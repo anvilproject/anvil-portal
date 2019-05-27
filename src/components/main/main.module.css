@@ -1,0 +1,22 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL main [content] component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Main */
+.main {
+    flex: 1;
+}
+
+/* Section */
+.main .sectionBody {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 0;
+}
+

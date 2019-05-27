@@ -1,0 +1,11 @@
+/**
+ * Global styles
+ */
+@import "./vars.module.css";
+
+/* Container */
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 16px;
+}

@@ -1,0 +1,14 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL footer component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Footer */
+.footer {
+    background-color: var(--shade-dark);
+    height: 96px;
+}
+

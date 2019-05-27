@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org/
+ *
+ * Style definitions specific to The AnVIL layout component.
+ */
+
+/* Site */
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

@@ -1,0 +1,70 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL header component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Header */
+.header {
+    background-color: var(--shade-light);
+}
+
+.header.peach {
+    background-color: var(--shade-light-peach);
+}
+
+.header > div {
+    align-items: center;
+    display: flex;
+    height: 66px;
+    justify-content: space-between;
+}
+
+/* Logo and navigation */
+.header > div > div, .header ul, .header li {
+    display: flex;
+    height: inherit;
+}
+
+/* Logo text */
+.header .logoText {
+    align-self: flex-end;
+    margin-bottom: 8px;
+    padding-left: 12px;
+}
+
+/* Logo */
+.header img {
+    align-self: center;
+    max-width: 48px;
+}
+
+/* Navigation */
+.header ul, .header li {
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+
+/* Links */
+.header li:not(:first-of-type) {
+    margin-left: 32px;
+}
+
+/* Link */
+.header li a {
+    color: var(--accent-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+}
+
+/* Link - active */
+.header li a.active {
+    box-shadow: 0 3px 0 0 var(--accent-blue);
+}
+
+
