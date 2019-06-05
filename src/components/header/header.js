@@ -14,26 +14,28 @@ import logo from "../../../images/logoAnVIL.png";
 
 // Styles
 import compStyles from "./header.module.css";
-import fontStyles from "../../styles/fontstyles.module.css";
 import globalStyles from "../../styles/global.module.css";
-
-let classNames = require("classnames");
 
 class Header extends React.Component {
 
     render() {
-        const {theme} = this.props;
         return (
-            <div className={classNames(compStyles.header, {[compStyles.peach]: theme === "peach"})}>
+            <div className={compStyles.header}>
                 <div className={globalStyles.container}>
                     <div>
                         <img src={logo} alt="anVIL"/>
-                        <span className={classNames(fontStyles.theAnVIL, compStyles.logoText)}>The AnVIL</span>
                     </div>
                     <ul>
-                        <li><Link to="/" activeClassName={compStyles.active}>Mustard</Link></li>
-                        <li><Link to="/bright" activeClassName={compStyles.active}>Bright</Link></li>
-                        <li><Link to="/peach" activeClassName={compStyles.active}>Peach</Link></li>
+                        <li><Link to="/" activeClassName={compStyles.active}>Paragraphs</Link></li>
+                        <li><Link to="/alegreyaSans" activeClassName={compStyles.active}>Alegreya</Link></li>
+                        <li><Link to="/barlow" activeClassName={compStyles.active}>Barlow</Link></li>
+                        <li><Link to="/lato" activeClassName={compStyles.active}>Lato</Link></li>
+                        <li><Link to="/mandali" activeClassName={compStyles.active}>Mandali</Link></li>
+                        <li><Link to="/notoSansHK" activeClassName={compStyles.active}>Noto HK</Link></li>
+                        <li><Link to="/openSans" activeClassName={compStyles.active}>Open Sans</Link></li>
+                        <li><Link to="/raleway" activeClassName={compStyles.active}>Raleway</Link></li>
+                        <li><Link to="/roboto" activeClassName={compStyles.active}>Roboto</Link></li>
+                        <li><Link to="/headings" activeClassName={compStyles.active}>Headings</Link></li>
                     </ul>
                 </div>
             </div>
@@ -41,8 +43,8 @@ class Header extends React.Component {
     }
 }
 
-export default (props) => {
+export default () => {
     return (
-        <Header {...props}/>
+        <Header/>
     )
 }

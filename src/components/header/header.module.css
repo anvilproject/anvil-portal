@@ -8,11 +8,7 @@
 
 /* Header */
 .header {
-    background-color: var(--shade-light);
-}
-
-.header.peach {
-    background-color: var(--shade-light-peach);
+    background-color: rgba(246, 247, 244, 0.58);
 }
 
 .header > div {
@@ -26,13 +22,6 @@
 .header > div > div, .header ul, .header li {
     display: flex;
     height: inherit;
-}
-
-/* Logo text */
-.header .logoText {
-    align-self: flex-end;
-    margin-bottom: 8px;
-    padding-left: 12px;
 }
 
 /* Logo */
@@ -50,7 +39,7 @@
 
 /* Links */
 .header li:not(:first-of-type) {
-    margin-left: 32px;
+    margin-left: 24px;
 }
 
 /* Link */

@@ -1,0 +1,20 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL index page.
+ */
+
+/* Paragraph Fonts */
+.paraFonts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paraFonts > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 16px;
+}
+
