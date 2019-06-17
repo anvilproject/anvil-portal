@@ -1,0 +1,35 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL template component.
+ */
+
+/* Article inner */
+.articleInner {
+    padding: 0;
+}
+
+/**
+ * Large Tablet
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Article inner */
+    .articleInner {
+        max-width: 600px;
+    }
+}
+
+/**
+ * Medium Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Article inner */
+    .articleInner {
+        margin: 0 32px;
+    }
+}

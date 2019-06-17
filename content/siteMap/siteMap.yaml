@@ -1,0 +1,52 @@
+- name: "About"
+  key: "about"
+  path: "/about"
+  position:
+    location: "h"
+    order: 0
+  primaryLinks:
+    - name: "About the Project"
+      key: "/about/about-the-project"
+      path: "/about"
+- name: "Team"
+  key: "team"
+  path: "/team"
+  position:
+    location: "h"
+    order: 2
+  primaryLinks:
+    - name: "Team"
+      key: "/team/team"
+      path: "/team"
+    - name: "Current Working Groups"
+      key: "/team/current-working-groups"
+- name: "Implementation"
+  key: "implementation"
+  path: "/implementation"
+  position:
+    location: "h"
+    order: 2
+  primaryLinks:
+    - name: "Project Implementation"
+      key: "/implementation/project-implementation"
+      path: "/implementation"
+- name: "Training"
+  key: "training"
+  path: "/training"
+  position:
+    location: "h"
+    order: 3
+  primaryLinks:
+    - name: "Training"
+      key: "/training/training"
+      path: "/training"
+- name: "Contact"
+  key: "contact"
+  path: "/contact"
+  position:
+    location: "h"
+    order: 4
+  primaryLinks:
+    - name: "Contact Us"
+      key: "/contact/contact-us"
+      path: "/contact"

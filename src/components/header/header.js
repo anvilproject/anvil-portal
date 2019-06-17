@@ -9,6 +9,9 @@
 import {Link} from "gatsby";
 import React from "react";
 
+// App dependencies
+import {headerStaticQuery} from "../../hooks/headerQuery";
+
 // Images
 import logo from "../../../images/logoAnVIL.png";
 
@@ -16,26 +19,36 @@ import logo from "../../../images/logoAnVIL.png";
 import compStyles from "./header.module.css";
 import globalStyles from "../../styles/global.module.css";
 
+let classNames = require("classnames");
+
 class Header extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {showNav: false};
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu = () => {
+        this.setState({showNav: !this.state.showNav});
+        this.props.onMenuOpen(this.state.showNav);
+    };
+
     render() {
+        const {homePage, links} = this.props;
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
-                    <div>
+                    <Link to="/">
                         <img src={logo} alt="anVIL"/>
-                    </div>
-                    <ul>
-                        <li><Link to="/" activeClassName={compStyles.active}>Paragraphs</Link></li>
-                        <li><Link to="/alegreyaSans" activeClassName={compStyles.active}>Alegreya</Link></li>
-                        <li><Link to="/barlow" activeClassName={compStyles.active}>Barlow</Link></li>
-                        <li><Link to="/lato" activeClassName={compStyles.active}>Lato</Link></li>
-                        <li><Link to="/mandali" activeClassName={compStyles.active}>Mandali</Link></li>
-                        <li><Link to="/notoSansHK" activeClassName={compStyles.active}>Noto HK</Link></li>
-                        <li><Link to="/openSans" activeClassName={compStyles.active}>Open Sans</Link></li>
-                        <li><Link to="/raleway" activeClassName={compStyles.active}>Raleway</Link></li>
-                        <li><Link to="/roboto" activeClassName={compStyles.active}>Roboto</Link></li>
-                        <li><Link to="/headings" activeClassName={compStyles.active}>Headings</Link></li>
+                        {homePage ? null : <span className={classNames(compStyles.theAnVIL)}>AnVIL</span>}
+                    </Link>
+                    <i className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>menu</i>
+                    <i className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>close</i>
+                    <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
+                        {links.map((l, i) => <li key={i}>
+                            <Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>{l.name}</Link>
+                        </li>)}
                     </ul>
                 </div>
             </div>
@@ -43,8 +56,8 @@ class Header extends React.Component {
     }
 }
 
-export default () => {
+export default (props) => {
     return (
-        <Header/>
-    )
+        <Header links={headerStaticQuery()} {...props}/>
+    );
 }

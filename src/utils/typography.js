@@ -9,29 +9,32 @@
 // Core dependencies
 import Typography from "typography";
 
+
 const typography = new Typography({
     baseFontSize: "16px",
     baseLineHeight: "24px",
     bodyColor: "#000000",
-    bodyFontFamily: ["Open Sans", "sans-serif"],
+    bodyFontFamily: ["Barlow", "sans-serif"],
     bodyWeight: "400",
     headerColor: "#012840",
     headerFontFamily: ["Open Sans", "sans-serif"],
-    headerWeight: "600",
+    headerWeight: "400",
     googleFonts: [
         {
             name: "Open Sans",
             styles: ["400", "600", "700"]
         },
         {
-            name: "Lato",
-            styles: ["300"]
+            name: "Barlow",
+            styles: ["300", "400"]
         }
     ],
     includeNormalize: true,
     overrideStyles: ({adjustFontSizeTo, scale}, options, styles) => {
         return {
-            "body, html": {},
+            "body, html": {
+                overscrollBehavior: "none",
+            },
             "body": {
                 margin: 0
             },
@@ -41,6 +44,7 @@ const typography = new Typography({
                 boxSizing: "border-box",
             },
             "a": {
+                color: "inherit",
                 cursor: "pointer",
                 font: "inherit",
                 textDecoration: "none",
@@ -48,10 +52,34 @@ const typography = new Typography({
             "a:focus,a:active,a:hover": {
                 outline: 0,
             },
+            h1: {
+                ...adjustFontSizeTo("38px"),
+                lineHeight: "44px",
+                margin: "0 0 24px",
+            },
+            h2: {
+                ...adjustFontSizeTo("28px"),
+                letterSpacing: "0.25px",
+                lineHeight: "36px",
+                margin: "0 0 12px",
+            },
+            h3: {
+                ...adjustFontSizeTo("18px"),
+                fontWeight: 700,
+                letterSpacing: "0.15px",
+                lineHeight: "26px",
+                margin: "0 0 10px",
+            },
+            h4: {
+                ...adjustFontSizeTo("16px"),
+                fontWeight: 600,
+                lineHeight: "24px",
+                margin: "0 0 4px",
+            },
             img: {
                 border: 0,
-                marginBottom: 0,
-            }
+                marginBottom: "24px",
+            },
         }
     }
 });

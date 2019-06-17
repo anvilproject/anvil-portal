@@ -8,7 +8,54 @@
 
 /* Footer */
 .footer {
-    background-color: var(--shade-dark);
-    height: 96px;
+    background: linear-gradient(rgba(246, 247, 244, 0.58), rgba(246, 247, 244, 0.58)), linear-gradient(white, white);
+    border-top: 2px solid var(--shade-dark);
+}
+
+/* Footer - dark background */
+.footer.bgDark {
+    background: var(--shade-dark);
+}
+
+/* Footer container */
+.footer > div {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Socials */
+.footer .socials {
+    align-items: center;
+    display: flex;
+    height: 64px;
+}
+
+/* Socials - link */
+.footer .socials a {
+    line-height: 0;
+}
+
+/* GitHub image */
+.footer .socials img {
+    height: 24px;
+    margin: 0 0 0 16px;
+}
+
+/* Material icon - dark background */
+.footer.bgDark i {
+    color: white;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Socials */
+    .footer .socials {
+        height: 96px;
+    }
 }
 

@@ -1,0 +1,93 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL nav component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Side Nav */
+.sideNav {
+    border-bottom: 2px solid var(--shade-light);
+    list-style: none;
+    margin: 0 0 32px;
+    padding-bottom: 16px;
+}
+
+/* Side Nav - hidden */
+.sideNav.hidden {
+    display: none;
+}
+
+/* Link container */
+.sideNavLink {
+    color: var(--accent-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 12px;
+}
+
+/* Link */
+.sideNavLink a {
+    width: 100%;
+}
+
+/* Link style - active */
+.sideNavLink a.active:before {
+    animation: activeLink 1s;
+    border: 1px solid var(--accent-gold);
+    width: 32px;
+}
+
+/* Link - animation */
+@keyframes activeLink {
+    from {
+        border: 1px solid var(--black12);
+    }
+    to {
+        border: 1px solid var(--accent-gold);
+    }
+}
+
+/* Link style - hover state */
+.sideNavLink:hover a:not(.active):before {
+    border: 1px solid var(--black12);
+    width: 32px;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Side Nav */
+    .sideNav {
+        max-width: fit-content;
+    }
+}
+
+/**
+ * Medium Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    .sideNav {
+        border-bottom: none;
+        flex: none;
+        height: 100%; /* Required for sticky position */
+        margin: 44px 0 0 0;
+        max-width: unset;
+        padding: 0;
+        position: sticky;
+        top: 144px;
+        width: 284px;
+    }
+
+    .sideNav.hidden {
+        display: inline-flex;
+    }
+}

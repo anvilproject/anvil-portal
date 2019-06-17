@@ -2,46 +2,40 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL typography.
+ * The AnVIL - home page.
  */
 
 // Core dependencies
 import React from "react"
+import {isBrowser} from "react-device-detect";
 
 // App dependencies
 import Layout from "../components/layout"
 
+// Images
+import hero from "../../images/hero.png"
+
 // Styles
 import compStyles from "./index.module.css";
-import fontStyles from "../styles/fontstyles.module.css";
+import globalStyles from "../styles/global.module.css";
+
+let classNames = require("classnames");
 
 const IndexPage = () => (
-    <Layout>
-        <div className={compStyles.paraFonts}>
-            <div className={fontStyles.alegreyaSans}><span>Alegreya Sans</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.barlow}><span>Barlow</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.lato}><span>Lato</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.mandali}><span>Mandali</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.notoSansHK}><span>Noto Sans HK</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.openSans}><span>Open Sans</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.raleway}><span>Raleway</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
-            <div className={fontStyles.roboto}><span>Roboto</span><span>The AnVIL team brings together groups that have extensive experience
-                building
-                open-source platforms, tools, and workflows that are widely used in the genomics community.</span></div>
+    <Layout homePage={true}>
+        <div className={classNames(globalStyles.main, globalStyles.bgLight, compStyles.homePage, {[compStyles.handheld]: !isBrowser})}>
+            <section>
+                <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
+                    <div className={compStyles.headline}>Welcome to The&nbsp;AnVIL</div>
+                    <div className={compStyles.hero}>User-centered solution for genomic data access, analysis, and
+                        visualization. Based on familiar software platforms. Engineered for cloud infrastructure.
+                    </div>
+                </div>
+            </section>
+            <section className={globalStyles.section}>
+                <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
+                    <img src={hero} alt="anVIL"/></div>
+            </section>
         </div>
     </Layout>
 );

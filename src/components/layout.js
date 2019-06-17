@@ -16,11 +16,23 @@ import Header from "./header/header";
 
 // Styles
 import compStyles from "./layout.module.css";
+import "../styles/globalStyles.css";
+
+let classNames = require('classnames');
 
 class Layout extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {noScroll: false};
+    }
+
+    onMenuOpen = (event) => {
+        this.setState({noScroll: !event});
+    };
+
     render() {
-        const {children, theme} = this.props;
+        const {children, docPath, homePage, hideNav} = this.props;
         return (
             <div>
                 <Helmet>
@@ -29,15 +41,13 @@ class Layout extends React.Component {
                           href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300&display=swap"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-                    <link
-                        href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700%7CNunito%7COld+Standard+TT:700%7CRoboto+Condensed%7CRoboto+Mono%7CRufina:700%7CSource+Code+Pro%7CSource+Sans+Pro:600&display=swap"
-                        rel="stylesheet"/>
-                    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans%7CBarlow%7CMandali%7CNoto+Sans+HK%7COpen+Sans&display=swap" rel="stylesheet"/>
+                    <link href="https://fonts.googleapis.com/css?family=Barlow:300,400|Open+Sans:300,400,600,700&display=swap" rel="stylesheet"/>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"/>
                 </Helmet>
-                <div className={compStyles.site}>
-                    <Header theme={theme}/>
-                    <Main>{children}</Main>
-                    <Footer/>
+                <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
+                    <Header homePage={homePage} onMenuOpen={this.onMenuOpen.bind(this)}/>
+                    {homePage ? children : <Main docPath={docPath} hideNav={hideNav}>{children}</Main>}
+                    <Footer homePage={homePage}/>
                 </div>
             </div>
         )

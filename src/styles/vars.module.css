@@ -5,16 +5,18 @@
 :root {
     --black: #000000;
     --primary: #035C94;
-    --accent-blue: #AEEBF2;
-    --accent-dusky-green: #7EBAC0;
-    --accent-mustard: #E0DD10;
-    --accent-green: #12C5B2;
-    --accent-orange: #FF8964;
+    --accent-ice: #AEEBF2;
+    --accent-glacier: #7EBAC0;
+    --accent-gold: #E0DD10;
     --accent-dark: #25445A;
     --shade-dark: #012840;
-    --shade-light-peach: #F2F2F2;
     --shade-light: #F6F7F4;
     --white: #FFFFFF;
     --black1: rgba(0, 0, 0, 0.01);
     --black3: rgba(0, 0, 0, 0.03);
+    --black6: rgba(0, 0, 0, 0.06);
+    --black12: rgba(0, 0, 0, 0.12);
+    --black34: rgba(0, 0, 0, 0.34);
+    --black58: rgba(0, 0, 0, 0.58);
+    --black87: rgba(0, 0, 0, 0.87);
 }
