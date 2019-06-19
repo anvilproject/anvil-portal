@@ -8,6 +8,9 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import Nav from "../nav/nav";
+
 // Styles
 import compStyles from "./main.module.css";
 import globalStyles from "../../styles/global.module.css";
@@ -15,11 +18,12 @@ import globalStyles from "../../styles/global.module.css";
 class Main extends React.Component {
 
     render() {
-        const {children} = this.props;
+        const {children, docPath, hideNav} = this.props;
         return (
-            <div className={compStyles.main}>
+            <div className={globalStyles.main}>
                 <div className={globalStyles.container}>
-                    <div className={compStyles.sectionBody}>
+                    <div className={compStyles.mainBody}>
+                        {hideNav ? null : <Nav docPath={docPath}/>}
                         {children}
                     </div>
                 </div>

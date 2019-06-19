@@ -8,49 +8,89 @@
 
 /* Header */
 .header {
-    background-color: var(--shade-light);
+    background: linear-gradient(rgba(246, 247, 244, 0.58), rgba(246, 247, 244, 0.58)), linear-gradient(white, white);
 }
 
-.header.peach {
-    background-color: var(--shade-light-peach);
-}
-
-.header > div {
+/* Flex - header container, logo & text container, <ul>, <li> */
+.header > div, .header > div > a, .header ul, .header li {
     align-items: center;
     display: flex;
-    height: 66px;
+}
+
+/* Header container */
+.header > div {
+    height: 60px;
     justify-content: space-between;
-}
-
-/* Logo and navigation */
-.header > div > div, .header ul, .header li {
-    display: flex;
-    height: inherit;
-}
-
-/* Logo text */
-.header .logoText {
-    align-self: flex-end;
-    margin-bottom: 8px;
-    padding-left: 12px;
 }
 
 /* Logo */
 .header img {
     align-self: center;
-    max-width: 48px;
+    margin: 0;
+    max-width: 40px;
+}
+
+/* The AnVIL - logo text */
+.header .theAnVIL {
+    align-self: flex-end;
+    color: var(--accent-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    line-height: 32px;
+    margin-bottom: -4px;
+    padding-left: 8px;
+}
+
+/* Menu icon */
+.header i {
+    color: var(--accent-glacier);
+    cursor: pointer;
+    display: block;
+    padding: 12px;
+}
+
+/* Menu / Close icon hidden */
+.header i.hidden {
+    display: none;
+}
+
+/* Navigation */
+.header ul {
+    align-items: flex-start;
+    background-color: var(--shade-light);
+    flex-direction: column;
+    height: calc(100% - 60px);
+    left: 0;
+    margin: 0;
+    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+    padding: 16px 0;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 10;
+}
+
+.header ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigation - hidden */
+.header ul:not(.nav) {
+    display: none;
 }
 
 /* Navigation */
 .header ul, .header li {
-    align-items: center;
     list-style: none;
-    margin: 0;
 }
 
 /* Links */
-.header li:not(:first-of-type) {
-    margin-left: 32px;
+.header li {
+    padding-left: 24px;
+    margin-bottom: 8px;
 }
 
 /* Link */
@@ -60,11 +100,113 @@
     font-size: 16px;
     height: 32px;
     line-height: 32px;
+    position: relative;
 }
 
 /* Link - active */
-.header li a.active {
-    box-shadow: 0 3px 0 0 var(--accent-blue);
+.header li a.active:before, .header li a:hover:before {
+    border-radius: 1px;
+    bottom: 2px;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    transition: opacity .25s ease;
+    width: 24px;
 }
 
+/* Link - hover */
+.header li a:not(.active):hover:before {
+    border: 1px solid rgba(174, 235, 242, 0.34);
+}
 
+.header li a.active:before {
+    border: 1px solid var(--accent-ice);
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Header */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    /* Header container */
+    .header > div {
+        height: 64px;
+    }
+        /* Logo */
+    .header img {
+        max-width: 58px;
+    }
+
+    /* The AnVIL text */
+    .header .theAnVIL {
+        font-size: 30px;
+        line-height: 38px;
+        margin-bottom: -2px;
+        padding-left: 12px;
+    }
+
+    /* Menu icon */
+    .header i:not(.hidden) {
+        display: none;
+    }
+
+    /* Navigation */
+    .header ul, .header li {
+        height: inherit;
+        overflow-y: unset;
+        padding: 0;
+    }
+
+    /* Nav available at all times */
+    .header ul:not(.nav), .header ul {
+        display: flex;
+    }
+
+    /* Navigation */
+    .header ul {
+        background-color: unset;
+        flex-direction: row;
+        position: unset;
+        width: unset;
+        z-index: unset;
+    }
+
+    /* Links - first link */
+    .header li:first-of-type {
+        margin: 0;
+    }
+
+    .header li:not(:first-of-type) {
+        margin: 0 0 0 24px;
+    }
+
+    /* Link */
+    .header li a {
+        white-space: nowrap;
+    }
+
+    /* Link - active */
+    .header li a.active:before, .header li a:hover:before {
+        border-radius: 2px;
+        bottom: -4px;
+        width: 100%;
+    }
+
+    /* Link - hover */
+    .header li a:not(.active):hover:before {
+        border: 2px solid rgba(174, 235, 242, 0.24);
+    }
+
+    .header li a.active:before {
+        border: 2px solid var(--accent-ice);
+    }
+}

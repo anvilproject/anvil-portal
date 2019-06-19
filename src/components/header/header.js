@@ -9,31 +9,46 @@
 import {Link} from "gatsby";
 import React from "react";
 
+// App dependencies
+import {headerStaticQuery} from "../../hooks/headerQuery";
+
 // Images
 import logo from "../../../images/logoAnVIL.png";
 
 // Styles
 import compStyles from "./header.module.css";
-import fontStyles from "../../styles/fontstyles.module.css";
 import globalStyles from "../../styles/global.module.css";
 
 let classNames = require("classnames");
 
 class Header extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {showNav: false};
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu = () => {
+        this.setState({showNav: !this.state.showNav});
+        this.props.onMenuOpen(this.state.showNav);
+    };
+
     render() {
-        const {theme} = this.props;
+        const {homePage, links} = this.props;
         return (
-            <div className={classNames(compStyles.header, {[compStyles.peach]: theme === "peach"})}>
+            <div className={compStyles.header}>
                 <div className={globalStyles.container}>
-                    <div>
+                    <Link to="/">
                         <img src={logo} alt="anVIL"/>
-                        <span className={classNames(fontStyles.theAnVIL, compStyles.logoText)}>The AnVIL</span>
-                    </div>
-                    <ul>
-                        <li><Link to="/" activeClassName={compStyles.active}>Mustard</Link></li>
-                        <li><Link to="/bright" activeClassName={compStyles.active}>Bright</Link></li>
-                        <li><Link to="/peach" activeClassName={compStyles.active}>Peach</Link></li>
+                        {homePage ? null : <span className={classNames(compStyles.theAnVIL)}>AnVIL</span>}
+                    </Link>
+                    <i className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>menu</i>
+                    <i className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>close</i>
+                    <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
+                        {links.map((l, i) => <li key={i}>
+                            <Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>{l.name}</Link>
+                        </li>)}
                     </ul>
                 </div>
             </div>
@@ -43,6 +58,6 @@ class Header extends React.Component {
 
 export default (props) => {
     return (
-        <Header {...props}/>
-    )
+        <Header links={headerStaticQuery()} {...props}/>
+    );
 }

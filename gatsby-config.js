@@ -1,3 +1,10 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * The AnVIL configuration file.
+ */
+
 module.exports = {
     siteMetadata: {
         title: `The AnVIL`,
@@ -52,6 +59,75 @@ module.exports = {
                 path: `${__dirname}/content`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `site-map`,
+                path: `${__dirname}/content/siteMap`,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        options: {
+                            offsetY: `100`,
+                            className: `anchor`,
+                        }
+                    },
+                    {
+                        resolve: `gatsby-remark-custom-blocks`,
+                        options: {
+                            blocks: {
+                                button: {
+                                    classes: "button dark"
+                                },
+                                buttonLight: {
+                                    classes: "button light"
+                                },
+                                caption: {
+                                    classes: "caption"
+                                },
+                                headline: {
+                                    classes: "headline"
+                                },
+                                hero: {
+                                    classes: "hero"
+                                },
+                                heroLine: {
+                                    classes: "hero line"
+                                },
+                                heroSmall: {
+                                    classes: "hero small"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        resolve: `gatsby-remark-embed-video`,
+                        options: {
+                            width: 600,
+                            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+                            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+                            noIframeBorder: true //Optional: Disable insertion of <style> border: 0
+                        }
+                    },
+                    `gatsby-remark-external-links`,
+                    `gatsby-remark-responsive-iframe`,
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 600,
+                            linkImagesToOriginal: false,
+                            wrapperStyle: `margin: 0 !important;`,
+                        }
+                    },
+                ]
+            }
+        },
         `gatsby-transformer-sharp`,
+        `gatsby-transformer-yaml`,
     ],
 };

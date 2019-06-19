@@ -1,0 +1,77 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL home page.
+ */
+
+/* Section - first */
+.homePage section:first-of-type {
+    padding: 60px 0 16px;
+}
+
+/* Headline */
+.homePage .headline {
+    color: var(--accent-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 82px;
+    margin: 0 0 32px;
+}
+
+/* Hero text */
+.homePage .hero {
+    color: var(--accent-dark);
+    font-family: "Barlow", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 0 0 16px;
+}
+
+/* Image */
+.homePage img {
+    margin: 0;
+}
+
+/* Devices */
+/* Detected with react-device-detect and class "handheld" */
+/* Section - first */
+.homePage.handheld section:first-of-type {
+    padding: 40px 0 0;
+}
+
+/**
+ * Mobile only
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+*/
+@media (max-width: 720px) and (max-height: 840px) {
+
+    /* Headline */
+    .homePage.handheld .headline {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 44px;
+        margin: 0 0 16px;
+    }
+
+    /* Hero text */
+    .homePage.handheld .hero {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 8px;
+    }
+}
+
+/**
+ * Small Window +
+ * Includes iPad portrait, iPad pro
+ */
+@media (min-height: 960px) {
+
+    /* Section - first */
+    .homePage section:first-of-type, .homePage.handheld section:first-of-type {
+        padding: 72px 0 32px;
+    }
+}

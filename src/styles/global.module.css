@@ -3,9 +3,87 @@
  */
 @import "./vars.module.css";
 
+/* Main */
+.main {
+    flex: 1;
+}
+
 /* Container */
 .container {
-    margin: 0 auto;
-    max-width: 960px;
     padding: 0 16px;
+}
+
+/* Section */
+.section {
+    padding: 16px 0;
+}
+
+/* Section inner */
+.sectionInner {
+    max-width: 760px;
+    padding: 0 16px;
+}
+
+/* Section inner - centered */
+.sectionInner.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Background - light */
+.bgLight {
+    background-color: var(--shade-light);
+}
+
+/* Background - dark */
+.bgDark {
+    background-color: var(--shade-dark);
+}
+
+/* Link */
+.link {
+    position: relative; /* Positions link style */
+}
+
+/* Link - scaffolding */
+.link:before {
+    border-radius: 1px;
+    bottom: -2px;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Container, section inner */
+    .container, .sectionInner {
+        padding: 0 24px;
+    }
+}
+
+@media screen and (min-width: 720px) and (min-height: 840px) {
+
+    /* Section */
+    .section {
+        padding: 32px 0;
+    }
+}
+
+/**
+ * Medium Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Container */
+    .container {
+        margin: 0 auto;
+        max-width: 1280px; /* Snap to 1280px */
+    }
 }
