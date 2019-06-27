@@ -7,7 +7,7 @@ author: "AnVIL"
 
 #Project Implementation
 
-[[heroLine]]
+[[heroSmall]]
 | The AnVIL team brings together groups that have extensive experience building open-source platforms, tools, and workflows that are widely used in the genomics community.
 
 The project will include [Bioconductor](https://www.bioconductor.org/), [Galaxy](https://galaxyproject.org/), [Gen3](https://gen3.org/), [Terra](https://app.terra.bio/), and [Jupyter](https://jupyter.org/) to start and include extension points for adding more tools and services. The AnVIL project will leverage those tools to build a more accessible and integrated platform for the genomics researchers.

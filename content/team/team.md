@@ -3,22 +3,45 @@ path: "/team/team"
 date: "10 June 2019"
 title: "Team"
 author: "AnVIL"
-linked:
-    - ./team-card/johns-hopkins-university.md
-    - ./team-card/penn-state-university.md
-    - ./team-card/oregon-health-sciences-university.md
-    - ./team-card/roswell-park-cancer-institute.md
-    - ./team-card/harvard-university.md
-    - ./team-card/city-university-of-new-york.md
-    - ./team-card/broad-institute.md
-    - ./team-card/university-of-chicago.md
-    - ./team-card/university-of-california-santa-cruz.md
-    - ./team-card/vanderbilt-university.md
-    - ./team-card/washington-university.md
-    - ./team-card/aha.md
 ---
 
 #The Team
 
 [[heroSmall]]
 | The AnVIL is a large consortium project to which many groups and individuals are contributing.
+
+#### [Johns Hopkins University](https://www.taylorlab.org)
+Taylor, Afgan, Leek, Schatz, Hansen
+
+#### [Penn State University](https://nekrut.github.io/lab_site)
+Nekrutenko
+
+#### [Oregon Health & Sciences University](https://goeckslab.org)
+Goecks and Ellrott
+
+#### Roswell Park Cancer Institute
+Morgan
+
+#### [Harvard University](http://vjcitn.github.io)
+Carey
+
+#### [City University of New York](https://waldronlab.io)
+Waldron
+
+#### Broad Institute
+Philippakis, MacArthur
+
+#### [University of Chicago](http://rgrossman.com)
+Grossman
+
+#### [University of California, Santa Cruz](https://cgl.genomics.ucsc.edu/team)
+Paten
+
+#### [Vanderbilt University](https://www.vumc.org/dbmi/person/robert-carroll-phd)
+Carroll
+
+#### [Washington University](https://www.genome.wustl.edu/research/labs/hall-lab)
+Hall
+
+#### AHA
+Hall

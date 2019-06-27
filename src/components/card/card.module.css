@@ -8,16 +8,11 @@
 
 /* Card */
 .card {
-    border: 1px solid var(--shade-light);
+    border: 1px solid var(--shade-light) !important; /* Required - removes markdown link style from <a> tag */
     border-radius: 4px;
     display: block;
     margin-bottom: 16px;
     padding: 16px;
-}
-
-/* Removal of markdown link style from <a> tag */
-.card:before {
-    display: none !important; /* Required */
 }
 
 /* Card - no margin */

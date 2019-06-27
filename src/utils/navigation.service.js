@@ -49,9 +49,13 @@ export function getSectionNav(siteMap, docPath) {
     // Get section for the document path
     const section = siteMap.filter(n => n.key === getKeyOfPath(docPath, 1))[0];
 
+    if (!section) {
+        return [];
+    }
+
     // Return error if no primary links for the section
-    if (!section.primaryLinks) {
-        throw new Error('No links for section: ' + section);
+    if (section && !section.primaryLinks) {
+        throw new Error("No links for section: " + section);
     }
 
     // Return all primary links for the document section

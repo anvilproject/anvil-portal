@@ -31,12 +31,10 @@ class Card extends React.Component {
     };
 
     render() {
-        const {children, post} = this.props,
+        const {post} = this.props,
             {frontmatter, html} = post,
             {linkTo} = frontmatter;
-        let id = (html.split('id="')[1].split('">')[0]),
-            colors = ["#AEEBF2", "#7EBAC0", "#E0DD10", "#035C94"],
-            colorPicker = colors[Math.floor(Math.random() * colors.length)];
+        let id = (html.split('id="')[1].split('">')[0]);
         const CardType = ({linkTo, children, ...props}) => {
             return linkTo ? React.createElement('a', {
                 href: linkTo,
@@ -45,8 +43,8 @@ class Card extends React.Component {
             }, children) : React.createElement("div", props, children);
         };
         return (
-            <CardType id={id} linkTo={linkTo} className={this.getCardClassName()} style={{borderColor: colorPicker}}
-                      dangerouslySetInnerHTML={{__html: children}}/>
+            <CardType id={id} linkTo={linkTo} className={this.getCardClassName()}
+                      dangerouslySetInnerHTML={{__html: html}}/>
         );
     }
 }

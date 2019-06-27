@@ -6,8 +6,9 @@
  */
 
 /* Section - first */
-.homePage section:first-of-type {
-    padding: 60px 0 16px;
+/* Includes devices - detected with react-device-detect and class "handheld" */
+.homePage section:first-of-type, .homePage.handheld section:first-of-type {
+    padding: 60px 0;
 }
 
 /* Headline */
@@ -31,15 +32,8 @@
 }
 
 /* Image */
-.homePage img {
-    margin: 0;
-}
-
-/* Devices */
-/* Detected with react-device-detect and class "handheld" */
-/* Section - first */
-.homePage.handheld section:first-of-type {
-    padding: 40px 0 0;
+.homePage .hero + img {
+    margin: 16px 0 0;
 }
 
 /**
@@ -65,13 +59,37 @@
 }
 
 /**
- * Small Window +
- * Includes iPad portrait, iPad pro
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media (min-height: 960px) {
+@media screen and (min-width: 720px) {
+
+    /* Scroll - fade effect */
+    .homePage:after {
+        background: linear-gradient(var(--shade-light) 0%, transparent 100%);
+        content: "";
+        display: block;
+        height: 24px;
+        left: 0;
+        position: fixed;
+        top: 64px;
+        width: 100%;
+    }
+
+    /* Image */
+    .homePage .hero + img {
+        margin: 16px 0 0;
+        max-width: 650px;
+    }
+}
+
+/**
+ * iPad portrait ~
+ */
+@media (min-width: 1024px) and (max-height: 840px) {
 
     /* Section - first */
-    .homePage section:first-of-type, .homePage.handheld section:first-of-type {
-        padding: 72px 0 32px;
+    .homePage.handheld section:first-of-type {
+        padding: 60px 0 40px;
     }
 }
