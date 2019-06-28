@@ -1,0 +1,166 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL featured workspaces component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Featured */
+.featured {
+    align-items: center;
+    background: linear-gradient(var(--shade-light) 76px, var(--white) 24px);
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+/* Featured - title, image container */
+.featured h3, .featured .workspaceImg {
+    flex: 1;
+}
+
+/* Featured - title */
+.featured h3 {
+    margin: 0;
+    text-align: right;
+}
+
+/* Featured - separator */
+.featured .sep {
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+    height: 100px;
+    margin: 0 20px;
+    width: 2px;
+}
+
+/* Featured - workspace image */
+.featured .workspaceImg img {
+    margin: 0;
+    max-height: 40px;
+}
+
+/* Workspaces - container */
+.workspaces {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0 32px;
+}
+
+/* Workspace */
+.workspace {
+    padding: 0 16px;
+    position: relative; /* Positions workspace link */
+}
+
+/* Workspace outer link */
+.workspace > a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Workspace inner link */
+.workspace p a {
+    border-bottom: 2px solid var(--black12);
+    position: relative;
+    z-index: 20;
+}
+
+/* Workspace inner link - hover */
+.workspace p a:hover {
+    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
+    transition: border .25s ease-in;
+}
+
+/* Heading anchor */
+.workspace h4 a {
+    display: none; /* Removes anchor */
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Featured */
+    .featured {
+        padding: 0 24px;
+    }
+
+    /* Featured - separator */
+    .featured .sep {
+        margin: 0 24px;
+    }
+
+    .workspaces {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Workspace */
+    .workspace {
+        max-width: 50%;
+        padding: 0 24px;
+    }
+
+    /* Workspace - title */
+    .workspace h4 {
+        min-height: 48px;
+    }
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    .workspace h4 {
+        min-height: unset;
+    }
+}
+
+/**
+ * Medium Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Workspaces */
+    .workspaces {
+        margin: 0 8px;
+    }
+
+    /* Workspace */
+    .workspace {
+        flex: 1;
+        max-width: unset;
+        padding: 0 16px;
+    }
+
+    /* Workspace - title */
+    .workspace h4 {
+        min-height: 48px;
+    }
+}
+
+/**
+ * X Large Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1921px) {
+
+    /* Workspaces - container */
+    .workspaces {
+        margin: 0 auto;
+        max-width: 1920px;
+    }
+}

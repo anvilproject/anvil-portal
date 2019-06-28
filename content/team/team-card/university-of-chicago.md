@@ -1,6 +1,6 @@
 ---
 component: "card"
-linkTo: "http://rgrossman.co"
+linkTo: "http://rgrossman.com"
 ---
 
 #### University of Chicago

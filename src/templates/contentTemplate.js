@@ -30,7 +30,7 @@ export default ({data}) => {
             <div className={classNames(compStyles.articleInner, "markdown")}>
                 <div dangerouslySetInnerHTML={{__html: html}}/>
                 {linked ? linked.map((link, i) => <Linked key={i} docPath={slug}
-                                                          post={link.childMarkdownRemark}>{link.childMarkdownRemark.html}</Linked>) : null}
+                                                          post={link.childMarkdownRemark}/>) : null}
             </div>
         </Layout>
     )
@@ -46,8 +46,9 @@ query($slug: String!) {
       frontmatter {
         title
         date
+        component
         linked {
-          childMarkdownRemark{
+          childMarkdownRemark {
             html
             frontmatter{
               linkTo

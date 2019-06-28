@@ -5,6 +5,11 @@
  * The AnVIL configuration file.
  */
 
+let contentPath = `${__dirname}/node_modules/anvil-portal-content/content`;
+let yamlPath = `${__dirname}/node_modules/anvil-portal-content/siteMap`;
+// let contentPath = `../anvil-portal-content/content`;
+// let yamlPath = `../anvil-portal-content/siteMap`;
+
 module.exports = {
     siteMetadata: {
         title: `The AnVIL`,
@@ -56,14 +61,14 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `markdown-pages`,
-                path: `${__dirname}/content`,
+                path: contentPath,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `site-map`,
-                path: `${__dirname}/content/siteMap`,
+                path: yamlPath,
             },
         },
         {

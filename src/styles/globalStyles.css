@@ -106,26 +106,14 @@
     background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)), linear-gradient(rgba(246, 247, 244, 1), rgba(246, 247, 244, 1));
 }
 
-/* Link - markdown links */
-.markdown a:not(.anchor) {
-    position: relative; /* Positions link line in markdown */
-}
-
 /* Link style - markdown content only */
-.markdown a:not(.anchor):before {
-    border: 1px solid var(--black12);
-    border-radius: 1px;
-    bottom: -2px;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.markdown a:not(.anchor) {
+    border-bottom: 2px solid var(--black12);
 }
 
 /* Link style - hover state - markdown content only */
-.markdown a:not(.anchor):hover:before {
-    border: 1px solid rgba(174, 235, 242, 0.87);
+.markdown a:not(.anchor):hover {
+    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
     transition: border .25s ease-in;
 }
 

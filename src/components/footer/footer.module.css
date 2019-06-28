@@ -8,12 +8,6 @@
 
 /* Footer */
 .footer {
-    background: linear-gradient(rgba(246, 247, 244, 0.58), rgba(246, 247, 244, 0.58)), linear-gradient(white, white);
-    border-top: 2px solid var(--shade-dark);
-}
-
-/* Footer - dark background */
-.footer.bgDark {
     background: var(--shade-dark);
 }
 
@@ -42,8 +36,7 @@
     margin: 0 0 0 16px;
 }
 
-/* Material icon - dark background */
-.footer.bgDark i {
+.footer i {
     color: white;
 }
 

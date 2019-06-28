@@ -1,6 +1,6 @@
 ---
 component: "card"
-linkTo: "https://www.harvardlds.org/our-labs/carey-lab"
+linkTo: "http://vjcitn.github.io"
 ---
 
 #### Harvard University
