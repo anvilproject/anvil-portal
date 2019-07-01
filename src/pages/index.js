@@ -28,7 +28,7 @@ const IndexPage = () => (
             className={classNames(globalStyles.main, compStyles.homePage, {[compStyles.handheld]: !isBrowser})}>
             <section className={globalStyles.bgLight}>
                 <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
-                    <div className={compStyles.headline}>Welcome to The&nbsp;AnVIL</div>
+                    <div className={compStyles.headline}>Welcome to AnVIL</div>
                     <div className={compStyles.hero}>User-centered solution for genomic data access, analysis, and
                         visualization. Based on familiar software platforms. Engineered for cloud infrastructure.
                     </div>
