@@ -1,6 +1,0 @@
----
-component: "card"
----
-
-#### AHA
-Hall
