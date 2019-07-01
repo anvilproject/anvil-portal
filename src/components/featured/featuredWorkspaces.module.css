@@ -36,9 +36,13 @@
     padding: 60px 0;
 }
 
+/* Workspaces container */
+.workspaces > div {
+    align-self: center;
+}
+
 /* Workspace */
 .workspace {
-    align-self: center;
     margin-bottom: 48px;
 }
 

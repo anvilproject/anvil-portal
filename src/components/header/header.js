@@ -35,13 +35,13 @@ class Header extends React.Component {
     };
 
     render() {
-        const {homePage, links} = this.props;
+        const {links} = this.props;
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
                     <Link to="/">
                         <img src={logo} alt="anVIL"/>
-                        {homePage ? null : <span className={classNames(compStyles.theAnVIL)}>AnVIL</span>}
+                        <span className={classNames(compStyles.theAnVIL)}>AnVIL</span>
                     </Link>
                     <i className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>menu</i>
                     <i className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>close</i>

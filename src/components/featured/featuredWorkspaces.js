@@ -32,9 +32,11 @@ class FeaturedWorkspaces extends React.Component {
                     </div>
                 </div>
                 <div className={compStyles.workspaces}>
-                    {linked ? linked.map((p, i) => <div key={i} className={compStyles.workspace}>
-                        <div className={"markdown"} dangerouslySetInnerHTML={{__html: p.childMarkdownRemark.html}}/>
-                    </div>) : null}
+                    <div className={globalStyles.container}>
+                        {linked ? linked.map((p, i) => <div key={i} className={compStyles.workspace}>
+                            <div className={"markdown"} dangerouslySetInnerHTML={{__html: p.childMarkdownRemark.html}}/>
+                        </div>) : null}
+                    </div>
                 </div>
             </section>
         );
