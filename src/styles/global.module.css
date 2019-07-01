@@ -15,13 +15,13 @@
 
 /* Section inner */
 .sectionInner {
+    margin: 0 auto;
     max-width: 760px;
     padding: 0 16px;
 }
 
 /* Section inner - centered */
 .sectionInner.centered {
-    margin: 0 auto;
     text-align: center;
 }
 

@@ -64,18 +64,6 @@
  */
 @media screen and (min-width: 720px) {
 
-    /* Scroll - fade effect */
-    .homePage:after {
-        background: linear-gradient(var(--shade-light) 0%, transparent 100%);
-        content: "";
-        display: block;
-        height: 24px;
-        left: 0;
-        position: fixed;
-        top: 64px;
-        width: 100%;
-    }
-
     /* Image */
     .homePage .hero + img {
         margin: 16px 0 0;

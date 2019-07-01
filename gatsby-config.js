@@ -5,8 +5,6 @@
  * The AnVIL configuration file.
  */
 
-//let contentPath = `${__dirname}/node_modules/anvil-portal-content/content`;
-//let yamlPath = `${__dirname}/node_modules/anvil-portal-content/siteMap`;
 let contentPath = `../anvil-portal-content/content`;
 let yamlPath = `../anvil-portal-content/siteMap`;
 

@@ -9,7 +9,7 @@
 import React from "react";
 
 // Images
-import gitHub from "../../../images/gitHub-white.png";
+import gitHub from "../../../images/gitHub.png";
 
 // Styles
 import compStyles from "./footer.module.css";
