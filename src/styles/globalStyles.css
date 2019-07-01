@@ -68,6 +68,10 @@
 
 /* The AnVIL class "button dark" */
 /* Markdown syntax [[button]] */
+.button {
+    display: inline-block;
+}
+
 .button a {
     align-items: center;
     border-radius: 4px;
@@ -118,8 +122,8 @@
 }
 
 /* Removal of link style within markdown from <a> tag - where required */
-.button a:before {
-    display: none !important; /* Required - removes link style from nested <a> tag */
+.markdown .button a, .markdown .button a:hover {
+    border-bottom: none;
 }
 
 /* Blockquote */

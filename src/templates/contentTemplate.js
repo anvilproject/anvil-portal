@@ -12,7 +12,6 @@ import React from "react";
 
 // App dependencies
 import Layout from "../components/layout";
-import Linked from "./linkedTemplate";
 
 // Styles
 import compStyles from "./contentTemplate.module.css";
@@ -21,16 +20,13 @@ let classNames = require("classnames");
 
 export default ({data}) => {
     const post = data.markdownRemark,
-        {fields, frontmatter, html} = post,
-        {slug} = fields,
-        {linked} = frontmatter;
+        {fields, html} = post,
+        {slug} = fields;
 
     return (
         <Layout docPath={slug}>
             <div className={classNames(compStyles.articleInner, "markdown")}>
                 <div dangerouslySetInnerHTML={{__html: html}}/>
-                {linked ? linked.map((link, i) => <Linked key={i} docPath={slug}
-                                                          post={link.childMarkdownRemark}/>) : null}
             </div>
         </Layout>
     )
