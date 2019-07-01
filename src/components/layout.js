@@ -45,9 +45,9 @@ class Layout extends React.Component {
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"/>
                 </Helmet>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
-                    <Header homePage={homePage} onMenuOpen={this.onMenuOpen.bind(this)}/>
+                    <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
                     {homePage ? children : <Main docPath={docPath} hideNav={hideNav}>{children}</Main>}
-                    <Footer homePage={homePage}/>
+                    <Footer/>
                 </div>
             </div>
         )
