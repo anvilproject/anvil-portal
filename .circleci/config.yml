@@ -31,7 +31,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ .Branch }-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run:
                 name: Gatsby Build
