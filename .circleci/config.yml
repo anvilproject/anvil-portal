@@ -5,6 +5,10 @@
 version: 2
 jobs:
   build:
+    branches:
+          only:
+            - master
+            - staging
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16
@@ -43,7 +47,7 @@ jobs:
 
       - run:
                 name: Firebase Deploy
-                command: ./node_modules/.bin/firebase  deploy -P staging --token "$FIREBASE_TOKEN"
+                command: ./node_modules/.bin/firebase  deploy -P {{ .Branch }} --token "$FIREBASE_TOKEN"
 
 
 
