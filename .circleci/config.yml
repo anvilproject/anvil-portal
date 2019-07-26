@@ -43,7 +43,7 @@ jobs:
 
       - run:
                 name: Firebase Deploy
-                command: ./node_modules/.bin/firebase  deploy -P staging
+                command: ./node_modules/.bin/firebase  deploy -P staging --token "$FIREBASE_TOKEN"
 
 
 
