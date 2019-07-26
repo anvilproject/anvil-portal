@@ -33,7 +33,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
-      -run:
+      - run:
                 name: Checkout Content
                 command: git clone git@github.com:anvilproject/anvil-portal-content.git
 
