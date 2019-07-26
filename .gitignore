@@ -80,6 +80,4 @@ site/style-bundle.js
 
 # Local
 .tmp
-/.firebaserc
-/firebase.json
 /.firebase/
