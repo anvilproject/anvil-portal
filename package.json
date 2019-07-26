@@ -33,6 +33,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "firebase-tools": "^7.2.1",
     "prettier": "^1.17.1"
   },
   "keywords": [
