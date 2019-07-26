@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "staging-anvil-portal",
+    "staging": "staging-anvil-portal",
+    "master": "anvil-and-terra-development"
+  }
+}

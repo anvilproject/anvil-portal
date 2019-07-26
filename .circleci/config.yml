@@ -1,0 +1,81 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.16
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/anvil-deploy
+    steps:
+
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            # fallback to using the latest cache if no exact match is found
+            # - v1-dependencies-
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
+      - run:
+                name: Checkout Content
+                command: git clone git@github.com:anvilproject/anvil-portal-content.git ../anvil-portal-content
+      - run:
+                name: Gatsby Build
+                command: npm run build
+
+      - persist_to_workspace:
+                    # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+                    # taken to be the root directory of the workspace.
+                    root: ~/anvil-deploy
+                    # Must be relative path from root
+                    paths:
+                      - public
+
+
+  deploy-staging:
+    docker:
+          # specify the version you desire here
+          - image: circleci/node:10.16
+
+    working_directory: ~/anvil-deploy
+    steps:
+      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/anvil-deploy
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+
+      - run:
+          name: Firebase Deploy
+          command: ./node_modules/.bin/firebase  deploy -P staging --token "$FIREBASE_TOKEN"
+workflows:
+    version: 2
+    build-n-deploy:
+      jobs:
+        - build
+        - deploy-staging:
+            requires:
+              - build
+            filters:
+              branches:
+                only: staging
+
