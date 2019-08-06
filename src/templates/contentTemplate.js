@@ -11,6 +11,7 @@ import {graphql} from "gatsby";
 import React from "react";
 
 // App dependencies
+import EditContent from "../components/editContent/editContent";
 import Layout from "../components/layout";
 
 // Styles
@@ -27,6 +28,7 @@ export default ({data}) => {
         <Layout docPath={slug}>
             <div className={classNames(compStyles.articleInner, "markdown")}>
                 <div dangerouslySetInnerHTML={{__html: html}}/>
+                <EditContent docPath={slug}/>
             </div>
         </Layout>
     )
