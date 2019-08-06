@@ -47,7 +47,6 @@ query($slug: String!) {
           childMarkdownRemark {
             html
             frontmatter{
-              linkTo
               component
             }
           }

@@ -13,9 +13,6 @@ export const featuredWorkspacesStaticQuery = () => {
 			      linked {
 			        childMarkdownRemark {
 			          html
-			          frontmatter {
-			            linkTo
-			          }
 			        }
 			      }
 			    }
