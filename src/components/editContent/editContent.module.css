@@ -1,0 +1,21 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL edit content component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Edit content link */
+.editContent {
+    border-bottom: none !important; /* Overrides markdown link style */
+    color: var(--accent-glacier);
+    display: flex;
+}
+
+/* Edit content separator */
+.editContentSeparator {
+    border-top: 1px solid var(--primary);
+    margin-top: 32px;
+    padding-top: 16px;
+}
