@@ -5,8 +5,8 @@
  * The AnVIL configuration file.
  */
 
-let contentPath = `../anvil-portal-content/content`;
-let yamlPath = `../anvil-portal-content/siteMap`;
+let contentPath = `./content`;
+let yamlPath = `./content`;
 
 module.exports = {
     siteMetadata: {

@@ -33,9 +33,6 @@ jobs:
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run:
-                name: Checkout Content
-                command: git clone git@github.com:anvilproject/anvil-portal-content.git ../anvil-portal-content
-      - run:
                 name: Gatsby Build
                 command: npm run build
 
