@@ -17,7 +17,7 @@ class EditContent extends React.Component {
 
     render() {
         const {docPath} = this.props,
-        editPath = 'https://github.com/anvilproject/anvil-portal-content/tree/master/content' + docPath + '.md';
+        editPath = 'https://github.com/anvilproject/anvil-portal/tree/staging/content' + docPath + '.md';
 
         return (
             <a className={classNames(compStyles.editContent, compStyles.editContentSeparator)}
