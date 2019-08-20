@@ -25,7 +25,7 @@ Initially based on the [Google Compute Platform](https://cloud.google.com/), the
 
 ##Data Analysis Platforms
 
-Layered on top of the infrastructure, the data analysis platforms layer will be seeded with of some of the most popular data analysis environments available today. This expandable set of environments will allow you to browse, analyze, and visualize data through a web browser as well as the [API and command line interface](https://github.com/anvilproject/client-apis). The environments will also be linked to allow data to be seamlessly accessed across them.
+Layered on top of the infrastructure, the data analysis platforms layer will be seeded with of some of the most popular data analysis environments available today. This expandable set of environments will allow you to browse, analyze, and visualize data through a web browser as well as the [API and command line interface](https://github.com/anvilproject/client-apis). The environments will also be linked allowing seamless data access.
 
 ![Infra Layer](./_images/app-layer.png)
 [[caption]]
