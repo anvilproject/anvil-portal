@@ -3,7 +3,7 @@ The front-facing AnVIL user portal
 
 
 # Content Lifecycle
-The content for the portal is located in the /content folder of this repository.
+The content for the portal is located in the [/content](https://github.com/anvilproject/anvil-portal/tree/staging/content) folder of this repository.
 Each page of the site, and some page components, are represented as markdown files in this folder.
 
 ## Page Creation
