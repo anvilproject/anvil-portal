@@ -24,8 +24,8 @@ The AnVIL is a 5-year project funded by the NIH to create a managed platform for
 
 ###Organize and host key NHGRI datasets
 
-* [CCDG](https://ccdg.rutgers.edu)
-* [CMG](http://mendelian.org)
-* [eMERGE](https://emerge.mc.vanderbilt.edu)
-* [1000 Genomes](http://www.internationalgenome.org)
-* [GTEx](https://gtexportal.org/home)
+* Centers for Common Disease Genomics - [CCDG](https://ccdg.rutgers.edu)
+* Centers for Mendelian Genomics - [CMG](http://mendelian.org)
+* Electronic Medical Records and Genomics - [eMERGE](https://emerge.mc.vanderbilt.edu)
+* The 1000 Genomes Project - [1000 Genomes](http://www.internationalgenome.org) 
+* Genotype-Tissue Expression - [GTEx](https://gtexportal.org/home)
