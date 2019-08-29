@@ -27,6 +27,17 @@
     line-height: 28px;
 }
 
+/* Link style - hero.small only. Matches .markdown link style */
+.hero.small a:not(.anchor) {
+    border-bottom: 2px solid var(--black12);
+}
+
+/* Link style - hover state - hero.small only. Matches .markdown link style */
+.hero.small a:not(.anchor):hover {
+    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
+    transition: border .25s ease-in;
+}
+
 /* The AnVIL class "hero line" */
 /* Markdown syntax [[heroLine]] */
 .hero.line {
