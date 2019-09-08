@@ -5,31 +5,37 @@
     location: "h"
     order: 0
   primaryLinks:
-    - name: "About the Project"
-      key: "/about/about-the-project"
+    - name: "Platform"
+      key: "/about/platform"
       path: "/about"
-- name: "Team"
-  key: "team"
-  path: "/team"
-  position:
-    location: "h"
-    order: 2
-  primaryLinks:
     - name: "Team"
-      key: "/team/team"
-      path: "/team"
+      key: "/about/team"
     - name: "Working Groups"
-      key: "/team/working-groups"
-- name: "Implementation"
-  key: "implementation"
-  path: "/implementation"
+      key: "/about/working-groups"
+- name: "Data"
+  key: "data"
+  path: "/data"
+  position:
+    location: "h"
+    order: 1
+  primaryLinks:
+    - name: "Data"
+      key: "/data/data"
+      path: "/data"
+    - name: "Data Access"
+      key: "/data/data-access"
+    - name: "Data Submission"
+      key: "/data/data-submission"
+- name: "Tools"
+  key: "tools"
+  path: "/tools"
   position:
     location: "h"
     order: 2
   primaryLinks:
-    - name: "Project Implementation"
-      key: "/implementation/project-implementation"
-      path: "/implementation"
+    - name: "Tools"
+      key: "/tools/tools"
+      path: "/tools"
 - name: "Training"
   key: "training"
   path: "/training"
