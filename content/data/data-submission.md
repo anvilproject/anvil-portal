@@ -8,7 +8,7 @@ author: "AnVIL"
 # Data Submission 
 
 [[heroSmall]]
-| The AnVIL is a premier location for hosting valuable data sets.. 
+| The AnVIL is a premier location for hosting valuable data sets. 
 
 Submitting data to be hosted on the AnVIL increases the visibility of the data and further increases the value of the collective “AnVIL data” by extending the diversity and breadth of data analysis options.
  
