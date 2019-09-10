@@ -106,3 +106,4 @@ The technical working group of the AnVIL provides direction and recommendations 
 - Martin Morgan (RPCI)
 - Vince Carey (HMS),
 - Bob Grossman (UC)
+- Benedict Paten (UCSC)
