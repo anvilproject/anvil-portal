@@ -75,6 +75,7 @@ The portal working group organizes and publishes the AnVIL website.
 - Enis Afgan (JHU)
 - Mo Heydarian (JHU)
 - Abbey George (UChicago)
+- Eric Karofsky (Broad)
 
 ## Outreach Working Group
 The Outreach working group provides training and support solutions for the AnVIL project.
