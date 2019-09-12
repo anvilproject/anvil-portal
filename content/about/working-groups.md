@@ -50,7 +50,7 @@ The Phenotype Working Group ensures that the datasets hosted in the AnVIL platfo
 
 ### Members
 - Kyle Ellrott (OHSU)
-- AAda Hamosh (CMG - JHMI)
+- Ada Hamosh (CMG - JHMI)
 - Melissa Haendel (OHSU)
 - James Knight (CMG - Yale)
 - Steve Buyske (CCDG)
@@ -72,9 +72,9 @@ The portal working group organizes and publishes the AnVIL website.
 - Kevin Osborn (UCSC)
 - Dave Rogers (UCSC, Clever Canary)
 - Fran McDade (Clever Canary)
-- Enis Afgan (JHU), Mo Heydarian (JHU)
+- Enis Afgan (JHU)
+- Mo Heydarian (JHU)
 - Abbey George (UChicago)
-- Keith Corbin (Broad)
 
 ## Outreach Working Group
 The Outreach working group provides training and support solutions for the AnVIL project.
@@ -104,5 +104,5 @@ The technical working group of the AnVIL provides direction and recommendations 
 - Clare Bernard (Broad)
 - Enis Afgan (JHU)
 - Martin Morgan (RPCI)
-- Vince Carey (HMS),
+- Vince Carey (HMS)
 - Bob Grossman (UC)
