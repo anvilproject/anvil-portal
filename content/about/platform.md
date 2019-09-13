@@ -31,7 +31,7 @@ The AnVIL leverages the Terra computing platform to manage access and billing of
 ### Gen3
  [Gen3](https://gen3.org) is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. Gen3 is an open source platform for developing data commons.
 
-### Docstore
+### Dockstore
 [Dockstore](https://dockstore.org) is an open platform used by the GA4GH for sharing Docker-based tools described with the Common Workflow Language (CWL), the Workflow Description Language (WDL), or Nextflow (NFL).
 
 
