@@ -7,10 +7,10 @@ author: "AnVIL"
 # Working Groups
 
 [[heroSmall]]
-| The AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations. Working groups are dynamic and are formulated as needed in the course of the project.
+| AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations. Working groups are dynamic and are formulated as needed in the course of the project.
 
 ## Data Access Working Group
-The Data Access working group will define the methods used to securely control and grant access to restricted access datasets hosted within the AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.
+The Data Access working group will define the methods used to securely control and grant access to restricted access datasets hosted within AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.
 
 ### Co-Chairs
 - Carolyn Hutter (NHGRI)
@@ -42,7 +42,7 @@ The data processing working group will define the process for data ingestion and
 - Adam Coffman (WashU)
 
 ## Phenotype Working Group
-The Phenotype Working Group ensures that the datasets hosted in the AnVIL platform are incorporated in a manner that facilitates research driven by phenotypic questions.
+The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.
 
 ### Co-Chairs
 - Robert Carroll (VUMC)
@@ -62,7 +62,7 @@ The Phenotype Working Group ensures that the datasets hosted in the AnVIL platfo
 - Qiong Liu (UChicago)
 
 ## Portal Working Group
-The portal working group organizes and publishes the AnVIL website.
+The portal working group organizes and publishes AnVIL's website.
 
 ### Co-Chairs
 - James Taylor (JHU)
@@ -96,7 +96,7 @@ Jeff Leek (JHU)
 - Mo Heydarian (JHU)
 
 ## Technical Working Group
-The technical working group of the AnVIL provides direction and recommendations to the developers of the AnVIL project.
+AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.
 
 ### Chair
 - James Taylor (JHU)

@@ -7,7 +7,7 @@ author: "AnVIL"
 #The Team
 
 [[heroSmall]]
-| The AnVIL is a collaborative project between the Broad Institute, Johns Hopkins University, the University of Chicago, Roswell Park Cancer Institute, University of California at Santa Cruz, Penn State University, Washington University, Oregon Health and Sciences University, Harvard Medical School, Vanderbilt University, and City University of New York.
+| AnVIL is a collaborative project between the Broad Institute, Johns Hopkins University, the University of Chicago, Roswell Park Cancer Institute, University of California at Santa Cruz, Penn State University, Washington University, Oregon Health and Sciences University, Harvard Medical School, Vanderbilt University, and City University of New York.
  
  Members of these teams are also involved with platform and software development representing the Terra, Galaxy, Bioconductor, Gen3, and Dockstore teams. 
 

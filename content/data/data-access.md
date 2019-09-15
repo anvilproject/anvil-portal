@@ -9,15 +9,15 @@ author: "AnVIL"
 
 
 [[heroSmall]]
-| The AnVIL requires robust access controls that can selectively grant access to a number of groups with different access request requirements 
+| AnVIL requires robust access controls that can selectively grant access to a number of groups with different access request requirements 
 
 
 ## Access Groups
 **Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium.
 
-**External Researcher Access** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within the AnVIL. 
+**External Researcher Access** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL. 
 
-**AnVIL Developers** - Per the terms of the grant, AnVIL developers are given access to data housed on the AnVIL in order to help facilitate testing, debugging, and support. 
+**AnVIL Developers** - Per the terms of the grant, AnVIL developers are given access to data housed on AnVIL in order to help facilitate testing, debugging, and support. 
 
 ## Specifications
 Terra maintains access controls through a list of Authorization Groups (Auth Groups) attached to each workspace. If a workspace has an auth group attached, it can only be interacted with by users inside the group. Auth groups can also contain other groups, allowing a simple nesting structure to make additions and removals simple. How each group above gets their names onto an auth group varies per user list. 
