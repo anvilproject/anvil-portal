@@ -38,6 +38,6 @@ The Genotype-Tissue Expression (GTEx) project is an ongoing effort to build a co
 
 The 1000 Genomes Project, launched in January 2008, is an international research effort to establish variation profiles across the human population. This open access data set continues to be a valuable resource to geneticists. 
 
-### [eMerge](https://emerge.mc.vanderbilt.edu)
+### [eMERGE](https://emerge.mc.vanderbilt.edu)
 
 The Electronic and MEdical Records and Genomics project (eMERGE) is a national network organized and funded by the NHGRI that combines DNA biorepositories with electronic medical record (EMR) systems for large scale, high-throughput genetic research in support of implementing genomic medicine.
