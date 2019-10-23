@@ -4,8 +4,13 @@
  *
  * Style definitions specific to The AnVIL scoop component.
  */
+@import "../../styles/vars.module.css";
 
 /* Scoop */
 .scoop {
     display: block; /* TODO Mim review and style */
+}
+
+.scoop:not(:last-of-type) {
+    margin: 32px 0;
 }

@@ -1,0 +1,39 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL featured workspaces component.
+ */
+
+/* Workspaces */
+.workspaces {
+    padding: 60px 0;
+}
+
+/* Workspace */
+.workspace {
+    align-self: center;
+    margin-bottom: 48px;
+    max-width: 650px;
+}
+
+/* Workspace heading */
+.workspace h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Workspace - last, workspace button */
+.workspace:last-of-type, .workspace > div > div p  {
+    margin: 0; /* Removal of unwanted margins from markdown */
+}
+
+/* Workspace button */
+.workspace > div {
+    margin-top: -8px;
+}
+
+/* Workspace button - remove border */
+.workspace > div > div p a {
+    border-bottom: none !important;
+}

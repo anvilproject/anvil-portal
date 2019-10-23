@@ -1,0 +1,28 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section intro component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Section intro */
+.sectionIntro {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+/* <h1> */
+.sectionIntro h1 {
+    display: inline-block; /* Positions anchor */
+}
+
+/* Paragraph */
+.sectionIntro p {
+    color: var(--accent-dark);
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: left;
+}

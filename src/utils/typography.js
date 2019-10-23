@@ -52,6 +52,9 @@ const typography = new Typography({
             "a:focus,a:active,a:hover": {
                 outline: 0,
             },
+            "p:last-child": {
+                margin: 0
+            },
             h1: {
                 ...adjustFontSizeTo("38px"),
                 lineHeight: "44px",
@@ -86,6 +89,9 @@ const typography = new Typography({
                 border: 0,
                 marginBottom: "24px",
             },
+            ".anchor": {
+                border: "none !important"
+            }
         }
     }
 });
