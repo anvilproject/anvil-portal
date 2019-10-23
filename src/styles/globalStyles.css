@@ -121,50 +121,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)), linear-gradient(rgba(246, 247, 244, 1), rgba(246, 247, 244, 1));
 }
 
-/* Link style - markdown content only */
-.markdown a:not(.anchor) {
-    border-bottom: 2px solid var(--black12);
-}
-
-/* Link style - hover state - markdown content only */
-.markdown a:not(.anchor):hover {
-    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
-    transition: border .25s ease-in;
-}
-
 /* Removal of link style within markdown from <a> tag - where required */
 .markdown .button a, .markdown .button a:hover {
     border-bottom: none;
-}
-
-/* Blockquote */
-blockquote {
-    color: var(--black58);
-    margin: 0 0 24px 0;
-    position: relative;
-}
-
-blockquote:before {
-    background-color: var(--accent-gold);
-    border-radius: 4px;
-    content: "";
-    display: block;
-    height: 100%;
-    left: -16px;
-    opacity: 0.5;
-    position: absolute;
-    width: 4px;
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Blockquote */
-    blockquote:before {
-        left: -12px;
-    }
-
 }

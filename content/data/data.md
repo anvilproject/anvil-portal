@@ -1,18 +1,15 @@
 ---
-date: "10 June 2019"
+date: "2019-06-10"
 title: "AnVIL Data"
 author: "AnVIL"
 ---
 
-
 # Data 
-
 
 [[heroSmall]]
 | AnVIL hosts high value datasets relevant to human health and disease.
 
-
- AnVIL data sets include NHGRI funded data sets of the Centers for Commons Disease Genetics (CCDG), the Centers for Mendelian Genomics (CMG), and the Genotype Tissue-Expression project (GTEx). Additional data sets include the high coverage 1000 Genomes whole genome sequencing data and VCFs, with more data sets to be added over time. 
+AnVIL data sets include NHGRI funded data sets of the Centers for Commons Disease Genetics (CCDG), the Centers for Mendelian Genomics (CMG), and the Genotype Tissue-Expression project (GTEx). Additional data sets include the high coverage 1000 Genomes whole genome sequencing data and VCFs, with more data sets to be added over time.
 
 Researchers can gain access to AnVIL hosted data sets by submitting a data access request through dbGaP for CCDG, CMG, or GTEx data. All 1000 Genomes data is publicly accessible. 
 

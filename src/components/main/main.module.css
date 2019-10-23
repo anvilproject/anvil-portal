@@ -4,41 +4,8 @@
  *
  * Style definitions specific to The AnVIL main [content] component.
  */
-@import "../../styles/vars.module.css";
 
-/* Main Body */
-.mainBody {
-    display: flex;
-    flex-direction: column;
-    padding: 36px 0;
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Main Body */
-    .mainBody {
-        align-content: center;
-        margin: 0 auto;
-        max-width: 600px;
-    }
-}
-
-/**
- * Medium Window +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1280px) {
-
-    /* Main Body */
-    .mainBody {
-        align-content: flex-start;
-        display: inline-flex;
-        flex-direction: unset;
-        margin: 0;
-        max-width: unset;
-    }
+/* Main */
+.main {
+    flex: 1;
 }

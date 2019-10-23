@@ -11,13 +11,9 @@ import {graphql} from "gatsby";
 import React from "react";
 
 // App dependencies
+import ArticleBody from "../components/article/articleBody";
 import EditContent from "../components/editContent/editContent";
 import Layout from "../components/layout";
-
-// Styles
-import compStyles from "./contentTemplate.module.css";
-
-let classNames = require("classnames");
 
 export default ({data}) => {
     const post = data.markdownRemark,
@@ -26,10 +22,9 @@ export default ({data}) => {
 
     return (
         <Layout docPath={slug}>
-            <div className={classNames(compStyles.articleInner, "markdown")}>
-                <div dangerouslySetInnerHTML={{__html: html}}/>
+            <ArticleBody html={html}>
                 <EditContent docPath={slug}/>
-            </div>
+            </ArticleBody>
         </Layout>
     )
 }

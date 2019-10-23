@@ -76,6 +76,12 @@ const typography = new Typography({
                 lineHeight: "24px",
                 margin: "0 0 4px",
             },
+            h5: {
+                ...adjustFontSizeTo("12px"),
+                fontWeight: 400,
+                lineHeight: "18px",
+                margin: "0 0 8px",
+            },
             img: {
                 border: 0,
                 marginBottom: "24px",

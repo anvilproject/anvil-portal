@@ -9,25 +9,19 @@
 import React from "react";
 
 // App dependencies
-import Nav from "../nav/nav";
+import Article from "../article/article";
 
 // Styles
 import compStyles from "./main.module.css";
-import globalStyles from "../../styles/global.module.css";
 
 class Main extends React.Component {
 
     render() {
-        const {children, docPath, hideNav} = this.props;
+        const {children, docPath, homePage} = this.props;
         return (
-            <div className={globalStyles.main}>
-                <div className={globalStyles.container}>
-                    <div className={compStyles.mainBody}>
-                        {hideNav ? null : <Nav docPath={docPath}/>}
-                        {children}
-                    </div>
-                </div>
-            </div>
+            <main className={compStyles.main}>
+                {homePage ? children : <Article docPath={docPath}>{children}</Article>}
+            </main>
         );
     }
 }

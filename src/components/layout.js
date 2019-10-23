@@ -16,7 +16,7 @@ import Header from "./header/header";
 
 // Styles
 import compStyles from "./layout.module.css";
-import "../styles/globalStyles.css";
+import "../styles/globalStyles.css"; /* TODO remove */
 
 let classNames = require('classnames');
 
@@ -32,7 +32,7 @@ class Layout extends React.Component {
     };
 
     render() {
-        const {children, docPath, homePage, hideNav} = this.props;
+        const {children, docPath, homePage} = this.props;
         return (
             <div>
                 <Helmet>
@@ -46,7 +46,7 @@ class Layout extends React.Component {
                 </Helmet>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
-                    {homePage ? children : <Main docPath={docPath} hideNav={hideNav}>{children}</Main>}
+                    <Main docPath={docPath} homePage={homePage}>{children}</Main>
                     <Footer/>
                 </div>
             </div>

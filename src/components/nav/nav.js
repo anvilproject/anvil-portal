@@ -36,11 +36,11 @@ class Nav extends React.Component {
 
 export default (props) => {
 
-    let docPath = props.docPath,
-        nav = NavigationService.getSectionNav(navStaticQuery(), docPath),
-        hideNav = nav.length <= 1;
+    const docPath = props.docPath;
+    const nav = docPath ? NavigationService.getSectionNav(navStaticQuery(), docPath) : [];
+    const hideNav = nav.length <= 1;
 
     return (
-        <Nav nav={nav} hideNav={hideNav} {...props}/>
+        <Nav nav={nav} hideNav={hideNav}/>
     );
 }

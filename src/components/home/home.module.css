@@ -5,14 +5,16 @@
  * Style definitions specific to The AnVIL home page.
  */
 
-/* Section - first */
+/* Section - hero */
+
+/* Section - styles */
 /* Includes devices - detected with react-device-detect and class "handheld" */
-.homePage section:first-of-type, .homePage.handheld section:first-of-type {
+.hero, .hero.handheld {
     padding: 60px 0;
 }
 
 /* Headline */
-.homePage .headline {
+.hero .headline {
     color: var(--accent-dark);
     font-family: "Open Sans", sans-serif;
     font-size: 60px;
@@ -21,8 +23,8 @@
     margin: 0 0 32px;
 }
 
-/* Hero text */
-.homePage .hero {
+/* Subhead text */
+.hero .subhead {
     color: var(--accent-dark);
     font-family: "Barlow", sans-serif;
     font-size: 24px;
@@ -32,7 +34,7 @@
 }
 
 /* Image */
-.homePage .hero + img {
+.hero img {
     margin: 16px 0 0;
 }
 
@@ -42,16 +44,17 @@
 */
 @media (max-width: 720px) and (max-height: 840px) {
 
+    /* Section - hero */
     /* Headline */
-    .homePage.handheld .headline {
+    .hero.handheld .headline {
         font-size: 40px;
         font-weight: 400;
         line-height: 44px;
         margin: 0 0 16px;
     }
 
-    /* Hero text */
-    .homePage.handheld .hero {
+    /* Subhead text */
+    .hero.handheld .subhead {
         font-size: 18px;
         line-height: 24px;
         margin: 0 0 8px;
@@ -65,7 +68,7 @@
 @media screen and (min-width: 720px) {
 
     /* Image */
-    .homePage .hero + img {
+    .hero img {
         margin: 16px 0 0;
         max-width: 650px;
     }
@@ -76,8 +79,8 @@
  */
 @media (min-width: 1024px) and (max-height: 840px) {
 
-    /* Section - first */
-    .homePage.handheld section:first-of-type {
+    /* Section - hero */
+    .hero.handheld {
         padding: 60px 0 40px;
     }
 }

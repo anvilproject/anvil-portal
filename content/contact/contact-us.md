@@ -1,6 +1,6 @@
 ---
 path: "/contact/contact-us"
-date: "10 June 2019"
+date: "2019-06-10"
 title: "Contact Us"
 author: "AnVIL"
 ---

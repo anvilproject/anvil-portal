@@ -1,12 +1,10 @@
 ---
-date: "10 June 2019"
+date: "2019-06-10"
 title: "AnVIL Data Access"
 author: "AnVIL"
 ---
 
-
 # Data Access 
-
 
 [[heroSmall]]
 | AnVIL requires robust access controls that can selectively grant access to a number of groups with different access request requirements 
