@@ -4,6 +4,7 @@
  *
  * Style definitions specific to The AnVIL article body component.
  */
+@import "../../styles/vars.module.css";
 
 /* Article body */
 .articleBody {
@@ -15,25 +16,25 @@
  */
 
 /* Link style */
-.articleBody .content p a {
+.content a {
     border-bottom: 2px solid var(--black12);
 }
 
 /* Link style - hover state */
-.articleBody .content p a:hover {
+.content a:hover {
     border-bottom: 2px solid rgba(174, 235, 242, 0.87);
     transition: border .25s ease-in;
 }
 
 /* Blockquote */
-.articleBody .content blockquote {
+.content blockquote {
     color: var(--black58);
     margin: 0 0 24px 0;
     position: relative;
 }
 
 /* Blockquote */
-.articleBody .content blockquote:before {
+.content blockquote:before {
     background-color: var(--accent-gold);
     border-radius: 4px;
     content: "";
@@ -61,7 +62,7 @@
      */
 
     /* Blockquote */
-    .articleBody .content blockquote:before {
+    .content blockquote:before {
         left: -12px;
     }
 }

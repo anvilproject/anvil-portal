@@ -3,7 +3,7 @@ path: "/news/article-two"
 date: "2019-10-23"
 title: "Article Two"
 description: "This is the second news article."
-featured: true
+featured: false
 author: "AnVIL"
 ---
 

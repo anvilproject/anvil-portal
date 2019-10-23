@@ -9,29 +9,63 @@
 import {Link} from "gatsby";
 import React from "react";
 
+// App dependencies
+import {newsStaticQuery} from "../../hooks/newsQuery";
+import * as NewsService from "../../utils/news.service";
+
 // Styles
+import contentStyles from "../article/articleBody.module.css";
 import compStyles from "./scoop.module.css";
+
+let classNames = require("classnames");
 
 class Scoop extends React.Component {
 
+    getScoops = () => {
+
+        const {featuredOnly, scoops} = this.props;
+
+        if (!featuredOnly) {
+
+            // Return all news articles
+            return scoops;
+        }
+
+        // Return only the featured news articles
+        return scoops.filter(scoop => scoop.frontmatter.featured === true);
+    };
+
     render() {
-        const {scoop} = this.props,
-            {fields, frontmatter} = scoop,
-            {slug} = fields,
-            {date, description, title} = frontmatter;
+        const {scoops} = this.props;
+
+        const Headline = (props) => {
+
+            const {scoop} = props,
+                {fields, frontmatter} = scoop,
+                {date, description, title} = frontmatter,
+                {slug} = fields;
+
+            return (
+                <div className={classNames(compStyles.scoop, contentStyles.content)} to={slug}>
+                    <h3><Link to={slug}>{title}</Link></h3>
+                    <h5>{date}</h5>
+                    {description ? <p>{description}</p> : null}
+                </div>
+            )
+        };
+
         return (
-            <div className={compStyles.scoop} to={slug}>
-                <h3><Link to={slug}>{title}</Link></h3>
-                <h5>{date}</h5>
-                {title ? <p>{description}</p> : null}
-            </div>
+            scoops ? this.getScoops().map((scoop, i) =>
+                <Headline scoop={scoop} key={i}/>) : null
         );
     }
 }
 
 export default (props) => {
 
+    const newsScoop = NewsService.getNewsArticles(newsStaticQuery());
+
     return (
-        <Scoop {...props}/>
+        <Scoop scoops={newsScoop} {...props}/>
     )
 }

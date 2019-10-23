@@ -14,17 +14,14 @@ import * as NewsService from "../../utils/news.service";
 import ArticleBody from "../article/articleBody";
 import Scoop from "./scoop";
 
-// Styles
-
 class Scoops extends React.Component {
 
     render() {
-        const {scoop, post} = this.props,
+        const {post} = this.props,
             {html} = post;
         return (
             <ArticleBody html={html}>
-                {scoop ? scoop.map((scoop, i) =>
-                    <Scoop key={i} scoop={scoop}/>) : null}
+                <Scoop featuredOnly={false}/>
             </ArticleBody>
         );
     }
@@ -33,9 +30,8 @@ class Scoops extends React.Component {
 export default () => {
 
     const newsPost = NewsService.getNewsIntroductionPost(newsStaticQuery());
-    const newsScoop = NewsService.getNewsArticles(newsStaticQuery());
 
     return (
-        <Scoops scoop={newsScoop} post={newsPost}/>
+        <Scoops post={newsPost}/>
     );
 }
