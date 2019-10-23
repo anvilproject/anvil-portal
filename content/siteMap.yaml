@@ -12,6 +12,16 @@
       key: "/about/team"
     - name: "Working Groups"
       key: "/about/working-groups"
+- name: "Contact"
+  key: "contact"
+  path: "/contact"
+  position:
+    location: "h"
+    order: 5
+  primaryLinks:
+    - name: "Contact Us"
+      key: "/contact/contact-us"
+      path: "/contact"
 - name: "Data"
   key: "data"
   path: "/data"
@@ -26,6 +36,16 @@
       key: "/data/data-access"
     - name: "Data Submission"
       key: "/data/data-submission"
+- name: "News"
+  key: "news"
+  path: "/news"
+  position:
+    location: "h"
+    order: 4
+  primaryLinks:
+    - name: "News"
+      key: "/news"
+      path: "/news"
 - name: "Tools"
   key: "tools"
   path: "/tools"
@@ -46,13 +66,3 @@
     - name: "Training"
       key: "/training/training"
       path: "/training"
-- name: "Contact"
-  key: "contact"
-  path: "/contact"
-  position:
-    location: "h"
-    order: 4
-  primaryLinks:
-    - name: "Contact Us"
-      key: "/contact/contact-us"
-      path: "/contact"
