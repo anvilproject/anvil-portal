@@ -2,16 +2,12 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - news scoop component.
+ * The AnVIL - scoop component.
  */
 
 // Core dependencies
 import {Link} from "gatsby";
 import React from "react";
-
-// App dependencies
-import {newsStaticQuery} from "../../hooks/newsQuery";
-import * as NewsService from "../../utils/news.service";
 
 // Styles
 import contentStyles from "../article/articleBody.module.css";
@@ -25,18 +21,18 @@ class Scoop extends React.Component {
 
         const {featuredOnly, scoops} = this.props;
 
-        if (!featuredOnly) {
+        if ( !featuredOnly ) {
 
-            // Return all news articles
+            // Returns all
             return scoops;
         }
 
-        // Return only the featured news articles
+        // Return only the featured scoops
         return scoops.filter(scoop => scoop.frontmatter.featured === true);
     };
 
     render() {
-        const {scoops} = this.props;
+        const {scoops, type} = this.props;
 
         const Headline = (props) => {
 
@@ -46,7 +42,7 @@ class Scoop extends React.Component {
                 {slug} = fields;
 
             return (
-                <div className={classNames(compStyles.scoop, contentStyles.content)} to={slug}>
+                <div className={classNames(compStyles.scoop, compStyles[type], contentStyles.content)} to={slug}>
                     <h3><Link to={slug}>{title}</Link></h3>
                     <h5>{date}</h5>
                     {description ? <p>{description}</p> : null}
@@ -63,9 +59,9 @@ class Scoop extends React.Component {
 
 export default (props) => {
 
-    const newsScoop = NewsService.getNewsArticles(newsStaticQuery());
+    const {featuredOnly, scoops, type} = props;
 
     return (
-        <Scoop scoops={newsScoop} {...props}/>
+        <Scoop featuredOnly={featuredOnly} scoops={scoops} type={type}/>
     )
 }

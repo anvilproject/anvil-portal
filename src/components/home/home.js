@@ -12,7 +12,7 @@ import {isBrowser} from "react-device-detect";
 // App dependencies
 import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
 import {newsStaticQuery} from "../../hooks/newsQuery";
-import * as NewsService from "../../utils/news.service";
+import * as ScoopsService from "../../utils/scoops.service";
 import Scoop from "../scoops/scoop";
 import SectionBody from "../section/sectionBody";
 import SectionIntro from "../section/sectionIntro";
@@ -30,7 +30,7 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {featured, news} = this.props;
+        const {featured, news, newsScoops} = this.props;
         return (
             <>
             <section className={classNames(globalStyles.bgLight, compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
@@ -48,7 +48,7 @@ class Home extends React.Component {
             </section>
             <section className={compStyles.news}>
                 <SectionIntro post={news}/>
-                <SectionBody><Scoop featuredOnly={true}/></SectionBody>
+                <SectionBody><Scoop featuredOnly={true} scoops={newsScoops}/></SectionBody>
             </section>
             </>
         );
@@ -57,10 +57,11 @@ class Home extends React.Component {
 
 export default () => {
 
-    const news = NewsService.getNewsIntroductionPost(newsStaticQuery());
     const featured = featuredWorkspacesStaticQuery();
+    const news = ScoopsService.getIntroduction(newsStaticQuery());
+    const newsScoops = ScoopsService.getScoops(newsStaticQuery());
 
     return (
-        <Home featured={featured} news={news}/>
+        <Home featured={featured} news={news} newsScoops={newsScoops}/>
     )
 }

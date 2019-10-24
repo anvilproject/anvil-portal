@@ -9,29 +9,27 @@
 import React from "react";
 
 // App dependencies
-import {newsStaticQuery} from "../../hooks/newsQuery";
-import * as NewsService from "../../utils/news.service";
 import ArticleBody from "../article/articleBody";
 import Scoop from "./scoop";
 
 class Scoops extends React.Component {
 
     render() {
-        const {post} = this.props,
-            {html} = post;
+        const {intro, scoops, type} = this.props,
+            {html} = intro;
         return (
             <ArticleBody html={html}>
-                <Scoop featuredOnly={false}/>
+                <Scoop featuredOnly={false} scoops={scoops} type={type}/>
             </ArticleBody>
         );
     }
 }
 
-export default () => {
+export default (props) => {
 
-    const newsPost = NewsService.getNewsIntroductionPost(newsStaticQuery());
+    const {intro, scoops, type} = props;
 
     return (
-        <Scoops post={newsPost}/>
+        <Scoops intro={intro} scoops={scoops} type={type}/>
     );
 }

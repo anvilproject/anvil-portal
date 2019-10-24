@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - news page.
+ * The AnVIL - events page.
  */
 
 // Core dependencies
@@ -11,16 +11,16 @@ import React from "react";
 // App dependencies
 import Layout from "../components/layout";
 import Scoops from "../components/scoops/scoops";
-import {newsStaticQuery} from "../hooks/newsQuery";
+import {eventsStaticQuery} from "../hooks/eventsQuery";
 import * as ScoopsService from "../utils/scoops.service";
 
-class News extends React.Component {
+class Events extends React.Component {
 
     render() {
         const {intro, scoops} = this.props;
         return (
             <Layout>
-                <Scoops intro={intro} scoops={scoops} type={"news"}/>
+                <Scoops intro={intro} scoops={scoops} type={"event"}/>
             </Layout>
         );
     }
@@ -28,10 +28,10 @@ class News extends React.Component {
 
 export default () => {
 
-    const intro = ScoopsService.getIntroduction(newsStaticQuery());
-    const newsScoops = ScoopsService.getScoops(newsStaticQuery());
+    const eventsScoops = ScoopsService.getScoops(eventsStaticQuery());
+    const intro = ScoopsService.getIntroduction(eventsStaticQuery());
 
     return (
-        <News intro={intro} scoops={newsScoops}/>
+        <Events intro={intro} scoops={eventsScoops}/>
     )
 }
