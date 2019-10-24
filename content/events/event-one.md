@@ -3,7 +3,7 @@ path: "/events/event-one"
 date: "2016-01-24"
 title: "Event One"
 description: "This is the first event."
-featured: true
+featured: false
 author: "AnVIL"
 ---
 

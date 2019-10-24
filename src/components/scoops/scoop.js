@@ -32,7 +32,7 @@ class Scoop extends React.Component {
     };
 
     render() {
-        const {scoops, type} = this.props;
+        const {compName, scoops} = this.props;
 
         const Headline = (props) => {
 
@@ -42,7 +42,7 @@ class Scoop extends React.Component {
                 {slug} = fields;
 
             return (
-                <div className={classNames(compStyles.scoop, compStyles[type], contentStyles.content)} to={slug}>
+                <div className={classNames(compStyles.scoop, compStyles[compName], contentStyles.content)} to={slug}>
                     <h3><Link to={slug}>{title}</Link></h3>
                     <h5>{date}</h5>
                     {description ? <p>{description}</p> : null}
@@ -59,9 +59,9 @@ class Scoop extends React.Component {
 
 export default (props) => {
 
-    const {featuredOnly, scoops, type} = props;
+    const {compName, featuredOnly, scoops} = props;
 
     return (
-        <Scoop featuredOnly={featuredOnly} scoops={scoops} type={type}/>
+        <Scoop compName={compName} featuredOnly={featuredOnly} scoops={scoops}/>
     )
 }

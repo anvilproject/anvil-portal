@@ -18,9 +18,10 @@ class Events extends React.Component {
 
     render() {
         const {intro, scoops} = this.props;
+        const compName = "event";
         return (
             <Layout>
-                <Scoops intro={intro} scoops={scoops} type={"event"}/>
+                <Scoops compName={compName} intro={intro} scoops={scoops}/>
             </Layout>
         );
     }

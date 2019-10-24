@@ -11,12 +11,14 @@ import React from "react";
 // Styles
 import compStyles from "./sectionBody.module.css";
 
+let classNames = require("classnames");
+
 class SectionBody extends React.Component {
 
     render() {
-        const {children, shade, top} = this.props;
+        const {children, compName} = this.props;
         return (
-            <div className={compStyles.sectionBody} style={{backgroundColor: shade, marginTop: top}}>
+            <div className={classNames(compStyles.sectionBody, compStyles[compName])}>
                 <div className={compStyles.container}>
                     {children}
                 </div>
