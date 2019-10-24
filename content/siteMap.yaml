@@ -17,7 +17,7 @@
   path: "/contact"
   position:
     location: "h"
-    order: 5
+    order: 6
   primaryLinks:
     - name: "Contact Us"
       key: "/contact/contact-us"
@@ -36,6 +36,16 @@
       key: "/data/data-access"
     - name: "Data Submission"
       key: "/data/data-submission"
+- name: "Events"
+  key: "events"
+  path: "/events"
+  position:
+    location: "h"
+    order: 5
+  primaryLinks:
+    - name: "Events"
+      key: "/events"
+      path: "/events"
 - name: "News"
   key: "news"
   path: "/news"

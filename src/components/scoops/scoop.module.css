@@ -9,8 +9,22 @@
 /* Scoop */
 .scoop {
     display: block; /* TODO Mim review and style */
+    margin: 16px 0; /* Home page only */
 }
 
-.scoop:not(:last-of-type) {
+/* Specified styles - event */
+/* TODO */
+.scoop.event {
     margin: 32px 0;
+}
+
+/* Specified styles - news */
+/* TODO */
+.scoop.news {
+    margin: 32px 0;
+}
+
+/* Scoop - last one */
+.scoop:last-of-type {
+    margin-bottom: 0;
 }
