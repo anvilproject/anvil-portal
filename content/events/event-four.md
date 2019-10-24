@@ -3,7 +3,7 @@ path: "/events/event-four"
 date: "2019-11-12"
 title: "Event Four"
 description: "This is the fourth event."
-featured: false
+featured: true
 author: "AnVIL"
 ---
 

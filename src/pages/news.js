@@ -18,9 +18,10 @@ class News extends React.Component {
 
     render() {
         const {intro, scoops} = this.props;
+        const compName = "news";
         return (
             <Layout>
-                <Scoops intro={intro} scoops={scoops} type={"news"}/>
+                <Scoops compName={compName} intro={intro} scoops={scoops}/>
             </Layout>
         );
     }

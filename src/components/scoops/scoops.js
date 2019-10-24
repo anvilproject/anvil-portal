@@ -15,11 +15,11 @@ import Scoop from "./scoop";
 class Scoops extends React.Component {
 
     render() {
-        const {intro, scoops, type} = this.props,
+        const {compName, intro, scoops} = this.props,
             {html} = intro;
         return (
             <ArticleBody html={html}>
-                <Scoop featuredOnly={false} scoops={scoops} type={type}/>
+                <Scoop compName={compName} featuredOnly={false} scoops={scoops}/>
             </ArticleBody>
         );
     }
@@ -27,9 +27,9 @@ class Scoops extends React.Component {
 
 export default (props) => {
 
-    const {intro, scoops, type} = props;
+    const {compName, intro, scoops} = props;
 
     return (
-        <Scoops intro={intro} scoops={scoops} type={type}/>
+        <Scoops compName={compName} intro={intro} scoops={scoops}/>
     );
 }
