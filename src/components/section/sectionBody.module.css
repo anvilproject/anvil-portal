@@ -6,12 +6,6 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Section body - background */
-.sectionBody.bgPale {
-    background-color: rgba(246, 247, 244, 0.38);
-    margin-top: 60px;
-}
-
 /* Container */
 .sectionBody .container {
     box-sizing: content-box;

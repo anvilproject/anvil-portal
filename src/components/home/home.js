@@ -32,10 +32,9 @@ class Home extends React.Component {
 
     render() {
         const {featured, events, eventsScoops, news, newsScoops} = this.props;
-        const compName = "bgPale";
         return (
             <>
-            <section className={classNames(globalStyles.bgLight, compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
+            <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
                 <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
                     <div className={compStyles.headline}>Welcome to AnVIL</div>
                     <div className={compStyles.subhead}>User-centered solution for genomic data access, analysis, and
@@ -46,7 +45,7 @@ class Home extends React.Component {
             </section>
             <section className={compStyles.featured}>
                 <SectionIntro post={featured}/>
-                <SectionBody compName={compName}><Workspaces/></SectionBody>
+                <SectionBody className={compStyles.bgPale}><Workspaces/></SectionBody>
             </section>
             <section className={compStyles.news}>
                 <SectionIntro post={news}/>

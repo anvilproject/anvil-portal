@@ -1,0 +1,23 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL hero component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Hero */
+.hero {
+    color: var(--accent-dark);
+    font-family: "Barlow", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 0 0 16px;
+}
+
+/* Small */
+.hero.small {
+    font-size: 18px;
+    line-height: 28px;
+}

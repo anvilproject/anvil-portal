@@ -17,12 +17,12 @@ import Layout from "../components/layout";
 
 export default ({data}) => {
     const post = data.markdownRemark,
-        {fields, html} = post,
+        {fields, htmlAst} = post,
         {slug} = fields;
 
     return (
         <Layout docPath={slug}>
-            <ArticleBody html={html}>
+            <ArticleBody htmlAst={htmlAst}>
                 <EditContent docPath={slug}/>
             </ArticleBody>
         </Layout>
@@ -33,6 +33,7 @@ export const query = graphql`
 query($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
+      htmlAst
       fields {
         slug
       }
@@ -42,7 +43,7 @@ query($slug: String!) {
         component
         linked {
           childMarkdownRemark {
-            html
+            htmlAst
             frontmatter{
               component
             }

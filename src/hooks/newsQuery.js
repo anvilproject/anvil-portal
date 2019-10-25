@@ -16,7 +16,7 @@ export const newsStaticQuery = () => {
                    featured
                    title
                 }
-                html
+                htmlAst
               }
             }
           }

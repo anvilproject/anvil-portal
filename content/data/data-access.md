@@ -6,9 +6,7 @@ author: "AnVIL"
 
 # Data Access 
 
-[[heroSmall]]
-| AnVIL requires robust access controls that can selectively grant access to a number of groups with different access request requirements 
-
+<hero small>AnVIL requires robust access controls that can selectively grant access to a number of groups with different access request requirements.</hero>
 
 ## Access Groups
 **Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium.

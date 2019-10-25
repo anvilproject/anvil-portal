@@ -14,14 +14,16 @@ import Scoops from "../components/scoops/scoops";
 import {eventsStaticQuery} from "../hooks/eventsQuery";
 import * as ScoopsService from "../utils/scoops.service";
 
+// Styles
+import compStyles from "./events.module.css";
+
 class Events extends React.Component {
 
     render() {
         const {intro, scoops} = this.props;
-        const compName = "event";
         return (
             <Layout>
-                <Scoops compName={compName} intro={intro} scoops={scoops}/>
+                <Scoops className={compStyles.event} intro={intro} scoops={scoops}/>
             </Layout>
         );
     }

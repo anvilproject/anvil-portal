@@ -16,7 +16,7 @@ export const eventsStaticQuery = () => {
                    featured
                    title
                 }
-                html
+                htmlAst
               }
             }
           }

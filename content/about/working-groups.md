@@ -6,8 +6,7 @@ author: "AnVIL"
 
 # Working Groups
 
-[[heroSmall]]
-| AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations. Working groups are dynamic and are formulated as needed in the course of the project.
+<hero small>AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations. Working groups are dynamic and are formulated as needed in the course of the project.</hero>
 
 ## Data Access Working Group
 The Data Access working group will define the methods used to securely control and grant access to restricted access datasets hosted within AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.

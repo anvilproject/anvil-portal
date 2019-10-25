@@ -16,9 +16,9 @@ let classNames = require("classnames");
 class SectionBody extends React.Component {
 
     render() {
-        const {children, compName} = this.props;
+        const {children, className} = this.props;
         return (
-            <div className={classNames(compStyles.sectionBody, compStyles[compName])}>
+            <div className={classNames(compStyles.sectionBody, className)}>
                 <div className={compStyles.container}>
                     {children}
                 </div>
