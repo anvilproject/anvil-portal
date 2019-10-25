@@ -7,21 +7,9 @@
 @import "../../styles/vars.module.css";
 
 /* Scoop */
+/* TODO Mim */
 .scoop {
-    display: block; /* TODO Mim review and style */
-    margin: 16px 0; /* Home page only */
-}
-
-/* Specified styles - event */
-/* TODO */
-.scoop.event {
-    margin: 32px 0;
-}
-
-/* Specified styles - news */
-/* TODO */
-.scoop.news {
-    margin: 32px 0;
+    margin: 16px 0;
 }
 
 /* Scoop - last one */

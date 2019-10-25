@@ -14,14 +14,16 @@ import Scoops from "../components/scoops/scoops";
 import {newsStaticQuery} from "../hooks/newsQuery";
 import * as ScoopsService from "../utils/scoops.service";
 
+// Styles
+import compStyles from "./news.module.css";
+
 class News extends React.Component {
 
     render() {
         const {intro, scoops} = this.props;
-        const compName = "news";
         return (
             <Layout>
-                <Scoops compName={compName} intro={intro} scoops={scoops}/>
+                <Scoops className={compStyles.news} intro={intro} scoops={scoops}/>
             </Layout>
         );
     }

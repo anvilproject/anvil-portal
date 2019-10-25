@@ -10,12 +10,10 @@ import React from "react";
 
 // App dependencies
 import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
+import Markdown from "../markdown/markdown";
 
 // Styles
-import contentStyles from "../article/articleBody.module.css";
 import compStyles from "./workspaces.module.css";
-
-let classNames = require("classnames");
 
 class Workspaces extends React.Component {
 
@@ -24,10 +22,9 @@ class Workspaces extends React.Component {
             {frontmatter} = post,
             {linked} = frontmatter;
         return (
-            <div className={classNames(compStyles.workspaces, contentStyles.content)}>
+            <div className={compStyles.workspaces}>
                 {linked ? linked.map((p, i) =>
-                    <div key={i} className={compStyles.workspace}
-                         dangerouslySetInnerHTML={{__html: p.childMarkdownRemark.html}}/>) : null}
+                    <Markdown className={compStyles.workspace} key={i}>{p.childMarkdownRemark.htmlAst}</Markdown>) : null}
             </div>
         );
     }

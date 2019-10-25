@@ -3,11 +3,6 @@
  */
 @import "./vars.module.css";
 
-/* Main */
-.main {
-    flex: 1;
-}
-
 /* Container */
 .container {
     padding: 0 16px;
@@ -23,31 +18,6 @@
 /* Section inner - centered */
 .sectionInner.centered {
     text-align: center;
-}
-
-/* Background - light */
-.bgLight {
-    background-color: var(--shade-light);
-}
-
-/* Background - dark */
-.bgDark {
-    background-color: var(--shade-dark);
-}
-
-/* Link */
-.link {
-    position: relative; /* Positions link style */
-}
-
-/* Link - scaffolding */
-.link:before {
-    border-radius: 1px;
-    bottom: -2px;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
 }
 
 /**

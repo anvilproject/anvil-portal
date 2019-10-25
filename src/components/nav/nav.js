@@ -27,7 +27,7 @@ class Nav extends React.Component {
             <ul className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})}>
                 {!hideNav && nav.map((p, i) =>
                     <li key={i} className={compStyles.sideNavLink}>
-                        <Link to={NavigationService.getPath(p)} className={globalStyles.link} activeClassName={compStyles.active}>{p.name}</Link>
+                        <Link to={NavigationService.getPath(p)} className={compStyles.link} activeClassName={compStyles.active}>{p.name}</Link>
                     </li>)}
             </ul>
         );

@@ -6,8 +6,7 @@ author: "AnVIL"
 
 # Platform
 
-[[heroSmall]]
-| AnVIL is a cloud based ecosystem that colocates high value data sets with commonly used bioinformatics tools in a secure environment. 
+<hero small>AnVIL is a cloud based ecosystem that colocates high value data sets with commonly used bioinformatics tools in a secure environment.</hero>
 
 By providing access to data and tools in a secure environment that can scale to meet the computational needs of researchers, AnVIL eliminates logistical concerns and allows researchers to focus on biological problems.
  

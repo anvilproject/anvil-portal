@@ -30,12 +30,23 @@
 }
 
 /* Link */
-.sideNavLink a {
+.sideNavLink .link {
+    position: relative; /* Positions link style */
+}
+
+/* Link - scaffolding */
+.sideNavLink .link:before {
+    border-radius: 1px;
+    bottom: -2px;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
     width: 100%;
 }
 
 /* Link style - active */
-.sideNavLink a.active:before {
+.sideNavLink .link.active:before {
     animation: activeLink 1s;
     border: 1px solid var(--accent-gold);
     width: 32px;
@@ -52,7 +63,7 @@
 }
 
 /* Link style - hover state */
-.sideNavLink:hover a:not(.active):before {
+.sideNavLink:hover .link:not(.active):before {
     border: 1px solid var(--black12);
     width: 32px;
 }

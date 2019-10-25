@@ -10,7 +10,7 @@ import {Link} from "gatsby";
 import React from "react";
 
 // Styles
-import contentStyles from "../article/articleBody.module.css";
+import contentStyles from "../markdown/markdown.module.css";
 import compStyles from "./scoop.module.css";
 
 let classNames = require("classnames");
@@ -32,7 +32,7 @@ class Scoop extends React.Component {
     };
 
     render() {
-        const {compName, scoops} = this.props;
+        const {className, scoops} = this.props;
 
         const Headline = (props) => {
 
@@ -42,7 +42,7 @@ class Scoop extends React.Component {
                 {slug} = fields;
 
             return (
-                <div className={classNames(compStyles.scoop, compStyles[compName], contentStyles.content)} to={slug}>
+                <div className={classNames(compStyles.scoop, className, contentStyles.content)} to={slug}>
                     <h3><Link to={slug}>{title}</Link></h3>
                     <h5>{date}</h5>
                     {description ? <p>{description}</p> : null}
@@ -59,9 +59,9 @@ class Scoop extends React.Component {
 
 export default (props) => {
 
-    const {compName, featuredOnly, scoops} = props;
+    const {className, featuredOnly, scoops} = props;
 
     return (
-        <Scoop compName={compName} featuredOnly={featuredOnly} scoops={scoops}/>
+        <Scoop className={className} featuredOnly={featuredOnly} scoops={scoops}/>
     )
 }

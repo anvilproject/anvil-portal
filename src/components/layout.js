@@ -16,7 +16,6 @@ import Header from "./header/header";
 
 // Styles
 import compStyles from "./layout.module.css";
-import "../styles/globalStyles.css"; /* TODO remove */
 
 let classNames = require('classnames');
 

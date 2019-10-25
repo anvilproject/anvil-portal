@@ -8,16 +8,19 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import Markdown from "../markdown/markdown";
+
 // Styles
 import compStyles from "./articleBody.module.css";
 
 class ArticleBody extends React.Component {
 
     render() {
-        const {children, html} = this.props;
+        const {children, htmlAst} = this.props;
         return (
             <div className={compStyles.articleBody}>
-                <div className={compStyles.content} dangerouslySetInnerHTML={{__html: html}}/>
+                <Markdown>{htmlAst}</Markdown>
                 {children}
             </div>
         );
@@ -26,9 +29,9 @@ class ArticleBody extends React.Component {
 
 export default (props) => {
 
-    const {html} = props;
+    const {htmlAst} = props;
 
     return (
-        <ArticleBody html={html} {...props}/>
+        <ArticleBody htmlAst={htmlAst} {...props}/>
     )
 }

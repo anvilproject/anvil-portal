@@ -7,12 +7,12 @@ export const featuredWorkspacesStaticQuery = () => {
 		  allMarkdownRemark {
 			edges {
 			  node {
-			    html
+			    htmlAst
 			    frontmatter {
 			      component
 			      linked {
 			        childMarkdownRemark {
-			          html
+			          htmlAst
 			        }
 			      }
 			    }

@@ -80,32 +80,11 @@ module.exports = {
                             className: `anchor`,
                         }
                     },
+                    `gatsby-remark-component`,
                     {
-                        resolve: `gatsby-remark-custom-blocks`,
+                        resolve: `gatsby-remark-component-parent2div`,
                         options: {
-                            blocks: {
-                                button: {
-                                    classes: "button dark"
-                                },
-                                buttonLight: {
-                                    classes: "button light"
-                                },
-                                caption: {
-                                    classes: "caption"
-                                },
-                                headline: {
-                                    classes: "headline"
-                                },
-                                hero: {
-                                    classes: "hero"
-                                },
-                                heroLine: {
-                                    classes: "hero line"
-                                },
-                                heroSmall: {
-                                    classes: "hero small"
-                                }
-                            }
+                            components: ["button", "inscription", "hero"]
                         }
                     },
                     {

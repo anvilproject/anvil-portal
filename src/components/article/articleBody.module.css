@@ -12,41 +12,6 @@
 }
 
 /**
- * Content Styles
- */
-
-/* Link style */
-.content a {
-    border-bottom: 2px solid var(--black12);
-}
-
-/* Link style - hover state */
-.content a:hover {
-    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
-    transition: border .25s ease-in;
-}
-
-/* Blockquote */
-.content blockquote {
-    color: var(--black58);
-    margin: 0 0 24px 0;
-    position: relative;
-}
-
-/* Blockquote */
-.content blockquote:before {
-    background-color: var(--accent-gold);
-    border-radius: 4px;
-    content: "";
-    display: block;
-    height: 100%;
-    left: -16px;
-    opacity: 0.5;
-    position: absolute;
-    width: 4px;
-}
-
-/**
  * Large Tablet
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
@@ -55,15 +20,6 @@
     /* Article body */
     .articleBody {
         max-width: 600px;
-    }
-
-    /**
-     * Content Styles
-     */
-
-    /* Blockquote */
-    .content blockquote:before {
-        left: -12px;
     }
 }
 
