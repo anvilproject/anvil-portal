@@ -93,12 +93,12 @@ function orderScoopsByDate(scoops) {
         const date1 = getDate(scoop1.frontmatter.date);
         const date2 = getDate(scoop2.frontmatter.date);
 
-        if (date1 > date2) {
+        if (date1 < date2) {
 
             return 1;
         }
 
-        if (date1 < date2) {
+        if (date1 > date2) {
 
             return -1;
         }
