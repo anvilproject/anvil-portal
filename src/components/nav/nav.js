@@ -15,7 +15,6 @@ import * as NavigationService from '../../utils/navigation.service';
 
 // Styles
 import compStyles from "./nav.module.css";
-import globalStyles from "../../styles/global.module.css";
 
 let classNames = require("classnames");
 

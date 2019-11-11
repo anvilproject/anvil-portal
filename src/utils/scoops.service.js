@@ -61,6 +61,22 @@ export function getScoops(posts) {
 }
 
 /**
+ * Returns true if any scoops are featured.
+ *
+ * @param scoops
+ * @returns {*}
+ */
+export function isAnyScoopsFeatured(scoops) {
+
+    if ( !scoops ) {
+
+        return false;
+    }
+
+    return scoops.some(scoop => scoop.frontmatter.featured === true)
+}
+
+/**
  * Returns true if the scoop is the introduction.
  *
  * @param slug

@@ -31,7 +31,9 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {featured, events, eventsScoops, news, newsScoops} = this.props;
+        const {events, eventsScoops, news, newsScoops, workspaces} = this.props;
+        const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
+        const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
         return (
             <>
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
@@ -44,17 +46,17 @@ class Home extends React.Component {
                 </div>
             </section>
             <section className={compStyles.featured}>
-                <SectionIntro post={featured}/>
+                <SectionIntro post={workspaces}/>
                 <SectionBody className={compStyles.bgPale}><Workspaces/></SectionBody>
             </section>
-            <section className={compStyles.news}>
+            {featuredNews ? <section className={compStyles.news}>
                 <SectionIntro post={news}/>
                 <SectionBody><Scoop featuredOnly={true} scoops={newsScoops}/></SectionBody>
-            </section>
-            <section className={compStyles.events}>
+            </section> : null}
+            {featuredEvents ? <section className={compStyles.events}>
                 <SectionIntro post={events}/>
                 <SectionBody><Scoop featuredOnly={true} scoops={eventsScoops}/></SectionBody>
-            </section>
+            </section> : null}
             </>
         );
     }
@@ -62,13 +64,13 @@ class Home extends React.Component {
 
 export default () => {
 
-    const featured = featuredWorkspacesStaticQuery();
+    const workspaces = featuredWorkspacesStaticQuery();
     const events = ScoopsService.getIntroduction(eventsStaticQuery());
     const eventsScoops = ScoopsService.getScoops(eventsStaticQuery());
     const news = ScoopsService.getIntroduction(newsStaticQuery());
     const newsScoops = ScoopsService.getScoops(newsStaticQuery());
 
     return (
-        <Home featured={featured} events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops}/>
+        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} workspaces={workspaces}/>
     )
 }

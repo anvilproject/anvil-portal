@@ -12,6 +12,11 @@
     margin: 16px 0;
 }
 
+/* Scoopless */
+p.scoopless {
+    margin: 16px 0 0;
+}
+
 /* Scoop - last one */
 .scoop:last-of-type {
     margin-bottom: 0;

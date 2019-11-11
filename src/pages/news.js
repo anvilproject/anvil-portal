@@ -23,7 +23,7 @@ class News extends React.Component {
         const {intro, scoops} = this.props;
         return (
             <Layout>
-                <Scoops className={compStyles.news} intro={intro} scoops={scoops}/>
+                <Scoops className={compStyles.news} intro={intro} scoops={scoops} type="news"/>
             </Layout>
         );
     }
