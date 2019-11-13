@@ -61,6 +61,43 @@ export function getScoops(posts) {
 }
 
 /**
+ * Returns filtered scoops by date, by past or upcoming dates.
+ *
+ * @param scoops
+ * @param past
+ */
+export function filterScoopsByDate(scoops, past) {
+
+    if ( !scoops ) {
+
+        return;
+    }
+
+    const today = new Date();
+
+    return scoops.filter(scoop => {
+
+        const date = new Date(scoop.frontmatter.date);
+
+        // Returns only scoops with a date older than today
+        if ( past ) {
+
+            return date.getTime() <= today.getTime();
+        }
+
+        // Return any invalid dates as upcoming events
+        // This will highlight any issues with date rendering
+        if ( !validateDate(date.toString()) ) {
+
+            return true;
+        }
+
+        // Returns only scoops with an upcoming date
+        return date.getTime() > today.getTime();
+    });
+}
+
+/**
  * Returns true if any scoops are featured.
  *
  * @param scoops
@@ -84,7 +121,7 @@ export function isAnyScoopsFeatured(scoops) {
  */
 export function validateDate(date) {
 
-    if ( date === "Invalid date" ) {
+    if ( date.toLowerCase() === "invalid date" ) {
 
         return "";
     }

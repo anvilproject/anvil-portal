@@ -43,9 +43,11 @@
     location: "h"
     order: 5
   primaryLinks:
-    - name: "Events"
+    - name: "Upcoming"
       key: "/events"
       path: "/events"
+    - name: "Past"
+      key: "/events/?past=true"
 - name: "News"
   key: "news"
   path: "/news"
