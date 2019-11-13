@@ -77,6 +77,38 @@ export function isAnyScoopsFeatured(scoops) {
 }
 
 /**
+ * Returns date as empty string when date format is invalid.
+ *
+ * @param date
+ * @returns {*}
+ */
+export function validateDate(date) {
+
+    if ( date === "Invalid date" ) {
+
+        return "";
+    }
+
+    return date;
+}
+
+/**
+ * Returns slug for the post, when specified.
+ *
+ * @param post
+ * @returns {string}
+ */
+function getSlug(post) {
+
+    if ( !post ) {
+
+        return "";
+    }
+
+    return post.fields.slug;
+}
+
+/**
  * Returns true if the scoop is the introduction.
  *
  * @param slug
@@ -121,20 +153,4 @@ function orderScoopsByDate(scoops) {
 
         return 0;
     });
-}
-
-/**
- * Returns slug for the post, when specified.
- *
- * @param post
- * @returns {string}
- */
-function getSlug(post) {
-
-    if ( !post ) {
-
-        return "";
-    }
-
-    return post.fields.slug;
 }
