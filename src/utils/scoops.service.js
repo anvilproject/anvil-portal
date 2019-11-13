@@ -50,14 +50,12 @@ export function getScoops(posts) {
         return;
     }
 
-    const scoops = posts.filter(post => {
+    return posts.filter(post => {
 
         const slug = getSlug(post);
 
         return !isIntroduction(slug);
     });
-
-    return orderScoopsByDate(scoops);
 }
 
 /**
@@ -77,7 +75,7 @@ export function filterScoopsByDate(scoops, past) {
 
     return scoops.filter(scoop => {
 
-        const date = new Date(scoop.frontmatter.date);
+        const date = getDate(scoop.frontmatter.date);
 
         // Returns only scoops with a date older than today
         if ( past ) {
@@ -159,35 +157,4 @@ function isIntroduction(slug) {
     }
 
     return slug.includes("intro");
-}
-
-/**
- * Order scoops by date.
- *
- * @param scoops
- */
-function orderScoopsByDate(scoops) {
-
-    if ( !scoops ) {
-
-        return scoops;
-    }
-
-    return scoops.sort((scoop1, scoop2) => {
-
-        const date1 = getDate(scoop1.frontmatter.date);
-        const date2 = getDate(scoop2.frontmatter.date);
-
-        if (date1 < date2) {
-
-            return 1;
-        }
-
-        if (date1 > date2) {
-
-            return -1;
-        }
-
-        return 0;
-    });
 }
