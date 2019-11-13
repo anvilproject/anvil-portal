@@ -1,12 +1,12 @@
 ---
-path: "/featured-workspaces/featured-workspaces"
+path: "/training/featured-workspaces"
 component: "featured"
 linked:
-    - ./gatk-germline.md
-    - ./gatk-somatic.md
-    - ./optimus-pipeline.md
-    - ./inferCNV.md
-    - ./gwas-pipeline.md
+    - ../featured-workspaces/gatk-germline.md
+    - ../featured-workspaces/gatk-somatic.md
+    - ../featured-workspaces/optimus-pipeline.md
+    - ../featured-workspaces/inferCNV.md
+    - ../featured-workspaces/gwas-pipeline.md
 ---
 
 #Featured Workspaces

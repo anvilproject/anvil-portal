@@ -4,7 +4,7 @@ export const featuredWorkspacesStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
 		query FeaturedWorkspacesStaticQuery {
-		  allMarkdownRemark {
+		  allMarkdownRemark(filter: {frontmatter: {component: {eq: "featured"}}}) {
 			edges {
 			  node {
 			    htmlAst
@@ -22,5 +22,5 @@ export const featuredWorkspacesStaticQuery = () => {
 		}
     `
     );
-    return allMarkdownRemark.edges.map(e => e.node).filter(n => n.frontmatter.component && n.frontmatter.component === "featured")[0];
+    return allMarkdownRemark.edges.map(e => e.node)[0];
 };
