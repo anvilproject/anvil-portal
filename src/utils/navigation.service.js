@@ -7,16 +7,6 @@
  */
 
 /**
- * Filter navigation links by location (header, footer).
- * @param navigationLinks
- * @param locationType
- */
-export function filterNavigationByLocation(navigationLinks, locationType) {
-
-    return navigationLinks.filter(n => n.position && n.position.location === locationType);
-}
-
-/**
  * Given a document path, return either its corresponding section or primary link.
  * Param x = 0 corresponds to section, x = 1 to primaryLink and so on.
  * @param docPath
@@ -61,21 +51,3 @@ export function getSectionNav(siteMap, docPath) {
     // Return all primary links for the document section
     return section.primaryLinks;
 }
-
-/**
- * Order navigation links.
- * @param navigationLinks
- */
-export function orderNavigationLinks(navigationLinks) {
-
-    return navigationLinks.sort((nav0, nav1) => {
-        if (nav0.position.order > nav1.position.order) {
-            return 1;
-        }
-        if (nav0.position.order < nav1.position.order) {
-            return -1;
-        }
-        return 0;
-    });
-}
-

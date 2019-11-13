@@ -14,15 +14,20 @@ import React from "react";
 import ArticleBody from "../components/article/articleBody";
 import EditContent from "../components/editContent/editContent";
 import Layout from "../components/layout";
+import Workspaces from "../components/workspaces/workspaces";
 
 export default ({data}) => {
     const post = data.markdownRemark,
-        {fields, htmlAst} = post,
-        {slug} = fields;
+        {fields, frontmatter, htmlAst} = post,
+        {slug} = fields,
+        {component} = frontmatter;
+
+    const workspaces = component === "featured";
 
     return (
         <Layout docPath={slug}>
             <ArticleBody htmlAst={htmlAst}>
+                {workspaces ? <Workspaces/> : null}
                 <EditContent docPath={slug}/>
             </ArticleBody>
         </Layout>
