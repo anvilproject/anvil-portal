@@ -1,11 +1,10 @@
 import {useStaticQuery, graphql} from 'gatsby';
-import * as NavigationService from '../utils/navigation.service';
 
 export const headerStaticQuery = () => {
     const {allSiteMapYaml} = useStaticQuery(
         graphql`
         query HeaderStaticQuery {
-          allSiteMapYaml {
+          allSiteMapYaml(filter: {position: {location: {eq: "h"}}}, sort: {fields: [position___order], order: ASC}) {
             edges {
               node {
                 name
@@ -20,6 +19,5 @@ export const headerStaticQuery = () => {
         }
     `
     );
-    let headerLinks = (NavigationService.filterNavigationByLocation(allSiteMapYaml.edges.map(e => e.node), 'h'));
-    return (NavigationService.orderNavigationLinks(headerLinks));
+    return allSiteMapYaml.edges.map(e => e.node);
 };
