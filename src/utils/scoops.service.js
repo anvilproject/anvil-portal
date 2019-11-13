@@ -61,6 +61,54 @@ export function getScoops(posts) {
 }
 
 /**
+ * Returns true if any scoops are featured.
+ *
+ * @param scoops
+ * @returns {*}
+ */
+export function isAnyScoopsFeatured(scoops) {
+
+    if ( !scoops ) {
+
+        return false;
+    }
+
+    return scoops.some(scoop => scoop.frontmatter.featured === true)
+}
+
+/**
+ * Returns date as empty string when date format is invalid.
+ *
+ * @param date
+ * @returns {*}
+ */
+export function validateDate(date) {
+
+    if ( date === "Invalid date" ) {
+
+        return "";
+    }
+
+    return date;
+}
+
+/**
+ * Returns slug for the post, when specified.
+ *
+ * @param post
+ * @returns {string}
+ */
+function getSlug(post) {
+
+    if ( !post ) {
+
+        return "";
+    }
+
+    return post.fields.slug;
+}
+
+/**
  * Returns true if the scoop is the introduction.
  *
  * @param slug
@@ -93,32 +141,16 @@ function orderScoopsByDate(scoops) {
         const date1 = getDate(scoop1.frontmatter.date);
         const date2 = getDate(scoop2.frontmatter.date);
 
-        if (date1 > date2) {
+        if (date1 < date2) {
 
             return 1;
         }
 
-        if (date1 < date2) {
+        if (date1 > date2) {
 
             return -1;
         }
 
         return 0;
     });
-}
-
-/**
- * Returns slug for the post, when specified.
- *
- * @param post
- * @returns {string}
- */
-function getSlug(post) {
-
-    if ( !post ) {
-
-        return "";
-    }
-
-    return post.fields.slug;
 }

@@ -23,7 +23,7 @@ class Events extends React.Component {
         const {intro, scoops} = this.props;
         return (
             <Layout>
-                <Scoops className={compStyles.event} intro={intro} scoops={scoops}/>
+                <Scoops className={compStyles.event} intro={intro} scoops={scoops} type="events"/>
             </Layout>
         );
     }

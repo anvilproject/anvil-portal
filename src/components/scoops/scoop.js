@@ -9,6 +9,9 @@
 import {Link} from "gatsby";
 import React from "react";
 
+// App dependencies
+import * as ScoopsService from "../../utils/scoops.service";
+
 // Styles
 import contentStyles from "../markdown/markdown.module.css";
 import compStyles from "./scoop.module.css";
@@ -32,7 +35,7 @@ class Scoop extends React.Component {
     };
 
     render() {
-        const {className, scoops} = this.props;
+        const {className, scoops, type} = this.props;
 
         const Headline = (props) => {
 
@@ -41,27 +44,30 @@ class Scoop extends React.Component {
                 {date, description, title} = frontmatter,
                 {slug} = fields;
 
+            const scoopDate = ScoopsService.validateDate(date);
+
             return (
-                <div className={classNames(compStyles.scoop, className, contentStyles.content)} to={slug}>
+                <div className={classNames(compStyles.scoop, className, contentStyles.content)}>
                     <h3><Link to={slug}>{title}</Link></h3>
-                    <h5>{date}</h5>
+                    {scoopDate ? <h5>{scoopDate}</h5> : null}
                     {description ? <p>{description}</p> : null}
                 </div>
             )
         };
 
         return (
-            scoops ? this.getScoops().map((scoop, i) =>
-                <Headline scoop={scoop} key={i}/>) : null
+            scoops.length ? this.getScoops().map((scoop, i) =>
+                    <Headline scoop={scoop} key={i}/>) :
+                <p className={compStyles.scoopless}>Currently, there are no {type}.</p>
         );
     }
 }
 
 export default (props) => {
 
-    const {className, featuredOnly, scoops} = props;
+    const {className, featuredOnly, scoops, type} = props;
 
     return (
-        <Scoop className={className} featuredOnly={featuredOnly} scoops={scoops}/>
+        <Scoop className={className} featuredOnly={featuredOnly} scoops={scoops} type={type}/>
     )
 }
