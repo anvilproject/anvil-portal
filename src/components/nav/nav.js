@@ -20,13 +20,29 @@ let classNames = require("classnames");
 
 class Nav extends React.Component {
 
+    getClassNames = ({href, location}) => {
+
+        if ( !location ) {
+
+            return;
+        }
+
+        if ( !location.href || !location.origin ) {
+
+            return;
+        }
+
+        return href === location.href.split(location.origin)[1] ?
+            {className: (classNames(compStyles.link, compStyles.active))} : {className: compStyles.link}
+    };
+
     render() {
         const {hideNav, nav} = this.props;
         return (
             <ul className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})}>
                 {!hideNav && nav.map((p, i) =>
                     <li key={i} className={compStyles.sideNavLink}>
-                        <Link to={NavigationService.getPath(p)} className={compStyles.link} activeClassName={compStyles.active}>{p.name}</Link>
+                        <Link getProps={this.getClassNames} to={NavigationService.getPath(p)}>{p.name}</Link>
                     </li>)}
             </ul>
         );
