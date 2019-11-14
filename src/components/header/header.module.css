@@ -33,14 +33,12 @@
 /* The AnVIL - logo text */
 .header .theAnVIL {
     align-self: flex-end;
-    color: var(--accent-dark);
-    font-family: "Open Sans", sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -1.5px;
-    line-height: 32px;
-    margin-bottom: -4px;
-    padding-left: 8px;
+    color: var(--primary);
+    font-family: "Barlow", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: -1px;
+    padding-left: 4px;
 }
 
 /* Menu icon */
@@ -140,18 +138,6 @@
     /* Header container */
     .header > div {
         height: 64px;
-    }
-        /* Logo */
-    .header img {
-        max-width: 58px;
-    }
-
-    /* The AnVIL text */
-    .header .theAnVIL {
-        font-size: 30px;
-        line-height: 38px;
-        margin-bottom: -2px;
-        padding-left: 12px;
     }
 
     /* Menu icon */
