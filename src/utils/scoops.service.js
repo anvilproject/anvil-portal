@@ -50,14 +50,55 @@ export function getScoops(posts) {
         return;
     }
 
-    const scoops = posts.filter(post => {
+    return posts.filter(post => {
 
         const slug = getSlug(post);
 
         return !isIntroduction(slug);
     });
+}
 
-    return orderScoopsByDate(scoops);
+/**
+ * Returns filtered scoops by date, by past or upcoming dates.
+ *
+ * @param scoops
+ * @param past
+ */
+export function filterScoopsByDate(scoops, past) {
+
+    if ( !scoops ) {
+
+        return;
+    }
+
+    const today = new Date();
+
+    return scoops.filter(scoop => {
+
+        const date = validateDate(scoop.frontmatter.date);
+        const dateObj = getDate(date);
+
+        // For any valid dates
+        if ( date ) {
+
+            if ( past ) {
+
+                // Returns scoops if date is older than today
+                return dateObj.getTime() <= today.getTime();
+            }
+            else {
+
+                // Returns scoops if date is upcoming
+                return dateObj.getTime() > today.getTime();
+            }
+        }
+        else {
+
+            // Return any invalid dates as upcoming events
+            // This will highlight any issues with date rendering
+            return !past;
+        }
+    });
 }
 
 /**
@@ -84,9 +125,9 @@ export function isAnyScoopsFeatured(scoops) {
  */
 export function validateDate(date) {
 
-    if ( date === "Invalid date" ) {
+    if ( date && date.toLowerCase() === "invalid date" ) {
 
-        return "";
+        return;
     }
 
     return date;
@@ -122,35 +163,4 @@ function isIntroduction(slug) {
     }
 
     return slug.includes("intro");
-}
-
-/**
- * Order scoops by date.
- *
- * @param scoops
- */
-function orderScoopsByDate(scoops) {
-
-    if ( !scoops ) {
-
-        return scoops;
-    }
-
-    return scoops.sort((scoop1, scoop2) => {
-
-        const date1 = getDate(scoop1.frontmatter.date);
-        const date2 = getDate(scoop2.frontmatter.date);
-
-        if (date1 < date2) {
-
-            return 1;
-        }
-
-        if (date1 > date2) {
-
-            return -1;
-        }
-
-        return 0;
-    });
 }

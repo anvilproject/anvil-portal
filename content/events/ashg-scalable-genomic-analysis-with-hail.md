@@ -1,7 +1,6 @@
 ---
-path: "/events/ashg-scalable-genomic-analysis-with-hail"
-date: "2019-10-16"
 title: "ASHG Workshop"
+date: "2019-10-16"
 description: "Interactive Workshop: An Introduction to Scalable Genomic Analysis with Hail."
 featured: false
 author: "AnVIL"

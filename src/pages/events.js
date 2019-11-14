@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import queryString from "query-string";
 import React from "react";
 
 // App dependencies
@@ -20,21 +21,26 @@ import compStyles from "./events.module.css";
 class Events extends React.Component {
 
     render() {
-        const {intro, scoops} = this.props;
+        const {docPath, intro, scoops, type} = this.props;
         return (
-            <Layout>
-                <Scoops className={compStyles.event} intro={intro} scoops={scoops} type="events"/>
+            <Layout docPath={docPath}>
+                <Scoops className={compStyles.event} intro={intro} scoops={scoops} type={type}/>
             </Layout>
         );
     }
 }
 
-export default () => {
+export default (props) => {
 
-    const eventsScoops = ScoopsService.getScoops(eventsStaticQuery());
-    const intro = ScoopsService.getIntroduction(eventsStaticQuery());
+    const docPath = props && props.location ? props.location.pathname : "";
+    const showPastEvents = queryString.parse(props.location.search).past;
+    const events = eventsStaticQuery();
+    const intro = ScoopsService.getIntroduction(events);
+    const eventsScoops = ScoopsService.getScoops(events);
+    const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, showPastEvents);
+    const type = showPastEvents ? "past events" : "upcoming events";
 
     return (
-        <Events intro={intro} scoops={eventsScoops}/>
+        <Events docPath={docPath} intro={intro} past={showPastEvents} scoops={scoopsByDate} type={type}/>
     )
 }

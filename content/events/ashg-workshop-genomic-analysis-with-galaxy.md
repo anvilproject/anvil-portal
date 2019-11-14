@@ -1,7 +1,6 @@
 ---
-path: "/events/ashg-workshop-genomic-analysis-with-galaxy"
-date: "2019-10-15"
 title: "ASHG Workshop"
+date: "2019-10-15"
 description: "Interactive Workshop: Reproducible and Transparent Genomic Analysis with Galaxy."
 featured: false
 author: "AnVIL"
