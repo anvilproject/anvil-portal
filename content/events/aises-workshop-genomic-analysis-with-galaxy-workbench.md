@@ -1,7 +1,6 @@
 ---
-path: "/events/aises-workshop-genomic-analysis-with-galaxy-workbench"
-date: "2019-10-11"
 title: "AISES Workshop"
+date: "2019-10-11"
 description: "Reproducible Genomic Data Analysis with the Galaxy Workbench."
 featured: false
 author: "AnVIL"

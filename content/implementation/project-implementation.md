@@ -1,6 +1,4 @@
 ---
-path: "/implementation/project-implementation"
-date: "2019-06-10"
 title: "Project Implementation"
 author: "AnVIL"
 ---

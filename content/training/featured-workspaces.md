@@ -1,5 +1,4 @@
 ---
-path: "/training/featured-workspaces"
 component: "featured"
 linked:
     - ../featured-workspaces/gatk-germline.md

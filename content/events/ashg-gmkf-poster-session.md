@@ -1,7 +1,6 @@
 ---
-path: "/events/ashg-gmkf-poster-session"
-date: "2019-10-15"
 title: "ASHG GMKF Poster Session"
+date: "2019-10-15"
 description: "Kids First Poster Session: Accelerating Pediatric Genomics Research through Collaboration."
 featured: false
 author: "AnVIL"

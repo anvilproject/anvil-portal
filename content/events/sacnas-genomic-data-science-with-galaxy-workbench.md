@@ -1,7 +1,6 @@
 ---
-path: "/events/sacnas-genomic-data-science-with-galaxy-workbench"
-date: "2019-10-30"
 title: "SACNAS Workshop"
+date: "2019-10-30"
 description: "Genomic data science with the Galaxy workbench."
 featured: false
 author: "AnVIL"
