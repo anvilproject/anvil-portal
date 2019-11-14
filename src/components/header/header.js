@@ -16,8 +16,8 @@ import {headerStaticQuery} from "../../hooks/headerQuery";
 import logo from "../../../images/logoAnVIL.png";
 
 // Styles
-import compStyles from "./header.module.css";
 import globalStyles from "../../styles/global.module.css";
+import compStyles from "./header.module.css";
 
 let classNames = require("classnames");
 

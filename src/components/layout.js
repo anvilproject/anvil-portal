@@ -40,7 +40,7 @@ class Layout extends React.Component {
                           href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300&display=swap"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-                    <link href="https://fonts.googleapis.com/css?family=Barlow:300,400|Open+Sans:300,400,600,700&display=swap" rel="stylesheet"/>
+                    <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500|Open+Sans:300,400,600,700&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"/>
                 </Helmet>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
