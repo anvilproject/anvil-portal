@@ -1,6 +1,4 @@
 ---
-path: "/training/guides"
-date: "2019-06-10"
 title: "Terra Guides"
 author: "AnVIL"
 ---
