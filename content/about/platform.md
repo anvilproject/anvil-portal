@@ -1,5 +1,4 @@
 ---
-date: "2019-06-10"
 title: "AnVIL Tools"
 author: "AnVIL"
 ---

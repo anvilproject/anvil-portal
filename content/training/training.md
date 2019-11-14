@@ -1,6 +1,4 @@
 ---
-path: "/training/training"
-date: "2019-06-10"
 title: "Training"
 author: "AnVIL"
 ---

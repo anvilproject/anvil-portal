@@ -75,23 +75,29 @@ export function filterScoopsByDate(scoops, past) {
 
     return scoops.filter(scoop => {
 
-        const date = getDate(scoop.frontmatter.date);
+        const date = validateDate(scoop.frontmatter.date);
+        const dateObj = getDate(date);
 
-        // Returns only scoops with a date older than today
-        if ( past ) {
+        // For any valid dates
+        if ( date ) {
 
-            return date.getTime() <= today.getTime();
+            if ( past ) {
+
+                // Returns scoops if date is older than today
+                return dateObj.getTime() <= today.getTime();
+            }
+            else {
+
+                // Returns scoops if date is upcoming
+                return dateObj.getTime() > today.getTime();
+            }
         }
+        else {
 
-        // Return any invalid dates as upcoming events
-        // This will highlight any issues with date rendering
-        if ( !validateDate(date.toString()) ) {
-
-            return true;
+            // Return any invalid dates as upcoming events
+            // This will highlight any issues with date rendering
+            return !past;
         }
-
-        // Returns only scoops with an upcoming date
-        return date.getTime() > today.getTime();
     });
 }
 
@@ -119,9 +125,9 @@ export function isAnyScoopsFeatured(scoops) {
  */
 export function validateDate(date) {
 
-    if ( date.toLowerCase() === "invalid date" ) {
+    if ( date && date.toLowerCase() === "invalid date" ) {
 
-        return "";
+        return;
     }
 
     return date;
