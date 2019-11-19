@@ -39,7 +39,7 @@ class Home extends React.Component {
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
                 <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
                     <div className={compStyles.headline}>Cloud-based Genomic Data Science</div>
-                    <div className={compStyles.subhead}>AnVIL, an Analysis, Visualization, and Informatics Lab-space, democratizes genomic data access, sharing and computing across large genomic, and genomic-related data sets.
+                    <div className={compStyles.subhead}>AnVIL &ndash; an Analysis, Visualization, and Informatics Lab-space democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets.
                     </div>
                     <img src={hero} alt="anVIL"/>
                 </div>

@@ -68,7 +68,7 @@ const typography = new Typography({
             },
             h3: {
                 ...adjustFontSizeTo("18px"),
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.15px",
                 lineHeight: "26px",
                 margin: "0 0 10px",
@@ -91,6 +91,12 @@ const typography = new Typography({
             },
             ".anchor": {
                 border: "none !important"
+            },
+            ul: {
+                marginBottom: "2.5rem"
+            },
+            li: {
+                marginBottom: 0
             }
         }
     }

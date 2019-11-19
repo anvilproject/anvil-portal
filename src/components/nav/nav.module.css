@@ -25,8 +25,8 @@
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
     font-weight: 400;
-    line-height: 26px;
-    margin-bottom: 12px;
+    line-height: 32px;
+    /*margin-bottom: 12px;*/
 }
 
 /* Link */
@@ -90,11 +90,11 @@
         border-bottom: none;
         flex: none;
         height: 100%; /* Required for sticky position */
-        margin: 44px 0 0 0;
+        margin: 0 0 0 0;
         max-width: unset;
         padding: 0;
         position: sticky;
-        top: 144px;
+        top: 105px;
         width: 284px;
     }
 
