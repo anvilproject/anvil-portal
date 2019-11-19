@@ -13,7 +13,7 @@ import React from "react";
 import {headerStaticQuery} from "../../hooks/headerQuery";
 
 // Images
-import logo from "../../../images/logoAnVIL.png";
+import logo from "../../../images/logo.png";
 
 // Styles
 import globalStyles from "../../styles/global.module.css";
@@ -41,7 +41,6 @@ class Header extends React.Component {
                 <div className={globalStyles.container}>
                     <Link to="/">
                         <img src={logo} alt="anVIL"/>
-                        <span className={classNames(compStyles.theAnVIL)}>AnVIL</span>
                     </Link>
                     <i className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>menu</i>
                     <i className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>close</i>
