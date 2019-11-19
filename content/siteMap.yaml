@@ -74,6 +74,8 @@
     location: "h"
     order: 3
   primaryLinks:
+    - name: "Onboarding"
+      key: "/training/onboarding"
     - name: "Training"
       key: "/training/training"
       path: "/training"
