@@ -26,19 +26,8 @@
 /* Logo */
 .header img {
     align-self: center;
+    height: 34px;
     margin: 0;
-    max-width: 40px;
-}
-
-/* The AnVIL - logo text */
-.header .theAnVIL {
-    align-self: flex-end;
-    color: var(--primary);
-    font-family: "Barlow", sans-serif;
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: -1px;
-    padding-left: 4px;
 }
 
 /* Menu icon */
