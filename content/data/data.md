@@ -19,11 +19,11 @@ AnVIL aims to host data sets of high value to the biomedical research community,
 
 ### [CCDG](https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-Disease-Genomics) 
 
-Large-scale genome sequencing effort to comprehensively identify rare risk and protective variants contributing to multiple common disease phenotypes.
+The Centers for Common Disease Genomics are a collaborative large-scale genome sequencing effort to comprehensively identify rare risk and protective variants contributing to multiple common disease phenotypes.
 
 ### [CMG](https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Mendelian-Genomics-CMG)
 
-A multi-center collaboration aimed at identifying the genes responsible for Mendelian phenotypes by whole exome and whole genome sequencing
+The Centers for Mendelian Genomics is a multi-center collaboration aimed at identifying the genes responsible for Mendelian phenotypes by whole exome and whole genome sequencing
 
 ### [GTEx](https://gtexportal.org/home/)
 
