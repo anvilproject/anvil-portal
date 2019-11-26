@@ -1,0 +1,42 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL outline component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Outline ul and li */
+ul.outline, .outline li {
+    list-style: none;
+}
+
+/* Outline container */
+ul.outline {
+    flex: none;
+    height: 100%;
+    margin: 0;
+    position: sticky;
+    top: 105px;
+    width: 284px;
+}
+
+/* Link */
+.outline li a {
+    color: var(--black58);
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Link - hover state */
+.outline li:hover a {
+    color: var(--black87);
+}
+
+/* Link - indentation */
+.outline .indent {
+    padding-left: 16px;
+}

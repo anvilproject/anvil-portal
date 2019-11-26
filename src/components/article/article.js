@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import Nav from "../nav/nav";
+import Outline from "../outline/outline";
 
 // Styles
 import globalStyles from "../../styles/global.module.css";
@@ -26,6 +27,7 @@ class Article extends React.Component {
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav docPath={docPath}/>
                     {children}
+                    <Outline docPath={docPath}/>
                 </div>
             </section>
         );
