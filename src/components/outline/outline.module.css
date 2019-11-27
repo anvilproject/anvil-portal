@@ -13,6 +13,7 @@ ul.outline, .outline li {
 
 /* Outline container */
 ul.outline {
+    display: none;
     flex: none;
     height: 100%;
     margin: 0;
@@ -84,4 +85,15 @@ ul.outline {
 /* Link - indentation */
 .outline .indent {
     padding-left: 16px;
+}
+
+/**
+ * Medium Window +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    ul.outline {
+        display: block;
+    }
 }
