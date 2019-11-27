@@ -21,6 +21,32 @@ ul.outline {
     width: 284px;
 }
 
+/* Outline - container */
+.outline li {
+    padding-left: 8px;
+    position: relative;
+}
+
+/* Outline - line */
+.outline li::before {
+    border-left: 1px solid var(--shade-light);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+/* First outline */
+.outline li:first-child::before {
+    top: 50%;
+}
+
+/* Last outline */
+.outline li:last-child::before {
+    bottom: 50%;
+}
+
 /* Link */
 .outline li a {
     color: var(--black58);
@@ -34,6 +60,25 @@ ul.outline {
 /* Link - hover state */
 .outline li:hover a {
     color: var(--black87);
+}
+
+/* Link - active */
+.outline li a.active {
+    color: var(--shade-dark);
+    position: relative;
+}
+
+/* Link - active indicator */
+.outline li a.active::after {
+    background-color: var(--accent-gold);
+    border-radius: 50%;
+    content: "";
+    height: 5px;
+    left: -10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
 }
 
 /* Link - indentation */

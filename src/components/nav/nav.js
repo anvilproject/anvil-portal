@@ -27,12 +27,15 @@ class Nav extends React.Component {
             return;
         }
 
-        if ( !location.href || !location.origin ) {
+        if ( !location.pathname ) {
 
             return;
         }
 
-        return href === location.href.split(location.origin)[1] ?
+        const search = location.search ? location.search : "";
+        const pathName = (location.pathname.endsWith("/") ? `${location.pathname.slice(0, -1)}${search}` : `${location.pathname}${search}`).trim();
+
+        return href === pathName ?
             {className: (classNames(compStyles.link, compStyles.active))} : {className: compStyles.link}
     };
 

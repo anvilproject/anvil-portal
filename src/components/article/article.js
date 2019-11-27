@@ -11,6 +11,7 @@ import React from "react";
 // App dependencies
 import Nav from "../nav/nav";
 import Outline from "../outline/outline";
+import Spy from "../spy/spy";
 
 // Styles
 import globalStyles from "../../styles/global.module.css";
@@ -20,14 +21,24 @@ const classNames = require("classnames");
 
 class Article extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = ({activeOutline: ""});
+    }
+
+    onOutlineChange = (event) => {
+
+        this.setState({activeOutline: event});
+    };
+
     render() {
         const {children, docPath} = this.props;
         return (
             <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav docPath={docPath}/>
-                    {children}
-                    <Outline docPath={docPath}/>
+                    <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>
+                    <Outline activeOutline={this.state.activeOutline} docPath={docPath}/>
                 </div>
             </section>
         );
