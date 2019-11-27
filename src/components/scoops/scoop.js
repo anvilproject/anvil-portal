@@ -58,7 +58,7 @@ class Scoop extends React.Component {
         return (
             scoops.length ? this.getScoops().map((scoop, i) =>
                     <Headline scoop={scoop} key={i}/>) :
-                <p className={compStyles.scoopless}>Currently, there are no {type}.</p>
+                <p className={compStyles.scoopless}>Currently, we have no {type}.</p>
         );
     }
 }
