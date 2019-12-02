@@ -18,19 +18,19 @@ ul.outline {
     height: 100%;
     margin: 0;
     position: sticky;
-    top: 105px;
+    top: 100px;
     width: 284px;
 }
 
 /* Outline - container */
 .outline li {
-    padding-left: 8px;
+    padding-left: 12px;
     position: relative;
 }
 
 /* Outline - line */
 .outline li::before {
-    border-left: 1px solid var(--shade-light);
+    border-left: 1px solid var(--black12);
     bottom: 0;
     content: "";
     left: 0;
@@ -50,32 +50,38 @@ ul.outline {
 
 /* Link */
 .outline li a {
-    color: var(--black58);
+    color: var(--black87);
     display: block;
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     font-weight: 400;
-    letter-spacing: 1px;
 }
 
 /* Link - hover state */
 .outline li:hover a {
-    color: var(--black87);
+    color: var(--accent-glacier);
+    position: relative;
+    transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Link - hover indicator */
+.outline li a:hover::after {
+    background-color: #e0e0e0; /* Equivalent to black12, without opacity, required so line isn't visible through ball */
 }
 
 /* Link - active */
 .outline li a.active {
-    color: var(--shade-dark);
+    color: var(--accent-glacier);
     position: relative;
 }
 
 /* Link - active indicator */
-.outline li a.active::after {
-    background-color: var(--accent-gold);
+.outline li a.active::after, .outline li a:hover::after {
+    background-color: var(--accent-glacier);
     border-radius: 50%;
     content: "";
     height: 5px;
-    left: -10px;
+    left: -14px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
