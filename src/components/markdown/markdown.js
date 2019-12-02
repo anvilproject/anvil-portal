@@ -28,7 +28,7 @@ class Markdown extends React.Component {
             components: { "button": Button, "inscription": Inscription, "hero": Hero }
         }).Compiler;
         return (
-            <div className={classNames(className, compStyles.content)}>{renderAst(children)}</div>
+            <div id="content" className={classNames(className, compStyles.content)}>{renderAst(children)}</div>
         );
     }
 }
