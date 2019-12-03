@@ -30,7 +30,7 @@ ul.outline {
 
 /* Outline - line */
 .outline li::before {
-    border-left: 1px solid var(--black12);
+    border-left: 1px solid var(--accent-glacier);
     bottom: 0;
     content: "";
     left: 0;
@@ -53,7 +53,7 @@ ul.outline {
     color: var(--black87);
     display: block;
     font-family: "Open Sans", sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
 }
 
@@ -62,11 +62,6 @@ ul.outline {
     color: var(--accent-glacier);
     position: relative;
     transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Link - hover indicator */
-.outline li a:hover::after {
-    background-color: #e0e0e0; /* Equivalent to black12, without opacity, required so line isn't visible through ball */
 }
 
 /* Link - active */
