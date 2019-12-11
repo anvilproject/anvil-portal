@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import {Link} from "gatsby";
 import React from "react";
 import {isBrowser} from "react-device-detect";
 
@@ -41,6 +42,7 @@ class Home extends React.Component {
                     <div className={compStyles.headline}>Cloud-based Genomic Data Science</div>
                     <div className={compStyles.subhead}>AnVIL &ndash; an Analysis, Visualization, and Informatics Lab-space for democratizing genomic data access, sharing and computing across large genomic-related data sets.
                     </div>
+                    <Link to="/about" className={compStyles.learnMore}>Learn More</Link>
                     <img src={hero} alt="anVIL"/>
                 </div>
             </section>

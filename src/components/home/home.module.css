@@ -44,6 +44,43 @@
     margin: 0 0 16px;
 }
 
+/* Hero - learn more */
+.hero .learnMore {
+    color: var(--accent-dark);
+    position: relative;
+    transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero .learnMore:hover {
+    color: var(--accent-glacier);
+}
+
+.hero .learnMore:after, .hero .learnMore:before {
+    background-color: var(--accent-dark);
+    content: ' ';
+    height: 7px;
+    right: -12px;
+    position: absolute;
+    transition: background-color linear 100ms;
+    width: 1px;
+    visibility: visible;
+}
+
+.hero .learnMore:after {
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+.hero .learnMore:before {
+    top: 5px;
+    transform: rotate(-45deg);
+
+}
+
+.hero .learnMore:hover:after, .hero .learnMore:hover:before {
+    background-color: var(--accent-glacier);
+}
+
 /* Hero - image */
 .hero img {
     margin: 16px 0 0;
