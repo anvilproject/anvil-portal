@@ -10,6 +10,7 @@ import React from "react";
 
 // Images
 import gitHub from "../../../images/gitHub.png";
+import nhgri from "../../../images/logoNHGRI.svg";
 import twitter from "../../../images/logoTwitter.png";
 
 // Styles
@@ -22,6 +23,9 @@ class Footer extends React.Component {
         return (
             <div className={compStyles.footer}>
                 <div className={globalStyles.container}>
+                    <div className={compStyles.logos}>
+                        <img src={nhgri} alt="nhgri"/>
+                    </div>
                     <div className={compStyles.socials}>
                         <a href="https://twitter.com/useAnVIL" target="_blank" rel="noopener noreferrer">
                             <img src={twitter} alt="twitter"/></a>
