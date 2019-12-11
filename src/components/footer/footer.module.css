@@ -15,7 +15,19 @@
 .footer > div {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+/* Logos */
+.footer .logos {
+    align-items: center;
+    display: flex;
+    height: 64px;
+}
+
+.footer .logos img {
+    height: 18px;
+    margin: 0;
 }
 
 /* Socials */
@@ -39,6 +51,19 @@
 .footer i {
     color: white;
     margin: 0 24px;
+}
+
+/**
+ * Extra small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 360px) {
+
+    /* Logos */
+    .footer .logos img {
+        height: 24px;
+    }
+
 }
 
 /**
