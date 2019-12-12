@@ -16,6 +16,7 @@ import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery
 import {newsStaticQuery} from "../../hooks/newsQuery";
 import {roadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
 import * as ScoopsService from "../../utils/scoops.service";
+import Carousel from "../carousel/carousel";
 import RoadMap from "../roadMap/roadMap";
 import Scoop from "../scoops/scoop";
 import SectionBody from "../section/sectionBody";
@@ -48,6 +49,7 @@ class Home extends React.Component {
                     <img src={hero} alt="anVIL"/>
                 </div>
             </section>
+            <Carousel/>
             <section className={compStyles.featured}>
                 <SectionIntro post={workspaces}/>
                 <SectionBody className={compStyles.bgPale}><Workspaces/></SectionBody>

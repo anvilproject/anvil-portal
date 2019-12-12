@@ -4,6 +4,12 @@ date: "2019-10-30"
 description: "Genomic data science with the Galaxy workbench."
 featured: false
 author: "AnVIL"
+carousel: {
+  active: true,
+  blurb: "Workshop attendees will be introduced to practical examples of how genomic data is used in research and clinical applications, highlighting techniques, technologies, and platforms used in genomic analysis.",
+  docType: "Event",
+  title: "SACNAS Workshop",
+}
 ---
 
 #SACNAS Workshop
