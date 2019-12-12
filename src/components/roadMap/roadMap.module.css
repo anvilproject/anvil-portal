@@ -1,0 +1,206 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL release roadmap component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Roadmap container */
+.roadmap {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    position: relative; /* Positions key */
+    width: 100%;
+}
+
+/* Key container */
+.roadmap .key {
+    margin-bottom: 48px;
+}
+
+/* Key */
+.roadmap .key span {
+    display: block;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 20px;
+    position: relative;
+    width: 104px;
+}
+
+/* Key - tool */
+.roadmap .key span.tool {
+    border-bottom: 2px dashed var(--accent-ice);
+    margin-bottom: 24px;
+}
+
+/* Key - platform */
+.roadmap .key span.platform {
+    border-bottom: 2px dashed var(--accent-glacier);
+}
+
+/* Key bubble */
+.roadmap .key span:after {
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 13px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    width: 13px;
+}
+
+/* Key bubble - tool */
+.roadmap .key span.tool:after {
+    background-color: var(--accent-ice);
+}
+
+/* Key bubble - platform */
+.roadmap .key span.platform:after {
+    background-color: var(--accent-glacier);
+}
+
+/* Quarter */
+.roadmap .quarter {
+    display: flex;
+    flex-direction: column-reverse; /* Positions date to top */
+}
+
+/* Label */
+.roadmap .label {
+    color: var(--shade-dark);
+    font-family: "Barlow", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 48px;
+    position: relative; /* Positions line */
+    width: 100%;
+}
+
+/* Label - separator */
+.roadmap .label:after {
+    background-color: var(--black12);
+    border-radius: 2px;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* Bubble stack */
+.roadmap .stack {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Bubble */
+.roadmap .bubble {
+    align-items: center;
+    border-radius: 50%;
+    color: var(--shade-dark);
+    cursor: pointer;
+    display: flex;
+    flex: none;
+    height: 90px;
+    justify-content: center;
+    margin: 4px;
+    width: 90px;
+}
+
+/* Data */
+.roadmap .bubble.data {
+    background-color: var(--accent-gold);
+}
+
+/* Platform */
+.roadmap .bubble.platform {
+    background-color: var(--accent-glacier);
+}
+
+/* Tool */
+.roadmap .bubble.tool {
+    background-color: var(--accent-ice);
+}
+
+/* Bubble text */
+.roadmap .bubble span {
+    align-self: center;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    max-width: 84px;
+    text-align: center;
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Roadmap container */
+    .roadmap {
+        align-items: flex-end;
+        align-self: center;
+        flex-direction: row;
+        width: unset;
+    }
+
+    /* Key container */
+    .roadmap .key {
+        margin-bottom: 0;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+    }
+
+    /* Key */
+    .roadmap .key span {
+        margin-bottom: 24px;
+        padding-right: 20px;
+        text-align: right;
+    }
+
+    /* Key bubble */
+    .roadmap .key span:after {
+        left: unset;
+        right: 0;
+    }
+
+    /* Quarter */
+    .roadmap .quarter {
+        flex-direction: column;
+        margin: 0 16px;
+    }
+
+    /* Bubble stack */
+    .roadmap .stack {
+        align-items: center;
+        flex-direction: column;
+        margin: 0 0 20px;
+    }
+
+    /* Label */
+    .roadmap .label {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        width: unset;
+    }
+
+    /* Label - line - hidden */
+    .roadmap .label:after {
+        display: none;
+    }
+}

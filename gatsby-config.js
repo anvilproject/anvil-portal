@@ -6,6 +6,7 @@
  */
 
 let contentPath = `./content`;
+let roadMapPath = `./content/roadmap/`;
 let yamlPath = `./content`;
 
 module.exports = {
@@ -67,6 +68,13 @@ module.exports = {
             options: {
                 name: `site-map`,
                 path: yamlPath,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `road-map`,
+                path: roadMapPath,
             },
         },
         {
