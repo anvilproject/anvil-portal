@@ -14,7 +14,9 @@ import {isBrowser} from "react-device-detect";
 import {eventsStaticQuery} from "../../hooks/eventsQuery";
 import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
 import {newsStaticQuery} from "../../hooks/newsQuery";
+import {roadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
 import * as ScoopsService from "../../utils/scoops.service";
+import RoadMap from "../roadMap/roadMap";
 import Scoop from "../scoops/scoop";
 import SectionBody from "../section/sectionBody";
 import SectionIntro from "../section/sectionIntro";
@@ -32,7 +34,7 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {events, eventsScoops, news, newsScoops, workspaces} = this.props;
+        const {events, eventsScoops, news, newsScoops, roadMapIntro, workspaces} = this.props;
         const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
         const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
         return (
@@ -50,6 +52,10 @@ class Home extends React.Component {
                 <SectionIntro post={workspaces}/>
                 <SectionBody className={compStyles.bgPale}><Workspaces/></SectionBody>
             </section>
+            <section className={compStyles.roadmap}>
+                <SectionIntro post={roadMapIntro}/>
+                <SectionBody><RoadMap/></SectionBody>
+            </section>
             {featuredNews ? <section className={compStyles.news}>
                 <SectionIntro post={news}/>
                 <SectionBody><Scoop featuredOnly={true} scoops={newsScoops}/></SectionBody>
@@ -65,13 +71,14 @@ class Home extends React.Component {
 
 export default () => {
 
-    const workspaces = featuredWorkspacesStaticQuery();
     const events = ScoopsService.getIntroduction(eventsStaticQuery());
     const eventsScoops = ScoopsService.getScoops(eventsStaticQuery());
     const news = ScoopsService.getIntroduction(newsStaticQuery());
     const newsScoops = ScoopsService.getScoops(newsStaticQuery());
+    const roadMap = roadMapIntroStaticQuery();
+    const workspaces = featuredWorkspacesStaticQuery();
 
     return (
-        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} workspaces={workspaces}/>
+        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} roadMapIntro={roadMap} workspaces={workspaces}/>
     )
 }
