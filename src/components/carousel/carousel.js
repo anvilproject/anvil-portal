@@ -22,6 +22,7 @@ import globalStyles from "../../styles/global.module.css";
 import compStyles from "./carousel.module.css";
 
 let classNames = require("classnames");
+let x0 = null;
 
 class Carousel extends React.Component {
 
@@ -29,6 +30,21 @@ class Carousel extends React.Component {
         super(props);
         this.state = {rotation: 0};
     }
+
+    componentDidMount() {
+
+        this.setTouchInteractions();
+    };
+
+    componentWillUnmount() {
+
+        this.removeTouchInteractions();
+    };
+
+    changedTouches = (e) => {
+
+        return e.changedTouches ? e.changedTouches[0] : e
+    };
 
     getActiveClassName = (index) => {
 
@@ -56,6 +72,17 @@ class Carousel extends React.Component {
 
             window.location.href = linkTo;
         }
+    };
+
+    removeTouchInteractions = () => {
+
+        const slot = document.getElementsByClassName(compStyles.slider)[0];
+
+        slot.removeEventListener("mousedown", this.swipeStart(), false);
+        slot.removeEventListener("touchstart", this.swipeStart(), false);
+
+        slot.removeEventListener("mouseup", this.swipeEnd(), false);
+        slot.removeEventListener("touchend", this.swipeEnd(), false);
     };
 
     rotateBack = () => {
@@ -93,6 +120,49 @@ class Carousel extends React.Component {
         this.setState({rotation: index})
     };
 
+    setTouchInteractions = () => {
+
+        const slot = document.getElementsByClassName(compStyles.slider)[0];
+
+        slot.addEventListener("mousedown", this.swipeStart(), false);
+        slot.addEventListener("touchstart", this.swipeStart(), false);
+
+        slot.addEventListener("mouseup", this.swipeEnd(), false);
+        slot.addEventListener("touchend", this.swipeEnd(), false);
+    };
+
+    swipeEnd = () => {
+
+        return (e) => {
+
+            if (x0 || x0 === 0) {
+
+                let dx = this.changedTouches(e).clientX - x0;
+                let s = Math.sign(dx);
+
+                if (s > 0) {
+
+                    this.rotateBack();
+                }
+
+                if (s < 0) {
+
+                    this.rotateForward();
+                }
+
+                x0 = null;
+            }
+        }
+    };
+
+    swipeStart = () => {
+
+        return (e) => {
+
+            x0 = this.changedTouches(e).clientX;
+        }
+    };
+
     render() {
         const {carousel} = this.props;
 
@@ -111,7 +181,9 @@ class Carousel extends React.Component {
                     <div className={compStyles.type}>{docType}</div>
                     <h4>{title}</h4>
                     <p className={compStyles.ellipsis}>{blurb}</p>
-                    <p className={compStyles.learnMore} onClick={() => this.redirect(linkTo, openTab)}>Learn More<img src={arrows} alt="learn more"/></p>
+                    <p className={compStyles.learnMore}
+                       onClick={() => this.redirect(linkTo, openTab)}>Learn More<img src={arrows} alt="learn more"/>
+                    </p>
                 </div>
             )
         };
@@ -125,9 +197,10 @@ class Carousel extends React.Component {
                             {carousel.map((slot, i) => <Slot key={i} show={i === this.state.rotation} slot={slot}/>)}
                         </div>
                         <div className={compStyles.bullets}>
-                            {carousel.map((bullet, i) => <span key={i}
-                                                               className={classNames({[compStyles.active]: this.getActiveClassName(i)})}
-                                                               onClick={() => this.rotateTo(i)}/>)}
+                            {carousel.map((bullet, i) =>
+                                <span key={i}
+                                      className={classNames({[compStyles.active]: this.getActiveClassName(i)})}
+                                      onClick={() => this.rotateTo(i)}/>)}
                         </div>
                     </div>
                     <img src={right} alt="next" onClick={this.rotateForward}/>

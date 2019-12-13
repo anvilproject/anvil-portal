@@ -3,8 +3,7 @@ carousel: {
   active: true,
   blurb: "This workspace serves as a basic tutorial for using Hail, a python-based package containing additional data types and methods for working with genomic data.",
   docType: "Workspace",
-  title: "GWAS Pipeline Using Hail",
-  url: "https://dev.data.humancellatlas.org/"
+  title: "GWAS Pipeline Using Hail"
 }
 ---
 ### GWAS Pipeline Using Hail
