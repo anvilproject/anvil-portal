@@ -45,7 +45,13 @@ function addToMap(acc, doc) {
 exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
     if (node.internal.type === `MarkdownRemark`) {
+        const carousel = node.frontmatter.carousel ? node.frontmatter.carousel : {active: false, blurb: "", docType: "", title: "", url: ""};
         const slug = createFilePath({node, getNode, basePath: `pages`});
+        createNodeField({
+            node,
+            name: `carousel`,
+            value: carousel,
+        }),
         createNodeField({
             node,
             name: `slug`,
@@ -62,6 +68,13 @@ exports.createPages = ({graphql, actions}) => {
         edges {
           node {
             fields {
+              carousel {
+                active
+                blurb
+                docType
+                title
+                url
+              }
               slug
             }
           }
@@ -102,6 +115,7 @@ exports.createPages = ({graphql, actions}) => {
                     // Data passed to context is available
                     // in page queries as GraphQL variables.
                     slug: node.fields.slug,
+                    carousel: node.fields.carousel
                 },
             });
         });
