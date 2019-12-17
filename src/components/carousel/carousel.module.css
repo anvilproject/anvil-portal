@@ -33,6 +33,7 @@
     align-self: stretch; /* To take up full height of parent */
     display: flex;
     flex: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Left, right arrow */
@@ -46,7 +47,7 @@
 /* Slot - container */
 .carousel .slider {
     position: relative; /* Positions hidden slots */
-    touch-action: none;
+    touch-action: pan-x;
 }
 
 /* Slot */
