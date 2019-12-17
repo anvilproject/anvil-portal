@@ -22,14 +22,22 @@
 }
 
 /* Cursor - pointer */
-/* Left, right arrow */
+/* Left, right arrow container */
 /* Slot container */
-.carousel img, .slot {
+.carousel .arrow, .slot {
     cursor: pointer;
 }
 
+/* Left, right arrow container */
+.carousel .arrow {
+    align-self: stretch; /* To take up full height of parent */
+    display: flex;
+    flex: none;
+}
+
 /* Left, right arrow */
-.carousel img {
+.carousel .arrow img {
+    align-self: center;
     height: 24px;
     margin: 0;
     width: 12px;
@@ -38,6 +46,7 @@
 /* Slot - container */
 .carousel .slider {
     position: relative; /* Positions hidden slots */
+    touch-action: none;
 }
 
 /* Slot */

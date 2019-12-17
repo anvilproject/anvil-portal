@@ -191,7 +191,9 @@ class Carousel extends React.Component {
         return (
             <section className={compStyles.carousel}>
                 <div className={classNames(globalStyles.sectionInner, compStyles.rotation)}>
-                    <img src={left} alt="prev" onClick={this.rotateBack}/>
+                    <span className={compStyles.arrow} onClick={this.rotateBack}>
+                        <img src={left} alt="prev"/>
+                    </span>
                     <div>
                         <div className={compStyles.slider}>
                             {carousel.map((slot, i) => <Slot key={i} show={i === this.state.rotation} slot={slot}/>)}
@@ -203,7 +205,9 @@ class Carousel extends React.Component {
                                       onClick={() => this.rotateTo(i)}/>)}
                         </div>
                     </div>
-                    <img src={right} alt="next" onClick={this.rotateForward}/>
+                    <span className={compStyles.arrow} onClick={this.rotateForward}>
+                        <img src={right} alt="next"/>
+                    </span>
                 </div>
             </section>
         );
