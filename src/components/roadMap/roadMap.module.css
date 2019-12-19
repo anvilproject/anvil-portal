@@ -144,7 +144,7 @@
 }
 
 /**
- * Small +
+ * Small
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 600px) {
@@ -181,7 +181,7 @@
     /* Quarter */
     .roadmap .quarter {
         flex-direction: column;
-        margin: 0 16px;
+        margin: 0 8px;
     }
 
     /* Bubble stack */
@@ -202,5 +202,17 @@
     /* Label - line - hidden */
     .roadmap .label:after {
         display: none;
+    }
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Quarter */
+    .roadmap .quarter {
+        margin: 0 16px;
     }
 }

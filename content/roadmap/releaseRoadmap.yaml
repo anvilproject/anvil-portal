@@ -39,6 +39,9 @@
         link: "/"
       - name: "Vision"
         link: "/"
+      platforms:
+      - name: "Gen 3"
+        link: "https://gen3.org/"
 - quarter: "2020 Q3"
   display:
       platforms:
