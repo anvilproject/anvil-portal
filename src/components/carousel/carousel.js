@@ -22,13 +22,15 @@ import globalStyles from "../../styles/global.module.css";
 import compStyles from "./carousel.module.css";
 
 let classNames = require("classnames");
+
 let x0 = null;
+let y0 = null;
 
 class Carousel extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {rotation: 0};
+        this.state = ({rotation: 0});
     }
 
     componentDidMount() {
@@ -62,6 +64,24 @@ class Carousel extends React.Component {
         }
     };
 
+    preventScrollingWhenSwiping = () => {
+
+        return (e) => {
+
+            const dx = this.changedTouches(e).clientX - x0;
+            const dy = this.changedTouches(e).clientY - y0;
+
+            const swiping = Math.abs(dx) > Math.abs(dy);
+
+            if ( swiping ) {
+
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }
+    };
+
     redirect = (linkTo, openTab) => {
 
         if (openTab) {
@@ -78,11 +98,13 @@ class Carousel extends React.Component {
 
         const slot = document.getElementsByClassName(compStyles.slider)[0];
 
-        slot.removeEventListener("mousedown", this.swipeStart(), false);
-        slot.removeEventListener("touchstart", this.swipeStart(), false);
+        slot.removeEventListener("mousedown", this.swipeStart());
+        slot.removeEventListener("touchstart", this.swipeStart());
 
-        slot.removeEventListener("mouseup", this.swipeEnd(), false);
-        slot.removeEventListener("touchend", this.swipeEnd(), false);
+        slot.removeEventListener("mouseup", this.swipeEnd());
+        slot.removeEventListener("touchend", this.swipeEnd());
+
+        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping());
     };
 
     rotateBack = () => {
@@ -124,11 +146,13 @@ class Carousel extends React.Component {
 
         const slot = document.getElementsByClassName(compStyles.slider)[0];
 
-        slot.addEventListener("mousedown", this.swipeStart(), false);
-        slot.addEventListener("touchstart", this.swipeStart(), false);
+        slot.addEventListener("mousedown", this.swipeStart());
+        slot.addEventListener("touchstart", this.swipeStart());
 
-        slot.addEventListener("mouseup", this.swipeEnd(), false);
-        slot.addEventListener("touchend", this.swipeEnd(), false);
+        slot.addEventListener("mouseup", this.swipeEnd());
+        slot.addEventListener("touchend", this.swipeEnd());
+
+        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping());
     };
 
     swipeEnd = () => {
@@ -137,20 +161,26 @@ class Carousel extends React.Component {
 
             if (x0 || x0 === 0) {
 
-                let dx = this.changedTouches(e).clientX - x0;
-                let s = Math.sign(dx);
+                const dx = this.changedTouches(e).clientX - x0;
+                const dy = this.changedTouches(e).clientY - y0;
+                const swiping = Math.abs(dx) > Math.abs(dy);
+                const s = Math.sign(dx);
 
-                if (s > 0) {
+                if ( swiping ) {
 
-                    this.rotateBack();
-                }
+                    if ( s > 0 ) {
 
-                if (s < 0) {
+                        this.rotateBack();
+                    }
 
-                    this.rotateForward();
+                    if ( s < 0 ) {
+
+                        this.rotateForward();
+                    }
                 }
 
                 x0 = null;
+                y0 = null;
             }
         }
     };
@@ -160,6 +190,7 @@ class Carousel extends React.Component {
         return (e) => {
 
             x0 = this.changedTouches(e).clientX;
+            y0 = this.changedTouches(e).clientY;
         }
     };
 

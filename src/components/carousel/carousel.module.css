@@ -47,7 +47,6 @@
 /* Slot - container */
 .carousel .slider {
     position: relative; /* Positions hidden slots */
-    touch-action: pan-x;
 }
 
 /* Slot */
