@@ -1,9 +1,9 @@
 #Events
 
-##Upcoming
+##Upcoming Events
 <Events></Events>
 
 ---
 
-##Past
+##Past Events
 <Events past></Events>
