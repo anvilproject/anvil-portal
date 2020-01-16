@@ -92,7 +92,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
-                            components: ["button", "inscription", "hero"]
+                            components: ["button", "events", "inscription", "hero"]
                         }
                     },
                     {

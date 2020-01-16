@@ -35,7 +35,7 @@ class Scoop extends React.Component {
     };
 
     render() {
-        const {className, scoops, type} = this.props;
+        const {className, noEvents, scoops, type} = this.props;
 
         const Headline = (props) => {
 
@@ -58,16 +58,16 @@ class Scoop extends React.Component {
         return (
             scoops.length ? this.getScoops().map((scoop, i) =>
                     <Headline scoop={scoop} key={i}/>) :
-                <p className={compStyles.scoopless}>Currently, we have no {type}.</p>
+                <p className={classNames(compStyles.scoopless, noEvents)}>Currently, we have no {type}.</p>
         );
     }
 }
 
 export default (props) => {
 
-    const {className, featuredOnly, scoops, type} = props;
+    const {className, featuredOnly, noEvents, scoops, type} = props;
 
     return (
-        <Scoop className={className} featuredOnly={featuredOnly} scoops={scoops} type={type}/>
+        <Scoop className={className} featuredOnly={featuredOnly} noEvents={noEvents} scoops={scoops} type={type}/>
     )
 }

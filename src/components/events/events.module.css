@@ -1,0 +1,14 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL events component.
+ */
+
+.event {
+    margin: 32px 0;
+}
+
+.event:last-child, p.noEvents {
+    margin-bottom: 32px;
+}
