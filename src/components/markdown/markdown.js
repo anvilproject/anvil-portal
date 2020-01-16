@@ -11,6 +11,7 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
+import Events from "../events/events";
 import Inscription from "../inscription/inscription";
 import Hero from "../hero/hero";
 
@@ -25,7 +26,7 @@ class Markdown extends React.Component {
         const {children, className} = this.props;
         const renderAst = new rehypeReact({
             createElement: React.createElement,
-            components: { "button": Button, "inscription": Inscription, "hero": Hero }
+            components: { "button": Button, "events": Events, "inscription": Inscription, "hero": Hero}
         }).Compiler;
         return (
             <div id="content" className={classNames(className, compStyles.content)}>{renderAst(children)}</div>

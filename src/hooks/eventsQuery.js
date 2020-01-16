@@ -4,7 +4,7 @@ export const eventsStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query EventsStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
             edges {
               node {
                 fields {
