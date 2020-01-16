@@ -1,6 +1,5 @@
 ---
-title: "FAQ"
-author: "AnVIL"
+draft: true
 ---
 
 #FAQ
