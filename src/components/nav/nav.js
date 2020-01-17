@@ -10,6 +10,7 @@ import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
+import {draftStaticQuery} from "../../hooks/draftQuery";
 import {navStaticQuery} from "../../hooks/navQuery";
 import * as NavigationService from '../../utils/navigation.service';
 
@@ -55,7 +56,9 @@ class Nav extends React.Component {
 export default (props) => {
 
     const docPath = props.docPath;
-    const nav = docPath ? NavigationService.getSectionNav(navStaticQuery(), docPath) : [];
+    const allSiteMapYaml = docPath ? NavigationService.getSectionNav(navStaticQuery(), docPath) : [];
+    const draftDocs = draftStaticQuery();
+    const nav = NavigationService.removeDraftDocuments(allSiteMapYaml, draftDocs);
     const hideNav = nav.length <= 1;
 
     return (

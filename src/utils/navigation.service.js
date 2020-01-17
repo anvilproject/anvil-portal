@@ -51,3 +51,34 @@ export function getSectionNav(siteMap, docPath) {
     // Return all primary links for the document section
     return section.primaryLinks;
 }
+
+/**
+ * Returns a filtered siteMap that will exclude any documents in draft mode.
+ *
+ * @param siteMap
+ * @param draftDocuments
+ * @returns {*}
+ */
+export function removeDraftDocuments(siteMap, draftDocuments) {
+
+    if ( !draftDocuments ) {
+
+        // If there are no documents in draft mode, return the siteMap for all documents
+        return siteMap;
+    }
+    else {
+
+        // Return a filtered siteMap, excluding any documents in draft mode.
+        // Draft mode is indicated by the frontmatter where "draft" is true.
+        return siteMap.filter(page => {
+
+            if (page.secondaryLinks) {
+                page.secondaryLinks = page.secondaryLinks.filter(secondaryLink => {
+                    return !draftDocuments.some(draftDoc => draftDoc.slug === secondaryLink.key)
+                });
+            }
+
+            return !draftDocuments.some(draftDoc => draftDoc.slug === page.key);
+        });
+    }
+}
