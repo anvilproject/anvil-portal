@@ -46,11 +46,17 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
     if (node.internal.type === `MarkdownRemark`) {
         const carousel = node.frontmatter.carousel ? node.frontmatter.carousel : {active: false, blurb: "", docType: "", title: "", url: ""};
+        const draft = node.frontmatter.draft ? node.frontmatter.draft : false;
         const slug = createFilePath({node, getNode, basePath: `pages`});
         createNodeField({
             node,
             name: `carousel`,
             value: carousel,
+        }),
+        createNodeField({
+            node,
+            name: `draft`,
+            value: draft,
         }),
         createNodeField({
             node,
@@ -75,6 +81,7 @@ exports.createPages = ({graphql, actions}) => {
                 title
                 url
               }
+              draft
               slug
             }
           }
@@ -114,8 +121,9 @@ exports.createPages = ({graphql, actions}) => {
                 context: {
                     // Data passed to context is available
                     // in page queries as GraphQL variables.
-                    slug: node.fields.slug,
-                    carousel: node.fields.carousel
+                    carousel: node.fields.carousel,
+                    draft: node.fields.draft,
+                    slug: node.fields.slug
                 },
             });
         });
