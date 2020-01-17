@@ -12,6 +12,8 @@
       key: "/about/team"
     - name: "Working Groups"
       key: "/about/working-groups"
+    - name: "FAQ"
+      key: "/about/faq"
 - name: "Contact"
   key: "contact"
   path: "/contact"
