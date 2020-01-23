@@ -114,6 +114,7 @@ module.exports = {
                             wrapperStyle: `margin: 0 !important;`,
                         }
                     },
+                    `gatsby-remark-images-medium-zoom`,
                 ]
             }
         },

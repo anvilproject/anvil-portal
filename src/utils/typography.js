@@ -89,6 +89,9 @@ const typography = new Typography({
                 border: 0,
                 marginBottom: "24px",
             },
+            "img:focus": {
+                outline: "none"
+            },
             ".anchor": {
                 border: "none !important"
             },
