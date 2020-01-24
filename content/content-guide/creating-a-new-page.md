@@ -1,15 +1,15 @@
 ---
-title: "Creating a New Page"
-author: "AnVIL"
+title: "Overview"
+author: "Dave Rogers"
 ---
 
-# Creating a New Page
+# Overview
 
 To create a new page, we need to:
 
-1. Add a `.md` file for the new page.
-1. Add `front matter` to the page.
-1. Add the page content.
+1. Add a new [markdown](https://en.wikipedia.org/wiki/Markdown) (`.md`) file for the new page.
+1. Add a "`front matter`" metadata secton to the new markdown file.
+1. Add the page content as markdown.
 1. Add the page to the siteMap.js file in the Data Portal Repository.
 
 
@@ -30,14 +30,13 @@ Typically the folder structure mirrors the structure or the the site. This is no
 
 ## Create the "Front Matter"
 
-Metadata describing the page and indicating its publication date, title ane URL are held in the pages "Front Matter". Front matter is a yaml section that lists key values pairs of configuration for the page.
+Metadata describing the page and indicating its publication date, and author are held in the pages "Front Matter". Front matter is a yaml section that lists key values pairs of configuration for the page in the very beginning or "front" of the file.
 
 
  ```
     ---
-    path: "/document/creating-content/example-page"
     date: "2018-05-30"
-    title: "Example Page"
+    Author: "Susan Smith"
     ---
  ```
  
@@ -46,9 +45,8 @@ Metadata describing the page and indicating its publication date, title ane URL 
  
  ## Add the Page Content
  
- With the front matter created its time to add the page content in mardown. 
- See on of the many [markdown guides](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) on the internet
+ With the front matter created its time to add the page content in mardown. See one of the many [markdown guides](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) on the internet
  
  ## Add the page URL to the siteMap.js
- To get your page added to the siteMap and deployed, please open a pull requst for for your new page in the [Github Project](https://github.com/HumanCellAtlas/data-portal-content/pulls) for the data portal repository.
+ To get your page added to the siteMap and deployed, please open a pull requst for for your new page in the [Github Project](https://github.com/anvilproject/anvil-portal/pulls) for the Anvil portal repository.
  

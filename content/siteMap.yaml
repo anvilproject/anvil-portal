@@ -93,17 +93,19 @@
   key: "content-guide"
   path: "/content-guide"
   primaryLinks:
+    - name: "Overview"
+      key: "/content-guide/overview"
+      path: "/content-guide"
     - name: "Creating a New Page"
       key: "/content-guide/creating-a-new-page"
-      path: "/content-guide"
     - name: "Editing an Existing Page"
       key: "/content-guide/editing-an-existing-page"
-      path: "/content-guide/editing-an-existing-page"
     - name: "Using Images"
       key: "/content-guide/using-images"
-      path: "/content-guide/using-images"
     - name: "Creating Links"
       key: "/content-guide/creating-links"
-      path: "/content-guide/creating-links"
+
+
+
 
 
