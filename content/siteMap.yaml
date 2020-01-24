@@ -48,16 +48,16 @@
     - name: "Events"
       key: "/events/events"
       path: "/events"
-- name: "News"
-  key: "news"
-  path: "/news"
-  position:
-    location: "h"
-    order: 4
-  primaryLinks:
-    - name: "News"
-      key: "/news"
-      path: "/news"
+#- name: "News"
+#  key: "news"
+#  path: "/news"
+#  position:
+#    location: "h"
+#    order: 4
+#  primaryLinks:
+#    - name: "News"
+#      key: "/news"
+#      path: "/news"
 - name: "Tools"
   key: "tools"
   path: "/tools"
