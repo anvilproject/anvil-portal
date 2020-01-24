@@ -33,6 +33,7 @@ class Footer extends React.Component {
                             <i className="material-icons-outlined">forum</i></a>
                         <a href="https://github.com/anvilproject" target="_blank" rel="noopener noreferrer">
                             <img src={gitHub} alt="gitHub"/></a>
+                        <a href="/help">Help</a>
                     </div>
                 </div>
             </div>
