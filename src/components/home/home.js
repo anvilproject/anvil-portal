@@ -19,6 +19,7 @@ import {OnboardingStaticQuery} from "../../hooks/onboardingQuery";
 import {RoadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
 import {SubmittingStaticQuery} from "../../hooks/submittingQuery";
 import * as ScoopsService from "../../utils/scoops.service";
+import * as StatsService from "../../utils/stats.service";
 import Carousel from "../carousel/carousel";
 import GoArrow from "../goArrow/goArrow";
 import RoadMap from "../roadMap/roadMap";
@@ -34,11 +35,17 @@ import compStyles from "./home.module.css";
 let classNames = require("classnames");
 
 class Home extends React.Component {
+    
+    formatStats = (count) => {
+
+        return NumberFormatService.format(count, 0);
+    };
 
     render() {
         const {events, eventsScoops, news, newsScoops, roadMapIntro, workspaces} = this.props;
         const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
         const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
+        const stats = StatsService.getStats();
         return (
             <>
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
