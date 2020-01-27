@@ -51,9 +51,6 @@
 - name: "Help"
   key: "help"
   path: "/help"
-  navigation:
-    location: "h"
-    order: 6
   primaryLinks:
     - name: ""
       key: "/help/help"
