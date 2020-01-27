@@ -48,6 +48,16 @@
     - name: "Events"
       key: "/events/events"
       path: "/events"
+- name: "Help"
+  key: "help"
+  path: "/help"
+  navigation:
+    location: "h"
+    order: 6
+  primaryLinks:
+    - name: ""
+      key: "/help/help"
+      path: "/help"      
 #- name: "News"
 #  key: "news"
 #  path: "/news"

@@ -27,13 +27,13 @@ class Footer extends React.Component {
                         <img src={nhgri} alt="nhgri"/>
                     </div>
                     <div className={compStyles.socials}>
+                        <a href="/help">Help</a>
                         <a href="https://twitter.com/useAnVIL" target="_blank" rel="noopener noreferrer">
                             <img src={twitter} alt="twitter"/></a>
                         <a href="https://gitter.im/anvil-project/Lobby" target="_blank" rel="noopener noreferrer">
                             <i className="material-icons-outlined">forum</i></a>
                         <a href="https://github.com/anvilproject" target="_blank" rel="noopener noreferrer">
                             <img src={gitHub} alt="gitHub"/></a>
-                        <a href="/help">Help</a>
                     </div>
                 </div>
             </div>
