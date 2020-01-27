@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const featuredWorkspacesStaticQuery = () => {
+export const FeaturedWorkspacesStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
 		query FeaturedWorkspacesStaticQuery {

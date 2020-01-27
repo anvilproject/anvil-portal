@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const roadMapIntroStaticQuery = () => {
+export const RoadMapIntroStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query RoadMapIntroStaticQuery {

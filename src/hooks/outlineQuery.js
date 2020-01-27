@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const outlineStaticQuery = () => {
+export const OutlineStaticQuery = () => {
     const {allFile} = useStaticQuery(
         graphql`
         query OutlineStaticQuery {

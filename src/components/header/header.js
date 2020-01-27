@@ -10,7 +10,7 @@ import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
-import {headerStaticQuery} from "../../hooks/headerQuery";
+import {HeaderStaticQuery} from "../../hooks/headerQuery";
 
 // Images
 import logo from "../../../images/logo.png";
@@ -57,6 +57,6 @@ class Header extends React.Component {
 
 export default (props) => {
     return (
-        <Header links={headerStaticQuery()} {...props}/>
+        <Header links={HeaderStaticQuery()} {...props}/>
     );
 }

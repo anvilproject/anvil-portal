@@ -11,7 +11,7 @@ import React from "react";
 // App dependencies
 import Layout from "../components/layout";
 import Scoops from "../components/scoops/scoops";
-import {newsStaticQuery} from "../hooks/newsQuery";
+import {NewsStaticQuery} from "../hooks/newsQuery";
 import * as ScoopsService from "../utils/scoops.service";
 
 // Styles
@@ -31,8 +31,8 @@ class News extends React.Component {
 
 export default () => {
 
-    const intro = ScoopsService.getIntroduction(newsStaticQuery());
-    const newsScoops = ScoopsService.getScoops(newsStaticQuery());
+    const intro = ScoopsService.getIntroduction(NewsStaticQuery());
+    const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
 
     return (
         <News intro={intro} scoops={newsScoops}/>

@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {eventsStaticQuery} from "../../hooks/eventsQuery";
+import {EventsStaticQuery} from "../../hooks/eventsQuery";
 import * as ScoopsService from "../../utils/scoops.service";
 import Scoop from "../scoops/scoop";
 
@@ -28,7 +28,7 @@ class Events extends React.Component {
 
 export default (props) => {
 
-    const events = eventsStaticQuery();
+    const events = EventsStaticQuery();
     const eventsScoops = ScoopsService.getScoops(events);
     const past = props && props.past === "";
     const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, past);
