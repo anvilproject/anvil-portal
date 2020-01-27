@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const carouselStaticQuery = () => {
+export const CarouselStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query CarouselStaticQuery {

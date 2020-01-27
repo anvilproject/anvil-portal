@@ -11,10 +11,10 @@ import React from "react";
 import {isBrowser} from "react-device-detect";
 
 // App dependencies
-import {eventsStaticQuery} from "../../hooks/eventsQuery";
-import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
-import {newsStaticQuery} from "../../hooks/newsQuery";
-import {roadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
+import {EventsStaticQuery} from "../../hooks/eventsQuery";
+import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
+import {NewsStaticQuery} from "../../hooks/newsQuery";
+import {RoadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
 import * as ScoopsService from "../../utils/scoops.service";
 import Carousel from "../carousel/carousel";
 import RoadMap from "../roadMap/roadMap";
@@ -73,12 +73,12 @@ class Home extends React.Component {
 
 export default () => {
 
-    const events = ScoopsService.getIntroduction(eventsStaticQuery());
-    const eventsScoops = ScoopsService.getScoops(eventsStaticQuery());
-    const news = ScoopsService.getIntroduction(newsStaticQuery());
-    const newsScoops = ScoopsService.getScoops(newsStaticQuery());
-    const roadMap = roadMapIntroStaticQuery();
-    const workspaces = featuredWorkspacesStaticQuery();
+    const events = ScoopsService.getIntroduction(EventsStaticQuery());
+    const eventsScoops = ScoopsService.getScoops(EventsStaticQuery());
+    const news = ScoopsService.getIntroduction(NewsStaticQuery());
+    const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
+    const roadMap = RoadMapIntroStaticQuery();
+    const workspaces = FeaturedWorkspacesStaticQuery();
 
     return (
         <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} roadMapIntro={roadMap} workspaces={workspaces}/>

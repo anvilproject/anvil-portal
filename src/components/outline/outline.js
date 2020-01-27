@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {outlineStaticQuery} from "../../hooks/outlineQuery";
+import {OutlineStaticQuery} from "../../hooks/outlineQuery";
 import * as OutlineService from "../../utils/outline.service";
 
 // Styles
@@ -49,7 +49,7 @@ class Outline extends React.Component {
 export default (props) => {
 
     const docPath = props.docPath;
-    const headings = OutlineService.filterHtmlAstByHeading(outlineStaticQuery(), docPath);
+    const headings = OutlineService.filterHtmlAstByHeading(OutlineStaticQuery(), docPath);
 
     return (
         <Outline headings={headings} {...props}/>

@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const navStaticQuery = () => {
+export const NavStaticQuery = () => {
     const {allSiteMapYaml} = useStaticQuery(
         graphql`
         query NavStaticQuery {

@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const roadMapStaticQuery = () => {
+export const RoadMapStaticQuery = () => {
     const {allReleaseRoadmapYaml} = useStaticQuery(
         graphql`
         query RoadMapStaticQuery {

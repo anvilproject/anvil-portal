@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {roadMapStaticQuery} from "../../hooks/roadMapQuery";
+import {RoadMapStaticQuery} from "../../hooks/roadMapQuery";
 
 // Styles
 import compStyles from "./roadMap.module.css";
@@ -94,7 +94,7 @@ class RoadMap extends React.Component {
 
 export default () => {
 
-    const roadMap = roadMapStaticQuery();
+    const roadMap = RoadMapStaticQuery();
 
     return (
         roadMap ? <RoadMap roadMap={roadMap}/> : null

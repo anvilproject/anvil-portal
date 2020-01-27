@@ -10,7 +10,7 @@
 import React from "react";
 
 // App dependencies
-import {carouselStaticQuery} from "../../hooks/carouselQuery";
+import {CarouselStaticQuery} from "../../hooks/carouselQuery";
 
 // Images
 import arrows from "../../../images/icon/arrows.png";
@@ -247,7 +247,7 @@ class Carousel extends React.Component {
 
 export default () => {
 
-    const carousel = carouselStaticQuery();
+    const carousel = CarouselStaticQuery();
     const showCarousel = carousel.length > 0;
 
     return (

@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {featuredWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
+import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
 import Markdown from "../markdown/markdown";
 
 // Styles
@@ -32,6 +32,6 @@ class Workspaces extends React.Component {
 
 export default () => {
     return (
-        <Workspaces post={featuredWorkspacesStaticQuery()}/>
+        <Workspaces post={FeaturedWorkspacesStaticQuery()}/>
     );
 }
