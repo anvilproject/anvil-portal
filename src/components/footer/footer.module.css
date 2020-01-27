@@ -39,29 +39,38 @@
 
 /* Socials - link */
 .footer .socials a {
+    color: var(--white);
     line-height: 0;
+}
+
+.footer .socials a:not(:first-of-type) {
+    margin-left: 12px;
 }
 
 /* GitHub image */
 .footer .socials img {
-    height: 24px;
+    height: 20px;
     margin: 0;
 }
 
-.footer i {
-    color: white;
-    margin: 0 24px;
-}
-
 /**
- * Extra small +
+ * Large handset small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 400px) {
 
     /* Logos */
     .footer .logos img {
         height: 24px;
+    }
+    
+    /* Socials */
+    .footer .socials img {
+        height: 24px;
+    }
+
+    .footer .socials a:not(:first-of-type) {
+        margin-left: 24px;
     }
 
 }

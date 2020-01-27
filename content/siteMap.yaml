@@ -48,6 +48,13 @@
     - name: "Events"
       key: "/events/events"
       path: "/events"
+- name: "Help"
+  key: "help"
+  path: "/help"
+  primaryLinks:
+    - name: ""
+      key: "/help/help"
+      path: "/help"      
 #- name: "News"
 #  key: "news"
 #  path: "/news"
@@ -82,3 +89,4 @@
       key: "/training/guides"
     - name: "Featured Workspaces"
       key: "/training/featured-workspaces"
+
