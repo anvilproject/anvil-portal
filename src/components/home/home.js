@@ -42,10 +42,9 @@ class Home extends React.Component {
     };
 
     render() {
-        const {events, eventsScoops, news, newsScoops, roadMapIntro, workspaces} = this.props;
+        const {events, eventsScoops, news, newsScoops, roadMapIntro, stats, workspaces} = this.props;
         const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
         const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
-        const stats = StatsService.getStats();
         return (
             <>
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
@@ -85,9 +84,10 @@ export default () => {
     const news = ScoopsService.getIntroduction(NewsStaticQuery());
     const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
     const roadMap = RoadMapIntroStaticQuery();
+    const stats = StatsService.getStats(StatsStaticQuery());
     const workspaces = FeaturedWorkspacesStaticQuery();
 
     return (
-        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} roadMapIntro={roadMap} workspaces={workspaces}/>
+        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} roadMapIntro={roadMap} stats={stats} workspaces={workspaces}/>
     )
 }

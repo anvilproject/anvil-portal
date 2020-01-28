@@ -6,6 +6,7 @@
  */
 
 let contentPath = `./content`;
+let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
 let roadMapPath = `./content/roadmap/`;
 let yamlPath = `./content`;
 
@@ -54,6 +55,14 @@ module.exports = {
             resolve: `gatsby-plugin-typography`,
             options: {
                 pathToConfigModule: `src/utils/typography`,
+            },
+        },
+        `gatsby-transformer-json`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: statsJsonPath,
+                name: 'json-schema',
             },
         },
         {
