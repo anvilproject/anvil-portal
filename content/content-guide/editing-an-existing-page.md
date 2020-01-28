@@ -3,7 +3,8 @@ title: "Editing an Existing Page"
 author: "AnVIL"
 ---
 
-# Editing an Existing Page Directly in Github
+# Editing an Existing Page 
+
 The HCA Data Portal pages are written in [markdown](https://guides.github.com/features/mastering-markdown/) and stored in the [HumanCellAtlas/data-portal-content](https://github.com/HumanCellAtlas/data-portal-content) repository on github.
 
 ## Find the Page Source in Github
