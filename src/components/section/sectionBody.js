@@ -9,6 +9,7 @@
 import React from "react";
 
 // Styles
+import globalStyles from "../../styles/global.module.css";
 import compStyles from "./sectionBody.module.css";
 
 let classNames = require("classnames");
@@ -19,7 +20,7 @@ class SectionBody extends React.Component {
         const {children, className} = this.props;
         return (
             <div className={classNames(compStyles.sectionBody, className)}>
-                <div className={compStyles.container}>
+                <div className={classNames(globalStyles.grid, globalStyles.g750, compStyles.container)}>
                     {children}
                 </div>
             </div>

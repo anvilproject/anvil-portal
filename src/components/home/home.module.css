@@ -7,22 +7,22 @@
 @import "../../styles/vars.module.css";
 
 /* Section - padding */
-/* Events, hero, news, roadmap */
-.events, .hero, .hero.handheld, .news, .roadmap {
+/* Hero */
+.hero, .hero.handheld {
     padding: 60px 0;
 }
 
-/* Featured */
-.featured {
+/* Accessing, events, featured, news, onboarding, roadmap, submitting */
+.accessing, .events, .featured, .news, .onboarding, .roadmap, .submitting {
     padding-top: 60px;
 }
 
-/* Section - styles */
-
-/* Hero */
-.hero {
-    background-color: var(--shade-light);
+/* Last section */
+section:last-child {
+    padding-bottom: 60px;
 }
+
+/* Section - styles */
 
 /* Hero - headline */
 .hero .headline {
@@ -42,59 +42,6 @@
     font-weight: 300;
     line-height: 32px;
     margin: 0 0 16px;
-}
-
-/* Hero - learn more */
-.hero .learnMore {
-    color: var(--accent-dark);
-    position: relative;
-    transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.hero .learnMore:hover {
-    color: var(--accent-glacier);
-}
-
-.hero .learnMore:after, .hero .learnMore:before {
-    background-color: var(--accent-dark);
-    content: ' ';
-    height: 7px;
-    right: -12px;
-    position: absolute;
-    transition: background-color linear 100ms;
-    width: 1px;
-    visibility: visible;
-}
-
-.hero .learnMore:after {
-    top: 10px;
-    transform: rotate(45deg);
-}
-
-.hero .learnMore:before {
-    top: 5px;
-    transform: rotate(-45deg);
-
-}
-
-.hero .learnMore:hover:after, .hero .learnMore:hover:before {
-    background-color: var(--accent-glacier);
-}
-
-/* Hero - image */
-.hero img {
-    margin: 16px 0 0;
-}
-
-/* Featured */
-.featured .bgPale {
-    background-color: rgba(246, 247, 244, 0.38);
-    margin-top: 60px;
-}
-
-/* News */
-.news {
-    background-color: var(--black3);
 }
 
 /**
@@ -117,20 +64,6 @@
         font-size: 18px;
         line-height: 24px;
         margin: 0 0 8px;
-    }
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Section - styles */
-    /* Hero - image */
-    .hero img {
-        margin: 16px 0 0;
-        max-width: 650px;
     }
 }
 

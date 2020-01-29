@@ -1,10 +1,10 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const RoadMapIntroStaticQuery = () => {
+export const OnboardingStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
-        query RoadMapIntroStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/roadmap/roadmap-intro/"}}}) {
+        query OnboardingStaticQuery {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/onboarding/onboarding-intro/"}}}) {
             edges {
               node {
                 frontmatter {

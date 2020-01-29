@@ -8,7 +8,7 @@
 
 /* Header */
 .header {
-    background: linear-gradient(rgba(246, 247, 244, 0.58), rgba(246, 247, 244, 0.58)), linear-gradient(white, white);
+    background: var(--white);
 }
 
 /* Flex - header container, logo & text container, <ul>, <li> */
@@ -46,7 +46,7 @@
 /* Navigation */
 .header ul {
     align-items: flex-start;
-    background-color: var(--shade-light);
+    background-color: var(--white);
     flex-direction: column;
     font-weight: 400;
     height: calc(100% - 60px);

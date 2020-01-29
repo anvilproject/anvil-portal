@@ -221,7 +221,7 @@ class Carousel extends React.Component {
 
         return (
             <section className={compStyles.carousel}>
-                <div className={classNames(globalStyles.sectionInner, compStyles.rotation)}>
+                <div className={classNames(globalStyles.grid, globalStyles.g750, compStyles.rotation)}>
                     <span className={compStyles.arrow} onClick={this.rotateBack}>
                         <img src={left} alt="prev"/>
                     </span>

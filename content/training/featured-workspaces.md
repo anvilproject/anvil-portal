@@ -1,5 +1,6 @@
 ---
 component: "featured"
+title: "Featured Workspaces"
 linked:
     - ../featured-workspaces/gatk-germline.md
     - ../featured-workspaces/gatk-somatic.md

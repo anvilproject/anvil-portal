@@ -8,10 +8,6 @@
 
 /* Container */
 .sectionBody .container {
-    box-sizing: content-box;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 650px;
-    padding: 0 16px;
 }

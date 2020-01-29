@@ -15,6 +15,7 @@ export const FeaturedWorkspacesStaticQuery = () => {
 			          htmlAst
 			        }
 			      }
+			      title
 			    }
 			  }
 			}
