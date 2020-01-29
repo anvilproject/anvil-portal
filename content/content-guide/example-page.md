@@ -1,38 +1,38 @@
 ---
 title: "Example Page"
-author: "AnVIL"
+author: "Dave Rogers"
 ---
 
 # Example Page - the Kitchen Sink
  
-The HCA data portal content is written by community members in markdown.
+Below we list examples of markdown for many of the textual / formatting elemetns on the AnVIL Portal.
 
-Markdown is lightweight markup language with plain text formatting syntax. It is designed to be converetd to HTML by markdown prosessing tools. There are many markdown guides and cheatsheets available on the internet for example here: 
+## Hero Text
+Many pages start with top level title or "Hero Text" like the below.
 
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
+```
+<hero small>I am hero text and am often placed at the top of a page</hero>
+```
 
-Most of what you see in the general guides will work on ths site. Below we give specific examples of  basic use caes in the context of the data portal.
+<hero small>I am hero text and am often placed at the top of a page</hero>
 
-Here for example is a demo of adding an immage to a page:
+# Heading One
 
-![Data Portal](./_images/data-portal.png "Data Potal Learn Section")
+```
+# Heading One
+```
 
-First upload the image to the _images folder at the same level as your source document.
-Then, link to the the image using something like:
+## Heading Two
 
-```![Data Portal](./_images/data-portal.png "Data Potal Learn Section")```
+```
+## Heading Two
+```
 
-## Viewing the Source Markdown for this page on Github
+### Heading Three
 
-The raw source for this page is located at:
-
-https://raw.githubusercontent.com/HumanCellAtlas/data-portal-content/master/content/document/creating-content/example-page.md
-
-## Viewing a Preview of this page on Github
-
-The preview source for this page is located at:
-
-https://github.com/HumanCellAtlas/data-portal-content/blob/master/content/document/creating-content/example-page.md
+```
+### Heading Three
+```
 
 >####Tip
 >I am a blockquote with only one paragrah
@@ -41,5 +41,6 @@ https://github.com/HumanCellAtlas/data-portal-content/blob/master/content/docume
 >But I have a second paragraph
 
 >####Tip
->Here is a blockquote with two paragraphs and
+>Here is a blockquote with two paragraphs.
 >This is the second one
+

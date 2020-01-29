@@ -15,7 +15,7 @@ Markdown syntax for a hyperlink is square brackets followed by parentheses. The 
 
 ## Internal Lniks
 
-For internal links (links to other Anvil portal pages) we need to follow a few rules:
+For internal links (links to other AnVIL portal pages) we need to follow a few rules:
 
 1. Use the "relative path" to the page omitting the protocol and domain name. For example use `/creating-content/creating-links` instead of `https://anvilproject.org/creating-content/creating-links`.
 1. For the link address use the `path` of the page in the site regardless of the location of the file in the repository.

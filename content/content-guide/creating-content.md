@@ -3,8 +3,16 @@ title: "Creating Content"
 author: "Dave Rogers"
 ---
 
-# Creating Content
+# AnVIL Content Guide
 
+## Overview
+Welcome to the AnVIL Portal content guide. We welcome help from the consortium and community members for content creation and maintenance. 
+
+### Getting Help
+The guides below are meant to help you get started working on content. Please feel free to reach out to us on the  [AnVIL Gitter channel](https://gitter.im/anvil-project/Lobby) or by emailing our [help desk](mailto:help@lists.anvilproject.org) with any questions.
+
+
+### Content Locaton
 The content for the portal is located in the [/content](https://github.com/anvilproject/anvil-portal/tree/staging/content) folder of the [anvil-portal](https://github.com/anvilproject/anvil-portal/tree/staging) github repository. Each page of the site, and some page components, are represented as [markdown](https://en.wikipedia.org/wiki/Markdown) files in this folder.
 
 >####TIP
@@ -16,18 +24,18 @@ The content for the portal is located in the [/content](https://github.com/anvil
 Below we describe the general flow of content creation, editing, review, approval and deployment. See the links at the left for more detail on each step.
 
 
-### Anvil Portal Content Roles
+### AnVIL Portal Content Roles
 There are three roles assocated with the content lifecycle:
 
 1. **Content Author** - This can be anyone with a github login (e.g. you!). 
-1. **Content Approver** - An Anvil Project team member.
-1. **Content Deployer** - A member of the [Anvil Portal Working Group](/about/working-groups#portal-working-group) with push access to the github master branch. 
+1. **Content Approver** - An AnVIL Project team member.
+1. **Content Deployer** - A member of the [AnVIL Portal Working Group](/about/working-groups#portal-working-group) with push access to the github master branch. 
 
 ### Content Update Worflow
 
 In general, to modify the portal content:
 
-1. A Content Author creates or edits a markdown page with the desired updates. When the content is ready, the Content Author creates a github pull request against the Anvil Portal repository staging branch for the updates requesting a review from appropriate team members.
+1. A Content Author creates or edits a markdown page with the desired updates. When the content is ready, the Content Author creates a github pull request against the AnVIL Portal repository staging branch for the updates requesting a review from appropriate team members.
  
 1. One or more Content Approvers review and approve the content (or suggest modifications). If the pull request is approved it is merged into staging branch, which auto deploys to [https://staging.anvilproject.org/](https://staging.anvilproject.org/). 
 
@@ -59,10 +67,12 @@ Once a change that requires approval has been approved, the pull request will be
 
 ## Deploying Content Updates
 
-### Deploying to Staging
+Content will be deployed by AnVIL team members with the "Content Deployer" role. In general the process proceeds as follows:
+
+### Deploying to Staging 
 The merge into the staging branch will automatically trigger a deploy to the staging environment. This generally completes in a few minutes. There the display of the content can be validated, and if all looks well the staging branch will be promoted to master to deploy the change.
 
-### Deploying to Production
+### Deploying to Production 
 Committing code to master, likewise will trigger a deploy to production. Once the change is deployed to production again site maintainers will review to be sure the content looks ok in production. 
 
 

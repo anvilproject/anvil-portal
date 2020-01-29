@@ -93,7 +93,7 @@
   key: "content-guide"
   path: "/content-guide"
   primaryLinks:
-    - name: "Creating Content"
+    - name: "Content Guide"
       key: "/content-guide/creating-content"
       path: "/content-guide"
     - name: "Editing an Existing Page"
@@ -104,6 +104,9 @@
       key: "/content-guide/using-images"
     - name: "Creating Links"
       key: "/content-guide/creating-links"
+#    - name: "Example Page"
+#      key: "/content-guide/example-page"
+
 
 
 
