@@ -96,6 +96,13 @@ module.exports = {
                         }
                     },
                     {
+                        resolve: `gatsby-remark-copy-linked-files`,
+                        options: {
+                            // don't copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
+                            ignoreFileExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'tiff', 'md'],
+                        }
+                    },
+                    {
                         resolve: `gatsby-remark-embed-video`,
                         options: {
                             width: 600,
