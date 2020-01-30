@@ -36,6 +36,16 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Left arrow container */
+.carousel .arrow:first-child {
+    padding-right: 24px;
+}
+
+/* Right arrow container */
+.carousel .arrow:last-child {
+    padding-left: 24px;
+}
+
 /* Left, right arrow */
 .carousel .arrow img {
     align-self: center;
@@ -47,11 +57,6 @@
 /* Slot - container */
 .carousel .slider {
     position: relative; /* Positions hidden slots */
-}
-
-/* Slot */
-.slot {
-    margin: 0 36px;
 }
 
 /* Slot - hidden */
@@ -158,4 +163,21 @@
 /* Bullet - active */
 .bullets span.active {
     opacity: 1;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Left arrow container */
+    .carousel .arrow:first-child {
+        padding-right: 36px;
+    }
+
+    /* Right arrow container */
+    .carousel .arrow:last-child {
+        padding-left: 36px;
+    }
 }

@@ -6,23 +6,123 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Section intro */
+/* Intro */
 .sectionIntro {
-    margin: 0 auto;
-    max-width: 650px;
+    flex-direction: column;
+    margin-bottom: -18px; /* Required to maintain section padding - altered by sectionContent translateY value */
 }
 
-/* <h1> */
-.sectionIntro h1 {
-    display: inline-block; /* Positions anchor */
+/* Title <h1> */
+.sectionIntro > h1 {
+    margin: 0;
+}
+
+/* Hide markdown heading <h1> */
+.sectionContent h1 {
+    display: none;
+}
+
+/* Content */
+.sectionIntro .sectionContent {
+    margin: 0 -16px;
+    padding: 24px 16px;
+    transform: translateY(-18px);
+    width: 100vw;
+}
+
+/* Content - odd background */
+section:nth-child(2n+3) .sectionContent {
+    background-color: rgba(174, 235, 242, 0.12);
+}
+
+/* Content - even background */
+section:nth-child(2n+4) .sectionContent {
+    background-color: rgba(126, 186, 192, 0.12);
 }
 
 /* Paragraph */
-.sectionIntro p {
+.sectionContent p {
     color: var(--accent-dark);
     font-family: "Barlow", sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 28px;
     text-align: left;
+}
+
+.sectionContent p:last-of-type {
+    margin-bottom: 12px;
+}
+
+.sectionContent p:last-child {
+    margin-bottom: 0;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Intro */
+    .sectionIntro {
+        margin-bottom: unset;
+    }
+
+    /* Intro - "end", "start" */
+    .end, .start {
+        justify-content: space-between;
+    }
+
+    /* Intro - "end" */
+    .end {
+        flex-direction: row;
+    }
+
+    /* Intro - "start" */
+    .start {
+        flex-direction: row-reverse;
+    }
+
+    /* Title <h1> - "end", "start" */
+    .end > h1, .start > h1 {
+        margin: 16px 0 0;
+    }
+
+    /* Title <h1>  - "stretch" */
+    .stretch > h1 {
+        text-align: center;
+    }
+
+    /* Title <h1> - "wrap" */
+    .sectionIntro > h1.wrap {
+        max-width: 265px;
+    }
+
+    /* Content - "end", "start", "stretch" */
+    .sectionIntro .sectionContent {
+        margin: unset;
+        transform: unset;
+        width: 100%;
+    }
+
+    /* Content - "end" */
+    .end .sectionContent {
+        margin-left: -100%; /* Pulls container across to max width setting */
+        max-width: 566px;
+        padding: 24px 100px 24px 132px;
+    }
+
+    /* Content - "start" */
+    .start .sectionContent {
+        margin-right: -100%; /* Pulls container across to max width setting */
+        max-width: 496px;
+        padding: 24px 132px 24px 64px;
+    }
+
+    /* Content - "stretch" */
+    .stretch .sectionContent {
+        margin-top: -18px;
+        padding: 44px 32px 24px;
+    }
 }

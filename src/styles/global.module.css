@@ -3,21 +3,29 @@
  */
 @import "./vars.module.css";
 
-/* Container */
-.container {
-    padding: 0 16px;
-}
-
-/* Section inner */
-.sectionInner {
+/* Grid */
+.grid {
     margin: 0 auto;
-    max-width: 760px;
+}
+
+/* Container, grid */
+.container, .grid {
     padding: 0 16px;
 }
 
-/* Section inner - centered */
-.sectionInner.centered {
+/* Grid - 750px */
+.grid.g750 {
+    max-width: 750px;
+}
+
+/* Grid - centered */
+.grid.centered {
     text-align: center;
+}
+
+/* Flex */
+.flex {
+    display: flex;
 }
 
 /**
@@ -26,8 +34,8 @@
  */
 @media screen and (min-width: 720px) {
 
-    /* Container, section inner */
-    .container, .sectionInner {
+    /* Container, grid */
+    .container, .grid {
         padding: 0 24px;
     }
 }

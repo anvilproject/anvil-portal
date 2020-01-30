@@ -7,33 +7,55 @@
 
 /* Workspaces */
 .workspaces {
-    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 60px;
 }
 
 /* Workspace */
 .workspace {
-    align-self: center;
+    flex-basis: 100%;
     margin-bottom: 48px;
-    max-width: 650px;
+}
+
+/* Workspace - last */
+.workspace:last-of-type  {
+    margin: 0;
 }
 
 /* Workspace heading */
-.workspace h3 {
-    font-size: 20px;
-    font-weight: 400;
+.workspace h4 {
+    margin-bottom: 10px;
 }
 
-/* Workspace - last, workspace button */
-.workspace:last-of-type, .workspace > div > div p  {
-    margin: 0; /* Removal of unwanted margins from markdown */
+/* Workspace paragraph */
+.workspace p {
+    font-size: 14px;
 }
 
-/* Workspace button */
-.workspace > div {
-    margin-top: -8px;
+/* Workspace paragraph - last */
+.workspace p:last-of-type {
+    margin-bottom: 12px;
 }
 
-/* Workspace button - remove border */
-.workspace > div > div p a {
-    border-bottom: none !important;
+/**
+ * Small Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Workspace */
+    .workspace {
+        flex-basis: 50%;
+    }
+
+    /* Workspace - odds */
+    .workspace:nth-of-type(odd) {
+        padding-right: 24px;
+    }
+
+    /* Workspace - evens */
+    .workspace:nth-of-type(even) {
+        padding-left: 24px;
+    }
 }

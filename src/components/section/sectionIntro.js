@@ -20,10 +20,14 @@ let classNames = require("classnames");
 class SectionIntro extends React.Component {
 
     render() {
-        const {htmlAst} = this.props;
+        const {end, htmlAst, post, start, stretch, wrap} = this.props,
+            {frontmatter} = post || {},
+            {title} = frontmatter || {};
+
         return (
-            <div className={classNames(globalStyles.sectionInner, globalStyles.centered)}>
-                <Markdown className={compStyles.sectionIntro}>{htmlAst}</Markdown>
+            <div className={classNames(globalStyles.grid, globalStyles.g750, globalStyles.flex, compStyles.sectionIntro, {[compStyles.end]: end}, {[compStyles.start]: start}, {[compStyles.stretch]: stretch})}>
+                {title ? <h1 className={classNames({[compStyles.wrap]: wrap})}>{title}</h1> : null}
+                <Markdown className={compStyles.sectionContent}>{htmlAst}</Markdown>
             </div>
         );
     }
