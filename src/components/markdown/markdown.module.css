@@ -46,6 +46,21 @@
     width: 4px;
 }
 
+/* Ordered list - secondary - style */
+.content ol ol li {
+    list-style: lower-alpha;
+}
+
+/* Ordered list - secondary list, last item */
+.content ol ol li:last-of-type {
+    margin-bottom: 12px;
+}
+
+/* Ordered list - secondary list end of ordered list */
+.content ol li:last-of-type ol li:last-of-type {
+    margin-bottom: 0;
+}
+
 /**
  * Large Tablet
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints

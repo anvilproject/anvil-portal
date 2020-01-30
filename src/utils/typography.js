@@ -95,6 +95,9 @@ const typography = new Typography({
             ".anchor": {
                 border: "none !important"
             },
+            ol: {
+                marginBottom: "1.5rem"
+            },
             ul: {
                 marginBottom: "2.5rem"
             },
