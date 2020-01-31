@@ -23,6 +23,31 @@
     width: 106px;
 }
 
+/* Stat - first */
+.stat:first-of-type span {
+    background-color: rgba(174, 235, 242, 0.54);
+}
+
+/* Stat - second */
+.stat:nth-of-type(2) span {
+    background-color: rgba(224, 221, 16, 0.54);
+}
+
+/* Stat - third */
+.stat:nth-of-type(3) span {
+    background-color: rgba(255, 137, 100, 0.54);
+}
+
+/* Stat - fourth */
+.stat:nth-of-type(4) span {
+    background-color: rgba(126, 186, 192, 0.54);
+}
+
+/* Stat - fifth */
+.stat:nth-of-type(5) span {
+    background-color: rgba(3, 92, 148, 0.38);
+}
+
 /* Stat - upper - count */
 .stat .count {
     align-items: flex-end;

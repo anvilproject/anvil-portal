@@ -16,7 +16,7 @@ export function format(num, digits) {
 		{value: 1E6, symbol: 'M'},
 		{value: 1E9, symbol: 'G'},
 		{value: 1E12, symbol: 'T'},
-		{value: 1E15, symbol: 'P'},
+		{value: 1E15, symbol: 'PB'},
 		{value: 1E18, symbol: 'E'}
 	];
 	const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
