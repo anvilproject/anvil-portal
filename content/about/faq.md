@@ -127,10 +127,6 @@ A new Terra user is eligible for the [free credits program](https://support.terr
 **_NHGRI AnVIL Contact_**: [anvil@mail.nih.gov](mailto:anvil@mail.nih.gov)
 
 ##Using  AnVIL
-###I have received access to data in a Workspace but I am receiving the message “Cannot access data. To view or download data in this workspace, please set up a billing project. You have $300 in free credits available!” Why is billing required to access this data?  What do I need to do to see the data?
-
-Workspaces can be shared between users to share data, workflows, or results on Terra. Each workspace is associated with a Google Cloud Platform (GCP) billing account that is billed for any egress, compute, or storage incurred in the Workspace. Workspaces enable tractability of spending. If a user shares a workspace with another user, the second user has to copy or clone the workspace and associate their own GCP billing account with the cloned workspace in order to perform any egress, compute, or storage requiring tasks. For example, if a Workspace has been shared with you, you would need to clone that Workspace to your account and associate your GCP billing account with the Workspace to view or download the data in the Workspace, since that would invoke compute or egress charges, respectively.
-
 ###What analysis tools can I use for data analysis on AnVIL?
 - [WDL](https://software.broadinstitute.org/wdl/) - Batch processing of GATK and other workflows
 - [Jupyter](https://jupyter.org/) - Interactive analysis with the python or R programming languages; the R environment includes a family of [Bioconductor](https://www.bioconductor.org/) 3.10 packages
