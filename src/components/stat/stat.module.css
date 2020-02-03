@@ -8,7 +8,7 @@
 
 /* Stat */
 .stat {
-    margin: 6px;
+    margin: 12px;
 }
 
 /* Stat - half */
@@ -87,10 +87,34 @@
 }
 
 /**
+ * Medium Handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 360px) {
+
+    /* Stat */
+    .stat {
+        margin: 2px;
+    }
+}
+
+/**
  * Large Handset +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 400px) {
+
+    /* Stat */
+    .stat {
+        margin: 8px;
+    }
+}
+
+/**
+ * XSmall +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
 
     /* Stat */
     .stat {
@@ -99,15 +123,22 @@
 }
 
 /**
- * Large Tablet +
+ * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 600px) {
 
     /* Stat */
     .stat {
         margin: 0;
     }
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
 
     /* Stat - half */
     .stat span {
