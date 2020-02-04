@@ -8,7 +8,7 @@
 /**
  * Format bytes to magnitude. Based off https://stackoverflow.com/a/9462382.
  */
-export function format(num, digits) {
+export function format(num, digitsConfig) {
 
 	const si = [
 		{value: 1, symbol: ''},
@@ -26,5 +26,17 @@ export function format(num, digits) {
 			break;
 		}
 	}
-	return (num / si[i].value).toFixed(digits).replace(rx, '$1') + si[i].symbol;
+	const symbol = si[i].symbol;
+	let digits;
+	// Handle a single digit specification where all values are formatted to the
+	// same length
+	if ( Number.isInteger(digitsConfig) ) {
+		digits = digitsConfig;
+	}
+	// Handle object containing symbol: digits config (eg {PB: 1}). Any magnitude
+	// that isn't specified is defaulted to no digits
+	else if ( !!digitsConfig ) {
+		digits = digitsConfig[symbol] || 0;
+	}
+	return (num / si[i].value).toFixed(digits).replace(rx, '$1') + symbol;
 }
