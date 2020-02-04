@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Gatsby Build
-          command: npm run build
+          command: npm run build-ci
 
       - persist_to_workspace:
                     # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is

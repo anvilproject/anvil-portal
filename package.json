@@ -46,6 +46,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "build-ci": "gatsby build --verbose",
     "build": "source ./start.sh && gatsby build --verbose",
     "start": "source ./start.sh && gatsby develop",
     "develop": "gatsby develop",
