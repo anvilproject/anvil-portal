@@ -25,7 +25,13 @@ jobs:
             - v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
             # - v1-dependencies-
-      - run: npm install
+      - run
+          name: Checkout Client-APIs Repo
+          command: cd .. && git clone git@github.com:anvilproject/client-apis.git --branch pyAnVIL --single-branch
+
+      - run:
+          name: Install npm
+          command: npm install
 
       - save_cache:
           paths:
@@ -33,8 +39,8 @@ jobs:
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
       - run:
-                name: Gatsby Build
-                command: npm run build
+          name: Gatsby Build
+          command: npm run build
 
       - persist_to_workspace:
                     # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
