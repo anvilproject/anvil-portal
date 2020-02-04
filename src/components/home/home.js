@@ -16,6 +16,7 @@ import {EventsStaticQuery} from "../../hooks/eventsQuery";
 import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
 import {NewsStaticQuery} from "../../hooks/newsQuery";
 import {OnboardingStaticQuery} from "../../hooks/onboardingQuery";
+import {SubmittingStaticQuery} from "../../hooks/submittingQuery";
 import {RoadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
 import * as ScoopsService from "../../utils/scoops.service";
 import Carousel from "../carousel/carousel";
