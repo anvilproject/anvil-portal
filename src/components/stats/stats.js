@@ -21,7 +21,9 @@ class Stats extends React.Component {
 
     formatStats = (count) => {
 
-        return NumberFormatService.format(count, 0);
+        return NumberFormatService.format(count, {
+            PB: 1
+        });
     };
 
     render() {
