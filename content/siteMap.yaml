@@ -89,4 +89,26 @@
       key: "/training/guides"
     - name: "Featured Workspaces"
       key: "/training/featured-workspaces"
+- name: "Content Guide"
+  key: "content-guide"
+  path: "/content-guide"
+  primaryLinks:
+    - name: "Content Guide"
+      key: "/content-guide/creating-content"
+      path: "/content-guide"
+    - name: "Editing an Existing Page"
+      key: "/content-guide/editing-an-existing-page"
+    - name: "Creating a New Page"
+      key: "/content-guide/creating-a-new-page"
+    - name: "Using Images"
+      key: "/content-guide/using-images"
+    - name: "Creating Links"
+      key: "/content-guide/creating-links"
+#    - name: "Example Page"
+#      key: "/content-guide/example-page"
+
+
+
+
+
 
