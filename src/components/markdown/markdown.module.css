@@ -12,13 +12,7 @@
 
 /* Link style */
 .content a {
-    border-bottom: 2px solid var(--black12);
-}
-
-/* Link style - hover state */
-.content a:hover {
-    border-bottom: 2px solid rgba(174, 235, 242, 0.87);
-    transition: border .25s ease-in;
+    background: linear-gradient(to top, rgba(174, 235, 242, 0.38) 0, rgba(174, 235, 242, 0.38) 40%, transparent 40%, transparent 100%);
 }
 
 /* Button - remove link style from button */
