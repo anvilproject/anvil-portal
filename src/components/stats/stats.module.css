@@ -1,0 +1,66 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL stats component.
+ */
+
+/* Stats */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -12px;
+    padding-top: 60px;
+}
+
+/**
+ * Medium Handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 360px) {
+
+    /* Stats */
+    .stats {
+        margin: -2px;
+    }
+}
+
+/**
+ * Large Handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 400px) {
+
+    /* Stats */
+    .stats {
+        margin: -8px;
+    }
+}
+
+/**
+ * XSmall +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Stats */
+    .stats {
+        margin: -12px auto;
+        max-width: 500px;
+    }
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Stats */
+    .stats {
+        justify-content: space-between;
+        margin: 0;
+        max-width: unset;
+    }
+}

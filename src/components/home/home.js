@@ -17,7 +17,6 @@ import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery
 import {NewsStaticQuery} from "../../hooks/newsQuery";
 import {OnboardingStaticQuery} from "../../hooks/onboardingQuery";
 import {RoadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
-import {SubmittingStaticQuery} from "../../hooks/submittingQuery";
 import * as ScoopsService from "../../utils/scoops.service";
 import Carousel from "../carousel/carousel";
 import GoArrow from "../goArrow/goArrow";
@@ -25,6 +24,7 @@ import RoadMap from "../roadMap/roadMap";
 import Scoop from "../scoops/scoop";
 import SectionBody from "../section/sectionBody";
 import SectionIntro from "../section/sectionIntro";
+import Stats from "../stats/stats";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
@@ -47,6 +47,7 @@ class Home extends React.Component {
                     <div className={compStyles.subhead}>AnVIL &ndash; an Analysis, Visualization, and Informatics Lab-space for democratizing genomic data access, sharing and computing across large genomic-related data sets.
                     </div>
                     <GoArrow><Link to="/about">Learn More</Link></GoArrow>
+                    <Stats/>
                 </div>
             </section>
             <Carousel/>
