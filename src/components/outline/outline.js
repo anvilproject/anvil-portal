@@ -38,10 +38,12 @@ class Outline extends React.Component {
         };
 
         return (
-            <ul className={compStyles.outline}>
+            <div className={compStyles.outline}>
+                <ul>
                 {headings ? headings.map((heading, i) =>
                     <Outline key={i} heading={heading} activeOutline={activeOutline}/>) : null}
-            </ul>
+                </ul>
+            </div>
         );
     }
 }

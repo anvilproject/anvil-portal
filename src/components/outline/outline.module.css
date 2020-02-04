@@ -6,46 +6,45 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Outline ul and li */
-ul.outline, .outline li {
-    list-style: none;
-}
-
 /* Outline container */
-ul.outline {
+.outline {
+    bottom: 0;
     display: none;
     flex: none;
-    height: 100%;
-    margin: 0;
-    position: sticky;
+    overflow-y: auto;
+    position: fixed;
+    right: calc(((100vw - 1232px) / 2) + 2px); /* 2px required to allow overflow auto of outline and pseudo element on active element <a> */
     top: 100px;
     width: 284px;
 }
 
-/* Outline - container */
-.outline li {
-    padding-left: 12px;
-    position: relative;
-}
-
-/* Outline - line */
-.outline li::before {
-    border-left: 1px solid var(--accent-glacier);
-    bottom: 0;
+/* Content line blocker */
+.outline:before {
+    background-color: rgba(255, 255, 255, 1);
     content: "";
-    left: 0;
-    position: absolute;
-    top: 0;
+    display: block;
+    height: 36px; /* Height margin between header and content */
+    position: fixed;
+    right: calc(((100vw - 1232px) / 2) + 282px);
+    top: 64px; /* Below header */
+    width: 1px;
 }
 
-/* First outline */
-.outline li:first-child::before {
-    top: 50%;
+/* Outline ul and li */
+.outline ul, .outline li {
+    list-style: none;
 }
 
-/* Last outline */
-.outline li:last-child::before {
-    bottom: 50%;
+/* Outline - unordered list */
+.outline ul {
+    margin: 0 0 156px; /* 96px footer and 60px section padding */
+    padding: 0 8px 32px 4px; /* RHS to allow for scroll bar, and LHS required to counter negative margin on outline container */
+}
+
+/* Outline - list */
+.outline li {
+    padding-left: 32px;
+    position: relative;
 }
 
 /* Link */
@@ -71,12 +70,12 @@ ul.outline {
 }
 
 /* Link - active indicator */
-.outline li a.active::after, .outline li a:hover::after {
+.outline li a.active::before, .outline li a:hover::before {
     background-color: var(--accent-glacier);
     border-radius: 50%;
     content: "";
     height: 5px;
-    left: -14px;
+    left: -35px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -85,7 +84,7 @@ ul.outline {
 
 /* Link - indentation */
 .outline .indent {
-    padding-left: 16px;
+    padding-left: 12px;
 }
 
 /**
@@ -94,7 +93,8 @@ ul.outline {
  */
 @media screen and (min-width: 1280px) {
 
-    ul.outline {
+    /* Outline container */
+    .outline {
         display: block;
     }
 }

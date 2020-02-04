@@ -8,6 +8,7 @@
 
 /* Article body */
 .articleBody {
+    box-sizing: content-box;
     padding: 0;
     width: 100%;
 }
@@ -20,7 +21,7 @@
 
     /* Article body */
     .articleBody {
-        max-width: 600px;
+        max-width: 650px;
     }
 }
 
@@ -32,6 +33,8 @@
 
     /* Article body */
     .articleBody {
-        margin: 0 32px;
+        border-left: 1px solid var(--accent-glacier);
+        border-right: 1px solid var(--accent-glacier);
+        padding: 0 32px;
     }
 }

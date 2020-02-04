@@ -15,13 +15,19 @@ let classNames = require("classnames");
 
 class EditContent extends React.Component {
 
+    redirect = (editPath) => {
+
+        window.open(editPath);
+    };
+
     render() {
         const {docPath} = this.props,
-        editPath = 'https://github.com/anvilproject/anvil-portal/tree/staging/content' + docPath + '.md';
+            editPath = 'https://github.com/anvilproject/anvil-portal/tree/staging/content' + docPath + '.md';
 
         return (
-            <a className={classNames(compStyles.editContent, compStyles.editContentSeparator)}
-               href={editPath} target='_blank' rel='noopener noreferrer'>Improve this page</a>
+            <div className={classNames(compStyles.editContent)} onClick={() => this.redirect(editPath)}>
+                <p className={compStyles.improve}>Improve this page</p>
+            </div>
         );
     }
 }

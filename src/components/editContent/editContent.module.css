@@ -6,16 +6,16 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Edit content link */
+/* Edit content */
 .editContent {
-    border-bottom: none !important; /* Overrides markdown link style */
-    color: var(--accent-glacier);
-    display: flex;
+    border-top: 1px solid rgba(126, 186, 192, 0.38);
+    cursor: pointer;
+    margin-top: 60px;
+    padding-top: 4px;
 }
 
-/* Edit content separator */
-.editContentSeparator {
-    border-top: 1px solid var(--primary);
-    margin-top: 32px;
-    padding-top: 16px;
+/* "Improve this page" */
+.improve {
+    background: linear-gradient(to top, transparent 0px, transparent 2px, rgba(174, 235, 242, 0.54) 2px, rgba(174, 235, 242, 0.54) 10px, transparent 10px);
+    display: inline-block;
 }

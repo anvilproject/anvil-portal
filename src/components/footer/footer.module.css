@@ -9,6 +9,7 @@
 /* Footer */
 .footer {
     background: var(--shade-dark);
+    position: relative; /* Required for outline component */
 }
 
 /* Footer container */
