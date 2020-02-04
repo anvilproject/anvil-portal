@@ -36,7 +36,7 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {events, eventsScoops, news, newsScoops, roadMapIntro, workspaces} = this.props;
+        const {accessing, events, eventsScoops, news, newsScoops, onboarding, roadMapIntro, submitting, workspaces} = this.props;
         const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
         const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
         return (
@@ -50,6 +50,15 @@ class Home extends React.Component {
                 </div>
             </section>
             <Carousel/>
+            <section className={compStyles.onboarding}>
+                <SectionIntro end post={onboarding}/>
+            </section>
+            <section className={compStyles.accessing}>
+                <SectionIntro post={accessing} start/>
+            </section>
+            <section className={compStyles.submitting}>
+                <SectionIntro end post={submitting} wrap/>
+            </section>
             <section className={compStyles.featured}>
                 <SectionIntro post={workspaces} stretch/>
                 <SectionBody><Workspaces/></SectionBody>
@@ -73,14 +82,17 @@ class Home extends React.Component {
 
 export default () => {
 
+    const accessing = AccessingStaticQuery();
     const events = ScoopsService.getIntroduction(EventsStaticQuery());
     const eventsScoops = ScoopsService.getScoops(EventsStaticQuery());
     const news = ScoopsService.getIntroduction(NewsStaticQuery());
     const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
+    const onboarding = OnboardingStaticQuery();
+    const submitting = SubmittingStaticQuery();
     const roadMap = RoadMapIntroStaticQuery();
     const workspaces = FeaturedWorkspacesStaticQuery();
 
     return (
-        <Home events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} roadMapIntro={roadMap} workspaces={workspaces}/>
+        <Home accessing={accessing} events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} onboarding={onboarding} roadMapIntro={roadMap} submitting={submitting} workspaces={workspaces}/>
     )
 }
