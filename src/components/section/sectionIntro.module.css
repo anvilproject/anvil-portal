@@ -96,7 +96,7 @@ section:nth-child(2n+4) .sectionContent {
 
     /* Title <h1> - "wrap" */
     .sectionIntro > h1.wrap {
-        max-width: 265px;
+        max-width: 264px;
     }
 
     /* Content - "end", "start", "stretch" */
