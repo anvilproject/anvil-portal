@@ -16,6 +16,11 @@
 
 /* "Improve this page" */
 .improve {
-    background: linear-gradient(to top, transparent 0px, transparent 2px, rgba(174, 235, 242, 0.54) 2px, rgba(174, 235, 242, 0.54) 10px, transparent 10px);
+    background: linear-gradient(to top, rgba(174, 235, 242, 0.54) 0, rgba(174, 235, 242, 0.54) 40%, transparent 40%, transparent 100%);
     display: inline-block;
+}
+
+/* Improve - hover */
+.improve:hover {
+    background: linear-gradient(to top, rgba(174, 235, 242, 0.87) 0, rgba(174, 235, 242, 0.87) 40%, transparent 40%, transparent 100%);
 }
