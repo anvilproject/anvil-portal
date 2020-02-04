@@ -25,7 +25,7 @@ jobs:
             - v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
             # - v1-dependencies-
-      - run
+      - run:
           name: Checkout Client-APIs Repo
           command: cd .. && git clone git@github.com:anvilproject/client-apis.git --branch pyAnVIL --single-branch
 
