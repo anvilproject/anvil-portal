@@ -3,6 +3,6 @@ title: "Get Started"
 ---
 #Get Started
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+View our training guides for onboarding to the Terra analysis engine.
 
-<go-arrow>[Learn More](/)</go-arrow>
+<go-arrow>[Learn More](/training/guides)</go-arrow>
