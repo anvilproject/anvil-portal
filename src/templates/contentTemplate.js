@@ -12,7 +12,7 @@ import React from "react";
 
 // App dependencies
 import ArticleBody from "../components/article/articleBody";
-import EditContent from "../components/editContent/editContent";
+import ArticleEnd from "../components/articleEnd/articleEnd";
 import Layout from "../components/layout";
 import Workspaces from "../components/workspaces/workspaces";
 
@@ -28,7 +28,7 @@ export default ({data}) => {
         <Layout docPath={slug}>
             <ArticleBody htmlAst={htmlAst}>
                 {workspaces ? <Workspaces/> : null}
-                <EditContent docPath={slug}/>
+                <ArticleEnd docPath={slug}/>
             </ArticleBody>
         </Layout>
     )
