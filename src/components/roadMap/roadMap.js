@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import {RoadMapStaticQuery} from "../../hooks/roadMapQuery";
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
 import compStyles from "./roadMap.module.css";
@@ -46,9 +47,11 @@ class RoadMap extends React.Component {
                 {link, name} = item;
 
             return (
-                <span className={classNames(compStyles.bubble, className)} onClick={() => this.redirect(link)}>
+                <ClickHandler className={classNames(compStyles.bubble, className)}
+                              clickAction={() => this.redirect(link)}
+                              tag={"span"}>
                     <span>{name}</span>
-                </span>
+                </ClickHandler>
             )
         };
 

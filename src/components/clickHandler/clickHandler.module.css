@@ -1,0 +1,10 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL click handler component.
+ */
+
+.handler:focus {
+    outline: none;
+}

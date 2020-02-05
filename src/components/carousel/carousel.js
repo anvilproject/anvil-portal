@@ -11,6 +11,7 @@ import React from "react";
 
 // App dependencies
 import {CarouselStaticQuery} from "../../hooks/carouselQuery";
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
 import arrows from "../../../images/icon/arrows.png";
@@ -73,7 +74,7 @@ class Carousel extends React.Component {
 
             const swiping = Math.abs(dx) > Math.abs(dy);
 
-            if ( swiping ) {
+            if ( swiping && e.cancelable ) {
 
                 e.preventDefault();
                 e.stopPropagation();
@@ -99,12 +100,12 @@ class Carousel extends React.Component {
         const slot = document.getElementsByClassName(compStyles.slider)[0];
 
         slot.removeEventListener("mousedown", this.swipeStart());
-        slot.removeEventListener("touchstart", this.swipeStart());
+        slot.removeEventListener("touchstart", this.swipeStart(), {passive: true});
 
         slot.removeEventListener("mouseup", this.swipeEnd());
         slot.removeEventListener("touchend", this.swipeEnd());
 
-        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping());
+        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping(), {passive: false});
     };
 
     rotateBack = () => {
@@ -147,12 +148,12 @@ class Carousel extends React.Component {
         const slot = document.getElementsByClassName(compStyles.slider)[0];
 
         slot.addEventListener("mousedown", this.swipeStart());
-        slot.addEventListener("touchstart", this.swipeStart());
+        slot.addEventListener("touchstart", this.swipeStart(), {passive: true});
 
         slot.addEventListener("mouseup", this.swipeEnd());
         slot.addEventListener("touchend", this.swipeEnd());
 
-        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping());
+        slot.addEventListener("touchmove", this.preventScrollingWhenSwiping(), {passive: false});
     };
 
     swipeEnd = () => {
@@ -207,38 +208,44 @@ class Carousel extends React.Component {
             const openTab = this.isValidUrl(url);
 
             return (
-                <div className={classNames({[compStyles.show]: show}, compStyles.slot)}
-                     onClick={() => this.redirect(linkTo, openTab)}>
+                <ClickHandler className={classNames({[compStyles.show]: show}, compStyles.slot)}
+                              clickAction={() => this.redirect(linkTo, openTab)}
+                              tag={"div"}>
                     <div className={compStyles.type}>{docType}</div>
                     <h4>{title}</h4>
                     <p className={compStyles.ellipsis}>{blurb}</p>
-                    <p className={compStyles.learnMore}
-                       onClick={() => this.redirect(linkTo, openTab)}>Learn More<img src={arrows} alt="learn more"/>
-                    </p>
-                </div>
+                    <ClickHandler className={compStyles.learnMore}
+                       clickAction={() => this.redirect(linkTo, openTab)} tag={"p"}>Learn More<img src={arrows} alt="learn more"/>
+                    </ClickHandler>
+                </ClickHandler>
             )
         };
 
         return (
             <section className={compStyles.carousel}>
                 <div className={classNames(globalStyles.grid, globalStyles.g750, compStyles.rotation)}>
-                    <span className={compStyles.arrow} onClick={this.rotateBack}>
+                    <ClickHandler className={compStyles.arrow}
+                                  clickAction={this.rotateBack}
+                                  tag={"span"}>
                         <img src={left} alt="prev"/>
-                    </span>
+                    </ClickHandler>
                     <div>
                         <div className={compStyles.slider}>
                             {carousel.map((slot, i) => <Slot key={i} show={i === this.state.rotation} slot={slot}/>)}
                         </div>
                         <div className={compStyles.bullets}>
                             {carousel.map((bullet, i) =>
-                                <span key={i}
+                                <ClickHandler key={i}
                                       className={classNames({[compStyles.active]: this.getActiveClassName(i)})}
-                                      onClick={() => this.rotateTo(i)}/>)}
+                                      clickAction={() => this.rotateTo(i)}
+                                              tag={"span"}/>)}
                         </div>
                     </div>
-                    <span className={compStyles.arrow} onClick={this.rotateForward}>
+                    <ClickHandler className={compStyles.arrow}
+                                  clickAction={this.rotateForward}
+                                  tag={"span"}>
                         <img src={right} alt="next"/>
-                    </span>
+                    </ClickHandler>
                 </div>
             </section>
         );
