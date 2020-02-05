@@ -33,8 +33,8 @@
 
     /* Article body */
     .articleBody {
-        border-left: 1px solid var(--accent-glacier);
-        border-right: 1px solid var(--accent-glacier);
+        border-left: 1px solid var(--accent-ice);
+        border-right: 1px solid var(--accent-ice);
         padding: 0 32px;
     }
 }
