@@ -29,6 +29,7 @@
 .content blockquote {
     color: var(--black58);
     margin: 0 0 24px 0;
+    padding-left: 16px;
     position: relative;
 }
 
@@ -37,9 +38,8 @@
     background-color: var(--accent-gold);
     border-radius: 4px;
     content: "";
-    display: block;
     height: 100%;
-    left: -16px;
+    left: 0;
     opacity: 0.5;
     position: absolute;
     width: 4px;
