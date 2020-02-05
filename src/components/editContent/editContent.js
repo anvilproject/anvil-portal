@@ -25,8 +25,8 @@ class EditContent extends React.Component {
             editPath = 'https://github.com/anvilproject/anvil-portal/tree/staging/content' + docPath + '.md';
 
         return (
-            <div className={classNames(compStyles.editContent)} onClick={() => this.redirect(editPath)}>
-                <p className={compStyles.improve}>Improve this page</p>
+            <div className={classNames(compStyles.editContent)}>
+                <a href={editPath} className={compStyles.improve} target="_blank" rel="noopener noreferrer">Improve this page</a>
             </div>
         );
     }

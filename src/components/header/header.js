@@ -11,6 +11,7 @@ import React from "react";
 
 // App dependencies
 import {HeaderStaticQuery} from "../../hooks/headerQuery";
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Images
 import logo from "../../../images/logo.png";
@@ -42,8 +43,14 @@ class Header extends React.Component {
                     <Link to="/">
                         <img src={logo} alt="anVIL"/>
                     </Link>
-                    <i className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>menu</i>
-                    <i className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")} onClick={this.toggleMenu}>close</i>
+                    <ClickHandler
+                        className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")}
+                        clickAction={this.toggleMenu}
+                        tag={"i"}>menu</ClickHandler>
+                    <ClickHandler
+                        className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")}
+                        clickAction={this.toggleMenu}
+                        tag={"i"}>close</ClickHandler>
                     <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
                         {links.map((l, i) => <li key={i}>
                             <Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>{l.name}</Link>
