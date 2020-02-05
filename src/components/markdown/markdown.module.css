@@ -12,7 +12,12 @@
 
 /* Link style */
 .content a {
-    background: linear-gradient(to top, rgba(174, 235, 242, 0.38) 0, rgba(174, 235, 242, 0.38) 40%, transparent 40%, transparent 100%);
+    background: linear-gradient(to top, rgba(174, 235, 242, 0.54) 0, rgba(174, 235, 242, 0.54) 40%, transparent 40%, transparent 100%);
+}
+
+/* Link hover */
+.content a:hover {
+    background: linear-gradient(to top, rgba(174, 235, 242, 0.87) 0, rgba(174, 235, 242, 0.87) 40%, transparent 40%, transparent 100%);
 }
 
 /* Button - remove link style from button */
