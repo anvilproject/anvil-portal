@@ -42,6 +42,7 @@
 
 /* Link */
 .sideNavLink .link {
+    display: block;
     padding: 2px 8px 2px 0;
     position: relative; /* Positions link hover and active styles */
 }
@@ -61,7 +62,7 @@
 /* Active line and indicator */
 .sideNavLink .link.active:before, .sideNavLink .link.active:after {
     animation: activeLink 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For active */
-    background-color: var(--accent-glacier);
+    background-color: var(--accent-ice);
 }
 
 /* Hover state line and indicator */
@@ -74,7 +75,7 @@
     bottom: 0;
     height: 1px;
     left: 0;
-    right: 0;
+    right: 2px;
 }
 
 /* Ball indicator */
@@ -92,19 +93,7 @@
         background-color: var(--black6);
     }
     to {
-        background-color: var(--accent-glacier);
-    }
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Side Nav */
-    .sideNav {
-        max-width: fit-content;
+        background-color: var(--accent-ice);
     }
 }
 
@@ -133,7 +122,6 @@
 
     /* Link */
     .sideNavLink .link {
-        display: block;
         padding: 2px 0;
     }
 }
