@@ -25,10 +25,7 @@ Typically the folder structure mirrors the structure or the the site. This is no
 >####TIP
 >Note that you can not create an empty directory using the Github interface. However you can create a directory while adding a file by adding the new directory name before the file name then hitting the "/" character
 
-<!--
-Uncomment when gif's work @frano
-#![Create Folder](./_images/create-folder.gif)
--->
+![Create Folder](./_images/create-folder.gif)
 
 ## Create the "Front Matter"
 

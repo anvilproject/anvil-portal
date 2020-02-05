@@ -2,25 +2,25 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to The AnVIL edit content component.
+ * Style definitions specific to The AnVIL article end component.
  */
-@import "../../styles/vars.module.css";
 
-/* Edit content */
-.editContent {
+/* End article */
+.articleEnd {
     border-top: 1px solid rgba(126, 186, 192, 0.38);
     cursor: pointer;
     margin-top: 60px;
     padding-top: 4px;
 }
 
-/* "Improve this page" */
-.improve {
+/* Link - "Improve this page", "Content Guide" */
+.articleEnd a {
     background: linear-gradient(to top, rgba(174, 235, 242, 0.54) 0, rgba(174, 235, 242, 0.54) 40%, transparent 40%, transparent 100%);
-    display: inline-block;
+    display: block;
+    width: fit-content;
 }
 
-/* Improve - hover */
-.improve:hover {
+/* Link - hover */
+.articleEnd a:hover {
     background: linear-gradient(to top, rgba(174, 235, 242, 0.87) 0, rgba(174, 235, 242, 0.87) 40%, transparent 40%, transparent 100%);
 }
