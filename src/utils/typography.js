@@ -9,7 +9,6 @@
 // Core dependencies
 import Typography from "typography";
 
-
 const typography = new Typography({
     baseFontSize: "16px",
     baseLineHeight: "24px",
