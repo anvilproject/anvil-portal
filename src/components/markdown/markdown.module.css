@@ -77,15 +77,3 @@
     right: 24px;
     width: 60px;
 }
-
-/**
- * Large Tablet
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Blockquote */
-    .content blockquote:before {
-        left: -12px;
-    }
-}
