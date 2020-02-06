@@ -77,3 +77,8 @@
     right: 24px;
     width: 60px;
 }
+
+/* Preformatted text */
+.content pre {
+    white-space: pre-wrap;
+}
