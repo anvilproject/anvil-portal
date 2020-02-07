@@ -6,13 +6,22 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Side Nav */
+/* Side nav - main content */
 .sideNav {
     border-bottom: 2px solid var(--shade-light);
-    list-style: none;
     margin: 0 0 32px;
     padding-bottom: 16px;
     position: relative; /* Positions content line blocker */
+}
+
+/* List style - <ul> */
+.sideNav, .sideNav ul {
+    list-style: none;
+}
+
+/* Secondary content <ul> */
+.sideNav ul {
+    margin: 0;
 }
 
 /* Content line blocker */
@@ -26,64 +35,71 @@
     width: 1px;
 }
 
-/* Side Nav - hidden */
+/* Side nav - hidden */
 .sideNav.hidden {
     display: none;
 }
 
-/* Link container */
-.sideNavLink {
+/* Nav item */
+.sideNav li {
     color: var(--accent-dark);
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
     font-weight: 400;
     line-height: 32px;
 }
 
+/* Nav item level 1 */
+.sideNav > li {
+    font-size: 18px;
+}
+
+/* Nav item level 2 */
+.sideNav ul > li {
+    font-size: 16px;
+    padding-left: 24px;
+}
+
 /* Link */
-.sideNavLink .link {
+.sideNav .link {
     display: block;
     padding: 2px 8px 2px 0;
     position: relative; /* Positions link hover and active styles */
 }
 
-/* Inactive, active and hover state line and indicator */
-.sideNavLink .link:before, .sideNavLink .link:after, .sideNavLink .link.active:before, .sideNavLink .link.active:after, .sideNavLink:hover .link:before, .sideNavLink:hover .link:after {
+/* Link line and indicator */
+.sideNav .link:before, .sideNav .link:after {
+    background-color: transparent;
     content: "";
     position: absolute;
-}
-
-/* Inactive line and indicator */
-.sideNavLink .link:before, .sideNavLink .link:after {
-    background-color: transparent;
     transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
 }
 
 /* Active line and indicator */
-.sideNavLink .link.active:before, .sideNavLink .link.active:after {
+.sideNav .link.active:before, .sideNav .link.active:after {
     animation: activeLink 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For active */
     background-color: var(--accent-ice);
 }
 
 /* Hover state line and indicator */
-.sideNavLink:hover .link:not(.active):before, .sideNavLink:hover .link:not(.active):after {
+.sideNav .link:not(.active):hover:before,
+.sideNav .link:not(.active):hover:after {
     background-color: var(--black6);
 }
 
 /* Line indicator */
-.sideNavLink .link:before, .sideNavLink .link.active:before, .sideNavLink:hover .link:before {
+.sideNav .link:before, .sideNav .link.active:before {
     bottom: 0;
     height: 1px;
     left: 0;
-    right: 2px;
+    right: 5px;
 }
 
 /* Ball indicator */
-.sideNavLink .link:after, .sideNavLink .link.active:after, .sideNavLink:hover .link:after {
+.sideNav .link:after, .sideNav .link.active:after {
     border-radius: 50%;
     bottom: -2px;
     height: 5px;
-    right: -3px;
+    right: 0;
     width: 5px;
 }
 
@@ -103,12 +119,12 @@
  */
 @media screen and (min-width: 1280px) {
 
-    /* Side Nav */
+    /* Side nav */
     .sideNav {
         border-bottom: none;
         flex: none;
         height: fit-content; /* Required for sticky position */
-        margin: 0 0 0 0;
+        margin: 0;
         max-width: unset;
         padding: 0;
         position: sticky;
@@ -116,12 +132,23 @@
         width: 234px;
     }
 
+    /* Show nav */
     .sideNav.hidden {
         display: inline-flex;
     }
 
     /* Link */
-    .sideNavLink .link {
+    .sideNav .link {
         padding: 2px 0;
+    }
+
+    /* Line indicator */
+    .sideNav .link:before, .sideNav .link.active:before {
+        right: 2px;
+    }
+
+    /* Ball indicator */
+    .sideNav .link:after, .sideNav .link.active:after {
+        right: -3px;
     }
 }
