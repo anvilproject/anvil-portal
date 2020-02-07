@@ -27,7 +27,7 @@ export function filterHtmlAstByHeading(posts, docPath) {
         return;
     }
 
-    return page.nodes[0].childMarkdownRemark.htmlAst.children.filter(child => child.tagName === "h2" || child.tagName === "h3");
+    return page.nodes[0].childMarkdownRemark.htmlAst.children.filter(child => child.tagName === "h1" || child.tagName === "h2" || child.tagName === "h3");
 }
 
 /**

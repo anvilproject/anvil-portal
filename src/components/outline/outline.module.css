@@ -62,22 +62,29 @@
     position: relative; /* Positions indicators */
 }
 
+/* First link <h1> */
+.outline li:first-of-type a {
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
 /* Link - indicators */
 .outline li a::before, .outline li a::after {
     content: "";
-}
-
-/* Link - hover and active indicators */
-.outline li a.active::before, .outline li a.active::after, .outline li:hover a::before, .outline li:hover a::after {
     position: absolute;
 }
 
-/* Link - hover and active line */
-.outline li a.active::after, .outline li:hover a::after {
+/* Link - first list, hover and active line */
+.outline li a.active::after, .outline li:hover a::after, .outline li:first-of-type a::after {
     bottom: 0;
     height: 1px;
     left: -30px;
-    width: 100%;
+    right: 0;
+}
+
+/* First link - <h1> - inactive */
+.outline li:not(:hover):first-of-type a:not(.active)::after {
+    left:0;
 }
 
 /* Link - hover and active ball indicator */
@@ -87,6 +94,12 @@
     height: 5px;
     left: -35px;
     width: 5px;
+}
+
+/* First link - inactive */
+.outline li:first-of-type a:not(.active)::after {
+    background-color: var(--accent-glacier);
+    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Link - active */
