@@ -1,0 +1,21 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL figure caption component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Caption */
+p.figCaption {
+    color: var(--black58);
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    margin: 16px 0 24px;
+}
+
+/* Caption - gif images */
+img + p.figCaption {
+    margin: -8px 0 24px;
+}

@@ -82,3 +82,9 @@
 .content pre {
     white-space: pre-wrap;
 }
+
+/* Code */
+.content code {
+    overflow-wrap: break-word; /* IE, Edge */
+    word-break: break-word;
+}
