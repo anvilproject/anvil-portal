@@ -101,7 +101,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
-                            components: ["button", "events", "go-arrow", "inscription", "hero"]
+                            components: ["button", "events", "figure-caption", "go-arrow", "hero"]
                         }
                     },
                     {
@@ -125,9 +125,8 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 600,
                             linkImagesToOriginal: false,
-                            wrapperStyle: `margin: 0 !important;`,
+                            wrapperStyle: `margin: 0 !important;`
                         }
                     },
                     `gatsby-remark-images-medium-zoom`,

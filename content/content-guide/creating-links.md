@@ -13,13 +13,13 @@ Markdown syntax for a hyperlink is square brackets followed by parentheses. The 
 ```
 
 
-## Internal Lniks
+## Internal Links
 
 For internal links (links to other AnVIL portal pages) we need to follow a few rules:
 
 1. Use the "relative path" to the page omitting the protocol and domain name. For example use `/creating-content/creating-links` instead of `https://anvilproject.org/creating-content/creating-links`.
 1. For the link address use the `path` of the page in the site regardless of the location of the file in the repository.
-1. Do not use the `.md` suffix. 
+1. Do not use the `.md` suffix.
 1. Don't forget to start the path with a forward slash: `/`.
 
 
@@ -61,7 +61,7 @@ This renders like:
 The markdown for external links is the same for internal links except we use the full url.
  
 ```
-[This is an external lnik to genome.gov] (https://www.genome.gov/)
+[This is an external link to genome.gov] (https://www.genome.gov/)
 
 ```
 
