@@ -48,7 +48,7 @@
 
 /* Link */
 .outline li a {
-    color: var(--black87);
+    color: var(--accent-dark);
     display: block;
     font-family: "Open Sans", sans-serif;
     font-size: 13px;

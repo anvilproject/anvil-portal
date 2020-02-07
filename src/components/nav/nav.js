@@ -42,12 +42,27 @@ class Nav extends React.Component {
 
     render() {
         const {hideNav, nav} = this.props;
+
+        const NavItem = (props) => {
+
+            const {item} = props,
+                {name/*, secondaryLinks*/} = item;
+
+            return (
+                <li>
+                    <Link getProps={this.getClassNames} to={NavigationService.getPath(item)}>{name}</Link>
+{/*
+                    {secondaryLinks ?
+                        <ul>{secondaryLinks.map((nestedItem, k) =>
+                            <NavItem key={k} item={nestedItem}/>)}</ul> : null}
+*/}
+                </li>
+            )
+        };
+
         return (
             <ul className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})}>
-                {!hideNav && nav.map((p, i) =>
-                    <li key={i} className={compStyles.sideNavLink}>
-                        <Link getProps={this.getClassNames} to={NavigationService.getPath(p)}>{p.name}</Link>
-                    </li>)}
+                {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
             </ul>
         );
     }
