@@ -46,16 +46,14 @@ class Nav extends React.Component {
         const NavItem = (props) => {
 
             const {item} = props,
-                {name/*, secondaryLinks*/} = item;
+                {name, secondaryLinks} = item;
 
             return (
                 <li>
                     <Link getProps={this.getClassNames} to={NavigationService.getPath(item)}>{name}</Link>
-{/*
                     {secondaryLinks ?
                         <ul>{secondaryLinks.map((nestedItem, k) =>
                             <NavItem key={k} item={nestedItem}/>)}</ul> : null}
-*/}
                 </li>
             )
         };

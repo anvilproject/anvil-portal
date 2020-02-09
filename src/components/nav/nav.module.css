@@ -56,7 +56,8 @@
 /* Nav item level 2 */
 .sideNav ul > li {
     font-size: 16px;
-    padding-left: 24px;
+    line-height: 24px;
+    padding-left: 16px;
 }
 
 /* Link */
@@ -140,6 +141,11 @@
     /* Link */
     .sideNav .link {
         padding: 2px 0;
+    }
+
+    /* Link level 2 */
+    .sideNav ul .link {
+        padding: 4px 0;
     }
 
     /* Line indicator */
