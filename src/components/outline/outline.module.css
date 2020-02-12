@@ -43,6 +43,8 @@
 
 /* Outline - list */
 .outline li {
+    line-height: 18px;
+    margin-bottom: 10px;
     padding-left: 32px;
 }
 

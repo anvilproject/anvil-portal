@@ -55,8 +55,9 @@
 
 /* Nav item level 2 */
 .sideNav ul > li {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 4px;
     padding-left: 16px;
 }
 
@@ -64,7 +65,7 @@
 .sideNav .link {
     display: block;
     padding: 2px 8px 2px 0;
-    position: relative; /* Positions link hover and active styles */
+    position: relative; /* Positions link hove-r and active styles */
 }
 
 /* Link line and indicator */
@@ -83,7 +84,7 @@
 
 /* Primary line and indicator - selected secondary */
 .sideNav .selected:before {
-    border-bottom: 1px dashed var(--black12);
+    /*border-bottom: 1px dashed var(--black12);*/
 }
 
 /* Hover state line and indicator */
