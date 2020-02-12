@@ -92,7 +92,7 @@ const typography = new Typography({
                 outline: "none"
             },
             ".anchor": {
-                background: "none !important"
+                borderBottom: "none !important"
             },
             ol: {
                 marginBottom: "1.5rem"

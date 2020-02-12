@@ -16,7 +16,7 @@
 
 /* Go to... - overrides markdown styles on <a> */
 .linkTo a, .linkTo a:hover {
-    background: none !important;
+    border-bottom: none !important;
 }
 
 /* Go to ... - hover */

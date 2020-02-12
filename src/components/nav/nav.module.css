@@ -65,7 +65,7 @@
 .sideNav .link {
     display: block;
     padding: 2px 8px 2px 0;
-    position: relative; /* Positions link hove-r and active styles */
+    position: relative; /* Positions link hover and active styles */
 }
 
 /* Link line and indicator */
