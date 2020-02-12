@@ -48,6 +48,20 @@
     padding-left: 32px;
 }
 
+/* Outline - first list <h1> */
+.outline li:first-of-type {
+    position: relative; /* Positions first list <h1> */
+}
+
+/* Outline - first list <h1> */
+.outline li:first-of-type::after {
+    border-bottom: 1px solid var(--black12);
+    content: "";
+    display: block;
+    margin: 8px 0;
+    width: 50%;
+}
+
 /* Link */
 .outline li a {
     color: var(--accent-dark);
@@ -62,13 +76,10 @@
     position: relative; /* Positions indicators */
 }
 
-/* Link - indicators */
-.outline li a::before, .outline li a::after {
+/* Link - indicators - excluding first list */
+/* TODO first list to be reinstated for #257 */
+.outline li:not(:first-of-type) a::before, .outline li:not(:first-of-type) a::after {
     content: "";
-}
-
-/* Link - hover and active indicators */
-.outline li a.active::before, .outline li a.active::after, .outline li:hover a::before, .outline li:hover a::after {
     position: absolute;
 }
 
@@ -77,7 +88,7 @@
     bottom: 0;
     height: 1px;
     left: -30px;
-    width: 100%;
+    right: 0;
 }
 
 /* Link - hover and active ball indicator */
