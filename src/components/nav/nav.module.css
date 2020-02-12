@@ -55,15 +55,17 @@
 
 /* Nav item level 2 */
 .sideNav ul > li {
-    font-size: 16px;
-    padding-left: 24px;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    padding-left: 16px;
 }
 
 /* Link */
 .sideNav .link {
     display: block;
     padding: 2px 8px 2px 0;
-    position: relative; /* Positions link hover and active styles */
+    position: relative; /* Positions link hove-r and active styles */
 }
 
 /* Link line and indicator */
@@ -80,14 +82,19 @@
     background-color: var(--accent-ice);
 }
 
+/* Primary line and indicator - selected secondary */
+.sideNav .selected:before {
+    /*border-bottom: 1px dashed var(--black12);*/
+}
+
 /* Hover state line and indicator */
-.sideNav .link:not(.active):hover:before,
-.sideNav .link:not(.active):hover:after {
+.sideNav .link:not(.active):not(.selected):hover:before,
+.sideNav .link:not(.active):not(.selected):hover:after {
     background-color: var(--black6);
 }
 
 /* Line indicator */
-.sideNav .link:before, .sideNav .link.active:before {
+.sideNav .link:before, .sideNav .link.active:before, .sideNav .selected:before {
     bottom: 0;
     height: 1px;
     left: 0;
@@ -142,9 +149,19 @@
         padding: 2px 0;
     }
 
+    /* Link level 2 */
+    .sideNav ul .link {
+        padding: 4px 0;
+    }
+
     /* Line indicator */
     .sideNav .link:before, .sideNav .link.active:before {
         right: 2px;
+    }
+
+    /* Line indicator - primary "selected" */
+    .sideNav .selected:before {
+        right: 0;
     }
 
     /* Ball indicator */

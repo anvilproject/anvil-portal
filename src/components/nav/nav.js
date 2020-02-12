@@ -21,23 +21,18 @@ let classNames = require("classnames");
 
 class Nav extends React.Component {
 
-    getClassNames = ({href, location}) => {
+    isActive = (key) => {
 
-        if ( !location ) {
+        const {docPath} = this.props;
 
-            return;
-        }
+        return docPath === key;
+    };
 
-        if ( !location.pathname ) {
+    isSelected = (key) => {
 
-            return;
-        }
+        const {docPath} = this.props;
 
-        const search = location.search ? location.search : "";
-        const pathName = (location.pathname.endsWith("/") ? `${location.pathname.slice(0, -1)}${search}` : `${location.pathname}${search}`).trim();
-
-        return href === pathName ?
-            {className: (classNames(compStyles.link, compStyles.active))} : {className: compStyles.link}
+        return docPath.startsWith(key) && docPath !== key;
     };
 
     render() {
@@ -46,16 +41,14 @@ class Nav extends React.Component {
         const NavItem = (props) => {
 
             const {item} = props,
-                {name/*, secondaryLinks*/} = item;
+                {key, name, secondaryLinks} = item;
 
             return (
                 <li>
-                    <Link getProps={this.getClassNames} to={NavigationService.getPath(item)}>{name}</Link>
-{/*
+                    <Link className={classNames(compStyles.link, {[compStyles.active]: this.isActive(key)}, {[compStyles.selected]: this.isSelected(key)})} to={NavigationService.getPath(item)}>{name}</Link>
                     {secondaryLinks ?
                         <ul>{secondaryLinks.map((nestedItem, k) =>
                             <NavItem key={k} item={nestedItem}/>)}</ul> : null}
-*/}
                 </li>
             )
         };
@@ -77,6 +70,6 @@ export default (props) => {
     const hideNav = nav.length <= 1;
 
     return (
-        <Nav nav={nav} hideNav={hideNav}/>
+        <Nav nav={nav} docPath={docPath} hideNav={hideNav}/>
     );
 }
