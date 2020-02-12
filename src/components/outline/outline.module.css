@@ -48,6 +48,20 @@
     padding-left: 32px;
 }
 
+/* Outline - first list <h1> */
+.outline li:first-of-type {
+    position: relative; /* Positions first list <h1> */
+}
+
+/* Outline - first list <h1> */
+.outline li:first-of-type::after {
+    border-bottom: 1px solid var(--black12);
+    content: "";
+    display: block;
+    margin: 8px 0;
+    width: 50%;
+}
+
 /* Link */
 .outline li a {
     color: var(--accent-dark);
@@ -62,29 +76,19 @@
     position: relative; /* Positions indicators */
 }
 
-/* First link <h1> */
-.outline li:first-of-type a {
-    margin-bottom: 4px;
-    padding-bottom: 2px;
-}
-
-/* Link - indicators */
-.outline li a::before, .outline li a::after {
+/* Link - indicators - excluding first list */
+/* TODO first list to be reinstated for #257 */
+.outline li:not(:first-of-type) a::before, .outline li:not(:first-of-type) a::after {
     content: "";
     position: absolute;
 }
 
-/* Link - first list, hover and active line */
-.outline li a.active::after, .outline li:hover a::after, .outline li:first-of-type a::after {
+/* Link - hover and active line */
+.outline li a.active::after, .outline li:hover a::after {
     bottom: 0;
     height: 1px;
     left: -30px;
     right: 0;
-}
-
-/* First link - <h1> - inactive */
-.outline li:not(:hover):first-of-type a:not(.active)::after {
-    left:0;
 }
 
 /* Link - hover and active ball indicator */
@@ -94,12 +98,6 @@
     height: 5px;
     left: -35px;
     width: 5px;
-}
-
-/* First link - inactive */
-.outline li:first-of-type a:not(.active)::after {
-    background-color: var(--accent-glacier);
-    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Link - active */
