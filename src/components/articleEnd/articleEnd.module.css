@@ -13,14 +13,19 @@
     padding-top: 4px;
 }
 
-/* Link - "Improve this page", "Content Guide" */
+/* Link - "Improve this page", "Content guide" */
 .articleEnd a {
-    background: linear-gradient(to top, rgba(174, 235, 242, 0.54) 0, rgba(174, 235, 242, 0.54) 40%, transparent 40%, transparent 100%);
+    border-bottom: 2px solid var(--accent-gold);
     display: block;
     width: fit-content;
 }
 
+/* Link - "Content guide" */
+.articleEnd a + a {
+    padding-top: 4px;
+}
+
 /* Link - hover */
 .articleEnd a:hover {
-    background: linear-gradient(to top, rgba(174, 235, 242, 0.87) 0, rgba(174, 235, 242, 0.87) 40%, transparent 40%, transparent 100%);
+    border-bottom: 2px solid var(--accent-gold); /* Placeholder */
 }
