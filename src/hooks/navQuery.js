@@ -16,7 +16,7 @@ export const NavStaticQuery = () => {
                     path
                     secondaryLinks {
                       name
-                      path
+                      key
                     }
                 }
               }

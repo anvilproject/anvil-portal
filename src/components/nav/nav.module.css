@@ -81,14 +81,19 @@
     background-color: var(--accent-ice);
 }
 
+/* Primary line and indicator - selected secondary */
+.sideNav .selected:before {
+    border-bottom: 1px dashed var(--black12);
+}
+
 /* Hover state line and indicator */
-.sideNav .link:not(.active):hover:before,
-.sideNav .link:not(.active):hover:after {
+.sideNav .link:not(.active):not(.selected):hover:before,
+.sideNav .link:not(.active):not(.selected):hover:after {
     background-color: var(--black6);
 }
 
 /* Line indicator */
-.sideNav .link:before, .sideNav .link.active:before {
+.sideNav .link:before, .sideNav .link.active:before, .sideNav .selected:before {
     bottom: 0;
     height: 1px;
     left: 0;
@@ -151,6 +156,11 @@
     /* Line indicator */
     .sideNav .link:before, .sideNav .link.active:before {
         right: 2px;
+    }
+
+    /* Line indicator - primary "selected" */
+    .sideNav .selected:before {
+        right: 0;
     }
 
     /* Ball indicator */
