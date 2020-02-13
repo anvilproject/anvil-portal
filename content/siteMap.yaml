@@ -116,5 +116,12 @@
       key: "/content-guide/using-images"
     - name: "Creating Links"
       key: "/content-guide/creating-links"
+- name: "Privacy"
+  key: "privacy"
+  path: "/privacy"
+  primaryLinks:
+    - name: ""
+      key: "/privacy/privacy"
+      path: "/privacy"
 #    - name: "Example Page"
 #      key: "/content-guide/example-page"

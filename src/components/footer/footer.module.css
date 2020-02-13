@@ -9,6 +9,7 @@
 /* Footer */
 .footer {
     background: var(--shade-dark);
+    padding: 32px 0;
     position: relative; /* Required for outline component */
 }
 
@@ -16,6 +17,7 @@
 .footer > div {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -33,19 +35,28 @@
 
 /* Socials */
 .footer .socials {
-    align-items: center;
     display: flex;
-    height: 64px;
+    flex-wrap: wrap;
 }
 
-/* Socials - link */
+/* Socials - link/social */
 .footer .socials a {
     color: var(--white);
-    line-height: 0;
+    flex: none;
+    text-align: center;
 }
 
-.footer .socials a:not(:first-of-type) {
-    margin-left: 12px;
+/* Socials - social only */
+.footer .socials a:not(.link) {
+    flex-basis: calc(100% / 3);
+    padding: 24px 0 0;
+}
+
+/* Socials - link only */
+.footer .socials .link {
+    flex-basis: 100%;
+    margin: 0;
+    padding: 4px 0;
 }
 
 /* GitHub image */
@@ -65,26 +76,49 @@
         height: 24px;
     }
     
-    /* Socials */
+    /* Social icon */
     .footer .socials img {
         height: 24px;
     }
+}
 
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Footer */
+    .footer {
+        padding: 0;
+    }
+
+    /* Footer container */
+    .footer > div {
+        flex-direction: row;
+    }
+
+    /* Socials */
+    .footer .socials {
+        align-items: center;
+        height: 96px;
+    }
+
+    /* Socials - link/social */
+    .footer .socials a:not(.link), .footer .socials .link {
+        flex-basis: unset;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Socials - link/social - excluding first */
     .footer .socials a:not(:first-of-type) {
         margin-left: 24px;
     }
 
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Socials */
-    .footer .socials {
-        height: 96px;
+    /* Socials - social only */
+    .footer .socials a:not(.link) {
+        line-height: 0;
     }
 }
 
