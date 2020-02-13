@@ -23,6 +23,7 @@ class Spy extends React.Component {
 
     componentDidMount() {
         this.getPageAnchors();
+        this.setFirstActiveOutline();
         window.addEventListener("scroll", this.handleScroll);
         window.addEventListener("hashchange", this.handleHashChange, false);
     };
@@ -31,6 +32,14 @@ class Spy extends React.Component {
         window.removeEventListener("scroll", this.handleScroll);
         window.removeEventListener("hashchange", this.handleHashChange, false);
     };
+
+    componentDidUpdate(_, prevState) {
+
+        if ( prevState.activeOutline !== this.state.activeOutline ) {
+
+            this.props.onOutlineChange(this.state.activeOutline);
+        }
+    }
 
     getPageAnchors = () => {
 
@@ -50,7 +59,6 @@ class Spy extends React.Component {
     handleHashChange = () => {
 
         this.setState({activeOutline: window.location.hash});
-        this.props.onOutlineChange(this.state.activeOutline);
     };
 
     handleScroll = () => {
@@ -83,16 +91,20 @@ class Spy extends React.Component {
 
                     window.history.pushState(null, "", `#${this.elementIdsByAnchorFromTop.get(currentAnchorPos)}`);
                     this.setState({activeOutline: currentElementId});
-                    this.props.onOutlineChange(this.state.activeOutline);
                 }
                 else {
 
                     window.history.pushState(null, "", window.location.pathname);
                     this.setState({activeOutline: ""});
-                    this.props.onOutlineChange(this.state.activeOutline);
                 }
             }
         }
+    };
+
+    setFirstActiveOutline = () => {
+
+        const h1Anchor = [...this.elementIdsByAnchorFromTop][0][1];
+        this.setState({activeOutline: `#${h1Anchor}`});
     };
 
     render() {
