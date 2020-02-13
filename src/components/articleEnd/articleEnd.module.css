@@ -16,13 +16,12 @@
 /* Link - "Improve this page", "Content guide" */
 .articleEnd a {
     border-bottom: 2px solid var(--accent-gold);
-    display: block;
     width: fit-content;
 }
 
 /* Link - "Content guide" */
 .articleEnd a + a {
-    padding-top: 4px;
+    margin-left: 16px;
 }
 
 /* Link - hover */

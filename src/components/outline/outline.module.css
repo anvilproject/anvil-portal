@@ -44,16 +44,20 @@
 /* Outline - list */
 .outline li {
     line-height: 18px;
-    margin-bottom: 10px;
     padding-left: 32px;
+}
+
+/* Outline - list - not last */
+.outline li:not(:last-of-type) {
+    margin-bottom: 2px;
 }
 
 /* Outline - first list <h1> */
 .outline li:first-of-type {
-    position: relative; /* Positions first list <h1> */
+    position: relative; /* Positions first list <h1> line */
 }
 
-/* Outline - first list <h1> */
+/* Outline - first list <h1> line */
 .outline li:first-of-type::after {
     border-bottom: 1px solid var(--black12);
     content: "";
@@ -65,30 +69,52 @@
 /* Link */
 .outline li a {
     color: var(--accent-dark);
-    display: block;
+    display: inline-block;
     font-family: "Open Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
-}
-
-/* Link */
-.outline li a {
+    padding: 4px 8px; /* For background color indicators */
     position: relative; /* Positions indicators */
 }
 
-/* Link - indicators - excluding first list */
-/* TODO first list to be reinstated for #257 */
-.outline li:not(:first-of-type) a::before, .outline li:not(:first-of-type) a::after {
+/* Link - background - active, hover */
+.outline li a.active, .outline li:hover a {
+    border-radius: 4px;
+}
+
+/* Link - background - active */
+.outline li a.active {
+    background-color: rgba(174, 235, 242, 0.54);
+}
+
+/* Link - background - hover state only */
+.outline li:hover a:not(.active) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Link - indicators */
+.outline li a::before, .outline li a::after {
     content: "";
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Link - hover and active line */
 .outline li a.active::after, .outline li:hover a::after {
-    bottom: 0;
     height: 1px;
+}
+
+/* Link - hover and active line - first level */
+.outline li a.active:not(.indent)::after, .outline li:hover a:not(.indent)::after {
     left: -30px;
-    right: 0;
+    width: 30px;
+}
+
+/* Link - hover and active line indented - second level */
+.outline li a.active.indent::after, .outline li:hover a.indent::after {
+    left: -46px;
+    width: 46px;
 }
 
 /* Link - hover and active ball indicator */
@@ -96,24 +122,37 @@
     border-radius: 50%;
     bottom: -2px;
     height: 5px;
-    left: -35px;
     width: 5px;
 }
 
-/* Link - active */
+/* Link - hover and active ball indicator - first level */
+.outline li a.active:not(.indent)::before, .outline li:hover a:not(.indent)::before {
+    left: -35px;
+}
+
+/* Link - hover and active ball indicator - second level */
+.outline li a.active.indent::before, .outline li:hover a.indent::before {
+    left: -51px;
+}
+
+/* Link - indicator colors - active */
 .outline li a.active::before, .outline li a.active::after {
     background-color: var(--accent-ice);
 }
 
-/* Link - hover */
+/* Link - indicator colors - hover */
 .outline li:hover a:not(.active)::before, .outline li:hover a:not(.active)::after {
     background-color: var(--black6);
+}
+
+/* Link - transitions - hover */
+.outline li a, .outline li a::before, .outline li a::after {
     transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Link - indentation */
+/* Link - indentation - second level */
 .outline .indent {
-    padding-left: 16px;
+    margin-left: 16px;
 }
 
 /**
