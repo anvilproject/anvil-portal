@@ -9,9 +9,13 @@
 // Core dependencies
 import React from "react";
 
+// App dependencies
+import * as ScrollingService from "../../utils/scrolling.service";
+
 class Spy extends React.Component {
 
     elementIdsByAnchorFromTop = new Map();
+    contentAnchors = [];
 
     constructor(props) {
         super(props);
@@ -22,13 +26,19 @@ class Spy extends React.Component {
     }
 
     componentDidMount() {
+
+        this.contentAnchors = ScrollingService.getContentAnchors();
         this.getPageAnchors();
         this.setFirstActiveOutline();
+
+        window.addEventListener("resize", this.getPageAnchors);
         window.addEventListener("scroll", this.handleScroll);
         window.addEventListener("hashchange", this.handleHashChange, false);
     };
 
     componentWillUnmount() {
+
+        window.removeEventListener("resize", this.getPageAnchors);
         window.removeEventListener("scroll", this.handleScroll);
         window.removeEventListener("hashchange", this.handleHashChange, false);
     };
@@ -43,17 +53,7 @@ class Spy extends React.Component {
 
     getPageAnchors = () => {
 
-        let anchorables = Array.from(document.getElementById("content").querySelectorAll("[id]"));
-
-        let currentScrollPos = window.scrollY;
-
-        anchorables.forEach(pageAnchor => {
-
-            if ( Number(pageAnchor.tagName.charAt(1)) <= 3 ) {
-
-                this.elementIdsByAnchorFromTop.set((pageAnchor.getBoundingClientRect().top + currentScrollPos), pageAnchor.id);
-            }
-        });
+        this.elementIdsByAnchorFromTop = ScrollingService.calculateElementIdsByAnchorFromTop(this.contentAnchors, this.elementIdsByAnchorFromTop);
     };
 
     handleHashChange = () => {
@@ -63,41 +63,12 @@ class Spy extends React.Component {
 
     handleScroll = () => {
 
-        let currentScrollPos = window.scrollY + 100;
-        let endScrollPos = document.body.clientHeight - window.innerHeight + 100;
+        let currentAction = ScrollingService.manageSpyScrollAction(this.elementIdsByAnchorFromTop, this.state.activeOutline);
 
-        // Check not at the bottom of the page
-        if ( currentScrollPos !== endScrollPos ) {
+        // Update state if required
+        if ( currentAction !== this.state.activeOutline ) {
 
-            let currentAnchorPos;
-
-            for ( let anchorPos of this.elementIdsByAnchorFromTop.keys() ) {
-
-                if ( currentScrollPos >= anchorPos ) {
-
-                    currentAnchorPos = anchorPos;
-                }
-                else {
-
-                    break; // exit iterator
-                }
-            }
-
-            let currentElementId = `#${this.elementIdsByAnchorFromTop.get(currentAnchorPos)}`;
-
-            if ( currentElementId !== this.state.activeOutline ) {
-
-                if ( currentAnchorPos !== undefined ) {
-
-                    window.history.pushState(null, "", `#${this.elementIdsByAnchorFromTop.get(currentAnchorPos)}`);
-                    this.setState({activeOutline: currentElementId});
-                }
-                else {
-
-                    window.history.pushState(null, "", window.location.pathname);
-                    this.setState({activeOutline: ""});
-                }
-            }
+            this.setState({activeOutline: currentAction});
         }
     };
 

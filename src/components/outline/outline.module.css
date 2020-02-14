@@ -10,23 +10,28 @@
 .outline {
     bottom: 0;
     display: none;
-    flex: none;
-    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+    padding-left: 2px; /* Required for indicator ball to be shown in overflow environment */
     position: fixed;
-    right: calc(((100vw - 1232px) / 2) + 2px); /* 2px required to allow overflow auto of outline and pseudo element on active element <a> */
+    right: 24px; /* Gutter */
+    scrollbar-width: none; /* Firefox 64 */
     top: 100px;
-    width: 284px;
+    width: 220px;
 }
 
-/* Content line blocker */
-.outline:before {
-    background-color: rgba(255, 255, 255, 1);
+/* Outline scrollbar */
+.outline::-webkit-scrollbar {
+    display: none;
+}
+
+/* Outline vertical line */
+.outline::before {
+    background-color: var(--accent-ice);
     content: "";
-    display: block;
-    height: 36px; /* Height margin between header and content */
-    position: fixed;
-    right: calc(((100vw - 1232px) / 2) + 282px);
-    top: 64px; /* Below header */
+    height: 100%;
+    position: absolute;
+    top: 0;
     width: 1px;
 }
 
@@ -37,14 +42,15 @@
 
 /* Outline - unordered list */
 .outline ul {
-    margin: 0 0 156px; /* 96px footer and 60px section padding */
-    padding: 0 8px 32px 4px; /* RHS to allow for scroll bar, and LHS required to counter negative margin on outline container */
+    border-left: 1px solid var(--accent-ice);
+    margin: 0;
+    padding: 0 8px 0 0; /* RHS to allow for scroll bar */
 }
 
 /* Outline - list */
 .outline li {
     line-height: 18px;
-    padding-left: 32px;
+    padding-left: 24px;
 }
 
 /* Outline - list - not last */
@@ -107,14 +113,14 @@
 
 /* Link - hover and active line - first level */
 .outline li a.active:not(.indent)::after, .outline li:hover a:not(.indent)::after {
-    left: -30px;
-    width: 30px;
+    left: -22px;
+    width: 22px;
 }
 
 /* Link - hover and active line indented - second level */
 .outline li a.active.indent::after, .outline li:hover a.indent::after {
-    left: -46px;
-    width: 46px;
+    left: -38px;
+    width: 38px;
 }
 
 /* Link - hover and active ball indicator */
@@ -127,12 +133,12 @@
 
 /* Link - hover and active ball indicator - first level */
 .outline li a.active:not(.indent)::before, .outline li:hover a:not(.indent)::before {
-    left: -35px;
+    left: -27px;
 }
 
 /* Link - hover and active ball indicator - second level */
 .outline li a.active.indent::before, .outline li:hover a.indent::before {
-    left: -51px;
+    left: -43px;
 }
 
 /* Link - indicator colors - active */
@@ -156,13 +162,26 @@
 }
 
 /**
- * Medium Window +
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
+
+    /* Outline container */
+    .outline {
+        display: block;
+    }
+}
+
+/**
+ * Medium +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1280px) {
 
     /* Outline container */
     .outline {
-        display: block;
+        right: calc((100vw - 1232px)/2 + 2px);
+        width: 284px;
     }
 }

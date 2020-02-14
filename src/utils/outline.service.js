@@ -27,7 +27,16 @@ export function filterHtmlAstByHeading(posts, docPath) {
         return;
     }
 
-    return page.nodes[0].childMarkdownRemark.htmlAst.children.filter(child => child.tagName === "h1" || child.tagName === "h2" || child.tagName === "h3");
+    // Grab any <h1>, <h2> or <h3> headings.
+    const headings = page.nodes[0].childMarkdownRemark.htmlAst.children.filter(child => child.tagName === "h1" || child.tagName === "h2" || child.tagName === "h3");
+
+    // Only show outline if there are some <h2> or <h3> headings e.g. hide the outline if there is only a <h1> heading.
+    if ( !headings.some(heading => heading.tagName === "h2" || heading.tagName === "h3") ) {
+
+        return;
+    }
+
+    return headings;
 }
 
 /**
