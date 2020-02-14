@@ -34,7 +34,7 @@ class Article extends React.Component {
     render() {
         const {children, docPath} = this.props;
         return (
-            <section className={classNames(globalStyles.flex, compStyles.article)}>
+            <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav docPath={docPath}/>
                     <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>

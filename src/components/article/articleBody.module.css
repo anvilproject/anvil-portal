@@ -4,7 +4,6 @@
  *
  * Style definitions specific to The AnVIL article body component.
  */
-@import "../../styles/vars.module.css";
 
 /* Article body */
 .articleBody {
@@ -26,6 +25,21 @@
 }
 
 /**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
+
+    /* Article body */
+    .articleBody {
+        margin-left: 220px; /* Nav */
+        margin-right: 220px; /* Outline */
+        max-width: unset;
+        padding: 0 16px;
+    }
+}
+
+/**
  * Medium Window +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
@@ -33,8 +47,9 @@
 
     /* Article body */
     .articleBody {
-        border-left: 1px solid var(--accent-ice);
-        border-right: 1px solid var(--accent-ice);
+        margin-left: 234px; /* Nav */
+        margin-right: unset; /* Outline */
+        max-width: 650px;
         padding: 0 32px;
     }
 }

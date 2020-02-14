@@ -3,7 +3,7 @@ title: "Terra Guides"
 author: "AnVIL"
 ---
 
-## Terra Guides
+# Terra Guides
  
 The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis. 
 

@@ -11,31 +11,15 @@
     border-bottom: 2px solid var(--shade-light);
     margin: 0 0 32px;
     padding-bottom: 16px;
-    position: relative; /* Positions content line blocker */
 }
 
 /* List style - <ul> */
-.sideNav, .sideNav ul {
-    list-style: none;
-}
-
-/* Secondary content <ul> */
 .sideNav ul {
+    list-style: none;
     margin: 0;
 }
 
-/* Content line blocker */
-.sideNav:before {
-    background-color: rgba(255, 255, 255, 1);
-    content: "";
-    height: 36px;
-    position: absolute;
-    right: -1px;
-    top: -36px; /* Height of margin between header and content */
-    width: 1px;
-}
-
-/* Side nav - hidden */
+/* Hidden */
 .sideNav.hidden {
     display: none;
 }
@@ -49,12 +33,12 @@
 }
 
 /* Nav item level 1 */
-.sideNav > li {
+.sideNav > ul > li {
     font-size: 18px;
 }
 
 /* Nav item level 2 */
-.sideNav ul > li {
+.sideNav ul ul li {
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 4px;
@@ -78,7 +62,6 @@
 
 /* Active line and indicator */
 .sideNav .link.active:before, .sideNav .link.active:after {
-    animation: activeLink 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For active */
     background-color: var(--accent-ice);
 }
 
@@ -110,38 +93,38 @@
     width: 5px;
 }
 
-/* Link - animation */
-@keyframes activeLink {
-    from {
-        background-color: var(--black6);
-    }
-    to {
-        background-color: var(--accent-ice);
-    }
-}
-
 /**
- * Medium Window +
+ * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 960px) {
 
     /* Side nav */
     .sideNav {
         border-bottom: none;
-        flex: none;
-        height: fit-content; /* Required for sticky position */
+        bottom: 0;
+        left: 24px; /* Gutter */
         margin: 0;
-        max-width: unset;
         padding: 0;
-        position: sticky;
+        position: fixed;
         top: 100px;
-        width: 234px;
+        width: 220px;
+    }
+
+    /* Side nav line */
+    .sideNav::before {
+        background-color: var(--accent-ice);
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
     }
 
     /* Show nav */
     .sideNav.hidden {
-        display: inline-flex;
+        display: block;
     }
 
     /* Link */
@@ -156,7 +139,7 @@
 
     /* Line indicator */
     .sideNav .link:before, .sideNav .link.active:before {
-        right: 2px;
+        right: 3px;
     }
 
     /* Line indicator - primary "selected" */
@@ -166,6 +149,19 @@
 
     /* Ball indicator */
     .sideNav .link:after, .sideNav .link.active:after {
-        right: -3px;
+        right: -2px;
+    }
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Side nav container */
+    .sideNav {
+        left: calc((100vw - 1232px) / 2 + 2px);
+        width: 234px;
     }
 }

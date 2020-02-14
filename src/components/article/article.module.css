@@ -9,18 +9,12 @@
 /* Article */
 .article {
     padding: 36px 0;
-    position: relative; /* Positions outline scroll mask */
 }
 
 /* Article container */
 .article .container {
     display: flex;
     flex-direction: column;
-}
-
-/* Article, container */
-.article, .article .container {
-    flex: 1;
 }
 
 /**
@@ -37,21 +31,10 @@
 }
 
 /**
- * Medium Window +
+ * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 1280px) {
-
-    /* Mask - for outline scroll */
-    .article:after {
-        background-color: var(--white);
-        bottom: 0;
-        content: "";
-        height: 60px;
-        left: 0;
-        position: absolute;
-        right: 0;
-    }
+@media screen and (min-width: 960px) {
 
     /* Article container */
     .article .container {

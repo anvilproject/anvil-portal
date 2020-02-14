@@ -12,17 +12,14 @@ import React from "react";
 import Article from "../article/article";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./main.module.css";
-
-let classNames = require ("classnames");
 
 class Main extends React.Component {
 
     render() {
         const {children, docPath, homePage} = this.props;
         return (
-            <main className={classNames(globalStyles.flex, compStyles.main)}>
+            <main className={compStyles.main}>
                 {homePage ? children : <Article docPath={docPath}>{children}</Article>}
             </main>
         );

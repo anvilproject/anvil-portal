@@ -4,7 +4,7 @@ export const OutlineStaticQuery = () => {
     const {allFile} = useStaticQuery(
         graphql`
         query OutlineStaticQuery {
-          allFile(filter: {relativeDirectory: {nin: ["", "contact", "featured-workspaces", "implementation", "implementation/_images", "news"]}}) {
+          allFile(filter: {relativeDirectory: {nin: ["", "contact", "featured-workspaces", "help", "implementation", "implementation/_images", "news"]}}) {
             group(field: relativePath) {
               slug: fieldValue
               nodes {

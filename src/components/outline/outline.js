@@ -11,13 +11,88 @@ import React from "react";
 // App dependencies
 import {OutlineStaticQuery} from "../../hooks/outlineQuery";
 import * as OutlineService from "../../utils/outline.service";
+import * as ScrollingService from "../../utils/scrolling.service";
 
 // Styles
 import compStyles from "./outline.module.css";
 
 let classNames = require("classnames");
+let htmlEls, outlineEl;
 
 class Outline extends React.Component {
+
+    componentDidMount() {
+
+        // Outline container element
+        outlineEl = document.getElementById("outline");
+
+        // HTML element
+        htmlEls = document.getElementsByTagName("html");
+
+        // Initialize outline style
+        this.setOutlineMaxHeight();
+
+        window.addEventListener("scroll", this.handleOutlineScroll);
+        window.addEventListener("resize", this.setOutlineMaxHeight);
+
+        if ( outlineEl ) {
+
+            outlineEl.addEventListener("mouseenter", this.disableDocumentOverflowStyle);
+            outlineEl.addEventListener("mouseleave", this.enableDocumentOverflowStyle);
+            outlineEl.addEventListener("click", this.enableDocumentOverflowStyle);
+        }
+    };
+
+    componentWillUnmount() {
+
+        window.removeEventListener("scroll", this.handleOutlineScroll);
+        window.removeEventListener("resize", this.setOutlineMaxHeight);
+
+        if ( outlineEl ) {
+
+            outlineEl.removeEventListener("mouseenter", this.disableDocumentOverflowStyle);
+            outlineEl.removeEventListener("mouseleave", this.enableDocumentOverflowStyle);
+            outlineEl.removeEventListener("click", this.enableDocumentOverflowStyle);
+        }
+    };
+
+    disableDocumentOverflowStyle = () => {
+
+        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlEls, outlineEl);
+
+        if ( outlineScrollable ) {
+
+                htmlEls[0].setAttribute("style", "overflow: hidden;")
+        }
+    };
+
+    enableDocumentOverflowStyle = () => {
+
+        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlEls, outlineEl);
+
+        if ( outlineScrollable ) {
+
+            htmlEls[0].setAttribute("style", "overflow-y: scroll;");
+        }
+    };
+
+    handleOutlineScroll = () => {
+
+        // Active outline
+        const activeEls = document.getElementsByClassName(compStyles.active);
+
+        // Manage outline max height style
+        this.setOutlineMaxHeight();
+
+        // Manage active outline position
+        ScrollingService.manageActiveOutlineScrollPosition(activeEls, outlineEl);
+    };
+
+    setOutlineMaxHeight = () => {
+
+        // Calculates the outline container maxHeight.
+        ScrollingService.calculateNavMaxHeight(outlineEl);
+    };
 
     render() {
         const {activeOutline, headings} = this.props;
@@ -38,10 +113,10 @@ class Outline extends React.Component {
         };
 
         return (
-            <div className={compStyles.outline}>
+            <div className={compStyles.outline} id="outline">
                 <ul>
-                {headings ? headings.map((heading, i) =>
-                    <Outline key={i} heading={heading} activeOutline={activeOutline}/>) : null}
+                    {headings ? headings.map((heading, i) =>
+                        <Outline key={i} heading={heading} activeOutline={activeOutline}/>) : null}
                 </ul>
             </div>
         );

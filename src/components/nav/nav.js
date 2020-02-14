@@ -13,11 +13,13 @@ import React from "react";
 import {DraftStaticQuery} from "../../hooks/draftQuery";
 import {NavStaticQuery} from "../../hooks/navQuery";
 import * as NavigationService from '../../utils/navigation.service';
+import * as ScrollingService from "../../utils/scrolling.service";
 
 // Styles
 import compStyles from "./nav.module.css";
 
 let classNames = require("classnames");
+let navEl;
 
 class Nav extends React.Component {
 
@@ -35,6 +37,30 @@ class Nav extends React.Component {
         return docPath.startsWith(key) && docPath !== key;
     };
 
+    componentDidMount() {
+
+        // Side nav container element
+        navEl = document.getElementById("nav");
+
+        // Initialize nav style
+        this.setSideNavMaxHeight();
+
+        window.addEventListener("scroll", this.setSideNavMaxHeight);
+        window.addEventListener("resize", this.setSideNavMaxHeight);
+    };
+
+    componentWillUnmount() {
+
+        window.removeEventListener("scroll", this.setSideNavMaxHeight);
+        window.removeEventListener("resize", this.setSideNavMaxHeight);
+    };
+
+    setSideNavMaxHeight = () => {
+
+        // Sets the nav container maxHeight.
+        ScrollingService.calculateNavMaxHeight(navEl);
+    };
+
     render() {
         const {hideNav, nav} = this.props;
 
@@ -45,18 +71,22 @@ class Nav extends React.Component {
 
             return (
                 <li>
-                    <Link className={classNames(compStyles.link, {[compStyles.active]: this.isActive(key)}, {[compStyles.selected]: this.isSelected(key)})} to={NavigationService.getPath(item)}>{name}</Link>
+                    <Link className={classNames(compStyles.link, {[compStyles.active]: this.isActive(key)}, {[compStyles.selected]: this.isSelected(key)})}
+                          to={NavigationService.getPath(item)}>{name}</Link>
                     {secondaryLinks ?
                         <ul>{secondaryLinks.map((nestedItem, k) =>
-                            <NavItem key={k} item={nestedItem}/>)}</ul> : null}
+                            <NavItem key={k} item={nestedItem}/>)}
+                        </ul> : null}
                 </li>
             )
         };
 
         return (
-            <ul className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})}>
-                {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
-            </ul>
+            <div className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
+                <ul>
+                    {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
+                </ul>
+            </div>
         );
     }
 }
