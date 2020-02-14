@@ -24,7 +24,7 @@ anvilproject.org will only use personal information collected from this site for
 
 ##Distribution of collected information:
 - anvilproject.org will not disclose, without your consent, personal information collected about you, except for certain explicit circumstances in which disclosure is required by law.
-- Anvilproject.org will not distribute or sell personal information to third-party organizations.
+- anvilproject.org will not distribute or sell personal information to third-party organizations.
 
 ##Privacy Statement Revisions:
 This Privacy Statement was last revised on Feb 11, 2020. We may change this Privacy Statement at any time and for any reason. We encourage you to review this Privacy Statement each time you visit the web site.
