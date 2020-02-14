@@ -51,9 +51,7 @@ class Home extends React.Component {
                     <div className={compStyles.subhead}>AnVIL &ndash; an Analysis, Visualization, and Informatics Lab-space for democratizing genomic data access, sharing and computing across large genomic-related data sets.
                     </div>
                     <GoArrow><Link to="/about">Learn More</Link></GoArrow>
-                    <div className={classNames(compStyles.subhead, compStyles.terra)}>Launch AnVIL’s Terra execution environment.
-                    </div>
-                    <GoArrow><a href="https://anvil.terra.bio/#" target="_blank"><img className={compStyles.logoTerra} src={logoTerra} alt="Terra"/>Launch AnVIL in Terra</a></GoArrow>
+                    <div className={compStyles.linkTerra}><GoArrow><a href="https://anvil.terra.bio/#" target="_blank"><img className={compStyles.logoTerra} src={logoTerra} alt="Terra"/>Launch AnVIL in Terra</a></GoArrow></div>
                     <Stats/>
                 </div>
             </section>

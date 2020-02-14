@@ -44,11 +44,11 @@ section:last-child {
     margin: 0 0 16px;
 }
 
-.hero .subhead.terra {
-    margin-top: 32px;
+.hero .linkTerra {
+    margin-top: 12px;
 }
 
-.logoTerra {
+.hero .logoTerra {
     margin: 0 8px 0 0;
     vertical-align: middle;
     width: 32px;
