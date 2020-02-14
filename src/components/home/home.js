@@ -32,6 +32,9 @@ import Workspaces from "../workspaces/workspaces";
 import globalStyles from "../../styles/global.module.css";
 import compStyles from "./home.module.css";
 
+// Logos
+import logoTerra from "../../../images/logoTerra.png";
+
 let classNames = require("classnames");
 
 class Home extends React.Component {
@@ -48,6 +51,9 @@ class Home extends React.Component {
                     <div className={compStyles.subhead}>AnVIL &ndash; an Analysis, Visualization, and Informatics Lab-space for democratizing genomic data access, sharing and computing across large genomic-related data sets.
                     </div>
                     <GoArrow><Link to="/about">Learn More</Link></GoArrow>
+                    <div className={classNames(compStyles.subhead, compStyles.terra)}>Launch AnVIL’s Terra execution environment.
+                    </div>
+                    <GoArrow><a href="https://anvil.terra.bio/#" target="_blank"><img className={compStyles.logoTerra} src={logoTerra} alt="Terra"/>Launch AnVIL in Terra</a></GoArrow>
                     <Stats/>
                 </div>
             </section>

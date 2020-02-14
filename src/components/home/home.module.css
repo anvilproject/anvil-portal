@@ -44,6 +44,16 @@ section:last-child {
     margin: 0 0 16px;
 }
 
+.hero .subhead.terra {
+    margin-top: 32px;
+}
+
+.logoTerra {
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    width: 32px;
+}
+
 /**
  * Mobile only
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
