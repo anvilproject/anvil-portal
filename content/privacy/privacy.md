@@ -16,7 +16,7 @@ anvilproject.org does not associate this data to individual user identities.
 anvilproject.org site may use "cookies" in order to deliver web content specific to individual users' interests or to keep track of online state. Sensitive personal information is not stored within cookies.
 
 ###Webforms
-anvilproject.org uses webforms forms on this site. These forms require users to give contact information [list information collected]. Contact information from the registration form is used only to send material relating to the [event/course/purpose] for which it was collected and will not be sold to another party.
+anvilproject.org uses webforms forms on this site. These forms require users to give contact information. Contact information from the registration form is used only to send material relating to the [event/course/purpose] for which it was collected and will not be sold to another party.
 
 ##Use of collected information:
 anvilproject.org will only use personal information collected from this site for the purpose of communication back to individuals who contact us via the site.
@@ -36,4 +36,4 @@ This website may contain links to other web sites. Some of those web sites may b
 We are not responsible for the performance of web sites operated by third parties or for your business dealings with them. Therefore, whenever you leave this web site we recommend that you review each web site's privacy practices and make your own conclusions regarding the adequacy of these practices.
 
 ##How to contact us
-[Help@lists.anvilproject.org](mailto: Help@lists.anvilproject.org)
+[help@lists.anvilproject.org](mailto: help@lists.anvilproject.org)
