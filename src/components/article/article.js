@@ -32,12 +32,12 @@ class Article extends React.Component {
     };
 
     render() {
-        const {children, docPath} = this.props;
+        const {children, docPath, noSpy} = this.props;
         return (
             <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav docPath={docPath}/>
-                    <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>
+                    {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
                     <Outline activeOutline={this.state.activeOutline} docPath={docPath}/>
                 </div>
             </section>

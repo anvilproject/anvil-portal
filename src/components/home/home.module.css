@@ -44,10 +44,7 @@ section:last-child {
     margin: 0 0 16px;
 }
 
-.hero .linkTerra {
-    margin-top: 12px;
-}
-
+/* Hero - logo terra "Launch AnVIL in terra" */
 .hero .logoTerra {
     margin: 0 8px 0 0;
     vertical-align: middle;
