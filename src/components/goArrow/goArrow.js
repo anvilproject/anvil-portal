@@ -11,12 +11,14 @@ import React from "react";
 // Styles
 import compStyles from "./goArrow.module.css";
 
+let classNames = require("classnames");
+
 class GoArrow extends React.Component {
 
     render() {
-        const {children} = this.props;
+        const {children, className} = this.props;
         return (
-            <span className={compStyles.linkTo}>{children}</span>
+            <span className={classNames(compStyles.linkTo, className)}>{children}</span>
         );
     }
 }

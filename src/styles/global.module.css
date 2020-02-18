@@ -28,6 +28,17 @@
     display: flex;
 }
 
+/* Link */
+.link {
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Link - hover */
+/* TODO */
+.link {
+    border-bottom: 2px solid var(--accent-gold);
+}
+
 /**
  * Large Tablet +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints

@@ -14,9 +14,15 @@
     transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Go to... - overrides markdown styles on <a> */
-.linkTo a, .linkTo a:hover {
-    border-bottom: none !important;
+/* Go to... - stretch block style */
+.linkTo.stretch {
+    display: block;
+    width: 100%;
+}
+
+/* Subsequent Go to... */
+.linkTo + .linkTo {
+    margin-top: 12px;
 }
 
 /* Go to ... - hover */
@@ -24,8 +30,18 @@
     color: var(--accent-glacier);
 }
 
+/* Go to... - overrides markdown styles on <a> */
+.linkTo a, .linkTo a:hover {
+    border-bottom: none !important;
+}
+
+/* Go to... link */
+.linkTo a {
+    position: relative; /* Positions go to ... arrow */
+}
+
 /* Go to ... arrow */
-.linkTo:after, .linkTo:before {
+.linkTo a:after, .linkTo a:before {
     background-color: var(--accent-dark);
     content: ' ';
     height: 7px;
@@ -36,18 +52,18 @@
     visibility: visible;
 }
 
-.linkTo:after {
+.linkTo a:after {
     top: 10px;
     transform: rotate(45deg);
 }
 
-.linkTo:before {
+.linkTo a:before {
     top: 5px;
     transform: rotate(-45deg);
 
 }
 
 /* Go to ... arrow - hover */
-.linkTo:hover:after, .linkTo:hover:before {
+.linkTo:hover a:after, .linkTo:hover a:before {
     background-color: var(--accent-glacier);
 }

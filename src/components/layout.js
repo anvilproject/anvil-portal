@@ -31,7 +31,7 @@ class Layout extends React.Component {
     };
 
     render() {
-        const {children, docPath, homePage} = this.props;
+        const {children, docPath, homePage, noSpy} = this.props;
         return (
             <div>
                 <Helmet>
@@ -45,7 +45,7 @@ class Layout extends React.Component {
                 </Helmet>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
-                    <Main docPath={docPath} homePage={homePage}>{children}</Main>
+                    <Main docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>
                     <Footer/>
                 </div>
             </div>
