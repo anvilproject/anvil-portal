@@ -45,10 +45,14 @@ section:last-child {
 }
 
 /* Hero - logo terra "Launch AnVIL in terra" */
+.hero .linkTerra {
+    margin-left: -24px;
+}
+
 .hero .logoTerra {
-    margin: 0 8px 0 0;
+    margin: 0 12px 0 0;
     vertical-align: middle;
-    width: 32px;
+    width: 48px;
 }
 
 /**
