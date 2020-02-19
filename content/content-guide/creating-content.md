@@ -12,7 +12,7 @@ Welcome to the AnVIL Portal content guide. We welcome help from the consortium a
 The guides below are meant to help you get started working on content. Please feel free to reach out to us on the  [AnVIL Gitter channel](https://gitter.im/anvil-project/Lobby) or by emailing our [help desk](mailto:help@lists.anvilproject.org) with any questions.
 
 
-### Content Locaton
+### Content Location
 The content for the portal is located in the [/content](https://github.com/anvilproject/anvil-portal/tree/staging/content) folder of the [anvil-portal](https://github.com/anvilproject/anvil-portal/tree/staging) github repository. Each page of the site, and some page components, are represented as [markdown](https://en.wikipedia.org/wiki/Markdown) files in this folder.
 
 >####TIP
@@ -25,13 +25,13 @@ Below we describe the general flow of content creation, editing, review, approva
 
 
 ### AnVIL Portal Content Roles
-There are three roles assocated with the content lifecycle:
+There are three roles associated with the content lifecycle:
 
 1. **Content Author** - This can be anyone with a github login (e.g. you!). 
 1. **Content Approver** - An AnVIL Project team member.
 1. **Content Deployer** - A member of the [AnVIL Portal Working Group](/about/working-groups#portal-working-group) with push access to the github master branch. 
 
-### Content Update Worflow
+### Content Update Workflow
 
 In general, to modify the portal content:
 
@@ -52,7 +52,7 @@ Edit the file and review the file in github.
 ### Creating a New Page
 For new pages, it may be helpful to start writing first in google doc or other word processor that has both a spell checker and the ability to solicit reviews from peers. 
 
-Once the page has has taken shape, it can be copied into a markdown file and markdown elements applied. For details see [Creating a New Page](/content-guide/creating-a-new-page)
+Once the page has taken shape, it can be copied into a markdown file and markdown elements applied. For details see [Creating a New Page](/content-guide/creating-a-new-page)
 
 ## Getting Content Reviewed
 
@@ -61,7 +61,7 @@ Once the file looks ok, submit a pull request against the staging branch, descri
 
 
 ### PR Review Policy
-We will generally request 2 reviewers for any complex technical content, team consensus for any marketing/branding/value proposition issues and allow the site maintainers to make typo or grammar fixes without additional reviewers.
+We will generally request two reviewers for any complex technical content, team consensus for any marketing/branding/value proposition issues and allow the site maintainers to make typo or grammar fixes without additional reviewers.
 
 Once a change that requires approval has been approved, the pull request will be merged into the staging branch by the site maintainers.
 
