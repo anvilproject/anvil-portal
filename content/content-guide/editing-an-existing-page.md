@@ -11,7 +11,7 @@ To edit a page:
 
 1. Find the page on the portal.
 1. Scroll to the bottom of the page and locate the "Improve this page" link there.
-1. Select the link which will take you the page's markdown file in github on the stagng branch. 
+1. Select the link which will take you the page's markdown file in github on the staging branch.
 1. Edit the page using the github markdown editor.
 1. Preview the page using the github markdown editor.
 1. Submit a pull request to have your updates merged into the staging branch of the repository. 
@@ -43,7 +43,7 @@ At the top of the file you will see a "Front Matter" sections between the `---` 
 
 ## Previewing Updates
 
-Once in the editor, you can update content as you like and even preview the markdown by selecing the "Preview Changes" tab.
+Once in the editor, you can update content as you like and even preview the markdown by selecting the "Preview Changes" tab.
 
 The preview will be styled for the github site, not for the HCA site, but you can see if your image links work and check general formatting of the document.
 
@@ -55,7 +55,7 @@ The preview will be styled for the github site, not for the HCA site, but you ca
 
 ## Creating a Pull Request
 
-Once you are ready, request a review from a peer, by creating a pull request in github using the pull reqest UI at the bottom of the edit or preview mode editor.
+Once you are ready, request a review from a peer, by creating a pull request in github using the pull request UI at the bottom of the edit or preview mode editor.
 
 Once your pull request is merged it will be deployed to the site.
 

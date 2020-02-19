@@ -15,7 +15,7 @@ To include an image in your page:
 
 Using the github web interface navigate to the parent folder of your page and add the image an `_images` folder. 
 
-In the github editor you can not create an empty folder so if the folder does not exist it will be crated during the upload step.
+In the github editor you can not create an empty folder so if the folder does not exist it will be created during the upload step.
 
 ## Referencing the Image in the Markdown
 
