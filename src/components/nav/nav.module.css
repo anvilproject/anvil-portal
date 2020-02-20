@@ -26,7 +26,7 @@
 
 /* Nav item */
 .sideNav li {
-    color: var(--accent-dark);
+    color: var(--accent-blue-dark);
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     line-height: 32px;
@@ -62,7 +62,7 @@
 
 /* Active line and indicator */
 .sideNav .link.active:before, .sideNav .link.active:after {
-    background-color: var(--accent-ice);
+    background-color: var(--accent-blue-light);
 }
 
 /* Primary line and indicator - selected secondary */
@@ -113,7 +113,7 @@
 
     /* Side nav line */
     .sideNav::before {
-        background-color: var(--accent-ice);
+        background-color: var(--accent-blue-light);
         content: "";
         height: 100%;
         position: absolute;

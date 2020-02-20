@@ -42,7 +42,7 @@ section:nth-child(2n+4) .sectionContent {
 
 /* Paragraph */
 .sectionContent p {
-    color: var(--accent-dark);
+    color: var(--accent-blue-dark);
     font-family: "Barlow", sans-serif;
     font-size: 18px;
     font-weight: 300;

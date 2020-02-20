@@ -3,15 +3,11 @@
  */
 
 :root {
+    --accent-blue-dark: #25445A;
+    --accent-blue-green: #7EBAC0;
+    --accent-blue-light: #AEEBF2;
+    --accent-mustard: #E0DD10;
     --black: #000000;
-    --primary: #035C94;
-    --accent-ice: #AEEBF2;
-    --accent-glacier: #7EBAC0;
-    --accent-gold: #E0DD10;
-    --accent-dark: #25445A;
-    --shade-dark: #012840;
-    --shade-light: #F6F7F4;
-    --white: #FFFFFF;
     --black1: rgba(0, 0, 0, 0.01);
     --black3: rgba(0, 0, 0, 0.03);
     --black6: rgba(0, 0, 0, 0.06);
@@ -19,4 +15,8 @@
     --black34: rgba(0, 0, 0, 0.34);
     --black58: rgba(0, 0, 0, 0.58);
     --black87: rgba(0, 0, 0, 0.87);
+    --primary: #035C94;
+    --shade-dark: #012840;
+    --shade-light: #F6F7F4;
+    --white: #FFFFFF;
 }

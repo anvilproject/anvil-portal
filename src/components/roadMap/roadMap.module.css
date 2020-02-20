@@ -34,13 +34,13 @@
 
 /* Key - tool */
 .roadmap .key span.tool {
-    border-bottom: 2px dashed var(--accent-ice);
+    border-bottom: 2px dashed var(--accent-blue-light);
     margin-bottom: 24px;
 }
 
 /* Key - platform */
 .roadmap .key span.platform {
-    border-bottom: 2px dashed var(--accent-glacier);
+    border-bottom: 2px dashed var(--accent-blue-green);
 }
 
 /* Key bubble */
@@ -58,12 +58,12 @@
 
 /* Key bubble - tool */
 .roadmap .key span.tool:after {
-    background-color: var(--accent-ice);
+    background-color: var(--accent-blue-light);
 }
 
 /* Key bubble - platform */
 .roadmap .key span.platform:after {
-    background-color: var(--accent-glacier);
+    background-color: var(--accent-blue-green);
 }
 
 /* Quarter */
@@ -119,17 +119,17 @@
 
 /* Data */
 .roadmap .bubble.data {
-    background-color: var(--accent-gold);
+    background-color: var(--accent-mustard);
 }
 
 /* Platform */
 .roadmap .bubble.platform {
-    background-color: var(--accent-glacier);
+    background-color: var(--accent-blue-green);
 }
 
 /* Tool */
 .roadmap .bubble.tool {
-    background-color: var(--accent-ice);
+    background-color: var(--accent-blue-light);
 }
 
 /* Bubble text */

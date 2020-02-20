@@ -101,7 +101,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
-                            components: ["button", "events", "figure-caption", "go-arrow", "hero"]
+                            components: ["button", "events", "figure-caption", "go-arrow", "hero", "style-guide-color-palette", "style-guide-download-logo", "style-guide-typography", "style-guide-typography-example"]
                         }
                     },
                     {
