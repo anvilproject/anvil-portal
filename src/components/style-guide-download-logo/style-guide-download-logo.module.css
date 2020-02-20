@@ -24,18 +24,15 @@
 
 /* Download image */
 .logo img:first-of-type {
-    height: 18px;
-    margin-right: 8px;
-}
-
-/* First logo image */
-.logo:first-of-type img:last-of-type {
     height: 30px;
-    margin-bottom: 2px;
 }
 
-/* Subsequent logo images */
-.logo:not(:first-of-type) img:last-of-type {
-    height: 36px;
-    margin-bottom: -4px;
+/* Squash AnVIL logo to match project and project.org */
+.logo:first-of-type img:first-of-type {
+    height: 25px;
+}
+
+.logo img:last-of-type {
+    height: 18px;
+    margin-left: 8px;
 }
