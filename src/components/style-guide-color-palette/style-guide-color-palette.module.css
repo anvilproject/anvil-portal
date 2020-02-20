@@ -1,0 +1,99 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL style guide color palette component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Palette */
+.palette {
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Palette - "brand" only */
+.palette:first-of-type {
+    display: flex;
+    padding-top: 8px;
+}
+
+/* Palette - subsequent colors */
+.palette:not(:first-of-type) {
+    display: inline-flex;
+    padding-top: 48px;
+}
+
+/* Palette - upper */
+.palette .upper {
+    align-items: flex-end;
+    border-bottom: 1px solid var(--black12);
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+/* Label */
+.palette h4 {
+    margin: 0;
+}
+
+/* Swatch */
+.palette .swatch {
+    border-radius: 50%;
+    flex: none;
+    height: 50px;
+    width: 50px;
+}
+
+/* Swatch - "brand" only */
+.palette:first-of-type .swatch {
+    height: 60px;
+    width: 60px;
+}
+
+/* Palette - lower */
+.palette .lower {
+    flex-direction: column;
+}
+
+/* Hex */
+.palette .lower div {
+    margin: 0; /* Removes margin on <Hero> component */
+}
+
+/* Variable */
+.palette .variable {
+    color: var(--black58);
+    font-weight: 300;
+    letter-spacing: 0.9px;
+    margin: 0 0 4px 0;
+}
+
+/**
+ * Small
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Palette */
+    .palette {
+        flex-basis: 50%;
+        width: calc((100% - 32px) / 2);
+    }
+
+    /* Palette - evens */
+    .palette:nth-of-type(even) {
+        margin-right: 16px;
+    }
+
+    /* Palette - odds - excludes "brand" */
+    .palette:nth-of-type(odd):not(:first-of-type) {
+        margin-left: 16px;
+    }
+
+    /* Palette - lower */
+    .palette .lower {
+        align-items: flex-end;
+    }
+}

@@ -12,12 +12,12 @@
 
 /* Link style */
 .content a {
-    border-bottom: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-mustard);
 }
 
 /* Link hover */
 .content a:hover {
-    border-bottom: 2px solid var(--accent-gold); /* Placeholder */
+    border-bottom: 2px solid var(--accent-mustard); /* Placeholder */
 }
 
 /* Button - remove link style from button */
@@ -35,7 +35,7 @@
 
 /* Blockquote */
 .content blockquote:before {
-    background-color: var(--accent-gold);
+    background-color: var(--accent-mustard);
     border-radius: 4px;
     content: "";
     height: 100%;

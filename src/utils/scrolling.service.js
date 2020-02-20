@@ -52,7 +52,10 @@ export function calculateNavMaxHeight(element) {
     // of scrolling. At near to end of scrolling (section padding and footer), the nav maxHeight will be
     // such that the appearance of the nav's bottom edge matches the bottom edge of the content.
 
-    if ( !element ) {
+    // The maxHeight setting is not required when the window innerWidth is less than 960px.
+    // In this instance, the outline and nav styles are defined by a different set of responsive settings.
+
+    if ( !element || window.innerWidth < 960 ) {
 
         return;
     }

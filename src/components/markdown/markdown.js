@@ -15,6 +15,10 @@ import Events from "../events/events";
 import FigureCaption from "../figureCaption/figureCaption";
 import GoArrow from "../goArrow/goArrow";
 import Hero from "../hero/hero";
+import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
+import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
+import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
+import StyleGuideTypographyExample from "../style-guide-typography-example/style-guide-typography-example";
 
 // Styles
 import compStyles from "./markdown.module.css";
@@ -44,7 +48,17 @@ class Markdown extends React.Component {
         const {children, className} = this.props;
         const renderAst = new rehypeReact({
             createElement: React.createElement,
-            components: { "button": Button, "events": Events, "figure-caption": FigureCaption, "go-arrow": GoArrow, "hero": Hero}
+            components: {
+                "button": Button,
+                "events": Events,
+                "figure-caption": FigureCaption,
+                "go-arrow": GoArrow,
+                "hero": Hero,
+                "style-guide-color-palette": StyleGuideColorPalette,
+                "style-guide-download-logo": StyleGuideDownloadLogo,
+                "style-guide-typography": StyleGuideTypography,
+                "style-guide-typography-example": StyleGuideTypographyExample
+            }
         }).Compiler;
         return (
             <div id="content" className={classNames(className, compStyles.content)}>{renderAst(children)}</div>

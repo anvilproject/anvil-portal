@@ -1,0 +1,41 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL style guide download logo component.
+ */
+
+/* Logo */
+.logo {
+    align-items: flex-end; /* Required for micro positioning of each download icon with the baseline of its associated brand */
+    border-bottom: none !important; /* Required to override markdown <a> styles */
+    display: flex;
+}
+
+/* First two logos */
+.logo:not(:last-of-type) {
+    margin-bottom: 24px;
+}
+
+/* Images */
+.logo img {
+    margin: 0;
+}
+
+/* Download image */
+.logo img:first-of-type {
+    height: 18px;
+    margin-right: 8px;
+}
+
+/* First logo image */
+.logo:first-of-type img:last-of-type {
+    height: 30px;
+    margin-bottom: 2px;
+}
+
+/* Subsequent logo images */
+.logo:not(:first-of-type) img:last-of-type {
+    height: 36px;
+    margin-bottom: -4px;
+}

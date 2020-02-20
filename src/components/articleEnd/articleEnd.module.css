@@ -15,7 +15,7 @@
 
 /* Link - "Improve this page", "Content guide" */
 .articleEnd a {
-    border-bottom: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-mustard);
     width: fit-content;
 }
 
@@ -26,5 +26,5 @@
 
 /* Link - hover */
 .articleEnd a:hover {
-    border-bottom: 2px solid var(--accent-gold); /* Placeholder */
+    border-bottom: 2px solid var(--accent-mustard); /* Placeholder */
 }

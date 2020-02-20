@@ -32,7 +32,7 @@
 
 /* Menu icon */
 .header i {
-    color: var(--accent-glacier);
+    color: var(--accent-blue-green);
     cursor: pointer;
     display: block;
     padding: 12px;
@@ -83,7 +83,7 @@
 
 /* Link */
 .header li a {
-    color: var(--accent-dark);
+    color: var(--accent-blue-dark);
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     height: 32px;
@@ -109,7 +109,7 @@
 }
 
 .header li a.active:before {
-    border: 1px solid var(--accent-ice);
+    border: 1px solid var(--accent-blue-light);
 }
 
 /**
@@ -183,6 +183,6 @@
     }
 
     .header li a.active:before {
-        border: 2px solid var(--accent-ice);
+        border: 2px solid var(--accent-blue-light);
     }
 }
