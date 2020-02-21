@@ -100,6 +100,7 @@ exports.createPages = ({graphql, actions}) => {
               secondaryLinks {
                 name
                 key
+                path
               }
             }
           }
