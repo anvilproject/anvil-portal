@@ -83,7 +83,7 @@
       - name: "Creating Links"
         key: "/guides/content-guide/creating-links"
         path: "/guides/creating-links"
-    - name: "AnVIL Style Guide"
+    - name: "Style Guide"
       key: "/guides/anvil-style-guide"
       path: "/anvil-style-guide/logos"
       secondaryLinks:

@@ -48,6 +48,18 @@ module.exports = {
                 }
             }
         },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'UA-154456484-1',
+                // Puts tracking script in the head instead of the body
+                head: false,
+                // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
+                anonymize: true,
+                // Optional - do not track
+                respectDNT: true,
+            },
+        },
         `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sharp`,
