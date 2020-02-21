@@ -22,16 +22,20 @@
     margin: 0;
 }
 
-/* Download image */
-.logo img:first-of-type {
-    height: 30px;
-}
-
 /* Squash AnVIL logo to match project and project.org */
+/* AnVIL logo only*/
 .logo:first-of-type img:first-of-type {
     height: 25px;
+    margin-bottom: 2px; /* Logo baseline adjusted to allow for download icon whitespace */
 }
 
+/* Logos project and project.org */
+.logo:not(:first-of-type) img:first-of-type {
+    height: 30px;
+    margin-bottom: -2px; /* Logo baseline adjusted to allow for download icon whitespace */
+}
+
+/* Download icon */
 .logo img:last-of-type {
     height: 18px;
     margin-left: 8px;
