@@ -1,0 +1,85 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL card collection component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Card collection */
+.collection {
+    margin: 32px 0 24px 0;
+}
+
+/* Card */
+.collection .card {
+    cursor: pointer;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Card - excludes first */
+.collection .card:nth-of-type(n+2) {
+    padding-top: 32px;
+}
+
+/* Primary - title and icon */
+.collection .primary {
+    align-items: center;
+    border-bottom: 1px solid var(--black12);
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+/* Title */
+.collection h4 {
+    margin: 0;
+}
+
+/* Icon */
+.collection .icon {
+    margin: 0 12px 0 0;
+    width: 30px;
+}
+
+/* Description */
+.collection .secondary {
+    font-size: 14px;
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Card */
+    .collection .card {
+        flex-basis: 50%;
+        width: calc((100% - 32px) / 2);
+    }
+
+    /* Card - odds */
+    .collection .card:nth-of-type(odd) {
+        margin-right: 16px;
+    }
+
+    /* Card - evens */
+    .collection .card:nth-of-type(even) {
+        margin-left: 16px;
+    }
+
+    /* Card - excludes first */
+    .collection .card:nth-of-type(n+2) {
+        padding-top: unset;
+    }
+
+    /* Card - excludes first two */
+    .collection .card:nth-of-type(n+3) {
+        padding-top: 32px;
+    }
+}

@@ -19,14 +19,7 @@ Terra is integrated with the Dockstore workflow repository, enabling AnVIL users
  
 Gen3 is leveraged by AnVIL as the data management system, enabling users to associate complex phenotypes, metadata, and clinical data with sequencing based data with sophisticated data models.
 
-### Terra
- [Terra](https://anvil.terra.bio) is an analysis platform that allows users to access data, run analysis tools, and collaborate. Terra is powered by Google Cloud Platform, enabling the user to scale and manage billing of their own projects. 
-
-### Gen3
- [Gen3](https://gen3.org) is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. Gen3 is an open source platform for developing data commons.
-
-### Dockstore
-[Dockstore](https://dockstore.org) is an open platform used by the GA4GH for sharing Docker-based tools described with the Common Workflow Language (CWL), the Workflow Description Language (WDL), or Nextflow (NFL).
+<card-collection collection="platforms"></card-collection>
 
 
 
