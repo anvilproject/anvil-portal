@@ -1,6 +1,5 @@
 ---
 title: "The AnVIL Platform"
-author: "AnVIL"
 ---
 
 
@@ -20,22 +19,12 @@ Future additions to the AnVIL analysis ecosystem will include the Galaxy workben
  
 ## Current Tools
 
-- [WDL](https://software.broadinstitute.org/wdl/) - Batch processing of GATK and other workflows 
-
-- [Jupyter](https://jupyter.org/) - Interactive analysis with the python or R programming languages; the R environment includes a family of [Bioconductor](https://www.bioconductor.org) 3.10 packages.
-
+<card-collection collection="tools" status="current"></card-collection>
 
 ## Coming Soon
 
-- [R Studio](https://www.rstudio.com/) - Interactive analysis with your favorite R coding platform
-
-- [AnVIL API library](https://github.com/anvilproject/client-apis) - Interact with AnVIL data, analysis solutions, and workflows via a command line interface. 
-
-- [Galaxy](https://galaxyproject.org/) - Access thousands of tools via an intuitive graphical user interface for processing batch analysis with Galaxy Workflows and interactive downstream visualizations. 
-
-- [Genome Browser supported by UCSC](http://genome.ucsc.edu/) - 
-Interactive analysis of genomic visualizations. 
+<card-collection collection="tools" status="coming"></card-collection>
 
 ## Request a Tool
 
-Contact the [AnVIL Team](anvil-project-managers@lists.anvilproject.org)  for additional requests and suggestions
+Contact the [AnVIL Team](anvil-project-managers@lists.anvilproject.org)  for additional requests and suggestions.
