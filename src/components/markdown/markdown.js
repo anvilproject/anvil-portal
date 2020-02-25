@@ -11,6 +11,7 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
+import CardCollection from "../cardCollection/cardCollection";
 import Events from "../events/events";
 import FigureCaption from "../figureCaption/figureCaption";
 import GoArrow from "../goArrow/goArrow";
@@ -50,6 +51,7 @@ class Markdown extends React.Component {
             createElement: React.createElement,
             components: {
                 "button": Button,
+                "card-collection": CardCollection,
                 "events": Events,
                 "figure-caption": FigureCaption,
                 "go-arrow": GoArrow,

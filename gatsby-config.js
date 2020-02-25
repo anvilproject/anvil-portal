@@ -5,6 +5,7 @@
  * The AnVIL configuration file.
  */
 
+let collectionPath = `./content/card-collection/`;
 let contentPath = `./content`;
 let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
 let roadMapPath = `./content/roadmap/`;
@@ -80,6 +81,13 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
+                name: `card-collection`,
+                path: collectionPath,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
                 name: `markdown-pages`,
                 path: contentPath,
             },
@@ -113,7 +121,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
-                            components: ["button", "events", "figure-caption", "go-arrow", "hero", "style-guide-color-palette", "style-guide-download-logo", "style-guide-typography", "style-guide-typography-example"]
+                            components: ["button", "card-collection", "events", "figure-caption", "go-arrow", "hero", "style-guide-color-palette", "style-guide-download-logo", "style-guide-typography", "style-guide-typography-example"]
                         }
                     },
                     {
