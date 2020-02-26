@@ -28,8 +28,6 @@
       - name: "Gen 3"
         link: "https://gen3.org/"
       tools:
-      - name: "RStudio"
-        link: "https://rstudio.com/"
       - name: "Bioconductor"
         link: "https://www.bioconductor.org/"
 - quarter: "2020 Q1"
@@ -42,6 +40,11 @@
       platforms:
       - name: "Gen 3"
         link: "https://gen3.org/"
+- quarter: "2020 Q2"
+  display:
+      tools:
+      - name: "RStudio"
+        link: "https://rstudio.com/"
 - quarter: "2020 Q3"
   display:
       platforms:
