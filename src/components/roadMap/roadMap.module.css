@@ -144,17 +144,17 @@
 }
 
 /**
- * Small
+ * Small +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 720px) {
 
     /* Roadmap container */
     .roadmap {
         align-items: flex-end;
         align-self: center;
         flex-direction: row;
-        width: unset;
+        justify-content: space-between;
     }
 
     /* Key container */
@@ -181,7 +181,6 @@
     /* Quarter */
     .roadmap .quarter {
         flex-direction: column;
-        margin: 0 8px;
     }
 
     /* Bubble stack */
@@ -202,17 +201,5 @@
     /* Label - line - hidden */
     .roadmap .label:after {
         display: none;
-    }
-}
-
-/**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Quarter */
-    .roadmap .quarter {
-        margin: 0 16px;
     }
 }
