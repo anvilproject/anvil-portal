@@ -144,19 +144,19 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
         // Scrolls to outline end as outline maxHeight is reduced.
         if ( pxToEndScroll < 160 ) {
 
-            outlineEl.scrollTo(0, outlineEl.scrollHeight - pxToEndScroll);
+            scrollTo(outlineEl, outlineEl.scrollHeight - pxToEndScroll);
         }
 
         // Repositions active outline to mid point if the active outline is positioned below the outline container.
         if ( activeBottomPos > outlineContainerHeight + 100 ) {
 
-            outlineEl.scrollTo(0, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
+            scrollTo(outlineEl, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
         }
 
         // Repositions active outline to mid point if the active outline is positioned above the outline container.
         if ( activeTopPos < 100 ) {
 
-            outlineEl.scrollTo(0, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
+            scrollTo(outlineEl, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
         }
     }
 }
@@ -232,4 +232,17 @@ function calculatePixelPositionFromEnd() {
     let endScrollPos = document.body.clientHeight - window.innerHeight;
 
     return endScrollPos - currentScrollPos;
+}
+
+/*
+ * Cross-browser scroll to functionality.
+ */
+function scrollTo(el, scrollTop) {
+
+    if ( el.scrollTo ) {
+        el.scrollTo(0, scrollTop)
+    }
+    else {
+        el.scrollTop = scrollTop;
+    }
 }
