@@ -23,20 +23,6 @@ let navEl;
 
 class Nav extends React.Component {
 
-    isActive = (key) => {
-
-        const {docPath} = this.props;
-
-        return docPath === key;
-    };
-
-    isSelected = (key) => {
-
-        const {docPath} = this.props;
-
-        return docPath.startsWith(key) && docPath !== key;
-    };
-
     componentDidMount() {
 
         // Side nav container element
@@ -55,10 +41,36 @@ class Nav extends React.Component {
         window.removeEventListener("resize", this.setSideNavMaxHeight);
     };
 
+    componentDidUpdate(prevProp) {
+
+        const {bannerHeight} = this.props;
+
+        if ( prevProp.bannerHeight !== bannerHeight ) {
+
+            this.setSideNavMaxHeight();
+        }
+    }
+
+    isActive = (key) => {
+
+        const {docPath} = this.props;
+
+        return docPath === key;
+    };
+
+    isSelected = (key) => {
+
+        const {docPath} = this.props;
+
+        return docPath.startsWith(key) && docPath !== key;
+    };
+
     setSideNavMaxHeight = () => {
 
+        const {bannerHeight} = this.props;
+
         // Sets the nav container maxHeight.
-        ScrollingService.calculateNavMaxHeight(navEl);
+        ScrollingService.calculateNavMaxHeight(bannerHeight, navEl);
     };
 
     render() {
@@ -100,6 +112,6 @@ export default (props) => {
     const hideNav = nav.length <= 1;
 
     return (
-        <Nav nav={nav} docPath={docPath} hideNav={hideNav}/>
+        <Nav nav={nav} docPath={docPath} hideNav={hideNav} {...props}/>
     );
 }

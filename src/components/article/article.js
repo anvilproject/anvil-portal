@@ -32,13 +32,13 @@ class Article extends React.Component {
     };
 
     render() {
-        const {children, docPath, noSpy} = this.props;
+        const {bannerHeight, children, docPath, noSpy} = this.props;
         return (
             <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
-                    <Nav docPath={docPath}/>
+                    <Nav bannerHeight={bannerHeight} docPath={docPath}/>
                     {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
-                    <Outline activeOutline={this.state.activeOutline} docPath={docPath}/>
+                    <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/>
                 </div>
             </section>
         );

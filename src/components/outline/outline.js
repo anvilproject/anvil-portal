@@ -17,7 +17,7 @@ import * as ScrollingService from "../../utils/scrolling.service";
 import compStyles from "./outline.module.css";
 
 let classNames = require("classnames");
-let htmlEls, outlineEl;
+let htmlCollection, outlineEl;
 
 class Outline extends React.Component {
 
@@ -26,8 +26,8 @@ class Outline extends React.Component {
         // Outline container element
         outlineEl = document.getElementById("outline");
 
-        // HTML element
-        htmlEls = document.getElementsByTagName("html");
+        // "Html" html collection
+        htmlCollection = document.getElementsByTagName("html");
 
         // Initialize outline style
         this.setOutlineMaxHeight();
@@ -56,23 +56,33 @@ class Outline extends React.Component {
         }
     };
 
+    componentDidUpdate(prevProp) {
+
+        const {bannerHeight} = this.props;
+
+        if ( prevProp.bannerHeight !== bannerHeight ) {
+
+            this.setOutlineMaxHeight();
+        }
+    }
+
     disableDocumentOverflowStyle = () => {
 
-        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlEls, outlineEl);
+        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlCollection, outlineEl);
 
         if ( outlineScrollable ) {
 
-                htmlEls[0].setAttribute("style", "overflow: hidden;")
+                htmlCollection.item(0).setAttribute("style", "overflow: hidden;")
         }
     };
 
     enableDocumentOverflowStyle = () => {
 
-        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlEls, outlineEl);
+        const outlineScrollable = ScrollingService.isOutlineScrollable(htmlCollection, outlineEl);
 
         if ( outlineScrollable ) {
 
-            htmlEls[0].setAttribute("style", "overflow-y: scroll;");
+            htmlCollection.item(0).setAttribute("style", "overflow-y: scroll;");
         }
     };
 
@@ -90,8 +100,10 @@ class Outline extends React.Component {
 
     setOutlineMaxHeight = () => {
 
+        const {bannerHeight} = this.props;
+
         // Calculates the outline container maxHeight.
-        ScrollingService.calculateNavMaxHeight(outlineEl);
+        ScrollingService.calculateNavMaxHeight(bannerHeight, outlineEl);
     };
 
     render() {

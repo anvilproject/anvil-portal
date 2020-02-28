@@ -10,6 +10,7 @@ import Helmet from "react-helmet";
 import React from "react";
 
 // App dependencies
+import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Main from "./main/main";
 import Header from "./header/header";
@@ -23,10 +24,16 @@ class Layout extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {noScroll: false};
+        this.state = {bannerHeight: 0, noScroll: false};
     }
 
+    onBannerHeightChange = (event) => {
+
+        this.setState({bannerHeight: event});
+    };
+
     onMenuOpen = (event) => {
+
         this.setState({noScroll: !event});
     };
 
@@ -45,7 +52,8 @@ class Layout extends React.Component {
                 </Helmet>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
-                    <Main docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>
+                    <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>
+                    <BannerPrivacy onBannerHeightChange={this.onBannerHeightChange.bind(this)}/>
                     <Footer/>
                 </div>
             </div>
