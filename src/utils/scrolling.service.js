@@ -40,17 +40,11 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  * Returns the style "maxHeight" for the side nav and outline, based on content and outline
  * scrolling positions.
  *
+ * @param bannerHeight
  * @param element
  * @returns {string}
  */
-export function calculateNavMaxHeight(element) {
-
-    // Calculate the side nav style "maxHeight", taking into account the sticky top position at 100px,
-    // the section padding 60px and the footer 96px. The maxHeight decreases with downward scrolling.
-    // When there is main content overflow, the maxHeight should allow an nav of length greater than
-    // available screen height, to stretch taking up full screen height, until the content approaches end
-    // of scrolling. At near to end of scrolling (section padding and footer), the nav maxHeight will be
-    // such that the appearance of the nav's bottom edge matches the bottom edge of the content.
+export function calculateNavMaxHeight(bannerHeight, element) {
 
     // The maxHeight setting is not required when the window innerWidth is less than 960px.
     // In this instance, the outline and nav styles are defined by a different set of responsive settings.
@@ -60,7 +54,33 @@ export function calculateNavMaxHeight(element) {
         return;
     }
 
-    return element.style.maxHeight = `${document.body.clientHeight - window.scrollY - 100 - 60 - 96}px`;
+    // Calculate the side nav style "maxHeight", taking into account the sticky top position at 100px,
+    // the section padding 60px and the footer 96px and the height of the privacy banner (if showing).
+    // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
+    // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
+    // sticky top position at 100px, until the content approaches end of scrolling.
+    // At near to end of scrolling (section padding and footer),
+    // the nav maxHeight will be such that the appearance of the nav's bottom edge matches the
+    // bottom edge of the content.
+
+    let elementHeight;
+
+    // If the privacy banner is showing, and the scroll position has not reached the end of the content,
+    // a different set of rules will govern the "maxHeight".
+    // The "maxHeight" will be calculated by the available height provided by the window, taking into account the
+    // sticky top position, and the banner height. This rule remains effective until the last scrollable 160px
+    // is in play.
+
+    if ( calculatePixelPositionFromEnd() < 160 ) {
+
+        elementHeight = document.body.clientHeight - window.scrollY - 100 - 60 - 96 - bannerHeight;
+    }
+    else {
+
+        elementHeight = window.innerHeight - 100 - bannerHeight;
+    }
+
+    return element.style.maxHeight = `${elementHeight}px`;
 }
 
 /**
@@ -109,9 +129,7 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
         let activeEl = activeEls[0];
 
         // Calculate the number of pixels from the end of the page
-        let currentScrollPos = window.scrollY;
-        let endScrollPos = document.body.clientHeight - window.innerHeight;
-        let pxToEndScroll = endScrollPos - currentScrollPos;
+        let pxToEndScroll = calculatePixelPositionFromEnd();
 
         // Outline container
         const outlineContainerHeight = outlineEl.offsetHeight;
@@ -200,4 +218,18 @@ export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline) 
 
     // Return state
     return activeOutline;
+}
+
+/**
+ * Returns the scrolling pixel position from the end of the page.
+ *
+ * @returns {number}
+ */
+function calculatePixelPositionFromEnd() {
+
+    // Calculate the number of pixels from the end of the page
+    let currentScrollPos = window.scrollY;
+    let endScrollPos = document.body.clientHeight - window.innerHeight;
+
+    return endScrollPos - currentScrollPos;
 }
