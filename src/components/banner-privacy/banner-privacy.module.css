@@ -10,8 +10,6 @@
     background-color: var(--accent-blue-dark);
     bottom: 0;
     color: var(--white);
-    font-family: "Courier New", sans-serif;
-    letter-spacing: -0.4px;
     padding: 24px 0;
     position: sticky;
 }

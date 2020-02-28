@@ -103,7 +103,7 @@ class BannerPrivacy extends React.Component {
                     <span>This website uses cookies for security and analytics purposes. By using this site, you agree to these uses. <a
                         className={compStyles.underline} href="/privacy">Learn more here</a>.</span>
                     <ClickHandler clickAction={() => {this.accept()}}tag={"span"}>
-                        <span className={compStyles.underline}>Ok</span>.</ClickHandler>
+                        <span className={compStyles.underline}>OK</span>.</ClickHandler>
                 </div>
             </div>
         );
