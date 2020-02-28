@@ -134,3 +134,14 @@ exports.createPages = ({graphql, actions}) => {
         });
     });
 };
+
+// Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. See:
+// https://github.com/gatsbyjs/gatsby/issues/14848
+exports.onCreateBabelConfig = ({ actions, stage }) => {
+    actions.setBabelPlugin({
+        name: `@babel/plugin-transform-spread`,
+        options: {
+            loose: false,
+        },
+    });
+};

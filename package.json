@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "AnVIL",
   "dependencies": {
+    "@fastly/performance-observer-polyfill": "1.1.0",
     "classnames": "2.2.6",
     "gatsby": "2.19.7",
     "gatsby-image": "2.2.39",
