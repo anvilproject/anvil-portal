@@ -94,11 +94,12 @@ const typography = new Typography({
             ".anchor": {
                 borderBottom: "none !important"
             },
-            ol: {
-                marginBottom: "1.5rem"
+            "ol, ul": {
+                marginBottom: "24px",
+                marginLeft: "32px"
             },
-            ul: {
-                marginBottom: "2.5rem"
+            "ol li:not(:last-child), ul li:not(:last-child)": {
+                marginBottom: "4px"
             },
             li: {
                 marginBottom: 0
