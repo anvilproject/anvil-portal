@@ -17,7 +17,7 @@ To edit a page:
 1. Submit a pull request to have your updates merged into the staging branch of the repository. 
 
 
-![Edit an Existing Page](./_images/improve-this-page.png "Improve this page")
+![Edit an Existing Page](../_images/improve-this-page.png "Improve this page")
 
 
 
@@ -28,7 +28,7 @@ Once you have found the page in github, you can edit and do a basic preview of t
 Selecting the  edit button will open the file in the github web editor and let you make changes to the page content.  The page content is in standard markdown.
 
  
-![Edit an Existing Page](./_images/edit-existing-page.png "Edit an Existing Page")
+![Edit an Existing Page](../_images/edit-existing-page.png "Edit an Existing Page")
 
 ## Modifying Front Matter
 
@@ -50,7 +50,7 @@ The preview will be styled for the github site, not for the HCA site, but you ca
 >Note that the github editor does not highlight spell check errors so be vigilant.
 
 
-![Edit in Github](./_images/preview-changes.png "Edit an Existing Page")
+![Edit in Github](../_images/preview-changes.png "Edit an Existing Page")
 
 
 ## Creating a Pull Request
@@ -59,6 +59,6 @@ Once you are ready, request a review from a peer, by creating a pull request in 
 
 Once your pull request is merged it will be deployed to the site.
 
-![Create a Pull Reqeust](./_images/pull-request.png)
+![Create a Pull Reqeust](../_images/pull-request.png)
  
  

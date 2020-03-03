@@ -20,12 +20,12 @@ Fist navigate to the parent directory and then use the `Create New File` button 
 
 Typically the folder structure mirrors the structure or the site. This is not strictly necessary as the URL to a page is defined by the site map and not the folder structures. However, it does make pages much easier to find when they need to be updated.
 
-![Create File](./_images/create-new-file.png)
+![Create File](../_images/create-new-file.png)
 
 >####TIP
 >Note that you can not create an empty directory using the Github interface. However you can create a directory while adding a file by adding the new directory name before the file name then hitting the "/" character
 
-![Create Folder](./_images/create-folder.gif)
+![Create Folder](../_images/create-folder.gif)
 
 ## Create the "Front Matter"
 

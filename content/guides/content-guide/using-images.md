@@ -22,14 +22,14 @@ In the github editor you can not create an empty folder so if the folder does no
 To reference the image we use markdown like:
 
 ```
-![AnVIL Image](./_images/anvil-image.png "AnVIL Portal Image!")
+![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
 ```
 
 Note the `./images/` preceding the image name. This is required to tell the CMS where the image is. 
 
 This renders like:
 
-![AnVIL Image](./_images/anvil-image.png "AnVIL Portal Image!")
+![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
 
 >####TIP
 >You can check if the image link is correct by using the preview link in the markdown editor.
