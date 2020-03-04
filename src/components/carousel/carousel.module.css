@@ -21,6 +21,11 @@
     justify-content: space-between;
 }
 
+/* Rotation container - stretch */
+.carousel .rotation > div {
+    flex: 1;
+}
+
 /* Cursor - pointer */
 /* Left, right arrow container */
 /* Slot container */
@@ -71,6 +76,7 @@
 /* Slot - show */
 .slot.show {
     animation: showSlot 0.5s ease 0s;
+    min-height: 131px; /* Required for when blurb is a single line */
     opacity: 1;
     position: relative;
     visibility: visible;
