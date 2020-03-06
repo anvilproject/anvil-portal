@@ -20,6 +20,9 @@ The Data Access working group will define the methods used to securely control a
 - Andrew Rula (Broad)
 - Rich Silva (Broad)
 - Garrett Rupp (UChicago)
+- Tara Matise (Rutgers)
+- Natasha Bonhomme (Genetic Alliance)
+- Kristofer Langlais (NIH Office of Science Policy)
 
 ## Data Processing Working Group
 The data processing working group will define the process for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.
