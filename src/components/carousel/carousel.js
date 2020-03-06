@@ -54,6 +54,17 @@ class Carousel extends React.Component {
         return index === this.state.rotation;
     };
 
+    isRelativePath = (link) => {
+
+        // Returns true if specified link is a relative pathname
+        if ( link.startsWith("/") ) {
+
+            return true;
+        }
+
+        return false;
+    };
+
     isValidUrl = (link) => {
 
         try {
@@ -204,7 +215,7 @@ class Carousel extends React.Component {
                 {carousel, slug} = slot,
                 {blurb, docType, title, url} = carousel;
 
-            const linkTo = this.isValidUrl(url) ? url : slug;
+            const linkTo = this.isValidUrl(url) ? url : this.isRelativePath(url) ? url : slug;
             const openTab = this.isValidUrl(url);
 
             return (
