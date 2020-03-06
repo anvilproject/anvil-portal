@@ -1,5 +1,6 @@
 const path = require(`path`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
+const express = require('express');
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
@@ -144,4 +145,12 @@ exports.onCreateBabelConfig = ({ actions, stage }) => {
             loose: false,
         },
     });
+};
+
+// See: https://github.com/gatsbyjs/gatsby/issues/18213
+// See: https://github.com/gatsbyjs/gatsby/issues/13072
+// To access static folder while in develop mode
+exports.onCreateDevServer=({app})=>{
+
+    app.use(express.static('public'))
 };
