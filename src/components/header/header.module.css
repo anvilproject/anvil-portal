@@ -17,6 +17,11 @@
     display: flex;
 }
 
+/* Flex none - logo */
+.header > div > a {
+    flex: none;
+}
+
 /* Header container */
 .header > div {
     height: 60px;
@@ -161,8 +166,9 @@
         margin: 0;
     }
 
+    /* Links - subsequent link */
     .header li:not(:first-of-type) {
-        margin: 0 0 0 36px;
+        margin: 0 0 0 24px;
     }
 
     /* Link */
@@ -184,5 +190,17 @@
 
     .header li a.active:before {
         border: 2px solid var(--accent-blue-light);
+    }
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 840px) {
+
+    /* Links - subsequent link */
+    .header li:not(:first-of-type) {
+        margin: 0 0 0 36px;
     }
 }
