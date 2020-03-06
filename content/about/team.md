@@ -47,3 +47,9 @@ author: "AnVIL"
 
 ### Washington University
 - [Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
+
+### National Human Genome Research Institute
+- Barbara Thomas
+- Jennifer Strasburger
+- Ken Wiley
+- Valentina di Francesco
