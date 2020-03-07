@@ -27,4 +27,6 @@ Through live demonstrations and interactive small-group exercises, you will lear
 While we will work in the context of AnVIL, you will be able to apply your new skills to myriad other genomic-related data sets and tools. And the best part is you will learn how to do all of this without needing to know anything about programming.
 
 ####Intended Audience:
-Researchers and clinicians interested in practical ways to access and analyze data in the cloud - without needing advanced computing training. No prior experience with any of the platforms or tools is required. The ideal audience member will have a basic familiarity with genomics terminology and standard high-throughput sequencing data formats.
+Researchers and clinicians interested in practical ways to access and analyze data in the cloud - without needing advanced computing training.
+
+No prior experience with any of the platforms or tools is required. The ideal audience member will have a basic familiarity with genomics terminology and standard high-throughput sequencing data formats.
