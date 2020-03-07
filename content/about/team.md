@@ -52,4 +52,4 @@ author: "AnVIL"
 - Barbara Thomas
 - Jennifer Strasburger
 - Ken Wiley
-- Valentina di Francesco
+- Valentina Di Francesco
