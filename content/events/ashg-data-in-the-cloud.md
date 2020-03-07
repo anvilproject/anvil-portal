@@ -8,7 +8,7 @@ author: "AnVIL"
 
 #ASHG Event
 ###Find and analyze data in the cloud with Gen3, Dockstore and Terra
-#####October 31st 2020
+#####October 31st, 2020
 #####Session from 7:15 a.m. to 8:45 a.m.
 #####San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101
 ---
