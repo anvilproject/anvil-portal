@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import rehypeReact from "rehype-react";
 
@@ -56,6 +57,7 @@ class Markdown extends React.Component {
                 "figure-caption": FigureCaption,
                 "go-arrow": GoArrow,
                 "hero": Hero,
+                "outbound-link": OutboundLink,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,
