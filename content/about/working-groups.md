@@ -15,68 +15,69 @@ The Data Access working group will define the methods used to securely control a
 - Stacey Donnelly (Broad)
 
 ### Members
-- Jonathan Lawson (Broad)
-- Elena Ghanaim (NHGRI)
 - Andrew Rula (Broad)
-- Rich Silva (Broad)
+- Elena Ghanaim (NHGRI)
 - Garrett Rupp (UChicago)
-- Tara Matise (Rutgers)
-- Natasha Bonhomme (Genetic Alliance)
+- Jonathan Lawson (Broad)
 - Kristofer Langlais (NIH Office of Science Policy)
+- Natasha Bonhomme (Genetic Alliance)
+- Rich Silva (Broad)
+- Tara Matise (Rutgers)
 
 ## Data Processing Working Group
 The data processing working group will define the process for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.
 
 ### Co-Chairs
-- Ira Hall (WashU)
 - Eric Banks (Broad)
+- Ira Hall (WashU)
 
 ### Members
-- Charlotte Tolonen (Broad)
-- Haley Abel (WashU)
-- Andrew Rula (Broad)
-- Rich Silva (Broad)
-- Qiong Liu (UChicago)
-- Sean Burke (UChicago)
-- Garrett Rupp (UChicago)
-- Jason Walker (WashU)
 - Adam Coffman (WashU)
+- Andrew Rula (Broad)
+- Charlotte Tolonen (Broad)
+- Garrett Rupp (UChicago)
+- Haley Abel (WashU)
+- Jason Walker (WashU)
+- Qiong Liu (UChicago)
+- Rich Silva (Broad)
+- Sean Burke (UChicago)
 
 ## Phenotype Working Group
 The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.
 
 ### Co-Chairs
-- Robert Carroll (VUMC)
 - David Crosslin (EMERGE - UW)
+- Robert Carroll (VUMC)
 
 ### Members
-- Kyle Ellrott (OHSU)
 - Ada Hamosh (CMG - JHMI)
-- Melissa Haendel (OHSU)
-- James Knight (CMG - Yale)
-- Steve Buyske (CCDG)
-- Kristin Wuichet (VUMC)
 - Andrew Rula (Broad)
-- Rich Silva (Broad)
 - Garrett Rupp (UChicago)
-- Sean Burke (UChicago)
+- James Knight (CMG - Yale)
+- Kristin Wuichet (VUMC)
+- Kyle Ellrott (OHSU)
+- Melissa Haendel (OHSU)
 - Qiong Liu (UChicago)
+- Rich Silva (Broad)
+- Sean Burke (UChicago)
+- Steve Buyske (CCDG)
 
 ## Portal Working Group
 The portal working group organizes and publishes AnVIL's website.
 
 ### Co-Chairs
-- James Taylor (JHU)
 - Benedict Paten (UCSC)
+- James Taylor (JHU)
 
 ### Members
-- Kevin Osborn (UCSC)
-- Dave Rogers (UCSC, Clever Canary)
-- Fran McDade (Clever Canary)
-- Enis Afgan (JHU)
-- Mo Heydarian (JHU)
 - Abbey George (UChicago)
+- Dave Rogers (UCSC, Clever Canary)
+- Enis Afgan (JHU)
 - Eric Karofsky (Broad)
+- Fran McDade (Clever Canary)
+- Kevin Osborn (UCSC)
+- Mim Hastie (Clever Canary)
+- Mo Heydarian (JHU)
 
 ## Outreach Working Group
 The Outreach working group provides training and support solutions for the AnVIL project.
@@ -85,16 +86,16 @@ The Outreach working group provides training and support solutions for the AnVIL
 Jeff Leek (JHU)
 
 ### Members
-- Geraldine Van der Auwera (Broad)
-- Jeremy Goecks (OHSU)
-- Kasper Hansen (JHU)
-- John Muschelli (JHU)
-- James Taylor (JHU)
-- Salin Thomas (Broad)
-- Kevin Osborn (UCSC)
 - Andrew Rula (Broad)
-- Rich Silva (Broad)
+- Geraldine Van der Auwera (Broad)
+- James Taylor (JHU)
+- Jeremy Goecks (OHSU)
+- John Muschelli (JHU)
+- Kasper Hansen (JHU)
+- Kevin Osborn (UCSC)
 - Mo Heydarian (JHU)
+- Rich Silva (Broad)
+- Salin Thomas (Broad)
 
 ## Technical Working Group
 AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.
@@ -103,9 +104,9 @@ AnVIL's technical working provides direction and recommendations to the develope
 - James Taylor (JHU)
 
 ### Members
+- Benedict Paten (UCSC)
+- Bob Grossman (UC)
 - Clare Bernard (Broad)
 - Enis Afgan (JHU)
 - Martin Morgan (RPCI)
 - Vince Carey (HMS)
-- Bob Grossman (UC)
-- Benedict Paten (UCSC)
