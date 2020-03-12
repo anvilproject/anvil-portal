@@ -1,6 +1,7 @@
-const path = require(`path`);
-const {createFilePath} = require(`gatsby-source-filesystem`);
 const express = require('express');
+const {fmImagesToRelative} = require('gatsby-remark-relative-images');
+const {createFilePath} = require(`gatsby-source-filesystem`);
+const path = require(`path`);
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
@@ -45,8 +46,9 @@ function addToMap(acc, doc) {
 
 exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
+    fmImagesToRelative(node);
     if (node.internal.type === `MarkdownRemark`) {
-        const carousel = node.frontmatter.carousel ? node.frontmatter.carousel : {active: false, blurb: "", docType: "", title: "", url: ""};
+        const carousel = node.frontmatter.carousel ? node.frontmatter.carousel : {active: false, blurb: "", docType: "", logo: "", title: "", url: ""};
         const draft = node.frontmatter.draft ? node.frontmatter.draft : false;
         const slug = createFilePath({node, getNode, basePath: `pages`});
         createNodeField({
@@ -79,6 +81,13 @@ exports.createPages = ({graphql, actions}) => {
                 active
                 blurb
                 docType
+                logo {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
                 title
                 url
               }

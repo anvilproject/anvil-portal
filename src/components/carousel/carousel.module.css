@@ -76,7 +76,6 @@
 /* Slot - show */
 .slot.show {
     animation: showSlot 0.5s ease 0s;
-    min-height: 131px; /* Required for when blurb is a single line */
     opacity: 1;
     position: relative;
     visibility: visible;
@@ -102,12 +101,27 @@
     }
 }
 
+/* Hero */
+.slot .hero {
+    align-items: center;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+/* Logo */
+.slot img {
+    display: inline-flex;
+    height: 32px;
+    margin: 0 16px 0 0;
+    width: auto;
+}
+
 /* Type */
 .slot .type {
     font-family: "Open Sans", sans-serif;
     font-size: 11px;
     font-weight: 600;
-    line-height: 15px;
+    line-height: 16px;
     text-transform: uppercase;
 }
 
@@ -115,7 +129,7 @@
 .slot h4 {
     color: inherit;
     display: -webkit-box;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1;
@@ -127,6 +141,7 @@
 .slot .ellipsis {
     display: -webkit-box;
     margin-bottom: 12px;
+    min-height: 48px; /* Required for when blurb is a single line */
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
