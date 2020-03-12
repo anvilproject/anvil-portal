@@ -213,7 +213,10 @@ class Carousel extends React.Component {
 
             const {show, slot} = props,
                 {carousel, slug} = slot,
-                {blurb, docType, title, url} = carousel;
+                {blurb, docType, logo, title, url} = carousel,
+                {childImageSharp} = logo || {},
+                {fluid} = childImageSharp || {},
+                {src} = fluid || {};
 
             const linkTo = this.isValidUrl(url) ? url : this.isRelativePath(url) ? url : slug;
             const openTab = this.isValidUrl(url);
@@ -222,8 +225,13 @@ class Carousel extends React.Component {
                 <ClickHandler className={classNames({[compStyles.show]: show}, compStyles.slot)}
                               clickAction={() => this.redirect(linkTo, openTab)}
                               tag={"div"}>
-                    <div className={compStyles.type}>{docType}</div>
-                    <h4>{title}</h4>
+                    <div className={compStyles.hero}>
+                        {logo ? <img src={src} alt="logo"/> : null}
+                        <div>
+                            <div className={compStyles.type}>{docType}</div>
+                            <h4>{title}</h4>
+                        </div>
+                    </div>
                     <p className={compStyles.ellipsis}>{blurb}</p>
                     <ClickHandler className={compStyles.learnMore}
                        clickAction={() => this.redirect(linkTo, openTab)} tag={"p"}>Learn More<img src={arrows} alt="learn more"/>

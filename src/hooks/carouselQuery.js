@@ -12,6 +12,13 @@ export const CarouselStaticQuery = () => {
                     active
                     blurb
                     docType
+                    logo {
+                      childImageSharp {
+                        fluid {
+                          src
+                        }
+                      }
+                    }
                     title
                     url
                   }

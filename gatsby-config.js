@@ -143,6 +143,9 @@ module.exports = {
                     `gatsby-remark-external-links`,
                     `gatsby-remark-responsive-iframe`,
                     {
+                        resolve: `gatsby-remark-relative-images`,
+                    },
+                    {
                         resolve: `gatsby-remark-images`,
                         options: {
                             linkImagesToOriginal: false,
