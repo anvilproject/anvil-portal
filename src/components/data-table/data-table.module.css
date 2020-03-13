@@ -1,0 +1,90 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Table - TODO - overflow */
+table {
+    display: inline-table;
+}
+
+/* Table - summary */
+table.summary {
+    max-width: 680px;
+}
+
+/* Table - detail - TODO */
+table.detail {
+    min-width: 1118px;
+    width: calc(1232px - 234px - 32px + (100vw - 1280px) / 2); /* Container, left nav, left content padding, page margin */
+}
+
+/* Header cell, row cell */
+.header th, .row td {
+    border-bottom: none;
+    color: var(--accent-blue-dark);
+    font-size: 14px;
+}
+
+/* Header */
+.header {
+    border-bottom: 1px solid var(--accent-blue-green);
+    height: 42px;
+    vertical-align: bottom;
+}
+
+/* Header cells */
+.header th {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 0 0 4px;
+}
+
+/* Header cell - first */
+.header th:first-of-type {
+    padding: 0 0 4px 8px;
+}
+
+/* Header cell - last */
+.header th:last-of-type {
+    padding: 0 8px 4px 0;
+}
+
+/* Row */
+.row {
+    border-bottom: 1px solid var(--shade-light-green);
+}
+
+/* Row cells */
+.row td {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    height: 32px;
+    padding: 0;
+}
+
+/* TODO */
+.row td.right, .header th.right {
+    //text-align: right;
+}
+
+/* Table - detail - row cell - program */
+table.detail .row td:first-of-type {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+/* Row cell - first */
+.row td:first-of-type {
+    padding: 0 0 0 8px;
+}
+
+/* Row cell - last */
+.row td:last-of-type {
+    padding: 0 8px 0 0;
+}

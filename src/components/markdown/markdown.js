@@ -12,6 +12,8 @@ import rehypeReact from "rehype-react";
 // App dependencies
 import Button from "../button/button";
 import CardCollection from "../cardCollection/cardCollection";
+import DataDetail from "../data-detail/data-detail";
+import DataSummary from "../data-summary/data-summary";
 import Events from "../events/events";
 import FigureCaption from "../figureCaption/figureCaption";
 import GoArrow from "../goArrow/goArrow";
@@ -52,6 +54,8 @@ class Markdown extends React.Component {
             components: {
                 "button": Button,
                 "card-collection": CardCollection,
+                "data-detail": DataDetail,
+                "data-summary": DataSummary,
                 "events": Events,
                 "figure-caption": FigureCaption,
                 "go-arrow": GoArrow,

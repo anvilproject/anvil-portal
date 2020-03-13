@@ -12,6 +12,17 @@
     width: 100%;
 }
 
+/* Article body - stretch */
+.articleBody.stretch {
+    left: 220px; /* Bound by left nav position */
+    margin-left: unset;
+    margin-right: unset;
+    max-width: unset;
+    position: relative;
+    right: 0;
+    width: 100%;
+}
+
 /**
  * Large Tablet
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
@@ -51,5 +62,10 @@
         margin-right: unset; /* Outline */
         max-width: 650px;
         padding: 0 32px;
+    }
+
+    /* Article body - stretch */
+    .articleBody.stretch {
+        left: 234px; /* Bound by left nav position */
     }
 }
