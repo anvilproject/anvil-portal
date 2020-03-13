@@ -11,7 +11,7 @@ Members of these teams are also involved with platform and software development 
 
 ### Broad Institute
 - [Anthony Philippakis](https://www.broadinstitute.org/bios/anthony-philippakis-0)
-- MacArthur
+- Daniel MacArthur
 
 ### City University of New York
 - [Levi Waldron](https://waldronlab.io)
@@ -24,7 +24,7 @@ Members of these teams are also involved with platform and software development 
 - [James Taylor](https://www.taylorlab.org)
 - Jeff Leek
 - Kasper Hansen
-- Schatz
+- Michael Schatz
 
 ### Oregon Health & Sciences University
 - [Jeremy Goecks](https://goeckslab.org)
