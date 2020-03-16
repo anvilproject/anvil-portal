@@ -34,6 +34,9 @@
       path: "/data"
     - name: "Data Access"
       key: "/data/data-access"
+      secondaryLinks:
+      - name: "dbGaP Access Guide"
+        key: "/data/data-access/dbgap-access-guide"
     - name: "Data Submission"
       key: "/data/data-submission"
 - name: "Events"
