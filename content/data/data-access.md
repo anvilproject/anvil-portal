@@ -10,7 +10,7 @@ author: "AnVIL"
 
 ## Access Groups
 
-**External Researcher Access** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL. 
+**[External Researcher Access](/data/data-access/dbgap-access-guide)** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL.
 
 **Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium.
 
