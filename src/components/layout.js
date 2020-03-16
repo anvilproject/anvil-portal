@@ -10,6 +10,7 @@ import Helmet from "react-helmet";
 import React from "react";
 
 // App dependencies
+import * as EnvironmentService from "../utils/environment.service";
 import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Main from "./main/main";
@@ -43,6 +44,7 @@ class Layout extends React.Component {
             <div>
                 <Helmet>
                     <title>The AnVIL</title>
+                    {EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
                     <link rel="stylesheet"
                           href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"/>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300&display=swap"/>
