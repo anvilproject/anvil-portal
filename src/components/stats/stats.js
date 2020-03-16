@@ -20,7 +20,6 @@ import compStyles from "./stats.module.css";
 class Stats extends React.Component {
 
     formatStats = (count) => {
-
         return NumberFormatService.format(count, {
             PB: 1
         });
