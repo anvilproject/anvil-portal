@@ -16,7 +16,7 @@ import DataTable from "../data-table/data-table";
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["Programs", "Project Id", "Public", "Samples", "Files", "Demographic", "Diagnosis", "Family", "Size (TB)"];
+let TABLE_HEADERS = ["program", "projectId", "public", "samples", "files", "demographics", "diagnosis", "families", "size"];
 
 let TABLE_ROWS = [
     {

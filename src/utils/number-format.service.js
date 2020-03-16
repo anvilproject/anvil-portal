@@ -40,3 +40,14 @@ export function format(num, digitsConfig) {
 	}
 	return (num / si[i].value).toFixed(digits).replace(rx, '$1') + symbol;
 }
+
+/**
+ * Returns true if the value is a number.
+ *
+ * @param value
+ * @returns {boolean}
+ */
+export function isNumber(value) {
+
+    return !isNaN(value);
+}

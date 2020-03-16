@@ -36,7 +36,7 @@ class Article extends React.Component {
         dashboard = docPath === "/data/data-dashboard";
 
         return (
-            <section className={compStyles.article}>
+            <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav bannerHeight={bannerHeight} docPath={docPath}/>
                     {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
