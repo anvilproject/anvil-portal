@@ -16,6 +16,11 @@ import ArticleEnd from "../components/articleEnd/articleEnd";
 import Layout from "../components/layout";
 import Workspaces from "../components/workspaces/workspaces";
 
+// Styles
+import bodyStyles from "../components/article/articleBody.module.css";
+
+let classNames = require("classnames");
+
 export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, htmlAst} = post,
@@ -23,10 +28,11 @@ export default ({data}) => {
         {component} = frontmatter;
 
     const workspaces = component === "featured";
+    const dashboard = slug === "/data/data-dashboard";
 
     return (
         <Layout docPath={slug}>
-            <ArticleBody htmlAst={htmlAst}>
+            <ArticleBody className={classNames({[bodyStyles.stretch]: dashboard})} htmlAst={htmlAst}>
                 {workspaces ? <Workspaces/> : null}
                 <ArticleEnd docPath={slug}/>
             </ArticleBody>

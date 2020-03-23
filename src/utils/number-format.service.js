@@ -40,3 +40,25 @@ export function format(num, digitsConfig) {
 	}
 	return (num / si[i].value).toFixed(digits).replace(rx, '$1') + symbol;
 }
+
+/**
+ * Formats file size to TB.
+ *
+ * @param size
+ * @returns {string}
+ */
+export function formatSizeToTB(size) {
+
+    return (size / 1E12).toFixed(2);
+}
+
+/**
+ * Returns true if the value is a number.
+ *
+ * @param value
+ * @returns {boolean}
+ */
+export function isNumber(value) {
+
+    return !isNaN(value);
+}

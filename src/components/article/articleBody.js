@@ -14,12 +14,14 @@ import Markdown from "../markdown/markdown";
 // Styles
 import compStyles from "./articleBody.module.css";
 
+let classNames = require("classnames");
+
 class ArticleBody extends React.Component {
 
     render() {
-        const {children, htmlAst} = this.props;
+        const {children, className, htmlAst} = this.props;
         return (
-            <div className={compStyles.articleBody}>
+            <div className={classNames(compStyles.articleBody, className)}>
                 <Markdown>{htmlAst}</Markdown>
                 {children}
             </div>
@@ -29,9 +31,9 @@ class ArticleBody extends React.Component {
 
 export default (props) => {
 
-    const {htmlAst} = props;
+    const {className, htmlAst} = props;
 
     return (
-        <ArticleBody htmlAst={htmlAst} {...props}/>
+        <ArticleBody className={className} htmlAst={htmlAst} {...props}/>
     )
 }

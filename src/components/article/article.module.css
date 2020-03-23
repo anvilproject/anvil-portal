@@ -10,6 +10,12 @@
     padding: 36px 0;
 }
 
+/* Overflow - hidden */
+/* For "data dashboard" */
+.article.overflow {
+    overflow: hidden;
+}
+
 /* Article container */
 .article .container {
     display: flex;

@@ -1,0 +1,159 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Table wrapper */
+/* Allows for overflow on smaller screens */
+.wrapper {
+    overflow-y: auto;
+    padding-right: 16px; /* RHS gutter */
+    width: calc(100vw - 16px);
+}
+
+/* Table wrapper - summary */
+.wrapper.summary {
+    margin-bottom: 24px;
+}
+
+/* Table */
+table {
+    display: inline-table;
+    margin: 0;
+}
+
+/* Table - summary */
+.summary table {
+    min-width: 568px;
+}
+
+/* Table - detail */
+.detail table {
+    max-width: 1280px;
+    min-width: 1118px;
+}
+
+/* Header cell, row cell */
+.header th, .row td {
+    border-bottom: none;
+    color: var(--accent-blue-dark);
+    font-size: 14px;
+}
+
+/* Header */
+.header {
+    border-bottom: 1px solid var(--accent-blue-green);
+    height: 42px;
+    vertical-align: bottom;
+}
+
+/* Header cells */
+.header th {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 0 0 4px;
+}
+
+/* Header cell - first */
+.header th:first-of-type {
+    padding: 0 0 4px 8px;
+}
+
+/* Header cell - last */
+.header th:last-of-type {
+    padding: 0 8px 4px 0;
+}
+
+/* Row */
+.row {
+    border-bottom: 1px solid var(--shade-light-green);
+}
+
+/* Row cells */
+.row td {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    height: 32px;
+    padding: 0;
+}
+
+/* Right align cell */
+.row td.right, .header th.right {
+    text-align: right;
+}
+
+/* Table - detail - row cell - program */
+table.detail .row td:first-of-type {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+/* Row cell - first */
+.row td:first-of-type {
+    padding: 0 0 0 8px;
+}
+
+/* Row cell - last */
+.row td:last-of-type {
+    padding: 0 8px 0 0;
+}
+
+/**
+ * Large Tablet
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Table wrapper - summary */
+    .wrapper.summary {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    /* Table wrapper - detail */
+    .wrapper.detail {
+        padding-right: calc((100vw - 602px) / 2); /* Page width minus: inner content max width, halved */
+        width: calc(100vw - ((100vw - 602px) / 2));
+    }
+}
+
+/**
+ * Small +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 960px) {
+
+    /* Table wrapper - detail */
+    .wrapper.detail {
+        padding-right: 24px;
+        width: calc(100vw - 220px - 16px - 24px); /* Page width minus: left nav, left content padding, page gutter */
+    }
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Table wrapper - summary */
+    .wrapper.summary {
+        padding-right: 0;
+        width: unset;
+    }
+
+    /* Table wrapper - detail */
+    .wrapper.detail {
+        width: calc(100vw - ((100vw - 1232px) / 2) - 234px - 32px); /* Page width minus: calculated left margin, left nav, left content padding. */
+    }
+
+    /* Table - summary */
+    .summary table {
+        max-width: 680px;
+    }
+}

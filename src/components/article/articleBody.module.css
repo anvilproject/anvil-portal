@@ -37,6 +37,16 @@
         max-width: unset;
         padding: 0 16px;
     }
+
+    /* Article body - stretch */
+    .articleBody.stretch {
+        left: 220px; /* Bound by left nav position */
+        margin-left: unset;
+        margin-right: unset;
+        max-width: calc(100vw - 48px - 220px - 16px); /* Page width minus: LHS & RHS gutter, nav, LHS content padding */
+        position: relative;
+        width: unset;
+    }
 }
 
 /**
@@ -51,5 +61,11 @@
         margin-right: unset; /* Outline */
         max-width: 650px;
         padding: 0 32px;
+    }
+
+    /* Article body - stretch */
+    .articleBody.stretch {
+        left: 234px; /* Bound by left nav position */
+        max-width: calc(1232px - 234px - 32px); /* Inner content minus: nav, LHS content padding */
     }
 }
