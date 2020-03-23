@@ -49,10 +49,10 @@ class DataTable extends React.Component {
             case "files":
                 return "Files";
             case "program":
-                return "Programs";
+                return "Program";
             case "projectId":
                 return "Project Id";
-            case "public":
+            case "publicData":
                 return "Public";
             case "samples":
                 return "Samples";
@@ -70,13 +70,13 @@ class DataTable extends React.Component {
 
         const TableRow = (props) => {
 
-            const {row} = props;
+            const {order, row} = props;
 
             return (
                 <tr className={compStyles.row}>
-                    {Object.entries(row).map(([key, value]) =>
-                        <td key={key}
-                            className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(value)}</td>)}
+                    {order.map((key, c) =>
+                        <td key={c}
+                            className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(row[key])}</td>)}
                 </tr>
             )
         };
@@ -90,7 +90,7 @@ class DataTable extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {tableRows.map((tableRow, r) => <TableRow key={r} row={tableRow}/>)}
+                    {tableRows.map((tableRow, r) => <TableRow key={r} order={tableHeaders} row={tableRow}/>)}
                 </tbody>
             </table>
             </div>

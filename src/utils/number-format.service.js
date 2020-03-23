@@ -42,6 +42,17 @@ export function format(num, digitsConfig) {
 }
 
 /**
+ * Formats file size to TB.
+ *
+ * @param size
+ * @returns {string}
+ */
+export function formatSizeToTB(size) {
+
+    return (size / 1E12).toFixed(2);
+}
+
+/**
  * Returns true if the value is a number.
  *
  * @param value

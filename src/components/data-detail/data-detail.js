@@ -11,67 +11,23 @@
 import React from "react";
 
 // App dependencies
+import {DashboardStaticQuery} from "../../hooks/dashboardQuery";
+import * as DashboardDetailService from "../../utils/dashboard-detail.service";
 import DataTable from "../data-table/data-table";
 
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["program", "projectId", "public", "samples", "files", "demographics", "diagnosis", "families", "size"];
-
-let TABLE_ROWS = [
-    {
-        program: "All CCDG",
-        projectId: "CCDG",
-        publicData: "NA",
-        samples: 59012,
-        files: 59013,
-        demographics: 59012,
-        diagnosis: 4,
-        families: 4998,
-        size: 901.1
-    },
-    {
-        program: "AnVIL_CCDG_Baylor_CVD_AFib_BioVU_WGS",
-        projectId: "CCDG",
-        publicData: "False",
-        samples: 1122,
-        files: 1122,
-        demographics: 1122,
-        diagnosis: null,
-        families: null,
-        size: 26.79
-    },
-    {
-        program: "AnVIL_CCDG_Baylor_CVD_AFib_Groningen_WGS",
-        projectId: "CCDG",
-        publicData: "False",
-        samples: 639,
-        files: 639,
-        demographics: 639,
-        diagnosis: null,
-        families: null,
-        size: 13.92
-    },
-    {
-        program: "AnVIL_CCDG_Baylor_CVD_EOCAD_BioMe_WGS",
-        projectId: "CCDG",
-        publicData: "False",
-        samples: 1201,
-        files: 1201,
-        demographics: 1201,
-        diagnosis: null,
-        families: null,
-        size: 102.66
-    },
-];
+let TABLE_HEADERS = ["projectId", "program", "publicData", "samples", "files", "demographics", "diagnosis", "families", "size"];
 
 class DataDetail extends React.Component {
 
     render() {
+        const {details} = this.props;
         return (
             <>
                 <h2>Data Detail</h2>
-                <DataTable className={tableStyles.detail} tableHeaders={TABLE_HEADERS} tableRows={TABLE_ROWS}/>
+                <DataTable className={tableStyles.detail} tableHeaders={TABLE_HEADERS} tableRows={details}/>
             </>
         );
     }
@@ -79,7 +35,9 @@ class DataDetail extends React.Component {
 
 export default () => {
 
+    const details = DashboardDetailService.getDashboardDetail(DashboardStaticQuery());
+
     return (
-        <DataDetail/>
+        <DataDetail details={details}/>
     )
 }
