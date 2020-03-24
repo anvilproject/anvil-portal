@@ -40,7 +40,7 @@
     - name: "Data Submission"
       key: "/data/data-submission"
     - name: "Data Dashboard"
-      key: "data/data-dashboard"
+      key: "/data/data-dashboard"
 - name: "Events"
   key: "events"
   path: "/events"
