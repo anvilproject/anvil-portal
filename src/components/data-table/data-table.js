@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import * as NumberFormatService from "../../utils/number-format.service";
+import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
 import compStyles from "./data-table.module.css";
@@ -33,6 +34,14 @@ class DataTable extends React.Component {
     cellAlignment(key) {
 
         return CELLS_RIGHT_ALIGNED.includes(key.toLowerCase());
+    };
+
+    redirect = (linkTo) => {
+
+        if ( linkTo ) {
+
+            window.open(linkTo)
+        }
     };
 
     translateHeaderCellNameToDisplayCellName = (cellName) => {
@@ -68,16 +77,28 @@ class DataTable extends React.Component {
     render() {
         const {className, tableHeaders, tableRows} = this.props;
 
-        const TableRow = (props) => {
+        const Row = (props) => {
 
-            const {order, row} = props;
+            const {children, url} = props;
 
             return (
-                <tr className={compStyles.row}>
+                url ? <ClickHandler className={classNames(compStyles.row, compStyles.link)}
+                                    clickAction={() => this.redirect(url)}
+                                    tag={"tr"}>{children}</ClickHandler> : <tr className={compStyles.row}>{children}</tr>
+            )
+        };
+
+        const TableRow = (props) => {
+
+            const {order, row} = props,
+                url = row["url"];
+
+            return (
+                <Row url={url}>
                     {order.map((key, c) =>
                         <td key={c}
                             className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(row[key])}</td>)}
-                </tr>
+                </Row>
             )
         };
 
