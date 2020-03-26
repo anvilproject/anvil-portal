@@ -73,6 +73,12 @@ table {
     border-bottom: 1px solid var(--shade-light-green);
 }
 
+/* Row - detail - hover */
+.row.link:hover {
+    background-color: var(--black3);
+    cursor: pointer;
+}
+
 /* Row cells */
 .row td {
     font-family: "Barlow", sans-serif;

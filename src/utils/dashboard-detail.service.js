@@ -23,7 +23,8 @@ export function getDashboardDetail(data) {
             projectId: project.project_id,
             publicData: formatBoolean(project.public),
             samples: getSamplesCount(project),
-            size: formatFileSize(project.size)
+            size: formatFileSize(project.size),
+            url: `https://anvil.terra.bio/#workspaces/anvil-datastorage/${project.project_id}`
         }
     });
 }
