@@ -18,7 +18,7 @@ import DataTable from "../data-table/data-table";
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["projectId", "program", "publicData", "samples", "files", "demographics", "diagnosis", "families", "size"];
+let TABLE_HEADERS = ["projectId", "program", "publicData", "demographics", "samples","files","size"];
 
 class DataDetail extends React.Component {
 

@@ -18,7 +18,7 @@ import DataTable from "../data-table/data-table";
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["program", "subjects", "samples", "cohorts", "files", "size"];
+let TABLE_HEADERS = ["program", "cohorts", "subjects", "samples","files", "size"];
 
 class DataSummary extends React.Component {
 

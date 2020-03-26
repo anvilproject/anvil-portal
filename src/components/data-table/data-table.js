@@ -50,7 +50,7 @@ class DataTable extends React.Component {
             case "cohorts":
                 return "Cohorts";
             case "demographics":
-                return "Demographic";
+                return "Subjects";
             case "diagnosis":
                 return "Diagnosis";
             case "families":
