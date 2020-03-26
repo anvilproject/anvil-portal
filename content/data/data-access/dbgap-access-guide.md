@@ -12,8 +12,6 @@ The AnVIL is a repository for a number of robust controlled access datasets. Whi
 1. Have an eRA Commons or NIH account. Go [here](https://wiki.nci.nih.gov/display/TCGA/Application+Process) for instructions to set up an eRA Commons or NIH account..
 1. Establish a link in Terra to your eRA Commons/NIH Account. To link an eRA Commons to your Terra account, go to your [Profile page](https://anvil.terra.bio/#profile) in Terra and log in with your NIH credentials. _(Note: Once per month, you will need to relink these accounts to ensure that you still have proper access)_.
 
-![NIH Account](../_images/nih-account.png)
-
 ##Submitting A Data Access Request
 
 1. **Identify the phsID of the cohort you wish to access.** A helpful list can be found here: [AnVIL Cohort Inventory](https://docs.google.com/spreadsheets/d/191X-ZmLwm2K5XlKfiXL6KvRXzCCxsbAqYrQ3HY_9IcA/edit?usp=sharing)
