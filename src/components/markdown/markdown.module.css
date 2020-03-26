@@ -10,6 +10,11 @@
  * Content Styles
  */
 
+/* Content */
+.content {
+    max-width: 650px; /* Required for style "stretch" on article body (data dashboard) */
+}
+
 /* Link style */
 .content a {
     border-bottom: 2px solid var(--accent-mustard);

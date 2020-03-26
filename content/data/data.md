@@ -36,3 +36,9 @@ The 1000 Genomes Project, launched in January 2008, is an international research
 ### [eMERGE](https://emerge.mc.vanderbilt.edu)
 
 The Electronic and MEdical Records and Genomics project (eMERGE) is a national network organized and funded by the NHGRI that combines DNA biorepositories with electronic medical record (EMR) systems for large scale, high-throughput genetic research in support of implementing genomic medicine.
+
+## Data Dashboard
+
+<data-summary></data-summary>
+
+<data-detail></data-detail>

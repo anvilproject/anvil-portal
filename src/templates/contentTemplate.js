@@ -27,11 +27,12 @@ export default ({data}) => {
         {slug} = fields,
         {component} = frontmatter;
 
+    const dashboard = slug === "/data/data";
+    const noSpy = dashboard;
     const workspaces = component === "featured";
-    const dashboard = slug === "/data/data-dashboard";
 
     return (
-        <Layout docPath={slug}>
+        <Layout docPath={slug} noSpy={noSpy}>
             <ArticleBody className={classNames({[bodyStyles.stretch]: dashboard})} htmlAst={htmlAst}>
                 {workspaces ? <Workspaces/> : null}
                 <ArticleEnd docPath={slug}/>

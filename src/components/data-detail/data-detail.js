@@ -26,7 +26,7 @@ class DataDetail extends React.Component {
         const {details} = this.props;
         return (
             <>
-                <h2>Data Detail</h2>
+                <h3>Data Detail</h3>
                 <DataTable className={tableStyles.detail} tableHeaders={TABLE_HEADERS} tableRows={details}/>
             </>
         );
