@@ -60,7 +60,7 @@ class DataTable extends React.Component {
             case "program":
                 return "Program";
             case "projectId":
-                return "Project Id";
+                return "Terra Workspace Name";
             case "publicData":
                 return "Public";
             case "samples":
