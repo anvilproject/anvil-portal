@@ -33,7 +33,7 @@ class Article extends React.Component {
 
     render() {
         const {bannerHeight, children, docPath, noSpy} = this.props,
-        dashboard = docPath === "/data/data-dashboard";
+        dashboard = docPath === "/data/data";
 
         return (
             <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
