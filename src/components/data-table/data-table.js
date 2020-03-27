@@ -47,6 +47,8 @@ class DataTable extends React.Component {
     translateHeaderCellNameToDisplayCellName = (cellName) => {
 
         switch (cellName) {
+            case "access":
+                return "Access";
             case "cohorts":
                 return "Cohorts";
             case "demographics":
@@ -61,8 +63,6 @@ class DataTable extends React.Component {
                 return "Program";
             case "projectId":
                 return "Terra Workspace Name";
-            case "publicData":
-                return "Public";
             case "samples":
                 return "Samples";
             case "subjects":

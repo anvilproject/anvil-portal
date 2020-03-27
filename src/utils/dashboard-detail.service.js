@@ -15,13 +15,13 @@ export function getDashboardDetail(data) {
     return data.projects.map(project => {
 
         return {
+            access: formatAccess(project.public),
             demographics: getDemographicsCount(project),
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
             program: switchProgramName(project.source),
             projectId: project.project_id,
-            publicData: formatBoolean(project.public),
             samples: getSamplesCount(project),
             size: formatFileSize(project.size),
             url: `https://anvil.terra.bio/#workspaces/anvil-datastorage/${project.project_id}`
@@ -38,16 +38,21 @@ function findProjectNodeByType(project, type) {
 }
 
 /**
- * Converts a boolean value into a capitalized string value.
+ * Converts the public data boolean value into a corresponding "Public" or "Private" string value.
  *
  * @param boolean
  * @returns {string}
  */
-function formatBoolean(boolean) {
+function formatAccess(boolean) {
 
-    const bool = boolean.toString();
+    if ( boolean === true ) {
 
-    return `${bool[0].toUpperCase()}${bool.slice(1)}`;
+        return "Public";
+    }
+    else {
+
+        return "Private";
+    }
 }
 
 /**
