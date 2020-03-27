@@ -29,15 +29,15 @@
     location: "h"
     order: 1
   primaryLinks:
-    - name: "Data"
+    - name: "Data Sets"
       key: "/data/data"
       path: "/data"
-    - name: "Data Access"
+    - name: "Data Access Controls"
       key: "/data/data-access"
-      secondaryLinks:
-      - name: "External Researcher Access"
-        key: "/data/data-access/dbgap-access-guide"
-    - name: "Data Submission"
+    - name: "Requesting Data Access"
+      key: "/data/data-access/dbgap-access-guide"
+      path: "/data/requesting-data-access"
+    - name: "Submitting Data"
       key: "/data/data-submission"
 - name: "Events"
   key: "events"

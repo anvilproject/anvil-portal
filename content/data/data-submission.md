@@ -1,8 +1,8 @@
 # Data Submission
 
+AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.
+
 ##Submission Opportunities
-###Ingestion announcement
-This page describes the eligibility requirements, ingestion process, and access to the AnVIL data submission application.
 
 ###Eligibility
 Data submitters must complete the [AnVIL Dataset Onboarding Application](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform) for evaluation by the AnVIL Data Ingestion Committee.
@@ -11,8 +11,11 @@ Data submitters must complete the [AnVIL Dataset Onboarding Application](https:/
 We strongly encourage people to contact the AnVIL team with any questions you have regarding data deposition, we are happy to answer questions or help determine if the AnVIL is the right place for your data. Contact us at: [help@lists.anvilproject.org](mailto:help@anvilproject.org).
 
 ##Minimal Ingestion Information
+
 ###Data models
-Data submitted for hosting by the AnVIL will be consistent with data model(s) in the AnVIL system when possible. This can either be accomplished by submitting data consistent with the existing data model(s), or by working directly with the AnVIL Phenotype WG and Data Processing WG to integrate into an existing data model. Phenotype data should be linked to a concept identifier from a standard ontology whenever possible. This can either be by submitting data linked to the ontologies existing in the AnVIL, or by working directly with the AnVIL Phenotype WG and Data Processing WG to map the phenotype data to appropriate ontologies.
+Data submitted for hosting by the AnVIL will be consistent with data model(s) in the AnVIL system when possible. This can either be accomplished by submitting data consistent with the existing data model(s), or by working directly with the AnVIL Phenotype WG and Data Processing WG to integrate into an existing data model. 
+
+Phenotype data should be linked to a concept identifier from a standard ontology whenever possible. This can either be by submitting data linked to the ontologies existing in the AnVIL, or by working directly with the AnVIL Phenotype WG and Data Processing WG to map the phenotype data to appropriate ontologies.
 
 In most instances, data ingestion will be the result of a collaborative effort with the Phenotype and Data Processing WGs, and will be initiated as a response to the ingestion application. The application should specify the current data model(s) and ontologies for the data to be submitted, in order to expedite review by both WGs.
 
