@@ -13,6 +13,7 @@ export const DashboardStaticQuery = () => {
                         size
                         type
                       }
+                      dbGAP_project_id
                       nodes {
                         count
                         type

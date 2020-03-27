@@ -55,17 +55,17 @@ table {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     line-height: 24px;
-    padding: 0 0 4px;
+    padding: 0 4px 4px;
 }
 
 /* Header cell - first */
 .header th:first-of-type {
-    padding: 0 0 4px 8px;
+    padding: 0 4px 4px 8px;
 }
 
 /* Header cell - last */
 .header th:last-of-type {
-    padding: 0 8px 4px 0;
+    padding: 0 8px 4px 4px;
 }
 
 /* Row */
@@ -73,18 +73,19 @@ table {
     border-bottom: 1px solid var(--shade-light-green);
 }
 
-/* Row - detail - hover */
-.row.link:hover {
-    background-color: var(--black3);
-    cursor: pointer;
-}
-
 /* Row cells */
 .row td {
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     height: 32px;
-    padding: 0;
+    min-width: 96px;
+    padding: 0 4px;
+}
+
+/* Row cell - link */
+.row td.link {
+    color: var(--primary);
+    cursor: pointer;
 }
 
 /* Right align cell */
@@ -101,12 +102,12 @@ table.detail .row td:first-of-type {
 
 /* Row cell - first */
 .row td:first-of-type {
-    padding: 0 0 0 8px;
+    padding: 0 4px 0 8px;
 }
 
 /* Row cell - last */
 .row td:last-of-type {
-    padding: 0 8px 0 0;
+    padding: 0 8px 0 4px;
 }
 
 /**

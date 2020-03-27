@@ -36,11 +36,18 @@ class DataTable extends React.Component {
         return CELLS_RIGHT_ALIGNED.includes(key.toLowerCase());
     };
 
-    redirect = (linkTo) => {
+    redirect = (column, linkId) => {
 
-        if ( linkTo ) {
+        if ( linkId ) {
 
-            window.open(linkTo)
+            if ( column === "projectId" ) {
+
+                window.open(`https://anvil.terra.bio/#workspaces/anvil-datastorage/${linkId}`)
+            }
+            else if ( column === "dbGapId" ) {
+
+                window.open(`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${linkId}`)
+            }
         }
     };
 
@@ -59,6 +66,8 @@ class DataTable extends React.Component {
                 return "Family";
             case "files":
                 return "Files";
+            case "dbGapId":
+                return "dbGap Id";
             case "program":
                 return "Program";
             case "projectId":
@@ -77,28 +86,30 @@ class DataTable extends React.Component {
     render() {
         const {className, tableHeaders, tableRows} = this.props;
 
-        const Row = (props) => {
+        const RowCell = (props) => {
 
-            const {children, url} = props;
+            const {children, className, column} = props,
+            linked = (column === "projectId" || column === "dbGapId") && children,
+            data = children || "--";
 
             return (
-                url ? <ClickHandler className={classNames(compStyles.row, compStyles.link)}
-                                    clickAction={() => this.redirect(url)}
-                                    tag={"tr"}>{children}</ClickHandler> : <tr className={compStyles.row}>{children}</tr>
+                linked ? <ClickHandler className={classNames(className, compStyles.link)}
+                                    clickAction={() => this.redirect(column, data)}
+                                    tag={"td"}>{children}</ClickHandler> : <td className={className}>{data}</td>
             )
         };
 
         const TableRow = (props) => {
 
-            const {order, row} = props,
-                url = row["url"];
+            const {order, row} = props;
 
             return (
-                <Row url={url}>
+                <tr className={compStyles.row}>
                     {order.map((key, c) =>
-                        <td key={c}
-                            className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(row[key])}</td>)}
-                </Row>
+                        <RowCell key={c}
+                              column={key}
+                              className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(row[key])}</RowCell>)}
+                </tr>
             )
         };
 
