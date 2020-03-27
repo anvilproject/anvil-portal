@@ -20,11 +20,11 @@ export function getDashboardDetail(data) {
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
+            dbGapId: project.dbGAP_project_id,
             program: switchProgramName(project.source),
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: formatFileSize(project.size),
-            url: `https://anvil.terra.bio/#workspaces/anvil-datastorage/${project.project_id}`
         }
     });
 }
