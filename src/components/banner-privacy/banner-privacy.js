@@ -85,7 +85,7 @@ class BannerPrivacy extends React.Component {
 
     accept = () => {
 
-        Cookies.set("privacyAccepted", true);
+        Cookies.set("privacyAccepted", true, { expires: new Date(2300, 1, 1) });
 
         this.setState({bannerHeight: 0});
         this.setState({visible: false});
