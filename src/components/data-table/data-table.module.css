@@ -93,6 +93,11 @@ table {
     padding: 0 4px;
 }
 
+/* Detail table - row cell - "access" */
+.detail .row td:nth-of-type(4) {
+    min-width: 32px;
+}
+
 /* Row cells - "total" */
 .row.total td {
     font-weight: 500;
