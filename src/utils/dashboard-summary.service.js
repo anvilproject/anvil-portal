@@ -19,9 +19,9 @@ export function getDashboardSummary(data) {
         return {
             cohorts: countCohorts(projectsByProgram),
             files: sumFiles(projectsByProgram),
-            program: switchProgramName(program),
+            program: program,
             samples: sumSamples(projectsByProgram),
-            size: calculateSize(projectsByProgram),
+            sizeTB: calculateSize(projectsByProgram),
             subjects: sumSubjects(projectsByProgram)
         }
     });
@@ -34,7 +34,7 @@ export function getDashboardSummaryTotals(summary) {
         files: totalFiles(summary),
         program: "Total",
         samples: totalSamples(summary),
-        size: totalSize(summary),
+        sizeTB: totalSize(summary),
         subjects: totalSubjects(summary)
     }
 }
@@ -184,24 +184,6 @@ function sumSubjects(data) {
 }
 
 /**
- * Returns the corresponding program display name.
- *
- * @param program
- * @returns {*}
- */
-function switchProgramName(program) {
-
-    switch (program) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return program;
-    }
-}
-
-/**
  * Returns the total number of cohorts for all programs.
  *
  * @param summary
@@ -242,7 +224,7 @@ function totalSamples(summary) {
  */
 function totalSize(summary) {
 
-    return reduceSummaryByType(summary, "size");
+    return reduceSummaryByType(summary, "sizeTB");
 }
 
 /**

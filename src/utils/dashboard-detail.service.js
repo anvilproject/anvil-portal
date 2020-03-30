@@ -21,7 +21,7 @@ export function getDashboardDetail(data) {
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
             dbGapId: project.dbGAP_project_id,
-            program: switchProgramName(project.source),
+            program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: formatFileSize(project.size),
@@ -110,22 +110,4 @@ function sumFileValues(files) {
         accum += file.count;
         return accum;
     }, 0);
-}
-
-/**
- * Returns the corresponding program display name.
- *
- * @param program
- * @returns {*}
- */
-function switchProgramName(program) {
-
-    switch (program) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return program;
-    }
 }
