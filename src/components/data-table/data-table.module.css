@@ -73,6 +73,17 @@ table {
     border-bottom: 1px solid var(--shade-light-green);
 }
 
+/* Summary table - row - last before "total" row */
+.summary .row:nth-last-child(2) {
+    border-bottom: none;
+}
+
+/* Summary table - row - "total" row */
+.summary .row.total {
+    border-top: 1px solid var(--accent-blue-green);
+    border-bottom-color: var(--accent-blue-green);
+}
+
 /* Row cells */
 .row td {
     font-family: "Barlow", sans-serif;
@@ -80,6 +91,11 @@ table {
     height: 32px;
     min-width: 96px;
     padding: 0 4px;
+}
+
+/* Row cells - "total" */
+.row.total td {
+    font-weight: 500;
 }
 
 /* Row cell - link */

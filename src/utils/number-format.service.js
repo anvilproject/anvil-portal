@@ -42,7 +42,7 @@ export function format(num, digitsConfig) {
 }
 
 /**
- * Formats file size to TB.
+ * Formats file size to TB, formatted to two decimal places.
  *
  * @param size
  * @returns {string}

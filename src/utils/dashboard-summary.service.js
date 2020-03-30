@@ -5,8 +5,6 @@
  * Service for formatting data dashboard summary into FE model.
  */
 
-import * as NumberFormatService from "./number-format.service";
-
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
  */
@@ -23,10 +21,22 @@ export function getDashboardSummary(data) {
             files: sumFiles(projectsByProgram),
             program: switchProgramName(program),
             samples: sumSamples(projectsByProgram),
-            size: formatSize(calculateSize(projectsByProgram)),
+            size: calculateSize(projectsByProgram),
             subjects: sumSubjects(projectsByProgram)
         }
     });
+}
+
+export function getDashboardSummaryTotals(summary) {
+
+    return {
+        cohorts: totalCohorts(summary),
+        files: totalFiles(summary),
+        program: "Total",
+        samples: totalSamples(summary),
+        size: totalSize(summary),
+        subjects: totalSubjects(summary)
+    }
 }
 
 /**
@@ -70,14 +80,18 @@ function filterProjectsByProgram(projects, program) {
 }
 
 /**
- * Returns size in TB, formatted to two decimal places.
+ * Returns the total sum of the specified summary type.
  *
- * @param size
- * @returns {string}
+ * @param data
+ * @param type
+ * @returns {*}
  */
-function formatSize(size) {
+function reduceSummaryByType(data, type) {
 
-    return NumberFormatService.formatSizeToTB(size);
+    return data.reduce((accum, summary) => {
+        accum += summary[type];
+        return accum;
+    }, 0);
 }
 
 /**
@@ -120,7 +134,7 @@ function sumFileValues(files) {
  */
 function sumNodeValues(nodes) {
 
-    return nodes.reduce((accum,  node) => {
+    return nodes.reduce((accum, node) => {
         accum += node.count;
         return accum;
     }, 0);
@@ -185,4 +199,59 @@ function switchProgramName(program) {
         default:
             return program;
     }
+}
+
+/**
+ * Returns the total number of cohorts for all programs.
+ *
+ * @param summary
+ * @returns {*}
+ */
+function totalCohorts(summary) {
+
+    return reduceSummaryByType(summary, "cohorts");
+}
+
+/**
+ * Returns the total number of files for all programs.
+ *
+ * @param summary
+ * @returns {*}
+ */
+function totalFiles(summary) {
+
+    return reduceSummaryByType(summary, "files");
+}
+
+/**
+ * Returns the total number of samples for all programs.
+ *
+ * @param summary
+ * @returns {*}
+ */
+function totalSamples(summary) {
+
+    return reduceSummaryByType(summary, "samples");
+}
+
+/**
+ * Returns the total number of sizes for all programs.
+ *
+ * @param summary
+ * @returns {*}
+ */
+function totalSize(summary) {
+
+    return reduceSummaryByType(summary, "size");
+}
+
+/**
+ * Returns the total number of subjects for all programs.
+ *
+ * @param summary
+ * @returns {*}
+ */
+function totalSubjects(summary) {
+
+    return reduceSummaryByType(summary, "subjects");
 }
