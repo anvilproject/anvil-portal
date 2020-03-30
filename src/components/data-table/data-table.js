@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import * as NumberFormatService from "../../utils/number-format.service";
+import * as DashboardTableService from "../../utils/dashboard-table.service";
 import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
@@ -17,120 +17,73 @@ import compStyles from "./data-table.module.css";
 
 let classNames = require("classnames");
 
-let CELLS_RIGHT_ALIGNED = ["cohorts", "demographics", "diagnosis", "families", "files", "samples", "size", "subjects"];
-
 class DataTable extends React.Component {
 
-    formatValue(value, column) {
+    redirect = (linkTo) => {
 
-        if ( value && column === "size" ) {
-
-            return NumberFormatService.formatSizeToTB(value);
-        }
-
-        if ( value && NumberFormatService.isNumber(value) ) {
-
-            return value.toLocaleString();
-        }
-
-        return value;
-    }
-
-    cellAlignment(key) {
-
-        return CELLS_RIGHT_ALIGNED.includes(key.toLowerCase());
-    };
-
-    redirect = (column, linkId) => {
-
-        if ( linkId ) {
-
-            if ( column === "projectId" ) {
-
-                window.open(`https://anvil.terra.bio/#workspaces/anvil-datastorage/${linkId}`)
-            }
-            else if ( column === "dbGapId" ) {
-
-                window.open(`https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${linkId}`)
-            }
-        }
-    };
-
-    translateHeaderCellNameToDisplayCellName = (cellName) => {
-
-        switch (cellName) {
-            case "access":
-                return "Access";
-            case "cohorts":
-                return "Cohorts";
-            case "demographics":
-                return "Subjects";
-            case "diagnosis":
-                return "Diagnosis";
-            case "families":
-                return "Family";
-            case "files":
-                return "Files";
-            case "dbGapId":
-                return "dbGap Id";
-            case "program":
-                return "Program";
-            case "projectId":
-                return "Terra Workspace Name";
-            case "samples":
-                return "Samples";
-            case "subjects":
-                return "Subjects";
-            case "size":
-                return "Size (TB)";
-            default:
-                return cellName;
-        }
+        window.open(linkTo)
     };
 
     render() {
-        const {className, tableHeaders, tableRows} = this.props;
+        const {className, tableHeaders, tableRows} = this.props,
+            summaryTable = className === compStyles.summary;
+
+        const HeaderCell = (props) => {
+
+            const {column} = props,
+                headerCell = DashboardTableService.switchDisplayColumnName(column),
+                rightAlign = DashboardTableService.cellAlignment(column);
+
+            return (
+                <th className={classNames({[compStyles.right]: rightAlign})}>{headerCell}</th>
+            )
+        };
 
         const RowCell = (props) => {
 
-            const {children, className, column} = props,
-            linked = (column === "projectId" || column === "dbGapId") && children,
-            data = this.formatValue(children, column) || "--";
+            const {children, column, summary} = props,
+                data = DashboardTableService.formatValue(children, column),
+                linkedTo = DashboardTableService.getCellUrl(children, column, summary),
+                rightAlign = DashboardTableService.cellAlignment(column);
 
             return (
-                linked ? <ClickHandler className={classNames(className, compStyles.link)}
-                                    clickAction={() => this.redirect(column, data)}
-                                    tag={"td"}>{children}</ClickHandler> : <td className={className}>{data}</td>
+                linkedTo ? <ClickHandler className={classNames({[compStyles.right]: rightAlign}, compStyles.link)}
+                                         clickAction={() => this.redirect(linkedTo)}
+                                         tag={"td"}>{data}</ClickHandler> :
+                    <td className={classNames({[compStyles.right]: rightAlign})}>{data}</td>
             )
         };
 
         const TableRow = (props) => {
 
-            const {order, row} = props;
-            const totalRow = row.program === "Total";
+            const {order, row, summary} = props,
+                totalRow = row.program === "Total";
 
             return (
                 <tr className={classNames(compStyles.row, {[compStyles.total]: totalRow})}>
                     {order.map((key, c) =>
                         <RowCell key={c}
-                              column={key}
-                              className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{row[key]}</RowCell>)}
+                                 column={key}
+                                 summary={summary}>{row[key]}</RowCell>)}
                 </tr>
             )
         };
 
         return (
             <div className={classNames(compStyles.wrapper, className)}>
-            <table>
-                <thead>
+                <table>
+                    <thead>
                     <tr className={compStyles.header}>
-                        {tableHeaders.map((tableHeader, h) => <th key={h} className={classNames({[compStyles.right]: this.cellAlignment(tableHeader)})}>{this.translateHeaderCellNameToDisplayCellName(tableHeader)}</th>)}
+                        {tableHeaders.map((tableHeader, h) => <HeaderCell key={h} column={tableHeader}/>)}
                     </tr>
-                </thead>
-                <tbody>
-                    {tableRows.map((tableRow, r) => <TableRow key={r} order={tableHeaders} row={tableRow}/>)}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {tableRows.map((tableRow, r) => <TableRow key={r}
+                                                              order={tableHeaders}
+                                                              row={tableRow}
+                                                              summary={summaryTable}/>)}
+                    </tbody>
+                </table>
             </div>
         );
     }
