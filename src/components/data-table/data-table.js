@@ -21,7 +21,12 @@ let CELLS_RIGHT_ALIGNED = ["cohorts", "demographics", "diagnosis", "families", "
 
 class DataTable extends React.Component {
 
-    formatValue(value) {
+    formatValue(value, column) {
+
+        if ( value && column === "size" ) {
+
+            return NumberFormatService.formatSizeToTB(value);
+        }
 
         if ( value && NumberFormatService.isNumber(value) ) {
 
@@ -90,7 +95,7 @@ class DataTable extends React.Component {
 
             const {children, className, column} = props,
             linked = (column === "projectId" || column === "dbGapId") && children,
-            data = children || "--";
+            data = this.formatValue(children, column) || "--";
 
             return (
                 linked ? <ClickHandler className={classNames(className, compStyles.link)}
@@ -102,13 +107,14 @@ class DataTable extends React.Component {
         const TableRow = (props) => {
 
             const {order, row} = props;
+            const totalRow = row.program === "Total";
 
             return (
-                <tr className={compStyles.row}>
+                <tr className={classNames(compStyles.row, {[compStyles.total]: totalRow})}>
                     {order.map((key, c) =>
                         <RowCell key={c}
                               column={key}
-                              className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{this.formatValue(row[key])}</RowCell>)}
+                              className={classNames({[compStyles.right]: this.cellAlignment(key)})}>{row[key]}</RowCell>)}
                 </tr>
             )
         };

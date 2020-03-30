@@ -35,7 +35,9 @@ class DataSummary extends React.Component {
 
 export default () => {
 
-    const summary = DashboardSummaryService.getDashboardSummary(DashboardStaticQuery());
+    const programs = DashboardSummaryService.getDashboardSummary(DashboardStaticQuery());
+    const total = DashboardSummaryService.getDashboardSummaryTotals(programs);
+    const summary = programs.concat(total);
 
     return (
         <DataSummary summary={summary}/>
