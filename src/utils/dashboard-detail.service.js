@@ -7,8 +7,6 @@
 
 import * as NumberFormatService from "./number-format.service";
 
-let GAP_IDS_UNDEFINED_STUDY_ACCESSION = ["phs001155", "phs001642", "phs001222", "phs001601", "phs001543", "phs001547", "phs001579", "phs001544", "phs001676", "phs001624", "phs001545", "phs001894", "phs001569", "phs001506", "phs001600", "phs001766", "phs001913"];
-
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard detail, to be displayed on the dashboard page.
  */
@@ -22,7 +20,7 @@ export function getDashboardDetail(data) {
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
-            dbGapId: removeGapIdUndefinedStudyAccession(project.dbGAP_project_id),
+            dbGapId: project.dbGAP_project_id,
             program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
@@ -98,19 +96,6 @@ function getFamiliesCount(project) {
 function getSamplesCount(project) {
 
     return findProjectNodeByType(project, "Sample").count;
-}
-
-/**
- * Returns a null value if there is no corresponding study accession for the specified gap id.
- *
- * @param gapId
- * @returns {null}
- */
-function removeGapIdUndefinedStudyAccession(gapId) {
-
-    const isGapIdInvalid = GAP_IDS_UNDEFINED_STUDY_ACCESSION.includes(gapId);
-
-    return isGapIdInvalid ? null : gapId;
 }
 
 /**

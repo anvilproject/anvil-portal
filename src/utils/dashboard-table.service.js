@@ -9,6 +9,8 @@ import * as NumberFormatService from "./number-format.service";
 
 let CELLS_RIGHT_ALIGNED = ["cohorts", "demographics", "diagnosis", "families", "files", "samples", "size", "sizeTB", "subjects"];
 
+let DBGAPIDS_BLACKLIST = ["phs001155", "phs001642", "phs001222", "phs001601", "phs001543", "phs001547", "phs001579", "phs001544", "phs001676", "phs001624", "phs001545", "phs001894", "phs001569", "phs001506", "phs001600", "phs001766", "phs001913"];
+
 /**
  * Return true if cell is to be right aligned.
  *
@@ -109,6 +111,17 @@ export function switchDisplayColumnName(columnName) {
 }
 
 /**
+ * Returns true if the specified gap id is not blacklisted.
+ *
+ * @param gapId
+ * @returns {boolean}
+ */
+function isGapIdWhitelist(gapId) {
+
+    return !DBGAPIDS_BLACKLIST.includes(gapId);
+}
+
+/**
  * Returns the corresponding url for the specified column.
  *
  * @param columnName
@@ -121,7 +134,7 @@ function switchColumnUrl(columnName, summary, value) {
     switch (columnName) {
         case "projectId":
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
-        case "dbGapId":
+        case isGapIdWhitelist(value) && "dbGapId":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
             return switchProgramUrl(value);
