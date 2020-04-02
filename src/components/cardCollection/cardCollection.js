@@ -22,9 +22,11 @@ import React from "react";
 import {CardCollectionStaticQuery} from "../../hooks/cardCollectionQuery";
 import * as CollectionService from "../../utils/collection.service";
 import ClickHandler from "../clickHandler/clickHandler";
+import GoArrow from "../goArrow/goArrow";
 import Markdown from "../markdown/markdown";
 
 // Styles
+import arrowStyles from "../goArrow/goArrow.module.css";
 import compStyles from "./cardCollection.module.css";
 
 let anchorEls;
@@ -114,6 +116,7 @@ class CardCollection extends React.Component {
                         <h4>{title}</h4>
                     </div>
                     <Markdown className={compStyles.secondary}>{htmlAst}</Markdown>
+                    <GoArrow className={arrowStyles.stretch}><span>Learn More</span></GoArrow>
                 </ClickHandler>
             )
         };
