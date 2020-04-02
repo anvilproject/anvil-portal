@@ -12,5 +12,8 @@ AnVIL provides access to a diverse array of genomic data sets that can be access
 
 NHGRI consortium data will be hosted primarily on AnVIL. Initial releases of data from the Centers For Common Disease Genomics (CCDG), Centers for Mendelian Diseases (CMG), Electronic Medical Records and Genomics (eMERGE) Network, and Clinical Sequencing Evidence-generating Research (CSER) consortium will be hosted on AnVIL. Researchers can apply for access to these data on dbGaP (<https://dbgap.ncbi.nlm.nih.gov/>). Once granted access, users can access their data on the Terra component of AnVIL by linking their eRA identities. Data will be made available to users in shared Workspaces and later accessible from Gen3.
 
+##Which of the NHGRI consortium data are available on AnVIL?
+Initial releases and project IDs of datasets from the CCDG, CMG, eMERGE, CSER, and GTEx can be found on the [AnVIL Data Dashboard](/data).
+
 ##Where can I find documentation to “get started” on AnVIL?
 There are resources available on the AnVIL Portal (<https://anvilproject.org/training/guides>) to help users get registered on AnVIL and provide some introductory usage guides.

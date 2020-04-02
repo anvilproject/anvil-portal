@@ -7,6 +7,8 @@ The current list of large-scale datasets which will be available through AnVIL a
 - eMERGE
 - CSER (coming soon)
 
+The AnVIL Data Dashboard provides a real time view of which data sets and individual projects are available on [AnVIL](/data).
+
 ##What user training will AnVIL provide?
 AnVIL will offer training materials, online Massive Open Online Courses (MOOC) modules as well as periodic workshops to engage with the AnVIL user community.
 
