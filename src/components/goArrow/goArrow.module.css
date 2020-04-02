@@ -36,12 +36,12 @@
 }
 
 /* Go to... link */
-.linkTo a {
+.linkTo a, .linkTo span {
     position: relative; /* Positions go to ... arrow */
 }
 
 /* Go to ... arrow */
-.linkTo a:after, .linkTo a:before {
+.linkTo a:after, .linkTo a:before, .linkTo span:after, .linkTo span:before {
     background-color: var(--accent-blue-dark);
     content: ' ';
     height: 7px;
@@ -52,18 +52,18 @@
     visibility: visible;
 }
 
-.linkTo a:after {
+.linkTo a:after, .linkTo span:after {
     top: 10px;
     transform: rotate(45deg);
 }
 
-.linkTo a:before {
+.linkTo a:before, .linkTo span:before {
     top: 5px;
     transform: rotate(-45deg);
 
 }
 
 /* Go to ... arrow - hover */
-.linkTo:hover a:after, .linkTo:hover a:before {
+.linkTo:hover a:after, .linkTo:hover a:before, .linkTo:hover span:after, .linkTo:hover span:before {
     background-color: var(--accent-blue-green);
 }
