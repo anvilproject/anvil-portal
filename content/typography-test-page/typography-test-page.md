@@ -18,6 +18,8 @@ Researchers can gain access to AnVIL hosted data sets by **submitting a data acc
 ###Webforms
 anvilproject.org uses webforms forms on this site. These forms require users to give contact information. Contact information from the registration form is used only to send material relating to the [event/course/purpose] for which it was collected and will not be sold to another party.
 
+![small image](./_images/nih.png)
+
 ## Data Sets
 ### [CCDG](https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-Disease-Genomics)
 The Centers for Common Disease Genomics are a collaborative large-scale genome sequencing effort to comprehensively identify rare risk and protective variants contributing to multiple common disease phenotypes.

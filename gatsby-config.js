@@ -161,7 +161,7 @@ module.exports = {
                         resolve: `gatsby-remark-images`,
                         options: {
                             linkImagesToOriginal: false,
-                            wrapperStyle: `margin: 0 !important;`
+                            wrapperStyle: `margin: 0 !important; margin-left: 0 !important;`
                         }
                     },
                     `gatsby-remark-images-medium-zoom`,
