@@ -25,6 +25,7 @@
 /* Content */
 .sectionIntro .sectionContent {
     margin: 0 -16px;
+    max-width: unset;
     padding: 24px 16px;
     transform: translateY(-18px);
     width: 100vw;
