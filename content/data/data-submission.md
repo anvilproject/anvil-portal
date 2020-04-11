@@ -1,14 +1,14 @@
-# Data Submission
+# Submiting Data to AnVIL
 
 AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.
 
-##Submission Opportunities
+##Starting the Data Submission Process
 
-###Eligibility
-Data submitters must complete the [AnVIL Dataset Onboarding Application](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform) for evaluation by the AnVIL Data Ingestion Committee.
+To begin the process of submitting data to AnVIL and confirm eligibility:
 
-###Contact us
-We strongly encourage people to contact the AnVIL team with any questions you have regarding data deposition, we are happy to answer questions or help determine if the AnVIL is the right place for your data. Contact us at: [help@lists.anvilproject.org](mailto:help@anvilproject.org).
+1. Complete our [AnVIL Dataset Onboarding Application](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform) for evaluation by the AnVIL Data Ingestion Committee.
+
+2. [Contact](mailto:help@anvilproject.org) the AnVIL team with any questions you have regarding data deposition. We are happy to answer questions or help determine if the AnVIL is the right place for your data.
 
 ##Minimal Ingestion Information
 
@@ -39,7 +39,10 @@ Phenotypic and clinical data should be in a format compatible with submission to
 AnVIL WGs will work with submitters to validate the format of this information, and to identify any situations in which one may supply more, or less information based on specific dataset needs.
 
 ###Associated meta-data
-Metadata should be in a format compatible with indexing once in AnVIL. Metadata recommendations will be provided by the AnVIL team to ensure that metadata are in an acceptable form to be incorporated into the broader AnVIL data model.  Data Processing WG and Phenotype WG will work with submission requesters in an effort to ingest their data properly.  Because each engagement will most likely be different, processes will be developed (and adjusted, as necessary) as we engage with the various submitters.  Additional details can be found in this document: [Minimal Meta-Data Requirements](https://docs.google.com/document/d/1DxqDw_pslY6DE5SbkZI7RAcjczH8CJM725JdI8rwJQU/edit?usp=sharing).
+Metadata should be in a format compatible with indexing once in AnVIL. Metadata recommendations will be provided by the AnVIL team to ensure that metadata are in an acceptable form to be incorporated into the broader AnVIL data model.  Data Processing WG and Phenotype WG will work with submission requesters in an effort to ingest their data properly.  Because each engagement will most likely be different, processes will be developed (and adjusted, as necessary) as we engage with the various submitters. 
+ 
+>Additional details can be found in this document: [Minimal Meta-Data Requirements](https://docs.google.com/document/d/1DxqDw_pslY6DE5SbkZI7RAcjczH8CJM725JdI8rwJQU/edit?usp=sharing).
+ 
 
 ###Access restrictions
 Known Data Use Limitations (DUL) need to be clearly defined by the data depositor. This is the list of requirements for gaining access and using the data. There should be protocols in place for gaining access at the time of ingest.
