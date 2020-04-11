@@ -8,7 +8,7 @@
       - name: "CMG"
         link: "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Mendelian-Genomics-CMG"
       - name: "eMerge"
-        link: "https://emerge.mc.vanderbilt.edu/"
+        link: "https://emerge-network.org/"
       platforms:
       - name: "Dockstore"
         link: "https://dockstore.org/"
@@ -23,7 +23,7 @@
   display:
       data:
       - name: "eMerge"
-        link: "https://emerge.mc.vanderbilt.edu/"
+        link: "https://emerge-network.org/"
       platforms:
       - name: "Gen 3"
         link: "https://gen3.org/"

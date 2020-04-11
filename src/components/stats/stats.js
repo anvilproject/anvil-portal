@@ -30,9 +30,9 @@ class Stats extends React.Component {
         return (
             <div className={compStyles.stats}>
                 <Stat stat={this.formatStats(stats.sources)}>programs</Stat>
+                <Stat stat={this.formatStats(stats.projects)}>cohorts</Stat>
                 <Stat stat={this.formatStats(stats.subjects)}>subjects</Stat>
                 <Stat stat={this.formatStats(stats.samples)}>samples</Stat>
-                <Stat stat={this.formatStats(stats.projects)}>cohorts</Stat>
                 <Stat stat={this.formatStats(stats.size)}>size</Stat>
             </div>
         );
