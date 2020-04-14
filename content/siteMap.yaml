@@ -29,7 +29,7 @@
     location: "h"
     order: 1
   primaryLinks:
-    - name: "Data Sets"
+    - name: "Datasets"
       key: "/data/data"
       path: "/data"
     - name: "Data Access Controls"
