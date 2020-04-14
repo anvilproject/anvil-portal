@@ -1,6 +1,6 @@
 #Requesting Data Access
 
-The AnVIL is a repository for a number of robust controlled access datasets. While these datasets have significant scientific value, access to them must be controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.
+<hero small>The AnVIL is a repository for a number of robust controlled access datasets. While these datasets have significant scientific value, access to them must be controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.</hero>
  
  This document intends to explain the process by which external, non-consortium members can gain access to a given cohort that is housed within the AnVIL.
 

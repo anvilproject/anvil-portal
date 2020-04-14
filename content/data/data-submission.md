@@ -1,6 +1,6 @@
 # Submiting Data to AnVIL
 
-AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.
+<hero small>AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.</hero>
 
 ##Starting the Data Submission Process
 
@@ -83,7 +83,10 @@ This is the evaluation that the ingested data was transferred as expected. At th
 This certification of analysis (CoA) documents the transfer of data. The CoA is signed off by AnVIL and data submitting party. This document will be made available along with the ingested data for public consumption.
 
 ###QC and processing
-In order to maximize the value of the AnVIL resource, ingested genomic data will be subject to quality control and harmonization.  For WGS files, a functional equivalence (FE) standard for alignment and processing of whole genome sequencing data has been defined by the CCDG and TOPMed consortia, with the goal of minimizing batch effects in cross-project analyses (Regier et al., 2018).  Submission of FE-compliant genome and exome sequencing data aligned to GRChB38 is encouraged. (See <https://github.com/CCDG/Pipeline-Standardization/blob/master/PipelineStandard.md>)\
+In order to maximize the value of the AnVIL resource, ingested genomic data will be subject to quality control and harmonization.  For WGS files, a functional equivalence (FE) standard for alignment and processing of whole genome sequencing data has been defined by the CCDG and TOPMed consortia, with the goal of minimizing batch effects in cross-project analyses (Regier et al., 2018).
+  
+  Submission of FE-compliant genome and exome sequencing data aligned to GRChB38 is encouraged. (See <https://github.com/CCDG/Pipeline-Standardization/blob/master/PipelineStandard.md>)\
+
 With exceptions (e.g., for legacy data sets), data not compliant with the FE standard may be aligned to GRChb38 and reprocessed, at the discretion of the Data Ingestion Committee.
 
 After reprocessing, quality control metrics for genome and exome sequencing data will be collected using multiple software packages (e.g., Picard, VerifyBamID2, Samtools flagstat, bamUtil stats) organized in a single Workflow Definition Language workflow. These metrics will be evaluated for depth and breadth of coverage, base-mismatch rate, rate of properly-paired reads, and sample contamination to determine QC pass/fail status. QC metrics will also be made available in the AnVIL workspace to aid users in sample selection.
