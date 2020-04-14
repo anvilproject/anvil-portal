@@ -10,13 +10,12 @@ author: "AnVIL"
 
 
 April 3, 2020
-
-We regret to share that James Taylor passed away in April of 2020. His full obituary can be found on the [Galaxy Community Hub](https://galaxyproject.org/jxtx/).
  
- A trailblazer in computational biology and genomics research, Taylor made an impact as a scientist, teacher, and colleague, with appointments at the Krieger School of Arts and Sciences and Whiting School of Engineering at Johns Hopkins University.
-  
-  James helped develop the Galaxy platform for data analysis and worked with members of his lab to extend the platform to make large scale computational analysis more accessible and reproducible.
-
-James was a member of the Science Gateways Institute Steering Committee, and had been a member of the National Center for Genome Analysis Scientific Advisory Board from 2014 to 2016; a member of the iPlant Scientific Advisory Board from 2013 to 2016; a member of the XSEDE Project User Advisory Committee from 2012 to 2014; and co-chair of the International Arabadopsis Informatics Consortium: Engineering, Architecture and Infrastructure Working Group in 2011.
-
-He is survived by his wife, Meredith Greif, Assistant Professor of Sociology at Johns Hopkins University.
+ Dr. James Taylor, co-Principal Investigator for the AnVIL Project and Ralph S. O’Connor Professor of Biology and Professor of Computer Science at Johns Hopkins University, passed away on April 2, 2020. He was 40. 
+ 
+ Dr. Taylor viewed AnVIL as a once-in-a-lifetime opportunity to democratize data-driven biomedical research. He worked tirelessly to promote open and reproducible science, leading teams in building foundational computational resources to support this vision. The AnVIL Project will continue to carry out Dr. Taylor’s goals. 
+ 
+ A James Taylor Foundation is being created, which will support students pursuing research in computational genomics and open science. Details will be shared soon. Dr.  Taylor’s full obituary can be found on the [Galaxy Community Hub](https://galaxyproject.org/jxtx/).
+ 
+ ![AnVIL Image](./_images/james-taylor.jpg "AnVIL Portal Image!")
+ <figure-caption> James Taylor at the Galaxy Community Conference. Freiburg, Germany. Photo by Bérénice Batut</figure-caption>
