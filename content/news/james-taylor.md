@@ -1,6 +1,6 @@
 ---
 title: "James Peter Taylor | 1979 - 2020"
-date: "2020-04-05"
+date: "2020-04-03"
 description: "In Memoriam, Professor James Taylor"
 featured: false
 author: "AnVIL"
