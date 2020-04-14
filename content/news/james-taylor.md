@@ -18,4 +18,4 @@ April 3, 2020
  A James Taylor Foundation is being created, which will support students pursuing research in computational genomics and open science. Details will be shared soon. Dr.  Taylor’s full obituary can be found on the [Galaxy Community Hub](https://galaxyproject.org/jxtx/).
  
  ![AnVIL Image](./_images/james-taylor.jpg "AnVIL Portal Image!")
- <figure-caption> James Taylor at the Galaxy Community Conference. Freiburg, Germany. Photo by Bérénice Batut</figure-caption>
+ <figure-caption> James Taylor at the Galaxy Community Conference. Freiburg, Germany. Photo by Bérénice Batut.</figure-caption>
