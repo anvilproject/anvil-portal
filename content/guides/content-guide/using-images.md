@@ -25,18 +25,25 @@ To reference the image we use markdown like:
 ![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
 ```
 
-Note the `./images/` preceding the image name. This is required to tell the CMS where the image is. 
+Note the `../_images/` preceding the image name. This is required to tell the CMS where the image is. 
+
+You can also add a caption to the image using an HTML style custom tag like:
+
+```
+<figure-caption>Figure 1. The original AnVIL hompepage image.</figure-caption>
+```
 
 This renders like:
 
 ![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
+<figure-caption>Figure 1. The original AnVIL hompepage image.</figure-caption>
 
 >####TIP
 >You can check if the image link is correct by using the preview link in the markdown editor.
 
 ## Controlling Image Size
 
-Currently images all expand to the same size in the page.
+Images expand to the natural size of the image. Image size will max out at the max column width wich is 650px.
 
 
 

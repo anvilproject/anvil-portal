@@ -4,7 +4,7 @@
  *
  * The AnVIL - figure caption component.
  * Use of this component within markdown is possible.
- * Use the tag <figcaption>my figure caption</figcaption> but ensure it is closed.
+ * Use the tag <figure-caption>my figure caption</figure-captoin> but ensure it is closed.
  */
 
 // Core dependencies

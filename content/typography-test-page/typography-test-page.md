@@ -51,7 +51,7 @@ For new pages, it may be helpful to start writing first in google doc or other w
 To get your page added to the siteMap and deployed, please open a pull request for for your new page in the [Github Project](https://github.com/anvilproject/anvil-portal/pulls) for the AnVIL portal repository.
 
 ![app layer](./_images/app-layer.png)
-<figure-caption>Figure 1: A unified view of data and computer regardless of tools used.
+<figure-caption>Figure 1: A unified view of data and computer regardless of tools used.</figure-caption>
 
 ####Getting Content Reviewed
 ##### Creating a Pull Request Against Staging
