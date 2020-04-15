@@ -29,15 +29,15 @@
     location: "h"
     order: 1
   primaryLinks:
-    - name: "Datasets"
+    - name: "Data"
       key: "/data/data"
       path: "/data"
-    - name: "Data Access Controls"
-      key: "/data/data-access"
     - name: "Requesting Data Access"
       key: "/data/requesting-data-access"
     - name: "Submitting Data"
       key: "/data/data-submission"
+    - name: "Data Access Controls in AnVIL Terra"
+      key: "/data/data-access"
 - name: "Events"
   key: "events"
   path: "/events"

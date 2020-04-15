@@ -3,7 +3,7 @@ title: "AnVIL Data"
 author: "AnVIL"
 ---
 
-# Datasets
+# Data
 
 <hero small>AnVIL hosts the following high value genomic datasets relevant to human health and disease. Additional datasets will be added as the project progresses.</hero>
 
