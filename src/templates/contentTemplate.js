@@ -15,6 +15,7 @@ import ArticleBody from "../components/article/articleBody";
 import ArticleEnd from "../components/articleEnd/articleEnd";
 import Layout from "../components/layout";
 import Workspaces from "../components/workspaces/workspaces";
+import * as TemplateService from "../utils/template.service";
 
 // Styles
 import bodyStyles from "../components/article/articleBody.module.css";
@@ -23,16 +24,18 @@ let classNames = require("classnames");
 
 export default ({data}) => {
     const post = data.markdownRemark,
-        {fields, frontmatter, htmlAst} = post,
+        {fields, frontmatter, headings, htmlAst} = post,
         {slug} = fields,
-        {component} = frontmatter;
-
-    const dashboard = slug === "/data/data";
-    const noSpy = dashboard;
-    const workspaces = component === "featured";
+        {component, description} = frontmatter,
+        dashboard = slug === "/data/data",
+        faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
+        h1 = TemplateService.getPageH1(headings),
+        noSpy = dashboard,
+        title = faq ? `FAQ - ${h1}` : h1,
+        workspaces = component === "featured";
 
     return (
-        <Layout docPath={slug} noSpy={noSpy}>
+        <Layout description={description} docPath={slug} noSpy={noSpy} title={title}>
             <ArticleBody className={classNames({[bodyStyles.stretch]: dashboard})} htmlAst={htmlAst}>
                 {workspaces ? <Workspaces/> : null}
                 <ArticleEnd docPath={slug}/>
@@ -49,6 +52,11 @@ query($slug: String!) {
       }
       frontmatter {
         component
+        description
+      }
+      headings(depth: h1) {
+        depth
+        value
       }
       html
       htmlAst
