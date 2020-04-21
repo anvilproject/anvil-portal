@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
-import Helmet from "react-helmet";
 import React from "react";
 
 // App dependencies
-import * as EnvironmentService from "../utils/environment.service";
 import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
-import Main from "./main/main";
 import Header from "./header/header";
+import Main from "./main/main";
+import SEO from "./seo/seo";
 
 // Styles
 import compStyles from "./layout.module.css";
@@ -39,19 +38,10 @@ class Layout extends React.Component {
     };
 
     render() {
-        const {children, docPath, homePage, noSpy} = this.props;
+        const {children, description, docPath, homePage, noSpy, title} = this.props;
         return (
             <div>
-                <Helmet>
-                    <title>The AnVIL</title>
-                    {EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
-                    <link rel="stylesheet"
-                          href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"/>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300&display=swap"/>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-                    <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500|Open+Sans:300,400,600,700&display=swap" rel="stylesheet"/>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"/>
-                </Helmet>
+                <SEO description={description} title={title}/>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
                     <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>
