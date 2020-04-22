@@ -1,6 +1,19 @@
 /**
  * Global styles
+ * 
+ * Media queries - Material Design (https://material.io/design/layout/responsive-layout-grid.html#breakpoints)
+ * 480px - Large handset portrait, extra small window
+ * 600px - Small tablet portrait, medium handset landscape, small window
+ * 720px - Large tablet portrait, large handset landscape, small window
+ * 960px - Small tablet landscape, small window
+ * 840px - Large handset portrait, small handset landscape, extra small window
+ * 1280px - Large tablet landscape, medium window
+ *
+ * Media queries - custom AnVIL breakpoints
+ * 1341px - Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
+ * 1545px - Content and outline are centered, rather than left-aligned
  */
+
 @import "./vars.module.css";
 
 /* Grid */
@@ -31,35 +44,21 @@
 /* Link */
 .link {
     border-bottom: 2px solid var(--accent-mustard);
+    transition: border 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Link - hover */
-/* TODO */
-.link {
-    border-bottom: 2px solid var(--accent-mustard);
+.link:hover {
+    border-bottom: 2px solid var(--black34);
 }
 
 /**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
 
-    /* Container, grid */
+    /* Container, grid - update containers from 16px margin to 24px */
     .container, .grid {
         padding: 0 24px;
-    }
-}
-
-/**
- * Medium Window +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1280px) {
-
-    /* Container */
-    .container {
-        margin: 0 auto;
-        max-width: 1280px; /* Snap to 1280px */
     }
 }

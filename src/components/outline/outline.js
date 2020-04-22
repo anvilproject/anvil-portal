@@ -125,7 +125,7 @@ class Outline extends React.Component {
         };
 
         return (
-            <div className={compStyles.outline} id="outline">
+            <div className={classNames(compStyles.outline, {[compStyles.empty]: !headings})} id="outline">
                 <ul>
                     {headings ? headings.map((heading, i) =>
                         <Outline key={i} heading={heading} activeOutline={activeOutline}/>) : null}
