@@ -23,27 +23,49 @@
 }
 
 /**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Large handset portrait, small handset landscape, extra small window
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 840px) {
 
-    /* Article container */
-    .article .container {
+    .contentPositioner {
+        display: flex;
+        flex: 1;
+        padding: 0 40px;
+        width: 840px;
         margin: 0 auto;
-        width: 650px;
     }
 }
 
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1341px) {
 
-    /* Article container */
     .article .container {
         flex-direction: row;
         width: unset;
     }
+
+    .contentPositioner {
+        width: unset;
+        max-width: 1240px;
+    }
+    
+    .contentContainer {
+        display: flex;
+        max-width: 712px;
+        margin: 0 auto 0 0;
+    }
 }
+
+/**
+ * Content and outline are centered, rather than left-aligned
+ */
+@media screen and (min-width: 1545px) {
+
+    .contentPositioner {
+        justify-content: center;
+    }
+}
+
+

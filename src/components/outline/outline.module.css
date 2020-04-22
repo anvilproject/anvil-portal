@@ -14,10 +14,9 @@
     overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
     padding-left: 2px; /* Required for indicator ball to be shown in overflow environment */
     position: fixed;
-    right: 24px; /* Gutter */
     scrollbar-width: none; /* Firefox 64 */
     top: 100px;
-    width: 220px;
+    width: 200px;
 }
 
 /* Outline scrollbar */
@@ -26,7 +25,7 @@
 }
 
 /* Outline vertical line */
-.outline::before {
+.outline:not(.empty)::before {
     background-color: var(--accent-blue-light);
     content: "";
     height: 100%;
@@ -44,7 +43,7 @@
 .outline ul {
     border-left: 1px solid var(--accent-blue-light);
     margin: 0;
-    padding: 0 8px 0 0; /* RHS to allow for scroll bar */
+    padding: 0;
 }
 
 /* Outline - list */
@@ -55,7 +54,7 @@
 
 /* Outline - list - not last */
 .outline li:not(:last-of-type) {
-    margin-bottom: 2px;
+    margin: 8px 0;
 }
 
 /* Outline - first list <h1> */
@@ -95,7 +94,7 @@
 
 /* Link - background - hover state only */
 .outline li:hover a:not(.active) {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 /* Link - indicators */
@@ -148,7 +147,7 @@
 
 /* Link - indicator colors - hover */
 .outline li:hover a:not(.active)::before, .outline li:hover a:not(.active)::after {
-    background-color: var(--black6);
+    background-color: var(--black12);
 }
 
 /* Link - transitions - hover */
@@ -162,26 +161,23 @@
 }
 
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
-@media screen and (min-width: 960px) {
-
+@media screen and (min-width: 1341px) {
+    
     /* Outline container */
     .outline {
         display: block;
+        left: 1120px;
     }
 }
 
 /**
- * Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Content and outline are centered, rather than left-aligned
  */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1545px) {
 
-    /* Outline container */
     .outline {
-        right: calc((100vw - 1232px)/2 + 2px);
-        width: 284px;
+        left: calc(50% + 347px);
     }
 }

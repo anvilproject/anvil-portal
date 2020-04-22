@@ -94,10 +94,12 @@ class Nav extends React.Component {
         };
 
         return (
-            <div className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
-                <ul>
-                    {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
-                </ul>
+            <div className={compStyles.sideNavContainer}>
+                <div className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
+                    <ul>
+                        {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
+                    </ul>
+                </div>
             </div>
         );
     }

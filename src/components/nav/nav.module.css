@@ -2,15 +2,15 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to The AnVIL nav component.
+ * Style definitions specific to the AnVIL nav component.
  */
+
 @import "../../styles/vars.module.css";
 
 /* Side nav - main content */
 .sideNav {
-    border-bottom: 2px solid var(--shade-light);
     margin: 0 0 32px;
-    padding-bottom: 16px;
+    padding-bottom: 32px;
 }
 
 /* List style - <ul> */
@@ -34,14 +34,14 @@
 
 /* Nav item level 1 */
 .sideNav > ul > li {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* Nav item level 2 */
 .sideNav ul ul li {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 4px;
+    margin: 8px 0;
     padding-left: 16px;
 }
 
@@ -73,7 +73,7 @@
 /* Hover state line and indicator */
 .sideNav .link:not(.active):not(.selected):hover:before,
 .sideNav .link:not(.active):not(.selected):hover:after {
-    background-color: var(--black6);
+    background-color: var(--black12);
 }
 
 /* Line indicator */
@@ -93,11 +93,32 @@
     width: 5px;
 }
 
+
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Large handset portrait, small handset landscape, extra small window. Side nav is stacked, and centered (whereas
+ * it is full width below this size).
  */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 840px) {
+
+    /* Side nav */
+    .sideNav {
+        max-width: 840px;
+        margin: 0 auto 32px;
+        padding: 0 40px;
+    }
+}
+
+/**
+ * Custom AnVIL breakpoint where column row layout changes to row layout (left nav/content/outline), in addition to
+ * complimentary JS in scroll.service updating the side nav and outline heights (to correct the display of the blue
+ * bars).
+ */
+@media screen and (min-width: 1341px) {
+
+    /* Side nav container - required to "add" fixed side nav to the flow */
+    .sideNavContainer {
+        min-width: 280px;
+    }
 
     /* Side nav */
     .sideNav {
@@ -105,14 +126,15 @@
         bottom: 0;
         left: 24px; /* Gutter */
         margin: 0;
+        max-width: unset; 
         padding: 0;
         position: fixed;
         top: 100px;
-        width: 220px;
+        width: 280px;
     }
 
     /* Side nav line */
-    .sideNav::before {
+    .sideNav:not(.hidden)::before {
         background-color: var(--accent-blue-light);
         content: "";
         height: 100%;
@@ -150,18 +172,5 @@
     /* Ball indicator */
     .sideNav .link:after, .sideNav .link.active:after {
         right: -2px;
-    }
-}
-
-/**
- * Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1280px) {
-
-    /* Side nav container */
-    .sideNav {
-        left: calc((100vw - 1232px) / 2 + 2px);
-        width: 234px;
     }
 }

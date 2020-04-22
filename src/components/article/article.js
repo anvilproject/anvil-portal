@@ -39,8 +39,12 @@ class Article extends React.Component {
             <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav bannerHeight={bannerHeight} docPath={docPath}/>
-                    {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
-                    {dashboard ? null : <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/>}
+                    <div className={compStyles.contentPositioner}>
+                        <div className={compStyles.contentContainer}>
+                            {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
+                            {dashboard ? null : <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/>}
+                        </div>
+                    </div>
                 </div>
             </section>
         );

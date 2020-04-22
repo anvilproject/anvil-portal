@@ -185,7 +185,7 @@
 
     /* Link - hover */
     .header li a:not(.active):hover:before {
-        border: 2px solid rgba(174, 235, 242, 0.24);
+        border: 2px solid rgba(0, 0, 0, 0.12);
     }
 
     .header li a.active:before {

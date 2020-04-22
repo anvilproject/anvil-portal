@@ -46,10 +46,10 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  */
 export function calculateNavMaxHeight(bannerHeight, element) {
 
-    // The maxHeight setting is not required when the window innerWidth is less than 960px.
+    // The maxHeight setting is not required when the window innerWidth is less than 1341px.
     // In this instance, the outline and nav styles are defined by a different set of responsive settings.
 
-    if ( !element || window.innerWidth < 960 ) {
+    if ( !element || window.innerWidth < 1341 ) {
 
         return;
     }
