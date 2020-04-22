@@ -94,7 +94,7 @@ export function switchDisplayColumnName(columnName) {
         case "dbGapId":
             return "dbGap Id";
         case "program":
-            return "Program";
+            return "Consortium";
         case "projectId":
             return "Terra Workspace Name";
         case "samples":
