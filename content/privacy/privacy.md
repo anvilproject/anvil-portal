@@ -20,7 +20,7 @@ anvilproject.org uses webforms forms on this site. These forms require users to 
 
 ##Use of collected information:
 anvilproject.org will only use personal information collected from this site for the purpose of communication back to individuals who contact us via the site.
-- anvilproject.org uses browser-IP-address information and anonymous-browser history to report information about site accesses and for profiling purposes. This information is used to improve Web presentation and utilization. IP address information may also be used for troubleshooting purposes.
+- anvilproject.org uses browser-IP-address information and anonymous-browser history to report information about site accesses and for profiling purposes. This information is used to improve web presentation and utilization. IP address information may also be used for troubleshooting purposes.
 
 ##Distribution of collected information:
 - anvilproject.org will not disclose, without your consent, personal information collected about you, except for certain explicit circumstances in which disclosure is required by law.
