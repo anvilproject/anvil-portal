@@ -16,6 +16,7 @@ module.exports = {
         title: `The AnVIL`,
         description: `Inverting the model of genomic data sharing`,
         author: `The AnVIL team`,
+        siteUrl: `https://anvilproject.org`,
     },
     plugins: [
         {
@@ -49,6 +50,12 @@ module.exports = {
         },
         `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
+            }
+        },
         `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-typography`,
