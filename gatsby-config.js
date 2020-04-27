@@ -50,18 +50,19 @@ module.exports = {
         },
         `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-plugin-sitemap`,
-            options: {
-                exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
-            }
-        },
+        `gatsby-plugin-robots-txt`,
         `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-plugin-typography`,
             options: {
                 pathToConfigModule: `src/utils/typography`,
             },
+        },
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
+            }
         },
         `gatsby-transformer-json`,
         {
