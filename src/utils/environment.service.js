@@ -13,5 +13,6 @@ const GATSBY_ENV = process.env.GATSBY_ENV;
  */
 export function isProd() {
 
-    return GATSBY_ENV === "PROD";
+    return true;
+    //return GATSBY_ENV === "PROD";
 }
