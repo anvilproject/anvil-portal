@@ -40,7 +40,7 @@ module.exports = {
             options: {
                 trackingId: 'UA-154456484-1',
                 // Puts tracking script in the head instead of the body
-                head: false,
+                head: true,
                 // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
                 anonymize: true,
                 // Optional - do not track

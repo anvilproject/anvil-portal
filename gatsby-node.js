@@ -1,3 +1,8 @@
+/**
+ * The AnVIL
+ * https://www.anvilproject.org
+ */
+
 const express = require('express');
 const {fmImagesToRelative} = require('gatsby-remark-relative-images');
 const {createFilePath} = require(`gatsby-source-filesystem`);
