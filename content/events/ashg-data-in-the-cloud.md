@@ -1,12 +1,12 @@
 ---
-title: "ASHG Event"
+title: "ASHG 2020 - Using AnVIL"
 date: "2020-10-31"
 description: "Find and analyze data in the cloud with Gen3, Dockstore and Terra."
 featured: true
 author: "AnVIL"
 ---
 
-#ASHG Event
+#ASHG 2020 - Using AnVIL
 ###Find and analyze data in the cloud with Gen3, Dockstore and Terra
 #####October 31st, 2020
 #####Session from 7:15 a.m. to 8:45 a.m.

@@ -1,12 +1,12 @@
 ---
-title: "ASHG Event"
+title: "ASHG 2020 - GWAS Analysis with Galaxy in AnVIL"
 date: "2020-10-28"
 description: "GWAS analysis with Galaxy on the Analysis Visualization Integrated Lab-space (AnVIL)."
 featured: true
 author: "AnVIL"
 ---
 
-#ASHG Event
+#ASHG 2020 - GWAS Analysis with Galaxy in AnVIL
 ###GWAS Analysis with Galaxy on the Analysis Visualization Integrated Lab-space (AnVIL)
 #####October 28th 2020
 #####Session from 7:15 a.m. to 8:45 a.m.
