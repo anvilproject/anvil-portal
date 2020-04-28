@@ -39,7 +39,7 @@ jobs:
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Setup Environment Variables
-          command: echo "export GATSBY_ENV=$CIRCLE_BRANCH >> $BASH_ENV
+          command: echo "export GATSBY_ENV=$CIRCLE_BRANCH" >> $BASH_ENV
 
       - run:
           name: Gatsby Build
