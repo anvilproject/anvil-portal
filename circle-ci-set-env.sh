@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "Building for environment: ${CIRCLE_BRANCH}"
 
