@@ -37,7 +37,7 @@
 
 /* Menu icon */
 .header i {
-    color: var(--accent-blue-green);
+    color: var(--accent-blue-dark);
     cursor: pointer;
     display: block;
     padding: 12px;

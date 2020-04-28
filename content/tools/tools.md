@@ -1,5 +1,6 @@
 ---
-title: "The AnVIL Platform"
+title: "Tools"
+description: "AnVIL provides access to an array of analysis and visualization solutions for genomic data analysis."
 ---
 
 

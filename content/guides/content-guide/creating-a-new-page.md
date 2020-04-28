@@ -1,6 +1,7 @@
 ---
-title: "Overview"
+title: "Creating a New Page"
 author: "Dave Rogers"
+description: "Instructions on how to create a new page in AnVIL."
 ---
 
 # Creating a New Page

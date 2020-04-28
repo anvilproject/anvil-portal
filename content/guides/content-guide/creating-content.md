@@ -1,6 +1,7 @@
 ---
-title: "Creating Content"
+title: "AnVIL Content Guide"
 author: "Dave Rogers"
+description: "Welcome to the AnVIL Portal content guide. We welcome help from the consortium and community members for content creation and maintenance."
 ---
 
 # AnVIL Content Guide

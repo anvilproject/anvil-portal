@@ -1,6 +1,7 @@
 ---
 title: "Using Images"
 author: "AnVIL"
+description: "Instructions on how to include images in AnVIL markdown."
 ---
 
 # Using Images

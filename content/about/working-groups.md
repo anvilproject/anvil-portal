@@ -1,6 +1,7 @@
 ---
 title: "Working Groups"
 author: "AnVIL"
+description: "AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations."
 ---
 
 # Working Groups

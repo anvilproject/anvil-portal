@@ -1,3 +1,9 @@
+---
+title: "Overview FAQ"
+author: "AnVIL"
+description: "What is AnVIL? What is an AnVIL Workspace? What is Terra and how does it relate to AnVIL?"
+---
+
 #Overview
 ##What is AnVIL?
 The NHGRI Genomic Data Science [The Genomic Analysis, Visualization, and Informatics Lab-space](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL), or ‘AnVIL,’ is NHGRI’s genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. In addition to downloading copies of data to local computers and servers, users will have the option to work with data in a secure cloud environment, where they can also use common bioinformatics tools and packages and develop and share their own software tools.

@@ -1,6 +1,7 @@
 ---
 title: "Contact Us"
 author: "AnVIL"
+description: "Contact us on the AnVIL Gitter channel or email our help desk."
 ---
 
 #Get in Touch

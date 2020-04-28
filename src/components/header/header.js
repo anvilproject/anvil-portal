@@ -46,11 +46,13 @@ class Header extends React.Component {
                     <ClickHandler
                         className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")}
                         clickAction={this.toggleMenu}
-                        tag={"i"}>menu</ClickHandler>
+                        tag={"i"}
+                        label="Show menu">menu</ClickHandler>
                     <ClickHandler
                         className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")}
                         clickAction={this.toggleMenu}
-                        tag={"i"}>close</ClickHandler>
+                        tag={"i"}
+                        label="Hide menu">close</ClickHandler>
                     <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
                         {links.map((l, i) => <li key={i}>
                             <Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>{l.name}</Link>

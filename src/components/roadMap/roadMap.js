@@ -49,7 +49,8 @@ class RoadMap extends React.Component {
             return (
                 <ClickHandler className={classNames(compStyles.bubble, className)}
                               clickAction={() => this.redirect(link)}
-                              tag={"span"}>
+                              tag={"span"}
+                              label={link}>
                     <span>{name}</span>
                 </ClickHandler>
             )

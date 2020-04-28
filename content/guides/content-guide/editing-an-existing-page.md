@@ -1,6 +1,7 @@
 ---
 title: "Editing an Existing Page"
 author: "Dave Rogers"
+description: "Editing an existing page is perhaps the easiest way to get started working with the content."
 ---
 
 # Editing an Existing Page 
