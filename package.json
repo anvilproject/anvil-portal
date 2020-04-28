@@ -53,7 +53,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build-ci": "source ./circle-ci-set-env.sh && gatsby build --verbose",
+    "build-ci": "gatsby build --verbose",
     "build": "source ./start.sh && gatsby build --verbose",
     "start": "source ./start.sh && gatsby develop",
     "develop": "gatsby develop",
