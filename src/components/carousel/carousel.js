@@ -224,7 +224,7 @@ class Carousel extends React.Component {
             return (
                 <ClickHandler className={classNames({[compStyles.show]: show}, compStyles.slot)}
                               clickAction={() => this.redirect(linkTo, openTab)}
-                              tag={"div"}>
+                              tag={"div"} label={title}>
                     <div className={compStyles.hero}>
                         {logo ? <img src={src} alt="logo"/> : null}
                         <div>
@@ -234,7 +234,7 @@ class Carousel extends React.Component {
                     </div>
                     <p className={compStyles.ellipsis}>{blurb}</p>
                     <ClickHandler className={compStyles.learnMore}
-                       clickAction={() => this.redirect(linkTo, openTab)} tag={"p"}>Learn More<img src={arrows} alt="learn more"/>
+                       clickAction={() => this.redirect(linkTo, openTab)} tag={"p"} label={title}>Learn More<img src={arrows} alt="learn more"/>
                     </ClickHandler>
                 </ClickHandler>
             )
@@ -245,7 +245,7 @@ class Carousel extends React.Component {
                 <div className={classNames(globalStyles.grid, globalStyles.g750, compStyles.rotation)}>
                     <ClickHandler className={compStyles.arrow}
                                   clickAction={this.rotateBack}
-                                  tag={"span"}>
+                                  tag={"span"} label="Previous">
                         <img src={left} alt="prev"/>
                     </ClickHandler>
                     <div>
@@ -257,12 +257,14 @@ class Carousel extends React.Component {
                                 <ClickHandler key={i}
                                       className={classNames({[compStyles.active]: this.getActiveClassName(i)})}
                                       clickAction={() => this.rotateTo(i)}
-                                              tag={"span"}/>)}
+                                              tag={"span"}
+                                              label={`Jump to slide ${i}`}/>)}
                         </div>
                     </div>
                     <ClickHandler className={compStyles.arrow}
                                   clickAction={this.rotateForward}
-                                  tag={"span"}>
+                                  tag={"span"}
+                                  label="Next">
                         <img src={right} alt="next"/>
                     </ClickHandler>
                 </div>

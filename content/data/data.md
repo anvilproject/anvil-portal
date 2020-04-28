@@ -1,6 +1,7 @@
 ---
-title: "AnVIL Data"
+title: "Data"
 author: "AnVIL"
+description: "AnVIL hosts high value genomic datasets relevant to human health and disease."
 ---
 
 # Data

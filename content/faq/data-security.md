@@ -1,3 +1,9 @@
+---
+title: "Data Security, Management, and Access Procedures FAQ"
+author: "AnVIL"
+description: "FAQs about data security, management, and access procedures."
+---
+
 #Data Security, Management, and Access Procedures
 ##Can AnVIL share controlled-access data with the broad scientific community?
 Per the NIH Guide Notice [NOT-HG-19-024](https://grants.nih.gov/grants/guide/notice-files/NOT-HG-19-024.html), AnVIL is an NIH-designated data repository that is authorized to share controlled-access data derived from human samples, associated phenotypic data and metadata with the research community in a manner that is consistent with the expectations put forth by the [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf).

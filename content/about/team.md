@@ -1,6 +1,7 @@
 ---
 title: "Team"
 author: "AnVIL"
+description: "AnVIL is a collaboration between the Broad, JHU, UChicago, RPCI, UCSC, Penn State, WUSTL, OHSU, Harvard Medical School, Vanderbilt & CUNY."
 ---
 
 #The Team

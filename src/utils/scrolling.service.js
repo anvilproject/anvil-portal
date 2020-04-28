@@ -91,7 +91,11 @@ export function calculateNavMaxHeight(bannerHeight, element) {
 export function getContentAnchors() {
 
     // Grab any content element with an anchor "id".
-    return Array.from(document.getElementById("content").querySelectorAll("[id]"));
+    const contentEl = document.querySelector('[id^="content"]');
+    if ( !contentEl ) {
+        return;
+    }
+    return Array.from(contentEl.querySelectorAll("[id]"));
 }
 
 /**

@@ -7,6 +7,7 @@ linked:
     - ../featured-workspaces/optimus-pipeline.md
     - ../featured-workspaces/inferCNV.md
     - ../featured-workspaces/gwas-pipeline.md
+description: "The AnVIL project's featured workspaces demonstrate common genomic analysis pipelines deployed using data and tools available on AnVIL."
 ---
 
 #Featured Workspaces

@@ -1,6 +1,7 @@
 ---
-title: "Creating Links"
+title: "Creating Links in Markdown"
 author: "Dave Rogers"
+description: "Instructions on how to create links in AnVIL markdown."
 ---
 
 # Creating Links in Markdown

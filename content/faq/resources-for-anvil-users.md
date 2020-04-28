@@ -1,3 +1,9 @@
+---
+title: "Resources for AnVIL Users FAQ"
+author: "AnVIL"
+description: "What user training will AnVIL provide? How does AnVIL handle users’ cloud service costs"
+---
+
 #Resources for AnVIL Users
 ##Which NHGRI datasets does AnVIL host?
 The current list of large-scale datasets which will be available through AnVIL are:

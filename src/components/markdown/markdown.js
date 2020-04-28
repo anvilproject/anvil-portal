@@ -38,10 +38,14 @@ class Markdown extends React.Component {
     addImageClassName = () => {
 
         // Find all <span> elements
-        let imagesEl = Array.from(document.getElementById("content").querySelectorAll("span"));
+        const contentEl = document.querySelector('[id^="content"]');
+        if ( !contentEl ) {
+            return;
+        }
+        const imagesEl = Array.from(contentEl.querySelectorAll("span"));
 
         // Filter for <span> that wraps the images for medium-zoom capability (therefore will exclude gif images)
-        let imagesWithZoomEl = imagesEl.filter(image => image.className.includes("gatsby-resp-image-wrapper"));
+        const imagesWithZoomEl = imagesEl.filter(image => image.className.includes("gatsby-resp-image-wrapper"));
 
         // Add class name
         imagesWithZoomEl.map(image => image.classList.add(compStyles.zoomIcon));
@@ -66,8 +70,9 @@ class Markdown extends React.Component {
                 "style-guide-typography-example": StyleGuideTypographyExample
             }
         }).Compiler;
+        const identifier = Date.now();
         return (
-            <div id="content" className={classNames(className, compStyles.content)}>{renderAst(children)}</div>
+            <div id={`content${identifier}`} className={classNames(className, compStyles.content)}>{renderAst(children)}</div>
         );
     }
 }

@@ -1,10 +1,8 @@
 ---
-title: "AnVIL Data Sources"
+title: "Data Sources"
 author: "AnVIL"
+description: "AnVIL hosts data and also allows users to submit their own data to the platform."
 ---
-
-
-
 
 # Data Sources 
 

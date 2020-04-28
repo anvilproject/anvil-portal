@@ -49,7 +49,8 @@ class DataTable extends React.Component {
             return (
                 linkedTo ? <ClickHandler className={classNames({[compStyles.right]: rightAlign}, compStyles.link)}
                                          clickAction={() => this.redirect(linkedTo)}
-                                         tag={"td"}>{data}</ClickHandler> :
+                                         tag={"td"}
+                                         label={data}>{data}</ClickHandler> :
                     <td className={classNames({[compStyles.right]: rightAlign})}>{data}</td>
             )
         };

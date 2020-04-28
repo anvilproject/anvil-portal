@@ -102,7 +102,7 @@ class BannerPrivacy extends React.Component {
                 <div className={globalStyles.container}>
                     <span>This website uses cookies for security and analytics purposes. By using this site, you agree to these uses. <a
                         className={compStyles.underline} href="/privacy">Learn more here</a>.</span>
-                    <ClickHandler clickAction={() => {this.accept()}}tag={"span"}>
+                    <ClickHandler clickAction={() => {this.accept()}} tag={"span"} label="Accept cookie usage.">
                         <span className={compStyles.underline}>OK</span>.</ClickHandler>
                 </div>
             </div>

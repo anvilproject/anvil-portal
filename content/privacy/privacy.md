@@ -1,3 +1,8 @@
+---
+title: "Privacy"
+description: "AnVIL's privacy policy."
+---
+
 #Privacy
 
 The NHGRI AnVIL portal  is committed to protecting the privacy and accuracy of confidential information to the extent possible, subject to provisions of state and federal law. Other than as required by laws that guarantee public access to certain types of information, or in response to subpoenas or other legal instruments that authorize access, personal information is not actively shared. In particular, we do not re-distribute or sell personal information collected on our web servers.

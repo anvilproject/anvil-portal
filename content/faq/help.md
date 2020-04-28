@@ -1,6 +1,7 @@
 ---
 title: "Help"
 author: "Dave Rogers"
+description: "For support for onboarding to the platform, submitting data or accessing data please reach out to us on the AnVIL Gitter channel or by emailing our help desk."
 ---
 
 #Help

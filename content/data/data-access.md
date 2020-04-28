@@ -1,6 +1,7 @@
 ---
-title: "AnVIL Data Access"
+title: "Data Access Controls"
 author: "AnVIL"
+description: "AnVIL provides robust access controls that can selectively grant access to a number of groups with different access request requirements."
 ---
 
 # Data Access Controls

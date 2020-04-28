@@ -1,3 +1,9 @@
+---
+title: "Data Submission FAQ"
+author: "AnVIL"
+description: "FAQs about data submission."
+---
+
 #Data Submission
 ##How do I submit data to AnVIL for sharing with the scientific community?
 Follow NHGRI’s guidance on the [NHGRI Genomic Data Sharing (GDS) Policy: Data Submission](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/data-submission) webpage. The webpage contains a flowchart for Intramural and Extramural Investigators, and links to the necessary forms.  Indicate that data is to be deposited in AnVIL on your NHGRI Genomic Data Sharing Plan (GDSP) form.

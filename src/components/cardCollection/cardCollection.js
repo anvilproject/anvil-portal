@@ -110,7 +110,7 @@ class CardCollection extends React.Component {
             return (
                 <ClickHandler className={compStyles.card}
                               clickAction={() => this.redirect(linkTo, openTab)}
-                              tag="div">
+                              tag="div" label={title}>
                     <div className={compStyles.primary}>
                         {src ? <img className={compStyles.icon} src={src} alt="logo"/> : null}
                         <h4>{title}</h4>

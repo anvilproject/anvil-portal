@@ -2,6 +2,4 @@
 title: "Accessing Data"
 ---
 
-Request access to AnVIL's high-value datasets for basic as well as clinical research.
-
-<go-arrow>[Learn More](/data/requesting-data-access)</go-arrow>
+Learn how to [request access](/data/requesting-data-access) to AnVIL's high-value datasets for basic as well as clinical research.
