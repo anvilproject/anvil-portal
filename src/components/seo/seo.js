@@ -31,7 +31,9 @@ class SEO extends React.Component {
                 <meta property="twitter:title" content={title}/>
                 {description ? [
                     <meta property="twitter:description" content={description} key="twitter:description"/>,
-                    <meta name="description" content={description} key="description" />
+                    <meta name="description" content={description} key="description" />,
+                    <meta property="og:description" content={description} key="og:description" />
+
                 ] : null}
                 <meta name="twitter:card" content="summary"/>
                 
