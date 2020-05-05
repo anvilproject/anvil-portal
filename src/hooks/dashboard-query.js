@@ -8,6 +8,7 @@ export const DashboardStaticQuery = () => {
                 edges {
                   node {
                     projects {
+                      data_type
                       files {
                         count
                         size

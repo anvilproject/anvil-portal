@@ -36,7 +36,6 @@ class SEO extends React.Component {
 
                 ] : null}
                 <meta name="twitter:card" content="summary"/>
-                
                 <html lang="en" />
             </Helmet>
         )

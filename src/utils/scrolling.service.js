@@ -92,9 +92,11 @@ export function getContentAnchors() {
 
     // Grab any content element with an anchor "id".
     const contentEl = document.querySelector('[id^="content"]');
+
     if ( !contentEl ) {
         return;
     }
+
     return Array.from(contentEl.querySelectorAll("[id]"));
 }
 
