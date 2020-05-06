@@ -11,14 +11,14 @@ import {graphql} from "gatsby";
 import React from "react";
 
 // App dependencies
-import ArticleBody from "../components/article/articleBody";
-import ArticleEnd from "../components/articleEnd/articleEnd";
+import ArticleBody from "../components/article/article-body";
+import ArticleEnd from "../components/article-end/article-end";
 import Layout from "../components/layout";
 import Workspaces from "../components/workspaces/workspaces";
 import * as TemplateService from "../utils/template.service";
 
 // Styles
-import bodyStyles from "../components/article/articleBody.module.css";
+import bodyStyles from "../components/article/article-body.module.css";
 
 let classNames = require("classnames");
 

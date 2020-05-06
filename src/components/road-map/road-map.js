@@ -9,11 +9,11 @@
 import React from "react";
 
 // App dependencies
-import {RoadMapStaticQuery} from "../../hooks/roadMapQuery";
-import ClickHandler from "../clickHandler/clickHandler";
+import ClickHandler from "../click-handler/click-handler";
+import {RoadMapStaticQuery} from "../../hooks/road-map-query";
 
 // Styles
-import compStyles from "./roadMap.module.css";
+import compStyles from "./road-map.module.css";
 
 let classNames = require("classnames");
 

@@ -9,8 +9,8 @@
 import React from "react";
 
 // Styles
+import compStyles from "./section-body.module.css";
 import globalStyles from "../../styles/global.module.css";
-import compStyles from "./sectionBody.module.css";
 
 let classNames = require("classnames");
 

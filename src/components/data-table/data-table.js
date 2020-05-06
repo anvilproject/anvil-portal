@@ -9,8 +9,8 @@
 import React from "react";
 
 // App dependencies
+import ClickHandler from "../click-handler/click-handler";
 import * as DashboardTableService from "../../utils/dashboard-table.service";
-import ClickHandler from "../clickHandler/clickHandler";
 
 // Styles
 import compStyles from "./data-table.module.css";

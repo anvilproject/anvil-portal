@@ -14,8 +14,8 @@ import Outline from "../outline/outline";
 import Spy from "../spy/spy";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./article.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 const classNames = require("classnames");
 

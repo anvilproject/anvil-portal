@@ -11,12 +11,12 @@
 import React from "react";
 
 // App dependencies
-import {ColorPaletteStaticQuery} from "../../hooks/colorPaletteQuery";
 import Hero from "../hero/hero";
+import {ColorPaletteStaticQuery} from "../../hooks/color-palette-query";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./style-guide-color-palette.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 let classNames = require("classnames");
 

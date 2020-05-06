@@ -12,7 +12,7 @@ import React from "react";
 import Markdown from "../markdown/markdown";
 
 // Styles
-import compStyles from "./articleBody.module.css";
+import compStyles from "./article-body.module.css";
 
 let classNames = require("classnames");
 

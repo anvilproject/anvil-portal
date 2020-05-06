@@ -10,15 +10,15 @@ import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
-import {HeaderStaticQuery} from "../../hooks/headerQuery";
-import ClickHandler from "../clickHandler/clickHandler";
+import ClickHandler from "../click-handler/click-handler";
+import {HeaderStaticQuery} from "../../hooks/header-query";
 
 // Images
 import logo from "../../../images/logo.png";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./header.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 let classNames = require("classnames");
 

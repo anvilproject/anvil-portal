@@ -11,7 +11,7 @@
 import React from "react";
 
 // App dependencies
-import {TypographyExampleStaticQuery} from "../../hooks/typographyExampleQuery";
+import {TypographyExampleStaticQuery} from "../../hooks/typography-example-query";
 
 // Styles
 import compStyles from "./style-guide-typography-example.module.css";

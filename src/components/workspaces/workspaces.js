@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
+import {FeaturedWorkspacesStaticQuery} from "../../hooks/featured-workspaces-query";
 import Markdown from "../markdown/markdown";
 
 // Styles

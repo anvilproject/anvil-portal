@@ -9,9 +9,9 @@
 import React from "react";
 
 // App dependencies
-import {EventsStaticQuery} from "../../hooks/eventsQuery";
-import * as ScoopsService from "../../utils/scoops.service";
+import {EventsStaticQuery} from "../../hooks/events-query";
 import Scoop from "../scoops/scoop";
+import * as ScoopsService from "../../utils/scoops.service";
 
 // Styles
 import compStyles from "./events.module.css";

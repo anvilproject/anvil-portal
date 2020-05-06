@@ -10,8 +10,8 @@ import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
-import {DraftStaticQuery} from "../../hooks/draftQuery";
-import {NavStaticQuery} from "../../hooks/navQuery";
+import {DraftStaticQuery} from "../../hooks/draft-query";
+import {NavStaticQuery} from "../../hooks/nav-query";
 import * as NavigationService from '../../utils/navigation.service';
 import * as ScrollingService from "../../utils/scrolling.service";
 

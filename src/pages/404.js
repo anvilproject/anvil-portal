@@ -17,7 +17,7 @@ import Layout from "../components/layout";
 import bubbles from "../../images/404.png";
 
 // Styles
-import bodyStyles from "../components/article/articleBody.module.css";
+import bodyStyles from "../components/article/article-body.module.css";
 import globalStyles from "../styles/global.module.css";
 import compStyles from "./404.module.css";
 

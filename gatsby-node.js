@@ -137,7 +137,7 @@ exports.createPages = ({graphql, actions}) => {
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             createPage({
                 path: getKeyOrPath(node.fields.slug, yamlSiteMapPathOrKey),
-                component: path.resolve(`./src/templates/contentTemplate.js`),
+                component: path.resolve(`./src/templates/content-template.js`),
                 context: {
                     // Data passed to context is available
                     // in page queries as GraphQL variables.

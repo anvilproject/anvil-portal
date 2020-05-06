@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import ArticleBody from "../article/articleBody";
+import ArticleBody from "../article/article-body";
 import Scoop from "./scoop";
 
 class Scoops extends React.Component {
