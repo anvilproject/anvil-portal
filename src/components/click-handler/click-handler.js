@@ -10,7 +10,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./clickHandler.module.css";
+import compStyles from "./click-handler.module.css";
 
 let classNames = require("classnames");
 

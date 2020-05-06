@@ -9,10 +9,10 @@
 import React from "react";
 
 // App dependencies
-import {StatsStaticQuery} from "../../hooks/statsQuery";
+import {StatsStaticQuery} from "../../hooks/stats-query";
+import Stat from "../stat/stat";
 import * as NumberFormatService from "../../utils/number-format.service";
 import * as StatsService from "../../utils/stats.service";
-import Stat from "../stat/stat";
 
 // Styles
 import compStyles from "./stats.module.css";

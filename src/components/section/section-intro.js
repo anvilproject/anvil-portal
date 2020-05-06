@@ -12,8 +12,8 @@ import React from "react";
 import Markdown from "../markdown/markdown";
 
 // Styles
+import compStyles from "./section-intro.module.css";
 import globalStyles from "../../styles/global.module.css";
-import compStyles from "./sectionIntro.module.css";
 
 let classNames = require("classnames");
 

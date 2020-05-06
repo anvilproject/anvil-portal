@@ -10,11 +10,11 @@ import Cookies from "js-cookie";
 import React from "react";
 
 // App dependencies
-import ClickHandler from "../clickHandler/clickHandler";
+import ClickHandler from "../click-handler/click-handler";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./banner-privacy.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 let bannerHtmlCollection;
 

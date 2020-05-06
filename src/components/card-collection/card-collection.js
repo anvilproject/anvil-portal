@@ -19,15 +19,15 @@
 import React from "react";
 
 // App dependencies
-import {CardCollectionStaticQuery} from "../../hooks/cardCollectionQuery";
-import * as CollectionService from "../../utils/collection.service";
-import ClickHandler from "../clickHandler/clickHandler";
-import GoArrow from "../goArrow/goArrow";
+import ClickHandler from "../click-handler/click-handler";
+import GoArrow from "../go-arrow/go-arrow";
+import {CardCollectionStaticQuery} from "../../hooks/card-collection-query";
 import Markdown from "../markdown/markdown";
+import * as CollectionService from "../../utils/collection.service";
 
 // Styles
-import arrowStyles from "../goArrow/goArrow.module.css";
-import compStyles from "./cardCollection.module.css";
+import compStyles from "./card-collection.module.css";
+import arrowStyles from "../go-arrow/go-arrow.module.css";
 
 let anchorEls;
 

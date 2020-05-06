@@ -11,7 +11,7 @@ import React from "react";
 // App dependencies
 import Layout from "../components/layout";
 import Scoops from "../components/scoops/scoops";
-import {NewsStaticQuery} from "../hooks/newsQuery";
+import {NewsStaticQuery} from "../hooks/news-query";
 import * as ScoopsService from "../utils/scoops.service";
 
 // Styles

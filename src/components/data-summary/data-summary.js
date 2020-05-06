@@ -11,9 +11,9 @@
 import React from "react";
 
 // App dependencies
-import {DashboardStaticQuery} from "../../hooks/dashboardQuery";
-import * as DashboardSummaryService from "../../utils/dashboard-summary.service";
 import DataTable from "../data-table/data-table";
+import {DashboardStaticQuery} from "../../hooks/dashboard-query";
+import * as DashboardSummaryService from "../../utils/dashboard-summary.service";
 
 // Styles
 import tableStyles from "../data-table/data-table.module.css";

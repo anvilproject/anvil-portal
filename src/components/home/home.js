@@ -10,27 +10,27 @@ import React from "react";
 import {isBrowser} from "react-device-detect";
 
 // App dependencies
-import {AccessingStaticQuery} from "../../hooks/accessingQuery";
-import {EventsStaticQuery} from "../../hooks/eventsQuery";
-import {FeaturedWorkspacesStaticQuery} from "../../hooks/featuredWorkspacesQuery";
-import {NewsStaticQuery} from "../../hooks/newsQuery";
-import {OnboardingStaticQuery} from "../../hooks/onboardingQuery";
-import {SubmittingStaticQuery} from "../../hooks/submittingQuery";
-import {RoadMapIntroStaticQuery} from "../../hooks/roadMapIntroQuery";
-import * as ScoopsService from "../../utils/scoops.service";
 import Carousel from "../carousel/carousel";
-import GoArrow from "../goArrow/goArrow";
-import RoadMap from "../roadMap/roadMap";
+import GoArrow from "../go-arrow/go-arrow";
+import {AccessingStaticQuery} from "../../hooks/accessing-query";
+import {EventsStaticQuery} from "../../hooks/events-query";
+import {FeaturedWorkspacesStaticQuery} from "../../hooks/featured-workspaces-query";
+import {NewsStaticQuery} from "../../hooks/news-query";
+import {OnboardingStaticQuery} from "../../hooks/onboarding-query";
+import {SubmittingStaticQuery} from "../../hooks/submitting-query";
+import {RoadMapIntroStaticQuery} from "../../hooks/road-map-intro-query";
+import RoadMap from "../road-map/road-map";
 import Scoop from "../scoops/scoop";
-import SectionBody from "../section/sectionBody";
-import SectionIntro from "../section/sectionIntro";
+import SectionBody from "../section/section-body";
+import SectionIntro from "../section/section-intro";
 import Stats from "../stats/stats";
+import * as ScoopsService from "../../utils/scoops.service";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
-import goStyles from "../goArrow/goArrow.module.css";
+import goStyles from "../go-arrow/go-arrow.module.css";
 import compStyles from "./home.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 // Logos
 import logoTerra from "../../../images/logoTerra.png";

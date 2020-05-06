@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./goArrow.module.css";
+import compStyles from "./go-arrow.module.css";
 
 let classNames = require("classnames");
 

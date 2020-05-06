@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {OutlineStaticQuery} from "../../hooks/outlineQuery";
+import {OutlineStaticQuery} from "../../hooks/outline-query";
 import * as OutlineService from "../../utils/outline.service";
 import * as ScrollingService from "../../utils/scrolling.service";
 

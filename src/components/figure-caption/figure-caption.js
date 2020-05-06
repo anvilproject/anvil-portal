@@ -11,7 +11,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./figureCaption.module.css";
+import compStyles from "./figure-caption.module.css";
 
 class FigureCaption extends React.Component {
 

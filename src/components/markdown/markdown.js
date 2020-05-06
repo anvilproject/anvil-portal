@@ -11,12 +11,12 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
-import CardCollection from "../cardCollection/cardCollection";
+import CardCollection from "../card-collection/card-collection";
 import DataDetail from "../data-detail/data-detail";
 import DataSummary from "../data-summary/data-summary";
 import Events from "../events/events";
-import FigureCaption from "../figureCaption/figureCaption";
-import GoArrow from "../goArrow/goArrow";
+import FigureCaption from "../figure-caption/figure-caption";
+import GoArrow from "../go-arrow/go-arrow";
 import Hero from "../hero/hero";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";

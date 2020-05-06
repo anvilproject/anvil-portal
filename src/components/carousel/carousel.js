@@ -10,8 +10,8 @@
 import React from "react";
 
 // App dependencies
-import {CarouselStaticQuery} from "../../hooks/carouselQuery";
-import ClickHandler from "../clickHandler/clickHandler";
+import ClickHandler from "../click-handler/click-handler";
+import {CarouselStaticQuery} from "../../hooks/carousel-query";
 
 // Images
 import arrows from "../../../images/icon/arrows.png";
@@ -19,8 +19,8 @@ import left from "../../../images/icon/left.png";
 import right from "../../../images/icon/right.png";
 
 // Styles
-import globalStyles from "../../styles/global.module.css";
 import compStyles from "./carousel.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 let classNames = require("classnames");
 

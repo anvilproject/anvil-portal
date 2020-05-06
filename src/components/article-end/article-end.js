@@ -10,7 +10,7 @@ import {Link} from "gatsby";
 import React from "react";
 
 // Styles
-import compStyles from "./articleEnd.module.css";
+import compStyles from "./article-end.module.css";
 
 let classNames = require("classnames");
 
