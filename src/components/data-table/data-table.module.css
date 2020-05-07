@@ -89,12 +89,22 @@ table {
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     height: 32px;
-    min-width: 96px;
+    min-width: 104px;
     padding: 0 4px;
 }
 
-/* Detail table - row cell - "access" */
+/* Detail table - row cell - "" */
+.detail .row td:nth-of-type(3) {
+    min-width: 124px;
+}
+
+/* Detail table - row cell - "dataType" */
 .detail .row td:nth-of-type(4) {
+    min-width: 132px;
+}
+
+/* Detail table - row cell - "access" */
+.detail .row td:nth-of-type(5) {
     min-width: 32px;
 }
 

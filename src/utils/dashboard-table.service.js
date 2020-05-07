@@ -83,6 +83,8 @@ export function switchDisplayColumnName(columnName) {
             return "Access";
         case "cohorts":
             return "Cohorts";
+        case "dataType":
+            return "Data Type";
         case "demographics":
             return "Subjects";
         case "diagnosis":
@@ -177,7 +179,7 @@ function switchProgramUrl(program) {
         case "GTEx":
             return "https://gtexportal.org/home/";
         case "ThousandGenomes":
-            return "https://www.internationalgenome.org/"
+            return "https://www.internationalgenome.org/";
         case "eMERGE":
             return "https://emerge-network.org/";
         default:

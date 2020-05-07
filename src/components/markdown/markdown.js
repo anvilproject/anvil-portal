@@ -39,9 +39,11 @@ class Markdown extends React.Component {
 
         // Find all <span> elements
         const contentEl = document.querySelector('[id^="content"]');
+
         if ( !contentEl ) {
             return;
         }
+
         const imagesEl = Array.from(contentEl.querySelectorAll("span"));
 
         // Filter for <span> that wraps the images for medium-zoom capability (therefore will exclude gif images)

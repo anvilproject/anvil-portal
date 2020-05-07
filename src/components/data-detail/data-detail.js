@@ -18,7 +18,7 @@ import * as DashboardDetailService from "../../utils/dashboard-detail.service";
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["program", "projectId", "dbGapId", "access", "demographics", "samples","files","size"];
+let TABLE_HEADERS = ["program", "projectId", "dbGapId", "dataType", "access", "demographics", "samples","files","size"];
 
 class DataDetail extends React.Component {
 
