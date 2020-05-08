@@ -96,16 +96,17 @@ workflows:
     version: 2
     build-n-deploy:
       jobs:
-        - build
         - deploy-staging:
             requires:
               - build
             filters:
               branches:
                 only: staging
+            context: anvil-portal-staging
         - deploy-prod:
             requires:
               - build
             filters:
               branches:
                 only: master
+            context: anvil-portal-prod

@@ -11,6 +11,12 @@ let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
 let roadMapPath = `./content/roadmap/`;
 let yamlPath = `./content`;
 
+
+let gtmId = process.env.GATSBY_GTM_ID;
+let gtmAuth = process.env.GATSBY_GTM_AUTH;
+let gtmEnvName = process.env.GATSBY_ENV_NAME;
+
+
 module.exports = {
     siteMetadata: {
         title: `The AnVIL`,
@@ -51,7 +57,7 @@ module.exports = {
         {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
-                id: "GTM-M3WNPD2",
+                id: gtmId,
 
                 // Include GTM in development.
                 // Defaults to false meaning GTM will only be loaded in production.
@@ -63,8 +69,8 @@ module.exports = {
                 defaultDataLayer: {},
 
                 // Specify optional GTM environment details.
-                // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
-                // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME"/*,
+                gtmAuth: gtmAuth,
+                gtmPreview: gtmEnvName,
             },
         },
         `gatsby-plugin-manifest`,
