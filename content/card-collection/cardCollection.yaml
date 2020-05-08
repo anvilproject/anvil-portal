@@ -12,7 +12,7 @@ tools:
   - title: "R Studio"
     logo: "./_images/r-studio.png"
     path: "./r-studio.md"
-    url: "https://www.rstudio.com/"
+    url: "https://rstudio.com/"
   - title: "AnVIL API Library"
     logo: "./_images/anvil.png"
     path: "./anvil.md"

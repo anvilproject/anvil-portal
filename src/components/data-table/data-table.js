@@ -11,6 +11,8 @@ import React from "react";
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
 import * as DashboardTableService from "../../utils/dashboard-table.service";
+import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
+import * as DOMService from "../../utils/dom.service";
 
 // Styles
 import compStyles from "./data-table.module.css";
@@ -19,9 +21,14 @@ let classNames = require("classnames");
 
 class DataTable extends React.Component {
 
-    redirect = (linkTo) => {
+    redirect = (linkTo, linkText) => {
 
-        window.open(linkTo)
+        window.open(linkTo);
+
+        // Track click to external sites
+        if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {
+            AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
+        }
     };
 
     render() {
@@ -48,7 +55,7 @@ class DataTable extends React.Component {
 
             return (
                 linkedTo ? <ClickHandler className={classNames({[compStyles.right]: rightAlign}, compStyles.link)}
-                                         clickAction={() => this.redirect(linkedTo)}
+                                         clickAction={() => this.redirect(linkedTo, data)}
                                          tag={"td"}
                                          label={data}>{data}</ClickHandler> :
                     <td className={classNames({[compStyles.right]: rightAlign})}>{data}</td>

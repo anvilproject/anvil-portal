@@ -28,4 +28,4 @@ Future additions to the AnVIL analysis ecosystem will include the Galaxy workben
 
 ## Request a Tool
 
-Contact the [AnVIL Team](anvil-project-managers@lists.anvilproject.org)  for additional requests and suggestions.
+Contact the [AnVIL Team](mailto:anvil-project-managers@lists.anvilproject.org)  for additional requests and suggestions.

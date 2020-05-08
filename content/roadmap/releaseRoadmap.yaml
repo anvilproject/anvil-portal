@@ -47,7 +47,7 @@
         link: "https://rstudio.com/"
 - quarter: "2020 Q3"
   display:
-      platforms:
+      tools:
       - name: "Galaxy"
         link: "https://galaxyproject.org/"
 - quarter: "2020 Q4"

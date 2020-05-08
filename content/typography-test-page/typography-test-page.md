@@ -83,7 +83,7 @@ All 1000 Genomes data is publicly accessible.
 
 ## Current Tools
 - WDL - Batch processing of GATK and other workflows
-- [Jupyter](https://jupyter.org/) - Interactive analysis with the python or R programming languages; the R environment includes a family of [Bioconductor](https://www.bioconductor.org) 3.10 packages.
+- [Jupyter](https://jupyter.org/) - Interactive analysis with the python or R programming languages; the R environment includes a family of [Bioconductor](https://www.bioconductor.org/) 3.10 packages.
 
 ### Creating a New Page
 1. Add a new [markdown](https://en.wikipedia.org/wiki/Markdown) (`.md`) file for the new page.
