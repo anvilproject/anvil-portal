@@ -95,6 +95,19 @@ class CardCollection extends React.Component {
 
         return (e) => {
 
+            const target = e.target;
+            if ( !DOMService.isAnchor(target) ) {
+                return;
+            }
+
+            const url = target.getAttribute("href");
+            if ( DOMService.isHrefExternal(url) || DOMService.isMailTo(url) ) {
+
+                const linkText = target.innerText;
+                AnvilGTMService.trackExternalLinkClicked(url, linkText);
+
+            }
+
             e.stopPropagation();
         }
     };
