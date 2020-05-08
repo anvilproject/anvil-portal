@@ -79,6 +79,7 @@ class Layout extends React.Component {
                     <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>
                     <BannerPrivacy onBannerHeightChange={this.onBannerHeightChange.bind(this)}/>
                     <Footer/>
+                    <div id="portal"/>
                 </div>
             </div>
         )

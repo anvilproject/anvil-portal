@@ -23,6 +23,17 @@ export function cellAlignment(columnName) {
 }
 
 /**
+ * Finds the corresponding tooltip label for the specified cell value.
+ *
+ * @param cellValue
+ * @returns {*}
+ */
+export function findCellTooltip(cellValue) {
+
+    return switchCellNameToTooltipLabel(cellValue);
+}
+
+/**
  * Returns a formatted value as specified by either column type or value type (specifically if the value is a number).
  * Any null value will return "--".
  *
@@ -37,6 +48,11 @@ export function formatValue(value, column) {
         if ( column === "program" ) {
 
             return switchProgramName(value);
+        }
+
+        if ( column === "dataType" ) {
+
+            return formatDataType(value);
         }
 
         if ( column === "sizeTB" ) {
@@ -113,6 +129,23 @@ export function switchDisplayColumnName(columnName) {
 }
 
 /**
+ * Formats the data type object into a string, with its correct display value.
+ *
+ * @param dataTypes
+ * @returns {*}
+ */
+function formatDataType(dataTypes) {
+
+    if ( dataTypes ) {
+
+        const switchedDataTypes = dataTypes.map(dataType => switchDataType(dataType));
+        return stringifyArray(switchedDataTypes);
+    }
+
+    return dataTypes;
+}
+
+/**
  * Returns true if the specified gap id is not blacklisted.
  *
  * @param gapId
@@ -121,6 +154,40 @@ export function switchDisplayColumnName(columnName) {
 function isGapIdWhitelist(gapId) {
 
     return !DBGAPIDS_BLACKLIST.includes(gapId);
+}
+
+/**
+ * Returns a string by concatenating all of the elements in an array, separated by a comma.
+ *
+ * @param array
+ * @returns {*}
+ */
+function stringifyArray(array) {
+
+    if ( array && typeof array === "object") {
+
+        return array.join(", ");
+    }
+
+    return array;
+}
+
+/**
+ * Returns the corresponding tooltip label for the specified cell value.
+ *
+ * @param cellValue
+ * @returns {*}
+ */
+function switchCellNameToTooltipLabel(cellValue) {
+
+    switch (cellValue) {
+        case "WGS":
+            return "Whole Genome Sequencing";
+        case "WES":
+            return "Whole Exome Sequencing";
+        default:
+            return null;
+    }
 }
 
 /**
@@ -142,6 +209,26 @@ function switchColumnUrl(columnName, summary, value) {
             return switchProgramUrl(value);
         default:
             return null;
+    }
+}
+
+/**
+ * Returns the corresponding data type display name.
+ *
+ * @param dataType
+ * @returns {*}
+ */
+function switchDataType(dataType) {
+
+    switch (dataType) {
+        case "Whole Genome":
+            return "WGS";
+        case "Whole genome":
+            return "WGS";
+        case "Exome":
+            return "WES";
+        default:
+            return dataType;
     }
 }
 

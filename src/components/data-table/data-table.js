@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
+import Tooltip from "../tooltip/tooltip";
 import * as DashboardTableService from "../../utils/dashboard-table.service";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../../utils/dom.service";
@@ -35,6 +36,19 @@ class DataTable extends React.Component {
         const {className, tableHeaders, tableRows} = this.props,
             summaryTable = className === compStyles.summary;
 
+        const Cell = (props) => {
+
+            const {children} = (props),
+                label = DashboardTableService.findCellTooltip(children);
+
+            if ( label ) {
+
+                return (<Tooltip label={label}>{children}</Tooltip>);
+            }
+
+            return children;
+        };
+
         const HeaderCell = (props) => {
 
             const {column} = props,
@@ -58,7 +72,7 @@ class DataTable extends React.Component {
                                          clickAction={() => this.redirect(linkedTo, data)}
                                          tag={"td"}
                                          label={data}>{data}</ClickHandler> :
-                    <td className={classNames({[compStyles.right]: rightAlign})}>{data}</td>
+                    <td className={classNames({[compStyles.right]: rightAlign})}><Cell>{data}</Cell></td>
             )
         };
 
@@ -81,15 +95,16 @@ class DataTable extends React.Component {
             <div className={classNames(compStyles.wrapper, className)}>
                 <table>
                     <thead>
-                    <tr className={compStyles.header}>
-                        {tableHeaders.map((tableHeader, h) => <HeaderCell key={h} column={tableHeader}/>)}
-                    </tr>
+                        <tr className={compStyles.header}>
+                            {tableHeaders.map((tableHeader, h) => <HeaderCell key={h} column={tableHeader}/>)}
+                        </tr>
                     </thead>
                     <tbody>
-                    {tableRows.map((tableRow, r) => <TableRow key={r}
-                                                              order={tableHeaders}
-                                                              row={tableRow}
-                                                              summary={summaryTable}/>)}
+                        {tableRows.map((tableRow, r) =>
+                            <TableRow key={r}
+                                      order={tableHeaders}
+                                      row={tableRow}
+                                      summary={summaryTable}/>)}
                     </tbody>
                 </table>
             </div>
