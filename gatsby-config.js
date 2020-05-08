@@ -43,25 +43,13 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                trackingId: 'UA-154456484-1',
-                // Puts tracking script in the head instead of the body
-                head: true,
-                // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
-                anonymize: true,
-                // Optional - do not track
-                respectDNT: true,
-            },
-        },
-        {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
                 id: gtmId,
 
                 // Include GTM in development.
                 // Defaults to false meaning GTM will only be loaded in production.
-                includeInDevelopment: true, /*************************************************************************************************************************************************/
+                includeInDevelopment: false,
 
                 // datalayer to be set before GTM is loaded
                 // should be an object or a function that is executed in the browser
@@ -71,6 +59,18 @@ module.exports = {
                 // Specify optional GTM environment details.
                 gtmAuth: gtmAuth,
                 gtmPreview: gtmEnvName,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'UA-154456484-1',
+                // Puts tracking script in the head instead of the body
+                head: true,
+                // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
+                anonymize: true,
+                // Optional - do not track
+                respectDNT: true,
             },
         },
         `gatsby-plugin-manifest`,
