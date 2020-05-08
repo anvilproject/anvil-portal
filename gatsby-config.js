@@ -15,6 +15,7 @@ let yamlPath = `./content`;
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
 let gtmEnvName = process.env.GATSBY_ENV_NAME;
+let trackingId = process.env.GATSBY_GA_TRACKING_ID;
 
 
 module.exports = {
@@ -64,7 +65,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: 'UA-154456484-1',
+                trackingId: trackingId,
                 // Puts tracking script in the head instead of the body
                 head: true,
                 // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
