@@ -94,13 +94,31 @@ jobs:
           command: ./node_modules/.bin/firebase  deploy -P master --token "$FIREBASE_TOKEN"
 workflows:
     version: 2
-    build-n-deploy:
+    build-n-deploy-staging:
       jobs:
-        - build
+        - build:
+            filters:
+              branches:
+                only: staging
+            context: anvil-portal-staging
         - deploy-staging:
             requires:
               - build
             filters:
               branches:
                 only: staging
-      context: anvil-portal-staging
+            context: anvil-portal-staging
+     build-n-deploy-prod:
+          jobs:
+            - build:
+                filters:
+                  branches:
+                    only: master
+                context: anvil-portal-prod
+            - deploy-prod:
+                requires:
+                  - build
+                filters:
+                  branches:
+                    only: master
+                context: anvil-portal-prod
