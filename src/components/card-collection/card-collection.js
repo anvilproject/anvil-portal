@@ -23,7 +23,9 @@ import ClickHandler from "../click-handler/click-handler";
 import GoArrow from "../go-arrow/go-arrow";
 import {CardCollectionStaticQuery} from "../../hooks/card-collection-query";
 import Markdown from "../markdown/markdown";
+import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as CollectionService from "../../utils/collection.service";
+import * as DOMService from "../../utils/dom.service";
 
 // Styles
 import compStyles from "./card-collection.module.css";
@@ -56,15 +58,20 @@ class CardCollection extends React.Component {
         }
     };
 
-    redirect = (linkTo, openTab) => {
-
+    redirect = (linkTo, openTab, linkText) => {
+        
         if (openTab) {
 
-            window.open(linkTo)
+            window.open(linkTo);
         }
         else {
 
             window.location.href = linkTo;
+        }
+
+        // Track click to external sites
+        if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {
+            AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
         }
     };
 
@@ -88,6 +95,19 @@ class CardCollection extends React.Component {
 
         return (e) => {
 
+            const target = e.target;
+            if ( !DOMService.isAnchor(target) ) {
+                return;
+            }
+
+            const url = target.getAttribute("href");
+            if ( DOMService.isHrefExternal(url) || DOMService.isMailTo(url) ) {
+
+                const linkText = target.innerText;
+                AnvilGTMService.trackExternalLinkClicked(url, linkText);
+
+            }
+
             e.stopPropagation();
         }
     };
@@ -109,7 +129,7 @@ class CardCollection extends React.Component {
 
             return (
                 <ClickHandler className={compStyles.card}
-                              clickAction={() => this.redirect(linkTo, openTab)}
+                              clickAction={() => this.redirect(linkTo, openTab, title)}
                               tag="div" label={title}>
                     <div className={compStyles.primary}>
                         {src ? <img className={compStyles.icon} src={src} alt="logo"/> : null}
@@ -132,7 +152,6 @@ class CardCollection extends React.Component {
 export default (props) => {
 
     const collection = CollectionService.getCollection(props, CardCollectionStaticQuery());
-
     return (
         collection ? <CardCollection collection={collection}/> : null
     )

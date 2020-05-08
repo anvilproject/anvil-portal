@@ -106,15 +106,23 @@
 /* Bubble */
 .roadmap .bubble {
     align-items: center;
+    align-self: center;
     border-radius: 50%;
     color: var(--shade-dark);
     cursor: pointer;
     display: flex;
     flex: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Barlow", sans-serif;
     height: 90px;
+    line-height: 16px;
     justify-content: center;
     margin: 4px;
+    padding: 4px;
+    text-align: center;
     width: 90px;
+
 }
 
 /* Data */
@@ -130,17 +138,6 @@
 /* Tool */
 .roadmap .bubble.tool {
     background-color: var(--accent-blue-light);
-}
-
-/* Bubble text */
-.roadmap .bubble span {
-    align-self: center;
-    font-family: "Barlow", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    max-width: 84px;
-    text-align: center;
 }
 
 /**

@@ -9,7 +9,6 @@
 import React from "react";
 
 // App dependencies
-import ClickHandler from "../click-handler/click-handler";
 import {RoadMapStaticQuery} from "../../hooks/road-map-query";
 
 // Styles
@@ -19,11 +18,12 @@ let classNames = require("classnames");
 
 class RoadMap extends React.Component {
 
-    redirect = (linkTo) => {
-
-        window.open(linkTo)
-    };
-
+    /**
+     * Returns true if quarter should be displayed.
+     *
+     * @param quarter
+     * @returns {boolean}
+     */
     showQuarter = (quarter) => {
 
         const {display} = quarter;
@@ -38,7 +38,11 @@ class RoadMap extends React.Component {
         return tools || platforms;
     };
 
+    /**
+     * Render quarters, bubbles and key.
+     */
     render() {
+
         const {roadMap} = this.props;
 
         const Bubble = (props) => {
@@ -47,12 +51,10 @@ class RoadMap extends React.Component {
                 {link, name} = item;
 
             return (
-                <ClickHandler className={classNames(compStyles.bubble, className)}
-                              clickAction={() => this.redirect(link)}
-                              tag={"span"}
-                              label={link}>
-                    <span>{name}</span>
-                </ClickHandler>
+                <a href={link}
+                   className={classNames(compStyles.bubble, className)}
+                   rel="nofollow noopener noreferrer"
+                   target="_blank">{name}</a>
             )
         };
 
