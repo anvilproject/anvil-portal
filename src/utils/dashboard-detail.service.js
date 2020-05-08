@@ -16,7 +16,7 @@ export function getDashboardDetail(data) {
 
         return {
             access: formatAccess(project.public),
-            dataType: stringifyArray(project.data_type),
+            dataType: project.data_type,
             demographics: getDemographicsCount(project),
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
@@ -97,22 +97,6 @@ function getFamiliesCount(project) {
 function getSamplesCount(project) {
 
     return findProjectNodeByType(project, "Sample").count;
-}
-
-/**
- * Returns a string by concatenating all of the elements in an array, separated by a comma.
- *
- * @param array
- * @returns {*}
- */
-function stringifyArray(array) {
-
-    if ( array && typeof array === "object") {
-
-        return array.join(", ");
-    }
-
-    return array;
 }
 
 /**

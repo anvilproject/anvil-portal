@@ -1,0 +1,39 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL tooltip component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Tooltip */
+.tooltip {
+    background-color: var(--white);
+    border-radius: 4px;
+    border: 1px solid var(--black12);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    color: var(--black);
+    display: inline-block;
+    font-family: "Barlow", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 200px;
+    opacity: 0;
+    padding: 4px 8px;
+    position: fixed;
+    transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+/* Tooltip - show */
+.tooltip.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tooltip target */
+span {
+    cursor: default;
+}
+
