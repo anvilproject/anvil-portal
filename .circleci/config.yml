@@ -108,17 +108,17 @@ workflows:
               branches:
                 only: staging
             context: anvil-portal-staging
-     build-n-deploy-prod:
-          jobs:
-            - build:
-                filters:
-                  branches:
-                    only: master
-                context: anvil-portal-prod
-            - deploy-prod:
-                requires:
-                  - build
-                filters:
-                  branches:
-                    only: master
-                context: anvil-portal-prod
+    build-n-deploy-prod:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only: master
+            context: anvil-portal-prod
+        - deploy-prod:
+            requires:
+              - build
+            filters:
+              branches:
+                only: master
+            context: anvil-portal-prod
