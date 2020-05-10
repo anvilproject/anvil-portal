@@ -1,7 +1,8 @@
 ---
-title: "Submitting Data"
+title: "
+ Contribute Data"
 ---
 
-[Upload your own data](/data/data-submission) to AnVIL utilizing access controlled sharing mechanisms.
+Work with the AnVIL team to [contribute your consortium's](/data/data-submission)  data to AnVIL.
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Accessing Data"
+title: "Access Data"
 ---
 
-Learn how to [request access](/data/requesting-data-access) to AnVIL's high-value datasets for basic as well as clinical research.
+Learn how to [request access](/data/requesting-data-access) to AnVIL's high-value,  access controlled, genomic datasets.
