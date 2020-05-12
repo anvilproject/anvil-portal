@@ -47,7 +47,7 @@ class Scoop extends React.Component {
             const scoopDate = ScoopsService.validateDate(date);
 
             return (
-                <div className={classNames(compStyles.scoop, className, contentStyles.content)}>
+                <div className={classNames(contentStyles.content, compStyles.scoop, className)}>
                     <h3><Link to={slug}>{title}</Link></h3>
                     {scoopDate ? <h5>{scoopDate}</h5> : null}
                     {description ? <p>{description}</p> : null}
@@ -57,7 +57,7 @@ class Scoop extends React.Component {
 
         return (
             scoops.length ? this.getScoops().map((scoop, i) =>
-                    <Headline scoop={scoop} key={i}/>) :
+                    <Headline key={i} scoop={scoop}/>) :
                 <p className={classNames(compStyles.scoopless, noEvents)}>Currently, we have no {type}.</p>
         );
     }

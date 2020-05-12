@@ -9,7 +9,8 @@
 /* Table wrapper */
 /* Allows for overflow on smaller screens */
 .wrapper {
-    overflow-y: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding-right: 16px; /* RHS gutter */
     width: calc(100vw - 16px);
 }
@@ -25,15 +26,9 @@ table {
     margin: 0;
 }
 
-/* Table - summary */
-.summary table {
-    min-width: 568px;
-}
-
 /* Table - detail */
 .detail table {
     max-width: 1118px;
-    min-width: 1118px;
 }
 
 /* Header cell, row cell */
@@ -150,43 +145,43 @@ table.detail .row td:first-of-type {
 
     /* Table wrapper - detail */
     .wrapper.detail {
-        padding-right: calc((100vw - 602px) / 2); /* Page width minus: inner content max width, halved */
-        width: calc(100vw - ((100vw - 602px) / 2));
+        padding-right: 24px;
+        width: calc(100vw - 24px);
     }
 }
 
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Large handset portrait, small handset landscape, extra small window
  */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 840px) {
 
     /* Table wrapper - detail */
     .wrapper.detail {
         padding-right: 24px;
-        width: calc(100vw - 220px - 16px - 24px); /* Page width minus: left nav, left content padding, page gutter */
+        width: calc(100vw - 40px - 24px); /* 100vw minus: content padding, gutter */
     }
 }
 
 /**
- * Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * AnVIL data table specific breakpoint.
+ * Allows for full width summary data table with introduction of margins - "auto" on the "contentPositioner" class on the article component at this screen width.
  */
-@media screen and (min-width: 1280px) {
-
-    /* Table wrapper - summary */
-    .wrapper.summary {
-        padding-right: 0;
-        width: unset;
-    }
+@media screen and (min-width: 888px) {
 
     /* Table wrapper - detail */
     .wrapper.detail {
-        width: calc(100vw - ((100vw - 1232px) / 2) - 234px - 32px); /* Page width minus: calculated left margin, left nav, left content padding. */
-    }
-
-    /* Table - summary */
-    .summary table {
-        max-width: 680px;
+        width: calc(100vw - ((100vw - 840px - 48px) / 2) - 24px - 40px); /* 100vw minus: the LHS content margin, both gutters, content padding */
     }
 }
+
+/**
+ * Column row layout changes to row layout (left nav/content/outline).
+ */
+@media screen and (min-width: 1341px) {
+
+    /* Table wrapper - detail */
+    .wrapper.detail {
+        width: calc(100vw - 280px - 24px - 40px); /* 100vw minus: LHS nav, LHS gutter, content padding */
+    }
+}
+

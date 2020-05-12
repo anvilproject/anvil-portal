@@ -18,7 +18,7 @@ import Workspaces from "../components/workspaces/workspaces";
 import * as TemplateService from "../utils/template.service";
 
 // Styles
-import bodyStyles from "../components/article/article-body.module.css";
+import tableStyles from "../components/markdown/markdown.module.css";
 
 let classNames = require("classnames");
 
@@ -36,7 +36,7 @@ export default ({data}) => {
 
     return (
         <Layout description={description} docPath={slug} noSpy={noSpy} title={title}>
-            <ArticleBody className={classNames({[bodyStyles.stretch]: dashboard})} htmlAst={htmlAst}>
+            <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
                 {workspaces ? <Workspaces/> : null}
                 <ArticleEnd docPath={slug}/>
             </ArticleBody>

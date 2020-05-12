@@ -17,7 +17,6 @@ import Layout from "../components/layout";
 import bubbles from "../../images/404.png";
 
 // Styles
-import bodyStyles from "../components/article/article-body.module.css";
 import globalStyles from "../styles/global.module.css";
 import compStyles from "./404.module.css";
 
@@ -28,7 +27,7 @@ class PageNotFound extends React.Component {
     render() {
         return (
             <Layout noSpy>
-                <div className={classNames(compStyles.error, bodyStyles.articleBody)}>
+                <div className={classNames(compStyles.error)}>
                     <h1>Oh Dear!</h1>
                     <Hero>We can’t find the page you were looking for.</Hero>
                     <Hero small>Try these working links instead:</Hero>
