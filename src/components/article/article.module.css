@@ -27,12 +27,18 @@
  */
 @media screen and (min-width: 840px) {
 
+    /* Content positioner */
     .contentPositioner {
         display: flex;
         flex: 1;
         padding: 0 40px;
-        width: 840px;
         margin: 0 auto;
+        width: 840px;
+    }
+
+    /* Content container */
+    .contentContainer {
+        width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
     }
 }
 
@@ -50,7 +56,7 @@
         width: unset;
         max-width: 1240px;
     }
-    
+
     .contentContainer {
         display: flex;
         max-width: 712px;

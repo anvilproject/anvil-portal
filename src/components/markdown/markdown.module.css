@@ -94,8 +94,14 @@
  * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
 @media screen and (min-width: 1341px) {
-    
+
+    /* Content */
     .content {
+        max-width: 712px;
+    }
+
+    /* Content - class "data" for markdown in data-table component */
+    .content.data {
         max-width: 760px;
     }
 }
