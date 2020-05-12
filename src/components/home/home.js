@@ -33,7 +33,7 @@ import compStyles from "./home.module.css";
 import globalStyles from "../../styles/global.module.css";
 
 // Logos
-import logoTerra from "../../../images/logoTerra.png";
+import logoTerra from "../../../images/logo-terra.png";
 
 let classNames = require("classnames");
 
