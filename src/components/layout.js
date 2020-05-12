@@ -13,6 +13,7 @@ import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Main from "./main/main";
+import PageHead from "./page-head/page-head";
 import SEO from "./seo/seo";
 import * as AnvilGTMService from "../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../utils/dom.service";
@@ -70,10 +71,12 @@ class Layout extends React.Component {
     };
 
     render() {
-        const {children, description, docPath, homePage, noSpy, title} = this.props;
-        return (
+        const {children, description, docPath, homePage, noSpy, title} = this.props,
+            site = "The AnVIL";
+            return (
             <div ref={this.containerEl}>
-                <SEO description={description} title={title}/>
+                <PageHead site={site}/>
+                <SEO description={description} site={site} title={title}/>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
                     <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy}>{children}</Main>

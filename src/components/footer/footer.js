@@ -9,9 +9,9 @@
 import React from "react";
 
 // Images
-import gitHub from "../../../images/gitHub.png";
-import nhgri from "../../../images/logoNHGRI.svg";
-import twitter from "../../../images/logoTwitter.png";
+import gitHub from "../../../images/git-hub.png";
+import nhgri from "../../../images/logo-nhgri.svg";
+import twitter from "../../../images/logo-twitter.png";
 
 // Styles
 import compStyles from "./footer.module.css";
