@@ -36,8 +36,9 @@ class DataDetail extends React.Component {
 export default () => {
 
     const details = DashboardDetailService.getDashboardDetail(DashboardStaticQuery());
+    const sortedDetails = DashboardDetailService.sortDashboardDetail(details);
 
     return (
-        <DataDetail details={details}/>
+        <DataDetail details={sortedDetails}/>
     )
 }

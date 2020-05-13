@@ -31,6 +31,58 @@ export function getDashboardDetail(data) {
 }
 
 /**
+ * Sorts the dashboard detail data, first by program "Consortium", then by projectId "Terra Workspace Name".
+ *
+ * @param dashboardData
+ */
+export function sortDashboardDetail(dashboardData) {
+
+    return dashboardData.sort(function (a, b) {
+
+        const programA = removeIgnorableCharacters(a.program);
+        const programB = removeIgnorableCharacters(b.program);
+
+        /* Sort by program. */
+        const programSort = compareOrderOfAWithB(programA, programB);
+
+        /* If program is the same, sort by projectId and return the sorted outcome. */
+        if ( programSort === 0 ) {
+
+            const projectIdA = removeIgnorableCharacters(a.projectId);
+            const projectIdB = removeIgnorableCharacters(b.projectId);
+
+            return compareOrderOfAWithB(projectIdA, projectIdB)
+        }
+
+        /* Return the program sorted outcome. */
+        return programSort;
+    });
+}
+
+/**
+ * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
+ * Used by the sort function.
+ *
+ * @param a
+ * @param b
+ * @returns {number}
+ */
+function compareOrderOfAWithB(a, b) {
+
+    if ( a < b ) {
+
+        return -1;
+    }
+
+    if ( a > b) {
+
+        return 1;
+    }
+
+    return 0;
+}
+
+/**
  * Find the project node by the specified type.
  */
 function findProjectNodeByType(project, type) {
@@ -97,6 +149,17 @@ function getFamiliesCount(project) {
 function getSamplesCount(project) {
 
     return findProjectNodeByType(project, "Sample").count;
+}
+
+/**
+ * Removes ignorable characters of the specified string and returns the string converted into lower case.
+ *
+ * @param str
+ * @returns {string}
+ */
+function removeIgnorableCharacters(str) {
+
+    return str.replace(/-/g, "").toLowerCase();
 }
 
 /**
