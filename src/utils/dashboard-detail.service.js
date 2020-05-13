@@ -37,21 +37,21 @@ export function getDashboardDetail(data) {
  */
 export function sortDashboardDetail(dashboardData) {
 
-    return dashboardData.sort(function (a, b) {
+    return dashboardData.sort(function (data0, data1) {
 
-        const programA = removeIgnorableCharacters(a.program);
-        const programB = removeIgnorableCharacters(b.program);
+        const program0 = convertToSortableValue(data0.program);
+        const program1 = convertToSortableValue(data1.program);
 
         /* Sort by program. */
-        const programSort = compareOrderOfAWithB(programA, programB);
+        const programSort = sortDataValue(program0, program1);
 
         /* If program is the same, sort by projectId and return the sorted outcome. */
         if ( programSort === 0 ) {
 
-            const projectIdA = removeIgnorableCharacters(a.projectId);
-            const projectIdB = removeIgnorableCharacters(b.projectId);
+            const projectId0 = convertToSortableValue(data0.projectId);
+            const projectId1 = convertToSortableValue(data1.projectId);
 
-            return compareOrderOfAWithB(projectIdA, projectIdB)
+            return sortDataValue(projectId0, projectId1)
         }
 
         /* Return the program sorted outcome. */
@@ -63,18 +63,18 @@ export function sortDashboardDetail(dashboardData) {
  * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
  * Used by the sort function.
  *
- * @param a
- * @param b
+ * @param value0
+ * @param value1
  * @returns {number}
  */
-function compareOrderOfAWithB(a, b) {
+function sortDataValue(value0, value1) {
 
-    if ( a < b ) {
+    if ( value0 < value1 ) {
 
         return -1;
     }
 
-    if ( a > b) {
+    if ( value0 > value1) {
 
         return 1;
     }
@@ -152,12 +152,12 @@ function getSamplesCount(project) {
 }
 
 /**
- * Removes ignorable characters of the specified string and returns the string converted into lower case.
+ * Removes characters of the specified string to be ignored during sort and returns the string converted into lower case.
  *
  * @param str
  * @returns {string}
  */
-function removeIgnorableCharacters(str) {
+function convertToSortableValue(str) {
 
     return str.replace(/-/g, "").toLowerCase();
 }
