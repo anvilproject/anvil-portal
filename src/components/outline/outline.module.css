@@ -10,18 +10,19 @@
 .outline {
     bottom: 0;
     display: none;
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar in IE unless actively scrolling. */
+    -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
     overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
-    padding-left: 2px; /* Required for indicator ball to be shown in overflow environment */
+    padding-left: 2px; /* Required for indicator ball to be shown in overflow environment. */
     position: fixed;
-    scrollbar-width: none; /* Firefox 64 */
+    scrollbar-width: none; /* Hide scrollbar in Firefox. */
     top: 100px;
     width: 200px;
 }
 
-/* Outline scrollbar */
+/* Scrollbar hidden - Safari and Chrome */
 .outline::-webkit-scrollbar {
     display: none;
+    width: 0;
 }
 
 /* Outline vertical line */
