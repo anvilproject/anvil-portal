@@ -15,11 +15,35 @@
  */
 export function trackEvent(category, action, label, dimensions) {
 
+    if ( !isTrackingEnabled() ) {
+        return;
+    }
+
     const eventConfig = Object.assign({
         event: category,
         eventAction: action,
         eventLabel: label
     }, dimensions);
 
-    window.dataLayer.push(eventConfig);
+    getDataLayer().push(eventConfig);
+}
+
+/**
+ * Returns the GTM data layer, if enabled, enabled for this environment.
+ *
+ * @returns {{}}
+ */
+function getDataLayer() {
+
+    return window.dataLayer;
+}
+
+/**
+ * Returns true if tracking is enabled.
+ *
+ * @returns {boolean}
+ */
+function isTrackingEnabled() {
+
+    return !!getDataLayer();
 }
