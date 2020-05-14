@@ -28,7 +28,7 @@ The folowing consortia are planned for data ingestion. Additional consortia are 
 
 ## Accessing AnVIL Data via Pre-Built Terra Workspaces
 
-In the near future, AnVIL data will be accessed through Terra workspaces created from cohorts defined in AnVIL's [Gen3](https://gen3.org/) instance. While Gen3 is being brought online, data can be accessed through the pre-built Terra workspaces listed below. 
+Currently, AnVIL data can be accessed through the pre-built Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.
 
 To access data:
 
