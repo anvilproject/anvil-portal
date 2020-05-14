@@ -75,7 +75,7 @@ class Layout extends React.Component {
             site = "The AnVIL";
             return (
             <div ref={this.containerEl}>
-                <PageHead site={site}/>
+                <PageHead pageTitle={title} site={site}/>
                 <SEO description={description} site={site} title={title}/>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header onMenuOpen={this.onMenuOpen.bind(this)}/>
