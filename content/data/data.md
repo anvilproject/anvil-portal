@@ -36,7 +36,7 @@ To access data:
 1. Request access to the study in using dbGaPs [Authorized Access Portal](https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login) with the study's phsId. See NCBI's [Starting Point to Applying for dbGaP Data](https://www.ncbi.nlm.nih.gov/books/NBK99225/) for more information.
 1. Once your access is approved, your data will appear as one or more workspaces in your Terra account.  
 
-Please see the [Requesting Data Access](/data/requesting-data-access) and [Accessing Data in Terra](/data/requesting-data-access#accessing-data-in-terra) guides for more detai.  
+Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detai.  
 
 
 ### Pre-Built Terra Workspaces

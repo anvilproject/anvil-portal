@@ -20,7 +20,7 @@ description: "Access to AnVIL’s datasets is controlled in adherence to NIH Pol
 1. Have an eRA Commons or NIH account. Go [here](https://wiki.nci.nih.gov/display/TCGA/Application+Process) for instructions to set up an eRA Commons or NIH account.
 1. Establish a link in Terra to your eRA Commons/NIH Account. To link an eRA Commons to your Terra account, go to your [Profile page](https://anvil.terra.bio/#profile) in Terra and log in with your NIH credentials. _(Note: Once per month, you will need to relink these accounts to ensure that you still have proper access)_.
 
-##Submitting A Data Access Request
+##Submitting A dbGaP Data Access Request
 
 1. **Identify the phsID of the cohort you wish to access.** A helpful list of datasets can be found on our [datasets](/data) page.
 1. **Request Access.** Navigate to the dbGaP page for that study and click “Request Access” near the top of the screen.
@@ -28,12 +28,12 @@ description: "Access to AnVIL’s datasets is controlled in adherence to NIH Pol
 1. **Wait for a response.** Each Data Access Committee hand evaluates their own DARs. Depending on the DAC, this can take some time. You will be notified via email when your application is approved or rejected.
 1. **Your access is granted!** Using telemetry files, dbGaP informs Terra which users should be given access to each dataset. For more detail, see the section on Telemetry files below.
 
-##Telemetry Files
+###Telemetry Files
 Once a user has been granted access by the relevant Data Access Committee (DAC), dbGaP will list their eRA Commons ID within that cohort’s telemetry file - a secure list provided to external data sources like the AnVIL.
  
  The names on the cohort’s telemetry file are synced with the relevant workspace using a Terra Authorization Domain. Using the linkage between a user’s Terra Account and their eRA Commons ID, the system automatically grants access when the user attempts to view or access that workspace.
 
-# Accessing Data in Terra
+## Once Your Access is Granted
 Once your access is granted, your data will appear as one or more workspaces on your [Terra workspaces](https://anvil.terra.bio/#workspaces) page. 
 
 > **Can't See Your Workspace?** For your workspaces to appear in Terra, make sure you have a Terra account and your Terra account is linked with your eRA Commons or NIH account as described above. 
@@ -52,12 +52,12 @@ Once you can see your workspace(s):
 
 > Note that when cloning a workspace, any authorization domains on the source workspace will follow any clones, but you will still need to share the workspace for anyone to access it.
 
-## Requestor Pays
+### Requestor Pays
 
 * All AnVIL buckets have Requester Pays enabled, meaning that you will need to provide a billing account in order to cover any costs associated with egress, storage, or compute.
 
 * If working in gsutil, using the -u argument will be critical to provide this billing account. 
 
-## Troubleshooting
+### Troubleshooting
 If you are having trouble with your access to AnVIL data, please email our help desk at  [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org) and someone will reach out to you as soon as we are able.
 
