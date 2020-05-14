@@ -197,6 +197,54 @@ export const GADimensionsByHref = {
         entityType: GAEntityType.DATA_CONSORTIUM
     },
     
+    // Data - Data
+    "https://www.covid19hg.org/": {
+        entityName: GAEntityName.COVID19HG,
+        entityType: GAEntityType.DATA_CONSORTIUM,
+    },
+
+    // Data - Data
+    "https://cser-consortium.org/": {
+        entityName: GAEntityName.CSER,
+        entityType: GAEntityType.DATA_CONSORTIUM,
+    },
+
+    // Data - Data
+    "https://gtexportal.org/home/": {
+        entityName: GAEntityName.GTEX,
+        entityType: GAEntityType.DATA_CONSORTIUM,
+    },
+
+    // Data - Data
+    "https://humanpangenome.org/": {
+        entityName: GAEntityName.HPP,
+        entityType: GAEntityType.DATA_CONSORTIUM,
+    },
+
+    // Data - Data
+    "https://www.nia.nih.gov/": {
+        entityName: GAEntityName.NIA,
+        entityType: GAEntityType.DATA_CONSORTIUM,
+    },
+
+    // Data - Data
+    "https://nda.nih.gov/": {
+        entityName: GAEntityName.NIMH,
+        entityType: GAEntityType.DATA_CONSORTIUM
+    },
+
+    // Data - Data
+    "https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login": {
+        entityName: GAEntityName.NIH,
+        entityType: GAEntityType.REFERENCE
+    },
+
+    // Data - Data
+    "https://www.ncbi.nlm.nih.gov/books/NBK99225/": {
+        entityName: GAEntityName.NIH,
+        entityType: GAEntityType.REFERENCE
+    },
+
     // Data - Requesting Access
     "https://wiki.nci.nih.gov/display/TCGA/Application+Process": {
         entityName: GAEntityName.ERA,

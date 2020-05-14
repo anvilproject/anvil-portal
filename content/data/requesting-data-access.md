@@ -46,9 +46,7 @@ Once you can see your workspace(s):
 
 * Tables containing phenotypic data and subject/sample information are available on the workspace's Data Tab.
 
-
-* If you plan to work on the cloud, you can clone the workspace to your own billing account. Click the ‘three vertical dots’ icon in the top right, click ‘Clone’ and follow the prompts. 
-
+* If you plan to work on the cloud, you can clone the workspace to your own billing account. Click the "three vertical dots" icon in the top right, click "Clone" and follow the prompts. 
 
 * If you want to work with, or download the files in the command line, information about the bucket path is readily accessible on the Data Tab > Files listing (as well as a bucket path on the main page).
 

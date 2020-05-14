@@ -21,12 +21,12 @@ The folowing consortia are planned for data ingestion. Additional consortia are 
 * [Covid19hg](https://www.covid19hg.org) -  Covid-19 Host Genetics Initiative
 * [CSER](https://cser-consortium.org ) - Clinical Sequencing Evidence-Generating Research
 * [GTExv9](https://gtexportal.org/home/) - Genotype-Tissue Expression Project
-* [HPP](https://humanpangenome.org/) - Human Pan-genome Project
+* [HPP](https://humanpangenome.org/) - Human Pangenome Project
 * [NIA](https://www.nia.nih.gov/) - National Institute of Aging
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 
 
-## Accessing AnVIL Data via Pre-built Terra Workspaces
+## Accessing AnVIL Data via Pre-Built Terra Workspaces
 
 In the near future, AnVIL data will be accessed through Terra workspaces created from cohorts defined in AnVIL's [Gen3](https://gen3.org/) instance. While Gen3 is being brought online, data can be accessed through the pre-built Terra workspaces listed below. 
 
@@ -39,5 +39,5 @@ To access data:
 Please see the [Requesting Data Access](/data/requesting-data-access) and [Accessing Data in Terra](/data/requesting-data-access#accessing-data-in-terra) guides for more detai.  
 
 
-### Pre-built Terra Workspaces
+### Pre-Built Terra Workspaces
 <data-detail></data-detail>
