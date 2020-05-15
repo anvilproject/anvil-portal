@@ -21,7 +21,7 @@ export function getDashboardDetail(data) {
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
-            dbGapId: project.dbGAP_project_id,
+            dbGapId: project.dbGAP_study_id,
             program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
