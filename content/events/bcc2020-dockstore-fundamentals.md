@@ -27,5 +27,5 @@ A wi-fi enabled laptop with a modern web browser.
 ####Registration
 https://bcc2020.github.io/Registration/
 
-####Link
+####More Info
 https://bcc2020.sched.com/event/c5gb/dockstore-fundamentals-introduction-to-docker-and-descriptors-for-reproducible-analysis

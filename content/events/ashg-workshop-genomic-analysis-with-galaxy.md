@@ -1,7 +1,7 @@
 ---
-title: "ASHG Workshop"
+title: "ASHG 2019 - Interactive Workshop: Reproducible and Transparent Genomic Analysis with Galaxy"
 date: "2019-10-15"
-description: "Interactive Workshop: Reproducible and Transparent Genomic Analysis with Galaxy."
+description: "Hands-on workshop introducing best practice approaches for genome-wide association studies (GWAS) using the Galaxy computational workbench (<https://galaxyproject.org>)."
 featured: false
 author: "AnVIL"
 ---

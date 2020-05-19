@@ -1,7 +1,7 @@
 ---
 title: "BCC 2020 - Reproducible Analysis in the Cloud with Dockstore and Terra"
 date: "2020-07-18"
-description: "This training will lead users through the steps of performing reproducible analysis at scale in the cloud."
+description: "This training will lead users through the steps of performing reproducible genomic analysis at scale in the cloud with Dockstore and Terra."
 featured: true
 author: "AnVIL"
 ---
@@ -26,5 +26,5 @@ This training will lead users through the steps of performing reproducible analy
 ####Registration
 https://bcc2020.github.io/Registration/
 
-####Link
+####More Info
 https://bcc2020.sched.com/event/c4pR/reproducible-analysis-in-the-cloud-with-dockstore-and-terra

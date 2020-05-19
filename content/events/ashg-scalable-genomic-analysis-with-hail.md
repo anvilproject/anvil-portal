@@ -1,5 +1,5 @@
 ---
-title: "ASHG Workshop"
+title: "ASHG 2019 - Hail Interactive Workshop"
 date: "2019-10-16"
 description: "Interactive Workshop: An Introduction to Scalable Genomic Analysis with Hail."
 featured: false
