@@ -1,14 +1,12 @@
 ---
-title: "BCC 2020 - Dockstore Fundamentals"
+title: "BCC 2020 - Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis"
 date: "2020-07-17"
-description: "Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis
-"
+description: "A hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows"
 featured: true
 author: "AnVIL"
 ---
 
-#Dockstore Fundamentals 
-###Introduction to Docker and Descriptors for Reproducible Analysis
+#Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis
 #####Friday, July 17, 12:30 - 3:00 PM PT (West Training 3)
 #####Virtual
 
