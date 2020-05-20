@@ -73,7 +73,7 @@ export function filterScoopsByDate(scoops, past) {
 
     const today = new Date();
 
-    return scoops.filter(scoop => {
+    const scoopsByDate = scoops.filter(scoop => {
 
         const date = validateDate(scoop.frontmatter.date);
         const dateObj = getDate(date);
@@ -99,6 +99,15 @@ export function filterScoopsByDate(scoops, past) {
             return !past;
         }
     });
+
+    /* Return past events, sorted from latest to earliest. */
+    if ( past ) {
+
+        return scoopsByDate;
+    }
+
+    /* Return future events, sorted from earliest to latest. */
+    return scoopsByDate.reverse();
 }
 
 /**
