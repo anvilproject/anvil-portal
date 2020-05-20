@@ -130,14 +130,29 @@
     background-color: var(--accent-mustard);
 }
 
+/* Data - hover */
+.roadmap .bubble.data:hover {
+    background-color: rgba(224, 221, 16, 0.58);
+}
+
 /* Platform */
 .roadmap .bubble.platform {
     background-color: var(--accent-blue-green);
 }
 
+/* Platform - hover */
+.roadmap .bubble.platform:hover {
+    background-color: rgba(126, 186, 192, 0.58);
+}
+
 /* Tool */
 .roadmap .bubble.tool {
     background-color: var(--accent-blue-light);
+}
+
+/* Tool - hover */
+.roadmap .bubble.tool:hover {
+    background-color: rgba(174, 235, 242, 0.58);
 }
 
 /**
