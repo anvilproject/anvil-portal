@@ -1,7 +1,7 @@
 ---
-title: "ASHG 2020 - GWAS Analysis with Galaxy in AnVIL"
+title: "ASHG 2020 - Workshop: GWAS Analysis with Galaxy in AnVIL"
 date: "2020-10-28"
-description: "GWAS analysis with Galaxy on the Analysis Visualization Integrated Lab-space (AnVIL)."
+description: "Attendees will use AnVIL to launch Galaxy and create, modify, and execute a Galaxy Workflow for GWAS analysis to demonstrate batch processing in Galaxy"
 featured: true
 author: "AnVIL"
 ---

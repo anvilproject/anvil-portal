@@ -1,13 +1,13 @@
 ---
-title: "SACNAS Workshop"
+title: "SACNAS 2019 - Workshop: Genomic data science with the Galaxy workbench"
 date: "2019-10-30"
-description: "Genomic data science with the Galaxy workbench."
+description: "Workshop attendees will be introduced to practical examples of how genomic data is used in research and clinical applications, highlighting techniques, technologies, and platforms used in genomic analysis."
 featured: false
 author: "AnVIL"
 ---
 
-#SACNAS Workshop
-###Genomic data science with the Galaxy workbench
+#SACNAS 2019 
+###Workshop: Genomic Data Science with the Galaxy Workbench
 #####October 30th, 2019
 #####2019 SACNAS - The National Diversity in STEM Conference, Honolulu
 
