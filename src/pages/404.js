@@ -10,7 +10,6 @@ import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
-import Hero from "../components/hero/hero";
 import Layout from "../components/layout";
 
 // Images
