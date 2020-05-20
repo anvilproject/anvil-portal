@@ -130,6 +130,7 @@
     color: inherit;
     display: -webkit-box;
     margin-bottom: 0;
+    margin-top: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1;

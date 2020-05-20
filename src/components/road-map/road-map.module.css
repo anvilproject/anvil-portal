@@ -130,6 +130,11 @@
     background-color: var(--accent-mustard);
 }
 
+/* Hover */
+.roadmap .bubble {
+    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 /* Data - hover */
 .roadmap .bubble.data:hover {
     background-color: rgba(224, 221, 16, 0.58);

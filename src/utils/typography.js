@@ -55,34 +55,45 @@ const typography = new Typography({
                 margin: 0
             },
             h1: {
-                ...adjustFontSizeTo("38px"),
-                lineHeight: "44px",
-                margin: "0 0 24px",
+                ...adjustFontSizeTo("32px"),
+                fontWeight: 400,
+                lineHeight: "40px",
+                margin: "0 0 24px"
             },
             h2: {
-                ...adjustFontSizeTo("28px"),
-                letterSpacing: "0.25px",
-                lineHeight: "36px",
-                margin: "0 0 12px",
+                ...adjustFontSizeTo("24px"),
+                fontWeight: 400,
+                lineHeight: "32px",
+                margin: "48px 0 24px"
             },
             h3: {
-                ...adjustFontSizeTo("18px"),
-                fontWeight: 600,
-                letterSpacing: "0.15px",
-                lineHeight: "26px",
-                margin: "0 0 10px",
+                ...adjustFontSizeTo("20px"),
+                fontWeight: 400,
+                lineHeight: "28px",
+                margin: "32px 0 16px"
             },
             h4: {
                 ...adjustFontSizeTo("16px"),
-                fontWeight: 600,
+                fontWeight: 400,
                 lineHeight: "24px",
-                margin: "0 0 4px",
+                margin: "32px 0 16px"
             },
             h5: {
-                ...adjustFontSizeTo("12px"),
-                fontWeight: 400,
-                lineHeight: "18px",
-                margin: "0 0 8px",
+                ...adjustFontSizeTo("14px"),
+                fontWeight: 600,
+                lineHeight: "24px",
+                margin: "32px 0 16px"
+            },
+            h6: {
+                ...adjustFontSizeTo("14px"),
+                fontWeight: 500,
+                lineHeight: "24px",
+                margin: "32px 0 16px",
+            },
+            p: {
+                ...adjustFontSizeTo("16px"),
+                lineHeight: "24px",
+                margin: "16px 0"
             },
             img: {
                 border: 0,
@@ -95,14 +106,13 @@ const typography = new Typography({
                 borderBottom: "none !important"
             },
             "ol, ul": {
-                marginBottom: "24px",
-                marginLeft: "32px"
-            },
-            "ol li:not(:last-child), ul li:not(:last-child)": {
-                marginBottom: "4px"
+                listStyle: "disc outside",
+                margin: "0",
+                paddingLeft: "40px"
             },
             li: {
-                marginBottom: 0
+                margin: "12px 0",
+                padding: "0"
             }
         }
     }

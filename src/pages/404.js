@@ -29,8 +29,8 @@ class PageNotFound extends React.Component {
             <Layout noSpy>
                 <div className={classNames(compStyles.error)}>
                     <h1>Oh Dear!</h1>
-                    <Hero>We can’t find the page you were looking for.</Hero>
-                    <Hero small>Try these working links instead:</Hero>
+                    <h2>We can’t find the page you were looking for.</h2>
+                    <p>Try these working links instead:</p>
                     <img className={compStyles.bubbles} alt="Page Not Found" src={bubbles}/>
                     <p><Link className={globalStyles.link} to="/">Home</Link></p>
                     <p><Link className={globalStyles.link} to="/help">Help</Link></p>
