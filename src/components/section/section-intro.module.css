@@ -117,7 +117,7 @@ section:nth-child(2n+4) .sectionContent {
     /* Content - "start" */
     .start .sectionContent {
         margin-right: -100%; /* Pulls container across to max width setting */
-        max-width: 496px;
+        max-width: 566px;
         padding: 24px 132px 24px 64px;
     }
 
