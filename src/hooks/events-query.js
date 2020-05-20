@@ -11,7 +11,7 @@ export const EventsStaticQuery = () => {
                    slug
                 }
                 frontmatter {
-                   date(formatString: "DD MMMM YYYY")
+                   date(formatString: "MMMM DD, YYYY")
                    description
                    featured
                    title
