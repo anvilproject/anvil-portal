@@ -19,8 +19,3 @@ p.scoopless {
 .scoop:last-of-type {
     margin-bottom: 0;
 }
-
-/** Override default h5 margins for scoops */
-h5 {
-    margin: 0 0 8px;
-}

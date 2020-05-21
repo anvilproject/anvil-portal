@@ -1,0 +1,39 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the list item component.
+ */
+
+/* Main list item container */
+.listItem {
+    border-radius: 4px;
+    padding: 4px; /* Left and right padding for hover background */
+    transition: background-color 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover of main list item container */
+.listItem:hover {
+    background-color: rgba(var(--accent-blue-green-rgb), 0.12);
+}
+
+.listItem a {
+    border-bottom: none !important; /* Hide default border bottom on links */
+    display: flex; /* Column layout for to level children in list item */
+}
+
+/* If there's only content child (and no icon child), add padding for add spacing between content and hover border */
+.listItem a > *:only-child {
+    padding-left: 5px;
+}
+
+/* List item title */
+.listItem h3 {
+    margin-top: 0; /* Override default h3 margin-top, keep margin-bottom */
+}
+
+/* Handle case where overline is used as an underline and must be scooted up towards the title above (eg news date) */
+h3 + div[class^='overline'] {
+    margin-top: -18px;
+}
+

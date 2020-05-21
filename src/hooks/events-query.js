@@ -11,8 +11,10 @@ export const EventsStaticQuery = () => {
                    slug
                 }
                 frontmatter {
+                   conference
                    date(formatString: "MMMM DD, YYYY")
                    description
+                   eventType
                    featured
                    title
                 }

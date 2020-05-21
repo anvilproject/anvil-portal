@@ -1,17 +1,21 @@
 ---
-title: "ASHG 2019 - Workshop: Reproducible and Transparent Genomic Analysis with Galaxy"
+title: "Reproducible and Transparent Genomic Analysis with Galaxy"
+conference: "ASHG 2019"
 date: "2019-10-15"
 description: "Hands-on workshop introducing best practice approaches for genome-wide association studies (GWAS) using the Galaxy computational workbench (<https://galaxyproject.org>)."
+eventType: "Workshop"
 featured: false
 author: "AnVIL"
 ---
 
-#ASHG Workshop
-### Workshop: Reproducible and Transparent Genomic Analysis with Galaxy
-##### October 15th 2019
-##### ASHG 2019 Annual Meeting, Houston
+###### ASHG 2019
+# Reproducible and Transparent Genomic Analysis with Galaxy
+##### Workshop
+##### Tuesday, October 15th 2019
+##### Houston
+---
 
-#### Description
+### Description
 This hands-on workshop will introduce best practice approaches for genome-wide association studies (GWAS) using the Galaxy computational workbench (<https://galaxyproject.org>).
 
 ### More Info
