@@ -41,16 +41,14 @@ Please see the [Requesting Data Access](/data/requesting-data-access) and [Once 
 
 ### Pre-Built Terra Workspaces
 
-Pre-Built Terra workspaces are listd below. Please note that:
+<data-summary dbGapAccessible=true></data-summary>
+<data-detail dbGapAccessible=true></data-detail>
+
+### Coming Soon - dbGaP Study Registration in Progress
 
 > For workspaces with no dbGaP Id, the dbGaP study registration is in progress. The dbGap Ids will be displayed once assigned by dbGaP. 
 
 >For workspaces where the dbGaP Id is not selectable, the dbGaP study registration is in progress.  The dbGaP Id has been assigned but the study is not yet listed in dbGaP.
-
-<data-summary dbGapAccessible=true></data-summary>
-<data-detail dbGapAccessible=true></data-detail>
-
-## Coming Soon
 
 <data-summary dbGapAccessible=false></data-summary>
 <data-detail dbGapAccessible=false></data-detail>
