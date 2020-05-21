@@ -76,7 +76,7 @@ class Scoop extends React.Component {
                             <ListItemContent>
                                 <h3>{title}</h3>
                                 <Overline>
-                                    <span>{scoopDate}</span>
+                                    <span>Posted: {scoopDate}</span>
                                 </Overline>
                                 <p>{description}</p>
                             </ListItemContent>}
