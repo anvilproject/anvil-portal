@@ -47,4 +47,10 @@ Pre-Built Terra workspaces are listd below. Please note that:
 
 >For workspaces where the dbGaP Id is not selectable, the dbGaP study registration is in progress.  The dbGaP Id has been assigned but the study is not yet listed in dbGaP.
 
-<data-detail></data-detail>
+<data-summary dbGapAccessible=true></data-summary>
+<data-detail dbGapAccessible=true></data-detail>
+
+## Coming Soon
+
+<data-summary dbGapAccessible=false></data-summary>
+<data-detail dbGapAccessible=false></data-detail>
