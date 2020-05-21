@@ -1,0 +1,94 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the BubbleDate component.
+ */
+
+/* Top-level container */
+.bubbleDate {
+    align-items: center;
+    border: 1px solid var(--accent-blue-green);
+    border-radius: 50%;
+    display: flex; /* Align date text in the middle */
+    font-family: "Barlow", sans-serif;
+    padding: 8px;
+    height: 65px;
+    width: 65px;
+}
+
+.disabled {
+    border: 1px solid var(--black12);
+}
+
+/* Wrapper element around day of month, and month/year values */
+.bubbleDateText {
+    display: flex; /* Row alignment of day of month, and month/year */
+    height: 24px; /* Set height to help position day of month, and month/year */
+}
+
+/* Event day of month */
+.bubbleDayOfMonth {
+    font-size: 22px;
+    line-height: 24px;
+    width: 26px;
+}
+
+/* Wrapper around month and year values */
+.bubbleMonthAndYear {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Add space between month and year to align with height of day of month */
+}
+
+/* Bubble month */
+.bubbleMonth {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 11px;
+    margin-top: 1px;
+    text-transform: uppercase;
+}
+
+/* Bubble year */
+.bubbleYear {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+
+/**
+ * Large handset portrait, extra small window
+ */
+@media screen and (min-width: 600px) {
+
+    /* Wrapper element around day of month, and month/year values */
+    .bubbleDateText {
+        height: 30px; /* Set height to help position day of month, and month/year */
+    }
+
+    .bubbleDate {
+        padding: 10px;
+        height: 90px;
+        width: 90px;
+    }
+
+    /* Event day of month */
+    .bubbleDayOfMonth {
+        font-size: 36px;
+        line-height: 28px;
+        width: 40px;
+    }
+
+    /* Bubble month */
+    .bubbleMonth {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    /* Bubble year */
+    .bubbleYear {
+        font-size: 13px;
+        line-height: 13px;
+    }
+}

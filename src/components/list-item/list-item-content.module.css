@@ -1,0 +1,12 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the list item component icon.
+ */
+
+/* Main list item content container */
+.listItemContent {
+    flex: 1;
+    padding-bottom: 16px;
+}

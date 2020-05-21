@@ -1,0 +1,27 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the Overline component.
+ */
+
+/* Overline container */
+.overline > * {
+    display: inline-flex;
+    font-size: 12px;
+    line-height: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Dot - excludes last */
+.overline > *:not(:last-of-type):after {
+    align-self: center;
+    background-color: var(--accent-blue-green);
+    border-radius: 50%;
+    content: "";
+    height: 3px;
+    margin: 0 8px;
+    width: 3px;
+}

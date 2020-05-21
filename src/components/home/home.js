@@ -78,7 +78,7 @@ class Home extends React.Component {
             </section> : null}
             {featuredEvents ? <section className={compStyles.events}>
                 <SectionIntro post={events} stretch/>
-                <SectionBody><Scoop featuredOnly={true} scoops={eventsScoops}/></SectionBody>
+                <SectionBody><Scoop featuredOnly={true} scoops={eventsScoops} type={"events"}/></SectionBody>
             </section> : null}
             </>
         );

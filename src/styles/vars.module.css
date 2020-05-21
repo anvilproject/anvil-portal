@@ -5,7 +5,9 @@
 :root {
     --accent-blue-dark: #25445A;
     --accent-blue-green: #7EBAC0;
+    --accent-blue-green-rgb: 126, 186, 192;
     --accent-blue-light: #AEEBF2;
+    --accent-blue-light-rbg: 174, 235, 242;
     --accent-mustard: #E0DD10;
     --black: #000000;
     --black1: rgba(0, 0, 0, 0.01);

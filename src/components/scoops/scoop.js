@@ -2,14 +2,18 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - scoop component.
+ * The AnVIL - scoop component, displays lists of either news or events.
  */
 
 // Core dependencies
-import {Link} from "gatsby";
 import React from "react";
 
 // App dependencies
+import BubbleDate from "../bubble-date/bubble-date";
+import ListItem from "../list-item/list-item";
+import ListItemContent from "../list-item/list-item-content";
+import ListItemIcon from "../list-item/list-item-icon";
+import Overline from "../overline/overline";
 import * as ScoopsService from "../../utils/scoops.service";
 
 // Styles
@@ -35,22 +39,48 @@ class Scoop extends React.Component {
     };
 
     render() {
+        
         const {className, noEvents, scoops, type} = this.props;
+
+        // Determine type of scoop - catch "events" for home page, or "upcoming events" and "past events" for events list
+        const scoopTypeEvents = /events/.test(type);
+        const pastEvents = /past/.test(type);
 
         const Headline = (props) => {
 
             const {scoop} = props,
                 {fields, frontmatter} = scoop,
-                {date, description, title} = frontmatter,
+                {conference, date, description, eventType, title} = frontmatter,
                 {slug} = fields;
 
+            // Validate and format dates for display
             const scoopDate = ScoopsService.validateDate(date);
 
             return (
                 <div className={classNames(contentStyles.content, compStyles.scoop, className)}>
-                    <h3><Link to={slug}>{title}</Link></h3>
-                    {scoopDate ? <h5>{scoopDate}</h5> : null}
-                    {description ? <p>{description}</p> : null}
+                    <ListItem linkTo={slug}>
+                        {scoopTypeEvents ? 
+                            <>
+                                <ListItemIcon>
+                                    <BubbleDate date={scoopDate} disabled={pastEvents}/>
+                                </ListItemIcon>
+                                <ListItemContent>
+                                    <Overline>
+                                        <span>{conference}</span>
+                                        <span>{eventType}</span>
+                                    </Overline>
+                                    <h3>{title}</h3>
+                                    <p>{description}</p>
+                                </ListItemContent>
+                            </> :
+                            <ListItemContent>
+                                <h3>{title}</h3>
+                                <Overline>
+                                    <span>{scoopDate}</span>
+                                </Overline>
+                                <p>{description}</p>
+                            </ListItemContent>}
+                    </ListItem>
                 </div>
             )
         };
