@@ -5,11 +5,10 @@
  * Basic data dashboard table service.
  */
 
-import * as NumberFormatService from "./number-format.service";
-
-let CELLS_RIGHT_ALIGNED = ["cohorts", "demographics", "diagnosis", "families", "files", "samples", "size", "sizeTB", "subjects"];
-
-let DBGAPIDS_BLACKLIST = ["phs001155", "phs001642", "phs001222", "phs001601", "phs001543", "phs001547", "phs001579", "phs001544", "phs001676", "phs001624", "phs001545", "phs001894", "phs001569", "phs001506", "phs001600", "phs001766", "phs001913"];
+// App dependencies
+import {BLACKLIST_DBGAPIDS} from "./blacklist-db-gap-ids";
+import * as NumberFormatService from "../number-format.service";
+import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
 /**
  * Return true if cell is to be right aligned.
@@ -19,7 +18,7 @@ let DBGAPIDS_BLACKLIST = ["phs001155", "phs001642", "phs001222", "phs001601", "p
  */
 export function cellAlignment(columnName) {
 
-    return CELLS_RIGHT_ALIGNED.includes(columnName);
+    return RIGHT_ALIGN_COLUMNS.includes(columnName);
 }
 
 /**
@@ -102,7 +101,7 @@ export function switchDisplayColumnName(columnName) {
         case "dataType":
             return "Data Type";
         case "demographics":
-            return "Subjects";
+            return "Demographics";
         case "diagnosis":
             return "Diagnosis";
         case "families":
@@ -146,14 +145,14 @@ function formatDataType(dataTypes) {
 }
 
 /**
- * Returns true if the specified gap id is not blacklisted.
+ * Returns true if the specified gap id is blacklisted.
  *
  * @param gapId
  * @returns {boolean}
  */
-function isGapIdWhitelist(gapId) {
+function isGapIdBlacklist(gapId) {
 
-    return !DBGAPIDS_BLACKLIST.includes(gapId);
+    return BLACKLIST_DBGAPIDS.includes(gapId);
 }
 
 /**
@@ -203,7 +202,7 @@ function switchColumnUrl(columnName, summary, value) {
     switch (columnName) {
         case "projectId":
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
-        case isGapIdWhitelist(value) && "dbGapId":
+        case !isGapIdBlacklist(value) && "dbGapId":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
             return switchProgramUrl(value);

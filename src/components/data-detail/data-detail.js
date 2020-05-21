@@ -13,12 +13,13 @@ import React from "react";
 // App dependencies
 import DataTable from "../data-table/data-table";
 import {DashboardStaticQuery} from "../../hooks/dashboard-query";
-import * as DashboardDetailService from "../../utils/dashboard-detail.service";
+import * as DashboardAccessibilityService from "../../utils/dashboard/dashboard-accessibility.service";
+import * as DashboardDetailService from "../../utils/dashboard/dashboard-detail.service";
 
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["program", "projectId", "dbGapId", "dataType", "access", "demographics", "samples","files","size"];
+let TABLE_HEADERS = ["program", "projectId", "dbGapId", "dataType", "access", "subjects", "samples","files","size"];
 
 class DataDetail extends React.Component {
 
@@ -32,9 +33,11 @@ class DataDetail extends React.Component {
     }
 }
 
-export default () => {
+export default (props) => {
 
-    const details = DashboardDetailService.getDashboardDetail(DashboardStaticQuery());
+    const dbGapAccessible = props.dbgapaccessible;
+    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardStaticQuery(), dbGapAccessible);
+    const details = DashboardDetailService.getDashboardDetail(dashboardByAccessibility);
     const sortedDetails = DashboardDetailService.sortDashboardDetail(details);
 
     return (

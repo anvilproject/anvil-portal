@@ -11,8 +11,8 @@ import React from "react";
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
 import Tooltip from "../tooltip/tooltip";
-import * as DashboardTableService from "../../utils/dashboard-table.service";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
+import * as DashboardTableService from "../../utils/dashboard/dashboard-table.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles

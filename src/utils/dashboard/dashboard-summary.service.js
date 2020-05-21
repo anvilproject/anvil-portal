@@ -14,7 +14,7 @@ export function getDashboardSummary(data) {
 
     return [...programs].map(program => {
 
-        const projectsByProgram = filterProjectsByProgram(data.projects, program);
+        const projectsByProgram = filterProjectsByProgram(data, program);
 
         return {
             cohorts: countCohorts(projectsByProgram),
@@ -102,7 +102,7 @@ function reduceSummaryByType(data, type) {
  */
 function setOfPrograms(data) {
 
-    return new Set(data.projects.map(project => project.source));
+    return new Set(data.map(project => project.source));
 }
 
 /**

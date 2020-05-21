@@ -5,14 +5,15 @@
  * Service for formatting data dashboard detail into FE model.
  */
 
-import * as NumberFormatService from "./number-format.service";
+// App dependencies
+import * as NumberFormatService from "../number-format.service";
 
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard detail, to be displayed on the dashboard page.
  */
 export function getDashboardDetail(data) {
 
-    return data.projects.map(project => {
+    return data.map(project => {
 
         return {
             access: formatAccess(project.public),
@@ -26,6 +27,7 @@ export function getDashboardDetail(data) {
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: formatFileSize(project.size),
+            subjects: getSubjectsCount(project)
         }
     });
 }
@@ -60,26 +62,14 @@ export function sortDashboardDetail(dashboardData) {
 }
 
 /**
- * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
- * Used by the sort function.
+ * Removes characters of the specified string to be ignored during sort and returns the string converted into lower case.
  *
- * @param value0
- * @param value1
- * @returns {number}
+ * @param str
+ * @returns {string}
  */
-function sortDataValue(value0, value1) {
+function convertToSortableValue(str) {
 
-    if ( value0 < value1 ) {
-
-        return -1;
-    }
-
-    if ( value0 > value1) {
-
-        return 1;
-    }
-
-    return 0;
+    return str.replace(/-/g, "").toLowerCase();
 }
 
 /**
@@ -121,6 +111,7 @@ function formatFileSize(size) {
 
 /**
  * Returns the demographics count.
+ * @param project
  */
 function getDemographicsCount(project) {
 
@@ -129,6 +120,7 @@ function getDemographicsCount(project) {
 
 /**
  * Returns the diagnosis count.
+ * @param project
  */
 function getDiagnosisCount(project) {
 
@@ -137,6 +129,7 @@ function getDiagnosisCount(project) {
 
 /**
  * Returns the families count.
+ * @param project
  */
 function getFamiliesCount(project) {
 
@@ -145,6 +138,7 @@ function getFamiliesCount(project) {
 
 /**
  * Returns the samples count.
+ * @param project
  */
 function getSamplesCount(project) {
 
@@ -152,14 +146,35 @@ function getSamplesCount(project) {
 }
 
 /**
- * Removes characters of the specified string to be ignored during sort and returns the string converted into lower case.
- *
- * @param str
- * @returns {string}
+ * Returns the subjects count.
+ * @param project
  */
-function convertToSortableValue(str) {
+function getSubjectsCount(project) {
 
-    return str.replace(/-/g, "").toLowerCase();
+    return findProjectNodeByType(project, "Subject").count;
+}
+
+/**
+ * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
+ * Used by the sort function.
+ *
+ * @param value0
+ * @param value1
+ * @returns {number}
+ */
+function sortDataValue(value0, value1) {
+
+    if ( value0 < value1 ) {
+
+        return -1;
+    }
+
+    if ( value0 > value1) {
+
+        return 1;
+    }
+
+    return 0;
 }
 
 /**

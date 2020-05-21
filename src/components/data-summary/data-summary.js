@@ -13,7 +13,8 @@ import React from "react";
 // App dependencies
 import DataTable from "../data-table/data-table";
 import {DashboardStaticQuery} from "../../hooks/dashboard-query";
-import * as DashboardSummaryService from "../../utils/dashboard-summary.service";
+import * as DashboardAccessibilityService from "../../utils/dashboard/dashboard-accessibility.service";
+import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
@@ -32,11 +33,13 @@ class DataSummary extends React.Component {
     }
 }
 
-export default () => {
+export default (props) => {
 
-    const programs = DashboardSummaryService.getDashboardSummary(DashboardStaticQuery());
-    const total = DashboardSummaryService.getDashboardSummaryTotals(programs);
-    const summary = programs.concat(total);
+    const dbGapAccessible = props.dbgapaccessible;
+    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardStaticQuery(), dbGapAccessible);
+    const dashboardSummary = DashboardSummaryService.getDashboardSummary(dashboardByAccessibility);
+    const total = DashboardSummaryService.getDashboardSummaryTotals(dashboardSummary);
+    const summary = dashboardSummary.concat(total);
 
     return (
         <DataSummary summary={summary}/>
