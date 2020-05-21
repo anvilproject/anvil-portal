@@ -15,8 +15,8 @@ import Layout from "../components/layout";
 class IndexPage extends React.Component {
 
     render() {
-        const description = "AnVIL – an Analysis, Visualization, and Informatics Lab-space for democratizing genomic data access, sharing and computing across large genomic-related data sets.",
-            title = "Cloud-based Genomic Data Science";
+        const description = "Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.",
+            title = "Migrate Your Genomic Analysis Workflows to the Cloud";
         return (
             <Layout description={description} homePage={true} title={title}>
                 <Home/>
