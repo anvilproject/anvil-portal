@@ -1,0 +1,11 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL event hero component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Event hero container */
+.eventHero {
+}

@@ -1,20 +1,16 @@
 ---
-title: "Find and Analyze Data in the Cloud with Gen3, Dockstore and Terra"
+author: "AnVIL"
 conference: "ASHG 2020"
 date: "2020-10-31"
 description: "We will guide you through a research journey with the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)."
 eventType: "Workshop"
 featured: true
-author: "AnVIL"
+location: "San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101"
+time: "07:15 - 08:45 PT"
+title: "Find and Analyze Data in the Cloud with Gen3, Dockstore and Terra"
 ---
 
-###### ASHG 2020
-# Find and Analyze Data in the Cloud with Gen3, Dockstore and Terra
-##### Workshop
-##### Saturday, October 31 2020
-##### 07:15 - 08:45 PT
-##### San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101
----
+<event-hero></event-hero>
 
 #### Description
 
@@ -30,7 +26,7 @@ Through live demonstrations and interactive small-group exercises, you will lear
 
 While we will work in the context of AnVIL, you will be able to apply your new skills to myriad other genomic-related data sets and tools. And the best part is you will learn how to do all of this without needing to know anything about programming.
 
-#### Intended Audience 
+#### Intended Audience
 
 Researchers and clinicians interested in practical ways to access and analyze data in the cloud - without needing advanced computing training.
 

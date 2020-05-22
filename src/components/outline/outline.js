@@ -109,7 +109,7 @@ class Outline extends React.Component {
     render() {
         const {activeOutline, headings} = this.props;
 
-        const Outline = (props) => {
+        const OutlineItem = (props) => {
 
             const {activeOutline, heading} = props;
             const outline = OutlineService.getOutline(heading);
@@ -128,7 +128,7 @@ class Outline extends React.Component {
             <div className={classNames(compStyles.outline, {[compStyles.empty]: !headings})} id="outline">
                 <ul>
                     {headings ? headings.map((heading, i) =>
-                        <Outline key={i} heading={heading} activeOutline={activeOutline}/>) : null}
+                        <OutlineItem key={i} heading={heading} activeOutline={activeOutline}/>) : null}
                 </ul>
             </div>
         );

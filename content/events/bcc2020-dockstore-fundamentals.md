@@ -1,20 +1,16 @@
 ---
-title: "Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis"
+author: "AnVIL"
 conference: "BCC 2020"
 date: "2020-07-17"
 description: "A hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows"
 eventType: "Virtual Workshop"
 featured: true
-author: "AnVIL"
+location: "West Training 3"
+time: "12:31 - 15:00 PT"
+title: "Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis"
 ---
 
-###### BCC 2020
-# Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis
-##### Virtual Workshop
-##### Friday, July 17 2020
-##### 12:31 - 15:00 PT (West Training 3)
-
----
+<event-hero></event-hero>
 
 ### Description
 This will be a hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows. Attendees will learn how to use Docker for packaging software into containers, how to write analytical workflows in a descriptor language (CWL, WDL, or Nextflow), and how to publish these workflows on Dockstore for sharing with others.

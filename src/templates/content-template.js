@@ -13,6 +13,7 @@ import React from "react";
 // App dependencies
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
+import FrontmatterContext from "../components/context/frontmatter-context";
 import Layout from "../components/layout";
 import Workspaces from "../components/workspaces/workspaces";
 import * as TemplateService from "../utils/template.service";
@@ -36,10 +37,12 @@ export default ({data}) => {
 
     return (
         <Layout description={description} docPath={slug} noSpy={noSpy} title={title}>
-            <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
-                {workspaces ? <Workspaces/> : null}
-                <ArticleEnd docPath={slug}/>
-            </ArticleBody>
+            <FrontmatterContext.Provider value={frontmatter}>
+                <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
+                    {workspaces ? <Workspaces/> : null}
+                    <ArticleEnd docPath={slug}/>
+                </ArticleBody>
+            </FrontmatterContext.Provider>
         </Layout>
     )
 }
@@ -51,8 +54,17 @@ query($slug: String!) {
         slug
       }
       frontmatter {
+        author
         component
+        conference
+        date(formatString: "MMMM DD, YYYY")
         description
+        eventType
+        featured
+        location
+        subTitle
+        time
+        title
       }
       headings(depth: h1) {
         depth

@@ -1,19 +1,15 @@
 ---
-title: "An Introduction to Scalable Genomic Analysis with Hail"
+author: "AnVIL"
 conference: "ASHG 2019"
 date: "2019-10-16"
 description: "This workshop provides an introduction to Hail through hands-on exploration and analysis of public 1000 Genomes data."
 eventType: "Workshop"
 featured: false
-author: "AnVIL"
+location: "Houston"
+title: "An Introduction to Scalable Genomic Analysis with Hail"
 ---
 
-###### ASHG 2019
-# An Introduction to Scalable Genomic Analysis with Hail
-##### Workshop
-##### Wednesday, October 16th 2019
-##### Houston
----
+<event-hero></event-hero>
 
 ### Description
 This workshop provides an introduction to Hail through hands-on exploration and analysis of public 1000 Genomes data.

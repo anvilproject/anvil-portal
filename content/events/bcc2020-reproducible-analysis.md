@@ -1,19 +1,16 @@
 ---
-title: "Reproducible Analysis in the Cloud with Dockstore and Terra"
+author: "AnVIL"
 conference: "BCC 2020"
 date: "2020-07-18"
 description: "This training will lead users through the steps of performing reproducible genomic analysis at scale in the cloud with Dockstore and Terra."
 eventType: "Virtual Workshop"
 featured: true
-author: "AnVIL"
+location: "West Training 6"
+time: "12:31 - 15:00 PT"
+title: "Reproducible Analysis in the Cloud with Dockstore and Terra"
 ---
 
-###### BCC 2020
-# Reproducible Analysis in the Cloud with Dockstore and Terra
-##### Virtual Workshop
-##### Saturday, July 18 2020
-##### 12:31 - 15:00 PT (West Training 6)
----
+<event-hero></event-hero>
 
 ### Description
 This training will lead users through the steps of performing reproducible analysis at scale in the cloud. Attendees will learn how to find workflows on Dockstore and how to export them to Terra’s interoperable cloud compute platform. We will give a brief tutorial of the Terra platform by walking through an example use case for genomic analysis. Along the way we’ll give you tips and tricks for scaling analyses on the Terra environment and introduce some of the more advanced features like using Jupyter Notebooks for producing and exploring results.

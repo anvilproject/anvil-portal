@@ -146,6 +146,7 @@ module.exports = {
                                 "card-collection",
                                 "data-detail",
                                 "data-summary",
+                                "event-hero",
                                 "events",
                                 "figure-caption",
                                 "go-arrow",

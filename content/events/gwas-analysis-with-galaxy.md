@@ -1,20 +1,17 @@
 ---
-title: "GWAS Analysis with Galaxy in AnVIL"
+author: "AnVIL"
 conference: "ASHG 2020"
 date: "2020-10-28"
 description: "Attendees will use AnVIL to launch Galaxy and create, modify, and execute a Galaxy Workflow for GWAS analysis to demonstrate batch processing in Galaxy"
 eventType: "Workshop"
 featured: true
-author: "AnVIL"
+location: "San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101"
+subTitle: "GWAS Analysis with Galaxy on the Analysis Visualization Integrated Lab-space (AnVIL)"
+time: "07:15 - 08:45 PT"
+title: "GWAS Analysis with Galaxy in AnVIL"
 ---
 
-###### ASHG 2020
-# GWAS Analysis with Galaxy on the Analysis Visualization Integrated Lab-space (AnVIL)
-##### Workshop
-##### October 28th 2020
-##### 07:15 - 08:45 PT
-##### San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101
----
+<event-hero></event-hero>
 
 ### Description
 Genome wide association studies (GWAS) require processing and analysis of thousands of samples, generally requiring complex computational pipelines that require an understanding of multiple programming languages, access to computational resources, and a secure environment to work with protected human data. Many researchers do not have the expertise and access to resources for complex genomic analysis, like GWAS.
