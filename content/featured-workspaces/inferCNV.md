@@ -1,4 +1,4 @@
-#### inferCNV tumor single-cell RNA-seq analysis pipeline
+#### inferCNV Tumor Single-Cell RNA-Seq Analysis Pipeline
 
 The [inferCNV](https://github.com/broadinstitute/inferCNV) workflow compares RNA from tumor samples with corresponding “normal” samples to identify evidence for copy number variations in tumors.
 
