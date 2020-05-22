@@ -3,6 +3,17 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - events component.
+ * Use of this component within markdown is possible.
+ * Use the tag <events filter='{"fronmatterName": "value"}'></events> but ensure it is closed.
+ *
+ * The prop "filter" is a JSON string and is optional. It may comprise of any of the following keys from events frontmatter:
+ * - "conference"
+ * - "eventType"
+ *
+ * The prop "past" is optional and will return past events. Omitting this prop will return upcoming events.
+ *
+ * An example of the filter prop, finding all upcoming events with conferences value equal to "ASHG 2020" would be:
+ * <events filter='{"conference":"ASHG 2020"}'></events>
  */
 
 // Core dependencies
@@ -28,13 +39,15 @@ class Events extends React.Component {
 
 export default (props) => {
 
+    const filter = props.filter;
     const events = EventsStaticQuery();
     const eventsScoops = ScoopsService.getScoops(events);
     const past = props && props.past === "";
     const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, past);
+    const scoopsByFilter = ScoopsService.filterScoopsByFrontmatter(scoopsByDate, filter);
     const type = past ? "past events" : "upcoming events";
 
     return (
-        <Events scoops={scoopsByDate} type={type}/>
+        <Events scoops={scoopsByFilter} type={type}/>
     )
 }
