@@ -111,6 +111,29 @@ export function filterScoopsByDate(scoops, past) {
 }
 
 /**
+ * Returns filtered scoops by specified filter terms.
+ *
+ * @param scoops
+ * @param filterStr
+ * @returns {*}
+ */
+export function filterScoopsByFrontmatter(scoops, filterStr) {
+
+    if ( !filterStr || !isJSONStringValid(filterStr) || !scoops.length > 0 ) {
+
+        return scoops;
+    }
+
+    const filterTerms = JSON.parse(filterStr);
+    const filterNodes = Object.keys(filterTerms);
+
+    return scoops.filter(scoop => {
+
+        return filterNodes.every(node => filterTerms[node] === scoop.frontmatter[node]);
+    })
+}
+
+/**
  * Returns true if any scoops are featured.
  *
  * @param scoops
@@ -172,4 +195,25 @@ function isIntroduction(slug) {
     }
 
     return slug.includes("intro");
+}
+
+/**
+ * Returns true if JSON string is valid.
+ *
+ * @param str
+ * @returns {boolean}
+ */
+function isJSONStringValid(str) {
+
+    try {
+
+        JSON.parse(str);
+    }
+
+    catch (e) {
+
+        return false;
+    }
+
+    return true;
 }
