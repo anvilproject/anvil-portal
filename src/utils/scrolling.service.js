@@ -191,6 +191,12 @@ export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline) 
 
                 currentAnchorPos = anchorPos;
             }
+            else if ( currentScrollPos < [...elementIdsByAnchorFromTop][0][0]) {
+
+                /* Make the current anchor position the first element, if the current scroll position is above the first element. */
+                /* The first element of interest in the spy should represent the <h1> tag. */
+                currentAnchorPos = [...elementIdsByAnchorFromTop][0][0];
+            }
             else {
 
                 break; // exit iterator
