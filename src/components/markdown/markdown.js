@@ -14,6 +14,7 @@ import Button from "../button/button";
 import CardCollection from "../card-collection/card-collection";
 import DataDetail from "../data-detail/data-detail";
 import DataSummary from "../data-summary/data-summary";
+import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";
 import GoArrow from "../go-arrow/go-arrow";
@@ -62,6 +63,7 @@ class Markdown extends React.Component {
                 "card-collection": CardCollection,
                 "data-detail": DataDetail,
                 "data-summary": DataSummary,
+                "event-hero": EventHero,
                 "events": Events,
                 "figure-caption": FigureCaption,
                 "go-arrow": GoArrow,

@@ -1,20 +1,16 @@
 ---
-title: "R / Bioconductor in the Cloud"
+author: "AnVIL"
 conference: "BCC 2020"
 date: "2020-07-17"
 description: "This session introduces R / Bioconductor in the AnVIL cloud computing environment. We cover use of the cloud as a replacement to desktop-style computing."
 eventType: "Virtual Workshop"
 featured: true
-author: "AnVIL"
+location: "West Training 2"
+time: "09:16 - 11:45 PT"
+title: "R / Bioconductor in the Cloud"
 ---
 
-###### BCC 2020
-# R / Bioconductor in the Cloud
-##### Virtual Workshop
-##### Friday, July 17 2020
-##### 09:16 - 11:45 PT (West Training 2)
-
----
+<event-hero></event-hero>
 
 ### Description
 [Bioconductor](https://bioconductor.org) provides more than 1800 R packages for the analysis and comprehension of high-throughput genomic data. Most users install and run Bioconductor on a personal computer or perhaps use an academic cluster. Cloud-based solutions are increasing appealing, removing the headaches of local installation while providing access to (a) better, scalable computing resources; and (b) large-scale 'consortium' and other reference data sets. This session introduces the AnVIL cloud computing environment. We cover: 
