@@ -98,27 +98,6 @@
     word-break: break-word;
 }
 
-
-/* Events oveline - conference name above event title, mix of overline and h3 styles */
-.content h6:first-of-type {
-    font-size: 20px;
-    letter-spacing: 2px;
-    line-height: 28px;
-    margin: 0 0 8px;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-/* Events - first event detail below event title - scoot up under title */
-h1 + h5 {
-    margin-top: 0;
-}
-
-/* Events - subsequent event details after first below event title - scoot together */
-h5 + h5 {
-    margin-top: -8px;
-}
-
 /**
  * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */

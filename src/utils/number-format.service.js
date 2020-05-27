@@ -1,6 +1,6 @@
 /*
- * Human Cell Atlas
- * https://www.humancellatlas.org/
+ * The AnVIL
+ * https://www.anvilproject.org
  *
  * Utility class for formatting number values. 
  */

@@ -6,6 +6,22 @@
  */
 @import "../../styles/vars.module.css";
 
-/* Event hero container */
-.eventHero {
+/* Event hero <h6> 0 overline - mix of overline and <h3> styles */
+.eventHero h6 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 28px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Events - first event detail below event title - scoot up under title */
+.eventHero h1 + h5 {
+    margin-top: 0;
+}
+
+/* Events - subsequent event details after first below event title - scoot together */
+.eventHero h5 + h5 {
+    margin-top: -8px;
 }

@@ -9,78 +9,85 @@
 /* Footer */
 .footer {
     background: var(--shade-dark);
-    padding: 32px 0;
+    padding: 60px 0;
     position: relative; /* Required for outline component */
     z-index: 2; /* Required for 404 page */
 }
 
 /* Footer container */
-.footer > div {
+.footer .container {
     align-items: center;
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 /* Logos */
-.footer .logos {
-    align-items: center;
-    display: flex;
-    height: 64px;
+.logos {
+    padding-bottom: 24px;
 }
 
-.footer .logos img {
-    height: 18px;
+/* Logo container */
+.logos > div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo - nhgri */
+.logos .nhgri {
+    box-sizing: content-box;
+    padding-bottom: 24px;
+}
+
+/* Logo - nhgri, nih */
+.logos .nhgri, .logos .nih {
+    height: 28px;
+}
+
+/* Logo - hhs, usa.gov */
+.logos .hhs, .logos .usaGov {
+    height: 40px;
+}
+
+/* Logo - hhs */
+.logos .hhs {
+    padding: 0 24px;
+}
+
+/* Logo */
+.logos img {
     margin: 0;
 }
 
 /* Socials */
-.footer .socials {
-    display: flex;
+.socials {
+    align-items: center;
     flex-wrap: wrap;
+    padding-top: 24px;
 }
 
-/* Socials - link/social */
-.footer .socials a {
+/* Social - e.g. twitter, github and links */
+.socials a {
     color: var(--white);
-    flex: none;
+    flex-basis: calc(100% / 3);
+    padding: 24px 0 0;
     text-align: center;
 }
 
-/* Socials - social only */
-.footer .socials a:not(.link) {
-    flex-basis: calc(100% / 3);
-    padding: 24px 0 0;
-}
-
-/* Socials - link only */
-.footer .socials .link {
+/* Link - e.g. "privacy" */
+.socials .link {
     flex-basis: 100%;
-    margin: 0;
     padding: 4px 0;
 }
 
-/* GitHub image */
-.footer .socials img {
-    height: 20px;
-    margin: 0;
+/* Social - e.g. twitter, github */
+.socials a:not(.link) {
+    line-height: 0;
 }
 
-/**
- * Large handset small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 400px) {
-
-    /* Logos */
-    .footer .logos img {
-        height: 24px;
-    }
-    
-    /* Social icon */
-    .footer .socials img {
-        height: 24px;
-    }
+/* GitHub image */
+.socials img {
+    height: 24px;
+    margin: 0;
 }
 
 /**
@@ -91,35 +98,33 @@
 
     /* Footer */
     .footer {
-        padding: 0;
+        padding: 32px 0;
     }
 
     /* Footer container */
-    .footer > div {
+    .footer .container {
+        align-items: flex-start;
         flex-direction: row;
+        justify-content: space-between;
     }
 
-    /* Socials */
-    .footer .socials {
-        align-items: center;
-        height: 96px;
-    }
-
-    /* Socials - link/social */
-    .footer .socials a:not(.link), .footer .socials .link {
-        flex-basis: unset;
+    /* Logos and socials */
+    .logos, .socials {
         padding: 0;
-        text-align: left;
     }
 
-    /* Socials - link/social - excluding first */
-    .footer .socials a:not(:first-of-type) {
-        margin-left: 24px;
+    /* Logo - container */
+    .logos > div {
+        justify-content: flex-start;
     }
 
-    /* Socials - social only */
-    .footer .socials a:not(.link) {
-        line-height: 0;
+    /* Social - e.g. link and twitter, github etc */
+    .socials a, .socials a.link {
+        flex-basis: unset;
+        padding: 0 12px;
+    }
+
+    .socials a:last-of-type {
+        padding: 0 0 0 12px;
     }
 }
-
