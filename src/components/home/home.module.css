@@ -12,8 +12,8 @@
     padding: 60px 0;
 }
 
-/* Accessing, events, featured, news, onboarding, roadmap, submitting */
-.accessing, .events, .featured, .news, .onboarding, .roadmap, .submitting {
+/* Accessing, events, featured, news, onboarding, roadmap, submitting, twitter */
+.accessing, .events, .featured, .news, .onboarding, .roadmap, .submitting, .twitter {
     padding-top: 60px;
 }
 

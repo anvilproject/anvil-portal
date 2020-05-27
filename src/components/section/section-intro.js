@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import Markdown from "../markdown/markdown";
+import SectionSplash from "../section-splash/section-splash";
 
 // Styles
 import compStyles from "./section-intro.module.css";
@@ -20,25 +21,20 @@ let classNames = require("classnames");
 class SectionIntro extends React.Component {
 
     render() {
-        const {end, htmlAst, post, start, stretch, wrap} = this.props,
-            {frontmatter} = post || {},
-            {title} = frontmatter || {};
+        const {end, post, sectionTitle, start, stretch, wrap} = this.props,
+            {frontmatter, htmlAst} = post || {},
+            {title} = frontmatter || {},
+            intro = title || sectionTitle;
 
         return (
             <div className={classNames(globalStyles.grid, globalStyles.g750, globalStyles.flex, compStyles.sectionIntro, {[compStyles.end]: end}, {[compStyles.start]: start}, {[compStyles.stretch]: stretch})}>
-                {title ? <h1 className={classNames({[compStyles.wrap]: wrap})}>{title}</h1> : null}
-                <Markdown className={compStyles.sectionContent}>{htmlAst}</Markdown>
+                <h1 className={classNames({[compStyles.wrap]: wrap})}>{intro}</h1>
+                <SectionSplash end={end} start={start} stretch={stretch}>
+                    {htmlAst ? <Markdown>{htmlAst}</Markdown> : null}
+                </SectionSplash>
             </div>
         );
     }
 }
 
-export default (props) => {
-
-    const {post} = props,
-        {htmlAst} = post;
-
-    return (
-        <SectionIntro htmlAst={htmlAst} {...props}/>
-    )
-}
+export default SectionIntro;

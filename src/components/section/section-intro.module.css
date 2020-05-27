@@ -9,54 +9,12 @@
 /* Intro */
 .sectionIntro {
     flex-direction: column;
-    margin-bottom: -18px; /* Required to maintain section padding - altered by sectionContent translateY value */
+    margin-bottom: -18px; /* Required to maintain section padding - altered by <SectionSplash> component translateY value */
 }
 
 /* Title <h1> */
 .sectionIntro > h1 {
     margin: 0;
-}
-
-/* Hide markdown heading <h1> */
-.sectionContent h1 {
-    display: none;
-}
-
-/* Content */
-.sectionIntro .sectionContent {
-    margin: 0 -16px;
-    max-width: unset;
-    padding: 24px 16px;
-    transform: translateY(-18px);
-    width: 100vw;
-}
-
-/* Content - odd background */
-section:nth-child(2n+3) .sectionContent {
-    background-color: rgba(174, 235, 242, 0.12);
-}
-
-/* Content - even background */
-section:nth-child(2n+4) .sectionContent {
-    background-color: rgba(126, 186, 192, 0.12);
-}
-
-/* Paragraph */
-.sectionContent p {
-    color: var(--accent-blue-dark);
-    font-family: "Barlow", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 28px;
-    text-align: left;
-}
-
-.sectionContent p:last-of-type {
-    margin-bottom: 12px;
-}
-
-.sectionContent p:last-child {
-    margin-bottom: 0;
 }
 
 /**
@@ -98,32 +56,5 @@ section:nth-child(2n+4) .sectionContent {
     /* Title <h1> - "wrap" */
     .sectionIntro > h1.wrap {
         max-width: 264px;
-    }
-
-    /* Content - "end", "start", "stretch" */
-    .sectionIntro .sectionContent {
-        margin: unset;
-        transform: unset;
-        width: 100%;
-    }
-
-    /* Content - "end" */
-    .end .sectionContent {
-        margin-left: -100%; /* Pulls container across to max width setting */
-        max-width: 566px;
-        padding: 24px 100px 24px 132px;
-    }
-
-    /* Content - "start" */
-    .start .sectionContent {
-        margin-right: -100%; /* Pulls container across to max width setting */
-        max-width: 566px;
-        padding: 24px 132px 24px 64px;
-    }
-
-    /* Content - "stretch" */
-    .stretch .sectionContent {
-        margin-top: -18px;
-        padding: 44px 32px 24px;
     }
 }
