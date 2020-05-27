@@ -91,8 +91,7 @@
 }
 
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Small tablet portrait, medium handset landscape, small window
  */
 @media screen and (min-width: 600px) {
 
@@ -126,5 +125,31 @@
 
     .socials a:last-of-type {
         padding: 0 0 0 12px;
+    }
+}
+
+/**
+ *  Small tablet landscape, small window
+ */
+@media screen and (min-width: 960px) {
+
+    /* Footer container */
+    .footer .container {
+        align-items: center;
+    }
+
+    /* Logos */
+    .footer .logos {
+        display: flex;
+    }
+
+    /* nhgri logo */
+    .footer .logos .nhgri {
+        padding: 0 48px 0 0; /** Update padding on NHGRI logo from bottom to right (as logos are horizontal and not stacked) */
+    }
+
+    /* Logo - hhs */
+    .footer .logos .hhs {
+        padding: 0 48px; /** Additional spacing between logos on larger devices */
     }
 }
