@@ -23,6 +23,7 @@ export const GAEntityName = {
     "GTEX": "GTEx",
     "HAIL": "Hail",
     "HPP": "HPP",
+    "HSS": "HSS",
     "INFERCNV": "inferCNV",
     "JUPTYER": "Jupyter",
     "NATURE": "Nature",
@@ -36,5 +37,6 @@ export const GAEntityName = {
     "THOUSAND_GENOMES": "1000 Genomes",
     "UCSC_GENOME_BROWSER": "UCSC Genome Browser",
     "UNSPECIFIED": "Unspecified",
+    "USA": "USA",
     "WDL": "WDL"
 };
