@@ -33,4 +33,4 @@ title: "R / Bioconductor in the Cloud - East Session"
 https://bcc2020.github.io/Registration/
 
 ### More Info
-https://bcc2020.sched.com/event/c463/r-bioconductor-in-the-cloud
+https://bcc2020.sched.com/event/bzhd/r-bioconductor-in-the-cloud
