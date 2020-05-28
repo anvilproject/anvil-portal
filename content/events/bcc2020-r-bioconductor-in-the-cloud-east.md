@@ -1,13 +1,13 @@
 ---
 author: "AnVIL"
 conference: "BCC 2020"
-date: "2020-07-17"
+date: "2020-07-18"
 description: "This session introduces R / Bioconductor in the AnVIL cloud computing environment. We cover use of the cloud as a replacement to desktop-style computing."
 eventType: "Virtual Workshop"
-featured: true
-location: "West Training 2"
-time: "09:16 - 11:45 PT"
-title: "R / Bioconductor in the Cloud - West Session"
+featured: false
+location: "East Training 4"
+time: "18:01 - 20:30 PT"
+title: "R / Bioconductor in the Cloud - East Session"
 ---
 
 <event-hero></event-hero>
