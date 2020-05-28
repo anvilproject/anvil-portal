@@ -30,11 +30,13 @@ class Footer extends React.Component {
             <div className={compStyles.footer}>
                 <div className={classNames(globalStyles.container, compStyles.container, globalStyles.flex)}>
                     <div className={compStyles.logos}>
-                        <div><img className={compStyles.nhgri} src={nhgri} alt="nhgri"/></div>
                         <div>
-                            <img className={compStyles.nih} src={nih} alt="nih"/>
-                            <img className={compStyles.hhs} src={hhs} alt="hhs"/>
-                            <img className={compStyles.usaGov} src={usaGov} alt="usa.gov"/>
+                            <a href="https://www.genome.gov" rel="noopener noreferrer" target="_blank"><img className={compStyles.nhgri} src={nhgri} alt="nhgri"/></a>
+                        </div>
+                        <div>
+                            <a href="https://www.nih.gov" rel="noopener noreferrer" target="_blank"><img className={compStyles.nih} src={nih} alt="nih"/></a>
+                            <a href="https://www.hhs.gov" rel="noopener noreferrer" target="_blank"><img className={compStyles.hhs} src={hhs} alt="hhs"/></a>
+                            <a href="https://www.usa.gov" rel="noopener noreferrer" target="_blank"><img className={compStyles.usaGov} src={usaGov} alt="usa.gov"/></a>
                         </div>
                     </div>
                     <div className={classNames(globalStyles.flex, compStyles.socials)}>

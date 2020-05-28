@@ -101,6 +101,21 @@ export const GADimensionsByHref = {
         entityType: GAEntityType.REFERENCE
     },
 
+
+    // Home - Footer
+    "https://www.nih.gov": {
+        entityName: GAEntityName.NIH,
+        entityType: GAEntityType.REFERENCE
+    },
+    "https://www.hhs.gov": {
+        entityName: GAEntityName.HSS,
+        entityType: GAEntityType.REFERENCE
+    },
+    "https://www.usa.gov": {
+        entityName: GAEntityName.USA,
+        entityType: GAEntityType.REFERENCE
+    },
+
     // About - Team
     "https://www.broadinstitute.org/bios/anthony-philippakis-0": {
         entityName: GAEntityName.UNSPECIFIED,

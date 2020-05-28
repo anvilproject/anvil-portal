@@ -32,6 +32,11 @@
     justify-content: center;
 }
 
+/* Logo link */
+.logos a {
+    line-height: 0;
+}
+
 /* Logo - nhgri */
 .logos .nhgri {
     box-sizing: content-box;
