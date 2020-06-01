@@ -1,2 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?><data_table name="AFLMU_Subject_Phenotypes" dataset_id="pht009913.v1" study_name="NHLBI TOPMed: AFLMU" study_id="phs001543.v1" participant_set="1" date_created="2020/02/26"><description/><variable id="phv00427152.v1.p1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string"><description>De-identified Subject ID</description><total><subject_profile><case_control><case>350</case></case_control><sex><male>265</male><female>84</female></sex></subject_profile><stats><stat n="350" nulls="0"/></stats></total></variable><variable id="phv00427153.v1.p1" var_name="af_status" calculated_type="string" reported_type="string"><description>AF status</description><total><subject_profile><case_control><case>350</case></case_control><sex><male>265</male><female>84</female></sex></subject_profile><stats><stat n="350" nulls="0"/><enum count="350">case</enum></stats></total></variable><variable id="phv00427154.v1.p1" var_name="sex" calculated_type="string" reported_type="string"><description>Gender of participant</description><total><subject_profile><case_control><case>350</case></case_control><sex><male>265</male><female>84</female></sex></subject_profile><stats><stat n="350" nulls="0"/><enum count="265">Male</enum><enum count="84">Female</enum><enum count="1">Unknown</enum></stats></total></variable><variable id="phv00427155.v1.p1" var_name="race" calculated_type="string" reported_type="string"><description>Race of participant</description><total><subject_profile><case_control><case>350</case></case_control><sex><male>265</male><female>84</female></sex></subject_profile><stats><stat n="350" nulls="0"/><enum count="350">white</enum></stats></total></variable></data_table>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="AFLMU_Subject_Phenotypes" dataset_id="pht009913.v1" study_name="NHLBI TOPMed: AFLMU"
+            study_id="phs001543.v1" participant_set="1" date_created="2020/02/26">
+    <description/>
+    <variable id="phv00427152.v1.p1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>De-identified Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>350</case>
+                </case_control>
+                <sex>
+                    <male>265</male>
+                    <female>84</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="350" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00427153.v1.p1" var_name="af_status" calculated_type="string" reported_type="string">
+        <description>AF status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>350</case>
+                </case_control>
+                <sex>
+                    <male>265</male>
+                    <female>84</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="350" nulls="0"/>
+                <enum count="350">case</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00427154.v1.p1" var_name="sex" calculated_type="string" reported_type="string">
+        <description>Gender of participant</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>350</case>
+                </case_control>
+                <sex>
+                    <male>265</male>
+                    <female>84</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="350" nulls="0"/>
+                <enum count="265">Male</enum>
+                <enum count="84">Female</enum>
+                <enum count="1">Unknown</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00427155.v1.p1" var_name="race" calculated_type="string" reported_type="string">
+        <description>Race of participant</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>350</case>
+                </case_control>
+                <sex>
+                    <male>265</male>
+                    <female>84</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="350" nulls="0"/>
+                <enum count="350">white</enum>
+            </stats>
+        </total>
+    </variable>
+</data_table>
