@@ -53,3 +53,5 @@ Please see the [Requesting Data Access](/data/requesting-data-access) and [Once 
 
 <data-summary dbGapAccessible=false></data-summary>
 <data-detail dbGapAccessible=false></data-detail>
+
+<data-studies></data-studies>

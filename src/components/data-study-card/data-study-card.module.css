@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data study card component.
+ */
+
+/* Study - container. */
+.study {
+    border: 1px solid var(--shade-light-green);
+    border-radius: 4px;
+    padding: 16px 16px 24px;
+}
+
+.study:not(:last-of-type) {
+    margin-bottom: 24px;
+}

@@ -20,6 +20,12 @@
     margin-bottom: 24px;
 }
 
+/* Table wrapper - study */
+.wrapper.study {
+    padding: 0;
+    width: 100%;
+}
+
 /* Table */
 table {
     display: inline-table;
@@ -31,18 +37,23 @@ table {
     max-width: 1118px;
 }
 
-/* Header cell, row cell */
-.header th, .row td {
-    border-bottom: none;
-    color: var(--accent-blue-dark);
-    font-size: 14px;
-}
-
 /* Header */
 .header {
     border-bottom: 1px solid var(--accent-blue-green);
     height: 42px;
     vertical-align: bottom;
+}
+
+/* Study - header */
+.study .header {
+    height: 32px;
+}
+
+/* Header cell, row cell */
+.header th, .row td {
+    border-bottom: none;
+    color: var(--accent-blue-dark);
+    font-size: 14px;
 }
 
 /* Header cells */
@@ -61,6 +72,22 @@ table {
 /* Header cell - last */
 .header th:last-of-type {
     padding: 0 8px 4px 4px;
+}
+
+/* Study - header cells */
+.study .header th {
+    font-weight: 300;
+    padding: 0 16px 4px;
+}
+
+/* Study - header cell - first */
+.study .header th:first-of-type {
+    padding: 0 4px 4px 0;
+}
+
+/* Study - header cell - last */
+.study .header th:last-of-type {
+    padding: 0 0 4px 4px;
 }
 
 /* Row */
@@ -89,18 +116,43 @@ table {
 }
 
 /* Detail table - row cell - "projectId" */
-.detail .row td:nth-of-type(2) {
+.detail .row td[id^="projectId"] {
     min-width: 452px;
 }
 
 /* Detail table - row cell - "dbGapId" */
-.detail .row td:nth-of-type(3) {
+.detail .row td[id^="dbGapId"] {
     min-width: 124px;
 }
 
 /* Detail table - row cell - "access" */
-.detail .row td:nth-of-type(5) {
+.detail .row td[id^="access"] {
     min-width: 32px;
+}
+
+/* Study - row cell */
+.study .row td {
+    height: 24px;
+    min-width: 80px;
+}
+
+/* Study - row cell - "workspaceId" */
+.study .row td[id^="workspaceId"] {
+    max-width: 268px; /* Required for ellipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Study - row cell - counts */
+.study .row td[id^="subjects"], .study .row td[id^="samples"], .study .row td[id^="files"], .study .row td[id^="size"] {
+    min-width: 72px;
+}
+
+/* Study - row cell - "dataType" */
+.study .row td[id^="dataType"] {
+    min-width: 96px;
 }
 
 /* Row cells - "total" */
@@ -119,13 +171,6 @@ table {
     text-align: right;
 }
 
-/* Table - detail - row cell - program */
-table.detail .row td:first-of-type {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 16px;
-}
-
 /* Row cell - first */
 .row td:first-of-type {
     padding: 0 4px 0 8px;
@@ -134,6 +179,33 @@ table.detail .row td:first-of-type {
 /* Row cell - last */
 .row td:last-of-type {
     padding: 0 8px 0 4px;
+}
+
+/* Study - row cell */
+.study .row td {
+    padding: 0 16px;
+}
+
+/* Study - row cell - first */
+.study .row td:first-of-type {
+    padding: 0 4px 0 0;
+}
+
+/* Study - row cell - last */
+.study .row td:last-of-type {
+    padding: 0 0 0 4px;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Study - row cell */
+    .study .row td {
+        min-width: 104px;
+    }
 }
 
 /**

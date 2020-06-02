@@ -11,9 +11,8 @@ import React from "react";
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
 import Tooltip from "../tooltip/tooltip";
-import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DashboardTableService from "../../utils/dashboard/dashboard-table.service";
-import * as DOMService from "../../utils/dom.service";
+import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
 import compStyles from "./data-table.module.css";
@@ -21,16 +20,6 @@ import compStyles from "./data-table.module.css";
 let classNames = require("classnames");
 
 class DataTable extends React.Component {
-
-    redirect = (linkTo, linkText) => {
-
-        window.open(linkTo);
-
-        // Track click to external sites
-        if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {
-            AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
-        }
-    };
 
     render() {
         const {className, tableHeaders, tableRows} = this.props,
@@ -54,9 +43,11 @@ class DataTable extends React.Component {
             const {column} = props,
                 headerCell = DashboardTableService.switchDisplayColumnName(column),
                 rightAlign = DashboardTableService.cellAlignment(column);
+            const identifier = Date.now(),
+                id = `${column}${identifier}`;
 
             return (
-                <th className={classNames({[compStyles.right]: rightAlign})}>{headerCell}</th>
+                <th id={id} className={classNames({[compStyles.right]: rightAlign})}>{headerCell}</th>
             )
         };
 
@@ -66,13 +57,16 @@ class DataTable extends React.Component {
                 data = DashboardTableService.formatValue(children, column),
                 linkedTo = DashboardTableService.getCellUrl(children, column, summary),
                 rightAlign = DashboardTableService.cellAlignment(column);
+            const identifier = Date.now(),
+                id = `${column}${identifier}`;
 
             return (
                 linkedTo ? <ClickHandler className={classNames({[compStyles.right]: rightAlign}, compStyles.link)}
-                                         clickAction={() => this.redirect(linkedTo, data)}
+                                         clickAction={() => RedirectService.redirect(linkedTo, data)}
+                                         id={id}
                                          tag={"td"}
                                          label={data}>{data}</ClickHandler> :
-                    <td className={classNames({[compStyles.right]: rightAlign})}><Cell>{data}</Cell></td>
+                    <td id={id} className={classNames({[compStyles.right]: rightAlign})}><Cell>{data}</Cell></td>
             )
         };
 
@@ -112,9 +106,4 @@ class DataTable extends React.Component {
     }
 }
 
-export default (props) => {
-
-    return (
-        <DataTable {...props}/>
-    )
-}
+export default DataTable;
