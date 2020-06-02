@@ -26,9 +26,7 @@ class DataSummary extends React.Component {
     render() {
         const {summary} = this.props;
         return (
-            <>
-                <DataTable className={tableStyles.summary} tableHeaders={TABLE_HEADERS} tableRows={summary}/>
-            </>
+            <DataTable className={tableStyles.summary} tableHeaders={TABLE_HEADERS} tableRows={summary}/>
         );
     }
 }

@@ -7,6 +7,7 @@
 
 export const RIGHT_ALIGN_COLUMNS = [
     "cohorts",
+    "consentStat",
     "demographics",
     "diagnosis",
     "families",

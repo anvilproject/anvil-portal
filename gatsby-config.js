@@ -5,12 +5,12 @@
  * The AnVIL configuration file.
  */
 
-let collectionPath = `./content/card-collection/`;
-let contentPath = `./content`;
 let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
-let roadMapPath = `./content/roadmap/`;
+let contentPath = `./content`;
 let yamlPath = `./content`;
-
+let collectionPath = `./content/card-collection/`;
+let roadMapPath = `./content/roadmap/`;
+let dbGapXml = `./db-gap-xml`;
 
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
@@ -90,6 +90,14 @@ module.exports = {
                 exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
             }
         },
+        `gatsby-transformer-db-gap`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: 'db-gap-xml',
+                path: dbGapXml
+            },
+        },
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -145,6 +153,7 @@ module.exports = {
                                 "button",
                                 "card-collection",
                                 "data-detail",
+                                "data-studies",
                                 "data-summary",
                                 "event-hero",
                                 "events",
@@ -188,6 +197,6 @@ module.exports = {
             }
         },
         `gatsby-transformer-sharp`,
-        `gatsby-transformer-yaml`,
+        `gatsby-transformer-yaml`
     ],
 };

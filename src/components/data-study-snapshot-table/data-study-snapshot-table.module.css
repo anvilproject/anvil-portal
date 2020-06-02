@@ -1,0 +1,26 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data (study) nested snapshot table component.
+ */
+
+/* Summary - container. */
+.summary {
+    margin-top: 24px;
+}
+
+/* Summary title. */
+.summary .title {
+    color: var(--accent-blue-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+/* Summary sub title. */
+.summary .subTitle {
+    font-size: 12px;
+    letter-spacing: 1.12px;
+}

@@ -13,6 +13,7 @@ import rehypeReact from "rehype-react";
 import Button from "../button/button";
 import CardCollection from "../card-collection/card-collection";
 import DataDetail from "../data-detail/data-detail";
+import DataStudies from "../data-studies/data-studies";
 import DataSummary from "../data-summary/data-summary";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
@@ -62,6 +63,7 @@ class Markdown extends React.Component {
                 "button": Button,
                 "card-collection": CardCollection,
                 "data-detail": DataDetail,
+                "data-studies": DataStudies,
                 "data-summary": DataSummary,
                 "event-hero": EventHero,
                 "events": Events,

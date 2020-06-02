@@ -98,6 +98,10 @@ export function switchDisplayColumnName(columnName) {
             return "Access";
         case "cohorts":
             return "Cohorts";
+        case "consentName":
+            return "Consent Code";
+        case "consentStat":
+            return "Subjects";
         case "dataType":
             return "Data Type";
         case "demographics":
@@ -122,6 +126,8 @@ export function switchDisplayColumnName(columnName) {
             return "Size";
         case "sizeTB":
             return "Size (TB)";
+        case "workspaceId":
+            return "Name";
         default:
             return columnName;
     }
@@ -200,12 +206,14 @@ function switchCellNameToTooltipLabel(cellValue) {
 function switchColumnUrl(columnName, summary, value) {
 
     switch (columnName) {
-        case "projectId":
-            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         case !isGapIdBlacklist(value) && "dbGapId":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
             return switchProgramUrl(value);
+        case "projectId":
+            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
+        case "workspaceId":
+            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
             return null;
     }

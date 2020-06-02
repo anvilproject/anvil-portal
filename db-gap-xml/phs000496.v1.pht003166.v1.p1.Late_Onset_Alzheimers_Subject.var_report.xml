@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="Late_Onset_Alzheimers_Subject" dataset_id="pht003166.v1"
+            study_name="Columbia University Study of Caribbean Hispanics and Late Onset Alzheimer's disease"
+            study_id="phs000496.v1" participant_set="1" date_created="03/28/2014">
+    <variable id="phv00180578.v1.p1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1425</case>
+                    <control>1677</control>
+                </case_control>
+                <sex>
+                    <male>1488</male>
+                    <female>2492</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="4003" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>503</male>
+                    <female>922</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1425" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>530</male>
+                    <female>1147</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1677" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180578.v1.p1.c1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1273</case>
+                    <control>935</control>
+                </case_control>
+                <sex>
+                    <male>757</male>
+                    <female>1456</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2277" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>459</male>
+                    <female>814</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1304" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>295</male>
+                    <female>640</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="968" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180578.v1.p1.c5" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>153</case>
+                    <control>743</control>
+                </case_control>
+                <sex>
+                    <male>291</male>
+                    <female>635</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="932" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>44</male>
+                    <female>109</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>235</male>
+                    <female>508</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="747" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180579.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by CU</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1425</case>
+                    <control>1677</control>
+                </case_control>
+                <sex>
+                    <male>1488</male>
+                    <female>2492</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="4003" nulls="0" mean_count="2002" sd="1609" median_count="2002" min_count="864"
+                      max_count="3139"/>
+                <enum code="1" count="3139">General Research Use (IRB) (GRU-IRB)</enum>
+                <enum code="0" count="864">Subjects did not participate in the study, did not complete a consent
+                    document and are included only for the pedigree structure and/or genotype controls, such as HapMap
+                    subjects
+                </enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>503</male>
+                    <female>922</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1425" nulls="0" mean_count="1425" median_count="1425" min_count="1425" max_count="1425"/>
+                <enum code="1" count="1425">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>530</male>
+                    <female>1147</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1677" nulls="0" mean_count="1677" median_count="1677" min_count="1677" max_count="1677"/>
+                <enum code="1" count="1677">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180579.v1.p1.c1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by CU</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1273</case>
+                    <control>935</control>
+                </case_control>
+                <sex>
+                    <male>757</male>
+                    <female>1456</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2277" nulls="0" mean_count="2277" median_count="2277" min_count="2277" max_count="2277"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>459</male>
+                    <female>814</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1304" nulls="0" mean_count="1304" median_count="1304" min_count="1304" max_count="1304"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>295</male>
+                    <female>640</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="968" nulls="0" mean_count="968" median_count="968" min_count="968" max_count="968"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180579.v1.p1.c5" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by CU</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>153</case>
+                    <control>743</control>
+                </case_control>
+                <sex>
+                    <male>291</male>
+                    <female>635</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="932" nulls="0" mean_count="932" median_count="932" min_count="932" max_count="932"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>44</male>
+                    <female>109</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0" mean_count="155" median_count="155" min_count="155" max_count="155"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>235</male>
+                    <female>508</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="747" nulls="0" mean_count="747" median_count="747" min_count="747" max_count="747"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180580.v1.p1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Subject's Alzheimer's disease affection status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1425</case>
+                    <control>1677</control>
+                </case_control>
+                <sex>
+                    <male>1480</male>
+                    <female>2486</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="3967" nulls="36" mean_count="1322" sd="415.6" median_count="1425" min_count="865"
+                      max_count="1677"/>
+                <enum code="1" count="1677">Not Affected</enum>
+                <enum code="2" count="1425">Affected</enum>
+                <enum code="0" count="865">Unknown</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>503</male>
+                    <female>922</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1425" nulls="0" mean_count="1425" median_count="1425" min_count="1425" max_count="1425"/>
+                <enum code="2" count="1425">Affected</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>530</male>
+                    <female>1147</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1677" nulls="0" mean_count="1677" median_count="1677" min_count="1677" max_count="1677"/>
+                <enum code="1" count="1677">Not Affected</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180580.v1.p1.c1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Subject's Alzheimer's disease affection status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1273</case>
+                    <control>935</control>
+                </case_control>
+                <sex>
+                    <male>757</male>
+                    <female>1456</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2277" nulls="0" mean_count="759" sd="674.2" median_count="968" min_count="5" max_count="1304"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>459</male>
+                    <female>814</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1304" nulls="0" mean_count="1304" median_count="1304" min_count="1304" max_count="1304"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>295</male>
+                    <female>640</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="968" nulls="0" mean_count="968" median_count="968" min_count="968" max_count="968"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00180580.v1.p1.c5" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Subject's Alzheimer's disease affection status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>153</case>
+                    <control>743</control>
+                </case_control>
+                <sex>
+                    <male>291</male>
+                    <female>635</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="932" nulls="0" mean_count="310.7" sd="383" median_count="155" min_count="30" max_count="747"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>44</male>
+                    <female>109</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0" mean_count="155" median_count="155" min_count="155" max_count="155"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>235</male>
+                    <female>508</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="747" nulls="0" mean_count="747" median_count="747" min_count="747" max_count="747"/>
+            </stats>
+        </controls>
+    </variable>
+</data_table>
