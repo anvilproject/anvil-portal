@@ -8,7 +8,8 @@
 // App dependencies
 import * as DashboardSortService from "./dashboard-sort.service";
 import {DashboardStudyStaticQuery} from "../../hooks/dashboard-study-query";
-import {DashboardSubjectStaticQuery} from "../../hooks/dashboard-subject-query";
+import {DashboardSubjectDictionaryStaticQuery} from "../../hooks/dashboard-subject-dictionary-query";
+import {DashboardSubjectReportStaticQuery} from "../../hooks/dashboard-subject-report-query";
 import * as DashboardDetailService from "../../utils/dashboard/dashboard-detail.service";
 
 /**
@@ -28,31 +29,37 @@ export function getDashboardStudies() {
  */
 function buildDashboardStudies() {
 
-    /* Get the db gap readiness dashboard details FE-model, and the studies and subject queries. */
+    /* Get the db gap readiness dashboard details FE-model, and the studies and subject report and dictionary queries. */
     const studies = DashboardStudyStaticQuery();
-    const subjects = DashboardSubjectStaticQuery();
+    const subjectsDictionary = DashboardSubjectDictionaryStaticQuery();
+    const subjectsReport = DashboardSubjectReportStaticQuery();
     const workspaces = DashboardDetailService.getDashboardDetail(true);
 
     /* Build the studies dashboard. */
     return studies.map(study => {
 
-        const dbGapId = study.dbGapId;
+        /* Find the subject and dictionary consentId and filter workspaces, specified by dbGapIdAccession. */
+        const dbGapIdAccession = study.dbGapIdAccession;
+        const consentId = subjectsDictionary.find(dictionary => dbGapIdAccession.startsWith(dictionary.dbGapIdAccession)).variableConsentId;
+        const subjectByStudy = subjectsReport.find(subject => dbGapIdAccession.startsWith(subject.dbGapIdAccession));
+        const workspacesByStudy = workspaces.filter(workspace => dbGapIdAccession.startsWith(workspace.dbGapIdAccession));
+
+        /* Assemble the study variables. */
+        const access = findFirstWorkspaceNodeByType(workspacesByStudy, "access");
+        const consents = findSubjectConsents(subjectByStudy, consentId);
+        const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
+        const count = consents.consentsStat;
         const diseases = study.diseases;
         const studyName = study.name.longName;
-        const subjectByStudy = subjects.find(subject => dbGapId.startsWith(subject.dbGapId));
-        const workspacesByStudy = workspaces.filter(workspace => dbGapId.startsWith(workspace.dbGapId));
-        const consentGroups = subjectByStudy.consentGroups;
-        const access = findFirstWorkspaceNodeByType(workspacesByStudy, "access");
-        const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
-        const studyWorkspaces = buildStudyWorkspaces(workspacesByStudy);
         const subjectsTotal = sumSubjectsValues(workspacesByStudy);
+        const studyWorkspaces = buildStudyWorkspaces(workspacesByStudy);
 
         return {
             access: access,
-            consentGroups: consentGroups,
+            consentGroup: consents,
             consortia: consortia,
-            count: subjectByStudy.count,
-            dbGapId: dbGapId,
+            count: count,
+            dbGapIdAccession: dbGapIdAccession,
             diseases: diseases,
             studyName: studyName,
             subjectsTotal: subjectsTotal,
@@ -89,27 +96,41 @@ function buildStudyWorkspaces(workspacesByStudy) {
 /**
  * Returns the first workspace's specified node value.
  *
- * @param workspacesByGapId
+ * @param workspacesByStudy
  * @param type
  * @returns {*}
  */
-function findFirstWorkspaceNodeByType(workspacesByGapId, type) {
+function findFirstWorkspaceNodeByType(workspacesByStudy, type) {
 
-    if ( workspacesByGapId.length ) {
+    if ( workspacesByStudy.length ) {
 
-        return workspacesByGapId[0][type];
+        return workspacesByStudy[0][type];
+    }
+}
+
+/**
+ * Returns the subject's consents specified by consentId.
+ *
+ * @param subjectByStudy
+ * @param consentId
+ */
+function findSubjectConsents(subjectByStudy, consentId) {
+
+    if ( subjectByStudy && subjectByStudy.variables ) {
+
+        return subjectByStudy.variables.find(variable => variable && variable.consentsId === consentId);
     }
 }
 
 /**
  * Sum the subjects counts.
  *
- * @param workspaces
+ * @param workspacesByStudy
  * @returns {*}
  */
-function sumSubjectsValues(workspaces) {
+function sumSubjectsValues(workspacesByStudy) {
 
-    return workspaces.reduce((accum, workspace) => {
+    return workspacesByStudy.reduce((accum, workspace) => {
         accum += workspace.subjects;
         return accum;
     }, 0);

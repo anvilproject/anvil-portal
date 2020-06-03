@@ -17,10 +17,11 @@ let TABLE_HEADERS = ["consentName", "consentStat"];
 class DataConsentGroups extends React.Component {
 
     render() {
-        const {consentGroups} = this.props;
+        const {consentGroup} = this.props,
+            {consents} = consentGroup;
         const title = "Consent Groups";
         return (
-            <DataStudySnapshotTable tableHeaders={TABLE_HEADERS} tableRows={consentGroups} title={title}/>
+            <DataStudySnapshotTable tableHeaders={TABLE_HEADERS} tableRows={consents} title={title}/>
         );
     }
 }

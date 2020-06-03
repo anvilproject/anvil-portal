@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="WUCADS_Subject" dataset_id="pht005832.v1"
+            study_name="Washington University Coronary Artery Disease Study" study_id="phs001227.v1" participant_set="1"
+            date_created="2020/02/18">
+    <description>The subject consent file includes subject IDs, consent information, and affection status for coronary
+        artery disease.
+    </description>
+    <variable id="phv00267253.v1.p1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>De-identified subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>155</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>70</male>
+                    <female>95</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="165" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>66</male>
+                    <female>89</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00267253.v1.p1.c1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>De-identified subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>19</case>
+                </case_control>
+                <sex>
+                    <male>9</male>
+                    <female>10</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="19" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00267253.v1.p1.c2" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>De-identified subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>136</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>61</male>
+                    <female>85</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="146" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>57</male>
+                    <female>79</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="136" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00267254.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded">
+        <description>Allowable research use</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>155</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>70</male>
+                    <female>95</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="165" nulls="0" mean_count="82.5" sd="89.8" median_count="82.5" min_count="19" max_count="146"/>
+                <enum code="2" count="146">General Research Use (IRB) (GRU-IRB)</enum>
+                <enum code="1" count="19">Disease-Specific (Atherosclerosis, IRB, MDS) (DS-ATHSCL-IRB-MDS)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>66</male>
+                    <female>89</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0" mean_count="77.5" sd="82.73" median_count="77.5" min_count="19"
+                      max_count="136"/>
+                <enum code="2" count="136">General Research Use (IRB) (GRU-IRB)</enum>
+                <enum code="1" count="19">Disease-Specific (Atherosclerosis, IRB, MDS) (DS-ATHSCL-IRB-MDS)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0" mean_count="10" median_count="10" min_count="10" max_count="10"/>
+                <enum code="2" count="10">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00267254.v1.p1.c1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded">
+        <description>Allowable research use</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>19</case>
+                </case_control>
+                <sex>
+                    <male>9</male>
+                    <female>10</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="19" nulls="0" mean_count="19" median_count="19" min_count="19" max_count="19"/>
+                <enum code="1" count="19">Disease-Specific (Atherosclerosis, IRB, MDS) (DS-ATHSCL-IRB-MDS)</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00267254.v1.p1.c2" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded">
+        <description>Allowable research use</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>136</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>61</male>
+                    <female>85</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="146" nulls="0" mean_count="146" median_count="146" min_count="146" max_count="146"/>
+                <enum code="2" count="146">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>57</male>
+                    <female>79</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="136" nulls="0" mean_count="136" median_count="136" min_count="136" max_count="136"/>
+                <enum code="2" count="136">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0" mean_count="10" median_count="10" min_count="10" max_count="10"/>
+                <enum code="2" count="10">General Research Use (IRB) (GRU-IRB)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00267255.v1.p1" var_name="AFFECTION_STATUS" calculated_type="string" reported_type="string">
+        <description>Case/control status for cardiovascular disease</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>155</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>70</male>
+                    <female>95</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="165" nulls="0"/>
+                <enum count="155">Case</enum>
+                <enum count="10">Control</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>66</male>
+                    <female>89</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="155" nulls="0"/>
+                <enum count="155">Case</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0"/>
+                <enum count="10">Control</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00267255.v1.p1.c1" var_name="AFFECTION_STATUS" calculated_type="string" reported_type="string">
+        <description>Case/control status for cardiovascular disease</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>19</case>
+                </case_control>
+                <sex>
+                    <male>9</male>
+                    <female>10</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="19" nulls="0"/>
+                <enum count="19">Case</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00267255.v1.p1.c2" var_name="AFFECTION_STATUS" calculated_type="string" reported_type="string">
+        <description>Case/control status for cardiovascular disease</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>136</case>
+                    <control>10</control>
+                </case_control>
+                <sex>
+                    <male>61</male>
+                    <female>85</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="146" nulls="0"/>
+                <enum count="136">Case</enum>
+                <enum count="10">Control</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>57</male>
+                    <female>79</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="136" nulls="0"/>
+                <enum count="136">Case</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>4</male>
+                    <female>6</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="10" nulls="0"/>
+                <enum count="10">Control</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

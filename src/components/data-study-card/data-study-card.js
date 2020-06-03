@@ -20,12 +20,11 @@ class DataStudiesCard extends React.Component {
 
     render() {
         const {study} = this.props,
-            {consentGroups, workspaces} = study,
-            {count, subjectsTotal} = study;
+            {consentGroup, count, subjectsTotal, workspaces} = study;
         return (
             <div className={compStyles.study}>
                 <DataStudy study={study}/>
-                <DataConsentGroups consentGroups={consentGroups}/>
+                <DataConsentGroups consentGroup={consentGroup}/>
                 <DataWorkspaces count={count} subjectsTotal={subjectsTotal} workspaces={workspaces}/>
             </div>
         );

@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="Broad_CMG_Subject" dataset_id="pht007300.v1"
+            study_name="Broad Institute Center for Mendelian Genomics" study_id="phs001272.v1" participant_set="1"
+            date_created="2018/11/16">
+    <description>Subject - Consent - Affection Status - Information</description>
+    <variable id="phv00347495.v1.p1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>693</case>
+                    <control>338</control>
+                </case_control>
+                <sex>
+                    <male>550</male>
+                    <female>481</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1031" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>384</male>
+                    <female>309</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="693" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>166</male>
+                    <female>172</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="338" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347495.v1.p1.c1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>143</case>
+                    <control>157</control>
+                </case_control>
+                <sex>
+                    <male>149</male>
+                    <female>151</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="300" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>72</male>
+                    <female>71</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="143" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>77</male>
+                    <female>80</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="157" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347495.v1.p1.c2" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>28</case>
+                    <control>47</control>
+                </case_control>
+                <sex>
+                    <male>40</male>
+                    <female>35</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="75" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>17</male>
+                    <female>11</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="28" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>23</male>
+                    <female>24</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="47" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347495.v1.p1.c3" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>509</case>
+                    <control>122</control>
+                </case_control>
+                <sex>
+                    <male>345</male>
+                    <female>286</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="631" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>284</male>
+                    <female>225</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="509" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>61</male>
+                    <female>61</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="122" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347495.v1.p1.c4" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>13</case>
+                    <control>12</control>
+                </case_control>
+                <sex>
+                    <male>16</male>
+                    <female>9</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="25" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>11</male>
+                    <female>2</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="13" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>5</male>
+                    <female>7</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="12" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347496.v1.p1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Affection status of the subject</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>693</case>
+                    <control>338</control>
+                </case_control>
+                <sex>
+                    <male>550</male>
+                    <female>481</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1031" nulls="0" mean_count="515.5" sd="251" median_count="515.5" min_count="338"
+                      max_count="693"/>
+                <enum code="1" count="693">Affected (Subject has Mendelian disease)</enum>
+                <enum code="2" count="338">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>384</male>
+                    <female>309</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="693" nulls="0" mean_count="693" median_count="693" min_count="693" max_count="693"/>
+                <enum code="1" count="693">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>166</male>
+                    <female>172</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="338" nulls="0" mean_count="338" median_count="338" min_count="338" max_count="338"/>
+                <enum code="2" count="338">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347496.v1.p1.c1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Affection status of the subject</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>143</case>
+                    <control>157</control>
+                </case_control>
+                <sex>
+                    <male>149</male>
+                    <female>151</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="300" nulls="0" mean_count="150" sd="9.899" median_count="150" min_count="143" max_count="157"/>
+                <enum code="2" count="157">Unaffected (Subject is clinically normal)</enum>
+                <enum code="1" count="143">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>72</male>
+                    <female>71</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="143" nulls="0" mean_count="143" median_count="143" min_count="143" max_count="143"/>
+                <enum code="1" count="143">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>77</male>
+                    <female>80</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="157" nulls="0" mean_count="157" median_count="157" min_count="157" max_count="157"/>
+                <enum code="2" count="157">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347496.v1.p1.c2" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Affection status of the subject</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>28</case>
+                    <control>47</control>
+                </case_control>
+                <sex>
+                    <male>40</male>
+                    <female>35</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="75" nulls="0" mean_count="37.5" sd="13.44" median_count="37.5" min_count="28" max_count="47"/>
+                <enum code="2" count="47">Unaffected (Subject is clinically normal)</enum>
+                <enum code="1" count="28">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>17</male>
+                    <female>11</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="28" nulls="0" mean_count="28" median_count="28" min_count="28" max_count="28"/>
+                <enum code="1" count="28">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>23</male>
+                    <female>24</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="47" nulls="0" mean_count="47" median_count="47" min_count="47" max_count="47"/>
+                <enum code="2" count="47">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347496.v1.p1.c3" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Affection status of the subject</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>509</case>
+                    <control>122</control>
+                </case_control>
+                <sex>
+                    <male>345</male>
+                    <female>286</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="631" nulls="0" mean_count="315.5" sd="273.7" median_count="315.5" min_count="122"
+                      max_count="509"/>
+                <enum code="1" count="509">Affected (Subject has Mendelian disease)</enum>
+                <enum code="2" count="122">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>284</male>
+                    <female>225</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="509" nulls="0" mean_count="509" median_count="509" min_count="509" max_count="509"/>
+                <enum code="1" count="509">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>61</male>
+                    <female>61</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="122" nulls="0" mean_count="122" median_count="122" min_count="122" max_count="122"/>
+                <enum code="2" count="122">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347496.v1.p1.c4" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Affection status of the subject</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>13</case>
+                    <control>12</control>
+                </case_control>
+                <sex>
+                    <male>16</male>
+                    <female>9</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="25" nulls="0" mean_count="12.5" sd="0.7071" median_count="12.5" min_count="12" max_count="13"/>
+                <enum code="1" count="13">Affected (Subject has Mendelian disease)</enum>
+                <enum code="2" count="12">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>11</male>
+                    <female>2</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="13" nulls="0" mean_count="13" median_count="13" min_count="13" max_count="13"/>
+                <enum code="1" count="13">Affected (Subject has Mendelian disease)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>5</male>
+                    <female>7</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="12" nulls="0" mean_count="12" median_count="12" min_count="12" max_count="12"/>
+                <enum code="2" count="12">Unaffected (Subject is clinically normal)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347497.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>693</case>
+                    <control>338</control>
+                </case_control>
+                <sex>
+                    <male>550</male>
+                    <female>481</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1031" nulls="0" mean_count="257.8" sd="276.1" median_count="187.5" min_count="25"
+                      max_count="631"/>
+                <enum code="3" count="631">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+                <enum code="1" count="300">General Research Use (GRU)</enum>
+                <enum code="2" count="75">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+                <enum code="4" count="25">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>384</male>
+                    <female>309</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="693" nulls="0" mean_count="173.3" sd="231.2" median_count="85.5" min_count="13"
+                      max_count="509"/>
+                <enum code="3" count="509">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+                <enum code="1" count="143">General Research Use (GRU)</enum>
+                <enum code="2" count="28">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+                <enum code="4" count="13">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>166</male>
+                    <female>172</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="338" nulls="0" mean_count="84.5" sd="66.65" median_count="84.5" min_count="12"
+                      max_count="157"/>
+                <enum code="1" count="157">General Research Use (GRU)</enum>
+                <enum code="3" count="122">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+                <enum code="2" count="47">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+                <enum code="4" count="12">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347497.v1.p1.c1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>143</case>
+                    <control>157</control>
+                </case_control>
+                <sex>
+                    <male>149</male>
+                    <female>151</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="300" nulls="0" mean_count="300" median_count="300" min_count="300" max_count="300"/>
+                <enum code="1" count="300">General Research Use (GRU)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>72</male>
+                    <female>71</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="143" nulls="0" mean_count="143" median_count="143" min_count="143" max_count="143"/>
+                <enum code="1" count="143">General Research Use (GRU)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>77</male>
+                    <female>80</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="157" nulls="0" mean_count="157" median_count="157" min_count="157" max_count="157"/>
+                <enum code="1" count="157">General Research Use (GRU)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347497.v1.p1.c2" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>28</case>
+                    <control>47</control>
+                </case_control>
+                <sex>
+                    <male>40</male>
+                    <female>35</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="75" nulls="0" mean_count="75" median_count="75" min_count="75" max_count="75"/>
+                <enum code="2" count="75">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>17</male>
+                    <female>11</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="28" nulls="0" mean_count="28" median_count="28" min_count="28" max_count="28"/>
+                <enum code="2" count="28">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>23</male>
+                    <female>24</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="47" nulls="0" mean_count="47" median_count="47" min_count="47" max_count="47"/>
+                <enum code="2" count="47">Disease-Specific (Kidney and Related Disorders, RD) (DS-KRD-RD)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347497.v1.p1.c3" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>509</case>
+                    <control>122</control>
+                </case_control>
+                <sex>
+                    <male>345</male>
+                    <female>286</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="631" nulls="0" mean_count="631" median_count="631" min_count="631" max_count="631"/>
+                <enum code="3" count="631">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>284</male>
+                    <female>225</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="509" nulls="0" mean_count="509" median_count="509" min_count="509" max_count="509"/>
+                <enum code="3" count="509">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>61</male>
+                    <female>61</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="122" nulls="0" mean_count="122" median_count="122" min_count="122" max_count="122"/>
+                <enum code="3" count="122">Health/Medical/Biomedical (MDS) (HMB-MDS)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347497.v1.p1.c4" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent status</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>13</case>
+                    <control>12</control>
+                </case_control>
+                <sex>
+                    <male>16</male>
+                    <female>9</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="25" nulls="0" mean_count="25" median_count="25" min_count="25" max_count="25"/>
+                <enum code="4" count="25">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>11</male>
+                    <female>2</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="13" nulls="0" mean_count="13" median_count="13" min_count="13" max_count="13"/>
+                <enum code="4" count="13">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>5</male>
+                    <female>7</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="12" nulls="0" mean_count="12" median_count="12" min_count="12" max_count="12"/>
+                <enum code="4" count="12">Disease-Specific (No Insurance companies, employers, or the police until
+                    required by court order or by law) (DS-NIC-EMP-LENF)
+                </enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347498.v1.p1" var_name="PI Info" calculated_type="string" reported_type="String">
+        <description>Principle Investigator contributing samples</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>693</case>
+                    <control>338</control>
+                </case_control>
+                <sex>
+                    <male>550</male>
+                    <female>481</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1031" nulls="0"/>
+                <enum count="477">Gleeson</enum>
+                <enum count="162">Pierce</enum>
+                <enum count="123">Sue White</enum>
+                <enum count="101">Manton</enum>
+                <enum count="75">Hildebrandt</enum>
+                <enum count="37">Bonnemann</enum>
+                <enum count="31">Laing</enum>
+                <enum count="25">INMR</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>384</male>
+                    <female>309</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="693" nulls="0"/>
+                <enum count="453">Gleeson</enum>
+                <enum count="78">Pierce</enum>
+                <enum count="43">Sue White</enum>
+                <enum count="36">Manton</enum>
+                <enum count="29">Bonnemann</enum>
+                <enum count="28">Hildebrandt</enum>
+                <enum count="13">Laing</enum>
+                <enum count="13">INMR</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>166</male>
+                    <female>172</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="338" nulls="0"/>
+                <enum count="84">Pierce</enum>
+                <enum count="80">Sue White</enum>
+                <enum count="65">Manton</enum>
+                <enum count="47">Hildebrandt</enum>
+                <enum count="24">Gleeson</enum>
+                <enum count="18">Laing</enum>
+                <enum count="12">INMR</enum>
+                <enum count="8">Bonnemann</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347498.v1.p1.c1" var_name="PI Info" calculated_type="string" reported_type="String">
+        <description>Principle Investigator contributing samples</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>143</case>
+                    <control>157</control>
+                </case_control>
+                <sex>
+                    <male>149</male>
+                    <female>151</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="300" nulls="0"/>
+                <enum count="162">Pierce</enum>
+                <enum count="101">Manton</enum>
+                <enum count="37">Bonnemann</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>72</male>
+                    <female>71</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="143" nulls="0"/>
+                <enum count="78">Pierce</enum>
+                <enum count="36">Manton</enum>
+                <enum count="29">Bonnemann</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>77</male>
+                    <female>80</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="157" nulls="0"/>
+                <enum count="84">Pierce</enum>
+                <enum count="65">Manton</enum>
+                <enum count="8">Bonnemann</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347498.v1.p1.c2" var_name="PI Info" calculated_type="string" reported_type="String">
+        <description>Principle Investigator contributing samples</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>28</case>
+                    <control>47</control>
+                </case_control>
+                <sex>
+                    <male>40</male>
+                    <female>35</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="75" nulls="0"/>
+                <enum count="75">Hildebrandt</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>17</male>
+                    <female>11</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="28" nulls="0"/>
+                <enum count="28">Hildebrandt</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>23</male>
+                    <female>24</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="47" nulls="0"/>
+                <enum count="47">Hildebrandt</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347498.v1.p1.c3" var_name="PI Info" calculated_type="string" reported_type="String">
+        <description>Principle Investigator contributing samples</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>509</case>
+                    <control>122</control>
+                </case_control>
+                <sex>
+                    <male>345</male>
+                    <female>286</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="631" nulls="0"/>
+                <enum count="477">Gleeson</enum>
+                <enum count="123">Sue White</enum>
+                <enum count="31">Laing</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>284</male>
+                    <female>225</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="509" nulls="0"/>
+                <enum count="453">Gleeson</enum>
+                <enum count="43">Sue White</enum>
+                <enum count="13">Laing</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>61</male>
+                    <female>61</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="122" nulls="0"/>
+                <enum count="80">Sue White</enum>
+                <enum count="24">Gleeson</enum>
+                <enum count="18">Laing</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00347498.v1.p1.c4" var_name="PI Info" calculated_type="string" reported_type="String">
+        <description>Principle Investigator contributing samples</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>13</case>
+                    <control>12</control>
+                </case_control>
+                <sex>
+                    <male>16</male>
+                    <female>9</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="25" nulls="0"/>
+                <enum count="25">INMR</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>11</male>
+                    <female>2</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="13" nulls="0"/>
+                <enum count="13">INMR</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>5</male>
+                    <female>7</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="12" nulls="0"/>
+                <enum count="12">INMR</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

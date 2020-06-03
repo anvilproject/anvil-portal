@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="TOPMed_WGS_MGH_AF_Subject" dataset_id="pht005261.v3"
+            study_name="NHLBI TOPMed - NHGRI CCDG: MGH Atrial Fibrillation Study" study_id="phs001062.v4"
+            participant_set="2" date_created="2020/05/07">
+    <description>The subject consent data table contains subject IDs, consent group information, subject aliases, and
+        affection status for atrial fibrillation (AF).
+    </description>
+    <variable id="phv00258881.v3.p2" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1163</case>
+                </case_control>
+                <sex>
+                    <male>793</male>
+                    <female>206</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1163" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258881.v3.p2.c1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>908</case>
+                </case_control>
+                <sex>
+                    <male>718</male>
+                    <female>190</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="908" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258881.v3.p2.c2" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>255</case>
+                </case_control>
+                <sex>
+                    <male>75</male>
+                    <female>16</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="255" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258882.v3.p2" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1163</case>
+                </case_control>
+                <sex>
+                    <male>793</male>
+                    <female>206</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1163" nulls="0" mean_count="581.5" sd="461.7" median_count="581.5" min_count="255"
+                      max_count="908"/>
+                <enum code="1" count="908">Health/Medical/Biomedical (IRB) (HMB-IRB)</enum>
+                <enum code="2" count="255">Disease-Specific (Atrial Fibrillation, IRB, RD) (DS-AF-IRB-RD)</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258882.v3.p2.c1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>908</case>
+                </case_control>
+                <sex>
+                    <male>718</male>
+                    <female>190</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="908" nulls="0" mean_count="908" median_count="908" min_count="908" max_count="908"/>
+                <enum code="1" count="908">Health/Medical/Biomedical (IRB) (HMB-IRB)</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258882.v3.p2.c2" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>255</case>
+                </case_control>
+                <sex>
+                    <male>75</male>
+                    <female>16</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="255" nulls="0" mean_count="255" median_count="255" min_count="255" max_count="255"/>
+                <enum code="2" count="255">Disease-Specific (Atrial Fibrillation, IRB, RD) (DS-AF-IRB-RD)</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309962.v2.p2" var_name="SUBJECT_SOURCE" calculated_type="string" reported_type="">
+        <description>Subject Source</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>11</case>
+                </case_control>
+                <sex>
+                    <male>8</male>
+                    <female>3</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="11" nulls="1152"/>
+                <enum count="11">dbGaP</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309962.v2.p2.c1" var_name="SUBJECT_SOURCE" calculated_type="string" reported_type="">
+        <description>Subject Source</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>11</case>
+                </case_control>
+                <sex>
+                    <male>8</male>
+                    <female>3</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="11" nulls="897"/>
+                <enum count="11">dbGaP</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309962.v2.p2.c2" var_name="SUBJECT_SOURCE" calculated_type="string" reported_type="">
+        <description>Subject Source</description>
+        <total>
+            <stats>
+                <stat n="0" nulls="255"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309963.v2.p2" var_name="SOURCE_SUBJECT_ID" calculated_type="integer" reported_type="">
+        <description>Source Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>11</case>
+                </case_control>
+                <sex>
+                    <male>8</male>
+                    <female>3</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="11" nulls="1152" median="" min="" max=""/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309963.v2.p2.c1" var_name="SOURCE_SUBJECT_ID" calculated_type="integer" reported_type="">
+        <description>Source Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>11</case>
+                </case_control>
+                <sex>
+                    <male>8</male>
+                    <female>3</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="11" nulls="897" median="" min="" max=""/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00309963.v2.p2.c2" var_name="SOURCE_SUBJECT_ID" calculated_type="integer" reported_type="">
+        <description>Source Subject ID</description>
+        <total>
+            <stats>
+                <stat n="0" nulls="255"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258883.v3.p2" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Case control status of the subject for atrial fibrillation (AF)</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>1163</case>
+                </case_control>
+                <sex>
+                    <male>793</male>
+                    <female>206</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="1163" nulls="0" mean_count="1163" median_count="1163" min_count="1163" max_count="1163"/>
+                <enum code="1" count="1163">Case</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258883.v3.p2.c1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Case control status of the subject for atrial fibrillation (AF)</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>908</case>
+                </case_control>
+                <sex>
+                    <male>718</male>
+                    <female>190</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="908" nulls="0" mean_count="908" median_count="908" min_count="908" max_count="908"/>
+                <enum code="1" count="908">Case</enum>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00258883.v3.p2.c2" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Case control status of the subject for atrial fibrillation (AF)</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>255</case>
+                </case_control>
+                <sex>
+                    <male>75</male>
+                    <female>16</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="255" nulls="0" mean_count="255" median_count="255" min_count="255" max_count="255"/>
+                <enum code="1" count="255">Case</enum>
+            </stats>
+        </total>
+    </variable>
+</data_table>

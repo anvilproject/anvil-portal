@@ -120,7 +120,7 @@ table {
     min-width: 452px;
 }
 
-/* Detail table - row cell - "dbGapId" */
+/* Detail table - row cell - "dbGapId" or "dbGapIdAccession" */
 .detail .row td[id^="dbGapId"] {
     min-width: 124px;
 }

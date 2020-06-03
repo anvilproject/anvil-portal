@@ -4,14 +4,10 @@ export const DashboardStudyStaticQuery = () => {
     const {allStudySchema} = useStaticQuery(
         graphql`
         query DashboardStudyStaticQuery {
-            allStudySchema(sort: {fields: dbGapId, order: ASC}) {
+            allStudySchema(sort: {fields: dbGapIdAccession, order: ASC}) {
               edges {
                 node {
-                  dbGapId
-                  consentGroups {
-                    longName
-                    shortName
-                  }
+                  dbGapIdAccession
                   diseases
                   name {
                     longName

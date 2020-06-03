@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GaPExchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./dbGaPEx2.1.5.xsd">
+
+    <MetaVariables>
+        <Submitter/>
+        <Method/>
+    </MetaVariables>
+    <MetaLinks/>
+
+    <Projects>
+        <Project/>
+    </Projects>
+
+    <Studies>
+
+        <Study source="dbGaP" accession="phs001598.v1.p1" parentStudy="phs001598.v1.p1" createDate="2018-05-17"
+               modDate="2020-03-17">
+
+            <Configuration>
+                <Data_Provider><![CDATA[
+		<table border="1">
+		<tr><th>Title</th><th>Name</th><th>Institute</th></tr>
+		<tr><td>Principal Investigator</td><td>Saman Nazarian</td><td>University of Pennsylvania, Philadelphia, PA, USA</td></tr>
+		<tr><td>Co-Investigators</td><td>Esra Gucuk Ipek</td><td>Johns Hopkins University, Baltimore, MD, USA</td></tr>
+		<tr><td>Co-Investigators</td><td>Jonathan Chrispin</td><td>Johns Hopkins University, Baltimore, MD, USA</td></tr>
+		<tr><td>Co-Investigators</td><td>Hugh Calkins</td><td>Johns Hopkins University, Baltimore, MD, USA</td></tr>
+		</table>
+	]]></Data_Provider>
+                <StudyNameEntrez>NHLBI TOPMed - NHGRI CCDG: JHU AFGen Study</StudyNameEntrez>
+                <StudyNameReportPage>NHLBI TOPMed - NHGRI CCDG: The Johns Hopkins University School of Medicine Atrial
+                    Fibrillation Genetics Study
+                </StudyNameReportPage>
+                <StudyTypes>
+                    <StudyType>Case Set</StudyType>
+                </StudyTypes>
+                <Description><![CDATA[
+<p>Atrial fibrillation (AF), the most common sustained cardiac arrhythmia, is the primary cause of many hospital admissions, and is associated with significant secondary morbidity by increasing the risk of stroke, heart failure, and all-cause mortality. The incidence of AF is on the rise, and it is projected that by the year 2050 more than 10 million patients will be affected by AF in the United States alone. Anti-arrhythmic medications have limited success in maintaining sinus rhythm, are associated with side effects, and appear ineffective at reducing mortality compared to a strategy of rate control and anticoagulation. Given the significant morbidity associated with this common arrhythmia, surgical and catheter ablation techniques have been developed to treat AF. However, despite the incorporation of various strategies for ablation, long-term recurrence rates of AF remain higher than 25 percent after ablation. Current techniques for catheter ablation of AF include pulmonary vein isolation and complex fractionated atrial electrogram (CFAE) ablation. However, the contribution of each strategy to long-term procedural success and the relative importance of each strategy for different patients remain unknown. Recent advances in cardiac imaging have allowed detailed analysis of left atrial myocardial anatomy. Parallel advances in molecular genetics have identified several candidate genes involved in familial and non-familial AF. However, the pathophysiology of AF generation and maintenance, and the potential contribution of such genetic or anatomic substrates for patient selection, and for target identification during catheter ablation have not yet been examined. Advances in molecular genetics and imaging, coupled with techniques for endocardial and epicardial mapping in the electrophysiology laboratory present an opportunity to significantly improve our understanding of (1) The relation of paroxysmal versus persistent AF with (a) structural left atrial changes (left/right atrial scar, wall thinning, pulmonary vein anomalies, and coronary sinus dilation) and with (b) candidate genetic variants. (2) The relation of candidate genetic variants with (a) structural left atrial changes and with (b) electrophysiologic properties (atrial effective refractory period (AERP) inhomogeneity, voltage abnormalities, trigger burden and location, C FAE extent and location), (3) The relation of structural left atrial changes with (a) CFAE location as targets for catheter ablation and with (b) reversible conduction block/myocardial injury after pulmonary vein isolation, and (4) Individualized endocardial targets for AF ablation based on candidate genes and anatomic substrates. The proposed study will improve our understanding of the underlying pathophysiology of AF, and may improve current techniques for treatment of this important arrhythmia.</p>]]>
+                </Description>
+                <StudyInEx><![CDATA[
+<p>We included patients with highly symptomatic drug refractory AF referred for catheter ablation that consented to study enrollment.</p>]]>
+                </StudyInEx>
+                <StudyProjects>
+                    <Project/>
+                </StudyProjects>
+                <Diseases>
+                    <Disease vocab_source="MESH" vocab_term="Atrial Fibrillation"/>
+                </Diseases>
+                <Attributions>
+                    <Header title="Principal Investigator">
+                        <AttName>Saman Nazarian</AttName>
+                        <Institution>University of Pennsylvania, Philadelphia, PA, USA</Institution>
+                    </Header>
+                    <Header title="Co-Investigators">
+                        <AttName>Esra Gucuk Ipek</AttName>
+                        <Institution>Johns Hopkins University, Baltimore, MD, USA</Institution>
+                    </Header>
+                    <Header title="Co-Investigators">
+                        <AttName>Jonathan Chrispin</AttName>
+                        <Institution>Johns Hopkins University, Baltimore, MD, USA</Institution>
+                    </Header>
+                    <Header title="Co-Investigators">
+                        <AttName>Hugh Calkins</AttName>
+                        <Institution>Johns Hopkins University, Baltimore, MD, USA</Institution>
+                    </Header>
+                </Attributions>
+                <DisplayPublicSummary>yes</DisplayPublicSummary>
+                <ConsentGroups>
+                    <ConsentGroup groupNum="1" shortName="HMB-NPU-MDS" longName="Health/Medical/Biomedical (NPU, MDS)"/>
+                </ConsentGroups>
+            </Configuration>
+
+            <AuthorizedAccess>
+                <DacInfo ssDacId="0">
+                    <DacName>NHLBI</DacName>
+                    <DacFullName>National Heart, Lung, and Blood Institute DAC</DacFullName>
+                    <DacEmail>0</DacEmail>
+                    <DacPhone/>
+                    <DacUrl/>
+                </DacInfo>
+                <Policy Policy_ID="phs001598.v1.p1_policy" ref_ssDacId="0">
+                    <DisplayResearchStatement>yes</DisplayResearchStatement>
+                    <DisplayPublicSummary>yes</DisplayPublicSummary>
+                    <EmbargoLength>0</EmbargoLength>
+                    <YearsUntilRenewal>1</YearsUntilRenewal>
+                    <WeeksCancelRequest>8</WeeksCancelRequest>
+                    <PdfSupplementReqired>no</PdfSupplementReqired>
+                    <AcknowledgementText>
+                        <para>
+                            http://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=DUC&amp;view_pdf&amp;stacc=phs001598.v1.p1
+                        </para>
+                    </AcknowledgementText>
+                    <DocumentSet>
+                        <DataUseCertificate Label="Data Use Certificate"
+                                            FilePath="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=DUC&amp;view_pdf&amp;stacc=phs001598.v1.p1"
+                                            FileName=""/>
+                    </DocumentSet>
+                </Policy>
+                <ConsentGroups>
+                    <ParticipantSet groupNum-REF="1">
+                        <ConsentName>Health/Medical/Biomedical (NPU, MDS)</ConsentName>
+                        <ConsentAbbrev>HMB-NPU-MDS</ConsentAbbrev>
+                        <UseLimitation>Use of this data is limited to health/medical/biomedical purposes, does not
+                            include the study of population origins or ancestry.
+                            Use of the data is limited to not-for-profit organizations.
+                            Use of the data includes methods development research (e.g., development of software or
+                            algorithms).
+                        </UseLimitation>
+                        <IrbRequired>No</IrbRequired>
+                    </ParticipantSet>
+                </ConsentGroups>
+            </AuthorizedAccess>
+            <Documents>
+                <Document phd="phd008024.1" type="protocol" createDate="2019-09-25" modDate="2020-03-17"
+                          urlToXml="http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/GetDocumentXml.cgi?document_id=phd008024.1"
+                          urlToHtml="http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/document.cgi?study_id=phs001598.v1.p1&amp;phd=8024">
+                    <OrigName>TOPMed_WGS_Methods_Freeze8.docx</OrigName>
+                    <DisplayName>TOPMed Whole Genome Sequencing Methods: Freeze 8</DisplayName>
+                    <Description>TOPMed Whole Genome Sequencing Methods: Freeze 8</Description>
+                    <displayStatus>public</displayStatus>
+                    <xmlStatus>public</xmlStatus>
+                </Document>
+            </Documents>
+
+
+        </Study>
+
+    </Studies>
+
+</GaPExchange>

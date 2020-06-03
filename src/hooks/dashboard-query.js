@@ -14,6 +14,7 @@ export const DashboardStaticQuery = () => {
                         size
                         type
                       }
+                      dbGAP_acession
                       dbGAP_study_id
                       nodes {
                         count

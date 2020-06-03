@@ -42,6 +42,7 @@ function buildDashboardDetail(data) {
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
             dbGapId: project.dbGAP_study_id,
+            dbGapIdAccession: project.dbGAP_acession,
             program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
