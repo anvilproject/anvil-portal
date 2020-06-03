@@ -58,7 +58,7 @@ async function onCreateNode({node, actions, loadNodeContent}) {
             return {
                 consents: consentsByEnum,
                 consentsId: consentsId,
-                consentsStat: consentsStat,
+                consentsStat: Number(consentsStat),
             }
         }
     }

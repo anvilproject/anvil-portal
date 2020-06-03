@@ -15,14 +15,16 @@ import DataTable from "../data-table/data-table";
 import compStyles from "./data-study-snapshot-table.module.css";
 import tableStyles from  "../data-table/data-table.module.css";
 
+let classNames = require("classnames");
+
 class DataStudySnapshotTable extends React.Component {
 
     render() {
-        const {subTitle, tableHeaders, tableRows, title} = this.props;
+        const {countError, subTitle, tableHeaders, tableRows, title} = this.props;
         return (
             <div className={compStyles.summary}>
                 <div className={compStyles.title}>{title}</div>
-                {subTitle ? <div className={compStyles.subTitle}>{subTitle}</div> : null}
+                {subTitle ? <div className={classNames({[compStyles.error]: countError}, compStyles.subTitle)}>{subTitle}</div> : null}
                 <DataTable className={tableStyles.study} tableHeaders={tableHeaders} tableRows={tableRows}/>
             </div>
         );

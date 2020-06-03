@@ -18,10 +18,11 @@ class DataWorkspaces extends React.Component {
 
     render() {
         const {count, subjectsTotal, workspaces} = this.props;
+        const countError = subjectsTotal !== count;
         const subTitle = `Subjects: ${subjectsTotal} of ${count}`;
         const title = "Terra Workspaces";
         return (
-            <DataStudySnapshotTable subTitle={subTitle} tableHeaders={TABLE_HEADERS} tableRows={workspaces} title={title}/>
+            <DataStudySnapshotTable countError={countError} subTitle={subTitle} tableHeaders={TABLE_HEADERS} tableRows={workspaces} title={title}/>
         );
     }
 }
