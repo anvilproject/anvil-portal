@@ -1,7 +1,7 @@
 ---
 title: "Discover AnVIL Virtually at the Online, Global BCC 2020 "
 date: "2020-05-21"
-description: "The 2020 Bioinformatics Community Conference  will now be virtual. AnVIL team members will join and present several virtual training workshops covering how to use Dockstore, Terra, R and Bioconductor to execute reproducale workflows in the cloud."
+description: "The 2020 Bioinformatics Community Conference  will now be virtual. AnVIL team members will join and present several virtual training workshops covering how to use Dockstore, Terra, R and Bioconductor to execute reproducible workflows in the cloud."
 featured: true
 author: "AnVIL"
 ---
