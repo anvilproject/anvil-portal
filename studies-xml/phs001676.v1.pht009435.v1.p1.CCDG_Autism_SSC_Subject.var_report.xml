@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="CCDG_Autism_SSC_Subject" dataset_id="pht009435.v1"
+            study_name="CCDG- Neuropsychiatric: Autism - Simons Simplex Collection (SSC)" study_id="phs001676.v1"
+            participant_set="1" date_created="2020/04/24">
+    <description>The subject consent file includes subject IDs, consent information, subject aliases, and case control
+        status of the subject for Autism.
+    </description>
+    <variable id="phv00417933.v1.p1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>2418</case>
+                    <control>6783</control>
+                </case_control>
+                <sex>
+                    <male>5431</male>
+                    <female>3770</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="9201" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>2095</male>
+                    <female>323</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2418" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>3336</male>
+                    <female>3447</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="6783" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417934.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>2418</case>
+                    <control>6783</control>
+                </case_control>
+                <sex>
+                    <male>5431</male>
+                    <female>3770</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="9201" nulls="0" mean_count="9201" median_count="9201" min_count="9201" max_count="9201"/>
+                <enum code="2" count="9201">Disease-Specific (Autism or other Neurodevelopmental Disease, IRB)
+                    (DS-AONDD-IRB)
+                </enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>2095</male>
+                    <female>323</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2418" nulls="0" mean_count="2418" median_count="2418" min_count="2418" max_count="2418"/>
+                <enum code="2" count="2418">Disease-Specific (Autism or other Neurodevelopmental Disease, IRB)
+                    (DS-AONDD-IRB)
+                </enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>3336</male>
+                    <female>3447</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="6783" nulls="0" mean_count="6783" median_count="6783" min_count="6783" max_count="6783"/>
+                <enum code="2" count="6783">Disease-Specific (Autism or other Neurodevelopmental Disease, IRB)
+                    (DS-AONDD-IRB)
+                </enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417935.v1.p1" var_name="SUBJECT_SOURCE" calculated_type="string" reported_type="string">
+        <description>Source repository where subjects originate</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>2418</case>
+                    <control>6783</control>
+                </case_control>
+                <sex>
+                    <male>5431</male>
+                    <female>3770</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="9201" nulls="0"/>
+                <enum count="9201">RUCDR Infinite Biologics</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>2095</male>
+                    <female>323</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2418" nulls="0"/>
+                <enum count="2418">RUCDR Infinite Biologics</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>3336</male>
+                    <female>3447</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="6783" nulls="0"/>
+                <enum count="6783">RUCDR Infinite Biologics</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417936.v1.p1" var_name="SOURCE_SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID used in the Source Repository</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>2418</case>
+                    <control>6783</control>
+                </case_control>
+                <sex>
+                    <male>5431</male>
+                    <female>3770</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="9201" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>2095</male>
+                    <female>323</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2418" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>3336</male>
+                    <female>3447</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="6783" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417937.v1.p1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Case control status of the subject for Autism</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>2418</case>
+                    <control>6783</control>
+                </case_control>
+                <sex>
+                    <male>5431</male>
+                    <female>3770</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="9201" nulls="0" mean_count="4601" sd="3087" median_count="4601" min_count="2418"
+                      max_count="6783"/>
+                <enum code="1" count="6783">Control</enum>
+                <enum code="2" count="2418">Case</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>2095</male>
+                    <female>323</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="2418" nulls="0" mean_count="2418" median_count="2418" min_count="2418" max_count="2418"/>
+                <enum code="2" count="2418">Case</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>3336</male>
+                    <female>3447</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="6783" nulls="0" mean_count="6783" median_count="6783" min_count="6783" max_count="6783"/>
+                <enum code="1" count="6783">Control</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

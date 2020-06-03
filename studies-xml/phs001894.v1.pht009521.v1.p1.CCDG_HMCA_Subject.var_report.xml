@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="CCDG_HMCA_Subject" dataset_id="pht009521.v1"
+            study_name="CCDG-Neuropsychiatric: Autism- Genetics of Human Developmental Brain Disorders"
+            study_id="phs001894.v1" participant_set="1" date_created="2020/04/15">
+    <description>This subject consent data table contains subject IDs and consent group information.</description>
+    <variable id="phv00420177.v1.p1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>205</case>
+                    <control>519</control>
+                </case_control>
+                <sex>
+                    <male>419</male>
+                    <female>305</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="724" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>157</male>
+                    <female>48</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="205" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>262</male>
+                    <female>257</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="519" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00420178.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>205</case>
+                    <control>519</control>
+                </case_control>
+                <sex>
+                    <male>419</male>
+                    <female>305</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="724" nulls="0" mean_count="724" median_count="724" min_count="724" max_count="724"/>
+                <enum code="2" count="724">Disease-Specific (Epilepsy and Cognition, PUB, GSO) (DS-EAC-PUB-GSO)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>157</male>
+                    <female>48</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="205" nulls="0" mean_count="205" median_count="205" min_count="205" max_count="205"/>
+                <enum code="2" count="205">Disease-Specific (Epilepsy and Cognition, PUB, GSO) (DS-EAC-PUB-GSO)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>262</male>
+                    <female>257</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="519" nulls="0" mean_count="519" median_count="519" min_count="519" max_count="519"/>
+                <enum code="2" count="519">Disease-Specific (Epilepsy and Cognition, PUB, GSO) (DS-EAC-PUB-GSO)</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

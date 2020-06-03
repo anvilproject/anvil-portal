@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GaPExchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./dbGaPEx2.1.5.xsd">
+
+    <MetaVariables>
+        <Submitter/>
+        <Method/>
+    </MetaVariables>
+    <MetaLinks/>
+
+    <Projects>
+        <Project/>
+    </Projects>
+
+    <Studies>
+
+        <Study source="dbGaP" accession="phs001502.v1.p1" parentStudy="phs001502.v1.p1" createDate="2017-12-11"
+               modDate="2017-12-11">
+
+            <Configuration>
+                <Data_Provider><![CDATA[
+		<table border="1">
+		<tr><th>Title</th><th>Name</th><th>Institute</th></tr>
+		<tr><td>Principal Investigator</td><td>Ira M. Hall, PhD</td><td>McDonnell Genome Institute, Washington University School of Medicine, St. Louis, MO, USA</td></tr>
+		<tr><td>Co-Principal Investigators</td><td>Nathan O. Stitziel, MD, PhD</td><td>McDonnell Genome Institute, Washington University School of Medicine, St. Louis, MO, USA</td></tr>
+		<tr><td>Co-Principal Investigators</td><td>Susan K Dutcher, PhD</td><td>McDonnell Genome Institute, Washington University School of Medicine, St. Louis, MO, USA</td></tr>
+		<tr><td>Sample Provider</td><td>Daniel J. Rader, MD</td><td>University of Pennsylvania, Philadelphia, PA, USA</td></tr>
+		<tr><td>Funding Source</td><td>5UM1HG008853</td><td>National Institutes of Health, Bethesda, MD, USA</td></tr>
+		</table>
+	]]></Data_Provider>
+                <StudyNameEntrez>CCDG-Cardiovascular: University of Pennsylvania Cohort</StudyNameEntrez>
+                <StudyNameReportPage>Center for Common Disease Genomics (CCDG)-Cardiovascular: University of
+                    Pennsylvania Cohort
+                </StudyNameReportPage>
+                <StudyTypes>
+                    <StudyType>Case-Control</StudyType>
+                </StudyTypes>
+                <Description><![CDATA[
+<p>The National Human Genome Research Institute (NHGRI) has funded the Centers for Common Disease Genomics (CCDG), a collaborative large-scale genome sequencing effort to comprehensively identify rare risk and protective variants contributing to multiple common disease phenotypes and to better understand the general principles of genomic architecture underlying common, complex inherited diseases.</p> <p>This study of early onset cardiovascular disease and metabolic risk contains data derived from the whole genome sequence data of individuals participating in Penn Medicine&#39;s BioBank. </p>]]>
+                </Description>
+                <StudyProjects>
+                    <Project/>
+                </StudyProjects>
+                <Diseases>
+                    <Disease vocab_source="MESH" vocab_term="Cardiovascular Diseases"/>
+                </Diseases>
+                <Attributions>
+                    <Header title="Principal Investigator">
+                        <AttName>Ira M. Hall, PhD</AttName>
+                        <Institution>McDonnell Genome Institute, Washington University School of Medicine, St. Louis,
+                            MO, USA
+                        </Institution>
+                    </Header>
+                    <Header title="Co-Principal Investigators">
+                        <AttName>Nathan O. Stitziel, MD, PhD</AttName>
+                        <Institution>McDonnell Genome Institute, Washington University School of Medicine, St. Louis,
+                            MO, USA
+                        </Institution>
+                    </Header>
+                    <Header title="Co-Principal Investigators">
+                        <AttName>Susan K Dutcher, PhD</AttName>
+                        <Institution>McDonnell Genome Institute, Washington University School of Medicine, St. Louis,
+                            MO, USA
+                        </Institution>
+                    </Header>
+                    <Header title="Sample Provider">
+                        <AttName>Daniel J. Rader, MD</AttName>
+                        <Institution>University of Pennsylvania, Philadelphia, PA, USA</Institution>
+                    </Header>
+                    <Header title="Funding Source">
+                        <AttName>5UM1HG008853</AttName>
+                        <Institution>National Institutes of Health, Bethesda, MD, USA</Institution>
+                    </Header>
+                </Attributions>
+                <DisplayPublicSummary>yes</DisplayPublicSummary>
+                <ConsentGroups>
+                    <ConsentGroup groupNum="1" shortName="HMB-IRB-PUB" longName="Health/Medical/Biomedical (IRB, PUB)"/>
+                </ConsentGroups>
+            </Configuration>
+
+
+        </Study>
+
+    </Studies>
+
+</GaPExchange>

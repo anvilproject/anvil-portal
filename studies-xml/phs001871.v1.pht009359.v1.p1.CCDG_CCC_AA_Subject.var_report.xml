@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="CCDG_CCC_AA_Subject" dataset_id="pht009359.v1"
+            study_name="Center for Common Disease Genomics (CCDG)-Cardiovascular:Cleveland Clinic"
+            study_id="phs001871.v1" participant_set="1" date_created="2019/08/01">
+    <description/>
+    <variable id="phv00417373.v1.p1" var_name="SUBJID" calculated_type="string" reported_type="string">
+        <description>De-identified subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>185</case>
+                    <control>163</control>
+                </case_control>
+                <sex>
+                    <male>137</male>
+                    <female>211</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="348" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>79</male>
+                    <female>106</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="185" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>58</male>
+                    <female>105</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="163" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417374.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded">
+        <description>Allowable research use</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>185</case>
+                    <control>163</control>
+                </case_control>
+                <sex>
+                    <male>137</male>
+                    <female>211</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="348" nulls="0" mean_count="348" median_count="348" min_count="348" max_count="348"/>
+                <enum code="1" count="348">Disease-Specific (Coronary Artery Disease, IRB) (DS-CAD-IRB)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>79</male>
+                    <female>106</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="185" nulls="0" mean_count="185" median_count="185" min_count="185" max_count="185"/>
+                <enum code="1" count="185">Disease-Specific (Coronary Artery Disease, IRB) (DS-CAD-IRB)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>58</male>
+                    <female>105</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="163" nulls="0" mean_count="163" median_count="163" min_count="163" max_count="163"/>
+                <enum code="1" count="163">Disease-Specific (Coronary Artery Disease, IRB) (DS-CAD-IRB)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00417375.v1.p1" var_name="AFFECTION_STATUS" calculated_type="string" reported_type="string">
+        <description>Has subject been diagnosed with coronary artery disease</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>185</case>
+                    <control>163</control>
+                </case_control>
+                <sex>
+                    <male>137</male>
+                    <female>211</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="348" nulls="0"/>
+                <enum count="185">Case</enum>
+                <enum count="163">Control</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>79</male>
+                    <female>106</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="185" nulls="0"/>
+                <enum count="185">Case</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>58</male>
+                    <female>105</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="163" nulls="0"/>
+                <enum count="163">Control</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

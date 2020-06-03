@@ -114,6 +114,8 @@ export function switchDisplayColumnName(columnName) {
             return "Files";
         case "dbGapId":
             return "dbGaP Id";
+        case "dbGapIdAccession":
+            return "dbGap Id";
         case "program":
             return "Consortium";
         case "projectId":
@@ -207,6 +209,8 @@ function switchColumnUrl(columnName, summary, value) {
 
     switch (columnName) {
         case !isGapIdBlacklist(value) && "dbGapId":
+            return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
+        case !isGapIdBlacklist(value) && "dbGapIdAccession":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
             return switchProgramUrl(value);

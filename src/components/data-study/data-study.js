@@ -20,8 +20,8 @@ class DataStudy extends React.Component {
 
     render() {
         const {study} = this.props,
-            {access, consortia, count, dbGapId, diseases, studyName} = study;
-        const linkedTo = DashboardTableService.getCellUrl(dbGapId, "dbGapId", false);
+            {access, consortia, count, dbGapIdAccession, diseases, studyName} = study;
+        const linkedTo = DashboardTableService.getCellUrl(dbGapIdAccession, "dbGapIdAccession", false);
         return (
             <div className={compStyles.study}>
                 <div className={classNames(compStyles.name)}>{studyName}</div>
@@ -29,9 +29,9 @@ class DataStudy extends React.Component {
                     <span className={compStyles.label}>Consortium:</span><span>{consortia}</span>
                     <span className={compStyles.label}>dbGaP Id:</span>
                     <ClickHandler className={compStyles.link}
-                                  clickAction={() => RedirectService.redirect(linkedTo, dbGapId)}
-                                  label={dbGapId}
-                                  tag={"span"}>{dbGapId}</ClickHandler>
+                                  clickAction={() => RedirectService.redirect(linkedTo, dbGapIdAccession)}
+                                  label={dbGapIdAccession}
+                                  tag={"span"}>{dbGapIdAccession}</ClickHandler>
                     <span className={compStyles.label}>Access:</span><span>{access}</span>
                     <span className={compStyles.label}>Subjects:</span><span>{count}</span>
                 </div>

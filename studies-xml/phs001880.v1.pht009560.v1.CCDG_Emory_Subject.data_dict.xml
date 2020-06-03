@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./datadict_v2.xsl"?>
+<data_table id="pht009560.v1" study_id="phs001880.v1" participant_set="1" date_created="Mon Oct 28 12:49:04 2019">
+    <description>Subject ID, consent group, and affection status of participants with or without cardiovascular disease
+        and involved in the "Center for Common Disease Genomics (CCDG) - Cardiovascular: Emory Cohort" project.
+    </description>
+    <variable id="phv00420385.v1">
+        <name>SUBJECT_ID</name>
+        <description>De-identified subject ID</description>
+        <type>string</type>
+    </variable>
+    <variable id="phv00420386.v1">
+        <name>CONSENT</name>
+        <description>Allowable research use</description>
+        <type>encoded</type>
+        <value code="1">General Research Use (NPU) (GRU-NPU)</value>
+    </variable>
+    <variable id="phv00420387.v1">
+        <name>AFFECTION_STATUS</name>
+        <description>Is subject a case or control for coronary artery disease [case=Subjects with coronary artery
+            disease; control=Subjects without coronary artery disease]
+        </description>
+        <type>string</type>
+        <value code="Case">Subjects with coronary artery disease</value>
+        <value code="Control">Subjects without coronary artery disease</value>
+    </variable>
+</data_table>

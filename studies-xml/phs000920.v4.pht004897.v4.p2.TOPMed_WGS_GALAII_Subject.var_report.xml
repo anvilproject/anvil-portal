@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="TOPMed_WGS_GALAII_Subject" dataset_id="pht004897.v4"
+            study_name="NHLBI TOPMed - NHGRI CCDG: Genes-Environments and Admixture in Latino Asthmatics (GALA II)"
+            study_id="phs000920.v4" participant_set="2" date_created="2020/01/13">
+    <description>The subject consent data table contains subject IDs and consent group information.</description>
+    <variable id="phv00252337.v4.p2" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <sex>
+                    <male>1985</male>
+                    <female>1992</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="4941" nulls="0"/>
+            </stats>
+        </total>
+    </variable>
+    <variable id="phv00252338.v4.p2" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <sex>
+                    <male>1985</male>
+                    <female>1992</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="4941" nulls="0" mean_count="4941" median_count="4941" min_count="4941" max_count="4941"/>
+                <enum code="2" count="4941">Disease-Specific (Lung Diseases, IRB, COL) (DS-LD-IRB-COL)</enum>
+            </stats>
+        </total>
+    </variable>
+</data_table>

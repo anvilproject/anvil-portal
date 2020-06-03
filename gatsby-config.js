@@ -10,7 +10,7 @@ let contentPath = `./content`;
 let yamlPath = `./content`;
 let collectionPath = `./content/card-collection/`;
 let roadMapPath = `./content/roadmap/`;
-let dbGapXml = `./db-gap-xml`;
+let studiesXml = `./studies-xml`;
 
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
@@ -90,12 +90,12 @@ module.exports = {
                 exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
             }
         },
-        `gatsby-transformer-db-gap`,
+        `gatsby-transformer-studies`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: 'db-gap-xml',
-                path: dbGapXml
+                name: 'studies-xml',
+                path: studiesXml
             },
         },
         `gatsby-transformer-json`,

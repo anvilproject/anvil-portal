@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="varreports_v3.xsl"?>
+<data_table name="CCDG_TASC_Subject" dataset_id="pht009162.v1"
+            study_name="CCDG- Neuropsychiatric: Autism- The Autism Simplex Collection (TASC)" study_id="phs001741.v1"
+            participant_set="1" date_created="2020/01/07">
+    <description>The subject consent file includes subject IDs, consent information, subject aliases, and case control
+        status of the subject for Autism.
+    </description>
+    <variable id="phv00409144.v1.p1" var_name="SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>307</case>
+                    <control>598</control>
+                </case_control>
+                <sex>
+                    <male>573</male>
+                    <female>332</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="905" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>273</male>
+                    <female>34</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="307" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>300</male>
+                    <female>298</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="598" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00409145.v1.p1" var_name="CONSENT" calculated_type="enum_integer" reported_type="encoded value">
+        <description>Consent group as determined by DAC</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>307</case>
+                    <control>598</control>
+                </case_control>
+                <sex>
+                    <male>573</male>
+                    <female>332</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="905" nulls="0" mean_count="905" median_count="905" min_count="905" max_count="905"/>
+                <enum code="2" count="905">Disease-Specific (Autism Spectrum Disorder, IRB) (DS-ASD-IRB)</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>273</male>
+                    <female>34</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="307" nulls="0" mean_count="307" median_count="307" min_count="307" max_count="307"/>
+                <enum code="2" count="307">Disease-Specific (Autism Spectrum Disorder, IRB) (DS-ASD-IRB)</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>300</male>
+                    <female>298</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="598" nulls="0" mean_count="598" median_count="598" min_count="598" max_count="598"/>
+                <enum code="2" count="598">Disease-Specific (Autism Spectrum Disorder, IRB) (DS-ASD-IRB)</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00409146.v1.p1" var_name="SUBJECT_SOURCE" calculated_type="string" reported_type="string">
+        <description>Source repository where subjects originate</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>307</case>
+                    <control>598</control>
+                </case_control>
+                <sex>
+                    <male>573</male>
+                    <female>332</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="905" nulls="0"/>
+                <enum count="688">Autism Sequencing Consortium</enum>
+                <enum count="217">University of Washington</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>273</male>
+                    <female>34</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="307" nulls="0"/>
+                <enum count="218">Autism Sequencing Consortium</enum>
+                <enum count="89">University of Washington</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>300</male>
+                    <female>298</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="598" nulls="0"/>
+                <enum count="470">Autism Sequencing Consortium</enum>
+                <enum count="128">University of Washington</enum>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00409147.v1.p1" var_name="SOURCE_SUBJECT_ID" calculated_type="string" reported_type="string">
+        <description>Subject ID used in the Source Repository</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>307</case>
+                    <control>598</control>
+                </case_control>
+                <sex>
+                    <male>573</male>
+                    <female>332</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="905" nulls="0"/>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>273</male>
+                    <female>34</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="307" nulls="0"/>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>300</male>
+                    <female>298</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="598" nulls="0"/>
+            </stats>
+        </controls>
+    </variable>
+    <variable id="phv00409148.v1.p1" var_name="AFFECTION_STATUS" calculated_type="enum_integer"
+              reported_type="encoded value">
+        <description>Case control status of the subject for Autism</description>
+        <total>
+            <subject_profile>
+                <case_control>
+                    <case>307</case>
+                    <control>598</control>
+                </case_control>
+                <sex>
+                    <male>573</male>
+                    <female>332</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="905" nulls="0" mean_count="452.5" sd="205.8" median_count="452.5" min_count="307"
+                      max_count="598"/>
+                <enum code="1" count="598">Control</enum>
+                <enum code="2" count="307">Case</enum>
+            </stats>
+        </total>
+        <cases>
+            <subject_profile>
+                <sex>
+                    <male>273</male>
+                    <female>34</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="307" nulls="0" mean_count="307" median_count="307" min_count="307" max_count="307"/>
+                <enum code="2" count="307">Case</enum>
+            </stats>
+        </cases>
+        <controls>
+            <subject_profile>
+                <sex>
+                    <male>300</male>
+                    <female>298</female>
+                </sex>
+            </subject_profile>
+            <stats>
+                <stat n="598" nulls="0" mean_count="598" median_count="598" min_count="598" max_count="598"/>
+                <enum code="1" count="598">Control</enum>
+            </stats>
+        </controls>
+    </variable>
+</data_table>

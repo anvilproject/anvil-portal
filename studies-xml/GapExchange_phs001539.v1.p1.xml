@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GaPExchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./dbGaPEx2.1.5.xsd">
+
+    <MetaVariables>
+        <Submitter/>
+        <Method/>
+    </MetaVariables>
+    <MetaLinks/>
+
+    <Projects>
+        <Project/>
+    </Projects>
+
+    <Studies>
+
+        <Study source="dbGaP" accession="phs001539.v1.p1" parentStudy="phs001539.v1.p1" createDate="2018-02-08"
+               modDate="2018-08-23">
+
+            <Configuration>
+                <Data_Provider><![CDATA[
+		<table border="1">
+		<tr><th>Title</th><th>Name</th><th>Institute</th></tr>
+		<tr><td>Principal Investigators</td><td>Kenneth B. Margulies, MD</td><td>Perelman School of Medicine at the University of Pennsylvania, Philadelphia, PA, USA</td></tr>
+		<tr><td>Principal Investigators</td><td>Thomas P. Cappola, MD, ScM</td><td>Perelman School of Medicine at the University of Pennsylvania, Philadelphia, PA, USA</td></tr>
+		<tr><td>Funding Source</td><td>1R01HL105993</td><td>National Heart, Lung, and Blood Institute, National Institutes of Health, Bethesda, MD, USA</td></tr>
+		</table>
+	]]></Data_Provider>
+                <StudyNameEntrez>MAGNet Study</StudyNameEntrez>
+                <StudyNameReportPage>Myocardial Applied Genomics Network (MAGNet) Study</StudyNameReportPage>
+                <StudyTypes>
+                    <StudyType>Case Set</StudyType>
+                </StudyTypes>
+                <Description><![CDATA[
+<p>The MAGNet repository includes samples from normal donors at the time of cardiac transplantation. The study protocol was approved by the Institutional Review Board at the University of Pennsylvania, and all patients provided written informed consent to participate.</p>]]>
+                </Description>
+                <StudyInEx><![CDATA[
+<p>The samples used for the current analyses were from normal heart transplant donors. </p>]]>
+                </StudyInEx>
+                <StudyProjects>
+                    <Project/>
+                </StudyProjects>
+                <Publications>
+                    <Publication>
+                        <Pubmed pmid="24177373"/>
+                    </Publication>
+                    <Publication>
+                        <Pubmed pmid="24952745"/>
+                    </Publication>
+                </Publications>
+                <Diseases>
+                    <Disease vocab_source="MESH" vocab_term="Atrial Fibrillation"/>
+                </Diseases>
+                <Attributions>
+                    <Header title="Principal Investigators">
+                        <AttName>Kenneth B. Margulies, MD</AttName>
+                        <Institution>Perelman School of Medicine at the University of Pennsylvania, Philadelphia, PA,
+                            USA
+                        </Institution>
+                    </Header>
+                    <Header title="Principal Investigators">
+                        <AttName>Thomas P. Cappola, MD, ScM</AttName>
+                        <Institution>Perelman School of Medicine at the University of Pennsylvania, Philadelphia, PA,
+                            USA
+                        </Institution>
+                    </Header>
+                    <Header title="Funding Source">
+                        <AttName>1R01HL105993</AttName>
+                        <Institution>National Heart, Lung, and Blood Institute, National Institutes of Health, Bethesda,
+                            MD, USA
+                        </Institution>
+                    </Header>
+                </Attributions>
+                <DisplayPublicSummary>yes</DisplayPublicSummary>
+                <StudyURLs>
+                    <Url name="MAGNet" url="http://www.med.upenn.edu/magnet/"/>
+                </StudyURLs>
+                <StudyHistory><![CDATA[
+<p>MAGNet is a collaborative group of investigators who use genomic approaches to understand human myocardial disease. Current projects include human myocardial expression, quantitative trait mapping, and systems genetics.</p>]]>
+                </StudyHistory>
+                <ConsentGroups>
+                    <ConsentGroup groupNum="1" shortName="HMB-MDS" longName="Health/Medical/Biomedical (MDS)"/>
+                </ConsentGroups>
+            </Configuration>
+
+
+        </Study>
+
+    </Studies>
+
+</GaPExchange>
