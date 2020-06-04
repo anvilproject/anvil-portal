@@ -35,6 +35,27 @@ async function onCreateNode({node, actions, loadNodeContent}) {
         return packagedNode;
     }
 
+    function buildStudyConsentGroups(consents) {
+
+        /* Consent groups, normalize. */
+        const consentsNormalized = normalizeNodeData(consents);
+
+        /* Build the consent groups. */
+        if ( consentsNormalized ) {
+
+            return consentsNormalized.map(consent => {
+
+                const {groupNum, longName, shortName} = consent;
+
+                return {
+                    groupNum: Number(groupNum),
+                    longName: longName,
+                    shortName: shortName
+                }
+            });
+        }
+    }
+
     function buildStudyDiseases(diseases) {
 
         if ( diseases ) {
@@ -50,6 +71,7 @@ async function onCreateNode({node, actions, loadNodeContent}) {
             const consentsByEnum = consents.map(consent => {
 
                 return {
+                    consentCode: Number(consent.code),
                     consentName: consent.value,
                     consentStat: Number(consent.count)
                 }
@@ -182,7 +204,8 @@ async function onCreateNode({node, actions, loadNodeContent}) {
                 {Studies} = GaPExchange || {},
                 {Study} = Studies || {},
                 {Configuration} = Study || {},
-                {Diseases, StudyNameEntrez, StudyNameReportPage} = Configuration || {},
+                {ConsentGroups, Diseases, StudyNameEntrez, StudyNameReportPage} = Configuration || {},
+                {ConsentGroup} = ConsentGroups || {},
                 {Disease} = Diseases || {};
 
             /* Attributes - accession. */
@@ -192,7 +215,11 @@ async function onCreateNode({node, actions, loadNodeContent}) {
             const diseasesNormalized = normalizeNodeData(Disease);
             const diseases = buildStudyDiseases(diseasesNormalized);
 
+            /* Consent groups. */
+            const consentGroups = buildStudyConsentGroups(ConsentGroup);
+
             const study =  {
+                consentGroups: consentGroups,
                 dbGapIdAccession: dbGapIdAccession,
                 diseases: diseases,
                 name: {
