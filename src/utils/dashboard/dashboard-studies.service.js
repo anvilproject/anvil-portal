@@ -50,7 +50,7 @@ function buildDashboardStudies() {
         const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
         const count = consents.consentsStat;
         const diseases = study.diseases;
-        const studyName = study.name.longName;
+        const studyName = study.name.shortName;
         const subjectsTotal = sumSubjectsValues(workspacesByStudy);
         const studyWorkspaces = buildStudyWorkspaces(workspacesByStudy);
 

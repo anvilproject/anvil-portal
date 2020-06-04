@@ -23,7 +23,6 @@ class DataStudies extends React.Component {
         const {studies} = this.props;
         return (
             <div className={compStyles.studies}>
-                <h2>Studies</h2>
                 {studies.map((study, s) => <DataStudyCard key={s} study={study}/>)}
             </div>
         );

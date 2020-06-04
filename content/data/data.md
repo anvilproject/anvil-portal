@@ -9,13 +9,15 @@ title: "Data"
 
 <hero small>AnVIL hosts high value genomic datasets relevant to human health and disease.</hero>
 
- ## Current Consortia
+## Consortia
+
+### Current Consortia
  
  A summary of the currently ingested data is listed below:
  
 <data-summary></data-summary>
 
-## Planned Consortia
+### Planned Consortia
 
 The folowing consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
 
@@ -27,9 +29,9 @@ The folowing consortia are planned for data ingestion. Additional consortia are 
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 
 
-## Accessing AnVIL Data via Pre-Built Terra Workspaces
+## Accessing AnVIL Data via Terra Workspaces
 
-Currently, AnVIL data can be accessed through the pre-built Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.
+Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.
 
 To access data:
 
@@ -39,10 +41,20 @@ To access data:
 
 Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detai.  
 
+## Studies (25)
 
-### Pre-Built Terra Workspaces
+_Needs an introduction._ 
+
+_Should we roll up "Cohorts" studies and display that in the table?_
+
+_Should we separate out completely ingested studies from ones that are lacking some subjects?_
 
 <data-summary dbGapAccessible=true></data-summary>
+<data-studies></data-studies>
+
+### Terra Workspaces
+
+
 <data-detail dbGapAccessible=true></data-detail>
 
 ### Coming Soon - dbGaP Study Registration in Progress
@@ -54,4 +66,3 @@ Please see the [Requesting Data Access](/data/requesting-data-access) and [Once 
 <data-summary dbGapAccessible=false></data-summary>
 <data-detail dbGapAccessible=false></data-detail>
 
-<data-studies></data-studies>
