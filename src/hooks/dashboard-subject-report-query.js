@@ -11,6 +11,7 @@ export const DashboardSubjectReportStaticQuery = () => {
                   name
                   variables {
                     consents {
+                      consentCode
                       consentName
                       consentStat
                     }

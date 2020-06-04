@@ -7,6 +7,11 @@ export const DashboardStudyStaticQuery = () => {
             allStudySchema(sort: {fields: dbGapIdAccession, order: ASC}) {
               edges {
                 node {
+                  consentGroups {
+                    groupNum
+                    longName
+                    shortName
+                  }
                   dbGapIdAccession
                   diseases
                   name {

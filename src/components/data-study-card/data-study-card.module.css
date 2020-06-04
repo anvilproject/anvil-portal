@@ -5,13 +5,13 @@
  * Style definitions specific to The AnVIL data study card component.
  */
 
-/* Study - container. */
+/* Study */
 .study {
-    border: 1px solid var(--shade-light-green);
     border-radius: 4px;
-    padding: 16px 16px 24px;
+    border-top: 1px solid var(--shade-light-green);
 }
 
+/* Study - container. */
 .study:not(:last-of-type) {
     margin-bottom: 24px;
 }

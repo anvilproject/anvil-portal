@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import DataStudySnapshotTable from "../data-study-snapshot-table/data-study-snapshot-table";
+import DataStudyCardTable from "../data-study-card-table/data-study-card-table";
 
 // Template variables
 let TABLE_HEADERS = ["consentName", "consentStat"];
@@ -21,7 +21,7 @@ class DataConsentGroups extends React.Component {
             {consents} = consentGroup;
         const title = "Consent Groups";
         return (
-            <DataStudySnapshotTable tableHeaders={TABLE_HEADERS} tableRows={consents} title={title}/>
+            <DataStudyCardTable tableHeaders={TABLE_HEADERS} tableRows={consents} title={title}/>
         );
     }
 }

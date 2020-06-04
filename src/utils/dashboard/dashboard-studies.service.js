@@ -46,7 +46,7 @@ function buildDashboardStudies() {
 
         /* Assemble the study variables. */
         const access = findFirstWorkspaceNodeByType(workspacesByStudy, "access");
-        const consents = findSubjectConsents(subjectByStudy, consentId);
+        const consents = getSubjectConsents(subjectByStudy, consentId, study.consentGroups);
         const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
         const count = consents.consentsStat;
         const diseases = study.diseases;
@@ -94,6 +94,41 @@ function buildStudyWorkspaces(workspacesByStudy) {
 }
 
 /**
+ * Builds the subject consents model.
+ *
+ * @param variablesByStudy
+ * @param studyConsentGroups
+ * @returns {{consents, consentsStat}}
+ */
+function buildSubjectConsents(variablesByStudy, studyConsentGroups) {
+
+    if ( variablesByStudy ) {
+
+        /* Build the consents for the study. */
+        const consents = variablesByStudy.consents.map(subjectConsent => {
+
+            const consentCode = subjectConsent.consentCode;
+
+            /* Find the study consent by subject consent code. */
+            const studyConsent = studyConsentGroups.find(studyConsentGroup => studyConsentGroup.groupNum === consentCode);
+
+            return {
+                consentCode: consentCode,
+                consentLongName: studyConsent.longName,
+                consentName: subjectConsent.consentName,
+                consentShortName: studyConsent.shortName,
+                consentStat: subjectConsent.consentStat
+            }
+        });
+
+        return {
+            consents: consents,
+            consentsStat: variablesByStudy.consentsStat
+        }
+    }
+}
+
+/**
  * Returns the first workspace's specified node value.
  *
  * @param workspacesByStudy
@@ -114,11 +149,14 @@ function findFirstWorkspaceNodeByType(workspacesByStudy, type) {
  * @param subjectByStudy
  * @param consentId
  */
-function findSubjectConsents(subjectByStudy, consentId) {
+function getSubjectConsents(subjectByStudy, consentId, studyConsentGroups) {
 
     if ( subjectByStudy && subjectByStudy.variables ) {
 
-        return subjectByStudy.variables.find(variable => variable && variable.consentsId === consentId);
+        const variablesByStudy = subjectByStudy.variables.find(variable => variable && variable.consentsId === consentId);
+
+        /* Build subject consents. */
+        return buildSubjectConsents(variablesByStudy, studyConsentGroups);
     }
 }
 

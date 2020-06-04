@@ -1,0 +1,20 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data (study) card table component.
+ */
+
+/* Container. */
+.container {
+    padding-top: 24px;
+}
+
+/* Title. */
+.title {
+    color: var(--accent-blue-dark);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
