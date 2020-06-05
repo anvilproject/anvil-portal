@@ -53,24 +53,35 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
     fmImagesToRelative(node);
     if (node.internal.type === `MarkdownRemark`) {
-        const carousel = node.frontmatter.carousel ? node.frontmatter.carousel : {active: false, blurb: "", docType: "", logo: "", title: "", url: ""};
-        const draft = node.frontmatter.draft ? node.frontmatter.draft : false;
-        const slug = createFilePath({node, getNode, basePath: `pages`});
+
+        const {frontmatter} = node,
+            {carousel, draft, privateEvent} = frontmatter;
+
+        const nodeValueCarousel = carousel ? carousel : {active: false, blurb: "", docType: "", logo: "", title: "", url: ""};
+        const nodeValueDraft = draft ? draft : false;
+        const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
+        const nodeValueSlug = createFilePath({node, getNode, basePath: `pages`});
+
         createNodeField({
             node,
             name: `carousel`,
-            value: carousel,
-        }),
+            value: nodeValueCarousel,
+        });
         createNodeField({
             node,
             name: `draft`,
-            value: draft,
-        }),
+            value: nodeValueDraft,
+        });
+        createNodeField({
+            node,
+            name: `privateEvent`,
+            value: nodeValuePrivateEvent,
+        });
         createNodeField({
             node,
             name: `slug`,
-            value: replacePath(slug),
-        })
+            value: replacePath(nodeValueSlug),
+        });
     }
 };
 

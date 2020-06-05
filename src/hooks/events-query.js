@@ -4,19 +4,19 @@ export const EventsStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query EventsStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}, privateEvent: {eq: false}}}, sort: {fields: [frontmatter___date], order: ASC}) {
             edges {
               node {
                 fields {
-                   slug
+                  slug
                 }
                 frontmatter {
-                   conference
-                   date(formatString: "MMMM DD, YYYY")
-                   description
-                   eventType
-                   featured
-                   title
+                  conference
+                  date(formatString: "MMMM DD, YYYY")
+                  description
+                  eventType
+                  featured
+                  title
                 }
                 htmlAst
               }

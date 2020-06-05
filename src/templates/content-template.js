@@ -58,6 +58,7 @@ query($slug: String!) {
         component
         conference
         date(formatString: "MMMM DD, YYYY")
+        dates
         description
         eventType
         featured
