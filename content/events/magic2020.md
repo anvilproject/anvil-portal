@@ -13,7 +13,7 @@ title: "Massive Genome Informatics in the Cloud (MaGIC) Jamboree"
 
 <event-hero></event-hero>
 
-#### Agenda
+### Agenda
 [Jamboree agenda with slide links](https://docs.google.com/presentation/d/1jW6Y7w9Tdl-33ttfRCYGNUmOpU2_8JSVRELbPj_oGTo/edit#slide=id.g87faf91edb_48_0)
 
 ### Description
