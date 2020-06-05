@@ -25,7 +25,7 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 ### Registration
 Registration is required. Register here: <http://tiny.cc/registration2020magicjam>
 
-### Virtual event agenda, all times ET
+### Virtual Event Agenda, all Times ET
 #### Day 1 (June 10th, 2020)
 |    |      |
 | -- | ---- |
