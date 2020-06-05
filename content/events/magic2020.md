@@ -7,7 +7,7 @@ description: "An introduction to the AnVIL platform to enable CCDG and CMG resea
 eventType: "Virtual Jamboree"
 featured: false
 privateEvent: true
-time: "11:00 am"
+time: "11:00 AM ET"
 title: "Massive Genome Informatics in the Cloud (MaGIC) Jamboree"
 ---
 
@@ -26,31 +26,31 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 Registration is required. Register here: <http://tiny.cc/registration2020magicjam>
 
 ### Virtual event agenda, all times ET (updated MH29MAY20):
-#### Day 1 (10th June 2020)
+#### Day 1 (June 10th, 2020)
 |    |      |
 | -- | ---- |
-| 11:00 am | NHGRI welcome and introduction (lecture) |
-| 11:05 am | AnVIL introduction (lecture) |
-| 11:30 am | Terra - data access and discovery (lecture) |
-| 12:00 pm | AnVIL data catalog and exploration (lecture) |
-| 12:30 pm | Break |
-| 1:30 pm | Linking billing accounts, eRA commons account on Terra (hands-on) |
-| 2:00 pm | Using AnVIL to access, browse, and share data (hand-on) |
-| 2:30 pm | Breakout sessions |
-| 3:00 pm |  Closing |
+| 11:00 AM | NHGRI welcome and introduction (lecture) |
+| 11:05 AM | AnVIL introduction (lecture) |
+| 11:30 AM | Terra - data access and discovery (lecture) |
+| 12:00 PM | AnVIL data catalog and exploration (lecture) |
+| 12:30 PM | Break |
+| 1:30 PM | Linking billing accounts, eRA commons account on Terra (hands-on) |
+| 2:00 PM | Using AnVIL to access, browse, and share data (hand-on) |
+| 2:30 PM | Breakout sessions |
+| 3:00 PM |  Closing |
 
-#### Day 2 (11th June 2020)
+#### Day 2 (June 11th, 2020)
 |    |      |
 | -- | ---- |
-| 11:00 am | Data analysis on AnVIL - use cases (lecture) |
-| 11:15 am | Dockstore and WDL (lecture) |
-| 11:45 am | Terra - for data analysis  (lecture) |
-| 12:00 pm | Concept of Workspaces (hands-on*) |
-| 12:30 pm | Break |
-| 1:30 pm | Batch processing of data with Workflows (hands-on*) |
-| 2:00 pm | Exploratory analysis with Notebooks & R Studio (hands-on*) |
-| 2:25 pm | Jamboree closing |
-| 2:30 pm | Breakout sessions |
+| 11:00 AM | Data analysis on AnVIL - use cases (lecture) |
+| 11:15 AM | Dockstore and WDL (lecture) |
+| 11:45 AM | Terra - for data analysis  (lecture) |
+| 12:00 PM | Concept of Workspaces (hands-on*) |
+| 12:30 PM | Break |
+| 1:30 PM | Batch processing of data with Workflows (hands-on*) |
+| 2:00 PM | Exploratory analysis with Notebooks & R Studio (hands-on*) |
+| 2:25 PM | Jamboree closing |
+| 2:30 PM | Breakout sessions |
 
 #### Agenda
 [Jamboree agenda with slide links](https://docs.google.com/presentation/d/1jW6Y7w9Tdl-33ttfRCYGNUmOpU2_8JSVRELbPj_oGTo/edit#slide=id.g87faf91edb_48_0)
