@@ -25,7 +25,7 @@ class PageNotFound extends React.Component {
 
     render() {
         return (
-            <Layout noSpy>
+            <Layout noSpy title={"The AnVIL"}>
                 <div className={classNames(compStyles.error)}>
                     <h1>Oh Dear!</h1>
                     <h2>We can’t find the page you were looking for.</h2>

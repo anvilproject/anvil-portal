@@ -27,16 +27,16 @@ export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
         {slug} = fields,
-        {component, description} = frontmatter,
+        {component, description, title} = frontmatter,
         dashboard = slug === "/data/data",
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
         h1 = TemplateService.getPageH1(headings),
         noSpy = dashboard,
-        title = faq ? `FAQ - ${h1}` : h1,
+        pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title,
         workspaces = component === "featured";
 
     return (
-        <Layout description={description} docPath={slug} noSpy={noSpy} title={title}>
+        <Layout description={description} docPath={slug} noSpy={noSpy} title={pageTitle}>
             <FrontmatterContext.Provider value={frontmatter}>
                 <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
                     {workspaces ? <Workspaces/> : null}
