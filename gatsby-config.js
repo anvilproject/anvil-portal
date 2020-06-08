@@ -21,7 +21,7 @@ let trackingId = process.env.GATSBY_GA_TRACKING_ID;
 module.exports = {
     siteMetadata: {
         title: `The AnVIL`,
-        description: `Inverting the model of genomic data sharing`,
+        description: `Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.`,
         author: `The AnVIL team`,
         siteUrl: `https://anvilproject.org`,
     },
