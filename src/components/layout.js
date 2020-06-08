@@ -21,7 +21,6 @@ import * as DOMService from "../utils/dom.service";
 // Styles
 import compStyles from "./layout.module.css";
 
-
 let classNames = require('classnames');
 
 class Layout extends React.Component {
