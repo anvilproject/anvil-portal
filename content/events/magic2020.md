@@ -56,7 +56,7 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 
 ### More Info
 This will be a virtual event on Zoom that will be recorded.
-Hands-on sections will be lead by AnVIL presenters, participants are invited to follow along in real time. Hands on sections on day 2 will work through an analysis example analyzing COVID data.
+Hands-on sections will be lead by AnVIL presenters, participants are invited to follow along in real time. Hands on sections on day 2 will work through an analysis example analyzing 1000 genomes data.
 
 ### Contact
 Please feel free to pass on any questions to [Shurjo Sen](mailto:sensh@mail.nih.gov) or [Mo Heydarian](mailto:mheydar1@jhu.edu).
