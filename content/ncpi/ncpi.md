@@ -1,4 +1,6 @@
-
+---
+draft: true
+---
 
 # Cloud Platform Interoperability 
 
@@ -12,7 +14,7 @@
 
 ## Goals
 
-
+![NIH Systems Interoperation](./_images/nih-systems-interoperation.png)
 
 ## Deliverbles
 
