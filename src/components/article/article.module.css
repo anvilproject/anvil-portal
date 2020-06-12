@@ -57,6 +57,11 @@
         max-width: 1240px;
     }
 
+    /* Content positioner - left alignment */
+    .contentPositioner.left {
+        margin: 0 auto 0 0;
+    }
+
     .contentContainer {
         display: flex;
         max-width: 712px;

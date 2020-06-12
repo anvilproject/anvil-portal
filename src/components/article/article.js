@@ -19,6 +19,11 @@ import globalStyles from "../../styles/global.module.css";
 
 const classNames = require("classnames");
 
+// Template variables
+const ALIGNMENT = {
+    "LEFT": "left"
+};
+
 class Article extends React.Component {
 
     constructor(props) {
@@ -32,14 +37,16 @@ class Article extends React.Component {
     };
 
     render() {
-        const {bannerHeight, children, docPath, noSpy} = this.props,
+        const {bannerHeight, children, docPath, noSpy, styles} = this.props,
+            {alignment} = styles || {},
         dashboard = docPath === "/data/data";
+        const left = alignment === ALIGNMENT.LEFT;
 
         return (
             <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav bannerHeight={bannerHeight} docPath={docPath}/>
-                    <div className={compStyles.contentPositioner}>
+                    <div className={classNames(compStyles.contentPositioner, {[compStyles.left]: left})}>
                         <div className={compStyles.contentContainer}>
                             {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
                             {dashboard ? null : <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/>}
