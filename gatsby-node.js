@@ -55,12 +55,13 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     if (node.internal.type === `MarkdownRemark`) {
 
         const {frontmatter} = node,
-            {carousel, draft, privateEvent} = frontmatter;
+            {carousel, draft, pageAlignment, privateEvent} = frontmatter || {};
 
         const nodeValueCarousel = carousel ? carousel : {active: false, blurb: "", docType: "", logo: "", title: "", url: ""};
         const nodeValueDraft = draft ? draft : false;
         const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
         const nodeValueSlug = createFilePath({node, getNode, basePath: `pages`});
+        const nodeValueStyles = {alignment: pageAlignment};
 
         createNodeField({
             node,
@@ -81,6 +82,11 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             node,
             name: `slug`,
             value: replacePath(nodeValueSlug),
+        });
+        createNodeField({
+            node,
+            name: `styles`,
+            value: nodeValueStyles,
         });
     }
 };

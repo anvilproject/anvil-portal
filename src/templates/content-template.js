@@ -26,7 +26,7 @@ let classNames = require("classnames");
 export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
-        {slug} = fields,
+        {slug, styles} = fields,
         {component, description, title} = frontmatter,
         dashboard = slug === "/data/data",
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
@@ -36,7 +36,7 @@ export default ({data}) => {
         workspaces = component === "featured";
 
     return (
-        <Layout description={description} docPath={slug} noSpy={noSpy} title={pageTitle}>
+        <Layout description={description} docPath={slug} noSpy={noSpy} styles={styles} title={pageTitle}>
             <FrontmatterContext.Provider value={frontmatter}>
                 <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
                     {workspaces ? <Workspaces/> : null}
@@ -51,6 +51,9 @@ export const query = graphql`
 query($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       fields {
+        styles {
+          alignment
+        }
         slug
       }
       frontmatter {
