@@ -19,7 +19,7 @@
   path: "/contact"
   position:
     location: "h"
-    order: 7
+    order: 8
   primaryLinks:
     - name: "Contact Us"
       key: "/contact/contact-us"
@@ -62,12 +62,22 @@
     - name: "Events"
       key: "/events/events"
       path: "/events"
+- name: "Interoperability"
+  key: "ncpi"
+  path: "/ncpi"
+  position:
+    location: "h"
+    order: 3
+  primaryLinks:
+    - name: "NCPI"
+      key: "/ncpi/ncpi"
+      path: "/ncpi"
 - name: "FAQ"
   key: "faq"
   path: "/faq"
   position:
     location: "h"
-    order: 6
+    order: 9
   primaryLinks:
     - name: "FAQ"
       key: "/faq/faq"
@@ -160,7 +170,7 @@
   path: "/training"
   position:
     location: "h"
-    order: 3
+    order: 6
   primaryLinks:
     - name: "Training"
       key: "/training/training"
