@@ -72,6 +72,8 @@
     - name: "NCPI"
       key: "/ncpi/ncpi"
       path: "/ncpi"
+    - name: "Research Use Cases"
+      key: "/ncpi/research-use-cases.md"
 - name: "FAQ"
   key: "faq"
   path: "/faq"
