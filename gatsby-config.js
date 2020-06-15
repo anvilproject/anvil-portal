@@ -175,14 +175,12 @@ module.exports = {
                     },
                     `gatsby-remark-external-links`,
                     `gatsby-remark-responsive-iframe`,
-                    {
-                        resolve: `gatsby-remark-relative-images`,
-                    },
+                    `gatsby-remark-relative-images`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
                             linkImagesToOriginal: false,
-                            wrapperStyle: `margin: 0 !important; margin-left: 0 !important;`
+                            maxWidth: 1000
                         }
                     },
                     `gatsby-remark-images-medium-zoom`,
