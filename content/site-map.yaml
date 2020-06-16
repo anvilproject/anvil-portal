@@ -19,7 +19,7 @@
   path: "/contact"
   position:
     location: "h"
-    order: 8
+    order: 7
   primaryLinks:
     - name: "Contact Us"
       key: "/contact/contact-us"
@@ -57,29 +57,37 @@
   path: "/events"
   position:
     location: "h"
-    order: 5
+    order: 4
   primaryLinks:
     - name: "Events"
       key: "/events/events"
       path: "/events"
-- name: "Interoperability"
+- name: "NCPI"
   key: "ncpi"
   path: "/ncpi"
   position:
     location: "h"
-    order: 3
+    order: 9
   primaryLinks:
-    - name: "NCPI"
+    - name: "NIH Cloud Platforms Interoperability "
       key: "/ncpi/ncpi"
       path: "/ncpi"
-    - name: "Research Use Cases"
+    - name: "Genomic Cloud Platform Interoperability"
+      key: "/ncpi/interop-accross-platforms"
+      path: "/interoperability"
+
+    - name: "Interop Research Use Cases"
       key: "/ncpi/research-use-cases"
+    - name: "Interop Standards"
+      key: "/ncpi/standards"
+    - name: "Working Group Members"
+      key: "/ncpi/working-group"
 - name: "FAQ"
   key: "faq"
   path: "/faq"
   position:
     location: "h"
-    order: 9
+    order: 8
   primaryLinks:
     - name: "FAQ"
       key: "/faq/faq"
@@ -143,7 +151,7 @@
   path: "/news"
   position:
     location: "h"
-    order: 4
+    order: 3
   primaryLinks:
     - name: "News"
       key: "/news"
@@ -172,7 +180,7 @@
   path: "/training"
   position:
     location: "h"
-    order: 6
+    order: 5
   primaryLinks:
     - name: "Training"
       key: "/training/training"
