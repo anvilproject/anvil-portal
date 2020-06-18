@@ -7,7 +7,7 @@
 
 /* Study - container. */
 .study:not(:last-of-type) {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 /* Natural text. */
@@ -19,6 +19,12 @@
 .study .link {
     color: var(--primary);
     cursor: pointer;
+}
+
+/* Study titles - override default typography front weight to highlight titles, remove margin bottom to scoot up table under title */
+.study h4 {
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 /* Error. */
@@ -41,6 +47,11 @@
     opacity: 1;
     padding-bottom: 8px;
     pointer-events: auto;
+}
+
+/* Limit width of study title and table. TODO remove once we have ellipsis on overline tokens */ 
+.tableSizer {
+    max-width: 760px;
 }
 
 /* Title. */

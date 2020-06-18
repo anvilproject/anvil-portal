@@ -23,7 +23,7 @@ import compStyles from "./data-study.module.css";
 // Template variables
 let TABLE_HEADERS_CONSENT_GROUPS = ["consentName", "consentStat"];
 let TABLE_HEADERS_DISEASES = ["diseases"];
-let TABLE_HEADERS_WORKSPACES = ["workspaceId", "dataType", "subjects", "samples"];
+let TABLE_HEADERS_WORKSPACES = ["workspaceId", "dataType", "subjects", "samples", "files", "size"];
 
 let classNames = require("classnames");
 
@@ -76,19 +76,21 @@ class DataStudy extends React.Component {
                         </PlusXMore> : null}
                     <span className={classNames({[compStyles.error]: countError})}>{subjectCount}</span>
                 </Overline>
-                <div className={classNames({[compStyles.hideMore]: !showMore}, {[compStyles.showMore]: showMore})}>
-                    <DataTable inset
-                               singleRow={true}
-                               tableHeaders={TABLE_HEADERS_DISEASES}
-                               tableRow={study}/>
-                    <DataTable inset
-                               tableHeaders={TABLE_HEADERS_CONSENT_GROUPS}
-                               tableRows={consents}/>
+                <div className={compStyles.tableSizer}>
+                    <div className={classNames({[compStyles.hideMore]: !showMore}, {[compStyles.showMore]: showMore})}>
+                        <DataTable inset
+                                   singleRow={true}
+                                   tableHeaders={TABLE_HEADERS_DISEASES}
+                                   tableRow={study}/>
+                        <DataTable inset
+                                   tableHeaders={TABLE_HEADERS_CONSENT_GROUPS}
+                                   tableRows={consents}/>
+                    </div>
+                    <h4 className={classNames(compStyles.title)}>{studyName}</h4>
+                    <DataTable workspaces
+                               tableHeaders={TABLE_HEADERS_WORKSPACES}
+                               tableRows={workspaces}/>
                 </div>
-                <h4 className={classNames(compStyles.title)}>{studyName}</h4>
-                <DataTable workspaces
-                           tableHeaders={TABLE_HEADERS_WORKSPACES}
-                           tableRows={workspaces}/>
             </div>
         );
     }

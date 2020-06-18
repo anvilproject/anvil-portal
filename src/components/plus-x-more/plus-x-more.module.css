@@ -20,6 +20,10 @@
     white-space: pre;
 }
 
+.plusMore span {
+    cursor: pointer; /* Required to override global tooltip style on <span> - TODO revisit */
+}
+
 .plusMore:focus {
     outline: none;
 }

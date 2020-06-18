@@ -12,7 +12,7 @@
     color: var(--accent-blue-dark);
     overflow-x: auto;
     overflow-y: hidden;
-    padding-right: 16px; /* RHS gutter */
+    /*padding-right: 16px; !* RHS gutter *!*/ /* TODO revisit - causing studies to not be full 760px */
     width: calc(100vw - 16px);
 }
 
@@ -23,7 +23,6 @@
 
 /* Table wrapper - inset, workspaces */
 .wrapper.inset, .wrapper.workspaces {
-    padding: 8px 0;
     width: 100%;
 }
 
@@ -31,6 +30,12 @@
 .wrapper.inset {
     color: var(--black87);
     display: table;
+    padding: 8px 0;
+}
+
+/* Add additional margin to the bottom of the consent groups to scoot down title below it */
+.wrapper.inset:last-of-type {
+    margin-bottom: 16px;
 }
 
 /* Table */
@@ -86,9 +91,14 @@ table {
     padding-right: 8px;
 }
 
-/* Header cells - inset, workspaces */
-.inset .header th, .workspaces .header th {
-    font-weight: 300;
+/* Header cells - inset */
+.inset .header th {
+    font-weight: 500;
+}
+
+/* Header cells - workspaces */
+.workspaces .header th {
+    font-weight: 500;
 }
 
 /* Header cell - first - inset, workspaces */
@@ -167,7 +177,7 @@ table {
 /* Row cell - counts */
 /* Inset table - "subjects" */
 /* Workspaces table - "subjects", "samples" */
-.inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
+.inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"], .workspaces .row td[id^="files"], .workspaces .row td[id^="size"] {
     min-width: 62px;
 }
 
