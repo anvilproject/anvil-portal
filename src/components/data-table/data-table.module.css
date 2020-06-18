@@ -9,6 +9,7 @@
 /* Table wrapper */
 /* Allows for overflow on smaller screens */
 .wrapper {
+    color: var(--accent-blue-dark);
     overflow-x: auto;
     overflow-y: hidden;
     padding-right: 16px; /* RHS gutter */
@@ -20,10 +21,16 @@
     margin-bottom: 24px;
 }
 
-/* Table wrapper - study */
-.wrapper.study {
-    padding: 0;
+/* Table wrapper - inset, workspaces */
+.wrapper.inset, .wrapper.workspaces {
+    padding: 8px 0;
     width: 100%;
+}
+
+/* Table wrapper - inset */
+.wrapper.inset {
+    color: var(--black87);
+    display: table;
 }
 
 /* Table */
@@ -44,15 +51,20 @@ table {
     vertical-align: bottom;
 }
 
-/* Study - header */
-.study .header {
+/* Header - inset, workspaces */
+.inset .header, .workspaces .header {
     height: 32px;
+}
+
+/* Header - inset */
+.inset .header {
+    border-bottom: 1px solid var(--shade-light-green);
 }
 
 /* Header cell, row cell */
 .header th, .row td {
     border-bottom: none;
-    color: var(--accent-blue-dark);
+    color: inherit;
     font-size: 14px;
 }
 
@@ -66,28 +78,27 @@ table {
 
 /* Header cell - first */
 .header th:first-of-type {
-    padding: 0 4px 4px 8px;
+    padding-left: 8px;
 }
 
 /* Header cell - last */
 .header th:last-of-type {
-    padding: 0 8px 4px 4px;
+    padding-right: 8px;
 }
 
-/* Study - header cells */
-.study .header th {
+/* Header cells - inset, workspaces */
+.inset .header th, .workspaces .header th {
     font-weight: 300;
-    padding: 0 16px 4px;
 }
 
-/* Study - header cell - first */
-.study .header th:first-of-type {
-    padding: 0 4px 4px 0;
+/* Header cell - first - inset, workspaces */
+.inset .header th:first-of-type, .workspaces .header th:first-of-type {
+    padding-left: 0;
 }
 
-/* Study - header cell - last */
-.study .header th:last-of-type {
-    padding: 0 0 4px 4px;
+/* Header cell - last - inset, workspaces */
+.inset .header th:last-of-type, .workspaces .header th:last-of-type {
+    padding-right: 0;
 }
 
 /* Row */
@@ -95,15 +106,21 @@ table {
     border-bottom: 1px solid var(--shade-light-green);
 }
 
-/* Summary table - row - last before "total" row */
+/* Row - summary table - last before "total" row */
 .summary .row:nth-last-child(2) {
     border-bottom: none;
 }
 
-/* Summary table - row - "total" row */
+/* Row - summary table - "total" row */
 .summary .row.total {
     border-top: 1px solid var(--accent-blue-green);
     border-bottom-color: var(--accent-blue-green);
+}
+
+/* Row - inset table */
+.inset .row {
+    border-left: 1px solid var(--shade-light-green);
+    border-right: 1px solid var(--shade-light-green);
 }
 
 /* Row cells */
@@ -115,44 +132,48 @@ table {
     padding: 0 4px;
 }
 
-/* Detail table - row cell - "projectId" */
+/* Row cell - detail table - "projectId" */
 .detail .row td[id^="projectId"] {
     min-width: 452px;
 }
 
-/* Detail table - row cell - "dbGapId" or "dbGapIdAccession" */
+/* Row cell - detail table - "dbGapId" or "dbGapIdAccession" */
 .detail .row td[id^="dbGapId"] {
     min-width: 124px;
 }
 
-/* Detail table - row cell - "access" */
+/* Row cell - detail table - "access" */
 .detail .row td[id^="access"] {
     min-width: 32px;
 }
 
-/* Study - row cell */
-.study .row td {
+/* Row cell - inset, workspaces */
+.inset .row td, .workspaces .row td {
     height: 24px;
-    min-width: 80px;
 }
 
-/* Study - row cell - "workspaceId" */
-.study .row td[id^="workspaceId"] {
-    max-width: 268px; /* Required for ellipsis */
+/* Row cell - ellipsis */
+/* Inset table - "consentName" */
+/* Workspaces table - "workspaceId" */
+.inset .row td[id^="consentName"], .workspaces .row td[id^="workspaceId"] {
+    max-width: 112px; /* Required for ellipsis */
+    min-width: 112px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
 
-/* Study - row cell - counts */
-.study .row td[id^="subjects"], .study .row td[id^="samples"], .study .row td[id^="files"], .study .row td[id^="size"] {
-    min-width: 72px;
+/* Row cell - counts */
+/* Inset table - "subjects" */
+/* Workspaces table - "subjects", "samples" */
+.inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
+    min-width: 62px;
 }
 
-/* Study - row cell - "dataType" */
-.study .row td[id^="dataType"] {
-    min-width: 96px;
+/* Row cell - workspaces table "dataType" */
+.workspaces .row td[id^="dataType"] {
+    min-width: 76px;
 }
 
 /* Row cells - "total" */
@@ -173,39 +194,22 @@ table {
 
 /* Row cell - first */
 .row td:first-of-type {
-    padding: 0 4px 0 8px;
+    padding-left: 8px;
 }
 
 /* Row cell - last */
 .row td:last-of-type {
-    padding: 0 8px 0 4px;
+    padding-right: 8px;
 }
 
-/* Study - row cell */
-.study .row td {
-    padding: 0 16px;
+/* Row cell - workspaces table - first */
+.workspaces .row td:first-of-type {
+    padding-left: 0;
 }
 
-/* Study - row cell - first */
-.study .row td:first-of-type {
-    padding: 0 4px 0 0;
-}
-
-/* Study - row cell - last */
-.study .row td:last-of-type {
-    padding: 0 0 0 4px;
-}
-
-/**
- * Large handset portrait, extra small window
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 480px) {
-
-    /* Study - row cell */
-    .study .row td {
-        min-width: 104px;
-    }
+/* Row cell - workspaces table - last */
+.workspaces .row td:last-of-type {
+    padding-right: 0;
 }
 
 /**
@@ -228,30 +232,6 @@ table {
 }
 
 /**
- * Large handset portrait, small handset landscape, extra small window
- */
-@media screen and (min-width: 840px) {
-
-    /* Table wrapper - detail */
-    .wrapper.detail {
-        padding-right: 24px;
-        width: calc(100vw - 40px - 24px); /* 100vw minus: content padding, gutter */
-    }
-}
-
-/**
- * AnVIL data table specific breakpoint.
- * Allows for full width summary data table with introduction of margins - "auto" on the "contentPositioner" class on the article component at this screen width.
- */
-@media screen and (min-width: 888px) {
-
-    /* Table wrapper - detail */
-    .wrapper.detail {
-        width: calc(100vw - ((100vw - 840px - 48px) / 2) - 24px - 40px); /* 100vw minus: the LHS content margin, both gutters, content padding */
-    }
-}
-
-/**
  * Column row layout changes to row layout (left nav/content/outline).
  */
 @media screen and (min-width: 1341px) {
@@ -262,3 +242,30 @@ table {
     }
 }
 
+/**
+ * Content and outline are centered, rather than left-aligned.
+ */
+@media screen and (min-width: 1545px) {
+
+    /* Header cells - workspaces */
+    .workspaces .header th {
+        padding-right: 16px;
+    }
+
+    /* Row cell - workspaces */
+    .workspaces .row td {
+        padding-right: 16px;
+    }
+
+    /* Row cell - counts */
+    /* Inset table - "subjects" */
+    /* Workspaces table - "subjects", "samples" */
+    .inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
+        min-width: 72px;
+    }
+
+    /* Row cell - workspaces - "dataType" */
+    .workspaces .row td[id^="dataType"] {
+        min-width: 96px;
+    }
+}

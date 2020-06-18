@@ -11,7 +11,7 @@
 import React from "react";
 
 // App dependencies
-import DataStudyCard from "../data-study-card/data-study-card";
+import DataStudy from "../data-study/data-study";
 import * as DashboardStudiesService from "../../utils/dashboard/dashboard-studies.service";
 
 // Styles
@@ -23,7 +23,7 @@ class DataStudies extends React.Component {
         const {studies} = this.props;
         return (
             <div className={compStyles.studies}>
-                {studies.map((study, s) => <DataStudyCard key={s} study={study}/>)}
+                {studies.map((study, s) => <DataStudy key={s} study={study}/>)}
             </div>
         );
     }

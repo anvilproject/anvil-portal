@@ -36,6 +36,11 @@
         width: 840px;
     }
 
+    .contentPositioner.left {
+        margin: 0;
+        padding: 0;
+    }
+
     /* Content container */
     .contentContainer {
         width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
@@ -60,6 +65,7 @@
     /* Content positioner - left alignment */
     .contentPositioner.left {
         margin: 0 auto 0 0;
+        padding: 0 40px;
     }
 
     .contentContainer {

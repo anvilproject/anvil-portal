@@ -12,17 +12,13 @@ import React from "react";
 import Nav from "../nav/nav";
 import Outline from "../outline/outline";
 import Spy from "../spy/spy";
+import * as StylesService from "../../utils/styles.service";
 
 // Styles
 import compStyles from "./article.module.css";
 import globalStyles from "../../styles/global.module.css";
 
 const classNames = require("classnames");
-
-// Template variables
-const ALIGNMENT = {
-    "LEFT": "left"
-};
 
 class Article extends React.Component {
 
@@ -40,12 +36,12 @@ class Article extends React.Component {
         const {bannerHeight, children, docPath, noSpy, styles} = this.props,
             {alignment} = styles || {},
         dashboard = docPath === "/data/data";
-        const left = alignment === ALIGNMENT.LEFT;
+        const left = StylesService.isPageAlignmentLeft(alignment);
 
         return (
             <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
-                    <Nav bannerHeight={bannerHeight} docPath={docPath}/>
+                    <Nav bannerHeight={bannerHeight} docPath={docPath} leftAlignPage={left}/>
                     <div className={classNames(compStyles.contentPositioner, {[compStyles.left]: left})}>
                         <div className={compStyles.contentContainer}>
                             {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}

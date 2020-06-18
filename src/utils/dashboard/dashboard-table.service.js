@@ -99,7 +99,7 @@ export function switchDisplayColumnName(columnName) {
         case "cohorts":
             return "Cohorts";
         case "consentName":
-            return "Consent Code";
+            return "Consent Groups";
         case "consentStat":
             return "Subjects";
         case "dataType":
@@ -108,6 +108,8 @@ export function switchDisplayColumnName(columnName) {
             return "Demographics";
         case "diagnosis":
             return "Diagnosis";
+        case "diseases":
+            return "Diseases";
         case "families":
             return "Family";
         case "files":
@@ -129,7 +131,7 @@ export function switchDisplayColumnName(columnName) {
         case "sizeTB":
             return "Size (TB)";
         case "workspaceId":
-            return "Name";
+            return "Workspace Name";
         default:
             return columnName;
     }

@@ -1,0 +1,50 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data study component.
+ */
+
+/* Study - container. */
+.study:not(:last-of-type) {
+    margin-bottom: 24px;
+}
+
+/* Natural text. */
+.study .natural {
+    text-transform: none;
+}
+
+/* Link. */
+.study .link {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* Error. */
+.study .error {
+    color: #b10062;
+}
+
+/* Hide panel. */
+/* For diseases, consent groups. */
+.hideMore {
+    height: 0;
+    opacity: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+}
+
+/* Show panel. */
+.showMore {
+    height: 100%;
+    opacity: 1;
+    padding-bottom: 8px;
+    pointer-events: auto;
+}
+
+/* Title. */
+.title {
+    color: var(--shade-dark);
+    margin: 0 0 8px;
+}

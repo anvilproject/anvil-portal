@@ -74,7 +74,7 @@ class Nav extends React.Component {
     };
 
     render() {
-        const {hideNav, nav} = this.props;
+        const {hideNav, leftAlignPage, nav} = this.props;
 
         const NavItem = (props) => {
 
@@ -95,7 +95,7 @@ class Nav extends React.Component {
 
         return (
             <div className={compStyles.sideNavContainer}>
-                <div className={classNames(compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
+                <div className={classNames({[compStyles.left]: leftAlignPage}, compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
                     <ul>
                         {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
                     </ul>

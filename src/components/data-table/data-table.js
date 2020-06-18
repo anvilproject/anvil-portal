@@ -22,7 +22,7 @@ let classNames = require("classnames");
 class DataTable extends React.Component {
 
     render() {
-        const {className, tableHeaders, tableRows} = this.props,
+        const {className, inset, singleRow, tableHeaders, tableRow, tableRows, workspaces} = this.props,
             summaryTable = className === compStyles.summary;
 
         const Cell = (props) => {
@@ -86,7 +86,7 @@ class DataTable extends React.Component {
         };
 
         return (
-            <div className={classNames(compStyles.wrapper, className)}>
+            <div className={classNames(compStyles.wrapper, className, {[compStyles.inset]: inset}, {[compStyles.workspaces]: workspaces})}>
                 <table>
                     <thead>
                         <tr className={compStyles.header}>
@@ -94,7 +94,8 @@ class DataTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {tableRows.map((tableRow, r) =>
+                        {singleRow ? <TableRow order={tableHeaders} row={tableRow}/> :
+                            tableRows.map((tableRow, r) =>
                             <TableRow key={r}
                                       order={tableHeaders}
                                       row={tableRow}

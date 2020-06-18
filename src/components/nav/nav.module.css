@@ -102,9 +102,15 @@
 
     /* Side nav */
     .sideNav {
-        max-width: 840px;
         margin: 0 auto 32px;
+        max-width: 840px;
         padding: 0 40px;
+    }
+
+    .sideNav.left {
+        margin: 0 0 32px;
+        max-width: unset;
+        padding: 0;
     }
 }
 
@@ -121,7 +127,7 @@
     }
 
     /* Side nav */
-    .sideNav {
+    .sideNav, .sideNav.left {
         border-bottom: none;
         bottom: 0;
         left: 24px; /* Gutter */
