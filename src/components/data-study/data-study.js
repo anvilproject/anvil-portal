@@ -15,6 +15,7 @@ import Overline from "../overline/overline";
 import PlusXMore from "../plus-x-more/plus-x-more";
 import * as DashboardStudyService from "../../utils/dashboard/dashboard-study.service";
 import * as DashboardTableService from "../../utils/dashboard/dashboard-table.service";
+import * as EnvironmentService from "../../utils/environment/environment.service";
 import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
@@ -34,6 +35,23 @@ class DataStudy extends React.Component {
         this.state = ({showMore: false});
     }
 
+    getSubjectCount = () => {
+
+        const {study} = this.props,
+            {subjectsCount, subjectsTotal} = study;
+        const count = subjectsCount.toLocaleString();
+        const total = subjectsTotal.toLocaleString();
+        const totalText = `${total} Subjects`;
+        const countOfTotalText = `${count} of ${totalText}`;
+
+        if ( EnvironmentService.isProd() || subjectsCount === subjectsTotal ) {
+
+            return <span>{totalText}</span>
+        }
+
+        return <span className={compStyles.error}>{countOfTotalText}</span>;
+    };
+
     onShowMore = (event) => {
 
         this.setState({showMore: event});
@@ -41,17 +59,16 @@ class DataStudy extends React.Component {
 
     render() {
         const {study} = this.props,
-            {consentGroup, consortia, count, dbGapIdAccession, diseases, studyName, subjectsTotal, workspaces} = study,
+            {consentGroup, consortia, dbGapIdAccession, diseases, studyName, workspaces} = study,
             {consents} = consentGroup,
             {showMore} = this.state;
-        const countError = count !== subjectsTotal;
         const firstConsent = DashboardStudyService.getFirstElement(consents).consentShortName;
         const firstDisease = DashboardStudyService.getFirstElement(diseases);
         const linkedTo = DashboardTableService.getCellUrl(dbGapIdAccession, "dbGapIdAccession", false);
         const moreConsents = DashboardStudyService.getCount(consents);
         const moreDiseases = DashboardStudyService.getCount(diseases);
         const singleCount = (moreDiseases === 0) && (moreConsents === 0);
-        const subjectCount = countError ? `${subjectsTotal} of ${count} Subjects` : `${count} Subjects`;
+        const subjectsCounter = this.getSubjectCount();
 
         return (
             <div className={compStyles.study}>
@@ -74,7 +91,7 @@ class DataStudy extends React.Component {
                                    showMore={showMore}>
                             <span>{firstConsent}</span>
                         </PlusXMore> : null}
-                    <span className={classNames({[compStyles.error]: countError})}>{subjectCount}</span>
+                    {subjectsCounter}
                 </Overline>
                 <div className={compStyles.tableSizer}>
                     <div className={classNames({[compStyles.hideMore]: !showMore}, {[compStyles.showMore]: showMore})}>

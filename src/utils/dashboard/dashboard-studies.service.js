@@ -48,20 +48,20 @@ function buildDashboardStudies() {
         const access = findFirstWorkspaceNodeByType(workspacesByStudy, "access");
         const consents = getSubjectConsents(subjectByStudy, consentId, study.consentGroups);
         const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
-        const count = consents.consentsStat;
         const diseases = study.diseases;
         const studyName = study.name.shortName;
-        const subjectsTotal = sumSubjectsValues(workspacesByStudy);
+        const subjectsCount = sumSubjectsValues(workspacesByStudy);
+        const subjectsTotal = consents.consentsStat;
         const studyWorkspaces = buildStudyWorkspaces(workspacesByStudy);
 
         return {
             access: access,
             consentGroup: consents,
             consortia: consortia,
-            count: count,
             dbGapIdAccession: dbGapIdAccession,
             diseases: diseases,
             studyName: studyName,
+            subjectsCount: subjectsCount,
             subjectsTotal: subjectsTotal,
             workspaces: studyWorkspaces
         }
