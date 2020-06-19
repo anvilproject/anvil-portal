@@ -107,9 +107,11 @@ const typography = new Typography({
                 borderBottom: "none !important"
             },
             "ol, ul": {
-                listStyle: "disc outside",
                 margin: "0",
                 paddingLeft: "40px"
+            },
+            ul: {
+                listStyle: "disc outside",
             },
             li: {
                 margin: "12px 0",
