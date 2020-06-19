@@ -41,3 +41,9 @@ While we will work in the context of AnVIL, you will be able to apply your new s
     - Bioconductor with Jupyter Notebooks in Terra
 1. Section IV: Genome-wide association study workflows
     - Galaxy workflows and complementary components
+    
+### More Info
+https://www.iscb.org/ismb2020/3962-ismb2018-tutorials#fd2
+
+### Registration
+https://www.iscb.org/ismb2020-registration
