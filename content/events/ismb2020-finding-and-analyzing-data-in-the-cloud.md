@@ -2,8 +2,8 @@
 author: "AnVIL"
 conference: "ISMB 2020"
 date: "2020-07-12"
-description: "This full-day tutorial will guide you through a research journey that highlights the capabilities and components of the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) resource."
-eventType: "Virtual Tutorial"
+description: "This full-day workshop will guide you through a research journey that highlights the capabilities and components of the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) resource."
+eventType: "Virtual Workshop"
 featured: true
 time: "09:00 AM - 06:00 PM EST"
 title: "Finding and Analyzing Data in the Cloud with Gen3, Dockstore, Terra, and Galaxy"
@@ -26,8 +26,6 @@ Specifically, you will learn how to:
 
 ###Audience
 While we will work in the context of AnVIL, you will be able to apply your new skills to myriad other genomic-related data sets and tools. Attendees must bring a WiFi-enabled laptop with the Chrome browser installed. Prior coding experience (R and/or Python) is required.
-
-**Maximum Audience: 40**
 
 ###Schedule Overview
 1. Section I: Introduction
