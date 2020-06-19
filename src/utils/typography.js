@@ -96,8 +96,9 @@ const typography = new Typography({
                 margin: "16px 0"
             },
             img: {
+                display: "block",
                 border: 0,
-                marginBottom: "24px",
+                margin: "0 auto"
             },
             "img:focus": {
                 outline: "none"
