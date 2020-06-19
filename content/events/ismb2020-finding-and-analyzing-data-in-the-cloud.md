@@ -6,7 +6,7 @@ description: "This full-day tutorial will guide you through a research journey t
 eventType: "Virtual Tutorial"
 featured: true
 time: "09:00 AM - 06:00 PM EST"
-title: "Finding and analyzing data in the cloud with Gen3, Dockstore, Terra, and Galaxy"
+title: "Finding and Analyzing Data in the Cloud with Gen3, Dockstore, Terra, and Galaxy"
 ---
 
 <event-hero></event-hero>
