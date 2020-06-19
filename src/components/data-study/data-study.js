@@ -45,11 +45,11 @@ class DataStudy extends React.Component {
             {consents} = consentGroup,
             {showMore} = this.state;
         const countError = count !== subjectsTotal;
-        const firstConsent = DashboardStudyService.getFirstConsent(consents);
-        const firstDisease = DashboardStudyService.getFirstDisease(diseases);
+        const firstConsent = DashboardStudyService.getFirstElement(consents).consentShortName;
+        const firstDisease = DashboardStudyService.getFirstElement(diseases);
         const linkedTo = DashboardTableService.getCellUrl(dbGapIdAccession, "dbGapIdAccession", false);
-        const moreConsents = DashboardStudyService.getConsentsCount(consents);
-        const moreDiseases = DashboardStudyService.getDiseasesCount(diseases);
+        const moreConsents = DashboardStudyService.getCount(consents);
+        const moreDiseases = DashboardStudyService.getCount(diseases);
         const singleCount = (moreDiseases === 0) && (moreConsents === 0);
         const subjectCount = countError ? `${subjectsTotal} of ${count} Subjects` : `${count} Subjects`;
 

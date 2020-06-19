@@ -6,69 +6,33 @@
  */
 
 /**
- * Returns the number of consents.
+ * Returns the count of an array.
  *
- * @param consents
+ * @param arr
  * @returns {number}
  */
-export function getConsentsCount(consents) {
+export function getCount(arr) {
 
-    if ( !consents ) {
+    if ( !arr ) {
 
         return 0;
     }
 
-    return consents.length - 1;
+    return arr.length - 1;
 }
 
 /**
- * Returns the number of diseases.
+ * Returns the first element of an array.
  *
- * @param diseases
- * @returns {number}
- */
-export function getDiseasesCount(diseases) {
-
-    if ( !diseases ) {
-
-        return 0;
-    }
-
-    const diseasesList = diseases.split(",");
-
-    return diseasesList.length - 1;
-}
-
-/**
- * Returns the first consent (short name).
- *
- * @param consents
+ * @param arr
  * @returns {*}
  */
-export function getFirstConsent(consents) {
+export function getFirstElement(arr) {
 
-    if ( !consents ) {
+    if ( !arr ) {
 
         return "";
     }
 
-    return consents[0].consentShortName;
-}
-
-/**
- * Returns the first disease.
- *
- * @param diseases
- * @returns {*}
- */
-export function getFirstDisease(diseases) {
-
-    if ( !diseases ) {
-
-        return "";
-    }
-
-    const diseasesList = diseases.split(",");
-
-    return diseasesList[0];
+    return arr[0];
 }

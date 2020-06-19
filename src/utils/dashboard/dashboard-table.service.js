@@ -44,14 +44,19 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
-        if ( column === "program" ) {
-
-            return switchProgramName(value);
-        }
-
         if ( column === "dataType" ) {
 
             return formatDataType(value);
+        }
+
+        if ( column === "diseases" ) {
+
+            return value.join(", ");
+        }
+
+        if ( column === "program" ) {
+
+            return switchProgramName(value);
         }
 
         if ( column === "sizeTB" ) {

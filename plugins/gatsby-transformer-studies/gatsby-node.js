@@ -60,7 +60,7 @@ async function onCreateNode({node, actions, loadNodeContent}) {
 
         if ( diseases ) {
 
-            return diseases.map(disease => disease.vocab_term).join(", ");
+            return diseases.map(disease => disease.vocab_term);
         }
     }
 
