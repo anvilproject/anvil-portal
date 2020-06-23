@@ -67,3 +67,8 @@
 .linkTo:hover a:after, .linkTo:hover a:before, .linkTo:hover span:after, .linkTo:hover span:before {
     background-color: var(--accent-blue-green);
 }
+
+/* Override global image display of block - required for Terra logo in hero */
+.linkTo img {
+    display: inline;
+}
