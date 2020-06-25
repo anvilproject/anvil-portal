@@ -11,9 +11,10 @@ description: "AnVIL provides robust access controls that can selectively grant a
 
 ## Access Groups
 
-**[External Researcher Access](/data/requesting-data-access)** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL.
 
-**Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium.
+**Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium. Guidelines for this official are being drafted by the Data Access Working Group and will be made available when they are finalized
+
+**[External Researcher Access](/data/requesting-data-access)** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL.
 
 **AnVIL Developers** - Per the terms of the grant, AnVIL developers are given access to data housed on AnVIL in order to help facilitate testing, debugging, and support. 
 
@@ -24,11 +25,16 @@ Terra maintains access controls through a list of Authorization Groups (Auth Gro
 
 In general, a top level auth group is created for the workspace with the data, and each of the user lists is added as a secondary group - populated according to the parameters for those users.
 
-1. **External Researcher Access** - dbGAP deposits a copy of their whitelist to a secure ftp site. This list is read by Terra and synced to an internal auth group. It is maintained entirely and solely by dbGAP beyond the initial linking to a new workspace.
-
 1. **Consortium Members** - As a dataset is onboarded, a point of contact is identified to serve as the point of contact for consortium access. This person is granted administrative rights over an auth group. Consortium members are added and removed from this list periodically to match the consortium’s membership records and maintain the integrity of the list.
 
+1. **External Researcher Access** - dbGAP deposits a copy of their whitelist to a secure ftp site. This list is read by Terra and synced to an internal auth group. It is maintained entirely and solely by dbGAP beyond the initial linking to a new workspace.
+
 1. **AnVIL Developers** - A list of current developers is maintained by the Project Management team. Users on this list are added/removed periodically to maintain the integrity of the list
+
+
+## Monitoring and Logging
+
+Both Terra and Gen3 operate in a FISMA-Moderate environment and comply with all requirements set forth in NIST-800-53. This includes robust logging of access to data, periodic audits, and monitoring for abnormal use patterns. Data access incidents will be reported to the relevant parties immediately upon being discovered. 
 
 
 
