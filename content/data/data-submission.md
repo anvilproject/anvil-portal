@@ -46,9 +46,6 @@ AnVIL WGs will work with submitters to validate the format of this information, 
 
 ###Associated Metadata
 Metadata should be in a format compatible with indexing once in AnVIL. Metadata recommendations will be provided by the AnVIL team to ensure that metadata are in an acceptable form to be incorporated into the broader AnVIL data model.  Data Processing WG and Phenotype WG will work with submission requesters in an effort to ingest their data properly.  Because each engagement will most likely be different, processes will be developed (and adjusted, as necessary) as we engage with the various submitters. 
- 
->Additional details can be found in this document: [Minimal Meta-Data Requirements](https://docs.google.com/document/d/1DxqDw_pslY6DE5SbkZI7RAcjczH8CJM725JdI8rwJQU/edit?usp=sharing).
- 
 
 ###Access Restrictions
 Known Data Use Limitations (DUL) need to be clearly defined by the data depositor. This is the list of requirements for gaining access and using the data. There should be protocols in place for gaining access at the time of ingest.
