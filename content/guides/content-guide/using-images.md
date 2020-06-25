@@ -14,7 +14,7 @@ To include an image in your page:
 
 ## Uploading the Image to an "_images" Folder
 
-Using the github web interface navigate to the parent folder of your page and add the image an `_images` folder. 
+Using the github web interface, navigate to the parent folder of your page and add the image to an `_images` folder. 
 
 In the github editor you can not create an empty folder so if the folder does not exist it will be created during the upload step.
 
@@ -31,20 +31,20 @@ Note the `../_images/` preceding the image name. This is required to tell the CM
 You can also add a caption to the image using an HTML style custom tag like:
 
 ```
-<figure-caption>Figure 1. The original AnVIL hompepage image.</figure-caption>
+<figure-caption>Figure 1. The original AnVIL homepage image.</figure-caption>
 ```
 
 This renders like:
 
 ![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
-<figure-caption>Figure 1. The original AnVIL hompepage image.</figure-caption>
+<figure-caption>Figure 1. The the image included using the markdown above.</figure-caption>
 
 >####TIP
 >You can check if the image link is correct by using the preview link in the markdown editor.
 
 ## Controlling Image Size
 
-Images expand to the natural size of the image. Image size will max out at the max column width wich is 650px.
+Images wider than the page channel will be sized to fit. Images narrower than the page channel will render their natural size.
 
 
 

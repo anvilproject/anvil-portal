@@ -37,7 +37,7 @@ This renders as: [An Internal Link](/creating-content/editing-an-existing-page)
 > Don't forget the leading slash "/" in the internal link paths.
 
 
-### Links to a Page Heading
+### Linking to an Internal Page Heading
 
 It is possible to link directly to any outline heading on an internal page as the page headings each have an anchor. 
 
@@ -45,6 +45,7 @@ It is possible to link directly to any outline heading on an internal page as th
 You can find out the link to a page heading by clicking on link icon that appears when you hover over a heading. After you click on the link symbol, the url to that heading will be in your browsers address bar. Copy the link and stip off the method and domain to make a relative url. 
 
 ![Link Icon](../_images/internal-link.png)
+<figure-caption>Figure 1: Hovering over a page heading to reveal the "copy to clipboard" link for the internal anchor.</figure-caption>
 
 Then use the path to create a link like so:
 

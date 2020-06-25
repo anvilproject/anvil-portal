@@ -19,7 +19,7 @@ To edit a page:
 
 
 ![Edit an Existing Page](../_images/improve-this-page.png "Improve this page")
-
+<figure-caption>Figure 1: Using the "Improve this page" link to locate the page's source file in github.</figure-caption>
 
 
 
@@ -30,7 +30,7 @@ Selecting the  edit button will open the file in the github web editor and let y
 
  
 ![Edit an Existing Page](../_images/edit-existing-page.png "Edit an Existing Page")
-
+<figure-caption>Figure 2: Using the github web editor to modify the source file's markdown.</figure-caption>
 ## Modifying Front Matter
 
 At the top of the file you will see a "Front Matter" sections between the `---` markers. Here you can change the Title and Publication Date of the document or the URL to the document in the site.
@@ -52,7 +52,7 @@ The preview will be styled for the github site, not for the HCA site, but you ca
 
 
 ![Edit in Github](../_images/preview-changes.png "Edit an Existing Page")
-
+<figure-caption>Figure 3: Using the github preview changes feature to view a diff of your changes against the original content.</figure-caption>
 
 ## Creating a Pull Request
 
@@ -60,6 +60,6 @@ Once you are ready, request a review from a peer, by creating a pull request in 
 
 Once your pull request is merged it will be deployed to the site.
 
-![Create a Pull Reqeust](../_images/pull-request.png)
- 
+![Create a Pull Request](../_images/pull-request.png)
+<figure-caption>Figure 4: Creating a pull request with the github interface.</figure-caption> 
  
