@@ -77,7 +77,7 @@ During the initial discussions and vetting with the Data Ingestion Committee, th
 ###Data Transfer
 Once data is in a format that meets the above requirements and have been approved by the Data Ingestion Committee, data submitters will contact a designated POC at the AnVIL team to shepherd the data into the AnVIL data storage repository.
 
-Both AnVIL team members and submitting parties will work together throughout the transfer process. Data will be deposited to an AnVIL owned bucket(s) on Google Cloud. For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.  Additional information can be found here: [Data Transfer into AnVIL](https://docs.google.com/document/d/14wtX83yNb-1Jy79pRn-WJukpzctnSBXwpdZFIlxgmec/edit#).
+Both AnVIL team members and submitting parties will work together throughout the transfer process. Data will be deposited to an AnVIL owned bucket(s) on Google Cloud. For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.  An overview of the data transfer workflow is provided in the [Data Transfer into AnVIL](/data/data-transfer-into-anvil) section.
 
 ###Quality Assurance Monitoring
 The transfer of data will be monitored and logged to ensure integrity of the transfer and be included in the Ingestion certification of analysis (see below).  This includes automated confirmation that the file transfers were successful and MD5sums are intact, performed by the GCP services at the time of transfer.
@@ -91,7 +91,7 @@ This certification of analysis (CoA) documents the transfer of data. The CoA is 
 ###QC and Processing
 In order to maximize the value of the AnVIL resource, ingested genomic data will be subject to quality control and harmonization.  For WGS files, a functional equivalence (FE) standard for alignment and processing of whole genome sequencing data has been defined by the CCDG and TOPMed consortia, with the goal of minimizing batch effects in cross-project analyses (Regier et al., 2018).
   
-  Submission of FE-compliant genome and exome sequencing data aligned to GRChB38 is encouraged. (See <https://github.com/CCDG/Pipeline-Standardization/blob/master/PipelineStandard.md>)\
+  Submission of FE-compliant genome and exome sequencing data aligned to GRChB38 is encouraged. (See <https://github.com/CCDG/Pipeline-Standardization/blob/master/PipelineStandard.md>).
 
 With exceptions (e.g., for legacy data sets), data not compliant with the FE standard may be aligned to GRChb38 and reprocessed, at the discretion of the Data Ingestion Committee.
 
