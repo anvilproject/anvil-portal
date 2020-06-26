@@ -20,19 +20,19 @@ class PlusXMore extends React.Component {
 
     handleShowMore = () => {
 
-        const {showMore} = this.props;
+        const { showMore } = this.props;
 
         this.props.onShowMore(!showMore);
     };
 
     render() {
-        const {children, moreCount, singleCount} = this.props;
+        const { children, moreCount } = this.props;
         const more = moreCount > 0;
-        const buttonText = singleCount ? " + more" : ` + ${moreCount} more`;
+        const buttonText = ` + ${moreCount} more`;
         return (
             <span>
-                {children}
-                {more || singleCount ? <button className={compStyles.plusMore} onClick={() => this.handleShowMore()}><span>{buttonText}</span></button> : null}
+                <button className={compStyles.plusMore} onClick={() => this.handleShowMore()}>{children}
+                    {more ? <span>{buttonText}</span> : null}</button>
             </span>
         );
     }

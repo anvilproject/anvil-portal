@@ -27,9 +27,8 @@ class DataTable extends React.Component {
 
         const Cell = (props) => {
 
-            const {children} = (props),
-                label = DashboardTableService.findCellTooltip(children);
-
+            const {children} = props;
+            const label = DashboardTableService.findCellTooltip(children);
             if ( label ) {
 
                 return (<Tooltip label={label}>{children}</Tooltip>);
@@ -53,19 +52,28 @@ class DataTable extends React.Component {
 
         const RowCell = (props) => {
 
-            const {children, column, summary} = props,
-                data = DashboardTableService.formatValue(children, column),
-                linkedTo = DashboardTableService.getCellUrl(children, column, summary),
-                rightAlign = DashboardTableService.cellAlignment(column);
-            const identifier = Date.now(),
-                id = `${column}${identifier}`;
+            const {children, column, summary} = props;
+            const data = DashboardTableService.formatValue(children, column);
+            const linkedTo = DashboardTableService.getCellUrl(children, column, summary);
+            const rightAlign = DashboardTableService.cellAlignment(column);
+            const identifier = Date.now();
+            const id = `${column}${identifier}`;
+            
+            // Add tooltip to workspace names
+            let linkedToContent;
+            if ( !!linkedTo && column === "projectId" ) {
+                linkedToContent = (<Tooltip label={data}>{data}</Tooltip>);
+            }
+            else {
+                linkedToContent = data;
+            }
 
             return (
                 linkedTo ? <ClickHandler className={classNames({[compStyles.right]: rightAlign}, compStyles.link)}
                                          clickAction={() => RedirectService.redirect(linkedTo, data)}
                                          id={id}
                                          tag={"td"}
-                                         label={data}>{data}</ClickHandler> :
+                                         label={data}>{linkedToContent}</ClickHandler> :
                     <td id={id} className={classNames({[compStyles.right]: rightAlign})}><Cell>{data}</Cell></td>
             )
         };

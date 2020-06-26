@@ -49,11 +49,6 @@
     pointer-events: auto;
 }
 
-/* Limit width of study title and table. TODO remove once we have ellipsis on overline tokens */ 
-.tableSizer {
-    max-width: 760px;
-}
-
 /* Title. */
 .title {
     color: var(--shade-dark);

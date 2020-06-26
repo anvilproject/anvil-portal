@@ -5,9 +5,10 @@
  * Style definitions specific to the Overline component.
  */
 
-/* Overline container */
-.overline > * {
+/* Overline container - immediate children */
+.overline > *:not(hr) {
     display: inline-flex;
+    align-items: baseline;
     font-size: 12px;
     line-height: 32px;
     letter-spacing: 2px;
@@ -15,8 +16,8 @@
     white-space: nowrap;
 }
 
-/* Dot - excludes last */
-.overline > *:not(:last-of-type):after {
+/* Dot - excludes first for < 840, excludes last for >= 840 */
+.overline > *:not(hr):not(:first-of-type):before, .overline > *:not(hr):not(:last-of-type):after {
     align-self: center;
     background-color: var(--accent-blue-green);
     border-radius: 50%;
@@ -24,4 +25,44 @@
     height: 3px;
     margin: 0 8px;
     width: 3px;
+}
+
+/* Mobile first - hide after dots on devices < 840 */
+.overline > *:not(hr):not(:last-of-type):after {
+    display: none;
+}
+
+/* Never dot hr - hr elements are used as a line break for devices < 840 */
+.overline > hr+*:before   {
+    display: none;
+}
+
+/* Sneaky hide of hr elements, scoot stacked overline rows closer with negative margin top */
+.overline hr {
+    flex-basis: 100%;
+    border: 0;
+    height: 0;
+    margin: -10px 0 0 0;
+    width: 100%;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+    
+    /* Show after dots on larger devices */
+    .overline > *:not(hr):not(:last-of-type):after {
+        display: inline-flex;
+    }
+
+    /* Hide before dots on larger devices */
+    .overline > *:not(hr):not(:first-of-type):before {
+        display: none;
+    }
+
+    /* Prevent stacking on larger devices */
+    .overline hr {
+        display: none;
+    }
 }

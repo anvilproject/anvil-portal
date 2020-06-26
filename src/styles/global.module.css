@@ -5,11 +5,12 @@
  * 480px - Large handset portrait, extra small window
  * 600px - Small tablet portrait, medium handset landscape, small window
  * 720px - Large tablet portrait, large handset landscape, small window
- * 960px - Small tablet landscape, small window
  * 840px - Large handset portrait, small handset landscape, extra small window
+ * 960px - Small tablet landscape, small window
  * 1280px - Large tablet landscape, medium window
  *
  * Media queries - custom AnVIL breakpoints
+ * 808px - Optimized width of data tables (to match main content channel), below which data tables should be overflow scroll (760px content channel + 24px x 2 for gutters)
  * 1341px - Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  * 1545px - Content and outline are centered, rather than left-aligned
  */

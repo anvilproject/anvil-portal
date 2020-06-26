@@ -12,14 +12,15 @@
     color: var(--accent-blue-dark);
     overflow-x: auto;
     overflow-y: hidden;
-    /*padding-right: 16px; !* RHS gutter *!*/ /* TODO revisit - causing studies to not be full 760px */
-    width: calc(100vw - 16px);
+    padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
+    width: calc(100vw - 16px); /* Allow table to stretch to right-hand side of device, to indicate more */
 }
 
 /* Table wrapper - summary */
 .wrapper.summary {
     margin-bottom: 24px;
 }
+
 
 /* Table wrapper - inset, workspaces */
 .wrapper.inset, .wrapper.workspaces {
@@ -46,7 +47,7 @@ table {
 
 /* Table - detail */
 .detail table {
-    max-width: 1118px;
+    min-width: 760px;
 }
 
 /* Header */
@@ -83,12 +84,12 @@ table {
 
 /* Header cell - first */
 .header th:first-of-type {
-    padding-left: 8px;
+    padding-left: 0;
 }
 
 /* Header cell - last */
 .header th:last-of-type {
-    padding-right: 8px;
+    padding-right: 0;
 }
 
 /* Header cells - inset */
@@ -138,18 +139,39 @@ table {
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     height: 32px;
-    min-width: 104px;
+    min-width: 62px;
     padding: 0 4px;
 }
 
-/* Row cell - detail table - "projectId" */
+/* Row cell - detail table - "program" eg CCDG */
+.detail .row td[id^="program"] {
+    bacground-color: red;
+    max-width: 92px; /* Required for ellipsis */
+    min-width: 92px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Row cell - detail table - "projectId" (ie Terra workspace name) */
 .detail .row td[id^="projectId"] {
-    min-width: 452px;
+    max-width: 300px;
+    min-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
 }
 
 /* Row cell - detail table - "dbGapId" or "dbGapIdAccession" */
 .detail .row td[id^="dbGapId"] {
-    min-width: 124px;
+    min-width: 112px;
+}
+
+/* Row cell - detail table - "type" */
+.detail .row td[id^="dataType"] {
+    min-width: 76px;
 }
 
 /* Row cell - detail table - "access" */
@@ -176,14 +198,18 @@ table {
 
 /* Row cell - counts */
 /* Inset table - "subjects" */
-/* Workspaces table - "subjects", "samples" */
-.inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"], .workspaces .row td[id^="files"], .workspaces .row td[id^="size"] {
-    min-width: 62px;
+/* Workspaces table - "subjects", "samples", "files", "size" */
+.inset .row td[id^="subjects"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
+    min-width: 76px;
 }
 
-/* Row cell - workspaces table "dataType" */
-.workspaces .row td[id^="dataType"] {
-    min-width: 76px;
+/* Row */
+.row {
+    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
+}
+
+.row:hover {
+    background-color: var(--black3);
 }
 
 /* Row cells - "total" */
@@ -204,27 +230,31 @@ table {
 
 /* Row cell - first */
 .row td:first-of-type {
-    padding-left: 8px;
+    padding-left: 0;
 }
 
 /* Row cell - last */
 .row td:last-of-type {
-    padding-right: 8px;
-}
-
-/* Row cell - workspaces table - first */
-.workspaces .row td:first-of-type {
-    padding-left: 0;
-}
-
-/* Row cell - workspaces table - last */
-.workspaces .row td:last-of-type {
     padding-right: 0;
 }
 
+
 /**
- * Large Tablet
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Custom sizing for data tables. Detail data tables are optimized for 760px (which is the width of the main content
+ * channel). Any devices larger than 808px (760px content + 24px x 2 for gutter), data table should consume entire
+ * container. 
+ */
+@media screen and (min-width: 808px) {
+
+    /* Undo overflow for devices where data tables can fit within 760px */
+    .wrapper {
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
 
@@ -232,50 +262,5 @@ table {
     .wrapper.summary {
         padding-right: 0;
         width: 100%;
-    }
-
-    /* Table wrapper - detail */
-    .wrapper.detail {
-        padding-right: 24px;
-        width: calc(100vw - 24px);
-    }
-}
-
-/**
- * Column row layout changes to row layout (left nav/content/outline).
- */
-@media screen and (min-width: 1341px) {
-
-    /* Table wrapper - detail */
-    .wrapper.detail {
-        width: calc(100vw - 280px - 24px - 40px); /* 100vw minus: LHS nav, LHS gutter, content padding */
-    }
-}
-
-/**
- * Content and outline are centered, rather than left-aligned.
- */
-@media screen and (min-width: 1545px) {
-
-    /* Header cells - workspaces */
-    .workspaces .header th {
-        padding-right: 16px;
-    }
-
-    /* Row cell - workspaces */
-    .workspaces .row td {
-        padding-right: 16px;
-    }
-
-    /* Row cell - counts */
-    /* Inset table - "subjects" */
-    /* Workspaces table - "subjects", "samples" */
-    .inset .row td[id^="subjects"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
-        min-width: 72px;
-    }
-
-    /* Row cell - workspaces - "dataType" */
-    .workspaces .row td[id^="dataType"] {
-        min-width: 96px;
     }
 }

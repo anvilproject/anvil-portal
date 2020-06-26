@@ -24,7 +24,7 @@ import compStyles from "./data-study.module.css";
 // Template variables
 let TABLE_HEADERS_CONSENT_GROUPS = ["consentName", "consentStat"];
 let TABLE_HEADERS_DISEASES = ["diseases"];
-let TABLE_HEADERS_WORKSPACES = ["workspaceId", "dataType", "subjects", "samples", "files", "size"];
+let TABLE_HEADERS_WORKSPACES = ["workspaceId", "dataType", "subjects", "samples"];
 
 let classNames = require("classnames");
 
@@ -44,7 +44,7 @@ class DataStudy extends React.Component {
         const totalText = `${total} Subjects`;
         const countOfTotalText = `${count} of ${totalText}`;
 
-        if ( EnvironmentService.isProd() || subjectsCount === subjectsTotal ) {
+        if ( EnvironmentService.isProd() || EnvironmentService.isStaging() || subjectsCount === subjectsTotal ) {
 
             return <span>{totalText}</span>
         }
@@ -78,12 +78,14 @@ class DataStudy extends React.Component {
                                   clickAction={() => RedirectService.redirect(linkedTo, dbGapIdAccession)}
                                   label={dbGapIdAccession}
                                   tag={"span"}>{dbGapIdAccession}</ClickHandler>
+                    <hr/>
                     {firstDisease ?
                         <PlusXMore onShowMore={this.onShowMore.bind(this)}
                                    moreCount={moreDiseases}
                                    showMore={showMore}>
                             <span>{firstDisease}</span>
                         </PlusXMore> : null}
+                    <hr/>
                     {firstConsent ?
                         <PlusXMore onShowMore={this.onShowMore.bind(this)}
                                    moreCount={moreConsents}
@@ -91,23 +93,22 @@ class DataStudy extends React.Component {
                                    showMore={showMore}>
                             <span>{firstConsent}</span>
                         </PlusXMore> : null}
+                    <hr/>
                     {subjectsCounter}
                 </Overline>
-                <div className={compStyles.tableSizer}>
-                    <div className={classNames({[compStyles.hideMore]: !showMore}, {[compStyles.showMore]: showMore})}>
-                        <DataTable inset
-                                   singleRow={true}
-                                   tableHeaders={TABLE_HEADERS_DISEASES}
-                                   tableRow={study}/>
-                        <DataTable inset
-                                   tableHeaders={TABLE_HEADERS_CONSENT_GROUPS}
-                                   tableRows={consents}/>
-                    </div>
-                    <h4 className={classNames(compStyles.title)}>{studyName}</h4>
-                    <DataTable workspaces
-                               tableHeaders={TABLE_HEADERS_WORKSPACES}
-                               tableRows={workspaces}/>
+                <div className={classNames({[compStyles.hideMore]: !showMore}, {[compStyles.showMore]: showMore})}>
+                    <DataTable inset
+                               singleRow={true}
+                               tableHeaders={TABLE_HEADERS_DISEASES}
+                               tableRow={study}/>
+                    <DataTable inset
+                               tableHeaders={TABLE_HEADERS_CONSENT_GROUPS}
+                               tableRows={consents}/>
                 </div>
+                <h4 className={classNames(compStyles.title)}>{studyName}</h4>
+                <DataTable workspaces
+                           tableHeaders={TABLE_HEADERS_WORKSPACES}
+                           tableRows={workspaces}/>
             </div>
         );
     }

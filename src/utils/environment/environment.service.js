@@ -36,3 +36,11 @@ export function isProd() {
 
     return GATSBY_ENV === "master";
 }
+
+/**
+ * Returns true if the current environment is staging.
+ */
+export function isStaging() {
+
+    return GATSBY_ENV === "staging";
+}
