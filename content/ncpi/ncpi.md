@@ -2,57 +2,86 @@
 draft: false
 ---
 
-# NIH Systems Interoperation Working Group
+# NCPI - NIH Cloud Platform Interoperability
 
-<hero small>The AnVIL participates in the NIH Systems Interoperation Working Group.</hero>
-
-
-## Mission
- The NIH Systems Interoperation Working Group group will spearhead technical improvements to cloud "stacks" created by the Common Fund (Kids First Data Resource Center), NCI (CRDC), NHGRI (AnVIL), and NHLBI (BioData Catalyst) that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.
-
-## Out of Initial Scope
-
-Given the time constraints and interest in showing progress in 6 months, we have purposely constrained the problem we are addressing to that which is achievable and maximizes value to researchers.  In the first 6 months we are not requiring use of a single-sign on mechanism across all datasets or stacks (but feedback for the RAS pilot is certainly expected), harmonization of metadata, or large scale data harmonization across projects.  These are worthwhile and interesting topics that are likely to be future areas of focus for this group.  But we will stay focused initially on the "lowest hanging fruit" in terms of user functionality and interoperability improvements.
+<hero small>The goal of the NIH Cloud Platform Interoperability effort (NCPI) is to establish guidelines and technical standards that will empower end-user analyses across the NIH's genomic analysis platforms</hero>
 
 
-## Background
-
-Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-based datasets together (or in distinct combinations).  While data portals make it easy to find data in most cases, it is difficult to take search results from a given data portal to a preferred analysis workspace (cloud compute environment). 
+The Kids First Data Resource is part of a new “NIH Cloud-Based Platforms Interoperability” (NCPI) effort, which is a collaboration with NHGRI AnVIL, NHLBI BioData Catalyst, and the NCI Cancer Research Data Commons (CRDC). The goal is to enable and promote end-user analyses of human genomic and phenotypic datasets across these platforms through federation and interoperability.
  
- Currently, there is not a way that researchers can browse multiple data portals (Kids First, AnVIL, Catalyst, etc), collect their search results, and take them to a single compute environment of their choosing (Terra, Seven Bridges, Cavatica, DNAstack, Galaxy, etc).
-   
-  Some data portals can send search results to analysis workspaces (Kids First DRC to Cavatica for example) but this is limited to specific analysis workspace + portal combinations (see Fig 1) while other portals cannot interact with analysis workspaces at all.
+ This new interoperability effort is being driven by additional key use cases that our research community has identified.
 
 
-Luckily, new and emerging standards (PFB, GA4GH DRS) can help to make the interface between data portals and analysis workspaces consistent, allowing many portals to send search results (e.g. lists of sample IDs and some metadata) to many different analysis workspace environments, ultimately giving researchers better access to data and increased flexibility in their analysis.
+## Clout Platform Components
+
+Like the Kids First Data Resource, each of these platforms are made up of
+
+1. portals for finding and aggregating data,
+1. cloud based analysis workspaces,
+1. collections of analytical workflows and tools,  and
+1. cloud-based data storage repositories (in either AWS or Google),
+
+… and the goal is to establish guidelines and technical standards that will empower end-user analyses across these platforms
 
 
-![NIH Systems Interoperation](./_images/before.png)
-<figure-caption>Figure 1: Currently portals can send search results to only specific compute environments (or no compute environments) making it much harder for researchers to use data across multiple projects in a common compute environment of their choice.</figure-captoin>
+## Some Proposed Principles for Interoperating Cloud Based Data Platforms
 
+1. **Interoperate with other trusted platforms**: if another trusted
+platform is part of your data ecosystem or wants to create an
+ecosystem with you, then interoperate with it.
 
-## Goals
-The key goal of this activity is to establish a generic and universal handoff mechanism so Data Portal users can further analyze search results on any analysis platform that supports the format (Figure 2).  This would allow for Data Portals to develop and maintain a single “export mechanism” which would be available to any Analysis Platform that invested in supporting the standard format. Importantly, this gives their users much more freedom in how and where they compute.
+2. **Follow the golden rule of data resources**: if you take someone else’s
+data, let them have access to your data (assuming you are operating at
+the same level of security and compliance).
 
+3. **Support the principle of least restrictive access**: Provide another
+trusted platform access to your data in the least restrictive manner
+possible.
+    - With rare exceptions, a data resource should provide an API so
+that application in other trusted platforms can access data directly.
+    - If this is not possible due to the size or sensitivity of your data, then support the ability for approved queries or analyses to be run
+over your data and the results returned. Sometimes this is called
+an analysis or query gateway.
 
-![NIH Systems Interoperation](./_images/nih-systems-interoperation.png)
-<figure-caption>Figure 2: By adopting a common standard to hand off search results from data portals to workspace environments we can 1) give researchers flexibility in how they perform their analysis and 2) we make it possible to work with datasets from different data portals in a common analysis workspace environment, allowing for joint analysis.</figure-captoin>
+1. **Agree on standards, compete on implementations**:
+    - It is important to open up your ecosystem to competition, less it stagnates.
+    - What this principle means is that a platform should expose its data and
+resources via APIs so that other applications can be part of your ecosystem.
+    - It is not necessary that the sponsor of the data resource fund other systems
+or applications, but you do not want to implicitly create a monopoly by
+requiring all users of your data use a particular application or platform.
+    - Remember that not all researchers have the same requirements, or the same
+preferences, and in general a mix of applications, systems and platforms is
+better than a single one.
 
-This group aims to improve interoperability between cloud "stacks" created by the Common Fund (Kids First Data Resource Portal), NCI (CRDC), NHGRI (AnVIL), and NHLBI (BioData Catalyst). The goal over the next 12 months is to expand users’ (researchers) analysis capabilities by interfacing advanced search capabilities available on portals with data analysis workspace environments, managing authorization as efficiently as possible to provide a good user experience.
+1. **Support patient partnered research**: Support patient partnered
+  research so that individuals can provide their data and have control
+  over it within your system. If you cannot do this today, add this to your
+  platform roadmap.
+
+## Working Groups
+Over the last 6 months, the group established working groups to address various layers of interoperability;
+
+These include
+
+* (Community Governance WG)        addressing operational barriers to trans-platform data sharing,
+
+* (Systems Interoperation WG)      testing technical standards for exchanging data across platforms,
+
+* (Outreach WG)        coordinating training resources for transitioning researchers to the cloud,
+
+* (FHIR WG)        and piloting FHIR standards for modeling and exchanging clinical and phenotypic data.
+
+While the working groups are making tremendous progress on these critical first steps to achieving interoperability…., additional activities will be needed (e.g. data harmonization).  
+
+Currently all of these platforms use different methods of logging in and managing approvals to controlled access data, and this is one of the major roadblocks to interoperability.
  
- By improving the handoff of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data. Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+ The NIH CIT is working to create one unified Researcher Auth Service (RAS) that will streamline access to multiple NIH data resources. You saw today how many systems you have to log into even just within the Kids First environment, to integrate data access across various sources, so RAS will simplify Kids First data access procedures too.
+ 
+This group is making good progress and they plan to deploy components of the service for systems that enable single sign on and modernized communication of dbGaP approval information this summer.
 
 
-## Deliverbles
 
-Build the necessary infrastructure to enable the use cases below
-Document the standards and conventions we use so that other systems can implement the same approaches
-Provide user-facing materials (blog post, tutorials, and/or documentation) so that other researchers can leverage what is built
-
-To facilitate this each IC resource will:
-
-1. enable users from another IC portal to search their data/tool assets,
-1. allow users from another IC resource to "bring" data/tools to the other resource for computation, assuming the appropriate approvals are in place.
 
 
 
