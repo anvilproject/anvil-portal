@@ -5,13 +5,15 @@
     location: "h"
     order: 0
   primaryLinks:
-    - name: "Platform"
-      key: "/about/platform"
+    - name: "About"
+      key: "/about/about"
       path: "/about"
     - name: "Team"
       key: "/about/team"
     - name: "Working Groups"
       key: "/about/working-groups"
+    - name: "Funding and Oversight"
+      key: "/about/funding-and-oversight"
 - name: "Contact"
   key: "contact"
   path: "/contact"
@@ -27,22 +29,29 @@
   path: "/data"
   position:
     location: "h"
-    order: 1
+    order: 2
   primaryLinks:
-    - name: "AnVIL Data"
+    - name: "Data on the AnVIL"
       key: "/data/data"
       path: "/data"
-    - name: "Data Access Controls"
-      key: "/data/data-access"
-    - name: "Requesting Data Access"
-      key: "/data/requesting-data-access"
-    - name: "Bringing Your Own Data"
-      key: "/data/bringing-your-own-data"
+    - name: "Accessing Data through Terra Workspaces"
+      key: "/data/accessing-data-through-terra-workspaces"
+    - name: "Dataset Inventory"
+      key: "/data/dataset-inventory"
+      secondaryLinks:
+         - name: "Requesting Data Access as Consortia Member"
+           key: "/data/requesting-data-access-as-a-consortium-member"
+         - name: "Requesting Data Access as an External Researcher"
+           key: "/data/requesting-data-access-as-an-external-researcher"
+         - name: "Data Access Controls"
+           key: "/data/data-access"
     - name: "Submitting Consortium Data"
       key: "/data/data-submission"
-    - name: "Transferring Data into AnVIL"
-      key: "/data/data-transfer-into-anvil"
-
+      secondaryLinks:
+         - name: "Transferring Consortium Data into AnVIL"
+           key: "/data/data-transfer-into-anvil"
+    - name: "Bringing Your Own Data"
+      key: "/data/bringing-your-own-data"
 - name: "Events"
   key: "events"
   path: "/events"
@@ -134,16 +143,18 @@
     - name: ""
       key: "/privacy/privacy"
       path: "/privacy"
-- name: "Tools"
-  key: "tools"
-  path: "/tools"
+- name: "Platform"
+  key: "platform"
+  path: "/platform"
   position:
     location: "h"
-    order: 2
+    order: 1
   primaryLinks:
+    - name: "Platform"
+      key: "/platform/platform"
+      path: "/platform"
     - name: "Tools"
-      key: "/tools/tools"
-      path: "/tools"
+      key: "/platform/tools"
 - name: "Training"
   key: "training"
   path: "/training"

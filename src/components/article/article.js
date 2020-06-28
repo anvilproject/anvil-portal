@@ -35,7 +35,8 @@ class Article extends React.Component {
     render() {
         const {bannerHeight, children, docPath, noSpy, styles} = this.props,
             {alignment} = styles || {},
-        dashboard = docPath === "/data/data";
+        //dashboard = docPath === "/data/data";
+        dashboard = false;
         const left = StylesService.isPageAlignmentLeft(alignment);
 
         return (

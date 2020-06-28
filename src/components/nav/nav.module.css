@@ -123,7 +123,7 @@
 
     /* Side nav container - required to "add" fixed side nav to the flow */
     .sideNavContainer {
-        min-width: 280px;
+        min-width: 240px;
     }
 
     /* Side nav */
@@ -136,7 +136,7 @@
         padding: 0;
         position: fixed;
         top: 100px;
-        width: 280px;
+        width: 240px;
     }
 
     /* Side nav line */

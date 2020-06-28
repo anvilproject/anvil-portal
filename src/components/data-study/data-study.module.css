@@ -23,7 +23,7 @@
 
 /* Study titles - override default typography front weight to highlight titles, remove margin bottom to scoot up table under title */
 .study h4 {
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 0;
 }
 

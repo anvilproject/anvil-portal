@@ -8,7 +8,7 @@
 
 /* Header */
 .header {
-    background: var(--white);
+    background: #f6f6f6;
 }
 
 /* Flex - header container, logo & text container, <ul>, <li> */

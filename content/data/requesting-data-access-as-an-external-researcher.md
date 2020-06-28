@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "Access to AnVIL’s datasets is controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort."
 ---
 
-#Requesting Researcher Data Access
+#Requesting External Researcher Data Access
 
 <hero small>The AnVIL is a repository for a number of robust controlled access datasets. While these datasets have significant scientific value, access to them must be controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.</hero>
  
