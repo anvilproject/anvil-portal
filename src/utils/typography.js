@@ -116,6 +116,9 @@ const typography = new Typography({
             li: {
                 margin: "12px 0",
                 padding: "0"
+            },
+            "ol li": {
+                paddingLeft: "8px"
             }
         }
     }
