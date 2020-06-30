@@ -49,7 +49,7 @@ class Home extends React.Component {
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
                 <div className={classNames(globalStyles.grid, globalStyles.g750, globalStyles.centered)}>
                     <div className={compStyles.headline}>Migrate Your Genomic Analysis Workflows to the Cloud</div>
-                    <div className={compStyles.subhead}>Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.</div>
+                    <div className={compStyles.subhead}>Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based computing environment.</div>
                     <GoArrow className={goStyles.stretch}><a href="https://anvil.terra.bio/#workspaces" className={compStyles.linkTerra} rel="nofollow noopener noreferrer" target="_blank"><img className={compStyles.logoTerra} src={logoTerra} alt="Terra"/>Launch AnVIL in Terra</a></GoArrow>
                     <Stats/>
                 </div>

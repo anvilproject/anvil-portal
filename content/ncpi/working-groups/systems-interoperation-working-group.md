@@ -4,16 +4,18 @@ draft: false
 
 # NIH Systems Interoperation Working Group
 
-<hero small>The AnVIL participates in the NIH Systems Interoperation Working Group.</hero>
+<hero small>The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.</hero>
 
 
-## Mission
- The NIH Systems Interoperation Working Group group will spearhead technical improvements to cloud "stacks" created by the Common Fund (Kids First Data Resource Center), NCI (CRDC), NHGRI (AnVIL), and NHLBI (BioData Catalyst) that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.
+### Co-Chairs
+- Brian O’Connor (Broad)
+- Jack DiGiovanna (Need Org)
 
-## Out of Initial Scope
+## Initial Focus
 
-Given the time constraints and interest in showing progress in 6 months, we have purposely constrained the problem we are addressing to that which is achievable and maximizes value to researchers.  In the first 6 months we are not requiring use of a single-sign on mechanism across all datasets or stacks (but feedback for the RAS pilot is certainly expected), harmonization of metadata, or large scale data harmonization across projects.  These are worthwhile and interesting topics that are likely to be future areas of focus for this group.  But we will stay focused initially on the "lowest hanging fruit" in terms of user functionality and interoperability improvements.
+Given the time constraints and interest in showing progress in 6 months, we have purposely constrained the problem we are addressing to that which is achievable and maximizes value to researchers.  
 
+In the first 6 months we are not requiring use of a single-sign on mechanism across all datasets or stacks (but feedback for the RAS pilot is certainly expected), harmonization of metadata, or large scale data harmonization across projects. These are worthwhile and interesting topics that are likely to be future areas of focus for this group.  But we will stay focused initially on the "lowest hanging fruit" in terms of user functionality and interoperability improvements.
 
 ## Background
 
@@ -25,7 +27,6 @@ Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-b
 
 
 Luckily, new and emerging standards (PFB, GA4GH DRS) can help to make the interface between data portals and analysis workspaces consistent, allowing many portals to send search results (e.g. lists of sample IDs and some metadata) to many different analysis workspace environments, ultimately giving researchers better access to data and increased flexibility in their analysis.
-
 
 ![NIH Systems Interoperation](./_images/before.png)
 <figure-caption>Figure 1: Currently portals can send search results to only specific compute environments (or no compute environments) making it much harder for researchers to use data across multiple projects in a common compute environment of their choice.</figure-captoin>
