@@ -41,15 +41,15 @@ class DataStudy extends React.Component {
             {subjectsCount, subjectsTotal} = study;
         const count = subjectsCount.toLocaleString();
         const total = subjectsTotal.toLocaleString();
-        const totalText = `${total} Subjects`;
-        const countOfTotalText = `${count} of ${totalText}`;
+        const countSubjectsText = `${count} Subjects`;
+        const countOfTotalSubjectsText = `${count} of ${total} Subjects`;
 
         if ( EnvironmentService.isProd() || EnvironmentService.isStaging() || subjectsCount === subjectsTotal ) {
 
-            return <span>{totalText}</span>
+            return <span>{countSubjectsText}</span>
         }
 
-        return <span className={compStyles.error}>{countOfTotalText}</span>;
+        return <span className={compStyles.error}>{countOfTotalSubjectsText}</span>;
     };
 
     onShowMore = (event) => {
