@@ -145,7 +145,6 @@ table {
 
 /* Row cell - detail table - "program" eg CCDG */
 .detail .row td[id^="program"] {
-    bacground-color: red;
     max-width: 92px; /* Required for ellipsis */
     min-width: 92px;
     overflow: hidden;
@@ -238,6 +237,17 @@ table {
     padding-right: 0;
 }
 
+/* Row cell - first */
+/* Inset table */
+.inset .row td:first-of-type {
+    padding-left: 8px;
+}
+
+/* Row cell - last */
+/* Inset table */
+.inset .row td:last-of-type {
+    padding-right: 8px;
+}
 
 /**
  * Custom sizing for data tables. Detail data tables are optimized for 760px (which is the width of the main content
