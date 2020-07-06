@@ -1,11 +1,11 @@
 ---
 author: "AnVIL"
 conference: "ISMB 2020"
-date: "2020-07-12"
+date: "2020-07-09"
 description: "This full-day workshop will guide you through a research journey that highlights the capabilities and components of the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) resource."
 eventType: "Virtual Workshop"
 featured: true
-time: "09:00 AM - 06:00 PM EST"
+time: "09:00 AM - 01:00 PM (Eastern Daylight Time)"
 title: "Finding and Analyzing Data in the Cloud with Gen3, Dockstore, Terra, and Galaxy"
 ---
 
@@ -41,7 +41,7 @@ While we will work in the context of AnVIL, you will be able to apply your new s
     - Galaxy workflows and complementary components
     
 ### More Info
-https://www.iscb.org/ismb2020/3962-ismb2018-tutorials#fd2
+https://www.iscb.org/ismb2020-program/tutorials#tut2
 
 ### Registration
 https://www.iscb.org/ismb2020-registration
