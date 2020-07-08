@@ -6,7 +6,6 @@
  */
 
 // Core dependencies
-const DomParser = require("dom-parser");
 const fetch = require("node-fetch");
 const {parseString} = require("xml2js");
 
@@ -116,9 +115,18 @@ const getXMLUrls = async function getXMLUrls(gapAccession) {
 
     /* Grab the gap index page. */
     const indexURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/`;
-    const indexes = await fetchIndex(indexURL);
-    const indexRefs = indexes.getElementsByTagName("a").map(element => element.getAttribute("href"));
 
+    /* Grab all <a> from the index page. */
+    const {html} = await fetchIndex(indexURL),
+        {body} = html,
+        {pre} = body,
+        {hr} = pre,
+        {a} = hr;
+
+    /* Grab the corresponding href attribute. */
+    const indexRefs = a.filter(index => index.att).map(index => index.att.HREF);
+
+    /* Find the dict and report URL reference. */
     const dictXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.data_dict"));
     const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
 
@@ -236,10 +244,9 @@ async function fetchIndex(url) {
 
     try {
 
-        const parser = new DomParser();
-        let fetchXML = await fetch(url);
-        let html = await fetchXML.text();
-        return await parser.parseFromString(html, "text/html");
+        let fetchIndex = await fetch(url);
+        let html = await fetchIndex.text();
+        return await parseHTML(html);
     }
     catch(err) {
 
@@ -353,6 +360,35 @@ function normalizeNodeData(values) {
         let nodeData = assignNodeValue(value);
 
         return nodeData.att;
+    });
+}
+
+/**
+ * Parses HTML to raw JSON.
+ *
+ * This is a minor modification of function parseXML due to requiring strict mode as "false".
+ * `sax-js` parses tag names to uppercase in this mode. Normalization of tags does not include the attributes "att"
+ * and so a separate function has been created to parse the HTML.
+ * See https://github.com/Leonidas-from-XIV/node-xml2js/issues/501.
+ *
+ * @param html
+ * @returns {Promise}
+ */
+function parseHTML(html) {
+
+    return new Promise((resolve, reject) => {
+
+        parseString(html, ({async: true, attrkey: "att", explicitArray: false, normalize: true, normalizeTags: true, strict: false, trim: true}), (err, result) => {
+
+            if (err) {
+
+                reject(err);
+            }
+            else {
+
+                resolve(result);
+            }
+        });
     });
 }
 
