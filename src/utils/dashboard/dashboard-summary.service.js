@@ -61,14 +61,6 @@ function countCohorts(data) {
 }
 
 /**
- * Filter the project nodes by the specified type.
- */
-function filterProjectNodesByType(project, type) {
-
-    return project.nodes.filter(node => node.type === type) || [];
-}
-
-/**
  * Filter the projects by the specified program.
  *
  * @param projects
@@ -76,7 +68,7 @@ function filterProjectNodesByType(project, type) {
  */
 function filterProjectsByProgram(projects, program) {
 
-    return projects.filter(project => project.source === program);
+    return projects.filter(project => project.program === program);
 }
 
 /**
@@ -102,7 +94,7 @@ function reduceSummaryByType(data, type) {
  */
 function setOfPrograms(data) {
 
-    return new Set(data.map(project => project.source));
+    return new Set(data.map(project => project.program));
 }
 
 /**
@@ -116,31 +108,6 @@ function sumFiles(data) {
 }
 
 /**
- * Sum the specified file counts.
- *
- * @param files
- * @returns {*}
- */
-function sumFileValues(files) {
-
-    return files.reduce((accum, file) => {
-        accum += file.count;
-        return accum;
-    }, 0);
-}
-
-/**
- * Sum the specified node counts.
- */
-function sumNodeValues(nodes) {
-
-    return nodes.reduce((accum, node) => {
-        accum += node.count;
-        return accum;
-    }, 0);
-}
-
-/**
  * Sum the file value, for the group of projects.
  *
  * @param data
@@ -150,7 +117,7 @@ function sumProjectFileValues(data) {
 
     return data.reduce((projectAccum, project) => {
 
-        projectAccum += sumFileValues(project.files);
+        projectAccum += project.files;
         return projectAccum;
     }, 0);
 }
@@ -162,7 +129,7 @@ function sumProjectNodeValues(data, nodeType) {
 
     return data.reduce((projectAccum, project) => {
 
-        projectAccum += sumNodeValues(filterProjectNodesByType(project, nodeType));
+        projectAccum += project[nodeType];
         return projectAccum;
     }, 0);
 }
@@ -172,7 +139,7 @@ function sumProjectNodeValues(data, nodeType) {
  */
 function sumSamples(data) {
 
-    return sumProjectNodeValues(data, "Sample");
+    return sumProjectNodeValues(data, "samples");
 }
 
 /**
@@ -180,7 +147,7 @@ function sumSamples(data) {
  */
 function sumSubjects(data) {
 
-    return sumProjectNodeValues(data, "Subject");
+    return sumProjectNodeValues(data, "subjects");
 }
 
 /**

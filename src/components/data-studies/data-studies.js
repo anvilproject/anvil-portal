@@ -12,7 +12,7 @@ import React from "react";
 
 // App dependencies
 import DataStudy from "../data-study/data-study";
-import * as DashboardStudiesService from "../../utils/dashboard/dashboard-studies.service";
+import {DashboardStudyStaticQuery} from "../../hooks/dashboard-study-query";
 
 // Styles
 import compStyles from "./data-studies.module.css";
@@ -31,7 +31,7 @@ class DataStudies extends React.Component {
 
 export default () => {
 
-    const studies = DashboardStudiesService.getDashboardStudies();
+    const studies = DashboardStudyStaticQuery();
 
     return (
         <DataStudies studies={studies}/>

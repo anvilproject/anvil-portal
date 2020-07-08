@@ -2,55 +2,52 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for filtering dashboard data by dbGap availability.
+ * Service for filtering workspaces by "consortia", "dbGap" or "public".
  */
-
-// App dependencies
-import {BLACKLIST_DBGAPIDS} from "./blacklist-db-gap-ids";
 
 /**
- * Returns a filtered set of dashboard data, specified by dbGapId availability.
+ * Returns a filtered set of workspaces, specified by "consortia" or "dbGap" or "public".
+ * "consortia" returns all private workspaces without a dbGapId accession.
+ * "dbGap" returns all workspaces with an accession.
+ * "public" [shared] returns all public workspaces without an accession.
  *
- * @param dashboardData
- * @param dbGapAccessible
+ * @param workspaces
+ * @param consortia
+ * @param dbGap
+ * @param shared
  * @returns {*}
  */
-export function filterDataByDBGapReadiness(dashboardData, dbGapAccessible) {
+export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared) {
 
-    /* An undefined value will build an unfiltered table, and returns all data. */
-    if ( !dbGapAccessible || !dashboardData ) {
+    if ( !!consortia && !!shared && !!dbGap ) {
 
-        return dashboardData.projects;
+        return workspaces;
     }
 
-    /* Determine the type of table to be built, specified by the availability of dbGapId. */
-    /* All public data will return with the accessible dbGapId data as "readiness data". */
-    /* A true accessible value will return data with accessible dbGapIds as "readiness data". */
-    /* A false accessible value will return data without dbGapIds (blacklisted dbGapIds), or inaccessible dbGapIds as "coming soon data". */
-    const showReadinessData = JSON.parse(dbGapAccessible);
+    /* Note: rehype-react custom component parsing of props. */
+    /* A prop without a value will not be interpreted as true; instead, it will be passed as the empty string "". */
+    return workspaces.filter(workspace => {
 
-    return dashboardData.projects.filter(data => {
+        const dbGapExists = !!workspace.dbGapIdAccession;
 
-        const dbGapBlacklisted = BLACKLIST_DBGAPIDS.includes(data.dbGAP_study_id);
-        const dbGapExists = !!data.dbGAP_study_id;
+        /* Prop "consortia" - return all private workspaces without a dbGapId accession. */
+        if ( consortia === "" ) {
 
-        if ( showReadinessData ) {
-
-            if ( data.public ) {
-
-                return true;
-            }
-
-            return dbGapExists && !dbGapBlacklisted;
+            return ( workspace.access === "Private" ) && !dbGapExists;
         }
-        else {
 
-            if ( data.public ) {
+        /* Prop "dbGap" - return all workspaces with a dbGapId accession. */
+        if ( dbGap === "" ) {
 
-                return false;
-            }
-
-            return !dbGapExists || dbGapBlacklisted;
+            return dbGapExists;
         }
+
+        /* Prop "public" - return all public workspaces without a dbGapId accession. */
+        if ( shared === "" ) {
+
+            return ( workspace.access === "Public" ) && !dbGapExists;
+        }
+
+        return workspace;
     });
 }

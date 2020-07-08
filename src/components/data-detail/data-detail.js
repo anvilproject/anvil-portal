@@ -4,9 +4,16 @@
  *
  * The AnVIL - data detail component.
  * Use of this component within markdown is possible.
- * Use the tag <data-detail dbGapAccessible=false></data-detail> but ensure it is closed.
+ * Use the tag <data-detail></data-detail> but ensure it is closed.
  *
- * The prop "dbGapAccessible" is an optional boolean value.
+ * The following props are optional and do not require a value:
+ * - "consortia"
+ * - "dbgap"
+ * - "public"
+ *
+ * "consortia" will return all private workspaces without a dbGapId accession value.
+ * "dbgap" will return all workspaces with a dbGapId accession value (note the lower case "g").
+ * "public" will return all public workspaces without a dbGapId accession value.
  */
 
 // Core dependencies
@@ -19,7 +26,7 @@ import * as DashboardDetailService from "../../utils/dashboard/dashboard-detail.
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
 
-let TABLE_HEADERS = ["program", "projectId", "dbGapIdAccession", "dataType", "access", "subjects", "samples"];
+let TABLE_HEADERS = ["program", "projectId", "dbGapId", "dataType", "access", "subjects", "samples"];
 
 class DataDetail extends React.Component {
 
@@ -33,8 +40,9 @@ class DataDetail extends React.Component {
 
 export default (props) => {
 
-    const dbGapAccessible = props.dbgapaccessible;
-    const details = DashboardDetailService.getDashboardDetail(dbGapAccessible);
+    const {consortia, dbgap} = props;
+    const shared = props.public;
+    const details = DashboardDetailService.getDashboardDetail(consortia, dbgap, shared);
 
     return (
         <DataDetail details={details}/>

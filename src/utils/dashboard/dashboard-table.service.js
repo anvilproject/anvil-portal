@@ -6,7 +6,6 @@
  */
 
 // App dependencies
-import {BLACKLIST_DBGAPIDS} from "./blacklist-db-gap-ids";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
@@ -51,7 +50,14 @@ export function formatValue(value, column) {
 
         if ( column === "diseases" ) {
 
-            return value.join(", ");
+            if ( value.length ) {
+
+                return value.join("; ");
+            }
+            else {
+
+                return "No diseases specified."
+            }
         }
 
         if ( column === "program" ) {
@@ -160,17 +166,6 @@ function formatDataType(dataTypes) {
 }
 
 /**
- * Returns true if the specified gap id is blacklisted.
- *
- * @param gapId
- * @returns {boolean}
- */
-function isGapIdBlacklist(gapId) {
-
-    return BLACKLIST_DBGAPIDS.includes(gapId);
-}
-
-/**
  * Returns a string by concatenating all of the elements in an array, separated by a comma.
  *
  * @param array
@@ -215,9 +210,7 @@ function switchCellNameToTooltipLabel(cellValue) {
 function switchColumnUrl(columnName, summary, value) {
 
     switch (columnName) {
-        case !isGapIdBlacklist(value) && "dbGapId":
-            return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
-        case !isGapIdBlacklist(value) && "dbGapIdAccession":
+        case "dbGapIdAccession":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
             return switchProgramUrl(value);
@@ -226,7 +219,7 @@ function switchColumnUrl(columnName, summary, value) {
         case "workspaceId":
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
-            return null;
+            return "";
     }
 }
 

@@ -1,28 +1,44 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
 export const DashboardStudyStaticQuery = () => {
-    const {allStudySchema} = useStaticQuery(
+    const {allDashboardSchemaJson} = useStaticQuery(
         graphql`
         query DashboardStudyStaticQuery {
-            allStudySchema(sort: {fields: dbGapIdAccession, order: ASC}) {
-              edges {
-                node {
-                  consentGroups {
-                    groupNum
-                    longName
-                    shortName
+          allDashboardSchemaJson {
+            edges {
+              node {
+                studies {
+                  access
+                  consentGroup {
+                    consents {
+                      consentCode
+                      consentLongName
+                      consentName
+                      consentShortName
+                      consentStat
+                    }
+                    consentsStat
                   }
+                  consortia
                   dbGapIdAccession
                   diseases
-                  name {
-                    longName
-                    shortName
-                   }
+                  studyName
+                  subjectsCount
+                  subjectsTotal
+                  workspaces {
+                    dataType
+                    files
+                    samples
+                    size
+                    subjects
+                    workspaceId
+                  }
                 }
               }
             }
+          }
         }
     `
     );
-    return allStudySchema.edges.map(n => n.node);
+    return allDashboardSchemaJson.edges.find(n => n.node).node.studies;
 };

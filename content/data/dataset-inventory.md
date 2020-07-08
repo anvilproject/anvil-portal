@@ -11,8 +11,6 @@ title: "Data"
 
 ## Accessing AnVIL Data via Terra Workspaces
 
-
-
 To access data:
 
 1. [Create an account](https://anvil.terra.bio/#workspaces) in AnVIL Terra and link your eRA Commons / NIH account.
@@ -21,12 +19,9 @@ To access data:
 
 Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detai.  
 
-
-
-
 ## Workspaces Accessible by Consortia Members and External Researchers
 
-<data-summary dbGapAccessible=true></data-summary>
+<data-summary dbGap></data-summary>
 
 <data-studies></data-studies>
 
@@ -38,6 +33,8 @@ Please see the [Requesting Data Access](/data/requesting-data-access) and [Once 
 
 >For workspaces where the dbGaP Id is not selectable, the dbGaP study registration is in progress.  The dbGaP Id has been assigned but the study is not yet listed in dbGaP.
 
-<data-summary dbGapAccessible=false></data-summary>
-<data-detail dbGapAccessible=false></data-detail>
+<data-summary consortia></data-summary>
+<data-detail consortia></data-detail>
 
+<data-summary public></data-summary>
+<data-detail public></data-detail>

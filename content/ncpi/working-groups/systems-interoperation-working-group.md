@@ -29,7 +29,7 @@ Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-b
 Luckily, new and emerging standards (PFB, GA4GH DRS) can help to make the interface between data portals and analysis workspaces consistent, allowing many portals to send search results (e.g. lists of sample IDs and some metadata) to many different analysis workspace environments, ultimately giving researchers better access to data and increased flexibility in their analysis.
 
 ![NIH Systems Interoperation](./_images/before.png)
-<figure-caption>Figure 1: Currently portals can send search results to only specific compute environments (or no compute environments) making it much harder for researchers to use data across multiple projects in a common compute environment of their choice.</figure-captoin>
+<figure-caption>Figure 1: Currently portals can send search results to only specific compute environments (or no compute environments) making it much harder for researchers to use data across multiple projects in a common compute environment of their choice.</figure-caption>
 
 
 ## Goals
@@ -37,7 +37,7 @@ The key goal of this activity is to establish a generic and universal handoff me
 
 
 ![NIH Systems Interoperation](./_images/nih-systems-interoperation.png)
-<figure-caption>Figure 2: By adopting a common standard to hand off search results from data portals to workspace environments we can 1) give researchers flexibility in how they perform their analysis and 2) we make it possible to work with datasets from different data portals in a common analysis workspace environment, allowing for joint analysis.</figure-captoin>
+<figure-caption>Figure 2: By adopting a common standard to hand off search results from data portals to workspace environments we can 1) give researchers flexibility in how they perform their analysis and 2) we make it possible to work with datasets from different data portals in a common analysis workspace environment, allowing for joint analysis.</figure-caption>
 
 This group aims to improve interoperability between cloud "stacks" created by the Common Fund (Kids First Data Resource Portal), NCI (CRDC), NHGRI (AnVIL), and NHLBI (BioData Catalyst). The goal over the next 12 months is to expand users’ (researchers) analysis capabilities by interfacing advanced search capabilities available on portals with data analysis workspace environments, managing authorization as efficiently as possible to provide a good user experience.
  
