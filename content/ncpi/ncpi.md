@@ -2,15 +2,32 @@
 draft: false
 ---
 
-# About NCPI - the NIH Cloud Platform Interoperability Effort
+# About the NIH Cloud Platform Interoperability Effort (NCPI)
 
 
-A key aim of the NIH is to strengthen the genomics analysis infrastructure by fostering the development of multiple cloud based, interoperable, genomic data commons and to deploy these data commons as a federated data ecosystem
 
+![NCPI Overview](./_images/ncpi-overview.svg)
+
+
+
+## Overview
+
+The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on Oct 3-4th, 2019 with the purpose of driving interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund.
+ 
+This new interoperability effort is a collaboration between NIH representatives and team members from each platform and will establish guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH federated data ecosystem.
+
+ The NCPI will demonstrate progress based on realistic researcher use cases every 6 months.
+
+
+
+
+## Platforms
 ![NCPI Overview](./_images/ncpi-hero.png)
 
+The NCPI will work to enable analysis across:
 
-To help achieve this aim, members from the following cloud based genomic analysis platforms have recently joined together to launch the NIH Cloud Platform Interoperability (NCPI) effort:
+
+
 
 
 * NHGRI AnVIL,
@@ -18,8 +35,6 @@ To help achieve this aim, members from the following cloud based genomic analysi
 * NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program,
 * and the NCI Cancer Research Data Commons.
 
-
-The NCPI is working to establish guidelines and technical standards that will empower end-user analyses across the NIH's genomic analysis platforms and enable the realization of the federated data ecosystem.
 
 ## Data Commons
 
@@ -34,7 +49,6 @@ A **Workspace Environment** is one where users can take links to data files (gen
 
 
 
-![NCPI Overview](./_images/ncpi-overview.svg)
 
 
 **Data Storage**

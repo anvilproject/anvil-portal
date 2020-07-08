@@ -5,17 +5,23 @@ pageAlignment: "center"
 title: "Data"
 ---
 
-# Data on the AnVIL
+# AnVIL Datasets
 
 <hero small>AnVIL hosts high value genomic datasets relevant to human health and disease.</hero>
 
-## Current Consortia
+## Current Datasets
  
  A summary of the currently ingested data is listed below:
  
 <data-summary></data-summary>
+### Public Datasets
+<data-summary public></data-summary>
+### dbGaP Accessible Datasets
+<data-summary dbGap></data-summary>
+### Consortia Access Datasets
+<data-summary consortia></data-summary>
 
-## Planned Consortia
+## Coming Soon
 
 The folowing consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
 
@@ -26,21 +32,3 @@ The folowing consortia are planned for data ingestion. Additional consortia are 
 * [NIA](https://www.nia.nih.gov/) - National Institute of Aging
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 * [UDN](https://undiagnosed.hms.harvard.edu/) - Undiagnosed Disease Network
-
-NIA - International Parkinson's Disease Genomics
-https://pdgenetics.org/
-
-NIMH - National Institute of Mental Health
-
-- InPSYght - Whole Genome Dataset
-- InPSYght - 10X Linked-Read Whole Genome Sequence Dataset
-- Genetic Neuroscience
-
-CEPH/Utah
-- Centre d'Etude du Polymorphisme Humain & Univerity of Utah
-
-Genomic Answers for Kids
-- Center for Pediatric Genomics Medicine
-
-PMDG
-- Pediatric Movement Disorders Genomics
