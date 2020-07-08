@@ -22,7 +22,7 @@ class PageHead extends React.Component {
                 <title>{title}</title>
                 {EnvironmentService.isProd() ? null : <meta name="robots" content="noindex" />}
                 <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500|Open+Sans:300,400,600,700&display=swap" rel="stylesheet"/>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons+Round"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"/>
                 <html lang="en" />
             </Helmet>
         )

@@ -14,6 +14,7 @@ import gitHub from "../../../images/logo-git-hub.png";
 import hhs from "../../../images/logo-hhs.svg";
 import nhgri from "../../../images/logo-nhgri.svg";
 import nih from "../../../images/logo-nih.svg";
+import slack from "../../../images/logo-slack.svg";
 import twitter from "../../../images/logo-twitter.png";
 import usaGov from "../../../images/logo-usa-gov.png";
 
@@ -44,8 +45,8 @@ class Footer extends React.Component {
                         <Link className={compStyles.link} to="/privacy">Privacy</Link>
                         <a href="https://twitter.com/useAnVIL" rel="noopener noreferrer" target="_blank">
                             <img src={twitter} alt="twitter"/></a>
-                        <a href="https://gitter.im/anvil-project/Lobby" rel="noopener noreferrer" target="_blank">
-                            <i className="material-icons-outlined">forum</i></a>
+                        <a href="https://anvil-community.slack.com/join/shared_invite/zt-fyn7c68g-PTWj5uszvyD6D7N6ab2iMQ#/" rel="noopener noreferrer" target="_blank">
+                            <img src={slack} alt="slack"/></a>
                         <a href="https://github.com/anvilproject" rel="noopener noreferrer" target="_blank">
                             <img src={gitHub} alt="gitHub"/></a>
                     </div>
