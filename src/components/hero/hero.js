@@ -26,9 +26,9 @@ class Hero extends React.Component {
     render() {
         const {children, small} = this.props;
         return (
-            <div className={classNames(compStyles.hero, {[compStyles.small]: this.isCompStyles(small)})}>
+            <p className={classNames(compStyles.hero, {[compStyles.small]: this.isCompStyles(small)})}>
                 {children}
-            </div>
+            </p>
         );
     }
 }

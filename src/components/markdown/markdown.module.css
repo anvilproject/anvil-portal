@@ -10,63 +10,8 @@
  * Content Styles
  */
 
-/* Link style */
 .content a {
-    border-bottom: 2px solid var(--accent-mustard);
-    transition: border 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Link hover */
-.content a:hover {
-    border-bottom: 2px solid var(--black34); /* Placeholder */
-}
-
-/* Button - remove link style from button */
-.content button a, .content button a:hover {
-    border-bottom: none; /* Required to override link style */
-}
-
-/* Blockquote */
-.content blockquote {
-    color: var(--black58);
-    font-size: 16px;
-    line-height: 24px;
-    margin: 16px 0;
-    padding: 8px 8px 8px 16px;
-    position: relative;
-}
-
-/* Blockquote */
-.content blockquote:before {
-    background-color: var(--accent-mustard);
-    border-radius: 4px;
-    bottom: 0;
-    content: "";
-    left: 0;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    width: 4px;
-}
-
-/* Blockquote contents */
-.content blockquote h4, .content blockquote p {
-    margin: 0;
-}
-
-/* Ordered list - secondary - style */
-.content ol ol li {
-    list-style: lower-alpha;
-}
-
-/* Ordered list - secondary list, last item */
-.content ol ol li:last-of-type {
-    margin-bottom: 12px;
-}
-
-/* Ordered list - secondary list end of ordered list */
-.content ol li:last-of-type ol li:last-of-type {
-    margin-bottom: 0;
+    text-decoration: underline;
 }
 
 /* Image zoom icon */
@@ -85,17 +30,6 @@
     position: absolute;
     right: 24px;
     width: 60px;
-}
-
-/* Preformatted text */
-.content pre {
-    white-space: pre-wrap;
-}
-
-/* Code */
-.content code {
-    overflow-wrap: break-word; /* IE, Edge */
-    word-break: break-word;
 }
 
 /**

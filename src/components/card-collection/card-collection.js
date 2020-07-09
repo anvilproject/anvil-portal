@@ -19,8 +19,9 @@
 import React from "react";
 
 // App dependencies
-import ClickHandler from "../click-handler/click-handler";
-import GoArrow from "../go-arrow/go-arrow";
+import ListItem from "../list-item/list-item";
+import ListItemContent from "../list-item/list-item-content";
+import ListItemIcon from "../list-item/list-item-icon";
 import {CardCollectionStaticQuery} from "../../hooks/card-collection-query";
 import Markdown from "../markdown/markdown";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
@@ -29,7 +30,6 @@ import * as DOMService from "../../utils/dom.service";
 
 // Styles
 import compStyles from "./card-collection.module.css";
-import arrowStyles from "../go-arrow/go-arrow.module.css";
 
 let anchorEls;
 
@@ -128,17 +128,20 @@ class CardCollection extends React.Component {
             const openTab = this.isValidUrl(url);
 
             return (
-                <ClickHandler className={compStyles.card}
-                              clickAction={() => this.redirect(linkTo, openTab, title)}
-                              tag="div" label={title}>
-                    <div className={compStyles.primary}>
-                        {src ? <img className={compStyles.icon} src={src} alt="logo"/> : null}
-                        <h4>{title}</h4>
-                    </div>
-                    <Markdown className={compStyles.secondary}>{htmlAst}</Markdown>
-                    <GoArrow className={arrowStyles.stretch}><span>Learn More</span></GoArrow>
-                </ClickHandler>
-            )
+                <div className={compStyles.listItem}>
+                    <ListItem redirectTo={() => this.redirect(linkTo, openTab, title)} label={title}>
+                        <ListItemIcon>
+                            <div className={compStyles.iconContainer}>
+                                <img className={compStyles.icon} src={src} alt="logo"/>
+                            </div>
+                        </ListItemIcon>
+                        <ListItemContent>
+                            <h3>{title}</h3>
+                            <Markdown className={compStyles.secondary}>{htmlAst}</Markdown>
+                        </ListItemContent>
+                    </ListItem>
+                </div>
+            );
         };
 
         return (

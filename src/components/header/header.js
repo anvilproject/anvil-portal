@@ -40,7 +40,7 @@ class Header extends React.Component {
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
-                    <Link to="/">
+                    <Link to="/" className={compStyles.logo}>
                         <img src={logo} alt="anVIL"/>
                     </Link>
                     <ClickHandler

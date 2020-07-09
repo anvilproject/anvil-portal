@@ -8,7 +8,7 @@
 
 /* Header */
 .header {
-    background: #f6f6f6;
+    background: var(--white);
 }
 
 /* Flex - header container, logo & text container, <ul>, <li> */
@@ -20,6 +20,11 @@
 /* Flex none - logo */
 .header > div > a {
     flex: none;
+}
+
+/* Logo */
+.header .logo {
+    margin-top: -9px;
 }
 
 /* Header container */
@@ -93,9 +98,6 @@
 .header li a {
     color: var(--accent-blue-dark);
     font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    height: 32px;
-    line-height: 32px;
     position: relative;
 }
 
@@ -197,13 +199,34 @@
 }
 
 /**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+
+    /* Links - subsequent link */
+    .header li:not(:first-of-type) {
+        margin: 0 0 0 16px;
+    }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
  */
 @media screen and (min-width: 840px) {
 
     /* Links - subsequent link */
     .header li:not(:first-of-type) {
-        margin: 0 0 0 36px;
+        margin: 0 0 0 24px;
+    }
+}
+
+/**
+ * Small tablet landscape, small window
+ */
+@media screen and (min-width: 960px) {
+
+    /* Links - subsequent link */
+    .header li:not(:first-of-type) {
+        margin: 0 0 0 32px;
     }
 }

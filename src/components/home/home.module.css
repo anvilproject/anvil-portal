@@ -37,7 +37,6 @@ section:last-child {
 /* Hero - subhead text */
 .hero .subhead {
     color: var(--accent-blue-dark);
-    font-family: "Barlow", sans-serif;
     font-size: 24px;
     font-weight: 300;
     line-height: 32px;

@@ -17,8 +17,9 @@
     background-color: rgba(var(--accent-blue-green-rgb), 0.12);
 }
 
-.listItem a {
-    border-bottom: none !important; /* Hide default border bottom on links */
+/* Handle a tags (for internal links) or spans (for external links) */
+.listItem > a, .listItem > span {
+    text-decoration: none !important; /* Hide default underline on links */
     display: flex; /* Column layout for to level children in list item */
 }
 

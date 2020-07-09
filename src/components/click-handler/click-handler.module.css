@@ -5,6 +5,10 @@
  * Style definitions specific to The AnVIL click handler component.
  */
 
+.handler {
+    cursor: pointer;
+}
+
 .handler:focus {
     outline: none;
 }

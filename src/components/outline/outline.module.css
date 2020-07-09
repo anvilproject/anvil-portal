@@ -54,8 +54,8 @@
 }
 
 /* Outline - list - not last */
-.outline li:not(:last-of-type) {
-    margin: 8px 0;
+.outline li {
+    margin: 12px 0;
 }
 
 /* Outline - first list <h1> */
@@ -74,9 +74,8 @@
 
 /* Link */
 .outline li a {
-    color: var(--accent-blue-dark);
+    color: var(--black58);
     display: inline-block;
-    font-family: "Open Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
     padding: 4px 8px; /* For background color indicators */
@@ -91,6 +90,7 @@
 /* Link - background - active */
 .outline li a.active {
     background-color: rgba(174, 235, 242, 0.54);
+    color: var(--accent-blue-dark);
 }
 
 /* Link - background - hover state only */

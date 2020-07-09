@@ -76,7 +76,6 @@ table {
 
 /* Header cells */
 .header th {
-    font-family: "Open Sans", sans-serif;
     font-weight: 600;
     line-height: 24px;
     padding: 0 4px 4px;
@@ -136,7 +135,6 @@ table {
 
 /* Row cells */
 .row td {
-    font-family: "Barlow", sans-serif;
     font-weight: 400;
     height: 32px;
     min-width: 62px;

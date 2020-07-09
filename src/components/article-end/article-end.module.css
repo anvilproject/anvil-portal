@@ -15,8 +15,7 @@
 
 /* Link - "Improve this page", "Content guide" */
 .articleEnd a {
-    border-bottom: 2px solid var(--accent-mustard);
-    transition: border 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: underline;
     width: fit-content;
 }
 
@@ -27,5 +26,5 @@
 
 /* Link - hover */
 .articleEnd a:hover {
-    border-bottom: 2px solid var(--black34);
+    /*border-bottom: 2px solid var(--black34);*/
 }
