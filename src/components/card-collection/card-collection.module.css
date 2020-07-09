@@ -10,14 +10,3 @@
 .collection .listItem {
     margin: 32px 0;
 }
-
-/* Icon container */
-.collection .iconContainer {
-    padding: 0 10px;
-    width: 90px;
-}
-
-/* Icon */
-.collection .icon {
-    width: 100%;
-}

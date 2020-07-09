@@ -7,55 +7,5 @@
 
 /* Workspaces */
 .workspaces {
-    display: flex;
-    flex-wrap: wrap;
     padding-top: 60px;
-}
-
-/* Workspace */
-.workspace {
-    flex-basis: 100%;
-    margin-bottom: 48px;
-}
-
-/* Workspace - last */
-.workspace:last-of-type  {
-    margin: 0;
-}
-
-/* Workspace heading */
-.workspace h4 {
-    margin: 0 0 10px; /** Override default h4 margins for workspaces */
-}
-
-/* Workspace paragraph */
-.workspace p {
-    font-size: 14px;
-}
-
-/* Workspace paragraph - last */
-.workspace p:last-of-type {
-    margin-bottom: 12px;
-}
-
-/**
- * Small Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 600px) {
-
-    /* Workspace */
-    .workspace {
-        flex-basis: 50%;
-    }
-
-    /* Workspace - odds */
-    .workspace:nth-of-type(odd) {
-        padding-right: 24px;
-    }
-
-    /* Workspace - evens */
-    .workspace:nth-of-type(even) {
-        padding-left: 24px;
-    }
 }

@@ -32,6 +32,7 @@ const typography = new Typography({
             styles: ["400", "600", "700"]
         }
     ],
+    headerColor: "#012840",
     headerFontFamily: [
         "Open Sans",
         "sans-serif"
@@ -41,7 +42,7 @@ const typography = new Typography({
     overrideStyles: ({rhythm}) => {
         return {
             "h2, h3, h4, h5,h6": {
-                marginTop: rhythm(1),
+                marginTop: rhythm(1.3333),
             },
             "ol, ul": {
                 margin: 0,

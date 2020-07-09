@@ -19,6 +19,7 @@
 import React from "react";
 
 // App dependencies
+import BrandIcon from "../brand-icon/brand-icon";
 import ListItem from "../list-item/list-item";
 import ListItemContent from "../list-item/list-item-content";
 import ListItemIcon from "../list-item/list-item-icon";
@@ -131,9 +132,7 @@ class CardCollection extends React.Component {
                 <div className={compStyles.listItem}>
                     <ListItem redirectTo={() => this.redirect(linkTo, openTab, title)} label={title}>
                         <ListItemIcon>
-                            <div className={compStyles.iconContainer}>
-                                <img className={compStyles.icon} src={src} alt="logo"/>
-                            </div>
+                            <BrandIcon src={src} alt={title}/>
                         </ListItemIcon>
                         <ListItemContent>
                             <h3>{title}</h3>

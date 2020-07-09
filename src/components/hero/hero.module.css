@@ -8,10 +8,13 @@
 
 /* Hero */
 .hero {
-    color: rgb(88, 96, 105);
+    background-color: rgba(126,186,192,.12);
+    color: var(--accent-blue-dark);
+    font-size: 18px;
     font-weight: 300;
-    font-size: 20px;  
-    margin: 24px 0; /* Rhythm - 1 */
+    line-height: 28px;
+    margin: 0 0 24px;
+    padding: 24px;
 }
 
 /* Small */
