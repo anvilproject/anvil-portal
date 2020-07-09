@@ -14,10 +14,10 @@ import Carousel from "../carousel/carousel";
 import GoArrow from "../go-arrow/go-arrow";
 import {AccessingStaticQuery} from "../../hooks/accessing-query";
 import {EventsStaticQuery} from "../../hooks/events-query";
-import {FeaturedWorkspacesStaticQuery} from "../../hooks/featured-workspaces-query";
 import {NewsStaticQuery} from "../../hooks/news-query";
 import {OnboardingStaticQuery} from "../../hooks/onboarding-query";
 import {RoadMapIntroStaticQuery} from "../../hooks/road-map-intro-query";
+import {SectionIntroStaticQuery} from "../../hooks/section-intro-query";
 import {SubmittingStaticQuery} from "../../hooks/submitting-query";
 import RoadMap from "../road-map/road-map";
 import Scoop from "../scoops/scoop";
@@ -25,6 +25,7 @@ import SectionBody from "../section/section-body";
 import SectionIntro from "../section/section-intro";
 import Stats from "../stats/stats";
 import Twitter from "../twitter/twitter";
+import * as HomeService from "../../utils/home.service";
 import * as ScoopsService from "../../utils/scoops.service";
 import Workspaces from "../workspaces/workspaces";
 
@@ -41,7 +42,7 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {accessing, events, eventsScoops, news, newsScoops, onboarding, roadMapIntro, submitting, workspaces} = this.props;
+        const {accessing, eventsScoops, newsScoops, onboarding, roadMapIntro, submitting, workspaces} = this.props;
         const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
         const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
         return (
@@ -66,18 +67,18 @@ class Home extends React.Component {
             </section>
             <section className={compStyles.featured}>
                 <SectionIntro post={workspaces} stretch/>
-                <SectionBody><Workspaces/></SectionBody>
+                <SectionBody><Workspaces featured/></SectionBody>
             </section>
             <section className={compStyles.roadmap}>
                 <SectionIntro post={roadMapIntro} stretch/>
                 <SectionBody><RoadMap/></SectionBody>
             </section>
             {featuredNews ? <section className={compStyles.news}>
-                <SectionIntro post={news} stretch/>
+                <SectionIntro sectionTitle={"News"} stretch/>
                 <SectionBody><Scoop featuredOnly={true} scoops={newsScoops}/></SectionBody>
             </section> : null}
             {featuredEvents ? <section className={compStyles.events}>
-                <SectionIntro post={events} stretch/>
+                <SectionIntro sectionTitle={"Events"} stretch/>
                 <SectionBody><Scoop featuredOnly={true} scoops={eventsScoops} type={"events"}/></SectionBody>
             </section> : null}
                 <section className={compStyles.twitter}>
@@ -92,16 +93,14 @@ class Home extends React.Component {
 export default () => {
 
     const accessing = AccessingStaticQuery();
-    const events = ScoopsService.getIntroduction(EventsStaticQuery());
     const eventsScoops = ScoopsService.getScoops(EventsStaticQuery());
-    const news = ScoopsService.getIntroduction(NewsStaticQuery());
     const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
     const onboarding = OnboardingStaticQuery();
-    const submitting = SubmittingStaticQuery();
     const roadMap = RoadMapIntroStaticQuery();
-    const workspaces = FeaturedWorkspacesStaticQuery();
+    const submitting = SubmittingStaticQuery();
+    const workspaces = HomeService.findSectionIntro("featured-workspaces", SectionIntroStaticQuery());
 
     return (
-        <Home accessing={accessing} events={events} eventsScoops={eventsScoops} news={news} newsScoops={newsScoops} onboarding={onboarding} roadMapIntro={roadMap} submitting={submitting} workspaces={workspaces}/>
+        <Home accessing={accessing} eventsScoops={eventsScoops} newsScoops={newsScoops} onboarding={onboarding} roadMapIntro={roadMap} submitting={submitting} workspaces={workspaces}/>
     )
 }

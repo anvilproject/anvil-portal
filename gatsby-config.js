@@ -155,7 +155,8 @@ module.exports = {
                                 "style-guide-color-palette",
                                 "style-guide-download-logo",
                                 "style-guide-typography",
-                                "style-guide-typography-example"]
+                                "style-guide-typography-example",
+                                "workspaces"]
                         }
                     },
                     {

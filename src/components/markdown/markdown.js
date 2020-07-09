@@ -24,6 +24,7 @@ import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-col
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
 import StyleGuideTypographyExample from "../style-guide-typography-example/style-guide-typography-example";
+import Workspaces from "../workspaces/workspaces";
 
 // Styles
 import compStyles from "./markdown.module.css";
@@ -73,7 +74,8 @@ class Markdown extends React.Component {
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,
-                "style-guide-typography-example": StyleGuideTypographyExample
+                "style-guide-typography-example": StyleGuideTypographyExample,
+                "workspaces": Workspaces
             }
         }).Compiler;
         const identifier = Date.now();

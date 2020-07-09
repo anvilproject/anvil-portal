@@ -15,7 +15,6 @@ import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
 import FrontmatterContext from "../components/context/frontmatter-context";
 import Layout from "../components/layout";
-import Workspaces from "../components/workspaces/workspaces";
 import * as TemplateService from "../utils/template.service";
 
 // Styles
@@ -27,19 +26,17 @@ export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
         {slug, styles} = fields,
-        {component, description, title} = frontmatter,
+        {description, title} = frontmatter,
         dashboard = slug === "/data/data",
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
         h1 = TemplateService.getPageH1(headings),
         noSpy = dashboard,
-        pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title,
-        workspaces = component === "featured";
+        pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
         <Layout description={description} docPath={slug} noSpy={noSpy} styles={styles} title={pageTitle}>
             <FrontmatterContext.Provider value={frontmatter}>
                 <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
-                    {workspaces ? <Workspaces/> : null}
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>
             </FrontmatterContext.Provider>
@@ -58,7 +55,6 @@ query($slug: String!) {
       }
       frontmatter {
         author
-        component
         conference
         date(formatString: "MMMM DD, YYYY")
         dates
