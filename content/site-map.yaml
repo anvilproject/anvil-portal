@@ -8,9 +8,9 @@
     order: 0
   primaryLinks:
     - name: "About"
-      key: "/about/about"
+      key: "/about/platform"
       path: "/about"
-    - name: "Team"
+    - name: "Leadership Team"
       key: "/about/team"
     - name: "Working Groups"
       key: "/about/working-groups"
@@ -21,7 +21,7 @@
   path: "/contact"
   position:
     location: "h"
-    order: 7
+    order: 8
   primaryLinks:
     - name: "Contact Us"
       key: "/contact/contact-us"
@@ -31,27 +31,19 @@
   path: "/data"
   position:
     location: "h"
-    order: 2
+    order: 1
   primaryLinks:
-    - name: "Data on the AnVIL"
+    - name: "AnVIL Data"
       key: "/data/data"
       path: "/data"
-    - name: "Accessing Data through Terra Workspaces"
-      key: "/data/accessing-data-through-terra-workspaces"
-    - name: "Dataset Inventory"
-      key: "/data/dataset-inventory"
-      secondaryLinks:
-         - name: "Requesting Data Access as Consortia Member"
-           key: "/data/requesting-data-access-as-a-consortium-member"
-         - name: "Requesting Data Access as an External Researcher"
-           key: "/data/requesting-data-access-as-an-external-researcher"
-         - name: "Data Access Controls"
-           key: "/data/data-access"
+    - name: "Requesting Data Access"
+      key: "/data/requesting-data-access"
+    - name: "Data Access Controls"
+      key: "/data/data-access"
     - name: "Submitting Consortium Data"
       key: "/data/data-submission"
-      secondaryLinks:
-         - name: "Transferring Consortium Data into AnVIL"
-           key: "/data/data-transfer-into-anvil"
+    - name: "Transferring Consortium Data into AnVIL"
+      key: "/data/data-transfer-into-anvil"
     - name: "Bringing Your Own Data"
       key: "/data/bringing-your-own-data"
 - name: "Events"
@@ -59,7 +51,7 @@
   path: "/events"
   position:
     location: "h"
-    order: 4
+    order: 5
   primaryLinks:
     - name: "Events"
       key: "/events/events"
@@ -120,7 +112,7 @@
   path: "/faq"
   position:
     location: "h"
-    order: 8
+    order: 7
   primaryLinks:
     - name: "FAQ"
       key: "/faq/faq"
@@ -184,7 +176,7 @@
   path: "/news"
   position:
     location: "h"
-    order: 3
+    order: 4
   primaryLinks:
     - name: "News"
       key: "/news"
@@ -196,24 +188,22 @@
     - name: ""
       key: "/privacy/privacy"
       path: "/privacy"
-- name: "Platform"
-  key: "platform"
-  path: "/platform"
+- name: "Tools"
+  key: "tools"
+  path: "/tools"
   position:
     location: "h"
-    order: 1
+    order: 2
   primaryLinks:
-    - name: "Platform"
-      key: "/platform/platform"
-      path: "/platform"
-    - name: "Analysis Tools"
-      key: "/platform/tools"
+    - name: "Tools"
+      key: "/tools/tools"
+      path: "/tools"
 - name: "Training"
   key: "training"
   path: "/training"
   position:
     location: "h"
-    order: 5
+    order: 3
   primaryLinks:
     - name: "Training"
       key: "/training/training"

@@ -9,7 +9,14 @@ title: "Data"
 
 <hero small>Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.</hero>
 
-.  
+
+
+### Public Datasets
+<data-summary public></data-summary>
+### dbGaP Accessible Datasets
+<data-summary dbGap></data-summary>
+### Consortia Access Datasets
+<data-summary consortia></data-summary>
 
 ## Public Access Worspaces
 <data-detail public></data-detail>
