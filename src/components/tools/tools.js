@@ -151,7 +151,6 @@ export default (props) => {
 
     const tools = CollectionService.filterTools(props, ToolsStaticQuery());
 
-    console.log(tools);
     return (
         tools ? <Tools tools={tools}/> : null
     )
