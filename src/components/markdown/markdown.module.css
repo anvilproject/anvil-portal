@@ -47,7 +47,7 @@
 }
 
 /**
- * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
+ * Outline (right-hand nav) is dropped below 1341px, in addition to complimentary JS in scroll.service
  */
 @media screen and (min-width: 1341px) {
 

@@ -46,10 +46,11 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  */
 export function calculateNavMaxHeight(bannerHeight, element) {
 
-    // The maxHeight setting is not required when the window innerWidth is less than 1341px.
+    // The maxHeight setting is not required when the window innerWidth is less than 840. (Outline is dropped at 
+    // 1341px, left nav is stacked at 840).
     // In this instance, the outline and nav styles are defined by a different set of responsive settings.
 
-    if ( !element || window.innerWidth < 1341 ) {
+    if ( !element || window.innerWidth < 840 ) {
 
         return;
     }
@@ -130,40 +131,37 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
 
     // Event handler that will reposition outline scroll if there is an active outline element,
     // and the element is positioned above or below the bounds of the outline navigation.
-    if ( activeEls.length ) {
+    let activeEl = activeEls[0];
 
-        let activeEl = activeEls[0];
+    // Calculate the number of pixels from the end of the page
+    let pxToEndScroll = calculatePixelPositionFromEnd();
 
-        // Calculate the number of pixels from the end of the page
-        let pxToEndScroll = calculatePixelPositionFromEnd();
+    // Outline container
+    const outlineContainerHeight = outlineEl.offsetHeight;
 
-        // Outline container
-        const outlineContainerHeight = outlineEl.offsetHeight;
+    // Active outline positions
+    const activeTopPos = activeEl.getBoundingClientRect().top;
+    const activeBottomPos = activeEl.getBoundingClientRect().bottom;
+    const activeMidHeight = (activeEl.offsetHeight / 2);
+    const posBelowScreen = activeBottomPos - (outlineContainerHeight + 100);
+    const posAboveScreen = 100 - activeTopPos;
 
-        // Active outline positions
-        const activeTopPos = activeEl.getBoundingClientRect().top;
-        const activeBottomPos = activeEl.getBoundingClientRect().bottom;
-        const activeMidHeight = (activeEl.offsetHeight / 2);
-        const posBelowScreen = activeBottomPos - (outlineContainerHeight + 100);
-        const posAboveScreen = 100 - activeTopPos;
+    // Scrolls to outline end as outline maxHeight is reduced.
+    if ( pxToEndScroll < 160 ) {
 
-        // Scrolls to outline end as outline maxHeight is reduced.
-        if ( pxToEndScroll < 160 ) {
+        scrollTo(outlineEl, outlineEl.scrollHeight - pxToEndScroll);
+    }
 
-            scrollTo(outlineEl, outlineEl.scrollHeight - pxToEndScroll);
-        }
+    // Repositions active outline to mid point if the active outline is positioned below the outline container.
+    if ( activeBottomPos > outlineContainerHeight + 100 ) {
 
-        // Repositions active outline to mid point if the active outline is positioned below the outline container.
-        if ( activeBottomPos > outlineContainerHeight + 100 ) {
+        scrollTo(outlineEl, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
+    }
 
-            scrollTo(outlineEl, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
-        }
+    // Repositions active outline to mid point if the active outline is positioned above the outline container.
+    if ( activeTopPos < 100 ) {
 
-        // Repositions active outline to mid point if the active outline is positioned above the outline container.
-        if ( activeTopPos < 100 ) {
-
-            scrollTo(outlineEl, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
-        }
+        scrollTo(outlineEl, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
     }
 }
 

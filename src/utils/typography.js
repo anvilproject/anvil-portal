@@ -42,11 +42,11 @@ const typography = new Typography({
     overrideStyles: ({rhythm}) => {
         return {
             "h2, h3, h4, h5,h6": {
-                marginTop: rhythm(1.3333),
+                marginTop: rhythm(1+1/3),
             },
             "ol, ul": {
                 margin: 0,
-                paddingLeft: rhythm(1.3333)
+                paddingLeft: rhythm(1+1/3)
             },
             "li": {
                 marginBottom: rhythm(2/3),
@@ -55,7 +55,7 @@ const typography = new Typography({
             // Children lists
             "li > ol, li > ul": {
                 margin: 0,
-                paddingLeft: rhythm(1.3333)
+                paddingLeft: rhythm(1+1/3)
             },
             "ol ol, ul ol": {
                 listStyleType: "lower-roman"
