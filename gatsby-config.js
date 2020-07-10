@@ -152,6 +152,7 @@ module.exports = {
                                 "figure-caption",
                                 "go-arrow",
                                 "hero",
+                                "news",
                                 "style-guide-color-palette",
                                 "style-guide-download-logo",
                                 "style-guide-typography",

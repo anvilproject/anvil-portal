@@ -6,6 +6,8 @@
  * Use of this component within markdown is possible.
  * Use the tag <events filter='{"fronmatterName": "value"}'></events> but ensure it is closed.
  *
+ * The prop "featured" is optional and returns featured events.
+ *
  * The prop "filter" is a JSON string and is optional. It may comprise of any of the following keys from events frontmatter:
  * - "conference"
  * - "eventType"
@@ -30,24 +32,24 @@ import compStyles from "./events.module.css";
 class Events extends React.Component {
 
     render() {
-        const {scoops, type} = this.props;
+        const {featuredOnly, scoops, type} = this.props;
         return (
-            <Scoop className={compStyles.event} noEvents={compStyles.noEvents} featuredOnly={false} scoops={scoops} type={type}/>
+            <Scoop className={compStyles.event} noEvents={compStyles.noEvents} featuredOnly={featuredOnly} scoops={scoops} type={type}/>
         );
     }
 }
 
 export default (props) => {
 
-    const filter = props.filter;
-    const events = EventsStaticQuery();
-    const eventsScoops = ScoopsService.getScoops(events);
-    const past = props && props.past === "";
-    const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, past);
+    const {featured, filter, past} = props;
+    const featuredOnly = featured || featured === "";
+    const pastEvent = past === "";
+    const eventsScoops = EventsStaticQuery();
+    const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, pastEvent);
     const scoopsByFilter = ScoopsService.filterScoopsByFrontmatter(scoopsByDate, filter);
-    const type = past ? "past events" : "upcoming events";
+    const type = pastEvent ? "past events" : "upcoming events";
 
     return (
-        <Events scoops={scoopsByFilter} type={type}/>
+        <Events featuredOnly={featuredOnly} scoops={scoopsByFilter} type={type}/>
     )
 }

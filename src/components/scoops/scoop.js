@@ -93,11 +93,4 @@ class Scoop extends React.Component {
     }
 }
 
-export default (props) => {
-
-    const {className, featuredOnly, noEvents, scoops, type} = props;
-
-    return (
-        <Scoop className={className} featuredOnly={featuredOnly} noEvents={noEvents} scoops={scoops} type={type}/>
-    )
-}
+export default Scoop;

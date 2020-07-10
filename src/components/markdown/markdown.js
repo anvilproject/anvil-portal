@@ -20,6 +20,7 @@ import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";
 import GoArrow from "../go-arrow/go-arrow";
 import Hero from "../hero/hero";
+import News from "../news/news";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
@@ -71,6 +72,7 @@ class Markdown extends React.Component {
                 "figure-caption": FigureCaption,
                 "go-arrow": GoArrow,
                 "hero": Hero,
+                "news": News,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,

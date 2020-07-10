@@ -11,16 +11,14 @@ import {isBrowser} from "react-device-detect";
 
 // App dependencies
 import Carousel from "../carousel/carousel";
+import Events from "../events/events";
 import GoArrow from "../go-arrow/go-arrow";
-import {EventsStaticQuery} from "../../hooks/events-query";
-import {NewsStaticQuery} from "../../hooks/news-query";
+import News from "../news/news";
 import RoadMap from "../road-map/road-map";
-import Scoop from "../scoops/scoop";
 import SectionBody from "../section/section-body";
 import SectionIntro from "../section/section-intro";
 import Stats from "../stats/stats";
 import Twitter from "../twitter/twitter";
-import * as ScoopsService from "../../utils/scoops.service";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
@@ -36,9 +34,6 @@ let classNames = require("classnames");
 class Home extends React.Component {
 
     render() {
-        const {eventsScoops, newsScoops} = this.props;
-        const featuredNews = ScoopsService.isAnyScoopsFeatured(newsScoops);
-        const featuredEvents = ScoopsService.isAnyScoopsFeatured(eventsScoops);
         return (
             <>
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
@@ -67,14 +62,14 @@ class Home extends React.Component {
                 <SectionIntro fileName={"road-map"} stretch/>
                 <SectionBody><RoadMap/></SectionBody>
             </section>
-            {featuredNews ? <section className={compStyles.news}>
+            <section className={compStyles.news}>
                 <SectionIntro sectionTitle={"News"} stretch/>
-                <SectionBody><Scoop featuredOnly={true} scoops={newsScoops}/></SectionBody>
-            </section> : null}
-            {featuredEvents ? <section className={compStyles.events}>
+                <SectionBody><News featured/></SectionBody>
+            </section>
+            <section className={compStyles.events}>
                 <SectionIntro sectionTitle={"Events"} stretch/>
-                <SectionBody><Scoop featuredOnly={true} scoops={eventsScoops} type={"events"}/></SectionBody>
-            </section> : null}
+                <SectionBody><Events featured/></SectionBody>
+            </section>
                 <section className={compStyles.twitter}>
                     <SectionIntro sectionTitle={"@useAnVIL on Twitter"} stretch/>
                     <SectionBody><Twitter/></SectionBody>
@@ -84,12 +79,4 @@ class Home extends React.Component {
     }
 }
 
-export default () => {
-
-    const eventsScoops = ScoopsService.getScoops(EventsStaticQuery());
-    const newsScoops = ScoopsService.getScoops(NewsStaticQuery());
-
-    return (
-        <Home eventsScoops={eventsScoops} newsScoops={newsScoops}/>
-    )
-}
+export default Home;

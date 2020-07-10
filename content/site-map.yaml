@@ -179,7 +179,7 @@
     order: 4
   primaryLinks:
     - name: "News"
-      key: "/news"
+      key: "/news/news"
       path: "/news"
 - name: "Privacy"
   key: "privacy"

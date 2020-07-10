@@ -17,48 +17,6 @@ function getDate(date) {
 }
 
 /**
- * Returns the scoops' introduction.
- *
- * @param posts
- */
-export function getIntroduction(posts) {
-
-    if ( !posts ) {
-
-        return;
-    }
-
-    const scoops = posts.filter(post => {
-
-        const slug = getSlug(post);
-
-        return isIntroduction(slug);
-    });
-
-    return scoops[0];
-}
-
-/**
- * Returns the list of scoops, excluding the introduction.
- *
- * @param posts
- */
-export function getScoops(posts) {
-
-    if ( !posts ) {
-
-        return;
-    }
-
-    return posts.filter(post => {
-
-        const slug = getSlug(post);
-
-        return !isIntroduction(slug);
-    });
-}
-
-/**
  * Returns filtered scoops by date, by past or upcoming dates.
  *
  * @param scoops
@@ -134,22 +92,6 @@ export function filterScoopsByFrontmatter(scoops, filterStr) {
 }
 
 /**
- * Returns true if any scoops are featured.
- *
- * @param scoops
- * @returns {*}
- */
-export function isAnyScoopsFeatured(scoops) {
-
-    if ( !scoops ) {
-
-        return false;
-    }
-
-    return scoops.some(scoop => scoop.frontmatter.featured === true)
-}
-
-/**
  * Returns date as empty string when date format is invalid.
  *
  * @param date
@@ -163,38 +105,6 @@ export function validateDate(date) {
     }
 
     return date;
-}
-
-/**
- * Returns slug for the post, when specified.
- *
- * @param post
- * @returns {string}
- */
-function getSlug(post) {
-
-    if ( !post ) {
-
-        return "";
-    }
-
-    return post.fields.slug;
-}
-
-/**
- * Returns true if the scoop is the introduction.
- *
- * @param slug
- * @returns {boolean}
- */
-function isIntroduction(slug) {
-
-    if ( !slug ) {
-
-        return false;
-    }
-
-    return slug.includes("intro");
 }
 
 /**
