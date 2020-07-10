@@ -4,7 +4,7 @@ export const SectionIntroStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query SectionIntroStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/^/section-intro/"}}}) {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/^/home/section-intro/"}}}) {
             edges {
               node {
                 fields {
