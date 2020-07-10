@@ -8,7 +8,6 @@
 let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
 let contentPath = `./content`;
 let yamlPath = `./content`;
-let collectionPath = `./content/card-collection/`;
 let roadMapPath = `./content/roadmap/`;
 
 let gtmId = process.env.GATSBY_GTM_ID;
@@ -101,13 +100,6 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `card-collection`,
-                path: collectionPath,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
                 name: `markdown-pages`,
                 path: contentPath,
             },
@@ -143,7 +135,6 @@ module.exports = {
                         options: {
                             components: [
                                 "button",
-                                "card-collection",
                                 "data-detail",
                                 "data-studies",
                                 "data-summary",
@@ -153,10 +144,12 @@ module.exports = {
                                 "go-arrow",
                                 "hero",
                                 "news",
+                                "platforms",
                                 "style-guide-color-palette",
                                 "style-guide-download-logo",
                                 "style-guide-typography",
                                 "style-guide-typography-example",
+                                "tools",
                                 "workspaces"]
                         }
                     },

@@ -55,19 +55,12 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     if (node.internal.type === `MarkdownRemark`) {
 
         const {frontmatter} = node,
-            {carousel, draft, pageAlignment, privateEvent} = frontmatter || {};
-
-        const nodeValueCarousel = carousel ? carousel : {active: false, blurb: "", docType: "", logo: "", title: "", url: ""};
+            {draft, pageAlignment, privateEvent} = frontmatter || {};
         const nodeValueDraft = draft ? draft : false;
         const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
         const nodeValueSlug = createFilePath({node, getNode, basePath: `pages`});
         const nodeValueStyles = {alignment: pageAlignment};
 
-        createNodeField({
-            node,
-            name: `carousel`,
-            value: nodeValueCarousel,
-        });
         createNodeField({
             node,
             name: `draft`,
@@ -99,20 +92,6 @@ exports.createPages = ({graphql, actions}) => {
         edges {
           node {
             fields {
-              carousel {
-                active
-                blurb
-                docType
-                logo {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-                title
-                url
-              }
               draft
               slug
             }
@@ -158,7 +137,6 @@ exports.createPages = ({graphql, actions}) => {
                 context: {
                     // Data passed to context is available
                     // in page queries as GraphQL variables.
-                    carousel: node.fields.carousel,
                     draft: node.fields.draft,
                     slug: node.fields.slug
                 },

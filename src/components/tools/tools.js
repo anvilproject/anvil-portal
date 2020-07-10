@@ -2,17 +2,14 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - card collection component.
+ * The AnVIL - tools component.
  * Use of this component within markdown is possible.
- * Use the tag <card-collection collection="inset-collection-prop-name" status="insert-status-prop-name"></card-collection> but ensure it is closed.
+ * Use the tag <Tools></Tools>.
  *
- * The prop "collection" is required and should be any of the following values:
- * - "tools"
- * - "platforms"
+ * The "current" prop is optional and will return current tools.
+ * The "coming" prop is optional and will return coming tools.
  *
- * The prop "status" is required only if collection prop is "tools", and should be one of the following values:
- * - "current"
- * - "coming"
+ * Tools are located in the /content/tools/set-of-tools directory.
  */
 
 // Core dependencies
@@ -20,21 +17,21 @@ import React from "react";
 
 // App dependencies
 import BrandIcon from "../brand-icon/brand-icon";
+import {ToolsStaticQuery} from "../../hooks/tools-query";
 import ListItem from "../list-item/list-item";
 import ListItemContent from "../list-item/list-item-content";
 import ListItemIcon from "../list-item/list-item-icon";
-import {CardCollectionStaticQuery} from "../../hooks/card-collection-query";
 import Markdown from "../markdown/markdown";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as CollectionService from "../../utils/collection.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import compStyles from "./card-collection.module.css";
+import compStyles from "./tools.module.css";
 
 let anchorEls;
 
-class CardCollection extends React.Component {
+class Tools extends React.Component {
 
     componentDidMount() {
 
@@ -60,7 +57,7 @@ class CardCollection extends React.Component {
     };
 
     redirect = (linkTo, openTab, linkText) => {
-        
+
         if (openTab) {
 
             window.open(linkTo);
@@ -114,13 +111,12 @@ class CardCollection extends React.Component {
     };
 
     render() {
-        const {collection} = this.props;
+        const {tools} = this.props;
 
-        const Collection = (props) => {
-            const {card} = props,
-                {logo, path, title, url} = card || {},
-                {childMarkdownRemark} = path || {},
-                {htmlAst} = childMarkdownRemark || {},
+        const Tool = (props) => {
+            const {tool} = props,
+                {frontmatter, htmlAst} = tool,
+                {logo, title, url} = frontmatter || {},
                 {childImageSharp} = logo || {},
                 {fluid} = childImageSharp || {},
                 {src} = fluid || {};
@@ -144,8 +140,8 @@ class CardCollection extends React.Component {
         };
 
         return (
-            <div className={compStyles.collection}>
-                {collection.map((item, i) => <Collection key={i} card={item}/>)}
+            <div className={compStyles.tools}>
+                {tools.map((tool, t) => <Tool key={t} tool={tool}/>)}
             </div>
         );
     }
@@ -153,8 +149,10 @@ class CardCollection extends React.Component {
 
 export default (props) => {
 
-    const collection = CollectionService.getCollection(props, CardCollectionStaticQuery());
+    const tools = CollectionService.filterTools(props, ToolsStaticQuery());
+
+    console.log(tools);
     return (
-        collection ? <CardCollection collection={collection}/> : null
+        tools ? <Tools tools={tools}/> : null
     )
 }

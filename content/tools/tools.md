@@ -20,11 +20,11 @@ Future additions to the AnVIL analysis ecosystem will include the Galaxy workben
  
 ## Current Tools
 
-<card-collection collection="tools" status="current"></card-collection>
+<Tools current></Tools>
 
 ## Coming Soon
 
-<card-collection collection="tools" status="coming"></card-collection>
+<Tools coming></Tools>
 
 ## Request a Tool
 

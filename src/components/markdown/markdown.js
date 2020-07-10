@@ -11,7 +11,6 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
-import CardCollection from "../card-collection/card-collection";
 import DataDetail from "../data-detail/data-detail";
 import DataStudies from "../data-studies/data-studies";
 import DataSummary from "../data-summary/data-summary";
@@ -21,10 +20,12 @@ import FigureCaption from "../figure-caption/figure-caption";
 import GoArrow from "../go-arrow/go-arrow";
 import Hero from "../hero/hero";
 import News from "../news/news";
+import Platforms from "../platforms/platforms";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
 import StyleGuideTypographyExample from "../style-guide-typography-example/style-guide-typography-example";
+import Tools from "../tools/tools";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
@@ -63,7 +64,6 @@ class Markdown extends React.Component {
             createElement: React.createElement,
             components: {
                 "button": Button,
-                "card-collection": CardCollection,
                 "data-detail": DataDetail,
                 "data-studies": DataStudies,
                 "data-summary": DataSummary,
@@ -73,10 +73,12 @@ class Markdown extends React.Component {
                 "go-arrow": GoArrow,
                 "hero": Hero,
                 "news": News,
+                "platforms": Platforms,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,
                 "style-guide-typography-example": StyleGuideTypographyExample,
+                "tools": Tools,
                 "workspaces": Workspaces
             }
         }).Compiler;

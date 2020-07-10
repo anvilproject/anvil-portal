@@ -20,8 +20,7 @@ Terra is integrated with the Dockstore workflow repository, enabling AnVIL users
  
 Gen3 is leveraged by AnVIL as the data management system, enabling users to associate complex phenotypes, metadata, and clinical data with sequencing based data with sophisticated data models.
 
-<card-collection collection="platforms"></card-collection>
-
+<Platforms></Platforms>
 
 
 

@@ -1,18 +1,16 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const CarouselStaticQuery = () => {
+export const ToolsStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
-        query CarouselStaticQuery {
-          allMarkdownRemark(filter: {frontmatter: {carousel: {eq: true}}}) {
+        query ToolsStaticQuery {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/set-of-tools/"}}}) {
             edges {
               node {
                 fields {
                   slug
                 }
                 frontmatter {
-                  blurb
-                  docType
                   logo {
                     childImageSharp {
                       fluid {
@@ -23,11 +21,12 @@ export const CarouselStaticQuery = () => {
                   title
                   url
                 }
+                htmlAst
               }
             }
           }
         }
     `
     );
-    return allMarkdownRemark.edges.map(e => e.node);
+    return allMarkdownRemark.edges.map(e => e.node).map(n => n);
 };

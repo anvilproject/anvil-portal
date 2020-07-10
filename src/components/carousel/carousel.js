@@ -54,15 +54,19 @@ class Carousel extends React.Component {
         return index === this.state.rotation;
     };
 
-    isRelativePath = (link) => {
+    getLink = (docType, slug, url) => {
 
-        // Returns true if specified link is a relative pathname
-        if ( link.startsWith("/") ) {
+        if ( docType.toLowerCase() === "tools" ) {
 
-            return true;
+            return "/tools";
         }
 
-        return false;
+        if ( docType.toLowerCase() === "platforms" ) {
+
+            return "/about";
+        }
+
+        return url ? url : slug;
     };
 
     isValidUrl = (link) => {
@@ -212,14 +216,15 @@ class Carousel extends React.Component {
         const Slot = (props) => {
 
             const {show, slot} = props,
-                {carousel, slug} = slot,
-                {blurb, docType, logo, title, url} = carousel,
+                {fields, frontmatter} = slot,
+                {blurb, docType, logo, title, url} = frontmatter || {},
+                {slug} = fields,
                 {childImageSharp} = logo || {},
                 {fluid} = childImageSharp || {},
                 {src} = fluid || {};
 
-            const linkTo = this.isValidUrl(url) ? url : this.isRelativePath(url) ? url : slug;
-            const openTab = this.isValidUrl(url);
+            const linkTo = this.getLink(docType, slug, url);
+            const openTab = this.isValidUrl(linkTo);
 
             return (
                 <ClickHandler className={classNames({[compStyles.show]: show}, compStyles.slot)}

@@ -1,0 +1,11 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL platforms component.
+ */
+
+/* Match platforms spacing between each list item */
+.platforms .listItem {
+    margin: 32px 0;
+}
