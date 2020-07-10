@@ -13,6 +13,7 @@ import BrandIcon from "../brand-icon/brand-icon";
 import ListItem from "../list-item/list-item";
 import ListItemContent from "../list-item/list-item-content";
 import ListItemIcon from "../list-item/list-item-icon";
+import Markdown from "../markdown/markdown";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../../utils/dom.service";
 
@@ -33,8 +34,8 @@ class Workspace extends React.Component {
 
     render() {
         const {workspace} = this.props,
-            {frontmatter} = workspace,
-            {description, logo, title, url} = frontmatter || {},
+            {frontmatter, htmlAst} = workspace,
+            {logo, title, url} = frontmatter || {},
             {childImageSharp} = logo || {},
             {fluid} = childImageSharp || {},
             {src} = fluid || {};
@@ -46,7 +47,7 @@ class Workspace extends React.Component {
                     </ListItemIcon>
                     <ListItemContent>
                         <h3>{title}</h3>
-                        {description}
+                        <Markdown>{htmlAst}</Markdown>
                     </ListItemContent>
                 </ListItem>
             </div>

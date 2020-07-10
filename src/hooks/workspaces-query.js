@@ -8,7 +8,6 @@ export const WorkspacesStaticQuery = () => {
                 edges {
                     node {
                         frontmatter {
-                            description
                             featured
                             logo {
                               childImageSharp {
@@ -20,6 +19,7 @@ export const WorkspacesStaticQuery = () => {
                             title
                             url
                         }
+                        htmlAst
                     }
                 }
             }
