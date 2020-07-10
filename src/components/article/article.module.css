@@ -31,7 +31,7 @@
     .contentPositioner {
         display: flex;
         flex: 1;
-        padding: 0 40px;
+        padding: 0 0 0 40px; /* Padding left for space between left nav and content */
         margin: 0 auto;
         max-width: 840px;
     }
@@ -71,6 +71,17 @@
         display: flex;
         max-width: 712px;
         margin: 0 auto 0 0;
+    }
+}
+
+/**
+ * Outline added above this point.
+ */
+@media screen and (min-width: 1341px) {
+
+    /* Content positioner */
+    .contentPositioner {
+        padding-right: 40px; /* Add space between outline and right hand side of viewport */
     }
 }
 

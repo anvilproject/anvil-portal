@@ -55,9 +55,4 @@
     .content {
         max-width: 712px;
     }
-
-    /* Content - class "data" for markdown in data-table component */
-    .content.data {
-        max-width: 760px;
-    }
 }

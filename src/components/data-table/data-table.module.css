@@ -12,19 +12,12 @@
     color: var(--accent-blue-dark);
     overflow-x: auto;
     overflow-y: hidden;
-    padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
-    width: calc(100vw - 16px); /* Allow table to stretch to right-hand side of device, to indicate more */
+    width: 100%;
 }
 
 /* Table wrapper - summary */
 .wrapper.summary {
     margin-bottom: 24px;
-}
-
-
-/* Table wrapper - inset, workspaces */
-.wrapper.inset, .wrapper.workspaces {
-    width: 100%;
 }
 
 /* Table wrapper - inset */
@@ -148,8 +141,8 @@ table {
 
 /* Row cell - detail table - "projectId" (ie Terra workspace name) */
 .detail .row td[id^="projectId"] {
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 197px;
+    min-width: 197px;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
@@ -243,25 +236,11 @@ table {
 }
 
 /**
- * Custom sizing for data tables. Detail data tables are optimized for 760px (which is the width of the main content
- * channel). Any devices larger than 808px (760px content + 24px x 2 for gutter), data table should consume entire
- * container. 
- */
-/*@media screen and (min-width: 808px) {*/
-
-    /*!* Undo overflow for devices where data tables can fit within 760px *!*/
-    /*.wrapper {*/
-        /*padding-right: 0;*/
-        /*width: 100%;*/
-    /*}*/
-/*}*/
-
-/**
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
     
-    /* Table wrapper - summary. Overflow no longer required. */
+    /* Table wrapper - summary. Overflow not required. */
     .wrapper.summary {
         padding-right: 0;
         width: 100%;
@@ -269,22 +248,41 @@ table {
 }
 
 /**
- * Large handset portrait, small handset landscape, extra small window
+ * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
  */
-@media screen and (min-width: 840px) {
+@media screen and (max-width: 694px) {
 
     .wrapper.detail {
-        max-width: calc(100vw - 24px - 24px - 200px - 40px);
+        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
+        width: calc(100vw - 16px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
 }
 
 /**
- * 
+ * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
+ */
+@media screen and (min-width: 840px) and (max-width: 949px) {
+
+    .wrapper.detail {
+        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
+        max-width: calc(100vw - 24px - 24px - 200px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
+    }
+}
+
+/**
+ * Custom breakpoint where tables change from scroll overflow, to 100% width of channel (712px).
  */
 @media screen and (min-width: 1040px) {
 
+    /* Prevent overflow on detail tables */
     .wrapper.detail {
         padding-right: 0;
         width: 100%;
+    }
+
+    /* Row cell - detail table - "projectId" (ie Terra workspace name) */
+    .detail .row td[id^="projectId"] {
+        max-width: 246px;
+        min-width: 246px;
     }
 }
