@@ -10,8 +10,22 @@
  * Content Styles
  */
 
+
+/* Link style */
 .content a {
-    text-decoration: underline;
+    color: var(--primary);
+    border-bottom: 1px dashed #aaaaaa; /* Placeholder */
+    text-decoration: none;
+}
+
+/* Link hover */
+.content a:hover {
+    border-bottom: 1px solid var(--primary); /* Placeholder */
+}
+
+/* Button - remove link style from button */
+.content button a, .content button a:hover {
+    border-bottom: none; /* Required to override link style */
 }
 
 /* Image zoom icon */

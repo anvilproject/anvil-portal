@@ -19,7 +19,8 @@
 
 /* Handle a tags (for internal links) or spans (for external links) */
 .listItem > a, .listItem > span {
-    text-decoration: none !important; /* Hide default underline on links */
+    color: var(--default-text) !important; /* Use default text color on links */
+    border-bottom: none !important; /* Hide default border on links */
     display: flex; /* Column layout for to level children in list item */
 }
 

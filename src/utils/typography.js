@@ -13,7 +13,7 @@ const typography = new Typography({
     baseFontSize: "16px",
     baseLineHeight: 1.5,
     blockMarginBottom: 2/3,
-    bodyColor: "rgb(36, 41, 46)",
+    bodyColor: "var(--default-text)",
     bodyFontFamily: [
         "-apple-system",
         "BlinkMacSystemFont",
@@ -32,7 +32,7 @@ const typography = new Typography({
             styles: ["400", "600", "700"]
         }
     ],
-    headerColor: "#012840",
+    headerColor: "var(--shade-dark)",
     headerFontFamily: [
         "Open Sans",
         "sans-serif"
@@ -60,9 +60,13 @@ const typography = new Typography({
             "ol ol, ul ol": {
                 listStyleType: "lower-roman"
             },
-            a: {
-                color: "rgb(36, 41, 46)",
+            a: { // Set link colors to default text color (this is for header, navs etc), markdown links override this
+                color: "var(--default-text)",
+                borderBottom: "none",
                 textDecoration: "none",
+            },
+            ".anchor": { // Anchor links
+                borderBottom: "none !important"
             },
             blockquote: {
                 borderLeft: "4px solid var(--accent-mustard)",

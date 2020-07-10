@@ -45,11 +45,6 @@ table {
     margin: 0;
 }
 
-/* Table - detail */
-.detail table {
-    min-width: 760px;
-}
-
 /* Header */
 .header {
     border-bottom: 1px solid var(--accent-blue-green);
@@ -252,22 +247,43 @@ table {
  * channel). Any devices larger than 808px (760px content + 24px x 2 for gutter), data table should consume entire
  * container. 
  */
-@media screen and (min-width: 808px) {
+/*@media screen and (min-width: 808px) {*/
 
-    /* Undo overflow for devices where data tables can fit within 760px */
-    .wrapper {
+    /*!* Undo overflow for devices where data tables can fit within 760px *!*/
+    /*.wrapper {*/
+        /*padding-right: 0;*/
+        /*width: 100%;*/
+    /*}*/
+/*}*/
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+    
+    /* Table wrapper - summary. Overflow no longer required. */
+    .wrapper.summary {
         padding-right: 0;
         width: 100%;
     }
 }
 
 /**
- * Large tablet portrait, large handset landscape, small window
+ * Large handset portrait, small handset landscape, extra small window
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 840px) {
 
-    /* Table wrapper - summary */
-    .wrapper.summary {
+    .wrapper.detail {
+        max-width: calc(100vw - 24px - 24px - 200px - 40px);
+    }
+}
+
+/**
+ * 
+ */
+@media screen and (min-width: 1040px) {
+
+    .wrapper.detail {
         padding-right: 0;
         width: 100%;
     }

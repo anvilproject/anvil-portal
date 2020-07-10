@@ -27,7 +27,6 @@
 
 /* Nav item */
 .sideNav li {
-    color: var(--accent-blue-dark);
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     margin: 0; /* Override default li margin */

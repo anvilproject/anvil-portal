@@ -5,4 +5,6 @@
  * Style definitions specific to The AnVIL workspace component.
  */
 
-.workspace {}
+.workspace {
+    margin: 32px 0;
+}
