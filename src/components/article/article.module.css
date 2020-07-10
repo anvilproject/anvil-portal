@@ -33,7 +33,7 @@
         flex: 1;
         padding: 0 40px;
         margin: 0 auto;
-        width: 840px;
+        max-width: 840px;
     }
 
     .contentPositioner.left {
@@ -50,7 +50,7 @@
 /**
  * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
-@media screen and (min-width: 1341px) {
+@media screen and (min-width: 840px) {
 
     .article .container {
         flex-direction: row;
@@ -58,7 +58,6 @@
     }
 
     .contentPositioner {
-        width: unset;
         max-width: 1240px;
     }
 

@@ -94,37 +94,15 @@
     width: 5px;
 }
 
-
 /**
- * Large handset portrait, small handset landscape, extra small window. Side nav is stacked, and centered (whereas
- * it is full width below this size).
+ * Large handset portrait, small handset landscape, extra small window. Nav is no longer stacked (and is sitting next
+ * article).
  */
 @media screen and (min-width: 840px) {
 
-    /* Side nav */
-    .sideNav {
-        margin: 0 auto 32px;
-        max-width: 840px;
-        padding: 0 40px;
-    }
-
-    .sideNav.left {
-        margin: 0 0 32px;
-        max-width: unset;
-        padding: 0;
-    }
-}
-
-/**
- * Custom AnVIL breakpoint where column row layout changes to row layout (left nav/content/outline), in addition to
- * complimentary JS in scroll.service updating the side nav and outline heights (to correct the display of the blue
- * bars).
- */
-@media screen and (min-width: 1341px) {
-
     /* Side nav container - required to "add" fixed side nav to the flow */
     .sideNavContainer {
-        min-width: 280px;
+        min-width: 200px;
     }
 
     /* Side nav */
@@ -133,11 +111,11 @@
         bottom: 0;
         left: 24px; /* Gutter */
         margin: 0;
-        max-width: unset; 
+        max-width: unset;
         padding: 0;
         position: fixed;
         top: 100px;
-        width: 280px;
+        width: 200px;
     }
 
     /* Side nav line */
@@ -169,5 +147,21 @@
     /* Ball indicator */
     .sideNav .link:after, .sideNav .link.active:after {
         right: -2px;
+    }
+}
+
+/**
+ * Large tablet landscape, medium window. Widen nav.
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Side nav container - required to "add" fixed side nav to the flow */
+    .sideNavContainer {
+        min-width: 280px;
+    }
+
+    /* Side nav */
+    .sideNav, .sideNav.left {
+        width: 280px;
     }
 }
