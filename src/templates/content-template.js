@@ -30,11 +30,10 @@ export default ({data}) => {
         dashboard = slug === "/data/data",
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
         h1 = TemplateService.getPageH1(headings),
-        noSpy = dashboard,
         pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
-        <Layout description={description} docPath={slug} noSpy={noSpy} styles={styles} title={pageTitle}>
+        <Layout description={description} docPath={slug} styles={styles} title={pageTitle}>
             <FrontmatterContext.Provider value={frontmatter}>
                 <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
                     <ArticleEnd docPath={slug}/>
