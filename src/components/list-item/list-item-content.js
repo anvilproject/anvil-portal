@@ -17,7 +17,25 @@ import compStyles from "./list-item-content.module.css";
 class ListItemContent extends React.Component {
 
     /**
-     * Prevent propagation on anchors within the list item content.
+     * Set banner height and scroll defaults. Create ref for handling tracking of external links.
+     */
+    constructor(props) {
+
+        super(props);
+        this.contentEl = React.createRef();
+    }
+
+    /**
+     * Set up click handler on top-level list item content element.
+     */
+    componentDidMount() {
+
+        this.contentEl.current.addEventListener("click", this.onClick, {passive: false});
+    }
+
+    /**
+     * Prevent propagation on anchors within the list item content. If we let the event bubble here, then any link action
+     * on the parent list item container will be visit instead of the link that was clicked on in the content.
      */
     onClick = (e) => {
 
@@ -25,11 +43,13 @@ class ListItemContent extends React.Component {
             e.stopPropagation();
         }
     };
+    
 
     render() {
         const {children} = this.props;
         return (
-            <div className={compStyles.listItemContent} onClick={(e) => this.onClick(e)}>
+            <div className={compStyles.listItemContent}
+                 ref={this.contentEl}>
                 {children}
             </div>
         );

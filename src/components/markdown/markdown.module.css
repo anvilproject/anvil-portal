@@ -11,7 +11,7 @@
  */
 
 
-/* Link style */
+/* Link style, also matches styles in ArticleEnd and PrivacyBanner. */
 .content a {
     color: var(--primary);
     border-bottom: 1px dashed #aaaaaa; /* Placeholder */

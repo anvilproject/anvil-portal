@@ -15,16 +15,18 @@
 
 /* Link - "Improve this page", "Content guide" */
 .articleEnd a {
-    text-decoration: underline;
+    color: var(--primary);
+    border-bottom: 1px dashed #aaaaaa; /* Placeholder */
+    text-decoration: none;
     width: fit-content;
+}
+
+/* Link hover */
+.articleEnd a:hover {
+    border-bottom: 1px solid var(--primary); /* Placeholder */
 }
 
 /* Link - "Content guide" */
 .articleEnd a + a {
     margin-left: 16px;
-}
-
-/* Link - hover */
-.articleEnd a:hover {
-    /*border-bottom: 2px solid var(--black34);*/
 }

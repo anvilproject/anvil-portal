@@ -28,7 +28,12 @@
 
 /* "Ok", "Learn more here" */
 .privacy .underline {
+    color: var(--white);
     cursor: pointer;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 1px dashed var(--white);
     white-space: nowrap;
+}
+
+.privacy .underline:hover {
+    border-bottom-style: solid;
 }
