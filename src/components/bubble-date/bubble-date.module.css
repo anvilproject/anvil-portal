@@ -28,9 +28,9 @@
 
 /* Event day of month */
 .bubbleDayOfMonth {
-    font-size: 22px;
+    font-size: 19px;
     line-height: 24px;
-    width: 26px;
+    width: 24px;
 }
 
 /* Wrapper around month and year values */
