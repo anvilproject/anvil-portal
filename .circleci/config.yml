@@ -27,7 +27,7 @@ jobs:
             # - v1-dependencies-
       - run:
           name: Checkout Client-APIs Repo
-          command: cd .. && git clone git@github.com:anvilproject/client-apis.git --branch pyAnVIL --single-branch
+          command: cd .. && git clone git@github.com:anvilproject/client-apis.git --branch pyAnVIL --single-branch && git checkout 1f17c0cd5133a8f1dcd53d943b263751396e85fe
 
       - run:
           name: Install npm
