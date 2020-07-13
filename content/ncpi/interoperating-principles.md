@@ -39,20 +39,9 @@ Sometimes platforms impose a requirement that an account be created and fees pai
 
 ## Notes
 
-1. Notice that with this definition above of a trust relationship, a data ecosystem is naturally formed by a platform and all the other platform that have a direct trust relationship with it.
+1. Notice that with this definition above of a trust relationship, a data ecosystem is naturally formed by a platform and all the other platforms that have a direct trust relationship with it.
 
 1. We might also consider saying that two systems have a data peering relationship if they have a trust relationship as defined above, allowing them to exchange both open and controlled access data.  Recall that peering between two internet service providers is an agreement supporting the exchange of traffic between users on the two systems.
 
  
-
-  
-  
-  
-## References
-
-[1] Robert L. Grossman, Some Proposed Principles for Interoperating Data Commons, 
-Medium, October 1, 2019, 
-https://medium.com/@rgrossman1/some-proposed-principles-for-interoperating-data-commons-3668c6cf48df
-
-[2] Robert L. Grossman, Data Lakes, Clouds, and Commons: A Review of Platforms for Analyzing and Sharing Genomic Data, https://arxiv.org/abs/1809.01699, 2018.  Alternatively: Trends in Genetics, Volume 35, Number 3, pages 223-234, March, 2019. PMID: 30691868 PMCID: PMC6474403 [Available on 2020-03-01] DOI: 10.1016/j.tig.2018.12.006
   
