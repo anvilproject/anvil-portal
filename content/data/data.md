@@ -9,16 +9,19 @@ title: "Data"
 
 <hero small>AnVIL hosts high value genomic datasets relevant to human health and disease.</hero>
 
-## Current Consortia
+## Consortia
+
+
+### Current Consortia
  
- A summary of the currently ingested data is listed below:
+ A summary of the currently ingested datasets is listed below:
  
 <data-summary></data-summary>
 
 
-## Planned Consortia
+### Planned Consortia
 
-The folowing consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
+The following consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
 
 * [Covid19hg](https://www.covid19hg.org) -  The COVID-19 host genetics initiative  
 * [CSER](https://cser-consortium.org ) - Clinical Sequencing Evidence-Generating Research
@@ -28,8 +31,8 @@ The folowing consortia are planned for data ingestion. Additional consortia are 
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 * [UDN](https://undiagnosed.hms.harvard.edu/) - Undiagnosed Disease Network
 
-
-## Accessing AnVIL Data via Terra Workspaces
+## Datasets
+### Accessing AnVIL Data via Terra Workspaces
 
 Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.
 
@@ -41,15 +44,20 @@ To access data:
 
 Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detai.  
 
-## Public Access Datasets
+### Public Access Datasets
+<hero small>The datasets below are public access.</hero>
 <data-detail public></data-detail>
 
-## Controlled Access Datasets
-The following workspaces are accessible by external (non-consortia) researhers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process]().
+### External Researcher Accessible Datasets
+<hero small>TThe following workspaces are accessible by external (non-consortia) researchers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process]().</hero>
+
 
 <data-studies></data-studies>
 
-## Consortia Access Datasets
+### Consortia Access Datasets
+
+<hero small>The following datasets are currently accessible by consortia members only. Once the studies are registered in dbGaP they will also be accessible to external researchers.</hero>
+
 
 > For workspaces with no dbGaP Id, the dbGaP study registration is in progress. The dbGap Ids will be displayed once assigned by dbGaP. 
 

@@ -11,7 +11,7 @@ The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome 
  
  The mission of the NCPI is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund.
  
-This new interoperability effort is a collaboration between NIH representatives and team members from each platform.
+This new interoperability effort is a collaboration between NIH representatives, team members from each platform and researchers running driver projects to validate the interoperability approaches.
  
  <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
 
