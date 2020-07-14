@@ -51,6 +51,7 @@ Consent groups in AnVIL are managed by depositing each unique consent group into
 All actions taken within AnVIL’s cloud platform are captured as part of security logging. The AnVIL grantees will periodically audit researcher activities.
 
 ##What happens in the event of a Data Management Incident (DMI)?
-The standard NIH DMI practice will be followed, including coordination through the NHGRI GPA, the appropriate DAC Chair, and the NIH-wide GDS Governance staff.
+Potential DMIs (e.g., unauthorized data sharing, breaches of data security, or inadvertent data releases that may compromise data confidentiality) **must be reported** to the appropriate Data Access Committee(s) (DAC(s)) **within 24 hours of when the incident is identified**. *To identify the appropriate DAC, see the [NIH Data Use Certification](https://osp.od.nih.gov/wp-content/uploads/Model_DUC.pdf)* for the approved dataset(s).
 
-Data Management Incidents should be reported to [anvil@mail.nih.gov](mailto:anvil@mail.nih.gov) and [GDS@mail.nih.gov](mailto:GDS@mail.nih.gov) as soon as they are discovered.
+The standard NIH [DMI](https://osp.od.nih.gov/scientific-sharing/categories-statistics-and-summary-information-on-policy-violations-2/#violation_embargo) practice will be followed, including coordination through the NHGRI GPA, the appropriate DAC Chair, AnVIL staff, and the NIH-wide GDS Governance staff. 
+
