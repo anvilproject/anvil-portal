@@ -55,6 +55,17 @@ section:last-child {
 }
 
 /**
+ * Up to large handset portrait OR update to small handset landscape
+*/
+@media (max-width: 479px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape) {
+
+    .hero .headline {
+        font-size: 4.5vmax;
+        line-height: 7vmax;
+    }
+}
+
+/**
  * Mobile only
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
 */
