@@ -23,3 +23,8 @@ Initial releases and project IDs of datasets from the CCDG, CMG, eMERGE, CSER, a
 
 ##Where can I find documentation to “get started” on AnVIL?
 There are resources available on the AnVIL Portal (<https://anvilproject.org/training/guides>) to help users get registered on AnVIL and provide some introductory usage guides.
+
+##Can NIH Intramural Investigators use AnVIL?
+Yes. AnVIL is a community resource that is available to both NIH extramural and intramural researchers. Interested intramural investigators should contact AnVIL Program Staff (<anvil@mail.nih.gov>) to discuss whether AnVIL can serve their lab’s data sharing needs. If so, NIH Intramural investigators and their lab members may deposit data in the AnVIL for sharing with the scientific community and may request access to data stored in AnVIL following the procedures described in these FAQs. 
+Intramural investigators will have access to AnVIL workspaces in a secure cloud-based environment. They will be subject to the same storage, compute, and egress charges as extramural investigators, and must set up a Google Cloud billing account to get started (see here for more information). Intramural investigators may wish to contact the NIH STRIDES Initiative to explore discounts on Google cloud services, in addition to other training and professional services. 
+
