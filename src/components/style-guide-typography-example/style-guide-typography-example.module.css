@@ -36,9 +36,9 @@
 /* Margin text */
 .example .marginText {
     color: var(--black58);
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     font-weight: 300;
-    line-height: 20px;
+    line-height: 1.25rem; /* 20px */
     margin-top: 2px;
     position: absolute;
     right: 0;

@@ -28,19 +28,19 @@ section:last-child {
 .hero .headline {
     color: var(--accent-blue-dark);
     font-family: "Open Sans", sans-serif;
-    font-size: 60px;
+    font-size: 3.75rem; /* 60px */
     font-weight: 600;
-    line-height: 82px;
-    margin: 0 0 32px;
+    line-height: 5.125rem; /* 82px */
+    margin: 0 0 2rem; /* 32px */
 }
 
 /* Hero - subhead text */
 .hero .subhead {
     color: var(--accent-blue-dark);
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px */
     font-weight: 300;
-    line-height: 32px;
-    margin: 0 0 40px;
+    line-height: 2rem; /* 32px */
+    margin: 0 0 2.5rem; /* 40px */
 }
 
 /* Hero - logo terra "Launch AnVIL in terra" */
@@ -63,17 +63,17 @@ section:last-child {
     /* Section - styles */
     /* Hero - headline */
     .hero.handheld .headline {
-        font-size: 40px;
+        font-size: 2.5rem; /* 40px */
         font-weight: 400;
-        line-height: 44px;
-        margin: 0 0 16px;
+        line-height: 2.75rem; /* 44px */
+        margin: 0 0 1rem; /* 16px */
     }
 
     /* Hero - subhead text */
     .hero.handheld .subhead {
-        font-size: 18px;
-        line-height: 24px;
-        margin: 0 0 8px;
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.5rem; /* 24px */
+        margin: 0 0 0.5rem; /* 8px */
     }
 }
 

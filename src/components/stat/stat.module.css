@@ -53,10 +53,10 @@
     align-items: flex-end;
     border-top-left-radius: 100% 200%;
     border-top-right-radius: 100% 200%;
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
     font-weight: 400;
     letter-spacing: 0.18px;
-    line-height: 20px;
+    line-height: 1.25rem; /* 20px */
     padding-bottom: 8px;
     position: relative; /* Positions stat delimiter */
 }
@@ -78,9 +78,9 @@
     align-items: flex-start;
     border-bottom-left-radius: 100% 200%;
     border-bottom-right-radius: 100% 200%;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     font-weight: 500;
-    line-height: 14px;
+    line-height: 0.875rem; /* 14px */
     padding-top: 8px;
 }
 
@@ -146,9 +146,9 @@
 
     /* Stat - upper - count */
     .stat .count {
-        font-size: 28px;
+        font-size: 1.75rem; /* 28px */
         letter-spacing: 0.25px;
-        line-height: 36px;
+        line-height: 2.25rem; /* 36px */
         padding-bottom: 4px;
     }
 

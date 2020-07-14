@@ -34,8 +34,8 @@
 
 /* Nav item level 1 */
 .sideNav > ul > li {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem; /* 14px */ 
+    line-height: 1.125rem; /* 18px */
 }
 
 /* Nav item level 2 */

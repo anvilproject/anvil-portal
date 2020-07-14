@@ -9,7 +9,7 @@
 /* Caption */
 p.figCaption {
     color: var(--black58);
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     letter-spacing: 0.8px;
     margin: 16px 0 24px;
 }

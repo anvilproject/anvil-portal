@@ -9,8 +9,8 @@
 .overline > *:not(hr) {
     display: inline-flex;
     align-items: baseline;
-    font-size: 12px;
-    line-height: 32px;
+    font-size: 0.75rem; /* 12px */
+    line-height: 2rem; /* 32px */
     letter-spacing: 1px;
     text-transform: uppercase;
     white-space: nowrap;

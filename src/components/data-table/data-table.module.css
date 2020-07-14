@@ -59,7 +59,7 @@ table {
 .header th, .row td {
     border-bottom: none;
     color: inherit;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
 }
 
 /* Header cells */

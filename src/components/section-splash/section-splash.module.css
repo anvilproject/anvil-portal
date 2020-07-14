@@ -33,9 +33,9 @@ section:nth-child(2n+4) .splash {
 /* Paragraph - overrides <Markdown> component styles */
 .splash p {
     color: var(--accent-blue-dark);
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
     font-weight: 300;
-    line-height: 28px;
+    line-height: 1.75rem; /*28 px */
     text-align: left;
 }
 
