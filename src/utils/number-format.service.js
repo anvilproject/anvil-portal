@@ -49,7 +49,8 @@ export function format(num, digitsConfig) {
  */
 export function formatSizeToTB(size) {
 
-    return (size / 1E12).toFixed(2);
+    /* See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString. */
+    return (size / 1E12).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
 /**
