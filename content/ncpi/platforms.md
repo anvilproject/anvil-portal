@@ -22,7 +22,7 @@ NHLBI BioData Catalyst is a cloud-based platform providing tools, applications, 
  Though the primary goal of the BioData Catalyst project is to build a data science ecosystem, at its core, this is a people-centric endeavor. BioData Catalyst is also building a community of practice working collaboratively to solve technical and scientific challenges.
 
 ## Cancer Research Data Commons (CRDC)
-[https://datascience.cancer.gov/data-commons](https://datascience.cancer.gov/data-commons)
+[https://datacommons.cancer.gov](https://datacommons.cancer.gov/)
 
 
 The goal of the National Cancer Institute’s Cancer Research Data Commons (CRDC) is to empower researchers to accelerate data-driven scientific discovery by connecting diverse datasets with analytical tools in the cloud. The CRDC is built upon an expandable data science infrastructure that provides secure access to many different data across scientific domains via Data Commons Framework.
