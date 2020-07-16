@@ -49,7 +49,7 @@ Please see the [Requesting Data Access](/data/requesting-data-access) and [Once 
 <data-detail public></data-detail>
 
 ### Researcher Access Datasets
-<hero small>The following workspaces are accessible by external (non-consortia) researchers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process](/data/requesting-data-access#requesting-data-access-as-a-consortium-member).</hero>
+<hero small>The following workspaces are accessible by external (non-consortia) researchers via the [dbGaP access process](/data/requesting-data-access#requesting-researcher-data-access-as-an-external-researcher) and also to consortia members via the [consortia fast track process](/data/requesting-data-access#requesting-data-access-as-a-consortium-member).</hero>
 
 
 <data-studies></data-studies>
