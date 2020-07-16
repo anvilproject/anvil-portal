@@ -89,7 +89,7 @@
 #         key: "/ncpi/working-groups/outreach-working-group"
 #        - name: "Systems Interop Working Group"
 #          key: "/ncpi/working-groups/systems-interoperation-working-group"
-    - name: "Research Use Cases"
+    - name: "Driver Projects"
       key: "/ncpi/research-use-cases/research-use-cases"
       path: "/ncpi/research-use-cases"
 #      secondaryLinks:
@@ -108,7 +108,10 @@
 #        - name: "UC6 - CRDC+AnVIL Interop"
 #          key: "/ncpi/research-use-cases/uc6-crdc+anvil-interop"
     - name: "Progress Updates"
-      key: "/ncpi/progress-updates/ncpi-progress-update-2020-04-16"
+      key: "/ncpi/progress-updates/2020-04-16-ncpi-progress-update"
+    - name: "Training Materials"
+      key: "/ncpi/training/2020-03-17-train-your-colleague"
+
 - name: "FAQ"
   key: "faq"
   path: "/faq"

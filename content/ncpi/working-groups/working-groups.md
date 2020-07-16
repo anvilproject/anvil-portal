@@ -77,7 +77,7 @@ Currently the NCPI participating platforms use different methods for authenticat
 - Jack DiGiovanna (Seven Bridges)
 
 
-## Background
+### Background
 
 Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-based datasets together (or in distinct combinations).  While data portals make it easy to find data in most cases, it is difficult to take search results from a given data portal to a preferred analysis workspace (cloud compute environment). 
  
@@ -89,7 +89,7 @@ Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-b
 Luckily, new and emerging standards (PFB, GA4GH DRS) can help to make the interface between data portals and analysis workspaces consistent, allowing many portals to send search results (e.g. lists of sample IDs and some metadata) to many different analysis workspace environments, ultimately giving researchers better access to data and increased flexibility in their analysis.
 
 
-## Goals
+### Goals
 The key goal of this activity is to establish a generic and universal handoff mechanism so Data Portal users can further analyze search results on any analysis platform that supports the format.  This would allow for Data Portals to develop and maintain a single “export mechanism” which would be available to any Analysis Platform that invested in supporting the standard format. Importantly, this gives their users much more freedom in how and where they compute.
 
  

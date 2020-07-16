@@ -2,9 +2,9 @@
 draft: false
 ---
 
-# Research Use Cases
+# Driver Projects
 
-The NCPI is  collecting specific research use cases in this section that can drive our proof of concept.
+The NCPI is collecting specific research use cases in this section that can drive our proof of concept.
 
 ##  1 - NHLBI BioData Catalyst + Kids First DRC
 <hero small>This collaboration aims to develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.</hero>
@@ -21,15 +21,6 @@ The Pediatric Cardiovascular Genetics Consortium (PCGC) is committed to defining
 
 Seven Bridges Genomics, Inc. (SBG) has recently described Pan-genome Graph References for improved WGS analyses and presented the use of personalized genome graphs for more consistent variant calling in family trios (ASHG 2019).
 
-### Analysis Plan
-
-1. Obtain confirmation from appropriate NIH Data Access Committees (NHLBI & Kids First) that these datasets can be used/combined in this manner.
-1. Identify subset of trios with validated de novo variants from PCGC to use as “gold standard” for new graph-based methods.
-1. Refine and improve methods utilizing the validated data on Cavatica.
-1. Expand to run in Cavatica and BDCatalyst across entire PCGC cohort.
-1. Provide new PCGC callset to approved researchers for analysis and further community validation / potential method refinement.
-1. If improvement, run across Kids First and TOPMed studies of interest to provide callsets to the community
-    1. Potentially any trio-based AnVIL datasets, e.g. CMGs.
 
 ### Interop Requirements
 1. Search for data in PCGC on the Kids First DRC and export to BDCatalyst for analysis.
@@ -49,18 +40,6 @@ Congenital heart defects (CHDs) are important birth defects to study due to thei
  
  In this research, we intend to study the genetic bases of congenital heart defects using a variant and gene set analysis approaches, machine learning methods, amongst other statistical and genetic analysis models to help fill in the gaps that exist in the understanding of the etiology of CHDs.
   
-
-### Analysis Plan
-
-1. Obtain confirmation from appropriate NIH Data Access Committees that these datasets can be used/combined in this manner.
-1. Find and aggregate all relevant CHD data into one workspace (PCGC whole exome, PCGC whole genome, locally sequenced data).
-1. Run Kids First DRC pipelines (currently in CWL on Cavatica) across data that has not already been harmonized to GRChr38.
-1. Perform joint genotyping across whole exome data.
-1. Perform joint genotyping across whole genome data.
-1. Aggregate and harmonize phenotypic data for analysis.
-    1. E.g. severity of defect.
-1. Bring own custom methods for gene set analysis and machine learning for downstream analysis.
-
 
 ## 3 - NHLBI BioData Catalyst + Kids First DRC
 
@@ -83,21 +62,7 @@ IRB19-1033
  Elucidating the similarities and differences between these two diseases may help our understanding of mechanistic/functional impacts of mutations and lead to the identification of actionable genetic targets. We will compare and contrast standing genetic variation in atrial fibrillation and juvenile congenital heart defects, with strong emphasis on a subset of cardiac-associated genes. 
  
  This approach highlights how even a simplistic comparison of well studied variants between cohorts from different data platforms can be of great value. Potentially interesting targets could be further annotated with biological, functional, and pathway information that would be used in a synergistic way to describe both similar and unique biological signatures across the cohorts.
-  
  
- 
-### Analysis Plan
-
-1. We have obtained an IRB for the TOPMed dataset
-1. We have obtained dbGaP access to these studies
-1. Upgrade WorkSpace Token Service to handle auth across multiple Gen3 data commons to enable an export of manifests from multiple data commons into a single Workspace.
-1. Aggregate all VCF files into a single workspace on Gen3 using Gen3 Fuse
-1. Subset to the regions of interest.
-1. Create new cohort-level VCF (different steps for each cohort)
-1. Annotate cohort-level VCFs
-1. Filter cohort-level VCFs
-1. Compare variant sets between cohorts
-1. Do GO enrichment of gene-level differences
 
 
 ## 4 - NHGRI AnVIL + Kids First DRC + NHLBI BioData Catalyst
@@ -110,13 +75,6 @@ IRB19-1033
 ### Analysis Question
 
 Appropriate controls are needed for various case/control analysis, such as burden testing. Ideally this is a healthy population with similar ancestry, but cohorts without the phenotype/disease of interest are often reasonable substitutes.
-
-### Analysis Plan
-
-1. Obtain confirmation from appropriate NIH Data Access Committees (e.g., Kids First ) that these datasets can be used/combined in this manner.
-1. Identify studies/participants with appropriate exclusion criteria that have the appropriate consent to be used as controls.
-1. Determine the pipeline used to call the variants to make sure they’re co-analyzable.
-    1. If not, run appropriate pipelines.
 
 
 ## 5 -  NCI CRDC + NHGRI AnVIL
@@ -134,19 +92,6 @@ The Fenyo lab is studying how retrotransposons work, which is fundamentally a mu
 
 The genomic and proteomic workflows are wrapped in CWL and functional on the CRDC. The results of their analysis of the TCGA data are already complete and available on the CRDC (highlighted at the prior Interop Meeting). The GTEx data is only accessible from the AnVIL platform, which currently only supports workflows wrapped in WDL.
 
-### Analysis Plan
-
-1. Obtain confirmation from appropriate NIH Data Access Committees that these datasets can be used/combined in this manner.
-1. Find proteomic cohort in PDC Data Portal.
-1. Export manifest describing cohort.
-1. Pull this data into a CRDC analysis ecosystem.
-1. Perform proteomics analysis within CRDC.
-1. Perform genomics analysis within CRDC.
-1. Combined analysis of 5-6.
-1. Find GTEx data cohort within AnVIL.
-1. Copy this dataset to CRDC.
-1. Perform GTEx analysis on CRDC.
-1. Combine derived results from 7 and 10 as necessary.
 
 ### Interop Requirements
 Interop between GDC and PDC within CRDC; interop between AnVIL - CRDC
@@ -173,17 +118,6 @@ We will explore the patterns of transcriptome variation between tumors derived f
  The incident rate ratio (IRR) of males to females for individual cancers ranges from strongly male-biased (e.g., bladder cancer), to strongly female biased (e.g., thyroid cancer) Ferlay, J., I. Soerjomataram, R. Dikshit et al., Cancer incidence and mortality worldwide: sources, methods and major patterns in GLOBOCAN 2012. Int J Cancer, 2015. 136(5): p. E359-86) (SEER). Hypotheses to explain this sexual dimorphism include: environmental exposures, hormones, the immune system, and genetic effects, including risk factors on autosomes and sex chromosomes, sexual dimorphism of gene expression, proteome, and the metabalome. Despite varying degrees of evidence in support of these hypotheses, the relative contribution of each is unknown for most cancers. A better understanding of the biological mechanisms influencing this sexual dimorphism is desperately needed.
 
 We hypothesize that tumors exhibit sexual dimorphism at the molecular level that underlie sex differences in higher-order clinical features.
-
-### Analysis Plan
-
-1. Obtain dbGaP authorization for GTEx and TCGA data
-1. Obtain gene-summarized RNASeq count data from the GDCC and the GTEx portals
-1. Aggregate and harmonize all files within a single workspace
-1. Match GTEx tissues to TCGA cancers
-1. Perform sex-differential expression (sex-DE) analysis of each TCGA tumor type and each GTEx tissue using limma
-1. Compare sex-DE genes across cancers and between normal and tumor tissues
-1. Annotate tumor sex-DE genes
-1. Perform additional analysis gene-level differences
 
 ## Additional Use Cases
 

@@ -34,7 +34,7 @@ The following consortia are planned for data ingestion. Additional consortia are
 ## Datasets
 ### Accessing AnVIL Data via Terra Workspaces
 
-Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a users personal or shared Terra workspace.
+Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a user's personal or shared Terra workspace.
 
 To access data:
 
@@ -42,14 +42,14 @@ To access data:
 1. Request access to the study in using dbGaPs [Authorized Access Portal](https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login) with the study's phsId. See NCBI's [Starting Point to Applying for dbGaP Data](https://www.ncbi.nlm.nih.gov/books/NBK99225/) for more information.
 1. Once your access is approved, your data will appear as one or more workspaces in your Terra account.  
 
-Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detai.  
+Please see the [Requesting Data Access](/data/requesting-data-access) and [Once Your Access is Granted](/data/requesting-data-access#once-your-access-is-granted) guides for more detail.  
 
 ### Public Access Datasets
 <hero small>The datasets below are public access.</hero>
 <data-detail public></data-detail>
 
 ### Researcher Access Datasets
-<hero small>The following workspaces are accessible by external (non-consortia) researchers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process]().</hero>
+<hero small>The following workspaces are accessible by external (non-consortia) researchers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process](/data/requesting-data-access#requesting-data-access-as-a-consortium-member).</hero>
 
 
 <data-studies></data-studies>

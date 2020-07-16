@@ -4,52 +4,64 @@ draft: false
 
 # About the NIH Cloud Platform Interoperability Effort (NCPI)
 
-
-## Overview
+![Hero](./_images/ncpi-hero.png)
 
 The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019.
  
  The mission of the NCPI is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund.
  
-This new interoperability effort is a collaboration between NIH representatives, team members from each platform and researchers running driver projects to validate the interoperability approaches.
+This new interoperability effort is a collaboration between NIH representatives, team members from each platform and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
  
  <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
 
- The NCPI will demonstrate progress based on realistic researcher use cases every six months.
+ The NCPI will demonstrate progress based on realistic research driver projects every six months.
 
 
-## Participating Platforms
+## Interoperating Data Commons
 
 The NCPI will work to enable analysis across the following data commons:
 
-* NHGRI [AnVIL](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil),
-* NHLBI [BioData Catalyst](/ncpi/platforms#cancer-research-data-commons-crdc),
-* NIH Common Fund's [Gabriella Miller Kids First](/ncpi/platforms#kids-first-data-resource-center) Pediatric Research Program,
-* and the NCI [Cancer Research Data Commons](/ncpi/platforms#cancer-research-data-commons-crdc).
+**AnVIL** - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
-## Areas of Focus
+**BioData Catalyst** - NHLBI BioData Catalyst is a cloud-based platform providing tools, applications, and workflows in secure workspaces. By increasing access to NHLBI datasets and innovative data analysis capabilities, BioData Catalyst accelerates efficient biomedical research that drives discovery and scientific advancement, leading to novel diagnostic tools, therapeutics, and prevention strategies for heart, lung, blood, and sleep disorders. [[more]](/ncpi/platforms#biodata-catalyst)
+
+**Cancer Research Data Commons** - The goal of the National Cancer Institute’s Cancer Research Data Commons (CRDC) is to empower researchers to accelerate data-driven scientific discovery by connecting diverse datasets with analytical tools in the cloud. The CRDC is built upon an expandable data science infrastructure that provides secure access to many different data across scientific domains via Data Commons Framework. [[more]](/ncpi/platforms#cancer-research-data-commons-crdc)
+
+
+**Kids First Data Resource Center**  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]] (/ncpi/platforms#kids-first-data-resource-center)
+
+## Initial Focus
 
 The NCPI has intentionally constrained the problems we are addressing to that which are achievable in the near term and maximize demonstrable value to researchers by enabling specific research use cases.
  
-The NCPI's working groups and collaborating projects along with their areas of focus are listed below.
 
 
-1. [Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
+### Initial Researcher User Stories
 
-1. [Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinate discourse, collaboration, and meetings between the working groups of NCPI.
+As a researcher I would like to:
 
-1. [FHIR Working Group](/ncpi/working-groups#fhir-working-group) - Assess the potential of FHIR resources to model and share complex clinical and phenotypic data.
+1. Use datasets form other platforms as *cases* so I can increase the power of my analysis.
+1. Use datasets form other platforms as *controls* so I can run analyses that were previously blocked by lack of controls.
+1. Use an analysis tool located on another platform.
+1. Use datasets from other platforms with a different datatype (e.g. expression vs WGS).
 
-1. [NIH CIT  Researcher Auth Service (RAS) Project](ncpi/working-groups#nih-cit-researcher-auth-service-project) - Streamline access to multiple NIH data resources by enabling single sign-on and modernized communication of dbGaP approval information.
+### Initial System Use Cases
 
-1. [Outreach and Training Working Group](/ncpi/working-groups#outreach-and-training-working-group) - Create a public knowledge base with training materials and a cloud cost guide to educate researchers on the research use cases enabled by interoperable cloud based data commons. 
+To enable the initial user researcher stories we will focus on developing the following system use cases:
 
-1. [Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
+**Generic Search Results Handoff** -   Establish a generic and universal handoff mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. Importantly, this gives researchers greater freedom in how and where they compute.
+
+By improving the handoff of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. 
+ 
+ For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data. Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+
+**Single Sign On Pilot** - Pilot a single sign on event authentication/authorization workflow through NIH’s RAS effort.
 
 
-## Driving Research Use Cases
 
- The interoperability effort is being driven by  key use cases that our research community has identified.
+## Research Driver Projects
+
+ The interoperability effort is being guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate of the utility of the developed interoperability features.
  
  1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#1---nhlbi-biodata-catalyst--kids-first-drc) - Develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.
  
@@ -62,6 +74,23 @@ The NCPI's working groups and collaborating projects along with their areas of f
  1. [CRDC +  AnVIL](/ncpi/research-use-cases#5----nci-crdc--nhgri-anvil) - Find a path to connect the GTEx data on the AnVIL platform to further processing and also combination with a prior analysis on the CRDC. This “normals” use case is a frequent request from our users, so finding a solution would be extremely valuable for a large number of cancer researchers
  
  1. [CRDC +  AnVIL](/ncpi/research-use-cases#6-nci-crdc--nhgri-anvil) - A comparison of transcriptome variation between tumors derived from male and female cancer patients.
+
+## Working Groups
+
+The NCPI's working groups and collaborating projects along with their areas of focus are listed below.
+
+
+[Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
+
+[Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinate discourse, collaboration, and meetings between the working groups of NCPI.
+
+[FHIR Working Group](/ncpi/working-groups#fhir-working-group) - Assess the potential of FHIR resources to model and share complex clinical and phenotypic data.
+
+[NIH CIT  Researcher Auth Service (RAS) Project](ncpi/working-groups#nih-cit-researcher-auth-service-project) - Streamline access to multiple NIH data resources by enabling single sign-on and modernized communication of dbGaP approval information.
+
+[Outreach and Training Working Group](/ncpi/working-groups#outreach-and-training-working-group) - Create a public knowledge base with training materials and a cloud cost guide to educate researchers on the research use cases enabled by interoperable cloud based data commons. 
+
+[Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
 
 
 ## Progress Updates
