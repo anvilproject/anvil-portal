@@ -51,7 +51,7 @@ As a researcher I would like to:
 
 1. Use datasets form other platforms as cases so I can increase the power of my analysis.
 1. Use datasets form other platforms as controls so I can run analyses that were previously blocked by lack of controls.
-1. Use an analysis tool unique to a different platform other than the one hosting my cohort.
+1. Use an analysis tool unique to a platform other than the one hosting my cohort.
 1. Use datasets from other platforms with a different datatype (e.g. expression vs WES).
 
 <hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any another platform in the ecosystem. </hero>
