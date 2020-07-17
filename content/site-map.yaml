@@ -89,7 +89,7 @@
 #         key: "/ncpi/working-groups/outreach-working-group"
 #        - name: "Systems Interop Working Group"
 #          key: "/ncpi/working-groups/systems-interoperation-working-group"
-    - name: "Driver Projects"
+    - name: "Driver Research Projects"
       key: "/ncpi/research-use-cases/research-use-cases"
       path: "/ncpi/research-use-cases"
 #      secondaryLinks:

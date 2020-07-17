@@ -74,6 +74,11 @@ The NIH Systems Interoperation Working Group group will spearhead technical impr
 - Brian O’Connor (Broad)
 - Jack DiGiovanna (Seven Bridges)
 
+**Documents**
+
+[Charter](https://docs.google.com/document/d/15BFO2-RlOUqIMY87bKSqlxUcb4qlaNiY-Q6Imk7WREo/edit?pli=1#)
+
+[Meeting Agenda](https://docs.google.com/document/d/1x34Xo9XpdFDG1Cc3xa6YnsAcOSKJ3kkGiOIiIq39KN4/edit?pli=1#heading=h.dox03dguv2oj)
 
 ### Background
 
