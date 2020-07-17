@@ -6,10 +6,6 @@ draft: false
 # Working Groups
 The NCPI has established the following working groups to address various challenges to interoperability.
 
-We have purposely constrained the problems we are addressing to that which is achievable in the near term and maximizes value to researchers.
- 
-Harmonization of metadata, or large scale data harmonization across projects, for example, are worthwhile and interesting topics that are likely to be future areas of focus for this group.  We will, however, stay focused initially on the "lowest hanging fruit" in terms of user functionality and interoperability improvements.
-
 
 ## Coordination Working Group
 
@@ -30,13 +26,15 @@ The Coordination Working Group provides an interface between the chairs of the o
 - Bob Grossman (ORG)
  
 
-##FHIR Working Group
+## FHIR Working Group
 
 <hero small>The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's particpating platforms.</hero>
 
 **Co-Chairs**
 - Robert Carrol (Vanderbilt)
 - Allison Heath (CHOP)
+
+### Background
 
 Recently, there is increasing attention on the potential of HL7 FHIR, a standard developed primarily for clinical data interoperability. Electronic Health Record interoperability has been a serious challenge in the field for the length of its existence - fraught with challenges across the spectrum of technical and policy.
  
@@ -50,7 +48,7 @@ An initial objective of the FHIR working group is to have a practical approach f
  As knowledge is gained, we anticipate needing to reevaluate the objectives of this working group. 
  
  
-##NIH CIT Researcher Auth Service Project
+## NIH CIT Researcher Auth Service Project
  
 <hero small>In parallel with the NCPI effort, the NIH CIT is working to create one unified Researcher Auth Service (RAS) that will streamline access to multiple NIH data resources.  </hero>
  
@@ -98,7 +96,7 @@ The key goal of this activity is to establish a generic and universal handoff me
  For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data. Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
 
-## Deliverables
+### Deliverables
 
 1. Build the necessary infrastructure to enable the research use cases.
 1. Document the standards and conventions we use so that other systems can implement the same approaches.

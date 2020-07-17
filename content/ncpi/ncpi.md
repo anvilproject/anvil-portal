@@ -4,9 +4,8 @@ draft: false
 
 
 # NIH Cloud Platform Interoperability Effort
- [AnVIL](https://anvilproject.org) | [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov)| [CRDC](https://datacommons.cancer.gov/) |  [Kids First](https://kidsfirstdrc.org).
-
-
+ [AnVIL](https://anvilproject.org) | [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov) | [CRDC](https://datacommons.cancer.gov/) |  [Kids First](https://kidsfirstdrc.org)
+ 
 
 ## Overview
 
@@ -19,13 +18,13 @@ The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome 
 ### Team 
 This new interoperability effort is a collaboration between NIH representatives, team members from each platform and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
  
+## Working Towards a Federated Data Ecosystem
+
  <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
 
 
-## Working Towards a Federated Data Ecosystem
-
-The NCPI will work to enable analysis across the following data commons:
-
+### Participating Data Commons
+The NCPI is working to enable end-user analysis across the following data commons:
 
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
@@ -37,37 +36,48 @@ The NCPI will work to enable analysis across the following data commons:
 
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#kids-first-data-resource-center)
 
-## Our Current Focus
+## Our Initial Focus
+
 
 The NCPI has intentionally constrained the problems we are addressing to that which are achievable in the near term and maximize demonstrable value to researchers by enabling specific research use cases.
 
 
-### Our First Researcher User Stories
+### To Start, We are Focusing on Cross-Platform Data Exchange
+
+The NCPI is currently working to enable the following researcher user stories:
+
 
 As a researcher I would like to:
 
 1. Use datasets form other platforms as cases so I can increase the power of my analysis.
 1. Use datasets form other platforms as controls so I can run analyses that were previously blocked by lack of controls.
-1. Use an analysis tool located on another platform.
-1. Use datasets from other platforms with a different datatype (e.g. expression vs WGS).
+1. Use an analysis tool unique to a different platform other than the one hosting my cohort.
+1. Use datasets from other platforms with a different datatype (e.g. expression vs WES).
 
-### Our First Systems Interoperability Use Cases
+<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any another platform in the ecosystem. </hero>
 
-To enable the initial researcher user stories, we are focused on delivering the following system use cases:
+### Our First Systems Interoperability Features
 
-**Generic Search Results Hand-off** -   We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. Importantly, this gives researchers greater freedom in how and where they compute.
+To enable the initial researcher user stories, we are focused on delivering the following system features:
+
+**Generic Search Results Hand-off** -   We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. 
+
+Importantly, this gives researchers greater freedom in how and where they compute.
 
 By improving the hand-off of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. 
  
- For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data. Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+ For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data.
+  
+  Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
 **Single Sign On Pilot** - We will pilot a single sign on event authentication/authorization workflow through NIH’s RAS effort.
-
 
 
 ## Driver Projects Help Us Meet Researcher Needs
 
  This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate of the utility of the developed interoperability features.
+ 
+### Our First Driver Projects Make Use of Cross-Platform Data Exchange
  
  1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#1---nhlbi-biodata-catalyst--kids-first-drc) - Develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.
  
@@ -99,7 +109,7 @@ The NCPI's working groups and collaborating projects along with their areas of f
 [Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
 
 
-## We Update on our Progeress Every Six Months
+## Our Progeress Updates
 The NCPI will give progress updates every six months. Summaries of past progress updates are listed below:
 
 1. [April 16, 2020 -  NIH Interoperability Workshop (Remote)](/ncpi/progress-updates/ncpi-progress-update-2020-04-16)
