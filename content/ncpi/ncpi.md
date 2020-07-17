@@ -2,32 +2,38 @@
 draft: false
 ---
 
-
 # NIH Cloud Platform Interoperability Effort
  Driving interoperability between [AnVIL](https://anvilproject.org), [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov), [CRDC](https://datacommons.cancer.gov/) and the  [Kids First DRC](https://kidsfirstdrc.org).
-
 
 ## Overview
 
 The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019.
  
 ### Mission
- The NCPI's mission is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund and to demonstrate progress based on driver research projects every six months.
- 
+ The NCPI's mission is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund.
+  
  
 ### Team 
 This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
+
+### Timeline 
+
+The NCPI will demonstrate progress based on driver research projects every six months.
  
 ## Working Towards a Federated Data Ecosystem
 
- <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
+ <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
+ </hero>
 
 
-### Participating Data Commons
+ 
+
+### Participating Genomic Data Commons
 
 
  ![HERO](./_images/ncpi-cloud.png)
 
+The following genomic data commons platforms are participating in the NCPI effort:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -42,7 +48,7 @@ This new interoperability effort is a collaboration between NIH representatives,
 ## Our Initial Focus
 
 
-The NCPI has intentionally constrained the problems we are addressing to that which are achievable in the near term and maximize demonstrable value to researchers by enabling specific research use cases.
+The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term  which can demonstrate value to researchers by enabling specific research projects.
 
 
 ### To Start, We are Focusing on Cross-Platform Data Exchange
@@ -57,7 +63,7 @@ As a researcher I would like to:
 1. Use an analysis tool unique to a platform other than the one hosting my cohort.
 1. Use datasets from other platforms with a different data type (e.g. expression vs WES).
 
-<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem. </hero>
+<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem.</hero>
 
 To enable the initial researcher user stories, we are focused on delivering the following system features:
 
@@ -74,7 +80,7 @@ By improving the hand-off of search results from portals to workspace environmen
 **Single Sign On Pilot** - We will pilot a single sign on event authentication/authorization workflow through NIH’s RAS effort.
 
 
-## Driver Projects Help Us Meet Researcher Needs
+## Driver Projects Help Us Target Researcher Needs
 
  <hero small> This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
  
