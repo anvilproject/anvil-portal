@@ -58,8 +58,8 @@ The NCPI is currently working to enable the following researcher user stories:
 
 As a researcher I would like to:
 
-1. Use datasets form other platforms as cases so I can increase the power of my analysis.
-1. Use datasets form other platforms as controls so I can run analyses that were previously blocked by lack of controls.
+1. Use datasets form other platforms as GWAS cases so I can increase the power of my analysis.
+1. Use datasets form other platforms as GWAS controls so I can run analyses that were previously blocked by lack of controls.
 1. Use an analysis tool unique to a platform other than the one hosting my cohort.
 1. Use datasets from other platforms with a different data type (e.g. expression vs WES).
 
