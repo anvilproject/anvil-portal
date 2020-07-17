@@ -93,7 +93,7 @@ By improving the hand-off of search results from portals to workspace environmen
  
  1. [CRDC +  AnVIL](/ncpi/research-use-cases#6-nci-crdc--nhgri-anvil) - A comparison of transcriptome variation between tumors derived from male and female cancer patients.
 
-## Our Working Groups
+## Working Groups
 
 The NCPI's working groups and collaborating projects along with their areas of focus are listed below.
 
@@ -111,7 +111,7 @@ The NCPI's working groups and collaborating projects along with their areas of f
 [Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
 
 
-## Our Progress Updates
+## Progress Updates
 The NCPI will give progress updates every six months. Summaries of past progress updates are listed below:
 
 1. [April 16, 2020 -  NIH Interoperability Workshop (Remote)](/ncpi/progress-updates/ncpi-progress-update-2020-04-16)
