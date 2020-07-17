@@ -4,7 +4,7 @@ draft: false
 
 
 # NIH Cloud Platform Interoperability Effort
- [AnVIL](https://anvilproject.org) | [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov) | [CRDC](https://datacommons.cancer.gov/) |  [Kids First](https://kidsfirstdrc.org)
+ Driving interoperability between [AnVIL](https://anvilproject.org), [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov), [CRDC](https://datacommons.cancer.gov/) and the  [Kids First DRC](https://kidsfirstdrc.org).
 
 
 ## Overview
@@ -27,7 +27,6 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 
  ![HERO](./_images/ncpi-cloud.png)
-
 
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
