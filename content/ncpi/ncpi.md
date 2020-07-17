@@ -5,18 +5,18 @@ draft: false
 
 # NIH Cloud Platform Interoperability Effort
  [AnVIL](https://anvilproject.org) | [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov) | [CRDC](https://datacommons.cancer.gov/) |  [Kids First](https://kidsfirstdrc.org)
- 
+
 
 ## Overview
 
 The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019.
  
 ### Mission
- The NCPI's mission is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund and to  demonstrate progress based on driver research projects every six months.
+ The NCPI's mission is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund and to demonstrate progress based on driver research projects every six months.
  
  
 ### Team 
-This new interoperability effort is a collaboration between NIH representatives, team members from each platform and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
+This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
  
 ## Working Towards a Federated Data Ecosystem
 
@@ -24,7 +24,10 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 
 ### Participating Data Commons
-The NCPI is working to enable end-user analysis across the following data commons:
+
+
+ ![HERO](./_images/ncpi-cloud.png)
+
 
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
@@ -35,6 +38,7 @@ The NCPI is working to enable end-user analysis across the following data common
 
 
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#kids-first-data-resource-center)
+
 
 ## Our Initial Focus
 
@@ -52,11 +56,9 @@ As a researcher I would like to:
 1. Use datasets form other platforms as cases so I can increase the power of my analysis.
 1. Use datasets form other platforms as controls so I can run analyses that were previously blocked by lack of controls.
 1. Use an analysis tool unique to a platform other than the one hosting my cohort.
-1. Use datasets from other platforms with a different datatype (e.g. expression vs WES).
+1. Use datasets from other platforms with a different data type (e.g. expression vs WES).
 
-<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any another platform in the ecosystem. </hero>
-
-### Our First Systems Interoperability Features
+<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem. </hero>
 
 To enable the initial researcher user stories, we are focused on delivering the following system features:
 
@@ -75,7 +77,7 @@ By improving the hand-off of search results from portals to workspace environmen
 
 ## Driver Projects Help Us Meet Researcher Needs
 
- This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate of the utility of the developed interoperability features.
+ <hero small> This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
  
 ### Our First Driver Projects Make Use of Cross-Platform Data Exchange
  
@@ -109,7 +111,7 @@ The NCPI's working groups and collaborating projects along with their areas of f
 [Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
 
 
-## Our Progeress Updates
+## Our Progress Updates
 The NCPI will give progress updates every six months. Summaries of past progress updates are listed below:
 
 1. [April 16, 2020 -  NIH Interoperability Workshop (Remote)](/ncpi/progress-updates/ncpi-progress-update-2020-04-16)

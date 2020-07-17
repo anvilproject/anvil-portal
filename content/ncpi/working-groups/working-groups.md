@@ -9,7 +9,7 @@ The NCPI has established the following working groups to address various challen
 
 ## Coordination Working Group
 
-<hero small>The Coordination Working Group will coordinate discourse, collaboration, and meetings between the working groups of NCPI.</hero> 
+The Coordination Working Group will coordinate discourse, collaboration, and meetings between the working groups of NCPI. 
 
 The Coordination Working Group provides an interface between the chairs of the other NCPI working groups to promote use case driven interoperability between cloud platforms. 
 
@@ -19,7 +19,7 @@ The Coordination Working Group provides an interface between the chairs of the o
 
 ## Community Governance Working Group
 
- <hero small>The Community Governance Working Group aims to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.</hero>
+The Community Governance Working Group aims to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
 
 **Co-Chairs**
 - Stan Ahalt (ORG)
@@ -28,7 +28,7 @@ The Coordination Working Group provides an interface between the chairs of the o
 
 ## FHIR Working Group
 
-<hero small>The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's particpating platforms.</hero>
+The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's particpating platforms.
 
 **Co-Chairs**
 - Robert Carrol (Vanderbilt)
@@ -60,7 +60,7 @@ Currently the NCPI participating platforms use different methods for authenticat
 
 ## Outreach and Training Working Group
 
-<hero small>The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. </hero>
+The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. 
 
 **Co-Chairs**
 - Ashok Krishnamurthy (RENCI)
@@ -68,7 +68,7 @@ Currently the NCPI participating platforms use different methods for authenticat
 
 ## NIH Systems Interoperation Working Group
 
-<hero small>The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.</hero>
+The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.
 
 **Co-Chairs**
 - Brian O’Connor (Broad)
