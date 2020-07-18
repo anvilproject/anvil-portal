@@ -20,20 +20,18 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 The NCPI will demonstrate progress based on driver research projects every six months.
  
-## Working Towards a Federated Data Ecosystem
+## The NCPI is helping to create a federated, genomic  data ecosystem.
 
  <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
 
-
- 
 
 ### Participating Genomic Data Commons
 
 
  ![HERO](./_images/ncpi-cloud.png)
 
-The following genomic data commons platforms are participating in the NCPI effort:
+The NCPI is is driving interoperability across  four genomic data commons:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -51,7 +49,7 @@ The following genomic data commons platforms are participating in the NCPI effor
 The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term  which can demonstrate value to researchers by enabling specific research projects.
 
 
-### To Start, We are Focusing on Cross-Platform Data Exchange
+### To start, we are focusing on cross-platform data exchange.
 
 The NCPI is currently working to enable the following researcher user stories:
 
@@ -77,14 +75,14 @@ By improving the hand-off of search results from portals to workspace environmen
   
   Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-**Single Sign On Pilot** - We will pilot a single sign on event authentication/authorization workflow through NIH’s RAS effort.
+**NIH RAS Single Sign On Pilot** - In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will pilot a single sign on authentication/authorization workflow.
 
 
-## Driver Projects Help Us Target Researcher Needs
+## Driver research projects help us target researcher needs.
 
  <hero small> This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
  
-### Our First Driver Projects Make Use of Cross-Platform Data Exchange
+### Our first driver projects make use of cross-platform data exchange.
  
  1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#1---nhlbi-biodata-catalyst--kids-first-drc) - Develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.
  
@@ -100,7 +98,7 @@ By improving the hand-off of search results from portals to workspace environmen
 
 ## Working Groups
 
-The NCPI's working groups and collaborating projects along with their areas of focus are listed below.
+The NCPIs has five working groups:
 
 
 [Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
@@ -108,8 +106,6 @@ The NCPI's working groups and collaborating projects along with their areas of f
 [Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinate discourse, collaboration, and meetings between the working groups of NCPI.
 
 [FHIR Working Group](/ncpi/working-groups#fhir-working-group) - Assess the potential of FHIR resources to model and share complex clinical and phenotypic data.
-
-[NIH CIT  Researcher Auth Service (RAS) Project](ncpi/working-groups#nih-cit-researcher-auth-service-project) - Streamline access to multiple NIH data resources by enabling single sign-on and modernized communication of dbGaP approval information.
 
 [Outreach and Training Working Group](/ncpi/working-groups#outreach-and-training-working-group) - Create a public knowledge base with training materials and a cloud cost guide to educate researchers on the research use cases enabled by interoperable cloud based data commons. 
 
