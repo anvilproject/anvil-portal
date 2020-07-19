@@ -31,7 +31,7 @@ The NCPI will demonstrate progress based on driver research projects every six m
 
  ![HERO](./_images/ncpi-cloud.png)
 
-The NCPI is is driving interoperability across  four genomic data commons:
+The NCPI collaboration currently involves four genomic data commons:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -56,16 +56,16 @@ The NCPI is currently working to enable the following researcher user stories:
 
 As a researcher I would like to:
 
-1. Use datasets form other platforms as GWAS cases so I can increase the power of my analysis.
-1. Use datasets form other platforms as GWAS controls so I can run analyses that were previously blocked by lack of controls.
-1. Use an analysis tool unique to a platform other than the one hosting my cohort.
-1. Use datasets from other platforms with a different data type (e.g. expression vs WES).
+1. Use datasets from other platforms as GWAS cases so I can increase the power of my analysis.
+1. Use datasets from other platforms as GWAS controls so I can run analyses that were previously blocked by lack of controls.
+1. Use an analysis tool unique to a platform other than the one hosting my dataset.
+1. Use datasets from other platforms with a different data type (e.g. expression vs. WES).
 
-<hero small> Each of these user stories are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem.</hero>
+<hero small> These researcher stories, and many others, are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem.</hero>
 
-To enable the initial researcher user stories, we are focused on delivering the following system features:
+To enable these researcher user stories, we are currently focused on the following deliverables:
 
-**Generic Search Results Hand-off** -   We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. 
+**A Generic Search Results Hand-off** -   We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. 
 
 Importantly, this gives researchers greater freedom in how and where they compute.
 
@@ -73,16 +73,18 @@ By improving the hand-off of search results from portals to workspace environmen
  
  For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data.
   
-  Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+ Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
 **NIH RAS Single Sign On Pilot** - In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will pilot a single sign on authentication/authorization workflow.
 
 
-## Driver research projects help us target researcher needs.
+## We are guided by driver research projects.
 
- <hero small> This interoperability effort is  guided by several research projects identified by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
+ <hero small> This interoperability effort is guided by several research projects identified and run by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
  
 ### Our first driver projects make use of cross-platform data exchange.
+
+There are currently six active driver research projects:
  
  1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#1---nhlbi-biodata-catalyst--kids-first-drc) - Develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.
  
