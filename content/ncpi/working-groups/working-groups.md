@@ -47,16 +47,6 @@ An initial objective of the FHIR working group is to have a practical approach f
  
  As knowledge is gained, we anticipate needing to reevaluate the objectives of this working group. 
  
- 
-## NIH CIT Researcher Auth Service Project
- 
-<hero small>In parallel with the NCPI effort, the NIH CIT is working to create one unified Researcher Auth Service (RAS) that will streamline access to multiple NIH data resources.  </hero>
- 
-Currently the NCPI participating platforms use different methods for authentication and managing approvals to controlled access data, and this is one of the major roadblocks to interoperability.
-  
-**Project Lead**
-- Rebecca Rosen (NIMH)
-
 
 ## Outreach and Training Working Group
 
