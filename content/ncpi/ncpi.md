@@ -4,17 +4,22 @@ draft: false
 
 # NIH Cloud Platform Interoperability Effort
 
+## The NCPI is helping to create a federated, genomic data ecosystem.
+
+ <hero small>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
+ </hero>
+
 ## Overview
 
 
-The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
+The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
 
 The NCPI's current participating platforms are:
 
 * [AnVIL](https://anvilproject.org),
 * [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov),
-* the [CRDC](https://datacommons.cancer.gov/) and 
-* the [Kids First DRC](https://kidsfirstdrc.org).
+* the [Cancer Research Data Ccommons](https://datacommons.cancer.gov/) and 
+* the [Kids First Data Resource Center](https://kidsfirstdrc.org).
 
  
  
@@ -25,10 +30,7 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 The NCPI will demonstrate progress based on specific use cases that enable the  research efforts every six months.
  
-## The NCPI is helping to create a federated, genomic data ecosystem.
 
- <hero small>The NCPI will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
- </hero>
 
 
 ### Overview of Collaborating Data Commons
