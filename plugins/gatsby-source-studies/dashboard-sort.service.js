@@ -32,20 +32,6 @@ const sortDataByDuoTypes = function sortDataByDuoTypes(dashboardData, type0, typ
 };
 
 /**
- * Sorts any dashboard data, by a singular specified type.
- *
- * @param data
- * @param type0
- */
-const sortDataBySingularType = function sortDataBySingularType(data, type0) {
-
-    return data.sort(function (data0, data1) {
-
-        return sortDataValues(data0, data1, type0);
-    })
-};
-
-/**
  * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
  * Used by the sort function.
  *
@@ -100,4 +86,3 @@ function sortDataValues(data0, data1, type) {
 }
 
 module.exports.sortDataByDuoTypes = sortDataByDuoTypes;
-module.exports.sortDataBySingularType = sortDataBySingularType;
