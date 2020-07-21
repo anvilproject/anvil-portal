@@ -2,43 +2,43 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for formatting data dashboard detail into FE model.
+ * Service for formatting workspaces into FE model.
  */
 
 // Core dependencies
 const path = require("path");
 
 // App dependencies
+const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {formatSizeToTB} = require(path.resolve(__dirname, "./number-format.service.js"));
-const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"))
 
 // Template variables
 const statsJson = require(path.resolve(__dirname, "../../../client-apis/pyAnVIL/notebooks/figures/report-data.json"));
 
 /**
- * Returns the formatted dashboard detail JSON.
+ * Returns the formatted workspaces JSON.
  *
  */
-const getDashboardDetail = function getDashboardDetail() {
+const getWorkspaces = async function getWorkspaces() {
 
     const projects = statsJson.projects;
 
     /* Build up the FE-compatible model. */
-    const details = buildDashboardDetail(projects);
+    const workspaces = buildDashboardWorkspace(projects);
 
     /* Validate filtered workspaces. */
-    validateWorkspacesFiltering(details);
+    validateWorkspacesFiltering(workspaces);
 
     /* Return the sorted dashboard. */
-    return sortDataByDuoTypes(details, "program", "projectId");
+    return sortDataByDuoTypes(workspaces, "program", "projectId");
 };
 
 /**
- * Parse the dashboard JSON and build up FE-compatible model of data dashboard detail, to be displayed on the dashboard page.
+ * Parse the dashboard JSON and build up FE-compatible model of workspaces, to be displayed on the dashboard page.
  *
  * @param projects
  */
-function buildDashboardDetail(projects) {
+function buildDashboardWorkspace(projects) {
 
     return projects.map(project => {
 
@@ -200,4 +200,4 @@ function validateWorkspacesFiltering(workspaces) {
 
 }
 
-module.exports.getDashboardDetail = getDashboardDetail;
+module.exports.getWorkspaces = getWorkspaces;

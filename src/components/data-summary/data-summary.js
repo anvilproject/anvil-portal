@@ -21,7 +21,7 @@ import React from "react";
 
 // App dependencies
 import DataTable from "../data-table/data-table";
-import {DashboardDetailStaticQuery} from "../../hooks/dashboard-detail-query";
+import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 import * as DashboardAccessibilityService from "../../utils/dashboard/dashboard-accessibility.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
@@ -44,7 +44,7 @@ export default (props) => {
 
     const {consortia, dbgap} = props;
     const shared = props.public;
-    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardDetailStaticQuery(), consortia, dbgap, shared);
+    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardWorkspaceStaticQuery(), consortia, dbgap, shared);
     const dashboardSummary = DashboardSummaryService.getDashboardSummary(dashboardByAccessibility);
     const total = DashboardSummaryService.getDashboardSummaryTotals(dashboardSummary);
     const summary = dashboardSummary.concat(total);

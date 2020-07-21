@@ -21,7 +21,7 @@ import React from "react";
 
 // App dependencies
 import DataTable from "../data-table/data-table";
-import * as DashboardDetailService from "../../utils/dashboard/dashboard-detail.service";
+import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
 // Styles
 import tableStyles from "../data-table/data-table.module.css";
@@ -42,7 +42,7 @@ export default (props) => {
 
     const {consortia, dbgap} = props;
     const shared = props.public;
-    const details = DashboardDetailService.getDashboardDetail(consortia, dbgap, shared);
+    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, shared);
 
     return (
         <DataDetail details={details}/>

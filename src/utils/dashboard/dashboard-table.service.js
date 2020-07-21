@@ -141,8 +141,6 @@ export function switchDisplayColumnName(columnName) {
             return "Size";
         case "sizeTB":
             return "Size (TB)";
-        case "workspaceId":
-            return "Workspace Name";
         default:
             return columnName;
     }
@@ -215,8 +213,6 @@ function switchColumnUrl(columnName, summary, value) {
         case summary && "program":
             return switchProgramUrl(value);
         case "projectId":
-            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
-        case "workspaceId":
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
             return "";

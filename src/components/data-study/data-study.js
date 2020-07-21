@@ -24,7 +24,7 @@ import compStyles from "./data-study.module.css";
 // Template variables
 let TABLE_HEADERS_CONSENT_GROUPS = ["consentName", "consentStat"];
 let TABLE_HEADERS_DISEASES = ["diseases"];
-let TABLE_HEADERS_WORKSPACES = ["workspaceId", "dataType", "subjects", "samples"];
+let TABLE_HEADERS_WORKSPACES = ["projectId", "dataType", "subjects", "samples"];
 
 let classNames = require("classnames");
 
