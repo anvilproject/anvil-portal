@@ -3,22 +3,27 @@ draft: false
 ---
 
 # NIH Cloud Platform Interoperability Effort
- Driving interoperability between [AnVIL](https://anvilproject.org), [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov), [CRDC](https://datacommons.cancer.gov/) and the  [Kids First DRC](https://kidsfirstdrc.org).
 
 ## Overview
 
-The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019.
+
+The NIH Cloud Platform Interoperability Effort (NCPI) was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
+
+The NCPI's current member platforms are:
+
+* [AnVIL](https://anvilproject.org),
+* [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov),
+* the [CRDC](https://datacommons.cancer.gov/) and 
+* the [Kids First DRC](https://kidsfirstdrc.org).
+
  
-### Mission
- The NCPI's mission is to drive interoperability among the genomic analysis platforms established by the NCI, NHLBI, NHGRI and the NIH Common Fund.
-  
  
 ### Team 
-This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform driver projects to inform and validate the interoperability approaches.
+This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
 
 ### Timeline 
 
-The NCPI will demonstrate progress based on driver research projects every six months.
+The NCPI will demonstrate progress based on specific use cases that enable the  research efforts every six months.
  
 ## The NCPI is helping to create a federated, genomic  data ecosystem.
 
@@ -26,12 +31,16 @@ The NCPI will demonstrate progress based on driver research projects every six m
  </hero>
 
 
-### Participating Genomic Data Commons
+### Overview of Collaborating Data Commons
+
+Each of the collaborating data commons securely hosts data in the cloud and collocates that data with a cloud based execution environment for running repeatable analysis workflows.
+
+The NCPI is facilitating the interoperability aspect of these data commons platforms and is helping to enable  cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results.
 
 
- ![HERO](./_images/ncpi-cloud.png)
+![HERO](./_images/ncpi-cloud.png)
 
-The NCPI collaboration currently involves four genomic data commons:
+More detail on the individual participating platforms is given below:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -46,28 +55,13 @@ The NCPI collaboration currently involves four genomic data commons:
 ## Our Initial Focus
 
 
-The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term  which can demonstrate value to researchers by enabling specific research projects.
+The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term  which can demonstrate value to researchers by enabling specific research projects. We are currently focused on the following deliverables:
 
-
-### To start, we are focusing on cross-platform data exchange.
-
-The NCPI is currently working to enable the following researcher user stories:
-
-
-As a researcher I would like to:
-
-1. Use datasets from other platforms as GWAS cases so I can increase the power of my analysis.
-1. Use datasets from other platforms as GWAS controls so I can run analyses that were previously blocked by lack of controls.
-1. Use an analysis tool unique to a platform other than the one hosting my dataset.
-1. Use datasets from other platforms with a different data type (e.g. expression vs. WES).
-
-<hero small> These researcher stories, and many others, are enabled when a researcher can easily find data in one platform and export it to any other platform in the data ecosystem.</hero>
-
-To enable these researcher user stories, we are currently focused on the following deliverables:
-
-**A Generic Search Results Hand-off** -   We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.  This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. 
-
-Importantly, this gives researchers greater freedom in how and where they compute.
+### Generic Search Results Hand-off
+  
+ We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.
+   
+ This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. Importantly, this gives researchers greater freedom in how and where they compute.
 
 By improving the hand-off of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. 
  
@@ -75,28 +69,26 @@ By improving the hand-off of search results from portals to workspace environmen
   
  Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-**NIH RAS Single Sign On Pilot** - In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will pilot a single sign on authentication/authorization workflow.
+### NIH RAS Single Sign On Pilot
+
+In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will pilot a single sign on authentication/authorization workflow.
 
 
-## We are guided by driver research projects.
+## We are guided by research.
 
- <hero small> This interoperability effort is guided by several research projects identified and run by the research community. Feedback from the driver projects is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
+ <hero small> This interoperability effort is guided by several research efforts that exercise specific research use cases. Feedback from the research efforts is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
  
-### Our first driver projects make use of cross-platform data exchange.
+### Our first research efforts make use of cross-platform data exchange.
 
-There are currently six active driver research projects:
- 
- 1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#1---nhlbi-biodata-catalyst--kids-first-drc) - Develop a more accurate pipeline to detect de novo mutations in family trios by utilizing the consistent calls and other graph-related information produced by the SBG graph tools in the PCGC pipeline.
- 
- 1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#2---nhlbi-biodata-catalyst--kids-first-drc) -  Help the scientific community to better understand cardiogenesis and to better assess risk of disease. Access to this whole genome sequence data will facilitate our work
- 
- 1. [BioData Catalyst + Kids First DRC](/ncpi/research-use-cases#3---nhlbi-biodata-catalyst--kids-first-drc) - A comparison of cardiac-associated genes from BioData Catalyst's TOPMed Vanderbilt atrial fibrillation and Kids First congenital heart defects cohorts.
+There are currently six active driver research efforts:
 
- 1. [AnVIL + Kids First DRC + NHLBI BioData Catalyst](/ncpi/research-use-cases#4---nhgri-anvil--kids-first-drc--nhlbi-biodata-catalyst) - Leveraging cross platform datasets as controls for analysis.
+* Three research efforts integrate data from BioData Catalyst and the Kids First DRC.
+* Two research efforts integrate data from CRDC and AnVIL.
+* One research effort integrates data across Anvil, Kids First DRC and BioData Catalyst.
+
+For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/15BFO2-RlOUqIMY87bKSqlxUcb4qlaNiY-Q6Imk7WREo/edit?pli=1#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
+
  
- 1. [CRDC +  AnVIL](/ncpi/research-use-cases#5----nci-crdc--nhgri-anvil) - Find a path to connect the GTEx data on the AnVIL platform to further processing and also combination with a prior analysis on the CRDC. This “normals” use case is a frequent request from our users, so finding a solution would be extremely valuable for a large number of cancer researchers
- 
- 1. [CRDC +  AnVIL](/ncpi/research-use-cases#6-nci-crdc--nhgri-anvil) - A comparison of transcriptome variation between tumors derived from male and female cancer patients.
 
 ## Working Groups
 

@@ -89,9 +89,9 @@
 #         key: "/ncpi/working-groups/outreach-working-group"
 #        - name: "Systems Interop Working Group"
 #          key: "/ncpi/working-groups/systems-interoperation-working-group"
-    - name: "Driver Research Projects"
-      key: "/ncpi/research-use-cases/research-use-cases"
-      path: "/ncpi/research-use-cases"
+#    - name: "Driver Research Projects"
+#      key: "/ncpi/research-use-cases/research-use-cases"
+#      path: "/ncpi/research-use-cases"
 #      secondaryLinks:
 #        - name: "UC1a - BDC + KF Interop"
 #          key: "/ncpi/research-use-cases/uc1a-bdc+kf-interop"
