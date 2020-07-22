@@ -16,11 +16,10 @@ The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms 
 
 The NCPI's current participating platforms are:
 
-* [AnVIL](https://anvilproject.org),
-* [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov),
-* the [Cancer Research Data Ccommons](https://datacommons.cancer.gov/) and 
-* the [Kids First Data Resource Center](https://kidsfirstdrc.org).
-
+* [AnVIL](https://anvilproject.org)
+* [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov)
+* [The Cancer Research Data Commons](https://datacommons.cancer.gov/)
+* [The Kids First Data Resource Center](https://kidsfirstdrc.org)
  
  
 ### Team 
@@ -28,14 +27,12 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 ### Timeline 
 
-The NCPI will demonstrate progress based on specific use cases that enable the  research efforts every six months.
+The NCPI will demonstrate progress based on enabling specific research use cases every six months.
  
-
-
 
 ### Overview of Collaborating Data Commons
 
-Each of the collaborating data commons securely hosts data in the cloud and collocates that data with a cloud based execution environment for running repeatable analysis workflows.
+Each of the collaborating data commons platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
 
 The NCPI is facilitating the interoperability aspect of these data commons platforms and is helping to enable cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results.
 
