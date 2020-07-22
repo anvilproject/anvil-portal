@@ -79,7 +79,7 @@ In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will
  
 ### Our first research efforts make use of cross-platform data exchange.
 
-There are currently six active driver research efforts:
+There are currently six cross-platform research efforts:
 
 * Three research efforts integrate data from BioData Catalyst and the Kids First DRC.
 * Two research efforts integrate data from CRDC and AnVIL.
