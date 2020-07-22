@@ -39,7 +39,7 @@ The NCPI is facilitating the interoperability aspect of these data commons platf
 
 ![HERO](./_images/ncpi-cloud.png)
 
-Additional information on each participating platform is given below:
+Additional information on each participating platform is given below.
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -94,18 +94,18 @@ For more information on the research efforts and their related use cases please 
 The NCPIs has five working groups:
 
 
-[Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
+[Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Working to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
 
-[Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinate discourse, collaboration, and meetings between the working groups of NCPI.
+[Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinating discourse, collaboration, and meetings between the working groups of NCPI.
 
-[FHIR Working Group](/ncpi/working-groups#fhir-working-group) - Assess the potential of FHIR resources to model and share complex clinical and phenotypic data.
+[FHIR Working Group](/ncpi/working-groups#fhir-working-group) - Assessing the potential of FHIR resources to model and share complex clinical and phenotypic data.
 
-[Outreach and Training Working Group](/ncpi/working-groups#outreach-and-training-working-group) - Create a public knowledge base with training materials and a cloud cost guide to educate researchers on the research use cases enabled by interoperable cloud based data commons. 
+[Outreach and Training Working Group](/ncpi/working-groups#outreach-and-training-working-group) - Creating a public knowledge base with training materials and a cloud cost guide to educate researchers on the research use cases enabled by interoperable cloud based data commons. 
 
-[Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Test and implement technical standards (e.g. GA4GH APIs)  for data exchange and demonstrate their effectiveness by enabling key cross-platform research use cases. 
+[Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Testing and implementing technical standards (e.g. GA4GH APIs) for data exchange and demonstrating their effectiveness in enabling key cross-platform research use cases. 
 
 
 ## Progress Updates
-The NCPI will give progress updates every six months. Summaries of past progress updates are listed below:
+The NCPI will give progress updates every six months. Summaries of past progress updates are listed below.
 
 1. [April 16, 2020 -  NIH Interoperability Workshop (Remote)](/ncpi/progress-updates/ncpi-progress-update-2020-04-16)
