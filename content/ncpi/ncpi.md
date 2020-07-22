@@ -39,7 +39,7 @@ The NCPI is facilitating the interoperability aspect of these data commons platf
 
 ![HERO](./_images/ncpi-cloud.png)
 
-More detail on the individual participating platforms is given below:
+Additional information on each participating platform is given below:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -52,7 +52,9 @@ More detail on the individual participating platforms is given below:
 
 ## Our Initial Focus
 
-The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term  which can demonstrate value to researchers by enabling specific research projects. We are currently focused on the following deliverables:
+The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term that can demonstrate value to researchers by enabling specific research projects.
+ 
+ We are currently focused on the deliverables listed below.
 
 ### Generic Search Results Hand-off
   
