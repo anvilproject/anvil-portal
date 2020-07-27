@@ -6,11 +6,15 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+// App dependencies
+const Bowser = require("bowser");
+const lunr = require("lunr");
+
 // Required for Edge, otherwise we get a "PerformanceObserver not defined" error 
 require('@fastly/performance-observer-polyfill/polyfill');
 
-// Determine site browser support
-const Bowser = require("bowser");
+// Template variables
+const DASHBOARD_JSON = "/dashboard-index.json";
 
 exports.onClientEntry = () => {
 
@@ -50,4 +54,16 @@ exports.onClientEntry = () => {
             window.location.replace("/browser-not-supported.html");
         }
     }
+
+    /* Build lunr search facility for data dashboard. */
+    window.dashboardIndex = window.dashboardIndex || {};
+    window.dashboardIndex = fetch(DASHBOARD_JSON)
+        .then(res => res.json())
+        .then(res => {
+            window.dashboardIndex = lunr.Index.load(res);
+            return window.dashboardIndex;
+        })
+        .catch((error) => {
+            console.error("Error - dashboard index not generated", error);
+        });
 };

@@ -17,12 +17,11 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
-import * as DashboardAccessibilityService from "../../utils/dashboard/dashboard-accessibility.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
 // Styles
@@ -42,14 +41,18 @@ class DataSummary extends React.Component {
 
 export default (props) => {
 
+    /* Dataset filtering props. */
+    const dashboardContext = useContext(DashboardFilterContext),
+        {dashboardFilterProps} = dashboardContext || {},
+        {query, results, resultsExist} = dashboardFilterProps || {};
+
+    /* Data summary component specific props. */
     const {consortia, dbgap} = props;
     const shared = props.public;
-    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardWorkspaceStaticQuery(), consortia, dbgap, shared);
-    const dashboardSummary = DashboardSummaryService.getDashboardSummary(dashboardByAccessibility);
-    const total = DashboardSummaryService.getDashboardSummaryTotals(dashboardSummary);
-    const summary = dashboardSummary.concat(total);
+
+    const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, query, results, shared);
 
     return (
-        <DataSummary summary={summary}/>
+        resultsExist ? <DataSummary summary={summary}/> : null
     )
 }

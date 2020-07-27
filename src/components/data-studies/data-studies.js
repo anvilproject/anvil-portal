@@ -8,11 +8,12 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataStudy from "../data-study/data-study";
-import {DashboardStudyStaticQuery} from "../../hooks/dashboard-study-query";
+import * as DashboardStudiesService from "../../utils/dashboard/dashboard-studies.service";
 
 // Styles
 import compStyles from "./data-studies.module.css";
@@ -31,9 +32,14 @@ class DataStudies extends React.Component {
 
 export default () => {
 
-    const studies = DashboardStudyStaticQuery();
+    /* Dataset filtering props. */
+    const dashboardContext = useContext(DashboardFilterContext),
+        {dashboardFilterProps} = dashboardContext || {},
+        {query, results, resultsExist} = dashboardFilterProps || {};
+
+    const studies = DashboardStudiesService.getDashboardStudies(query, results);
 
     return (
-        <DataStudies studies={studies}/>
+        resultsExist ? <DataStudies studies={studies}/> : null
     )
 }

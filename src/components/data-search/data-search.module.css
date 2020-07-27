@@ -1,0 +1,41 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL button component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Input. */
+.search {
+    color: var(--black87);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    height: 32px;
+    padding: 0 4px;
+}
+
+/* Input focus. */
+.search:focus {
+    border-color: var(--accent-blue-green);
+    outline: none;
+}
+
+/* Input, placeholder. */
+.search, .search::placeholder {
+    font-size: 12px;
+    line-height: 32px;
+}
+
+/* Input - placeholder. */
+.search::placeholder {
+    color: var(--black58);
+}
+
+/* No results. */
+.error {
+    color: var(--accent-blue-green);
+    font-size: 14px;
+    line-height: 32px;
+    padding: 8px 0;
+}

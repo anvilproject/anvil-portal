@@ -8,6 +8,7 @@
 const path = require("path");
 
 // App dependencies
+const {generateDashboardIndex} = require(path.resolve(__dirname, "dashboard-index.service.js"));
 const {getStudies} = require(path.resolve(__dirname, "dashboard-studies.service.js"));
 const {getWorkspaces} = require(path.resolve(__dirname, "dashboard-workspaces.service.js"));
 
@@ -114,7 +115,7 @@ exports.createSchemaCustomization = ({actions}) => {
     }`);
 };
 
-exports.createResolvers = ({ createResolvers }) => {
+exports.createResolvers = ({createResolvers}) => {
     const resolvers = {
         Study: {
             workspaces: {
@@ -141,4 +142,16 @@ exports.createResolvers = ({ createResolvers }) => {
     };
 
     createResolvers(resolvers);
+};
+
+exports.onPostBootstrap = ({getNodesByType}) => {
+
+    /* Get the workspaces. */
+    const workspaces = getNodesByType("Workspace");
+
+    /* Get the studies. */
+    const studies = getNodesByType("Study");
+
+    /* Generate the dashboard search index. */
+    generateDashboardIndex(studies, workspaces);
 };

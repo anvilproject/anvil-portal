@@ -13,8 +13,8 @@ import React from "react";
 // App dependencies
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
-import FrontmatterContext from "../components/context/frontmatter-context";
 import Layout from "../components/layout";
+import Providers from "../components/providers/providers";
 import * as TemplateService from "../utils/template.service";
 
 // Styles
@@ -35,11 +35,11 @@ export default ({data}) => {
 
     return (
         <Layout description={description} docPath={slug} ncpi={ncpi} styles={styles} title={pageTitle}>
-            <FrontmatterContext.Provider value={frontmatter}>
+            <Providers frontmatter={frontmatter}>
                 <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>
-            </FrontmatterContext.Provider>
+            </Providers>
         </Layout>
     )
 }

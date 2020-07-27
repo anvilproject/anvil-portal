@@ -8,6 +8,6 @@
 // Core dependencies
 import React from "react";
 
-const FrontmatterContext = React.createContext({title: ""});
+const FrontmatterContext = React.createContext({});
 
 export default FrontmatterContext;

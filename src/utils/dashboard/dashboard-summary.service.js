@@ -5,29 +5,67 @@
  * Service for formatting data dashboard summary into FE model.
  */
 
+// App dependencies
+import * as DashboardService from "./dashboard.service";
+import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
+
+/**
+ * Returns the dashboard summary filtered by results from the search, if applicable,
+ * and then by "consortia", "dbgap" or "public" [shared].
+ *
+ * @param consortia
+ * @param dbgap
+ * @param filterQuery
+ * @param filterResults
+ * @param shared
+ * @returns {Array.<*>}
+ */
+export function getDashboardSummary(consortia, dbgap, filterQuery, filterResults, shared) {
+
+    /* Filter workspaces by dataset search, if applicable. */
+    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterQuery, filterResults);
+
+    /* Filter workspaces by accessibility. */
+    const workspacesByAccessibility = DashboardService.filterDataByDBGapReadiness(workspaces, consortia, dbgap, shared);
+
+    const summary = buildDashboardSummary(workspacesByAccessibility);
+    const summaryTotals = buildDashboardSummaryTotals(summary);
+
+    return summary.concat(summaryTotals);
+}
+
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
+ *
+ * @param workspaces
+ * @returns {Array}
  */
-export function getDashboardSummary(data) {
+function buildDashboardSummary(workspaces) {
 
-    const programs = setOfPrograms(data);
+    const programs = setOfPrograms(workspaces);
 
     return [...programs].map(program => {
 
-        const projectsByProgram = filterProjectsByProgram(data, program);
+        const workspacesByProgram = filterWorkspacesByProgram(workspaces, program);
 
         return {
-            cohorts: countCohorts(projectsByProgram),
-            files: sumFiles(projectsByProgram),
+            cohorts: countCohorts(workspacesByProgram),
+            files: sumFiles(workspacesByProgram),
             program: program,
-            samples: sumSamples(projectsByProgram),
-            sizeTB: calculateSize(projectsByProgram),
-            subjects: sumSubjects(projectsByProgram)
+            samples: sumSamples(workspacesByProgram),
+            sizeTB: calculateSize(workspacesByProgram),
+            subjects: sumSubjects(workspacesByProgram)
         }
     });
 }
 
-export function getDashboardSummaryTotals(summary) {
+/**
+ * Returns the dashboard summary total counts.
+ *
+ * @param summary
+ * @returns {{cohorts: *, files: *, program: string, samples: *, sizeTB: *, subjects: *}}
+ */
+function buildDashboardSummaryTotals(summary) {
 
     return {
         cohorts: totalCohorts(summary),
@@ -66,7 +104,7 @@ function countCohorts(data) {
  * @param projects
  * @param program
  */
-function filterProjectsByProgram(projects, program) {
+function filterWorkspacesByProgram(projects, program) {
 
     return projects.filter(project => project.program === program);
 }

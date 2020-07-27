@@ -6,19 +6,25 @@
  */
 
 // App dependencies
-import * as DashboardAccessibilityService from "./dashboard-accessibility.service";
+import * as DashboardService from "./dashboard.service";
 import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 /**
- * Returns the dashboard workspaces filtered by "consortia", "dbgap" or "public" [shared].
+ * Returns the dashboard workspaces filtered by results from the search, if applicable,
+ * and then by "consortia", "dbgap" or "public" [shared].
  *
  * @param consortia
  * @param dbgap
+ * @param filterQuery
+ * @param filterResults
  * @param shared
  * @returns {*}
  */
-export function getDashboardWorkspaces(consortia, dbgap, shared) {
+export function getDashboardWorkspaces(consortia, dbgap, filterQuery, filterResults, shared) {
 
-    /* Filter the query by db gap readiness. */
-    return DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardWorkspaceStaticQuery(), consortia, dbgap, shared);
+    /* Filter workspaces by dataset search, if applicable. */
+    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterQuery, filterResults);
+
+    /* Filter workspaces by db gap readiness. */
+    return DashboardService.filterDataByDBGapReadiness(workspaces, consortia, dbgap, shared);
 }
