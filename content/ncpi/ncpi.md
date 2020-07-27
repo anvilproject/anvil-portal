@@ -11,35 +11,18 @@ draft: false
 
 ## Overview
 
-
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
 
-The NCPI's current participating platforms are:
 
-* [AnVIL](https://anvilproject.org)
-* [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov)
-* [The Cancer Research Data Commons](https://datacommons.cancer.gov/)
-* [The Kids First Data Resource Center](https://kidsfirstdrc.org)
- 
- 
-### Team 
-This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
-
-### Timeline 
-
-The NCPI will demonstrate progress based on enabling specific research use cases every six months.
- 
-
-### Overview of Collaborating Data Commons
-
-Each of the collaborating data commons platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
-
-The NCPI is facilitating the interoperability aspect of these data commons platforms and is helping to enable cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results.
-
+Each of the NCPI's platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
 
 ![HERO](./_images/ncpi-cloud.png)
 
-Additional information on each participating platform is given below.
+
+
+
+
+The NCPI's current participating platforms are:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
 
@@ -50,7 +33,20 @@ Additional information on each participating platform is given below.
 
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#kids-first-data-resource-center)
 
-## Our Initial Focus
+
+ 
+### Team 
+This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
+
+### Timeline 
+
+The NCPI will demonstrate progress based on enabling specific research use cases every six months.
+
+
+## Researcher User Stories 
+<hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results. </hero>
+
+### Our Initial Focus
 
 The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term that can demonstrate value to researchers by enabling specific research projects.
  
