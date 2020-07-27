@@ -17,9 +17,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
@@ -40,11 +41,19 @@ class DataDetail extends React.Component {
 
 export default (props) => {
 
+    /* Dataset filtering props. */
+    const dashboardContext = useContext(DashboardFilterContext),
+        {dashboardFilterProps} = dashboardContext || {},
+        {query, results, resultsExist} = dashboardFilterProps || {};
+
+    /* Data detail component specific props. */
     const {consortia, dbgap} = props;
     const shared = props.public;
-    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, shared);
+
+    /* Get the workspaces. */
+    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, query, results, shared);
 
     return (
-        <DataDetail details={details}/>
+        resultsExist ? <DataDetail details={details}/> : null
     )
 }

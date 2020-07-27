@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for filtering workspaces by "consortia", "dbGap" or "public".
+ * Service for dashboard data.
  */
 
 /**
@@ -50,4 +50,54 @@ export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared)
 
         return workspace;
     });
+}
+
+/**
+ * Filters studies by results from the dataset search.
+ *
+ * @param studies
+ * @param filterQuery
+ * @param filterResults
+ * @returns {*}
+ */
+export function filterStudiesBySearchResults(studies, filterQuery, filterResults) {
+
+    if ( !filterQuery ) {
+
+        return studies;
+    }
+
+    return studies.reduce((acc, study) => {
+
+        if ( study.workspaces.some(workspace => filterResults.includes(workspace.projectId)) ) {
+
+            const studyClone = Object.assign({}, study);
+
+            studyClone.workspaces = study.workspaces.filter(workspace => filterResults.includes(workspace.projectId));
+
+            acc.push(studyClone);
+
+            return acc;
+        }
+
+        return acc;
+    }, []);
+}
+
+/**
+ * Filters workspaces by results from the dataset search.
+ *
+ * @param workspaces
+ * @param filterQuery
+ * @param filterResults
+ * @returns {*}
+ */
+export function filterWorkspacesBySearchResults(workspaces, filterQuery, filterResults) {
+
+    if ( !filterQuery ) {
+
+        return workspaces;
+    }
+
+    return workspaces.filter(workspace => filterResults.includes(workspace.projectId));
 }

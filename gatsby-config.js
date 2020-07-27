@@ -136,6 +136,7 @@ module.exports = {
                             components: [
                                 "button",
                                 "data-detail",
+                                "data-search",
                                 "data-studies",
                                 "data-summary",
                                 "event-hero",
