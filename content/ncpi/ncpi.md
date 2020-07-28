@@ -17,9 +17,6 @@ The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms 
 ![HERO](./_images/ncpi-cloud.png)
 
 
-
-
-
 The NCPI's current participating platforms are:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
@@ -41,11 +38,10 @@ This new interoperability effort is a collaboration between NIH representatives,
 The NCPI will demonstrate progress based on enabling specific research use cases every six months.
 
 
-## Researcher User Stories 
-Each of the NCPI's platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
+## Researcher Use Cases 
 
-
-<hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results. </hero>
+<hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross platform data discovery
+ and the exchange of datasets, analysis workflows and analysis results. </hero>
 
 ### Our Initial Focus
 
