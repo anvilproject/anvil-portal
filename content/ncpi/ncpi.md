@@ -4,7 +4,7 @@ draft: false
 
 # NIH Cloud Platform Interoperability Effort
 
-## The NCPI is helping to create a federated, genomic data ecosystem.
+## Helping to create a federated genomic data ecosystem.
 
  <hero small>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
@@ -13,8 +13,6 @@ draft: false
 
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
 
-
-Each of the NCPI's platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
 
 ![HERO](./_images/ncpi-cloud.png)
 
@@ -44,6 +42,9 @@ The NCPI will demonstrate progress based on enabling specific research use cases
 
 
 ## Researcher User Stories 
+Each of the NCPI's platforms securely hosts data in the cloud and collocates data with a cloud-based execution environment for running repeatable analysis workflows.
+
+
 <hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross platform data discovery and the exchange of datasets, analysis workflows and analysis results. </hero>
 
 ### Our Initial Focus
