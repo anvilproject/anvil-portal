@@ -42,7 +42,7 @@ class Header extends React.Component {
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
-                    <Link to="/" className={compStyles.logo}>
+                    <Link to="/" className={classNames(compStyles.logo, {[compStyles.ncpi]: ncpi})}>
                         {ncpi ? <img src={cloudNCPI} alt="ncpi"/> : <img src={logoAnvil} alt="anVIL"/>}
                     </Link>
                     <ClickHandler

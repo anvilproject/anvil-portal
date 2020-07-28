@@ -23,7 +23,7 @@
 }
 
 /* Logo */
-.header .logo {
+.header .logo:not(.ncpi) {
     margin-top: -9px;
 }
 
@@ -38,6 +38,11 @@
     align-self: center;
     height: 32px;
     margin: 0;
+}
+
+/* NCPI logo */
+.header .ncpi img {
+    height: 50px;
 }
 
 /* Menu icon */
