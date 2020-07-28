@@ -1,10 +1,15 @@
 
-# Train Your Colleague - Virtual Session
+# NCPI Training
+
+## Train Your Colleague - Virtual Session
 **March 17, 18, 2020**
 
+The goal of this training session was to provide background information on the AnVIL, BioData Catalyst, Cancer Research Data Commons, and Gabriella Miller Kids First Platforms involved in the NIH Cloud Platforms Interoperability (NCPI) group to the trainers and developers of these platforms. 
+
+In order to interoperate between platforms our teams have to understand how the other platforms operate. 
 
 
-## Day 1 - Component introduction
+### Day 1 - Component introduction
 
 Day 1 Zoom Recording: [Video](https://zoom.us/rec/play/78UsIb2s_Ds3Sd2QtwSDC_MoW9TrJ66s2iFL-_ZZnh61UXhRZwClZrJAMbbf9O4tMv9M5YV5Qv77pwaq)
 
@@ -40,7 +45,7 @@ Day 1 Zoom Recording: [Video](https://zoom.us/rec/play/78UsIb2s_Ds3Sd2QtwSDC_MoW
     - Start - 3:32:09 
     - End - 4:00:39
 
-## Day 2 - Use cases
+### Day 2 - Use cases
 
 Day 2 Zoom Recording: [Video](https://zoom.us/rec/play/vZR5f7ur_W43SdzBswSDVvYtW9S0ePis0SVPqKZbxRnhWyEEYVOgZOdAM-L8O1-OhW9_7kwXtDLXGaqt)
 
