@@ -11,10 +11,11 @@ import React from "react";
 
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
-import {HeaderStaticQuery} from "../../hooks/header-query";
+import * as HeaderService from "../../utils/header.service";
 
 // Images
-import logo from "../../../images/logo.png";
+import cloudNCPI from "../../../images/cloud-ncpi.svg";
+import logoAnvil from "../../../images/logo.png";
 
 // Styles
 import compStyles from "./header.module.css";
@@ -36,12 +37,13 @@ class Header extends React.Component {
     };
 
     render() {
-        const {links} = this.props;
+        const {links, ncpi} = this.props;
+        const showPartiallyActive = !ncpi;
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
                     <Link to="/" className={compStyles.logo}>
-                        <img src={logo} alt="anVIL"/>
+                        {ncpi ? <img src={cloudNCPI} alt="ncpi"/> : <img src={logoAnvil} alt="anVIL"/>}
                     </Link>
                     <ClickHandler
                         className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")}
@@ -55,7 +57,7 @@ class Header extends React.Component {
                         label="Hide menu">close</ClickHandler>
                     <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
                         {links.map((l, i) => <li key={i}>
-                            <Link activeClassName={compStyles.active} partiallyActive={true} to={l.path}>{l.name}</Link>
+                            <Link activeClassName={compStyles.active} partiallyActive={showPartiallyActive} to={l.path}>{l.name}</Link>
                         </li>)}
                     </ul>
                 </div>
@@ -65,7 +67,11 @@ class Header extends React.Component {
 }
 
 export default (props) => {
+
+    const {ncpi} = props;
+    const links = HeaderService.getHeaderLinks(ncpi);
+
     return (
-        <Header links={HeaderStaticQuery()} {...props}/>
+        <Header links={links} {...props}/>
     );
 }

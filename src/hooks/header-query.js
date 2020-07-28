@@ -9,10 +9,6 @@ export const HeaderStaticQuery = () => {
               node {
                 name
                 path
-                position {
-                    location
-                    order
-                }
               }
             }
           }
