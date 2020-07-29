@@ -12,19 +12,25 @@ import React, {useContext} from "react";
 
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
-import DataStudy from "../data-study/data-study";
+import DataTable from "../data-table/data-table";
 import * as DashboardStudiesService from "../../utils/dashboard/dashboard-studies.service";
 
 // Styles
 import compStyles from "./data-studies.module.css";
 
+let TABLE_HEADERS_WORKSPACES = ["consortia", "dbGapIdAccession", "studyName", "projectId", "diseases", "access", "dataType", "subjects"];
+
 class DataStudies extends React.Component {
 
     render() {
         const {studies} = this.props;
+        const workspaces = DashboardStudiesService.buildStudiesWorkspaces(studies);
         return (
             <div className={compStyles.studies}>
-                {studies.map((study, s) => <DataStudy key={s} study={study}/>)}
+                {/*{studies.map((study, s) => <DataStudy key={s} study={study}/>)}*/}
+                <DataTable workspaces
+                           tableHeaders={TABLE_HEADERS_WORKSPACES}
+                           tableRows={workspaces}/>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
 description: "Search the AnVIL dataset."
-pageAlignment: "center"
+pageAlignment: "left"
 title: "Data Sets"
 ---
 
@@ -13,4 +13,3 @@ title: "Data Sets"
 
 <data-studies><data-studies/>
 
-<data-detail></data-detail>
