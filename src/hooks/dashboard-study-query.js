@@ -24,6 +24,7 @@ export const DashboardStudyStaticQuery = () => {
                 subjectsCount
                 subjectsTotal
                 workspaces {
+                  access
                   dataType
                   files
                   projectId

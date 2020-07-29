@@ -109,8 +109,12 @@ export function switchDisplayColumnName(columnName) {
             return "Access";
         case "cohorts":
             return "Cohorts";
+        case "consortia":
+            return "Consortia";
         case "consentName":
             return "Consent Groups";
+        case "consents":
+            return "Access";
         case "consentStat":
             return "Subjects";
         case "dataType":
@@ -135,6 +139,8 @@ export function switchDisplayColumnName(columnName) {
             return "Terra Workspace Name";
         case "samples":
             return "Samples";
+        case "studyName":
+            return "Title";
         case "subjects":
             return "Subjects";
         case "size":
