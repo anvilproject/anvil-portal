@@ -107,6 +107,8 @@ export function switchDisplayColumnName(columnName) {
     switch (columnName) {
         case "access":
             return "Access";
+        case "accessUI":
+            return "Access";
         case "cohorts":
             return "Cohorts";
         case "consortia":

@@ -27,9 +27,6 @@ import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
-// Styles
-import tableStyles from "../data-table/data-table.module.css";
-
 let TABLE_HEADERS_WORKSPACES = ["program", "projectId", "dbGapId", "dataType", "access", "subjects", "samples"];
 let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["program", "dbGapIdAccession", "studyName", "projectId", "diseases", "accessUI", "dataType", "subjects"];
 
@@ -39,7 +36,7 @@ class DataDetail extends React.Component {
         const {details, withStudy} = this.props;
         const tableHeaders = withStudy ? TABLE_HEADERS_WORKSPACES_BY_STUDY : TABLE_HEADERS_WORKSPACES;
         return (
-            <DataTable className={tableStyles.detail} tableHeaders={tableHeaders} tableRows={details}/>
+            <DataTable detail={!withStudy} tableHeaders={tableHeaders} tableRows={details} workspaces={!!withStudy}/>
         );
     }
 }

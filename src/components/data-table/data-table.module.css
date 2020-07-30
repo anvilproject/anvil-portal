@@ -143,8 +143,8 @@ table {
     max-width: 170px;
 }
 
-/* Workspaces table - "cosortia", "access" "dataType", "subjects" */
-.workspaces .row td[id^="access"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"] {
+/* Workspaces table - "program", "dataType", "subjects" */
+.workspaces .row td[id^="program"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"] {
     min-width: 85px;
     max-width: 85px;
 }
