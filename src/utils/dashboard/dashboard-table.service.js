@@ -98,6 +98,26 @@ export function getCellUrl(value, column, summary) {
 }
 
 /**
+ * Returns the corresponding data type display name.
+ *
+ * @param dataType
+ * @returns {*}
+ */
+export function switchDataType(dataType) {
+
+    switch (dataType) {
+        case "Whole Genome":
+            return "WGS";
+        case "Whole genome":
+            return "WGS";
+        case "Exome":
+            return "WES";
+        default:
+            return dataType;
+    }
+}
+
+/**
  * Returns corresponding column display label.
  * @param columnName
  * @returns {*}
@@ -224,26 +244,6 @@ function switchColumnUrl(columnName, summary, value) {
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
             return "";
-    }
-}
-
-/**
- * Returns the corresponding data type display name.
- *
- * @param dataType
- * @returns {*}
- */
-function switchDataType(dataType) {
-
-    switch (dataType) {
-        case "Whole Genome":
-            return "WGS";
-        case "Whole genome":
-            return "WGS";
-        case "Exome":
-            return "WES";
-        default:
-            return dataType;
     }
 }
 

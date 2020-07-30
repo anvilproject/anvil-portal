@@ -1,0 +1,49 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL checkbox component.
+ */
+
+/* Checkbox - container. */
+.checkbox {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    margin-right: 24px;
+}
+
+/* Check. */
+.check {
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    box-sizing: content-box;
+    height: 14px;
+    opacity: 0.58;
+    position: relative; /* Positions icon */
+    width: 14px;
+}
+
+/* Active. */
+.check.active {
+    background-color: var(--primary);
+    opacity: 1;
+    transition: all 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Icon. */
+.icon {
+    color: var(--white);
+    cursor: inherit;
+    font-size: 14px !important;
+    position: absolute;
+}
+
+.label {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.check, .icon, .label {
+    pointer-events: none;
+}

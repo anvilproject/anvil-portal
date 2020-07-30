@@ -12,14 +12,14 @@ import {DashboardStudyStaticQuery} from "../../hooks/dashboard-study-query";
 /**
  * Returns the dashboard studies filtered by results from the search, if applicable.
  *
- * @param filterQuery
  * @param filterResults
+ * @param resultsExist
  * @returns {*}
  */
-export function getDashboardStudies(filterQuery, filterResults) {
+export function getDashboardStudies(filterResults, resultsExist) {
 
     /* Filter studies by dataset search, if applicable. */
-    return DashboardService.filterStudiesBySearchResults(DashboardStudyStaticQuery(), filterQuery, filterResults);
+    return DashboardService.filterStudiesBySearchResults(DashboardStudyStaticQuery(), filterResults, resultsExist);
 }
 
 /**

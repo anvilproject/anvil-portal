@@ -45,8 +45,7 @@ export default (props) => {
 
     /* Dataset filtering props. */
     const dashboardContext = useContext(DashboardFilterContext),
-        {dashboardFilterProps} = dashboardContext || {},
-        {query, results, resultsExist} = dashboardFilterProps || {};
+        {results, resultsExist} = dashboardContext || {};
 
     /* Data detail component specific props. */
     const {consortia, dbgap, study} = props;
@@ -58,9 +57,10 @@ export default (props) => {
     const withStudy = study === "";
 
     /* Get the workspaces. */
-    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, query, results, shared);
+    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);
+    const detailsExist = details.length > 0;
 
     return (
-        resultsExist ? <DataDetail details={details} withStudy={withStudy}/> : null
+        resultsExist && detailsExist ? <DataDetail details={details} withStudy={withStudy}/> : null
     )
 }

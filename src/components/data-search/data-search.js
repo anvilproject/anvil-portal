@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import Checkboxes from "../checkboxes/checkboxes";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 
 // Styles
@@ -19,14 +20,15 @@ class DataSearch extends React.Component {
     render() {
         return (
             <DashboardFilterContext.Consumer>
-                {({dashboardFilterProps, onChange}) => (
+                {({inputValue, resultsExist, onChange}) => (
                     <>
-                    <input className={compStyles.search}
-                           placeholder={"Search"}
-                           type="text"
-                           value={dashboardFilterProps.query}
-                           onChange={(e) => onChange(e)}/>
-                    {dashboardFilterProps.resultsExist ? null : <p className={compStyles.error}>No results. Try using wildcards "*".</p>}
+                        <Checkboxes/>
+                        <input className={compStyles.search}
+                               placeholder={"Search"}
+                               type="text"
+                               value={inputValue}
+                               onChange={(e) => onChange(e)}/>
+                        {resultsExist ? null : <p className={compStyles.error}>No results.</p>}
                     </>
                 )}
             </DashboardFilterContext.Consumer>

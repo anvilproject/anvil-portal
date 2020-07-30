@@ -56,13 +56,18 @@ export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared)
  * Filters studies by results from the dataset search.
  *
  * @param studies
- * @param filterQuery
  * @param filterResults
+ * @param resultsExist
  * @returns {*}
  */
-export function filterStudiesBySearchResults(studies, filterQuery, filterResults) {
+export function filterStudiesBySearchResults(studies, filterResults, resultsExist) {
 
-    if ( !filterQuery ) {
+    if ( !resultsExist ) {
+
+        return studies;
+    }
+
+    if ( filterResults.length === 0 ) {
 
         return studies;
     }
@@ -88,13 +93,18 @@ export function filterStudiesBySearchResults(studies, filterQuery, filterResults
  * Filters workspaces by results from the dataset search.
  *
  * @param workspaces
- * @param filterQuery
  * @param filterResults
+ * @param resultsExist
  * @returns {*}
  */
-export function filterWorkspacesBySearchResults(workspaces, filterQuery, filterResults) {
+export function filterWorkspacesBySearchResults(workspaces, filterResults, resultsExist) {
 
-    if ( !filterQuery ) {
+    if ( !resultsExist ) {
+
+        return workspaces;
+    }
+
+    if ( filterResults.length === 0 ) {
 
         return workspaces;
     }

@@ -27,7 +27,6 @@ class DataStudies extends React.Component {
         const workspaces = DashboardStudiesService.buildStudiesWorkspaces(studies);
         return (
             <div className={compStyles.studies}>
-                {/*{studies.map((study, s) => <DataStudy key={s} study={study}/>)}*/}
                 <DataTable workspaces
                            tableHeaders={TABLE_HEADERS_WORKSPACES}
                            tableRows={workspaces}/>
@@ -40,12 +39,12 @@ export default () => {
 
     /* Dataset filtering props. */
     const dashboardContext = useContext(DashboardFilterContext),
-        {dashboardFilterProps} = dashboardContext || {},
-        {query, results, resultsExist} = dashboardFilterProps || {};
+        {results, resultsExist} = dashboardContext || {};
 
-    const studies = DashboardStudiesService.getDashboardStudies(query, results);
+    const studies = DashboardStudiesService.getDashboardStudies(results, resultsExist);
+    const studiesExist = studies.length > 0;
 
     return (
-        resultsExist ? <DataStudies studies={studies}/> : null
+        resultsExist && studiesExist ? <DataStudies studies={studies}/> : null
     )
 }

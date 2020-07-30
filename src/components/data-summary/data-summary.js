@@ -43,16 +43,16 @@ export default (props) => {
 
     /* Dataset filtering props. */
     const dashboardContext = useContext(DashboardFilterContext),
-        {dashboardFilterProps} = dashboardContext || {},
-        {query, results, resultsExist} = dashboardFilterProps || {};
+        {results, resultsExist} = dashboardContext || {};
 
     /* Data summary component specific props. */
     const {consortia, dbgap} = props;
     const shared = props.public;
 
-    const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, query, results, shared);
+    const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, results, resultsExist, shared);
+    const summaryExists = summary.length > 0;
 
     return (
-        resultsExist ? <DataSummary summary={summary}/> : null
+        resultsExist && summaryExists ? <DataSummary summary={summary}/> : null
     )
 }

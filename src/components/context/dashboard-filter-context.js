@@ -10,8 +10,14 @@
 import React from "react";
 
 const DashboardFilterContext = React.createContext({
-    dashboardFilterProps: {dashboardIndex: [], query: "", results: [], resultsExist: true},
-    onChange: () => {}
+    checkboxes: [],
+    dashboardIndex: [],
+    inputValue: "",
+    results: [],
+    resultsExist: true,
+    onChange: () => {},
+    onHandleChecked: () => {},
+    onInitializeCheckboxes: () => {}
 });
 
 export default DashboardFilterContext;

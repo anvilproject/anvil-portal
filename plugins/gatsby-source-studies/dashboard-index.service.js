@@ -122,29 +122,34 @@ function getAccessUI(workspace, studies) {
  * Allows lunr to index the data type for the FE data type display name
  * as well as the original data type value from the JSON.
  *
- * @param dataType
+ * @param dataTypes
  * @returns {string}
  */
-function getDataTypes(dataType) {
+function getDataTypes(dataTypes) {
 
-    if ( !dataType ) {
+    if ( !dataTypes ) {
 
         return "";
     }
 
-    dataType.map(type => type.toLowerCase());
+    return dataTypes.reduce((acc, dataType) => {
 
-    if ( dataType.includes("whole genome") ) {
+        const type = dataType.toLowerCase();
 
-        dataType.push("WGS");
-    }
+        acc = `${acc} ${type}`;
 
-    if ( dataType.includes("exome") ) {
+        if ( type.includes("whole genome") ) {
 
-        dataType.push("WES");
-    }
+            acc = `${acc} WGS`;
+        }
 
-    return dataType.join(" ");
+        if ( type.includes("exome") ) {
+
+            acc = `${acc} WES`;
+        }
+
+        return acc;
+    }, "");
 }
 
 /**
