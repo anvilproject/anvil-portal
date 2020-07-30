@@ -8,6 +8,7 @@
 const path = require("path");
 
 // App dependencies
+const {getWorkspaceAccessUI, getWorkspaceDiseases, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
 const {generateDashboardIndex} = require(path.resolve(__dirname, "dashboard-index.service.js"));
 const {getStudies} = require(path.resolve(__dirname, "dashboard-studies.service.js"));
 const {getWorkspaces} = require(path.resolve(__dirname, "dashboard-workspaces.service.js"));
@@ -70,7 +71,43 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
 
 exports.createSchemaCustomization = ({actions}) => {
 
-    const {createTypes} = actions;
+    const {createFieldExtension, createTypes} = actions;
+
+    createFieldExtension({
+        name: "accessUI",
+        extend(options, prevFieldConfig) {
+            return {
+                resolve(source, arg, context, info) {
+                    const studies = context.nodeModel.getAllNodes({type: "Study"});
+                    return getWorkspaceAccessUI(source, studies);
+                },
+            }
+        }
+    });
+
+    createFieldExtension({
+        name: "diseases",
+        extend(options, prevFieldConfig) {
+            return {
+                resolve(source, arg, context, info) {
+                    const studies = context.nodeModel.getAllNodes({type: "Study"});
+                    return getWorkspaceDiseases(source, studies);
+                },
+            }
+        }
+    });
+
+    createFieldExtension({
+        name: "studyName",
+        extend(options, prevFieldConfig) {
+            return {
+                resolve(source, arg, context, info) {
+                    const studies = context.nodeModel.getAllNodes({type: "Study"});
+                    return getWorkspaceStudyName(source, studies);
+                },
+            }
+        }
+    });
 
     createTypes(`
     type Consents implements Node {
@@ -87,6 +124,7 @@ exports.createSchemaCustomization = ({actions}) => {
     type Workspace implements Node {
         id: ID!
         access: String
+        accessUI: String @accessUI
         dataType: [String]
         demographics: Int
         diagnosis: Int
@@ -94,12 +132,14 @@ exports.createSchemaCustomization = ({actions}) => {
         files: Int
         dbGapId: String
         dbGapIdAccession: String
+        diseases: [String] @diseases
         program: String
         projectId: String!
         samples: Int
         size: Float
         sizeTB: Float
         study: Study @link(by: "dbGapIdAccession", from: "dbGapIdAccession")
+        studyName: String @studyName
         subjects: Int
     }
     type Study implements Node {

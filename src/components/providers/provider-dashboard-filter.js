@@ -37,7 +37,7 @@ class ProviderDashboardFilter extends React.Component {
 
             const query = event.target.value;
             const results = this.getSearchResults(query);
-            const resultsExist = (query && results.length) || !query;
+            const resultsExist = ( query && results.length > 0 ) || !query;
 
             this.setState({
                 ...this.state,

@@ -8,11 +8,13 @@ export const DashboardWorkspaceStaticQuery = () => {
             edges {
               node {
                 access
+                accessUI
                 dataType
                 dbGapId
                 dbGapIdAccession
                 demographics
                 diagnosis
+                diseases
                 families
                 files
                 program
@@ -20,6 +22,7 @@ export const DashboardWorkspaceStaticQuery = () => {
                 samples
                 size
                 sizeTB
+                studyName
                 subjects
               }
             }

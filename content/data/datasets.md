@@ -11,5 +11,5 @@ title: "Data Sets"
 
 <data-summary></data-summary>
 
-<data-studies><data-studies/>
+<data-detail study><data-detail/>
 

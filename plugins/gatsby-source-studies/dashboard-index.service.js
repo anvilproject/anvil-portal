@@ -22,7 +22,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
         this.ref("projectId");
         this.field("access");
-        this.field("consentShortName");
+        this.field("accessUI");
         this.field("dataTypes");
         this.field("dbGapId");
         this.field("dbGapIdAccession");
@@ -32,9 +32,12 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
         this.field("studyName");
         this.field("workspaceName");
 
+        this.pipeline.remove(lunr.stemmer);
+        this.searchPipeline.remove(lunr.stemmer);
+
         workspaces.forEach(workspace => {
 
-            const consentShortName = getConsentShortName(studies, workspace.dbGapIdAccession);
+            const accessUI = getAccessUI(workspace, studies);
             const dataTypes = getDataTypes(workspace.dataType);
             const diseases = getDiseases(studies, workspace.dbGapIdAccession);
             const program = getProgram(workspace.program);
@@ -43,7 +46,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
             this.add({
                 "access": workspace.access,
-                "consentShortName": consentShortName,
+                "accessUI": accessUI,
                 "dataTypes": dataTypes,
                 "dbGapId" : workspace.dbGapId,
                 "dbGapIdAccession": workspace.dbGapIdAccession,
@@ -74,27 +77,44 @@ function convertToSortableValue(str) {
 }
 
 /**
- * Returns the consent short names as a string, joined by a space.
+ * Return the access display text for the specified workspace:
  *
+ * - "Researcher" when study exists
+ * - "Public" when access: "Public"
+ * - "Consortia" when access: "Private" (and without study)
+ *
+ * @param workspace
  * @param studies
- * @param dbGapIdAccession
- * @returns {string}
+ * @returns {*}
  */
-function getConsentShortName(studies, dbGapIdAccession) {
+function getAccessUI(workspace, studies) {
 
-    const study = findStudy(studies, dbGapIdAccession);
+    let studyExists = false;
 
-    if ( !study || !study.consentGroup ) {
+    if ( workspace.dbGapIdAccession ) {
 
-        return "";
+        studyExists = !!findStudy(studies, workspace.dbGapIdAccession);
     }
 
-    return study.consentGroup.consents.reduce((acc, consent) => {
+    /* "researcher" - workspace with a study. */
+    if ( studyExists ) {
 
-        const consentShortName = consent.consentShortName;
+        return "researcher";
+    }
 
-        return acc.concat(" ", consentShortName);
-    }, "")
+    /* "consortia" - private workspace. */
+    if ( workspace.access === "Private" ) {
+
+        return "consortia";
+    }
+
+    /* "public" - public workspace. */
+    if ( workspace.access === "Public" ) {
+
+        return "public";
+    }
+
+    return ""
 }
 
 /**
