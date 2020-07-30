@@ -20,6 +20,11 @@
     margin-bottom: 24px;
 }
 
+/* Table wrapper - workspaces */
+.wrapper.workspaces {
+    width: calc(100vw - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
+}
+
 /* Table */
 table {
     display: inline-table;
@@ -45,6 +50,11 @@ table {
     font-weight: 600;
     line-height: 24px;
     padding: 0 4px 4px;
+}
+
+/* Add padding to the right of cells for workspaces to prevent long values from jamming up */
+.workspaces .header th, .workspaces {
+    padding: 0 8px 4px;
 }
 
 /* Header cell - first */
@@ -79,6 +89,11 @@ table {
     height: 32px;
     min-width: 62px;
     padding: 0 4px;
+}
+
+/* Add padding to the right of cells for workspaces to prevent long values from jamming up */
+.workspaces .row td {
+    padding: 2px 8px 2px;
 }
 
 /* Row cell - detail table - "program" eg CCDG */
@@ -116,39 +131,22 @@ table {
     min-width: 32px;
 }
 
-/* Row cell - ellipsis */
-/* Workspaces table - "workspaceId" */
-/*.workspaces .row td[id^="workspaceId"] {*/
-    /*max-width: 112px; !* Required for ellipsis *!*/
-    /*min-width: 112px;*/
-    /*overflow: hidden;*/
-    /*text-overflow: ellipsis;*/
-    /*white-space: nowrap;*/
-    /*width: 100%;*/
-/*}*/
-
-/* Row cell - dbGap Id */
-.workspaces .row td[id^="dbGapIdAccession"] {
-    min-width: 150px;
-    max-width: 150px;
-}
-
 /* Row cell - study name */
 .workspaces .row td[id^="studyName"] {
     min-width: 300px;
     max-width: 300px;
 }
 
-/* Row cell - dieases */
+/* Row cell - diseases */
 .workspaces .row td[id^="diseases"] {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 170px;
+    max-width: 170px;
 }
 
 /* Workspaces table - "cosortia", "access" "dataType", "subjects" */
 .workspaces .row td[id^="access"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"] {
-    min-width: 77px;
-    max-width: 77px;
+    min-width: 85px;
+    max-width: 85px;
 }
 
 /* Row */
@@ -158,6 +156,11 @@ table {
 
 .row:hover {
     background-color: var(--black3);
+}
+
+/* Vertical align to the top for workspaces - there will always be multi-line cells due to long titles */
+.workspaces .row {
+    vertical-align: top;
 }
 
 /* Row cells - "total" */
@@ -210,6 +213,22 @@ table {
 }
 
 /**
+ * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
+ */
+@media screen and (min-width: 840px) {
+
+    /* Table wrapper - summary. Overflow not required. Summary width stretches to match workspaces width unless capped. */
+    .wrapper.summary {
+        width: calc(100vw - 24px - 200px - 40px - 24px);
+    }
+    
+    .wrapper.workspaces {
+        max-width: calc(100vw - 24px - 200px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
+        width: unset;
+    }
+}
+
+/**
  * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
  */
 @media screen and (min-width: 840px) and (max-width: 949px) {
@@ -239,11 +258,82 @@ table {
 }
 
 /**
- * Large tablet landscape, medium window
+ * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For workspaces, we squash dieases and 
+ * data type and let study name consume available space.
  */
 @media screen and (min-width: 1280px) {
 
+    /* Table wrapper - summary. Overflow not required. Summary width stretches to match workspaces width unless capped.
+       Update for larger left-nav width */
+    .wrapper.summary {
+        width: calc(100vw - 24px - 280px - 40px - 24px);
+    }
+
+    /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
     .wrapper.workspaces {
-        max-width: calc(100vw - 24px - 24px - 280px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
+        max-width: calc(100vw - 24px - 280px - 40px);
+    }
+
+    /* Row cell - study name - expand to consume all remaining space */
+    .workspaces .row td[id^="studyName"] {
+        min-width: unset;
+        max-width: unset;
+    }
+
+    /* Row cell - Terra ID */
+    .workspaces .row td[id^="projectId"] {
+        min-width: 130px;
+        max-width: 130px;
+    }
+
+    /* Row cell - diseases */
+    .workspaces .row td[id^="diseases"] {
+        min-width: 130px;
+        max-width: 130px;
+    }
+
+    /* Workspaces table - "cosortia", "access" "dataType", "subjects" */
+    .workspaces .row td[id^="dataType"] {
+        min-width: 35px;
+        max-width: 35px;
+    }
+}
+
+/**
+ * Custom breakpoint where we want the "reset" the sizes of project ID and disease columns that were squashed during
+ * optimization for 13 inch laptop. This breakpoint sits between the breakpoints of 13 inch (1280px) and 15 inch
+ * latops (1690px).
+ */
+@media screen and (min-width: 1340px) {
+
+    /* Row cell - Terra ID */
+    .workspaces .row td[id^="projectId"] {
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    /* Row cell - diseases */
+    .workspaces .row td[id^="diseases"] {
+        min-width: 170px;
+        max-width: 170px;
+    }
+}
+
+/**
+ * Custom breakpoint where table is at full width (according to set column widths) and must be stretched to continue
+ * to be attached to right-hand gutter - optimized for MacBook Pro 15 inch
+ */
+@media screen and (min-width: 1680px) {
+
+    /* Workspaces has reached its natural max width, force stretch to right-hand gutter */
+    .wrapper.workspaces {
+        max-width: unset;
+        width: calc(100vw - 280px - 24px - 40px - 24px);
+    }
+
+    /* Row cell - Terra ID */
+    .workspaces .row td[id^="projectId"] {
+        min-width: unset;
+        max-width: unset;
     }
 }
