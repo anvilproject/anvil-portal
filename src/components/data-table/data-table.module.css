@@ -292,7 +292,7 @@ table {
         max-width: 130px;
     }
 
-    /* Workspaces table - "cosortia", "access" "dataType", "subjects" */
+    /* Workspaces table - "dataType" */
     .workspaces .row td[id^="dataType"] {
         min-width: 35px;
         max-width: 35px;
@@ -333,7 +333,13 @@ table {
 
     /* Row cell - Terra ID */
     .workspaces .row td[id^="projectId"] {
-        min-width: unset;
-        max-width: unset;
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    /* Workspaces table - "dataType" */
+    .workspaces .row td[id^="dataType"] {
+        min-width: 85px;
+        max-width: 85px;
     }
 }
