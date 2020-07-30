@@ -56,7 +56,7 @@ class ProviderDashboardFilter extends React.Component {
 
         this.state = ({
             checkboxes: [],
-            dashboardIndex: window.dashboardIndex,
+            dashboardIndex: this.getDashboardIndex(),
             inputValue: "",
             results: [],
             resultsExist: true,
@@ -155,6 +155,16 @@ class ProviderDashboardFilter extends React.Component {
 
         return this.getSearchResults(checkedQueryStringByType);
     };
+
+    getDashboardIndex = () => {
+
+        if (typeof window !== "undefined") {
+
+            return window.dashboardIndex;
+        }
+
+        return [];
+    }
 
     getInputResults = () => {
 

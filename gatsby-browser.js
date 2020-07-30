@@ -56,14 +56,17 @@ exports.onClientEntry = () => {
     }
 
     /* Build lunr search facility for data dashboard. */
-    window.dashboardIndex = window.dashboardIndex || {};
-    window.dashboardIndex = fetch(DASHBOARD_JSON)
-        .then(res => res.json())
-        .then(res => {
-            window.dashboardIndex = lunr.Index.load(res);
-            return window.dashboardIndex;
-        })
-        .catch((error) => {
-            console.error("Error - dashboard index not generated", error);
-        });
+    if( typeof window !== "undefined" ) {
+
+        window.dashboardIndex = window.dashboardIndex || {};
+        window.dashboardIndex = fetch(DASHBOARD_JSON)
+            .then(res => res.json())
+            .then(res => {
+                window.dashboardIndex = lunr.Index.load(res);
+                return window.dashboardIndex;
+            })
+            .catch((error) => {
+                console.error("Error - dashboard index not generated", error);
+            });
+    }
 };
