@@ -1,0 +1,37 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search input component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Input. */
+.input {
+    color: var(--black87);
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 2px;
+    display: block;
+    height: 30px;
+    max-width: 246px;
+    padding: 0 4px;
+    width: 100%;
+}
+
+/* Input focus. */
+.input:focus {
+    border-color: var(--accent-blue-green);
+    outline: none;
+}
+
+/* Input, placeholder. */
+.input, .input::placeholder {
+    font-size: 12px;
+    line-height: 32px;
+}
+
+/* Input - placeholder. */
+.input::placeholder {
+    color: var(--black58);
+}

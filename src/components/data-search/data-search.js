@@ -9,8 +9,10 @@
 import React from "react";
 
 // App dependencies
-import Checkboxes from "../checkboxes/checkboxes";
 import DashboardFilterContext from "../context/dashboard-filter-context";
+import DataSearchCheckboxes from "../data-search-checkboxes/data-search-checkboxes";
+import DataSearchEmptyResults from "../data-search-empty-results/data-search-empty-results";
+import DataSearchInput from "../data-search-input/data-search-input";
 
 // Styles
 import compStyles from "./data-search.module.css";
@@ -20,16 +22,12 @@ class DataSearch extends React.Component {
     render() {
         return (
             <DashboardFilterContext.Consumer>
-                {({inputValue, resultsExist, onChange}) => (
-                    <>
-                        <Checkboxes/>
-                        <input className={compStyles.search}
-                               placeholder={"Search"}
-                               type="text"
-                               value={inputValue}
-                               onChange={(e) => onChange(e)}/>
-                        {resultsExist ? null : <p className={compStyles.error}>No results.</p>}
-                    </>
+                {({inputValue, onHandleChange}) => (
+                    <div className={compStyles.search}>
+                        <DataSearchInput inputValue={inputValue} onHandleChange={(e) => onHandleChange(e)}/>
+                        <DataSearchCheckboxes/>
+                        <DataSearchEmptyResults/>
+                    </div>
                 )}
             </DashboardFilterContext.Consumer>
         )

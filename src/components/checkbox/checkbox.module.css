@@ -10,16 +10,20 @@
     align-items: center;
     cursor: pointer;
     display: inline-flex;
-    margin-right: 24px;
+    margin-bottom: 12px;
+}
+
+/* Checkbox - last. */
+.checkbox:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Check. */
 .check {
-    border: 1px solid var(--primary);
-    border-radius: 4px;
+    border: 2px solid var(--primary);
+    border-radius: 2px;
     box-sizing: content-box;
     height: 14px;
-    opacity: 0.58;
     position: relative; /* Positions icon */
     width: 14px;
 }
@@ -39,9 +43,15 @@
     position: absolute;
 }
 
+/* Inactive - hide icon. */
+.check:not(.active) .icon {
+    display: none;
+}
+
+/* Label */
 .label {
     font-size: 14px;
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .check, .icon, .label {

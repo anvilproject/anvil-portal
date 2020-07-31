@@ -6,20 +6,22 @@
  */
 
 // Core dependencies
+import lunr from "lunr";
 import React from "react";
 
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 
 // Template variables
-const inputsDenyList = ["^", "~", ":"];
+const denyListInputs = ["^", "~", ":"];
+const DASHBOARD_INDEX = "/dashboard-index.json";
 
 class ProviderDashboardFilter extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.onChange = (event) => {
+        this.onHandleChange = (event) => {
 
             const inputValue = event.target.value;
 
@@ -51,16 +53,21 @@ class ProviderDashboardFilter extends React.Component {
 
         this.onInitializeCheckboxes = (event) => {
 
-            this.setState({checkboxes: event});
+            const checkboxes = event;
+            const checkboxTypes = this.getCheckboxTypes(event);
+
+            this.setState({checkboxes: checkboxes, checkboxTypes: checkboxTypes});
         };
 
         this.state = ({
             checkboxes: [],
-            dashboardIndex: this.getDashboardIndex(),
+            checkboxTypes: [],
+            dashboardIndex: [],
             inputValue: "",
+            querying: false,
             results: [],
             resultsExist: true,
-            onChange: this.onChange,
+            onHandleChange: this.onHandleChange,
             onHandleChecked: this.onHandleChecked,
             onInitializeCheckboxes: this.onInitializeCheckboxes
         });
@@ -70,16 +77,37 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setState = ({
             checkboxes: [],
+            checkboxTypes: [],
             dashboardIndex: [],
             inputValue: "",
+            querying: false,
             results: [],
             resultsExist: true,
         });
     }
 
+    componentDidMount() {
+
+        /* Grab the index. */
+        fetch(DASHBOARD_INDEX)
+            .then(res => res.json())
+            .then(res => {
+                const dashboardIndex = lunr.Index.load(res);
+
+                this.setState({dashboardIndex: dashboardIndex})
+            })
+            .catch(err => {
+                console.log(err, "Error loading index");
+            });
+    }
+
     componentDidUpdate(_, prevState) {
 
         if ( ( prevState.inputValue !== this.state.inputValue ) || ( prevState.checkboxes !== this.state.checkboxes ) ) {
+
+            const querying = this.isCheckboxing() || this.isInputting();
+
+            this.setState({querying: querying});
 
             /* Update query. */
             this.updateResults();
@@ -114,9 +142,9 @@ class ProviderDashboardFilter extends React.Component {
         return "";
     };
 
-    filterCheckboxes = (checkboxes) => {
+    filterCheckedBoxesByType = (checkboxes, type) => {
 
-        return checkboxes.filter(checkbox => checkbox.checked);
+        return checkboxes.filter(checkbox => checkbox.checked && checkbox.type === type);
     };
 
     getCheckboxIndex = (checkboxesClone, label) => {
@@ -124,47 +152,56 @@ class ProviderDashboardFilter extends React.Component {
         return checkboxesClone.findIndex(checkboxClone => checkboxClone.label === label);
     };
 
-    getCheckedResults = () => {
+    getCheckboxTypes = (checkboxes) => {
 
-        const {checkboxes} = this.state;
+        const setOfTypes = new Set(checkboxes.map(checkbox => checkbox.type));
+        return [...setOfTypes];
+    };
+
+    getCheckedBoxesByType = () => {
+
+        const {checkboxes, checkboxTypes} = this.state;
+
+        return checkboxTypes.map(type => {
+
+            const checkedBoxes = this.filterCheckedBoxesByType(checkboxes, type);
+
+            return {
+                checkboxes: checkedBoxes,
+                type: type
+            }
+        });
+
+    };
+
+    getCheckedResults = () => {
 
         if ( this.isCheckboxing() ) {
 
-            /* Filter checked checkboxes. */
-            const checkedBoxes = this.filterCheckboxes(checkboxes);
+            /* Get any checked boxes, by type. */
+            const checkedBoxesByType = this.getCheckedBoxesByType();
 
-            /* Get any dataTypes results. */
-            const resultsByDateType = this.getCheckedResultsByTypeName(checkedBoxes, "dataTypes");
+            /* Get any results, by type. Results are retrieved by type to retain "OR" searching amongst types. */
+            const checkedResultsByTypeName = this.getCheckedResultsByTypeName(checkedBoxesByType);
 
-            /* Get any accessUI results. */
-            const resultsByAccessUI = this.getCheckedResultsByTypeName(checkedBoxes, "accessUI");
-
-            /* Return results, where there are duplicates. */
-            return this.joinSimilarResults(resultsByDateType, resultsByAccessUI);
+            /* Return results, where there are duplicates. Searching will be "AND" between types. */
+            return this.joinCheckboxResults(checkedResultsByTypeName);
         }
 
         return [];
     };
 
-    getCheckedResultsByTypeName = (checkedBoxes, typeName) => {
+    getCheckedResultsByTypeName = (checkedBoxesByType) => {
 
-        /* Get any types checked. */
-        const checkedByTypes = checkedBoxes.filter(checkedBoxes => checkedBoxes.type === typeName);
+        return checkedBoxesByType.map(checkedByType => {
 
-        const checkedQueryStringByType = this.buildCheckedValueString(checkedByTypes);
+            const checkedBoxes = checkedByType.checkboxes;
 
-        return this.getSearchResults(checkedQueryStringByType);
+            const checkedQueryStringByType = this.buildCheckedValueString(checkedBoxes);
+
+            return this.getSearchResults(checkedQueryStringByType);
+        });
     };
-
-    getDashboardIndex = () => {
-
-        if (typeof window !== "undefined") {
-
-            return window.dashboardIndex;
-        }
-
-        return [];
-    }
 
     getInputResults = () => {
 
@@ -198,7 +235,7 @@ class ProviderDashboardFilter extends React.Component {
 
     isInputDenied = (inputValue) => {
 
-        return inputsDenyList.some(deniedInput => inputValue.includes(deniedInput));
+        return denyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
     isInputting = () => {
@@ -218,6 +255,59 @@ class ProviderDashboardFilter extends React.Component {
         return true;
     };
 
+    joinCheckboxResults = (checkedResultsByTypeName) => {
+
+        /* Determine the count of types that have a list of results. This counter is then used to create a set of
+        /* results where each result must exist within each type's list of results.
+        /* For example, if two checkboxes are selected from different types e.g. "CMG" from type "Consortia"
+        /* and "Researcher" from type "Access" the resulting set should only include workspaces that exist in both types.
+        /* The counter will be "2" (i.e. results from two types "Consortia" and "Researcher") and this counter is used to confirm
+        /* that any workspace must appear twice in the results array. */
+        const counter = checkedResultsByTypeName.reduce((acc, results) => {
+
+            if ( results.length ) {
+
+                acc++;
+            }
+
+            return acc;
+        }, 0);
+
+        const setOfResults = new Set();
+
+        /* Create a counter for each workspace's appearance within each type. If the counter matches the expect counter from
+        /* above, then add the workspace to the set. */
+        checkedResultsByTypeName.reduce((acc, results) => {
+
+            results.forEach(result => {
+
+                /* Get the accumulator counter for the result. */
+                const resultCounter = acc.get(result);
+
+                if ( !resultCounter ) {
+
+                    /* If the result is not yet mapped, then add the result to the map with counter = 1. */
+                    acc.set(result, 1);
+                }
+                else {
+
+                    /* If the result is mapped, increment the counter. */
+                    acc.set(result, resultCounter + 1);
+                }
+
+                if ( acc.get(result) === counter ) {
+
+                    /* Add to the set of results, if the result counter is equivalent to the expected counter across all results. */
+                    setOfResults.add(result);
+                }
+            });
+
+            return acc;
+        }, new Map());
+
+        return [...setOfResults];
+    };
+
     joinDisimilarResults = (res1, res2) => {
 
         /* Join the results together. */
@@ -232,23 +322,9 @@ class ProviderDashboardFilter extends React.Component {
         return results.filter((result, i) => results.indexOf(result) !== i);
     };
 
-    joinSimilarResults = (res1, res2) => {
-
-        /* Join the results together. */
-        const results = res1.concat(res2);
-
-        /* Return the results if only one set of results exist. */
-        /* i.e. there will be no duplicates. */
-        if ( res1.length === 0 || res2.length === 0 ) {
-
-            return results;
-        }
-
-        /* Return the results, where duplicates exist. */
-        return results.filter((result, i) => results.indexOf(result) !== i);
-    };
-
     updateResults = () => {
+
+        const {querying} = this.state;
 
         /* Get the checked results. */
         const checkedResults = this.getCheckedResults();
@@ -259,7 +335,9 @@ class ProviderDashboardFilter extends React.Component {
         /* Join the results together with an "AND". i.e. find any duplicates. */
         const results = this.joinDisimilarResults(checkedResults, inputResults);
 
-        this.setState({results: results, resultsExist: this.isResults(results)});
+        const resultsExist = ( this.isResults(results) && querying ) || !querying;
+
+        this.setState({results: results, resultsExist: resultsExist});
     };
 
     render() {

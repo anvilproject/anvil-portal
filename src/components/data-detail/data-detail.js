@@ -58,9 +58,8 @@ export default (props) => {
 
     /* Get the workspaces. */
     const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);
-    const detailsExist = details.length > 0;
 
     return (
-        resultsExist && detailsExist ? <DataDetail details={details} withStudy={withStudy}/> : null
+        resultsExist ? <DataDetail details={details} withStudy={withStudy}/> : null
     )
 }

@@ -1,0 +1,40 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search panel component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Panel. */
+.panel {
+    background-color: var(--primary3);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 12px;
+    margin: 0 1px;
+}
+
+/* Panel - first. */
+.panel:first-of-type {
+    margin-left: 0;
+}
+
+/* Panel - last. */
+.panel:last-of-type {
+    margin-right: 0;
+}
+
+/* Panel label. */
+.panel [id="group-label"] {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+/* Error. */
+.panel.error {
+    flex-basis: 100%;
+    margin: 2px 0 0;
+}

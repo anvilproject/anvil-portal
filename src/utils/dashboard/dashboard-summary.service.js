@@ -22,8 +22,13 @@ import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-que
  */
 export function getDashboardSummary(consortia, dbgap, filterResults, resultsExist, shared) {
 
+    if ( !resultsExist ) {
+
+        return [];
+    }
+
     /* Filter workspaces by dataset search, if applicable. */
-    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterResults, resultsExist);
+    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterResults);
 
     /* Filter workspaces by accessibility. */
     const workspacesByAccessibility = DashboardService.filterDataByDBGapReadiness(workspaces, consortia, dbgap, shared);

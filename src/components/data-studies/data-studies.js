@@ -42,9 +42,8 @@ export default () => {
         {results, resultsExist} = dashboardContext || {};
 
     const studies = DashboardStudiesService.getDashboardStudies(results, resultsExist);
-    const studiesExist = studies.length > 0;
 
     return (
-        resultsExist && studiesExist ? <DataStudies studies={studies}/> : null
+        resultsExist ? <DataStudies studies={studies}/> : null
     )
 }

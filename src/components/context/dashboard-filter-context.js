@@ -11,11 +11,13 @@ import React from "react";
 
 const DashboardFilterContext = React.createContext({
     checkboxes: [],
+    checkboxTypes: [],
     dashboardIndex: [],
     inputValue: "",
+    querying: false,
     results: [],
     resultsExist: true,
-    onChange: () => {},
+    onHandleChange: () => {},
     onHandleChecked: () => {},
     onInitializeCheckboxes: () => {}
 });

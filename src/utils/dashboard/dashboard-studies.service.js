@@ -18,8 +18,13 @@ import {DashboardStudyStaticQuery} from "../../hooks/dashboard-study-query";
  */
 export function getDashboardStudies(filterResults, resultsExist) {
 
+    if ( !resultsExist ) {
+
+        return [];
+    }
+
     /* Filter studies by dataset search, if applicable. */
-    return DashboardService.filterStudiesBySearchResults(DashboardStudyStaticQuery(), filterResults, resultsExist);
+    return DashboardService.filterStudiesBySearchResults(DashboardStudyStaticQuery(), filterResults);
 }
 
 /**

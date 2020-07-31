@@ -131,6 +131,12 @@ table {
     min-width: 32px;
 }
 
+/* Row cell - workspaces table - "dbGapId" or "dbGapIdAccession" */
+.workspaces .row td[id^="dbGapId"] {
+    min-width: 134px;
+    max-width: 134px;
+}
+
 /* Row cell - study name */
 .workspaces .row td[id^="studyName"] {
     min-width: 300px;
@@ -141,6 +147,12 @@ table {
 .workspaces .row td[id^="diseases"] {
     min-width: 170px;
     max-width: 170px;
+}
+
+/* Row cell - workspaces table - "accessUI" */
+.workspaces .row td[id^="accessUI"] {
+    min-width: 90px;
+    max-width: 90px;
 }
 
 /* Workspaces table - "program", "dataType", "subjects" */
@@ -276,8 +288,8 @@ table {
 
     /* Row cell - study name - expand to consume all remaining space */
     .workspaces .row td[id^="studyName"] {
-        min-width: unset;
-        max-width: unset;
+        //min-width: unset; /* TODO Mim, messes around when filtering and results are limited in the study name. */
+        //max-width: unset;
     }
 
     /* Row cell - Terra ID */

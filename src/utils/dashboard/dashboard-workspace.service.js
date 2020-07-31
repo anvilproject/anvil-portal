@@ -23,8 +23,13 @@ import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-que
  */
 export function getDashboardWorkspaces(consortia, dbgap, filterResults, resultsExist, shared) {
 
+    if ( !resultsExist ) {
+
+        return [];
+    }
+
     /* Filter workspaces by dataset search, if applicable. */
-    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterResults, resultsExist);
+    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterResults);
 
     /* Filter workspaces by db gap readiness. */
     return DashboardService.filterDataByDBGapReadiness(workspaces, consortia, dbgap, shared);
@@ -43,6 +48,27 @@ export function getDashboardWorkspacesAccess() {
     const setOfAccess = new Set(workspaces.map(workspace => workspace.accessUI));
 
     return [...setOfAccess];
+}
+
+/**
+ * Returns a list of consortias.
+ *
+ * @returns {[null]}
+ */
+export function getDashboardWorkspacesConsortias() {
+
+    const workspaces = DashboardWorkspaceStaticQuery();
+
+    const setOfConsortias = new Set();
+
+    /* Get the set of consortias. */
+    workspaces.forEach(workspace => {
+
+        const consortia = DashboardTableService.switchProgramName(workspace.program);
+        setOfConsortias.add(consortia);
+    });
+
+    return [...setOfConsortias];
 }
 
 /**

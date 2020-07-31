@@ -31,7 +31,7 @@ The following consortia currently participate in AnVIL’s consortia data sharin
  
 If you are a member of a participating consortium and would like access to a consortium’s data please reach out to your consortium leadership to request access.
 
-## Requesting Researcher Data Access as an External Researcher
+## Requesting Data Access as a Researcher
  
  This document intends to explain the process by which external, non-consortium members can gain access to a given cohort that is housed within the AnVIL.
 

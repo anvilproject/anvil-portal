@@ -50,9 +50,8 @@ export default (props) => {
     const shared = props.public;
 
     const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, results, resultsExist, shared);
-    const summaryExists = summary.length > 0;
 
     return (
-        resultsExist && summaryExists ? <DataSummary summary={summary}/> : null
+        resultsExist ? <DataSummary summary={summary}/> : null
     )
 }

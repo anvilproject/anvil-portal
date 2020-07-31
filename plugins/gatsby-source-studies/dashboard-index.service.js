@@ -39,6 +39,8 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
             const accessUI = getAccessUI(workspace, studies);
             const dataTypes = getDataTypes(workspace.dataType);
+            const dbGapId = getGapId(workspace.dbGapId);
+            const dbGapIdAccession = getGapId(workspace.dbGapIdAccession);
             const diseases = getDiseases(studies, workspace.dbGapIdAccession);
             const program = getProgram(workspace.program);
             const studyName = getStudyName(studies, workspace.dbGapIdAccession);
@@ -48,8 +50,8 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
                 "access": workspace.access,
                 "accessUI": accessUI,
                 "dataTypes": dataTypes,
-                "dbGapId" : workspace.dbGapId,
-                "dbGapIdAccession": workspace.dbGapIdAccession,
+                "dbGapId" : dbGapId,
+                "dbGapIdAccession": dbGapIdAccession,
                 "diseases": diseases,
                 "program": program,
                 "projectId": workspace.projectId,
@@ -172,26 +174,53 @@ function getDiseases(studies, dbGapIdAccession) {
 }
 
 /**
+ * Returns the db Gap ID with its corresponding number, without the prefix "phs00x".
+ *
+ * @param gapId
+ * @returns {string}
+ */
+function getGapId(gapId) {
+
+    if ( !gapId ) {
+
+        return gapId;
+    }
+
+    const gapNumber = gapId.split("0").pop();
+
+    return `${gapId} ${gapNumber}`;
+}
+
+/**
  * Returns the program.
  * Allows lunr to index the program for the FE program display name
  * as well as the original program value from the JSON.
  *
- * @param program
+ * @param consortia
  * @returns {string}
  */
-function getProgram(program) {
+function getProgram(consortia) {
 
-    if ( !program ) {
+    let consortiaName = consortia;
+
+    if ( !consortiaName ) {
 
         return "";
     }
 
-    if ( program.toLowerCase().includes("thousandgenomes") ) {
+    /* Handles consortia "thousandgenomes". */
+    if ( consortiaName.toLowerCase().includes("thousandgenomes") ) {
 
-        return program.concat(" ", "1000").concat(" ", "thousand").concat(" ", "genomes");
+        return `${consortiaName} 1000 genomes thousand`;
     }
 
-    return program;
+    /* Handles consorita "GTEx". */
+    if ( consortiaName.toLowerCase().includes("gtex") ) {
+
+        return `${consortiaName} GTEx (v8)`;
+    }
+
+    return consortiaName;
 }
 
 /**

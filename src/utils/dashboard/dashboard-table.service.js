@@ -141,6 +141,8 @@ export function switchDisplayColumnName(columnName) {
             return "Subjects";
         case "dataType":
             return "Data Type";
+        case "dataTypes":
+            return "Data Type";
         case "demographics":
             return "Demographics";
         case "diagnosis":
@@ -171,6 +173,24 @@ export function switchDisplayColumnName(columnName) {
             return "Size (TB)";
         default:
             return columnName;
+    }
+}
+
+/**
+ * Returns the corresponding program display name.
+ *
+ * @param program
+ * @returns {*}
+ */
+export function switchProgramName(program) {
+
+    switch (program) {
+        case "GTEx":
+            return "GTEx (v8)";
+        case "ThousandGenomes":
+            return "1000 Genomes";
+        default:
+            return program;
     }
 }
 
@@ -208,6 +228,24 @@ function stringifyArray(array) {
 }
 
 /**
+ * Returns accessUI corresponding page URL.
+ *
+ * @param accessUI
+ * @returns {*}
+ */
+function switchAccessUIUrl(accessUI) {
+
+    switch(accessUI) {
+        case "Consortia":
+            return "/data/requesting-data-access#requesting-data-access-as-a-consortium-member";
+        case "Researcher":
+            return "/data/requesting-data-access#requesting-data-access-as-a-researcher";
+        default:
+            return "";
+    }
+}
+
+/**
  * Returns the corresponding tooltip label for the specified cell value.
  *
  * @param cellValue
@@ -236,6 +274,8 @@ function switchCellNameToTooltipLabel(cellValue) {
 function switchColumnUrl(columnName, summary, value) {
 
     switch (columnName) {
+        case "accessUI":
+            return switchAccessUIUrl(value);
         case "dbGapIdAccession":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         case summary && "program":
@@ -244,24 +284,6 @@ function switchColumnUrl(columnName, summary, value) {
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
             return "";
-    }
-}
-
-/**
- * Returns the corresponding program display name.
- *
- * @param program
- * @returns {*}
- */
-function switchProgramName(program) {
-
-    switch (program) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return program;
     }
 }
 

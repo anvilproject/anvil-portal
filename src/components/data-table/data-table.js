@@ -59,12 +59,15 @@ class DataTable extends React.Component {
             const identifier = Date.now();
             const id = `${column}${identifier}`;
             
-            // Add tooltip to workspace names
+            /* Add tooltip to workspace names. */
             let linkedToContent;
+
             if ( !!linkedTo && column === "projectId" ) {
+
                 linkedToContent = (<Tooltip label={data}>{data}</Tooltip>);
             }
             else {
+
                 linkedToContent = data;
             }
 
