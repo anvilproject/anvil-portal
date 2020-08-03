@@ -33,5 +33,6 @@
 /* Tooltip target */
 span {
     cursor: default;
+    display: inline-block; /* Prevent tooltip from hiding when hovering between lines on multiline values */
 }
 

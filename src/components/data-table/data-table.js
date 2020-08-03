@@ -59,12 +59,15 @@ class DataTable extends React.Component {
             const identifier = Date.now();
             const id = `${column}${identifier}`;
             
-            /* Add tooltip to workspace names. */
+            /* Add tooltip to workspace names, truncate long diseases values. */
             let linkedToContent;
-
             if ( !!linkedTo && column === "projectId" ) {
 
                 linkedToContent = (<Tooltip label={data}>{data}</Tooltip>);
+            }
+            else if ( column === "diseases" && data.length > 50 ) {
+                const truncated = `${data.substring(0, 47)}...`;
+                linkedToContent = (<Tooltip label={data}>{truncated}</Tooltip>);
             }
             else {
 
@@ -77,7 +80,7 @@ class DataTable extends React.Component {
                                          id={id}
                                          tag={"td"}
                                          label={data}>{linkedToContent}</ClickHandler> :
-                    <td id={id} className={classNames({[compStyles.right]: rightAlign})}><Cell>{data}</Cell></td>
+                    <td id={id} className={classNames({[compStyles.right]: rightAlign})}><Cell>{linkedToContent}</Cell></td>
             )
         };
 

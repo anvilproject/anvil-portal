@@ -56,7 +56,7 @@ export function formatValue(value, column) {
             }
             else {
 
-                return "No diseases specified."
+                return "--"
             }
         }
 

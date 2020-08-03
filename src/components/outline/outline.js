@@ -141,6 +141,6 @@ export default (props) => {
     const headings = OutlineService.filterHtmlAstByHeading(OutlineStaticQuery(), docPath);
 
     return (
-        <Outline headings={headings} {...props}/>
+        headings ? <Outline headings={headings} {...props}/> : null
     );
 }

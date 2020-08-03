@@ -28,7 +28,7 @@ import DataTable from "../data-table/data-table";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
 let TABLE_HEADERS_WORKSPACES = ["program", "projectId", "dbGapId", "dataType", "access", "subjects", "samples"];
-let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["program", "dbGapIdAccession", "studyName", "projectId", "diseases", "accessUI", "dataType", "subjects"];
+let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["program", "projectId", "dbGapIdAccession", "studyName", "diseases", "accessUI", "dataType", "subjects"];
 
 class DataDetail extends React.Component {
 
