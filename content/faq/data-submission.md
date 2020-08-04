@@ -8,11 +8,6 @@ description: "FAQs about data submission."
 ##How do I submit data to AnVIL for sharing with the scientific community?
 If you have questions about submitting your data to AnVIL please contact the AnVIL team (<help@lists.anvilproject.org>) or complete our onboarding [form](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform).
 
-
-The NIH Genomic Data Sharing Policy states that all submissions of human genomic data should be accompanied by an [Institutional Certification](https://osp.od.nih.gov/scientific-sharing/institutional-certifications/) from the responsible Institutional Official(s) of the submitting institution that clearly delineates any limitations on the research use of the data, as expressed in the informed consent documents, and that, in submitting and sharing of the data, consideration has been given to risks to individuals, their families, groups or populations.
-
-The AnVIL team is in the process of formalizing the data submission pipeline. If you have questions about hosting your data on AnVIL please feel free to reach out to the AnVIL team ([help@lists.anvilproject.org](mailto:help@lists.anvilproject.org)) or complete our [onboarding form](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform).
-
 ##Does NHGRI plan to move data from dbGaP to AnVIL?
 Yes. NHGRI plans to transfer data from selected NHGRI-funded studies to the AnVIL platform. Before this happens, Institutions and the study PIs will be notified of the plan to transfer data and will have an opportunity to consult with IRBs and notify the NHGRI if there are substantive concerns.
 
