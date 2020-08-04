@@ -4,8 +4,6 @@
 
 Version C April 8, 2020
 
-https://docs.google.com/document/d/1oGb41XjDIq5fCGGa1FbUSjKEGb_BLleirTYObFQqjkQ/edit
-
 Over the last few years, a growing number of cloud-based data platforms have been developed that provide the research and translational community with access to data that is integrated with computational resources, services and workspaces, as well as knowledge resources, semantic services and AI services. 
 
 As the number of these platforms grows, it is becoming critical to establish some operating principles so that platforms can interoperate, allowing researchers to access, explore and integrate data from multiple platforms. 

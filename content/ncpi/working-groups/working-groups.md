@@ -4,7 +4,7 @@ draft: false
 
 
 # Working Groups
-The NCPI has established the following working groups to address various challenges to interoperability.
+<hero small>The NCPI has established the following working groups to address various challenges to interoperability.</hero>
 
 
 ## Coordination Working Group
@@ -13,7 +13,7 @@ The Coordination Working Group will coordinate discourse, collaboration, and mee
 
 The Coordination Working Group provides an interface between the chairs of the other NCPI working groups to promote use case driven interoperability between cloud platforms. 
 
-**Co-Chairs**
+### Co-Chairs
 - Valentina di Francesco (NHGRI)
 - Ken Wiley (NHGRI)
 
@@ -21,7 +21,7 @@ The Coordination Working Group provides an interface between the chairs of the o
 
 The Community Governance Working Group aims to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
 
-**Co-Chairs**
+### Co-Chairs
 - Stan Ahalt (ORG)
 - Bob Grossman (ORG)
  
@@ -30,17 +30,17 @@ The Community Governance Working Group aims to establish a set of [principles](/
 
 The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's particpating platforms.
 
-**Co-Chairs**
+### Co-Chairs
 - Robert Carrol (Vanderbilt)
 - Allison Heath (CHOP)
 
-### Background
 
+### Background
 Recently, there is increasing attention on the potential of HL7 FHIR, a standard developed primarily for clinical data interoperability. Electronic Health Record interoperability has been a serious challenge in the field for the length of its existence - fraught with challenges across the spectrum of technical and policy.
  
  Similar challenges face the research world in using FHIR: the standard has only been lightly implemented in clinical practice, though at times to great effect, and the tools researchers need to effectively use this complex data do not exist. However, the promise of interoperability of systems with large support in the community is one that’s hard to ignore in the context of clinical/phenotypic data interoperability for the NCPI efforts. 
 
-### Initial Focus
+
 An initial objective of the FHIR working group is to have a practical approach for learning and prototyping with FHIR to gain a shared understanding of the problems it solves.
  
  Our first project is a collaborative technical “hands-on” project to allow teams to gain hands-on experience with FHIR. This will allow us to better communicate and create a roadmap for clinical data interoperability between datasets hosted by participants in NCPI. 
@@ -52,7 +52,7 @@ An initial objective of the FHIR working group is to have a practical approach f
 
 The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. 
 
-**Co-Chairs**
+### Co-Chairs
 - Ashok Krishnamurthy (RENCI)
 - Anton Nekrutenk (PSU)
 
@@ -60,18 +60,19 @@ The Outreach and Training Working Group will provide exposure and training for N
 
 The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.
 
-**Co-Chairs**
+### Co-Chairs
 - Brian O’Connor (Broad)
 - Jack DiGiovanna (Seven Bridges)
 
-**Documents**
+### Documents
 
 [Charter](https://docs.google.com/document/d/15BFO2-RlOUqIMY87bKSqlxUcb4qlaNiY-Q6Imk7WREo/edit?pli=1#)
 
 [Meeting Agenda](https://docs.google.com/document/d/1x34Xo9XpdFDG1Cc3xa6YnsAcOSKJ3kkGiOIiIq39KN4/edit?pli=1#heading=h.dox03dguv2oj)
 
-### Background
 
+
+### Background
 Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-based datasets together (or in distinct combinations).  While data portals make it easy to find data in most cases, it is difficult to take search results from a given data portal to a preferred analysis workspace (cloud compute environment). 
  
  Currently, there is not a way that researchers can browse multiple data portals (Kids First, AnVIL, Catalyst, etc), collect their search results, and take them to a single compute environment of their choosing (Terra, Seven Bridges, Cavatica, DNAstack, Galaxy, etc).
