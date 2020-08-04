@@ -101,4 +101,14 @@ The NCPIs has five working groups:
 ## Progress Updates
 The NCPI will give progress updates every six months. Summaries of past progress updates are listed below.
 
-1. [April 16, 2020 -  NIH Interoperability Workshop (Remote)](/ncpi/progress-updates/2020-04-16-ncpi-progress-update)
+### April 16, 2020 - 2nd NCPI Workshop
+
+* [Agenda](https://docs.google.com/document/d/1NM_fOdbMKRnT-GFZMWYZ7W65Y0UpQ9lE4RekOvbXg9I/edit)
+* [Presentation Slides](https://docs.google.com/presentation/d/1He7naDpPQugrROq8Gh0VjxLiFyDnOuWUukLyToEoNzU/edit?usp=sharing)
+* [Zoom Recording](https://drive.google.com/file/d/1sk35jfEl6RDApApJIRawfof5wkXpU5O1/view)
+
+
+### October 03, 2019 - 1st NCPI Workshop
+
+* [Agenda](https://docs.google.com/document/d/1lA-pgt5-afpM0Vz5ytIv62BlcQmcB-pGhwXf1CHuHhc/edit?usp=sharing)
+

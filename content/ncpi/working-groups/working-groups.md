@@ -28,7 +28,7 @@ The Community Governance Working Group aims to establish a set of [principles](/
 
 ## FHIR Working Group
 
-The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's particpating platforms.
+The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's participating platforms.
 
 ### Co-Chairs
 - Robert Carrol (Vanderbilt)

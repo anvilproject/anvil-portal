@@ -1,7 +1,9 @@
 
 # Participating Platforms
 
-<hero small>The NCPI effort is a collaboration between NIH representatives and team members from the platforms listed below with the goal of enabling cross-platform end-user analysis. </hero>
+<hero small>The NCPI participating platforms are:  NHGRI's AnVIL, NHLBI's BioData Catalyst, the National Cancer Institute’s Cancer Research Data Commons and the NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program.</hero>
+
+An overview of each platform is given below: 
 
 ## Analysis, Visualization, and Informatics Lab-space (AnVIL)
 
