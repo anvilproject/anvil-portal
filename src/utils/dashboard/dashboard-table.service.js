@@ -43,11 +43,6 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
-        if ( column === "dataType" ) {
-
-            return formatDataType(value);
-        }
-
         if ( column === "diseases" ) {
 
             if ( value.length ) {
@@ -60,11 +55,6 @@ export function formatValue(value, column) {
             }
         }
 
-        if ( column === "program" ) {
-
-            return switchProgramName(value);
-        }
-
         if ( column === "sizeTB" ) {
 
             return NumberFormatService.formatSizeToTB(value);
@@ -73,6 +63,11 @@ export function formatValue(value, column) {
         if ( NumberFormatService.isNumber(value) ) {
 
             return value.toLocaleString();
+        }
+
+        if ( NumberFormatService.isArray(value) ) {
+
+            return stringifyArray(value);
         }
 
         return value;
@@ -98,26 +93,6 @@ export function getCellUrl(value, column, summary) {
 }
 
 /**
- * Returns the corresponding data type display name.
- *
- * @param dataType
- * @returns {*}
- */
-export function switchDataType(dataType) {
-
-    switch (dataType) {
-        case "Whole Genome":
-            return "WGS";
-        case "Whole genome":
-            return "WGS";
-        case "Exome":
-            return "WES";
-        default:
-            return dataType;
-    }
-}
-
-/**
  * Returns corresponding column display label.
  * @param columnName
  * @returns {*}
@@ -131,16 +106,16 @@ export function switchDisplayColumnName(columnName) {
             return "Access";
         case "cohorts":
             return "Cohorts";
-        case "consortia":
-            return "Consortia";
         case "consentName":
             return "Consent Groups";
         case "consents":
             return "Access";
         case "consentStat":
             return "Subjects";
-        case "dataType":
-            return "Data Type";
+        case "consortia":
+            return "Consortia";
+        case "consortium":
+            return "Consortium";
         case "dataTypes":
             return "Data Type";
         case "demographics":
@@ -157,8 +132,6 @@ export function switchDisplayColumnName(columnName) {
             return "dbGaP Id";
         case "dbGapIdAccession":
             return "dbGap Id";
-        case "program":
-            return "Consortium";
         case "projectId":
             return "Terra Workspace Name";
         case "samples":
@@ -174,41 +147,6 @@ export function switchDisplayColumnName(columnName) {
         default:
             return columnName;
     }
-}
-
-/**
- * Returns the corresponding program display name.
- *
- * @param program
- * @returns {*}
- */
-export function switchProgramName(program) {
-
-    switch (program) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return program;
-    }
-}
-
-/**
- * Formats the data type object into a string, with its correct display value.
- *
- * @param dataTypes
- * @returns {*}
- */
-function formatDataType(dataTypes) {
-
-    if ( dataTypes ) {
-
-        const switchedDataTypes = dataTypes.map(dataType => switchDataType(dataType));
-        return stringifyArray(switchedDataTypes);
-    }
-
-    return dataTypes;
 }
 
 /**
@@ -256,8 +194,12 @@ function switchCellNameToTooltipLabel(cellValue) {
     switch (cellValue) {
         case "WGS":
             return "Whole Genome Sequencing";
+        case "WGS, VCF":
+            return "Whole Genome Sequencing, Variant Call Format";
         case "WES":
             return "Whole Exome Sequencing";
+        case "VCF":
+            return "Variant Call Format";
         default:
             return null;
     }
@@ -278,8 +220,8 @@ function switchColumnUrl(columnName, summary, value) {
             return switchAccessUIUrl(value);
         case "dbGapIdAccession":
             return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
-        case summary && "program":
-            return switchProgramUrl(value);
+        case summary && "consortium":
+            return switchConsortiumUrl(value);
         case "projectId":
             return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
         default:
@@ -288,24 +230,24 @@ function switchColumnUrl(columnName, summary, value) {
 }
 
 /**
- * Returns the corresponding program url.
+ * Returns the corresponding consortium url.
  *
- * @param program
+ * @param consortium
  * @returns {*}
  */
-function switchProgramUrl(program) {
+function switchConsortiumUrl(consortium) {
 
-    switch (program) {
+    switch (consortium) {
         case "CCDG":
             return "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-Disease-Genomics";
         case "CMG":
             return "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Mendelian-Genomics-CMG";
-        case "GTEx":
-            return "https://gtexportal.org/home/";
-        case "ThousandGenomes":
-            return "https://www.internationalgenome.org/";
         case "eMERGE":
             return "https://emerge-network.org/";
+        case "GTEx (v8)":
+            return "https://gtexportal.org/home/";
+        case "1000 Genomes":
+            return "https://www.internationalgenome.org/";
         default:
             return null;
     }

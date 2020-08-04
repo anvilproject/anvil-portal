@@ -17,7 +17,7 @@ export const DashboardStudyStaticQuery = () => {
                   }
                   consentsStat
                 }
-                consortia
+                consortium
                 dbGapIdAccession
                 diseases
                 studyName
@@ -25,7 +25,7 @@ export const DashboardStudyStaticQuery = () => {
                 subjectsTotal
                 workspaces {
                   access
-                  dataType
+                  dataTypes
                   files
                   projectId
                   samples

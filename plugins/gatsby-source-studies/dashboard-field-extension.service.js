@@ -59,9 +59,9 @@ const getWorkspaceDiseases = function getWorkspaceDiseases(workspace, studies) {
     // apply to each workspace in the study, except for CMG (which we leave blank for now). Once we have direct
     // mapping between workspace and diseases, we can update this to use the workspace-specific values, including
     // for CMG.
-    const consortia = workspace.program;
+    const consortium = workspace.consortium;
 
-    if ( consortia.toLowerCase() === "cmg" ) {
+    if ( consortium.toLowerCase() === "cmg" ) {
 
         return [];
     }

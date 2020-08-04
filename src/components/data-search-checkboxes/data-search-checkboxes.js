@@ -30,16 +30,16 @@ class DataSearchCheckboxes extends React.Component {
 
     generateCheckboxes = () => {
 
-        const {accessTypes, consortias, dataTypes} = this.props;
+        const {accessTypes, consortia, dataTypes} = this.props;
 
         const accessCheckboxes = accessTypes.map(accessType => {
 
             return {label: accessType, checked: false, type: "accessUI"}
         });
 
-        const consortiaCheckboxes = consortias.map(consortia => {
+        const consortiaCheckboxes = consortia.map(consortium => {
 
-            return {label: consortia, checked: false, type: "program"}
+            return {label: consortium, checked: false, type: "consortium"}
         });
 
         const dataTypeCheckboxes = dataTypes.map(dataType => {
@@ -94,10 +94,10 @@ export default () => {
 
     const accessTypes = DashboardWorkspaceService.getDashboardWorkspacesAccess();
     const dataTypes = DashboardWorkspaceService.getDashboardWorkspacesDataTypes();
-    const consortias = DashboardWorkspaceService.getDashboardWorkspacesConsortias();
+    const consortia = DashboardWorkspaceService.getDashboardWorkspacesConsortia();
     const checkboxes = useContext(DashboardFilterContext);
 
     return (
-        checkboxes ? <DataSearchCheckboxes accessTypes={accessTypes} consortias={consortias} dataTypes={dataTypes} {...checkboxes}/> : null
+        checkboxes ? <DataSearchCheckboxes accessTypes={accessTypes} consortia={consortia} dataTypes={dataTypes} {...checkboxes}/> : null
     )
 }

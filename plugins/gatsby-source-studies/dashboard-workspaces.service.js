@@ -30,7 +30,7 @@ const getWorkspaces = async function getWorkspaces() {
     validateWorkspacesFiltering(workspaces);
 
     /* Return the sorted dashboard. */
-    return sortDataByDuoTypes(workspaces, "program", "projectId");
+    return sortDataByDuoTypes(workspaces, "consortium", "projectId");
 };
 
 /**
@@ -44,14 +44,14 @@ function buildDashboardWorkspace(projects) {
 
         return {
             access: formatAccess(project.public),
-            dataType: project.data_type,
+            consortium: switchConsortiumName(project.source),
+            dataTypes: formatDataTypes(project.data_type),
             demographics: getDemographicsCount(project),
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
             dbGapId: project.dbGAP_study_id,
             dbGapIdAccession: project.dbGAP_acession,
-            program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: project.size,
@@ -89,6 +89,22 @@ function formatAccess(boolean) {
 
         return "Private";
     }
+}
+
+/**
+ * Formats and normalizes the data types, with its correct display value.
+ *
+ * @param dataTypes
+ * @returns {*}
+ */
+function formatDataTypes(dataTypes) {
+
+    if ( dataTypes ) {
+
+        return dataTypes.map(dataType => switchDataType(dataType));
+    }
+
+    return dataTypes;
 }
 
 /**
@@ -163,13 +179,53 @@ function sumFileValues(files) {
 }
 
 /**
+ * Returns the corresponding consortium display name.
+ *
+ * @param consortium
+ * @returns {*}
+ */
+function switchConsortiumName(consortium) {
+
+    switch (consortium) {
+        case "GTEx":
+            return "GTEx (v8)";
+        case "ThousandGenomes":
+            return "1000 Genomes";
+        default:
+            return consortium;
+    }
+}
+
+/**
+ * Returns the corresponding data type display name.
+ *
+ * @param dataType
+ * @returns {*}
+ */
+function switchDataType(dataType) {
+
+    switch (dataType) {
+        case "Whole Genome":
+            return "WGS";
+        case "Whole genome":
+            return "WGS";
+        case "Exome":
+            return "WES";
+        case "Whole Exome":
+            return "WES";
+        default:
+            return dataType;
+    }
+}
+
+/**
  * Logs an error in the build process if the sum of filtered workspaces does not equal the total number of workspaces.
  *
  * @param workspaces
  */
 function validateWorkspacesFiltering(workspaces) {
 
-    /* Consortia. */
+    /* Consortium. */
     const workspacesByConsortiaCount = workspaces.filter(workspace => {
 
         const dbGapExists = !!workspace.dbGapIdAccession;

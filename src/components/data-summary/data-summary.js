@@ -22,19 +22,17 @@ import React, {useContext} from "react";
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
+import * as DashboardService from "../../utils/dashboard/dashboard.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
-// Styles
-import tableStyles from "../data-table/data-table.module.css";
-
-let TABLE_HEADERS = ["program", "cohorts", "subjects", "samples","files", "sizeTB"];
+let TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
 
 class DataSummary extends React.Component {
 
     render() {
-        const {summary} = this.props;
+        const {crop, summary} = this.props;
         return (
-            <DataTable className={tableStyles.summary} tableHeaders={TABLE_HEADERS} tableRows={summary}/>
+            <DataTable crop={crop} summary tableHeaders={TABLE_HEADERS} tableRows={summary}/>
         );
     }
 }
@@ -46,12 +44,15 @@ export default (props) => {
         {results, resultsExist} = dashboardContext || {};
 
     /* Data summary component specific props. */
-    const {consortia, dbgap} = props;
+    const {consortia, crop, dbgap} = props;
     const shared = props.public;
+
+    /* Determine whether the table should render in "crop" mode. */
+    const cropTable = DashboardService.parseProp(crop);
 
     const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, results, resultsExist, shared);
 
     return (
-        resultsExist ? <DataSummary summary={summary}/> : null
+        resultsExist ? <DataSummary crop={cropTable} summary={summary}/> : null
     )
 }

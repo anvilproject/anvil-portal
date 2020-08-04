@@ -3,6 +3,11 @@
  * https://www.anvilproject.org
  *
  * Style definitions specific to The AnVIL data table component.
+ *
+ * "studies" class is for workspaces table with studies included.
+ * "summary" class is for the summary table.
+ * "workspaces" class is for workspaces table.
+ * "crop" class applies to any table needing a max width applied to match the content width.
  */
 @import "../../styles/vars.module.css";
 
@@ -18,11 +23,6 @@
 /* Table wrapper - summary */
 .wrapper.summary {
     margin-bottom: 24px;
-}
-
-/* Table wrapper - workspaces */
-.wrapper.workspaces {
-    width: calc(100vw - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
 }
 
 /* Table */
@@ -52,8 +52,9 @@ table {
     padding: 0 4px 4px;
 }
 
-/* Add padding to the right of cells for workspaces to prevent long values from jamming up */
-.workspaces .header th, .workspaces {
+/* Header cells - studies table */
+/* Add padding to the right of cells for studies table to prevent long values from jamming up. */
+.studies .header th {
     padding: 0 8px 4px;
 }
 
@@ -72,6 +73,12 @@ table {
     border-bottom: 1px solid var(--shade-light-green);
 }
 
+/* Row - studies table */
+/* Vertical align to the top for studies table - there will always be multi-line cells due to long titles */
+.studies .row {
+    vertical-align: top;
+}
+
 /* Row - summary table - last before "total" row */
 .summary .row:nth-last-child(2) {
     border-bottom: none;
@@ -83,84 +90,6 @@ table {
     border-bottom-color: var(--accent-blue-green);
 }
 
-/* Row cells */
-.row td {
-    font-weight: 400;
-    height: 32px;
-    min-width: 62px;
-    padding: 0 4px;
-}
-
-/* Add padding to the right of cells for workspaces to prevent long values from jamming up */
-.workspaces .row td {
-    padding: 2px 8px 2px;
-}
-
-/* Row cell - detail table - "program" eg CCDG */
-.detail .row td[id^="program"] {
-    max-width: 92px; /* Required for ellipsis */
-    min-width: 92px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-}
-
-/* Row cell - detail table - "projectId" (ie Terra workspace name) */
-.detail .row td[id^="projectId"] {
-    max-width: 197px;
-    min-width: 197px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    white-space: nowrap;
-}
-
-/* Row cell - detail table - "dbGapId" or "dbGapIdAccession" */
-.detail .row td[id^="dbGapId"] {
-    min-width: 112px;
-}
-
-/* Row cell - detail table - "type" */
-.detail .row td[id^="dataType"] {
-    min-width: 76px;
-}
-
-/* Row cell - detail table - "access" */
-.detail .row td[id^="access"] {
-    min-width: 32px;
-}
-
-/* Row cell - workspaces table - "dbGapId" or "dbGapIdAccession" */
-.workspaces .row td[id^="dbGapId"] {
-    min-width: 134px;
-    max-width: 134px;
-}
-
-/* Row cell - study name */
-.workspaces .row td[id^="studyName"] {
-    min-width: 300px;
-    max-width: 300px;
-}
-
-/* Row cell - diseases */
-.workspaces .row td[id^="diseases"] {
-    min-width: 170px;
-    max-width: 170px;
-}
-
-/* Row cell - workspaces table - "accessUI" */
-.workspaces .row td[id^="accessUI"] {
-    min-width: 90px;
-    max-width: 90px;
-}
-
-/* Workspaces table - "program", "dataType", "subjects" */
-.workspaces .row td[id^="program"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"] {
-    min-width: 85px;
-    max-width: 85px;
-}
-
 /* Row */
 .row {
     transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
@@ -170,12 +99,90 @@ table {
     background-color: var(--black3);
 }
 
-/* Vertical align to the top for workspaces - there will always be multi-line cells due to long titles */
-.workspaces .row {
-    vertical-align: top;
+/* Row cells */
+.row td {
+    font-weight: 400;
+    height: 32px;
+    min-width: 62px;
+    padding: 0 4px;
 }
 
-/* Row cells - "total" */
+/* Row cell - ellipsis */
+/* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
+/* Row cell - studies table - "projectId" */
+.workspaces .row td[id^="projectId"], .studies .row td[id^="projectId"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Row cell - workspaces table */
+/* Row cell - workspaces table - "access" */
+.workspaces .row td[id^="access"] {
+    min-width: 32px;
+}
+
+/* Row cell - workspaces table - "consortium" eg CCDG */
+.workspaces .row td[id^="consortium"] {
+    max-width: 92px;
+    min-width: 92px;
+}
+
+/* Row cell - workspaces table - "dataTypes" */
+.workspaces .row td[id^="dataTypes"] {
+    min-width: 76px;
+}
+
+/* Row cell - workspaces table - "dbGapId" or "dbGapIdAccession" */
+.workspaces .row td[id^="dbGapId"] {
+    min-width: 112px;
+}
+
+/* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
+.workspaces .row td[id^="projectId"] {
+    max-width: 197px; /* Required for ellipsis */
+    min-width: 197px;
+}
+
+/* Row cell - studies table */
+/* All cells */
+/* Add padding to the right of cells for studies table to prevent long values from jamming up */
+.studies .row td {
+    padding: 2px 8px 2px;
+}
+
+/* Row cell - studies table - "accessUI" */
+.studies .row td[id^="accessUI"] {
+    max-width: 90px;
+    min-width: 90px;
+}
+
+/* Row cell - studies table - "dbGapId" or "dbGapIdAccession" */
+.studies .row td[id^="dbGapId"] {
+    max-width: 134px;
+    min-width: 134px;
+}
+
+/* Row cell - studies table - "diseases" */
+.studies .row td[id^="diseases"] {
+    max-width: 170px;
+    min-width: 170px;
+}
+
+/* Row cell - studies table - "studyName" */
+.studies .row td[id^="studyName"] {
+    max-width: 300px;
+    min-width: 300px;
+}
+
+/* Row cell - studies table - "consortium", "dataTypes", "subjects" */
+.studies .row td[id^="consortium"], .studies .row td[id^="dataTypes"], .studies .row td[id^="subjects"] {
+    max-width: 85px;
+    min-width: 85px;
+}
+
+/* Row cell - "total" */
 .row.total td {
     font-weight: 500;
 }
@@ -186,7 +193,7 @@ table {
     cursor: pointer;
 }
 
-/* Right align cell */
+/* Row cell - right align cell */
 .row td.right, .header th.right {
     text-align: right;
 }
@@ -202,52 +209,13 @@ table {
 }
 
 /**
- * Large tablet portrait, large handset landscape, small window
- */
-@media screen and (min-width: 720px) {
-    
-    /* Table wrapper - summary. Overflow not required. */
-    .wrapper.summary {
-        padding-right: 0;
-        width: 100%;
-    }
-}
-
-/**
- * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
- */
-@media screen and (max-width: 694px) {
-
-    .wrapper.detail {
-        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
-        width: calc(100vw - 16px); /* Allow table to stretch to right-hand side of device, to indicate more */
-    }
-}
-
-/**
  * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
  */
 @media screen and (min-width: 840px) {
 
-    /* Table wrapper - summary. Overflow not required. Summary width stretches to match workspaces width unless capped. */
-    .wrapper.summary {
-        width: calc(100vw - 24px - 200px - 40px - 24px);
-    }
-    
-    .wrapper.workspaces {
-        max-width: calc(100vw - 24px - 200px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
-        width: unset;
-    }
-}
-
-/**
- * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
- */
-@media screen and (min-width: 840px) and (max-width: 949px) {
-
-    .wrapper.detail {
-        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
-        max-width: calc(100vw - 24px - 24px - 200px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
+    /* Wrapper */
+    .wrapper {
+        max-width: calc(100vw - 24px - 200px - 40px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
 }
 
@@ -256,58 +224,42 @@ table {
  */
 @media screen and (min-width: 1040px) {
 
-    /* Prevent overflow on detail tables */
-    .wrapper.detail {
-        padding-right: 0;
-        width: 100%;
-    }
-
-    /* Row cell - detail table - "projectId" (ie Terra workspace name) */
-    .detail .row td[id^="projectId"] {
+    /* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
+    .workspaces .row td[id^="projectId"] {
         max-width: 246px;
         min-width: 246px;
     }
 }
 
 /**
- * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For workspaces, we squash dieases and 
+ * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For studies table, we squash diseases and
  * data type and let study name consume available space.
  */
 @media screen and (min-width: 1280px) {
 
-    /* Table wrapper - summary. Overflow not required. Summary width stretches to match workspaces width unless capped.
-       Update for larger left-nav width */
-    .wrapper.summary {
-        width: calc(100vw - 24px - 280px - 40px - 24px);
-    }
-
+    /* Table wrapper. */
     /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
-    .wrapper.workspaces {
-        max-width: calc(100vw - 24px - 280px - 40px);
+    .wrapper {
+        max-width: calc(100vw - 24px - 280px - 40px - 24px);
     }
 
-    /* Row cell - study name - expand to consume all remaining space */
-    .workspaces .row td[id^="studyName"] {
-        //min-width: unset; /* TODO Mim, messes around when filtering and results are limited in the study name. */
-        //max-width: unset;
-    }
-
-    /* Row cell - Terra ID */
-    .workspaces .row td[id^="projectId"] {
-        min-width: 130px;
-        max-width: 130px;
-    }
-
-    /* Row cell - diseases */
-    .workspaces .row td[id^="diseases"] {
-        min-width: 130px;
-        max-width: 130px;
-    }
-
-    /* Workspaces table - "dataType" */
-    .workspaces .row td[id^="dataType"] {
-        min-width: 35px;
+    /* Row cell - studies table */
+    /* Row cell - studies table - "dataTypes" */
+    .studies .row td[id^="dataTypes"] {
         max-width: 35px;
+        min-width: 35px;
+    }
+
+    /* Row cell - studies table - "diseases" */
+    .studies .row td[id^="diseases"] {
+        max-width: 130px;
+        min-width: 130px;
+    }
+
+    /* Row cell - studies table - "projectId" */
+    .studies .row td[id^="projectId"] {
+        max-width: 130px;
+        min-width: 130px;
     }
 }
 
@@ -318,16 +270,29 @@ table {
  */
 @media screen and (min-width: 1340px) {
 
-    /* Row cell - Terra ID */
-    .workspaces .row td[id^="projectId"] {
-        min-width: 200px;
-        max-width: 200px;
+    /* Row cell - studies table */
+    /* Row cell - studies tables - "diseases" */
+    .studies .row td[id^="diseases"] {
+        max-width: 170px;
+        min-width: 170px;
     }
 
-    /* Row cell - diseases */
-    .workspaces .row td[id^="diseases"] {
-        min-width: 170px;
-        max-width: 170px;
+    /* Row cell - studies table - "projectId" */
+    .studies .row td[id^="projectId"] {
+        max-width: 200px;
+        min-width: 200px;
+    }
+}
+
+/**
+ * Outline (right-hand nav) is dropped below 1341px, in addition to complimentary JS in scroll.service
+ */
+@media screen and (min-width: 1341px) {
+
+    /* Force max width on content pages that contain both content and data. */
+    /* This class is applied via the prop "crop" on either <data-summary> or <data-workspaces> components. */
+    .wrapper.crop {
+        max-width: 712px;
     }
 }
 
@@ -337,21 +302,16 @@ table {
  */
 @media screen and (min-width: 1680px) {
 
-    /* Workspaces has reached its natural max width, force stretch to right-hand gutter */
-    .wrapper.workspaces {
-        max-width: unset;
-        width: calc(100vw - 280px - 24px - 40px - 24px);
-    }
-
-    /* Row cell - Terra ID */
-    .workspaces .row td[id^="projectId"] {
-        min-width: 350px;
-        max-width: 350px;
-    }
-
-    /* Workspaces table - "dataType" */
-    .workspaces .row td[id^="dataType"] {
-        min-width: 85px;
+    /* Row cell - studies table */
+    /* Row cell - studies table - "dataTypes" */
+    .studies .row td[id^="dataTypes"] {
         max-width: 85px;
+        min-width: 85px;
+    }
+
+    /* Row cell - studies table - "projectId" */
+    .studies .row td[id^="projectId"] {
+        max-width: 350px;
+        min-width: 350px;
     }
 }

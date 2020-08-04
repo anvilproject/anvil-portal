@@ -22,13 +22,22 @@ let classNames = require("classnames");
 class DataTable extends React.Component {
 
     render() {
-        const {className, detail, inset, singleRow, tableHeaders, tableRow, tableRows, workspaces} = this.props,
-            summaryTable = className === compStyles.summary;
+        const {crop, singleRow, studies, summary, tableHeaders, tableRow, tableRows, workspaces} = this.props;
+        /* The prop "studies" provides styles specific to the workspaces table with studies included. */
+        /* The prop "summary" provides styles to the summary table. */
+        /* The prop "workspaces" provides styles specific to the data workspaces table. */
+        const tableClassNames = classNames(
+            {[compStyles.crop]: crop},
+            {[compStyles.studies]: studies},
+            {[compStyles.summary]: summary},
+            {[compStyles.workspaces]: workspaces},
+            compStyles.wrapper);
 
         const Cell = (props) => {
 
             const {children} = props;
             const label = DashboardTableService.findCellTooltip(children);
+
             if ( label ) {
 
                 return (<Tooltip label={label}>{children}</Tooltip>);
@@ -61,13 +70,15 @@ class DataTable extends React.Component {
             
             /* Add tooltip to workspace names, truncate long diseases values. */
             let linkedToContent;
+
             if ( !!linkedTo && column === "projectId" ) {
 
                 linkedToContent = (<Tooltip label={data}>{data}</Tooltip>);
             }
             else if ( column === "diseases" && data.length > 50 ) {
+
                 const truncated = `${data.substring(0, 47)}...`;
-                linkedToContent = (<Tooltip label={data}>{truncated}</Tooltip>);
+                linkedToContent = (<Tooltip label={data} multiline>{truncated}</Tooltip>);
             }
             else {
 
@@ -87,7 +98,7 @@ class DataTable extends React.Component {
         const TableRow = (props) => {
 
             const {order, row, summary} = props,
-                totalRow = row.program === "Total";
+                totalRow = row.consortium === "Total";
 
             return (
                 <tr className={classNames(compStyles.row, {[compStyles.total]: totalRow})}>
@@ -100,7 +111,7 @@ class DataTable extends React.Component {
         };
 
         return (
-            <div className={classNames(compStyles.wrapper, className, {[compStyles.detail]: detail}, {[compStyles.inset]: inset}, {[compStyles.workspaces]: workspaces})}>
+            <div className={tableClassNames}>
                 <table>
                     <thead>
                         <tr className={compStyles.header}>
@@ -113,7 +124,7 @@ class DataTable extends React.Component {
                             <TableRow key={r}
                                       order={tableHeaders}
                                       row={tableRow}
-                                      summary={summaryTable}/>)}
+                                      summary={summary}/>)}
                     </tbody>
                 </table>
             </div>

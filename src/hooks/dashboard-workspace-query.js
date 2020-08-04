@@ -9,7 +9,8 @@ export const DashboardWorkspaceStaticQuery = () => {
               node {
                 access
                 accessUI
-                dataType
+                consortium
+                dataTypes
                 dbGapId
                 dbGapIdAccession
                 demographics
@@ -17,7 +18,6 @@ export const DashboardWorkspaceStaticQuery = () => {
                 diseases
                 families
                 files
-                program
                 projectId
                 samples
                 size

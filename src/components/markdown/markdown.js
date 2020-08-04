@@ -11,10 +11,9 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
-import DataDetail from "../data-detail/data-detail";
 import DataSearch from "../data-search/data-search";
-import DataStudies from "../data-studies/data-studies";
 import DataSummary from "../data-summary/data-summary";
+import DataWorkspaces from "../data-workspaces/data-workspaces";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";
@@ -65,10 +64,9 @@ class Markdown extends React.Component {
             createElement: React.createElement,
             components: {
                 "button": Button,
-                "data-detail": DataDetail,
                 "data-search": DataSearch,
-                "data-studies": DataStudies,
                 "data-summary": DataSummary,
+                "data-workspaces": DataWorkspaces,
                 "event-hero": EventHero,
                 "events": Events,
                 "figure-caption": FigureCaption,
@@ -85,8 +83,9 @@ class Markdown extends React.Component {
             }
         }).Compiler;
         const identifier = Date.now();
+        const markdownClassNames = classNames(className, compStyles.content);
         return (
-            <div id={`content${identifier}`} className={classNames(className, compStyles.content)}>{renderAst(children)}</div>
+            <div id={`content${identifier}`} className={markdownClassNames}>{renderAst(children)}</div>
         );
     }
 }

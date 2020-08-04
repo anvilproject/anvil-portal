@@ -1,7 +1,6 @@
 ---
 author: "AnVIL"
 description: "AnVIL hosts high value genomic datasets relevant to human health and disease."
-pageAlignment: "center"
 title: "Data"
 ---
 
@@ -12,19 +11,21 @@ title: "Data"
 
 
 ### Public Datasets
-<data-summary public></data-summary>
+<data-summary crop public></data-summary>
+
 ### dbGaP Accessible Datasets
-<data-summary dbGap></data-summary>
+<data-summary crop dbgap></data-summary>
+
 ### Consortia Access Datasets
-<data-summary consortia></data-summary>
+<data-summary consortia crop></data-summary>
 
 ## Public Access Worspaces
-<data-detail public></data-detail>
+<data-workspaces crop public></data-workspaces>
 
 ## Controlled Access Workspaces
 The following workspaces are accessible by external (non-consortia) researhers via the [dbGaP access process]() and also to consortia members via the [consortia fast track process]().
 
-<data-studies></data-studies>
+<data-workspaces crop study></data-workspaces study>
 
 ## Consortia Members Access Only (dbGaP Registraton in Progress)
 
@@ -33,6 +34,7 @@ The following workspaces are accessible by external (non-consortia) researhers v
 
 >For workspaces where the dbGaP Id is not selectable, the dbGaP study registration is in progress.  The dbGaP Id has been assigned but the study is not yet listed in dbGaP.
 
-<data-summary consortia></data-summary>
-<data-detail consortia></data-detail>
+<data-summary consortia crop></data-summary>
+
+<data-workspaces consortia crop></data-workspaces>
 

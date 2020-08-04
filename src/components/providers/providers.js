@@ -9,8 +9,8 @@
 import React from "react";
 
 // App dependencies
-import ProviderDashboardFilter from "./provider-dashboard-filter";
-import ProviderFrontmatter from "./provider-frontmatter";
+import ProviderDashboardFilter from "../provider-dashboard-filter/provider-dashboard-filter";
+import ProviderFrontmatter from "../provider-frontmatter/provider-frontmatter";
 
 class Providers extends React.Component {
 

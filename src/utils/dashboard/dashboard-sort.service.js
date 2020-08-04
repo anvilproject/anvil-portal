@@ -26,7 +26,7 @@ export function sortDataByDuoTypes(dashboardData, type0, type1) {
             return sortDataValues(data0, data1, type1)
         }
 
-        /* Return the program sorted outcome. */
+        /* Return the sorted outcome. */
         return firstSort;
     });
 }

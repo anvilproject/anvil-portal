@@ -49,7 +49,7 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
     workspaces.forEach(workspace => {
 
         const nodeContent = JSON.stringify(workspace);
-        const workspaceId = `${workspace.program}${workspace.projectId}`;
+        const workspaceId = `${workspace.consortium}${workspace.projectId}`;
 
         const nodeMeta = {
             id: createNodeId(workspaceId),
@@ -125,7 +125,8 @@ exports.createSchemaCustomization = ({actions}) => {
         id: ID!
         access: String
         accessUI: String @accessUI
-        dataType: [String]
+        consortium: String
+        dataTypes: [String]
         demographics: Int
         diagnosis: Int
         families: Int
@@ -133,7 +134,6 @@ exports.createSchemaCustomization = ({actions}) => {
         dbGapId: String
         dbGapIdAccession: String
         diseases: [String] @diseases
-        program: String
         projectId: String!
         samples: Int
         size: Float
@@ -145,7 +145,7 @@ exports.createSchemaCustomization = ({actions}) => {
     type Study implements Node {
         id: ID!
         consentGroup: ConsentGroup
-        consortia: String
+        consortium: String
         dbGapIdAccession: String!
         diseases: [String]
         studyName: String!

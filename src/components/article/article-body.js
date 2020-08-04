@@ -24,11 +24,4 @@ class ArticleBody extends React.Component {
     }
 }
 
-export default (props) => {
-
-    const {className, htmlAst} = props;
-
-    return (
-        <ArticleBody className={className} htmlAst={htmlAst} {...props}/>
-    )
-}
+export default ArticleBody;

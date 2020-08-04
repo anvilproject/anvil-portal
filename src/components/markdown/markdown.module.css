@@ -45,16 +45,3 @@
     right: 24px;
     width: 60px;
 }
-
-/**
- * Outline (right-hand nav) is dropped below 1341px, in addition to complimentary JS in scroll.service
- */
-@media screen and (min-width: 1341px) {
-
-    /* Force max width on content pages that contain both content and data (eg /data/data). "App" pages (eg /datasets) 
-       do not have a right nav and therefore do not need a max-width, as they expand to the right-hand gutter. This class
-       is applied in the the ContentTemplate component. */
-    .content.data {
-        max-width: 712px;
-    }
-}

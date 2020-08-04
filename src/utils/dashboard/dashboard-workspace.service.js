@@ -7,7 +7,6 @@
 
 // App dependencies
 import * as DashboardService from "./dashboard.service";
-import * as DashboardTableService from "./dashboard-table.service";
 import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 /**
@@ -51,24 +50,23 @@ export function getDashboardWorkspacesAccess() {
 }
 
 /**
- * Returns a list of consortias.
+ * Returns a list of consortia.
  *
  * @returns {[null]}
  */
-export function getDashboardWorkspacesConsortias() {
+export function getDashboardWorkspacesConsortia() {
 
     const workspaces = DashboardWorkspaceStaticQuery();
 
-    const setOfConsortias = new Set();
+    const setOfConsortia = new Set();
 
-    /* Get the set of consortias. */
+    /* Get the set of consortia. */
     workspaces.forEach(workspace => {
 
-        const consortia = DashboardTableService.switchProgramName(workspace.program);
-        setOfConsortias.add(consortia);
+        setOfConsortia.add(workspace.consortium);
     });
 
-    return [...setOfConsortias];
+    return [...setOfConsortia];
 }
 
 /**
@@ -85,12 +83,11 @@ export function getDashboardWorkspacesDataTypes() {
     /* Get the set of access types. */
     workspaces.forEach(workspace => {
 
-        if ( workspace.dataType ) {
+        if ( workspace.dataTypes ) {
 
-            workspace.dataType.forEach(type => {
+            workspace.dataTypes.forEach(type => {
 
-                const dataType = DashboardTableService.switchDataType(type);
-                setOfDataTypes.add(dataType)
+                setOfDataTypes.add(type)
             });
         }
     });

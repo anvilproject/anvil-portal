@@ -27,7 +27,7 @@ const getStudies = async function getStudies(workspaces) {
     const dashboardStudies = await buildDashboardStudies(studyWorkspaces);
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes(dashboardStudies, "consortia", "studyName");
+    return sortDataByDuoTypes(dashboardStudies, "consortium", "studyName");
 };
 
 /**
@@ -52,7 +52,7 @@ async function buildDashboardStudies(workspaces) {
  *
  * @param gapAccession
  * @param workspaces
- * @returns {Promise.<{access: *, consentGroup: {consents, consentsStat}, consortia: *, dbGapIdAccession: *, diseases, studyName, subjectsCount: *, subjectsTotal, workspaces}>}
+ * @returns {Promise.<{consentGroup: {consents, consentsStat}, consortium: *, dbGapIdAccession: *, diseases: *, studyName, subjectsCount: *, subjectsTotal}>}
  */
 async function buildDashboardStudy(gapAccession, workspaces) {
 
@@ -69,7 +69,7 @@ async function buildDashboardStudy(gapAccession, workspaces) {
 
     /* Assemble the study variables. */
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
+    const consortium = findFirstWorkspaceNodeByType(workspacesByStudy, "consortium");
     const diseases = studyExchange.diseases;
     const studyName = studyExchange.name.shortName;
     const subjectsCount = sumSubjectsValues(workspacesByStudy);
@@ -77,7 +77,7 @@ async function buildDashboardStudy(gapAccession, workspaces) {
 
     return {
         consentGroup: consents,
-        consortia: consortia,
+        consortium: consortium,
         dbGapIdAccession: gapAccession,
         diseases: diseases,
         studyName: studyName,

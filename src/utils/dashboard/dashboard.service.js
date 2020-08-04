@@ -24,63 +24,30 @@ export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared)
         return workspaces;
     }
 
-    /* Note: rehype-react custom component parsing of props. */
-    /* A prop without a value will not be interpreted as true; instead, it will be passed as the empty string "". */
     return workspaces.filter(workspace => {
 
         const dbGapExists = !!workspace.dbGapIdAccession;
 
         /* Prop "consortia" - return all private workspaces without a dbGapId accession. */
-        if ( consortia === "" ) {
+        if ( parseProp(consortia) ) {
 
             return ( workspace.access === "Private" ) && !dbGapExists;
         }
 
         /* Prop "dbGap" - return all workspaces with a dbGapId accession. */
-        if ( dbGap === "" ) {
+        if ( parseProp(dbGap) ) {
 
             return dbGapExists;
         }
 
         /* Prop "public" - return all public workspaces without a dbGapId accession. */
-        if ( shared === "" ) {
+        if ( parseProp(shared) ) {
 
             return ( workspace.access === "Public" ) && !dbGapExists;
         }
 
         return workspace;
     });
-}
-
-/**
- * Filters studies by results from the dataset search.
- *
- * @param studies
- * @param filterResults
- * @returns {*}
- */
-export function filterStudiesBySearchResults(studies, filterResults) {
-
-    if ( filterResults.length === 0 ) {
-
-        return studies;
-    }
-
-    return studies.reduce((acc, study) => {
-
-        if ( study.workspaces.some(workspace => filterResults.includes(workspace.projectId)) ) {
-
-            const studyClone = Object.assign({}, study);
-
-            studyClone.workspaces = study.workspaces.filter(workspace => filterResults.includes(workspace.projectId));
-
-            acc.push(studyClone);
-
-            return acc;
-        }
-
-        return acc;
-    }, []);
 }
 
 /**
@@ -98,4 +65,16 @@ export function filterWorkspacesBySearchResults(workspaces, filterResults) {
     }
 
     return workspaces.filter(workspace => filterResults.includes(workspace.projectId));
+}
+
+/**
+ * Returns a true value for any rehype-react custom prop.
+ * i.e. A rehype-react prop without a value will not be interpreted as true; instead, it will be passed as the empty string "".
+ *
+ * @param value
+ * @returns {boolean}
+ */
+export function parseProp(value) {
+
+    return !!value || value === "";
 }

@@ -2,9 +2,9 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - data detail component.
+ * The AnVIL - data workspaces component.
  * Use of this component within markdown is possible.
- * Use the tag <data-detail></data-detail> but ensure it is closed.
+ * Use the tag <data-workspaces></data-workspaces>.
  *
  * The following props are optional and do not require a value:
  * - "consortia"
@@ -25,18 +25,19 @@ import React, {useContext} from "react";
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
+import * as DashboardService from "../../utils/dashboard/dashboard.service";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
-let TABLE_HEADERS_WORKSPACES = ["program", "projectId", "dbGapId", "dataType", "access", "subjects", "samples"];
-let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["program", "projectId", "dbGapIdAccession", "studyName", "diseases", "accessUI", "dataType", "subjects"];
+let TABLE_HEADERS_WORKSPACES = ["consortium", "projectId", "dbGapId", "dataTypes", "access", "subjects", "samples"];
+let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "dbGapIdAccession", "studyName", "diseases", "accessUI", "dataTypes", "subjects"];
 
-class DataDetail extends React.Component {
+class DataWorkspaces extends React.Component {
 
     render() {
-        const {details, withStudy} = this.props;
+        const {crop, withStudy, workspaces} = this.props;
         const tableHeaders = withStudy ? TABLE_HEADERS_WORKSPACES_BY_STUDY : TABLE_HEADERS_WORKSPACES;
         return (
-            <DataTable detail={!withStudy} tableHeaders={tableHeaders} tableRows={details} workspaces={!!withStudy}/>
+            <DataTable crop={crop} studies={!!withStudy} tableHeaders={tableHeaders} tableRows={workspaces} workspaces={!withStudy}/>
         );
     }
 }
@@ -48,18 +49,19 @@ export default (props) => {
         {results, resultsExist} = dashboardContext || {};
 
     /* Data detail component specific props. */
-    const {consortia, dbgap, study} = props;
+    const {consortia, crop, dbgap, study} = props;
     const shared = props.public;
 
-    /* Process bystudy prop into a boolean. */
-    /* Due to rehype-react custom component parsing of props, a prop without a value
-    /* will not be interpreted as true; instead, it will be passed as the empty string "". */
-    const withStudy = study === "";
+    /* Determine whether the table should render in "crop" mode. */
+    const cropTable = DashboardService.parseProp(crop);
+
+    /* Determine whether the workspaces table includes study data. */
+    const withStudy = DashboardService.parseProp(study);
 
     /* Get the workspaces. */
-    const details = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);
+    const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);
 
     return (
-        resultsExist ? <DataDetail details={details} withStudy={withStudy}/> : null
+        resultsExist ? <DataWorkspaces crop={cropTable} withStudy={withStudy} workspaces={workspaces}/> : null
     )
 }

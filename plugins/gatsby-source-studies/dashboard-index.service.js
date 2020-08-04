@@ -23,11 +23,11 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
         this.ref("projectId");
         this.field("access");
         this.field("accessUI");
+        this.field("consortium");
         this.field("dataTypes");
         this.field("dbGapId");
         this.field("dbGapIdAccession");
         this.field("diseases");
-        this.field("program");
         this.field("projectId");
         this.field("studyName");
         this.field("workspaceName");
@@ -38,22 +38,22 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
         workspaces.forEach(workspace => {
 
             const accessUI = getAccessUI(workspace, studies);
-            const dataTypes = getDataTypes(workspace.dataType);
+            const consortium = getConsortiumName(workspace.consortium);
+            const dataTypes = getDataTypes(workspace.dataTypes);
             const dbGapId = getGapId(workspace.dbGapId);
             const dbGapIdAccession = getGapId(workspace.dbGapIdAccession);
             const diseases = getDiseases(studies, workspace.dbGapIdAccession);
-            const program = getProgram(workspace.program);
             const studyName = getStudyName(studies, workspace.dbGapIdAccession);
             const workspaceName = getWorkspaceName(workspace.projectId);
 
             this.add({
                 "access": workspace.access,
                 "accessUI": accessUI,
+                "consortium": consortium,
                 "dataTypes": dataTypes,
                 "dbGapId" : dbGapId,
                 "dbGapIdAccession": dbGapIdAccession,
                 "diseases": diseases,
-                "program": program,
                 "projectId": workspace.projectId,
                 "studyName": studyName,
                 "workspaceName": workspaceName
@@ -61,7 +61,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
         });
     });
 
-    fs.writeFileSync("public/dashboard-index.json", JSON.stringify(dashboardIndex));
+    fs.writeFileSync("static/dashboard-index.json", JSON.stringify(dashboardIndex));
 };
 
 /**
@@ -120,9 +120,32 @@ function getAccessUI(workspace, studies) {
 }
 
 /**
+ * Returns the consortium.
+ * Allows lunr to index the consortium for the FE consortium display name.
+ *
+ * @param consortium
+ * @returns {string}
+ */
+function getConsortiumName(consortium) {
+
+    if ( !consortium ) {
+
+        return "";
+    }
+
+    /* Handles consortium "1000 genomes". */
+    if ( consortium.toLowerCase().includes("1000 genomes") ) {
+
+        return `${consortium} thousand`;
+    }
+
+    return consortium;
+}
+
+/**
  * Returns the data types as a string joined by a space.
- * Allows lunr to index the data type for the FE data type display name
- * as well as the original data type value from the JSON.
+ * Allows lunr to index data type for the FE data type display name
+ * as well as the long-hand version of the data type.
  *
  * @param dataTypes
  * @returns {string}
@@ -140,14 +163,19 @@ function getDataTypes(dataTypes) {
 
         acc = `${acc} ${type}`;
 
-        if ( type.includes("whole genome") ) {
+        if ( type.includes("wgs") ) {
 
-            acc = `${acc} WGS`;
+            acc = `${acc} whole genome`;
         }
 
-        if ( type.includes("exome") ) {
+        if ( type.includes("wes") ) {
 
-            acc = `${acc} WES`;
+            acc = `${acc} whole exome`;
+        }
+
+        if ( type.includes("vcf") ) {
+
+            acc = `${acc} variant call format`
         }
 
         return acc;
@@ -174,7 +202,7 @@ function getDiseases(studies, dbGapIdAccession) {
 }
 
 /**
- * Returns the db Gap ID with its corresponding number, without the prefix "phs00x".
+ * Returns the db Gap ID with its corresponding number, without the prefix "phs00*".
  *
  * @param gapId
  * @returns {string}
@@ -186,41 +214,24 @@ function getGapId(gapId) {
         return gapId;
     }
 
-    const gapNumber = gapId.split("0").pop();
+    const gapNumbers = gapId.split("phs").pop().split("");
+
+    const gapNumber = gapNumbers.reduce((acc, num) => {
+
+        if ( acc.length ) {
+
+            acc.push(num);
+        }
+
+        if ( !acc.length && num !== "0" ) {
+
+            acc.push(num);
+        }
+
+        return acc;
+    }, []).join("");
 
     return `${gapId} ${gapNumber}`;
-}
-
-/**
- * Returns the program.
- * Allows lunr to index the program for the FE program display name
- * as well as the original program value from the JSON.
- *
- * @param consortia
- * @returns {string}
- */
-function getProgram(consortia) {
-
-    let consortiaName = consortia;
-
-    if ( !consortiaName ) {
-
-        return "";
-    }
-
-    /* Handles consortia "thousandgenomes". */
-    if ( consortiaName.toLowerCase().includes("thousandgenomes") ) {
-
-        return `${consortiaName} 1000 genomes thousand`;
-    }
-
-    /* Handles consorita "GTEx". */
-    if ( consortiaName.toLowerCase().includes("gtex") ) {
-
-        return `${consortiaName} GTEx (v8)`;
-    }
-
-    return consortiaName;
 }
 
 /**
