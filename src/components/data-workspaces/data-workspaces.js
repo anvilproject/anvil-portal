@@ -29,15 +29,15 @@ import * as DashboardService from "../../utils/dashboard/dashboard.service";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
 let TABLE_HEADERS_WORKSPACES = ["consortium", "projectId", "dbGapId", "dataTypes", "access", "subjects", "samples"];
-let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "dbGapIdAccession", "studyName", "diseases", "accessUI", "dataTypes", "subjects"];
+let TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessUI", "dataTypes", "subjects"];
 
 class DataWorkspaces extends React.Component {
 
     render() {
-        const {crop, withStudy, workspaces} = this.props;
+        const {withStudy, workspaces} = this.props;
         const tableHeaders = withStudy ? TABLE_HEADERS_WORKSPACES_BY_STUDY : TABLE_HEADERS_WORKSPACES;
         return (
-            <DataTable crop={crop} studies={!!withStudy} tableHeaders={tableHeaders} tableRows={workspaces} workspaces={!withStudy}/>
+            <DataTable studies={!!withStudy} tableHeaders={tableHeaders} tableRows={workspaces} workspaces={!withStudy}/>
         );
     }
 }
@@ -49,11 +49,8 @@ export default (props) => {
         {results, resultsExist} = searching || {};
 
     /* Data detail component specific props. */
-    const {consortia, crop, dbgap, study} = props;
+    const {consortia, dbgap, study} = props;
     const shared = props.public;
-
-    /* Determine whether the table should render in "crop" mode. */
-    const cropTable = DashboardService.parseRehypeProp(crop);
 
     /* Determine whether the workspaces table includes study data. */
     const withStudy = DashboardService.parseRehypeProp(study);
@@ -62,6 +59,6 @@ export default (props) => {
     const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);
 
     return (
-        resultsExist ? <DataWorkspaces crop={cropTable} withStudy={withStudy} workspaces={workspaces}/> : null
+        resultsExist ? <DataWorkspaces withStudy={withStudy} workspaces={workspaces}/> : null
     )
 }

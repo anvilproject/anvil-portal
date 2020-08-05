@@ -21,14 +21,14 @@ export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
         {slug, styles} = fields,
-        {description, title} = frontmatter,
+        {description, showOutline, title} = frontmatter,
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
         ncpi = slug.startsWith("/ncpi"),
         h1 = TemplateService.getPageH1(headings),
         pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
-        <Layout description={description} docPath={slug} ncpi={ncpi} styles={styles} title={pageTitle}>
+        <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
             <Providers frontmatter={frontmatter}>
                 <ArticleBody htmlAst={htmlAst}>
                     <ArticleEnd docPath={slug}/>
@@ -56,6 +56,7 @@ query($slug: String!) {
         eventType
         featured
         location
+        showOutline
         subTitle
         time
         title

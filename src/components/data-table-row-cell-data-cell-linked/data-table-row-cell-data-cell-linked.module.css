@@ -1,0 +1,12 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table row cell data cell linked component.
+ */
+
+/* Row cell - linked cell */
+td.link {
+    color: var(--primary);
+    cursor: pointer;
+}

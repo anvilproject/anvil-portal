@@ -33,20 +33,20 @@ class Article extends React.Component {
     };
 
     render() {
-        const {bannerHeight, children, docPath, noSpy, styles} = this.props,
-            {alignment} = styles || {},
-        //dashboard = docPath === "/data/data";
-        dashboard = false;
+        const {bannerHeight, children, docPath, noSpy, showOutline, styles} = this.props,
+            {alignment} = styles || {};
         const left = StylesService.isPageAlignmentLeft(alignment);
+        const useOutline = showOutline;
+        const useSpy = showOutline && !noSpy;
 
         return (
-            <section className={classNames(compStyles.article, {[compStyles.overflow]: dashboard})}>
+            <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
                     <Nav bannerHeight={bannerHeight} docPath={docPath} leftAlignPage={left}/>
                     <div className={classNames(compStyles.contentPositioner, {[compStyles.left]: left})}>
                         <div className={compStyles.contentContainer}>
-                            {noSpy ? children : <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy>}
-                            {dashboard ? null : <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/>}
+                            {useSpy ? <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy> : children}
+                            {useOutline ? <Outline bannerHeight={bannerHeight} activeOutline={this.state.activeOutline} docPath={docPath}/> : null}
                         </div>
                     </div>
                 </div>

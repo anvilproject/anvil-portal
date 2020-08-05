@@ -2,6 +2,7 @@
 author: "AnVIL"
 description: "AnVIL hosts high value genomic datasets relevant to human health and disease."
 pageAlignment: "left"
+showOutline: false
 title: "Data"
 ---
 

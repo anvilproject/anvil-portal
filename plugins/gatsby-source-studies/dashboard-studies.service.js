@@ -81,6 +81,7 @@ async function buildDashboardStudy(gapAccession, workspaces) {
         dbGapIdAccession: gapAccession,
         diseases: diseases,
         studyName: studyName,
+        studyUrl: urls.studyUrl,
         subjectsCount: subjectsCount,
         subjectsTotal: subjectsTotal
     };

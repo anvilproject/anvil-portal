@@ -4,10 +4,9 @@
  *
  * Style definitions specific to The AnVIL data table component.
  *
- * "studies" class is for workspaces table with studies included.
- * "summary" class is for the summary table.
- * "workspaces" class is for workspaces table.
- * "crop" class applies to any table needing a max width applied to match the content width.
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ * "workspaces" identifier is for workspaces table.
  */
 @import "../../styles/vars.module.css";
 
@@ -20,192 +19,15 @@
     width: 100%;
 }
 
-/* Table wrapper - summary */
-.wrapper.summary {
+/* Summary table - wrapper */
+.wrapper[id^="summary"] {
     margin-bottom: 24px;
 }
 
 /* Table */
-table {
+.wrapper table {
     display: inline-table;
     margin: 0;
-}
-
-/* Header */
-.header {
-    border-bottom: 1px solid var(--accent-blue-green);
-    height: 42px;
-    vertical-align: bottom;
-}
-
-/* Header cell, row cell */
-.header th, .row td {
-    border-bottom: none;
-    color: inherit;
-    font-size: 0.875rem; /* 14px */
-}
-
-/* Header cells */
-.header th {
-    font-weight: 600;
-    line-height: 24px;
-    padding: 0 4px 4px;
-}
-
-/* Header cells - studies table */
-/* Add padding to the right of cells for studies table to prevent long values from jamming up. */
-.studies .header th {
-    padding: 0 8px 4px;
-}
-
-/* Header cell - first */
-.header th:first-of-type {
-    padding-left: 0;
-}
-
-/* Header cell - last */
-.header th:last-of-type {
-    padding-right: 0;
-}
-
-/* Row */
-.row {
-    border-bottom: 1px solid var(--shade-light-green);
-}
-
-/* Row - studies table */
-/* Vertical align to the top for studies table - there will always be multi-line cells due to long titles */
-.studies .row {
-    vertical-align: top;
-}
-
-/* Row - summary table - last before "total" row */
-.summary .row:nth-last-child(2) {
-    border-bottom: none;
-}
-
-/* Row - summary table - "total" row */
-.summary .row.total {
-    border-top: 1px solid var(--accent-blue-green);
-    border-bottom-color: var(--accent-blue-green);
-}
-
-/* Row */
-.row {
-    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
-}
-
-.row:hover {
-    background-color: var(--black3);
-}
-
-/* Row cells */
-.row td {
-    font-weight: 400;
-    height: 32px;
-    min-width: 62px;
-    padding: 0 4px;
-}
-
-/* Row cell - ellipsis */
-/* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
-/* Row cell - studies table - "projectId" */
-.workspaces .row td[id^="projectId"], .studies .row td[id^="projectId"] {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-}
-
-/* Row cell - workspaces table */
-/* Row cell - workspaces table - "access" */
-.workspaces .row td[id^="access"] {
-    min-width: 32px;
-}
-
-/* Row cell - workspaces table - "consortium" eg CCDG */
-.workspaces .row td[id^="consortium"] {
-    max-width: 92px;
-    min-width: 92px;
-}
-
-/* Row cell - workspaces table - "dataTypes" */
-.workspaces .row td[id^="dataTypes"] {
-    min-width: 76px;
-}
-
-/* Row cell - workspaces table - "dbGapId" or "dbGapIdAccession" */
-.workspaces .row td[id^="dbGapId"] {
-    min-width: 112px;
-}
-
-/* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
-.workspaces .row td[id^="projectId"] {
-    max-width: 197px; /* Required for ellipsis */
-    min-width: 197px;
-}
-
-/* Row cell - studies table */
-/* All cells */
-/* Add padding to the right of cells for studies table to prevent long values from jamming up */
-.studies .row td {
-    padding: 2px 8px 2px;
-}
-
-/* Row cell - studies table - "accessUI" */
-.studies .row td[id^="accessUI"] {
-    max-width: 90px;
-    min-width: 90px;
-}
-
-/* Row cell - studies table - "dbGapId" or "dbGapIdAccession" */
-.studies .row td[id^="dbGapId"] {
-    max-width: 134px;
-    min-width: 134px;
-}
-
-/* Row cell - studies table - "diseases" */
-.studies .row td[id^="diseases"] {
-    max-width: 170px;
-    min-width: 170px;
-}
-
-/* Row cell - studies table - "studyName" */
-.studies .row td[id^="studyName"] {
-    max-width: 300px;
-    min-width: 300px;
-}
-
-/* Row cell - studies table - "consortium", "dataTypes", "subjects" */
-.studies .row td[id^="consortium"], .studies .row td[id^="dataTypes"], .studies .row td[id^="subjects"] {
-    max-width: 85px;
-    min-width: 85px;
-}
-
-/* Row cell - "total" */
-.row.total td {
-    font-weight: 500;
-}
-
-/* Row cell - link */
-.row td.link {
-    color: var(--primary);
-    cursor: pointer;
-}
-
-/* Row cell - right align cell */
-.row td.right, .header th.right {
-    text-align: right;
-}
-
-/* Row cell - first */
-.row td:first-of-type {
-    padding-left: 0;
-}
-
-/* Row cell - last */
-.row td:last-of-type {
-    padding-right: 0;
 }
 
 /**
@@ -220,18 +42,6 @@ table {
 }
 
 /**
- * Custom breakpoint where tables change from scroll overflow, to 100% width of channel (712px).
- */
-@media screen and (min-width: 1040px) {
-
-    /* Row cell - workspaces table - "projectId" (ie Terra workspace name) */
-    .workspaces .row td[id^="projectId"] {
-        max-width: 246px;
-        min-width: 246px;
-    }
-}
-
-/**
  * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For studies table, we squash diseases and
  * data type and let study name consume available space.
  */
@@ -241,77 +51,5 @@ table {
     /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
     .wrapper {
         max-width: calc(100vw - 24px - 280px - 40px - 24px);
-    }
-
-    /* Row cell - studies table */
-    /* Row cell - studies table - "dataTypes" */
-    .studies .row td[id^="dataTypes"] {
-        max-width: 35px;
-        min-width: 35px;
-    }
-
-    /* Row cell - studies table - "diseases" */
-    .studies .row td[id^="diseases"] {
-        max-width: 130px;
-        min-width: 130px;
-    }
-
-    /* Row cell - studies table - "projectId" */
-    .studies .row td[id^="projectId"] {
-        max-width: 130px;
-        min-width: 130px;
-    }
-}
-
-/**
- * Custom breakpoint where we want the "reset" the sizes of project ID and disease columns that were squashed during
- * optimization for 13 inch laptop. This breakpoint sits between the breakpoints of 13 inch (1280px) and 15 inch
- * latops (1690px).
- */
-@media screen and (min-width: 1340px) {
-
-    /* Row cell - studies table */
-    /* Row cell - studies tables - "diseases" */
-    .studies .row td[id^="diseases"] {
-        max-width: 170px;
-        min-width: 170px;
-    }
-
-    /* Row cell - studies table - "projectId" */
-    .studies .row td[id^="projectId"] {
-        max-width: 200px;
-        min-width: 200px;
-    }
-}
-
-/**
- * Outline (right-hand nav) is dropped below 1341px, in addition to complimentary JS in scroll.service
- */
-@media screen and (min-width: 1341px) {
-
-    /* Force max width on content pages that contain both content and data. */
-    /* This class is applied via the prop "crop" on either <data-summary> or <data-workspaces> components. */
-    .wrapper.crop {
-        max-width: 712px;
-    }
-}
-
-/**
- * Custom breakpoint where table is at full width (according to set column widths) and must be stretched to continue
- * to be attached to right-hand gutter - optimized for MacBook Pro 15 inch
- */
-@media screen and (min-width: 1680px) {
-
-    /* Row cell - studies table */
-    /* Row cell - studies table - "dataTypes" */
-    .studies .row td[id^="dataTypes"] {
-        max-width: 85px;
-        min-width: 85px;
-    }
-
-    /* Row cell - studies table - "projectId" */
-    .studies .row td[id^="projectId"] {
-        max-width: 350px;
-        min-width: 350px;
     }
 }

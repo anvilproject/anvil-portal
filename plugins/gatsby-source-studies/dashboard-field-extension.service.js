@@ -88,6 +88,50 @@ const getWorkspaceDiseases = function getWorkspaceDiseases(workspace, studies) {
     return study.diseases;
 };
 
+/**
+ * Returns a FE compatible model for the GapId for the specified workspace.
+ *
+ * @param workspace
+ * @param studies
+ * @returns {*}
+ */
+const getWorkspaceGapId = function getWorkspaceGapId(workspace, studies) {
+
+    /* Get the workspace dbGapIdAccession, if it exists. */
+    /* If the dbGapIdAccession does not exist, return dbGapId and empty studyUrl value. */
+    const dbGapIdAccession = workspace.dbGapIdAccession;
+
+    if ( !dbGapIdAccession ) {
+
+        return {
+            studyUrl: "",
+            value: workspace.dbGapId
+        };
+    }
+
+    /* Find the study, if it exists. */
+    /* Return dbGapAccession with the studyUrl, if it exists. */
+    const study = studies.find(study => study.dbGapIdAccession === dbGapIdAccession);
+    let studyUrl = "";
+
+    if ( study ) {
+
+        studyUrl = study.studyUrl;
+    }
+
+    return {
+        studyUrl: studyUrl,
+        value: workspace.dbGapIdAccession
+    }
+};
+
+/**
+ * Returns the study name for the specified workspace.
+ *
+ * @param workspace
+ * @param studies
+ * @returns {*}
+ */
 const getWorkspaceStudyName = function getWorkspaceStudyName(workspace, studies) {
 
     /* Get the workspace dbGapIdAccession, if it exists. */
@@ -109,4 +153,5 @@ const getWorkspaceStudyName = function getWorkspaceStudyName(workspace, studies)
 
 module.exports.getWorkspaceAccessUI = getWorkspaceAccessUI;
 module.exports.getWorkspaceDiseases = getWorkspaceDiseases;
+module.exports.getWorkspaceGapId = getWorkspaceGapId;
 module.exports.getWorkspaceStudyName = getWorkspaceStudyName;

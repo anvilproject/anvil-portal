@@ -12,7 +12,7 @@ import * as DashboardTableService from "./dashboard-table.service";
 import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 /* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":"];
+export const DenyListInputs = ["^", "~", ":", "-"];
 
 /* Set of checkbox groups (selected from workspace property values) for the dashboard search function. */
 export const DashboardSearchCheckboxWorkspaceProperties = [

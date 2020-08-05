@@ -8,7 +8,7 @@
 const path = require("path");
 
 // App dependencies
-const {getWorkspaceAccessUI, getWorkspaceDiseases, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
+const {getWorkspaceAccessUI, getWorkspaceDiseases, getWorkspaceGapId, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
 const {generateDashboardIndex} = require(path.resolve(__dirname, "dashboard-index.service.js"));
 const {getStudies} = require(path.resolve(__dirname, "dashboard-studies.service.js"));
 const {getWorkspaces} = require(path.resolve(__dirname, "dashboard-workspaces.service.js"));
@@ -98,6 +98,18 @@ exports.createSchemaCustomization = ({actions}) => {
     });
 
     createFieldExtension({
+        name: "gapId",
+        extend(options, prevFieldConfig) {
+            return {
+                resolve(source, arg, context, info) {
+                    const studies = context.nodeModel.getAllNodes({type: "Study"});
+                    return getWorkspaceGapId(source, studies);
+                },
+            }
+        }
+    });
+
+    createFieldExtension({
         name: "studyName",
         extend(options, prevFieldConfig) {
             return {
@@ -121,6 +133,10 @@ exports.createSchemaCustomization = ({actions}) => {
         consents: [Consents]
         consentsStat: Int
     }
+    type GapId implements Node {
+        studyUrl: String
+        value: String
+    }
     type Workspace implements Node {
         id: ID!
         access: String
@@ -134,6 +150,7 @@ exports.createSchemaCustomization = ({actions}) => {
         dbGapId: String
         dbGapIdAccession: String
         diseases: [String] @diseases
+        gapId: GapId @gapId
         projectId: String!
         samples: Int
         size: Float
@@ -149,6 +166,7 @@ exports.createSchemaCustomization = ({actions}) => {
         dbGapIdAccession: String!
         diseases: [String]
         studyName: String!
+        studyUrl: String!
         subjectsCount: Int
         subjectsTotal: Int
         workspaces: [Workspace]

@@ -18,6 +18,10 @@ export const DashboardWorkspaceStaticQuery = () => {
                 diseases
                 families
                 files
+                gapId {
+                  studyUrl
+                  value
+                }
                 projectId
                 samples
                 size

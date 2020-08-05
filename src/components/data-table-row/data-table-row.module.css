@@ -1,0 +1,40 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table row component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ * "workspaces" identifier is for workspaces table.
+ */
+@import "../../styles/vars.module.css";
+
+/* Row */
+.row {
+    border-bottom: 1px solid var(--shade-light-green);
+    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
+}
+
+/* Row - hover state */
+.row:hover {
+    background-color: var(--black3);
+}
+
+/* Studies table */
+/* Vertical align to the top for studies table - there will always be multi-line cells due to long titles */
+[id^="studies"] .row {
+    vertical-align: top;
+}
+
+/* Summary table - last before "total" row */
+[id^="summary"] .row:nth-last-child(2) {
+    border-bottom: none;
+}
+
+/* Summary table - "total" row */
+[id^="summary"] .row:last-child {
+    border-top: 1px solid var(--accent-blue-green);
+    border-bottom-color: var(--accent-blue-green);
+    font-weight: 500;
+}

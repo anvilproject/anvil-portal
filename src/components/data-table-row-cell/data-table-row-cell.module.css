@@ -1,0 +1,201 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table row cell component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ * "workspaces" identifier is for workspaces table.
+ */
+@import "../../styles/vars.module.css";
+
+/* Row cells */
+[id^="studies"] td,
+[id^="summary"] td,
+[id^="workspaces"] td {
+    border-bottom: none;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+    height: 32px;
+    min-width: 62px;
+    padding: 0 4px;
+}
+
+/* Ellipsis */
+/* Studies table - "projectId" */
+/* Workspaces table - "projectId" (ie Terra workspace name) */
+[id^="studies"] td[id^="projectId"],
+[id^="workspaces"] td[id^="projectId"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Studies table */
+/* Add padding to the right of cells for studies table to prevent long values from jamming up */
+[id^="studies"] td {
+    padding: 2px 8px 2px;
+}
+
+/* Studies table - "accessUI" */
+[id^="studies"] td[id^="accessUI"] {
+    max-width: 90px;
+    min-width: 90px;
+}
+
+/* Studies table - "dataTypes" */
+[id^="studies"] td[id^="dataTypes"] span {
+    white-space: nowrap;
+}
+
+/* Studies table - "dbGapId" or "dbGapIdAccession" */
+[id^="studies"] td[id^="dbGapId"] {
+    max-width: 134px;
+    min-width: 134px;
+}
+
+/* Studies table - "diseases" */
+[id^="studies"] td[id^="diseases"] {
+    max-width: 170px;
+    min-width: 170px;
+}
+
+/* Studies table - "studyName" */
+[id^="studies"] td[id^="studyName"] {
+    max-width: 300px;
+    min-width: 300px;
+}
+
+/* Studies table - "consortium", "dataTypes", "subjects" */
+[id^="studies"] td[id^="consortium"],
+[id^="studies"] td[id^="dataTypes"],
+[id^="studies"] td[id^="subjects"] {
+    max-width: 85px;
+    min-width: 85px;
+}
+
+/* Summary table - "total" */
+[id^="summary"] td {
+    font-weight: inherit; /* Font weight specified by data table row */
+}
+
+/* Workspaces table */
+/* Workspaces table - "access" */
+[id^="workspaces"] td[id^="access"] {
+    min-width: 32px;
+}
+
+/* Workspaces table - "consortium" eg CCDG */
+[id^="workspaces"] td[id^="consortium"] {
+    max-width: 92px;
+    min-width: 92px;
+}
+
+/* Workspaces table - "dataTypes" */
+[id^="workspaces"] td[id^="dataTypes"] {
+    min-width: 76px;
+    white-space: nowrap;
+}
+
+/* Workspaces table - "dbGapId" or "dbGapIdAccession" */
+[id^="workspaces"] td[id^="dbGapId"] {
+    min-width: 112px;
+}
+
+/* Workspaces table - "projectId" (ie Terra workspace name) */
+[id^="workspaces"] td[id^="projectId"] {
+    max-width: 197px; /* Required for ellipsis */
+    min-width: 197px;
+}
+
+/* Row cell - first */
+[id^="studies"] td:first-of-type,
+[id^="summary"] td:first-of-type,
+[id^="workspaces"] td:first-of-type {
+    padding-left: 0;
+}
+
+/* Row cell - last */
+[id^="studies"] td:last-of-type,
+[id^="summary"] td:last-of-type,
+[id^="workspaces"] td:last-of-type {
+    padding-right: 0;
+}
+
+/**
+ * Custom breakpoint where tables change from scroll overflow, to 100% width of channel (712px).
+ */
+@media screen and (min-width: 1040px) {
+
+    /* Workspaces table - "projectId" (ie Terra workspace name) */
+    [id^="workspaces"] td[id^="projectId"] {
+        max-width: 246px;
+        min-width: 246px;
+    }
+}
+
+/**
+ * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For studies table, we squash diseases and
+ * data type and let study name consume available space.
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Studies table - "dataTypes" */
+    [id^="studies"] td[id^="dataTypes"] {
+        max-width: 35px;
+        min-width: 35px;
+    }
+
+    /* Studies table - "diseases" */
+    [id^="studies"] td[id^="diseases"] {
+        max-width: 130px;
+        min-width: 130px;
+    }
+
+    /* Studies table - "projectId" */
+    [id^="studies"] td[id^="projectId"] {
+        max-width: 130px;
+        min-width: 130px;
+    }
+}
+
+/**
+ * Custom breakpoint where we want the "reset" the sizes of project ID and disease columns that were squashed during
+ * optimization for 13 inch laptop. This breakpoint sits between the breakpoints of 13 inch (1280px) and 15 inch
+ * latops (1690px).
+ */
+@media screen and (min-width: 1340px) {
+
+    /* Studies tables - "diseases" */
+    [id^="studies"] td[id^="diseases"] {
+        max-width: 170px;
+        min-width: 170px;
+    }
+
+    /* Studies table - "projectId" */
+    [id^="studies"] td[id^="projectId"] {
+        max-width: 200px;
+        min-width: 200px;
+    }
+}
+
+/**
+ * Custom breakpoint where table is at full width (according to set column widths) and must be stretched to continue
+ * to be attached to right-hand gutter - optimized for MacBook Pro 15 inch
+ */
+@media screen and (min-width: 1680px) {
+
+    /* Studies table - "dataTypes" */
+    [id^="studies"] td[id^="dataTypes"] {
+        max-width: 85px;
+        min-width: 85px;
+    }
+
+    /* Studies table - "projectId" */
+    [id^="studies"] td[id^="projectId"] {
+        max-width: 350px;
+        min-width: 350px;
+    }
+}
