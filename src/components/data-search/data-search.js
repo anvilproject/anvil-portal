@@ -22,9 +22,9 @@ class DataSearch extends React.Component {
     render() {
         return (
             <DashboardFilterContext.Consumer>
-                {({inputValue, onHandleChange}) => (
+                {({inputValue, onHandleInput}) => (
                     <div className={compStyles.search}>
-                        <DataSearchInput inputValue={inputValue} onHandleChange={(e) => onHandleChange(e)}/>
+                        <DataSearchInput inputValue={inputValue} onHandleInput={(e) => onHandleInput(e)}/>
                         <DataSearchCheckboxes/>
                         <DataSearchEmptyResults/>
                     </div>

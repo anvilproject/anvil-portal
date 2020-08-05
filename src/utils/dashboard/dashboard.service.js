@@ -29,19 +29,19 @@ export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared)
         const dbGapExists = !!workspace.dbGapIdAccession;
 
         /* Prop "consortia" - return all private workspaces without a dbGapId accession. */
-        if ( parseProp(consortia) ) {
+        if ( parseRehypeProp(consortia) ) {
 
             return ( workspace.access === "Private" ) && !dbGapExists;
         }
 
         /* Prop "dbGap" - return all workspaces with a dbGapId accession. */
-        if ( parseProp(dbGap) ) {
+        if ( parseRehypeProp(dbGap) ) {
 
             return dbGapExists;
         }
 
         /* Prop "public" - return all public workspaces without a dbGapId accession. */
-        if ( parseProp(shared) ) {
+        if ( parseRehypeProp(shared) ) {
 
             return ( workspace.access === "Public" ) && !dbGapExists;
         }
@@ -68,13 +68,23 @@ export function filterWorkspacesBySearchResults(workspaces, filterResults) {
 }
 
 /**
+ * Returns true if the value is an array.
+ *
+ * @param value
+ */
+export function isArray(value) {
+
+    return Array.isArray(value);
+}
+
+/**
  * Returns a true value for any rehype-react custom prop.
  * i.e. A rehype-react prop without a value will not be interpreted as true; instead, it will be passed as the empty string "".
  *
  * @param value
  * @returns {boolean}
  */
-export function parseProp(value) {
+export function parseRehypeProp(value) {
 
     return !!value || value === "";
 }

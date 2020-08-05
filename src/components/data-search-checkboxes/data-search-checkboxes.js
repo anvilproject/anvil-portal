@@ -13,91 +13,53 @@ import React, {useContext} from "react";
 import Checkbox from "../checkbox/checkbox";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataSearchPanel from "../data-search-panel/data-search-panel";
-import * as DashboardTableService from "../../utils/dashboard/dashboard-table.service";
-import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
+import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
 class DataSearchCheckboxes extends React.Component {
 
     componentDidMount() {
 
-        const {onInitializeCheckboxes} = this.props;
+        const {initCheckboxes, onInitializeCheckboxes} = this.props;
 
         /* Initialize checkboxes. */
-        const checkboxes = this.generateCheckboxes();
-
-        onInitializeCheckboxes(checkboxes);
+        onInitializeCheckboxes(initCheckboxes);
     }
 
-    generateCheckboxes = () => {
-
-        const {accessTypes, consortia, dataTypes} = this.props;
-
-        const accessCheckboxes = accessTypes.map(accessType => {
-
-            return {label: accessType, checked: false, type: "accessUI"}
-        });
-
-        const consortiaCheckboxes = consortia.map(consortium => {
-
-            return {label: consortium, checked: false, type: "consortium"}
-        });
-
-        const dataTypeCheckboxes = dataTypes.map(dataType => {
-
-            return {label: dataType, checked: false, type: "dataTypes"}
-        });
-
-        return consortiaCheckboxes.concat(accessCheckboxes).concat(dataTypeCheckboxes);
-    };
-
-    getCheckboxesByType = () => {
+    shouldComponentUpdate(prevProps) {
 
         const {checkboxes} = this.props;
 
-        /* Get the set of types. */
-        const setOfTypes = new Set(checkboxes.map(checkbox => checkbox.type));
-
-        return [...setOfTypes].map(type => {
-
-            /* Filter checkboxes by type. */
-            const checkboxesByType = checkboxes.filter(checkbox => checkbox.type === type);
-
-            /* Build the checkbox by type model. */
-            return {
-                checkboxes: checkboxesByType,
-                type: type
-            }
-        });
-    };
-
-    getCheckboxGroupLabel = (checkbox) => {
-
-        const {type} = checkbox;
-
-        return DashboardTableService.switchDisplayColumnName(type);
-    };
+        return prevProps.checkboxes !== checkboxes;
+    }
 
     render() {
-        const {onHandleChecked} = this.props;
-        const checkboxesByTypes = this.getCheckboxesByType();
+        const {checkboxes, onHandleChecked} = this.props;
+        const checkboxesByGroupNames = DashboardSearchService.getCheckboxesByGroupName(checkboxes);
+
+        const Checkboxes = (props) => {
+            const {checkboxesByGroupName, onHandleChecked} = props,
+                {checkboxes, groupName} = checkboxesByGroupName;
+
+            return (
+                <DataSearchPanel>
+                    <span id="group-label">{groupName}</span>
+                    {checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox} onHandleChecked={onHandleChecked}/>)}
+                </DataSearchPanel>
+            )
+        };
+
         return (
-            checkboxesByTypes.map((checkboxesByType, b) =>
-                <DataSearchPanel key={b}>
-                    <span id="group-label">{this.getCheckboxGroupLabel(checkboxesByType)}</span>
-                    {checkboxesByType.checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox} onHandleChecked={onHandleChecked}/>)}
-                </DataSearchPanel>)
+            checkboxesByGroupNames.map((checkboxesByGroupName, b) => <Checkboxes key={b} checkboxesByGroupName={checkboxesByGroupName} onHandleChecked={onHandleChecked}/>)
         )
     };
 }
 
 export default () => {
 
-    const accessTypes = DashboardWorkspaceService.getDashboardWorkspacesAccess();
-    const dataTypes = DashboardWorkspaceService.getDashboardWorkspacesDataTypes();
-    const consortia = DashboardWorkspaceService.getDashboardWorkspacesConsortia();
-    const checkboxes = useContext(DashboardFilterContext);
+    const initCheckboxes = DashboardSearchService.getDashboardSearchCheckboxes();
+    const searching = useContext(DashboardFilterContext);
 
     return (
-        checkboxes ? <DataSearchCheckboxes accessTypes={accessTypes} consortia={consortia} dataTypes={dataTypes} {...checkboxes}/> : null
+        <DataSearchCheckboxes initCheckboxes={initCheckboxes} {...searching}/>
     )
 }

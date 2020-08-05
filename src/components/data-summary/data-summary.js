@@ -39,16 +39,16 @@ class DataSummary extends React.Component {
 
 export default (props) => {
 
-    /* Dataset filtering props. */
-    const dashboardContext = useContext(DashboardFilterContext),
-        {results, resultsExist} = dashboardContext || {};
+    /* Dataset searching props. */
+    const searching = useContext(DashboardFilterContext),
+        {results, resultsExist} = searching || {};
 
     /* Data summary component specific props. */
     const {consortia, crop, dbgap} = props;
     const shared = props.public;
 
     /* Determine whether the table should render in "crop" mode. */
-    const cropTable = DashboardService.parseProp(crop);
+    const cropTable = DashboardService.parseRehypeProp(crop);
 
     const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, results, resultsExist, shared);
 

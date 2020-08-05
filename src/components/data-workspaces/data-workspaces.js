@@ -45,18 +45,18 @@ class DataWorkspaces extends React.Component {
 export default (props) => {
 
     /* Dataset filtering props. */
-    const dashboardContext = useContext(DashboardFilterContext),
-        {results, resultsExist} = dashboardContext || {};
+    const searching = useContext(DashboardFilterContext),
+        {results, resultsExist} = searching || {};
 
     /* Data detail component specific props. */
     const {consortia, crop, dbgap, study} = props;
     const shared = props.public;
 
     /* Determine whether the table should render in "crop" mode. */
-    const cropTable = DashboardService.parseProp(crop);
+    const cropTable = DashboardService.parseRehypeProp(crop);
 
     /* Determine whether the workspaces table includes study data. */
-    const withStudy = DashboardService.parseProp(study);
+    const withStudy = DashboardService.parseRehypeProp(study);
 
     /* Get the workspaces. */
     const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(consortia, dbgap, results, resultsExist, shared);

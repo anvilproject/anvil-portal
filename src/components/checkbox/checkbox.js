@@ -15,12 +15,19 @@ let classNames = require("classnames");
 
 class Checkbox extends React.Component {
 
+    shouldComponentUpdate(prevProps) {
+
+        const {checkbox} = this.props;
+
+        return prevProps.checkbox !== checkbox;
+    }
+
     onHandleClick = () => {
 
         const {checkbox, onHandleChecked} = this.props,
-            {checked, label, type} = checkbox;
+            {checked, property, value} = checkbox;
 
-        onHandleChecked({checked: !checked, label: label, type: type});
+        onHandleChecked({checked: !checked, property: property, value: value});
     };
 
     render() {

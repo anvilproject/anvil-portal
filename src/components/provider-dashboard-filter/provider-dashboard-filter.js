@@ -11,17 +11,35 @@ import React from "react";
 
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
+import {DashboardSearchCheckboxWorkspaceProperties} from "../../utils/dashboard/dashboard-search-workspace-property.model";
 
 // Template variables
-const denyListInputs = ["^", "~", ":"];
 const DASHBOARD_INDEX = "/dashboard-index.json";
+const denyListInputs = ["^", "~", ":"];
 
 class ProviderDashboardFilter extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.onHandleChange = (event) => {
+        this.onHandleChecked = (event) => {
+
+            const checkboxesClone = [...this.state.checkboxes];
+
+            /* Get the checkbox index. */
+            const checkboxIndex = this.getCheckedCheckboxIndex(checkboxesClone, event.value);
+
+            /* Clone the checkbox and update the clone with new value. */
+            const checkboxClone = {...checkboxesClone[checkboxIndex], ...event};
+
+            /* Update the checkbox clone with the revised value. */
+            checkboxesClone.splice(checkboxIndex, 1, checkboxClone);
+
+            /* Update state. */
+            this.setState({checkboxes: checkboxesClone});
+        };
+
+        this.onHandleInput = (event) => {
 
             const inputValue = event.target.value;
 
@@ -34,41 +52,20 @@ class ProviderDashboardFilter extends React.Component {
             this.setState({inputValue: inputValue});
         };
 
-        this.onHandleChecked = (event) => {
-
-            const checkboxesClone = [...this.state.checkboxes];
-
-            /* Get the checkbox index. */
-            const checkboxIndex = this.getCheckboxIndex(checkboxesClone, event.label);
-
-            /* Clone the checkbox and update the clone with new value. */
-            const checkboxClone = {...checkboxesClone[checkboxIndex], ...event};
-
-            /* Update the checkbox clone with the revised value. */
-            checkboxesClone.splice(checkboxIndex, 1, checkboxClone);
-
-            /* Update state. */
-            this.setState({checkboxes: checkboxesClone});
-        };
-
         this.onInitializeCheckboxes = (event) => {
 
-            const checkboxes = event;
-            const checkboxTypes = this.getCheckboxTypes(event);
-
-            this.setState({checkboxes: checkboxes, checkboxTypes: checkboxTypes});
+            this.setState({checkboxes: event});
         };
 
         this.state = ({
             checkboxes: [],
-            checkboxTypes: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
             results: [],
             resultsExist: true,
-            onHandleChange: this.onHandleChange,
             onHandleChecked: this.onHandleChecked,
+            onHandleInput: this.onHandleInput,
             onInitializeCheckboxes: this.onInitializeCheckboxes
         });
     }
@@ -77,7 +74,6 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setState = ({
             checkboxes: [],
-            checkboxTypes: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
@@ -103,22 +99,14 @@ class ProviderDashboardFilter extends React.Component {
 
     componentDidUpdate(_, prevState) {
 
-        if ( ( prevState.inputValue !== this.state.inputValue ) || ( prevState.checkboxes !== this.state.checkboxes ) ) {
-
-            const querying = this.isCheckboxing() || this.isInputting();
-
-            this.setState({querying: querying});
-
-            /* Update query. */
-            this.updateResults();
-        }
+        this.searchStateChanged(prevState);
     }
 
     buildCheckedValueString = (checkboxes) => {
 
         if ( checkboxes.length ) {
 
-            return checkboxes.map(checkedBox => `${checkedBox.type}: ${checkedBox.label}`).join(" ");
+            return checkboxes.map(checkedBox => `${checkedBox.property}: ${checkedBox.value}`).join(" ");
         }
 
         return "";
@@ -136,79 +124,154 @@ class ProviderDashboardFilter extends React.Component {
                 return values.map(value => `+${value}*`).join(" ");
             }
 
+            /* Singular input value. */
             return `+${inputValue}*`;
         }
 
         return "";
     };
 
-    filterCheckedBoxesByType = (checkboxes, type) => {
+    filterCheckedCheckboxesByProperty = (checkboxes, property) => {
 
-        return checkboxes.filter(checkbox => checkbox.checked && checkbox.type === type);
+        return checkboxes.filter(checkbox => checkbox.checked && checkbox.property === property);
     };
 
-    getCheckboxIndex = (checkboxesClone, label) => {
+    findMultiplicateResults = (resultsByGroup) => {
 
-        return checkboxesClone.findIndex(checkboxClone => checkboxClone.label === label);
+        /* Determine the count of groups that have a list of results. This counter is then used to create a set of
+        /* results where each result must exist within each group's list of results.
+        /* For example, if two checkboxes are selected from different properties e.g. "CMG" from property "consortia"
+        /* and "Researcher" from property "accessUI" the resulting set should only include workspaces that exist in both groups.
+        /* Noting, in this instance, both groups are workspace properties.
+        /* The counter will be "2" (i.e. results from two properties with selected values) and this counter is used to confirm
+        /* that any workspace must appear twice in the results array. */
+        const counter = resultsByGroup.reduce((acc, results) => {
+
+            if ( results.length ) {
+
+                acc++;
+            }
+
+            return acc;
+        }, 0);
+
+        const setOfResults = new Set();
+
+        /* Create a counter for each workspace's appearance within each group. If the counter matches the expect counter from
+        /* above, then add the workspace to the set. */
+        resultsByGroup.reduce((acc, results) => {
+
+            /* Handle case where group has no results - early exit. */
+            if ( !results ) {
+
+                return acc;
+            }
+
+            results.forEach(result => {
+
+                /* Get the accumulator counter for the result. */
+                const resultCounter = acc.get(result);
+
+                if ( !resultCounter ) {
+
+                    /* If the result is not yet mapped, then add the result to the map with counter = 1. */
+                    acc.set(result, 1);
+                }
+                else {
+
+                    /* If the result is mapped, increment the counter. */
+                    acc.set(result, resultCounter + 1);
+                }
+
+                if ( acc.get(result) === counter ) {
+
+                    /* Add to the set of results, if the result counter is equivalent to the expected counter across all results. */
+                    setOfResults.add(result);
+                }
+            });
+
+            return acc;
+        }, new Map());
+
+        return [...setOfResults];
     };
 
-    getCheckboxTypes = (checkboxes) => {
+    getCheckedCheckboxesByProperties = () => {
 
-        const setOfTypes = new Set(checkboxes.map(checkbox => checkbox.type));
-        return [...setOfTypes];
-    };
+        const {checkboxes} = this.state;
 
-    getCheckedBoxesByType = () => {
+        return DashboardSearchCheckboxWorkspaceProperties.map(property => {
 
-        const {checkboxes, checkboxTypes} = this.state;
-
-        return checkboxTypes.map(type => {
-
-            const checkedBoxes = this.filterCheckedBoxesByType(checkboxes, type);
+            const checkedBoxes = this.filterCheckedCheckboxesByProperty(checkboxes, property);
 
             return {
                 checkboxes: checkedBoxes,
-                type: type
+                property: property
             }
         });
 
     };
 
-    getCheckedResults = () => {
+    getCheckedCheckboxIndex = (checkboxesClone, checkboxValue) => {
 
-        if ( this.isCheckboxing() ) {
-
-            /* Get any checked boxes, by type. */
-            const checkedBoxesByType = this.getCheckedBoxesByType();
-
-            /* Get any results, by type. Results are retrieved by type to retain "OR" searching amongst types. */
-            const checkedResultsByTypeName = this.getCheckedResultsByTypeName(checkedBoxesByType);
-
-            /* Return results, where there are duplicates. Searching will be "AND" between types. */
-            return this.joinCheckboxResults(checkedResultsByTypeName);
-        }
-
-        return [];
+        return checkboxesClone.findIndex(checkboxClone => checkboxClone.value === checkboxValue);
     };
 
-    getCheckedResultsByTypeName = (checkedBoxesByType) => {
+    getCheckedResults = () => {
 
-        return checkedBoxesByType.map(checkedByType => {
+        /* Get any checked boxes, by property. */
+        const checkedBoxesByProperties = this.getCheckedCheckboxesByProperties();
 
-            const checkedBoxes = checkedByType.checkboxes;
+        /* Get any results, by property. Results are retrieved by property to retain "OR" searching amongst properties. */
+        return this.getCheckedResultsByProperty(checkedBoxesByProperties);
+    };
 
-            const checkedQueryStringByType = this.buildCheckedValueString(checkedBoxes);
+    getCheckedResultsByProperty = (checkedBoxesByProperty) => {
 
-            return this.getSearchResults(checkedQueryStringByType);
+        return checkedBoxesByProperty.map(checkedByProperty => {
+
+            const checkedBoxes = checkedByProperty.checkboxes;
+
+            const checkedQueryString = this.buildCheckedValueString(checkedBoxes);
+
+            return this.getSearchResults(checkedQueryString);
         });
     };
 
     getInputResults = () => {
 
         const {inputValue} = this.state;
-
         const inputString = this.buildInputValueString(inputValue);
+
         return this.getSearchResults(inputString);
+    };
+
+    getMultiplicatedResults = (checkedResults, inputResults) => {
+
+        /* Handle case where inputting returns empty results. */
+        /* In this instance, all results will be null due to the "AND" between inputting and properties. */
+        if ( this.isInputtingNullResults(inputResults) ) {
+
+            return [];
+        }
+
+        /* Join input results with checked results. */
+        const results = [...checkedResults, inputResults];
+
+        /* Return multiplicate results. */
+        return this.findMultiplicateResults(results);
+    };
+
+    getResults = () => {
+
+        /* Get the checked results. */
+        const checkedResults = this.getCheckedResults();
+
+        /* Get the input results. */
+        const inputResults = this.getInputResults();
+
+        /* Return any multiplicated results. Searching will be "AND" between properties and input. */
+        return this.getMultiplicatedResults(checkedResults, inputResults);
     };
 
     getSearchResults = (query) => {
@@ -245,6 +308,11 @@ class ProviderDashboardFilter extends React.Component {
         return !!inputValue;
     };
 
+    isInputtingNullResults = (inputResults) => {
+
+        return this.isInputting() && !inputResults.length;
+    };
+
     isResults = (results) => {
 
         if ( this.isCheckboxing() || this.isInputting() ) {
@@ -255,85 +323,30 @@ class ProviderDashboardFilter extends React.Component {
         return true;
     };
 
-    joinCheckboxResults = (checkedResultsByTypeName) => {
+    searchStateChanged = (prevState) => {
 
-        /* Determine the count of types that have a list of results. This counter is then used to create a set of
-        /* results where each result must exist within each type's list of results.
-        /* For example, if two checkboxes are selected from different types e.g. "CMG" from type "Consortia"
-        /* and "Researcher" from type "Access" the resulting set should only include workspaces that exist in both types.
-        /* The counter will be "2" (i.e. results from two types "Consortia" and "Researcher") and this counter is used to confirm
-        /* that any workspace must appear twice in the results array. */
-        const counter = checkedResultsByTypeName.reduce((acc, results) => {
+        const {inputValue, checkboxes} = this.state;
 
-            if ( results.length ) {
+        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.checkboxes !== checkboxes );
 
-                acc++;
-            }
+        if ( stateChanged ) {
 
-            return acc;
-        }, 0);
+            const querying = this.isCheckboxing() || this.isInputting();
 
-        const setOfResults = new Set();
+            /* Update state - querying. */
+            this.setState({querying: querying});
 
-        /* Create a counter for each workspace's appearance within each type. If the counter matches the expect counter from
-        /* above, then add the workspace to the set. */
-        checkedResultsByTypeName.reduce((acc, results) => {
-
-            results.forEach(result => {
-
-                /* Get the accumulator counter for the result. */
-                const resultCounter = acc.get(result);
-
-                if ( !resultCounter ) {
-
-                    /* If the result is not yet mapped, then add the result to the map with counter = 1. */
-                    acc.set(result, 1);
-                }
-                else {
-
-                    /* If the result is mapped, increment the counter. */
-                    acc.set(result, resultCounter + 1);
-                }
-
-                if ( acc.get(result) === counter ) {
-
-                    /* Add to the set of results, if the result counter is equivalent to the expected counter across all results. */
-                    setOfResults.add(result);
-                }
-            });
-
-            return acc;
-        }, new Map());
-
-        return [...setOfResults];
-    };
-
-    joinDisimilarResults = (res1, res2) => {
-
-        /* Join the results together. */
-        const results = res1.concat(res2);
-
-        if ( !this.isInputting() || !this.isCheckboxing() ) {
-
-            return results;
+            /* Update results. */
+            this.updateResults();
         }
-
-        /* Return the results, where duplicates exist. */
-        return results.filter((result, i) => results.indexOf(result) !== i);
     };
 
     updateResults = () => {
 
         const {querying} = this.state;
 
-        /* Get the checked results. */
-        const checkedResults = this.getCheckedResults();
-
-        /* Get the input results. */
-        const inputResults = this.getInputResults();
-
-        /* Join the results together with an "AND". i.e. find any duplicates. */
-        const results = this.joinDisimilarResults(checkedResults, inputResults);
+        /* Get the results. */
+        const results = this.getResults();
 
         const resultsExist = ( this.isResults(results) && querying ) || !querying;
 

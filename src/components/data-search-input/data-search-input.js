@@ -16,8 +16,15 @@ import compStyles from "./data-search-input.module.css";
 
 class DataSearchInput extends React.Component {
 
+    shouldComponentUpdate(prevProps) {
+
+        const {inputValue} = this.props;
+
+        return prevProps.inputValue !== inputValue;
+    }
+
     render() {
-        const {inputValue, onHandleChange} = this.props;
+        const {inputValue, onHandleInput} = this.props;
         return (
             <DataSearchPanel>
                 <span id="group-label">Search</span>
@@ -25,7 +32,7 @@ class DataSearchInput extends React.Component {
                        type="text"
                        placeholder={"e.g. disease, study name, dbGaP Id"}
                        value={inputValue}
-                       onChange={(e) => onHandleChange(e)}/>
+                       onChange={(e) => onHandleInput(e)}/>
             </DataSearchPanel>
         )
     }

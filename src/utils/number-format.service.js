@@ -54,16 +54,6 @@ export function formatSizeToTB(size) {
 }
 
 /**
- * Returns true if the value is an array.
- *
- * @param value
- */
-export function isArray(value) {
-
-    return Array.isArray(value);
-}
-
-/**
  * Returns true if the value is a number.
  *
  * @param value

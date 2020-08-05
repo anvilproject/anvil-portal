@@ -6,6 +6,7 @@
  */
 
 // App dependencies
+import * as DashboardService from "./dashboard.service";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
@@ -65,7 +66,7 @@ export function formatValue(value, column) {
             return value.toLocaleString();
         }
 
-        if ( NumberFormatService.isArray(value) ) {
+        if ( DashboardService.isArray(value) ) {
 
             return stringifyArray(value);
         }
