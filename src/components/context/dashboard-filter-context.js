@@ -10,7 +10,7 @@
 import React from "react";
 
 const DashboardFilterContext = React.createContext({
-    checkboxes: [],
+    checkboxGroups: [],
     dashboardIndex: [],
     inputValue: "",
     querying: false,
@@ -18,7 +18,7 @@ const DashboardFilterContext = React.createContext({
     resultsExist: true,
     onHandleChecked: () => {},
     onHandleInput: () => {},
-    onInitializeCheckboxes: () => {}
+    onInitializeCheckboxGroups: () => {}
 });
 
 export default DashboardFilterContext;

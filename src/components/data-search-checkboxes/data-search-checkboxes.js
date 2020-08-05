@@ -19,47 +19,46 @@ class DataSearchCheckboxes extends React.Component {
 
     componentDidMount() {
 
-        const {initCheckboxes, onInitializeCheckboxes} = this.props;
+        const {initCheckboxGroups, onInitializeCheckboxGroups} = this.props;
 
-        /* Initialize checkboxes. */
-        onInitializeCheckboxes(initCheckboxes);
+        /* Initialize checkbox groups. */
+        onInitializeCheckboxGroups(initCheckboxGroups);
     }
 
     shouldComponentUpdate(prevProps) {
 
-        const {checkboxes} = this.props;
+        const {checkboxGroups} = this.props;
 
-        return prevProps.checkboxes !== checkboxes;
+        return prevProps.checkboxGroups !== checkboxGroups;
     }
 
     render() {
-        const {checkboxes, onHandleChecked} = this.props;
-        const checkboxesByGroupNames = DashboardSearchService.getCheckboxesByGroupName(checkboxes);
+        const {checkboxGroups, onHandleChecked} = this.props;
 
-        const Checkboxes = (props) => {
-            const {checkboxesByGroupName, onHandleChecked} = props,
-                {checkboxes, groupName} = checkboxesByGroupName;
+        const CheckboxGroup = (props) => {
+            const {checkboxGroup, onHandleChecked} = props,
+                {checkboxes, groupName, property} = checkboxGroup;
 
             return (
                 <DataSearchPanel>
                     <span id="group-label">{groupName}</span>
-                    {checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox} onHandleChecked={onHandleChecked}/>)}
+                    {checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox} property={property} onHandleChecked={onHandleChecked}/>)}
                 </DataSearchPanel>
             )
         };
 
         return (
-            checkboxesByGroupNames.map((checkboxesByGroupName, b) => <Checkboxes key={b} checkboxesByGroupName={checkboxesByGroupName} onHandleChecked={onHandleChecked}/>)
+            checkboxGroups.map((checkboxGroup, g) => <CheckboxGroup key={g} checkboxGroup={checkboxGroup} onHandleChecked={onHandleChecked}/>)
         )
     };
 }
 
 export default () => {
 
-    const initCheckboxes = DashboardSearchService.getDashboardSearchCheckboxes();
+    const initCheckboxGroups = DashboardSearchService.getDashboardSearchCheckboxGroups();
     const searching = useContext(DashboardFilterContext);
 
     return (
-        <DataSearchCheckboxes initCheckboxes={initCheckboxes} {...searching}/>
+        <DataSearchCheckboxes initCheckboxGroups={initCheckboxGroups} {...searching}/>
     )
 }

@@ -11,11 +11,10 @@ import React from "react";
 
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
-import {DashboardSearchCheckboxWorkspaceProperties} from "../../utils/dashboard/dashboard-search-workspace-property.model";
+import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
 // Template variables
 const DASHBOARD_INDEX = "/dashboard-index.json";
-const denyListInputs = ["^", "~", ":"];
 
 class ProviderDashboardFilter extends React.Component {
 
@@ -24,19 +23,33 @@ class ProviderDashboardFilter extends React.Component {
 
         this.onHandleChecked = (event) => {
 
-            const checkboxesClone = [...this.state.checkboxes];
+            const {checked, property, value} = event;
 
-            /* Get the checkbox index. */
-            const checkboxIndex = this.getCheckedCheckboxIndex(checkboxesClone, event.value);
+            /* Clone state variable checkboxGroups. */
+            const checkboxGroupsClone = [...this.state.checkboxGroups];
 
-            /* Clone the checkbox and update the clone with new value. */
-            const checkboxClone = {...checkboxesClone[checkboxIndex], ...event};
+            /* Get the checkbox group index for the checked checkbox. */
+            const groupIndex = this.getCheckedCheckboxGroupIndex(checkboxGroupsClone, property);
 
-            /* Update the checkbox clone with the revised value. */
-            checkboxesClone.splice(checkboxIndex, 1, checkboxClone);
+            /* Clone the checkbox group. */
+            const checkboxGroupClone = Object.assign({}, checkboxGroupsClone[groupIndex]);
+
+            /* Clone the checkboxes. */
+            const checkboxGroupCheckboxes = [...checkboxGroupClone.checkboxes];
+
+            /* Clone the checked checkbox and update checked value. */
+            const checkboxIndex = this.getCheckedCheckboxIndex(checkboxGroupCheckboxes, value);
+            const checkboxClone = Object.assign({}, checkboxGroupCheckboxes[checkboxIndex]);
+
+            checkboxClone.checked = checked;
+
+            /* Update the clones. */
+            checkboxGroupCheckboxes.splice(checkboxIndex, 1, checkboxClone);
+            checkboxGroupClone.checkboxes = checkboxGroupCheckboxes;
+            checkboxGroupsClone.splice(groupIndex, 1, checkboxGroupClone);
 
             /* Update state. */
-            this.setState({checkboxes: checkboxesClone});
+            this.setState({checkboxGroups: checkboxGroupsClone});
         };
 
         this.onHandleInput = (event) => {
@@ -52,13 +65,13 @@ class ProviderDashboardFilter extends React.Component {
             this.setState({inputValue: inputValue});
         };
 
-        this.onInitializeCheckboxes = (event) => {
+        this.onInitializeCheckboxGroups = (event) => {
 
-            this.setState({checkboxes: event});
+            this.setState({checkboxGroups: event});
         };
 
         this.state = ({
-            checkboxes: [],
+            checkboxGroups: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
@@ -66,14 +79,14 @@ class ProviderDashboardFilter extends React.Component {
             resultsExist: true,
             onHandleChecked: this.onHandleChecked,
             onHandleInput: this.onHandleInput,
-            onInitializeCheckboxes: this.onInitializeCheckboxes
+            onInitializeCheckboxGroups: this.onInitializeCheckboxGroups
         });
     }
 
     componentWillUnmount() {
 
         this.setState = ({
-            checkboxes: [],
+            checkboxGroups: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
@@ -102,11 +115,11 @@ class ProviderDashboardFilter extends React.Component {
         this.searchStateChanged(prevState);
     }
 
-    buildCheckedValueString = (checkboxes) => {
+    buildCheckedValueString = (checkboxes, property) => {
 
         if ( checkboxes.length ) {
 
-            return checkboxes.map(checkedBox => `${checkedBox.property}: ${checkedBox.value}`).join(" ");
+            return checkboxes.map(checkedBox => `${property}: ${checkedBox.value}`).join(" ");
         }
 
         return "";
@@ -131,9 +144,9 @@ class ProviderDashboardFilter extends React.Component {
         return "";
     };
 
-    filterCheckedCheckboxesByProperty = (checkboxes, property) => {
+    filterCheckedCheckboxes = (checkboxes) => {
 
-        return checkboxes.filter(checkbox => checkbox.checked && checkbox.property === property);
+        return checkboxes.filter(checkbox => checkbox.checked);
     };
 
     findMultiplicateResults = (resultsByGroup) => {
@@ -198,23 +211,28 @@ class ProviderDashboardFilter extends React.Component {
 
     getCheckedCheckboxesByProperties = () => {
 
-        const {checkboxes} = this.state;
+        const {checkboxGroups} = this.state;
 
-        return DashboardSearchCheckboxWorkspaceProperties.map(property => {
+        return checkboxGroups.map(checkboxGroup => {
 
-            const checkedBoxes = this.filterCheckedCheckboxesByProperty(checkboxes, property);
+            const checkedBoxes = this.filterCheckedCheckboxes(checkboxGroup.checkboxes);
 
             return {
                 checkboxes: checkedBoxes,
-                property: property
+                property: checkboxGroup.property
             }
         });
 
     };
 
-    getCheckedCheckboxIndex = (checkboxesClone, checkboxValue) => {
+    getCheckedCheckboxGroupIndex = (checkboxGroups, checkboxProperty) => {
 
-        return checkboxesClone.findIndex(checkboxClone => checkboxClone.value === checkboxValue);
+        return checkboxGroups.findIndex(checkboxGroup => checkboxGroup.property === checkboxProperty);
+    };
+
+    getCheckedCheckboxIndex = (checkboxGroupCheckboxes, checkboxValue) => {
+
+        return checkboxGroupCheckboxes.findIndex(checkbox => checkbox.value === checkboxValue);
     };
 
     getCheckedResults = () => {
@@ -230,9 +248,9 @@ class ProviderDashboardFilter extends React.Component {
 
         return checkedBoxesByProperty.map(checkedByProperty => {
 
-            const checkedBoxes = checkedByProperty.checkboxes;
+            const {checkboxes, property} = checkedByProperty;
 
-            const checkedQueryString = this.buildCheckedValueString(checkedBoxes);
+            const checkedQueryString = this.buildCheckedValueString(checkboxes, property);
 
             return this.getSearchResults(checkedQueryString);
         });
@@ -291,14 +309,14 @@ class ProviderDashboardFilter extends React.Component {
 
     isCheckboxing = () => {
 
-        const {checkboxes} = this.state;
+        const {checkboxGroups} = this.state;
 
-        return checkboxes.some(checkbox => checkbox.checked);
+        return checkboxGroups.some(checkbox => checkbox.checked);
     };
 
     isInputDenied = (inputValue) => {
 
-        return denyListInputs.some(deniedInput => inputValue.includes(deniedInput));
+        return DashboardSearchService.DenyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
     isInputting = () => {
@@ -325,9 +343,9 @@ class ProviderDashboardFilter extends React.Component {
 
     searchStateChanged = (prevState) => {
 
-        const {inputValue, checkboxes} = this.state;
+        const {inputValue, checkboxGroups} = this.state;
 
-        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.checkboxes !== checkboxes );
+        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.checkboxGroups !== checkboxGroups );
 
         if ( stateChanged ) {
 

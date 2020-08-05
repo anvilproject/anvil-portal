@@ -7,45 +7,25 @@
 
 // App dependencies
 import * as DashboardService from "./dashboard.service";
-import {DashboardSearchCheckboxWorkspaceProperties} from "./dashboard-search-workspace-property.model";
 import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
 import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
-/**
- * Returns a FE model of checkboxes, grouped by group name.
- *
- * @param checkboxes
- * @returns {Array}
- */
-export function getCheckboxesByGroupName(checkboxes) {
+/* Search input deny list. */
+export const DenyListInputs = ["^", "~", ":"];
 
-    if ( !checkboxes.length ) {
-
-        return []
-    }
-
-    /* Get the set of checkbox group names. */
-    const setOfCheckboxGroupNames = new Set(checkboxes.map(checkbox => checkbox.groupName));
-
-    return [...setOfCheckboxGroupNames].map(groupName => {
-
-        /* Filter checkboxes by group name. */
-        const checkboxesByGroupName = checkboxes.filter(checkbox => checkbox.groupName === groupName);
-
-        /* Build the checkbox by group model. */
-        return {
-            checkboxes: checkboxesByGroupName,
-            groupName: groupName
-        }
-    });
-}
+/* Set of checkbox groups (selected from workspace property values) for the dashboard search function. */
+export const DashboardSearchCheckboxWorkspaceProperties = [
+    "consortium",
+    "accessUI",
+    "dataTypes"
+];
 
 /**
- * Returns checkbox initialization FE model.
+ * Returns checkbox group initialization FE model for checkboxGroup state variable for dashboard-filter-context component.
  *
  */
-export function getDashboardSearchCheckboxes() {
+export function getDashboardSearchCheckboxGroups() {
 
     const checkboxValuesByProperties = getCheckboxValuesByProperty();
 
@@ -65,27 +45,23 @@ function buildInitCheckboxes(checkboxValuesByProperties) {
         return [];
     }
 
-    return [...checkboxValuesByProperties].reduce((acc, [property, checkboxValues]) => {
+    return [...checkboxValuesByProperties].map(([property, checkboxValues]) => {
 
-        if ( checkboxValues.length ) {
+        const checkboxes = checkboxValues.map(checkboxValue => {
 
-            checkboxValues.forEach(checkboxValue => {
+            return {
+                checked: false,
+                label: switchWorkspaceValueDisplayText(checkboxValue),
+                value: checkboxValue,
+            };
+        });
 
-                const checkbox = {
-                    checked: false,
-                    groupName: DashboardTableService.switchDisplayColumnName(property),
-                    label: switchWorkspaceValueDisplayText(checkboxValue),
-                    property: property,
-                    value: checkboxValue,
-                };
-
-                acc.push(checkbox);
-            });
-        }
-
-        return acc;
-    }, []);
-
+        return {
+            checkboxes: checkboxes,
+            groupName: DashboardTableService.switchDisplayColumnName(property),
+            property: property
+        };
+    });
 }
 
 /**

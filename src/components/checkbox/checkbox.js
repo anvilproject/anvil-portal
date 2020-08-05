@@ -24,8 +24,8 @@ class Checkbox extends React.Component {
 
     onHandleClick = () => {
 
-        const {checkbox, onHandleChecked} = this.props,
-            {checked, property, value} = checkbox;
+        const {checkbox, property, onHandleChecked} = this.props,
+            {checked, value} = checkbox;
 
         onHandleChecked({checked: !checked, property: property, value: value});
     };
