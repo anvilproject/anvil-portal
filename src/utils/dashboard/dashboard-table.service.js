@@ -6,12 +6,12 @@
  */
 
 // App dependencies
-import DataTableRowCellDataCell from "../../components/data-table-row-cell-data-cell/data-table-row-cell-data-cell";
-import DataTableRowCellDataCellLinked from "../../components/data-table-row-cell-data-cell-linked/data-table-row-cell-data-cell-linked";
 import DataTableRowCellDataTypes from "../../components/data-table-row-cell-data-types/data-table-row-cell-data-types";
 import DataTableRowCellEllipsis from "../../components/data-table-row-cell-ellipsis/data-table-row-cell-ellipsis";
 import DataTableRowCellGapId from "../../components/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
 import DataTableRowCellProjectId from "../../components/data-table-row-cell-project-id/data-table-row-cell-project-id";
+import DataTableRowCellRedirect from "../../components/data-table-row-cell-redirect/data-table-row-cell-redirect";
+import DataTableRowCellX from "../../components/data-table-row-cell-x/data-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
@@ -85,19 +85,19 @@ export function getCellUrl(value, column) {
  * Returns the corresponding react element type for the specified column name.
  *
  * @param columnName
- * @param summaryExists
+ * @param summaryTable
  * @returns {*}
  */
-export function getReactElementType(columnName, summaryExists) {
+export function getReactElementType(columnName, summaryTable) {
 
-    if ( columnName === "consortium" && summaryExists ) {
+    if ( columnName === "consortium" && summaryTable ) {
 
-        return DataTableRowCellDataCellLinked;
+        return DataTableRowCellRedirect;
     }
 
     switch (columnName) {
         case "accessUI":
-            return DataTableRowCellDataCellLinked;
+            return DataTableRowCellRedirect;
         case "dataTypes":
             return DataTableRowCellDataTypes;
         case "diseases":
@@ -107,7 +107,7 @@ export function getReactElementType(columnName, summaryExists) {
         case "projectId":
             return DataTableRowCellProjectId;
         default:
-            return DataTableRowCellDataCell;
+            return DataTableRowCellX;
     }
 }
 

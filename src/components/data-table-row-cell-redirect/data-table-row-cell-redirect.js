@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - data table row cell data cell linked component.
+ * The AnVIL - data table row cell redirect component.
  * Renders a data cell with a link.
  */
 
@@ -15,9 +15,9 @@ import * as DashboardTableService from "../../utils/dashboard/dashboard-table.se
 import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
-import compStyles from "./data-table-row-cell-data-cell-linked.module.css";
+import compStyles from "./data-table-row-cell-redirect.module.css";
 
-class DataTableRowCellDataCellLinked extends React.Component {
+class DataTableRowCellRedirect extends React.Component {
 
     render() {
         const {children, column, id} = this.props;
@@ -34,4 +34,4 @@ class DataTableRowCellDataCellLinked extends React.Component {
     }
 }
 
-export default DataTableRowCellDataCellLinked;
+export default DataTableRowCellRedirect;

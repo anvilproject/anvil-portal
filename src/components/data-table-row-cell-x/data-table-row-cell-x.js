@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - data table row cell data cell component.
+ * The AnVIL - data table row cell x component.
  * Returns generic data cell for any unspecified workspace property.
  */
 
@@ -13,11 +13,11 @@ import React from "react";
 import * as DashboardTableService from "../../utils/dashboard/dashboard-table.service";
 
 // Styles
-import compStyles from "./data-table-row-cell-data-cell.module.css";
+import compStyles from "./data-table-row-cell-x.module.css";
 
 let classNames = require("classnames");
 
-class DataTableRowCellDataCell extends React.Component {
+class DataTableRowCellX extends React.Component {
 
     render() {
         const {children, column, id} = this.props;
@@ -29,4 +29,4 @@ class DataTableRowCellDataCell extends React.Component {
     }
 }
 
-export default DataTableRowCellDataCell;
+export default DataTableRowCellX;

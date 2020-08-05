@@ -311,7 +311,7 @@ class ProviderDashboardFilter extends React.Component {
 
         const {checkboxGroups} = this.state;
 
-        return checkboxGroups.some(checkbox => checkbox.checked);
+        return checkboxGroups.some(checkboxGroup => checkboxGroup.checkboxes.some(checkbox => checkbox.checked));
     };
 
     isInputDenied = (inputValue) => {
