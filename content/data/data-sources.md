@@ -4,6 +4,8 @@ author: "AnVIL"
 description: "AnVIL hosts data and also allows users to submit their own data to the platform."
 ---
 
+Currently, AnVIL data can be accessed through the Terra workspaces listed below. In the near future, the [Gen3 Data Explorer](https://gen3.org/) will allow for selection of datasets and the creation of virtual cohorts that can then be analyzed in a user's personal or shared Terra workspace.
+
 # Data Sources 
 
 AnVIL hosts data from the following programs and also allows users to submit their own data to the platform.
