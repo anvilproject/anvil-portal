@@ -39,10 +39,11 @@ class Header extends React.Component {
     render() {
         const {links, ncpi} = this.props;
         const showPartiallyActive = !ncpi;
+        const logoLink = ncpi ? "/ncpi" : "/";
         return (
             <div className={compStyles.header}>
                 <div className={globalStyles.container}>
-                    <Link to="/" className={classNames(compStyles.logo, {[compStyles.ncpi]: ncpi})}>
+                    <Link to={logoLink} className={classNames(compStyles.logo, {[compStyles.ncpi]: ncpi})}>
                         {ncpi ? <img src={cloudNCPI} alt="ncpi"/> : <img src={logoAnvil} alt="anVIL"/>}
                     </Link>
                     <ClickHandler

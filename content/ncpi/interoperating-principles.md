@@ -1,3 +1,7 @@
+---
+description: "The NCPI has adopted the following interoperating principles help guide our efforts."
+title: "Five Principles for Interoperating Data Platforms"
+---
 # Five Principles for Interoperating Data Platforms
 
 <hero small>The NCPI has adopted the following interoperating principles help guide our efforts.</hero>
@@ -42,4 +46,3 @@ Sometimes platforms impose a requirement that an account be created and fees pai
 1. We might also consider saying that two systems have a data peering relationship if they have a trust relationship as defined above, allowing them to exchange both open and controlled access data.  Recall that peering between two internet service providers is an agreement supporting the exchange of traffic between users on the two systems.
 
  
-  

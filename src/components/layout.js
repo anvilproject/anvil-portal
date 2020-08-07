@@ -71,11 +71,11 @@ class Layout extends React.Component {
 
     render() {
         const {children, description, docPath, homePage, ncpi, noSpy, styles, title} = this.props,
-            site = "The AnVIL";
+            site = ncpi ? "NCPI" : "The AnVIL";
             return (
             <div ref={this.containerEl}>
                 <PageHead pageTitle={title} site={site}/>
-                <SEO description={description} site={site} title={title}/>
+                <SEO description={description} ncpi={ncpi} site={site} title={title}/>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header ncpi={ncpi} onMenuOpen={this.onMenuOpen.bind(this)}/>
                     <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy} styles={styles}>{children}</Main>

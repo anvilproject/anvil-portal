@@ -15,9 +15,10 @@ import * as EnvironmentService from "../../utils/environment/environment.service
 class SEO extends React.Component {
 
     render() {
-        const {description, site, title} = this.props,
+        const {description, ncpi, site, title} = this.props,
             siteURL = EnvironmentService.getCurrentEnvironmentURL(),
-            twitterImgUrl = `${siteURL}images/anvil-twitter.png`;
+            imgFileName = ncpi ? "twitter-ncpi.png" : "twitter-anvil.png",
+            twitterImgUrl = `${siteURL}images/${imgFileName}`;
         return (
             <Helmet>
                 <meta property="og:title" content={title}/>
