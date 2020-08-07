@@ -9,6 +9,5 @@
 /* Header */
 .header {
     border-bottom: 1px solid var(--accent-blue-green);
-    height: 42px;
     vertical-align: bottom;
 }

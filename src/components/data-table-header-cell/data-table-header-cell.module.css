@@ -37,12 +37,12 @@ th.right {
 [id^="studies"] th:first-of-type,
 [id^="summary"] th:first-of-type,
 [id^="workspaces"] th:first-of-type {
-    padding-left: 0;
+    padding-left: 2px; /* Scoot in first and last, matches cell */
 }
 
 /* Header cell - last */
 [id^="studies"] th:last-of-type,
 [id^="summary"] th:last-of-type,
 [id^="workspaces"] th:last-of-type {
-    padding-right: 0;
+    padding-right: 2px; /* Scoot in first and last, matches cell */
 }

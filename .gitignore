@@ -81,3 +81,6 @@ site/style-bundle.js
 # Local
 .tmp
 /.firebase/
+
+# Data
+static/dashboard-index.json

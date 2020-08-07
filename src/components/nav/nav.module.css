@@ -48,7 +48,7 @@
 .sideNav .link {
     color: var(--black58);
     display: block;
-    padding: 12px 8px 12px 0;
+    padding: 12px 40px 12px 0; /* 40px to match content margins */
     position: relative; /* Positions link hover and active styles */
 }
 

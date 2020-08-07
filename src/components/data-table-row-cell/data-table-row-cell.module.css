@@ -114,14 +114,14 @@
 [id^="studies"] td:first-of-type,
 [id^="summary"] td:first-of-type,
 [id^="workspaces"] td:first-of-type {
-    padding-left: 0;
+    padding-left: 2px; /* Scoot in first and last, matches header cell */
 }
 
 /* Row cell - last */
 [id^="studies"] td:last-of-type,
 [id^="summary"] td:last-of-type,
 [id^="workspaces"] td:last-of-type {
-    padding-right: 0;
+    padding-right: 2px; /* Scoot in first and last, matches header cell */
 }
 
 /**
@@ -142,10 +142,10 @@
  */
 @media screen and (min-width: 1280px) {
 
-    /* Studies table - "dataTypes" */
+    /* Studies table - "dataTypes", stretch to fit "data types" without word wrap */
     [id^="studies"] td[id^="dataTypes"] {
-        max-width: 35px;
-        min-width: 35px;
+        max-width: 85px;
+        min-width: 85px;
     }
 
     /* Studies table - "diseases" */
@@ -187,15 +187,9 @@
  */
 @media screen and (min-width: 1680px) {
 
-    /* Studies table - "dataTypes" */
-    [id^="studies"] td[id^="dataTypes"] {
-        max-width: 85px;
-        min-width: 85px;
-    }
-
     /* Studies table - "projectId" */
     [id^="studies"] td[id^="projectId"] {
-        max-width: 350px;
-        min-width: 350px;
+        max-width: 343px;
+        min-width: 343px;
     }
 }

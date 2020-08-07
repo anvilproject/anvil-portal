@@ -37,7 +37,7 @@
 
     /* Wrapper */
     .wrapper {
-        max-width: calc(100vw - 24px - 200px - 40px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
+        max-width: calc(100vw - 24px - 200px - 40px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
 }
 
@@ -50,6 +50,6 @@
     /* Table wrapper. */
     /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
     .wrapper {
-        max-width: calc(100vw - 24px - 280px - 40px - 24px);
+        max-width: calc(100vw - 24px - 280px - 40px - 40px);
     }
 }
