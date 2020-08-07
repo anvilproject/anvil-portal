@@ -8,9 +8,7 @@ title: "Data"
 
 # Explore Data
 
-Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. Search by disease, workspace name, or dbGaP ID. Filter by consortia, access type and data type.
-
-See the [Requesting Data Access](/data/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.
+<hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/data/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.</hero>
 
 <data-search></data-search>
 

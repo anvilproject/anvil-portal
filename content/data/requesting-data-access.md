@@ -1,22 +1,23 @@
 
 #Requesting Data Access
 
-<hero small>The AnVIL is a repository for a number of robust controlled access datasets. While these datasets have significant scientific value, access to them must be controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.</hero>
+<hero small>AnVIL is a repository for open and controlled access datasets. Dataset access is controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.</hero>
 
-AnVIL currently supports three types of access:
 
-1. Public Access  - Public access data is accessible to all.
-1. Consortia Access - Data listed as "Consortia Access" is accessible to consortia members under their data sharing agreement. Access is granted by the "Consortia Fasttrack" process described below.
+## Access Types
+AnVIL provides three types of access:
+
+1. Public Access  - Public access datasets are accessible to all.
+1. Consortia Access - Consortia Access datasets are accessible to consortia members under their data sharing agreement. 
 1. Researcher Access - Data listed as "Researcher Access" is accessible to general researchers for uses matching the data's dbGaP consent. Access is granted by the dbGaP data access process described below under "Requesting Data Access as a Researcher". 
 
 
 
-##Requesting Data Access as a Consortium Member
+## Requesting Data Access as a Consortium Member
 
 Many consortia have data sharing agreements between members granting each member access to every other member's data within the consortium.
 
 The AnVIL is offering a streamlined access process for consortium members in data-sharing consortia.
-### Consortia Access Control Admin
  
 The consortium bringing the data in designates a contact person, and that person is added to an access list as an access control admin for the consortia's datasets. 
  
