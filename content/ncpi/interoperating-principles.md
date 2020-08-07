@@ -1,10 +1,10 @@
 ---
-description: "The NCPI has adopted the following interoperating principles help guide our efforts."
+description: "The NCPI has adopted the following interoperating principles to help guide our efforts."
 title: "Five Principles for Interoperating Data Platforms"
 ---
 # Five Principles for Interoperating Data Platforms
 
-<hero small>The NCPI has adopted the following interoperating principles help guide our efforts.</hero>
+<hero small>The NCPI has adopted the following interoperating principles to help guide our efforts.</hero>
 
 Version C April 8, 2020
 
