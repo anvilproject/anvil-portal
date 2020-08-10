@@ -8,12 +8,14 @@ title: "Five Principles for Interoperating Data Platforms"
 
 Version C April 8, 2020
 
+## Background
 Over the last few years, a growing number of cloud-based data platforms have been developed that provide the research and translational community with access to data that is integrated with computational resources, services and workspaces, as well as knowledge resources, semantic services and AI services. 
 
 As the number of these platforms grows, it is becoming critical to establish some operating principles so that platforms can interoperate, allowing researchers to access, explore and integrate data from multiple platforms. 
 
 Interoperating data platforms in this way is a critical step towards creating a data ecosystem that benefits: the users of the platform, who can access the data they need for their research; the funders and other supporters of the platforms, whose efforts and investments are leveraged and available to a broader community; and the patients, study participants, and other data contributors whose critical contributions have a greater impact.  
 
+## One Definition - Trust Relationship
 Before we introduce the principles, we need one definition.  A trust relationship is an agreement between two or more data platforms about security, compliance, and liability that provides the foundation for two or more platforms to interoperate.  A trust relationship also includes an agreement about any fees or charges required to access data in the platform.
 
 

@@ -66,7 +66,7 @@ The NIH Systems Interoperation Working Group group will spearhead technical impr
 
 ### Documents
 
-[Charter](https://docs.google.com/document/d/15BFO2-RlOUqIMY87bKSqlxUcb4qlaNiY-Q6Imk7WREo/edit?pli=1#)
+[Charter](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.m0rkzy3k737h)
 
 [Meeting Agenda](https://docs.google.com/document/d/1x34Xo9XpdFDG1Cc3xa6YnsAcOSKJ3kkGiOIiIq39KN4/edit?pli=1#heading=h.dox03dguv2oj)
 

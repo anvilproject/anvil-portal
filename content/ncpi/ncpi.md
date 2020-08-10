@@ -35,11 +35,6 @@ The NCPI's current participating platforms are:
 ### Team 
 This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
 
-### Timeline 
-
-The NCPI will demonstrate progress based on enabling specific research use cases every six months.
-
-
 ## Researcher Use Cases 
 
 <hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross platform data discovery
@@ -59,13 +54,13 @@ The NCPI has intentionally constrained the problems we are addressing to those a
 
 By improving the hand-off of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. 
  
- For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data.
+For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment on either AnVIL or BioData Catalyst where they can perform a joint analysis on these data.
   
  Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
 ### NIH RAS Single Sign On Pilot
 
-In collaboration with the NIH CIT Researcher Auth Service (RAS) Project, we will pilot a single sign on authentication/authorization workflow.
+In collaboration with the [NIH CIT Researcher Auth Service (RAS) Initiative](https://datascience.nih.gov/data-infrastructure/researcher-auth-service), we will pilot a single sign on authentication/authorization workflow.
 
 
 ## We are guided by cross-platform research efforts.
@@ -80,7 +75,7 @@ There are currently six cross-platform research efforts:
 * Two research efforts integrate data from CRDC and AnVIL.
 * One research effort integrates data across Anvil, Kids First DRC and BioData Catalyst.
 
-For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/15BFO2-RlOUqIMY87bKSqlxUcb4qlaNiY-Q6Imk7WREo/edit?pli=1#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
+For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
 
  
 
@@ -89,7 +84,7 @@ For more information on the research efforts and their related use cases please 
 The NCPIs has five working groups:
 
 
-[Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Working to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
+[Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Working to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing and analysis.
 
 [Coordination Working Group](/ncpi/working-groups#coordination-working-group) - Coordinating discourse, collaboration, and meetings between the working groups of NCPI.
 

@@ -1,7 +1,7 @@
 
 # Participating Platforms
 
-<hero small>The NCPI's participating platforms are:  NHGRI's AnVIL, NHLBI's BioData Catalyst, the National Cancer Institute’s Cancer Research Data Commons and the NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program.</hero>
+<hero small>The NCPI's participating platforms are:  NHGRI's AnVIL, NHLBI's BioData Catalyst, NCI's Cancer Research Data Commons and the NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program.</hero>
 
 An overview of each platform is given below: 
 
