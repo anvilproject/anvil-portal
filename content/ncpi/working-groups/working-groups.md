@@ -13,7 +13,7 @@ The Coordination Working Group will coordinate discourse, collaboration, and mee
 
 The Coordination Working Group provides an interface between the chairs of the other NCPI working groups to promote use case driven interoperability between cloud platforms. 
 
-### Co-Chairs
+#### Co-Chairs
 - Valentina Di Francesco (NHGRI)
 - Ken Wiley (NHGRI)
 
@@ -21,21 +21,21 @@ The Coordination Working Group provides an interface between the chairs of the o
 
 The Community Governance Working Group aims to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
 
-### Co-Chairs
-- Stan Ahalt (RENCI)
-- Bob Grossman (UChicago)
+#### Co-Chairs
+- Stan Ahalt (RENCI) - BDC
+- Bob Grossman (UChicago) - AnVIL, BDC, CRDC
  
 
 ## FHIR Working Group
 
 The FHIR Working Group is exploring the potential of HL7 FHIR to support the exchange of clinical and phenotype data between the NCPI effort's participating platforms.
 
-### Co-Chairs
-- Robert Carrol (Vanderbilt)
-- Allison Heath (CHOP)
+#### Co-Chairs
+- Robert Carrol (Vanderbilt)  - AnVIL, BDC
+- Allison Heath (CHOP)  - KFDRC
 
 
-### Background
+#### Background
 Recently, there is increasing attention on the potential of HL7 FHIR, a standard developed primarily for clinical data interoperability. Electronic Health Record interoperability has been a serious challenge in the field for the length of its existence - fraught with challenges across the spectrum of technical and policy.
  
  Similar challenges face the research world in using FHIR: the standard has only been lightly implemented in clinical practice, though at times to great effect, and the tools researchers need to effectively use this complex data do not exist. However, the promise of interoperability of systems with large support in the community is one that’s hard to ignore in the context of clinical/phenotypic data interoperability for the NCPI efforts. 
@@ -52,19 +52,19 @@ An initial objective of the FHIR working group is to have a practical approach f
 
 The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. 
 
-### Co-Chairs
-- Ashok Krishnamurthy (RENCI)
-- Anton Nekrutenko (PSU)
+#### Co-Chairs
+- Ashok Krishnamurthy (RENCI) - BDC
+- Anton Nekrutenko (PSU) - AnVIL
 
 ## NIH Systems Interoperation Working Group
 
 The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability.  We will demonstrate progress rooted in realistic researcher use cases every 6 months.
 
-### Co-Chairs
-- Brian O’Connor (Broad)
-- Jack DiGiovanna (Seven Bridges)
+#### Co-Chairs
+- Brian O’Connor (Broad) - AnVIL, BDC, CRDC
+- Jack DiGiovanna (Seven Bridges) - BDC, CRDC, KFDRC
 
-### Documents
+#### Documents
 
 [Charter](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.m0rkzy3k737h)
 
@@ -72,7 +72,7 @@ The NIH Systems Interoperation Working Group group will spearhead technical impr
 
 
 
-### Background
+#### Background
 Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-based datasets together (or in distinct combinations).  While data portals make it easy to find data in most cases, it is difficult to take search results from a given data portal to a preferred analysis workspace (cloud compute environment). 
  
  Currently, there is not a way that researchers can browse multiple data portals (Kids First, AnVIL, Catalyst, etc), collect their search results, and take them to a single compute environment of their choosing (Terra, Seven Bridges, Cavatica, DNAstack, Galaxy, etc).
@@ -83,7 +83,7 @@ Right now it is very difficult to use GTEx, Kids First, TOPMed, and TCGA cloud-b
 Luckily, new and emerging standards (PFB, GA4GH DRS) can help to make the interface between data portals and analysis workspaces consistent, allowing many portals to send search results (e.g. lists of sample IDs and some metadata) to many different analysis workspace environments, ultimately giving researchers better access to data and increased flexibility in their analysis.
 
 
-### Goals
+#### Goals
 The key goal of this activity is to establish a generic and universal handoff mechanism so Data Portal users can further analyze search results on any analysis platform that supports the format.  This would allow for Data Portals to develop and maintain a single “export mechanism” which would be available to any Analysis Platform that invested in supporting the standard format. Importantly, this gives their users much more freedom in how and where they compute.
 
  
@@ -92,7 +92,7 @@ The key goal of this activity is to establish a generic and universal handoff me
  For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment where they can perform a joint analysis on these data. Right now, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
 
-### Deliverables
+#### Deliverables
 
 1. Build the necessary infrastructure to enable the research use cases.
 1. Document the standards and conventions we use so that other systems can implement the same approaches.
