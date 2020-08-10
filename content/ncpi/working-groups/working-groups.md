@@ -14,7 +14,7 @@ The Coordination Working Group will coordinate discourse, collaboration, and mee
 The Coordination Working Group provides an interface between the chairs of the other NCPI working groups to promote use case driven interoperability between cloud platforms. 
 
 ### Co-Chairs
-- Valentina di Francesco (NHGRI)
+- Valentina Di Francesco (NHGRI)
 - Ken Wiley (NHGRI)
 
 ## Community Governance Working Group
@@ -22,8 +22,8 @@ The Coordination Working Group provides an interface between the chairs of the o
 The Community Governance Working Group aims to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing.
 
 ### Co-Chairs
-- Stan Ahalt (ORG)
-- Bob Grossman (ORG)
+- Stan Ahalt (RENCI)
+- Bob Grossman (UChicago)
  
 
 ## FHIR Working Group
@@ -54,7 +54,7 @@ The Outreach and Training Working Group will provide exposure and training for N
 
 ### Co-Chairs
 - Ashok Krishnamurthy (RENCI)
-- Anton Nekrutenk (PSU)
+- Anton Nekrutenko (PSU)
 
 ## NIH Systems Interoperation Working Group
 
