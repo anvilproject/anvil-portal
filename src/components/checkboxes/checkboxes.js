@@ -20,7 +20,7 @@ class Checkboxes extends React.Component {
             <DataSearchPanel>
                 <span id="group">
                     <span>{groupName}</span>
-                    <span>Count</span>
+                    <span>Cohorts</span>
                 </span>
                 {checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox}/>)}
             </DataSearchPanel>

@@ -55,6 +55,7 @@ class ProviderDashboardFilter extends React.Component {
             inputValue: "",
             querying: false,
             setOfResults: new Set(),
+            setOfResultsByFacet: new Map(),
             termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
             onHandleInput: this.onHandleInput,
@@ -68,6 +69,7 @@ class ProviderDashboardFilter extends React.Component {
             inputValue: "",
             querying: false,
             setOfResults: new Set(),
+            setOfResultsByFacet: new Map(),
             termsChecked: new Map(),
         });
     }
@@ -136,18 +138,40 @@ class ProviderDashboardFilter extends React.Component {
         return terms.filter(term => termsChecked.get(term));
     };
 
-    findIntersectionSetOfResults = (setsOfResults) => {
+    findIntersectionSetOfResults = (setOfResultsByFacet) => {
 
-        if ( !setsOfResults.length ) {
+        /* Grab the first available set with results and remove the set from setOfResultsByFacet. */
+        const facet = this.getFirstSetWithResults(setOfResultsByFacet);
+
+        /* Early exit - inactive querying. */
+        if ( !facet ) {
 
             return new Set();
         }
 
-        const lastSet = setsOfResults.pop();
+        const firstSet = setOfResultsByFacet.get(facet);
+        setOfResultsByFacet.delete(facet);
 
-        return new Set([...lastSet].filter(result => {
+        /* Create a new set of intersection results. */
+        /* i.e. filter through the first set to confirm results exist in all other faceted sets. */
+        /* The inputting set of results will be passed over when "inputting" is false. */
+        /* Any empty facet i.e. "checked" set of results are passed over because no terms within the facet have been "checked". */
+        return new Set([...firstSet].filter(result => {
 
-            return [...setsOfResults].every(setOfResults => setOfResults.has(result));
+            return [...setOfResultsByFacet].every(([facet, setOfResults]) => {
+
+                if ( facet === "input" && this.isInputting() ) {
+
+                    return setOfResults.has(result);
+                }
+
+                if ( setOfResults.size === 0 ) {
+
+                    return true;
+                }
+
+                return setOfResults.has(result)
+            });
         }));
     };
 
@@ -170,41 +194,31 @@ class ProviderDashboardFilter extends React.Component {
             if ( selectedTerms.length ) {
 
                 const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+                const facetQueryResults = this.getResultsByQuery(facetQueryString);
 
-                acc.push(this.getResultsByQuery(facetQueryString));
+                acc.set(facet, facetQueryResults);
+            }
+            else {
+
+                acc.set(facet, new Set());
             }
 
             return acc;
-        }, []);
+        }, new Map());
+    };
+
+    getFirstSetWithResults = (setOfResultsByFacet) => {
+
+        return [...setOfResultsByFacet.keys()].find(facet => setOfResultsByFacet.get(facet).size > 0);
     };
 
     getInputResults = () => {
 
         const {inputValue} = this.state;
         const inputString = this.buildInputValueString(inputValue);
+        const inputResults = this.getResultsByQuery(inputString);
 
-        return this.getResultsByQuery(inputString);
-    };
-
-    getIntersectionSetsOfResults = (checkedResults, inputResults) => {
-
-        /* Handle case where inputting returns empty results. */
-        /* In this instance, all results will be null due to the "AND" between inputting and facets. */
-        if ( this.isInputtingNullResults(inputResults) ) {
-
-            return new Set();
-        }
-
-        /* Join input results with checked results. */
-        let resultsSets = [...checkedResults];
-
-        if ( inputResults.size ) {
-
-            resultsSets.push(inputResults);
-        }
-
-        /* Return intersection sets. */
-        return this.findIntersectionSetOfResults(resultsSets);
+        return new Map([["input", inputResults]]);
     };
 
     getResultsByQuery = (query) => {
@@ -241,13 +255,19 @@ class ProviderDashboardFilter extends React.Component {
     getSetOfResults = () => {
 
         /* Get the checked results. */
-        const checkedResults = this.getCheckedResults();
+        const checkedResultsByFacet = this.getCheckedResults();
 
         /* Get the input results. */
-        const inputResults = this.getInputResults();
+        const inputResultsByInput = this.getInputResults();
+
+        /* Join input results with checked results. */
+        let setOfResultsByFacet = new Map([...checkedResultsByFacet, ...inputResultsByInput]);
+
+        /* Update set of results by facet. */
+        this.updateSetOfResultsByFacet(setOfResultsByFacet);
 
         /* Return any intersecting sets of results. i.e. searching will be "AND" between facets and input. */
-        return this.getIntersectionSetsOfResults(checkedResults, inputResults);
+        return this.findIntersectionSetOfResults(setOfResultsByFacet);
     };
 
     initializeTermsChecked = () => {
@@ -280,11 +300,6 @@ class ProviderDashboardFilter extends React.Component {
         return !!inputValue;
     };
 
-    isInputtingNullResults = (setOfInputResults) => {
-
-        return this.isInputting() && setOfInputResults.size === 0;
-    };
-
     searchStateChanged = (prevState) => {
 
         const {inputValue, termsChecked} = this.state;
@@ -298,7 +313,7 @@ class ProviderDashboardFilter extends React.Component {
             /* Update state - querying. */
             this.setState({querying: querying});
 
-            /* Update results. */
+            /* Update set of results. */
             this.updateSetOfResults();
         }
     };
@@ -308,12 +323,23 @@ class ProviderDashboardFilter extends React.Component {
         /* Get the set of results. */
         const setOfResults = this.getSetOfResults();
 
-        this.setState({setOfResults: setOfResults});
+        /* Clone setOfResults, and update state. */
+        const setOfResultsClone = new Set(setOfResults);
+
+        this.setState({setOfResults: setOfResultsClone});
+    };
+
+    updateSetOfResultsByFacet = (setOfResultsByFacet) => {
+
+        /* Clone setOfResultsByFacet and update state. */
+        const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
+
+        this.setState({setOfResultsByFacet: setOfResultsByFacetClone});
     };
 
     render() {
         const {checkboxGroups, children, facetByTerm, workspacesQuery} = this.props,
-            {inputValue, querying, setOfResults, termsChecked,
+            {inputValue, querying, setOfResults, setOfResultsByFacet, termsChecked,
                 onHandleChecked, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults, querying);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);

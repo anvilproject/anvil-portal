@@ -14,6 +14,7 @@ const DashboardFilterContext = React.createContext({
     inputValue: "",
     querying: false,
     setOfResults: new Set(),
+    setOfResultsByFacet: new Map(),
     summaries: [],
     termsChecked: new Map(),
     termsCount: new Map(),
