@@ -6,9 +6,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataSearchPanel from "../data-search-panel/data-search-panel";
 
 // Styles
@@ -16,11 +17,11 @@ import compStyles from "./data-search-input.module.css";
 
 class DataSearchInput extends React.Component {
 
-    shouldComponentUpdate(prevProps) {
+    shouldComponentUpdate(nextProps) {
 
         const {inputValue} = this.props;
 
-        return prevProps.inputValue !== inputValue;
+        return inputValue !== nextProps.inputValue;
     }
 
     render() {
@@ -38,4 +39,11 @@ class DataSearchInput extends React.Component {
     }
 }
 
-export default DataSearchInput;
+export default () => {
+
+    const {inputValue, onHandleInput} = useContext(DashboardFilterContext);
+
+    return (
+        <DataSearchInput inputValue={inputValue} onHandleInput={(e) => onHandleInput(e)}/>
+    )
+};

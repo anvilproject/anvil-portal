@@ -3,17 +3,6 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - data summary component.
- * Use of this component within markdown is possible.
- * Use the tag <data-summary></data-summary> but ensure it is closed.
- *
- * The following props are optional and do not require a value:
- * - "consortia"
- * - "dbgap"
- * - "public"
- *
- * "consortia" will return all private workspaces without a dbGapId accession value.
- * "dbgap" will return all workspaces with a dbGapId accession value (note the lower case "g").
- * "public" will return all public workspaces without a dbGapId accession value.
  */
 
 // Core dependencies
@@ -22,33 +11,32 @@ import React, {useContext} from "react";
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
-import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
-let TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
+// Template variables
+const TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
 
 class DataSummary extends React.Component {
 
     render() {
-        const {summary} = this.props;
+        const {summaries} = this.props;
         return (
-            <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summary}/>
+            <>
+            <h2>Search Summary</h2>
+            <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summaries}/>
+            </>
         );
     }
 }
 
-export default (props) => {
+export default () => {
 
     /* Dataset searching props. */
     const searching = useContext(DashboardFilterContext),
-        {results, resultsExist} = searching || {};
+        {summaries} = searching || {};
 
-    /* Data summary component specific props. */
-    const {consortia, dbgap} = props;
-    const shared = props.public;
-
-    const summary = DashboardSummaryService.getDashboardSummary(consortia, dbgap, results, resultsExist, shared);
+    const showSummaries = summaries.length > 0;
 
     return (
-        resultsExist ? <DataSummary summary={summary}/> : null
+        showSummaries ? <DataSummary summaries={summaries}/> : null
     )
 }

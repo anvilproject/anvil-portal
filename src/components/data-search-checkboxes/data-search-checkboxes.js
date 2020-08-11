@@ -10,55 +10,33 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import Checkbox from "../checkbox/checkbox";
+import Checkboxes from "../checkboxes/checkboxes";
 import DashboardFilterContext from "../context/dashboard-filter-context";
-import DataSearchPanel from "../data-search-panel/data-search-panel";
-import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
 class DataSearchCheckboxes extends React.Component {
 
-    componentDidMount() {
+    shouldComponentUpdate(_) {
 
-        const {initCheckboxGroups, onInitializeCheckboxGroups} = this.props;
-
-        /* Initialize checkbox groups. */
-        onInitializeCheckboxGroups(initCheckboxGroups);
-    }
-
-    shouldComponentUpdate(prevProps) {
-
-        const {checkboxGroups} = this.props;
-
-        return prevProps.checkboxGroups !== checkboxGroups;
+        return false;
     }
 
     render() {
-        const {checkboxGroups, onHandleChecked} = this.props;
-
-        const CheckboxGroup = (props) => {
-            const {checkboxGroup, onHandleChecked} = props,
-                {checkboxes, groupName, property} = checkboxGroup;
-
-            return (
-                <DataSearchPanel>
-                    <span id="group-label">{groupName}</span>
-                    {checkboxes.map((checkbox, c) => <Checkbox key={c} checkbox={checkbox} property={property} onHandleChecked={onHandleChecked}/>)}
-                </DataSearchPanel>
-            )
-        };
-
+        const {checkboxGroups} = this.props;
         return (
-            checkboxGroups.map((checkboxGroup, g) => <CheckboxGroup key={g} checkboxGroup={checkboxGroup} onHandleChecked={onHandleChecked}/>)
+            checkboxGroups.map((checkboxGroup, c) =>
+                <Checkboxes key={c}
+                            checkboxes={checkboxGroup.checkboxes}
+                            groupName={checkboxGroup.groupName}/>)
         )
     };
 }
 
 export default () => {
 
-    const initCheckboxGroups = DashboardSearchService.getDashboardSearchCheckboxGroups();
-    const searching = useContext(DashboardFilterContext);
+    const searching = useContext(DashboardFilterContext),
+    {checkboxGroups} = searching;
 
     return (
-        <DataSearchCheckboxes initCheckboxGroups={initCheckboxGroups} {...searching}/>
+        <DataSearchCheckboxes checkboxGroups={checkboxGroups}/>
     )
 }

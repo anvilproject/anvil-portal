@@ -14,7 +14,7 @@ import React from "react";
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
 import Layout from "../components/layout";
-import Providers from "../components/providers/providers";
+import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import * as TemplateService from "../utils/template.service";
 
 export default ({data}) => {
@@ -29,11 +29,11 @@ export default ({data}) => {
 
     return (
         <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
-            <Providers frontmatter={frontmatter}>
+            <ProviderFrontmatter frontmatter={frontmatter}>
                 <ArticleBody htmlAst={htmlAst}>
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>
-            </Providers>
+            </ProviderFrontmatter>
         </Layout>
     )
 }

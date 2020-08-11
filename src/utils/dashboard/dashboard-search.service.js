@@ -2,66 +2,71 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service data dashboard workspaces.
+ * Services data dashboard search.
  */
 
 // App dependencies
 import * as DashboardService from "./dashboard.service";
 import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-"];
 
-/* Set of checkbox groups (selected from workspace property values) for the dashboard search function. */
-export const DashboardSearchCheckboxWorkspaceProperties = [
+/* Set of facets (selected from workspace property values) for the dashboard search function. */
+export const DashboardSearchFacets = [
     "consortium",
     "accessUI",
     "dataTypes"
 ];
 
 /**
- * Returns checkbox group initialization FE model for checkboxGroup state variable for dashboard-filter-context component.
+ * Returns FE model of terms by facet.
  *
+ * @param termsByFacets
+ * @returns {Array}
  */
-export function getDashboardSearchCheckboxGroups() {
+export function buildDashboardCheckboxesByFacet(termsByFacets) {
 
-    const checkboxValuesByProperties = getCheckboxValuesByProperty();
-
-    return buildInitCheckboxes(checkboxValuesByProperties);
-}
-
-/**
- * Returns the checkbox FE model for searching over values within the specified workspace properties.
- *
- * @param checkboxValuesByProperties
- * @returns {*}
- */
-function buildInitCheckboxes(checkboxValuesByProperties) {
-
-    if ( !checkboxValuesByProperties ) {
+    if ( !termsByFacets ) {
 
         return [];
     }
 
-    return [...checkboxValuesByProperties].map(([property, checkboxValues]) => {
-
-        const checkboxes = checkboxValues.map(checkboxValue => {
-
-            return {
-                checked: false,
-                label: switchWorkspaceValueDisplayText(checkboxValue),
-                value: checkboxValue,
-            };
-        });
+    return [...termsByFacets].map(([facet, terms]) => {
 
         return {
-            checkboxes: checkboxes,
-            groupName: DashboardTableService.switchDisplayColumnName(property),
-            property: property
+            checkboxes: buildCheckboxes(terms),
+            groupName: DashboardTableService.switchDisplayColumnName(facet)
         };
     });
+}
+
+/**
+ * Returns a map of counts for each term.
+ *
+ * @param termsChecked
+ * @param facetByTerm
+ * @param workspaces
+ * @returns {*}
+ */
+export function getCountsByTerms(termsChecked, facetByTerm, workspaces) {
+
+    if ( workspaces.length === 0 ) {
+
+        return new Map();
+    }
+
+    return [...termsChecked].reduce((acc, [term, checked]) => {
+
+        const facet = facetByTerm.get(term);
+
+        const termCounter = getTermCounter(workspaces, facet, term);
+
+        acc.set(term, termCounter);
+
+        return acc;
+    }, new Map());
 }
 
 /**
@@ -69,20 +74,18 @@ function buildInitCheckboxes(checkboxValuesByProperties) {
  *
  * @returns {Map}
  */
-function getCheckboxValuesByProperty() {
-
-    const workspaces = DashboardWorkspaceStaticQuery();
+export function getDashboardFacets(workspaces) {
 
     /* Generate a new map object of checkbox by workspace property as the key. */
     /* For each key, find a set of workspace values corresponding to the workspace property. */
     let checkboxesByProperty = new Map();
 
     /* For each property, grab the set of corresponding workspace values. */
-    DashboardSearchCheckboxWorkspaceProperties.forEach(property => {
+    DashboardSearchFacets.forEach(property => {
 
         const setOfCheckboxValues = new Set();
 
-        /* Map through workspaces and grab the set of values for the specified workspace property. */
+        /* Grab the set of values, and corresponding count for the specified workspace property. */
         workspaces.forEach(workspace => {
 
             /* Return if the value is invalid. */
@@ -121,6 +124,95 @@ function getCheckboxValuesByProperty() {
     });
 
     return checkboxesByProperty;
+}
+
+/**
+ * Returns a map of facet by term.
+ *
+ * @param termsByFacets
+ * @returns {Map}
+ */
+export function getDashboardFacetByTerm(termsByFacets) {
+
+    const termByFacet = new Map();
+
+    [...termsByFacets].forEach(([facet, terms]) => {
+
+        terms.forEach(term => termByFacet.set(term, facet));
+    });
+
+    return termByFacet;
+}
+
+/**
+ * Returns the set of terms for all facets.
+ *
+ * @param termsByFacets
+ * @returns {*}
+ */
+export function getDashboardSetOfTerms(termsByFacets) {
+
+    return [...termsByFacets.values()].reduce((acc, terms) => {
+
+        terms.map(term => acc.add(term));
+
+        return acc;
+    }, new Set());
+}
+
+/**
+ * Returns FE model for checkboxes.
+ *
+ * @param terms
+ * @returns {Array}
+ */
+function buildCheckboxes(terms) {
+
+    if ( !terms ) {
+
+        return [];
+    }
+
+    return terms.map(term => {
+
+        return {
+            label: switchWorkspaceValueDisplayText(term),
+            value: term
+        }
+    })
+}
+
+/**
+ * Returns the count for the specified term.
+ *
+ * @param workspaces
+ * @param facet
+ * @param term
+ */
+function getTermCounter(workspaces, facet, term) {
+
+    return workspaces.reduce((acc, workspace) => {
+
+        if ( DashboardService.isArray(workspace[facet]) ) {
+
+            workspace[facet].forEach(wf => {
+
+                if ( wf === term ) {
+
+                    acc++;
+                }
+            })
+        }
+        else {
+
+            if (workspace[facet] === term) {
+
+                acc++;
+            }
+        }
+
+        return acc;
+    }, 0);
 }
 
 /**

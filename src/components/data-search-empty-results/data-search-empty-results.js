@@ -30,9 +30,11 @@ export default () => {
 
     /* Dataset filtering props. */
     const searching = useContext(DashboardFilterContext),
-        {resultsExist} = searching;
+        {querying, setOfResults} = searching;
+
+    const showEmptyResults = querying && setOfResults.size === 0;
 
     return (
-        resultsExist ? null : <DataSearchEmptyResults/>
+        showEmptyResults ? <DataSearchEmptyResults/> : null
     )
 }

@@ -10,13 +10,7 @@ title: "Data"
 
 <hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/data/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.</hero>
 
-<data-search></data-search>
-
-## Search Summary
-<data-summary></data-summary>
-
-## Search Results
-<data-workspaces study><data-workspaces/>
+<data-dashboard></data-dashboard>
 
 ## Notes.
 

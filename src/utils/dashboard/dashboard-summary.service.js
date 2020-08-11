@@ -5,35 +5,20 @@
  * Service for formatting data dashboard summary into FE model.
  */
 
-// App dependencies
-import * as DashboardService from "./dashboard.service";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
-
 /**
- * Returns the dashboard summary filtered by results from the search, if applicable,
- * and then by "consortia", "dbgap" or "public" [shared].
+ * Returns the dashboard summary.
  *
- * @param consortia
- * @param dbgap
- * @param filterResults
- * @param resultsExist
- * @param shared
- * @returns {Array.<*>}
+ * @param workspaces
+ * @returns {*}
  */
-export function getDashboardSummary(consortia, dbgap, filterResults, resultsExist, shared) {
+export function getDashboardSummary(workspaces) {
 
-    if ( !resultsExist ) {
+    if ( workspaces.length === 0 ) {
 
         return [];
     }
 
-    /* Filter workspaces by dataset search, if applicable. */
-    const workspaces = DashboardService.filterWorkspacesBySearchResults(DashboardWorkspaceStaticQuery(), filterResults);
-
-    /* Filter workspaces by accessibility. */
-    const workspacesByAccessibility = DashboardService.filterDataByDBGapReadiness(workspaces, consortia, dbgap, shared);
-
-    const summary = buildDashboardSummary(workspacesByAccessibility);
+    const summary = buildDashboardSummary(workspaces);
     const summaryTotals = buildDashboardSummaryTotals(summary);
 
     return summary.concat(summaryTotals);

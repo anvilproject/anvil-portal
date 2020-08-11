@@ -11,9 +11,7 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
-import DataSearch from "../data-search/data-search";
-import DataSummary from "../data-summary/data-summary";
-import DataWorkspaces from "../data-workspaces/data-workspaces";
+import DataDashboard from "../data-dashboard/data-dashboard";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";
@@ -64,9 +62,7 @@ class Markdown extends React.Component {
             createElement: React.createElement,
             components: {
                 "button": Button,
-                "data-search": DataSearch,
-                "data-summary": DataSummary,
-                "data-workspaces": DataWorkspaces,
+                "data-dashboard": DataDashboard,
                 "event-hero": EventHero,
                 "events": Events,
                 "figure-caption": FigureCaption,

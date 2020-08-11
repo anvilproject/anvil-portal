@@ -12,6 +12,8 @@ import React from "react";
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
+import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
+import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
 
 // Template variables
 const DASHBOARD_INDEX = "/dashboard-index.json";
@@ -23,33 +25,16 @@ class ProviderDashboardFilter extends React.Component {
 
         this.onHandleChecked = (event) => {
 
-            const {checked, property, value} = event;
+            const {checked, value} = event;
 
-            /* Clone state variable checkboxGroups. */
-            const checkboxGroupsClone = [...this.state.checkboxGroups];
+            /* Clone state variable termsChecked. */
+            const termsCheckedClone = new Map(this.state.termsChecked);
 
-            /* Get the checkbox group index for the checked checkbox. */
-            const groupIndex = this.getCheckedCheckboxGroupIndex(checkboxGroupsClone, property);
-
-            /* Clone the checkbox group. */
-            const checkboxGroupClone = Object.assign({}, checkboxGroupsClone[groupIndex]);
-
-            /* Clone the checkboxes. */
-            const checkboxGroupCheckboxes = [...checkboxGroupClone.checkboxes];
-
-            /* Clone the checked checkbox and update checked value. */
-            const checkboxIndex = this.getCheckedCheckboxIndex(checkboxGroupCheckboxes, value);
-            const checkboxClone = Object.assign({}, checkboxGroupCheckboxes[checkboxIndex]);
-
-            checkboxClone.checked = checked;
-
-            /* Update the clones. */
-            checkboxGroupCheckboxes.splice(checkboxIndex, 1, checkboxClone);
-            checkboxGroupClone.checkboxes = checkboxGroupCheckboxes;
-            checkboxGroupsClone.splice(groupIndex, 1, checkboxGroupClone);
+            /* Update clone. */
+            termsCheckedClone.set(value, checked);
 
             /* Update state. */
-            this.setState({checkboxGroups: checkboxGroupsClone});
+            this.setState({termsChecked: termsCheckedClone});
         };
 
         this.onHandleInput = (event) => {
@@ -65,49 +50,35 @@ class ProviderDashboardFilter extends React.Component {
             this.setState({inputValue: inputValue});
         };
 
-        this.onInitializeCheckboxGroups = (event) => {
-
-            this.setState({checkboxGroups: event});
-        };
-
         this.state = ({
-            checkboxGroups: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
-            results: [],
-            resultsExist: true,
+            setOfResults: new Set(),
+            termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
             onHandleInput: this.onHandleInput,
-            onInitializeCheckboxGroups: this.onInitializeCheckboxGroups
         });
     }
 
     componentWillUnmount() {
 
         this.setState = ({
-            checkboxGroups: [],
             dashboardIndex: [],
             inputValue: "",
             querying: false,
-            results: [],
-            resultsExist: true,
+            setOfResults: new Set(),
+            termsChecked: new Map(),
         });
     }
 
     componentDidMount() {
 
         /* Grab the index. */
-        fetch(DASHBOARD_INDEX)
-            .then(res => res.json())
-            .then(res => {
-                const dashboardIndex = lunr.Index.load(res);
+        this.fetchDashboardIndex();
 
-                this.setState({dashboardIndex: dashboardIndex})
-            })
-            .catch(err => {
-                console.log(err, "Error loading index");
-            });
+        /* Initialize the state "termsChecked". */
+        this.initializeTermsChecked();
     }
 
     componentDidUpdate(_, prevState) {
@@ -115,11 +86,11 @@ class ProviderDashboardFilter extends React.Component {
         this.searchStateChanged(prevState);
     }
 
-    buildCheckedValueString = (checkboxes, property) => {
+    buildFacetQueryString = (selectedTerms, facet) => {
 
-        if ( checkboxes.length ) {
+        if ( selectedTerms.length ) {
 
-            return checkboxes.map(checkedBox => `${property}: ${checkedBox.value}`).join(" ");
+            return selectedTerms.map(selectedTerm => `${facet}: ${selectedTerm}`).join(" ");
         }
 
         return "";
@@ -144,116 +115,67 @@ class ProviderDashboardFilter extends React.Component {
         return "";
     };
 
-    filterCheckedCheckboxes = (checkboxes) => {
+    fetchDashboardIndex = () => {
 
-        return checkboxes.filter(checkbox => checkbox.checked);
-    };
+        fetch(DASHBOARD_INDEX)
+            .then(res => res.json())
+            .then(res => {
+                const dashboardIndex = lunr.Index.load(res);
 
-    findMultiplicateResults = (resultsByGroup) => {
-
-        /* Determine the count of groups that have a list of results. This counter is then used to create a set of
-        /* results where each result must exist within each group's list of results.
-        /* For example, if two checkboxes are selected from different properties e.g. "CMG" from property "consortia"
-        /* and "Researcher" from property "accessUI" the resulting set should only include workspaces that exist in both groups.
-        /* Noting, in this instance, both groups are workspace properties.
-        /* The counter will be "2" (i.e. results from two properties with selected values) and this counter is used to confirm
-        /* that any workspace must appear twice in the results array. */
-        const counter = resultsByGroup.reduce((acc, results) => {
-
-            if ( results.length ) {
-
-                acc++;
-            }
-
-            return acc;
-        }, 0);
-
-        const setOfResults = new Set();
-
-        /* Create a counter for each workspace's appearance within each group. If the counter matches the expect counter from
-        /* above, then add the workspace to the set. */
-        resultsByGroup.reduce((acc, results) => {
-
-            /* Handle case where group has no results - early exit. */
-            if ( !results ) {
-
-                return acc;
-            }
-
-            results.forEach(result => {
-
-                /* Get the accumulator counter for the result. */
-                const resultCounter = acc.get(result);
-
-                if ( !resultCounter ) {
-
-                    /* If the result is not yet mapped, then add the result to the map with counter = 1. */
-                    acc.set(result, 1);
-                }
-                else {
-
-                    /* If the result is mapped, increment the counter. */
-                    acc.set(result, resultCounter + 1);
-                }
-
-                if ( acc.get(result) === counter ) {
-
-                    /* Add to the set of results, if the result counter is equivalent to the expected counter across all results. */
-                    setOfResults.add(result);
-                }
+                this.setState({dashboardIndex: dashboardIndex})
+            })
+            .catch(err => {
+                console.log(err, "Error loading index");
             });
-
-            return acc;
-        }, new Map());
-
-        return [...setOfResults];
     };
 
-    getCheckedCheckboxesByProperties = () => {
+    filterSelectedTerms = (terms) => {
 
-        const {checkboxGroups} = this.state;
+        const {termsChecked} = this.state;
 
-        return checkboxGroups.map(checkboxGroup => {
-
-            const checkedBoxes = this.filterCheckedCheckboxes(checkboxGroup.checkboxes);
-
-            return {
-                checkboxes: checkedBoxes,
-                property: checkboxGroup.property
-            }
-        });
-
+        return terms.filter(term => termsChecked.get(term));
     };
 
-    getCheckedCheckboxGroupIndex = (checkboxGroups, checkboxProperty) => {
+    findIntersectionSetOfResults = (setsOfResults) => {
 
-        return checkboxGroups.findIndex(checkboxGroup => checkboxGroup.property === checkboxProperty);
-    };
+        if ( !setsOfResults.length ) {
 
-    getCheckedCheckboxIndex = (checkboxGroupCheckboxes, checkboxValue) => {
+            return new Set();
+        }
 
-        return checkboxGroupCheckboxes.findIndex(checkbox => checkbox.value === checkboxValue);
+        const lastSet = setsOfResults.pop();
+
+        return new Set([...lastSet].filter(result => {
+
+            return [...setsOfResults].every(setOfResults => setOfResults.has(result));
+        }));
     };
 
     getCheckedResults = () => {
 
-        /* Get any checked boxes, by property. */
-        const checkedBoxesByProperties = this.getCheckedCheckboxesByProperties();
+        /* Get the selected terms for each facet. */
+        const selectedTermsByFacets = this.getSelectedTermsByFacets();
 
-        /* Get any results, by property. Results are retrieved by property to retain "OR" searching amongst properties. */
-        return this.getCheckedResultsByProperty(checkedBoxesByProperties);
+        /* Get any results, by facet. Results are retrieved by facet to retain "OR" searching amongst facets. */
+        return this.getCheckedResultsByFacet(selectedTermsByFacets);
     };
 
-    getCheckedResultsByProperty = (checkedBoxesByProperty) => {
+    getCheckedResultsByFacet = (selectedTermsByFacets) => {
 
-        return checkedBoxesByProperty.map(checkedByProperty => {
+        /* Only return a set of checked results, if the facet has selected terms. */
+        return selectedTermsByFacets.reduce((acc, selectedTermsByFacet) => {
 
-            const {checkboxes, property} = checkedByProperty;
+            const {selectedTerms, facet} = selectedTermsByFacet;
 
-            const checkedQueryString = this.buildCheckedValueString(checkboxes, property);
+            if ( selectedTerms.length ) {
 
-            return this.getSearchResults(checkedQueryString);
-        });
+                const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+
+                acc.push(this.getResultsByQuery(facetQueryString));
+            }
+
+            return acc;
+        }, []);
     };
 
     getInputResults = () => {
@@ -261,42 +183,35 @@ class ProviderDashboardFilter extends React.Component {
         const {inputValue} = this.state;
         const inputString = this.buildInputValueString(inputValue);
 
-        return this.getSearchResults(inputString);
+        return this.getResultsByQuery(inputString);
     };
 
-    getMultiplicatedResults = (checkedResults, inputResults) => {
+    getIntersectionSetsOfResults = (checkedResults, inputResults) => {
 
         /* Handle case where inputting returns empty results. */
-        /* In this instance, all results will be null due to the "AND" between inputting and properties. */
+        /* In this instance, all results will be null due to the "AND" between inputting and facets. */
         if ( this.isInputtingNullResults(inputResults) ) {
 
-            return [];
+            return new Set();
         }
 
         /* Join input results with checked results. */
-        const results = [...checkedResults, inputResults];
+        let resultsSets = [...checkedResults];
 
-        /* Return multiplicate results. */
-        return this.findMultiplicateResults(results);
+        if ( inputResults.size ) {
+
+            resultsSets.push(inputResults);
+        }
+
+        /* Return intersection sets. */
+        return this.findIntersectionSetOfResults(resultsSets);
     };
 
-    getResults = () => {
-
-        /* Get the checked results. */
-        const checkedResults = this.getCheckedResults();
-
-        /* Get the input results. */
-        const inputResults = this.getInputResults();
-
-        /* Return any multiplicated results. Searching will be "AND" between properties and input. */
-        return this.getMultiplicatedResults(checkedResults, inputResults);
-    };
-
-    getSearchResults = (query) => {
+    getResultsByQuery = (query) => {
 
         if ( !query ) {
 
-            return [];
+            return new Set();
         }
 
         const {dashboardIndex} = this.state;
@@ -304,14 +219,53 @@ class ProviderDashboardFilter extends React.Component {
         const queryString = `${query}`;
         const results = dashboardIndex.search(queryString);
 
-        return results.map(result => result.ref)
+        return new Set(results.map(result => result.ref));
+    };
+
+    getSelectedTermsByFacets = () => {
+
+        const {termsByFacets} = this.props;
+
+        return [...termsByFacets].map(([facet, terms]) => {
+
+            const selectedTerms = this.filterSelectedTerms(terms);
+
+            return {
+                selectedTerms: selectedTerms,
+                facet: facet
+            }
+        });
+
+    };
+
+    getSetOfResults = () => {
+
+        /* Get the checked results. */
+        const checkedResults = this.getCheckedResults();
+
+        /* Get the input results. */
+        const inputResults = this.getInputResults();
+
+        /* Return any intersecting sets of results. i.e. searching will be "AND" between facets and input. */
+        return this.getIntersectionSetsOfResults(checkedResults, inputResults);
+    };
+
+    initializeTermsChecked = () => {
+
+        const {setOfTerms} = this.props;
+
+        const termsChecked = new Map();
+
+        [...setOfTerms].forEach(term => termsChecked.set(term, false));
+
+        this.setState({termsChecked: termsChecked});
     };
 
     isCheckboxing = () => {
 
-        const {checkboxGroups} = this.state;
+        const {termsChecked} = this.state;
 
-        return checkboxGroups.some(checkboxGroup => checkboxGroup.checkboxes.some(checkbox => checkbox.checked));
+        return [...termsChecked.keys()].some(term => termsChecked.get(term));
     };
 
     isInputDenied = (inputValue) => {
@@ -326,26 +280,16 @@ class ProviderDashboardFilter extends React.Component {
         return !!inputValue;
     };
 
-    isInputtingNullResults = (inputResults) => {
+    isInputtingNullResults = (setOfInputResults) => {
 
-        return this.isInputting() && !inputResults.length;
-    };
-
-    isResults = (results) => {
-
-        if ( this.isCheckboxing() || this.isInputting() ) {
-
-            return results.length > 0;
-        }
-
-        return true;
+        return this.isInputting() && setOfInputResults.size === 0;
     };
 
     searchStateChanged = (prevState) => {
 
-        const {inputValue, checkboxGroups} = this.state;
+        const {inputValue, termsChecked} = this.state;
 
-        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.checkboxGroups !== checkboxGroups );
+        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.termsChecked !== termsChecked );
 
         if ( stateChanged ) {
 
@@ -355,26 +299,29 @@ class ProviderDashboardFilter extends React.Component {
             this.setState({querying: querying});
 
             /* Update results. */
-            this.updateResults();
+            this.updateSetOfResults();
         }
     };
 
-    updateResults = () => {
+    updateSetOfResults = () => {
 
-        const {querying} = this.state;
+        /* Get the set of results. */
+        const setOfResults = this.getSetOfResults();
 
-        /* Get the results. */
-        const results = this.getResults();
-
-        const resultsExist = ( this.isResults(results) && querying ) || !querying;
-
-        this.setState({results: results, resultsExist: resultsExist});
+        this.setState({setOfResults: setOfResults});
     };
 
     render() {
-        const {children} = this.props;
+        const {checkboxGroups, children, facetByTerm, workspacesQuery} = this.props,
+            {inputValue, querying, setOfResults, termsChecked,
+                onHandleChecked, onHandleInput} = this.state;
+        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults, querying);
+        const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
+        const termsCount = DashboardSearchService.getCountsByTerms(termsChecked, facetByTerm, workspaces);
         return (
-            <DashboardFilterContext.Provider value={this.state}>
+            <DashboardFilterContext.Provider
+                value={{checkboxGroups, inputValue, querying, setOfResults, summaries, termsChecked, termsCount, workspaces,
+                    onHandleChecked, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>
         )

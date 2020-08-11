@@ -6,65 +6,15 @@
  */
 
 /**
- * Returns a filtered set of workspaces, specified by "consortia" or "dbGap" or "public".
- * "consortia" returns all private workspaces without a dbGapId accession.
- * "dbGap" returns all workspaces with an accession.
- * "public" [shared] returns all public workspaces without an accession.
+ * Filters workspaces by results from the dashboard search.
  *
  * @param workspaces
- * @param consortia
- * @param dbGap
- * @param shared
+ * @param setOfResults
  * @returns {*}
  */
-export function filterDataByDBGapReadiness(workspaces, consortia, dbGap, shared) {
+export function filterWorkspacesBySearchResults(workspaces, setOfResults) {
 
-    if ( !!consortia && !!shared && !!dbGap ) {
-
-        return workspaces;
-    }
-
-    return workspaces.filter(workspace => {
-
-        const dbGapExists = !!workspace.dbGapIdAccession;
-
-        /* Prop "consortia" - return all private workspaces without a dbGapId accession. */
-        if ( parseRehypeProp(consortia) ) {
-
-            return ( workspace.access === "Private" ) && !dbGapExists;
-        }
-
-        /* Prop "dbGap" - return all workspaces with a dbGapId accession. */
-        if ( parseRehypeProp(dbGap) ) {
-
-            return dbGapExists;
-        }
-
-        /* Prop "public" - return all public workspaces without a dbGapId accession. */
-        if ( parseRehypeProp(shared) ) {
-
-            return ( workspace.access === "Public" ) && !dbGapExists;
-        }
-
-        return workspace;
-    });
-}
-
-/**
- * Filters workspaces by results from the dataset search.
- *
- * @param workspaces
- * @param filterResults
- * @returns {*}
- */
-export function filterWorkspacesBySearchResults(workspaces, filterResults) {
-
-    if ( filterResults.length === 0 ) {
-
-        return workspaces;
-    }
-
-    return workspaces.filter(workspace => filterResults.includes(workspace.projectId));
+    return workspaces.filter(workspace => setOfResults.has(workspace.projectId));
 }
 
 /**
