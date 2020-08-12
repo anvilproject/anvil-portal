@@ -6,33 +6,61 @@
  */
 
 /**
- * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
+ * Returns the dashboard summary.
+ *
+ * @param workspaces
+ * @returns {*}
  */
-export function getDashboardSummary(data) {
+export function getDashboardSummary(workspaces) {
 
-    const programs = setOfPrograms(data);
+    if ( workspaces.length === 0 ) {
 
-    return [...programs].map(program => {
+        return [];
+    }
 
-        const projectsByProgram = filterProjectsByProgram(data, program);
+    const summary = buildDashboardSummary(workspaces);
+    const summaryTotals = buildDashboardSummaryTotals(summary);
+
+    return summary.concat(summaryTotals);
+}
+
+/**
+ * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
+ *
+ * @param workspaces
+ * @returns {Array}
+ */
+function buildDashboardSummary(workspaces) {
+
+    const consortia = setOfConsortia(workspaces);
+
+    return [...consortia].map(consortium => {
+
+        const workspacesByConsortium = filterWorkspacesByConsortium(workspaces, consortium);
 
         return {
-            cohorts: countCohorts(projectsByProgram),
-            files: sumFiles(projectsByProgram),
-            program: program,
-            samples: sumSamples(projectsByProgram),
-            sizeTB: calculateSize(projectsByProgram),
-            subjects: sumSubjects(projectsByProgram)
+            cohorts: countCohorts(workspacesByConsortium),
+            consortium: consortium,
+            files: sumFiles(workspacesByConsortium),
+            samples: sumSamples(workspacesByConsortium),
+            sizeTB: calculateSize(workspacesByConsortium),
+            subjects: sumSubjects(workspacesByConsortium)
         }
     });
 }
 
-export function getDashboardSummaryTotals(summary) {
+/**
+ * Returns the dashboard summary total counts.
+ *
+ * @param summary
+ * @returns {{cohorts: *, consortium: string, files: *, samples: *, sizeTB: *, subjects: *}}
+ */
+function buildDashboardSummaryTotals(summary) {
 
     return {
         cohorts: totalCohorts(summary),
+        consortium: "Total",
         files: totalFiles(summary),
-        program: "Total",
         samples: totalSamples(summary),
         sizeTB: totalSize(summary),
         subjects: totalSubjects(summary)
@@ -61,14 +89,14 @@ function countCohorts(data) {
 }
 
 /**
- * Filter the projects by the specified program.
+ * Filter the projects by the specified consortium.
  *
- * @param projects
- * @param program
+ * @param workspaces
+ * @param consortium
  */
-function filterProjectsByProgram(projects, program) {
+function filterWorkspacesByConsortium(workspaces, consortium) {
 
-    return projects.filter(project => project.program === program);
+    return workspaces.filter(workspace => workspace.consortium === consortium);
 }
 
 /**
@@ -87,14 +115,14 @@ function reduceSummaryByType(data, type) {
 }
 
 /**
- * Returns the set of programs.
+ * Returns the set of consortia.
  *
  * @param data
  * @returns {Set}
  */
-function setOfPrograms(data) {
+function setOfConsortia(data) {
 
-    return new Set(data.map(project => project.program));
+    return new Set(data.map(project => project.consortium));
 }
 
 /**
@@ -151,7 +179,7 @@ function sumSubjects(data) {
 }
 
 /**
- * Returns the total number of cohorts for all programs.
+ * Returns the total number of cohorts for all consortia.
  *
  * @param summary
  * @returns {*}
@@ -162,7 +190,7 @@ function totalCohorts(summary) {
 }
 
 /**
- * Returns the total number of files for all programs.
+ * Returns the total number of files for all consortia.
  *
  * @param summary
  * @returns {*}
@@ -173,7 +201,7 @@ function totalFiles(summary) {
 }
 
 /**
- * Returns the total number of samples for all programs.
+ * Returns the total number of samples for all consortia.
  *
  * @param summary
  * @returns {*}
@@ -184,7 +212,7 @@ function totalSamples(summary) {
 }
 
 /**
- * Returns the total number of sizes for all programs.
+ * Returns the total number of sizes for all consortia.
  *
  * @param summary
  * @returns {*}
@@ -195,7 +223,7 @@ function totalSize(summary) {
 }
 
 /**
- * Returns the total number of subjects for all programs.
+ * Returns the total number of subjects for all consortia.
  *
  * @param summary
  * @returns {*}

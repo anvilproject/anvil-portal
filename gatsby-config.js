@@ -135,9 +135,7 @@ module.exports = {
                         options: {
                             components: [
                                 "button",
-                                "data-detail",
-                                "data-studies",
-                                "data-summary",
+                                "data-dashboard",
                                 "event-hero",
                                 "events",
                                 "figure-caption",

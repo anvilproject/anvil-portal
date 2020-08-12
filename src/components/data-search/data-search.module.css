@@ -1,0 +1,38 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Search. */
+.search {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 32px 0 24px; /** Padding bottom matches padding between tables */
+    width: 100%;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
+ */
+@media screen and (min-width: 840px) {
+
+    /* Update for left-nav width. */
+    .search {
+        width: calc(100vw - 24px - 200px - 40px - 40px);
+    }
+}
+
+/**
+ * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch.
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Update for larger left-nav width. */
+    .search {
+        width: calc(100vw - 24px - 280px - 40px - 40px);
+    }
+}

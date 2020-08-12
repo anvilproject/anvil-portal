@@ -11,6 +11,7 @@ const {parseString} = require("xml2js");
 
 // Template dependencies
 const ncbiPath = "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/";
+const studyPath = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=";
 
 /**
  * Builds the subject dictionary schema.
@@ -113,6 +114,9 @@ const getXMLUrls = async function getXMLUrls(gapAccession) {
     /* Get the gapId from the accession. */
     const gapId = gapAccession.split(".")[0];
 
+    /* Get the study url. */
+    const studyUrl = `${studyPath}${gapAccession}`;
+
     /* Grab the gap index page. */
     const indexURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/`;
 
@@ -135,7 +139,7 @@ const getXMLUrls = async function getXMLUrls(gapAccession) {
     const dictURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/${dictXMLRef}`;
     const reportURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/${reportXMLRef}`;
 
-    return {dict: dictURL, gapExchange: exchangeURL, report: reportURL};
+    return {dict: dictURL, gapExchange: exchangeURL, report: reportURL, studyUrl: studyUrl};
 };
 
 /**

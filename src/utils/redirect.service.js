@@ -17,7 +17,14 @@ import * as DOMService from "./dom.service";
  */
 export function redirect(linkTo, linkText) {
 
-    window.open(linkTo);
+    if ( linkTo && linkTo.startsWith("/") ) {
+
+        window.open(linkTo, "_self")
+    }
+    else {
+
+        window.open(linkTo);
+    }
 
     // Track click to external sites
     if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {

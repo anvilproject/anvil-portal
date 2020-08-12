@@ -145,6 +145,34 @@ exports.createPages = ({graphql, actions}) => {
     });
 };
 
+exports.createSchemaCustomization = ({actions}) => {
+
+    const {createFieldExtension, createTypes} = actions;
+
+    createFieldExtension({
+        name: "showOutline",
+        extend() {
+            return {
+                resolve(source) {
+                    if ( source.showOutline === false ) {
+
+                        return source.showOutline;
+                    }
+                    return true;
+                },
+            }
+        }
+    });
+
+    createTypes(`
+    type MarkdownRemark implements Node {
+        frontmatter: Frontmatter
+    }
+    type Frontmatter {
+        showOutline: Boolean @showOutline
+    }`);
+};
+
 // Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. See:
 // https://github.com/gatsbyjs/gatsby/issues/14848
 exports.onCreateBabelConfig = ({ actions, stage }) => {

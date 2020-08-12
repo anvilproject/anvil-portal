@@ -1,38 +1,36 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
 export const DashboardStudyStaticQuery = () => {
-    const {allDashboardSchemaJson} = useStaticQuery(
+    const {allStudy} = useStaticQuery(
         graphql`
         query DashboardStudyStaticQuery {
-          allDashboardSchemaJson {
+          allStudy {
             edges {
               node {
-                studies {
+                consentGroup {
+                  consents {
+                    consentCode
+                    consentLongName
+                    consentName
+                    consentShortName
+                    consentStat
+                  }
+                  consentsStat
+                }
+                consortium
+                dbGapIdAccession
+                diseases
+                studyName
+                subjectsCount
+                subjectsTotal
+                workspaces {
                   access
-                  consentGroup {
-                    consents {
-                      consentCode
-                      consentLongName
-                      consentName
-                      consentShortName
-                      consentStat
-                    }
-                    consentsStat
-                  }
-                  consortia
-                  dbGapIdAccession
-                  diseases
-                  studyName
-                  subjectsCount
-                  subjectsTotal
-                  workspaces {
-                    dataType
-                    files
-                    samples
-                    size
-                    subjects
-                    workspaceId
-                  }
+                  dataTypes
+                  files
+                  projectId
+                  samples
+                  size
+                  subjects
                 }
               }
             }
@@ -40,5 +38,5 @@ export const DashboardStudyStaticQuery = () => {
         }
     `
     );
-    return allDashboardSchemaJson.edges.find(n => n.node).node.studies;
+    return allStudy.edges.map(n => n.node);
 };

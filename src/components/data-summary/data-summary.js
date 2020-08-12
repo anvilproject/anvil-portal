@@ -3,53 +3,40 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - data summary component.
- * Use of this component within markdown is possible.
- * Use the tag <data-summary></data-summary> but ensure it is closed.
- *
- * The following props are optional and do not require a value:
- * - "consortia"
- * - "dbgap"
- * - "public"
- *
- * "consortia" will return all private workspaces without a dbGapId accession value.
- * "dbgap" will return all workspaces with a dbGapId accession value (note the lower case "g").
- * "public" will return all public workspaces without a dbGapId accession value.
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
-import {DashboardDetailStaticQuery} from "../../hooks/dashboard-detail-query";
-import * as DashboardAccessibilityService from "../../utils/dashboard/dashboard-accessibility.service";
-import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 
-// Styles
-import tableStyles from "../data-table/data-table.module.css";
-
-let TABLE_HEADERS = ["program", "cohorts", "subjects", "samples","files", "sizeTB"];
+// Template variables
+const TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
 
 class DataSummary extends React.Component {
 
     render() {
-        const {summary} = this.props;
+        const {summaries} = this.props;
         return (
-            <DataTable className={tableStyles.summary} tableHeaders={TABLE_HEADERS} tableRows={summary}/>
+            <>
+            <h2>Search Summary</h2>
+            <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summaries}/>
+            </>
         );
     }
 }
 
-export default (props) => {
+export default () => {
 
-    const {consortia, dbgap} = props;
-    const shared = props.public;
-    const dashboardByAccessibility = DashboardAccessibilityService.filterDataByDBGapReadiness(DashboardDetailStaticQuery(), consortia, dbgap, shared);
-    const dashboardSummary = DashboardSummaryService.getDashboardSummary(dashboardByAccessibility);
-    const total = DashboardSummaryService.getDashboardSummaryTotals(dashboardSummary);
-    const summary = dashboardSummary.concat(total);
+    /* Dataset searching props. */
+    const searching = useContext(DashboardFilterContext),
+        {summaries} = searching || {};
+
+    const showSummaries = summaries.length > 0;
 
     return (
-        <DataSummary summary={summary}/>
+        showSummaries ? <DataSummary summaries={summaries}/> : null
     )
 }

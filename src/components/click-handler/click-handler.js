@@ -25,7 +25,7 @@ class ClickHandler extends React.Component {
     };
 
     render() {
-        const { children, className, clickAction, id, label, tag: Tag } = this.props;
+        const {children, className, clickAction, id, label, tag: Tag} = this.props;
 
         return (
             <Tag id={id}

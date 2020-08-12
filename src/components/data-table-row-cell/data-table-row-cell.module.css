@@ -1,0 +1,99 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table row cell component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ * "workspaces" identifier is for workspaces table.
+ */
+@import "../../styles/vars.module.css";
+
+/* Row cells */
+[id^="studies"] td,
+[id^="summary"] td,
+[id^="workspaces"] td {
+    border-bottom: none;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+    height: 32px;
+    min-width: 62px;
+    padding: 0 4px;
+}
+
+/* Ellipsis */
+/* Studies table - "projectId" */
+/* Workspaces table - "projectId" (ie Terra workspace name) */
+[id^="studies"] td[id^="projectId"],
+[id^="workspaces"] td[id^="projectId"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 175px; /* Matches studyName and diseases */
+}
+
+/* Studies table */
+/* Add padding to the right of cells for studies table to prevent long values from jamming up */
+[id^="studies"] td {
+    padding: 2px 8px 2px;
+}
+
+/* Studies table - "accessUI" */
+[id^="studies"] td[id^="accessUI"] {
+    width: 90px;
+}
+
+/* Studies table - "dataTypes" */
+[id^="studies"] td[id^="dataTypes"] {
+    width: 85px;
+}
+
+/* Studies table - "dataTypes" */
+[id^="studies"] td[id^="dataTypes"] span {
+    white-space: nowrap;
+}
+
+/* Studies table - "diseases" */
+[id^="studies"] td[id^="diseases"] {
+    max-width: 175px;
+}
+
+/* Studies table - "studyName" */
+[id^="studies"] td[id^="studyName"] {
+    max-width: 175px;
+}
+
+/* Studies table - "consortium" */
+[id^="studies"] td[id^="consortium"] {
+    width: 112px; /** Always allow for 1000 Genomes */
+}
+
+/* Studies table - "consortium" */
+[id^="studies"] td[id^="subjects"] {
+    width: 80px;
+}
+
+/* Summary table - "total" */
+[id^="summary"] td {
+    font-weight: inherit; /* Font weight specified by data table row */
+}
+
+/* Workspaces table - "dataTypes" */
+[id^="workspaces"] td[id^="dataTypes"] {
+    white-space: nowrap;
+}
+
+/* Row cell - first */
+[id^="studies"] td:first-of-type,
+[id^="summary"] td:first-of-type,
+[id^="workspaces"] td:first-of-type {
+    padding-left: 2px; /* Scoot in first and last, matches header cell */
+}
+
+/* Row cell - last */
+[id^="studies"] td:last-of-type,
+[id^="summary"] td:last-of-type,
+[id^="workspaces"] td:last-of-type {
+    padding-right: 2px; /* Scoot in first and last, matches header cell */
+}

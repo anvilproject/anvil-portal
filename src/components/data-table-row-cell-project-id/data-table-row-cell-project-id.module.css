@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table row cell project id component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Row cell - linked cell */
+td.link {
+    color: var(--primary);
+    cursor: pointer;
+}

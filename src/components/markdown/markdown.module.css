@@ -45,14 +45,3 @@
     right: 24px;
     width: 60px;
 }
-
-/**
- * Outline (right-hand nav) is dropped below 1341px, in addition to complimentary JS in scroll.service
- */
-@media screen and (min-width: 1341px) {
-
-    /* Content */
-    .content {
-        max-width: 712px;
-    }
-}

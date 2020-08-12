@@ -1,0 +1,127 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search panel component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Panel. */
+.panel {
+    background-color: var(--primary3);
+    display: flex;
+    flex: 1;
+    flex-basis: 100%;
+    flex-direction: column;
+    margin: 1px 0;
+    padding: 12px;
+}
+
+/* Panel - first. */
+.panel:first-of-type {
+    margin-top: 0;
+}
+
+/* Panel - last. */
+.panel:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Panel label. */
+.panel [id="group"] {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+/* Error. */
+.panel.error {
+    flex-basis: 100%;
+    margin: 2px 0 0;
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ */
+@media screen and (min-width: 600px) {
+
+    /* Panel */
+    .panel {
+        flex-basis: inherit;
+        margin: 0 1px;
+    }
+
+    /* Panel - first. */
+    .panel:first-of-type {
+        flex-basis: 100%;
+        margin-bottom: 2px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Panel - second. */
+    .panel:nth-of-type(2) {
+        margin-left: 0;
+    }
+
+    /* Panel - last. */
+    .panel:last-of-type {
+        margin-right: 0;
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+
+    /* Panel - first - search. */
+    .panel:first-of-type {
+        flex-basis: inherit;
+        margin-bottom: 0;
+        margin-right: 1px;
+    }
+
+    /* Panel - second. */
+    .panel:nth-of-type(2) {
+        margin-left: 1px;
+    }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
+ */
+@media screen and (min-width: 840px) {
+
+    /* Panel - first - search. */
+    .panel:first-of-type {
+        flex-basis: 100%;
+        margin-bottom: 2px;
+        margin-right: 0;
+    }
+
+    /* Panel - second. */
+    .panel:nth-of-type(2) {
+        margin-left: 0;
+    }
+}
+
+/**
+ * Custom breakpoint where tables change from scroll overflow, to 100% width of channel (712px).
+ */
+@media screen and (min-width: 1040px) {
+
+    /* Panel - first - search. */
+    .panel:first-of-type {
+        flex-basis: inherit;
+        margin-bottom: 0;
+        margin-right: 1px;
+    }
+
+    /* Panel - second. */
+    .panel:nth-of-type(2) {
+        margin-left: 1px;
+    }
+}

@@ -13,33 +13,27 @@ import React from "react";
 // App dependencies
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
-import FrontmatterContext from "../components/context/frontmatter-context";
 import Layout from "../components/layout";
+import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import * as TemplateService from "../utils/template.service";
-
-// Styles
-import tableStyles from "../components/markdown/markdown.module.css";
-
-let classNames = require("classnames");
 
 export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
         {slug, styles} = fields,
-        {description, title} = frontmatter,
-        dashboard = slug === "/data/data",
+        {description, showOutline, title} = frontmatter,
         faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
         ncpi = slug.startsWith("/ncpi"),
         h1 = TemplateService.getPageH1(headings),
         pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
-        <Layout description={description} docPath={slug} ncpi={ncpi} styles={styles} title={pageTitle}>
-            <FrontmatterContext.Provider value={frontmatter}>
-                <ArticleBody className={classNames({[tableStyles.data]: dashboard})} htmlAst={htmlAst}>
+        <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
+            <ProviderFrontmatter frontmatter={frontmatter}>
+                <ArticleBody htmlAst={htmlAst}>
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>
-            </FrontmatterContext.Provider>
+            </ProviderFrontmatter>
         </Layout>
     )
 }
@@ -62,6 +56,7 @@ query($slug: String!) {
         eventType
         featured
         location
+        showOutline
         subTitle
         time
         title

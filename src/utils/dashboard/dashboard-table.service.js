@@ -6,6 +6,12 @@
  */
 
 // App dependencies
+import DataTableRowCellDataTypes from "../../components/data-table-row-cell-data-types/data-table-row-cell-data-types";
+import DataTableRowCellEllipsis from "../../components/data-table-row-cell-ellipsis/data-table-row-cell-ellipsis";
+import DataTableRowCellGapId from "../../components/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
+import DataTableRowCellProjectId from "../../components/data-table-row-cell-project-id/data-table-row-cell-project-id";
+import DataTableRowCellRedirect from "../../components/data-table-row-cell-redirect/data-table-row-cell-redirect";
+import DataTableRowCellX from "../../components/data-table-row-cell-x/data-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
@@ -21,17 +27,6 @@ export function cellAlignment(columnName) {
 }
 
 /**
- * Finds the corresponding tooltip label for the specified cell value.
- *
- * @param cellValue
- * @returns {*}
- */
-export function findCellTooltip(cellValue) {
-
-    return switchCellNameToTooltipLabel(cellValue);
-}
-
-/**
  * Returns a formatted value as specified by either column type or value type (specifically if the value is a number).
  * Any null value will return "--".
  *
@@ -43,11 +38,6 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
-        if ( column === "dataType" ) {
-
-            return formatDataType(value);
-        }
-
         if ( column === "diseases" ) {
 
             if ( value.length ) {
@@ -56,13 +46,8 @@ export function formatValue(value, column) {
             }
             else {
 
-                return "No diseases specified."
+                return "--"
             }
-        }
-
-        if ( column === "program" ) {
-
-            return switchProgramName(value);
         }
 
         if ( column === "sizeTB" ) {
@@ -86,14 +71,91 @@ export function formatValue(value, column) {
  *
  * @param value
  * @param column
- * @param summary
  * @returns {*}
  */
-export function getCellUrl(value, column, summary) {
+export function getCellUrl(value, column) {
 
     if ( value ) {
 
-        return switchColumnUrl(column, summary, value);
+        return switchColumnUrl(value, column);
+    }
+}
+
+/**
+ * Returns the corresponding react element type for the specified column name.
+ *
+ * @param columnName
+ * @param summaryTable
+ * @returns {*}
+ */
+export function getReactElementType(columnName, summaryTable) {
+
+    if ( columnName === "consortium" && summaryTable ) {
+
+        return DataTableRowCellRedirect;
+    }
+
+    switch (columnName) {
+        case "accessUI":
+            return DataTableRowCellRedirect;
+        case "dataTypes":
+            return DataTableRowCellDataTypes;
+        case "diseases":
+            return DataTableRowCellEllipsis;
+        case "gapId":
+            return DataTableRowCellGapId;
+        case "projectId":
+            return DataTableRowCellProjectId;
+        default:
+            return DataTableRowCellX;
+    }
+}
+
+/**
+ * Returns the table class name.
+ *
+ * @param studies
+ * @param summary
+ * @param workspaces
+ * @returns {*}
+ */
+export function getTableName(studies, summary, workspaces) {
+
+    if ( studies ) {
+
+        return "studies";
+    }
+
+    if ( summary ) {
+
+        return "summary";
+    }
+
+    if ( workspaces ) {
+
+        return "workspaces";
+    }
+
+    return "";
+}
+
+/**
+ * Returns the corresponding tooltip label for the specified data type value.
+ *
+ * @param dataType
+ * @returns {*}
+ */
+export function switchDataTypeToTooltipLabel(dataType) {
+
+    switch (dataType) {
+        case "WGS":
+            return "Whole Genome Sequencing";
+        case "WES":
+            return "Whole Exome Sequencing";
+        case "VCF":
+            return "Variant Call Format";
+        default:
+            return null;
     }
 }
 
@@ -107,13 +169,21 @@ export function switchDisplayColumnName(columnName) {
     switch (columnName) {
         case "access":
             return "Access";
+        case "accessUI":
+            return "Access";
         case "cohorts":
             return "Cohorts";
         case "consentName":
             return "Consent Groups";
+        case "consents":
+            return "Access";
         case "consentStat":
             return "Subjects";
-        case "dataType":
+        case "consortia":
+            return "Consortia";
+        case "consortium":
+            return "Consortium";
+        case "dataTypes":
             return "Data Type";
         case "demographics":
             return "Demographics";
@@ -126,160 +196,86 @@ export function switchDisplayColumnName(columnName) {
         case "files":
             return "Files";
         case "dbGapId":
-            return "dbGaP Id";
+            return "dbGap Id";
         case "dbGapIdAccession":
             return "dbGap Id";
-        case "program":
-            return "Consortium";
+        case "gapId":
+            return "dbGap Id";
         case "projectId":
             return "Terra Workspace Name";
         case "samples":
             return "Samples";
+        case "studyName":
+            return "Title";
         case "subjects":
             return "Subjects";
         case "size":
             return "Size";
         case "sizeTB":
             return "Size (TB)";
-        case "workspaceId":
-            return "Workspace Name";
         default:
             return columnName;
     }
 }
 
 /**
- * Formats the data type object into a string, with its correct display value.
+ * Returns accessUI corresponding page URL.
  *
- * @param dataTypes
+ * @param accessUI
  * @returns {*}
  */
-function formatDataType(dataTypes) {
+function switchAccessUIUrl(accessUI) {
 
-    if ( dataTypes ) {
-
-        const switchedDataTypes = dataTypes.map(dataType => switchDataType(dataType));
-        return stringifyArray(switchedDataTypes);
-    }
-
-    return dataTypes;
-}
-
-/**
- * Returns a string by concatenating all of the elements in an array, separated by a comma.
- *
- * @param array
- * @returns {*}
- */
-function stringifyArray(array) {
-
-    if ( array && typeof array === "object") {
-
-        return array.join(", ");
-    }
-
-    return array;
-}
-
-/**
- * Returns the corresponding tooltip label for the specified cell value.
- *
- * @param cellValue
- * @returns {*}
- */
-function switchCellNameToTooltipLabel(cellValue) {
-
-    switch (cellValue) {
-        case "WGS":
-            return "Whole Genome Sequencing";
-        case "WES":
-            return "Whole Exome Sequencing";
-        default:
-            return null;
-    }
-}
-
-/**
- * Returns the corresponding url for the specified column.
- *
- * @param columnName
- * @param summary
- * @param value
- * @returns {*}
- */
-function switchColumnUrl(columnName, summary, value) {
-
-    switch (columnName) {
-        case "dbGapIdAccession":
-            return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
-        case summary && "program":
-            return switchProgramUrl(value);
-        case "projectId":
-            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
-        case "workspaceId":
-            return `https://anvil.terra.bio/#workspaces/anvil-datastorage/${value}`;
+    switch(accessUI) {
+        case "Consortia":
+            return "/data/requesting-data-access#requesting-data-access-as-a-consortium-member";
+        case "Researcher":
+            return "/data/requesting-data-access#requesting-data-access-as-a-researcher";
         default:
             return "";
     }
 }
 
 /**
- * Returns the corresponding data type display name.
+ * Returns the corresponding url for the specified column.
  *
- * @param dataType
+ * @param value
+ * @param columnName
  * @returns {*}
  */
-function switchDataType(dataType) {
+function switchColumnUrl(value, columnName) {
 
-    switch (dataType) {
-        case "Whole Genome":
-            return "WGS";
-        case "Whole genome":
-            return "WGS";
-        case "Exome":
-            return "WES";
+    switch (columnName) {
+        case "accessUI":
+            return switchAccessUIUrl(value);
+        case "consortium":
+            return switchConsortiumUrl(value);
+        case "dbGapIdAccession":
+            return `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${value}`;
         default:
-            return dataType;
+            return "";
     }
 }
 
 /**
- * Returns the corresponding program display name.
+ * Returns the corresponding consortium url.
  *
- * @param program
+ * @param consortium
  * @returns {*}
  */
-function switchProgramName(program) {
+function switchConsortiumUrl(consortium) {
 
-    switch (program) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return program;
-    }
-}
-
-/**
- * Returns the corresponding program url.
- *
- * @param program
- * @returns {*}
- */
-function switchProgramUrl(program) {
-
-    switch (program) {
+    switch (consortium) {
         case "CCDG":
             return "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-Disease-Genomics";
         case "CMG":
             return "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Mendelian-Genomics-CMG";
-        case "GTEx":
-            return "https://gtexportal.org/home/";
-        case "ThousandGenomes":
-            return "https://www.internationalgenome.org/";
         case "eMERGE":
             return "https://emerge-network.org/";
+        case "GTEx (v8)":
+            return "https://gtexportal.org/home/";
+        case "1000 Genomes":
+            return "https://www.internationalgenome.org/";
         default:
             return null;
     }

@@ -6,11 +6,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+// App dependencies
+const Bowser = require("bowser");
+
 // Required for Edge, otherwise we get a "PerformanceObserver not defined" error 
 require('@fastly/performance-observer-polyfill/polyfill');
-
-// Determine site browser support
-const Bowser = require("bowser");
 
 exports.onClientEntry = () => {
 

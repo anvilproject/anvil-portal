@@ -6,7 +6,7 @@ description: "AnVIL provides robust access controls that can selectively grant a
 
 # Data Access Controls
 
-<hero small>AnVIL provides robust access controls that can selectively grant access to a number of groups with different access request requirements.</hero>
+<hero small>AnVIL provides robust access controls that can selectively grant access to a number of groups with different access request requirements.</hero
 
 
 ## Access Groups

@@ -25,6 +25,10 @@
     width: 0;
 }
 
+.outline.empty {
+    pointer-events: none; /* Required for data search component. */
+}
+
 /* Outline vertical line */
 .outline:not(.empty)::before {
     background-color: var(--accent-blue-light);

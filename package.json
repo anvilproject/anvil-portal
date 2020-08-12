@@ -36,6 +36,7 @@
     "gatsby-transformer-sharp": "2.3.14",
     "gatsby-transformer-yaml": "2.2.23",
     "js-cookie": "^2.2.1",
+    "lunr": "^2.3.8",
     "node-fetch": "^2.6.0",
     "prop-types": "15.7.2",
     "react": "16.12.0",

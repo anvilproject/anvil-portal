@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const {sortDataByDuoTypes, sortDataBySingularType} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
+const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {buildDict, buildExchange, buildReport, getXMLUrls} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 /**
@@ -27,7 +27,7 @@ const getStudies = async function getStudies(workspaces) {
     const dashboardStudies = await buildDashboardStudies(studyWorkspaces);
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes(dashboardStudies, "consortia", "studyName");
+    return sortDataByDuoTypes(dashboardStudies, "consortium", "studyName");
 };
 
 /**
@@ -52,7 +52,7 @@ async function buildDashboardStudies(workspaces) {
  *
  * @param gapAccession
  * @param workspaces
- * @returns {Promise.<{access: *, consentGroup: {consents, consentsStat}, consortia: *, dbGapIdAccession: *, diseases, studyName, subjectsCount: *, subjectsTotal, workspaces}>}
+ * @returns {Promise.<{consentGroup: {consents, consentsStat}, consortium: *, dbGapIdAccession: *, diseases: *, studyName, subjectsCount: *, subjectsTotal}>}
  */
 async function buildDashboardStudy(gapAccession, workspaces) {
 
@@ -68,51 +68,23 @@ async function buildDashboardStudy(gapAccession, workspaces) {
     const workspacesByStudy = workspaces.filter(workspace => gapAccession.startsWith(workspace.dbGapIdAccession));
 
     /* Assemble the study variables. */
-    const access = findFirstWorkspaceNodeByType(workspacesByStudy, "access");
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const consortia = findFirstWorkspaceNodeByType(workspacesByStudy, "program");
+    const consortium = findFirstWorkspaceNodeByType(workspacesByStudy, "consortium");
     const diseases = studyExchange.diseases;
     const studyName = studyExchange.name.shortName;
     const subjectsCount = sumSubjectsValues(workspacesByStudy);
     const subjectsTotal = consents.consentsStat;
-    const studyWorkspaces = buildStudyWorkspaces(workspacesByStudy);
 
     return {
-        access: access,
         consentGroup: consents,
-        consortia: consortia,
+        consortium: consortium,
         dbGapIdAccession: gapAccession,
         diseases: diseases,
         studyName: studyName,
+        studyUrl: urls.studyUrl,
         subjectsCount: subjectsCount,
-        subjectsTotal: subjectsTotal,
-        workspaces: studyWorkspaces
+        subjectsTotal: subjectsTotal
     };
-}
-
-/**
- * Returns workspaces summarized by its projectId and corresponding counts.
- *
- * @param workspacesByStudy
- */
-function buildStudyWorkspaces(workspacesByStudy) {
-
-    if ( workspacesByStudy ) {
-
-        const studyWorkspaces = workspacesByStudy.map(workspace => {
-
-            return {
-                dataType: workspace.dataType,
-                files: workspace.files,
-                samples: workspace.samples,
-                size: workspace.sizeTB,
-                subjects: workspace.subjects,
-                workspaceId: workspace.projectId
-            }
-        });
-
-        return sortDataBySingularType(studyWorkspaces, "workspaceId")
-    }
 }
 
 /**

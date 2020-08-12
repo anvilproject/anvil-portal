@@ -2,56 +2,56 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for formatting data dashboard detail into FE model.
+ * Service for formatting workspaces into FE model.
  */
 
 // Core dependencies
 const path = require("path");
 
 // App dependencies
+const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {formatSizeToTB} = require(path.resolve(__dirname, "./number-format.service.js"));
-const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"))
 
 // Template variables
 const statsJson = require(path.resolve(__dirname, "../../../client-apis/pyAnVIL/notebooks/figures/report-data.json"));
 
 /**
- * Returns the formatted dashboard detail JSON.
+ * Returns the formatted workspaces JSON.
  *
  */
-const getDashboardDetail = function getDashboardDetail() {
+const getWorkspaces = async function getWorkspaces() {
 
     const projects = statsJson.projects;
 
     /* Build up the FE-compatible model. */
-    const details = buildDashboardDetail(projects);
+    const workspaces = buildDashboardWorkspace(projects);
 
     /* Validate filtered workspaces. */
-    validateWorkspacesFiltering(details);
+    validateWorkspacesFiltering(workspaces);
 
     /* Return the sorted dashboard. */
-    return sortDataByDuoTypes(details, "program", "projectId");
+    return sortDataByDuoTypes(workspaces, "consortium", "projectId");
 };
 
 /**
- * Parse the dashboard JSON and build up FE-compatible model of data dashboard detail, to be displayed on the dashboard page.
+ * Parse the dashboard JSON and build up FE-compatible model of workspaces, to be displayed on the dashboard page.
  *
  * @param projects
  */
-function buildDashboardDetail(projects) {
+function buildDashboardWorkspace(projects) {
 
     return projects.map(project => {
 
         return {
             access: formatAccess(project.public),
-            dataType: project.data_type,
+            consortium: switchConsortiumName(project.source),
+            dataTypes: formatDataTypes(project.data_type),
             demographics: getDemographicsCount(project),
             diagnosis: getDiagnosisCount(project),
             families: getFamiliesCount(project),
             files: sumFileValues(project.files),
             dbGapId: project.dbGAP_study_id,
             dbGapIdAccession: project.dbGAP_acession,
-            program: project.source,
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: project.size,
@@ -89,6 +89,22 @@ function formatAccess(boolean) {
 
         return "Private";
     }
+}
+
+/**
+ * Formats and normalizes the data types, with its correct display value.
+ *
+ * @param dataTypes
+ * @returns {*}
+ */
+function formatDataTypes(dataTypes) {
+
+    if ( dataTypes ) {
+
+        return dataTypes.map(dataType => switchDataType(dataType));
+    }
+
+    return dataTypes;
 }
 
 /**
@@ -163,13 +179,53 @@ function sumFileValues(files) {
 }
 
 /**
+ * Returns the corresponding consortium display name.
+ *
+ * @param consortium
+ * @returns {*}
+ */
+function switchConsortiumName(consortium) {
+
+    switch (consortium) {
+        case "GTEx":
+            return "GTEx (v8)";
+        case "ThousandGenomes":
+            return "1000 Genomes";
+        default:
+            return consortium;
+    }
+}
+
+/**
+ * Returns the corresponding data type display name.
+ *
+ * @param dataType
+ * @returns {*}
+ */
+function switchDataType(dataType) {
+
+    switch (dataType) {
+        case "Whole Genome":
+            return "WGS";
+        case "Whole genome":
+            return "WGS";
+        case "Exome":
+            return "WES";
+        case "Whole Exome":
+            return "WES";
+        default:
+            return dataType;
+    }
+}
+
+/**
  * Logs an error in the build process if the sum of filtered workspaces does not equal the total number of workspaces.
  *
  * @param workspaces
  */
 function validateWorkspacesFiltering(workspaces) {
 
-    /* Consortia. */
+    /* Consortium. */
     const workspacesByConsortiaCount = workspaces.filter(workspace => {
 
         const dbGapExists = !!workspace.dbGapIdAccession;
@@ -200,4 +256,4 @@ function validateWorkspacesFiltering(workspaces) {
 
 }
 
-module.exports.getDashboardDetail = getDashboardDetail;
+module.exports.getWorkspaces = getWorkspaces;

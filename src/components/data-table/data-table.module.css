@@ -3,6 +3,10 @@
  * https://www.anvilproject.org
  *
  * Style definitions specific to The AnVIL data table component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ * "workspaces" identifier is for workspaces table.
  */
 @import "../../styles/vars.module.css";
 
@@ -15,274 +19,37 @@
     width: 100%;
 }
 
-/* Table wrapper - summary */
-.wrapper.summary {
+/* Summary table - wrapper */
+.wrapper[id^="summary"] {
     margin-bottom: 24px;
 }
 
-/* Table wrapper - inset */
-.wrapper.inset {
-    color: var(--black87);
-    display: table;
-    padding: 8px 0;
-}
-
-/* Add additional margin to the bottom of the consent groups to scoot down title below it */
-.wrapper.inset:last-of-type {
-    margin-bottom: 16px;
-}
-
 /* Table */
-table {
+.wrapper table {
     display: inline-table;
     margin: 0;
 }
 
-/* Header */
-.header {
-    border-bottom: 1px solid var(--accent-blue-green);
-    height: 42px;
-    vertical-align: bottom;
-}
-
-/* Header - inset, workspaces */
-.inset .header, .workspaces .header {
-    height: 32px;
-}
-
-/* Header - inset */
-.inset .header {
-    border-bottom: 1px solid var(--shade-light-green);
-}
-
-/* Header cell, row cell */
-.header th, .row td {
-    border-bottom: none;
-    color: inherit;
-    font-size: 0.875rem; /* 14px */
-}
-
-/* Header cells */
-.header th {
-    font-weight: 600;
-    line-height: 24px;
-    padding: 0 4px 4px;
-}
-
-/* Header cell - first */
-.header th:first-of-type {
-    padding-left: 0;
-}
-
-/* Header cell - last */
-.header th:last-of-type {
-    padding-right: 0;
-}
-
-/* Header cells - inset */
-.inset .header th {
-    font-weight: 500;
-}
-
-/* Header cells - workspaces */
-.workspaces .header th {
-    font-weight: 500;
-}
-
-/* Header cell - first - inset, workspaces */
-.inset .header th:first-of-type, .workspaces .header th:first-of-type {
-    padding-left: 0;
-}
-
-/* Header cell - last - inset, workspaces */
-.inset .header th:last-of-type, .workspaces .header th:last-of-type {
-    padding-right: 0;
-}
-
-/* Row */
-.row {
-    border-bottom: 1px solid var(--shade-light-green);
-}
-
-/* Row - summary table - last before "total" row */
-.summary .row:nth-last-child(2) {
-    border-bottom: none;
-}
-
-/* Row - summary table - "total" row */
-.summary .row.total {
-    border-top: 1px solid var(--accent-blue-green);
-    border-bottom-color: var(--accent-blue-green);
-}
-
-/* Row - inset table */
-.inset .row {
-    border-left: 1px solid var(--shade-light-green);
-    border-right: 1px solid var(--shade-light-green);
-}
-
-/* Row cells */
-.row td {
-    font-weight: 400;
-    height: 32px;
-    min-width: 62px;
-    padding: 0 4px;
-}
-
-/* Row cell - detail table - "program" eg CCDG */
-.detail .row td[id^="program"] {
-    max-width: 92px; /* Required for ellipsis */
-    min-width: 92px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-}
-
-/* Row cell - detail table - "projectId" (ie Terra workspace name) */
-.detail .row td[id^="projectId"] {
-    max-width: 197px;
-    min-width: 197px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    white-space: nowrap;
-}
-
-/* Row cell - detail table - "dbGapId" or "dbGapIdAccession" */
-.detail .row td[id^="dbGapId"] {
-    min-width: 112px;
-}
-
-/* Row cell - detail table - "type" */
-.detail .row td[id^="dataType"] {
-    min-width: 76px;
-}
-
-/* Row cell - detail table - "access" */
-.detail .row td[id^="access"] {
-    min-width: 32px;
-}
-
-/* Row cell - inset, workspaces */
-.inset .row td, .workspaces .row td {
-    height: 24px;
-}
-
-/* Row cell - ellipsis */
-/* Inset table - "consentName" */
-/* Workspaces table - "workspaceId" */
-.inset .row td[id^="consentName"], .workspaces .row td[id^="workspaceId"] {
-    max-width: 112px; /* Required for ellipsis */
-    min-width: 112px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-}
-
-/* Row cell - counts */
-/* Inset table - "subjects" */
-/* Workspaces table - "subjects", "samples", "files", "size" */
-.inset .row td[id^="subjects"], .workspaces .row td[id^="dataType"], .workspaces .row td[id^="subjects"], .workspaces .row td[id^="samples"] {
-    min-width: 76px;
-}
-
-/* Row */
-.row {
-    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
-}
-
-.row:hover {
-    background-color: var(--black3);
-}
-
-/* Row cells - "total" */
-.row.total td {
-    font-weight: 500;
-}
-
-/* Row cell - link */
-.row td.link {
-    color: var(--primary);
-    cursor: pointer;
-}
-
-/* Right align cell */
-.row td.right, .header th.right {
-    text-align: right;
-}
-
-/* Row cell - first */
-.row td:first-of-type {
-    padding-left: 0;
-}
-
-/* Row cell - last */
-.row td:last-of-type {
-    padding-right: 0;
-}
-
-/* Row cell - first */
-/* Inset table */
-.inset .row td:first-of-type {
-    padding-left: 8px;
-}
-
-/* Row cell - last */
-/* Inset table */
-.inset .row td:last-of-type {
-    padding-right: 8px;
-}
-
 /**
- * Large tablet portrait, large handset landscape, small window
+ * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
  */
-@media screen and (min-width: 720px) {
-    
-    /* Table wrapper - summary. Overflow not required. */
-    .wrapper.summary {
-        padding-right: 0;
-        width: 100%;
+@media screen and (min-width: 840px) {
+
+    /* Wrapper */
+    .wrapper {
+        max-width: calc(100vw - 24px - 200px - 40px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
 }
 
 /**
- * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
+ * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For studies table, we squash diseases and
+ * data type and let study name consume available space.
  */
-@media screen and (max-width: 694px) {
+@media screen and (min-width: 1280px) {
 
-    .wrapper.detail {
-        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
-        width: calc(100vw - 16px); /* Allow table to stretch to right-hand side of device, to indicate more */
-    }
-}
-
-/**
- * Custom breakpoint where detail tables no longer fit within channel and must have overflow/scroll
- */
-@media screen and (min-width: 840px) and (max-width: 949px) {
-
-    .wrapper.detail {
-        padding-right: 16px; /* Add "internal" gutter on right-hand side of table */
-        max-width: calc(100vw - 24px - 24px - 200px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
-    }
-}
-
-/**
- * Custom breakpoint where tables change from scroll overflow, to 100% width of channel (712px).
- */
-@media screen and (min-width: 1040px) {
-
-    /* Prevent overflow on detail tables */
-    .wrapper.detail {
-        padding-right: 0;
-        width: 100%;
-    }
-
-    /* Row cell - detail table - "projectId" (ie Terra workspace name) */
-    .detail .row td[id^="projectId"] {
-        max-width: 246px;
-        min-width: 246px;
+    /* Table wrapper. */
+    /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
+    .wrapper {
+        max-width: calc(100vw - 24px - 280px - 40px - 40px);
     }
 }
