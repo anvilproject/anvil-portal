@@ -20,6 +20,20 @@ export function sortData(data) {
 }
 
 /**
+ * Sorts a map object.
+ *
+ * @param mapObj
+ * @returns {Map}
+ */
+export function sortMap(mapObj) {
+
+    return new Map([...mapObj].sort(function ([data0], [data1]) {
+
+        return compareDataValues(data0, data1);
+    }));
+}
+
+/**
  * A simple comparison between two variables, returning a value to indicate an order of the variables in relation to each other.
  * Used by the sort function.
  *

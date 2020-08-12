@@ -11,6 +11,9 @@ import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
 import * as DashboardWorkspaceService from "./dashboard-workspace.service";
 
+// Template variables
+const setOfDenyListTerms = new Set(["NA", "--", "", null]);
+
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-"];
 
@@ -22,25 +25,24 @@ export const DashboardSearchFacets = [
 ];
 
 /**
- * Returns FE model of terms by facet.
+ * Returns FE model of checkboxes by facet.
  *
- * @param termsByFacets
- * @returns {Array}
+ * @param facetsByTerm
+ * @returns {*}
  */
-export function buildDashboardCheckboxesByFacet(termsByFacets) {
+export function buildDashboardCheckboxesByFacet(facetsByTerm) {
 
-    if ( !termsByFacets ) {
+    return DashboardSearchFacets.reduce((acc, facet) => {
 
-        return [];
-    }
-
-    return [...termsByFacets].map(([facet, terms]) => {
-
-        return {
-            checkboxes: buildCheckboxes(terms),
+        const checkboxGroup = {
+            checkboxes: buildCheckboxesByFacet(facet, facetsByTerm),
             groupName: DashboardTableService.switchDisplayColumnName(facet)
         };
-    });
+
+        acc.push(checkboxGroup);
+
+        return acc;
+    }, [])
 }
 
 /**
@@ -48,11 +50,15 @@ export function buildDashboardCheckboxesByFacet(termsByFacets) {
  *
  * @param facetByTerm
  * @param setOfCountResultsByFacet
- * @param inputting
  * @param workspacesQuery
  * @returns {*}
  */
-export function getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputting, workspacesQuery) {
+export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, workspacesQuery) {
+
+    if ( setOfCountResultsByFacet.size === 0 ) {
+
+        return new Map();
+    }
 
     return [...facetByTerm].reduce((acc, [term, facet]) => {
 
@@ -60,7 +66,7 @@ export function getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputtin
         const setOfCountResults = setOfCountResultsByFacet.get(facet);
 
         /* Filter the workspaces. */
-        const workspaces = DashboardWorkspaceService.getDashboardWorkspacesForCount(workspacesQuery, setOfCountResults, inputting);
+        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfCountResults);
 
         /* Get the counter for the term. */
         const termCounter = getTermCounter(facet, term, workspaces);
@@ -71,116 +77,98 @@ export function getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputtin
 }
 
 /**
- * Returns a map of object of checkbox values by workspace property.
+ * Returns a map object of facet by term.
+ * Values are sorted alphabetically.
  *
- * @returns {Map}
+ * @param workspacesQuery
+ * @returns {*}
  */
-export function getDashboardFacets(workspaces) {
+export function getDashboardFacetsByTerm(workspacesQuery) {
 
-    /* Generate a new map object of checkbox by workspace property as the key. */
-    /* For each key, find a set of workspace values corresponding to the workspace property. */
-    let checkboxesByProperty = new Map();
+    const facetsByTerm = DashboardSearchFacets.reduce((acc, facet) => {
 
-    /* For each property, grab the set of corresponding workspace values. */
-    DashboardSearchFacets.forEach(property => {
+        /* Grab the terms. */
+        workspacesQuery.forEach(workspace => {
 
-        const setOfCheckboxValues = new Set();
+            const term = workspace[facet];
 
-        /* Grab the set of values, and corresponding count for the specified workspace property. */
-        workspaces.forEach(workspace => {
+            /* Handle case where term is an array. */
+            if ( DashboardService.isArray(term) ) {
 
-            /* Return if the value is invalid. */
-            if ( isCheckboxValueInvalid(workspace[property]) ) {
+                workspace[facet].forEach(term => {
 
-                return;
-            }
+                    if ( !setOfDenyListTerms.has(term) ) {
 
-            /* Check the value is an array and grab all values inside the array. */
-            if ( DashboardService.isArray(workspace[property]) ) {
-
-                const workspaceValues = workspace[property];
-
-                workspaceValues.forEach(value => {
-
-                    /* Check there are no invalid values inside the array. */
-                    if ( !isCheckboxValueInvalid(value) ) {
-
-                        setOfCheckboxValues.add(value)
+                        acc.set(term, facet);
                     }
-                });
+                })
             }
-            /* Otherwise, grab the value. */
             else {
 
-                const workspaceValue = workspace[property];
+                if (!setOfDenyListTerms.has(term)) {
 
-                setOfCheckboxValues.add(workspaceValue);
+                    acc.set(term, facet);
+                }
             }
         });
 
-        /* Sort the set of values. */
-        const checkboxValues = DashboardSortService.sortData([...setOfCheckboxValues]);
+        return acc;
+    }, new Map());
 
-        checkboxesByProperty.set(property, checkboxValues);
-    });
-
-    return checkboxesByProperty;
+    /* Return sorted facetsByTerm. */
+    return DashboardSortService.sortMap(facetsByTerm);
 }
 
 /**
- * Returns a map of facet by term.
+ * Returns a set of search groups.
  *
- * @param termsByFacets
- * @returns {Map}
+ * @returns {Set}
  */
-export function getDashboardFacetByTerm(termsByFacets) {
+export function getDashboardSetOfSearchGroups() {
 
-    const termByFacet = new Map();
+    const setOfSearchGroups = new Set();
 
-    [...termsByFacets].forEach(([facet, terms]) => {
+    /* Add the facets, and the "input" to the set. */
+    DashboardSearchFacets.forEach(facet => setOfSearchGroups.add(facet));
+    setOfSearchGroups.add("input");
 
-        terms.forEach(term => termByFacet.set(term, facet));
-    });
-
-    return termByFacet;
+    return setOfSearchGroups;
 }
 
 /**
  * Returns the set of terms for all facets.
  *
- * @param termsByFacets
+ * @param facetsByTerm
  * @returns {*}
  */
-export function getDashboardSetOfTerms(termsByFacets) {
+export function getDashboardSetOfTerms(facetsByTerm) {
 
-    return [...termsByFacets.values()].reduce((acc, terms) => {
-
-        terms.map(term => acc.add(term));
-
-        return acc;
-    }, new Set());
+    return new Set([...facetsByTerm.keys()]);
 }
 
 /**
- * Returns FE model for checkboxes.
+ * Builds a FE model of checkboxes for the specified facet.
  *
- * @param terms
- * @returns {Array}
+ * @param facet
+ * @param facetsByTerm
+ * @returns {*}
  */
-function buildCheckboxes(terms) {
+function buildCheckboxesByFacet(facet, facetsByTerm) {
 
-    if ( !terms ) {
+    return [...facetsByTerm].reduce((acc, [term, ft]) => {
 
-        return [];
-    }
+        if ( ft === facet ) {
 
-    return terms.map(term => {
+            const checkbox = {
+                label: switchWorkspaceValueDisplayText(term),
+                value: term
+            };
 
-        return {
-            label: switchWorkspaceValueDisplayText(term),
-            value: term
+            acc.push(checkbox);
         }
-    })
+
+        return acc;
+    }, []);
 }
 
 /**
@@ -214,17 +202,6 @@ function getTermCounter(facet, term, workspaces) {
 
         return acc;
     }, 0);
-}
-
-/**
- * Returns true if the checkbox value is invalid.
- *
- * @param checkboxValue
- * @returns {boolean}
- */
-function isCheckboxValueInvalid(checkboxValue) {
-
-    return !checkboxValue || checkboxValue === "NA";
 }
 
 /**

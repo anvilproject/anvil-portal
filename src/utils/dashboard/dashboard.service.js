@@ -26,15 +26,3 @@ export function isArray(value) {
 
     return Array.isArray(value);
 }
-
-/**
- * Returns a true value for any rehype-react custom prop.
- * i.e. A rehype-react prop without a value will not be interpreted as true; instead, it will be passed as the empty string "".
- *
- * @param value
- * @returns {boolean}
- */
-export function parseRehypeProp(value) {
-
-    return !!value || value === "";
-}
