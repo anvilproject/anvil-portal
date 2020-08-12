@@ -52,8 +52,10 @@ class ProviderDashboardFilter extends React.Component {
 
         this.state = ({
             dashboardIndex: [],
+            inputting: false,
             inputValue: "",
             querying: false,
+            setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsByFacet: new Map(),
             termsChecked: new Map(),
@@ -66,11 +68,13 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setState = ({
             dashboardIndex: [],
+            inputting: false,
             inputValue: "",
             querying: false,
+            setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsByFacet: new Map(),
-            termsChecked: new Map(),
+            termsChecked: new Map()
         });
     }
 
@@ -86,6 +90,8 @@ class ProviderDashboardFilter extends React.Component {
     componentDidUpdate(_, prevState) {
 
         this.searchStateChanged(prevState);
+
+        this.setOfResultsByFacetStateChanged(prevState);
     }
 
     buildFacetQueryString = (selectedTerms, facet) => {
@@ -297,6 +303,8 @@ class ProviderDashboardFilter extends React.Component {
 
         const {inputValue} = this.state;
 
+        this.setState({inputting: !!inputValue});
+
         return !!inputValue;
     };
 
@@ -316,6 +324,49 @@ class ProviderDashboardFilter extends React.Component {
             /* Update set of results. */
             this.updateSetOfResults();
         }
+    };
+
+    setOfResultsByFacetStateChanged = (prevState) => {
+
+        const {setOfResultsByFacet} = this.state;
+
+        const stateChanged = ( prevState.setOfResultsByFacet !== setOfResultsByFacet );
+
+        if ( stateChanged ) {
+
+            /* Update counts. */
+            this.updateCounts();
+        }
+    };
+
+    updateCounts = () => {
+
+        const {facetByTerm} = this.props,
+            {setOfResultsByFacet} = this.state;
+
+        /* Get a set of facets. */
+        const setOfFacets = new Set([...facetByTerm.values()]);
+
+        /* Get the results for each facet. */
+        const setOfCountResultsByFacet = [...setOfFacets].reduce((acc, facet) => {
+
+            /* Clone the setOfResultsByFacet. */
+            const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
+
+            /* Remove the facet from the setOfResultsByFacet */
+            /* We are only interested in the intersection of results between the other facets/input. */
+            setOfResultsByFacetClone.delete(facet);
+
+            /* Get the intersection of results. */
+            const setOfResults = this.findIntersectionSetOfResults(setOfResultsByFacetClone);
+
+            acc.set(facet, setOfResults);
+
+            return acc;
+        }, new Map());
+
+        /* Update state. */
+        this.setState({setOfCountResultsByFacet: setOfCountResultsByFacet});
     };
 
     updateSetOfResults = () => {
@@ -339,11 +390,11 @@ class ProviderDashboardFilter extends React.Component {
 
     render() {
         const {checkboxGroups, children, facetByTerm, workspacesQuery} = this.props,
-            {inputValue, querying, setOfResults, setOfResultsByFacet, termsChecked,
+            {inputting, inputValue, querying, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults, querying);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
-        const termsCount = DashboardSearchService.getCountsByTerms(termsChecked, facetByTerm, workspaces);
+        const termsCount = DashboardSearchService.getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputting, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
                 value={{checkboxGroups, inputValue, querying, setOfResults, summaries, termsChecked, termsCount, workspaces,

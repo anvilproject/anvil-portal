@@ -38,8 +38,8 @@ class Checkbox extends React.Component {
     render() {
         const {checked, count, disabled, label} = this.props;
         return (
-            <span className={classNames(compStyles.checkbox, {[compStyles.disabled]: disabled})} onClick={this.onHandleClick} role="presentation">
-                <span className={classNames({[compStyles.active]: checked}, compStyles.check)}>
+            <span className={classNames({[compStyles.active]: checked}, compStyles.checkbox, {[compStyles.disabled]: disabled})} onClick={this.onHandleClick} role="presentation">
+                <span className={compStyles.check}>
                     <span className={classNames("material-icons-round", compStyles.icon)}>done</span>
                 </span>
                 <span className={compStyles.label}>{label}</span>

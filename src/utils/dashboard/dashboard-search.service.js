@@ -9,6 +9,7 @@
 import * as DashboardService from "./dashboard.service";
 import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
+import * as DashboardWorkspaceService from "./dashboard-workspace.service";
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-"];
@@ -45,24 +46,24 @@ export function buildDashboardCheckboxesByFacet(termsByFacets) {
 /**
  * Returns a map of counts for each term.
  *
- * @param termsChecked
  * @param facetByTerm
- * @param workspaces
+ * @param setOfCountResultsByFacet
+ * @param inputting
+ * @param workspacesQuery
  * @returns {*}
  */
-export function getCountsByTerms(termsChecked, facetByTerm, workspaces) {
+export function getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputting, workspacesQuery) {
 
-    if ( workspaces.length === 0 ) {
+    return [...facetByTerm].reduce((acc, [term, facet]) => {
 
-        return new Map();
-    }
+        /* Get the corresponding setOfResults for the facet. */
+        const setOfCountResults = setOfCountResultsByFacet.get(facet);
 
-    return [...termsChecked].reduce((acc, [term, checked]) => {
+        /* Filter the workspaces. */
+        const workspaces = DashboardWorkspaceService.getDashboardWorkspacesForCount(workspacesQuery, setOfCountResults, inputting);
 
-        const facet = facetByTerm.get(term);
-
-        const termCounter = getTermCounter(workspaces, facet, term);
-
+        /* Get the counter for the term. */
+        const termCounter = getTermCounter(facet, term, workspaces);
         acc.set(term, termCounter);
 
         return acc;
@@ -185,11 +186,11 @@ function buildCheckboxes(terms) {
 /**
  * Returns the count for the specified term.
  *
- * @param workspaces
  * @param facet
  * @param term
+ * @param workspaces
  */
-function getTermCounter(workspaces, facet, term) {
+function getTermCounter(facet, term, workspaces) {
 
     return workspaces.reduce((acc, workspace) => {
 

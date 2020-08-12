@@ -18,15 +18,20 @@
     margin-bottom: 0;
 }
 
-/* Checkbox - disabled. */
-.checkbox.disabled {
+/* Checkbox - inactive and zero count. */
+.checkbox:not(.active).disabled {
     color: var(--black12);
     cursor: default;
     pointer-events: none;
 }
 
+/* Checkbox - active and zero count. */
+.checkbox.active.disabled {
+    color: var(--black58);
+}
+
 /* Check. */
-.check {
+.checkbox .check {
     border: 2px solid var(--primary);
     border-radius: 2px;
     box-sizing: content-box;
@@ -36,24 +41,25 @@
 }
 
 /* Check - active. */
-.check.active {
+.checkbox.active .check {
     background-color: var(--primary);
     opacity: 1;
     transition: all 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Check - disabled. */
-.checkbox.disabled .check, .checkbox.disabled .check.active {
+/* Check - inactive and zero count. */
+.checkbox:not(.active).disabled .check {
     border: 2px solid var(--black12);
 }
 
-/* Check - active, but disabled */
-.checkbox.disabled .check.active {
-    background-color: var(--black12);
+/* Check - active and zero count. */
+.checkbox.active.disabled .check {
+    background-color: var(--black34);
+    border: 2px solid var(--black12);
 }
 
 /* Icon. */
-.icon {
+.checkbox .icon {
     color: var(--white);
     cursor: inherit;
     font-size: 14px !important;
@@ -61,7 +67,7 @@
 }
 
 /* Inactive - hide icon. */
-.check:not(.active) .icon {
+.checkbox:not(.active) .icon {
     display: none;
 }
 
