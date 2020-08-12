@@ -45,9 +45,9 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 | 12:00 PM | Concept of Workspaces (hands-on*) | [Slides](https://docs.google.com/presentation/d/1csJ0FhLjOLfn02pTKQP3BE-z5WfGu__UOzN_ihtIU1k/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=1pxzQE6Rugc) |
 | 12:30 PM | Break |   |
 | 1:30 PM | Batch processing of data with Workflows (hands-on*) | [Slides](https://docs.google.com/presentation/d/1Chsi8j2AHXXAACrvP7phXhdc644IKpkNCEUcFhEixWc/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=x5SL8yd3kNg) |
-| 2:00 PM | Exploratory analysis with Notebooks & R Studio (hands-on*) | [Slides](http://docs.google.com/document/d/1vR555ldiejOaOzlM9TVYUlKzxvab5NrlD5jHzOmvutw), [Video](https://www.youtube.com/watch?v=XRbJ3bilsa0) |
+| 2:00 PM | Exploratory analysis with Notebooks & R Studio (hands-on*) | [Slides](https://docs.google.com/document/d/1vR555ldiejOaOzlM9TVYUlKzxvab5NrlD5jHzOmvutw/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=XRbJ3bilsa0) |
 | 2:25 PM | Jamboree closing |   |
 | 2:30 PM | Breakout sessions |   |
 
-###Contact
-Please feel free to pass on any questions to Shurjo Sen or Mo Heydarian.
+### Contact
+Please feel free to pass on any questions to [Shurjo Sen](mailto:sensh@mail.nih.gov) or [Mo Heydarian](mailto:mheydar1@jhu.edu).
