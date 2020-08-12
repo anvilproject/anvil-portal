@@ -37,8 +37,8 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 | 3:00 PM |  Closing |  |
 
 #### Day 2 (June 11th, 2020)
-|    |      |
-| -- | ---- |
+|    |      |     |
+| -- | ---- | --- |
 | 11:00 AM | Data analysis on AnVIL - use cases (lecture) | [Slides](https://docs.google.com/presentation/d/1r7iqhcZRfVKZ6Yk5KSjH0C96IQsyjS41iXwzUEQtUGc/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=py1G4r2xLyc) |
 | 11:15 AM | Dockstore and WDL (lecture) | [Slides](https://docs.google.com/presentation/d/1ehwiD2HPmg59GO-WxJ9r5aPkiJlMPLl9xFNsAJolexU/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=mhPQ3z_xxyQ) |
 | 11:45 AM | Terra - for data analysis  (lecture) | [Slides](https://docs.google.com/presentation/d/1oDqsoKJhE2bxrKwXmCvSNPt63WNAGYYnMNIizECki8k/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=IrERpCkE_m4) |
