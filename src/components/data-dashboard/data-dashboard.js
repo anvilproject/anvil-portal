@@ -21,17 +21,17 @@ import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.
 function DataDashboard() {
 
     const workspacesQuery = DashboardWorkspaceStaticQuery();
-    const termsByFacets = DashboardSearchService.getDashboardFacets(workspacesQuery);
-    const facetByTerm = DashboardSearchService.getDashboardFacetByTerm(termsByFacets);
-    const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(termsByFacets);
-    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(termsByFacets);
+    const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(workspacesQuery);
+    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm);
+    const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups();
+    const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
 
     return (
         <ProviderDashboardFilter
             checkboxGroups={checkboxGroups}
-            facetByTerm={facetByTerm}
+            facetsByTerm={facetsByTerm}
+            setOfSearchGroups={setOfSearchGroups}
             setOfTerms={setOfTerms}
-            termsByFacets={termsByFacets}
             workspacesQuery={workspacesQuery}>
             <DataSearch/>
             <DataSummary/>

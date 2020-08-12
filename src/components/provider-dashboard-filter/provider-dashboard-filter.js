@@ -52,12 +52,11 @@ class ProviderDashboardFilter extends React.Component {
 
         this.state = ({
             dashboardIndex: [],
-            inputting: false,
+            dashboardIndexMounted: false,
             inputValue: "",
-            querying: false,
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
-            setOfResultsByFacet: new Map(),
+            setOfResultsBySearchGroups: new Map(),
             termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
             onHandleInput: this.onHandleInput,
@@ -68,12 +67,11 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setState = ({
             dashboardIndex: [],
-            inputting: false,
+            dashboardIndexMounted: false,
             inputValue: "",
-            querying: false,
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
-            setOfResultsByFacet: new Map(),
+            setOfResultsBySearchGroups: new Map(),
             termsChecked: new Map()
         });
     }
@@ -89,9 +87,11 @@ class ProviderDashboardFilter extends React.Component {
 
     componentDidUpdate(_, prevState) {
 
+        this.dashboardIndexMountedStateChanged(prevState);
+
         this.searchStateChanged(prevState);
 
-        this.setOfResultsByFacetStateChanged(prevState);
+        this.setOfResultsBySearchGroupsStateChanged(prevState);
     }
 
     buildFacetQueryString = (selectedTerms, facet) => {
@@ -123,6 +123,19 @@ class ProviderDashboardFilter extends React.Component {
         return "";
     };
 
+    dashboardIndexMountedStateChanged = (prevState) => {
+
+        const {dashboardIndexMounted} = this.state;
+
+        const stateChanged = ( prevState.dashboardIndexMounted !== dashboardIndexMounted );
+
+        if ( stateChanged ) {
+
+            /* Update set of results. */
+            this.updateSetOfResults();
+        }
+    };
+
     fetchDashboardIndex = () => {
 
         fetch(DASHBOARD_INDEX)
@@ -130,109 +143,28 @@ class ProviderDashboardFilter extends React.Component {
             .then(res => {
                 const dashboardIndex = lunr.Index.load(res);
 
-                this.setState({dashboardIndex: dashboardIndex})
+                this.setState({dashboardIndex: dashboardIndex, dashboardIndexMounted: true})
             })
             .catch(err => {
                 console.log(err, "Error loading index");
             });
     };
 
-    filterSelectedTerms = (terms) => {
+    findIntersectionSetOfResults = (setOfResultsBySearchGroups) => {
 
-        const {termsChecked} = this.state;
-
-        return terms.filter(term => termsChecked.get(term));
-    };
-
-    findIntersectionSetOfResults = (setOfResultsByFacet) => {
-
-        /* Grab the first available set with results and remove the set from setOfResultsByFacet. */
-        const facet = this.getFirstSetWithResults(setOfResultsByFacet);
-
-        /* Early exit - inactive querying. */
-        if ( !facet ) {
-
-            return new Set();
-        }
-
-        const firstSet = setOfResultsByFacet.get(facet);
-        setOfResultsByFacet.delete(facet);
+        /* Sort the set of results by set size. */
+        const sortedSetsOfResults = this.sortSetsOfResults(setOfResultsBySearchGroups);
+        const firstSetOfResults = sortedSetsOfResults.shift();
 
         /* Create a new set of intersection results. */
-        /* i.e. filter through the first set to confirm results exist in all other faceted sets. */
-        /* The inputting set of results will be passed over when "inputting" is false. */
-        /* Any empty facet i.e. "checked" set of results are passed over because no terms within the facet have been "checked". */
-        return new Set([...firstSet].filter(result => {
+        /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
+        return new Set([...firstSetOfResults].filter(result => {
 
-            return [...setOfResultsByFacet].every(([facet, setOfResults]) => {
-
-                if ( facet === "input" && this.isInputting() ) {
-
-                    return setOfResults.has(result);
-                }
-
-                if ( setOfResults.size === 0 ) {
-
-                    return true;
-                }
-
-                return setOfResults.has(result)
-            });
+            return sortedSetsOfResults.every(setOfResults => setOfResults.has(result));
         }));
     };
 
-    getCheckedResults = () => {
-
-        /* Get the selected terms for each facet. */
-        const selectedTermsByFacets = this.getSelectedTermsByFacets();
-
-        /* Get any results, by facet. Results are retrieved by facet to retain "OR" searching amongst facets. */
-        return this.getCheckedResultsByFacet(selectedTermsByFacets);
-    };
-
-    getCheckedResultsByFacet = (selectedTermsByFacets) => {
-
-        /* Only return a set of checked results, if the facet has selected terms. */
-        return selectedTermsByFacets.reduce((acc, selectedTermsByFacet) => {
-
-            const {selectedTerms, facet} = selectedTermsByFacet;
-
-            if ( selectedTerms.length ) {
-
-                const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
-                const facetQueryResults = this.getResultsByQuery(facetQueryString);
-
-                acc.set(facet, facetQueryResults);
-            }
-            else {
-
-                acc.set(facet, new Set());
-            }
-
-            return acc;
-        }, new Map());
-    };
-
-    getFirstSetWithResults = (setOfResultsByFacet) => {
-
-        return [...setOfResultsByFacet.keys()].find(facet => setOfResultsByFacet.get(facet).size > 0);
-    };
-
-    getInputResults = () => {
-
-        const {inputValue} = this.state;
-        const inputString = this.buildInputValueString(inputValue);
-        const inputResults = this.getResultsByQuery(inputString);
-
-        return new Map([["input", inputResults]]);
-    };
-
     getResultsByQuery = (query) => {
-
-        if ( !query ) {
-
-            return new Set();
-        }
 
         const {dashboardIndex} = this.state;
 
@@ -242,38 +174,78 @@ class ProviderDashboardFilter extends React.Component {
         return new Set(results.map(result => result.ref));
     };
 
-    getSelectedTermsByFacets = () => {
+    getSetOfInputResults = () => {
 
-        const {termsByFacets} = this.props;
+        const {inputValue} = this.state;
+        const inputString = this.buildInputValueString(inputValue);
 
-        return [...termsByFacets].map(([facet, terms]) => {
-
-            const selectedTerms = this.filterSelectedTerms(terms);
-
-            return {
-                selectedTerms: selectedTerms,
-                facet: facet
-            }
-        });
-
+        return new Set(this.getResultsByQuery(inputString));
     };
 
     getSetOfResults = () => {
 
-        /* Get the checked results. */
-        const checkedResultsByFacet = this.getCheckedResults();
+        /* Get the set of results by search groups. */
+        const setOfResultsBySearchGroups = this.getSetOfResultsBySearchGroups();
 
-        /* Get the input results. */
-        const inputResultsByInput = this.getInputResults();
-
-        /* Join input results with checked results. */
-        let setOfResultsByFacet = new Map([...checkedResultsByFacet, ...inputResultsByInput]);
-
-        /* Update set of results by facet. */
-        this.updateSetOfResultsByFacet(setOfResultsByFacet);
+        /* Update set of results by search group. */
+        this.updateSetOfResultsBySearchGroups(setOfResultsBySearchGroups);
 
         /* Return any intersecting sets of results. i.e. searching will be "AND" between facets and input. */
-        return this.findIntersectionSetOfResults(setOfResultsByFacet);
+        return this.findIntersectionSetOfResults(setOfResultsBySearchGroups);
+    };
+
+    getTermsChecked = (facet) => {
+
+        const {facetsByTerm} = this.props,
+            {termsChecked} = this.state;
+
+        return [...termsChecked].reduce((acc, [term, checked]) => {
+
+            const termInFacet = facetsByTerm.get(term) === facet;
+
+            if ( termInFacet && checked ) {
+
+                acc.push(term);
+            }
+
+            return acc;
+        }, []);
+    };
+
+    getSetOfFacetedResults = (facet) => {
+
+        /* Grab any checked terms for the facet. */
+        const selectedTerms = this.getTermsChecked(facet);
+
+        /* Build the query string. */
+        const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+
+        return this.getResultsByQuery(facetQueryString);
+    };
+
+    getSetOfResultsBySearchGroup = (searchGroup) => {
+
+        /* Return a set of results for the search group "input". */
+        if ( searchGroup === "input" ) {
+
+            return this.getSetOfInputResults();
+        }
+
+        /* Return a set of results for the faceted search group. */
+        return this.getSetOfFacetedResults(searchGroup);
+    };
+
+    getSetOfResultsBySearchGroups = () => {
+
+        const {setOfSearchGroups} = this.props;
+
+        return [...setOfSearchGroups].reduce((acc, searchGroup) => {
+
+            const resultsBySearchGroup = this.getSetOfResultsBySearchGroup(searchGroup);
+            acc.set(searchGroup, resultsBySearchGroup);
+
+            return acc;
+        }, new Map());
     };
 
     initializeTermsChecked = () => {
@@ -287,86 +259,54 @@ class ProviderDashboardFilter extends React.Component {
         this.setState({termsChecked: termsChecked});
     };
 
-    isCheckboxing = () => {
-
-        const {termsChecked} = this.state;
-
-        return [...termsChecked.keys()].some(term => termsChecked.get(term));
-    };
-
     isInputDenied = (inputValue) => {
 
         return DashboardSearchService.DenyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
-    isInputting = () => {
-
-        const {inputValue} = this.state;
-
-        this.setState({inputting: !!inputValue});
-
-        return !!inputValue;
-    };
-
     searchStateChanged = (prevState) => {
 
-        const {inputValue, termsChecked} = this.state;
+        const {dashboardIndexMounted, inputValue, termsChecked} = this.state;
 
-        const stateChanged = ( prevState.inputValue !== inputValue ) || ( prevState.termsChecked !== termsChecked );
+        const inputValueChanged = prevState.inputValue !== inputValue;
+        const termsCheckedChanged = prevState.termsChecked !== termsChecked;
 
-        if ( stateChanged ) {
+        const stateChanged = inputValueChanged || termsCheckedChanged;
 
-            const querying = this.isCheckboxing() || this.isInputting();
-
-            /* Update state - querying. */
-            this.setState({querying: querying});
+        if ( dashboardIndexMounted && stateChanged ) {
 
             /* Update set of results. */
             this.updateSetOfResults();
         }
     };
 
-    setOfResultsByFacetStateChanged = (prevState) => {
+    setOfResultsBySearchGroupsStateChanged = (prevState) => {
 
-        const {setOfResultsByFacet} = this.state;
+        const {dashboardIndexMounted, setOfResultsBySearchGroups} = this.state;
 
-        const stateChanged = ( prevState.setOfResultsByFacet !== setOfResultsByFacet );
+        const stateChanged = ( prevState.setOfResultsBySearchGroups !== setOfResultsBySearchGroups );
 
-        if ( stateChanged ) {
+        if ( dashboardIndexMounted && stateChanged ) {
 
-            /* Update counts. */
-            this.updateCounts();
+            /* Update term counts. */
+            this.updateTermCounts();
         }
     };
 
-    updateCounts = () => {
+    sortSetsOfResults = (setOfResultsBySearchGroups) => {
 
-        const {facetByTerm} = this.props,
-            {setOfResultsByFacet} = this.state;
+        return [...setOfResultsBySearchGroups.values()]
+            .sort(function (set0, set1) {
 
-        /* Get a set of facets. */
-        const setOfFacets = new Set([...facetByTerm.values()]);
+                if ( set0.size > set1.size ) {
 
-        /* Get the results for each facet. */
-        const setOfCountResultsByFacet = [...setOfFacets].reduce((acc, facet) => {
+                    return 1;
+                }
+                else {
 
-            /* Clone the setOfResultsByFacet. */
-            const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
-
-            /* Remove the facet from the setOfResultsByFacet */
-            /* We are only interested in the intersection of results between the other facets/input. */
-            setOfResultsByFacetClone.delete(facet);
-
-            /* Get the intersection of results. */
-            const setOfResults = this.findIntersectionSetOfResults(setOfResultsByFacetClone);
-
-            acc.set(facet, setOfResults);
-
-            return acc;
-        }, new Map());
-
-        /* Update state. */
-        this.setState({setOfCountResultsByFacet: setOfCountResultsByFacet});
+                    return -1;
+                }
+            });
     };
 
     updateSetOfResults = () => {
@@ -380,24 +320,54 @@ class ProviderDashboardFilter extends React.Component {
         this.setState({setOfResults: setOfResultsClone});
     };
 
-    updateSetOfResultsByFacet = (setOfResultsByFacet) => {
+    updateSetOfResultsBySearchGroups = (setOfResultsBySearchGroups) => {
 
-        /* Clone setOfResultsByFacet and update state. */
-        const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
+        /* Clone setOfResultsBySearchGroups and update state. */
+        const setOfResultsBySearchGroupsClone = new Map(setOfResultsBySearchGroups);
 
-        this.setState({setOfResultsByFacet: setOfResultsByFacetClone});
+        this.setState({setOfResultsBySearchGroups: setOfResultsBySearchGroupsClone});
+    };
+
+    updateTermCounts = () => {
+
+        const {facetsByTerm} = this.props,
+            {setOfResultsBySearchGroups} = this.state;
+
+        /* Get a set of facets. */
+        const setOfFacets = new Set([...facetsByTerm.values()]);
+
+        /* Get the results for each facet. */
+        const setOfCountResultsByFacet = [...setOfFacets].reduce((acc, facet) => {
+
+            /* Clone the setOfResultsBySearchGroups. */
+            const setOfResultsBySearchGroupsClone = new Map(setOfResultsBySearchGroups);
+
+            /* Remove the facet from the setOfResultsBySearchGroups */
+            /* We are only interested in the intersection of results between the other facets/input. */
+            setOfResultsBySearchGroupsClone.delete(facet);
+
+            /* Get the intersection of results. */
+            const setOfResults = this.findIntersectionSetOfResults(setOfResultsBySearchGroupsClone);
+
+            acc.set(facet, setOfResults);
+
+            return acc;
+        }, new Map());
+
+        /* Update state. */
+        this.setState({setOfCountResultsByFacet: setOfCountResultsByFacet});
     };
 
     render() {
-        const {checkboxGroups, children, facetByTerm, workspacesQuery} = this.props,
-            {inputting, inputValue, querying, setOfCountResultsByFacet, setOfResults, termsChecked,
+        const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
+            {inputValue, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleInput} = this.state;
-        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults, querying);
+        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
-        const termsCount = DashboardSearchService.getCountsByTerms(facetByTerm, setOfCountResultsByFacet, inputting, workspacesQuery);
+        const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
-                value={{checkboxGroups, inputValue, querying, setOfResults, summaries, termsChecked, termsCount, workspaces,
+                value={{checkboxGroups, inputValue, setOfResults, summaries, termsChecked, termsCount, workspaces,
                     onHandleChecked, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>

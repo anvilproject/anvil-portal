@@ -35,6 +35,7 @@
     border: 2px solid var(--primary);
     border-radius: 2px;
     box-sizing: content-box;
+    flex: none;
     height: 14px;
     position: relative; /* Positions icon */
     width: 14px;
@@ -80,6 +81,7 @@
 /* Count */
 .count {
     flex: 1;
+    padding-left: 8px;
     text-align: right;
 }
 
