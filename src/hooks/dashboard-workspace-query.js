@@ -8,7 +8,7 @@ export const DashboardWorkspaceStaticQuery = () => {
             edges {
               node {
                 access
-                accessUI
+                accessType
                 consortium
                 dataTypes
                 dbGapId

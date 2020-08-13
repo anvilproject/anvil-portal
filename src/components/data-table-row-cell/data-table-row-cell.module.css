@@ -39,9 +39,9 @@
     padding: 2px 8px 2px;
 }
 
-/* Studies table - "accessUI" */
-[id^="studies"] td[id^="accessUI"] {
-    width: 90px;
+/* Studies table - "accessType" */
+[id^="studies"] td[id^="accessType"] {
+    width: 144px;
 }
 
 /* Studies table - "dataTypes" */
