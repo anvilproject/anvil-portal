@@ -154,7 +154,6 @@ exports.createSchemaCustomization = ({actions}) => {
         projectId: String!
         samples: Int
         size: Float
-        sizeTB: Float
         study: Study @link(by: "dbGapIdAccession", from: "dbGapIdAccession")
         studyName: String @studyName
         subjects: Int

@@ -6,14 +6,12 @@
  *
  * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
- * "workspaces" identifier is for workspaces table.
  */
 @import "../../styles/vars.module.css";
 
 /* Row cells */
 [id^="studies"] td,
-[id^="summary"] td,
-[id^="workspaces"] td {
+[id^="summary"] td {
     border-bottom: none;
     font-size: 0.875rem; /* 14px */
     font-weight: 400;
@@ -23,10 +21,8 @@
 }
 
 /* Ellipsis */
-/* Studies table - "projectId" */
-/* Workspaces table - "projectId" (ie Terra workspace name) */
-[id^="studies"] td[id^="projectId"],
-[id^="workspaces"] td[id^="projectId"] {
+/* Studies table - "projectId" (ie Terra workspace name) */
+[id^="studies"] td[id^="projectId"] {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -59,6 +55,11 @@
     max-width: 175px;
 }
 
+/* Studies table - "size" */
+[id^="studies"] td[id^="size"] {
+    width: 84px;
+}
+
 /* Studies table - "studyName" */
 [id^="studies"] td[id^="studyName"] {
     max-width: 175px;
@@ -79,21 +80,14 @@
     font-weight: inherit; /* Font weight specified by data table row */
 }
 
-/* Workspaces table - "dataTypes" */
-[id^="workspaces"] td[id^="dataTypes"] {
-    white-space: nowrap;
-}
-
 /* Row cell - first */
 [id^="studies"] td:first-of-type,
-[id^="summary"] td:first-of-type,
-[id^="workspaces"] td:first-of-type {
+[id^="summary"] td:first-of-type {
     padding-left: 2px; /* Scoot in first and last, matches header cell */
 }
 
 /* Row cell - last */
 [id^="studies"] td:last-of-type,
-[id^="summary"] td:last-of-type,
-[id^="workspaces"] td:last-of-type {
+[id^="summary"] td:last-of-type {
     padding-right: 2px; /* Scoot in first and last, matches header cell */
 }

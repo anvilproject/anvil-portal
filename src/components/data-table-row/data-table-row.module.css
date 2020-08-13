@@ -6,7 +6,6 @@
  *
  * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
- * "workspaces" identifier is for workspaces table.
  */
 @import "../../styles/vars.module.css";
 
