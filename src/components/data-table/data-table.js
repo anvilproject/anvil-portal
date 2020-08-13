@@ -19,8 +19,8 @@ import compStyles from "./data-table.module.css";
 class DataTable extends React.Component {
 
     render() {
-        const {singleRow, studies, summary, tableHeaders, tableRow, tableRows, workspaces} = this.props;
-        const tableName = DashboardTableService.getTableName(studies, summary, workspaces);
+        const {singleRow, studies, summary, tableHeaders, tableRow, tableRows} = this.props;
+        const tableName = DashboardTableService.getTableName(studies, summary);
         const identifier = Date.now();
         const tableId = `${tableName}${identifier}`;
 

@@ -10,7 +10,6 @@ const path = require("path");
 
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {formatSizeToTB} = require(path.resolve(__dirname, "./number-format.service.js"));
 
 // Template variables
 const statsJson = require(path.resolve(__dirname, "../../../client-apis/pyAnVIL/notebooks/figures/report-data.json"));
@@ -55,7 +54,6 @@ function buildDashboardWorkspace(projects) {
             projectId: project.project_id,
             samples: getSamplesCount(project),
             size: project.size,
-            sizeTB: formatFileSize(project.size),
             subjects: getSubjectsCount(project)
         }
     });
@@ -105,17 +103,6 @@ function formatDataTypes(dataTypes) {
     }
 
     return dataTypes;
-}
-
-/**
- * Returns file size in TB, formatted to two decimal places.
- *
- * @param size
- * @returns {string}
- */
-function formatFileSize(size) {
-
-    return formatSizeToTB(size);
 }
 
 /**

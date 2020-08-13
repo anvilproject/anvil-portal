@@ -25,7 +25,6 @@ export const DashboardWorkspaceStaticQuery = () => {
                 projectId
                 samples
                 size
-                sizeTB
                 studyName
                 subjects
               }

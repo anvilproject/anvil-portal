@@ -50,7 +50,7 @@ export function formatValue(value, column) {
             }
         }
 
-        if ( column === "sizeTB" ) {
+        if ( column === "sizeTB" || column === "size" ) {
 
             return NumberFormatService.formatSizeToTB(value);
         }
@@ -61,6 +61,12 @@ export function formatValue(value, column) {
         }
 
         return value;
+    }
+
+    /* Handle case when value is zero. */
+    if ( value === 0 ) {
+
+        return NumberFormatService.formatSizeToTB(value);
     }
 
     return "--";
@@ -116,10 +122,9 @@ export function getReactElementType(columnName, summaryTable) {
  *
  * @param studies
  * @param summary
- * @param workspaces
  * @returns {*}
  */
-export function getTableName(studies, summary, workspaces) {
+export function getTableName(studies, summary) {
 
     if ( studies ) {
 
@@ -129,11 +134,6 @@ export function getTableName(studies, summary, workspaces) {
     if ( summary ) {
 
         return "summary";
-    }
-
-    if ( workspaces ) {
-
-        return "workspaces";
     }
 
     return "";
@@ -210,7 +210,7 @@ export function switchDisplayColumnName(columnName) {
         case "subjects":
             return "Subjects";
         case "size":
-            return "Size";
+            return "Size (TB)";
         case "sizeTB":
             return "Size (TB)";
         default:
