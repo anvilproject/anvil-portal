@@ -33,10 +33,10 @@
     location: "h"
     order: 1
   primaryLinks:
-    - name: "AnVIL Data"
+    - name: "Data"
       key: "/data/data"
       path: "/data"
-    - name: "AnVIL Consortia"
+    - name: "Consortia"
       key: "/data/consortia"
     - name: "Requesting Data Access"
       key: "/data/requesting-data-access"
@@ -44,7 +44,7 @@
       key: "/data/data-access"
     - name: "Submitting Consortium Data"
       key: "/data/data-submission"
-    - name: "Transferring Consortium Data into AnVIL"
+    - name: "Transferring Consortium Data"
       key: "/data/data-transfer-into-anvil"
     - name: "Bringing Your Own Data"
       key: "/data/bringing-your-own-data"
