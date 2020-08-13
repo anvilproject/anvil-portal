@@ -96,7 +96,7 @@ export function getReactElementType(columnName, summaryTable) {
     }
 
     switch (columnName) {
-        case "accessUI":
+        case "accessType":
             return DataTableRowCellRedirect;
         case "dataTypes":
             return DataTableRowCellDataTypes;
@@ -169,7 +169,7 @@ export function switchDisplayColumnName(columnName) {
     switch (columnName) {
         case "access":
             return "Access";
-        case "accessUI":
+        case "accessType":
             return "Access";
         case "cohorts":
             return "Cohorts";
@@ -219,17 +219,17 @@ export function switchDisplayColumnName(columnName) {
 }
 
 /**
- * Returns accessUI corresponding page URL.
+ * Returns accessType corresponding page URL.
  *
- * @param accessUI
+ * @param accessType
  * @returns {*}
  */
-function switchAccessUIUrl(accessUI) {
+function switchAccessTypeUrl(accessType) {
 
-    switch(accessUI) {
-        case "Consortia":
+    switch(accessType) {
+        case "Consortium Access":
             return "/data/requesting-data-access#requesting-data-access-as-a-consortium-member";
-        case "Researcher":
+        case "Controlled Access":
             return "/data/requesting-data-access#requesting-data-access-as-a-researcher";
         default:
             return "";
@@ -246,8 +246,8 @@ function switchAccessUIUrl(accessUI) {
 function switchColumnUrl(value, columnName) {
 
     switch (columnName) {
-        case "accessUI":
-            return switchAccessUIUrl(value);
+        case "accessType":
+            return switchAccessTypeUrl(value);
         case "consortium":
             return switchConsortiumUrl(value);
         case "dbGapIdAccession":

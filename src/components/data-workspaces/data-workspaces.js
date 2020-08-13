@@ -13,7 +13,7 @@ import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
 
 // Template variables
-const TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessUI", "dataTypes", "subjects"];
+const TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "subjects"];
 
 class DataWorkspaces extends React.Component {
 

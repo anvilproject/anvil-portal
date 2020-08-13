@@ -22,7 +22,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
         this.ref("projectId");
         this.field("access");
-        this.field("accessUI");
+        this.field("accessType");
         this.field("consortium");
         this.field("dataTypes");
         this.field("dbGapId");
@@ -37,7 +37,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
         workspaces.forEach(workspace => {
 
-            const accessUI = getAccessUI(workspace, studies);
+            const accessType = getAccessType(workspace, studies);
             const consortium = getConsortiumName(workspace.consortium);
             const dataTypes = getDataTypes(workspace.dataTypes);
             const dbGapId = getGapId(workspace.dbGapId);
@@ -48,7 +48,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
 
             this.add({
                 "access": workspace.access,
-                "accessUI": accessUI,
+                "accessType": accessType,
                 "consortium": consortium,
                 "dataTypes": dataTypes,
                 "dbGapId" : dbGapId,
@@ -79,17 +79,17 @@ function convertToSortableValue(str) {
 }
 
 /**
- * Return the access display text for the specified workspace:
+ * Return the access type for the specified workspace:
  *
- * - "Researcher" when study exists
- * - "Public" when access: "Public"
- * - "Consortia" when access: "Private" (and without study)
+ * - "controlled" for "Controlled Access" when study exists
+ * - "open" for "Open Access" when access: "Public"
+ * - "consortium" for "Consortium Access" when access: "Private" (and without study)
  *
  * @param workspace
  * @param studies
  * @returns {*}
  */
-function getAccessUI(workspace, studies) {
+function getAccessType(workspace, studies) {
 
     let studyExists = false;
 
@@ -101,19 +101,19 @@ function getAccessUI(workspace, studies) {
     /* "researcher" - workspace with a study. */
     if ( studyExists ) {
 
-        return "researcher";
+        return "controlled";
     }
 
     /* "consortia" - private workspace. */
     if ( workspace.access === "Private" ) {
 
-        return "consortia";
+        return "consortium";
     }
 
     /* "public" - public workspace. */
     if ( workspace.access === "Public" ) {
 
-        return "public";
+        return "open";
     }
 
     return ""

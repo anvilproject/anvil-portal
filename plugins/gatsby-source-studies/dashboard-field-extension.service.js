@@ -8,14 +8,14 @@
 /**
  * Return the access display text for the specified workspace:
  *
- * - "Researcher" when study exists
- * - "Public" when access: "Public"
- * - "Consortia" when access: "Private" (and without study)
+ * - "Controlled Access" when study exists
+ * - "Open Access" when access: "Public"
+ * - "Consortium Access" when access: "Private" (and without study)
  *
  * @param workspace
  * @param studies
  */
-const getWorkspaceAccessUI = function getWorkspaceAccessUI(workspace, studies) {
+const getWorkspaceAccessType = function getWorkspaceAccessType(workspace, studies) {
 
     /* Get the workspace dbGapIdAccession, if it exists. */
     const dbGapIdAccession = workspace.dbGapIdAccession;
@@ -30,17 +30,17 @@ const getWorkspaceAccessUI = function getWorkspaceAccessUI(workspace, studies) {
 
     if ( studyExists ) {
 
-        return "Researcher";
+        return "Controlled Access";
     }
 
     if ( workspace.access === "Private" ) {
 
-        return "Consortia";
+        return "Consortium Access";
     }
 
     if ( workspace.access === "Public"  ) {
 
-        return workspace.access;
+        return "Open Access";
     }
 
     return "";
@@ -151,7 +151,7 @@ const getWorkspaceStudyName = function getWorkspaceStudyName(workspace, studies)
     return study.studyName;
 };
 
-module.exports.getWorkspaceAccessUI = getWorkspaceAccessUI;
+module.exports.getWorkspaceAccessType = getWorkspaceAccessType;
 module.exports.getWorkspaceDiseases = getWorkspaceDiseases;
 module.exports.getWorkspaceGapId = getWorkspaceGapId;
 module.exports.getWorkspaceStudyName = getWorkspaceStudyName;

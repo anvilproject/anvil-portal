@@ -20,7 +20,7 @@ export const DenyListInputs = ["^", "~", ":", "-"];
 /* Set of facets (selected from workspace property values) for the dashboard search function. */
 export const DashboardSearchFacets = [
     "consortium",
-    "accessUI",
+    "accessType",
     "dataTypes"
 ];
 

@@ -8,7 +8,7 @@
 const path = require("path");
 
 // App dependencies
-const {getWorkspaceAccessUI, getWorkspaceDiseases, getWorkspaceGapId, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
+const {getWorkspaceAccessType, getWorkspaceDiseases, getWorkspaceGapId, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
 const {generateDashboardIndex} = require(path.resolve(__dirname, "dashboard-index.service.js"));
 const {getStudies} = require(path.resolve(__dirname, "dashboard-studies.service.js"));
 const {getWorkspaces} = require(path.resolve(__dirname, "dashboard-workspaces.service.js"));
@@ -74,12 +74,12 @@ exports.createSchemaCustomization = ({actions}) => {
     const {createFieldExtension, createTypes} = actions;
 
     createFieldExtension({
-        name: "accessUI",
+        name: "accessType",
         extend(options, prevFieldConfig) {
             return {
                 resolve(source, arg, context, info) {
                     const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getWorkspaceAccessUI(source, studies);
+                    return getWorkspaceAccessType(source, studies);
                 },
             }
         }
@@ -140,7 +140,7 @@ exports.createSchemaCustomization = ({actions}) => {
     type Workspace implements Node {
         id: ID!
         access: String
-        accessUI: String @accessUI
+        accessType: String @accessType
         consortium: String
         dataTypes: [String]
         demographics: Int
