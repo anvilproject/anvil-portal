@@ -4,41 +4,16 @@
 <hero small>AnVIL is a repository for open and controlled access datasets. Dataset access is controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort.</hero>
 
 
-## Access Types
-AnVIL provides three types of access:
+## Data Access Types
+AnVIL provides three types of data access:
 
-1. Public Access  - Public access datasets are accessible to all.
-1. Consortia Access - Consortia Access datasets are accessible to consortia members under their data sharing agreement. 
-1. Researcher Access - Data listed as "Researcher Access" is accessible to general researchers for uses matching the data's dbGaP consent. Access is granted by the dbGaP data access process described below under "Requesting Data Access as a Researcher". 
+1. Open Access  - Open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces
+) or [Gen3](https://gen3.theanvil.io).
+1. [Controlled Access](#accessing-controlled-access-data) - Controlled Access datasets are accessible to researchers for use matching the data's [dbGaP consent codes](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4721915/). Access is granted by the dbGaP data access process described below. 
+1. [Consortium Access](#accessing-consortium-access-data) - Consortium Access datasets are accessible to consortia members under the coonsortium data sharing agreement. 
 
 
-
-## Requesting Data Access as a Consortium Member
-
-Many consortia have data sharing agreements between members granting each member access to every other member's data within the consortium.
-
-The AnVIL is offering a streamlined access process for consortium members in data-sharing consortia.
- 
-The consortium bringing the data in designates a contact person, and that person is added to an access list as an access control admin for the consortia's datasets. 
- 
-The admin can add or remove users as their needs demand, and any users added to that list will see all the workspaces for their group.
- 
- For example, someone added to the CCDG access list will be able to see all the CCDG workspaces.
- 
-> Note that a few cohorts are excluded from the consortium-wide-access due to data sensitivity needs.
-
-### Participating Consortia
-
-The following consortia currently participate in AnVIL’s consortia data sharing program: 
- 
- * CCDG,
- * CMG,
- * GTEx,
- * eMERGE
- 
-If you are a member of a participating consortium and would like access to a consortium’s data please reach out to your consortium leadership to request access.
-
-## Requesting Data Access as a Researcher
+## Accessing Controlled Access Data
  
  This document intends to explain the process by which external, non-consortium members can gain access to a given cohort that is housed within the AnVIL.
 
@@ -84,12 +59,37 @@ Once you can see your workspace(s):
 
 > Note that when cloning a workspace, any authorization domains on the source workspace will follow any clones, but you will still need to share the workspace for anyone to access it.
 
-#### Requestor Pays
+
+## Accessing Consortium Access Data
+
+Many consortia have data sharing agreements between members granting each member access to every other member's data within the consortium.
+
+The AnVIL is offering a streamlined access process for consortium members in data-sharing consortia.
+ 
+The consortium bringing the data in designates a contact person, and that person is added to an access list as an access control admin for the consortia's datasets. 
+ 
+The admin can add or remove users as their needs demand, and any users added to that list will see all the workspaces for their group.
+ 
+ For example, someone added to the CCDG access list will be able to see all the CCDG workspaces.
+ 
+> Note that a few cohorts are excluded from the consortium-wide-access due to data sensitivity needs.
+
+### Participating Consortia
+
+The following consortia currently participate in AnVIL’s consortia data sharing program: 
+ 
+ * CCDG,
+ * CMG,
+ * GTEx,
+ * eMERGE
+ 
+If you are a member of a participating consortium and would like access to a consortium’s data please reach out to your consortium leadership to request access.
+## Requestor Pays
 
 * All AnVIL buckets have Requester Pays enabled, meaning that you will need to provide a billing account in order to cover any costs associated with egress, storage, or compute.
 
 * If working in gsutil, using the -u argument will be critical to provide this billing account. 
 
-#### Troubleshooting
+## Troubleshooting
 If you are having trouble with your access to AnVIL data, please email our help desk at  [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org) and someone will reach out to you as soon as we are able.
 

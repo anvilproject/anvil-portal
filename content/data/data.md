@@ -1,6 +1,6 @@
 ---
 author: "AnVIL"
-description: "AnVIL hosts high value genomic datasets relevant to human health and disease."
+description: "Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest."
 pageAlignment: "left"
 showOutline: false
 title: "Data"
@@ -8,11 +8,12 @@ title: "Data"
 
 # Explore Data
 
-<hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/data/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.</hero>
+<hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/data/requesting-data-access) guide for information on how to request access to AnVIL's [open access](/data/requesting-data-access#data-access-types), [controlled access](/data/requesting-data-access#accessing-controlled-access-data) and [consortium access](/data/requesting-data-access#accessing-consortium-access-data) datasets.</hero>
+
 
 <data-dashboard></data-dashboard>
 
-## Notes.
+## Notes
 
 > For workspaces with no dbGaP Id, the dbGaP study registration is in progress. The dbGap Ids will be displayed once assigned by dbGaP. 
 

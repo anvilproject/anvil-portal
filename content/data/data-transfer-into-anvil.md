@@ -6,8 +6,6 @@ description: "Guidelines to help an interested party learn how data is transmitt
 
 #Transferring Data Into AnVIL
 
-
-
 <hero small>This document details the data transfer protocol during the transition to Gen3 as the primary data repository for the AnVIL. This process will evolve during the transition period.</hero>
 
 ## Data Transfer Workflow

@@ -228,9 +228,9 @@ function switchAccessTypeUrl(accessType) {
 
     switch(accessType) {
         case "Consortium Access":
-            return "/data/requesting-data-access#requesting-data-access-as-a-consortium-member";
+            return "/data/requesting-data-access#accessing-consortium-access-data";
         case "Controlled Access":
-            return "/data/requesting-data-access#requesting-data-access-as-a-researcher";
+            return "/data/requesting-data-access#accessing-controlled-access-data";
         default:
             return "";
     }
