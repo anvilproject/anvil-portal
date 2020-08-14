@@ -10,6 +10,8 @@ import lunr from "lunr";
 import React from "react";
 
 // App dependencies
+import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
+import { GAEntityType } from "../../utils/anvil-gtm/ga-entity-type.model";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
@@ -33,8 +35,20 @@ class ProviderDashboardFilter extends React.Component {
             /* Update clone. */
             termsCheckedClone.set(value, checked);
 
+            /** Get tracking values for selected facet */
+            const previousQuery = this.state.query;
+            const {facetsByTerm} = this.props;
+            const currentQuery = this.buildQuery(facetsByTerm, this.state.inputValue, termsCheckedClone);
+
             /* Update state. */
-            this.setState({termsChecked: termsCheckedClone});
+            this.setState({
+                termsChecked: termsCheckedClone,
+                query: currentQuery
+            });
+            
+            /* Execute tracking */
+            AnvilGTMService.trackSearchFacetSelected(
+                facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
         };
 
         this.onHandleInput = (event) => {
@@ -46,11 +60,23 @@ class ProviderDashboardFilter extends React.Component {
                 return;
             }
 
+            /* Track input */
+            const previousQuery = this.state.query;
+            const {facetsByTerm} = this.props;
+            const currentQuery = this.buildQuery(facetsByTerm, inputValue, this.state.termsChecked);
+
             /* Update inputValue state. */
-            this.setState({inputValue: inputValue});
+            this.setState({
+                inputValue: inputValue,
+                query: currentQuery
+            });
+
+            /** Execute tracking */
+            AnvilGTMService.trackSearchInput(inputValue, currentQuery, previousQuery, GAEntityType.WORKSPACE);
         };
 
         this.state = ({
+            query: "", // Analytics-specific value, used to specify the current query state when tracking a change
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
@@ -66,6 +92,7 @@ class ProviderDashboardFilter extends React.Component {
     componentWillUnmount() {
 
         this.setState = ({
+            query: "",
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
@@ -93,6 +120,43 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setOfResultsBySearchGroupsStateChanged(prevState);
     }
+
+    /**
+     * Build the query string from the specified set of selected facet terms and input value.
+     * 
+     * @param facetsByTerm
+     * @param inputValue
+     * @param termsChecked
+     */
+    buildQuery = (facetsByTerm, inputValue, termsChecked) => {
+
+        const selectedTermsByFacet = [...facetsByTerm.keys()]
+            .reduce((accum, term)=> {
+
+                // Only add term to current query if it's currently selected
+                if ( termsChecked.get(term) ) {
+
+                    const facet = facetsByTerm.get(term);
+
+                    // A term as already been added to the current query for this facet; add term to existing array 
+                    if ( accum.has(facet) ) {
+                        accum.get(facet).push(term);
+                    }
+                    // This is the first term selected for the facet, create new array containing term
+                    else {
+                        accum.set(facet, [term]);
+                    }
+                }
+                return accum;
+            }, new Map());
+
+        if ( inputValue ) {
+            selectedTermsByFacet.set("search", inputValue);
+        }
+
+        // Convert selected terms to valid query string object
+        return new URLSearchParams(selectedTermsByFacet).toString();
+    };
 
     buildFacetQueryString = (selectedTerms, facet) => {
 
