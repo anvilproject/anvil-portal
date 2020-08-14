@@ -5,6 +5,9 @@
  * Utility class for Google Tag Manager-related functionality. 
  */
 
+// App dependencies
+import { GADimension } from "../anvil-gtm/ga-dimension.model";
+
 /**
  * Send custom event to GTM/GA.
  * 
@@ -19,7 +22,7 @@ export function trackEvent(category, action, label, dimensions) {
         return;
     }
 
-    const eventConfig = Object.assign({
+    const eventConfig = Object.assign(getDefaultDimensions(), {
         event: category,
         eventAction: action,
         eventLabel: label
@@ -36,6 +39,21 @@ export function trackEvent(category, action, label, dimensions) {
 function getDataLayer() {
 
     return window.dataLayer;
+}
+
+/**
+ * Get the default values for every dimension.
+ *
+ * @returns {[key: string]: string}
+ */
+function getDefaultDimensions() {
+
+    const defaultDimensions = {};
+    for ( let i in GADimension ) {
+        defaultDimensions[GADimension[i]] = undefined;
+    }
+
+    return defaultDimensions;
 }
 
 /**
