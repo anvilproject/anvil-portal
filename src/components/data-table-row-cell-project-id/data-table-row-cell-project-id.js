@@ -19,8 +19,19 @@ import compStyles from "./data-table-row-cell-project-id.module.css";
 
 class DataTableRowCellProjectId extends React.Component {
 
+    /**
+     * Strip Anvil_xxx from beginning of project ID, if specified, where xxx is the consortium name. 
+     * 
+     * @returns {string}
+     */
+    getProjectDisplayText = (projectId) => {
+
+        return projectId.replace(/^AnVIL\_(CCDG|CMG|GTex)\_/i, "");
+    };
+
     render() {
         const {children, id} = this.props;
+        const projectDisplayText = this.getProjectDisplayText(children);
         const linkTo = `https://anvil.terra.bio/#workspaces/anvil-datastorage/${children}`;
 
         return (
@@ -29,7 +40,7 @@ class DataTableRowCellProjectId extends React.Component {
                           id={id}
                           tag={"td"}
                           label={children}>
-                <Tooltip label={children}>{children}</Tooltip>
+                <Tooltip label={children}>{projectDisplayText}</Tooltip>
             </ClickHandler>
         );
     }
