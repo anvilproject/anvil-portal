@@ -8,10 +8,11 @@
 // App dependencies
 import { GAAction } from "./ga-action.model";
 import { GACategory } from "./ga-category.model";
+import { GADimension } from "./ga-dimension.model";
+import { GADimensionsByHref } from "./ga-dimensions-by-href.model";
 import { GAEntityName } from "./ga-entity-name.model";
 import { GAEntityType } from "./ga-entity-type.model";
 import * as GTMService from "../gtm/gtm.service";
-import { GADimensionsByHref } from "./ga-dimensions-by-href.model";
 
 /**
  * Create and send a GA tracking event generated from the specified external link and label. Dimensions are calculated
@@ -25,6 +26,33 @@ export function trackExternalLinkClicked(url, linkText) {
     const dimensions = createExternalLinkDimensions(url);
     GTMService.trackEvent(GACategory.EXTERNAL_LINK, GAAction.CLICK, linkText, dimensions);
 }
+
+/**
+ * Track select of search facet.
+ */
+export function trackSearchFacetSelected(facet, term, selected, query, previousQuery, entityType) {
+
+    GTMService.trackEvent(GACategory.SEARCH, selected ? GAAction.SELECT : GAAction.DESELECT, term, {
+        [GADimension.ENTITY_TYPE]: entityType,
+        [GADimension.FACET]: facet,
+        [GADimension.TERM]: term,
+        [GADimension.PREVIOUS_QUERY]: previousQuery,
+        [GADimension.QUERY]: query
+    });
+}
+
+/**
+ * Track input of search text.
+ */
+export function trackSearchInput(value, query, previousQuery, entityType) {
+
+    GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
+        [GADimension.ENTITY_TYPE]: entityType,
+        [GADimension.PREVIOUS_QUERY]: previousQuery,
+        [GADimension.QUERY]: query
+    });
+}
+
 
 /**
  * If there is an entity name configured for the specified URL, return it as is. If not and the URL links to a Terra

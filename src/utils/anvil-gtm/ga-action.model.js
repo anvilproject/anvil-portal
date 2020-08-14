@@ -6,5 +6,8 @@
  */
 
 export const GAAction = {
-    "CLICK": "Click"
+    "CLICK": "Click",
+    "DESELECT": "Deselect",
+    "ENTER_TEXT": "Enter Text",
+    "SELECT": "Select"
 };
