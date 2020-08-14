@@ -74,7 +74,7 @@ During the initial discussions and vetting with the Data Ingestion Committee, th
 ###Data Transfer
 Once data is in a format that meets the above requirements and have been approved by the Data Ingestion Committee, data submitters will contact a designated POC at the AnVIL team to shepherd the data into the AnVIL data storage repository.
 
-Both AnVIL team members and submitting parties will work together throughout the transfer process. Data will be deposited to an AnVIL owned bucket(s) on Google Cloud. For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.  An overview of the data transfer workflow is provided in the [Data Transfer into AnVIL](/data/data-transfer-into-anvil) section.
+Both AnVIL team members and submitting parties will work together throughout the transfer process. Data will be deposited to an AnVIL owned bucket(s) on Google Cloud. For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.  
 
 ###Quality Assurance Monitoring
 The transfer of data will be monitored and logged to ensure integrity of the transfer and be included in the Ingestion certification of analysis (see below).  This includes automated confirmation that the file transfers were successful and MD5sums are intact, performed by the GCP services at the time of transfer.

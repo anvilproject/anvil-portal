@@ -44,8 +44,6 @@
       key: "/data/data-access"
     - name: "Submitting Consortium Data"
       key: "/data/data-submission"
-    - name: "Transferring Consortium Data"
-      key: "/data/data-transfer-into-anvil"
     - name: "Bringing Your Own Data"
       key: "/data/bringing-your-own-data"
 - name: "Events"
