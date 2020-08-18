@@ -88,6 +88,7 @@ module.exports = {
                 exclude: [`/events/events-intro`, `/news/news-intro`, `/guides/content-guide/example-page`, `/typography-test-page/typography-test-page`],
             }
         },
+        `gatsby-plugin-workspace-fields-report`,
         `gatsby-source-studies`,
         `gatsby-transformer-json`,
         {
