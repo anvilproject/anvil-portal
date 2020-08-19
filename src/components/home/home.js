@@ -6,13 +6,13 @@
  */
 
 // Core dependencies
+import {Link} from "gatsby";
 import React from "react";
 import {isBrowser} from "react-device-detect";
 
 // App dependencies
 import Carousel from "../carousel/carousel";
 import Events from "../events/events";
-import GoArrow from "../go-arrow/go-arrow";
 import News from "../news/news";
 import RoadMap from "../road-map/road-map";
 import SectionBody from "../section/section-body";
@@ -22,11 +22,13 @@ import Twitter from "../twitter/twitter";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
-import goStyles from "../go-arrow/go-arrow.module.css";
 import compStyles from "./home.module.css";
 import globalStyles from "../../styles/global.module.css";
 
 // Logos
+import logoDockstore from "../../../images/logo-dockstore.png";
+import logoGen3 from "../../../images/logo-gen3.png";
+import logoNCPI from "../../../images/cloud-ncpi.svg";
 import logoTerra from "../../../images/logo-terra.png";
 
 let classNames = require("classnames");
@@ -40,7 +42,32 @@ class Home extends React.Component {
                 <div className={classNames(globalStyles.grid, globalStyles.g750, globalStyles.centered)}>
                     <div className={compStyles.headline}>Migrate Your Genomic Analysis Workflows to the Cloud</div>
                     <div className={compStyles.subhead}>Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based computing environment.</div>
-                    <GoArrow className={goStyles.stretch}><a href="https://anvil.terra.bio/#workspaces" className={compStyles.linkTerra} rel="nofollow noopener noreferrer" target="_blank"><img className={compStyles.logoTerra} src={logoTerra} alt="Terra"/>Launch AnVIL in Terra</a></GoArrow>
+                    <div className={compStyles.tiles}>
+                        <div className={compStyles.tile}>
+                            <a href="https://anvil.terra.bio/#workspaces" rel="nofollow noopener noreferrer" target="_blank">
+                                <img className={compStyles.tileLogo} src={logoTerra} alt="Terra"/>
+                                <span><span>Launch Terra</span>, AnVIL’s  cloud computing environment.</span>
+                            </a>
+                        </div>
+                        <div className={compStyles.tile}>
+                            <a href="https://gen3.theanvil.io/" rel="nofollow noopener noreferrer" target="_blank">
+                                <img className={compStyles.tileLogo} src={logoGen3} alt="Gen3"/>
+                                <span>Create a virtual cohort in AnVIL’s <span>Gen3 Data Explorer</span>.</span>
+                            </a>
+                        </div>
+                        <div className={compStyles.tile}>
+                            <a href="https://dockstore.org/organizations/anvil" rel="nofollow noopener noreferrer" target="_blank">
+                                <img className={compStyles.tileLogo} src={logoDockstore} alt="Dockstore"/>
+                                <span>Discover and launch repeatable workflows with <span>Dockstore</span>.</span>
+                            </a>
+                        </div>
+                        <div className={compStyles.tile}>
+                            <Link to="/ncpi">
+                                <img className={compStyles.tileLogo} src={logoNCPI} alt="NCPI"/>
+                                <span>Explore emerging support for cross platform data sharing and analysis via the <span>NIH Cloud Platform Interoperability effort</span>.</span>
+                            </Link>
+                        </div>
+                    </div>
                     <Stats/>
                 </div>
             </section>
