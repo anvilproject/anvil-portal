@@ -9,7 +9,7 @@
 /* Section - padding */
 /* Hero */
 .hero, .hero.handheld {
-    padding: 2.5rem 0 3.75rem; /* 40px 0 60px */
+    padding: 1.25rem 0 3.75rem; /* 20px 0 60px */
 }
 
 /* Accessing, events, featured, news, onboarding, roadmap, submitting, twitter */
@@ -73,17 +73,15 @@ section:last-child {
 }
 
 .tiles .tile span {
+    pointer-events: none; /* Allow parent anchor tag to capture clicks, which bubble to layout to trigger tracking */
     cursor: pointer; /* Override global tooltip style */
 }
 
-.tiles .tile span span {
-    color: var(--primary);
-    border-bottom: 1px dashed #aaaaaa;
-}
-
-.tiles .tile span span:hover {
-    color: var(--primary);
-    border-bottom: 1px solid var(--primary);
+/* Stats caption, links to data dash */
+.statsCaption {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0; /* 24px */
 }
 
 /**
