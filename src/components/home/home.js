@@ -70,7 +70,7 @@ class Home extends React.Component {
                     </div>
                     <Stats/>
                     <div className={compStyles.statsCaption}>
-                        <Link to="/data" className={globalStyles.asLink}>Explore datasets and how to request access</Link>
+                        <Link to="/data" className={globalStyles.asLink}>Explore AnVIL's datasets and learn how to request access.</Link>
                     </div>
                 </div>
             </section>
