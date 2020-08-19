@@ -43,6 +43,16 @@
     display: flex;
 }
 
+/* Dashed underline link style */
+.asLink {
+    color: var(--primary);
+    border-bottom: 1px dashed #aaaaaa;
+}
+
+.asLink:hover {
+    border-bottom: 1px solid var(--primary);
+}
+
 /**
  * Large tablet portrait, large handset landscape, small window
  */

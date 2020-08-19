@@ -11,9 +11,21 @@ import { GAEntityType } from "./ga-entity-type.model";
 
 export const GADimensionsByHref = {
 
-    // Home - Hero
+    // Home - Tiles
     "https://anvil.terra.bio/#workspaces": {
         entityName: GAEntityName.TERRA,
+        entityType: GAEntityType.PLATFORM_COMPONENT
+    },
+
+    // Home - Tiles
+    "https://gen3.theanvil.io/": {
+        entityName: GAEntityName.GEN3,
+        entityType: GAEntityType.PLATFORM_COMPONENT
+    },
+
+    // Home - Tiles
+    "https://dockstore.org/organizations/anvil": {
+        entityName: GAEntityName.DOCKSTORE,
         entityType: GAEntityType.PLATFORM_COMPONENT
     },
 
