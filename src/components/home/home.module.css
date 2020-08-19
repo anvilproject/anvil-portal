@@ -9,17 +9,17 @@
 /* Section - padding */
 /* Hero */
 .hero, .hero.handheld {
-    padding: 60px 0;
+    padding: 2.5rem 0 3.75rem; /* 40px 0 60px */
 }
 
 /* Accessing, events, featured, news, onboarding, roadmap, submitting, twitter */
 .accessing, .events, .featured, .news, .onboarding, .roadmap, .submitting, .twitter {
-    padding-top: 60px;
+    padding-top: 3.75rem; /* 60px */
 }
 
 /* Last section */
 section:last-child {
-    padding-bottom: 60px;
+    padding-bottom: 3.75rem; /* 60px */
 }
 
 /* Section - styles */
@@ -43,15 +43,47 @@ section:last-child {
     margin: 0 0 2.5rem; /* 40px */
 }
 
-/* Hero - logo terra "Launch AnVIL in terra" */
-.hero .linkTerra {
-    margin-left: -24px;
+/* Tiles - Terra, Gen3, Dockstore, NCPI */
+.tiles {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.hero .logoTerra {
-    margin: 0 12px 0 0;
+.tiles .tile {
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 3rem; /* 48px */
+}
+
+.tiles .tile:last-child {
+    margin-bottom: 0;
+}
+
+.tiles .tile a {
+    align-items: flex-start; /* Align text and logos to top, to allow for extra height in NCPI text */
+    display: flex;
+}
+
+.tiles .tileLogo {
+    margin: 0 1.5rem 0 0; /* 24px */
     vertical-align: middle;
-    width: 48px;
+    width: 3rem; /* 48px */
+}
+
+.tiles .tile span {
+    cursor: pointer; /* Override global tooltip style */
+}
+
+.tiles .tile span span {
+    color: var(--primary);
+    border-bottom: 1px dashed #aaaaaa;
+}
+
+.tiles .tile span span:hover {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
 }
 
 /**
@@ -85,6 +117,30 @@ section:last-child {
         font-size: 1.125rem; /* 18px */
         line-height: 1.5rem; /* 24px */
         margin: 0 0 0.5rem; /* 8px */
+    }
+}
+
+/**
+ * Large handset portrait, extra small window
+ */
+@media (min-width: 480px) {
+
+    /* Tiles - Terra, Gen3, Dockstore, NCPI */
+    .tiles {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tiles .tile {
+        width: calc(50% - 24px);
+    }
+    
+    .tiles .tile:nth-child(odd) {
+        margin-right: 24px;
+    }
+
+    .tiles .tile:first-child {
+        margin-bottom: 48px;
     }
 }
 
