@@ -7,7 +7,7 @@
 
 /* Checkbox - container. */
 .checkbox {
-    align-items: center;
+    align-items: flex-start;
     cursor: pointer;
     display: inline-flex;
     margin-bottom: 12px;
@@ -72,17 +72,22 @@
     display: none;
 }
 
-/* Label */
+/* Label. */
 .label {
     font-size: 14px;
     margin-left: 12px;
 }
 
-/* Count */
+/* Count. */
 .count {
     flex: 1;
     padding-left: 8px;
     text-align: right;
+}
+
+/* Label, count. */
+.label, .count {
+    line-height: 18px; /* Required to equal checkbox height for alignment when label wraps. */
 }
 
 .check, .icon, .label {
