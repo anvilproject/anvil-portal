@@ -31,7 +31,7 @@ class DataSearchInput extends React.Component {
         const showClear = !!inputValue;
         return (
             <DataSearchPanel>
-                <span id="group-label">Search</span>
+                <span id="group">Search</span>
                 <span className={compStyles.search}>
                     <input className={compStyles.input}
                        type="text"

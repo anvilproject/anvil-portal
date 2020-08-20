@@ -16,9 +16,9 @@
 .search .icon {
     color: var(--black34);
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
     opacity: 0;
-    padding: 3px;
+    padding: 5px;
     position: absolute;
     right: 0;
     top: 0;
@@ -39,7 +39,7 @@
 .input {
     color: var(--black87);
     background-color: transparent;
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     border-radius: 2px;
     display: block;
     height: 30px;
