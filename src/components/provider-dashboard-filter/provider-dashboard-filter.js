@@ -51,28 +51,18 @@ class ProviderDashboardFilter extends React.Component {
                 facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
         };
 
+        this.onHandleClearInput = () => {
+
+            /* Handle change in search value. */
+            this.onHandleSearch("");
+        };
+
         this.onHandleInput = (event) => {
 
             const inputValue = event.target.value;
 
-            if ( this.isInputDenied(inputValue) ) {
-
-                return;
-            }
-
-            /* Track input */
-            const previousQuery = this.state.query;
-            const {facetsByTerm} = this.props;
-            const currentQuery = this.buildQuery(facetsByTerm, inputValue, this.state.termsChecked);
-
-            /* Update inputValue state. */
-            this.setState({
-                inputValue: inputValue,
-                query: currentQuery
-            });
-
-            /** Execute tracking */
-            AnvilGTMService.trackSearchInput(inputValue, currentQuery, previousQuery, GAEntityType.WORKSPACE);
+            /* Handle change in search value. */
+            this.onHandleSearch(inputValue);
         };
 
         this.state = ({
@@ -85,6 +75,7 @@ class ProviderDashboardFilter extends React.Component {
             setOfResultsBySearchGroups: new Map(),
             termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
+            onHandleClearInput: this.onHandleClearInput,
             onHandleInput: this.onHandleInput,
         });
     }
@@ -328,6 +319,28 @@ class ProviderDashboardFilter extends React.Component {
         return DashboardSearchService.DenyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
+    onHandleSearch = (inputValue) => {
+
+        if ( this.isInputDenied(inputValue) ) {
+
+            return;
+        }
+
+        /* Track input */
+        const previousQuery = this.state.query;
+        const {facetsByTerm} = this.props;
+        const currentQuery = this.buildQuery(facetsByTerm, inputValue, this.state.termsChecked);
+
+        /* Update inputValue state. */
+        this.setState({
+            inputValue: inputValue,
+            query: currentQuery
+        });
+
+        /** Execute tracking */
+        AnvilGTMService.trackSearchInput(inputValue, currentQuery, previousQuery, GAEntityType.WORKSPACE);
+    };
+
     searchStateChanged = (prevState) => {
 
         const {dashboardIndexMounted, inputValue, termsChecked} = this.state;
@@ -425,14 +438,14 @@ class ProviderDashboardFilter extends React.Component {
     render() {
         const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
             {inputValue, setOfCountResultsByFacet, setOfResults, termsChecked,
-                onHandleChecked, onHandleInput} = this.state;
+                onHandleChecked, onHandleClearInput, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
                 value={{checkboxGroups, inputValue, setOfResults, summaries, termsChecked, termsCount, workspaces,
-                    onHandleChecked, onHandleInput}}>
+                    onHandleChecked, onHandleClearInput, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>
         )

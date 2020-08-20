@@ -15,6 +15,8 @@ import DataSearchPanel from "../data-search-panel/data-search-panel";
 // Styles
 import compStyles from "./data-search-input.module.css";
 
+let classNames = require("classnames");
+
 class DataSearchInput extends React.Component {
 
     shouldComponentUpdate(nextProps) {
@@ -25,15 +27,22 @@ class DataSearchInput extends React.Component {
     }
 
     render() {
-        const {inputValue, onHandleInput} = this.props;
+        const {inputValue, onHandleClearInput, onHandleInput} = this.props;
+        const showClear = !!inputValue;
         return (
             <DataSearchPanel>
                 <span id="group-label">Search</span>
-                <input className={compStyles.input}
+                <span className={compStyles.search}>
+                    <input className={compStyles.input}
                        type="text"
                        placeholder={"e.g. disease, study name, dbGaP Id"}
                        value={inputValue}
                        onChange={(e) => onHandleInput(e)}/>
+                    <span className={classNames(compStyles.icon, "material-icons-round", {[compStyles.active]: showClear})}
+                          role="presentation"
+                          onClick={onHandleClearInput}
+                          onKeyDown={onHandleClearInput}>close</span>
+                </span>
             </DataSearchPanel>
         )
     }
@@ -41,9 +50,9 @@ class DataSearchInput extends React.Component {
 
 export default () => {
 
-    const {inputValue, onHandleInput} = useContext(DashboardFilterContext);
+    const {inputValue, onHandleClearInput, onHandleInput} = useContext(DashboardFilterContext);
 
     return (
-        <DataSearchInput inputValue={inputValue} onHandleInput={(e) => onHandleInput(e)}/>
+        <DataSearchInput inputValue={inputValue} onHandleClearInput={onHandleClearInput} onHandleInput={(e) => onHandleInput(e)}/>
     )
 };
