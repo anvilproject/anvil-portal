@@ -36,9 +36,9 @@
     border-radius: 2px;
     box-sizing: content-box;
     flex: none;
-    height: 14px;
+    height: 13px;
     position: relative; /* Positions icon */
-    width: 14px;
+    width: 13px;
 }
 
 /* Check - active. */
@@ -63,7 +63,7 @@
 .checkbox .icon {
     color: var(--white);
     cursor: inherit;
-    font-size: 14px !important;
+    font-size: 13px !important;
     position: absolute;
 }
 
@@ -74,8 +74,7 @@
 
 /* Label. */
 .label {
-    font-size: 14px;
-    margin-left: 12px;
+    margin-left: 8px;
 }
 
 /* Count. */
@@ -87,7 +86,9 @@
 
 /* Label, count. */
 .label, .count {
-    line-height: 18px; /* Required to equal checkbox height for alignment when label wraps. */
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 17px; /* Required to equal checkbox height for alignment when label wraps. */
 }
 
 .check, .icon, .label {
