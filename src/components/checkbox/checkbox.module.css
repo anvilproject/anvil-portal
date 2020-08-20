@@ -7,7 +7,7 @@
 
 /* Checkbox - container. */
 .checkbox {
-    align-items: flex-start;
+    align-items: center;
     cursor: pointer;
     display: inline-flex;
     margin-bottom: 12px;
@@ -32,7 +32,7 @@
 
 /* Check. */
 .checkbox .check {
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     border-radius: 2px;
     box-sizing: content-box;
     flex: none;
@@ -50,13 +50,13 @@
 
 /* Check - inactive and zero count. */
 .checkbox:not(.active).disabled .check {
-    border: 2px solid var(--black12);
+    border: 1px solid var(--black12);
 }
 
 /* Check - active and zero count. */
 .checkbox.active.disabled .check {
     background-color: var(--black34);
-    border: 2px solid var(--black12);
+    border: 1px solid var(--black12);
 }
 
 /* Icon. */
@@ -74,7 +74,7 @@
 
 /* Label. */
 .label {
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 /* Count. */
@@ -88,7 +88,7 @@
 .label, .count {
     font-size: 13px;
     font-weight: 300;
-    line-height: 17px; /* Required to equal checkbox height for alignment when label wraps. */
+    line-height: 16px; /* Required to equal checkbox height for alignment when label wraps. */
 }
 
 .check, .icon, .label {
