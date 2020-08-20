@@ -45,7 +45,7 @@ class ProviderDashboardFilter extends React.Component {
                 termsChecked: termsCheckedClone,
                 query: currentQuery
             });
-            
+
             /* Execute tracking */
             AnvilGTMService.trackSearchFacetSelected(
                 facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
@@ -80,24 +80,13 @@ class ProviderDashboardFilter extends React.Component {
         });
     }
 
-    componentWillUnmount() {
-
-        this.setState = ({
-            query: "",
-            dashboardIndex: [],
-            dashboardIndexMounted: false,
-            inputValue: "",
-            setOfCountResultsByFacet: new Map(),
-            setOfResults: new Set(),
-            setOfResultsBySearchGroups: new Map(),
-            termsChecked: new Map()
-        });
-    }
-
     componentDidMount() {
 
         /* Grab the index. */
         this.fetchDashboardIndex();
+
+        /* Initialize the state "inputValue". */
+        this.initializeInputValue();
 
         /* Initialize the state "termsChecked". */
         this.initializeTermsChecked();
@@ -112,42 +101,19 @@ class ProviderDashboardFilter extends React.Component {
         this.setOfResultsBySearchGroupsStateChanged(prevState);
     }
 
-    /**
-     * Build the query string from the specified set of selected facet terms and input value.
-     * 
-     * @param facetsByTerm
-     * @param inputValue
-     * @param termsChecked
-     */
-    buildQuery = (facetsByTerm, inputValue, termsChecked) => {
+    componentWillUnmount() {
 
-        const selectedTermsByFacet = [...facetsByTerm.keys()]
-            .reduce((accum, term)=> {
-
-                // Only add term to current query if it's currently selected
-                if ( termsChecked.get(term) ) {
-
-                    const facet = facetsByTerm.get(term);
-
-                    // A term as already been added to the current query for this facet; add term to existing array 
-                    if ( accum.has(facet) ) {
-                        accum.get(facet).push(term);
-                    }
-                    // This is the first term selected for the facet, create new array containing term
-                    else {
-                        accum.set(facet, [term]);
-                    }
-                }
-                return accum;
-            }, new Map());
-
-        if ( inputValue ) {
-            selectedTermsByFacet.set("search", inputValue);
-        }
-
-        // Convert selected terms to valid query string object
-        return new URLSearchParams(selectedTermsByFacet).toString();
-    };
+        this.setState = ({
+            query: "",
+            dashboardIndex: [],
+            dashboardIndexMounted: false,
+            inputValue: "",
+            setOfCountResultsByFacet: new Map(),
+            setOfResults: new Set(),
+            setOfResultsBySearchGroups: new Map(),
+            termsChecked: new Map(),
+        });
+    }
 
     buildFacetQueryString = (selectedTerms, facet) => {
 
@@ -176,6 +142,43 @@ class ProviderDashboardFilter extends React.Component {
         }
 
         return "";
+    };
+
+    /**
+     * Build the query string from the specified set of selected facet terms and input value.
+     *
+     * @param facetsByTerm
+     * @param inputValue
+     * @param termsChecked
+     */
+    buildQuery = (facetsByTerm, inputValue, termsChecked) => {
+
+        const selectedTermsByFacet = [...facetsByTerm.keys()]
+            .reduce((accum, term)=> {
+
+                // Only add term to current query if it's currently selected
+                if ( termsChecked.get(term) ) {
+
+                    const facet = facetsByTerm.get(term);
+
+                    // A term as already been added to the current query for this facet; add term to existing array
+                    if ( accum.has(facet) ) {
+                        accum.get(facet).push(term);
+                    }
+                    // This is the first term selected for the facet, create new array containing term
+                    else {
+                        accum.set(facet, [term]);
+                    }
+                }
+                return accum;
+            }, new Map());
+
+        if ( inputValue ) {
+            selectedTermsByFacet.set("search", inputValue);
+        }
+
+        // Convert selected terms to valid query string object
+        return new URLSearchParams(selectedTermsByFacet).toString();
     };
 
     dashboardIndexMountedStateChanged = (prevState) => {
@@ -229,6 +232,17 @@ class ProviderDashboardFilter extends React.Component {
         return new Set(results.map(result => result.ref));
     };
 
+    getSetOfFacetedResults = (facet) => {
+
+        /* Grab any checked terms for the facet. */
+        const selectedTerms = this.getTermsChecked(facet);
+
+        /* Build the query string. */
+        const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+
+        return this.getResultsByQuery(facetQueryString);
+    };
+
     getSetOfInputResults = () => {
 
         const {inputValue} = this.state;
@@ -247,35 +261,6 @@ class ProviderDashboardFilter extends React.Component {
 
         /* Return any intersecting sets of results. i.e. searching will be "AND" between facets and input. */
         return this.findIntersectionSetOfResults(setOfResultsBySearchGroups);
-    };
-
-    getTermsChecked = (facet) => {
-
-        const {facetsByTerm} = this.props,
-            {termsChecked} = this.state;
-
-        return [...termsChecked].reduce((acc, [term, checked]) => {
-
-            const termInFacet = facetsByTerm.get(term) === facet;
-
-            if ( termInFacet && checked ) {
-
-                acc.push(term);
-            }
-
-            return acc;
-        }, []);
-    };
-
-    getSetOfFacetedResults = (facet) => {
-
-        /* Grab any checked terms for the facet. */
-        const selectedTerms = this.getTermsChecked(facet);
-
-        /* Build the query string. */
-        const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
-
-        return this.getResultsByQuery(facetQueryString);
     };
 
     getSetOfResultsBySearchGroup = (searchGroup) => {
@@ -303,13 +288,74 @@ class ProviderDashboardFilter extends React.Component {
         }, new Map());
     };
 
+    getSetOfURLParams = () => {
+
+        /* Grab the URL params. */
+        const params = [...this.getURLParams().values()];
+
+        /* Return a set of the URL params. */
+        return params.reduce((acc, param) => {
+
+            const paramsByFacet = param.split(",");
+            paramsByFacet.forEach(param => acc.add(param));
+
+            return acc;
+        }, new Set())
+    };
+
+    getTermsChecked = (facet) => {
+
+        const {facetsByTerm} = this.props,
+            {termsChecked} = this.state;
+
+        return [...termsChecked].reduce((acc, [term, checked]) => {
+
+            const termInFacet = facetsByTerm.get(term) === facet;
+
+            if ( termInFacet && checked ) {
+
+                acc.push(term);
+            }
+
+            return acc;
+        }, []);
+    };
+
+    getURLParams = () => {
+
+        /* Grab the search parameters. */
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const currentQuery = urlSearchParams.get("query");
+
+        return new URLSearchParams(currentQuery);
+    };
+
+    initializeInputValue = () => {
+
+        const inputValue = this.getURLParams().get("search");
+
+        if ( inputValue ) {
+
+            this.onHandleSearch(inputValue);
+        }
+    };
+
     initializeTermsChecked = () => {
 
         const {setOfTerms} = this.props;
 
         const termsChecked = new Map();
 
-        [...setOfTerms].forEach(term => termsChecked.set(term, false));
+        /* Grab checkbox values from the URL - any input values will be ignored. */
+        const setOfURLParamValues = this.getSetOfURLParams();
+
+        [...setOfTerms].forEach(term => {
+
+            /* Checkbox value will be true, if the URL has the checkbox value. */
+            const checked = setOfURLParamValues.has(term);
+
+            termsChecked.set(term, checked);
+        });
 
         this.setState({termsChecked: termsChecked});
     };
@@ -354,6 +400,9 @@ class ProviderDashboardFilter extends React.Component {
 
             /* Update set of results. */
             this.updateSetOfResults();
+
+            /* Update dashboard URL with query. */
+            this.updateDashboardURL();
         }
     };
 
@@ -384,6 +433,17 @@ class ProviderDashboardFilter extends React.Component {
                     return -1;
                 }
             });
+    };
+
+    updateDashboardURL = () => {
+
+        const {query} = this.state;
+
+        const params = new URLSearchParams();
+        params.set("query", query);
+
+        /* Push to URL. */
+        window.history.pushState(null, "", `?${params.toString()}`);
     };
 
     updateSetOfResults = () => {
