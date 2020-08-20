@@ -64,7 +64,7 @@ class Home extends React.Component {
                         <div className={compStyles.tile}>
                             <Link to="/ncpi">
                                 <img className={compStyles.tileLogo} src={logoNCPI} alt="NCPI"/>
-                                <span>Explore emerging support for cross platform data sharing and analysis via the <span className={globalStyles.asLink}>NIH Cloud Platform Interoperability effort</span>.</span>
+                                <span>Explore emerging support for cross-platform data sharing and analysis via the <span className={globalStyles.asLink}>NIH Cloud Platform Interoperability effort</span>.</span>
                             </Link>
                         </div>
                     </div>
