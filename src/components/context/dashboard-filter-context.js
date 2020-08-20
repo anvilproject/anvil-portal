@@ -20,6 +20,7 @@ const DashboardFilterContext = React.createContext({
     termsCount: new Map(),
     workspaces: [],
     onHandleChecked: () => {},
+    onHandleClearInput: () => {},
     onHandleInput: () => {},
 });
 
