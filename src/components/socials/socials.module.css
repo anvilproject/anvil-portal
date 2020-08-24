@@ -9,20 +9,15 @@
 /* Socials - container. */
 .socials {
     align-items: center;
-    border-top: 1px dashed var(--black12);
     display: inline-flex;
-    margin-top: 16px;
+    margin-top: 60px;
     padding-top: 8px;
-}
-
-/* Socials - container - hover. */
-.socials:hover {
-    border-top: 1px dashed var(--accent-mustard);
 }
 
 /* Social button. */
 .socials button {
     background-color: transparent;
+    cursor: pointer;
     border: none;
     line-height: 1px;
     padding: 0 16px;
@@ -46,6 +41,16 @@
 /* Social image - all. */
 .socials img {
     margin: 0;
+}
+
+/* Social icons - hover transition */
+.socials img, .socials span {
+    transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Social icons 0 hover */
+.socials img:hover, .socials span:hover {
+    opacity: 54%;
 }
 
 /* Social image - linkedin. */
