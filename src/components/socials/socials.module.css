@@ -1,0 +1,61 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL socials component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Socials - container. */
+.socials {
+    align-items: center;
+    border-top: 1px dashed var(--black12);
+    display: inline-flex;
+    margin-top: 16px;
+    padding-top: 8px;
+}
+
+/* Socials - container - hover. */
+.socials:hover {
+    border-top: 1px dashed var(--accent-mustard);
+}
+
+/* Social button. */
+.socials button {
+    background-color: transparent;
+    border: none;
+    line-height: 1px;
+    padding: 0 16px;
+}
+
+/* Social button - focused. */
+.socials button:focus {
+    outline: none;
+}
+
+/* Social button - first. */
+.socials button:first-of-type {
+    padding-left: 0;
+}
+
+/* Social button - last. */
+.socials button:last-of-type {
+    padding-right: 0;
+}
+
+/* Social image - all. */
+.socials img {
+    margin: 0;
+}
+
+/* Social image - linkedin. */
+.socials .linkedin img {
+    height: 16px;
+}
+
+/* Social image - email. */
+.socials .email span {
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 20px;
+}

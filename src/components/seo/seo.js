@@ -18,7 +18,7 @@ class SEO extends React.Component {
         const {description, ncpi, site, title} = this.props,
             siteURL = EnvironmentService.getCurrentEnvironmentURL(),
             imgFileName = ncpi ? "twitter-ncpi.png" : "twitter-anvil.png",
-            twitterImgUrl = `${siteURL}images/${imgFileName}`;
+            imgUrl = `${siteURL}images/${imgFileName}`;
         return (
             <Helmet>
                 <meta property="og:title" content={title}/>
@@ -28,7 +28,8 @@ class SEO extends React.Component {
                     <meta property="twitter:description" content={description} key="twitter:description"/>,
                     <meta name="description" content={description} key="description"/>,
                     <meta property="og:description" content={description} key="og:description"/>,
-                    <meta name="twitter:image" content={twitterImgUrl} key="twitter:image"/>
+                    <meta name="twitter:image" content={imgUrl} key="twitter:image"/>,
+                    <meta name="og:image" content={imgUrl} key="og:image"/>
                 ] : null}
                 <meta name="twitter:card" content="summary"/>
             </Helmet>
