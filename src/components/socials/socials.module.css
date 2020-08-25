@@ -9,7 +9,7 @@
 /* Socials - container. */
 .socials {
     align-items: center;
-    display: inline-flex;
+    display: flex;
     margin-top: 60px;
     padding-top: 8px;
 }
@@ -28,13 +28,14 @@
     outline: none;
 }
 
-/* Social button - first. */
-.socials button:first-of-type {
+/* Social button - twitter - first. */
+.socials button.twitter {
     padding-left: 0;
+    padding-right: 10px;
 }
 
-/* Social button - last. */
-.socials button:last-of-type {
+/* Social button - email - last. */
+.socials button.email {
     padding-right: 0;
 }
 
@@ -43,14 +44,19 @@
     margin: 0;
 }
 
-/* Social icons - hover transition */
+/* Social icons - hover transition. */
 .socials img, .socials span {
     transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Social icons 0 hover */
+/* Social icons - hover. */
 .socials img:hover, .socials span:hover {
-    opacity: 54%;
+    opacity: 0.54;
+}
+
+/* Social iamge - twitter. */
+.socials .twitter img {
+    height: 30px;
 }
 
 /* Social image - linkedin. */
