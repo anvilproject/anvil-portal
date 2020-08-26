@@ -9,8 +9,7 @@
 .articleEnd {
     border-top: 1px solid rgba(126, 186, 192, 0.38);
     cursor: pointer;
-    margin-top: 60px;
-    padding-top: 4px;
+    padding-top: 12px;
 }
 
 /* Link - "Improve this page", "Content guide" */
