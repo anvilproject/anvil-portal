@@ -1,11 +1,12 @@
 ---
 author: "AnVIL"
 conference: "AISES 2019"
-date: "2019-10-11"
 description: "This hands-on workshop will introduce genomic data science through guided exercises using the Galaxy workbench (<https://galaxyproject.org>)"
 eventType: "Workshop"
 featured: false
 location: "Milwaukee, Wisconsin"
+sessions: [{sessionStart: "11 Oct 2019"}]
+timezone: "America/Chicago"
 title: "Reproducible Genomic Data Analysis with the Galaxy Workbench"
 ---
 

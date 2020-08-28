@@ -1,9 +1,9 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const NewsStaticQuery = () => {
+export const ScoopNewsStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
-        query NewsStaticQuery {
+        query ScoopNewsStaticQuery {
           allMarkdownRemark(filter: {fields: {slug: {regex: "/news/", ne: "/news/news"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
             edges {
               node {

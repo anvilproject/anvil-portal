@@ -22,7 +22,7 @@
 import React from "react";
 
 // App dependencies
-import {EventsStaticQuery} from "../../hooks/events-query";
+import {ScoopEventStaticQuery} from "../../hooks/scoop-event-query";
 import Scoop from "../scoops/scoop";
 import * as ScoopsService from "../../utils/scoops.service";
 
@@ -44,8 +44,8 @@ export default (props) => {
     const {featured, filter, past} = props;
     const featuredOnly = featured || featured === "";
     const pastEvent = past === "";
-    const eventsScoops = EventsStaticQuery();
-    const scoopsByDate = ScoopsService.filterScoopsByDate(eventsScoops, pastEvent);
+    const scoops = ScoopEventStaticQuery();
+    const scoopsByDate = ScoopsService.filterScoopsByDate(scoops, pastEvent);
     const scoopsByFilter = ScoopsService.filterScoopsByFrontmatter(scoopsByDate, filter);
     const type = pastEvent ? "past events" : "upcoming events";
 

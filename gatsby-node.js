@@ -7,6 +7,7 @@ const express = require('express');
 const {fmImagesToRelative} = require('gatsby-remark-relative-images');
 const {createFilePath} = require(`gatsby-source-filesystem`);
 const path = require(`path`);
+const {buildDateBubbleField, buildDateStartField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
@@ -149,16 +150,67 @@ exports.createSchemaCustomization = ({actions}) => {
 
     const {createFieldExtension, createTypes} = actions;
 
+    /* Create field "dateBubble" of type string array. */
+    createFieldExtension({
+        name: "dateBubble",
+        extend() {
+            return {
+                resolve(source) {
+                    return buildDateBubbleField(source);
+                },
+            }
+        }
+    });
+    /* Create field "dateStart" of type date. */
+    createFieldExtension({
+        name: "dateStart",
+        extend() {
+            return {
+                resolve(source) {
+                    return buildDateStartField(source);
+                },
+            }
+        }
+    });
+    /* Create field "featured" of type boolean. */
+    createFieldExtension({
+        name: "featured",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns false value when featured is undefined. */
+                    if ( source.featured === undefined ) {
+
+                        return false;
+                    }
+                    return source.featured;
+                },
+            }
+        }
+    });
+    /* Create field "sessionsDisplay" of type string array. */
+    createFieldExtension({
+        name: "sessionsDisplay",
+        extend() {
+            return {
+                resolve(source) {
+                    return buildSessionsDisplayField(source);
+                },
+            }
+        }
+    });
+    /* Create field "showOutline" of type boolean. */
     createFieldExtension({
         name: "showOutline",
         extend() {
             return {
                 resolve(source) {
-                    if ( source.showOutline === false ) {
+                    /* Returns true value when showOutline is undefined. */
+                    if ( source.showOutline === undefined ) {
 
-                        return source.showOutline;
+                        return true;
                     }
-                    return true;
+                    return source.showOutline;
                 },
             }
         }
@@ -169,7 +221,23 @@ exports.createSchemaCustomization = ({actions}) => {
         frontmatter: Frontmatter
     }
     type Frontmatter {
+        conference: String
+        dateBubble: [String] @dateBubble
+        dateStart: Date @dateStart
+        description: String
+        eventType: String
+        featured: Boolean @featured
+        location: String
+        sessions: [Session]
+        sessionsDisplay: [String] @sessionsDisplay
         showOutline: Boolean @showOutline
+        subTitle: String
+        timezone: String
+        title: String
+    }
+    type Session {
+        sessionEnd: String
+        sessionStart: String
     }`);
 };
 

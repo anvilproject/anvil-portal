@@ -27,7 +27,6 @@ export default ({data}) => {
         ncpi = slug.startsWith("/ncpi"),
         h1 = TemplateService.getPageH1(headings),
         pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
-
     return (
         <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
             <ProviderFrontmatter frontmatter={frontmatter}>
@@ -53,14 +52,13 @@ query($slug: String!) {
         author
         conference
         date(formatString: "MMMM DD, YYYY")
-        dates
         description
         eventType
         featured
         location
+        sessionsDisplay
         showOutline
         subTitle
-        time
         title
       }
       headings(depth: h1) {

@@ -1,12 +1,12 @@
 ---
 author: "AnVIL"
 conference: "BCC 2020"
-date: "2020-07-17"
 description: "A hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows"
 eventType: "Virtual Workshop"
 featured: true
 location: "East Training 1"
-time: "18:00 - 20:30 PT"
+sessions: [{sessionEnd: "17 Jul 2020 8:30 PM", sessionStart: "17 Jul 2020 6:00 PM"}]
+timezone: "America/Los_Angeles"
 title: "Dockstore Fundamentals: Introduction to Docker and Descriptors for Reproducible Analysis - East Session"
 ---
 

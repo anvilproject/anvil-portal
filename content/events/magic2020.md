@@ -1,12 +1,11 @@
 ---
 author: "AnVIL"
 conference: "AnVIL Magic 2020"
-date: "2020-06-10"
-dates: "Jun 10, 2020 and Jun 11, 2020"
 description: "An introduction to the AnVIL platform to enable CCDG and CMG researchers to analyze GSP data using AnVIL tools."
 eventType: "Virtual Jamboree"
 featured: false
-time: "11:00 AM ET"
+sessions: [{sessionEnd: "10 Jun 2020 3:00 PM", sessionStart: "10 Jun 2020 11:00 AM"}, {sessionEnd: "11 Jun 2020 2:30 PM", sessionStart: "11 Jun 2020 11:00 AM"}]
+timezone: "America/New_York"
 title: "Massive Genome Informatics in the Cloud (MaGIC) Jamboree"
 ---
 

@@ -17,7 +17,7 @@ function getDate(date) {
 }
 
 /**
- * Returns filtered scoops by date, by past or upcoming dates.
+ * Returns filtered scoops by start date, by past or upcoming.
  *
  * @param scoops
  * @param past
@@ -33,7 +33,10 @@ export function filterScoopsByDate(scoops, past) {
 
     const scoopsByDate = scoops.filter(scoop => {
 
-        const date = validateDate(scoop.frontmatter.date);
+        const {frontmatter} = scoop,
+            {dateStart} = frontmatter;
+
+        const date = validateDate(dateStart);
         const dateObj = getDate(date);
 
         // For any valid dates
@@ -101,7 +104,7 @@ export function validateDate(date) {
 
     if ( date && date.toLowerCase() === "invalid date" ) {
 
-        return;
+        return "";
     }
 
     return date;

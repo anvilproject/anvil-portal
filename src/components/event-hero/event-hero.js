@@ -21,18 +21,15 @@ class EventHero extends React.Component {
 
     render() {
         const frontmatter = this.context,
-            {conference, date, dates, eventType, location, subTitle, time, title} = frontmatter;
-        const eventDate = dates ? dates : date;
+            {conference, eventType, location, sessionsDisplay, subTitle, title} = frontmatter;
         const identifier = AnchorService.buildAnchorIdentifier(title);
         return (
             <div className={compStyles.eventHero}>
                 <h6>{conference}</h6>
                 <h1 id={identifier}>{title}</h1>
                 <h5>{eventType}</h5>
-                <h5>{eventDate}</h5>
-                <h5>{time ? <span>{time}</span> : null}
-                    {time && location ? <span>, </span> : null}
-                    <span>{location}</span></h5>
+                {sessionsDisplay ? sessionsDisplay.map((session, s) => <h5 key={s}>{session}</h5>) : null}
+                <h5>{location}</h5>
                 <hr/>
                 {subTitle ? <h2>{subTitle}</h2> : null}
             </div>

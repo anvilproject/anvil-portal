@@ -1,11 +1,12 @@
 ---
 author: "AnVIL"
 conference: "ASHG 2019"
-date: "2019-10-15"
 description: "Hands-on workshop introducing best practice approaches for genome-wide association studies (GWAS) using the Galaxy computational workbench (<https://galaxyproject.org>)."
 eventType: "Workshop"
 featured: false
 location: "Houston"
+sessions: [{sessionStart: "15 Oct 2019"}]
+timezone: "America/Chicago"
 title: "Reproducible and Transparent Genomic Analysis with Galaxy"
 ---
 
