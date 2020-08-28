@@ -42,7 +42,7 @@ const generateDashboardIndex = function generateDashboardIndex(studies, workspac
             const dataTypes = getDataTypes(workspace.dataTypes);
             const dbGapId = getGapId(workspace.dbGapId);
             const dbGapIdAccession = getGapId(workspace.dbGapIdAccession);
-            const diseases = getDiseases(studies, workspace.dbGapIdAccession);
+            const diseases = getDiseases(studies, workspace.dbGapIdAccession, workspace.consortium);
             const studyName = getStudyName(studies, workspace.dbGapIdAccession);
             const workspaceName = getWorkspaceName(workspace.projectId);
 
@@ -187,9 +187,19 @@ function getDataTypes(dataTypes) {
  *
  * @param studies
  * @param dbGapIdAccession
+ * @param consortium
  * @returns {string}
  */
-function getDiseases(studies, dbGapIdAccession) {
+function getDiseases(studies, dbGapIdAccession, consortium) {
+
+    // We currently don't have a direct mapping between diseases and workspaces. We can assume each study's diseases
+    // apply to each workspace in the study, except for CMG (which we leave blank for now). Once we have direct
+    // mapping between workspace and diseases, we can update this to use the workspace-specific values, including
+    // for CMG.
+    if ( consortium.toLowerCase() === "cmg" ) {
+
+        return "";
+    }
 
     const study = findStudy(studies, dbGapIdAccession);
 
