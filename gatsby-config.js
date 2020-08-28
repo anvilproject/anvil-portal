@@ -13,8 +13,6 @@ let roadMapPath = `./content/roadmap/`;
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
 let gtmEnvName = process.env.GATSBY_ENV_NAME;
-let trackingId = process.env.GATSBY_GA_TRACKING_ID;
-
 
 module.exports = {
     siteMetadata: {
@@ -58,18 +56,6 @@ module.exports = {
                 // Specify optional GTM environment details.
                 gtmAuth: gtmAuth,
                 gtmPreview: gtmEnvName,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                trackingId: trackingId,
-                // Puts tracking script in the head instead of the body
-                head: true,
-                // Optional https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/#the-anonymize-option
-                anonymize: true,
-                // Optional - do not track
-                respectDNT: true,
             },
         },
         `gatsby-plugin-manifest`,
