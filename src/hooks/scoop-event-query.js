@@ -1,10 +1,10 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const EventsStaticQuery = () => {
+export const ScoopEventStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
-        query EventsStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}, privateEvent: {eq: false}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+        query ScoopEventStaticQuery {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}, privateEvent: {eq: false}}}, sort: {fields: [frontmatter___dateStart], order: ASC}) {
             edges {
               node {
                 fields {
@@ -12,7 +12,8 @@ export const EventsStaticQuery = () => {
                 }
                 frontmatter {
                   conference
-                  date(formatString: "MMMM DD, YYYY")
+                  dateBubble
+                  dateStart
                   description
                   eventType
                   featured

@@ -50,11 +50,11 @@ class Scoop extends React.Component {
 
             const {scoop} = props,
                 {fields, frontmatter} = scoop,
-                {conference, date, description, eventType, title} = frontmatter,
+                {conference, date, dateBubble, description, eventType, title} = frontmatter,
                 {slug} = fields;
 
             // Validate and format dates for display
-            const scoopDate = ScoopsService.validateDate(date);
+            const dateNews = ScoopsService.validateDate(date);
 
             return (
                 <div className={classNames(contentStyles.content, compStyles.scoop, className)}>
@@ -62,7 +62,7 @@ class Scoop extends React.Component {
                         {scoopTypeEvents ? 
                             <>
                                 <ListItemIcon>
-                                    <BubbleDate date={scoopDate} disabled={pastEvents}/>
+                                    <BubbleDate dateBubble={dateBubble} disabled={pastEvents}/>
                                 </ListItemIcon>
                                 <ListItemContent>
                                     <Overline>
@@ -76,7 +76,7 @@ class Scoop extends React.Component {
                             <ListItemContent>
                                 <h3>{title}</h3>
                                 <Overline>
-                                    <span>Posted: {scoopDate}</span>
+                                    <span>Posted: {dateNews}</span>
                                 </Overline>
                                 <p>{description}</p>
                             </ListItemContent>}

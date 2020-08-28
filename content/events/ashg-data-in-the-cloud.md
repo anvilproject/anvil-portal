@@ -1,12 +1,12 @@
 ---
 author: "AnVIL"
 conference: "ASHG 2020"
-date: "2020-10-31"
 description: "We will guide you through a research journey with the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL)."
 eventType: "Workshop"
 featured: true
 location: "San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101"
-time: "07:15 - 08:45 PT"
+sessions: [{sessionEnd: "31 Oct 2020 8:45 AM", sessionStart: "31 Oct 2020 7:15 AM"}]
+timezone: "America/Los_Angeles"
 title: "Find and Analyze Data in the Cloud with Gen3, Dockstore and Terra"
 ---
 

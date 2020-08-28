@@ -16,10 +16,9 @@ class BubbleDate extends React.Component {
 
     render() {
         
-        const {disabled, date} = this.props;
-        const [monthMMMM, dayOfMonth, year] = date.split(/[ ,]+/);
-        const month = monthMMMM.substring(0, 3);
-        
+        const {dateBubble, disabled} = this.props;
+        const [month, dayOfMonth, year] = dateBubble || [];
+
         return (
             <div className={classNames(compStyles.bubbleDate, {[compStyles.disabled]: disabled})}>
                 <div className={compStyles.bubbleDateText}>

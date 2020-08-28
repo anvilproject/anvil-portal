@@ -1,13 +1,13 @@
 ---
 author: "AnVIL"
 conference: "SACNAS 2019"
-date: "2019-10-30"
 description: "Workshop attendees will be introduced to practical examples of how genomic data is used in research and clinical applications, highlighting techniques, technologies, and platforms used in genomic analysis."
 eventType: "Workshop"
 featured: false
 location: "Honolulu"
+sessions: [{sessionEnd: "30 Oct 2019 6:00 PM", sessionStart: "30 Oct 2019 9:00 AM"}]
 subTitle: "SACNAS 2019 - The National Diversity in STEM Conference"
-time: "09:00 - 18:00 HST"
+timezone: "Pacific/Honolulu"
 title: "Genomic data science with the Galaxy workbench"
 ---
 

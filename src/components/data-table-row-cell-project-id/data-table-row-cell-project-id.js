@@ -26,7 +26,7 @@ class DataTableRowCellProjectId extends React.Component {
      */
     getProjectDisplayText = (projectId) => {
 
-        return projectId.replace(/^AnVIL\_(CCDG|CMG|GTex)\_/i, "");
+        return projectId.replace(/^AnVIL_(CCDG|CMG|GTex)_/i, "");
     };
 
     render() {

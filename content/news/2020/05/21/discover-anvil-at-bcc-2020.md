@@ -21,5 +21,5 @@ Please see the [full schedule](https://bcc2020.sched.com) of events.
 AnVIL team members will be presenting the following virtual training  workshops at BCC 2020. See the individual event pages for details on dates, times and registration information.
 
 
-<events filter='{"conference":"BCC 2020"}'></events>
+<events filter='{"conference":"BCC 2020"}' past></events>
 

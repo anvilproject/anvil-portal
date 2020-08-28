@@ -13,7 +13,7 @@
 import React from "react";
 
 // App dependencies
-import {NewsStaticQuery} from "../../hooks/news-query";
+import {ScoopNewsStaticQuery} from "../../hooks/scoop-news-query";
 import Scoops from "../scoops/scoops";
 
 // Styles
@@ -33,7 +33,7 @@ export default (props) => {
 
     const {featured} = props;
     const featuredOnly = featured || featured === "";
-    const newsScoops = NewsStaticQuery();
+    const newsScoops = ScoopNewsStaticQuery();
 
     return (
         <News featuredOnly={featuredOnly} scoops={newsScoops}/>
