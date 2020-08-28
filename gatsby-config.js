@@ -23,23 +23,6 @@ module.exports = {
     },
     plugins: [
         {
-            resolve: `gatsby-plugin-favicon`,
-            options: {
-                logo: "./images/favicon-anvil.png",
-
-                icons: {
-                    android: true,
-                    appleIcon: true,
-                    appleStartup: true,
-                    coast: false,
-                    favicons: true,
-                    firefox: true,
-                    yandex: false,
-                    windows: false
-                }
-            }
-        },
-        {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
                 id: gtmId,
@@ -57,6 +40,23 @@ module.exports = {
                 gtmAuth: gtmAuth,
                 gtmPreview: gtmEnvName,
             },
+        },
+        {
+            resolve: `gatsby-plugin-favicon`,
+            options: {
+                logo: "./images/favicon-anvil.png",
+
+                icons: {
+                    android: true,
+                    appleIcon: true,
+                    appleStartup: true,
+                    coast: false,
+                    favicons: true,
+                    firefox: true,
+                    yandex: false,
+                    windows: false
+                }
+            }
         },
         `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
