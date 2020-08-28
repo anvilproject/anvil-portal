@@ -148,27 +148,27 @@ function reformatToDisplayableSessions(sessions, timezone) {
         const {sessionEnd, sessionStart} = session || {};
 
         /* Grab the various formatting styles for display of each session. */
-        const formatByDate = "dddd MMM D YYYY";
-        const formatByDateTime = "dddd MMM D YYYY h:mm A";
-        const formatByTime = "HH:mm";
         const formatByTimeWithPeriod = "h:mm A";
+        const formatByTimeWithTZ = `${formatByTimeWithPeriod} zz`;
+        const formatByDate = "dddd MMMM D YYYY";
+        const formatByTime24Hr = "HH:mm"; // Used to check if time is specified for event
 
         /* Start and end sessions. */
         /* Both start and end sessions are expected to have time values. */
         /* i.e. A start session without a time, having an end session (also without a time, but perhaps on the next day)
          * is indicative of improper use of the frontmatter field "sessions". */
-        /* Returns the session display string e.g. "Friday Jul 17 2020 09:16 AM to 11:45 AM". */
+        /* Returns the session display string e.g. "Friday July 17 2020 09:16 AM to 11:45 AM EST". */
         if ( sessionStart && sessionEnd ) {
 
             /* Format the session start and end display strings. */
-            const startDisplayStr = convertSessionDateToMoment(sessionStart, timezone).format(formatByDateTime);
-            const endDisplayStr = convertSessionDateToMoment(sessionEnd, timezone).format(formatByTimeWithPeriod);
+            const startDisplayStr = convertSessionDateToMoment(sessionStart, timezone).format(`${formatByDate} ${formatByTimeWithPeriod}`);
+            const endDisplayStr = convertSessionDateToMoment(sessionEnd, timezone).format(formatByTimeWithTZ);
 
             return `${startDisplayStr} to ${endDisplayStr}`;
         }
 
         /* Start session only. */
-        /* Returns either "Friday Jul 17 2020 09:16 AM" if a time is specified
+        /* Returns either "Friday Jul 17 2020 09:16 AM EST" if a time is specified
          * or "Friday Jul 17 2020" if no time has been specified with the start session. */
         if ( sessionStart ) {
 
@@ -177,14 +177,14 @@ function reformatToDisplayableSessions(sessions, timezone) {
 
             /* Returns the start session without time, if no time has been specified. */
             /* e.g. "Friday Jul 17 2020". */
-            if ( startMoment.format(formatByTime) === "00:00" ) {
+            if ( startMoment.format(formatByTime24Hr) === "00:00" ) {
 
                 return startMoment.format(formatByDate);
             }
 
             /* Returns the start session with time. */
             /* e.g. "Friday Jul 17 2020 09:16 AM". */
-            return convertSessionDateToMoment(sessionStart, timezone).format(formatByDateTime);
+            return convertSessionDateToMoment(sessionStart, timezone).format(`${formatByDate} ${formatByTimeWithTZ}`);
         }
 
         return "";
