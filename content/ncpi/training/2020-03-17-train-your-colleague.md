@@ -9,58 +9,22 @@ The goal of this training session was to provide background information on the A
 
 ### Day 1 - Component introduction
 
-Day 1 Zoom Recording: [Video](https://zoom.us/rec/play/78UsIb2s_Ds3Sd2QtwSDC_MoW9TrJ66s2iFL-_ZZnh61UXhRZwClZrJAMbbf9O4tMv9M5YV5Qv77pwaq)
-
-* Stack (IC) Introductions
-    - Start - 0:00
-    - End - 16:25
-
-* Systems Interoperation WG Intro/Update - (Brian O’Connor)
-    - Start - 16:55 
-    - End - 25:50
-
-* Gen3 (Viktorija, Fan, Dmitry, Alex, Garrett) 
-    - Start - 26:25
-    - End - 1:11:30
-
-* Terra (Alex Bauman - back end, Geraldine Van der Auwera - front end)
-    - Start - 1:11:38
-    - End - 1:41:20
-
-* Dockstore (Louise Cabansay) 
-    - Start - 1:54:49
-    - End - 2:28:02
-
-* PIC-SURE (Arnaud Serrett-Larmande)
-    - Start - 2:29:02 
-    - End - 2:50:02
-
-* Seven Bridges (Manisha Ray, Ana Damljanovic)
-    - Start - 2:50:32
-    - End - 3:32:00
-
-* ISB-CGC (Kawther Abdileh, Fabian Seidl) 
-    - Start - 3:32:09 
-    - End - 4:00:39
+|      |     |
+| ---- | --- |
+| Stack (IC) introductions | [Slides](https://docs.google.com/presentation/d/15sjBQG4X7AMKoFy0pJRYMnjmNHh8MVWUq9fOXpwPcnU/edit?usp=sharing), [Video](https://youtu.be/PspTGZIbw5I) |
+| Systems Interoperations WG update | [Slides](https://docs.google.com/presentation/d/1OofCfSmX_9WiaRYMOFlln8Ac41I6akav7fKgQt8ytSQ/edit?usp=sharing), [Video](https://youtu.be/-3bqz4B67QE) |
+| Gen3 introduction | [Slides](https://drive.google.com/open?id=11c7gKEfOZuu6TCWCDroHgNiVgjP7oIEh-NofRAzsCKw), [Video](https://youtu.be/tzqCYwQRgfU) |
+| Terra introduction | [Slides](https://drive.google.com/open?id=17B7122itLyn3q0Xp2fMQX7wnTeTozeCvLNVARFDXdqw), [Slides](https://drive.google.com/open?id=1wmyeUzC50ko76pJ1oyQmJSEpzjfTGbDP), [Video](https://youtu.be/eQwHTQKPCeA) |
+| Dockstore introduction | [Slides](https://drive.google.com/open?id=1unq_zyd_1u_kEsYKABVMuaIYMjJ0soFTVLcOtD17hlg), [Video](https://youtu.be/fgrwJ1VN91s) |
+| PIC-SURE introduction | [Slides](https://drive.google.com/open?id=1etNlyQH62XSCFLq3Sb5K5iLbpWifRq9Fst5TKgsHKa8), [Video](https://youtu.be/jOdIlEybj4A) |
+| Seven Bridges introduction | [Slides](https://drive.google.com/file/d/1iznxMlyRcwxV8cVU3PeyO78ehc8wedDb/view?usp=sharing), [Video](https://youtu.be/1wHenZ0QR08) |
+| ISB-CGC introduction | [Slides](https://drive.google.com/file/d/1tjs38dbx6zTcJXbBA9Dhc67mJgkEXT1v/view?usp=sharing), [Video](https://youtu.be/JDqm7NsG46Y) |
 
 ### Day 2 - Use cases
 
-Day 2 Zoom Recording: [Video](https://zoom.us/rec/play/vZR5f7ur_W43SdzBswSDVvYtW9S0ePis0SVPqKZbxRnhWyEEYVOgZOdAM-L8O1-OhW9_7kwXtDLXGaqt)
-
-* BDC/AnVIL Gold Standard Use Case (Beth Sheets)
-    - Start - 0:00
-    - End - 54:00
-
-* SB-CGC Use Case (Dave Roberson)
-
-    - Start - 54:00
-    - End - 1:57:50
-
-* KFDRC (Allison Heath) & BDC (Alison Leaf, Seven Bridges) Use Case 
-
-    - Start - 2:13:30
-    - End - 3:14:30
-
-* ISB-CGC/CRDC Use Case
-    - Start - 3:14:55
-    - End - 3:41:20
+|      |     |
+| ---- | --- |
+| AnVIL/BioData Catalyst gold standard use case | [Video](https://youtu.be/uyrgVvhplwM) |
+| Seven Bridges use case | [Video](https://youtu.be/elmG_02zn_4) |
+| Kids First Data Resource Center (KFDRC) use case & BioData Catalyst use case | [Video](https://youtu.be/w3m3EvK3pKw) |
+| Institute of Systems Biology - Cancer Genomics Cloud / Cancer Research Data Commons use case | [Video](https://youtu.be/kLgHSW-39XE) |
