@@ -67,6 +67,7 @@ section:last-child {
 }
 
 .tiles .tileLogo {
+    flex: none;
     margin: 0 1.5rem 0 0; /* 24px */
     vertical-align: middle;
     width: 3rem; /* 48px */
