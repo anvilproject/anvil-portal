@@ -12,6 +12,9 @@ import React, {useContext} from "react";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
 
+// Styles
+import compStyles from "./data-summary.module.css";
+
 // Template variables
 const TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
 
@@ -21,7 +24,7 @@ class DataSummary extends React.Component {
         const {summaries} = this.props;
         return (
             <>
-            <h2>Search Summary</h2>
+            <h2 class={compStyles.headerNoBorder}>Search Summary</h2>
             <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summaries}/>
             </>
         );

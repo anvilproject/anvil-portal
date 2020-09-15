@@ -5,3 +5,7 @@
  * Style definitions specific to The AnVIL data workspaces component.
  */
 
+.headerNoBorder {
+    border-bottom: 0;
+    padding-bottom: 0;
+}

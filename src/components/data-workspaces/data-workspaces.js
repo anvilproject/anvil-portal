@@ -12,6 +12,9 @@ import React, {useContext} from "react";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
 
+// Styles
+import compStyles from "./data-workspaces.module.css";
+
 // Template variables
 const TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "size", "subjects"];
 
@@ -21,7 +24,7 @@ class DataWorkspaces extends React.Component {
         const {workspaces} = this.props;
         return (
             <>
-            <h2>Search Results</h2>
+            <h2 class={compStyles.headerNoBorder}>Search Results</h2>
             <DataTable studies tableHeaders={TABLE_HEADERS_WORKSPACES_BY_STUDY} tableRows={workspaces}/>
             </>
         );

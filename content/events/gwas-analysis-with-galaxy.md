@@ -6,7 +6,6 @@ eventType: "Workshop"
 featured: true
 location: "San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101"
 sessions: [{sessionEnd: "28 Oct 2020 8:45 AM", sessionStart: "28 Oct 2020 7:15 AM"}]
-subTitle: "GWAS Analysis with Galaxy on the Analysis Visualization Informatic Lab-space (AnVIL)"
 timezone: "America/Los_Angeles"
 title: "GWAS Analysis with Galaxy in AnVIL"
 ---

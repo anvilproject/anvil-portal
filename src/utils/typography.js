@@ -44,6 +44,10 @@ const typography = new Typography({
             "h2, h3, h4, h5,h6": {
                 marginTop: rhythm(1+1/3),
             },
+            "h2":{
+                borderBottom: "1px solid rgba(var(--accent-blue-green-rgb), .58)",
+                paddingBottom: "6px"
+            },
             "ol, ul": {
                 margin: 0,
                 paddingLeft: rhythm(1+1/3)
