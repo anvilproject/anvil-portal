@@ -50,11 +50,21 @@ An initial objective of the FHIR working group is to have a practical approach f
 
 ## Outreach and Training Working Group
 
-The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. 
+The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. At this time the group priorities are:
+
+ - Development of NCPI data dashboard. Dashboard will aggregate information about datasets available through each of the four NCPI platforms
+ - Outreach and training related to cloud cost and FHIR
+ - Organization and support of NCPI-wide workshops 
+
+#### Background
+
+The objective of this working group is to guide outreach and training activities within the framework of NCPI effort. 
 
 #### Co-Chairs
 - Ashok Krishnamurthy (RENCI) - BDC
-- Anton Nekrutenko (PSU) - AnVIL
+- Anton Nekrutenko (PSU, Galaxy) - AnVIL
+
+
 
 ## NIH Systems Interoperation Working Group
 
