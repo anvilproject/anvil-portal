@@ -32,7 +32,6 @@ The NCPI's  participating platforms are:
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#kids-first-data-resource-center)
 
 
- 
 ### Team 
 This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
 
@@ -48,15 +47,20 @@ The NCPI has intentionally constrained the problems we are addressing to those a
 
 ### Generic Search Results Hand-off
   
- We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.
+We are working to establish a generic and universal hand-off mechanism so data portal users can further analyze search results on any analysis platform that supports the format.
    
- This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. Importantly, this gives researchers greater freedom in how and where they compute.
+This will allow data portals to develop and maintain a single “export mechanism” which would be available to any analysis platforms that invested in supporting the standard format. Importantly, this gives researchers greater freedom in how and where they compute.
 
 By improving the hand-off of search results from portals to workspace environments through standardization, we will enable researchers to query on multiple portals and aggregate their search results to a common cloud workspace of their choosing in order to perform an analysis. 
  
 For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment on either AnVIL or BioData Catalyst where they can perform a joint analysis on these data.
   
- Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+
+### NCPI Data Dashboard
+
+To make the most effective use of the data managed by NCPI platforms users must be able to view, browse, and search datasets available across all resources. This would allow biomedical researchers to understand what data is already available. This, in turn, will allow for better experimental design of future studies and will prevent duplication of current and past efforts. To allow such "bird's eye view" of the data we are building the NCPI Data Dashboard. Initially the dashboard will use infrastructure build by the [AnVIL project](/data) to generate overview of available datasets. 
+
 
 ### NIH RAS Single Sign On Pilot
 
@@ -78,7 +82,6 @@ There are currently six cross-platform research efforts:
 For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
 
  
-
 ## Working Groups
 
 The NCPIs has five working groups:
