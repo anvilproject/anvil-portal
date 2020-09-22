@@ -68,19 +68,8 @@
 
     .contentContainer {
         display: flex;
-        max-width: 712px;
+        max-width: 780px;
         margin: 0 auto 0 0;
-    }
-}
-
-/**
- * Outline added above this point.
- */
-@media screen and (min-width: 1341px) {
-
-    /* Content positioner */
-    .contentPositioner {
-        padding-right: 40px; /* Add space between outline and right hand side of viewport */
     }
 }
 
