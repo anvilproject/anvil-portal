@@ -13,6 +13,7 @@ By providing access to data and tools in a secure environment that can scale to 
 Providing access to such a platform with tens of thousands of human genome sequences will allow the genomics community to ask new questions that were not logistically feasible before.
 
 ## Platform Components
+![Inverting the Model of Data Sharing](./_images/anvil-overview.png)
 
 AnVIL leverages the Terra computing platform to manage access and billing of cloud projects, launch analysis environments, and manage data.
  
