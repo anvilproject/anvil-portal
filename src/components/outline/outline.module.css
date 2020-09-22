@@ -167,14 +167,14 @@
 }
 
 /**
- * Outline is dropped below 1341px, in addition to complimentary JS in scroll.service
+ * Outline is dropped below 1388, in addition to complimentary JS in scroll.service
  */
-@media screen and (min-width: 1341px) {
+@media screen and (min-width: 1388px) {
     
     /* Outline container */
     .outline {
         display: block;
-        left: 1120px;
+        left: 1168px;
     }
 }
 
@@ -184,6 +184,6 @@
 @media screen and (min-width: 1545px) {
 
     .outline {
-        left: calc(50% + 347px);
+        left: calc(50% + 395px);
     }
 }

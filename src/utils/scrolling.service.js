@@ -47,7 +47,7 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
 export function calculateNavMaxHeight(bannerHeight, element) {
 
     // The maxHeight setting is not required when the window innerWidth is less than 840. (Outline is dropped at 
-    // 1341px, left nav is stacked at 840).
+    // 1388px, left nav is stacked at 840).
     // In this instance, the outline and nav styles are defined by a different set of responsive settings.
 
     if ( !element || window.innerWidth < 840 ) {
