@@ -6,7 +6,13 @@ description: "FAQs about data submission."
 
 #Data Submission
 ##How do I submit data to AnVIL for sharing with the scientific community?
-If you have questions about submitting your data to AnVIL please contact the AnVIL team (<help@lists.anvilproject.org>) or complete our onboarding [form](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform).
+AnVIL aims to host a variety of datasets useful to the genomics community. Submission requires the following steps:
+
+1. If you have questions about submitting your data to AnVIL please contact the AnVIL team (<help@lists.anvilproject.org>)
+1. To apply for data submission, complete our onboarding [form](https://docs.google.com/forms/d/e/1FAIpQLSe3NViQ8bTkXexqJ7QukcIcSwe1OLlIirScvaP7YXq4TMqa7A/viewform?urp=gmail_link&gxids=7628). The [AnVIL Ingestion Committee](https://anvilproject.org/data/data-submission#anvil-data-ingestion-committee-dic-approval) will assess whether the dataset is a good fit for AnVIL. Some aspects of the dataset evaluated by the Committee include: the amount of genomic data, phenotypic and clinical data, and relevant metadata; appropriate ethical oversight data collection, and; the nature of the informed consent for broad data sharing (i.e., restrictiveness of data use limitations)
+1. If the study is approved, contact the [NHGRI Genomic Program Administrator (GPA)](https://www.genome.gov/staff/Jennifer-Strasburger-MS#:~:text=Biography,Data%20Access%20Committee%20(DAC).) to register the approved study in dbGaP
+1. AnVIL staff will contact you promptly to initiate Data Ingestion. For more information about data transfer and QC, see the AnVIL Data [Ingestion Pipeline](https://anvilproject.org/data/data-submission#ingestion-pipeline)
+
 
 ##Does NHGRI plan to move data from dbGaP to AnVIL?
 Yes. NHGRI plans to transfer data from selected NHGRI-funded studies to the AnVIL platform. Before this happens, Institutions and the study PIs will be notified of the plan to transfer data and will have an opportunity to consult with IRBs and notify the NHGRI if there are substantive concerns.
