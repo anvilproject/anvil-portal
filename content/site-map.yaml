@@ -1,5 +1,3 @@
-- name: "TODO"
-  key: "/todo"
 - name: "About"
   key: "about"
   path: "/about"
@@ -145,16 +143,6 @@
       - name: "Typography Examples"
         key: "/guides/anvil-style-guide/typography-examples"
         path: "/anvil-style-guide/typography-examples"
-- name: "News"
-  key: "news"
-  path: "/news"
-  position:
-    location: "h"
-    order: 4
-  primaryLinks:
-    - name: "News"
-      key: "/news/news"
-      path: "/news"
 - name: "Privacy"
   key: "privacy"
   path: "/privacy"
