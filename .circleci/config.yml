@@ -80,14 +80,18 @@ workflows:
         - build:
             filters:
               branches:
-                only: staging
+                only:
+                  - staging
+                  - ux-dev
             context: anvil-portal-staging
         - deploy:
             requires:
               - build
             filters:
               branches:
-                only: staging
+                only:
+                  - staging
+                  - ux-dev
             context: anvil-portal-staging
     build-n-deploy-prod:
       jobs:
