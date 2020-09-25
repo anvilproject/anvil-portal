@@ -45,7 +45,7 @@ class Footer extends React.Component {
                         <Link className={compStyles.link} to="/privacy">Privacy</Link>
                         <a href="https://twitter.com/useAnVIL" rel="noopener noreferrer" target="_blank">
                             <img src={twitter} alt="twitter"/></a>
-                        <a href="https://anvil-community.slack.com/join/shared_invite/zt-fyn7c68g-PTWj5uszvyD6D7N6ab2iMQ#/" rel="noopener noreferrer" target="_blank">
+                        <a href=" https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg" rel="noopener noreferrer" target="_blank">
                             <img src={slack} alt="slack"/></a>
                         <a href="https://github.com/anvilproject" rel="noopener noreferrer" target="_blank">
                             <img src={gitHub} alt="gitHub"/></a>
