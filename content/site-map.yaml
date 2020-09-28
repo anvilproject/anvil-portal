@@ -57,9 +57,6 @@
 - name: "NCPI"
   key: "ncpi"
   path: "/ncpi"
-  position:
-    location: "h"
-    order: 9
   primaryLinks:
     - name: "NCPI Overview"
       key: "/ncpi/ncpi"
