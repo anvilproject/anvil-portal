@@ -4,24 +4,24 @@ author: "AnVIL"
 description: "Guides helping users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis."
 ---
 
-# Terra Guides
+# Getting Started with Terra
  
-The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis. 
+<hero small>The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis.</hero> 
 
-### General
+## General
 - [Terra training materials](https://support.terra.bio/) - A library of training materials for the Terra platform.
 
 - [Navigating the Terra interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra)
 
 - [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains)
 
-### Account Setup
+## Account Setup
 
 - [Register a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account)
 
 - [Set up Google account with non-Google email](https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Google-email)
 
-### Billing
+## Billing
 
 - [Linking Terra identity with Google Billing](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-projects-and-Google-Billing-Accounts)
 
@@ -29,12 +29,12 @@ The guides listed below help users navigate their way through creating an accoun
 
 - [Terra introductory credit guide](https://support.terra.bio/hc/en-us/articles/360027940952-Free-credits-FAQs)
 
-### Terra Workspaces
+## Terra Workspaces
 
 - [Anatomy of the Workspace](https://support.terra.bio/hc/en-us/articles/360022716811-The-Workspace-Organize-data-organize-and-run-analysis-tools)
 - [Workspace access levels](https://support.terra.bio/hc/en-us/articles/360025851892-Reader-writer-or-owner-Workspace-access-controls-explained)
 
-### Analysis
+## Analysis
 
 - [Running GATK workflows](https://support.terra.bio/hc/en-us/articles/360029034232-Getting-started-with-GATK-workflows-in-the-cloud-FAQs)
 

@@ -6,13 +6,12 @@ description: "AnVIL provides robust access controls that can selectively grant a
 
 # Data Access Controls
 
-<hero small>AnVIL provides robust access controls that can selectively grant access to a number of groups with different access request requirements.</hero
+<hero small>AnVIL provides robust access controls that can selectively grant access to a number of groups with different access request requirements.</hero>
 
 
 ## Access Groups
 
-
-**Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium. Guidelines for this official are being drafted by the Data Access Working Group and will be made available when they are finalized
+**Consortium Members** - Members of the data-generating consortium are granted access directly by a designated official of the consortium. Guidelines for this official are outlined in the [Consortium Guidelines for AnVIL Data Access](/resources/for-consortia/consortium-data-access-guidelines) resource.
 
 **[External Researcher Access](/data/requesting-data-access)** - Members of the wider community may request access through dbGAP. Upon receiving access in dbGAP, the researcher will be able to access the data within AnVIL.
  

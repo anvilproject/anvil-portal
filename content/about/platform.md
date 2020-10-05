@@ -1,10 +1,10 @@
 ---
-title: "Platform Components"
+title: "Platform Overview"
 author: "AnVIL"
 description: "AnVIL is a cloud based ecosystem that colocates high value data sets with commonly used bioinformatics tools in a secure environment."
 ---
 
-# Platform
+# Platform Overview
 
 <hero small>AnVIL is a cloud based ecosystem that colocates high value data sets with commonly used bioinformatics tools in a secure environment.</hero>
 

@@ -8,7 +8,7 @@ title: "Data"
 
 # Explore Data
 
-<hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/data/requesting-data-access) guide for information on how to request access to AnVIL's [open access](/data/requesting-data-access#data-access-types), [controlled access](/data/requesting-data-access#accessing-controlled-access-data) and [consortium access](/data/requesting-data-access#accessing-consortium-access-data) datasets.</hero>
+<hero small>Explore AnVIL's studies and associated Terra workspaces to discover datasets of interest. See the [Requesting Data Access](/resources/guides/requesting-data-access) guide for information on how to request access to AnVIL's [open access](/resources/guides/requesting-data-access#data-access-types), [controlled access](/resources/guides/requesting-data-access#accessing-controlled-access-data) and [consortium access](/resources/guides/requesting-data-access#accessing-consortium-access-data) datasets.</hero>
 
 
 <data-dashboard></data-dashboard>
