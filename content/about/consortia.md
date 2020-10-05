@@ -4,7 +4,7 @@ description: "AnVIL hosts high value genomic datasets relevant to human health a
 title: "Consortia"
 ---
 
-# AnVIL Consortia
+# Data Consortia
 
 <hero small>AnVIL hosts data from the following programs and also allows users to submit their own data to the platform.</hero>
 
