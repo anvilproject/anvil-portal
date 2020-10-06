@@ -59,7 +59,7 @@
 
 /* Outline - list - not last */
 .outline li {
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 /* Outline - first list <h1> */
@@ -78,7 +78,7 @@
 
 /* Link */
 .outline li a {
-    color: var(--black58);
+    color: var(--black87);
     display: inline-block;
     font-family: "Open Sans", sans-serif;
     font-size: 0.8125rem; /* 13px */

@@ -9,6 +9,8 @@
 /* Header */
 .header {
     background: var(--white);
+    border-bottom: 1px solid var(--black12);
+
 }
 
 /* Flex - header container, logo & text container, <ul>, <li> */

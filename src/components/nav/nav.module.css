@@ -35,8 +35,8 @@
 
 /* Nav item level 1 */
 .sideNav > ul > li {
-    font-size: 0.875rem; /* 14px */ 
-    line-height: 1.125rem; /* 18px */
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
 }
 
 /* Nav item level 2 */
@@ -47,11 +47,16 @@
 
 /* Link */
 .sideNav .link {
-    color: var(--black58);
+    color: var(--black87);
     display: block;
-    padding: 12px 40px 12px 0; /* 40px to match content margins */
+    padding: 6px 40px 6px 0; /* 40px to match content margins */
     position: relative; /* Positions link hover and active styles */
 }
+
+.sideNav .link.active {
+    color: var(--primary);
+}
+
 
 /* Link line and indicator */
 .sideNav .link:before, .sideNav .link:after {

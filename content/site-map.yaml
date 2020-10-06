@@ -166,7 +166,7 @@
           key: "/resources/guides/bringing-your-own-data"
     - name: "For Consortia"
       key: "/resources/for-consortia"
-      path: "/resources/for-consortia"
+      path: "/resources/for-consortia/data-submission"
       secondaryLinks:
         - name: "Submitting Consortium Data"
           key: "/resources/for-consortia/data-submission"
