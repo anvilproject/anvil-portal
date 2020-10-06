@@ -12,7 +12,7 @@
       key: "/about/tools"
     - name: "Data  Consortia"
       key: "/about/consortia"
-    - name: "Project Funding"
+    - name: "Project Sponsor"
       key: "/about/project-funding"
 - name: "Help"
   key: "help"

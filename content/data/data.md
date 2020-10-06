@@ -10,7 +10,7 @@ title: "Data"
 
 Search AnVIL's datasets and associated Terra workspaces for datasets of interest. 
 
-See the [Requesting Data Access](/resources/guides/requesting-data-access) guide for information requesting access to AnVIL's [open access](/resources/guides/requesting-data-access#data-access-types), [controlled access](/resources/guides/requesting-data-access#accessing-controlled-access-data) and [consortium access](/resources/guides/requesting-data-access#accessing-consortium-access-data) datasets.
+Learn now to request access to AnVIL's [open access](/resources/guides/requesting-data-access#data-access-types), [controlled access](/resources/guides/requesting-data-access#accessing-controlled-access-data) and [consortium access](/resources/guides/requesting-data-access#accessing-consortium-access-data) datasets in our [Requesting Data Access](/resources/guides/requesting-data-access) guide.
 
 
 <data-dashboard></data-dashboard>
