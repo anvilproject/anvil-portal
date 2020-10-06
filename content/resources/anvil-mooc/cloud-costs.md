@@ -4,10 +4,10 @@
 
 
 ## Objectives
-The main objectives of this tutorial are to
-enumerate costs associated with computing,
-highlight important aspects of Google Cloud billing, and
-estimate several use case costs.
+
+* Enumerate costs associated with computing.
+* Highlight important aspects of Google Cloud billing.
+* Estimate several use case costs.
 
 
 ## Video Presentation
