@@ -16,23 +16,11 @@
 }
 
 /**
- * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
+ * Large window.
  */
-@media screen and (min-width: 840px) {
-
-    /* Update for left-nav width. */
+@media screen and (min-width: 1440px) {
+    
     .search {
-        width: calc(100vw - 24px - 200px - 40px - 40px);
-    }
-}
-
-/**
- * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch.
- */
-@media screen and (min-width: 1280px) {
-
-    /* Update for larger left-nav width. */
-    .search {
-        width: calc(100vw - 24px - 280px - 40px - 40px);
+        max-width: 1392px; /* Cap width of search on large devices */
     }
 }

@@ -58,8 +58,12 @@
     /* Content positioner - left alignment */
     .contentPositioner.left {
         margin: 0 auto 0 0;
-        padding: 0 40px;
         max-width: unset;
+    }
+    
+    /* Cap width of content on left aligned pages */
+    .contentPositioner.left p {
+        max-width: 816px;
     }
 
     .contentPositioner.left .contentContainer {

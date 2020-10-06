@@ -36,19 +36,16 @@
 
     /* Wrapper */
     .wrapper {
-        max-width: calc(100vw - 24px - 200px - 40px - 40px); /* Allow table to stretch to right-hand side of device, to indicate more */
+        max-width: calc(100vw - 24px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
 }
 
 /**
- * Large tablet landscape, medium window - optimized for MacBook Pro 13 inch. For studies table, we squash diseases and
- * data type and let study name consume available space.
+ * Large window.
  */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 
-    /* Table wrapper. */
-    /* Allow table to stretch to right-hand side of device, to indicate more. Update for larger left-nav width. */
     .wrapper {
-        max-width: calc(100vw - 24px - 280px - 40px - 40px);
+        max-width: 1392px; /* Cap width of table on large devices */
     }
 }

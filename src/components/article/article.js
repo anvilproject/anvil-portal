@@ -42,7 +42,7 @@ class Article extends React.Component {
         return (
             <section className={compStyles.article}>
                 <div className={classNames(globalStyles.container, compStyles.container)}>
-                    <Nav bannerHeight={bannerHeight} docPath={docPath} leftAlignPage={left}/>
+                    {left ? null : <Nav bannerHeight={bannerHeight} docPath={docPath} leftAlignPage={left}/>}
                     <div className={classNames(compStyles.contentPositioner, {[compStyles.left]: left})}>
                         <div className={compStyles.contentContainer}>
                             {useSpy ? <Spy onOutlineChange={this.onOutlineChange.bind(this)}>{children}</Spy> : children}
