@@ -45,7 +45,7 @@
  */
 @media screen and (min-width: 1440px) {
 
-    .wrapper {
-        max-width: 1392px; /* Cap width of table on large devices */
-    }
+    /*.wrapper {*/
+    /*    max-width: 1392px; !* Cap width of table on large devices *!*/
+    /*}*/
 }

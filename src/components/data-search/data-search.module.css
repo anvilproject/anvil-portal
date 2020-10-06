@@ -20,7 +20,7 @@
  */
 @media screen and (min-width: 1440px) {
     
-    .search {
-        max-width: 1392px; /* Cap width of search on large devices */
-    }
+    /*.search {*/
+    /*    max-width: 1392px; !* Cap width of search on large devices *!*/
+    /*}*/
 }

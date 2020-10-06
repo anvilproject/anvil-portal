@@ -24,7 +24,7 @@
     - name: "Help"
       key: "/help/help"
       path: "/help"
-- name: "Data Sets"
+- name: "Datasets"
   key: "data"
   path: "/data"
   position:
@@ -191,7 +191,7 @@
 
     - name: "Reference"
       key: "/resources/reference"
-      path: "/resources/reference"
+      path: "/resources/reference/data-access"
       secondaryLinks:
         - name: "Data Access Controls"
           key: "/resources/reference/data-access"
