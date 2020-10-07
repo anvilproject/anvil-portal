@@ -12,7 +12,7 @@ Working groups are dynamic and are formulated as needed in the course of the pro
 
 ## Data Access Working Group
 
-<hero small>The Data Access working group defines the methods used to securely control and grant access to restricted access datasets hosted within AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.</hero>
+The Data Access working group defines the methods used to securely control and grant access to restricted access datasets hosted within AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.
 
 ### Co-Chairs
 - Carolyn Hutter (NHGRI)
@@ -29,7 +29,7 @@ Working groups are dynamic and are formulated as needed in the course of the pro
 - Tara Matise (Rutgers)
 
 ## Data Processing Working Group
-<hero small>The data processing working group defines the processes for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.</hero>
+The data processing working group defines the processes for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.
 
 ### Co-Chairs
 - Eric Banks (Broad)
@@ -47,7 +47,7 @@ Working groups are dynamic and are formulated as needed in the course of the pro
 - Sean Burke (UChicago)
 
 ## Phenotype Working Group
-<hero small>The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.</hero>
+The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.
 
 ### Co-Chairs
 - David Crosslin (EMERGE - UW)
@@ -67,7 +67,7 @@ Working groups are dynamic and are formulated as needed in the course of the pro
 - Steve Buyske (CCDG)
 
 ## Portal Working Group
-<hero small>The portal working group organizes and publishes AnVIL's website.</hero>
+The portal working group organizes and publishes AnVIL's website.
 
 ### Co-Chairs
 - Benedict Paten (UCSC)
@@ -84,7 +84,7 @@ Working groups are dynamic and are formulated as needed in the course of the pro
 - Mo Heydarian (JHU)
 
 ## Outreach Working Group
-<hero small>The Outreach working group provides training and support solutions for the AnVIL project.</hero>
+The Outreach working group provides training and support solutions for the AnVIL project.
 
 ### Chair
 Jeff Leek (JHU)
@@ -102,7 +102,7 @@ Jeff Leek (JHU)
 - Salin Thomas (Broad)
 
 ## Technical Working Group
-<hero small>AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.</hero>
+AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.
 
 ### Chair
 - James Taylor (JHU)

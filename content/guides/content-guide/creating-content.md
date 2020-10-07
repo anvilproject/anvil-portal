@@ -30,7 +30,7 @@ There are three roles associated with the content lifecycle:
 
 1. **Content Author** - This can be anyone with a github login (e.g. you!). 
 1. **Content Approver** - An AnVIL Project team member.
-1. **Content Deployer** - A member of the [AnVIL Portal Working Group](/about/working-groups#portal-working-group) with push access to the github master branch. 
+1. **Content Deployer** - A member of the [AnVIL Portal Working Group](/team/working-groups#portal-working-group) with push access to the github master branch. 
 
 ### Content Update Workflow
 
