@@ -10,7 +10,7 @@ title: "Data"
 
 Search AnVIL's datasets and associated Terra workspaces for datasets of interest. 
 
-Learn now to request access to AnVIL's [open access](/resources/guides/requesting-data-access#data-access-types), [controlled access](/resources/guides/requesting-data-access#accessing-controlled-access-data) and [consortium access](/resources/guides/requesting-data-access#accessing-consortium-access-data) datasets in our [Requesting Data Access](/resources/guides/requesting-data-access) guide.
+Learn now to request access to AnVIL's [open access](/learn/guides/requesting-data-access#data-access-types), [controlled access](/learn/guides/requesting-data-access#accessing-controlled-access-data) and [consortium access](/learn/guides/requesting-data-access#accessing-consortium-access-data) datasets in our [Requesting Data Access](/learn/guides/requesting-data-access) guide.
 
 
 <data-dashboard></data-dashboard>
@@ -21,4 +21,4 @@ Learn now to request access to AnVIL's [open access](/resources/guides/requestin
 
 >For workspaces where the dbGaP Id is not selectable, the dbGaP study registration is in progress.  The dbGaP Id has been assigned but the study is not yet listed in dbGaP. Once the study is listed in dbGaP non-consortia members will be able to request access via dbGaP.
 
- See the [Requesting Data Access](/resources/guides/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.
+ See the [Requesting Data Access](/learn/guides/requesting-data-access) guide for information on AnVIL's access types, how to request access and what to do once your access request is approved.
