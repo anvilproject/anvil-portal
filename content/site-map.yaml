@@ -146,7 +146,7 @@
       key: "/team/oversight-committee"
 - name: "Learn"
   key: "learn"
-  path: "/larn"
+  path: "/learn"
   position:
     location: "h"
     order: 1
