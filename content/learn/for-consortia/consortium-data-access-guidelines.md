@@ -2,7 +2,7 @@
 
 ## NHGRI Expectations for Consortia Access to data in the AnVIL
 
-The [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf) requires that NIH-funded and -supported researchers generating ‘large-scale’ genomic data release such data in a timely fashion (see the Data Release Timeline in the [Supplemental Information to the NIH GDS Policy](https://osp.od.nih.gov/wp-content/uploads/Supplemental_Info_GDS_Policy.pdf)).
+The [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf) requires that NIH-funded researchers generating ‘large-scale’ genomic data release such data in a timely fashion (see the Data Release Timeline in the [Supplemental Information to the NIH GDS Policy](https://osp.od.nih.gov/wp-content/uploads/Supplemental_Info_GDS_Policy.pdf)).
  
  All [data produced with NHGRI support](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/data-standards) should be shared with the community rapidly, completely, and in NIH-designated data repositories.
   
