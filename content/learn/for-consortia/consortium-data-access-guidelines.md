@@ -1,12 +1,10 @@
 # Consortium Guidelines for AnVIL Data Access
 
->TODO add links
-
 ## NHGRI Expectations for Consortia Access to data in the AnVIL
 
-The NIH Genomic Data Sharing (GDS) Policy requires that NIH-funded and -supported researchers generating ‘large-scale’ genomic data release such data in a timely fashion (see the Data Release Timeline in the Supplemental Information to the NIH GDS Policy).
+The [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf) requires that NIH-funded and -supported researchers generating ‘large-scale’ genomic data release such data in a timely fashion (see the Data Release Timeline in the [Supplemental Information to the NIH GDS Policy](https://osp.od.nih.gov/wp-content/uploads/Supplemental_Info_GDS_Policy.pdf)).
  
- All data produced with NHGRI support should be shared with the community rapidly, completely, and in NIH-designated data repositories.
+ All [data produced with NHGRI support](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/data-standards) should be shared with the community rapidly, completely, and in NIH-designated data repositories.
   
  This expectation goes beyond genomic data alone. NHGRI also expects as much phenotypic data (stripped of HIPAA identifiers) as possible to be shared, beyond the variables used for the first study publication. All supporting meta-data should be well documented (e.g., data element dictionaries, data collection protocols, study inclusion and exclusion criteria).
 
@@ -19,7 +17,7 @@ It is up to the consortium to determine who is a member of the consortium, and t
 
 Consortium members are responsible for ensuring data remain securely within the consortium. They will have the ability to create Terra Authorization Domains for providing access to personnel under their supervision (or for designating this responsibility to a ‘designated access approver’). 
 
-* Must establish Two Factor Authentication on your Google Account; 
+* Must establish [Two Factor Authentication](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en) on your Google Account; 
 * Must not provide access to users without the appropriate permissions and supervision;
 * Must ensure all personnel under your supervision are aware of and adhere to all data use limitations and all terms of consortium agreements (MOUs, DUAs, etc.); and,
 * Must report any potential data security incidents to the Consortium contact person and AnVIL staff within 24 hours and follow any consortium specific protocols as necessary.
@@ -28,7 +26,7 @@ Consortium members are responsible for ensuring data remain securely within the 
 
 The contact person is responsible for ensuring that the list of consortium members approved for access is current and accurate, and for helping to ensure that the consortium members handle pre-release genomic and associated data responsibly. This persons’ responsibilities include:
 
-* Ensuring all consortium members confirm they have Two Factor Authentication active on their Google Account before granting them access;
+* Ensuring all consortium members confirm they have [Two Factor Authentication](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en) active on their Google Account before granting them access;
 * Ensuring that the Terra Authorization Domain, i.e., the list of consortium members (different from any lab-specific Authorization Domains) is current;
 * Updating in a timely manner the list of approved consortium members when a member leaves the consortium;
 * Ensuring that consortium members only have access to appropriate datasets (i.e., if there are multiple datasets, and a consortium member is only approved for access to a subset of those datasets, these limited access permissions should be organized via distinct Terra Authorization Domains); 
