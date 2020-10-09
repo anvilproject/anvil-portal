@@ -10,6 +10,6 @@
 
 
 ## Slides
-The slides for this tutorial are are located [here](https://docs.google.com/presentation/d/1_Fc8xIKwNEJtmu3K8UIU77Tvmt4ekImeT8kbn5GcSts).
+The slides for this tutorial are are located [here](https://docs.google.com/presentation/d/16vkgy8lp0M1liE0s8FdsjGXMWQu5_t6-0xOMFsF__Ro).
 
 
