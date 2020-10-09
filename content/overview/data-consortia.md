@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
 description: "AnVIL hosts high value genomic datasets relevant to human health and disease."
-title: "Consortia"
+title: "Data Consortia"
 ---
 
 # Data Consortia

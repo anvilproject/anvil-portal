@@ -1,5 +1,6 @@
 ---
-draft: false
+description: "The NCPI has established the following working groups to address various challenges to interoperability."
+title: "NCPI Working Groups"
 ---
 
 

@@ -1,9 +1,9 @@
 ---
-title: "Example Workspaces"
+title: "Using Example Workspaces"
 description: "The AnVIL project's featured workspaces demonstrate common genomic analysis pipelines deployed using data and tools available on AnVIL."
 ---
 
-#Example Workspaces
+#Using Example Workspaces
 
 The AnVIL project's example workspaces demonstrate common genomic analysis pipelines deployed using data and tools available on AnVIL.
 

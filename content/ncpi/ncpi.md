@@ -1,7 +1,6 @@
 ---
 description: "The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem."
 title: "NIH Cloud Platform Interoperability Effort"
-draft: false
 ---
 
 # NIH Cloud Platform Interoperability Effort

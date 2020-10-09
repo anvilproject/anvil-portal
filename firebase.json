@@ -16,6 +16,69 @@
       "source": "/contact",
       "destination": "/help",
       "type": 301
-    } ]
+    },
+    {
+      "source": "/about",
+      "destination": "/overview",
+      "type": 301
+    },
+    {
+      "source": "/about/team",
+      "destination": "/team",
+      "type": 301
+    },
+    {
+      "source": "/about/working-groups",
+      "destination": "/team/working-groups",
+      "type": 301
+    }
+    ,
+    {
+      "source": "/data/consortia",
+      "destination": "/overview/data-consortia",
+      "type": 301
+    }
+    ,
+    {
+      "source": "/data/requesting-data-access",
+      "destination": "/learn/accessing-data/requesting-data-access",
+      "type": 301
+    },
+    {
+      "source": "/data/data-access",
+      "destination": "/learn/reference/data-access-controls",
+      "type": 301
+    },
+    {
+      "source": "/data/data-submission",
+      "destination": "/learn/for-consortia/data-submission",
+      "type": 301
+    },
+    {
+      "source": "/data/bringing-your-own-data",
+      "destination": "/learn/accessing-data/bringing-your-own-data",
+      "type": 301
+    },
+    {
+      "source": "/tools",
+      "destination": "/overview/supported-analysis-tools",
+      "type": 301
+    },
+    {
+      "source": "/training",
+      "destination": "/learn",
+      "type": 301
+    },
+    {
+      "source": "/training/guides",
+      "destination": "/learn",
+      "type": 301
+    },
+    {
+      "source": "/training/featured-workspaces",
+      "destination": "/learn/getting-started/using-example-workspaces",
+      "type": 301
+    }
+    ]
   }
 }

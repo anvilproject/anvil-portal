@@ -1,4 +1,7 @@
-
+---
+description: "The goal of this training session was to provide background information on the AnVIL, BioData Catalyst, Cancer Research Data Commons, and Gabriella Miller Kids First Platforms involved in the NIH Cloud Platforms Interoperability (NCPI) group to the trainers and developers of these platforms."
+title: "NCPI Train Your Colleague - Virtual Session - March 17, 18, 2020"
+---
 # NCPI Training
 
 ## Train Your Colleague - Virtual Session
