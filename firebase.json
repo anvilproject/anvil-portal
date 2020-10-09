@@ -31,8 +31,12 @@
       "source": "/about/working-groups",
       "destination": "/team/working-groups",
       "type": 301
-    }
-    ,
+    },
+    {
+      "source": "/about/funding-and-oversight",
+      "destination": "/overview/project-sponsor",
+      "type": 301
+    },
     {
       "source": "/data/consortia",
       "destination": "/overview/data-consortia",
