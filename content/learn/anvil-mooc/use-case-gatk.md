@@ -1,3 +1,8 @@
+---
+title: "AnVIL MOOC - Use Case: GATK"
+author: "AnVIL"
+description: "An overview of the goals and architecture of the GATK platform and how GATK can be used in AnVIL."
+---
 # Use Case: GATK
 
 `video: https://youtu.be/JQPX0vdIQ50`

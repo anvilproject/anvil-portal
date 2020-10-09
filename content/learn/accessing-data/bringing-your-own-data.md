@@ -1,7 +1,7 @@
 ---
 title: "Bringing Your Own Data"
 author: "AnVIL"
-description: "Uploading data to AnVIL's Terra instance."
+description: "Uploading your own data to AnVIL's Terra instance."
 ---
 
 # Bringing Your Own Data

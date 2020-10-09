@@ -1,7 +1,9 @@
+---
+title: "AnVIL MOOC - Cloud Costs"
+author: "AnVIL"
+description: "An overview of costs associated with cloud computing and important aspects of Google Cloud billing."
+---
 # Cloud Costs
-
-
-
 
 ## Objectives
 

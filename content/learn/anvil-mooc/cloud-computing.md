@@ -1,3 +1,8 @@
+---
+title: "AnVIL MOOC - Cloud Computing"
+author: "AnVIL"
+description: "An overview of different cloud computing platforms and the state of cloud computing."
+---
 # Cloud Computing
 
 `video: https://youtu.be/AUCsYjU4Hus`

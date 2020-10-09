@@ -180,7 +180,7 @@
       key: "/learn/anvil-mooc"
       path: "/learn/anvil-mooc/what-is-anvil"
       secondaryLinks:
-        - name: "What is AnVIL"
+        - name: "What is AnVIL?"
           key: "/learn/anvil-mooc/what-is-anvil"
         - name: "Cloud Computing"
           key: "/learn/anvil-mooc/cloud-computing"

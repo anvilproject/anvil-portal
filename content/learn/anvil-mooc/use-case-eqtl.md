@@ -1,3 +1,8 @@
+---
+title: "AnVIL MOOC - Use Case: eQTL"
+author: "AnVIL"
+description: "An overview of costs associated with cloud computing and important aspects of Google Cloud billing."
+---
 # Use Case: eQTL
 
 `video: https://youtu.be/nzONmqijg34`

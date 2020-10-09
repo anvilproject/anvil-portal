@@ -1,3 +1,9 @@
+---
+title: "Consortium Guidelines for AnVIL Data Access"
+author: "AnVIL"
+description: "An overview of data sharing and access guidelines for NIH-funded researchers generating ‘large-scale’ genomic data."
+---
+
 # Consortium Guidelines for AnVIL Data Access
 
 ## NHGRI Expectations for Consortia Access to data in the AnVIL

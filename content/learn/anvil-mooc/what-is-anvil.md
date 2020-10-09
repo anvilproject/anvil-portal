@@ -1,3 +1,8 @@
+---
+title: "AnVIL MOOC - What is AnVIL?"
+author: "AnVIL"
+description: "An overview of the revolutions in DNA sequencing and computational genomics that are pushing researchers to compute in the cloud and an introduction to the main components of AnVIL."
+---
 # What is AnVIL?
 
 `video: https://youtu.be/PoNDxLoAf4k`

@@ -1,3 +1,9 @@
+---
+title: "AnVIL MOOC - Use Case: GWAS"
+author: "AnVIL"
+description: "An overview of the scientific questions and datasets used in GWAS and how AnVIL makes GWAS research easier."
+---
+
 # Use Case: GWAS
 
 `video: https://youtu.be/0OAYUM2Bym0`
