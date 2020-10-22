@@ -5,12 +5,10 @@
     location: "h"
     order: 0
   primaryLinks:
-    - name: "Platform Overview"
-      key: "/overview/platform"
+    - name: "What is AnVIL?"
+      key: "/overview/overview"
       path: "/overview"
-    - name: "Supported Analysis Tools"
-      key: "/overview/supported-analysis-tools"
-    - name: "Data  Consortia"
+    - name: "Data  Consortia Roadmap"
       key: "/overview/data-consortia"
     - name: "Project Sponsor"
       key: "/overview/project-sponsor"
