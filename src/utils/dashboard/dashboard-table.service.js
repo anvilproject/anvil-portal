@@ -11,6 +11,7 @@ import DataTableRowCellEllipsis from "../../components/data-table-row-cell-ellip
 import DataTableRowCellGapId from "../../components/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
 import DataTableRowCellProjectId from "../../components/data-table-row-cell-project-id/data-table-row-cell-project-id";
 import DataTableRowCellRedirect from "../../components/data-table-row-cell-redirect/data-table-row-cell-redirect";
+import DataTableRowCellValuesTooltip from "../../components/data-table-row-cell-values-tooltip/data-table-row-cell-values-tooltip";
 import DataTableRowCellX from "../../components/data-table-row-cell-x/data-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
@@ -38,6 +39,13 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
+        /* Handle column is "platform". */
+        if ( column === "platform" ) {
+
+            return switchStudyPlatform(value);
+        }
+
+        /* Handle column is "diseases". */
         if ( column === "diseases" ) {
 
             if ( value.length ) {
@@ -50,11 +58,13 @@ export function formatValue(value, column) {
             }
         }
 
+        /* Handle column is "sizeTB" or "size". */
         if ( column === "sizeTB" || column === "size" ) {
 
             return NumberFormatService.formatSizeToTB(value);
         }
 
+        /* Handle column with cell value as number. */
         if ( NumberFormatService.isNumber(value) ) {
 
             return value.toLocaleString();
@@ -104,6 +114,8 @@ export function getReactElementType(columnName, summaryTable) {
     switch (columnName) {
         case "accessType":
             return DataTableRowCellRedirect;
+        case "consentCodes":
+            return DataTableRowCellValuesTooltip;
         case "dataTypes":
             return DataTableRowCellDataTypes;
         case "diseases":
@@ -120,11 +132,17 @@ export function getReactElementType(columnName, summaryTable) {
 /**
  * Returns the table class name.
  *
+ * @param ncpi
  * @param studies
  * @param summary
  * @returns {*}
  */
-export function getTableName(studies, summary) {
+export function getTableName(ncpi, studies, summary) {
+
+    if ( ncpi ) {
+
+        return "ncpi";
+    }
 
     if ( studies ) {
 
@@ -177,6 +195,10 @@ export function switchDisplayColumnName(columnName) {
             return "Consent Groups";
         case "consents":
             return "Access";
+        case "consentCodes":
+            return "Consent Codes";
+        case "consentShortNames":
+            return "Consent Codes";
         case "consentStat":
             return "Subjects";
         case "consortia":
@@ -201,6 +223,8 @@ export function switchDisplayColumnName(columnName) {
             return "dbGap Id";
         case "gapId":
             return "dbGap Id";
+        case "platform":
+            return "Platform";
         case "projectId":
             return "Terra Workspace Name";
         case "samples":
@@ -215,6 +239,32 @@ export function switchDisplayColumnName(columnName) {
             return "Size (TB)";
         default:
             return columnName;
+    }
+}
+
+/**
+ * Returns the platform display value.
+ * - "anvil" to "AnVIL"
+ * - "BDC" to "BioData Catalyst"
+ * - "CRDC" to "Cancer Research Data Commons"
+ * - "KFDRC" to "Kids First Data Resource Center"
+ *
+ * @param platform
+ * @returns {*}
+ */
+export function switchStudyPlatform(platform) {
+
+    switch (platform) {
+        case "anvil":
+            return "AnVIL";
+        case "BDC":
+            return "BioData Catalyst";
+        case "CRDC":
+            return "Cancer Research Data Commons";
+        case "KFDRC":
+            return "Kids First Data Resource Center";
+        default:
+            return "";
     }
 }
 

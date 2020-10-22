@@ -13,12 +13,9 @@ import React from "react";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../utils/anvil-gtm/ga-entity-type.model";
 import DashboardFilterContext from "../context/dashboard-filter-context";
+import * as DashboardService from "../../utils/dashboard/dashboard.service";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
-import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
-
-// Template variables
-const DASHBOARD_INDEX = "/dashboard-index.json";
 
 class ProviderDashboardFilter extends React.Component {
 
@@ -37,7 +34,7 @@ class ProviderDashboardFilter extends React.Component {
 
             /** Get tracking values for selected facet */
             const previousQuery = this.state.query;
-            const {facetsByTerm} = this.props;
+            const {facetsByTerm} = this.state;
             const currentQuery = this.buildQuery(facetsByTerm, this.state.inputValue, termsCheckedClone);
 
             /* Update state. */
@@ -57,6 +54,23 @@ class ProviderDashboardFilter extends React.Component {
             this.onHandleSearch("");
         };
 
+        this.onHandleInitializeDashboard = (event) => {
+
+            this.setState({
+                checkboxGroups: event.checkboxGroups,
+                dashboardEntities: event.dashboardEntities,
+                dashboardIndexFileName: event.dashboardIndexFileName,
+                facetsByTerm: event.facetsByTerm,
+                resultKey: event.resultKey,
+                setOfSearchGroups: event.setOfSearchGroups,
+                setOfTerms: event.setOfTerms,
+                summaryKey: event.summaryKey,
+                termSearchValueByTermDisplay: event.termSearchValueByTermDisplay,
+                tableHeadersEntities: event.tableHeadersEntities,
+                tableHeadersSummary: event.tableHeadersSummary
+            });
+        };
+
         this.onHandleInput = (event) => {
 
             const inputValue = event.target.value;
@@ -66,51 +80,68 @@ class ProviderDashboardFilter extends React.Component {
         };
 
         this.state = ({
-            query: "", // Analytics-specific value, used to specify the current query state when tracking a change
+            checkboxGroups: [],
+            dashboardEntities: [],
             dashboardIndex: [],
+            dashboardIndexFileName: "",
             dashboardIndexMounted: false,
+            facetsByTerm: new Map(),
             inputValue: "",
+            query: "", // Analytics-specific value, used to specify the current query state when tracking a change
+            resultKey: "",
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsBySearchGroups: new Map(),
+            setOfSearchGroups: new Set(),
+            setOfTerms: new Set(),
+            summaryKey: "",
+            termSearchValueByTermDisplay: new Map(),
+            tableHeadersEntities: [],
+            tableHeadersSummary: [],
             termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
             onHandleClearInput: this.onHandleClearInput,
+            onHandleInitializeDashboard: this.onHandleInitializeDashboard,
             onHandleInput: this.onHandleInput,
         });
     }
 
-    componentDidMount() {
-
-        /* Grab the index. */
-        this.fetchDashboardIndex();
-
-        /* Initialize the state "inputValue". */
-        this.initializeInputValue();
-
-        /* Initialize the state "termsChecked". */
-        this.initializeTermsChecked();
-    }
-
     componentDidUpdate(_, prevState) {
 
+        /* Dashboard index file name ready - initialize dashboard. */
+        this.dashboardIndexFileNameStateChange(prevState);
+
+        /* Dashboard index mounted - update results. */
         this.dashboardIndexMountedStateChanged(prevState);
 
+        /* Search state changed. */
         this.searchStateChanged(prevState);
 
+        /* Results state changed. */
         this.setOfResultsBySearchGroupsStateChanged(prevState);
     }
 
     componentWillUnmount() {
 
         this.setState = ({
-            query: "",
+            checkboxGroups: [],
+            dashboardEntities: [],
             dashboardIndex: [],
+            dashboardIndexFileName: "",
+            dashboardIndexFileNameMounted: false,
             dashboardIndexMounted: false,
+            facetsByTerm: new Map(),
             inputValue: "",
+            query: "",
+            resultKey: "",
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsBySearchGroups: new Map(),
+            setOfSearchGroups: new Set(),
+            setOfTerms: new Set(),
+            summaryKey: "",
+            tableHeadersEntities: [],
+            tableHeadersSummary: [],
             termsChecked: new Map(),
         });
     }
@@ -181,6 +212,25 @@ class ProviderDashboardFilter extends React.Component {
         return new URLSearchParams(selectedTermsByFacet).toString();
     };
 
+    dashboardIndexFileNameStateChange = (prevState) => {
+
+        const {dashboardIndexFileName} = this.state;
+
+        const stateChanged = ( prevState.dashboardIndexFileName !== dashboardIndexFileName );
+
+        if ( stateChanged ) {
+
+            /* Grab the index. */
+            this.fetchDashboardIndex();
+
+            /* Initialize the state "inputValue". */
+            this.initializeInputValue();
+
+            /* Initialize the state "termsChecked". */
+            this.initializeTermsChecked();
+        }
+    };
+
     dashboardIndexMountedStateChanged = (prevState) => {
 
         const {dashboardIndexMounted} = this.state;
@@ -196,12 +246,14 @@ class ProviderDashboardFilter extends React.Component {
 
     fetchDashboardIndex = () => {
 
-        fetch(DASHBOARD_INDEX)
+        const {dashboardIndexFileName} = this.state;
+
+        fetch(dashboardIndexFileName)
             .then(res => res.json())
             .then(res => {
-                const dashboardIndex = lunr.Index.load(res);
+                const index = lunr.Index.load(res);
 
-                this.setState({dashboardIndex: dashboardIndex, dashboardIndexMounted: true})
+                this.setState({dashboardIndex: index, dashboardIndexMounted: true})
             })
             .catch(err => {
                 console.log(err, "Error loading index");
@@ -232,13 +284,23 @@ class ProviderDashboardFilter extends React.Component {
         return new Set(results.map(result => result.ref));
     };
 
+    getSelectedSearchTerms = (selectedTerms) => {
+
+        const {termSearchValueByTermDisplay} = this.state;
+
+        return selectedTerms.map(selectedTerm => termSearchValueByTermDisplay.get(selectedTerm));
+    };
+
     getSetOfFacetedResults = (facet) => {
 
         /* Grab any checked terms for the facet. */
         const selectedTerms = this.getTermsChecked(facet);
 
+        /* Convert the checked terms to a suitable search term format. */
+        const selectedSearchTerms = this.getSelectedSearchTerms(selectedTerms);
+
         /* Build the query string. */
-        const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+        const facetQueryString = this.buildFacetQueryString(selectedSearchTerms, facet);
 
         return this.getResultsByQuery(facetQueryString);
     };
@@ -277,7 +339,7 @@ class ProviderDashboardFilter extends React.Component {
 
     getSetOfResultsBySearchGroups = () => {
 
-        const {setOfSearchGroups} = this.props;
+        const {setOfSearchGroups} = this.state;
 
         return [...setOfSearchGroups].reduce((acc, searchGroup) => {
 
@@ -305,8 +367,7 @@ class ProviderDashboardFilter extends React.Component {
 
     getTermsChecked = (facet) => {
 
-        const {facetsByTerm} = this.props,
-            {termsChecked} = this.state;
+        const {facetsByTerm, termsChecked} = this.state;
 
         return [...termsChecked].reduce((acc, [term, checked]) => {
 
@@ -342,7 +403,7 @@ class ProviderDashboardFilter extends React.Component {
 
     initializeTermsChecked = () => {
 
-        const {setOfTerms} = this.props;
+        const {setOfTerms} = this.state;
 
         const termsChecked = new Map();
 
@@ -374,7 +435,8 @@ class ProviderDashboardFilter extends React.Component {
 
         /* Track input */
         const previousQuery = this.state.query;
-        const {facetsByTerm} = this.props;
+        const {facetsByTerm} = this.state;
+
         const currentQuery = this.buildQuery(facetsByTerm, inputValue, this.state.termsChecked);
 
         /* Update inputValue state. */
@@ -467,8 +529,7 @@ class ProviderDashboardFilter extends React.Component {
 
     updateTermCounts = () => {
 
-        const {facetsByTerm} = this.props,
-            {setOfResultsBySearchGroups} = this.state;
+        const {facetsByTerm, setOfResultsBySearchGroups} = this.state;
 
         /* Get a set of facets. */
         const setOfFacets = new Set([...facetsByTerm.values()]);
@@ -496,16 +557,17 @@ class ProviderDashboardFilter extends React.Component {
     };
 
     render() {
-        const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
-            {inputValue, setOfCountResultsByFacet, setOfResults, termsChecked,
-                onHandleChecked, onHandleClearInput, onHandleInput} = this.state;
-        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
-        const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
-        const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
+        const {children} = this.props,
+            {checkboxGroups, dashboardEntities, facetsByTerm, inputValue, resultKey,
+                summaryKey, setOfCountResultsByFacet, setOfResults, tableHeadersEntities, tableHeadersSummary, termsChecked,
+                onHandleChecked, onHandleClearInput, onHandleInitializeDashboard, onHandleInput} = this.state;
+        const entities = DashboardService.filterDashboardEntities(dashboardEntities, setOfResults, resultKey);
+        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey);
+        const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, dashboardEntities, resultKey);
         return (
             <DashboardFilterContext.Provider
-                value={{checkboxGroups, inputValue, setOfResults, summaries, termsChecked, termsCount, workspaces,
-                    onHandleChecked, onHandleClearInput, onHandleInput}}>
+                value={{checkboxGroups, entities, inputValue, setOfResults, summaries, tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount,
+                    onHandleChecked, onHandleClearInput, onHandleInitializeDashboard, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>
         )

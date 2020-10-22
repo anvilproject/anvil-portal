@@ -2,8 +2,14 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for dashboard field extension.
+ * Service for AnVIL dashboard field extension.
  */
+
+// Core dependencies
+const path = require("path");
+
+// App dependencies
+const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
 /**
  * Return the access display text for the specified workspace:
@@ -15,7 +21,7 @@
  * @param workspace
  * @param studies
  */
-const getWorkspaceAccessType = function getWorkspaceAccessType(workspace, studies) {
+const getFieldTypeWorkspaceAccessType = function getFieldTypeWorkspaceAccessType(workspace, studies) {
 
     /* Get the workspace dbGapIdAccession, if it exists. */
     const dbGapIdAccession = workspace.dbGapIdAccession;
@@ -53,7 +59,7 @@ const getWorkspaceAccessType = function getWorkspaceAccessType(workspace, studie
  * @param studies
  * @returns {*}
  */
-const getWorkspaceDiseases = function getWorkspaceDiseases(workspace, studies) {
+const getFieldTypeWorkspaceDiseases = function getFieldTypeWorkspaceDiseases(workspace, studies) {
 
     // We currently don't have a direct mapping between diseases and workspaces. We can assume each study's diseases
     // apply to each workspace in the study, except for CMG (which we leave blank for now). Once we have direct
@@ -89,40 +95,25 @@ const getWorkspaceDiseases = function getWorkspaceDiseases(workspace, studies) {
 };
 
 /**
- * Returns a FE compatible model for the GapId for the specified workspace.
+ * Returns a FE compatible model for the field gapId for the specified workspace.
  *
  * @param workspace
  * @param studies
- * @returns {*}
  */
-const getWorkspaceGapId = function getWorkspaceGapId(workspace, studies) {
+const getFieldTypeWorkspaceGapId = function getFieldTypeWorkspaceGapId(workspace, studies) {
 
-    /* Get the workspace dbGapIdAccession, if it exists. */
-    /* If the dbGapIdAccession does not exist, return dbGapId and empty studyUrl value. */
-    const dbGapIdAccession = workspace.dbGapIdAccession;
+    /* Studies and workspace dbGapIdAccession value exist. */
+    /* Return existing study gapId value. */
+    if ( workspace.dbGapIdAccession && studies ) {
 
-    if ( !dbGapIdAccession ) {
+        /* Find the study and return the corresponding gapId value. */
+        const study = studies.find(study => study.dbGapIdAccession === workspace.dbGapIdAccession);
 
-        return {
-            studyUrl: "",
-            value: workspace.dbGapId
-        };
+        return study.gapId;
     }
 
-    /* Find the study, if it exists. */
-    /* Return dbGapAccession with the studyUrl, if it exists. */
-    const study = studies.find(study => study.dbGapIdAccession === dbGapIdAccession);
-    let studyUrl = "";
-
-    if ( study ) {
-
-        studyUrl = study.studyUrl;
-    }
-
-    return {
-        studyUrl: studyUrl,
-        value: workspace.dbGapIdAccession
-    }
+    /* Build and return gapId value from dbGapId. */
+    return buildGapId(workspace.dbGapId);
 };
 
 /**
@@ -132,7 +123,7 @@ const getWorkspaceGapId = function getWorkspaceGapId(workspace, studies) {
  * @param studies
  * @returns {*}
  */
-const getWorkspaceStudyName = function getWorkspaceStudyName(workspace, studies) {
+const getFieldTypeWorkspaceStudyName = function getFieldTypeWorkspaceStudyName(workspace, studies) {
 
     /* Get the workspace dbGapIdAccession, if it exists. */
     /* If the dbGapIdAccession does not exist, return empty value. */
@@ -151,7 +142,7 @@ const getWorkspaceStudyName = function getWorkspaceStudyName(workspace, studies)
     return study.studyName;
 };
 
-module.exports.getWorkspaceAccessType = getWorkspaceAccessType;
-module.exports.getWorkspaceDiseases = getWorkspaceDiseases;
-module.exports.getWorkspaceGapId = getWorkspaceGapId;
-module.exports.getWorkspaceStudyName = getWorkspaceStudyName;
+module.exports.getFieldTypeWorkspaceAccessType = getFieldTypeWorkspaceAccessType;
+module.exports.getFieldTypeWorkspaceDiseases = getFieldTypeWorkspaceDiseases;
+module.exports.getFieldTypeWorkspaceGapId = getFieldTypeWorkspaceGapId;
+module.exports.getFieldTypeWorkspaceStudyName = getFieldTypeWorkspaceStudyName;

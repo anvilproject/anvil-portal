@@ -3,7 +3,7 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - data table row cell x component.
- * Returns generic data cell for any unspecified workspace property.
+ * Returns generic data cell for any unspecified property.
  */
 
 // Core dependencies

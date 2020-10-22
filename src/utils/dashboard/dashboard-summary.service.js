@@ -8,17 +8,18 @@
 /**
  * Returns the dashboard summary.
  *
- * @param workspaces
+ * @param entities
+ * @param entityKey
  * @returns {*}
  */
-export function getDashboardSummary(workspaces) {
+export function getDashboardSummary(entities, entityKey) {
 
-    if ( workspaces.length === 0 ) {
+    if ( entities.length === 0 ) {
 
         return [];
     }
 
-    const summary = buildDashboardSummary(workspaces);
+    const summary = buildDashboardSummary(entities, entityKey);
     const summaryTotals = buildDashboardSummaryTotals(summary);
 
     return summary.concat(summaryTotals);
@@ -27,24 +28,25 @@ export function getDashboardSummary(workspaces) {
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
  *
- * @param workspaces
+ * @param entities
+ * @param entityKey
  * @returns {Array}
  */
-function buildDashboardSummary(workspaces) {
+function buildDashboardSummary(entities, entityKey) {
 
-    const consortia = setOfConsortia(workspaces);
+    const setOfSummaryTerms = getSetOfSummaryTerms(entities, entityKey);
 
-    return [...consortia].map(consortium => {
+    return [...setOfSummaryTerms].map(term => {
 
-        const workspacesByConsortium = filterWorkspacesByConsortium(workspaces, consortium);
+        const filteredEntities = filterEntitiesByTerm(entities, term, entityKey);
 
         return {
-            cohorts: countCohorts(workspacesByConsortium),
-            consortium: consortium,
-            files: sumFiles(workspacesByConsortium),
-            samples: sumSamples(workspacesByConsortium),
-            sizeTB: calculateSize(workspacesByConsortium),
-            subjects: sumSubjects(workspacesByConsortium)
+            cohorts: countCohorts(filteredEntities),
+            consortium: term,
+            files: sumFiles(filteredEntities),
+            samples: sumSamples(filteredEntities),
+            sizeTB: calculateSize(filteredEntities),
+            subjects: sumSubjects(filteredEntities)
         }
     });
 }
@@ -89,14 +91,15 @@ function countCohorts(data) {
 }
 
 /**
- * Filter the projects by the specified consortium.
+ * Filter the entities by the specified term.
  *
- * @param workspaces
- * @param consortium
+ * @param entities
+ * @param term
+ * @param entityKey
  */
-function filterWorkspacesByConsortium(workspaces, consortium) {
+function filterEntitiesByTerm(entities, term, entityKey) {
 
-    return workspaces.filter(workspace => workspace.consortium === consortium);
+    return entities.filter(entity => entity[entityKey] === term);
 }
 
 /**
@@ -115,14 +118,15 @@ function reduceSummaryByType(data, type) {
 }
 
 /**
- * Returns the set of consortia.
+ * Returns the set of terms for the specified entity element.
  *
- * @param data
+ * @param entities
+ * @param entityKey
  * @returns {Set}
  */
-function setOfConsortia(data) {
+function getSetOfSummaryTerms(entities, entityKey) {
 
-    return new Set(data.map(project => project.consortium));
+    return new Set(entities.map(entity => entity[entityKey]));
 }
 
 /**

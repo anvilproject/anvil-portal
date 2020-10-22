@@ -21,15 +21,15 @@ class DataTableRowCellGapId extends React.Component {
 
     render() {
         const {children, column, id} = this.props,
-            {studyUrl, value} = children || {};
-        const cellValue = DashboardTableService.formatValue(value, column);
+            {gapIdDisplay, studyUrl} = children || {};
+        const cellValue = DashboardTableService.formatValue(gapIdDisplay, column);
 
         return (
             studyUrl ? <ClickHandler className={compStyles.link}
-                                     clickAction={() => RedirectService.redirect(studyUrl, value)}
+                                     clickAction={() => RedirectService.redirect(studyUrl, gapIdDisplay)}
                                      id={id}
                                      tag={"td"}
-                                     label={value}>{value}</ClickHandler> :
+                                     label={gapIdDisplay}>{gapIdDisplay}</ClickHandler> :
                 <td id={id}>{cellValue}</td>
         );
     }

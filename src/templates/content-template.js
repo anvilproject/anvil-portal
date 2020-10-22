@@ -14,6 +14,7 @@ import React from "react";
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
 import Layout from "../components/layout";
+import ProviderDashboardFilter from "../components/provider-dashboard-filter/provider-dashboard-filter";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import Socials from "../components/socials/socials";
 import * as TemplateService from "../utils/template.service";
@@ -29,12 +30,14 @@ export default ({data}) => {
         pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
     return (
         <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
-            <ProviderFrontmatter frontmatter={frontmatter}>
-                <ArticleBody htmlAst={htmlAst}>
-                    <Socials/>
-                    <ArticleEnd docPath={slug}/>
-                </ArticleBody>
-            </ProviderFrontmatter>
+            <ProviderDashboardFilter>
+                <ProviderFrontmatter frontmatter={frontmatter}>
+                    <ArticleBody htmlAst={htmlAst}>
+                        <Socials/>
+                        <ArticleEnd docPath={slug}/>
+                    </ArticleBody>
+                </ProviderFrontmatter>
+            </ProviderDashboardFilter>
         </Layout>
     )
 }

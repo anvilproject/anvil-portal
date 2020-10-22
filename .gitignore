@@ -83,7 +83,8 @@ site/style-bundle.js
 /.firebase/
 
 # Data
-static/dashboard-index.json
+static/dashboard-index-anvil.json
+static/dashboard-index-ncpi.json
 
 # Workspace Field Report
 static/workspace-fields-report.csv

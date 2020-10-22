@@ -104,21 +104,21 @@ const buildReport = async function buildReport(url) {
 };
 
 /**
- * Returns the XML urls (exchange, data_dict and var_report urls) for the specified gapId.
+ * Returns the XML urls (exchange, data_dict and var_report urls) for the specified dbGapIdAccession.
  *
- * @param gapAccession
+ * @param dbGapIdAccession
  * @returns {Promise.<{dict: string, gapExchange: string, report: string}>}
  */
-const getXMLUrls = async function getXMLUrls(gapAccession) {
+const getXMLUrls = async function getXMLUrls(dbGapIdAccession) {
 
-    /* Get the gapId from the accession. */
-    const gapId = gapAccession.split(".")[0];
+    /* Get the dbGapId from the accession. */
+    const dbGapId = dbGapIdAccession.split(".")[0];
 
     /* Get the study url. */
-    const studyUrl = `${studyPath}${gapAccession}`;
+    const studyUrl = `${studyPath}${dbGapIdAccession}`;
 
     /* Grab the gap index page. */
-    const indexURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/`;
+    const indexURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/`;
 
     /* Grab all <a> from the index page. */
     const {html} = await fetchIndex(indexURL),
@@ -135,9 +135,9 @@ const getXMLUrls = async function getXMLUrls(gapAccession) {
     const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
 
     /* Gap exchange, subject dictionary and report XML URLs. */
-    const exchangeURL = `${ncbiPath}${gapId}/${gapAccession}/GapExchange_${gapAccession}.xml`;
-    const dictURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/${dictXMLRef}`;
-    const reportURL = `${ncbiPath}${gapId}/${gapAccession}/pheno_variable_summaries/${reportXMLRef}`;
+    const exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
+    const dictURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${dictXMLRef}`;
+    const reportURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${reportXMLRef}`;
 
     return {dict: dictURL, gapExchange: exchangeURL, report: reportURL, studyUrl: studyUrl};
 };

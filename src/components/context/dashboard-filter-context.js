@@ -11,16 +11,19 @@ import React from "react";
 
 const DashboardFilterContext = React.createContext({
     checkboxGroups: [],
+    entities: [],
     inputValue: "",
     setOfCountResultsByFacet: new Map(),
     setOfResults: new Set(),
     setOfResultsBySearchGroups: new Map(),
     summaries: [],
+    tableHeadersEntities: [],
+    tableHeadersSummary: [],
     termsChecked: new Map(),
     termsCount: new Map(),
-    workspaces: [],
     onHandleChecked: () => {},
     onHandleClearInput: () => {},
+    onHandleInitializeDashboard: () => {},
     onHandleInput: () => {},
 });
 

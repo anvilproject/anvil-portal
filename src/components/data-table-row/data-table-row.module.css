@@ -4,6 +4,7 @@
  *
  * Style definitions specific to The AnVIL data table row component.
  *
+ * "ncpi" identifier is for ncpi dashboard.
  * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
  */
@@ -20,8 +21,10 @@
     background-color: var(--black3);
 }
 
+/* NCPI table */
 /* Studies table */
 /* Vertical align to the top for studies table - there will always be multi-line cells due to long titles */
+[id^="ncpi"] .row,
 [id^="studies"] .row {
     vertical-align: top;
 }

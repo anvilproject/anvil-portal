@@ -13,7 +13,7 @@ Search AnVIL's datasets and associated Terra workspaces for datasets of interest
 Learn now to request access to AnVIL's [open access](/learn/accessing-data/requesting-data-access#data-access-types), [controlled access](/learn/accessing-data/requesting-data-access#accessing-controlled-access-data) and [consortium access](/learn/accessing-data/requesting-data-access#accessing-consortium-access-data) datasets in our [Requesting Data Access](/learn/accessing-data/requesting-data-access) guide.
 
 
-<data-dashboard></data-dashboard>
+<data-dashboard-anvil></data-dashboard-anvil>
 
 ## Notes
 

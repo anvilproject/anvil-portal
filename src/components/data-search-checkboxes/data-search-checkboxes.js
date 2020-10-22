@@ -17,7 +17,10 @@ class DataSearchCheckboxes extends React.Component {
 
     shouldComponentUpdate(_) {
 
-        return false;
+        const {checkboxGroups} = this.props;
+
+        /* Update component if checkboxGroups is undefined. */
+        return checkboxGroups.length === 0;
     }
 
     render() {

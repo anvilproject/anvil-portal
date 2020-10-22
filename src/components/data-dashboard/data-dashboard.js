@@ -3,41 +3,69 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - data dashboard component.
- * Use of this component within markdown is possible.
- * Use the tag <data-dashboard></data-dashboard>.
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
-import DataSearch from "../data-search/data-search";
-import DataSummary from "../data-summary/data-summary";
-import DataWorkspaces from "../data-workspaces/data-workspaces";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
-import ProviderDashboardFilter from "../provider-dashboard-filter/provider-dashboard-filter";
+import DashboardFilterContext from "../context/dashboard-filter-context";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
-function DataDashboard() {
+class DataDashboard extends React.Component {
 
-    const workspacesQuery = DashboardWorkspaceStaticQuery();
-    const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(workspacesQuery);
-    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm);
-    const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups();
-    const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
+    componentDidMount() {
 
-    return (
-        <ProviderDashboardFilter
-            checkboxGroups={checkboxGroups}
-            facetsByTerm={facetsByTerm}
-            setOfSearchGroups={setOfSearchGroups}
-            setOfTerms={setOfTerms}
-            workspacesQuery={workspacesQuery}>
-            <DataSearch/>
-            <DataSummary/>
-            <DataWorkspaces/>
-        </ProviderDashboardFilter>
-    )
+        /* Initialize dashboard. */
+        this.initializeDashboard();
+    }
+
+    initializeDashboard = () => {
+
+        const {dashboardEntities,
+            dashboardIndexFileName,
+            resultKey,
+            searchFacets,
+            summaryKey,
+            tableHeadersEntities,
+            tableHeadersSummary,
+            onHandleInitializeDashboard} = this.props;
+
+        const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(dashboardEntities, searchFacets);
+        const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets);
+        const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups(searchFacets);
+        const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
+        const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTermDisplay(facetsByTerm);
+
+        onHandleInitializeDashboard({
+            checkboxGroups: checkboxGroups,
+            dashboardEntities: dashboardEntities,
+            dashboardIndexFileName: dashboardIndexFileName,
+            facetsByTerm: facetsByTerm,
+            resultKey: resultKey,
+            setOfSearchGroups: setOfSearchGroups,
+            setOfTerms: setOfTerms,
+            summaryKey: summaryKey,
+            termSearchValueByTermDisplay: termSearchValueByTermDisplay,
+            tableHeadersEntities: tableHeadersEntities,
+            tableHeadersSummary: tableHeadersSummary});
+    };
+
+    render() {
+        const {children} = this.props;
+        return (
+            children
+        )
+    };
 }
 
-export default DataDashboard;
+export default (props) => {
+
+    /* Grab the dashboard function onHandleInitializeDashboard. */
+    const searching = useContext(DashboardFilterContext),
+        {onHandleInitializeDashboard} = searching || {};
+
+    return (
+        <DataDashboard onHandleInitializeDashboard={onHandleInitializeDashboard} {...props}/>
+    )
+};

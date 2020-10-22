@@ -4,12 +4,14 @@
  *
  * Style definitions specific to The AnVIL data table row cell component.
  *
+ * "ncpi" identifier is for ncpi dashboard.
  * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
  */
 @import "../../styles/vars.module.css";
 
 /* Row cells */
+[id^="ncpi"] td,
 [id^="studies"] td,
 [id^="summary"] td {
     border-bottom: none;
@@ -29,8 +31,10 @@
     max-width: 233px; /* Matches studyName and diseases */
 }
 
+/* NCPI table */
 /* Studies table */
 /* Add padding to the right of cells for studies table to prevent long values from jamming up */
+[id^="ncpi"] td,
 [id^="studies"] td {
     padding: 2px 8px 2px;
 }
@@ -38,6 +42,11 @@
 /* Studies table - "accessType" */
 [id^="studies"] td[id^="accessType"] {
     width: 144px;
+}
+
+/* NCPI table - "consentCodes" */
+[id^="ncpi"] td[id^="consentCodes"] {
+    width: 200px;
 }
 
 /* Studies table - "dataTypes" */
@@ -50,6 +59,11 @@
     white-space: nowrap;
 }
 
+/* NCPI table - "diseases" */
+[id^="ncpi"] td[id^="diseases"] {
+    max-width: 158px;
+}
+
 /* Studies table - "diseases" */
 [id^="studies"] td[id^="diseases"] {
     max-width: 158px;
@@ -58,6 +72,11 @@
 /* Studies table - "size" */
 [id^="studies"] td[id^="size"] {
     width: 84px;
+}
+
+/* NCPI table - "studyName" ("title") */
+[id^="ncpi"] td[id^="studyName"] {
+    max-width: 400px;
 }
 
 /* Studies table - "studyName" ("title") */
@@ -73,6 +92,11 @@
 /* Studies table - "consortium" */
 [id^="studies"] td[id^="subjects"] {
     width: 80px;
+}
+
+/* NCPI table - "platform" */
+[id^="ncpi"] td[id^="platform"] {
+    width: 240px;
 }
 
 /* Summary table - "total" */
