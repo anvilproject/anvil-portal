@@ -1,0 +1,14 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search empty results component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* No results. */
+.error {
+    color: var(--accent-blue-green);
+    font-size: 14px;
+    line-height: 32px;
+}

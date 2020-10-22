@@ -13,8 +13,8 @@ import React from "react";
 // App dependencies
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
+import ProviderDashboardFilter from "../components/data-dashboard/provider-dashboard-filter/provider-dashboard-filter";
 import Layout from "../components/layout";
-import ProviderDashboardFilter from "../components/provider-dashboard-filter/provider-dashboard-filter";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import Socials from "../components/socials/socials";
 import * as TemplateService from "../utils/template.service";

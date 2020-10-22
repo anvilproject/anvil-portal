@@ -11,8 +11,8 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
-import DataDashboardAnVIL from "../data-dashboard-anvil/data-dashboard-anvil";
-import DataDashboardNCPI from "../data-dashboard-ncpi/data-dashboard-ncpi";
+import DataDashboardAnVIL from "../data-dashboard/data-dashboard-anvil";
+import DataDashboardNCPI from "../data-dashboard/data-dashboard-ncpi";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";

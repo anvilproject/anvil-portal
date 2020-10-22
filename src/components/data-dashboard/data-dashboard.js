@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import DashboardFilterContext from "../context/dashboard-filter-context";
+import ContextDashboardFilter from "./context-dashboard-filter/context-dashboard-filter";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
 class DataDashboard extends React.Component {
@@ -62,8 +62,7 @@ class DataDashboard extends React.Component {
 export default (props) => {
 
     /* Grab the dashboard function onHandleInitializeDashboard. */
-    const searching = useContext(DashboardFilterContext),
-        {onHandleInitializeDashboard} = searching || {};
+    const {onHandleInitializeDashboard} = useContext(ContextDashboardFilter);
 
     return (
         <DataDashboard onHandleInitializeDashboard={onHandleInitializeDashboard} {...props}/>

@@ -10,7 +10,7 @@ import React from "react";
 
 // App dependencies
 import Checkbox from "../checkbox/checkbox";
-import DataSearchPanel from "../data-search-panel/data-search-panel";
+import DataSearchPanel from "../data-dashboard/data-search-panel/data-search-panel";
 
 class Checkboxes extends React.Component {
 

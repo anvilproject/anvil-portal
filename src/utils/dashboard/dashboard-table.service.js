@@ -6,13 +6,13 @@
  */
 
 // App dependencies
-import DataTableRowCellDataTypes from "../../components/data-table-row-cell-data-types/data-table-row-cell-data-types";
-import DataTableRowCellEllipsis from "../../components/data-table-row-cell-ellipsis/data-table-row-cell-ellipsis";
-import DataTableRowCellGapId from "../../components/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
-import DataTableRowCellProjectId from "../../components/data-table-row-cell-project-id/data-table-row-cell-project-id";
-import DataTableRowCellRedirect from "../../components/data-table-row-cell-redirect/data-table-row-cell-redirect";
-import DataTableRowCellValuesTooltip from "../../components/data-table-row-cell-values-tooltip/data-table-row-cell-values-tooltip";
-import DataTableRowCellX from "../../components/data-table-row-cell-x/data-table-row-cell-x";
+import DataTableRowCellDataTypes from "../../components/data-dashboard/data-table-row-cell-data-types/data-table-row-cell-data-types";
+import DataTableRowCellEllipsis from "../../components/data-dashboard/data-table-row-cell-ellipsis/data-table-row-cell-ellipsis";
+import DataTableRowCellGapId from "../../components/data-dashboard/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
+import DataTableRowCellProjectId from "../../components/data-dashboard/data-table-row-cell-project-id/data-table-row-cell-project-id";
+import DataTableRowCellRedirect from "../../components/data-dashboard/data-table-row-cell-redirect/data-table-row-cell-redirect";
+import DataTableRowCellValuesTooltip from "../../components/data-dashboard/data-table-row-cell-values-tooltip/data-table-row-cell-values-tooltip";
+import DataTableRowCellX from "../../components/data-dashboard/data-table-row-cell-x/data-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 

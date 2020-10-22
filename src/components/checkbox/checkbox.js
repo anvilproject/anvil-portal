@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import DashboardFilterContext from "../context/dashboard-filter-context";
+import ContextDashboardFilter from "../data-dashboard/context-dashboard-filter/context-dashboard-filter";
 
 // Styles
 import compStyles from "./checkbox.module.css";
@@ -54,8 +54,7 @@ export default (props) => {
     const {checkbox} = props,
         {label, value} = checkbox;
 
-    const searching = useContext(DashboardFilterContext),
-        {termsChecked, termsCount, onHandleChecked} = searching;
+    const {termsChecked, termsCount, onHandleChecked} = useContext(ContextDashboardFilter);
 
     /* Get the count. */
     let count = 0;

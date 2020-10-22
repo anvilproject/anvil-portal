@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import FrontmatterContext from "../context/frontmatter-context";
+import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
@@ -47,8 +47,7 @@ function Socials() {
         return `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}&via=useAnVIL`;
     }
 
-    const frontmatterContext = useContext(FrontmatterContext),
-        {title} = frontmatterContext;
+    const {title} = useContext(FrontmatterContext);
     const encodedTitle = encodeURIComponent(`AnVIL - ${title}`).toString();
 
     return (

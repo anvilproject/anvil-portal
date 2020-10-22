@@ -1,0 +1,26 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data search component.
+ */
+@import "../../../styles/vars.module.css";
+
+/* Search. */
+.search {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 32px 0 24px; /** Padding bottom matches padding between tables */
+    width: 100%;
+}
+
+/**
+ * Large window.
+ */
+@media screen and (min-width: 1440px) {
+    
+    /*.search {*/
+    /*    max-width: 1392px; !* Cap width of search on large devices *!*/
+    /*}*/
+}
