@@ -14,6 +14,7 @@ import React from "react";
 import DataDashboard from "./data-dashboard";
 import DataSearch from "./data-search/data-search";
 import DataTableEntities from "./data-table-entities/data-table-entities";
+import DataTableSummary from "./data-table-summary/data-table-summary";
 import {DashboardNCPIStaticQuery} from "../../hooks/dashboard-ncpi-query";
 
 // Template variables
@@ -23,7 +24,7 @@ const lunrIndexRefField = "dbGapIdAccession";
 const searchFacets = ["platform", "diseases", "consentShortNames"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
 const summaryKey = "platform";
 const tableHeadersEntities = ["platform", "gapId", "studyName", "diseases", "consentCodes", "subjectsTotal"];
-const tableHeadersSummary = ["platform", "cohorts"];
+const tableHeadersSummary = ["platform", "studies", "subjectsTotal"];
 
 function DataDashboardNCPI() {
 
@@ -39,6 +40,7 @@ function DataDashboardNCPI() {
                        tableHeadersEntities={tableHeadersEntities}
                        tableHeadersSummary={tableHeadersSummary}>
             <DataSearch/>
+            <DataTableSummary/>
             <DataTableEntities ncpi/>
         </DataDashboard>
     )

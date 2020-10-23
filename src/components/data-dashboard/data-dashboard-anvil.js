@@ -24,7 +24,7 @@ const lunrIndexRefField = "projectId";
 const searchFacets = ["consortium", "accessType", "dataTypes"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
 const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "size", "subjects"];
-const tableHeadersSummary = ["consortium", "cohorts", "subjects", "samples", "files", "sizeTB"];
+const tableHeadersSummary = ["consortium", "cohorts", "subjects", "samples", "files", "size"];
 
 function DataDashboardAnVIL() {
 

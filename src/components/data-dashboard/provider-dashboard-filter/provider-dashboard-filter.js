@@ -565,7 +565,7 @@ class ProviderDashboardFilter extends React.Component {
                 summaryKey, setOfCountResultsByFacet, setOfResults, tableHeadersEntities, tableHeadersSummary, termsChecked,
                 onHandleChecked, onHandleClearInput, onHandleInitializeDashboard, onHandleInput} = this.state;
         const entities = DashboardService.filterDashboardEntities(dashboardEntities, setOfResults, resultKey);
-        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey);
+        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey ,tableHeadersSummary);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, dashboardEntities, resultKey);
         return (
             <ContextDashboardFilter.Provider value={{checkboxGroups, countLabel, entities, inputValue, setOfResults, summaries,
