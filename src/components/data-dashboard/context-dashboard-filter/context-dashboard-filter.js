@@ -11,6 +11,7 @@ import React from "react";
 
 const ContextDashboardFilter = React.createContext({
     checkboxGroups: [],
+    countLabel: "",
     entities: [],
     inputValue: "",
     setOfCountResultsByFacet: new Map(),

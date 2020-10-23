@@ -24,7 +24,7 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
         const nodeContent = JSON.stringify(study);
 
         const nodeMeta = {
-            id: createNodeId(study.studyName),
+            id: createNodeId(`${study.platform}${study.dbGapIdAccession}`),
             parent: null,
             children: [],
             internal: {

@@ -146,7 +146,7 @@ function buildNodeTypeRowCellValueTooltip(displayValue, value) {
  */
 function buildSubjectConsents(variablesByStudy, studyConsentGroups) {
 
-    if ( variablesByStudy ) {
+    if ( variablesByStudy && studyConsentGroups && studyConsentGroups.length ) {
 
         /* Build the consents for the study. */
         const consents = variablesByStudy.consents.map(subjectConsent => {
@@ -170,6 +170,8 @@ function buildSubjectConsents(variablesByStudy, studyConsentGroups) {
             consentsStat: variablesByStudy.consentsStat
         }
     }
+
+    return {consents: [], consentsStat: 0}
 }
 
 module.exports.buildConsentCodes = buildConsentCodes;

@@ -18,6 +18,7 @@ import DataTableSummary from "./data-table-summary/data-table-summary";
 import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 // Template variables
+const countLabel = "Cohorts";
 const dashboardIndexFileName = "/dashboard-index-anvil.json";
 const lunrIndexRefField = "projectId";
 const searchFacets = ["consortium", "accessType", "dataTypes"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
@@ -30,7 +31,8 @@ function DataDashboardAnVIL() {
     const dashboardEntities = DashboardWorkspaceStaticQuery();
 
     return (
-        <DataDashboard dashboardEntities={dashboardEntities}
+        <DataDashboard countLabel={countLabel}
+                       dashboardEntities={dashboardEntities}
                        dashboardIndexFileName={dashboardIndexFileName}
                        resultKey={lunrIndexRefField}
                        searchFacets={searchFacets}

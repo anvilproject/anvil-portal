@@ -5,7 +5,7 @@ showOutline: false
 title: "NCPI Data"
 ---
 
-# Explore NCPI Data
+# NCPI Dataset Catalog
 
 <hero small>Explore NCPI's studies to discover datasets of interest.</hero>
 

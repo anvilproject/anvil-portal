@@ -22,21 +22,31 @@ const studyPath = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?s
  */
 const buildDict = async function buildDict(url) {
 
-    const {data_table} = await fetchXML(url),
-        {variable} = data_table;
+    if ( url ) {
 
-    /* Attributes - study_id, participant_set. */
-    const dbGapIdAccession = data_table.att.study_id;
-    const participantSet = data_table.att.participant_set;
+        const dictHTML = await fetchXML(url);
 
-    /* <variables> filtered by var_name is "CONSENT". */
-    const variableConsentId = getDictionaryConsentId(variable);
-    const consentId = `${variableConsentId}.p${participantSet}`;
+        if ( dictHTML ) {
 
-    return {
-        dbGapIdAccession: dbGapIdAccession,
-        variableConsentId: consentId
-    };
+            const {data_table} = dictHTML,
+                {variable} = data_table;
+
+            /* Attributes - study_id, participant_set. */
+            const dbGapIdAccession = data_table.att.study_id;
+            const participantSet = data_table.att.participant_set;
+
+            /* <variables> filtered by var_name is "CONSENT". */
+            const variableConsentId = getDictionaryConsentId(variable);
+            const consentId = `${variableConsentId}.p${participantSet}`;
+
+            return {
+                dbGapIdAccession: dbGapIdAccession,
+                variableConsentId: consentId
+            };
+        }
+    }
+
+    return {dbGapIdAccession: "", variableConsentId: ""}
 };
 
 /**
@@ -48,33 +58,43 @@ const buildDict = async function buildDict(url) {
  */
 const buildExchange = async function buildExchange(url) {
 
-    const {GaPExchange} = await fetchXML(url),
-        {Studies} = GaPExchange || {},
-        {Study} = Studies || {},
-        {Configuration} = Study || {},
-        {ConsentGroups, Diseases, StudyNameEntrez, StudyNameReportPage} = Configuration || {},
-        {ConsentGroup} = ConsentGroups || {},
-        {Disease} = Diseases || {};
+    if ( url ) {
 
-    /* Attributes - accession. */
-    const dbGapIdAccession = Study.att.accession;
+        const exchangeHTML = await fetchXML(url);
 
-    /* Diseases, normalize and build. */
-    const diseasesNormalized = normalizeNodeData(Disease);
-    const diseases = buildStudyDiseases(diseasesNormalized);
+        if ( exchangeHTML ) {
 
-    /* Consent groups. */
-    const consentGroups = buildStudyConsentGroups(ConsentGroup);
+            const {GaPExchange} = exchangeHTML,
+                {Studies} = GaPExchange || {},
+                {Study} = Studies || {},
+                {Configuration} = Study || {},
+                {ConsentGroups, Diseases, StudyNameEntrez, StudyNameReportPage} = Configuration || {},
+                {ConsentGroup} = ConsentGroups || {},
+                {Disease} = Diseases || {};
 
-    return {
-        consentGroups: consentGroups,
-        dbGapIdAccession: dbGapIdAccession,
-        diseases: diseases,
-        name: {
-            longName: StudyNameReportPage,
-            shortName: StudyNameEntrez,
+            /* Attributes - accession. */
+            const dbGapIdAccession = Study.att.accession;
+
+            /* Diseases, normalize and build. */
+            const diseasesNormalized = normalizeNodeData(Disease);
+            const diseases = buildStudyDiseases(diseasesNormalized);
+
+            /* Consent groups. */
+            const consentGroups = buildStudyConsentGroups(ConsentGroup);
+
+            return {
+                consentGroups: consentGroups,
+                dbGapIdAccession: dbGapIdAccession,
+                diseases: diseases,
+                name: {
+                    longName: StudyNameReportPage,
+                    shortName: StudyNameEntrez,
+                }
+            };
         }
-    };
+    }
+
+    return {consentGroups: [], dbGapIdAccession: "", diseases: [], name: {longName: "", shortName: ""}};
 };
 
 /**
@@ -82,25 +102,69 @@ const buildExchange = async function buildExchange(url) {
  * Includes study accession, study name, and the <variables> tags where var_name is "CONSENT".
  *
  * @param url
- * @returns {Promise.<{dbGapIdAccession: *, name: *, variables: {}}>}
+ * @returns {Promise.<*>}
  */
 const buildReport = async function buildReport(url) {
 
-    const {data_table} = await fetchXML(url),
-        {variable} = data_table;
+    if ( url ) {
 
-    /* Attributes - dbGapId, study_id. */
-    const dbGapIdAccession = data_table.att.study_id;
-    const studyName = data_table.att.study_name;
+        const reportHTML = await fetchXML(url);
 
-    /* <variables> filtered by var_name is "CONSENT". */
-    const variablesByConsent = getSubjectVariablesByConsent(variable);
+        if ( reportHTML ) {
 
-    return {
-        dbGapIdAccession: dbGapIdAccession,
-        name: studyName,
-        variables: variablesByConsent
-    };
+            const {data_table} = reportHTML,
+                {variable} = data_table;
+
+            /* Attributes - dbGapId, study_id. */
+            const dbGapIdAccession = data_table.att.study_id;
+            const studyName = data_table.att.study_name;
+
+            /* <variables> filtered by var_name is "CONSENT". */
+            const variablesByConsent = getSubjectVariablesByConsent(variable);
+
+            return {
+                dbGapIdAccession: dbGapIdAccession,
+                name: studyName,
+                variables: variablesByConsent
+            };
+        }
+    }
+
+    return {dbGapIdAccession: "", name: "", variables: []}
+};
+
+/**
+ * Returns the study dbGap accession from dbGap.
+ *
+ * @param dbGapId
+ * @returns {Promise.<void>}
+ */
+const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
+
+    /* Get the study url. */
+    const studyUrl = `${studyPath}${dbGapId}`;
+    const regex = /.*?study_id=/gi;
+
+    /* Return any redirected url. */
+    /* Will also return empty string for any study that does not exist. */
+    /* Site redirects to "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=". */
+    try {
+
+        return await fetch(studyUrl)
+            .then(response => {
+
+                const redirected = response.redirected;
+
+                if ( redirected ) {
+
+                    return response.url.replace(regex, "");
+                }
+            });
+    }
+    catch(err) {
+
+        console.log(`Error fetching ${studyUrl}`);
+    }
 };
 
 /**
@@ -115,31 +179,44 @@ const getXMLUrls = async function getXMLUrls(dbGapIdAccession) {
     const dbGapId = dbGapIdAccession.split(".")[0];
 
     /* Get the study url. */
-    const studyUrl = `${studyPath}${dbGapIdAccession}`;
+    const studyURL = `${studyPath}${dbGapIdAccession}`;
+
+    /* Get the gap exchange url. */
+    const exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
+
+    /* Get the dictionary and report urls. */
+    /* Initialize dictionary and report urls. */
+    let dictURL = "";
+    let reportURL = "";
 
     /* Grab the gap index page. */
     const indexURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/`;
 
     /* Grab all <a> from the index page. */
-    const {html} = await fetchIndex(indexURL),
-        {body} = html,
-        {pre} = body,
-        {hr} = pre,
-        {a} = hr;
+    const indexHTML = await fetchIndex(indexURL);
 
-    /* Grab the corresponding href attribute. */
-    const indexRefs = a.filter(index => index.att).map(index => index.att.HREF);
+    /* Get the subject dictionary and report XML URLs, if the gap index page exists. */
+    if ( indexHTML ) {
 
-    /* Find the dict and report URL reference. */
-    const dictXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.data_dict"));
-    const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
+        const {html} = indexHTML,
+            {body} = html,
+            {pre} = body,
+            {hr} = pre,
+            {a} = hr;
 
-    /* Gap exchange, subject dictionary and report XML URLs. */
-    const exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
-    const dictURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${dictXMLRef}`;
-    const reportURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${reportXMLRef}`;
+        /* Grab the corresponding href attribute. */
+        const indexRefs = a.filter(index => index.att).map(index => index.att.HREF);
 
-    return {dict: dictURL, gapExchange: exchangeURL, report: reportURL, studyUrl: studyUrl};
+        /* Find the dict and report URL reference. */
+        const dictXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.data_dict"));
+        const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
+
+        /* Subject dictionary and report XML URLs. */
+        dictURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${dictXMLRef}`;
+        reportURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${reportXMLRef}`;
+    }
+
+    return {dict: dictURL, gapExchange: exchangeURL, report: reportURL, studyUrl: studyURL};
 };
 
 /**
@@ -248,9 +325,17 @@ async function fetchIndex(url) {
 
     try {
 
-        let fetchIndex = await fetch(url);
-        let html = await fetchIndex.text();
-        return await parseHTML(html);
+        const fetchIndex = await fetch(url);
+
+        if ( fetchIndex.status === 200 ) {
+
+            const html = await fetchIndex.text();
+            return await parseHTML(html);
+        }
+        else {
+
+            console.log(`Fetch status error: ${url}`);
+        }
     }
     catch(err) {
 
@@ -269,8 +354,16 @@ async function fetchXML(url) {
     try {
 
         let fetchXML = await fetch(url);
-        const XMLToText = await fetchXML.text();
-        return await parseXML(XMLToText);
+
+        if ( fetchXML.status === 200 ) {
+
+            const XMLToText = await fetchXML.text();
+            return await parseXML(XMLToText);
+        }
+        else {
+
+            console.log(`Fetch status error: ${url}`);
+        }
     }
     catch(err) {
 
@@ -423,4 +516,5 @@ function parseXML(xml) {
 module.exports.buildDict = buildDict;
 module.exports.buildExchange = buildExchange;
 module.exports.buildReport = buildReport;
+module.exports.getStudyGapAccession = getStudyGapAccession;
 module.exports.getXMLUrls = getXMLUrls;

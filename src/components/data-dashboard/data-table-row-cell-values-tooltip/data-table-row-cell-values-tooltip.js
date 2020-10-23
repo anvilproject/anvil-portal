@@ -19,6 +19,7 @@ class DataTableRowCellValuesTooltip extends React.Component {
     render() {
         const {children, id} = this.props;
         const cellData = children;
+        const showCell = cellData && cellData.length;
         const last = cellData.length - 1;
 
         const RowCellValueTooltip = (props) => {
@@ -34,7 +35,7 @@ class DataTableRowCellValuesTooltip extends React.Component {
 
         return (
             <td id={id}>
-                {cellData.map((cellDatum, c) => <RowCellValueTooltip key={c} datum={cellDatum} last={last === c}/>)}
+                {showCell ? cellData.map((cellDatum, c) => <RowCellValueTooltip key={c} datum={cellDatum} last={last === c}/>) : "--"}
             </td>
         );
     }

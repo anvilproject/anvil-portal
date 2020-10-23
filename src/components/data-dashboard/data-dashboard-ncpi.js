@@ -17,11 +17,12 @@ import DataTableEntities from "./data-table-entities/data-table-entities";
 import {DashboardNCPIStaticQuery} from "../../hooks/dashboard-ncpi-query";
 
 // Template variables
+const countLabel = "Studies";
 const dashboardIndexFileName = "/dashboard-index-ncpi.json";
 const lunrIndexRefField = "dbGapIdAccession";
-const searchFacets = ["platform", "consentShortNames"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
+const searchFacets = ["platform", "diseases", "consentShortNames"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
 const summaryKey = "platform";
-const tableHeadersEntities = ["platform", "gapId", "studyName", "diseases", "consentCodes"];
+const tableHeadersEntities = ["platform", "gapId", "studyName", "diseases", "consentCodes", "subjectsTotal"];
 const tableHeadersSummary = ["platform", "cohorts"];
 
 function DataDashboardNCPI() {
@@ -29,7 +30,8 @@ function DataDashboardNCPI() {
     const dashboardEntities = DashboardNCPIStaticQuery();
 
     return (
-        <DataDashboard dashboardEntities={dashboardEntities}
+        <DataDashboard countLabel={countLabel}
+                       dashboardEntities={dashboardEntities}
                        dashboardIndexFileName={dashboardIndexFileName}
                        resultKey={lunrIndexRefField}
                        searchFacets={searchFacets}

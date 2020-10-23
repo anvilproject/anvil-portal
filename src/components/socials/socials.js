@@ -47,7 +47,7 @@ function Socials() {
         return `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}&via=useAnVIL`;
     }
 
-    const {title} = useContext(FrontmatterContext);
+    const {title} = useContext(ContextFrontmatter);
     const encodedTitle = encodeURIComponent(`AnVIL - ${title}`).toString();
 
     return (

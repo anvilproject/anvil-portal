@@ -14,7 +14,7 @@ import * as DashboardTableService from "./dashboard-table.service";
 const setOfDenyListTerms = new Set(["NA", "--", "", null]);
 
 /* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":", "-"];
+export const DenyListInputs = ["^", "~", ":", "-", "+"];
 
 /**
  * Returns FE model of checkboxes by facet.

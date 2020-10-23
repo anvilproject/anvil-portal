@@ -58,6 +58,7 @@ class ProviderDashboardFilter extends React.Component {
 
             this.setState({
                 checkboxGroups: event.checkboxGroups,
+                countLabel: event.countLabel,
                 dashboardEntities: event.dashboardEntities,
                 dashboardIndexFileName: event.dashboardIndexFileName,
                 facetsByTerm: event.facetsByTerm,
@@ -81,6 +82,7 @@ class ProviderDashboardFilter extends React.Component {
 
         this.state = ({
             checkboxGroups: [],
+            countLabel: "",
             dashboardEntities: [],
             dashboardIndex: [],
             dashboardIndexFileName: "",
@@ -125,6 +127,7 @@ class ProviderDashboardFilter extends React.Component {
 
         this.setState = ({
             checkboxGroups: [],
+            countLabel: "",
             dashboardEntities: [],
             dashboardIndex: [],
             dashboardIndexFileName: "",
@@ -558,14 +561,14 @@ class ProviderDashboardFilter extends React.Component {
 
     render() {
         const {children} = this.props,
-            {checkboxGroups, dashboardEntities, facetsByTerm, inputValue, resultKey,
+            {checkboxGroups, countLabel ,dashboardEntities, facetsByTerm, inputValue, resultKey,
                 summaryKey, setOfCountResultsByFacet, setOfResults, tableHeadersEntities, tableHeadersSummary, termsChecked,
                 onHandleChecked, onHandleClearInput, onHandleInitializeDashboard, onHandleInput} = this.state;
         const entities = DashboardService.filterDashboardEntities(dashboardEntities, setOfResults, resultKey);
         const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, dashboardEntities, resultKey);
         return (
-            <ContextDashboardFilter.Provider value={{checkboxGroups, entities, inputValue, setOfResults, summaries,
+            <ContextDashboardFilter.Provider value={{checkboxGroups, countLabel, entities, inputValue, setOfResults, summaries,
                 tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount,
                 onHandleChecked, onHandleClearInput, onHandleInitializeDashboard, onHandleInput}}>
                 {children}

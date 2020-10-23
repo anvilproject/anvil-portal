@@ -68,6 +68,7 @@ export function getCollection(type, collections) {
  * Filters tools into "coming" or "current".
  * Slug directory location will determine outcome.
  *
+ * @param props
  * @param tools
  * @returns {*}
  */

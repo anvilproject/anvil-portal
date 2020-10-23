@@ -233,6 +233,8 @@ export function switchDisplayColumnName(columnName) {
             return "Title";
         case "subjects":
             return "Subjects";
+        case "subjectsTotal":
+            return "Subjects";
         case "size":
             return "Size (TB)";
         case "sizeTB":
@@ -244,10 +246,10 @@ export function switchDisplayColumnName(columnName) {
 
 /**
  * Returns the platform display value.
- * - "anvil" to "AnVIL"
+ * - "AnVIL" to "AnVIL"
  * - "BDC" to "BioData Catalyst"
- * - "CRDC" to "Cancer Research Data Commons"
- * - "KFDRC" to "Kids First Data Resource Center"
+ * - "NCRDC" to "Cancer Research Data Commons"
+ * - "KF" to "Kids First Data Resource Center"
  *
  * @param platform
  * @returns {*}
@@ -255,13 +257,13 @@ export function switchDisplayColumnName(columnName) {
 export function switchStudyPlatform(platform) {
 
     switch (platform) {
-        case "anvil":
+        case "AnVIL":
             return "AnVIL";
         case "BDC":
             return "BioData Catalyst";
-        case "CRDC":
+        case "NCRDC":
             return "Cancer Research Data Commons";
-        case "KFDRC":
+        case "KF":
             return "Kids First Data Resource Center";
         default:
             return "";

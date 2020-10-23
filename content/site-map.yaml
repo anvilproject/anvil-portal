@@ -63,8 +63,6 @@
     - name: "Progress Updates"
       key: "/ncpi/progress-updates/progress-updates"
       path: "/ncpi/progress-updates"
-    - name: "Data"
-      key: "/ncpi/data"
 - name: "FAQ"
   key: "faq"
   path: "/faq"

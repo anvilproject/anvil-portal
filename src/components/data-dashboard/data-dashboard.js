@@ -22,7 +22,8 @@ class DataDashboard extends React.Component {
 
     initializeDashboard = () => {
 
-        const {dashboardEntities,
+        const {countLabel,
+            dashboardEntities,
             dashboardIndexFileName,
             resultKey,
             searchFacets,
@@ -39,6 +40,7 @@ class DataDashboard extends React.Component {
 
         onHandleInitializeDashboard({
             checkboxGroups: checkboxGroups,
+            countLabel: countLabel,
             dashboardEntities: dashboardEntities,
             dashboardIndexFileName: dashboardIndexFileName,
             facetsByTerm: facetsByTerm,
