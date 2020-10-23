@@ -157,8 +157,8 @@ export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
 
     [...facetsByTerm.keys()].forEach(termDisplay => {
 
-        /* Replace any white space, hyphens or brackets with an underscore. */
-        const termSearchValue = termDisplay.replace(/(-|\s|\(|\))/g, "_");
+        /* Replace any white space, commas, hyphens or brackets with an underscore. */
+        const termSearchValue = termDisplay.replace(/(,|-|\s|\(|\))/g, "_");
         termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
     });
 

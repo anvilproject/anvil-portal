@@ -83,7 +83,7 @@ const getIndexFieldConsentShortNames = function getIndexFieldConsentShortNames(c
 /**
  * Returns the consortium.
  * Facilitates the indexing of consortium into a searchable checkbox value.
- * Replaces any white space, hyphens or brackets with an underscore.
+ * Replaces any white space, commas, hyphens or brackets with an underscore.
  * e.g. "1000 genomes" returns "1000_genomes" and "GTEx (v8)" returns "GTEx__v8_".
  *
  * @param consortium
@@ -93,7 +93,7 @@ const getIndexFieldConsortiumName = function getIndexFieldConsortiumName(consort
 
     if ( consortium ) {
 
-        return consortium.replace(/(-|\s|\(|\))/g, "_");
+        return consortium.replace(/(,|-|\s|\(|\))/g, "_");
     }
 
     return "";
@@ -129,12 +129,14 @@ const getIndexFieldDataTypes = function getIndexFieldDataTypes(dataTypes) {
 };
 
 /**
- * Returns the study's diseases as a concatenated string value.
- * Facilitates the indexing of an array of diseases.
+ * Returns the study's diseases.
+ * Facilitates the indexing of diseases into a searchable text or checkbox value.
+ * Replaces any white space, commas, hyphens or brackets with an underscore.
+ * e.g. "Hearing Loss, Sensorineural" returns "Hearing_Loss__Sensorineural".
  *
  * @param diseases
  * @param consortium
- * @returns {string}
+ * @returns {Array}
  */
 const getIndexFieldDiseases = function getIndexFieldDiseases(diseases, consortium = "") {
 
@@ -144,33 +146,43 @@ const getIndexFieldDiseases = function getIndexFieldDiseases(diseases, consortiu
     // for CMG.
     if ( consortium.toLowerCase() === "cmg" ) {
 
-        return "";
+        return [];
     }
 
-    if ( diseases ) {
+    if ( diseases && diseases.length ) {
 
-        return diseases.join(" ");
+        /* Clone diseases. */
+        const diseasesClone = Array.from(diseases);
+
+        return diseasesClone.reduce((acc, disease) => {
+
+            const diseaseStr = disease.replace(/(,|-|\s|\(|\))/g, "_");
+            acc.push(diseaseStr);
+
+            return acc;
+        }, diseasesClone);
     }
 
-    return "";
+    return [];
 };
 
 /**
- * Returns the GapId's corresponding number.
+ * Returns the GapId and GapId's corresponding number.
  * Indexes GapId's number - strips off any prefix/suffix.
- * e.g. a GapId of "phs001395.v1.p1" returns "1395".
+ * e.g. a GapId of "phs001395.v1.p1" returns "1395" and "phs001395.v1.p1".
  *
  * @param gapId
- * @returns {string}
+ * @returns {*}
  */
 const getIndexFieldGapNumber = function getIndexFieldGapNumber(gapId) {
 
     if ( gapId ) {
 
-        return gapId.replace(/(^phs0*|\..*$)/g, "");
+        const gapNumber = gapId.replace(/(^phs0*|\..*$)/g, "");
+        return [gapId, gapNumber];
     }
 
-    return "";
+    return [];
 };
 
 /**
