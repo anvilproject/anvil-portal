@@ -40,7 +40,7 @@ class Home extends React.Component {
             <>
             <section className={classNames(compStyles.hero, {[compStyles.handheld]: !isBrowser})}>
                 <div className={classNames(globalStyles.grid, globalStyles.g750, globalStyles.centered)}>
-                    <div className={compStyles.headline}>Migrate Your Genomic Analysis to the Cloud</div>
+                    <div className={compStyles.headline}>Migrate Your Genomic Research to the Cloud</div>
                     <div className={compStyles.subhead}>Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based computing environment.</div>
                     <div className={compStyles.tiles}>
                         <div className={compStyles.tile}>
