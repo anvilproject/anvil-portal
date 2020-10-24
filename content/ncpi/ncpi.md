@@ -57,9 +57,9 @@ For example, this will let a researcher search for Kids First and TOPMed data on
   
 Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-### NCPI Data Dashboard
+### NCPI Dataset Catalog Prototype
 
-To make the most effective use of the data managed by NCPI platforms users must be able to view, browse, and search datasets available across all resources. This would allow biomedical researchers to understand what data is already available. This, in turn, will allow for better experimental design of future studies and will prevent duplication of current and past efforts. To allow such "bird's eye view" of the data we are building the NCPI Data Dashboard. Initially the dashboard will use infrastructure build by the [AnVIL project](/data) to generate overview of available datasets. 
+To make the most effective use of the data managed by NCPI platforms users must be able to view, browse, and search datasets available across all resources. This would allow biomedical researchers to understand what data is already available. This, in turn, will allow for better experimental design of future studies and will prevent duplication of current and past efforts. To allow such "bird's eye view" of the data we are building the NCPI Dataset Catalog. Initially the catalog will use infrastructure build by the [AnVIL project](/data) to generate overview of available datasets. 
 
 
 ### NIH RAS Single Sign On Pilot

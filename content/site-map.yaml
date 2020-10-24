@@ -46,7 +46,7 @@
   key: "ncpi"
   path: "/ncpi"
   primaryLinks:
-    - name: "NCPI Overview"
+    - name: "Overview"
       key: "/ncpi/ncpi"
       path: "/ncpi"
     - name: "Participating Platforms"

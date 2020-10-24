@@ -53,9 +53,9 @@ An initial objective of the FHIR working group is to have a practical approach f
 
 The Outreach and Training Working Group will provide exposure and training for NCPI platforms in the biomedical research community. At this time the group priorities are:
 
- - Development of NCPI data dashboard. Dashboard will aggregate information about datasets available through each of the four NCPI platforms
- - Outreach and training related to cloud cost and FHIR
- - Organization and support of NCPI-wide workshops 
+ - Development of the NCPI Dataset Catalog. The catalog will aggregate information about datasets available through each of the four NCPI platforms.
+ - Outreach and training related to cloud cost and FHIR.
+ - Organization and support of NCPI-wide workshops.
 
 #### Background
 
