@@ -25,7 +25,7 @@ Members of these teams are also involved with platform and software development 
 - [James Taylor](https://www.taylorlab.org)
 - Jeff Leek
 - Kasper Hansen
-- Michael Schatz
+- [Michael Schatz](http://schatz-lab.org)
 
 ## Oregon Health & Sciences University
 - [Jeremy Goecks](https://goeckslab.org)
