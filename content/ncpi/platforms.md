@@ -47,20 +47,18 @@ The goal of the National Cancer Institute’s Cancer Research Data Commons (CRDC
 
 [https://kidsfirstdrc.org](https://kidsfirstdrc.org)
 
+The vision of the NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program (“Kids First”) is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”
 
+The program continues to generate and share whole genome sequence data from thousands of children affected by these conditions, ranging from rare pediatric cancers, such as osteosarcoma, to more prevalent diagnoses, such as congenital heart defects.
 
-The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”
- 
- The program continues to generate and share whole genome sequence data from thousands of children affected by these conditions, ranging from rare pediatric cancers, such as osteosarcoma, to more prevalent diagnoses, such as congenital heart defects.
-  
-  In 2018, Kids First launched the Gabriella Miller Kids First Data Resource Center, charged with building a large-scale data platform supporting clinical and genetic data from these patients and their families in order to accelerate discovery and ultimately clinical impact.
-   
-  Researchers can search, access, aggregate, and analyze these data through the Kids First Data Resource Portal. Additionally, by using cloud-based individual workspaces in CAVATICA, a data analysis and sharing computation platform, researchers can cross-analyze Kids First data with data from other efforts, such as NCI’s TARGET program and consortia-based datasets like the Children’s Brain Tumor Tissue Consortium (CBTTC).
- 
- CAVATICA is a cloud based infrastructure originally developed for supporting pediatric disease research, but can support the analytics of all forms of controlled-access data in a cloud environment.
-  
- CAVATICA is powered by the Seven Bridges Platform, which meets or exceeds all NIH requirements for dbGaP or similarly controlled-access data on both Amazon Web Services (AWS) and/or the Google Compute Platform (GCP). Please see the Seven Bridges [Compliance White Paper](https://www.sevenbridges.com/wp-content/uploads/2017/08/WP_Compliance_Web.pdf) for full description of CAVATICA's security and compliance features.
-  
- For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA   support user authentication and authorization to controlled-access datasets via integration with the Gen3-powered Bionimbus Trusted Partnership for access and distribution (KFDRC Framework Services).
-  
-  The Kids First Data Resource enables scientists to rapidly explore shared genetic pathways and associated clinical datasets underlying diverse pediatric conditions occurring throughout development, empowering cross-disease discovery with the aim of improving  preventative measures, diagnostics, and therapeutic interventions on behalf of affected children and their families.
+In 2018, Kids First launched the Gabriella Miller Kids First Data Resource Center (Kids First DRC), charged with building a large-scale data platform supporting clinical and genetic data from these patients and their families in order to accelerate discovery and ultimately clinical impact.
+
+The Kids First DRC enables scientists to rapidly explore shared genetic pathways and associated clinical datasets underlying diverse pediatric conditions occurring throughout development, empowering cross-disease discovery with the aim of improving preventative measures, diagnostics, and therapeutic interventions on behalf of affected children and their families.
+
+Researchers can search, access, aggregate, and analyze these data through the Kids First Data Resource Portal. Additionally, by using cloud-based individual workspaces in CAVATICA, a data analysis and sharing computation platform, researchers can cross-analyze Kids First data with data from other efforts, such as NCI’s TARGET program and consortia-based datasets like the Children’s Brain Tumor Network (CBTN).
+
+CAVATICA is a cloud based infrastructure originally developed for supporting pediatric disease research, but can support the analytics of all forms of controlled-access data in a cloud environment.
+
+CAVATICA is powered by the Seven Bridges Platform, which meets or exceeds all NIH requirements for dbGaP or similarly controlled-access data on both Amazon Web Services (AWS) and/or the Google Compute Platform (GCP). Please see the [Seven Bridges Compliance White Paper](https://www.sevenbridges.com/library/white-papers/compliance/) for a full description of CAVATICA's security and compliance features.
+
+For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA support user authentication and authorization to controlled-access datasets via integration with the Gen3-powered Bionimbus Trusted Partnership for access and distribution (KFDRC Framework Services).
