@@ -193,7 +193,7 @@
 
     - name: "Reference"
       key: "/learn/reference"
-      path: "/learn/reference/data-access"
+      path: "/learn/reference/data-access-controls"
       secondaryLinks:
         - name: "Data Access Controls"
           key: "/learn/reference/data-access-controls"
