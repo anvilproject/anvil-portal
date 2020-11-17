@@ -10,7 +10,7 @@
 /* Arrow - neutral. */
 .arrow {
     color: var(--primary);
-    transition: transform 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 50ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Arrow - open e.g. down. */
