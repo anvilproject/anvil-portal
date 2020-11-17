@@ -44,3 +44,8 @@
     right: 24px;
     width: 60px;
 }
+
+/* Code - highlight. */
+:not(pre) > code[class*="language-"], pre[class*='language-'] {
+    background-color: var(--shade-light);
+}

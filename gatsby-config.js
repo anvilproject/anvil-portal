@@ -165,6 +165,12 @@ module.exports = {
                         }
                     },
                     `gatsby-remark-images-medium-zoom`,
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            classPrefix: "language-",
+                        },
+                    },
                 ]
             }
         },
