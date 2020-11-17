@@ -64,6 +64,8 @@ class Tooltip extends React.Component {
         const {children, label, multiline} = this.props,
             {show, mounted, tooltipPos} = this.state,
             {x, y} = tooltipPos;
+        const identifier = Date.now();
+        const tooltipId = `tooltip${identifier}`;
 
         const tooltip = <div ref={this.tooltipRef} style={{left: x, top: y}} className={classNames({[compStyles.show]: show}, compStyles.tooltip)}>{label}</div>;
 
@@ -71,6 +73,7 @@ class Tooltip extends React.Component {
             <>
                 {mounted ? ReactDOM.createPortal(tooltip, this.portalRoot) : null}
                 <span className={classNames({[compStyles.multiline]: multiline})}
+                      id={tooltipId}
                       onBlur={this.hideTooltip()}
                       onFocus={this.showTooltip()}
                       onMouseOut={this.hideTooltip()}

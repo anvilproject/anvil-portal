@@ -1,0 +1,26 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL nav arrow component.
+ */
+
+@import "../../../styles/vars.module.css";
+
+/* Arrow - neutral. */
+.arrow {
+    color: var(--primary);
+    transition: transform 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Arrow - open e.g. down. */
+.arrow.rotate {
+    transform: rotate(90deg);
+}
+
+/* Placeholder. */
+.placeholder {
+    flex: none;
+    height: 24px;
+    width: 24px;
+}
