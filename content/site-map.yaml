@@ -76,7 +76,7 @@
     - name: "Data Submission"
       key: "/faq/data-submission"
     - name: "Resources for AnVIL Users"
-      key: "/faq/learn-for-anvil-users"
+      key: "/faq/resources-for-anvil-users"
     - name: "Using AnVIL"
       key: "/faq/using-anvil"
 - name: "Guides"

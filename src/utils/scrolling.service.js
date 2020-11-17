@@ -46,8 +46,8 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  */
 export function calculateNavMaxHeight(bannerHeight, element) {
 
-    // The maxHeight setting is not required when the window innerWidth is less than 840. (Outline is dropped at 
-    // 1388px, left nav is stacked at 840).
+    // The maxHeight setting is not required when the window innerWidth is less than 840.
+    // (Outline is dropped at 1388px, left nav is stacked at 840).
     // In this instance, the outline and nav styles are defined by a different set of responsive settings.
 
     if ( !element || window.innerWidth < 840 ) {
@@ -55,8 +55,12 @@ export function calculateNavMaxHeight(bannerHeight, element) {
         return;
     }
 
-    // Calculate the side nav style "maxHeight", taking into account the sticky top position at 100px,
-    // the section padding 60px and the footer 96px and the height of the privacy banner (if showing).
+    // Calculate the side nav style "maxHeight", taking into account the:
+    // - sticky top position at 100px,
+    // - section padding 60px
+    // - footer 104px
+    // - privacy banner height (if showing).
+
     // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
     // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
     // sticky top position at 100px, until the content approaches end of scrolling.
@@ -65,6 +69,9 @@ export function calculateNavMaxHeight(bannerHeight, element) {
     // bottom edge of the content.
 
     let elementHeight;
+    const footerHeight = 104;
+    const sectionPaddingHeight = 60;
+    const stickyTopHeight = 100;
 
     // If the privacy banner is showing, and the scroll position has not reached the end of the content,
     // a different set of rules will govern the "maxHeight".
@@ -74,11 +81,11 @@ export function calculateNavMaxHeight(bannerHeight, element) {
 
     if ( calculatePixelPositionFromEnd() < 160 ) {
 
-        elementHeight = document.body.clientHeight - window.scrollY - 100 - 60 - 96 - bannerHeight;
+        elementHeight = document.body.clientHeight - window.scrollY - stickyTopHeight - sectionPaddingHeight - footerHeight - bannerHeight;
     }
     else {
 
-        elementHeight = window.innerHeight - 100 - bannerHeight;
+        elementHeight = window.innerHeight - stickyTopHeight - bannerHeight;
     }
 
     return element.style.maxHeight = `${elementHeight}px`;
@@ -95,6 +102,7 @@ export function getContentAnchors() {
     const contentEl = document.querySelector('[id^="content"]');
 
     if ( !contentEl ) {
+
         return;
     }
 
@@ -250,9 +258,11 @@ function calculatePixelPositionFromEnd() {
 function scrollTo(el, scrollTop) {
 
     if ( el.scrollTo ) {
+
         el.scrollTo(0, scrollTop)
     }
     else {
+
         el.scrollTop = scrollTop;
     }
 }

@@ -6,79 +6,114 @@
  * Filters navigation by document path.
  */
 
+// App dependencies
+import {DraftStaticQuery} from "../hooks/draft-query";
+import {NavStaticQuery} from "../hooks/nav-query";
+
+/**
+ * Return the navigation links for the specified docPath.
+ *
+ * @param docPath
+ * @returns {*}
+ */
+export function getNav(docPath) {
+
+    if ( docPath ) {
+
+        /* Grab the section navigation. */
+        const section = findSectionNavigation(docPath);
+
+        /* Remove any documents in draft mode and return the navigation. */
+        if ( Object.keys(section).length > 0 && section.primaryLinks ) {
+
+            return removeDraftDocuments(section.primaryLinks);
+        }
+    }
+
+    return [];
+}
+
+/**
+ * Returns the section navigation for the specified docPath.
+ *
+ * @returns {{}}
+ */
+function findSectionNavigation(docPath) {
+
+    /* Grab all sections navigation. */
+    const sections = NavStaticQuery();
+
+    if ( sections ) {
+
+        /* Grab section key from the docPath. */
+        const sectionKey = getKeyOfPath(docPath, 1);
+
+        /* Find the corresponding section. */
+        return sections.find(section => section.key === sectionKey);
+    }
+
+    return {};
+}
+
 /**
  * Given a document path, return either its corresponding section or primary link.
  * Param x = 0 corresponds to section, x = 1 to primaryLink and so on.
+ *
  * @param docPath
  * @param x
  * @returns {*}
  */
-export function getKeyOfPath(docPath, x) {
+function getKeyOfPath(docPath, x) {
 
     return docPath.split('/')[x];
 }
 
 /**
- * Returns either the path (if there is one) or the key
+ * Returns true if the link is in draft mode.
+ *
+ * @param draftDocs
  * @param link
- * @returns {*}
  */
-export function getPath(link) {
+function isDraftMode(draftDocs, link) {
 
-    return link.path ? link.path : link.key ? link.key : '/';
-}
-
-/**
- * Given a path, return the navigation for the section.
- * @param siteMap
- * @param docPath
- * @returns {Array}
- */
-export function getSectionNav(siteMap, docPath) {
-
-    // Get section for the document path
-    const section = siteMap.filter(n => n.key === getKeyOfPath(docPath, 1))[0];
-
-    if (!section) {
-        return [];
-    }
-
-    // Return error if no primary links for the section
-    if (section && !section.primaryLinks) {
-        throw new Error("No links for section: " + section);
-    }
-
-    // Return all primary links for the document section
-    return section.primaryLinks;
+    return draftDocs.some(draftDoc => draftDoc.slug === link.key);
 }
 
 /**
  * Returns a filtered siteMap that will exclude any documents in draft mode.
  *
- * @param siteMap
- * @param draftDocuments
+ * @param navLinks
  * @returns {*}
  */
-export function removeDraftDocuments(siteMap, draftDocuments) {
+function removeDraftDocuments(navLinks) {
 
-    if ( !draftDocuments ) {
+    /* Grab any draft documents. */
+    const draftDocs = DraftStaticQuery();
 
-        // If there are no documents in draft mode, return the siteMap for all documents
-        return siteMap;
-    }
-    else {
+    if ( draftDocs ) {
 
-        // Return a filtered siteMap, excluding any documents in draft mode.
-        // Draft mode is indicated by the frontmatter where "draft" is true.
-        return siteMap.filter(page => {
+        /* Return a new collection of navigation links, excluding any documents in draft mode. */
+        /* Draft mode is indicated by the frontmatter where "draft" is true. */
+        return navLinks.reduce((acc, navLink) => {
 
-            if (page.secondaryLinks) {
-                page.secondaryLinks = page.secondaryLinks.filter(secondaryLink => {
-                    return !draftDocuments.some(draftDoc => draftDoc.slug === secondaryLink.key)
-                });
+            if ( !isDraftMode(draftDocs, navLink) ) {
+
+                /* Clone the link. */
+                const navLinkClone = Object.assign({}, navLink);
+                const secondaryLinks = navLink.secondaryLinks;
+
+                /* Filter any secondary links in draft mode. */
+                if ( secondaryLinks ) {
+
+                    navLinkClone.secondaryLinks = secondaryLinks.filter(sLink => !isDraftMode(draftDocs, sLink));
+                }
+
+                acc.push(navLinkClone);
             }
 
-            return !draftDocuments.some(draftDoc => draftDoc.slug === page.key);
-        });
+            return acc;
+        }, []);
     }
+
+    return navLinks;
 }

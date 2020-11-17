@@ -6,114 +6,61 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
-import React from "react";
+import React, {useCallback, useEffect, useRef} from "react";
 
 // App dependencies
-import {DraftStaticQuery} from "../../hooks/draft-query";
-import {NavStaticQuery} from "../../hooks/nav-query";
+import NavList from "./nav-list/nav-list";
 import * as NavigationService from '../../utils/navigation.service';
 import * as ScrollingService from "../../utils/scrolling.service";
 
 // Styles
 import compStyles from "./nav.module.css";
 
-let classNames = require("classnames");
-let navEl;
+function Nav(props) {
 
-class Nav extends React.Component {
+    const {bannerHeight, docPath} = props;
+    const navRef = useRef(null);
+    const nav = NavigationService.getNav(docPath);
+    const showNav = nav.length > 1;
 
-    componentDidMount() {
+    const setSideNavMaxHeight = useCallback(() => {
 
-        // Side nav container element
-        navEl = document.getElementById("nav");
+        /* Sets the nav container maxHeight. */
+        ScrollingService.calculateNavMaxHeight(bannerHeight, navRef.current);
+    }, [bannerHeight]);
 
-        // Initialize nav style
-        this.setSideNavMaxHeight();
+    /* useEffect - componentDidMount, componentWillUnmount. */
+    useEffect(() => {
 
-        window.addEventListener("scroll", this.setSideNavMaxHeight);
-        window.addEventListener("resize", this.setSideNavMaxHeight);
-    };
+        /* Initialize nav style. */
+        setSideNavMaxHeight();
 
-    componentWillUnmount() {
+        /* Add event listeners "scroll" and "resize". */
+        window.addEventListener("scroll", setSideNavMaxHeight);
+        window.addEventListener("resize", setSideNavMaxHeight);
 
-        window.removeEventListener("scroll", this.setSideNavMaxHeight);
-        window.removeEventListener("resize", this.setSideNavMaxHeight);
-    };
+        return() => {
 
-    componentDidUpdate(prevProp) {
-
-        const {bannerHeight} = this.props;
-
-        if ( prevProp.bannerHeight !== bannerHeight ) {
-
-            this.setSideNavMaxHeight();
-        }
-    }
-
-    isActive = (key) => {
-
-        const {docPath} = this.props;
-
-        return docPath === key;
-    };
-
-    isSelected = (key) => {
-
-        const {docPath} = this.props;
-
-        return docPath.startsWith(key) && docPath !== key;
-    };
-
-    setSideNavMaxHeight = () => {
-
-        const {bannerHeight} = this.props;
-
-        // Sets the nav container maxHeight.
-        ScrollingService.calculateNavMaxHeight(bannerHeight, navEl);
-    };
-
-    render() {
-        const {hideNav, leftAlignPage, nav} = this.props;
-
-        const NavItem = (props) => {
-
-            const {item} = props,
-                {key, name, secondaryLinks} = item;
-
-            return (
-                <li>
-                    <Link className={classNames(compStyles.link, {[compStyles.active]: this.isActive(key)}, {[compStyles.selected]: this.isSelected(key)})}
-                          to={NavigationService.getPath(item)}>{name}</Link>
-                    {secondaryLinks ?
-                        <ul>{secondaryLinks.map((nestedItem, k) =>
-                            <NavItem key={k} item={nestedItem}/>)}
-                        </ul> : null}
-                </li>
-            )
+            /* Remove event listeners. */
+            window.removeEventListener("scroll", setSideNavMaxHeight);
+            window.removeEventListener("resize", setSideNavMaxHeight);
         };
+    }, [setSideNavMaxHeight]);
 
-        return (
-            <div className={compStyles.sideNavContainer}>
-                <div className={classNames({[compStyles.left]: leftAlignPage}, compStyles.sideNav, {[compStyles.hidden]: hideNav})} id="nav">
-                    <ul>
-                        {!hideNav && nav.map((navItem, i) => <NavItem key={i} item={navItem}/>)}
-                    </ul>
-                </div>
-            </div>
-        );
-    }
-}
+    /* useEffect - componentDidUpdate - bannerHeight. */
+    useEffect(() => {
 
-export default (props) => {
-
-    const docPath = props.docPath;
-    const allSiteMapYaml = docPath ? NavigationService.getSectionNav(NavStaticQuery(), docPath) : [];
-    const draftDocs = DraftStaticQuery();
-    const nav = NavigationService.removeDraftDocuments(allSiteMapYaml, draftDocs);
-    const hideNav = nav.length <= 1;
+        setSideNavMaxHeight();
+    }, [setSideNavMaxHeight]);
 
     return (
-        <Nav nav={nav} docPath={docPath} hideNav={hideNav} {...props}/>
+        <div className={compStyles.sideNavContainer}>
+            {showNav ?
+                <div className={compStyles.sideNav} ref={navRef}>
+                    <NavList docPath={docPath} nav={nav}/>
+                </div> : null}
+        </div>
     );
 }
+
+export default Nav;
