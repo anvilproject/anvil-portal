@@ -6,8 +6,8 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
-import React from "react";
+import {navigate} from "gatsby";
+import React, {useState} from "react";
 
 // Styles
 import compStyles from "./nav-item.module.css";
@@ -18,17 +18,38 @@ function NavItem(props) {
 
     const {docPath, item} = props,
         {key, name, path, secondaryLinks} = item;
+    const [, , itemPrimaryKey] = docPath.split("/");
+    const [, , keyPrimaryKey] = key.split("/");
+    const [itemActive, ] = useState(docPath === key);
+    const [itemButton, ] = useState(!!secondaryLinks);
+    const [itemOpen, setItemOpen] = useState(keyPrimaryKey === itemPrimaryKey);
+    const showSecondaryLinks = secondaryLinks && itemOpen;
     const urlTo = path || key;
+    const classNamesItem = classNames(
+        {[compStyles.active]: itemActive},
+        {[compStyles.button]: itemButton},
+        {[compStyles.link]: !itemButton},
+        {[compStyles.open]: itemOpen});
 
-    const isActive = () => {
+    const onHandleClick = () => {
 
-        return docPath === key;
+        if ( secondaryLinks ) {
+
+            setItemOpen(itemOpen => !itemOpen);
+        }
+        else {
+
+            navigate(urlTo);
+        }
     };
 
     return (
         <li className={compStyles.navItem}>
-            <Link className={classNames({[compStyles.active]: isActive()})} to={urlTo}>{name}</Link>
-            {secondaryLinks ?
+            <span className={classNamesItem} role={"presentation"} onClick={() => onHandleClick()}>
+                <span>{name}</span>
+                {secondaryLinks ? <span className={classNames(compStyles.arrow, "material-icons-round")}>keyboard_arrow_right</span> : null}
+            </span>
+            {showSecondaryLinks ?
                 <ul>
                     {secondaryLinks.map((nestedItem, k) => <NavItem key={k} docPath={docPath} item={nestedItem}/>)}
                 </ul> : null}
@@ -36,4 +57,4 @@ function NavItem(props) {
     );
 }
 
-export default NavItem;
+export default React.memo(NavItem);
