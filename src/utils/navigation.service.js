@@ -24,7 +24,7 @@ export function getNav(docPath) {
         const section = findSectionNavigation(docPath);
 
         /* Remove any documents in draft mode and return the navigation. */
-        if ( Object.keys(section).length > 0 && section.primaryLinks ) {
+        if ( section && Object.keys(section).length > 0 && section.primaryLinks ) {
 
             return removeDraftDocuments(section.primaryLinks);
         }
