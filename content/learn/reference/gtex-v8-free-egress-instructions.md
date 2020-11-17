@@ -92,7 +92,7 @@ $ gen3-client configure --profile=<profile_name>
 You’re expected to see messages of successful configuration as shown below.\
 ![Step 3 - Configure the Gen3-Client](../_images/step-3-configure-gen3-client.png)
 
-## Step 4 - Download Object Files
+### Step 4 - Download Object Files
 To download the object files, use the manifest.json (Step 2) with the gen3-client and run the command line as shown below.
 
 ```shell
