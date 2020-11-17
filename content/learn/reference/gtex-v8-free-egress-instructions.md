@@ -1,21 +1,36 @@
 ---
 title: "GTEx v8 - Free Egress Instructions"
 author: "AnVIL"
-description: ""
+description: "Instructions for free egress download of GTEx v8 from the AnVIL Gen3 Data Commons"
 ---
 
 # GTEx v8 - Free Egress Instructions
 
 ## Overview
-The Genotype-Tissue Expression (GTEx) Program is a widely used data resource and tissue bank to study the relationship between genetic variants (inherited changes in DNA sequence) and gene expression (how genes are turned on and off) in multiple human tissues and across individuals. Previously, large genetic studies identified variants that are associated with human diseases. However, it is less clear how these variants affect gene expression and thereby contribute to human diseases. To provide insight into how genes are expressed differently across the body and how they are regulated, GTEx includes whole-genome sequence and RNA-sequence from nearly 1000 deceased adult donors, with multiple tissue samples collected per donor (e.g. lung, brain, pancreas, skin, etc.). It also features an image library of the tissue samples, and a form to request tissue samples.
+The Genotype-Tissue Expression (GTEx) Program is a widely used data resource and tissue bank to study the relationship between genetic variants (inherited changes in DNA sequence) and gene expression (how genes are turned on and off) in multiple human tissues and across individuals. Previously, large genetic studies identified variants that are associated with human diseases. However, it is less clear how these variants affect gene expression and thereby contribute to human diseases. 
 
-The primary entry point for accessing GTEx data is through the GTEx portal (<https://gtexportal.org/>). The GTEx Portal provides open access to data including gene expression, QTLs, and histology images. However, due to the nature of our donor consent agreement, raw data and attributes which might be used to identify the donors, such as raw sequencing data or variant calls, are not publicly available on the GTEx Portal. Accessing the raw data requires authorization from the NIH database of Genotypes and Phenotypes (dbGaP). dbGaP was developed to archive and distribute the data and results from studies that have investigated the interaction of genotype and phenotype in Humans. If you do not currently have access to the GTEx data on dbGaP, you can apply for access to the data by selecting “Request Access” at this [link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v8.p2).
+To provide insight into how genes are expressed differently across the body and how they are regulated, GTEx includes whole-genome sequence and RNA-sequence from nearly 1000 deceased adult donors, with multiple tissue samples collected per donor (e.g. lung, brain, pancreas, skin, etc.). It also features an image library of the tissue samples, and a form to request tissue samples.
 
-Once you are approved for accessing the raw GTEx data, you can either analyze the protected data within the cloud using the Terra Platform within [this workspace](https://app.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_V8_hg38) or you can download the protected data to your home institutions for free using the instructions provided below. For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility. If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on “[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)” for more information. Also note, you should not attempt to export the protected data from the Terra workspace, as this will incur egress fees as the data are exported from the cloud environment. Instead, you should follow the directions below to download the data free of charge from the Gen3 platform.
+The primary entry point for accessing GTEx data is through the GTEx portal (<https://gtexportal.org/>). The GTEx Portal provides open access to data including gene expression, QTLs, and histology images. However, due to the nature of our donor consent agreement, raw data and attributes which might be used to identify the donors, such as raw sequencing data or variant calls, are not publicly available on the GTEx Portal. 
 
-## Download GTEx v8 phenotypic data
+### Requesting Access
+Accessing the raw data requires authorization from the NIH database of Genotypes and Phenotypes (dbGaP). dbGaP was developed to archive and distribute the data and results from studies that have investigated the interaction of genotype and phenotype in Humans. If you do not currently have access to the GTEx data on dbGaP, you can apply for access to the data by selecting “Request Access” at this [link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v8.p2).
+
+Once you are approved for accessing the raw GTEx data, you can either analyze the protected data within the cloud using the Terra Platform within [this workspace](https://app.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_V8_hg38) or you can download the protected data to your home institutions for free using the instructions provided below. 
+
+### Downloading vs. Analyzing in Terra
+For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility.
+
+ Please note that you should not attempt to export the protected data from the Terra workspace, as this will incur egress fees as the data are exported from the cloud environment. Instead, please follow the directions below to download the data free of charge from the Gen3 platform.
+ 
+### Security Requirements 
+ If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on “[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)” for more information. 
+ 
+.
+
+## Downloading GTEx v8 Phenotypic Data
 ### Step 1 - Login to Anvil Gen3
-**Login** to the AnVIL Gen3 Commons with your **NIH credentials** and navigate to the Exploration page.
+**Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io) with your **NIH credentials** and navigate to the Exploration page.
 
 ![Step 1 - Login to Anvil Gen3](../_images/step-1-login-to-anvil-gen3.png)
 
@@ -46,7 +61,9 @@ Additional search facets can be applied in the “Downloadable” tab in order t
 $ pip install pypfb
 ```
 
-- Note: Please make sure you are running at least version 0.5.0. To ensure this, you can run the **command line** shown below
+> Note: Please make sure you are running at least version 0.5.0. To ensure this, you can 
+run the **command line** shown below:
+
 ```shell
 $ pip install pypfb==0.5.0
 ```
@@ -62,7 +79,7 @@ Running the command above will generate a directory of (./tsvs/) that contains a
 
 ![Step 4 - Convert PFB to TSV](../_images/step-4 -convert-pfb-to-tsv.png)
 
-## Download GTEx v8 Object Files
+## Downloading GTEx v8 Object Files
 
 ### Step 1 - Login to Anvil Gen3
 **Login** to the AnVIL Gen3 Commons with your **NIH credentials** and navigate to the Exploration page.
