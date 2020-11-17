@@ -62,7 +62,11 @@ const typography = new Typography({
                 paddingLeft: rhythm(1+1/3)
             },
             "li br + span": {
+                marginLeft: "0 !important",
                 marginTop: "16px"
+            },
+            "li blockquote": {
+                margin: "16px 0",
             },
             "ol ol, ul ol": {
                 listStyleType: "lower-roman"
