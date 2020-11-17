@@ -9,6 +9,9 @@
 import {navigate} from "gatsby";
 import React, {useState} from "react";
 
+// App dependencies
+import NavArrow from "../nav-arrow/nav-arrow";
+
 // Styles
 import compStyles from "./nav-item.module.css";
 
@@ -23,13 +26,10 @@ function NavItem(props) {
     const [itemActive, ] = useState(docPath === key);
     const [itemButton, ] = useState(!!secondaryLinks);
     const [itemOpen, setItemOpen] = useState(keyPrimaryKey === itemPrimaryKey);
+    const showArrow = secondaryLinks && secondaryLinks.length > 0;
     const showSecondaryLinks = secondaryLinks && itemOpen;
     const urlTo = path || key;
-    const classNamesItem = classNames(
-        {[compStyles.active]: itemActive},
-        {[compStyles.button]: itemButton},
-        {[compStyles.link]: !itemButton},
-        {[compStyles.open]: itemOpen});
+    const classNamesItem = classNames({[compStyles.active]: itemActive}, {[compStyles.button]: itemButton});
 
     const onHandleClick = () => {
 
@@ -46,8 +46,8 @@ function NavItem(props) {
     return (
         <li className={compStyles.navItem}>
             <span className={classNamesItem} role={"presentation"} onClick={() => onHandleClick()}>
+                <NavArrow rotate={itemOpen} showArrow={showArrow}/>
                 <span>{name}</span>
-                {secondaryLinks ? <span className={classNames(compStyles.arrow, "material-icons-round")}>keyboard_arrow_right</span> : null}
             </span>
             {showSecondaryLinks ?
                 <ul>
