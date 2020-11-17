@@ -61,6 +61,9 @@ const typography = new Typography({
                 margin: 0,
                 paddingLeft: rhythm(1+1/3)
             },
+            "li br + span": {
+                marginTop: "16px"
+            },
             "ol ol, ul ol": {
                 listStyleType: "lower-roman"
             },

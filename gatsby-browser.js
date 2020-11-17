@@ -11,6 +11,7 @@ const Bowser = require("bowser");
 
 // Required for Edge, otherwise we get a "PerformanceObserver not defined" error 
 require('@fastly/performance-observer-polyfill/polyfill');
+require("prismjs/themes/prism.css");
 
 exports.onClientEntry = () => {
 

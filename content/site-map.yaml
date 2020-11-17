@@ -198,11 +198,12 @@
           key: "/learn/anvil-mooc/use-case-gwas"
         - name: "Use Case: eQTL"
           key: "/learn/anvil-mooc/use-case-eqtl"
-
     - name: "Reference"
       key: "/learn/reference"
       path: "/learn/reference/data-access-controls"
       secondaryLinks:
+        - name: "GTEx v8 - Free Egress Instructions"
+          key: "/learn/reference/gtex-v8-free-egress-instructions"
         - name: "Data Access Controls"
           key: "/learn/reference/data-access-controls"
 #    - name: "Example Page"
