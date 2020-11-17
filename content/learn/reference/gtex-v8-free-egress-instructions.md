@@ -30,7 +30,7 @@ For many analyses, it will be substantially easier and more efficient to perform
 
 ## Downloading GTEx v8 Phenotypic Data
 ### Step 1 - Login to Anvil Gen3
-**Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io) with your **NIH credentials** and navigate to the Exploration page.
+**Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io/login) with your **NIH credentials** and navigate to the Exploration page.
 
 ![Step 1 - Login to Anvil Gen3](../_images/step-1-login-to-anvil-gen3.png)
 
@@ -118,6 +118,6 @@ $ gen3-client download-multiple --profile=<profile_name>
 --download-path=<path-to-file-directory> --protocol=s3
 ```
 
-Important: “**--protocol**” **tag** is important to this command as it will determine which bucket the files will be downloaded from. The “**s3**” value will download from the egress free Cleversafe bucket for the datasets in the “Downloadable” tab.
+> Important: “**--protocol**” **tag** is important to this command as it will determine which bucket the files will be downloaded from. The “**s3**” value will download from the egress free Cleversafe bucket for the datasets in the “Downloadable” tab.
 
-**Note**: With larger manifests containing more than 100,000 files such as GTEx v8, the initial process of reading and parsing the manifest into the gen3-client can take anywhere from 30 - 240 mins.
+> **Note**: With larger manifests containing more than 100,000 files such as GTEx v8, the initial process of reading and parsing the manifest into the gen3-client can take anywhere from 30 - 240 mins.
