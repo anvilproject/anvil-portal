@@ -21,7 +21,7 @@ Once you are approved for accessing the raw GTEx data, you can either analyze th
 ### Downloading vs. Analyzing in Terra
 For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility.
 
-Please note that you should not attempt to export the protected data from the Terra workspace, as this will incur egress fees as the data are exported from the cloud environment. Instead, please follow the directions below to download the data free of charge from the Gen3 platform.
+> Please note that you should not attempt to export the protected data from the Terra workspace, as this will incur egress fees as the data are exported from the cloud environment. Instead, please follow the directions below to download the data free of charge from the Gen3 platform.
 
 ### Security Requirements
 If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on “[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)” for more information.

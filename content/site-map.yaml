@@ -182,7 +182,7 @@
          key: "/ncpi/training/2020-03-17-train-your-colleague"
        - name: "MaGIC Jamboree (June 2020)"
          key: "/events/magic2020"
-    - name: "AnVIL MOOC"
+    - name: "MOOC"
       key: "/learn/anvil-mooc"
       path: "/learn/anvil-mooc/what-is-anvil"
       secondaryLinks:
