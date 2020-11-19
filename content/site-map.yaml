@@ -32,6 +32,16 @@
     - name: "Data"
       key: "/data/data"
       path: "/data"
+- name: "News"
+  key: "events"
+  path: "/news"
+  position:
+    location: "h"
+    order: 4
+  primaryLinks:
+    - name: "Events"
+      key: "/news/news"
+      path: "/news"
 - name: "Events"
   key: "events"
   path: "/events"
