@@ -8,7 +8,9 @@ title: "NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data"
 
 # NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data
 
-One of the most widely-used resources for studying the relationship between genetic variation and gene expression is the [Genotype-Tissue Expression (GTEx) project][1]. Established by the NIH Common Fund in 2010, the recent [GTEx V8 dataset][2] represents the largest atlas of human gene expression and corresponding trait loci to date (dbGaP accession: [phs000424.v8.p2][3]). This dataset contains genotype data from 838 postmortem donors and 17,382 RNA-seq samples across 54 tissue sites and 2 cell lines. The [GTEx Portal][4] provides uniformly processed gene expression data, a QTL Browser, and a mechanism by which to request available biospecimens to allow researchers to study the impact of genetic variation on complex traits and diseases.
+One of the most widely-used resources for studying the relationship between genetic variation and gene expression is the [Genotype-Tissue Expression (GTEx) project][1]. Established by the NIH Common Fund in 2010, the recent [GTEx V8 dataset][2] represents the largest atlas of human gene expression and corresponding trait loci to date (dbGaP accession: [phs000424.v8.p2][3]).
+ 
+ This dataset contains genotype data from 838 postmortem donors and 17,382 RNA-seq samples across 54 tissue sites and 2 cell lines. The [GTEx Portal][4] provides uniformly processed gene expression data, a QTL Browser, and a mechanism by which to request available biospecimens to allow researchers to study the impact of genetic variation on complex traits and diseases.
 
 Controlled access to raw and protected data that may identify donors is provided through the [AnVIL Project][5]. Established in 2018, the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) provides a cloud-based environment that colocates an extensive collection of high-value datasets with commonly used bioinformatics tools in a secure computing environment.
 
