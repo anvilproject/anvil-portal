@@ -7,6 +7,7 @@ title: "NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data"
 ---
 
 # NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data
+##### Posted: November 20, 2020
 
 One of the most widely-used resources for studying the relationship between genetic variation and gene expression is the [Genotype-Tissue Expression (GTEx) project][1]. Established by the NIH Common Fund in 2010, the recent [GTEx V8 dataset][2] represents the largest atlas of human gene expression and corresponding trait loci to date (dbGaP accession: [phs000424.v8.p2][3]).
  
@@ -18,7 +19,9 @@ In support of the evolving nature of the NHGRI mission, we are pleased to announ
 
 We foresee that in the long term, more users will choose to perform the analysis of GTEx and other large datasets directly within AnVIL’s cloud environment.  AnVIL offers an elastic, shared computing resource, with active threat detection and monitoring, that provides an increasingly attractive alternative to redundantly downloaded data amongst siloed compute infrastructure.
 
-AnVIL is built on a set of established components that have been used in a number of flagship scientific projects. The [Terra platform][6] provides a compute environment with secure data and analysis sharing capabilities. [Dockstore][7] provides standards based sharing of containerized tools and workflows. [R/Bioconductor][8] and [Galaxy][9] provide environments for users at different skill levels to construct and execute analyses. The [Gen3 data commons][10] framework provides data and metadata ingest, querying, and organization. Taken together, the AnVIL cloud platform allows researchers to build novel cohorts out of GTEx and other major NHGRI datasets such as [CCDG][11], [CMG][12], and [eMERGE][13] and compute on them in place with scalable and easy to use tools.
+AnVIL is built on a set of established components that have been used in a number of flagship scientific projects. The [Terra platform][6] provides a compute environment with secure data and analysis sharing capabilities. [Dockstore][7] provides standards based sharing of containerized tools and workflows. [R/Bioconductor][8] and [Galaxy][9] provide environments for users at different skill levels to construct and execute analyses. The [Gen3 data commons][10] framework provides data and metadata ingest, querying, and organization.
+ 
+ Taken together, the AnVIL cloud platform allows researchers to build novel cohorts out of GTEx and other major NHGRI datasets such as [CCDG][11], [CMG][12], and [eMERGE][13] and compute on them in place with scalable and easy to use tools.
 
 [1]: https://www.genome.gov/Funded-Programs-Projects/Genotype-Tissue-Expression-Project
 [2]: https://science.sciencemag.org/content/369/6509/1318
