@@ -26,6 +26,10 @@ For many analyses, it will be substantially easier and more efficient to perform
 ### Security Requirements
 If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on “[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)” for more information.
 
+### Getting Help
+For help or support executing the instructions below please reach out to the Gen3 team at <support@datacommons.io>.
+
+
 ## Downloading GTEx v8 Phenotypic Data
 ### Step 1 - Login to Anvil Gen3
 **Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io/login) with your **NIH credentials** and navigate to the Exploration page.
