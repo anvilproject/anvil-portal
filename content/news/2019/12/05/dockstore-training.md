@@ -2,7 +2,7 @@
 title: "Dockstore: An Introduction"
 date: "2019-12-05"
 description: "Dockstore is a platform for sharing portable, container-based tools and workflows written in CWL, WDL, and Nextflow. This webinar covers the basics of Dockstore, how it is useful for the community, and how to use it in your research."
-featured: true
+featured: false
 author: "AnVIL"
 ---
 
