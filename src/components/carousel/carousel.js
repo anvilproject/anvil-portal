@@ -58,12 +58,12 @@ class Carousel extends React.Component {
 
         if ( docType.toLowerCase() === "tools" ) {
 
-            return "/tools";
+            return "/overview#analysis-tools";
         }
 
         if ( docType.toLowerCase() === "platforms" ) {
 
-            return "/about";
+            return "/overview#platform-components";
         }
 
         return url ? url : slug;
