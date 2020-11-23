@@ -35,26 +35,74 @@ class ProviderDashboardFilter extends React.Component {
             /* Update clone. */
             termsCheckedClone.set(value, checked);
 
-            /** Get tracking values for selected facet */
-            const previousQuery = this.state.query;
-            const {facetsByTerm} = this.props;
-            const currentQuery = this.buildQuery(facetsByTerm, this.state.inputValue, termsCheckedClone);
+            /* Update termsChecked and query state and execute tracking. */
+            this.onHandleUpdateFacets(termsCheckedClone, value, checked);
+        };
 
-            /* Update state. */
-            this.setState({
-                termsChecked: termsCheckedClone,
-                query: currentQuery
-            });
+        this.onHandleClearFacet = (facet) => {
 
-            /* Execute tracking */
-            AnvilGTMService.trackSearchFacetSelected(
-                facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
+            /* Clear search. */
+            if ( facet === "search" ) {
+
+                this.onHandleClearInput();
+            }
+            /* Clear facet. */
+            else {
+
+                const {facetsByTerm} = this.props;
+                const {termsChecked} = this.state;
+                const termsCheckedClone = new Map(termsChecked);
+
+                /* Update clone. */
+                [...termsChecked].forEach(([term, checked]) => {
+
+                    const termFacet = facetsByTerm.get(term);
+
+                    if ( termFacet === facet && checked ) {
+
+                        termsCheckedClone.set(term, false);
+                    }
+                });
+
+                this.onHandleUpdateFacets(termsCheckedClone);
+            }
         };
 
         this.onHandleClearInput = () => {
 
             /* Handle change in search value. */
-            this.onHandleSearch("");
+            this.onHandleUpdateSearch("");
+        };
+
+        this.onHandleClearSearch = () => {
+
+            this.onHandleClearInput();
+            this.onHandleClearFacets();
+        };
+
+        this.onHandleClearTerm = (facet, term) => {
+
+            /* Update search. */
+            if ( facet === "search" ) {
+
+                const {inputValue} = this.state;
+
+                /* Split inputValue into terms. */
+                /* Remove the term from the terms and create a new inputValue string. */
+                const terms = inputValue.split(" ");
+                const termIndex = terms.findIndex(input => input === term);
+                terms.splice(termIndex, 1);
+                const inputValueStr = terms.join(" ");
+
+                /* Update search with new inputValue string. */
+                this.onHandleUpdateSearch(inputValueStr);
+            }
+            /* Update facet. */
+            else {
+
+                /* Handle change in term value. */
+                this.onHandleChecked({value: term, checked: false});
+            }
         };
 
         this.onHandleInput = (event) => {
@@ -62,7 +110,7 @@ class ProviderDashboardFilter extends React.Component {
             const inputValue = event.target.value;
 
             /* Handle change in search value. */
-            this.onHandleSearch(inputValue);
+            this.onHandleUpdateSearch(inputValue);
         };
 
         this.state = ({
@@ -70,12 +118,16 @@ class ProviderDashboardFilter extends React.Component {
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsBySearchGroups: new Map(),
             termsChecked: new Map(),
             onHandleChecked: this.onHandleChecked,
+            onHandleClearFacet: this.onHandleClearFacet,
             onHandleClearInput: this.onHandleClearInput,
+            onHandleClearSearch: this.onHandleClearSearch,
+            onHandleClearTerm: this.onHandleClearTerm,
             onHandleInput: this.onHandleInput,
         });
     }
@@ -108,6 +160,7 @@ class ProviderDashboardFilter extends React.Component {
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
             setOfResultsBySearchGroups: new Map(),
@@ -153,29 +206,10 @@ class ProviderDashboardFilter extends React.Component {
      */
     buildQuery = (facetsByTerm, inputValue, termsChecked) => {
 
-        const selectedTermsByFacet = [...facetsByTerm.keys()]
-            .reduce((accum, term)=> {
+        const selectedTermsByFacet = this.getSelectedTermsByFacet(facetsByTerm, inputValue, termsChecked);
 
-                // Only add term to current query if it's currently selected
-                if ( termsChecked.get(term) ) {
-
-                    const facet = facetsByTerm.get(term);
-
-                    // A term as already been added to the current query for this facet; add term to existing array
-                    if ( accum.has(facet) ) {
-                        accum.get(facet).push(term);
-                    }
-                    // This is the first term selected for the facet, create new array containing term
-                    else {
-                        accum.set(facet, [term]);
-                    }
-                }
-                return accum;
-            }, new Map());
-
-        if ( inputValue ) {
-            selectedTermsByFacet.set("search", inputValue);
-        }
+        /* Update state selectedTermsByFacet. */
+        this.setState({selectedTermsByFacet: new Map(selectedTermsByFacet)});
 
         // Convert selected terms to valid query string object
         return new URLSearchParams(selectedTermsByFacet).toString();
@@ -188,6 +222,9 @@ class ProviderDashboardFilter extends React.Component {
         const stateChanged = ( prevState.dashboardIndexMounted !== dashboardIndexMounted );
 
         if ( stateChanged ) {
+
+            /* Update selected terms by facet. */
+            this.updateSelectedTermsByFacet();
 
             /* Update set of results. */
             this.updateSetOfResults();
@@ -230,6 +267,38 @@ class ProviderDashboardFilter extends React.Component {
         const results = dashboardIndex.search(queryString);
 
         return new Set(results.map(result => result.ref));
+    };
+
+    getSelectedTermsByFacet = (facetsByTerm, inputValue, termsChecked) => {
+
+        const selectedTermsByFacet = [...facetsByTerm.keys()]
+            .reduce((accum, term)=> {
+
+                // Only add term to current query if it's currently selected
+                if ( termsChecked.get(term) ) {
+
+                    const facet = facetsByTerm.get(term);
+
+                    // A term as already been added to the current query for this facet; add term to existing array
+                    if ( accum.has(facet) ) {
+
+                        accum.get(facet).push(term);
+                    }
+                    // This is the first term selected for the facet, create new array containing term
+                    else {
+
+                        accum.set(facet, [term]);
+                    }
+                }
+                return accum;
+            }, new Map());
+
+        if ( inputValue ) {
+
+            selectedTermsByFacet.set("search", inputValue.split(" "));
+        }
+
+        return selectedTermsByFacet;
     };
 
     getSetOfFacetedResults = (facet) => {
@@ -332,12 +401,10 @@ class ProviderDashboardFilter extends React.Component {
 
     initializeInputValue = () => {
 
-        const inputValue = this.getURLParams().get("search");
+        const inputValueStr = this.getURLParams().get("search") || "";
+        const inputStr = inputValueStr.replace(/,/g, " ");
 
-        if ( inputValue ) {
-
-            this.onHandleSearch(inputValue);
-        }
+        this.setState({inputValue: inputStr});
     };
 
     initializeTermsChecked = () => {
@@ -365,7 +432,44 @@ class ProviderDashboardFilter extends React.Component {
         return DashboardSearchService.DenyListInputs.some(deniedInput => inputValue.includes(deniedInput));
     };
 
-    onHandleSearch = (inputValue) => {
+    onHandleClearFacets = () => {
+
+        const {termsChecked} = this.state;
+        const termsCheckedClone = new Map(termsChecked);
+
+        [...termsCheckedClone].forEach(([term, checked]) => {
+
+            if ( checked ) {
+
+                termsCheckedClone.set(term, false);
+            }
+        });
+
+        this.onHandleUpdateFacets(termsCheckedClone);
+    };
+
+    onHandleUpdateFacets = (termsCheckedClone, value, checked) => {
+
+        /** Get tracking values for selected facet */
+        const previousQuery = this.state.query;
+        const {facetsByTerm} = this.props;
+        const currentQuery = this.buildQuery(facetsByTerm, this.state.inputValue, termsCheckedClone);
+
+        /* Update state. */
+        this.setState({
+            termsChecked: termsCheckedClone,
+            query: currentQuery
+        });
+
+        /* Execute tracking */
+        if ( value ) {
+
+            AnvilGTMService.trackSearchFacetSelected(
+                facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
+        }
+    };
+
+    onHandleUpdateSearch = (inputValue) => {
 
         if ( this.isInputDenied(inputValue) ) {
 
@@ -397,6 +501,9 @@ class ProviderDashboardFilter extends React.Component {
         const stateChanged = inputValueChanged || termsCheckedChanged;
 
         if ( dashboardIndexMounted && stateChanged ) {
+
+            /* Update selected terms by facet. */
+            this.updateSelectedTermsByFacet();
 
             /* Update set of results. */
             this.updateSetOfResults();
@@ -444,6 +551,17 @@ class ProviderDashboardFilter extends React.Component {
 
         /* Push to URL. */
         window.history.pushState(null, "", `?${params.toString()}`);
+    };
+
+    updateSelectedTermsByFacet = () => {
+
+        const {facetsByTerm} = this.props;
+        const {inputValue, termsChecked} = this.state;
+
+        const selectedTermsByFacet = this.getSelectedTermsByFacet(facetsByTerm, inputValue, termsChecked);
+
+        /* Update state selectedTermsByFacet. */
+        this.setState({selectedTermsByFacet: new Map(selectedTermsByFacet)});
     };
 
     updateSetOfResults = () => {
@@ -497,15 +615,15 @@ class ProviderDashboardFilter extends React.Component {
 
     render() {
         const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
-            {inputValue, setOfCountResultsByFacet, setOfResults, termsChecked,
-                onHandleChecked, onHandleClearInput, onHandleInput} = this.state;
+            {inputValue, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
+                onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
-                value={{checkboxGroups, inputValue, setOfResults, summaries, termsChecked, termsCount, workspaces,
-                    onHandleChecked, onHandleClearInput, onHandleInput}}>
+                value={{checkboxGroups, inputValue, selectedTermsByFacet, setOfResults, summaries, termsChecked, termsCount, workspaces,
+                    onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>
         )
