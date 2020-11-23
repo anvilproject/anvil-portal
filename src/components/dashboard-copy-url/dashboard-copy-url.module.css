@@ -1,0 +1,22 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard copy url [to clipboard] component.
+ */
+
+/* Copy URL - icon and text. */
+.copy, .copy + i {
+    color: var(--accent-blue-green);
+}
+
+/* Copy URL - text. */
+.copy {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+/* Copy URL - icon. */
+.copy + i {
+    font-size: 16px;
+}
