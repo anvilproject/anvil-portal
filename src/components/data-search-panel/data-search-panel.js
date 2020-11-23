@@ -16,9 +16,9 @@ let classNames = require("classnames");
 class DataSearchPanel extends React.Component {
 
     render() {
-        const {children, error} = this.props;
+        const {children, stretch} = this.props;
         return (
-            <div className={classNames({[compStyles.error]: error}, compStyles.panel)}>{children}</div>
+            <div className={classNames(compStyles.panel, {[compStyles.stretch]: stretch})}>{children}</div>
         )
     };
 }

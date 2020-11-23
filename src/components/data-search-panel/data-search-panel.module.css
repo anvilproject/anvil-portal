@@ -36,8 +36,8 @@
     margin-bottom: 12px;
 }
 
-/* Error. */
-.panel.error {
+/* Panel - "stretch". */
+.panel.stretch {
     flex-basis: 100%;
     margin: 2px 0 0;
 }

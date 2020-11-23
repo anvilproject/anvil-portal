@@ -12,6 +12,7 @@ import React from "react";
 import DataSearchCheckboxes from "../data-search-checkboxes/data-search-checkboxes";
 import DataSearchEmptyResults from "../data-search-empty-results/data-search-empty-results";
 import DataSearchInput from "../data-search-input/data-search-input";
+import DataSearchSelectedToolbar from "../data-search-selected-toolbar/data-search-selected-toolbar";
 
 // Styles
 import compStyles from "./data-search.module.css";
@@ -23,6 +24,7 @@ class DataSearch extends React.Component {
             <div className={compStyles.search}>
                 <DataSearchInput/>
                 <DataSearchCheckboxes/>
+                <DataSearchSelectedToolbar/>
                 <DataSearchEmptyResults/>
             </div>
         )

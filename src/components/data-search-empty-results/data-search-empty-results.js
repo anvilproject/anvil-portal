@@ -19,7 +19,7 @@ class DataSearchEmptyResults extends React.Component {
 
     render() {
         return (
-            <DataSearchPanel error>
+            <DataSearchPanel stretch>
                 <div className={compStyles.error}>No results</div>
             </DataSearchPanel>
         )

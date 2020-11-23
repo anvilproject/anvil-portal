@@ -24,7 +24,7 @@ class DataWorkspaces extends React.Component {
         const {workspaces} = this.props;
         return (
             <>
-            <h2 class={compStyles.headerNoBorder}>Search Results</h2>
+            <h2 className={compStyles.headerNoBorder}>Search Results</h2>
             <DataTable studies tableHeaders={TABLE_HEADERS_WORKSPACES_BY_STUDY} tableRows={workspaces}/>
             </>
         );

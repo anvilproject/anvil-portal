@@ -205,6 +205,8 @@ export function switchDisplayColumnName(columnName) {
             return "Terra Workspace Name";
         case "samples":
             return "Samples";
+        case "search":
+            return "Text Search";
         case "studyName":
             return "Title";
         case "subjects":

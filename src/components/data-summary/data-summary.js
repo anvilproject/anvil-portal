@@ -24,7 +24,7 @@ class DataSummary extends React.Component {
         const {summaries} = this.props;
         return (
             <>
-            <h2 class={compStyles.headerNoBorder}>Search Summary</h2>
+            <h2 className={compStyles.headerNoBorder}>Search Summary</h2>
             <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summaries}/>
             </>
         );
