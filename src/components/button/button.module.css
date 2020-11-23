@@ -9,18 +9,25 @@
 /* Button */
 .button {
     align-items: center;
+    background-color: transparent;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
-    height: 36px;
     justify-content: center;
-    min-width: 64px;
-    padding: 0 16px;
+    padding: unset;
 }
 
+/* Button - focus. */
 .button:focus {
     outline: none;
+}
+
+/* Button - dark, light. */
+.button.dark, .button.light {
+    border-radius: 4px;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
 }
 
 /* Button - dark */

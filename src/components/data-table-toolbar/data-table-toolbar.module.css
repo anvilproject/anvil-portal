@@ -1,0 +1,19 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL data table toolbar component.
+ */
+
+/* Toolbar. */
+.toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 0 16px; /* Margin matches <h2> inside toolbar. */
+}
+
+/* Toolbar - all children. */
+.toolbar > * {
+    margin: 0; /* Strip margin off <h2> inside toolbar. */
+}

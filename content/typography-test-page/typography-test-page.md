@@ -93,8 +93,6 @@ All 1000 Genomes data is publicly accessible.
 
 Typically the folder structure mirrors the structure or the the site. This is not strictly necessary as the URL to a page is defined by the site map and not the folder structures. However, it does make pages much easier to find when they need to be updated.
 
-<button dark>Create a page</button>
-
 ##Data dictionary
 1. A data dictionary (data model), containing the following information:
     - Properties within the data model (Gender, Blood Pressure, etc.)
