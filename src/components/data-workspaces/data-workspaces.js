@@ -11,6 +11,7 @@ import React, {useContext} from "react";
 // App dependencies
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import DataTable from "../data-table/data-table";
+import DataTableToolbar from "../data-table-toolbar/data-table-toolbar";
 
 // Styles
 import compStyles from "./data-workspaces.module.css";
@@ -24,7 +25,9 @@ class DataWorkspaces extends React.Component {
         const {workspaces} = this.props;
         return (
             <>
-            <h2 className={compStyles.headerNoBorder}>Search Results</h2>
+            <DataTableToolbar>
+                <h2 class={compStyles.headerNoBorder}>Search Results</h2>
+            </DataTableToolbar>
             <DataTable studies tableHeaders={TABLE_HEADERS_WORKSPACES_BY_STUDY} tableRows={workspaces}/>
             </>
         );

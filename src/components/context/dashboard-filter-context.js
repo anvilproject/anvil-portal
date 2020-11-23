@@ -12,6 +12,7 @@ import React from "react";
 const DashboardFilterContext = React.createContext({
     checkboxGroups: [],
     inputValue: "",
+    searchURL: "",
     selectedTermsByFacet: new Map(),
     setOfCountResultsByFacet: new Map(),
     setOfResults: new Set(),

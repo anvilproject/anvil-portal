@@ -16,6 +16,7 @@ import DashboardFilterContext from "../context/dashboard-filter-context";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../utils/dashboard/dashboard-summary.service";
 import * as DashboardWorkspaceService from "../../utils/dashboard/dashboard-workspace.service";
+import * as EnvironmentService from "../../utils/environment/environment.service";
 
 // Template variables
 const DASHBOARD_INDEX = "/dashboard-index.json";
@@ -118,6 +119,7 @@ class ProviderDashboardFilter extends React.Component {
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            searchURL: `${EnvironmentService.getCurrentEnvironmentURL()}data`,
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
@@ -136,6 +138,9 @@ class ProviderDashboardFilter extends React.Component {
 
         /* Grab the index. */
         this.fetchDashboardIndex();
+
+        /* Initialize the state "searchURL". */
+        this.initializeSearchURL();
 
         /* Initialize the state "inputValue". */
         this.initializeInputValue();
@@ -160,6 +165,7 @@ class ProviderDashboardFilter extends React.Component {
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            searchURL: "",
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
@@ -407,6 +413,11 @@ class ProviderDashboardFilter extends React.Component {
         this.setState({inputValue: inputStr});
     };
 
+    initializeSearchURL = () => {
+
+        this.setState({searchURL: window.location.href});
+    };
+
     initializeTermsChecked = () => {
 
         const {setOfTerms} = this.props;
@@ -548,6 +559,9 @@ class ProviderDashboardFilter extends React.Component {
 
         const params = new URLSearchParams();
         params.set("query", query);
+        const searchURL = `${EnvironmentService.getCurrentEnvironmentURL()}data?${params.toString()}`;
+
+        this.setState({searchURL: searchURL});
 
         /* Push to URL. */
         window.history.pushState(null, "", `?${params.toString()}`);
@@ -615,14 +629,14 @@ class ProviderDashboardFilter extends React.Component {
 
     render() {
         const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
-            {inputValue, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
+            {inputValue, searchURL, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
         const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
-                value={{checkboxGroups, inputValue, selectedTermsByFacet, setOfResults, summaries, termsChecked, termsCount, workspaces,
+                value={{checkboxGroups, inputValue, searchURL, selectedTermsByFacet, setOfResults, summaries, termsChecked, termsCount, workspaces,
                     onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>
