@@ -15,17 +15,14 @@ import DataTable from "../data-table/data-table";
 // Styles
 import compStyles from "./data-summary.module.css";
 
-// Template variables
-const TABLE_HEADERS = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
-
 class DataSummary extends React.Component {
 
     render() {
-        const {summaries} = this.props;
+        const {summaries, tableHeaders} = this.props;
         return (
             <>
-            <h2 class={compStyles.headerNoBorder}>Search Summary</h2>
-            <DataTable summary tableHeaders={TABLE_HEADERS} tableRows={summaries}/>
+            <h2 className={compStyles.headerNoBorder}>Search Summary</h2>
+            <DataTable summary tableHeaders={tableHeaders} tableRows={summaries}/>
             </>
         );
     }
@@ -34,12 +31,11 @@ class DataSummary extends React.Component {
 export default () => {
 
     /* Dataset searching props. */
-    const searching = useContext(DashboardFilterContext),
-        {summaries} = searching || {};
+    const {summaries, tableHeadersSummary} = useContext(DashboardFilterContext);
 
     const showSummaries = summaries.length > 0;
 
     return (
-        showSummaries ? <DataSummary summaries={summaries}/> : null
+        showSummaries ? <DataSummary summaries={summaries} tableHeaders={tableHeadersSummary}/> : null
     )
 }

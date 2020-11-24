@@ -507,7 +507,7 @@ class ProviderDashboardFilter extends React.Component {
     };
 
     render() {
-        const {checkboxGroups, children, facetsByTerm, workspacesQuery} = this.props,
+        const {checkboxGroups, children, facetsByTerm, tableHeadersEntities, tableHeadersSummary, workspacesQuery} = this.props,
             {inputValue, searchURL, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleClearInput, onHandleInput} = this.state;
         const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
@@ -515,7 +515,8 @@ class ProviderDashboardFilter extends React.Component {
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
         return (
             <DashboardFilterContext.Provider
-                value={{checkboxGroups, inputValue, searchURL, setOfResults, summaries, termsChecked, termsCount, workspaces,
+                value={{checkboxGroups, inputValue, searchURL, setOfResults, summaries,
+                    tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, workspaces,
                     onHandleChecked, onHandleClearInput, onHandleInput}}>
                 {children}
             </DashboardFilterContext.Provider>

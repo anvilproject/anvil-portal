@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import DashboardCopyURL from "../dashboard-copy-url/dashboard-copy-url";
+import DashboardDownloadTSV from "../dashboard-download-tsv/dashboard-download-tsv";
 
 // Styles
 import compStyles from "./data-table-toolbar.module.css";
@@ -21,7 +22,10 @@ function DataTableToolbar(props) {
     return (
         <div className={compStyles.toolbar}>
             {children}
-            <DashboardCopyURL/>
+            <span className={compStyles.tools}>
+                <DashboardDownloadTSV/>
+                <DashboardCopyURL/>
+            </span>
         </div>
     );
 }

@@ -16,19 +16,16 @@ import DataTableToolbar from "../data-table-toolbar/data-table-toolbar";
 // Styles
 import compStyles from "./data-workspaces.module.css";
 
-// Template variables
-const TABLE_HEADERS_WORKSPACES_BY_STUDY = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "size", "subjects"];
-
 class DataWorkspaces extends React.Component {
 
     render() {
-        const {workspaces} = this.props;
+        const {tableHeaders, workspaces} = this.props;
         return (
             <>
             <DataTableToolbar>
-                <h2 class={compStyles.headerNoBorder}>Search Results</h2>
+                <h2 className={compStyles.headerNoBorder}>Search Results</h2>
             </DataTableToolbar>
-            <DataTable studies tableHeaders={TABLE_HEADERS_WORKSPACES_BY_STUDY} tableRows={workspaces}/>
+            <DataTable studies tableHeaders={tableHeaders} tableRows={workspaces}/>
             </>
         );
     }
@@ -37,12 +34,10 @@ class DataWorkspaces extends React.Component {
 export default () => {
 
     /* Grab the workspaces. */
-    const searching = useContext(DashboardFilterContext),
-        {workspaces} = searching || {};
-
+    const {tableHeadersEntities, workspaces} = useContext(DashboardFilterContext);
     const showWorkspaces = workspaces.length > 0;
 
     return (
-        showWorkspaces ? <DataWorkspaces workspaces={workspaces}/> : null
+        showWorkspaces ? <DataWorkspaces tableHeaders={tableHeadersEntities} workspaces={workspaces}/> : null
     )
 }
