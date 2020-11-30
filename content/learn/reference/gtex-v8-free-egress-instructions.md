@@ -34,7 +34,7 @@ For help or support executing the instructions below please reach out to the Gen
 ### Step 1 - Login to Anvil Gen3
 **Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io/login) with your **NIH credentials** and navigate to the Exploration page.
 
-![Step 1 - Login to Anvil Gen3](../_images/step-1-login-to-anvil-gen3.png)
+![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-step-1-login-to-anvil-gen3.png)
 
 ### Step 2 - Generate a PFB File in the Exploration page
 **PFB** (**P**ortable **F**ile for **B**iomedical data) contains both the associated phenotypic information and the complete list of object files (as GUIDs, or Globally Unique Identifiers) that have been ingested into the Gen3 data dictionary. To **generate and download the PFB** file:
@@ -42,9 +42,9 @@ For help or support executing the instructions below please reach out to the Gen
 1. Navigate to the **Exploration Page** (<https://gen3.theanvil.io/explorer>)
 1. Click the “**Downloadable**” tab and select “**CF-GTEx**” under “Projects” and “Project Id”
 1. Click “**Export to PFB**” button (Please wait patiently for this step - Can take 30 - 60s)\
-![Step 2 - Generate a PFB File in the Exploration page](../_images/step-2-generate-a-pfb-file-in-the-exploration-page.png)
+![Step 2 - Generate a PFB File in the Exploration page](../_images/reference/gtex-step-2-generate-a-pfb-file-in-the-exploration-page.png)
 1. Download generated PFB file\
-![Step 2 - Download generated PFB file](../_images/step-2-download-pfb.png)
+![Step 2 - Download generated PFB file](../_images/reference/gtex-step-2-download-pfb.png)
 
 #### Optional - Filter Facets and Cohort Generation
 
@@ -91,7 +91,7 @@ Done, created 6 files under: ./tsvs/
 ### Step 1 - Login to Anvil Gen3
 **Login** to the AnVIL Gen3 Commons with your **NIH credentials** and navigate to the Exploration page.
 
-![Step 1 - Login to Anvil Gen3](../_images/step-1-login-to-anvil-gen3.png)
+![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-step-1-login-to-anvil-gen3.png)
 
 ### Step 2 - Generate a Manifest of Object Files in the Exploration Page
 To download the GTEx v8 object files, you need to create a **manifest JSON file** which contains a complete list of Globally Unique Identifiers (GUIDs) associated with the GTEx v8 object files.
@@ -99,14 +99,14 @@ To download the GTEx v8 object files, you need to create a **manifest JSON file*
 1. Navigate to the **Exploration Page** (<https://gen3.theanvil.io/explorer>)
 1. Click the “**Downloadable**” tab and select “**CF-GTEx**” under “Projects” and “Project Id”
 1. Click “**Download**” button and then click “**Download Manifest**” in the pulldown menu\
-![Step 2 - Generate a Manifest of Object Files](../_images/step-2-generate-manifest-object-files.png)
+![Step 2 - Generate a Manifest of Object Files](../_images/reference/gtex-step-2-generate-manifest-object-files.png)
 
 ### Step 3 - Download and Configure the Gen3-Client
 The **gen3-client** (<https://gen3.org/resources/user/gen3-client>) provides an easy-to-use, command-line interface for downloading files from a Gen3 data commons.
 
 1. **Download gen3-client** from [HERE](https://github.com/uc-cdis/cdis-data-client/releases) and pick the most recent binary executable based on your operating system. Unzip the executable in the working directory of your choice.
 1. **Download an API key** from the Gen3 data commons from [HERE](https://gen3.theanvil.io/identity)\
-![Step 3 - Download and Configure the Gen3-Client](../_images/step-3-download-and-configure-gen3-client.png)
+![Step 3 - Download and Configure the Gen3-Client](../_images/reference/gtex-step-3-download-and-configure-gen3-client.png)
 1. **Configure** a profile with downloaded API key by running the following command
 ```shell
 $ gen3-client configure --profile=<profile_name>
