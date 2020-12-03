@@ -179,6 +179,8 @@
           key:  "/learn/accessing-data/requesting-data-access"
         - name: "Bringing Your Own Data"
           key: "/learn/accessing-data/bringing-your-own-data"
+        - name: "Data Access Controls"
+          key: "/learn/accessing-data/data-access-controls"
     - name: "For Consortia"
       key: "/learn/for-consortia"
       path: "/learn/for-consortia/data-submission"
@@ -217,7 +219,9 @@
       secondaryLinks:
         - name: "GTEx v8 - Free Egress Instructions"
           key: "/learn/reference/gtex-v8-free-egress-instructions"
-        - name: "Data Access Controls"
-          key: "/learn/reference/data-access-controls"
+        - name: "Cross Platform Data Access with GA4GH DRS in Terra"
+          key: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
+
+
 #    - name: "Example Page"
 #      key: "/content-guide/example-page"
