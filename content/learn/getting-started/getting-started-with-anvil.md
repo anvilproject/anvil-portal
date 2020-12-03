@@ -1,19 +1,13 @@
 ---
-title: "Terra Guides"
+title: "Getting Started with AnVIL"
 author: "AnVIL"
 description: "Guides helping users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis."
 ---
 
-# Getting Started with Terra
+# Getting Started with AnVIL
  
 <hero small>The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis.</hero> 
 
-## General
-- [Terra training materials](https://support.terra.bio/) - A library of training materials for the Terra platform.
-
-- [Navigating the Terra interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra)
-
-- [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains)
 
 ## Account Setup
 
@@ -41,4 +35,11 @@ description: "Guides helping users navigate their way through creating an accoun
 - [Interactive analysis with Jupyter notebooks](https://support.terra.bio/hc/en-us/articles/360024898671-Interactive-analysis-with-Jupyter-notebooks)
 
 - [Visualizing genomic data with IGV](https://support.terra.bio/hc/en-us/articles/360029654831-Viewing-IGV-tracks-of-BAM-files-in-your-workspace-data)
+
+## General
+- [Terra training materials](https://support.terra.bio/) - A library of training materials for the Terra platform.
+
+- [Navigating the Terra interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra)
+
+- [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains)
 
