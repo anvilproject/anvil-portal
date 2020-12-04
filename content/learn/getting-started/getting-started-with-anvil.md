@@ -37,9 +37,16 @@ description: "Guides helping users navigate their way through creating an accoun
 - [Visualizing genomic data with IGV](https://support.terra.bio/hc/en-us/articles/360029654831-Viewing-IGV-tracks-of-BAM-files-in-your-workspace-data)
 
 ## General
+
+- [Overview of Terra for new users](https://support.terra.bio/hc/en-us/sections/360006866192-New-users-overview)
+
 - [Terra training materials](https://support.terra.bio/) - A library of training materials for the Terra platform.
 
-- [Navigating the Terra interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra)
+- [Navigating the Terra user interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra)
 
 - [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains)
+
+
+
+
 
