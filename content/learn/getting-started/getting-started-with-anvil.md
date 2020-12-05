@@ -8,6 +8,7 @@ description: "Guides helping users navigate their way through creating an accoun
  
 <hero small>The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis.</hero> 
 
+`video: https://www.youtube.com/watch?v=m8Tt0KemKFI&t=584s&feature=youtu.be`
 
 ## Account Setup
 
