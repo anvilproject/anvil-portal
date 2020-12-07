@@ -13,10 +13,11 @@
 /* Copy URL - text. */
 .copy {
     font-size: 14px;
+    line-height: 20px;
     margin-right: 4px;
 }
 
 /* Copy URL - icon. */
 .copy + i {
-    font-size: 16px;
+    font-size: 20px;
 }

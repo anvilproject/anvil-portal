@@ -17,3 +17,14 @@
 .toolbar > * {
     margin: 0; /* Strip margin off <h2> inside toolbar. */
 }
+
+/* Tools. */
+.toolbar .tools {
+    align-items: center;
+    display: flex;
+}
+
+/* Tool - not first. */
+.toolbar .tools > *:not(:first-of-type) {
+    padding-left: 16px;
+}
