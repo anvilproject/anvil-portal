@@ -188,16 +188,13 @@
             - name: "Cross Platform Data Access with GA4GH DRS in Terra"
               file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
     - name: "Consortia"
-      pathPartial: "/consortia"
+      pathPartial: "/for-consortia"
       navigationItems:
-        - name: "For Consortia"
-          file: ""
-          pathPartial: "/for-consortia"
-          navigationItems:
-            - name: "Submitting Consortium Data"
-              file: "/learn/for-consortia/data-submission"
-            - name: "Consortium Data Access Guidelines"
-              file: "/learn/for-consortia/consortium-data-access-guidelines"
+        - name: "Submitting Consortium Data"
+          file: "/learn/for-consortia/data-submission"
+        - name: "Consortium Data Access Guidelines"
+          file: "/learn/for-consortia/consortium-data-access-guidelines"
+
 ## Overview
 - menuItem: "Overview"
   pageTitle: "Overview"
