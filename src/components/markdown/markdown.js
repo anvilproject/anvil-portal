@@ -34,25 +34,27 @@ class Markdown extends React.Component {
 
     componentDidMount() {
 
-        this.addImageClassName();
+        this.addClassList();
     }
 
-    addImageClassName = () => {
+    addClassList = () => {
 
-        // Find all <span> elements
+        /* Grab the content element. */
         const contentEl = document.querySelector('[id^="content"]');
 
         if ( !contentEl ) {
             return;
         }
 
-        const imagesEl = Array.from(contentEl.querySelectorAll("span"));
+        /* Grab <span> that wraps the images for medium-zoom capability (therefore will exclude gif images). */
+        const imagesWithZoomEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
 
-        // Filter for <span> that wraps the images for medium-zoom capability (therefore will exclude gif images)
-        const imagesWithZoomEl = imagesEl.filter(image => image.className.includes("gatsby-resp-image-wrapper"));
+        /* Grab <div> that wraps videos. */
+        const videosEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
 
-        // Add class name
-        imagesWithZoomEl.map(image => image.classList.add(compStyles.zoomIcon));
+        /* Add class name. */
+        imagesWithZoomEl.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
+        videosEl.map(videoEl => videoEl.classList.add(compStyles.video));
     };
 
     render() {

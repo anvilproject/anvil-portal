@@ -27,6 +27,11 @@
     border-bottom: none; /* Required to override link style */
 }
 
+/* Image, video. */
+.content .zoomIcon, .content .video {
+    margin: 24px 0;
+}
+
 /* Image zoom icon */
 .content .zoomIcon::after {
     opacity: 0;
