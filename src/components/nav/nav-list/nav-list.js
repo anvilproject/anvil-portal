@@ -16,11 +16,11 @@ import compStyles from "./nav-list.module.css";
 
 function Nav(props) {
 
-    const {docPath, nav} = props;
+    const {docPath, navItems} = props;
 
     return (
         <ul className={compStyles.navList}>
-            {nav.map((navItem, i) => <NavItem key={i} docPath={docPath} item={navItem}/>)}
+            {navItems.map((navItem, i) => <NavItem key={i} docPath={docPath} navItem={navItem}/>)}
         </ul>
     );
 }

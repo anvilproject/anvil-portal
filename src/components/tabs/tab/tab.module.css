@@ -1,0 +1,24 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL tab component.
+ */
+
+@import "../../../styles/vars.module.css";
+
+/* Tab. */
+.tab {
+    color: var(--accent-blue-dark);
+    margin-right: 24px;
+}
+
+/* Tab - active. */
+.tab.active {
+    box-shadow: inset 0 -4px var(--accent-blue-light);
+}
+
+/* Tab - hover. */
+.tab:not(.active):hover {
+    box-shadow: inset 0 -4px var(--black12);
+}

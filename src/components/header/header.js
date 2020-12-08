@@ -37,7 +37,7 @@ class Header extends React.Component {
     };
 
     render() {
-        const {links, ncpi} = this.props;
+        const {headers, ncpi} = this.props;
         const showPartiallyActive = !ncpi;
         const logoLink = ncpi ? "/ncpi" : "/";
         return (
@@ -57,8 +57,8 @@ class Header extends React.Component {
                         tag={"i"}
                         label="Hide menu">close</ClickHandler>
                     <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
-                        {links.map((l, i) => <li key={i}>
-                            <Link activeClassName={compStyles.active} partiallyActive={showPartiallyActive} to={l.path}>{l.name}</Link>
+                        {headers.map((header, i) => <li key={i}>
+                            <Link activeClassName={compStyles.active} partiallyActive={showPartiallyActive} to={header.path}>{header.name}</Link>
                         </li>)}
                     </ul>
                 </div>
@@ -70,9 +70,9 @@ class Header extends React.Component {
 export default (props) => {
 
     const {ncpi} = props;
-    const links = HeaderService.getHeaderLinks(ncpi);
+    const headers = HeaderService.getHeaderLinks(ncpi);
 
     return (
-        <Header links={links} {...props}/>
+        <Header headers={headers} {...props}/>
     );
 }

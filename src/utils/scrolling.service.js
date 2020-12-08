@@ -6,6 +6,11 @@
  * Methods to support scrolling content and outline actions.
  */
 
+// Template variables
+const footerHt = 104; /* Footer height. */
+const sectionPaddingTop = 36; /* Section padding top. */
+const sectionPaddingBottom = 60; /* Section padding bottom. */
+
 /**
  * Returns a Map object of all <h1> to <h3> anchor "id"s with their corresponding position from the top of the page.
  *
@@ -40,55 +45,59 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  * Returns the style "maxHeight" for the side nav and outline, based on content and outline
  * scrolling positions.
  *
- * @param bannerHeight
- * @param element
+ * @param bannerHt
+ * @param navEl
+ * @param articleOffsetTop
  * @returns {string}
  */
-export function calculateNavMaxHeight(bannerHeight, element) {
+export function calculateNavStyles(bannerHt, navEl, articleOffsetTop) {
 
-    // The maxHeight setting is not required when the window innerWidth is less than 840.
+    /* Intialize styles. */
+    const navStyles = {maxHeight: `unset`, top: `unset`};
+
+    // The styles are only required when the window innerWidth is equal to or greater than 840.
     // (Outline is dropped at 1388px, left nav is stacked at 840).
-    // In this instance, the outline and nav styles are defined by a different set of responsive settings.
+    // The outline and nav styles are defined by a different set of responsive settings for smaller screens.
 
-    if ( !element || window.innerWidth < 840 ) {
+    if ( navEl && articleOffsetTop && window.innerWidth >= 840 ) {
 
-        return;
+        // Calculate the side nav style "maxHeight", taking into account the:
+        // - sticky top position (calculated from articleRef on article component)
+        // - section padding
+        // - footer
+        // - privacy banner height (if showing).
+
+        // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
+        // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
+        // sticky top position, until the content approaches end of scrolling.
+        // At near to end of scrolling (section padding and footer),
+        // the nav maxHeight will be such that the appearance of the nav's bottom edge matches the
+        // bottom edge of the content.
+
+        let elementHeight;
+        const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+
+        // If the privacy banner is showing, and the scroll position has not reached the end of the content,
+        // a different set of rules will govern the "maxHeight".
+        // The "maxHeight" will be calculated by the available height provided by the window, taking into account the
+        // sticky top position, and the banner height. This rule remains effective until the last scrollable 160px
+        // is in play.
+
+        const bottomHt = footerHt + sectionPaddingBottom;
+
+        if ( calculatePixelPositionFromEnd() < bottomHt ) {
+
+            elementHeight = document.body.clientHeight - window.scrollY - stickyTopPos - sectionPaddingBottom - footerHt - bannerHt;
+        }
+        else {
+
+            elementHeight = window.innerHeight - stickyTopPos - bannerHt;
+        }
+
+        Object.assign(navStyles, {maxHeight: elementHeight, top: stickyTopPos});
     }
 
-    // Calculate the side nav style "maxHeight", taking into account the:
-    // - sticky top position at 100px,
-    // - section padding 60px
-    // - footer 104px
-    // - privacy banner height (if showing).
-
-    // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
-    // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
-    // sticky top position at 100px, until the content approaches end of scrolling.
-    // At near to end of scrolling (section padding and footer),
-    // the nav maxHeight will be such that the appearance of the nav's bottom edge matches the
-    // bottom edge of the content.
-
-    let elementHeight;
-    const footerHeight = 104;
-    const sectionPaddingHeight = 60;
-    const stickyTopHeight = 100;
-
-    // If the privacy banner is showing, and the scroll position has not reached the end of the content,
-    // a different set of rules will govern the "maxHeight".
-    // The "maxHeight" will be calculated by the available height provided by the window, taking into account the
-    // sticky top position, and the banner height. This rule remains effective until the last scrollable 160px
-    // is in play.
-
-    if ( calculatePixelPositionFromEnd() < 160 ) {
-
-        elementHeight = document.body.clientHeight - window.scrollY - stickyTopHeight - sectionPaddingHeight - footerHeight - bannerHeight;
-    }
-    else {
-
-        elementHeight = window.innerHeight - stickyTopHeight - bannerHeight;
-    }
-
-    return element.style.maxHeight = `${elementHeight}px`;
+    return navStyles;
 }
 
 /**
@@ -129,8 +138,9 @@ export function isOutlineScrollable(htmlEls, outlineEl) {
  *
  * @param activeEls
  * @param outlineEl
+ * @param articleOffsetTop
  */
-export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
+export function manageActiveOutlineScrollPosition(activeEls, outlineEl, articleOffsetTop) {
 
     if ( activeEls.length === 0 ) {
 
@@ -147,12 +157,15 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
     // Outline container
     const outlineContainerHeight = outlineEl.offsetHeight;
 
+    // Sticky top position
+    const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+
     // Active outline positions
     const activeTopPos = activeEl.getBoundingClientRect().top;
     const activeBottomPos = activeEl.getBoundingClientRect().bottom;
     const activeMidHeight = (activeEl.offsetHeight / 2);
-    const posBelowScreen = activeBottomPos - (outlineContainerHeight + 100);
-    const posAboveScreen = 100 - activeTopPos;
+    const posBelowScreen = activeBottomPos - (outlineContainerHeight + stickyTopPos);
+    const posAboveScreen = stickyTopPos - activeTopPos;
 
     // Scrolls to outline end as outline maxHeight is reduced.
     if ( pxToEndScroll < 160 ) {
@@ -161,13 +174,13 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
     }
 
     // Repositions active outline to mid point if the active outline is positioned below the outline container.
-    if ( activeBottomPos > outlineContainerHeight + 100 ) {
+    if ( activeBottomPos > outlineContainerHeight + stickyTopPos ) {
 
         scrollTo(outlineEl, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
     }
 
     // Repositions active outline to mid point if the active outline is positioned above the outline container.
-    if ( activeTopPos < 100 ) {
+    if ( activeTopPos < stickyTopPos ) {
 
         scrollTo(outlineEl, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
     }
@@ -178,15 +191,17 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl) {
  *
  * @param elementIdsByAnchorFromTop
  * @param activeOutline
+ * @param articleOffsetTop
  * @returns {*}
  */
-export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline) {
+export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline, articleOffsetTop) {
 
-    let currentScrollPos = window.scrollY + 100;
-    let endScrollPos = document.body.clientHeight - window.innerHeight + 100;
+    const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+    let currentScrollPos = window.scrollY + sectionPaddingTop;
+    let endScrollPos = document.body.clientHeight - window.innerHeight + stickyTopPos;
 
     // Check not at the bottom of the page
-    if (currentScrollPos !== endScrollPos) {
+    if ( currentScrollPos !== endScrollPos ) {
 
         let currentAnchorPos;
 
@@ -217,16 +232,10 @@ export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline) 
 
             if ( currentAnchorPos !== undefined ) {
 
-                // Update window location
-                //window.history.pushState(null, "", currentElementId);
-
                 // Return state
                 return currentElementId;
             }
             else {
-
-                // Update window location
-                //window.history.pushState(null, "", window.location.pathname);
 
                 // Return state
                 return "";

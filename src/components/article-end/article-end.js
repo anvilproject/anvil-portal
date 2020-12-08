@@ -23,7 +23,7 @@ class ArticleEnd extends React.Component {
         return (
             <div className={classNames(compStyles.articleEnd)}>
                 <a href={editPath} target="_blank" rel="noopener noreferrer">Improve this page</a>
-                <Link to={"/content-guide"}>Content guide</Link>
+                <Link to={"/guides"}>Content guide</Link>
             </div>
         );
     }

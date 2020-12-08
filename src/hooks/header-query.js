@@ -1,19 +1,21 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
 export const HeaderStaticQuery = () => {
-    const {allSiteMapYaml} = useStaticQuery(
+    const {allSiteMapHeaderYaml} = useStaticQuery(
         graphql`
         query HeaderStaticQuery {
-          allSiteMapYaml(filter: {position: {location: {eq: "h"}}}, sort: {fields: [position___order], order: ASC}) {
+          allSiteMapHeaderYaml {
             edges {
               node {
-                name
-                path
+                headers {
+                  name
+                  path
+                }
               }
             }
           }
         }
     `
     );
-    return allSiteMapYaml.edges.map(e => e.node);
+    return allSiteMapHeaderYaml.edges.find(e => e.node).node.headers;
 };

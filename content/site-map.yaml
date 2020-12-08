@@ -1,236 +1,277 @@
-- name: "Overview"
-  key: "overview"
-  path: "/overview"
-  position:
-    location: "h"
-    order: 0
-  primaryLinks:
-    - name: "What is AnVIL?"
-      key: "/overview/overview"
-      path: "/overview"
-    - name: "Data  Consortia Roadmap"
-      key: "/overview/data-consortia"
-    - name: "Project Sponsor"
-      key: "/overview/project-sponsor"
-- name: "Help"
-  key: "help"
-  path: "/help"
-  position:
-    location: "h"
-    order: 8
-  primaryLinks:
-    - name: "Help"
-      key: "/help/help"
-      path: "/help"
-- name: "Datasets"
-  key: "data"
-  path: "/data"
-  position:
-    location: "h"
-    order: 2
-  primaryLinks:
-    - name: "Data"
-      key: "/data/data"
-      path: "/data"
-- name: "News"
-  key: "events"
-  path: "/news"
-  position:
-    location: "h"
-    order: 4
-  primaryLinks:
-    - name: "Events"
-      key: "/news/news"
-      path: "/news"
-- name: "Events"
-  key: "events"
-  path: "/events"
-  position:
-    location: "h"
-    order: 5
-  primaryLinks:
-    - name: "Events"
-      key: "/events/events"
-      path: "/events"
-- name: "NCPI"
-  key: "ncpi"
-  path: "/ncpi"
-  primaryLinks:
-    - name: "Overview"
-      key: "/ncpi/ncpi"
-      path: "/ncpi"
-    - name: "Participating Platforms"
-      key: "/ncpi/platforms"
-    - name: "Guiding Principles"
-      key: "/ncpi/interoperating-principles"
-    - name: "Working Groups"
-      key: "/ncpi/working-groups/working-groups"
-      path: "/ncpi/working-groups"
-    - name: "Training Materials"
-      key: "/ncpi/training/2020-03-17-train-your-colleague"
-    - name: "Progress Updates"
-      key: "/ncpi/progress-updates/progress-updates"
-      path: "/ncpi/progress-updates"
-- name: "FAQ"
-  key: "faq"
-  path: "/faq"
-  position:
-    location: "h"
-    order: 7
-  primaryLinks:
-    - name: "Overview"
-      key: "/faq/overview"
-      path: "/faq"
-    - name: "Data Security, Management, and Access Procedures"
-      key: "/faq/data-security"
-    - name: "Data Submission"
-      key: "/faq/data-submission"
-    - name: "Resources for AnVIL Users"
-      key: "/faq/resources-for-anvil-users"
-    - name: "Using AnVIL"
-      key: "/faq/using-anvil"
-- name: "Guides"
-  key: "guides"
-  path: "/content-guide"
-  primaryLinks:
-    - name: "Content Guide"
-      key: "/guides/content-guide"
-      path: "/content-guide"
-      secondaryLinks:
-      - name: "Content Guide"
-        key: "/guides/content-guide/creating-content"
-        path: "/content-guide"
-      - name: "Editing an Existing Page"
-        key: "/guides/content-guide/editing-an-existing-page"
-        path: "/guides/editing-an-existing-page"
-      - name: "Creating a New Page"
-        key: "/guides/content-guide/creating-a-new-page"
-        path: "/guides/creating-a-new-page"
-      - name: "Using Images"
-        key: "/guides/content-guide/using-images"
-        path: "/guides/using-images"
-      - name: "Adding YouTube Videos"
-        key: "/guides/content-guide/adding-youtube-videos"
-        path: "/guides/adding-youtube-videos"
-      - name: "Creating Links"
-        key: "/guides/content-guide/creating-links"
-        path: "/guides/creating-links"
-    - name: "Style Guide"
-      key: "/guides/anvil-style-guide"
-      path: "/anvil-style-guide/logos"
-      secondaryLinks:
-      - name: "Logos"
-        key: "/guides/anvil-style-guide/logos"
-        path: "/anvil-style-guide/logos"
-      - name: "Color Palette"
-        key: "/guides/anvil-style-guide/color-palette"
-        path: "/anvil-style-guide/color-palette"
-      - name: "Typography"
-        key: "/guides/anvil-style-guide/typography"
-        path: "/anvil-style-guide/typography"
-      - name: "Typography Examples"
-        key: "/guides/anvil-style-guide/typography-examples"
-        path: "/anvil-style-guide/typography-examples"
-- name: "Privacy"
-  key: "privacy"
-  path: "/privacy"
-  primaryLinks:
+## Site map
+#
+## menuItem
+# - "menuItem" is the display name for the menuItem in the header or footer components.
+# - "pageTitle" is the display name for the menuItem on the page (optional).
+# - "pathPartial" builds the path for any navigationItems belonging to the menuItem. It is also the path for the menuItem in the header or footer.
+# - "tabs" are the tabs belonging to the menuItem.
+#
+## tabs
+# - "name" is the display name of the tab in the tab component.
+# - "pathPartial" builds the path for any navigationItems belonging to the tab.
+# - "navigationItems" are the markdown pages belonging to the tab, listed as a navigation item.
+# Rules:
+# - "name" as an empty string implies there are no tabs for the menuItem.
+# - "pathPartial" as an empty string omits the partial from the navigation item's path.
+# - The first navigationItem with a corresponding markdown file will become the tab's path.
+#
+## navigationItems
+# - "name" is the display name of the navigation item in the navigation component.
+# - "file" is the relative path of the markdown page.
+# - "pathPartial" builds the path for the navigation item. Any parent partials are used to generate the full path.
+# - "pathOverride" overrides/replaces any path generated for the navigation item.
+# - "navigationItems" are children navigationItems belonging to the navigation item.
+# Rules:
+# - "pathPartial", "pathOverride", and "navigationItems" are optional.
+# - "name" with an empty string will prevent the display of the navigation item. Typically used when only one page exists for the tab or menuItem.
+# - "file" as an empty string will convert the navigation item to a "toggle" button to open/close children navigationItems belonging to the navigation item.
+# - "pathPartial" as an empty string omits the partial from the navigation item's path. If "file" is valid, the partial will come from the markdown file name.
+#    e.g. the markdown file "/team/working-groups.md" partial will be generated from the file name of the markdown file i.e. "working-groups".
+#    If "file" is an empty string, the navigation item is a "toggle" button where the partial will be omitted from any children navigationItems paths.
+# - "pathOverride" overrides and replaces any built paths from partials.
+
+## Datasets
+- menuItem: "Datasets"
+  pageTitle: "Datasets"
+  pathPartial: "/data"
+  tabs:
     - name: ""
-      key: "/privacy/privacy"
-      path: "/privacy"
-- name: "Team"
-  key: "team"
-  path: "/team"
-  position:
-    location: "h"
-    order: 5
-  primaryLinks:
-    - name: "Leadership Team"
-      key: "/team/team"
-      path: "/team"
-    - name: "Working Groups"
-      key: "/team/working-groups"
-    - name: "Oversight Committee"
-      key: "/team/oversight-committee"
-- name: "Learn"
-  key: "learn"
-  path: "/learn"
-  position:
-    location: "h"
-    order: 1
-  primaryLinks:
-    - name: "Getting Started"
-      key: "/learn/getting-started"
-      path: "/learn"
-      secondaryLinks:
-        - name: "Getting Started with AnVIL"
-          key: "/learn/getting-started/getting-started-with-anvil"
-          path: "/learn"
-        - name: "Using Example Workspaces"
-          key: "/learn/getting-started/using-example-workspaces"
-        - name: "Getting Started with Galaxy"
-          key: "/learn/getting-started/getting-started-with-galaxy"
-          path: "/learn/get-started/getting-started-with-galaxy"
-    - name: "Accessing Data"
-      key: "/learn/accessing-data"
-      path: "/learn/accessing-data/requesting-data-access"
-      secondaryLinks:
-        - name: "Requesting Data Access"
-          key:  "/learn/accessing-data/requesting-data-access"
-        - name: "Data Access Controls"
-          key: "/learn/accessing-data/data-access-controls"
-        - name: "Bringing Your Own Data"
-          key: "/learn/accessing-data/bringing-your-own-data"
-    - name: "For Consortia"
-      key: "/learn/for-consortia"
-      path: "/learn/for-consortia/data-submission"
-      secondaryLinks:
-        - name: "Submitting Consortium Data"
-          key: "/learn/for-consortia/data-submission"
-        - name: "Consortium Data Access Guidelines"
-          key: "/learn/for-consortia/consortium-data-access-guidelines"
-    - name: "Training Events"
-      key: "/learn/training"
-      secondaryLinks:
-       - name: "NCPI Train Your Colleagues (March 2020)"
-         key: "/learn/training/ncpi-train-your-colleagues-march-2020"
-       - name: "MaGIC Jamboree (June 2020)"
-         key: "/learn/training/magic-jamboree-june-2020"
-    - name: "MOOC"
-      key: "/learn/anvil-mooc"
-      path: "/learn/anvil-mooc/what-is-anvil"
-      secondaryLinks:
-        - name: "What is AnVIL?"
-          key: "/learn/anvil-mooc/what-is-anvil"
-        - name: "Cloud Computing"
-          key: "/learn/anvil-mooc/cloud-computing"
-        - name: "Cloud Costs"
-          key: "/learn/anvil-mooc/cloud-costs"
-        - name: "Use Case: GATK"
-          key: "/learn/anvil-mooc/use-case-gatk"
-        - name: "Use Case: GWAS"
-          key: "/learn/anvil-mooc/use-case-gwas"
-        - name: "Use Case: eQTL"
-          key: "/learn/anvil-mooc/use-case-eqtl"
-    - name: "Videos"
-      key: "/learn/videos"
-      secondaryLinks:
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/data/data"
+          pathOverride: "/data"
+## Events
+- menuItem: "Events"
+  pageTitle: "Events"
+  pathPartial: "/events"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/events/events"
+          pathOverride: "/events"
+## FAQ
+- menuItem: "FAQ"
+  pageTitle: "FAQ"
+  pathPartial: "/faq"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Overview"
+          file: "/faq/overview"
+          pathOverride: "/faq"
+        - name: "Data Security, Management, and Access Procedures"
+          file: "/faq/data-security"
+        - name: "Data Submission"
+          file: "/faq/data-submission"
+        - name: "Resources for AnVIL Users"
+          file: "/faq/resources-for-anvil-users"
         - name: "Using AnVIL"
-          key: "/learn/videos/anvil-videos"
-        - name: "Using Terra"
-          key: "/learn/videos/terra-videos"
-        - name: "Using Dockstore"
-          key: "/learn/videos/dockstore-videos"
-        - name: "Using Gen3"
-          key: "/learn/videos/gen3-videos"
-    - name: "Reference"
-      key: "/learn/reference"
-      secondaryLinks:
-        - name: "GTEx v8 - Free Egress Instructions"
-          key: "/learn/reference/gtex-v8-free-egress-instructions"
-        - name: "Cross Platform Data Access with GA4GH DRS in Terra"
-          key: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
-
-
-#    - name: "Example Page"
-#      key: "/content-guide/example-page"
+          file: "/faq/using-anvil"
+## Guides
+- menuItem: "Guides"
+  pageTitle: "Guides"
+  pathPartial: "/guides"
+  tabs:
+    - name: "Content Guide"
+      pathPartial: "/content"
+      navigationItems:
+        - name: "Creating Content"
+          file: "/guides/content/creating-content"
+          pathOverride: "/guides"
+        - name: "Editing an Existing Page"
+          file: "/guides/content/editing-an-existing-page"
+        - name: "Creating a New Page"
+          file: "/guides/content/creating-a-new-page"
+        - name: "Using Images"
+          file: "/guides/content/using-images"
+        - name: "Adding YouTube Videos"
+          file: "/guides/content/adding-youtube-videos"
+        - name: "Creating Links"
+          file: "/guides/content/creating-links"
+    - name: "Style Guide"
+      pathPartial: "/style"
+      navigationItems:
+        - name: "Logos"
+          file: "/guides/style/logos"
+        - name: "Color Palette"
+          file: "/guides/style/color-palette"
+        - name: "Typography"
+          file: "/guides/style/typography"
+        - name: "Typography Examples"
+          file: "/guides/style/typography-examples"
+## Help
+- menuItem: "Help"
+  pageTitle: "Help"
+  pathPartial: "/help"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/help/help"
+          pathOverride: "/help"
+## Learn
+- menuItem: "Learn"
+  pageTitle: "Learn"
+  pathPartial: "/learn"
+  tabs:
+    - name: "Researchers"
+      pathPartial: "/researchers"
+      navigationItems:
+        - name: "Getting Started"
+          file: ""
+          pathPartial: "/getting-started"
+          navigationItems:
+            - name: "Getting Started with AnVIL"
+              file: "/learn/getting-started/getting-started-with-anvil"
+              pathOverride: "/learn"
+            - name: "Using Example Workspaces"
+              file: "/learn/getting-started/using-example-workspaces"
+            - name: "Getting Started with Galaxy"
+              file: "/learn/getting-started/getting-started-with-galaxy"
+        - name: "Accessing Data"
+          file: ""
+          pathPartial: "/accessing-data"
+          navigationItems:
+            - name: "Requesting Data Access"
+              file:  "/learn/accessing-data/requesting-data-access"
+            - name: "Data Access Controls"
+              file: "/learn/accessing-data/data-access-controls"
+            - name: "Bringing Your Own Data"
+              file: "/learn/accessing-data/bringing-your-own-data"
+        - name: "Training Events"
+          file: ""
+          pathPartial: "/training"
+          navigationItems:
+            - name: "NCPI Train Your Colleagues (March 2020)"
+              file: "/learn/training/ncpi-train-your-colleagues-march-2020"
+            - name: "MaGIC Jamboree (June 2020)"
+              file: "/learn/training/magic-jamboree-june-2020"
+        - name: "MOOC"
+          file: ""
+          pathPartial: "/mooc"
+          navigationItems:
+            - name: "What is AnVIL?"
+              file: "/learn/mooc/what-is-anvil"
+            - name: "Cloud Computing"
+              file: "/learn/mooc/cloud-computing"
+            - name: "Cloud Costs"
+              file: "/learn/mooc/cloud-costs"
+            - name: "Use Case: GATK"
+              file: "/learn/mooc/use-case-gatk"
+            - name: "Use Case: GWAS"
+              file: "/learn/mooc/use-case-gwas"
+            - name: "Use Case: eQTL"
+              file: "/learn/mooc/use-case-eqtl"
+        - name: "Videos"
+          file: ""
+          pathPartial: "/videos"
+          navigationItems:
+            - name: "Using AnVIL"
+              file: "/learn/videos/anvil-videos"
+            - name: "Using Terra"
+              file: "/learn/videos/terra-videos"
+            - name: "Using Dockstore"
+              file: "/learn/videos/dockstore-videos"
+            - name: "Using Gen3"
+              file: "/learn/videos/gen3-videos"
+        - name: "Reference"
+          file: ""
+          pathPartial: "/reference"
+          navigationItems:
+            - name: "GTEx v8 - Free Egress Instructions"
+              file: "/learn/reference/gtex-v8-free-egress-instructions"
+            - name: "Cross Platform Data Access with GA4GH DRS in Terra"
+              file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
+    - name: "Consortia"
+      pathPartial: "/consortia"
+      navigationItems:
+        - name: "For Consortia"
+          file: ""
+          pathPartial: "/for-consortia"
+          navigationItems:
+            - name: "Submitting Consortium Data"
+              file: "/learn/for-consortia/data-submission"
+            - name: "Consortium Data Access Guidelines"
+              file: "/learn/for-consortia/consortium-data-access-guidelines"
+## Overview
+- menuItem: "Overview"
+  pageTitle: "Overview"
+  pathPartial: "/overview"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "What is AnVIL?"
+          file: "/overview/overview"
+          pathOverride: "/overview"
+        - name: "Data Consortia Roadmap"
+          file: "/overview/data-consortia"
+        - name: "Project Sponsor"
+          file: "/overview/project-sponsor"
+## NCPI
+- menuItem: "NCPI"
+  pageTitle: "NCPI"
+  pathPartial: "/ncpi"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Overview"
+          file: "/ncpi/ncpi"
+          pathOverride: "/ncpi"
+        - name: "Participating Platforms"
+          file: "/ncpi/platforms"
+        - name: "Guiding Principles"
+          file: "/ncpi/interoperating-principles"
+        - name: "Working Groups"
+          file: "/ncpi/working-groups"
+        - name: "Training Materials"
+          file: ""
+          pathPartial: "/training"
+          navigationItems:
+            - name: "Train Your Colleague"
+              file: "/ncpi/training/2020-03-17-train-your-colleague"
+        - name: "Progress Updates"
+          file: "/ncpi/progress-updates"
+## News
+- menuItem: "News"
+  pageTitle: "News"
+  pathPartial: "/news"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/news/news"
+          pathOverride: "/news"
+## Privacy
+- menuItem: "Privacy"
+  pageTitle: "Privacy"
+  pathPartial: "/privacy"
+  tabs:
+      - name: ""
+        pathPartial: ""
+        navigationItems:
+          - name: ""
+            file: "/privacy/privacy"
+            pathOverride: "/privacy"
+## Team
+- menuItem: "Team"
+  pageTitle: "Team"
+  pathPartial: "/team"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Leadership Team"
+          file: "/team/team"
+          pathOverride: "/team"
+        - name: "Working Groups"
+          file: "/team/working-groups"
+        - name: "Oversight Committee"
+          file: "/team/oversight-committee"

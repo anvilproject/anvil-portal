@@ -27,25 +27,14 @@
 
     /* Side nav */
     .sideNav {
-        bottom: 0;
+        border-right: 1px solid var(--accent-blue-light);
+        height: 100%;
         left: 24px; /* Gutter */
         margin: 0;
         max-width: unset;
         padding: 0 2px 0 0;
         position: fixed;
-        top: 100px;
         width: 200px;
-    }
-
-    /* Side nav line */
-    .sideNav::before {
-        background-color: var(--accent-blue-light);
-        content: "";
-        height: 100%;
-        position: absolute;
-        right: 2px;
-        top: 0;
-        width: 1px;
     }
 }
 

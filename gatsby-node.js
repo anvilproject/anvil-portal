@@ -3,90 +3,73 @@
  * https://www.anvilproject.org
  */
 
-const express = require('express');
-const {fmImagesToRelative} = require('gatsby-remark-relative-images');
-const {createFilePath} = require(`gatsby-source-filesystem`);
-const path = require(`path`);
-const {buildDateBubbleField, buildDateStartField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
+const express = require("express");
+const {fmImagesToRelative} = require("gatsby-remark-relative-images");
+const {createFilePath} = require("gatsby-source-filesystem");
+const {buildPostSlug} = require("./src/utils/node/create-node.service");
+const {buildMenuItems, getPostComponent, getPostNavigations} = require("./src/utils/node/create-pages.service");
+const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
-// Replacing '/' would result in empty string which is invalid
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
+/**
+ * Create new node fields.
+ * Places nodes under the "fields" keys on the extended node object.
+ *
+ * @param actions
+ * @param getNode
+ * @param node
+ */
+exports.onCreateNode = ({actions, getNode, node}) => {
 
-// Returns document path or key.
-function getKeyOrPath(key, siteMapPathOrKey) {
-
-    const path = siteMapPathOrKey.get(key);
-
-    if (path) {
-        return path;
-    }
-    else {
-        return key
-    }
-}
-
-// sections -> primary docs -> secondary docs
-function keyToPath(siteMap) {
-    return siteMap.reduce((acc, section) => {
-        if (section.primaryLinks) {
-            return section.primaryLinks.reduce((acc, pLink) => {
-                addToMap(acc, pLink);
-                if (pLink.secondaryLinks) {
-                    pLink.secondaryLinks.forEach(sLink => addToMap(acc, sLink));
-                }
-                return acc;
-            }, acc);
-        }
-        return acc;
-    }, new Map());
-}
-
-function addToMap(acc, doc) {
-
-    if (doc.path) {
-        acc.set(doc.key, doc.path);
-    } else {
-        acc.set(doc.key, doc.key);
-    }
-}
-
-exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
+    const {internal} = node,
+        {type} = internal;
     fmImagesToRelative(node);
-    if (node.internal.type === `MarkdownRemark`) {
+
+    if ( type === "MarkdownRemark" ) {
 
         const {frontmatter} = node,
             {draft, pageAlignment, privateEvent} = frontmatter || {};
+
+        /* Extended node fields. */
+        const filePath = createFilePath({node, getNode, basePath: ""});
         const nodeValueDraft = draft ? draft : false;
         const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
-        const nodeValueSlug = createFilePath({node, getNode, basePath: `pages`});
+        const nodeValueSlug = buildPostSlug(filePath);
         const nodeValueStyles = {alignment: pageAlignment};
 
         createNodeField({
             node,
-            name: `draft`,
+            name: "draft",
             value: nodeValueDraft,
         });
         createNodeField({
             node,
-            name: `privateEvent`,
+            name: "privateEvent",
             value: nodeValuePrivateEvent,
         });
         createNodeField({
             node,
-            name: `slug`,
-            value: replacePath(nodeValueSlug),
+            name: "slug",
+            value: nodeValueSlug,
         });
         createNodeField({
             node,
-            name: `styles`,
+            name: "styles",
             value: nodeValueStyles,
         });
     }
 };
 
-exports.createPages = ({graphql, actions}) => {
+/**
+ * Create pages.
+ *
+ * @param actions
+ * @param graphql
+ */
+exports.createPages = ({actions, graphql}) => {
+
     const {createPage} = actions;
+
     return graphql(`
     {
       allMarkdownRemark {
@@ -102,17 +85,22 @@ exports.createPages = ({graphql, actions}) => {
       allSiteMapYaml {
         edges {
           node {
-            name
-            key
-            path
-            primaryLinks {
+            menuItem
+            pageTitle
+            pathPartial
+            tabs {
               name
-              key
-              path
-              secondaryLinks {
+              pathPartial
+              navigationItems {
                 name
-                key
-                path
+                file
+                navigationItems {
+                  name
+                  file
+                  pathOverride
+                }
+                pathOverride
+                pathPartial
               }
             }
           }
@@ -121,31 +109,55 @@ exports.createPages = ({graphql, actions}) => {
     }
   `).then(result => {
 
-        // if there is an error return
-        if (result.errors) {
+        /* If there is an error, return. */
+        if ( result.errors ) {
+
             return Promise.reject(result.errors);
         }
 
-        // get siteMap
-        let yamlSiteMap = result.data.allSiteMapYaml.edges.map(n => n.node);
+        const {data} = result,
+            {allMarkdownRemark, allSiteMapYaml} = data;
 
-        let yamlSiteMapPathOrKey = keyToPath(yamlSiteMap);
+        /* For all site map documents associate the slug with a path. */
+        /* This will be used to create the correct path for each post. */
+        const menuItems = buildMenuItems(allSiteMapYaml);
 
-        result.data.allMarkdownRemark.edges.forEach(({node}) => {
-            createPage({
-                path: getKeyOrPath(node.fields.slug, yamlSiteMapPathOrKey),
-                component: path.resolve(`./src/templates/content-template.js`),
-                context: {
-                    // Data passed to context is available
-                    // in page queries as GraphQL variables.
-                    draft: node.fields.draft,
-                    slug: node.fields.slug
-                },
-            });
+        /* For each markdown file create a post. */
+        allMarkdownRemark.edges.forEach(({node}) => {
+
+            const {id, fields} = node,
+                {draft, slug} = fields;
+
+            /* Grab the post's pageTitle, tabs, navItems and path. */
+            const postNavigations = getPostNavigations(slug, menuItems);
+            const postComponent = getPostComponent();
+
+            /* Create a page, if there is a slug. */
+            if ( slug ) {
+
+                createPage({
+                    path: postNavigations.path,
+                    component: postComponent,
+                    context: {
+                        id: id,
+                        draft: draft,
+                        navItems: postNavigations.navItems,
+                        slug: slug,
+                        tabs: postNavigations.tabs,
+                        title: postNavigations.title
+                    }
+                });
+            }
         });
     });
 };
 
+/**
+ * Schema customization.
+ *
+ * @param actions
+ * @returns {*}
+ */
 exports.createSchemaCustomization = ({actions}) => {
 
     const {createFieldExtension, createTypes} = actions;
@@ -188,6 +200,18 @@ exports.createSchemaCustomization = ({actions}) => {
             }
         }
     });
+    /* Create field "headers" of type header array. */
+    createFieldExtension({
+        name: "headers",
+        extend() {
+            return {
+                resolve(source, arg, context, info) {
+                    const items = context.nodeModel.getAllNodes({type: "SiteMapYaml"});
+                    return buildHeadersField(source, items);
+                },
+            }
+        }
+    });
     /* Create field "sessionsDisplay" of type string array. */
     createFieldExtension({
         name: "sessionsDisplay",
@@ -217,9 +241,6 @@ exports.createSchemaCustomization = ({actions}) => {
     });
 
     createTypes(`
-    type MarkdownRemark implements Node {
-        frontmatter: Frontmatter
-    }
     type Frontmatter {
         conference: String
         dateBubble: [String] @dateBubble
@@ -235,9 +256,37 @@ exports.createSchemaCustomization = ({actions}) => {
         timezone: String
         title: String
     }
+    type Header implements Node {
+        name: String
+        path: String
+    }
+    type MarkdownRemark implements Node {
+        frontmatter: Frontmatter
+    }
+    type NavigationItems implements Node {
+        file: String
+        name: String
+        navigationItems: [NavigationItems]
+        pathOverride: String
+        pathPartial: String
+    }
     type Session {
         sessionEnd: String
         sessionStart: String
+    }
+    type SiteMapYaml implements Node {
+        menuItem: String
+        pageTitle: String
+        pathPartial: String
+        tabs: [Tab]
+    }
+    type SiteMapHeaderYaml implements Node {
+        headers: [Header] @headers
+    }
+    type Tab implements Node {
+        name: String
+        navigationItems: [NavigationItems]
+        pathPartial: String
     }`);
 };
 
@@ -257,5 +306,5 @@ exports.onCreateBabelConfig = ({ actions, stage }) => {
 // To access static folder while in develop mode
 exports.onCreateDevServer=({app})=>{
 
-    app.use(express.static('public'))
+    app.use(express.static("public"))
 };

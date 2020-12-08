@@ -1,0 +1,14 @@
+## Site Map Header
+#
+## menuItems
+# Comprises of a list of "menuItem" in order of appearance on the header.
+
+- menuItems:
+    - "Overview"
+    - "Learn"
+    - "Datasets"
+    - "News"
+    - "Events"
+    - "Team"
+    - "FAQ"
+    - "Help"
