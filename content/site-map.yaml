@@ -141,6 +141,7 @@
               file:  "/learn/accessing-data/requesting-data-access"
             - name: "Data Access Controls"
               file: "/learn/accessing-data/data-access-controls"
+              pathOverride: "/learn/reference/data-access-controls"
             - name: "Bringing Your Own Data"
               file: "/learn/accessing-data/bringing-your-own-data"
         - name: "Training Events"
