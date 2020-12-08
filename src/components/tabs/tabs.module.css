@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL tabs component.
+ */
+
+@import "../../styles/vars.module.css";
+
+/* Tabs. */
+.tabs {
+    align-items: center;
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 1px;
+}

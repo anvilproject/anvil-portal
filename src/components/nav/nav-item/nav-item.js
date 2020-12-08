@@ -7,7 +7,7 @@
 
 // Core dependencies
 import {navigate} from "gatsby";
-import React, {useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 
 // App dependencies
 import NavArrow from "../nav-arrow/nav-arrow";
@@ -19,29 +19,37 @@ let classNames = require("classnames");
 
 function NavItem(props) {
 
-    const {docPath, item} = props,
-        {key, name, path, secondaryLinks} = item;
-    const [, , itemPrimaryKey] = docPath.split("/");
-    const [, , keyPrimaryKey] = key.split("/");
-    const [itemActive, ] = useState(docPath === key);
-    const [itemButton, ] = useState(!!secondaryLinks);
-    const [itemOpen, setItemOpen] = useState(keyPrimaryKey === itemPrimaryKey);
-    const showArrow = secondaryLinks && secondaryLinks.length > 0;
-    const showSecondaryLinks = secondaryLinks && itemOpen;
-    const urlTo = path || key;
+    const {docPath, navItem} = props,
+        {file, name, navItems, path, slugs} = navItem || {};
+    const [itemActive, ] = useState(docPath === file);
+    const [itemButton, ] = useState(!file);
+    const [itemOpen, setItemOpen] = useState(false);
+    const showArrow = navItems && navItems.length > 0;
+    const showNestedLinks = navItems && itemOpen;
     const classNamesItem = classNames({[compStyles.active]: itemActive}, {[compStyles.button]: itemButton});
+
+    const initializeNavItem = useCallback(() => {
+
+        const nestedSlug = slugs && slugs.includes(docPath);
+        setItemOpen(nestedSlug);
+    }, [docPath, slugs]);
 
     const onHandleClick = () => {
 
-        if ( secondaryLinks ) {
+        if ( navItems ) {
 
             setItemOpen(itemOpen => !itemOpen);
         }
         else {
 
-            navigate(urlTo);
+            navigate(path);
         }
     };
+
+    useEffect(() => {
+
+        initializeNavItem();
+    }, [initializeNavItem]);
 
     return (
         <li className={compStyles.navItem}>
@@ -49,9 +57,9 @@ function NavItem(props) {
                 <NavArrow rotate={itemOpen} showArrow={showArrow}/>
                 <span>{name}</span>
             </span>
-            {showSecondaryLinks ?
+            {showNestedLinks ?
                 <ul>
-                    {secondaryLinks.map((nestedItem, k) => <NavItem key={k} docPath={docPath} item={nestedItem}/>)}
+                    {navItems.map((nestedItem, k) => <NavItem key={k} docPath={docPath} navItem={nestedItem}/>)}
                 </ul> : null}
         </li>
     );

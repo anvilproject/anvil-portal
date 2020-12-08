@@ -6,11 +6,10 @@
  */
 
 // Core dependencies
-import React, {useCallback, useEffect, useRef} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
 import NavList from "./nav-list/nav-list";
-import * as NavigationService from '../../utils/navigation.service';
 import * as ScrollingService from "../../utils/scrolling.service";
 
 // Styles
@@ -18,46 +17,49 @@ import compStyles from "./nav.module.css";
 
 function Nav(props) {
 
-    const {bannerHeight, docPath} = props;
+    const {articleOffsetTop, bannerHeight, docPath, navItems} = props;
     const navRef = useRef(null);
-    const nav = NavigationService.getNav(docPath);
-    const showNav = nav.length > 1;
+    const [navStyles, setNavStyles] = useState({maxHeight: `unset`, top: `unset`});
+    const {maxHeight, top} = navStyles || {};
+    const showNav = navItems && navItems.length > 0 && !!navItems[0].name;
 
-    const setSideNavMaxHeight = useCallback(() => {
+    const updateNavStyles = useCallback(() => {
 
-        /* Sets the nav container maxHeight. */
-        ScrollingService.calculateNavMaxHeight(bannerHeight, navRef.current);
-    }, [bannerHeight]);
+        /* Sets the nav container maxHeight and top position. */
+        const styles = ScrollingService.calculateNavStyles(bannerHeight, navRef.current, articleOffsetTop);
+
+        setNavStyles(navStyles => ({...navStyles, maxHeight: styles.maxHeight, top: styles.top}));
+    }, [articleOffsetTop, bannerHeight]);
 
     /* useEffect - componentDidMount, componentWillUnmount. */
     useEffect(() => {
 
         /* Initialize nav style. */
-        setSideNavMaxHeight();
+        updateNavStyles();
 
         /* Add event listeners "scroll" and "resize". */
-        window.addEventListener("scroll", setSideNavMaxHeight);
-        window.addEventListener("resize", setSideNavMaxHeight);
+        window.addEventListener("scroll", updateNavStyles);
+        window.addEventListener("resize", updateNavStyles);
 
         return() => {
 
             /* Remove event listeners. */
-            window.removeEventListener("scroll", setSideNavMaxHeight);
-            window.removeEventListener("resize", setSideNavMaxHeight);
+            window.removeEventListener("scroll", updateNavStyles);
+            window.removeEventListener("resize", updateNavStyles);
         };
-    }, [setSideNavMaxHeight]);
+    }, [updateNavStyles]);
 
-    /* useEffect - componentDidUpdate - bannerHeight. */
+    /* useEffect - componentDidUpdate - bannerHeight, articleOffsetTop. */
     useEffect(() => {
 
-        setSideNavMaxHeight();
-    }, [setSideNavMaxHeight]);
+        updateNavStyles();
+    }, [updateNavStyles]);
 
     return (
         <div className={compStyles.sideNavContainer}>
             {showNav ?
-                <div className={compStyles.sideNav} ref={navRef}>
-                    <NavList docPath={docPath} nav={nav}/>
+                <div className={compStyles.sideNav} ref={navRef} style={{maxHeight: maxHeight, top: top}}>
+                    <NavList docPath={docPath} navItems={navItems}/>
                 </div> : null}
         </div>
     );

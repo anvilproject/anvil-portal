@@ -22,13 +22,21 @@ export default ({data}) => {
     const post = data.markdownRemark,
         {fields, frontmatter, headings, htmlAst} = post,
         {slug, styles} = fields,
-        {description, showOutline, title} = frontmatter,
-        faq = slug.includes("/faq/") && !slug.includes("/faq/help"),
-        ncpi = slug.startsWith("/ncpi"),
-        h1 = TemplateService.getPageH1(headings),
-        pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
+        {description, showOutline, title} = frontmatter;
+    const {context} = data.sitePage;
+    const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
+    const ncpi = slug.startsWith("/ncpi");
+    const h1 = TemplateService.getPageH1(headings);
+    const pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
+
     return (
-        <Layout description={description} docPath={slug} ncpi={ncpi} showOutline={showOutline} styles={styles} title={pageTitle}>
+        <Layout navigations={context}
+                description={description}
+                docPath={slug}
+                ncpi={ncpi}
+                showOutline={showOutline}
+                styles={styles}
+                title={pageTitle}>
             <ProviderFrontmatter frontmatter={frontmatter}>
                 <ArticleBody htmlAst={htmlAst}>
                     <Socials/>
@@ -67,6 +75,28 @@ query($slug: String!) {
       }
       html
       htmlAst
+    }
+    sitePage(context: {slug: {eq: $slug }}) {
+      context {
+        navItems {
+          file
+          name
+          navItems {
+            file
+            name
+            path
+          }
+          path
+          slugs
+        }
+        slug
+        tabs {
+          active
+          name
+          path
+        }
+        title
+      }
     }
   }
 `;

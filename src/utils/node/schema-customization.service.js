@@ -1,6 +1,6 @@
 /*
- * Human Cell Atlas
- * https://www.humancellatlas.org/
+ * The AnVIL
+ * https://www.anvilproject.org
  *
  * Basic service supporting gatsby-node schema customization.
  */
@@ -59,6 +59,41 @@ const buildDateStartField = function buildDateStartField(source) {
     return firstSession.toDate();
 };
 
+/**
+ * Returns an array of header values, comprising of header display name, and header path.
+ *
+ * @param source
+ * @param items
+ * @returns {Array}
+ */
+const buildHeadersField = function buildHeadersField(source, items) {
+
+    const {menuItems} = source;
+
+    if ( items && items.length && menuItems && menuItems.length ) {
+
+        return menuItems.map(menuItem => {
+
+            const header = items.find(item => item.menuItem === menuItem);
+            const name = header.menuItem;
+            const path = header.pathPartial;
+
+            return {
+                name: name,
+                path: path
+            }
+        })
+    }
+
+    return [];
+};
+
+/**
+ * Returns the session in a displayable format.
+ *
+ * @param source
+ * @returns {Array}
+ */
 const buildSessionsDisplayField = function buildSessionsDisplayField(source) {
 
     const {sessions, timezone} = source || {};
@@ -193,4 +228,5 @@ function reformatToDisplayableSessions(sessions, timezone) {
 
 module.exports.buildDateBubbleField = buildDateBubbleField;
 module.exports.buildDateStartField = buildDateStartField;
+module.exports.buildHeadersField = buildHeadersField;
 module.exports.buildSessionsDisplayField = buildSessionsDisplayField;

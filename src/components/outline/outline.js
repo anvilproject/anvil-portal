@@ -21,6 +21,11 @@ let htmlCollection, outlineEl;
 
 class Outline extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = ({maxHeight: 'unset', top: 'unset'});
+    }
+
     componentDidMount() {
 
         // Outline container element
@@ -29,11 +34,8 @@ class Outline extends React.Component {
         // "Html" html collection
         htmlCollection = document.getElementsByTagName("html");
 
-        // Initialize outline style
-        this.setOutlineMaxHeight();
-
         window.addEventListener("scroll", this.handleOutlineScroll);
-        window.addEventListener("resize", this.setOutlineMaxHeight);
+        window.addEventListener("resize", this.updateNavStyles);
 
         if ( outlineEl ) {
 
@@ -46,7 +48,7 @@ class Outline extends React.Component {
     componentWillUnmount() {
 
         window.removeEventListener("scroll", this.handleOutlineScroll);
-        window.removeEventListener("resize", this.setOutlineMaxHeight);
+        window.removeEventListener("resize", this.updateNavStyles);
 
         if ( outlineEl ) {
 
@@ -58,11 +60,11 @@ class Outline extends React.Component {
 
     componentDidUpdate(prevProp) {
 
-        const {bannerHeight} = this.props;
+        const {articleOffsetTop, bannerHeight} = this.props;
 
-        if ( prevProp.bannerHeight !== bannerHeight ) {
+        if ( prevProp.bannerHeight !== bannerHeight || prevProp.articleOffsetTop !== articleOffsetTop ) {
 
-            this.setOutlineMaxHeight();
+            this.updateNavStyles();
         }
     }
 
@@ -88,26 +90,30 @@ class Outline extends React.Component {
 
     handleOutlineScroll = () => {
 
+        const {articleOffsetTop} = this.props;
+
         // Active outline
         const activeEls = document.getElementsByClassName(compStyles.active);
 
         // Manage outline max height style
-        this.setOutlineMaxHeight();
+        this.updateNavStyles();
 
         // Manage active outline position
-        ScrollingService.manageActiveOutlineScrollPosition(activeEls, outlineEl);
+        ScrollingService.manageActiveOutlineScrollPosition(activeEls, outlineEl, articleOffsetTop);
     };
 
-    setOutlineMaxHeight = () => {
+    updateNavStyles = () => {
 
-        const {bannerHeight} = this.props;
+        const {articleOffsetTop, bannerHeight} = this.props;
 
         // Calculates the outline container maxHeight.
-        ScrollingService.calculateNavMaxHeight(bannerHeight, outlineEl);
+        const outlineStyles = ScrollingService.calculateNavStyles(bannerHeight, outlineEl, articleOffsetTop);
+        this.setState({maxHeight: outlineStyles.maxHeight, top: outlineStyles.top});
     };
 
     render() {
         const {activeOutline, headings} = this.props;
+        const {maxHeight, top} = this.state;
 
         const OutlineItem = (props) => {
 
@@ -125,7 +131,7 @@ class Outline extends React.Component {
         };
 
         return (
-            <div className={classNames(compStyles.outline, {[compStyles.empty]: !headings})} id="outline">
+            <div className={classNames(compStyles.outline, {[compStyles.empty]: !headings})} id="outline" style={{maxHeight: maxHeight, top: top}}>
                 <ul>
                     {headings ? headings.map((heading, i) =>
                         <OutlineItem key={i} heading={heading} activeOutline={activeOutline}/>) : null}

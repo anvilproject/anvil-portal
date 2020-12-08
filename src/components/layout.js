@@ -70,15 +70,22 @@ class Layout extends React.Component {
     };
 
     render() {
-    const {children, description, docPath, homePage, ncpi, noSpy, showOutline, styles, title} = this.props,
-            site = ncpi ? "NCPI" : "The AnVIL";
-            return (
+        const {children, description, docPath, homePage, navigations, ncpi, noSpy, showOutline, styles, title} = this.props;
+        const site = ncpi ? "NCPI" : "The AnVIL";
+
+        return (
             <div ref={this.containerEl}>
                 <PageHead pageTitle={title} site={site}/>
                 <SEO description={description} ncpi={ncpi} site={site} title={title}/>
                 <div className={classNames(compStyles.site, {[compStyles.menuOpen]: this.state.noScroll})}>
                     <Header ncpi={ncpi} onMenuOpen={this.onMenuOpen.bind(this)}/>
-                    <Main bannerHeight={this.state.bannerHeight} docPath={docPath} homePage={homePage} noSpy={noSpy} showOutline={showOutline} styles={styles}>{children}</Main>
+                    <Main bannerHeight={this.state.bannerHeight}
+                          docPath={docPath}
+                          homePage={homePage}
+                          navigations={navigations}
+                          noSpy={noSpy}
+                          showOutline={showOutline}
+                          styles={styles}>{children}</Main>
                     <BannerPrivacy onBannerHeightChange={this.onBannerHeightChange.bind(this)}/>
                     <Footer/>
                     <div id="portal"/>

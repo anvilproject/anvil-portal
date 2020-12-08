@@ -8,6 +8,7 @@
 /* Article */
 .article {
     padding: 36px 0;
+    position: relative; /* Positions tabs. */
 }
 
 /* Article container */

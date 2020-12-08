@@ -8,7 +8,7 @@ title: "Data"
 
 # Dataset Catalog
 
-Search AnVIL's datasets and associated Terra workspaces for datasets of interest. 
+Search AnVIL's datasets and associated Terra workspaces for datasets of interest.
 
 Open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces)  or [Gen3](https://gen3.theanvil.io). To request access for datasets with access restrictions, see AnVIL's guides for requesting access to [Controlled Access](/learn/accessing-data/requesting-data-access#accessing-controlled-access-data) and [Consortium Access](/learn/accessing-data/requesting-data-access#accessing-consortium-access-data) datasets.
 

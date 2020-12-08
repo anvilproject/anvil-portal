@@ -15,7 +15,6 @@
     padding-left: 2px; /* Required for indicator ball to be shown in overflow environment. */
     position: fixed;
     scrollbar-width: none; /* Hide scrollbar in Firefox. */
-    top: 100px;
     width: 200px;
 }
 

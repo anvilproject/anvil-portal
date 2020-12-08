@@ -47,7 +47,9 @@ class Spy extends React.Component {
 
         if ( prevState.activeOutline !== this.state.activeOutline ) {
 
-            this.props.onOutlineChange(this.state.activeOutline);
+            const {setActiveOutline} = this.props;
+
+            setActiveOutline(this.state.activeOutline);
         }
     }
 
@@ -63,7 +65,9 @@ class Spy extends React.Component {
 
     handleScroll = () => {
 
-        let currentAction = ScrollingService.manageSpyScrollAction(this.elementIdsByAnchorFromTop, this.state.activeOutline);
+        const {articleOffsetTop} = this.props;
+
+        let currentAction = ScrollingService.manageSpyScrollAction(this.elementIdsByAnchorFromTop, this.state.activeOutline, articleOffsetTop);
 
         // Update state if required
         if ( currentAction !== this.state.activeOutline ) {

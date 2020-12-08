@@ -17,13 +17,15 @@ import compStyles from "./main.module.css";
 class Main extends React.Component {
 
     render() {
-        const {bannerHeight, children, docPath, homePage, noSpy, showOutline, styles} = this.props;
+        const {bannerHeight, children, docPath, homePage, navigations, noSpy, showOutline, styles} = this.props;
+
         return (
             <main className={compStyles.main}>
                 {homePage ? children :
                     <Article
                         bannerHeight={bannerHeight}
                         docPath={docPath}
+                        navigations={navigations}
                         noSpy={noSpy}
                         showOutline={showOutline}
                         styles={styles}>{children}</Article>}
