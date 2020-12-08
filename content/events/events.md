@@ -2,10 +2,10 @@
 description: "Upcoming and previous events about the AnVIL genomic analysis platform and its components."
 title: "Events"
 ---
-#Events
+#AnVIL Community Events
 
-##Upcoming Events
+##Upcoming
 <Events></Events>
 
-##Past Events
+##Past
 <Events past></Events>

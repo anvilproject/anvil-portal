@@ -35,7 +35,7 @@
   pageTitle: "Datasets"
   pathPartial: "/data"
   tabs:
-    - name: ""
+    - name: "Dataset Catalog"
       pathPartial: ""
       navigationItems:
         - name: ""
@@ -120,7 +120,7 @@
   pathPartial: "/learn"
   tabs:
     - name: "Researchers"
-      pathPartial: "/researchers"
+      pathPartial: ""
       navigationItems:
         - name: "Getting Started"
           file: ""
@@ -153,7 +153,7 @@
               file: "/learn/training/magic-jamboree-june-2020"
         - name: "MOOC"
           file: ""
-          pathPartial: "/mooc"
+          pathPartial: "/anvil-mooc"
           navigationItems:
             - name: "What is AnVIL?"
               file: "/learn/mooc/what-is-anvil"
@@ -171,13 +171,13 @@
           file: ""
           pathPartial: "/videos"
           navigationItems:
-            - name: "Using AnVIL"
+            - name: "AnVIL"
               file: "/learn/videos/anvil-videos"
-            - name: "Using Terra"
+            - name: "Terra"
               file: "/learn/videos/terra-videos"
-            - name: "Using Dockstore"
+            - name: "Dockstore"
               file: "/learn/videos/dockstore-videos"
-            - name: "Using Gen3"
+            - name: "Gen3"
               file: "/learn/videos/gen3-videos"
         - name: "Reference"
           file: ""
@@ -208,7 +208,7 @@
           pathOverride: "/overview"
         - name: "Data Consortia Roadmap"
           file: "/overview/data-consortia"
-        - name: "Project Sponsor"
+        - name: "Supported by NHGRI"
           file: "/overview/project-sponsor"
 ## NCPI
 - menuItem: "NCPI"
