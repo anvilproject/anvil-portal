@@ -39,7 +39,7 @@ And perform a variety of genomics research. The step-by-step tutorial below demo
 1. Galaxy must be launched from a workspace. This can either be an existing workspace that has data already loaded, or could be from a new workspace. For this example, we will create a new workspace using the “Create New Workspace” dialog. Note you will also need to set up and select a Billing project to be associated with the Workspace.\
 ![Step 6](../_images/getting-started/galaxy-step-6.png)
 1. For this example, we will load (simulated) microbial sequencing data available here: <https://github.com/schatzlab/appliedgenomics2020/raw/master/assignments/assignment2/asm.tgz>. After downloading the asm.tgz file, expand the archive and upload the data to the Terra workspace by dragging and dropping the files from your local computer (or using the + button) into the Files pane in the Data tab.\
-![Step 7](../_images/getting-started/galaxy-step-7.png)\
+![Step 7](../_images/getting-started/galaxy-step-7.png)
 ![Step 7 - loaded](../_images/getting-started/galaxy-step-7a.png)
 1. Next click on the “Notebooks” tab to find the “Create a Cloud Environment for Galaxy” button.\
 ![Step 8](../_images/getting-started/galaxy-step-8.png)
