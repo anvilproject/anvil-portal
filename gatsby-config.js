@@ -22,6 +22,7 @@ module.exports = {
         siteUrl: `https://anvilproject.org`,
     },
     plugins: [
+        `gatsby-plugin-catch-links`,
         {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
