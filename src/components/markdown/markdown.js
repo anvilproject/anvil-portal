@@ -14,7 +14,6 @@ import DataDashboard from "../data-dashboard/data-dashboard";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import FigureCaption from "../figure-caption/figure-caption";
-import GoArrow from "../go-arrow/go-arrow";
 import Hero from "../hero/hero";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
@@ -66,7 +65,6 @@ class Markdown extends React.Component {
                 "event-hero": EventHero,
                 "events": Events,
                 "figure-caption": FigureCaption,
-                "go-arrow": GoArrow,
                 "hero": Hero,
                 "news": News,
                 "platforms": Platforms,

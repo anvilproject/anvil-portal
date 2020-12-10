@@ -11,8 +11,8 @@ const componentPath = "src/templates/content-template.js";
 const path = require("path");
 
 /**
- * Returns a map object key-value pair comprising of post navigation object (tabs, navigation and post path)
- * and corresponding markdown file path (equivalent to the post's slug).
+ * Returns an object built from the site map grouped by menuItem comprising of tabs, navigation and post path and post slug
+ * i.e. corresponding markdown file path.
  *
  * @param siteMapYAML
  * @returns {*}
@@ -32,6 +32,31 @@ const buildMenuItems = function buildMenuItems(siteMapYAML) {
 };
 
 /**
+ * Returns a map object key-value pair of menuItem and corresponding set of navItems (in order of navigational appearance).
+ * Builds next and previous article links in order of appearance in the site map.
+ *
+ * @param menuItems
+ */
+const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems) {
+
+    return menuItems.reduce((acc, menuItem) => {
+
+        const {pageTitle, tabs} = menuItem || {};
+        const setOfNavItems = new Set();
+
+        tabs.forEach(tab => {
+
+            const {navItems} = tab;
+
+            buildSetOfNavItems(navItems, setOfNavItems);
+        });
+
+        acc.set(pageTitle, setOfNavItems);
+        return acc;
+    }, new Map());
+};
+
+/**
  * Returns the post's template component path.
  *
  * @returns {string}
@@ -46,8 +71,9 @@ const getPostComponent = function getPostComponent() {
  *
  * @param slug
  * @param menuItems
+ * @param setOfNavItemsByMenuItem
  */
-const getPostNavigations = function getPostNavigations(slug, menuItems) {
+const getPostNavigations = function getPostNavigations(slug, menuItems, setOfNavItemsByMenuItem) {
 
     /* Default - slug as path. */
     const postNavigations = {path: slug};
@@ -68,7 +94,7 @@ const getPostNavigations = function getPostNavigations(slug, menuItems) {
 
             const {navItems} = tab;
 
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems));
+            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem));
         }
     }
 
@@ -267,9 +293,10 @@ function buildPath(navItem, pathPartials) {
  * @param navItems
  * @param navItem
  * @param t
+ * @param setOfNavItemsByMenuItem
  * @returns {{path: *, navItems: *, tabs: [null], title: *}}
  */
-function buildPostNavs(menuItem, navItems, navItem, t) {
+function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem) {
 
     const {pageTitle, tabs} = menuItem;
     const {path} = navItem;
@@ -277,7 +304,46 @@ function buildPostNavs(menuItem, navItems, navItem, t) {
     const tabsClone = [...tabs];
     tabsClone[t] = Object.assign({...tabsClone[t]}, {active: true});
 
-    return {navItems: navItems, path: path, tabs: tabsClone, title: pageTitle};
+    const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
+    const indexOfNavItem = [...setOfNavItems].findIndex(nItem => nItem.path === path);
+    const navItemNext = [...setOfNavItems][indexOfNavItem + 1] || null;
+    const navItemPrev = [...setOfNavItems][indexOfNavItem - 1] || null;
+
+    return {
+        navItemNext: navItemNext,
+        navItemPrevious: navItemPrev,
+        navItems: navItems,
+        path: path,
+        tabs: tabsClone,
+        title: pageTitle
+    };
+}
+
+/**
+ * Returns the complete set of navItems for each menuItem.
+ *
+ * @param nItems
+ * @param setOfNavItems
+ * @returns {Set}
+ */
+function buildSetOfNavItems(nItems, setOfNavItems) {
+
+    nItems.forEach(nItem => {
+
+        const {name, path} = nItem || {};
+
+        if ( path ) {
+
+            setOfNavItems.add({name: name, path: path});
+        }
+
+        if ( nItem.navItems ) {
+
+            buildSetOfNavItems(nItem.navItems, setOfNavItems);
+        }
+    });
+
+    return setOfNavItems;
 }
 
 /**
@@ -288,9 +354,10 @@ function buildPostNavs(menuItem, navItems, navItem, t) {
  * @param tab
  * @param t
  * @param nItems
+ * @param setOfNavItemsByMenuItem
  * @returns {{}}
  */
-function findPostNavigations(slug, menuItem, tab, t, nItems) {
+function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenuItem) {
 
     const postNavigations = {};
 
@@ -299,13 +366,13 @@ function findPostNavigations(slug, menuItem, tab, t, nItems) {
         /* Update post navigations with corresponding navigations. */
         if ( navItem.file === slug ) {
 
-            Object.assign(postNavigations, buildPostNavs(menuItem, tab.navItems, navItem, t));
+            Object.assign(postNavigations, buildPostNavs(menuItem, tab.navItems, navItem, t, setOfNavItemsByMenuItem));
         }
 
         /* Investigate nested navItems to find any slug matches and update the post navigations accordingly. */
         if ( navItem.navItems ) {
 
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItem.navItems));
+            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItem.navItems, setOfNavItemsByMenuItem));
         }
     }
 
@@ -340,5 +407,6 @@ function getTabPath(navigationItems) {
 }
 
 module.exports.buildMenuItems = buildMenuItems;
+module.exports.buildSetOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem;
 module.exports.getPostComponent = getPostComponent;
 module.exports.getPostNavigations = getPostNavigations;

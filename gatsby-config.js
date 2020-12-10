@@ -125,7 +125,6 @@ module.exports = {
                                 "event-hero",
                                 "events",
                                 "figure-caption",
-                                "go-arrow",
                                 "hero",
                                 "news",
                                 "platforms",

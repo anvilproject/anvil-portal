@@ -13,6 +13,7 @@ import React from "react";
 // App dependencies
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
+import ArticleNavigation from "../components/article-navigation/article-navigation";
 import Layout from "../components/layout";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import Socials from "../components/socials/socials";
@@ -40,6 +41,7 @@ export default ({data}) => {
             <ProviderFrontmatter frontmatter={frontmatter}>
                 <ArticleBody htmlAst={htmlAst}>
                     <Socials/>
+                    <ArticleNavigation navigations={context}/>
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>
             </ProviderFrontmatter>
@@ -78,6 +80,14 @@ query($slug: String!) {
     }
     sitePage(context: {slug: {eq: $slug }}) {
       context {
+        navItemNext {
+          name
+          path
+        }
+        navItemPrevious {
+          name
+          path
+        }
         navItems {
           file
           name
