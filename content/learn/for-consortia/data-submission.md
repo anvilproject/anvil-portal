@@ -103,6 +103,6 @@ These identifiers allow for tracking data across components of the AnVIL, and fa
 Studies submitted to the AnVIL will still need to be registered with dbGaP, though there will be no requirement to submit source files or individual samples. Consent codes given by dbGaP will be used to determine access - with studies split into individual workspaces based on cohort and consent pairings. External researchers can use dbGaP to apply for access, and a completed and approved DAR will permit dbGaP to communicate this access grant to Terra.
 
 ###Access Control
-Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/reference/data-access-controls).
+Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/accessing-data/data-access-controls).
 
 
