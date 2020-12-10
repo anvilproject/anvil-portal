@@ -17,11 +17,13 @@ import compStyles from "./tabs.module.css";
 function Tabs(props) {
 
     const {tabs} = props;
+    const showTabs = tabs && tabs.length > 0;
 
     return (
-        <span className={compStyles.tabs}>
-            {tabs.map((tab, t) => <Tab key={t} tab={tab}/>)}
-        </span>
+        showTabs ?
+            <span className={compStyles.tabs}>
+                {tabs.map((tab, t) => <Tab key={t} tab={tab}/>)}
+            </span> : null
     );
 }
 

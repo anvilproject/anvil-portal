@@ -7,8 +7,10 @@
  */
 
 // Template variables
+const allowListScoopMenuItems = ["events", "news"];
 const componentPath = "src/templates/content-template.js";
-const path = require("path");
+const denyListScoopSlugs = ["/events/events", "/news/news"];
+const nodePath = require("path");
 
 /**
  * Returns an object built from the site map grouped by menuItem comprising of tabs, navigation and post path and post slug
@@ -36,34 +38,34 @@ const buildMenuItems = function buildMenuItems(siteMapYAML) {
  * Builds next and previous article links in order of appearance in the site map.
  *
  * @param menuItems
+ * @param markdowns
  */
-const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems) {
+const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems, markdowns) {
 
     return menuItems.reduce((acc, menuItem) => {
 
-        const {pageTitle, tabs} = menuItem || {};
+        const {pageTitle, path, tabs} = menuItem || {};
         const setOfNavItems = new Set();
 
-        tabs.forEach(tab => {
+        /* Build set of nav items for news or events menu item. */
+        if ( isMenuItemScoop(pageTitle) ) {
 
-            const {navItems} = tab;
+            buildSetOfScoopNavItems(path, markdowns, setOfNavItems);
+        }
+        /* Build set of nav items for all other menu items. */
+        else {
 
-            buildSetOfNavItems(navItems, setOfNavItems);
-        });
+            tabs.forEach(tab => {
+
+                const {navItems} = tab;
+
+                buildSetOfNavItems(navItems, setOfNavItems);
+            });
+        }
 
         acc.set(pageTitle, setOfNavItems);
         return acc;
     }, new Map());
-};
-
-/**
- * Returns the post's template component path.
- *
- * @returns {string}
- */
-const getPostComponent = function getPostComponent() {
-
-    return path.resolve(componentPath);
 };
 
 /**
@@ -73,32 +75,28 @@ const getPostComponent = function getPostComponent() {
  * @param menuItems
  * @param setOfNavItemsByMenuItem
  */
-const getPostNavigations = function getPostNavigations(slug, menuItems, setOfNavItemsByMenuItem) {
+const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem) {
 
-    /* Default - slug as path. */
-    const postNavigations = {path: slug};
+    /* Default - slug as path, initialize navigations. */
+    const postNavigations = {navItems: [], path: slug, tabs: [], title: ""};
 
-    /* For each menuItem. */
-    for ( const [, menuItem] of menuItems.entries() ) {
+    /* Handle special case for scoops (news or events not listed in the site map). */
+    if ( isSlugScoop(slug) ) {
 
-        /* Handle special case where any news of events file (not listed in the site map) is allocated a page title. */
-        const [,title,] = slug.split("/");
-
-        if ( title === "news" || title === "events" ) {
-
-            Object.assign(postNavigations, {title: title});
-        }
-
-        /* For every tab. */
-        for ( const [t, tab] of menuItem.tabs.entries() ) {
-
-            const {navItems} = tab;
-
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem));
-        }
+        return buildScoopNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations);
     }
 
-    return postNavigations;
+    return buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations);
+};
+
+/**
+ * Returns the slug's template component path.
+ *
+ * @returns {string}
+ */
+const getSlugComponent = function getSlugComponent() {
+
+    return nodePath.resolve(componentPath);
 };
 
 /**
@@ -161,6 +159,7 @@ function buildMenuItem(menuItem) {
 
     return {
         pageTitle: pageTitle,
+        path: pathPartial,
         tabs: pageTabs
     };
 }
@@ -287,6 +286,32 @@ function buildPath(navItem, pathPartials) {
 }
 
 /**
+ * Returns the post navigations for the specified slug.
+ *
+ * @param slug
+ * @param menuItems
+ * @param setOfNavItemsByMenuItem
+ * @param postNavigations
+ * @returns {*}
+ */
+function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations) {
+
+    /* For each menuItem. */
+    for ( const [, menuItem] of menuItems.entries() ) {
+
+        /* For every tab. */
+        for ( const [t, tab] of menuItem.tabs.entries() ) {
+
+            const {navItems} = tab;
+
+            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem));
+        }
+    }
+
+    return postNavigations;
+}
+
+/**
  * Builds the post's navigations (navItems, path, tabs, title) for the specified slug.
  *
  * @param menuItem
@@ -294,29 +319,47 @@ function buildPath(navItem, pathPartials) {
  * @param navItem
  * @param t
  * @param setOfNavItemsByMenuItem
- * @returns {{path: *, navItems: *, tabs: [null], title: *}}
+ * @returns {{navItemNext: *, navItemPrevious: *, navItems, path: *, tabs: *, title: *}}
  */
 function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem) {
 
     const {pageTitle, tabs} = menuItem;
     const {path} = navItem;
 
-    const tabsClone = [...tabs];
-    tabsClone[t] = Object.assign({...tabsClone[t]}, {active: true});
-
-    const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
-    const indexOfNavItem = [...setOfNavItems].findIndex(nItem => nItem.path === path);
-    const navItemNext = [...setOfNavItems][indexOfNavItem + 1] || null;
-    const navItemPrev = [...setOfNavItems][indexOfNavItem - 1] || null;
+    const postTabs = getPostTabs(tabs, t);
+    const postNavItems = getPostNavItems(navItems);
+    const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem);
 
     return {
         navItemNext: navItemNext,
         navItemPrevious: navItemPrev,
-        navItems: navItems,
+        navItems: postNavItems,
         path: path,
-        tabs: tabsClone,
+        tabs: postTabs,
         title: pageTitle
     };
+}
+
+/**
+ * Returns the scoops navigations for the specified scoop.
+ *
+ * @param slug
+ * @param menuItems
+ * @param setOfNavItemsByMenuItem
+ * @param postNavigations
+ */
+function buildScoopNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations) {
+
+    /* Update any scoops with corresponding navigations. */
+    if ( !denyListScoopSlugs.includes(slug) ) {
+
+        const pageTitle = menuItems.find(menuItem => slug.startsWith(menuItem.path)).pageTitle;
+        const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, slug, setOfNavItemsByMenuItem);
+
+        Object.assign(postNavigations, {navItemNext: navItemNext, navItemPrevious: navItemPrev, title: pageTitle});
+    }
+
+    return postNavigations;
 }
 
 /**
@@ -332,7 +375,7 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
 
         const {name, path} = nItem || {};
 
-        if ( path ) {
+        if ( name && path ) {
 
             setOfNavItems.add({name: name, path: path});
         }
@@ -344,6 +387,53 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
     });
 
     return setOfNavItems;
+}
+
+/**
+ * Builds
+ * @param path
+ * @param markdowns
+ * @param setOfNavItems
+ * @returns {*}
+ */
+function buildSetOfScoopNavItems(path, markdowns, setOfNavItems) {
+
+    /* Group the scoops by date, past scoops are order most recent to oldest and future scoops are ordered by upcoming dates. */
+    const scoops = filterScoopsSortedByDate(markdowns, path);
+    const scoopIndex = findFirstPastScoopIndex(scoops);
+    const pastScoops = scoops.slice(scoopIndex);
+    const futureScoops = scoops.slice(0, scoopIndex).reverse();
+    const sortedScoops = futureScoops.concat(pastScoops);
+
+    /* Add the scoops to the setOfNavItems. */
+    sortedScoops.forEach(scoop => {
+
+        const {fields, frontmatter} = scoop || {},
+            {slug} = fields || {},
+            {title} = frontmatter || {};
+
+        setOfNavItems.add({name: title, path: slug});
+    });
+
+    return setOfNavItems;
+}
+
+/**
+ * Returns the index of the first scoop after today's date.
+ *
+ * @param scoops
+ * @returns number
+ */
+function findFirstPastScoopIndex(scoops) {
+
+    const today = new Date();
+
+    return scoops.findIndex(scoop => {
+
+        const scoopDate = getScoopDate(scoop);
+
+        return scoopDate < today;
+    });
 }
 
 /**
@@ -380,6 +470,122 @@ function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenu
 }
 
 /**
+ * Returns scoops, sorted by date.
+ *
+ * @param markdowns
+ * @param path
+ * @returns {Array.<*>}
+ */
+function filterScoopsSortedByDate(markdowns, path) {
+
+    return markdowns.edges
+        .map(n => n.node)
+        .filter(markdown => isMarkdownScoopValid(markdown, path))
+        .sort(function(s0, s1) {
+
+            const s0Date = getScoopDate(s0);
+            const s1Date = getScoopDate(s1);
+
+            return s1Date - s0Date;
+        });
+}
+
+/**
+ * Returns an array of next and previous navItem for the post.
+ *
+ * @param pageTitle
+ * @param path
+ * @param setOfNavItemsByMenuItem
+ * @returns {Array}
+ */
+function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem) {
+
+    /* Grab the set of navItems for the specified menuItem. */
+    /* Find the index of the navItem within the set. */
+    const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
+    const navItems = [...setOfNavItems];
+    const indexOfNavItem = navItems.findIndex(nItem => nItem.path === path);
+
+    /* Initialize navItemNext/Prev. */
+    let navItemNext = null;
+    let navItemPrev = null;
+
+    /* Update next/prev navItems from the set of navItems. */
+    if ( indexOfNavItem >= 0 ) {
+
+        navItemNext = navItems[indexOfNavItem + 1] || null;
+        navItemPrev = navItems[indexOfNavItem - 1] || null;
+    }
+
+    return Array.of(navItemNext, navItemPrev);
+}
+
+/**
+ * Returns the navItems for the post - removing any unnamed first-level navItems.
+ *
+ * @param navItems
+ */
+function getPostNavItems(navItems) {
+
+    /* Return navItems - remove any unnamed nav items. */
+    return navItems.reduce((acc, navItem) => {
+
+        const {name} = navItem || {};
+
+        if ( name ) {
+
+            acc.push(navItem);
+        }
+
+        return acc;
+    }, []);
+}
+
+/**
+ * Returns the tabs for the post - removing any unnamed tabs.
+ * Updates the post's tab to active.
+ *
+ * @param tabs
+ * @param t
+ * @returns {*}
+ */
+function getPostTabs(tabs, t) {
+
+    /* Update tab with active state. */
+    const tabsClone = [...tabs];
+    tabsClone[t] = Object.assign({...tabsClone[t]}, {active: true});
+
+    /* Return tabs - remove any unnamed tabs. */
+    return tabsClone.reduce((acc, tab) => {
+
+        const {name} = tab || {};
+
+        if ( name ) {
+
+            acc.push(tab);
+        }
+
+        return acc;
+    }, [])
+}
+
+/**
+ * Returns the date or dateStart as a date value for the specified scoop.
+ *
+ * @param scoop
+ * @returns {Date}
+ */
+function getScoopDate(scoop) {
+
+    const {frontmatter} = scoop || {},
+        {date, dateStart} = frontmatter || {};
+
+    const scoopDate = dateStart || date;
+
+    return new Date(scoopDate);
+}
+
+/**
  * Returns the path for the specified tab.
  *
  * @param navigationItems
@@ -406,7 +612,49 @@ function getTabPath(navigationItems) {
     return "";
 }
 
+/**
+ * Returns true if the markdown slug is a scoop, is not a draft, and is not a private event.
+ *
+ * @param markdown
+ * @param path
+ * @returns boolean
+ */
+function isMarkdownScoopValid(markdown, path) {
+
+    const {fields} = markdown || {},
+        {draft, privateEvent, slug} = fields;
+    const scoopSlug = slug.startsWith(path) && !denyListScoopSlugs.includes(slug);
+
+    return scoopSlug && !draft && !privateEvent;
+}
+
+/**
+ * Returns true if the menu item is "News" or "Events".
+ *
+ * @param pageTitle
+ * @returns {boolean}
+ */
+function isMenuItemScoop(pageTitle) {
+
+    const title = pageTitle.toLowerCase();
+
+    return allowListScoopMenuItems.includes(title);
+}
+
+/**
+ * Returns true if the slug is a scoop.
+ *
+ * @param slug
+ * @returns boolean
+ */
+function isSlugScoop(slug) {
+
+    const scoopSlug = slug.startsWith("/events") || slug.startsWith("/news");
+
+    return scoopSlug && !denyListScoopSlugs.includes(slug);
+}
+
 module.exports.buildMenuItems = buildMenuItems;
 module.exports.buildSetOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem;
-module.exports.getPostComponent = getPostComponent;
-module.exports.getPostNavigations = getPostNavigations;
+module.exports.buildSlugNavigations = buildSlugNavigations;
+module.exports.getSlugComponent = getSlugComponent;

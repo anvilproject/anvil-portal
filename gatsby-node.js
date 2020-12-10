@@ -7,7 +7,7 @@ const express = require("express");
 const {fmImagesToRelative} = require("gatsby-remark-relative-images");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
-const {buildMenuItems, buildSetOfNavItemsByMenuItem, getPostComponent, getPostNavigations} = require("./src/utils/node/create-pages.service");
+const {buildMenuItems, buildSetOfNavItemsByMenuItem, buildSlugNavigations, getSlugComponent} = require("./src/utils/node/create-pages.service");
 const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
 /**
@@ -77,7 +77,13 @@ exports.createPages = ({actions, graphql}) => {
           node {
             fields {
               draft
+              privateEvent
               slug
+            }
+            frontmatter {
+              date
+              dateStart
+              title
             }
           }
         }
@@ -124,7 +130,7 @@ exports.createPages = ({actions, graphql}) => {
 
         /* Builds a set of navigation items for each menu item. */
         /* Builds next and previous article links in order of appearance in the site map. */
-        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
+        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems, allMarkdownRemark);
 
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {
@@ -132,25 +138,25 @@ exports.createPages = ({actions, graphql}) => {
             const {id, fields} = node,
                 {draft, slug} = fields;
 
-            /* Grab the post's pageTitle, tabs, navItems and path. */
-            const postNavigations = getPostNavigations(slug, menuItems, setOfNavItemsByMenuItem);
-            const postComponent = getPostComponent();
+            /* Grab the slug's pageTitle, tabs, navItems and path. */
+            const slugNavigations = buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem);
+            const slugComponent = getSlugComponent();
 
             /* Create a page, if there is a slug. */
             if ( slug ) {
 
                 createPage({
-                    path: postNavigations.path,
-                    component: postComponent,
+                    path: slugNavigations.path,
+                    component: slugComponent,
                     context: {
                         id: id,
                         draft: draft,
-                        navItemNext: postNavigations.navItemNext,
-                        navItemPrevious: postNavigations.navItemPrevious,
-                        navItems: postNavigations.navItems,
+                        navItemNext: slugNavigations.navItemNext,
+                        navItemPrevious: slugNavigations.navItemPrevious,
+                        navItems: slugNavigations.navItems,
                         slug: slug,
-                        tabs: postNavigations.tabs,
-                        title: postNavigations.title
+                        tabs: slugNavigations.tabs,
+                        title: slugNavigations.title
                     }
                 });
             }

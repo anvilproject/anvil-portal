@@ -22,12 +22,11 @@ function Headline(props) {
 
     const {navigations} = props,
         {tabs, title} = navigations || {};
-    const showTabs = tabs && tabs.length > 0 && tabs[0].name;
 
     return (
         <div className={classNames(globalStyles.container, compStyles.headline)}>
             <Title title={title}/>
-            {showTabs ? <Tabs tabs={tabs}/> : null}
+            <Tabs tabs={tabs}/>
         </div>
     );
 }

@@ -21,7 +21,7 @@ function Nav(props) {
     const navRef = useRef(null);
     const [navStyles, setNavStyles] = useState({maxHeight: `unset`, top: `unset`});
     const {maxHeight, top} = navStyles || {};
-    const showNav = navItems && navItems.length > 0 && !!navItems[0].name;
+    const showNav = navItems && navItems.length > 0;
 
     const updateNavStyles = useCallback(() => {
 
