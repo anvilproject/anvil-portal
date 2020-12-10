@@ -1,28 +1,37 @@
 ---
 author: "AnVIL"
-title: ""
-description: ""
+title: " Alpha Version of Galaxy Running in AnVIL/Terra"
+description: "An overview and tutorial of how to use Galaxy on AnVIL."
 ---
 
 # Alpha Version of Galaxy Running in AnVIL/Terra
 
-We are pleased to announce that Galaxy (<https://galaxyproject.org>) is now available within AnVIL! To access this functionality use the new “Create a Cloud Environment for Galaxy” feature under Notebooks.
+We are pleased to announce that Galaxy (<https://galaxyproject.org>) is now available within AnVIL! 
+
+## Overview of Galaxy in the Cloud
+
+`video: https://www.youtube.com/watch?v=-Q4SjLEd99s`
+
+## Launching Galaxy in AnVIL
+
+To access Galaxy use the new “Create a Cloud Environment for Galaxy” feature under Notebooks.
 
 ![Create a cloud environment for Galaxy](../_images/getting-started/galaxy-cloud-environment-create.png)
+
+
 
 This will take you to the AnVIL branded version of Galaxy!
 
 ![AnVIL branded Galaxy](../_images/getting-started/galaxy-anvil-branded-galaxy.png)
 
-From the AnVIL branded version of Galaxy, users can browse files in their AnVIL/Terra Workspace.
+From the AnVIL branded version of Galaxy, users can browse files in their AnVIL/Terra Workspace and perform a variety of genomics research.
 
 ![Browsing files in the AnVIL/Terra Workspace](../_images/getting-started/galaxy-browsing-files.png)
-
-And perform a variety of genomics research. The step-by-step tutorial below demonstrates how to compute quality metrics of unaligned reads, align the reads to a reference genome using bowtie2, plot a coverage histogram, call variants using FreeBayes, and then summarize the variant calls using bcftools.
 
 ![bcftools](../_images/getting-started/galaxy-bcf-tools.png)
 
 ## Step-by-Step Tutorial
+The step-by-step tutorial below demonstrates how to compute quality metrics of unaligned reads, align the reads to a reference genome using bowtie2, plot a coverage histogram, call variants using FreeBayes, and then summarize the variant calls using bcftools.
 
 ### I. Launching Galaxy
 
