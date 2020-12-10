@@ -7,7 +7,7 @@ const express = require("express");
 const {fmImagesToRelative} = require("gatsby-remark-relative-images");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
-const {buildMenuItems, getPostComponent, getPostNavigations} = require("./src/utils/node/create-pages.service");
+const {buildMenuItems, buildSetOfNavItemsByMenuItem, getPostComponent, getPostNavigations} = require("./src/utils/node/create-pages.service");
 const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
 /**
@@ -118,9 +118,13 @@ exports.createPages = ({actions, graphql}) => {
         const {data} = result,
             {allMarkdownRemark, allSiteMapYaml} = data;
 
-        /* For all site map documents associate the slug with a path. */
+        /* Build menuItems where each site map document associates the slug with a path. */
         /* This will be used to create the correct path for each post. */
         const menuItems = buildMenuItems(allSiteMapYaml);
+
+        /* Builds a set of navigation items for each menu item. */
+        /* Builds next and previous article links in order of appearance in the site map. */
+        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
 
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {
@@ -129,7 +133,7 @@ exports.createPages = ({actions, graphql}) => {
                 {draft, slug} = fields;
 
             /* Grab the post's pageTitle, tabs, navItems and path. */
-            const postNavigations = getPostNavigations(slug, menuItems);
+            const postNavigations = getPostNavigations(slug, menuItems, setOfNavItemsByMenuItem);
             const postComponent = getPostComponent();
 
             /* Create a page, if there is a slug. */
@@ -141,6 +145,8 @@ exports.createPages = ({actions, graphql}) => {
                     context: {
                         id: id,
                         draft: draft,
+                        navItemNext: postNavigations.navItemNext,
+                        navItemPrevious: postNavigations.navItemPrevious,
                         navItems: postNavigations.navItems,
                         slug: slug,
                         tabs: postNavigations.tabs,

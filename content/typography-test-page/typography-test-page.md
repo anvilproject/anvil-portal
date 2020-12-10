@@ -65,8 +65,6 @@ We will generally request 2 reviewers for any complex technical content, team co
 ###Contact Us
 Please feel free to reach out to us on the [AnVIL Gitter channel](https://gitter.im/anvil-project/Lobby) or email our [help desk](mailto:help@lists.anvilproject.org).
 
-<go-arrow>[AnVIL Gitter channel](https://gitter.im/anvil-project/Lobby)</go-arrow>
-
 ##Research
 Researchers can gain access to AnVIL hosted data sets by submitting a data access request through dbGaP for CCDG, CMG, or GTEx data. All 1000 Genomes data is publicly accessible.
 
