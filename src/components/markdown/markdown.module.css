@@ -29,12 +29,13 @@
 
 /* Image. */
 .zoomIcon {
-    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20); /* Elevation 8. */
+    box-shadow: rgba(0, 0, 0, 0.14) 0 12px 24px -4px, rgba(0, 0, 0, 0.24) 0 8px 16px -8px, rgba(0, 0, 0, 0.24) 0 -6px 16px -6px;
+    //box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 3px rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.20); /* Elevation 8. */
 }
 
 /* Image, video. */
 .content .zoomIcon, .content .video {
-    margin: 32px 0;
+    margin: 48px 0;
 }
 
 /* Image zoom icon */
