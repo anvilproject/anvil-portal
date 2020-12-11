@@ -16,6 +16,7 @@ import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
 import compStyles from "./data-table-row-cell-gap-id.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 class DataTableRowCellGapId extends React.Component {
 
@@ -29,7 +30,7 @@ class DataTableRowCellGapId extends React.Component {
                                      clickAction={() => RedirectService.redirect(studyUrl, value)}
                                      id={id}
                                      tag={"td"}
-                                     label={value}>{value}</ClickHandler> :
+                                     label={value}><span className={globalStyles.asLink}>{value}</span></ClickHandler> :
                 <td id={id}>{cellValue}</td>
         );
     }

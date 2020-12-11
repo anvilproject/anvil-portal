@@ -16,6 +16,7 @@ import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
 import compStyles from "./data-table-row-cell-project-id.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 class DataTableRowCellProjectId extends React.Component {
 
@@ -40,7 +41,7 @@ class DataTableRowCellProjectId extends React.Component {
                           id={id}
                           tag={"td"}
                           label={children}>
-                <Tooltip label={children}>{projectDisplayText}</Tooltip>
+                <Tooltip label={children}><span className={globalStyles.asLink}>{projectDisplayText}</span></Tooltip>
             </ClickHandler>
         );
     }
