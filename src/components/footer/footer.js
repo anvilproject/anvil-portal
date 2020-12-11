@@ -17,6 +17,7 @@ import nih from "../../../images/logo-nih.svg";
 import slack from "../../../images/logo-slack.svg";
 import twitter from "../../../images/logo-twitter.png";
 import usaGov from "../../../images/logo-usa-gov.png";
+import youtube from "../../../images/logo-youtube.png";
 
 // Styles
 import compStyles from "./footer.module.css";
@@ -49,6 +50,8 @@ class Footer extends React.Component {
                             <img src={slack} alt="slack"/></a>
                         <a href="https://github.com/anvilproject" rel="noopener noreferrer" target="_blank">
                             <img src={gitHub} alt="gitHub"/></a>
+                        <a className={compStyles.youtube} href="https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw" rel="noopener noreferrer" target="_blank">
+                            <img src={youtube} alt="youtube"/></a>
                     </div>
                 </div>
             </div>

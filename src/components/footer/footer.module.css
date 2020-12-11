@@ -70,10 +70,10 @@
     padding-top: 24px;
 }
 
-/* Social - e.g. twitter, slack, github and links */
+/* Social - e.g. twitter, slack, github, youtube and links */
 .socials a {
     color: var(--white);
-    flex-basis: calc(100% / 3);
+    flex-basis: calc(100% / 4);
     padding: 24px 0 0;
     text-align: center;
 }
@@ -84,15 +84,20 @@
     padding: 4px 0;
 }
 
-/* Social - e.g. twitter, slack, github */
+/* Social - e.g. twitter, slack, github, youtube */
 .socials a:not(.link) {
     line-height: 0;
 }
 
-/* GitHub image */
+/* Twitter, slack, github, youtube image */
 .socials img {
     height: 24px;
     margin: 0;
+}
+
+/* youtube image. */
+.socials img.youtube {
+    height: 20px;
 }
 
 /**
