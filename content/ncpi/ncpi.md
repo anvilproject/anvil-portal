@@ -4,7 +4,7 @@ title: "NIH Cloud Platform Interoperability Effort"
 ---
 
 # NIH Cloud Platform Interoperability Effort
-## Helping to create a federated genomic data ecosystem
+### Helping to create a federated genomic data ecosystem
 
  <hero small>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
