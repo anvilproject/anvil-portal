@@ -166,19 +166,29 @@
 }
 
 /**
- * Outline is dropped below 1388, in addition to complimentary JS in scroll.service
+ * Content and outline take up entire space, align outline with right-hand gutter.
  */
-@media screen and (min-width: 1388px) {
-    
-    /* Outline container */
+@media screen and (min-width: 1024px) {
+
     .outline {
         display: block;
-        left: 1168px;
+        right: 24px;
     }
 }
 
 /**
- * Content and outline are centered, rather than left-aligned
+ * Content has reached its max width (780px), align outline with content.
+ */
+@media screen and (min-width: 1386px) {
+
+    .outline {
+        left: 1168px;
+        right: unset;
+    }
+}
+
+/**
+ * Content and outline are centered, rather than left-aligned.
  */
 @media screen and (min-width: 1545px) {
 
@@ -186,3 +196,4 @@
         left: calc(50% + 395px);
     }
 }
+
