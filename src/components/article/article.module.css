@@ -73,8 +73,27 @@
 
     .contentContainer {
         display: flex;
-        max-width: 780px;
         margin: 0 auto 0 0;
+    }
+}
+
+/**
+ * Outline is now visible, allow space for outline.
+ */
+@media screen and (min-width: 1024px) {
+
+    .contentContainer {
+        max-width: calc(100% - 238px);
+    }
+}
+
+/**
+ * Content has reached its max width.
+ */
+@media screen and (min-width: 1386px) {
+
+    .contentContainer {
+        max-width: 780px;
     }
 }
 
