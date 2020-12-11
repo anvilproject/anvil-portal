@@ -4,22 +4,17 @@ title: "NIH Cloud Platform Interoperability Effort"
 ---
 
 # NIH Cloud Platform Interoperability Effort
-## Helping to create a federated genomic data ecosystem.
+## Helping to create a federated genomic data ecosystem
 
  <hero small>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
 
 
-[AnVIL](/), [BioData Catalyst](https://biodatacatalyst.nhlbi.nih.gov/), the [Cancer Research Data Commons](https://datacommons.cancer.gov/) and the [Kids First Data Resource Center](https://kidsfirstdrc.org/) are participating in the NCPI and are working together to enable  cross-platform data sharing and analysis.
-
-## Overview
-
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
 
-
+## Platforms
 ![HERO](./_images/ncpi-cloud.png)
 
-### Platform Details
 The NCPI's  participating platforms are:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#analysis-visualization-and-informatics-lab-space-anvil)
@@ -32,14 +27,12 @@ The NCPI's  participating platforms are:
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#kids-first-data-resource-center)
 
 
-### Team 
+## Team 
 This new interoperability effort is a collaboration between NIH representatives, platform team members and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
 
-## Researcher Use Cases 
+## Initial Focus
 
 <hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross-platform data discovery and the cross-platform exchange of datasets, analysis workflows and analysis results.</hero>
-
-### Our Initial Focus
 
 The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term that can demonstrate value to researchers by enabling specific research projects.
  
@@ -57,22 +50,19 @@ For example, this will let a researcher search for Kids First and TOPMed data on
   
 Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-### NCPI Dataset Catalog Prototype
 
-To make the most effective use of the data managed by NCPI platforms, users must be able to view, browse, and search datasets available across all resources. This would allow biomedical researchers to understand what data is already available. This, in turn, will allow for better experimental design of future studies and will prevent duplication of current and past efforts. To allow such "bird's eye view" of the data we are building the NCPI Dataset Catalog. Initially the catalog will use infrastructure built by the [AnVIL project](/data) to generate overview of available datasets. 
-
-
-### NIH RAS Single Sign On Pilot
+### Single Sign On Pilot with NIH RAS 
 
 In collaboration with the [NIH CIT Researcher Auth Service (RAS) Initiative](https://datascience.nih.gov/data-infrastructure/researcher-auth-service), we will pilot a single sign on authentication/authorization workflow.
 
+### Cross-Platform Data Discovery
 
-## We are guided by cross-platform research efforts.
+To make the most effective use of the data managed by NCPI platforms, users must be able to view, browse, and search datasets available across all resources. This would allow biomedical researchers to understand what data is already available. This, in turn, will allow for better experimental design of future studies and will prevent duplication of current and past efforts. To allow such "bird's eye view" of the data we are building the NCPI Dataset Catalog. Initially the catalog will use infrastructure built by the [AnVIL project](/data) to generate overview of available datasets. 
 
- <hero small> This interoperability effort is guided by several research efforts that exercise specific research use cases. Feedback from the research efforts is used to aid discovery of detailed interoperability requirements and validate the utility of the developed interoperability features. </hero>
+## Cross-Platform Research Efforts
+
+ <hero small> This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid discovery of detailed interoperability requirements and validate the utility of the developed features. </hero>
  
-### Our first research efforts make use of cross-platform data exchange.
-
 There are currently six cross-platform research efforts:
 
 * Three research efforts integrate data from BioData Catalyst and the Kids First DRC.
