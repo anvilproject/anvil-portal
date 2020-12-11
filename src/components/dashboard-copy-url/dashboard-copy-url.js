@@ -12,6 +12,7 @@ import React, {useContext} from "react";
 import Button from "../button/button";
 import DashboardFilterContext from "../context/dashboard-filter-context";
 import Tooltip from "../tooltip/tooltip";
+import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 
 // Styles
 import compStyles from "./dashboard-copy-url.module.css";
@@ -23,6 +24,7 @@ function DashboardCopyURL() {
     const onCopyToClipboard = () => {
 
         navigator.clipboard.writeText(searchURL);
+        AnvilGTMService.trackDashboardShared(searchURL);
     };
 
     return (

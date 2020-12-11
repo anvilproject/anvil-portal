@@ -15,6 +15,19 @@ import { GAEntityType } from "./ga-entity-type.model";
 import * as GTMService from "../gtm/gtm.service";
 
 /**
+ * Track share of dashboard.
+ *
+ * @param {string} url
+ */
+export function trackDashboardShared(url) {
+
+    const dimensions = {
+        [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
+    };
+    GTMService.trackEvent(GACategory.DASHBOARD, GAAction.SHARE, url, dimensions);
+}
+
+/**
  * Create and send a GA tracking event generated from the specified external link and label. Dimensions are calculated
  * from the specified URL.
  * 

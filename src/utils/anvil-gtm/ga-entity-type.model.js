@@ -12,6 +12,7 @@ export const GAEntityType = {
     "FORM": "Form",
     "GITTER": "Gitter",
     "PLATFORM_COMPONENT": "Platform Component",
+    "QUERY": "Query",
     "REFERENCE": "Reference",
     "STUDY": "Study",
     "TOOL": "Tool",
