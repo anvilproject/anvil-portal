@@ -16,6 +16,7 @@ import * as RedirectService from "../../utils/redirect.service";
 
 // Styles
 import compStyles from "./data-table-row-cell-redirect.module.css";
+import globalStyles from "../../styles/global.module.css";
 
 class DataTableRowCellRedirect extends React.Component {
 
@@ -28,7 +29,7 @@ class DataTableRowCellRedirect extends React.Component {
                                    clickAction={() => RedirectService.redirect(linkTo, children)}
                                    id={id}
                                    tag={"td"}
-                                   label={children}>{children}</ClickHandler> :
+                                   label={children}><span className={globalStyles.asLink}>{children}</span></ClickHandler> :
                 <td id={id}>{children}</td>
         );
     }
