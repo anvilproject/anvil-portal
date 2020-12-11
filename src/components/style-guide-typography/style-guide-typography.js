@@ -13,6 +13,7 @@ import React from "react";
 // App dependencies
 import Hero from "../hero/hero";
 import {TypographyStaticQuery} from "../../hooks/typography-query";
+import LogoFont from "../logo-font/logo-font";
 
 // Styles
 import compStyles from "./style-guide-typography.module.css";
@@ -22,7 +23,7 @@ class StyleGuideTypography extends React.Component {
     render() {
         const {typography} = this.props;
 
-        const componentsMap = {hero: Hero, "hero small": Hero};
+        const componentsMap = {hero: Hero, "hero small": Hero, "logo font": LogoFont};
         const componentsProps = {"hero small": {small: ""}};
 
         const Typography = (props) => {
