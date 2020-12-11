@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL logo font component.
+ */
+
+/* Logo - font. */
+.logoFont {
+    color: var(--primary);
+    font-family: "Open Sans", sans-serif;
+    font-size: 188px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 256px;
+    margin: 0;
+}
