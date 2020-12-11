@@ -6,6 +6,7 @@
  */
 
 export const GACategory = {
+    "DASHBOARD": "Dashboard",
     "EXTERNAL_LINK": "External Link",
     "SEARCH": "Search"
 };
