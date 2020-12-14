@@ -6,7 +6,7 @@ description: "AnVIL access controls can selectively grant access to groups with 
 
 # Data Access Controls
 
-<hero small>AnVIL access controls can selectively grant access to groups with different access requirements.</hero>
+<hero>AnVIL access controls can selectively grant access to groups with different access requirements.</hero>
 
 Terra uses authorization groups (auth groups) to control access to workspaces. If a workspace has an auth group attached, the workspace can only be interacted with by users belonging to the auth group.
 

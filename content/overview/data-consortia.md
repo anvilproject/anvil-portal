@@ -6,7 +6,7 @@ title: "Data Consortia"
 
 # Data Consortia
 
-<hero small>AnVIL hosts data from the following programs and also allows users to submit their own data to the platform.</hero>
+<hero>AnVIL hosts data from the following programs and also allows users to submit their own data to the platform.</hero>
 
 ## Current Consortia
 

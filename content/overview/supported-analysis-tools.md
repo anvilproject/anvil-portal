@@ -5,7 +5,7 @@ description: "AnVIL provides access to an array of analysis and visualization so
 
 # Supported Analysis Tools
 
-<hero small>AnVIL provides access to an array of analysis and visualization solutions for genomic data analysis.</hero>
+<hero>AnVIL provides access to an array of analysis and visualization solutions for genomic data analysis.</hero>
 
 Running on Google Cloud Platform (GCP), the analysis solutions of AnVIL are scalable and manageable with GCP, uncapping previous limits of biomedical scalability. Linking billing to user accounts enables AnVIL users to monitor and scale their own analysis. 
 

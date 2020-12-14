@@ -4,7 +4,7 @@ title: "Five Principles for Interoperating Data Platforms"
 ---
 # Five Principles for Interoperating Data Platforms
 
-<hero small>The NCPI has adopted the following interoperating principles to help guide our efforts.</hero>
+<hero>The NCPI has adopted the following interoperating principles to help guide our efforts.</hero>
 
 Version C April 8, 2020
 

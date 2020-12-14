@@ -11,10 +11,10 @@ Below we list examples of markdown for many of the textual / formatting elemetns
 Many pages start with top level title or "Hero Text" like the below.
 
 ```
-<hero small>I am hero text and am often placed at the top of a page</hero>
+<hero>I am hero text and am often placed at the top of a page</hero>
 ```
 
-<hero small>I am hero text and am often placed at the top of a page</hero>
+<hero>I am hero text and am often placed at the top of a page</hero>
 
 # Heading One
 

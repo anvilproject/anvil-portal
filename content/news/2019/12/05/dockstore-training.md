@@ -9,7 +9,7 @@ author: "AnVIL"
 #Dockstore: An Introduction
 #####December 5, 2019
 
-<hero small>Dockstore is a platform for sharing portable, container-based tools and workflows written in CWL, WDL, and Nextflow.</hero>
+<hero>Dockstore is a platform for sharing portable, container-based tools and workflows written in CWL, WDL, and Nextflow.</hero>
 
 This webinar covers the basics of Dockstore, how it is useful for the community, and how to use it in your research.  It also covers the fundamentals of finding workflows on the registry and provide examples of running them on sample data.
 

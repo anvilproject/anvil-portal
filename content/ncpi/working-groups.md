@@ -5,7 +5,7 @@ title: "NCPI Working Groups"
 
 
 # Working Groups
-<hero small>The NCPI has established the following working groups to address various challenges to interoperability.</hero>
+<hero>The NCPI has established the following working groups to address various challenges to interoperability.</hero>
 
 
 ## Coordination Working Group

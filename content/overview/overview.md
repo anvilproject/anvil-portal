@@ -5,7 +5,7 @@ description: "AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and
 ---
 
 #What is AnVIL?
-<hero small>AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space.</hero>
+<hero>AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space.</hero>
 
 The traditional model of genomic data sharing – centralized data warehouses such as dbGaP from which researchers download data to analyze locally – is increasingly unsustainable. Not only are transfer/download costs prohibitive, but this approach also leads to redundant siloed compute infrastructure and makes ensuring security and compliance of protected data highly problematic.
 

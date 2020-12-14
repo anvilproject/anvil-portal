@@ -53,7 +53,7 @@ Edit the file and review the file in github.
 ### Creating a New Page
 For new pages, it may be helpful to start writing first in google doc or other word processor that has both a spell checker and the ability to solicit reviews from peers. 
 
-Once the page has taken shape, it can be copied into a markdown file and markdown elements applied. For details see [Creating a New Page](/content-guide/creating-a-new-page)
+Once the page has taken shape, it can be copied into a markdown file and markdown elements applied. For details see [Creating a New Page](/guides/content/creating-a-new-page)
 
 ## Getting Content Reviewed
 

@@ -9,9 +9,9 @@
 .logoFont {
     color: var(--primary);
     font-family: "Open Sans", sans-serif;
-    font-size: 188px;
+    font-size: 1.625rem; /* 26px. */
     font-weight: 600;
     letter-spacing: 0;
-    line-height: 256px;
+    line-height: 2rem; /* 32px. */
     margin: 0;
 }

@@ -1,0 +1,62 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL style guide typography example heading component.
+ */
+@import "../../styles/vars.module.css";
+
+/* Heading */
+.heading {
+    position: relative; /* Positions margin indicator */
+}
+
+/* Margin indicator */
+.marginIndicator {
+    border: 1px dashed rgba(255, 137, 100, 0.58);
+    border-left: none;
+    content: "";
+    display: block;
+    left: 150px;
+    position: absolute;
+    right: 0;
+}
+
+/* Margin text */
+.marginText {
+    color: var(--black58);
+    font-size: 0.875rem; /* 14px */
+    font-weight: 300;
+    line-height: 1.25rem; /* 20px */
+    margin-top: 2px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+/**
+ * XSmall +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 360px) {
+
+    /* Margin text */
+    .marginText {
+        bottom: 100%;
+        margin-bottom: 2px;
+        margin-top: unset;
+        top: unset;
+    }
+}
+
+/**
+ * Small
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Margin indicator */
+    .marginIndicator {
+        width: 250px;
+    }
+}

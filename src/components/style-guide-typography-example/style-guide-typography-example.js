@@ -11,83 +11,31 @@
 import React from "react";
 
 // App dependencies
-import {TypographyExampleStaticQuery} from "../../hooks/typography-example-query";
+import StyleGuideTypographyExampleHeading from "../style-guide-typography-example-heading/style-guide-typography-example-heading";
 
 // Styles
 import compStyles from "./style-guide-typography-example.module.css";
 
-const headingLabels = {
-    "h1": "Heading One",
-    "h2": "Heading Two",
-    "h3": "Heading Three",
-    "h4": "Heading Four",
-    "h5": "Heading Five"
-};
+// Template variables
+const examples = ["h1", "h2", "h3", "h4", "h5", "p"];
 
-class StyleGuideTypographyExample extends React.Component {
+function StyleGuideTypographyExample() {
 
-    render() {
-        const {examples} = this.props;
+    const Example = (props) => {
 
-        const Example = (props) => {
-
-            const {example} = props;
-
-            return (
-                <div className={compStyles.example}>
-                    <Heading example={example}/>
-                    <LorumIpsum/>
-                </div>
-            )
-        };
-
-        const Heading = (props) => {
-
-            const {example} = props,
-                {margin, tagName: Tag} = example,
-                label = headingLabels[Tag];
-
-            return (
-                <Tag className={compStyles.label}>
-                    {label ? <span>{label}</span> : null}
-                    <Margin margin={margin}/>
-                </Tag>
-            )
-        };
-
-        const LorumIpsum = () => {
-
-            return (
-                <p className={compStyles.latin}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua.</p>
-            )
-        };
-
-        const Margin = (props) => {
-
-            const {margin} = props,
-                bottomMargin = margin.split(" ")[2] || "0px";
-
-            return (
-                <span className={compStyles.marginIndicator} style={{height: bottomMargin}}>
-                    <span className={compStyles.marginText}>margin {bottomMargin}</span>
-                </span>
-            )
-        };
+        const {example} = props;
 
         return (
-            <>
-            {examples ? examples.map((example, i) => <Example key={i} example={example}/>) : null}
-            </>
-        );
-    }
-}
-
-export default () => {
-
-    const examples = TypographyExampleStaticQuery();
+            <div className={compStyles.example}>
+                <StyleGuideTypographyExampleHeading example={example}/>
+                <p className={compStyles.latin}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore et dolore magna aliqua.</p>
+            </div>
+        )
+    };
 
     return (
-        <StyleGuideTypographyExample examples={examples}/>
+        examples.map((example, e) => <Example key={e} example={example}/>)
     );
 }
+
+export default StyleGuideTypographyExample;

@@ -6,7 +6,7 @@ description: "AnVIL's working groups take on the responsibility for specific por
 
 # Working Groups
 
-<hero small>AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations.</hero>
+<hero>AnVIL's working groups take on the responsibility for specific portions of the project and its day-to-day operations.</hero>
 
 Working groups are dynamic and are formulated as needed in the course of the project.
 
