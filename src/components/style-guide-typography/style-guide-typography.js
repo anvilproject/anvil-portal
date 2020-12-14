@@ -4,7 +4,7 @@
  *
  * The AnVIL - style guide typography component.
  * Used by the markdown page "/anvil-style-guide/typography".
- * Use the closed tag syntax <style-guide-typography></style-guide-typography>.
+ * <style-guide-typography></style-guide-typography>.
  */
 
 // Core dependencies
@@ -12,57 +12,23 @@ import React from "react";
 
 // App dependencies
 import Hero from "../hero/hero";
-import {TypographyStaticQuery} from "../../hooks/typography-query";
 import LogoFont from "../logo-font/logo-font";
+import StyleGuideTypo from "../style-guide-typo/style-guide-typo";
 
-// Styles
-import compStyles from "./style-guide-typography.module.css";
-
-class StyleGuideTypography extends React.Component {
-
-    render() {
-        const {typography} = this.props;
-
-        const componentsMap = {hero: Hero, "hero small": Hero, "logo font": LogoFont};
-        const componentsProps = {"hero small": {small: ""}};
-
-        const Typography = (props) => {
-
-            const {typo} = props,
-                {color, fontFamily, fontSize, fontWeight, label, letterSpacing, lineHeight, margin, tagName} = typo;
-
-            const Tag = componentsMap[tagName] ? componentsMap[tagName] : tagName;
-            const componentProps = componentsProps[tagName];
-
-            return (
-                <div className={compStyles.typo}>
-                    {Tag ? <Tag className={compStyles.label} {...componentProps}>{label}</Tag> : null}
-                    <p className={compStyles.styles}>
-                        <span>{fontFamily}</span>
-                        <span>{fontWeight}</span>
-                        <span>{fontSize} / {lineHeight}</span>
-                        <span>{letterSpacing}</span>
-                        <span>{margin}</span>
-                        <span>{color}</span>
-                    </p>
-                </div>
-            )
-
-        };
-
-        return (
-            <>
-            {typography ? typography.map((typo, i) => <Typography key={i} typo={typo}/>) : null}
-            </>
-        );
-    }
-}
-
-export default () => {
-
-    const typography = TypographyStaticQuery();
+function StyleGuideTypography() {
 
     return (
-        <StyleGuideTypography typography={typography}/>
-    );
+        <>
+        <StyleGuideTypo><LogoFont>AnVIL</LogoFont></StyleGuideTypo>
+        <StyleGuideTypo><h1>Heading1</h1></StyleGuideTypo>
+        <StyleGuideTypo><h2>Heading2</h2></StyleGuideTypo>
+        <StyleGuideTypo><h3>Heading3</h3></StyleGuideTypo>
+        <StyleGuideTypo><h4>Heading4</h4></StyleGuideTypo>
+        <StyleGuideTypo><h5>Heading5</h5></StyleGuideTypo>
+        <StyleGuideTypo><p>Paragraph</p></StyleGuideTypo>
+        <StyleGuideTypo><Hero>Hero</Hero></StyleGuideTypo>
+        </>
+    )
 }
+
+export default StyleGuideTypography;

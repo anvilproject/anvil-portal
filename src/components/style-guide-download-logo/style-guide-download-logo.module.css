@@ -10,11 +10,7 @@
     align-items: flex-end; /* Required for micro positioning of each download icon with the baseline of its associated brand */
     border-bottom: none !important; /* Required to override markdown <a> styles */
     display: flex;
-}
-
-/* First two logos */
-.logo:not(:last-of-type) {
-    margin-bottom: 24px;
+    margin: 40px 0;
 }
 
 /* Images */

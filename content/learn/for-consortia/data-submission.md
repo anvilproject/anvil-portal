@@ -6,7 +6,7 @@ description: "AnVIL aims to host data sets of high value to the biomedical resea
 
 # Submitting Consortium Data
 
-<hero small>AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.</hero>
+<hero>AnVIL aims to host data sets of high value to the biomedical research community, serving basic research as well as clinical research. AnVIL is open to hosting additional data sets, including public access and restricted access data.</hero>
 
 ##Starting the Data Submission Process
 

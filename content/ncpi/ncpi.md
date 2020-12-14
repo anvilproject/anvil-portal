@@ -6,7 +6,7 @@ title: "NIH Cloud Platform Interoperability Effort"
 # NIH Cloud Platform Interoperability Effort
 ### Helping to create a federated genomic data ecosystem
 
- <hero small>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
+ <hero>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
 
 
@@ -32,7 +32,7 @@ This new interoperability effort is a collaboration between NIH representatives,
 
 ## Initial Focus
 
-<hero small>The NCPI is helping to enable cross-platform authentication and authorization, cross-platform data discovery and the cross-platform exchange of datasets, analysis workflows and analysis results.</hero>
+<hero>The NCPI is helping to enable cross-platform authentication and authorization, cross-platform data discovery and the cross-platform exchange of datasets, analysis workflows and analysis results.</hero>
 
 The NCPI has intentionally constrained the problems we are addressing to those achievable in the near term that can demonstrate value to researchers by enabling specific research projects.
  
@@ -61,7 +61,7 @@ To make the most effective use of the data managed by NCPI platforms, users must
 
 ## Cross-Platform Research Efforts
 
- <hero small> This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid discovery of detailed interoperability requirements and validate the utility of the developed features. </hero>
+ <hero> This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid discovery of detailed interoperability requirements and validate the utility of the developed features. </hero>
  
 There are currently six cross-platform research efforts:
 

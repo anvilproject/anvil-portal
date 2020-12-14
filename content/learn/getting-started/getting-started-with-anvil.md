@@ -6,7 +6,7 @@ description: "Guides helping users navigate their way through creating an accoun
 
 # Getting Started with AnVIL
 
-<hero small>The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis.</hero>
+<hero>The guides listed below help users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis.</hero>
 
 ## Account Setup
 

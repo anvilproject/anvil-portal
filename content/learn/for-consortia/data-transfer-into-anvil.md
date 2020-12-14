@@ -7,7 +7,7 @@ draft: true
 
 #Transferring Data Into AnVIL
 
-<hero small>This document details the data transfer protocol during the transition to Gen3 as the primary data repository for the AnVIL. This process will evolve during the transition period.</hero>
+<hero>This document details the data transfer protocol during the transition to Gen3 as the primary data repository for the AnVIL. This process will evolve during the transition period.</hero>
 
 ## Data Transfer Workflow
 

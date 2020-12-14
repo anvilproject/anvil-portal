@@ -5,7 +5,7 @@ title: "NCPI Progress Updates"
 
 # Progress Updates
 
-<hero small>The NCPI demonstrates progress based on enabling specific research use cases every six months.</hero>
+<hero>The NCPI demonstrates progress based on enabling specific research use cases every six months.</hero>
 
 Previous progress updates are listed below:
 
