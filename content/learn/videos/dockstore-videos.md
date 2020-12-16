@@ -1,4 +1,7 @@
-
+---
+title: "Dockstore Videos"
+description: "Selected videos from the Dockstore YouTube channel."
+---
 # Dockstore Videos
 
 Selected videos from the [Dockstore YouTube Channel](https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g) are listed below. 

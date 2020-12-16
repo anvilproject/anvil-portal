@@ -1,4 +1,7 @@
-
+---
+title: "Terra Videos"
+description: "Selected videos from the Terra YouTube channel."
+---
 # Terra Videos
 
 Selected videos from Terra's "Getting Started with Terra" YouTube playlist are listed below. For the full list of Terra training videos, please see the [Terra YouTube Channel](https://youtube.com/channel/UCkXAqpR5Hk1ZmNd2-1K2l5Q).
