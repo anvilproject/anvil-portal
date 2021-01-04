@@ -72,17 +72,26 @@ const buildHeadersField = function buildHeadersField(source, items) {
 
     if ( items && items.length && menuItems && menuItems.length ) {
 
-        return menuItems.map(menuItem => {
+        return menuItems.reduce((acc, menuItem) => {
 
             const header = items.find(item => item.menuItem === menuItem);
-            const name = header.menuItem;
-            const path = header.pathPartial;
 
-            return {
-                name: name,
-                path: path
+            /* Accumulate header if it exists. */
+            if ( header && Object.keys(header).length > 0 ) {
+
+                const name = header.menuItem;
+                const path = header.pathPartial;
+
+                const item = {name: name, path: path};
+                acc.push(item);
             }
-        })
+            else {
+
+                console.log(`*** *** Error. Header ${menuItem} not found.`);
+            }
+
+            return acc;
+        }, [])
     }
 
     return [];

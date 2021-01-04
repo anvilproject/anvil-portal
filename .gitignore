@@ -84,6 +84,7 @@ site/style-bundle.js
 
 # Data
 static/dashboard-index.json
+static/site-search-index.json
 
 # Workspace Field Report
 static/workspace-fields-report.csv

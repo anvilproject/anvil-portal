@@ -1,6 +1,3 @@
----
-draft: true
----
 #Typography Test Page
 ##Training
 

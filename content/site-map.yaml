@@ -1,4 +1,7 @@
-## Site map
+## Site Map
+#
+# For any markdown document to be included as a site page with a corresponding site URL,
+# the document must be included in this site map.
 #
 ## menuItem
 # - "menuItem" is the display name for the menuItem in the header or footer components.
@@ -9,25 +12,28 @@
 ## tabs
 # - "name" is the display name of the tab in the tab component.
 # - "pathPartial" builds the path for any navigationItems belonging to the tab.
-# - "navigationItems" are the markdown pages belonging to the tab, listed as a navigation item.
-# Rules:
+# - "navigationItems" are the documents belonging to the tab, listed as a navigation item.
+# ------
 # - "name" as an empty string implies there are no tabs for the menuItem.
 # - "pathPartial" as an empty string omits the partial from the navigation item's path.
-# - The first navigationItem with a corresponding markdown file will become the tab's path.
+# - The first navigationItem with a corresponding markdown document will become the tab's path.
 #
 ## navigationItems
 # - "name" is the display name of the navigation item in the navigation component.
-# - "file" is the relative path of the markdown page.
+# - "draft: true" are documents in draft mode. Documents are created as a page in local environment only.
+# - "file" is the relative path of the markdown document.
 # - "pathPartial" builds the path for the navigation item. Any parent partials are used to generate the full path.
 # - "pathOverride" overrides/replaces any path generated for the navigation item.
 # - "navigationItems" are children navigationItems belonging to the navigation item.
-# Rules:
-# - "pathPartial", "pathOverride", and "navigationItems" are optional.
-# - "name" with an empty string will prevent the display of the navigation item. Typically used when only one page exists for the tab or menuItem.
+# ------
+# - "draft", "pathPartial", "pathOverride", and "navigationItems" are optional.
+# - "name" with an empty string will prevent the display of the navigation item. Typically used when only one page exists for the tab or menuItem. Also used by events/news.
+# - "draft" set to true, indicates the document is in draft mode. The document will be created into a page in local environment only.
 # - "file" as an empty string will convert the navigation item to a "toggle" button to open/close children navigationItems belonging to the navigation item.
-# - "pathPartial" as an empty string omits the partial from the navigation item's path. If "file" is valid, the partial will come from the markdown file name.
-#    e.g. the markdown file "/team/working-groups.md" partial will be generated from the file name of the markdown file i.e. "working-groups".
-#    If "file" is an empty string, the navigation item is a "toggle" button where the partial will be omitted from any children navigationItems paths.
+# - "pathPartial" as an empty string omits the partial from the navigation item's path.
+#    If "file" is valid, the partial will come from the markdown document file name.
+#    e.g. the markdown document "/team/working-groups.md" partial will be generated from the file name of the document i.e. "working-groups".
+#    n.b. If "file" is an empty string, the navigation item is a "toggle" button where the partial will be omitted from any children navigationItems paths.
 # - "pathOverride" overrides and replaces any built paths from partials.
 
 ## Datasets
@@ -52,6 +58,35 @@
         - name: ""
           file: "/events/events"
           pathOverride: "/events"
+          navigationItems:
+            - name: ""
+              file: "/events/ashg-data-in-the-cloud"
+            - name: ""
+              file: "/events/gwas-analysis-with-galaxy"
+            - name: ""
+              file: "/events/bcc2020-r-bioconductor-in-the-cloud-east"
+            - name: ""
+              file: "/events/bcc2020-reproducible-analysis"
+            - name: ""
+              file: "/events/bcc2020-dockstore-fundamentals-east"
+            - name: ""
+              file: "/events/bcc2020-dockstore-fundamentals"
+            - name: ""
+              file: "/events/bcc2020-r-bioconductor-in-the-cloud"
+            - name: ""
+              file: "/events/ismb2020-finding-and-analyzing-data-in-the-cloud"
+            - name: ""
+              file: "/events/magic2020"
+            - name: ""
+              file: "/events/sacnas-genomic-data-science-with-galaxy-workbench"
+            - name: ""
+              file: "/events/ashg-scalable-genomic-analysis-with-hail"
+            - name: ""
+              file: "/events/ashg-workshop-genomic-analysis-with-galaxy"
+            - name: ""
+              file: "/events/ashg-gmkf-poster-session"
+            - name: ""
+              file: "/events/aises-workshop-genomic-analysis-with-galaxy-workbench"
 ## FAQ
 - menuItem: "FAQ"
   pageTitle: "FAQ"
@@ -196,7 +231,9 @@
           file: "/learn/for-consortia/data-submission"
         - name: "Consortium Data Access Guidelines"
           file: "/learn/for-consortia/consortium-data-access-guidelines"
-
+        - name: "Data Transfer into AnVIL"
+          draft: "true"
+          file: "/learn/for-consortia/data-transfer-into-anvil"
 ## Overview
 - menuItem: "Overview"
   pageTitle: "Overview"
@@ -248,6 +285,22 @@
         - name: ""
           file: "/news/news"
           pathOverride: "/news"
+          navigationItems:
+            - name: ""
+              file: "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data"
+              pathOverride: "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data"
+            - name: ""
+              file: "/news/2020/06/19/announcing-gen3-availability-in-anvil"
+              pathOverride: "/news/2020/06/19/announcing-gen3-availability-in-anvil"
+            - name: ""
+              file: "/news/2020/05/21/discover-anvil-at-bcc-2020"
+              pathOverride: "/news/2020/05/21/discover-anvil-at-bcc-2020"
+            - name: ""
+              file: "/news/james-taylor"
+              pathOverride: "/news/james-taylor"
+            - name: ""
+              file: "/news/2019/12/05/dockstore-training"
+              pathOverride: "/news/2019/12/05/dockstore-training"
 ## Privacy
 - menuItem: "Privacy"
   pageTitle: "Privacy"
@@ -274,3 +327,15 @@
           file: "/team/working-groups"
         - name: "Oversight Committee"
           file: "/team/oversight-committee"
+## -----------
+## Z Documents
+- menuItem: "Typography Test"
+  pageTitle: "Typography Test"
+  pathPartial: "/typography-test-page"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          draft: "true"
+          file: "/typography-test-page/typography-test-page"
