@@ -2,7 +2,6 @@
 title: "Data Transfer Into AnVIL"
 author: "AnVIL Team"
 description: "Guidelines to help an interested party learn how data is transmitted into  AnVIL once the decision has been made to ingest a dataset"
-draft: true
 ---
 
 #Transferring Data Into AnVIL

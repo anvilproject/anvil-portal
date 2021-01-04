@@ -2,6 +2,7 @@
 #
 ## menuItems
 # Comprises of a list of "menuItem" in order of appearance on the header.
+# Uses the menuItem from site-map.yaml for identification e.g. "Learn".
 
 - menuItems:
     - "Overview"

@@ -7,8 +7,9 @@ const express = require("express");
 const {fmImagesToRelative} = require("gatsby-remark-relative-images");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
-const {buildMenuItems, buildSetOfNavItemsByMenuItem, buildSlugNavigations, getSlugComponent} = require("./src/utils/node/create-pages.service");
+const {buildDocumentTitleBySlug, buildMenuItems, buildSetOfNavItemsByMenuItem, buildSetOfSiteSlugs, buildSlugNavigations, getHeaders, getSlugComponent, isShouldCreatePage, validateHeaders} = require("./src/utils/node/create-pages.service");
 const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
+const {generateSiteSearchIndex} = require("./src/utils/node/site-search-index.service");
 
 /**
  * Create new node fields.
@@ -28,20 +29,14 @@ exports.onCreateNode = ({actions, getNode, node}) => {
     if ( type === "MarkdownRemark" ) {
 
         const {frontmatter} = node,
-            {draft, pageAlignment, privateEvent} = frontmatter || {};
+            {pageAlignment, privateEvent} = frontmatter || {};
 
         /* Extended node fields. */
         const filePath = createFilePath({node, getNode, basePath: ""});
-        const nodeValueDraft = draft ? draft : false;
         const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
         const nodeValueSlug = buildPostSlug(filePath);
         const nodeValueStyles = {alignment: pageAlignment};
 
-        createNodeField({
-            node,
-            name: "draft",
-            value: nodeValueDraft,
-        });
         createNodeField({
             node,
             name: "privateEvent",
@@ -76,15 +71,16 @@ exports.createPages = ({actions, graphql}) => {
         edges {
           node {
             fields {
-              draft
               privateEvent
               slug
             }
             frontmatter {
               date
               dateStart
+              description
               title
             }
+            htmlAst
           }
         }
       }
@@ -98,16 +94,28 @@ exports.createPages = ({actions, graphql}) => {
               name
               pathPartial
               navigationItems {
-                name
+                draft
                 file
+                name
                 navigationItems {
-                  name
+                  draft
                   file
+                  name
                   pathOverride
                 }
                 pathOverride
                 pathPartial
               }
+            }
+          }
+        }
+      }
+      allSiteMapHeaderYaml {
+        edges {
+          node {
+            headers {
+              name
+              path
             }
           }
         }
@@ -122,7 +130,7 @@ exports.createPages = ({actions, graphql}) => {
         }
 
         const {data} = result,
-            {allMarkdownRemark, allSiteMapYaml} = data;
+            {allMarkdownRemark, allSiteMapYaml, allSiteMapHeaderYaml} = data;
 
         /* Build menuItems where each site map document associates the slug with a path. */
         /* This will be used to create the correct path for each post. */
@@ -130,27 +138,46 @@ exports.createPages = ({actions, graphql}) => {
 
         /* Builds a set of navigation items for each menu item. */
         /* Builds next and previous article links in order of appearance in the site map. */
-        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems, allMarkdownRemark);
+        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
+
+        /* Validate headers with available menu items and corresponding nav items. */
+        /* Grab the list of headers from site-map-header.yaml. */
+        /* We will use this to confirm each header has a legitimate path and associated document. */
+        const headers = getHeaders(allSiteMapHeaderYaml);
+        validateHeaders(headers, setOfNavItemsByMenuItem);
+
+        /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
+        const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
+
+        /* Build a relationship between document slug associated document title. */
+        /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
+        const documentTitleBySlug = buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs);
+
+        /* Initialize posts to be index by lunr. */
+        const postSearches = Array.of();
 
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {
 
             const {id, fields} = node,
-                {draft, slug} = fields;
+                {slug} = fields;
 
-            /* Grab the slug's pageTitle, tabs, navItems and path. */
-            const slugNavigations = buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem);
-            const slugComponent = getSlugComponent();
+            /* Create a page, if there is a slug and the file exists on the site map. */
+            if ( isShouldCreatePage(slug, setOfSiteSlugs) ) {
 
-            /* Create a page, if there is a slug. */
-            if ( slug ) {
+                /* Grab the slug's pageTitle, tabs, navItems and path. */
+                const slugNavigations = buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug);
+                const slugComponent = getSlugComponent();
 
+                /* Add the page to the list of searchable pages for site searching. */
+                postSearches.push(node);
+
+                /* Create page. */
                 createPage({
                     path: slugNavigations.path,
                     component: slugComponent,
                     context: {
                         id: id,
-                        draft: draft,
                         navItemNext: slugNavigations.navItemNext,
                         navItemPrevious: slugNavigations.navItemPrevious,
                         navItems: slugNavigations.navItems,
@@ -161,6 +188,10 @@ exports.createPages = ({actions, graphql}) => {
                 });
             }
         });
+
+        /* Indexing markdown pages for site searchability. */
+        /* Generate the dashboard search index. */
+        generateSiteSearchIndex(postSearches);
     });
 };
 
@@ -192,6 +223,22 @@ exports.createSchemaCustomization = ({actions}) => {
             return {
                 resolve(source) {
                     return buildDateStartField(source);
+                },
+            }
+        }
+    });
+    /* Create field "draft" of type boolean. */
+    createFieldExtension({
+        name: "draft",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns false when draft is undefined. */
+                    if ( source.draft === undefined ) {
+
+                        return false;
+                    }
+                    return JSON.parse(source.draft.toLowerCase());
                 },
             }
         }
@@ -276,6 +323,7 @@ exports.createSchemaCustomization = ({actions}) => {
         frontmatter: Frontmatter
     }
     type NavigationItems implements Node {
+        draft: Boolean @draft
         file: String
         name: String
         navigationItems: [NavigationItems]

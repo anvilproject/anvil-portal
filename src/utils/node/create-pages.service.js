@@ -7,10 +7,35 @@
  */
 
 // Template variables
-const allowListScoopMenuItems = ["events", "news"];
 const componentPath = "src/templates/content-template.js";
-const denyListScoopSlugs = ["/events/events", "/news/news"];
 const nodePath = require("path");
+
+/**
+ * Returns a map object key-value pair of document slug and corresponding title.
+ *
+ * @param allMarkdownRemark
+ * @param setOfSiteSlugs
+ * @returns {*}
+ */
+const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs) {
+
+    /* Build for each valid site document, a relationship between document title and slug. */
+    return allMarkdownRemark.edges
+        .map(n => n.node)
+        .reduce((acc, markdown) => {
+
+        const {fields, frontmatter} = markdown,
+            {slug} = fields,
+            {title} = frontmatter;
+
+        if ( setOfSiteSlugs.has(slug) ) {
+
+            acc.set(slug, title);
+        }
+
+        return acc;
+        }, new Map());
+};
 
 /**
  * Returns an object built from the site map grouped by menuItem comprising of tabs, navigation and post path and post slug
@@ -21,13 +46,19 @@ const nodePath = require("path");
  */
 const buildMenuItems = function buildMenuItems(siteMapYAML) {
 
+    /* Build the menu items. */
     return siteMapYAML.edges
         .map(n => n.node)
         .reduce((acc, menuItem) => {
 
         /* Build the menu. */
         const mItem = buildMenuItem(menuItem);
-        acc.push(mItem);
+
+        /* Only add the menu item if it has tabs, and nav items. */
+        if ( mItem ) {
+
+            acc.push(mItem);
+        }
 
         return acc;
     }, []);
@@ -38,34 +69,50 @@ const buildMenuItems = function buildMenuItems(siteMapYAML) {
  * Builds next and previous article links in order of appearance in the site map.
  *
  * @param menuItems
- * @param markdowns
  */
-const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems, markdowns) {
+const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems) {
 
     return menuItems.reduce((acc, menuItem) => {
 
-        const {pageTitle, path, tabs} = menuItem || {};
+        const {pageTitle, tabs} = menuItem || {};
         const setOfNavItems = new Set();
 
-        /* Build set of nav items for news or events menu item. */
-        if ( isMenuItemScoop(pageTitle) ) {
+        tabs.forEach(tab => {
 
-            buildSetOfScoopNavItems(path, markdowns, setOfNavItems);
-        }
-        /* Build set of nav items for all other menu items. */
-        else {
+            const {navItems} = tab;
+            buildSetOfNavItems(navItems, setOfNavItems);
+        });
 
-            tabs.forEach(tab => {
+        acc.set(pageTitle, setOfNavItems);
+
+        return acc;
+    }, new Map());
+};
+
+/**
+ * Returns a set of all site document files (slugs) to be included in the site.
+ * These are markdown documents, included in the site map.
+ *
+ * @param menuItems
+ * @returns {*}
+ */
+const buildSetOfSiteSlugs = function buildSetOfSiteSlugs(menuItems) {
+
+    /* Grab the set of site slugs from the site map. */
+    return menuItems.reduce((acc, menuItem) => {
+
+        const {tabs} = menuItem || {};
+
+        tabs.forEach(tab => {
 
                 const {navItems} = tab;
 
-                buildSetOfNavItems(navItems, setOfNavItems);
+                /* Add all navItems. */
+                addSetOfSiteSlugs(navItems, acc);
             });
-        }
 
-        acc.set(pageTitle, setOfNavItems);
         return acc;
-    }, new Map());
+    }, new Set());
 };
 
 /**
@@ -74,19 +121,38 @@ const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuI
  * @param slug
  * @param menuItems
  * @param setOfNavItemsByMenuItem
+ * @param documentTitleBySlug
+ * @returns {*}
  */
-const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem) {
+const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     /* Default - slug as path, initialize navigations. */
     const postNavigations = {navItems: [], path: slug, tabs: [], title: ""};
 
-    /* Handle special case for scoops (news or events not listed in the site map). */
-    if ( isSlugScoop(slug) ) {
+    return buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations, documentTitleBySlug);
+};
 
-        return buildScoopNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations);
-    }
+/**
+ * Returns a list of header (path and name) for the site.
+ *
+ * @param siteMapHeaderYAML
+ * @returns {*}
+ */
+const getHeaders = function getHeaders(siteMapHeaderYAML) {
 
-    return buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations);
+    return siteMapHeaderYAML.edges
+        .map(n => n.node)
+        .reduce((acc, n) => {
+
+            const {headers} = n;
+
+            if ( headers ) {
+
+                acc.push(...headers);
+            }
+
+            return acc;
+        }, []);
 };
 
 /**
@@ -98,6 +164,89 @@ const getSlugComponent = function getSlugComponent() {
 
     return nodePath.resolve(componentPath);
 };
+
+/**
+ * Returns true, if the post exists on the site map.
+ *
+ * @param slug
+ * @param setOfNavItemSlugs
+ * @returns {boolean}
+ */
+const isShouldCreatePage = function isShouldCreatePage(slug, setOfNavItemSlugs) {
+
+    return setOfNavItemSlugs.has(slug);
+};
+
+/**
+ * Validates all header paths.
+ * No return.
+ * Logs any path errors during build.
+ *
+ * @param headers
+ * @param setOfNavItemsByMenuItem
+ */
+const validateHeaders = function validateHeaders(headers, setOfNavItemsByMenuItem) {
+
+    headers.forEach(header => {
+
+        const {name, path} = header;
+        const setOfNavItems = setOfNavItemsByMenuItem.get(name);
+        const navItemExists = setOfNavItems && [...setOfNavItems].some(navItem => navItem.path === path);
+
+        if ( !setOfNavItems ) {
+
+            /* Error message. */
+            /* A menu item does not exist for the corresponding header. */
+            /* Possible causes are... */
+            /* The menu item in the site-map-header.yaml file does not match a "menuItem" in site-map.yaml. */
+            /* The menu item in the site-map does not have a document. */
+            /* Note, check that there is at least one document exists, and the document is not in draft mode. */
+            console.log(`*** *** Error. The header "${name}" does not have a corresponding "menuItem".`);
+        }
+        else {
+
+
+            if ( !navItemExists ) {
+
+                /* Error message. */
+                /* Menu item exists for the corresponding header. However there is no path match for the header. */
+                /* Possible causes are... */
+                /* The menu item pathPartial in the site-map.yaml does not have a corresponding document path. */
+                /* Note, check that there is at least one document exists, and the document is not in draft mode. */
+                console.log(`*** *** Error. The header "${name}" of path "${path}" does not have a corresponding document in the site map.`);
+            }
+        }
+    })
+};
+
+/**
+ * Returns the set of site document files (slugs), built from all navItems and any nested items.
+ *
+ * @param nItems
+ * @param acc
+ * @returns {*}
+ */
+function addSetOfSiteSlugs(nItems, acc) {
+
+    nItems.forEach(nItem => {
+
+        const {file, path, navItems} = nItem;
+
+        if ( file && path ) {
+
+            acc.add(file);
+
+        }
+
+        /* Add any nested navItems. */
+        if ( navItems ) {
+
+            addSetOfSiteSlugs(navItems, acc);
+        }
+    });
+
+    return acc;
+}
 
 /**
  * Builds a path partial from the file's final path.
@@ -118,7 +267,8 @@ function buildFilePartial(file) {
 }
 
 /**
- * Returns a list of slugs (file paths) belonging to the navigationItem.
+ * Returns a list of slugs (documents) belonging to the navigationItem.
+ *
  * @param navigationItems
  * @param slugs
  */
@@ -144,7 +294,7 @@ function buildListOfSlugs(navigationItems, slugs = []) {
  * Returns the menuItem with its tabs and navItems and their corresponding paths.
  *
  * @param menuItem
- * @returns {{pageTitle, tabs}}
+ * @returns {*}
  */
 function buildMenuItem(menuItem) {
 
@@ -157,11 +307,16 @@ function buildMenuItem(menuItem) {
     /* Build page tabs. */
     const pageTabs = buildPageTabs(tabs, pathPartials);
 
-    return {
-        pageTitle: pageTitle,
-        path: pathPartial,
-        tabs: pageTabs
-    };
+    if ( pageTabs && pageTabs.length > 0 ) {
+
+        return {
+            pageTitle: pageTitle,
+            path: pathPartial,
+            tabs: pageTabs
+        };
+    }
+
+    return null;
 }
 
 /**
@@ -172,37 +327,44 @@ function buildMenuItem(menuItem) {
  */
 function buildNavItems(navItems, pathPartials) {
 
-    return navItems.map(navItem => {
+    return navItems.reduce((acc, navItem) => {
 
-        const {file, name, navigationItems, pathPartial} = navItem || {};
+        const {draft, file, name, navigationItems, pathPartial} = navItem || {};
 
-        /* Clone the path partials for the navigation item. */
-        const partials = Array.from(pathPartials);
+        /* Add the nav item if it isn't in draft mode. */
+        /* Or, allow the nav item if the environment is LOCAL - all draft documents are available in this environment. */
+        if ( !draft || isEnvironmentLocal() ) {
 
-        /* Build the path. */
-        const path = buildPath(navItem, partials);
+            /* Clone the path partials for the navigation item. */
+            const partials = Array.from(pathPartials);
 
-        /* Build the nav items. */
-        const items = {
-            file: file,
-            name: name,
-            path: path
-        };
+            /* Build the path. */
+            const path = buildPath(navItem, partials);
 
-        /* Build any nested navigationItems. */
-        if ( navigationItems ) {
+            /* Build the nav items. */
+            const items = {
+                file: file,
+                name: name,
+                path: path
+            };
 
-            /* Grab any pathPartials on the current navigation item. */
-            partials.push(pathPartial);
+            /* Build any nested navigationItems. */
+            if ( navigationItems ) {
 
-            /* Grab any nested slugs (files) on the current navigation item. */
-            const slugs = buildListOfSlugs(navigationItems);
+                /* Grab any pathPartials on the current navigation item. */
+                partials.push(pathPartial);
 
-            Object.assign(items, {navItems: buildNavItems(navigationItems, partials), slugs: slugs});
+                /* Grab any nested slugs (files) on the current navigation item. */
+                const slugs = buildListOfSlugs(navigationItems);
+
+                Object.assign(items, {navItems: buildNavItems(navigationItems, partials), slugs: slugs});
+            }
+
+            acc.push(items);
         }
 
-        return items;
-    });
+        return acc;
+    }, []);
 }
 
 /**
@@ -215,7 +377,7 @@ function buildPageTabs(tabs, pathPartials) {
 
     if ( tabs && tabs.length > 0 ) {
 
-        return tabs.map(tab => {
+        return tabs.reduce((acc, tab) => {
 
             /* Grab the tab fields. */
             const {name, navigationItems, pathPartial} = tab;
@@ -232,18 +394,25 @@ function buildPageTabs(tabs, pathPartials) {
 
             /* Build navigationItems for the tab. */
             const navItems = buildNavItems(navigationItems, partials);
-            Object.assign(pageTab, {navItems: navItems});
 
-            /* Build the tab path from the first available navItem. */
-            if ( name ) {
+            /* Only add the tab if there are nav items. */
+            if ( navItems && navItems.length > 0 ) {
 
-                /* Grab the tab path. */
-                const path = getTabPath(navItems);
-                Object.assign(pageTab, {path: path});
+                Object.assign(pageTab, {navItems: navItems});
+
+                /* Build the tab path from the first available navItem. */
+                if ( name ) {
+
+                    /* Grab the tab path. */
+                    const path = getTabPath(navItems);
+                    Object.assign(pageTab, {path: path});
+                }
+
+                acc.push(pageTab);
             }
 
-            return pageTab;
-        })
+            return acc;
+        }, [])
     }
 
     return [];
@@ -261,6 +430,7 @@ function buildPath(navItem, pathPartials) {
     const {file, pathOverride, pathPartial} = navItem || {};
 
     /* Early exit - no path. */
+    /* Used by nav item toggle button. */
     if ( !file ) {
 
         return "";
@@ -292,9 +462,10 @@ function buildPath(navItem, pathPartials) {
  * @param menuItems
  * @param setOfNavItemsByMenuItem
  * @param postNavigations
+ * @param documentTitleBySlug
  * @returns {*}
  */
-function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations) {
+function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations, documentTitleBySlug) {
 
     /* For each menuItem. */
     for ( const [, menuItem] of menuItems.entries() ) {
@@ -304,7 +475,7 @@ function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavi
 
             const {navItems} = tab;
 
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem));
+            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem, documentTitleBySlug));
         }
     }
 
@@ -319,16 +490,17 @@ function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavi
  * @param navItem
  * @param t
  * @param setOfNavItemsByMenuItem
+ * @param documentTitleBySlug
  * @returns {{navItemNext: *, navItemPrevious: *, navItems, path: *, tabs: *, title: *}}
  */
-function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem) {
+function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     const {pageTitle, tabs} = menuItem;
     const {path} = navItem;
 
     const postTabs = getPostTabs(tabs, t);
     const postNavItems = getPostNavItems(navItems);
-    const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem);
+    const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem, documentTitleBySlug);
 
     return {
         navItemNext: navItemNext,
@@ -338,28 +510,6 @@ function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem) 
         tabs: postTabs,
         title: pageTitle
     };
-}
-
-/**
- * Returns the scoops navigations for the specified scoop.
- *
- * @param slug
- * @param menuItems
- * @param setOfNavItemsByMenuItem
- * @param postNavigations
- */
-function buildScoopNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations) {
-
-    /* Update any scoops with corresponding navigations. */
-    if ( !denyListScoopSlugs.includes(slug) ) {
-
-        const pageTitle = menuItems.find(menuItem => slug.startsWith(menuItem.path)).pageTitle;
-        const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, slug, setOfNavItemsByMenuItem);
-
-        Object.assign(postNavigations, {navItemNext: navItemNext, navItemPrevious: navItemPrev, title: pageTitle});
-    }
-
-    return postNavigations;
 }
 
 /**
@@ -375,9 +525,9 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
 
         const {name, path} = nItem || {};
 
-        if ( name && path ) {
+        if ( path ) {
 
-            setOfNavItems.add({name: name, path: path});
+            setOfNavItems.add({file: nItem.file, name: name, path: path});
         }
 
         if ( nItem.navItems ) {
@@ -390,53 +540,6 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
 }
 
 /**
- * Builds
- * @param path
- * @param markdowns
- * @param setOfNavItems
- * @returns {*}
- */
-function buildSetOfScoopNavItems(path, markdowns, setOfNavItems) {
-
-    /* Group the scoops by date, past scoops are order most recent to oldest and future scoops are ordered by upcoming dates. */
-    const scoops = filterScoopsSortedByDate(markdowns, path);
-    const scoopIndex = findFirstPastScoopIndex(scoops);
-    const pastScoops = scoops.slice(scoopIndex);
-    const futureScoops = scoops.slice(0, scoopIndex).reverse();
-    const sortedScoops = futureScoops.concat(pastScoops);
-
-    /* Add the scoops to the setOfNavItems. */
-    sortedScoops.forEach(scoop => {
-
-        const {fields, frontmatter} = scoop || {},
-            {slug} = fields || {},
-            {title} = frontmatter || {};
-
-        setOfNavItems.add({name: title, path: slug});
-    });
-
-    return setOfNavItems;
-}
-
-/**
- * Returns the index of the first scoop after today's date.
- *
- * @param scoops
- * @returns number
- */
-function findFirstPastScoopIndex(scoops) {
-
-    const today = new Date();
-
-    return scoops.findIndex(scoop => {
-
-        const scoopDate = getScoopDate(scoop);
-
-        return scoopDate < today;
-    });
-}
-
-/**
  * Finds the post's navigations for the specified slug.
  *
  * @param slug
@@ -445,9 +548,10 @@ function findFirstPastScoopIndex(scoops) {
  * @param t
  * @param nItems
  * @param setOfNavItemsByMenuItem
+ * @param documentTitleBySlug
  * @returns {{}}
  */
-function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenuItem) {
+function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     const postNavigations = {};
 
@@ -456,38 +560,17 @@ function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenu
         /* Update post navigations with corresponding navigations. */
         if ( navItem.file === slug ) {
 
-            Object.assign(postNavigations, buildPostNavs(menuItem, tab.navItems, navItem, t, setOfNavItemsByMenuItem));
+            Object.assign(postNavigations, buildPostNavs(menuItem, tab.navItems, navItem, t, setOfNavItemsByMenuItem, documentTitleBySlug));
         }
 
         /* Investigate nested navItems to find any slug matches and update the post navigations accordingly. */
         if ( navItem.navItems ) {
 
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItem.navItems, setOfNavItemsByMenuItem));
+            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItem.navItems, setOfNavItemsByMenuItem, documentTitleBySlug));
         }
     }
 
     return postNavigations;
-}
-
-/**
- * Returns scoops, sorted by date.
- *
- * @param markdowns
- * @param path
- * @returns {Array.<*>}
- */
-function filterScoopsSortedByDate(markdowns, path) {
-
-    return markdowns.edges
-        .map(n => n.node)
-        .filter(markdown => isMarkdownScoopValid(markdown, path))
-        .sort(function(s0, s1) {
-
-            const s0Date = getScoopDate(s0);
-            const s1Date = getScoopDate(s1);
-
-            return s1Date - s0Date;
-        });
 }
 
 /**
@@ -496,9 +579,10 @@ function filterScoopsSortedByDate(markdowns, path) {
  * @param pageTitle
  * @param path
  * @param setOfNavItemsByMenuItem
+ * @param documentTitleBySlug
  * @returns {Array}
  */
-function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem) {
+function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     /* Grab the set of navItems for the specified menuItem. */
     /* Find the index of the navItem within the set. */
@@ -515,6 +599,18 @@ function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem) {
 
         navItemNext = navItems[indexOfNavItem + 1] || null;
         navItemPrev = navItems[indexOfNavItem - 1] || null;
+
+        /* Update navItemNext with a title from document frontmatter, if navItem "name" is undefined. */
+        if ( navItemNext ) {
+
+            Object.assign(navItemNext, getPostNextPreviousName(navItemNext, documentTitleBySlug));
+        }
+
+        /* Update navItemPrev with a title from document frontmatter, if navItem "name" is undefined. */
+        if ( navItemPrev ) {
+
+            Object.assign(navItemPrev, getPostNextPreviousName(navItemPrev, documentTitleBySlug))
+        }
     }
 
     return Array.of(navItemNext, navItemPrev);
@@ -539,6 +635,36 @@ function getPostNavItems(navItems) {
 
         return acc;
     }, []);
+}
+
+/**
+ * Updates post nav item next/previous with a title from the document's frontmatter "title"
+ * if the corresponding navItem has an undefined "name" value.
+ * Ensures the nav next/previous button has a display value.
+ *
+ * @param navItem
+ * @param documentTitleBySlug
+ * @returns {*}
+ */
+function getPostNextPreviousName(navItem, documentTitleBySlug) {
+
+    const {name, file} = navItem || {};
+
+    if ( !name ) {
+
+        const navDisplayName = documentTitleBySlug.get(file) || "";
+
+        if ( !navDisplayName ) {
+
+            /* Error message. */
+            /* Document requires frontmatter "title" for display of nav item next/previous. */
+            console.log(`*** *** Error. Document ${file} requires a "title" in the frontmatter.`)
+        }
+
+        return {name: navDisplayName};
+    }
+
+    return {};
 }
 
 /**
@@ -570,22 +696,6 @@ function getPostTabs(tabs, t) {
 }
 
 /**
- * Returns the date or dateStart as a date value for the specified scoop.
- *
- * @param scoop
- * @returns {Date}
- */
-function getScoopDate(scoop) {
-
-    const {frontmatter} = scoop || {},
-        {date, dateStart} = frontmatter || {};
-
-    const scoopDate = dateStart || date;
-
-    return new Date(scoopDate);
-}
-
-/**
  * Returns the path for the specified tab.
  *
  * @param navigationItems
@@ -613,48 +723,21 @@ function getTabPath(navigationItems) {
 }
 
 /**
- * Returns true if the markdown slug is a scoop, is not a draft, and is not a private event.
+ * Returns true if the current environment is local.
  *
- * @param markdown
- * @param path
- * @returns boolean
- */
-function isMarkdownScoopValid(markdown, path) {
-
-    const {fields} = markdown || {},
-        {draft, privateEvent, slug} = fields;
-    const scoopSlug = slug.startsWith(path) && !denyListScoopSlugs.includes(slug);
-
-    return scoopSlug && !draft && !privateEvent;
-}
-
-/**
- * Returns true if the menu item is "News" or "Events".
- *
- * @param pageTitle
  * @returns {boolean}
  */
-function isMenuItemScoop(pageTitle) {
+function isEnvironmentLocal() {
 
-    const title = pageTitle.toLowerCase();
-
-    return allowListScoopMenuItems.includes(title);
+    return process.env.GATSBY_ENV === "LOCAL";
 }
 
-/**
- * Returns true if the slug is a scoop.
- *
- * @param slug
- * @returns boolean
- */
-function isSlugScoop(slug) {
-
-    const scoopSlug = slug.startsWith("/events") || slug.startsWith("/news");
-
-    return scoopSlug && !denyListScoopSlugs.includes(slug);
-}
-
+module.exports.buildDocumentTitleBySlug = buildDocumentTitleBySlug;
 module.exports.buildMenuItems = buildMenuItems;
 module.exports.buildSetOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem;
+module.exports.buildSetOfSiteSlugs = buildSetOfSiteSlugs;
 module.exports.buildSlugNavigations = buildSlugNavigations;
+module.exports.getHeaders = getHeaders;
 module.exports.getSlugComponent = getSlugComponent;
+module.exports.isShouldCreatePage = isShouldCreatePage;
+module.exports.validateHeaders = validateHeaders;
