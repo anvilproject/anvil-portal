@@ -9,7 +9,6 @@ const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
 const {buildDocumentTitleBySlug, buildMenuItems, buildSetOfNavItemsByMenuItem, buildSetOfSiteSlugs, buildSlugNavigations, getHeaders, getSlugComponent, isShouldCreatePage, validateHeaders} = require("./src/utils/node/create-pages.service");
 const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
-const {generateSiteSearchIndex} = require("./src/utils/node/site-search-index.service");
 
 /**
  * Create new node fields.
@@ -80,7 +79,6 @@ exports.createPages = ({actions, graphql}) => {
               description
               title
             }
-            htmlAst
           }
         }
       }
@@ -153,9 +151,6 @@ exports.createPages = ({actions, graphql}) => {
         /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
         const documentTitleBySlug = buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs);
 
-        /* Initialize posts to be index by lunr. */
-        const postSearches = Array.of();
-
         /* For each markdown file create a post. */
         allMarkdownRemark.edges.forEach(({node}) => {
 
@@ -168,9 +163,6 @@ exports.createPages = ({actions, graphql}) => {
                 /* Grab the slug's pageTitle, tabs, navItems and path. */
                 const slugNavigations = buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug);
                 const slugComponent = getSlugComponent();
-
-                /* Add the page to the list of searchable pages for site searching. */
-                postSearches.push(node);
 
                 /* Create page. */
                 createPage({
@@ -188,10 +180,6 @@ exports.createPages = ({actions, graphql}) => {
                 });
             }
         });
-
-        /* Indexing markdown pages for site searchability. */
-        /* Generate the dashboard search index. */
-        generateSiteSearchIndex(postSearches);
     });
 };
 

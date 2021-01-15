@@ -312,6 +312,17 @@
           - name: ""
             file: "/privacy/privacy"
             pathOverride: "/privacy"
+## Search
+- menuItem: "Search"
+  pageTitle: "Search"
+  pathPartial: "/search"
+  tabs:
+      - name: ""
+        pathPartial: ""
+        navigationItems:
+          - name: ""
+            file: "/search/search"
+            pathOverride: "/search"
 ## Team
 - menuItem: "Team"
   pageTitle: "Team"

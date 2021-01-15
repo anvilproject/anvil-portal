@@ -1,0 +1,64 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL header nav items component.
+ */
+
+/* Navigation items. */
+.headerNavItems {
+    align-items: flex-start;
+    background-color: var(--white);
+    flex-direction: column;
+    display: none;
+    height: calc(100% - 60px);
+    left: 0;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+    -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
+    padding: 16px 0;
+    position: fixed;
+    scrollbar-width: none; /* Hide scrollbar in Firefox. */
+    top: 60px;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Scrollbar hidden - Safari and Chrome */
+.headerNavItems::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+/* Menu open. */
+.headerNavItems.menuOpen {
+    display: flex;
+}
+
+/**
+ * Large Tablet +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Navigation items. */
+    .headerNavItems {
+        align-items: center;
+        background-color: unset;
+        flex: 1;
+        flex-direction: row;
+        height: inherit;
+        justify-content: flex-end;
+        overflow-y: unset;
+        padding: 0;
+        position: unset;
+        width: unset;
+        z-index: unset;
+    }
+
+    /* Navigation items - open. */
+    .headerNavItems, .menuOpen {
+        display: flex;
+    }
+}

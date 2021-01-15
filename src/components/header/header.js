@@ -6,73 +6,77 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
-import React from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 
 // App dependencies
-import ClickHandler from "../click-handler/click-handler";
-import * as HeaderService from "../../utils/header.service";
-
-// Images
-import cloudNCPI from "../../../images/cloud-ncpi.svg";
-import logoAnvil from "../../../images/logo.png";
+import HeaderLogo from "./header-logo/header-logo";
+import HeaderMenuButton from "./header-menu-button/header-menu-button";
+import HeaderNavItems from "./header-nav-items/header-nav-items";
+import SiteSearchButton from "../site-search/site-search-button/site-search-button";
 
 // Styles
 import compStyles from "./header.module.css";
 import globalStyles from "../../styles/global.module.css";
 
-let classNames = require("classnames");
+function Header(props) {
 
-class Header extends React.Component {
+    const {ncpi, setSiteScrollable} = props;
+    const refDelayResize = useRef(0);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    constructor(props) {
-        super(props);
-        this.state = {showNav: false};
-        this.toggleMenu = this.toggleMenu.bind(this);
-    }
+    const handleResize = useCallback(() => {
 
-    toggleMenu = () => {
-        this.setState({showNav: !this.state.showNav});
-        this.props.onMenuOpen(this.state.showNav);
-    };
+        /* Clear any previously set timeout. */
+        if ( refDelayResize.current ) {
 
-    render() {
-        const {headers, ncpi} = this.props;
-        const showPartiallyActive = !ncpi;
-        const logoLink = ncpi ? "/ncpi" : "/";
-        return (
-            <div className={compStyles.header}>
-                <div className={globalStyles.container}>
-                    <Link to={logoLink} className={classNames(compStyles.logo, {[compStyles.ncpi]: ncpi})}>
-                        {ncpi ? <img src={cloudNCPI} alt="ncpi"/> : <img src={logoAnvil} alt="anVIL"/>}
-                    </Link>
-                    <ClickHandler
-                        className={classNames({[compStyles.hidden]: this.state.showNav}, "material-icons-round")}
-                        clickAction={this.toggleMenu}
-                        tag={"i"}
-                        label="Show menu">menu</ClickHandler>
-                    <ClickHandler
-                        className={classNames({[compStyles.hidden]: !this.state.showNav}, "material-icons-round")}
-                        clickAction={this.toggleMenu}
-                        tag={"i"}
-                        label="Hide menu">close</ClickHandler>
-                    <ul className={classNames({[compStyles.nav]: this.state.showNav})}>
-                        {headers.map((header, i) => <li key={i}>
-                            <Link activeClassName={compStyles.active} partiallyActive={showPartiallyActive} to={header.path}>{header.name}</Link>
-                        </li>)}
-                    </ul>
-                </div>
-            </div>
-        );
-    }
-}
+            clearTimeout(refDelayResize.current);
+        }
 
-export default (props) => {
+        /* Delay resize - improves indexing/search performance. */
+        refDelayResize.current = setTimeout(() => {
 
-    const {ncpi} = props;
-    const headers = HeaderService.getHeaderLinks(ncpi);
+            const windowWidth = window.innerWidth;
+
+            if ( windowWidth >= 720 ) {
+
+                /* Close menu. */
+                setMenuOpen(false);
+            }
+        }, 300);
+        return () => clearTimeout(refDelayResize.current);
+    }, []);
+
+    /* useEffect - componentDidMount/componentWillUnmount. */
+    /* Event listeners - resize. */
+    useEffect(() => {
+
+        /* Add event listeners. */
+        window.addEventListener("resize", handleResize);
+
+        return() => {
+
+            /* Remove event listeners. */
+            window.removeEventListener("resize", handleResize);
+        }
+    }, [handleResize]);
+
+    /* useEffect - componentDidUpdate - menuOpen. */
+    useEffect(() => {
+
+        setSiteScrollable(!menuOpen);
+    }, [menuOpen, setSiteScrollable]);
+
 
     return (
-        <Header headers={headers} {...props}/>
+        <div className={compStyles.header}>
+            <div className={globalStyles.container}>
+                <HeaderLogo ncpi={ncpi}/>
+                <HeaderNavItems menuOpen={menuOpen} ncpi={ncpi}/>
+                <SiteSearchButton/>
+                <HeaderMenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+            </div>
+        </div>
     );
 }
+
+export default Header;

@@ -89,3 +89,6 @@ static/site-search-index.json
 # Workspace Field Report
 static/workspace-fields-report.csv
 plugins/gatsby-plugin-workspace-fields-report/prod-workspaces-sb-all.json
+
+# Keys
+keys.sh

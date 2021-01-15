@@ -10,123 +10,14 @@
 .header {
     background: var(--white);
     border-bottom: 1px solid var(--black12);
-
 }
 
-/* Flex - header container, logo & text container, <ul>, <li> */
-.header > div, .header > div > a, .header ul, .header li {
+/* Header container. */
+.header > div {
     align-items: center;
     display: flex;
-}
-
-/* Flex none - logo */
-.header > div > a {
-    flex: none;
-}
-
-/* Logo */
-.header .logo:not(.ncpi) {
-    margin-top: -9px;
-}
-
-/* Header container */
-.header > div {
     height: 60px;
-    justify-content: space-between;
-}
-
-/* Logo */
-.header img {
-    align-self: center;
-    height: 32px;
-    margin: 0;
-}
-
-/* NCPI logo */
-.header .ncpi img {
-    height: 50px;
-}
-
-/* Menu icon */
-.header i {
-    color: var(--accent-blue-dark);
-    cursor: pointer;
-    display: block;
-    padding: 12px;
-}
-
-/* Menu / Close icon hidden */
-.header i.hidden {
-    display: none;
-}
-
-/* Navigation */
-.header ul {
-    align-items: flex-start;
-    background-color: var(--white);
-    flex-direction: column;
-    font-weight: 400;
-    height: calc(100% - 60px);
-    left: 0;
-    margin: 0;
-    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
-    -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
-    padding: 16px 0;
-    position: fixed;
-    scrollbar-width: none; /* Hide scrollbar in Firefox. */
-    top: 60px;
-    width: 100%;
-    z-index: 10;
-}
-
-/* Scrollbar hidden - Safari and Chrome */
-.header ul::-webkit-scrollbar {
-    display: none;
-    width: 0;
-}
-
-/* Navigation - hidden */
-.header ul:not(.nav) {
-    display: none;
-}
-
-/* Navigation */
-.header ul, .header li {
-    list-style: none;
-}
-
-/* Links */
-.header li {
-    padding-left: 24px;
-    margin-bottom: 8px;
-}
-
-/* Link */
-.header li a {
-    color: var(--accent-blue-dark);
-    font-family: "Open Sans", sans-serif;
-    position: relative;
-}
-
-/* Link - active */
-.header li a.active:before, .header li a:hover:before {
-    border-radius: 1px;
-    bottom: 2px;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    transition: opacity .25s ease;
-    width: 24px;
-}
-
-/* Link - hover */
-.header li a:not(.active):hover:before {
-    border: 1px solid rgba(174, 235, 242, 0.34);
-}
-
-.header li a.active:before {
-    border: 1px solid var(--accent-blue-light);
+    justify-content: stretch;
 }
 
 /**
@@ -147,93 +38,13 @@
         height: 64px;
     }
 
-    /* Menu icon */
-    .header i:not(.hidden) {
+    /* Site search button. */
+    .header button:first-of-type {
+        margin-left: 16px;
+    }
+
+    /* Menu button */
+    .header button:last-of-type {
         display: none;
-    }
-
-    /* Navigation */
-    .header ul, .header li {
-        height: inherit;
-        overflow-y: unset;
-        padding: 0;
-    }
-
-    /* Nav available at all times */
-    .header ul:not(.nav), .header ul {
-        display: flex;
-    }
-
-    /* Navigation */
-    .header ul {
-        background-color: unset;
-        flex-direction: row;
-        position: unset;
-        width: unset;
-        z-index: unset;
-    }
-
-    /* Links - first link */
-    .header li:first-of-type {
-        margin: 0;
-    }
-
-    /* Links - subsequent link */
-    .header li:not(:first-of-type) {
-        margin: 0 0 0 24px;
-    }
-
-    /* Link */
-    .header li a {
-        white-space: nowrap;
-    }
-
-    /* Link - active */
-    .header li a.active:before, .header li a:hover:before {
-        border-radius: 2px;
-        bottom: -4px;
-        width: 100%;
-    }
-
-    /* Link - hover */
-    .header li a:not(.active):hover:before {
-        border: 2px solid var(--black12);
-    }
-
-    .header li a.active:before {
-        border: 2px solid var(--accent-blue-light);
-    }
-}
-
-/**
- * Large tablet portrait, large handset landscape, small window
- */
-@media screen and (min-width: 720px) {
-
-    /* Links - subsequent link */
-    .header li:not(:first-of-type) {
-        margin: 0 0 0 16px;
-    }
-}
-
-/**
- * Large handset portrait, small handset landscape, extra small window
- */
-@media screen and (min-width: 840px) {
-
-    /* Links - subsequent link */
-    .header li:not(:first-of-type) {
-        margin: 0 0 0 24px;
-    }
-}
-
-/**
- * Small tablet landscape, small window
- */
-@media screen and (min-width: 960px) {
-
-    /* Links - subsequent link */
-    .header li:not(:first-of-type) {
-        margin: 0 0 0 32px;
     }
 }

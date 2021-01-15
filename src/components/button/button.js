@@ -11,12 +11,17 @@ import React from "react";
 // Styles
 import compStyles from "./button.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
 function Button(props) {
 
-    const {children, clickAction, dark} = props;
+    const {children, clickAction, dark, disabled, icon} = props;
     const darkButton = (dark === "") || dark === true;
+    const classNamesButton = classNames(
+        compStyles.button,
+        {[compStyles.dark]: darkButton},
+        {[compStyles.disabled]: disabled},
+        {[compStyles.icon]: icon});
 
     const onHandleClickAction = () => {
 
@@ -27,8 +32,7 @@ function Button(props) {
     };
 
     return (
-        <button className={classNames(compStyles.button, {[compStyles.dark]: darkButton})}
-                onClick={() => onHandleClickAction()}>
+        <button className={classNamesButton} onClick={() => onHandleClickAction()}>
             {children}
         </button>
     );

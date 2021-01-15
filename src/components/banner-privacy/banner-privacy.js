@@ -62,8 +62,10 @@ class BannerPrivacy extends React.Component {
 
         if (prevState.bannerHeight !== this.state.bannerHeight) {
 
+            const {setBannerHeight} = this.props;
+
             // Banner height has changed
-            this.props.onBannerHeightChange(this.state.bannerHeight);
+            setBannerHeight(this.state.bannerHeight);
         }
     }
 

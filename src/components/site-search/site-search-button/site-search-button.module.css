@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search button component.
+ */
+
+/* Site search button. */
+.siteSearch {
+    color: var(--accent-blue-dark);
+    display: block;
+}
+
+/* Site search button - hover. */
+.siteSearch:hover {
+    color: var(--black58);
+}

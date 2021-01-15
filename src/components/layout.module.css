@@ -13,22 +13,10 @@
     position: relative; /* Positions privacy banner */
 }
 
-/* Menu open - no scroll */
-.site.menuOpen {
+/* No scroll */
+.site.noScroll {
     left: 0;
     position: fixed;
     right: 0;
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-
-    /* Menu open - allow scroll if menu left open and screen re-sized */
-    .site.menuOpen {
-        position: relative;
-    }
 }
 
