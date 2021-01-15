@@ -17,6 +17,7 @@ import FigureCaption from "../figure-caption/figure-caption";
 import Hero from "../hero/hero";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
+import SiteSearch from "../site-search/site-search";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
@@ -69,6 +70,7 @@ class Markdown extends React.Component {
                 "hero": Hero,
                 "news": News,
                 "platforms": Platforms,
+                "site-search": SiteSearch,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,

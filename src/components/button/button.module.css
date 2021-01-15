@@ -41,6 +41,19 @@
     background-color: rgba(3, 92, 148, 0.87);
 }
 
+/* Button - disabled. */
+.button.disabled {
+    opacity: 0.38;
+    pointer-events: none;
+}
+
+/* Button - icon. */
+.button.icon {
+    background-color: transparent;
+    min-width: unset;
+    padding: 8px;
+}
+
 /* Button - light */
 .button.light {
     background-color: var(--shade-light);

@@ -129,6 +129,7 @@ module.exports = {
                                 "hero",
                                 "news",
                                 "platforms",
+                                "site-search",
                                 "style-guide-color-palette",
                                 "style-guide-download-logo",
                                 "style-guide-typography",

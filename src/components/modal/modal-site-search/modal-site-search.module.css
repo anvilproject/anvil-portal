@@ -1,0 +1,16 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL modal site search component.
+ */
+
+/* Site search. */
+.siteSearch {
+    align-items: center;
+    composes: modal from "../modal.module.css";
+    display: flex;
+    height: 52px;
+    margin-top: 64px; /* Positions below header. */
+    width: 100vw;
+}

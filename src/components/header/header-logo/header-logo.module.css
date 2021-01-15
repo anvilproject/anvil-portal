@@ -1,0 +1,32 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL header logo component.
+ */
+
+/* Logo - link. */
+.logo {
+    align-items: center;
+    display: flex;
+    flex: none;
+    margin-right: auto;
+    margin-top: -9px;
+}
+
+/* Logo - link - NCPI. */
+.logo.ncpi {
+    margin-top: 0;
+}
+
+/* AnVIL and NCPI image */
+.logo img {
+    align-self: center;
+    height: 32px;
+    margin: 0;
+}
+
+/* NCPI image */
+.logo.ncpi img {
+    height: 50px;
+}

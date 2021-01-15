@@ -1,0 +1,33 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search result component.
+ */
+
+/* Snippet. */
+.snippet {
+    align-items: flex-start;
+    display: flex;
+    padding: 16px 0 24px;
+}
+
+/* Snippet - all. */
+.snippet * {
+    margin: 0;
+}
+
+/* URL. */
+.snippet .url {
+    font-size: 12px;
+    margin: 12px 0 8px;
+}
+
+/* Image. */
+.snippet img {
+    display: block;
+    height: auto;
+    margin-right: 16px;
+    width: 60px;
+}
+
