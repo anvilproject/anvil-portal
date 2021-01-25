@@ -29,6 +29,7 @@
         padding: 0 0 0 40px; /* Padding left for space between left nav and content */
         margin: 0 auto;
         max-width: 840px;
+        min-width: 0; /* Required for <pre> tag to respect overflow conditions on article flexbox container. */
     }
 
     .contentPositioner.left {
