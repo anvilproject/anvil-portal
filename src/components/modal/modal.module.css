@@ -14,7 +14,7 @@
 
 /* Modal overlay. */
 .modalOverlay {
-    background-color: var(--black12);
+    background-color: var(--black3);
     bottom: 0;
     right: 0;
     z-index: 20;

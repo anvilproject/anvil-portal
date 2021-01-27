@@ -9,25 +9,32 @@
 import React from "react";
 
 // App dependencies
+import Arrow from "../../arrow/arrow";
 import Button from "../../button/button";
-import Icon from "../../icon/icon";
 
 function SiteSearchPaginationButton(props) {
 
-    const {children, setGCSEParams, showMore, sign, startIndex} = props;
-    const morePages = !!showMore;
+    const {icon, setGCSEParams, setGCSEResponse, showMore, sign, startIndex} = props;
+    const next = icon === "arrow_forward_ios";
+    const previous = icon === "arrow_back_ios";
+    const label = next ? "Next" : previous ? "Previous" : "";
+    const morePages = (!!showMore && next) || (!!showMore && previous);
 
     const onHandlePageRequest = () => {
 
         const nextIndex = startIndex + (sign*10);
 
+        setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEMounted: false}));
         setGCSEParams(GCSEParams => ({...GCSEParams, start: nextIndex}));
     };
 
     return (
-        <Button clickAction={() => onHandlePageRequest()} disabled={!morePages}>
-            <Icon showHover={true} showIcon={true}>{children}</Icon>
-        </Button>
+        morePages ?
+            <Button clickAction={() => onHandlePageRequest()}>
+                <Arrow reverse={previous}>
+                    <span>{label}</span>
+                </Arrow>
+            </Button> : null
     )
 }
 
