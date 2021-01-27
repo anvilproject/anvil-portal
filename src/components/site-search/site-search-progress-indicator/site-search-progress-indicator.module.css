@@ -1,0 +1,51 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search progress indicator component.
+ */
+
+/* Site search progress indicator. */
+.progressIndicator {
+    padding: 16px 0;
+}
+
+/* Indicator. */
+.progressIndicator span {
+    animation: indicator 1s ease infinite;
+    border-radius: 50%;
+    content: "";
+    display: inline-flex;
+    height: 12px;
+    width: 12px;
+}
+
+/* Indicator - first. */
+.progressIndicator span:first-of-type {
+    animation-delay: 0s;
+    background-color: var(--accent-mustard);
+    opacity: 1;
+}
+
+/* Indicator - second. */
+.progressIndicator span:nth-of-type(2) {
+    animation-delay: 0.33s;
+    background-color: var(--accent-blue-light);
+    margin: 0 4px;
+}
+
+/* Indicator - third. */
+.progressIndicator span:last-of-type {
+    animation-delay: 0.66s;
+    background-color: var(--accent-blue-green);
+}
+
+/* Indicator - animation. */
+@keyframes indicator {
+    0%, 60%, 100% {
+        opacity: 0.24;
+    }
+    30% {
+        opacity: 1;
+    }
+}
