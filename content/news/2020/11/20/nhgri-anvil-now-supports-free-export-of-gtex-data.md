@@ -13,7 +13,7 @@ title: "NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data"
 # NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data
 ##### Posted: November 20, 2020
 
->Note: GTEx Download is currently unavailable - maintenance activities are in progress.
+<warning>Note: GTEx Download is currently unavailable - maintenance activities are in progress.</warning>
 
 
 One of the most widely-used resources for studying the relationship between genetic variation and gene expression is the [Genotype-Tissue Expression (GTEx) project][1]. Established by the NIH Common Fund in 2010, the recent [GTEx V8 dataset][2] represents the largest atlas of human gene expression and corresponding trait loci to date (dbGaP accession: [phs000424.v8.p2][3]).
