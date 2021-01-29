@@ -1,0 +1,18 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL warning component.
+ */
+
+/* Warning */
+.warning {
+    background-color: var(--warning);
+    border-radius: 4px;
+    color: var(--default-text);
+    font-size: 1.125rem; /* 18px */
+    font-weight: 300;
+    line-height: 1.75rem; /* 28px */ 
+    margin: 40px 0;
+    padding: 32px 24px;
+}

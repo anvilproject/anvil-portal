@@ -134,6 +134,7 @@ module.exports = {
                                 "style-guide-typography",
                                 "style-guide-typography-example",
                                 "tools",
+                                "warning",
                                 "workspaces"]
                         }
                     },
