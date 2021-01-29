@@ -22,6 +22,7 @@ import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-dow
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
 import StyleGuideTypographyExample from "../style-guide-typography-example/style-guide-typography-example";
 import Tools from "../tools/tools";
+import Warning from "../warning/warning";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
@@ -73,6 +74,7 @@ class Markdown extends React.Component {
                 "style-guide-typography": StyleGuideTypography,
                 "style-guide-typography-example": StyleGuideTypographyExample,
                 "tools": Tools,
+                "warning": Warning,
                 "workspaces": Workspaces
             }
         }).Compiler;
