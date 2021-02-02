@@ -1,0 +1,71 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search bar component.
+ */
+
+/* Search bar. */
+.searchBar {
+    align-items: center;
+    display: flex;
+    flex-basis: 36px;
+    justify-content: flex-end;
+}
+
+/* Search bar - expanded. */
+.searchBar.expanded {
+    flex-basis: 100%;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Search bar. */
+    .searchBar {
+        flex-basis: 200px;
+        margin-left: 32px;
+    }
+
+    /* Search bar - expanded. */
+    .searchBar.expanded {
+        flex-basis: 400px;
+    }
+
+    /* Search bar, and expanded. */
+    .searchBar, .searchBar.expanded {
+        transition: flex-basis 300ms ease;
+    }
+}
+
+/**
+ * Large Tablet +, Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Search bar - expanded. */
+    .searchBar.expanded {
+        transition: flex-basis 300ms ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
+    }
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Search bar. */
+    .searchBar {
+        transition: flex-basis 300ms ease 300ms; /* Delay improves access to header links while search bar is open. */
+    }
+
+    /* Search bar - expanded. */
+    .searchBar.expanded {
+        transition: flex-basis 300ms ease;
+    }
+}

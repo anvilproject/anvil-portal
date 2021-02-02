@@ -20,8 +20,8 @@ const classNames = require("classnames");
 
 function HeaderLogo(props) {
 
-    const {ncpi} = props;
-    const classNamesLogo = classNames(compStyles.logo, {[compStyles.ncpi]: ncpi});
+    const {ncpi, searchBarOpen} = props;
+    const classNamesLogo = classNames(compStyles.logo, {[compStyles.ncpi]: ncpi}, {[compStyles.searchBarOpen]: searchBarOpen});
     const imgAlt = ncpi ? "NCPI" : "AnVIL";
     const imgSrc = ncpi ? logoNCPI : logoAnvil;
     const linkTo = ncpi ? "/ncpi" : "/";

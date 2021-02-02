@@ -32,7 +32,7 @@ function Button(props) {
     };
 
     return (
-        <button className={classNamesButton} onClick={() => onHandleClickAction()}>
+        <button className={classNamesButton} onClick={() => onHandleClickAction()} type="button">
             {children}
         </button>
     );

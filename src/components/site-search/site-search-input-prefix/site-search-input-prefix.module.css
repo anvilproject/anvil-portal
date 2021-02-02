@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search input prefix component.
+ */
+
+/* Input prefix. */
+.inputPrefix {
+    pointer-events: none;
+    position: absolute;
+}
+
+/* Input prefix icon. */
+.inputPrefix i {
+    padding: 8px;
+}
