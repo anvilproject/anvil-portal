@@ -44,8 +44,6 @@ function SiteSearch() {
                 .catch(err => {
                     console.log(err, "Error requesting Google Custom SE.");
                 });
-
-            window.scrollTo(0, 0);
         }
     }, [query, start]);
 
@@ -62,11 +60,8 @@ function SiteSearch() {
     return (
         GCSEMounted ?
             <>
-            <h2>for "{searchTerms ? searchTerms : null}"</h2>
             {searchTerms && results ?
-                <>
-                <SiteSearchResults results={results}/>
-                </> :
+                <SiteSearchResults results={results}/> :
                 <p>No results</p>}
             {showPagination ?
                 <SiteSearchPagination nextPage={nextPage}

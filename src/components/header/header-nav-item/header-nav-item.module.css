@@ -43,26 +43,17 @@
 }
 
 /**
- * Large Tablet +
+ * Large Tablet +, Medium +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
 
     /* Navigation item */
     .headerNavItem {
         height: inherit;
+        margin: 0 0 0 32px;
         overflow-y: unset;
         padding: 0;
-    }
-
-    /* Links - first link */
-    .headerNavItem:first-of-type {
-        margin: 0;
-    }
-
-    /* Links - subsequent link */
-    .headerNavItem:not(:first-of-type) {
-        margin: 0 0 0 24px;
     }
 
     /* Link */
@@ -84,38 +75,5 @@
 
     .headerNavItem a.active:before {
         border: 2px solid var(--accent-blue-light);
-    }
-}
-
-/**
- * Large tablet portrait, large handset landscape, small window
- */
-@media screen and (min-width: 720px) {
-
-    /* Links - subsequent link */
-    .headerNavItem:not(:first-of-type) {
-        margin: 0 0 0 16px;
-    }
-}
-
-/**
- * Large handset portrait, small handset landscape, extra small window
- */
-@media screen and (min-width: 840px) {
-
-    /* Links - subsequent link */
-    .headerNavItem:not(:first-of-type) {
-        margin: 0 0 0 24px;
-    }
-}
-
-/**
- * Small tablet landscape, small window
- */
-@media screen and (min-width: 960px) {
-
-    /* Links - subsequent link */
-    .headerNavItem:not(:first-of-type) {
-        margin: 0 0 0 32px;
     }
 }

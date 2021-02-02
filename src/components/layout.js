@@ -13,9 +13,8 @@ import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Main from "./main/main";
-import Modal from "./modal/modal";
 import PageHead from "./page-head/page-head";
-import ProviderModal from "./modal/provider-modal/provider-modal";
+import ProviderAnVILPortal from "./provider-anvil-portal/provider-anvil-portal";
 import SEO from "./seo/seo";
 import * as AnvilGTMService from "../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../utils/dom.service";
@@ -23,7 +22,7 @@ import * as DOMService from "../utils/dom.service";
 // Styles
 import compStyles from "./layout.module.css";
 
-let classNames = require('classnames');
+const classNames = require("classnames");
 
 function Layout(props) {
 
@@ -64,26 +63,25 @@ function Layout(props) {
     }, []);
 
     return (
-        <div ref={siteRef}>
-            <PageHead pageTitle={title} site={site}/>
-            <SEO description={description} ncpi={ncpi} site={site} title={title}/>
-            <ProviderModal>
-                <div className={classNames(compStyles.site, {[compStyles.noScroll]: !siteScrollable})}>
-                    <Header ncpi={ncpi} setSiteScrollable={setSiteScrollable}/>
-                    <Main bannerHeight={bannerHeight}
-                          docPath={docPath}
-                          homePage={homePage}
-                          navigations={navigations}
-                          noSpy={noSpy}
-                          showOutline={showOutline}
-                          styles={styles}>{children}</Main>
-                    <BannerPrivacy setBannerHeight={setBannerHeight}/>
-                    <Footer/>
-                    <div id="portal"/>
-                </div>
-                <Modal/>
-            </ProviderModal>
-        </div>
+        <ProviderAnVILPortal>
+            <div ref={siteRef}>
+                <PageHead pageTitle={title} site={site}/>
+                <SEO description={description} ncpi={ncpi} site={site} title={title}/>
+                    <div className={classNames(compStyles.site, {[compStyles.noScroll]: !siteScrollable})}>
+                        <Header ncpi={ncpi} setSiteScrollable={setSiteScrollable}/>
+                        <Main bannerHeight={bannerHeight}
+                              docPath={docPath}
+                              homePage={homePage}
+                              navigations={navigations}
+                              noSpy={noSpy}
+                              showOutline={showOutline}
+                              styles={styles}>{children}</Main>
+                        <BannerPrivacy setBannerHeight={setBannerHeight}/>
+                        <Footer/>
+                        <div id="portal"/>
+                    </div>
+            </div>
+        </ProviderAnVILPortal>
     )
 }
 

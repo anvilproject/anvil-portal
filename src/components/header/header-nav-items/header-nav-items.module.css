@@ -37,10 +37,10 @@
 }
 
 /**
- * Large Tablet +
+ * Large Tablet +, Medium +
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
 
     /* Navigation items. */
     .headerNavItems {
@@ -60,5 +60,77 @@
     /* Navigation items - open. */
     .headerNavItems, .menuOpen {
         display: flex;
+    }
+
+    /* Navigation - search collapsed. */
+    .headerNavItems {
+        animation: searchCollapsed 600ms ease;
+        opacity: 1;
+        overflow: hidden; /* Required, for smooth expand/collapse animation of search. */
+        visibility: visible;
+    }
+
+    /* Navigation - search expanded. */
+    .headerNavItems.searchBarOpen {
+        animation: searchExpanded 600ms ease;
+        opacity: 0;
+        visibility: collapse;
+    }
+
+    @keyframes searchCollapsed {
+        0% {
+            opacity: 0;
+            visibility: collapse;
+        }
+        50% {
+            opacity: 0;
+            visibility: collapse;
+        }
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @keyframes searchExpanded {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        50% {
+            opacity: 0;
+            visibility: collapse;
+        }
+        100% {
+            opacity: 0;
+            visibility: collapse;
+        }
+    }
+}
+
+/**
+ * Medium +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Search expanded. */
+    .headerNavItems.searchBarOpen {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @keyframes searchCollapsed {
+        0%, 100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @keyframes searchExpanded {
+        0%, 100% {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }

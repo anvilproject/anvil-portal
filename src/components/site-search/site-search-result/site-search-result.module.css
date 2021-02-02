@@ -9,12 +9,18 @@
 .snippet {
     align-items: flex-start;
     display: flex;
+    flex-direction: column;
     padding: 16px 0 24px;
 }
 
 /* Snippet - all. */
 .snippet * {
     margin: 0;
+}
+
+/* Title. */
+.snippet h4 {
+    line-height: 24px;
 }
 
 /* URL. */
@@ -31,3 +37,14 @@
     width: 60px;
 }
 
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Snippet. */
+    .snippet {
+        flex-direction: row;
+    }
+}

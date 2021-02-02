@@ -19,8 +19,11 @@ const classNames = require("classnames");
 
 function HeaderNavItems(props) {
 
-    const {menuOpen, ncpi} = props;
-    const classNamesHeaderNavItems = classNames(compStyles.headerNavItems, {[compStyles.menuOpen]: menuOpen});
+    const {menuOpen, ncpi, searchBarOpen} = props;
+    const classNamesHeaderNavItems = classNames(
+        compStyles.headerNavItems,
+        {[compStyles.menuOpen]: menuOpen},
+        {[compStyles.searchBarOpen]: searchBarOpen});
     const headers = HeaderService.getHeaderLinks(ncpi);
     const showPartiallyActive = !ncpi;
 

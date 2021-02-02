@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useCallback, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // App dependencies
 import Headline from "../headline/headline";
@@ -26,24 +26,22 @@ function Article(props) {
     const {bannerHeight, children, docPath, navigations, noSpy, showOutline, styles} = props,
         {navItems} = navigations || {},
         {alignment} = styles || {};
+    const refArticle = useRef(null);
     const [activeOutline, setActiveOutline] = useState("");
     const [articleOffsetTop, setArticleOffsetTop] = useState(0);
     const left = StylesService.isPageAlignmentLeft(alignment);
     const useOutline = showOutline;
     const useSpy = showOutline && !noSpy;
 
-    const articleRef = useCallback(node => {
+    useEffect(() => {
 
-        if ( node !== null ) {
-
-            setArticleOffsetTop(node.offsetTop);
-        }
+        setArticleOffsetTop(refArticle.current.offsetTop);
     }, []);
 
     return (
         <>
         <Headline navigations={navigations}/>
-        <section className={compStyles.article} ref={articleRef}>
+        <section className={compStyles.article} ref={refArticle}>
             <div className={classNames(globalStyles.container, compStyles.container)}>
                 {left ? null :
                     <Nav articleOffsetTop={articleOffsetTop}

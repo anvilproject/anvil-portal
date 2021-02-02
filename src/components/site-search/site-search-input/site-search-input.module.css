@@ -1,0 +1,68 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search input component.
+ */
+
+/* Input. */
+.input {
+    background-color: var(--black6);
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--default-text);
+    display: inline-block;
+    font-weight: 400;
+    height: 36px;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Input focus. */
+.input:focus {
+    outline: none;
+    padding: 8px 36px;
+}
+
+/* Input, placeholder */
+input, input[type="text"], .input::placeholder {
+    font-size: 16px;
+    line-height: 36px;
+}
+
+/* Input - placeholder. */
+.input::placeholder {
+    color: transparent;
+    font-weight: 300;
+}
+
+/* Input text. */
+input[type="text"] {
+    color: transparent;
+}
+
+/* Input text - focus. */
+input:focus[type="text"] {
+    color: var(--default-text);
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+
+    /* Input. */
+    .input {
+        padding: 8px 36px;
+    }
+
+    /* Input - placeholder. */
+    .input::placeholder, input[type="text"] {
+        color: var(--default-text);
+    }
+}

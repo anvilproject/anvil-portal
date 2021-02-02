@@ -7,50 +7,51 @@
 
 // Core dependencies
 import {navigate} from "gatsby";
-import {useLocation} from "@reach/router";
-import React, {useEffect, useRef} from "react";
+import React, {useState} from "react";
+
+// App dependencies
+import SiteSearchInput from "../site-search-input/site-search-input";
 
 // Styles
 import compStyles from "./site-search-form.module.css";
 
 function SiteSearchForm(props) {
 
-    const {modalAction, onCloseModal} = props;
-    const currentLocation = useLocation();
-    const inputRef = useRef(null);
+    const {onSetSiteSearchBarOpen, onSetSiteSearchTerms, searchBarOpen, setMenuOpen, siteSearchTerms} = props;
+    const [query, setQuery] = useState("");
 
     const onHandleSubmit = (event) => {
 
         event.preventDefault();
 
-        /* Set the search params. */
-        const params = new URLSearchParams();
-        params.set("q", inputRef.current.value);
+        /* Only submit form if query is valid. */
+        if ( query && query !== siteSearchTerms ) {
 
-        /* Close modal, if already on the search page. */
-        if ( currentLocation.pathname === "/search" ) {
+            /* Update AnVIL app provider with new search term. */
+            onSetSiteSearchTerms(query);
 
-            /* Close modal. */
-            onCloseModal(modalAction);
+            /* Set the search params. */
+            const params = new URLSearchParams();
+            params.set("q", query);
+
+            /* Navigate with params. */
+            navigate(`/search?${params.toString()}`, {state: {siteSearchTerms: query}});
+
+            /* Close search bar and remove <input> focus. */
+            onSetSiteSearchBarOpen(false);
+
+            /* Close header menu. */
+            setMenuOpen(false);
         }
-
-        /* Navigate with params. */
-        navigate(`/search?${params.toString()}`)
     };
-
-    /* useEffect - componentDidMount, componentWillUnmount. */
-    /* Handles external control of focus to the <input>. */
-    useEffect(() => {
-
-        inputRef.current.focus();
-    }, []);
 
     return (
         <form className={compStyles.form} onSubmit={(e) => onHandleSubmit(e)}>
-            <input className={compStyles.input}
-                   placeholder={"Search"}
-                   ref={inputRef}
-                   type="text"/>
+            <SiteSearchInput onSetSiteSearchBarOpen={onSetSiteSearchBarOpen}
+                             onSetSiteSearchTerms={onSetSiteSearchTerms}
+                             query={query}
+                             searchBarOpen={searchBarOpen}
+                             setQuery={setQuery}/>
         </form>
     )
 }

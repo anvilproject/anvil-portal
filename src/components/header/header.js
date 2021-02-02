@@ -12,7 +12,7 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import HeaderLogo from "./header-logo/header-logo";
 import HeaderMenuButton from "./header-menu-button/header-menu-button";
 import HeaderNavItems from "./header-nav-items/header-nav-items";
-import SiteSearchButton from "../site-search/site-search-button/site-search-button";
+import SiteSearchBar from "../site-search/site-search-bar/site-search-bar";
 
 // Styles
 import compStyles from "./header.module.css";
@@ -23,6 +23,7 @@ function Header(props) {
     const {ncpi, setSiteScrollable} = props;
     const refDelayResize = useRef(0);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [searchBarOpen, setSearchBarOpen] = useState(false);
 
     const handleResize = useCallback(() => {
 
@@ -37,7 +38,7 @@ function Header(props) {
 
             const windowWidth = window.innerWidth;
 
-            if ( windowWidth >= 720 ) {
+            if ( windowWidth >= 1024 ) {
 
                 /* Close menu. */
                 setMenuOpen(false);
@@ -66,17 +67,18 @@ function Header(props) {
         setSiteScrollable(!menuOpen);
     }, [menuOpen, setSiteScrollable]);
 
-
     return (
         <div className={compStyles.header}>
             <div className={globalStyles.container}>
-                <HeaderLogo ncpi={ncpi}/>
-                <HeaderNavItems menuOpen={menuOpen} ncpi={ncpi}/>
-                <SiteSearchButton/>
+                <HeaderLogo ncpi={ncpi} searchBarOpen={searchBarOpen}/>
+                <HeaderNavItems menuOpen={menuOpen} ncpi={ncpi} searchBarOpen={searchBarOpen}/>
+                <SiteSearchBar onSetSiteSearchBarOpen={setSearchBarOpen}
+                               searchBarOpen={searchBarOpen}
+                               setMenuOpen={setMenuOpen}/>
                 <HeaderMenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             </div>
         </div>
     );
 }
 
-export default Header;
+export default React.memo(Header);

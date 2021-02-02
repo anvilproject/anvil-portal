@@ -1,9 +1,7 @@
 ---
 description: "AnVIL's site search."
 showOutline: false
-title: "Search"
+title: "Search Results"
 ---
-
-# Search Results
 
 <site-search></site-search>

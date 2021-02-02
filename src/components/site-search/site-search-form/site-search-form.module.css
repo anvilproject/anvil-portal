@@ -7,37 +7,8 @@
 
 /* Form. */
 .form {
-    height: inherit;
     margin: 0;
-    width: inherit;
+    position: relative; /* Positions search icon and clear button. */
+    width: 100%; /* Takes up all available width. */
 }
 
-/* Input. */
-.input {
-    background-color: transparent;
-    border: none;
-    box-sizing: border-box;
-    color: var(--default-text);
-    display: inline-block;
-    font-weight: 400;
-    height: 100%;
-    padding: 0;
-    width: 100%;
-}
-
-/* Input focus. */
-.input:focus {
-    outline: none;
-}
-
-/* Input, placeholder */
-input, input[type="text"], .input::placeholder {
-    font-size: 24px;
-    line-height: 32px;
-}
-
-/* Input - placeholder. */
-.input::placeholder {
-    color: var(--default-text);
-    font-weight: 300;
-}
