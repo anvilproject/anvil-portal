@@ -90,10 +90,8 @@ const typography = new Typography({
             "blockquote > *": {
                 margin: 0
             },
-            pre: {
-                "white-space": "pre-wrap"
-            },
             code: {
+                background: "#f6f7f4 !important",
                 "overflow-wrap": "break-word", /* IE, Edge */
                 "word-break": "break-word"
             }

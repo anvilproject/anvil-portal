@@ -56,7 +56,22 @@
     width: 60px;
 }
 
-/* Code - highlight. */
-:not(pre) > code[class*="language-"], pre[class*='language-'] {
+/* Code block - "gatsby-highlight". */
+.codeBlock {
     background-color: var(--shade-light);
+    margin: 16px 0;
+    padding: 16px;
+}
+
+/* Code block <pre> - "gatsby-highlight". */
+.codeBlock pre {
+    background: none;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+/* Code block <code> - "gatsby-highlight". */
+.codeBlock code {
+    background: none;
 }
