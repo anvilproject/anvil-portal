@@ -9,7 +9,13 @@
 import React from "react";
 
 const ContextAnVILPortal = React.createContext({
+    menuOpen: false,
+    searchBarOpen: false,
+    siteSearchLoading: false,
     siteSearchTerms: "",
+    onSetMenuOpen: () => {},
+    onSetSiteSearchBarOpen: () => {},
+    onSetSiteSearchLoading: () => {},
     onSetSiteSearchTerms: () => {}
 });
 

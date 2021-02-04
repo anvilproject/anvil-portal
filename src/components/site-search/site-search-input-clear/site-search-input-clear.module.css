@@ -2,20 +2,28 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to The AnVIL site search input suffix component.
+ * Style definitions specific to The AnVIL site search input clear component.
  */
 
-/* Input suffix. */
-.inputSuffix {
+/* Input clear wrapper. */
+.clear {
+    cursor: pointer;
     opacity: 0;
     pointer-events: none;
     position: absolute;
     right: 0;
+    top: 0;
     transition: opacity 200ms ease;
 }
 
-.inputSuffix.show {
+/* Input clear - active. */
+.clear.active {
     opacity: 1;
     pointer-events: all;
     transition: opacity 200ms ease 400ms;
+}
+
+/* Input clear icon. */
+.clear i {
+    padding: 8px;
 }

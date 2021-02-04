@@ -6,15 +6,17 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
 import Arrow from "../../arrow/arrow";
 import Button from "../../button/button";
+import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 
 function SiteSearchPaginationButton(props) {
 
     const {icon, setGCSEParams, setGCSEResponse, showMore, sign, startIndex} = props;
+    const {onSetSiteSearchLoading} = useContext(ContextAnVILPortal);
     const next = icon === "arrow_forward_ios";
     const previous = icon === "arrow_back_ios";
     const label = next ? "Next" : previous ? "Previous" : "";
@@ -24,7 +26,10 @@ function SiteSearchPaginationButton(props) {
 
         const nextIndex = startIndex + (sign*10);
 
+        /* Reset GCSEMounted to false to indicate site search in progress. */
         setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEMounted: false}));
+        onSetSiteSearchLoading(true);
+
         setGCSEParams(GCSEParams => ({...GCSEParams, start: nextIndex}));
     };
 

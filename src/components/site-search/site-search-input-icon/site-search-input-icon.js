@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL - site search input prefix component.
+ * The AnVIL - site search input icon component.
  * Wrapper for input search icon.
  */
 
@@ -13,16 +13,16 @@ import React from "react";
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./site-search-input-prefix.module.css";
+import compStyles from "./site-search-input-icon.module.css";
 
-function SiteSearchInputPrefix() {
+function SiteSearchInputIcon() {
 
     return (
-        <span className={compStyles.inputPrefix}>
+        <span className={compStyles.searchIcon}>
             <Icon fontSize={20} showHover={false} showIcon={true}>search</Icon>
         </span>
     )
 }
 
-export default SiteSearchInputPrefix;
+export default SiteSearchInputIcon;
 
