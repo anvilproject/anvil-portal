@@ -50,11 +50,15 @@ class Markdown extends React.Component {
         /* Grab <span> that wraps the images for medium-zoom capability (therefore will exclude gif images). */
         const imagesWithZoomEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
 
+        /* Grab <div> that wraps a code block with gatsby-remark-prismjs. */
+        const prismsEl = Array.from(contentEl.getElementsByClassName("gatsby-highlight"));
+
         /* Grab <div> that wraps videos. */
         const videosEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
 
         /* Add class name. */
         imagesWithZoomEl.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
+        prismsEl.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
         videosEl.map(videoEl => videoEl.classList.add(compStyles.video));
     };
 
