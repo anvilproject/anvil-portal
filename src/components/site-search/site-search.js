@@ -18,25 +18,24 @@ import * as AnVILGCSEService from "../../utils/anvil-gcse/anvil-gcse.service";
 
 function SiteSearch() {
 
-    const {onSetSiteSearchLoading, siteSearchTerms} = useContext(ContextAnVILPortal);
+    const {onSetSiteSearchLoading, siteSearchLoading, siteSearchTerms} = useContext(ContextAnVILPortal);
     const location = useLocation();
-    const [GCSEResponse, setGCSEResponse] = useState({GCSEAPI: {}, GCSEMounted: false});
+    const [GCSEResponse, setGCSEResponse] = useState({GCSEAPI: {}});
     const [GCSEParams, setGCSEParams] = useState({query: "", start: 1});
     const {query, start} = GCSEParams || {};
-    const {GCSEAPI, GCSEMounted} = GCSEResponse || {},
+    const {GCSEAPI} = GCSEResponse || {},
         {queries, items: results} = GCSEAPI || {},
         {nextPage, previousPage} = queries || {},
         {request: requests} = queries || {};
     const request = AnVILGCSEService.getGCSERequest(requests),
-        {searchTerms, startIndex} = request;
+        {startIndex} = request;
     const showPagination = nextPage || previousPage;
 
-    /* useEffect - componentDidUpdate - GCSEMounted, query, start. */
+    /* useEffect - componentDidUpdate - query, siteSearchLoading, start. */
     useEffect(() => {
 
-        const newGCSERequest = query && GCSEMounted === false;
-
-        if ( newGCSERequest ) {
+        /* Query string defined, fetch SE results. */
+        if ( query ) {
 
             /* Grab the Google Custom SE request URL. */
             const GCSERequestURL = AnVILGCSEService.getGCSERequestURL(query, start);
@@ -46,38 +45,48 @@ function SiteSearch() {
                 .then(res => res.json())
                 .then(res => {
 
-                    setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEAPI: res, GCSEMounted: true}));
+                    setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEAPI: res}));
                     onSetSiteSearchLoading(false);
                 })
                 .catch(err => {
                     console.log(err, "Error requesting Google Custom SE.");
                 });
         }
-    }, [GCSEMounted, onSetSiteSearchLoading, query, start]);
+
+        /* Query string is undefined, end site search progress indicator. */
+        if ( !query && siteSearchLoading ) {
+
+            const delayProgressIndicatorFinish = setTimeout(() => {
+
+                onSetSiteSearchLoading(false);
+            }, 1000);
+
+            return () => clearTimeout(delayProgressIndicatorFinish);
+        }
+    }, [onSetSiteSearchLoading, query, siteSearchLoading, start]);
 
     /* useEffect - componentDidUpdate - location. */
     useEffect(() => {
 
-        /* Reset GCSEMounted to false to indicate site search in progress. */
-        setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEMounted: false}));
+        /* Indicate site search in progress. */
         onSetSiteSearchLoading(true);
 
         setGCSEParams(GCSEParams => ({...GCSEParams, query: siteSearchTerms, start: 1}));
     }, [location, onSetSiteSearchLoading, siteSearchTerms]);
 
     return (
-        GCSEMounted ?
-            <>
-            {searchTerms && results ?
-                <SiteSearchResults results={results}/> :
-                <p>No results</p>}
-            {showPagination ?
-                <SiteSearchPagination nextPage={nextPage}
-                                      previousPage={previousPage}
-                                      setGCSEParams={setGCSEParams}
-                                      setGCSEResponse={setGCSEResponse}
-                                      startIndex={startIndex}/> : null}
-            </> : <SiteSearchProgressIndicator/>
+        siteSearchLoading ? <SiteSearchProgressIndicator/> :
+            query ?
+                results ?
+                <>
+                <SiteSearchResults results={results}/>
+                {showPagination ?
+                    <SiteSearchPagination nextPage={nextPage}
+                                          previousPage={previousPage}
+                                          setGCSEParams={setGCSEParams}
+                                          startIndex={startIndex}/> : null}
+                </> : <p>No results.</p> :
+                <p>Please enter a query in the search box.</p>
     )
 }
 

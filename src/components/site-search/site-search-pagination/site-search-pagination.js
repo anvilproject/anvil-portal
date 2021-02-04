@@ -16,19 +16,17 @@ import compStyles from "./site-search-pagination.module.css";
 
 function SiteSearchPagination(props) {
 
-    const {nextPage, previousPage, setGCSEParams, setGCSEResponse, startIndex} = props || {};
+    const {nextPage, previousPage, setGCSEParams, startIndex} = props || {};
 
     return (
         <div className={compStyles.pagination}>
             <SiteSearchPaginationButton icon={"arrow_back_ios"}
                                         setGCSEParams={setGCSEParams}
-                                        setGCSEResponse={setGCSEResponse}
                                         showMore={previousPage}
                                         sign={-1}
                                         startIndex={startIndex}/>
             <SiteSearchPaginationButton icon={"arrow_forward_ios"}
                                         setGCSEParams={setGCSEParams}
-                                        setGCSEResponse={setGCSEResponse}
                                         showMore={nextPage}
                                         sign={1}
                                         startIndex={startIndex}/>

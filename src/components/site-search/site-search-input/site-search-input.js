@@ -34,14 +34,18 @@ function SiteSearchInput(props) {
 
     const onInitializeInputValue = useCallback(() => {
 
-        const {state} = currentLocation || {},
+        const {search, state} = currentLocation || {},
             {siteSearchTerms} = state || {};
+        const [, query] = search.split("=");
 
-        if ( siteSearchTerms ) {
+        /* Grab the search terms from navigate state, or current URL search params. */
+        const terms = siteSearchTerms || query;
+
+        if ( terms ) {
 
             /* Update AnVIL app provider and <input> value. */
-            onSetSiteSearchTerms(siteSearchTerms);
-            setQuery(siteSearchTerms);
+            onSetSiteSearchTerms(terms);
+            setQuery(terms);
         }
     }, [currentLocation, onSetSiteSearchTerms, setQuery]);
 
