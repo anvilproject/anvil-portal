@@ -15,7 +15,7 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 
 function SiteSearchPaginationButton(props) {
 
-    const {icon, setGCSEParams, setGCSEResponse, showMore, sign, startIndex} = props;
+    const {icon, setGCSEParams, showMore, sign, startIndex} = props;
     const {onSetSiteSearchLoading} = useContext(ContextAnVILPortal);
     const next = icon === "arrow_forward_ios";
     const previous = icon === "arrow_back_ios";
@@ -26,10 +26,10 @@ function SiteSearchPaginationButton(props) {
 
         const nextIndex = startIndex + (sign*10);
 
-        /* Reset GCSEMounted to false to indicate site search in progress. */
-        setGCSEResponse(GCSEResponse => ({...GCSEResponse, GCSEMounted: false}));
+        /* Indicate site search in progress. */
         onSetSiteSearchLoading(true);
 
+        /* Update start with page request (page 1, 11, 21 etc). */
         setGCSEParams(GCSEParams => ({...GCSEParams, start: nextIndex}));
     };
 
