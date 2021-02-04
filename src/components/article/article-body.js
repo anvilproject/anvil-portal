@@ -6,25 +6,26 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
 import Markdown from "../markdown/markdown";
 
 // Styles
 import compStyles from "./article-body.module.css";
 
-class ArticleBody extends React.Component {
+function ArticleBody(props) {
 
-    render() {
-        const {children, className, htmlAst} = this.props;
-        return (
-            <div className={compStyles.articleBody}>
-                <Markdown className={className}>{htmlAst}</Markdown>
-                {children}
-            </div>
-        );
-    }
+    const {children, className, htmlAst} = props;
+    const {siteSearchLoading} = useContext(ContextAnVILPortal);
+
+    return (
+        <div className={compStyles.articleBody}>
+            <Markdown className={className}>{htmlAst}</Markdown>
+            {siteSearchLoading ? null : children}
+        </div>
+    );
 }
 
 export default ArticleBody;

@@ -6,21 +6,31 @@
  */
 
 // Core dependencies
-import React, {useCallback, useEffect, useRef} from "react";
+import React, {useCallback, useContext, useEffect, useRef} from "react";
 import {useLocation} from "@reach/router";
 
 // App dependencies
-import SiteSearchInputPrefix from "../site-search-input-prefix/site-search-input-prefix";
-import SiteSearchInputSuffix from "../site-search-input-suffix/site-search-input-suffix";
+import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
+import SiteSearchInputClear from "../site-search-input-clear/site-search-input-clear";
+import SiteSearchInputIcon from "../site-search-input-icon/site-search-input-icon";
 
 // Styles
 import compStyles from "./site-search-input.module.css";
 
 function SiteSearchInput(props) {
 
-    const {onSetSiteSearchBarOpen, onSetSiteSearchTerms, query, searchBarOpen, setQuery} = props;
+    const {query, setQuery} = props;
+    const {onSetSiteSearchBarOpen, onSetSiteSearchTerms, searchBarOpen} = useContext(ContextAnVILPortal);
     const currentLocation = useLocation();
     const refInput = useRef(null);
+
+    const onHandleKeyDown = useCallback((e) => {
+
+        if ( e.key === "Escape" ) {
+
+            onSetSiteSearchBarOpen(false);
+        }
+    }, [onSetSiteSearchBarOpen]);
 
     const onInitializeInputValue = useCallback(() => {
 
@@ -45,10 +55,6 @@ function SiteSearchInput(props) {
 
             onSetSiteSearchBarOpen(false)
         }
-        else {
-
-            refInput.current.focus();
-        }
     };
 
     const onInputChange = (e) => {
@@ -61,14 +67,26 @@ function SiteSearchInput(props) {
 
     const onInputClear = () => {
 
-        /* Maintain <input> focus and clear value. */
+        /* Clear value and maintain <input> focus. */
         setQuery("");
+        refInput.current.focus();
     };
 
     const onInputFocus = () => {
 
         onSetSiteSearchBarOpen(true);
     };
+
+    /* useEffect - componentDidMount, componentWillUnmount. */
+    /* Add & remove event listener - "keydown". */
+    useEffect(() => {
+
+        document.addEventListener("keydown", onHandleKeyDown);
+        return () => {
+
+            document.removeEventListener("keydown", onHandleKeyDown);
+        }
+    }, [onHandleKeyDown]);
 
     /* useEffect - componentDidMount. */
     /* Initialize <input> with any previous search value. */
@@ -89,7 +107,7 @@ function SiteSearchInput(props) {
 
     return (
         <>
-        <SiteSearchInputPrefix/>
+        <SiteSearchInputIcon/>
         <input className={compStyles.input}
                onBlur={(e) => onInputBlur(e)}
                onChange={(e) => onInputChange(e)}
@@ -98,7 +116,7 @@ function SiteSearchInput(props) {
                ref={refInput}
                type="text"
                value={query}/>
-        <SiteSearchInputSuffix onInputClear={onInputClear} query={query} searchBarOpen={searchBarOpen}/>
+        <SiteSearchInputClear onInputClear={onInputClear} query={query} searchBarOpen={searchBarOpen}/>
         </>
     )
 }

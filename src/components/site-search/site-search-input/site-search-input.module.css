@@ -25,13 +25,12 @@
 /* Input focus. */
 .input:focus {
     outline: none;
-    padding: 8px 36px;
+    padding: 0 36px;
 }
 
 /* Input, placeholder */
 input, input[type="text"], .input::placeholder {
     font-size: 16px;
-    line-height: 36px;
 }
 
 /* Input - placeholder. */
@@ -58,7 +57,7 @@ input:focus[type="text"] {
 
     /* Input. */
     .input {
-        padding: 8px 36px;
+        padding: 0 36px;
     }
 
     /* Input - placeholder. */

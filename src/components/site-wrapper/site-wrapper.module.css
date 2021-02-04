@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org/
  *
- * Style definitions specific to The AnVIL layout component.
+ * Style definitions specific to The AnVIL site wrapper component.
  */
 
 /* Site */
@@ -19,4 +19,3 @@
     position: fixed;
     right: 0;
 }
-

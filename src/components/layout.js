@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 
 // App dependencies
 import BannerPrivacy from "./banner-privacy/banner-privacy";
@@ -16,71 +16,35 @@ import Main from "./main/main";
 import PageHead from "./page-head/page-head";
 import ProviderAnVILPortal from "./provider-anvil-portal/provider-anvil-portal";
 import SEO from "./seo/seo";
-import * as AnvilGTMService from "../utils/anvil-gtm/anvil-gtm.service";
-import * as DOMService from "../utils/dom.service";
-
-// Styles
-import compStyles from "./layout.module.css";
-
-const classNames = require("classnames");
+import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-link-tracker";
+import SiteWrapper from "./site-wrapper/site-wrapper";
 
 function Layout(props) {
 
     const {children, description, docPath, homePage, navigations, ncpi, noSpy, showOutline, styles, title} = props;
-    const siteRef = useRef(null);
+    const refSite = useRef(null);
     const [bannerHeight, setBannerHeight] = useState(0);
-    const [siteScrollable, setSiteScrollable] = useState(false);
     const site = ncpi ? "NCPI" : "The AnVIL";
-
-    const onHandleTrackingExternalLinks = (e) => {
-
-        const target = e.target;
-
-        if ( !DOMService.isAnchor(target) ) {
-            return;
-        }
-
-        const url = target.getAttribute("href");
-
-        if ( DOMService.isHrefExternal(url) || DOMService.isMailTo(url) ) {
-
-            const linkText = target.innerText;
-            AnvilGTMService.trackExternalLinkClicked(url, linkText);
-        }
-    };
-
-    /* useEffect - componentDidMount, componentWillUnmount. */
-    /* Set up tracking of external links - add event listener. */
-    useEffect(() => {
-
-        const siteRefEl = siteRef.current;
-        siteRefEl.addEventListener("click", onHandleTrackingExternalLinks, {passive: true});
-
-        return() => {
-
-            siteRefEl.removeEventListener("click", onHandleTrackingExternalLinks, {passive: true});
-        }
-    }, []);
 
     return (
         <ProviderAnVILPortal>
-            <div ref={siteRef}>
-                <PageHead pageTitle={title} site={site}/>
-                <SEO description={description} ncpi={ncpi} site={site} title={title}/>
-                    <div className={classNames(compStyles.site, {[compStyles.noScroll]: !siteScrollable})}>
-                        <Header ncpi={ncpi} setSiteScrollable={setSiteScrollable}/>
-                        <Main bannerHeight={bannerHeight}
-                              docPath={docPath}
-                              homePage={homePage}
-                              navigations={navigations}
-                              noSpy={noSpy}
-                              showOutline={showOutline}
-                              styles={styles}>{children}</Main>
-                        <BannerPrivacy setBannerHeight={setBannerHeight}/>
-                        <Footer/>
-                        <div id="portal"/>
-                    </div>
-            </div>
+            <PageHead pageTitle={title} site={site}/>
+            <SEO description={description} ncpi={ncpi} site={site} title={title}/>
+            <SiteExternalLinkTracker refSite={refSite}>
+                <SiteWrapper ref={refSite}>
+                    <Header ncpi={ncpi}/>
+                    <Main bannerHeight={bannerHeight}
+                          docPath={docPath}
+                          homePage={homePage}
+                          navigations={navigations}
+                          noSpy={noSpy}
+                          showOutline={showOutline}
+                          styles={styles}>{children}</Main>
+                    <BannerPrivacy setBannerHeight={setBannerHeight}/>
+                    <Footer/>
+                    <div id="portal"/>
+                </SiteWrapper>
+            </SiteExternalLinkTracker>
         </ProviderAnVILPortal>
     )
 }

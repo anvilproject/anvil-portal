@@ -7,17 +7,18 @@
 
 // Core dependencies
 import {navigate} from "gatsby";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 
 // App dependencies
+import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 import SiteSearchInput from "../site-search-input/site-search-input";
 
 // Styles
 import compStyles from "./site-search-form.module.css";
 
-function SiteSearchForm(props) {
+function SiteSearchForm() {
 
-    const {onSetSiteSearchBarOpen, onSetSiteSearchTerms, searchBarOpen, setMenuOpen, siteSearchTerms} = props;
+    const {onSetMenuOpen, onSetSiteSearchBarOpen, onSetSiteSearchTerms} = useContext(ContextAnVILPortal);
     const [query, setQuery] = useState("");
 
     const onHandleSubmit = (event) => {
@@ -25,7 +26,7 @@ function SiteSearchForm(props) {
         event.preventDefault();
 
         /* Only submit form if query is valid. */
-        if ( query && query !== siteSearchTerms ) {
+        if ( query ) {
 
             /* Update AnVIL app provider with new search term. */
             onSetSiteSearchTerms(query);
@@ -41,17 +42,13 @@ function SiteSearchForm(props) {
             onSetSiteSearchBarOpen(false);
 
             /* Close header menu. */
-            setMenuOpen(false);
+            onSetMenuOpen(false);
         }
     };
 
     return (
         <form className={compStyles.form} onSubmit={(e) => onHandleSubmit(e)}>
-            <SiteSearchInput onSetSiteSearchBarOpen={onSetSiteSearchBarOpen}
-                             onSetSiteSearchTerms={onSetSiteSearchTerms}
-                             query={query}
-                             searchBarOpen={searchBarOpen}
-                             setQuery={setQuery}/>
+            <SiteSearchInput query={query} setQuery={setQuery}/>
         </form>
     )
 }

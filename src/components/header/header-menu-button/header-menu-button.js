@@ -6,19 +6,20 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
 import Button from "../../button/button";
+import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 import Icon from "../../icon/icon";
 
-function HeaderMenuButton(props) {
+function HeaderMenuButton() {
 
-    const {menuOpen, setMenuOpen} = props;
+    const {menuOpen, onSetMenuOpen} = useContext(ContextAnVILPortal);
     const menuIcon = menuOpen ? "close" : "menu";
 
     return (
-        <Button clickAction={() => setMenuOpen(menuOpen => !menuOpen)} icon>
+        <Button clickAction={() => onSetMenuOpen(!menuOpen)} icon>
             <Icon blueDark showHover={false} showIcon={true}>{menuIcon}</Icon>
         </Button>
     );
