@@ -21,7 +21,7 @@
 }
 
 /**
- * Large Tablet +
+ * Large tablet portrait, large handset landscape, small window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
@@ -37,13 +37,6 @@
     .header > div {
         height: 64px;
     }
-}
-
-/**
- * Large Tablet +, Medium +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1024px) {
 
     /* Menu button. */
     .header > div > button:last-of-type {
