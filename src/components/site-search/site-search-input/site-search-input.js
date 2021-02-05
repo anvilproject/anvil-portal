@@ -36,7 +36,10 @@ function SiteSearchInput(props) {
 
         const {search, state} = currentLocation || {},
             {siteSearchTerms} = state || {};
-        const [, query] = search.split("=");
+
+        /* Get the search params. */
+        const params = new URLSearchParams(search);
+        const query = params.get("q", params);
 
         /* Grab the search terms from navigate state, or current URL search params. */
         const terms = siteSearchTerms || query;
@@ -118,6 +121,7 @@ function SiteSearchInput(props) {
                onFocus={() => onInputFocus()}
                placeholder={"Search"}
                ref={refInput}
+               spellCheck="false"
                type="text"
                value={query}/>
         <SiteSearchInputClear onInputClear={onInputClear} query={query} searchBarOpen={searchBarOpen}/>

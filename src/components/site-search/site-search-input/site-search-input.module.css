@@ -11,7 +11,7 @@
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
-    color: var(--default-text);
+    color: transparent;
     display: inline-block;
     font-weight: 400;
     height: 36px;
@@ -24,6 +24,7 @@
 
 /* Input focus. */
 .input:focus {
+    color: var(--default-text);
     outline: none;
     padding: 0 36px;
 }
@@ -39,21 +40,23 @@ input, input[type="text"], .input::placeholder {
     font-weight: 300;
 }
 
-/* Input text. */
-input[type="text"] {
-    color: transparent;
-}
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
 
-/* Input text - focus. */
-input:focus[type="text"] {
-    color: var(--default-text);
+    /* Input focus. */
+    .input:focus {
+        transition: color 0s ease 300ms, padding 0s ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
+    }
 }
 
 /**
- * Large handset portrait, extra small window
+ * Large tablet portrait, large tablet landscape, medium window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 1024px) {
 
     /* Input. */
     .input {

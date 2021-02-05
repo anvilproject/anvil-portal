@@ -37,10 +37,10 @@
 }
 
 /**
- * Large Tablet +, Medium +
+ * Large tablet portrait, large handset landscape, small window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 720px) {
 
     /* Navigation items. */
     .headerNavItems {
@@ -109,7 +109,7 @@
 }
 
 /**
- * Medium +
+ * Large tablet portrait, large tablet landscape, medium window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1280px) {

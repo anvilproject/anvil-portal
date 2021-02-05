@@ -21,7 +21,7 @@ function ProviderAnVILPortal(props) {
     const [siteScrollable, setSiteScrollable] = useState(true);
     const [siteSearchLoading, setSiteSearchLoading] = useState(false);
     const [siteSearchTerms, setSiteSearchTerms] = useState("");
-    const menuSnapPoint = 1024;
+    const menuSnapPoint = 720;
 
     const onSetMenuOpen = useCallback((expanded) => {
 
