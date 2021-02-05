@@ -168,6 +168,8 @@
               file: "/learn/getting-started/using-example-workspaces"
             - name: "Getting Started with Galaxy"
               file: "/learn/getting-started/getting-started-with-galaxy"
+            - name: "Getting Started with Gen3"
+              file: "/learn/getting-started/getting-started-with-gen3"
         - name: "Accessing Data"
           file: ""
           pathPartial: "/accessing-data"
