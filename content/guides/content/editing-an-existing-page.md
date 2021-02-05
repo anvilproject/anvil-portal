@@ -46,7 +46,7 @@ At the top of the file you will see a "Front Matter" sections between the `---` 
 
 Once in the editor, you can update content as you like and even preview the markdown by selecting the "Preview Changes" tab.
 
-The preview will be styled for the github site, not for the HCA site, but you can see if your image links work and check general formatting of the document.
+The preview will be styled for the github site, not for the AnVIL site, but you can see if your image links work and check general formatting of the document.
 
 >Note that the github editor does not highlight spell check errors so be vigilant.
 
