@@ -32,7 +32,7 @@ function Layout(props) {
             <ProviderSiteSearch>
                 <PageHead pageTitle={title} site={site}/>
                 <SEO description={description} ncpi={ncpi} site={site} title={title}/>
-                <SiteExternalLinkTracker refSite={refSite}>
+                <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
                     <SiteWrapper ref={refSite}>
                         <Header ncpi={ncpi}/>
                         <Main bannerHeight={bannerHeight}

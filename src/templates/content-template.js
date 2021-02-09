@@ -14,9 +14,9 @@ import React from "react";
 import ArticleBody from "../components/article/article-body";
 import ArticleEnd from "../components/article-end/article-end";
 import ArticleNavigation from "../components/article-navigation/article-navigation";
+import ArticleSocials from "../components/article-socials/article-socials";
 import Layout from "../components/layout";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
-import Socials from "../components/socials/socials";
 import * as TemplateService from "../utils/template.service";
 
 export default ({data}) => {
@@ -40,7 +40,7 @@ export default ({data}) => {
                 title={pageTitle}>
             <ProviderFrontmatter frontmatter={frontmatter}>
                 <ArticleBody htmlAst={htmlAst}>
-                    <Socials/>
+                    <ArticleSocials/>
                     <ArticleNavigation navigations={context}/>
                     <ArticleEnd docPath={slug}/>
                 </ArticleBody>

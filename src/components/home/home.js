@@ -18,7 +18,7 @@ import RoadMap from "../road-map/road-map";
 import SectionBody from "../section/section-body";
 import SectionIntro from "../section/section-intro";
 import Stats from "../stats/stats";
-import Twitter from "../twitter/twitter";
+import TwitterTimeline from "../twitter-timeline/twitter-timeline";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
@@ -102,7 +102,7 @@ class Home extends React.Component {
             </section>
                 <section className={compStyles.twitter}>
                     <SectionIntro sectionTitle={"@useAnVIL on Twitter"} stretch/>
-                    <SectionBody><Twitter/></SectionBody>
+                    <SectionBody><TwitterTimeline/></SectionBody>
                 </section>
             </>
         );

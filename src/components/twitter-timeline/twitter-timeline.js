@@ -2,14 +2,14 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL Twitter component - displays embedded timeline of @useAnVIL.
+ * The AnVIL twitter timeline component - displays embedded timeline of @useAnVIL.
  */
 
 // Core dependencies
 import React from "react";
 import Helmet from "react-helmet";
 
-class Twitter extends React.Component {
+class TwitterTimeline extends React.Component {
 
     render() {
         return (
@@ -26,4 +26,4 @@ class Twitter extends React.Component {
     }
 }
 
-export default Twitter;
+export default TwitterTimeline;
