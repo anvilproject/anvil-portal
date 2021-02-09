@@ -8,7 +8,6 @@
  *
  * Props
  * -----
- * - bird: a true value toggles twitter bird logo, without any background color (false or no value reverts to white twitter brand logo with blue circle background).
  * - url: twitter url utilized by <a> element.
  */
 
@@ -20,21 +19,14 @@ import Social from "../social/social";
 
 // Images
 import twitter from "../../../../images/logo-twitter.svg";
-import twitterCircle from "../../../../images/logo-twitter-circle.svg";
-
-// Styles
-import compStyles from "./social-twitter.module.css";
-
-const classNames = require("classnames");
 
 function SocialTwitter(props) {
 
-    const {bird, url} = props;
-    const imgSrc = bird ? twitter : twitterCircle;
+    const {url} = props;
 
     return (
         <Social url={url}>
-            <img className={classNames({[compStyles.bird]: bird})} alt={"Twitter"} src={imgSrc}/>
+            <img alt={"Twitter"} src={twitter}/>
         </Social>
     );
 }

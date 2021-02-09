@@ -12,9 +12,10 @@ An overview of each platform is given below:
 
 ## Analysis, Visualization, and Informatics Lab-space (AnVIL)
 
+[https://anvilproject.org](https://anvilproject.org)
+
 <socials>
-<social-link url="https://anvilproject.org"></social-link>
-<social-twitter url="https://twitter.com/useAnVIL"></social-twitter>
+<social-twitter-handle handle="useAnVIL" showbird="true"></social-twitter-handle>
 <social-youtube url="https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw"></social-youtube>
 </socials>
 
@@ -24,6 +25,7 @@ In addition to downloading copies of data to local computers and servers, users 
 
 
 ## BioData Catalyst
+
 [https://biodatacatalyst.nhlbi.nih.gov](https://biodatacatalyst.nhlbi.nih.gov)
 
 
@@ -33,9 +35,13 @@ Though the primary goal of the BioData Catalyst project is to build a data scien
 
 ## Cancer Research Data Commons (CRDC)
 
+[https://datacommons.cancer.gov](https://datacommons.cancer.gov/)
+
 <socials>
-<social-link url="https://datacommons.cancer.gov"></social-link>
-<social-twitter url="https://twitter.com/isb_cgc"></social-twitter>
+<social-twitter-hashtag hashtag="NCICommons" showbird="true"></social-twitter-hashtag>
+<social-twitter-handle handle="genomicscloud"></social-twitter-handle>
+<social-twitter-handle handle="BroadFireCloud"></social-twitter-handle>
+<social-twitter-handle handle="isb_cgc"></social-twitter-handle>
 <social-youtube url="https://www.youtube.com/embed/tk1nEX2gnqk?rel=0&autoplay=1"></social-youtube>
 </socials>
 
@@ -52,9 +58,10 @@ The CRDC will encompass and connect multiple cloud-based data repositories and s
 
 ## Kids First Data Resource Center
 
+[https://kidsfirstdrc.org](https://kidsfirstdrc.org)
+
 <socials>
-<social-link url="https://kidsfirstdrc.org"></social-link>
-<social-twitter url="https://twitter.com/kidsfirstdrc"></social-twitter>
+<social-twitter-handle handle="kidsfirstdrc" showbird="true"></social-twitter-handle>
 <social-youtube url="https://www.youtube.com/channel/UCK9sPu0j4_ci4m3nNFa6gVw/featured"></social-youtube>
 </socials>
 

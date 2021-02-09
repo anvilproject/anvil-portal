@@ -7,10 +7,12 @@
 
 /* Social. */
 a.social {
-    color: unset;
     border: none;
-    height: 20px;
-    padding: 0 16px;
+    color: unset;
+    cursor: pointer;
+    flex: none;
+    height: 28px;
+    padding: 6px 0;
 }
 
 /* Social icons - hover. */
@@ -32,7 +34,7 @@ a.social, .social > span {
 
 /* Social - second (if after social link). */
 a:not(.social) + .social {
-    padding-left: 32px;
+    padding-left: 28px;
 }
 
 /* Social - last. */
@@ -46,4 +48,43 @@ a:not(.social) + .social {
     margin: 0;
     pointer-events: none; /* Allows click event on wrapper <a> element to pass through to external link tracker. */
     transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window
+ */
+@media screen and (min-width: 600px) {
+
+    /* Social. */
+    a.social {
+        height: 24px;
+        padding: 0 8px;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ * Outline is now visible.
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Social. */
+    a.social {
+        height: 28px;
+        padding: 6px 0;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Social. */
+    a.social {
+        height: 24px;
+        padding: 0 12px;
+    }
 }

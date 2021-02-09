@@ -20,13 +20,16 @@ import Social from "../social/social";
 // Images
 import youtube from "../../../../images/logo-youtube-red.png";
 
+// Styles
+import compStyles from "./social-youtube.module.css";
+
 function SocialYoutube(props) {
 
     const {url} = props;
 
     return (
         <Social imgSrc={youtube} media={"Youtube"} url={url}>
-            <img src={youtube} alt={"Youtube"}/>
+            <img className={compStyles.youtube} src={youtube} alt={"Youtube"}/>
         </Social>
     );
 }
