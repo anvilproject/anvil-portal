@@ -11,5 +11,6 @@ export const GAAction = {
     "ENTER_TEXT": "Enter Text",
     "SEARCH": "Search",
     "SELECT": "Select",
+    "SELECT_SEARCH_RESULT": "Select Search Result",
     "SHARE": "Share"
 };

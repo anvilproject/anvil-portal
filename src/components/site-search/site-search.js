@@ -79,7 +79,7 @@ function SiteSearch() {
             query ?
                 results ?
                 <>
-                <SiteSearchResults results={results}/>
+                <SiteSearchResults results={results} query={query}/>
                 {showPagination ?
                     <SiteSearchPagination nextPage={nextPage}
                                           previousPage={previousPage}
