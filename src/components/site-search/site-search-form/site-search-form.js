@@ -12,6 +12,7 @@ import React, {useContext, useState} from "react";
 // App dependencies
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 import SiteSearchInput from "../site-search-input/site-search-input";
+import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 // Styles
 import compStyles from "./site-search-form.module.css";
@@ -43,6 +44,9 @@ function SiteSearchForm() {
 
             /* Close header menu. */
             onSetMenuOpen(false);
+            
+            /* Track search */
+            AnvilGTMService.trackSiteSearch(query);
         }
     };
 

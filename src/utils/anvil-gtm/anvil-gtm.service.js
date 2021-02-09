@@ -41,7 +41,7 @@ export function trackExternalLinkClicked(url, linkText) {
 }
 
 /**
- * Track select of search facet.
+ * Track select of search facet from dashboard.
  */
 export function trackSearchFacetSelected(facet, term, selected, query, previousQuery, entityType) {
 
@@ -55,7 +55,7 @@ export function trackSearchFacetSelected(facet, term, selected, query, previousQ
 }
 
 /**
- * Track input of search text.
+ * Track input of search text from dashboard.
  */
 export function trackSearchInput(value, query, previousQuery, entityType) {
 
@@ -66,6 +66,13 @@ export function trackSearchInput(value, query, previousQuery, entityType) {
     });
 }
 
+/**
+ * Track site search.
+ */
+export function trackSiteSearch(value) {
+
+    GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SEARCH, value, {});
+}
 
 /**
  * If there is an entity name configured for the specified URL, return it as is. If not and the URL links to a Terra
