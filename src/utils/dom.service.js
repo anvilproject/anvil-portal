@@ -17,25 +17,25 @@ export function isAnchor(element) {
 }
 
 /**
- * Returns true if the href attribute of the specified HTML element links to an external site.
+ * Returns true if the href attribute links to an external site.
  *
  * @param {string} url
  * @returns {boolean}
  */
 export function isHrefExternal(url) {
 
-    var regex = /^https?:\/\//i;
+    const regex = /^https?:\/\/(?!anvilproject\.org)./i;
     return regex.test(url);
 }
 
 /**
- * Returns true if the protocol of the specified HTML element is mailto.
+ * Returns true if the protocol of the href attribute is mailto.
  *
  * @param {string} url
  * @returns {boolean}
  */
 export function isMailTo(url) {
 
-    var regex = /^mailto:/i;
+    const regex = /^mailto:/i;
     return regex.test(url);
 }
