@@ -74,6 +74,18 @@ export function trackSiteSearch(value) {
     GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SEARCH, value, {});
 }
 
+
+/**
+ * Track click on site search result.
+ */
+export function trackSiteSearchResultClicked(title, url, query) {
+
+    GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SELECT_SEARCH_RESULT, title, {
+        [GADimension.ENTITY_URL]: url,
+        [GADimension.QUERY]: query
+    });
+}
+
 /**
  * If there is an entity name configured for the specified URL, return it as is. If not and the URL links to a Terra
  * workspace, generate the entity name from the workspace name in the URL. If the URL links to dbGaP, generate the

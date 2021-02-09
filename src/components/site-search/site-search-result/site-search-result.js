@@ -3,10 +3,18 @@
  * https://www.anvilproject.org
  *
  * The AnVIL site search result component.
+ * 
+ * Props
+ * *****
+ * - results: the set of search results matching the entered search text
+ * - query: the entered search text, required for tracking of click on search results
  */
 
 // Core dependencies
 import React from "react";
+
+// App dependencies
+import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 // Images
 import searchPlaceholder from "../../../../images/search-placeholder.png";
@@ -16,22 +24,32 @@ import compStyles from "./site-search-result.module.css";
 
 function SiteSearchResult(props) {
 
-    const {result} = props,
-        {link, formattedUrl, pagemap, snippet, title} = result,
-        {cse_thumbnail} = pagemap || {};
+    const { result, query } = props,
+        { link, formattedUrl, pagemap, snippet, title } = result,
+        { cse_thumbnail } = pagemap || {};
     const firstThumbnail = cse_thumbnail ? cse_thumbnail[0] : null;
     const imgSrc = firstThumbnail ? firstThumbnail.src : searchPlaceholder;
+
+    /**
+     * Track click on search result. 
+     */
+    const onSearchResultClicked = (resultTitle, resultUrl, query) => {
+
+        AnvilGTMService.trackSiteSearchResultClicked(resultTitle, resultUrl, query);
+    };
 
     return (
         <div className={compStyles.snippet}>
             <img src={imgSrc} alt={"Search Result"}/>
             <span>
-                <h4><a href={link} rel={"noopener noreferrer"}>{title}</a></h4>
+                <h4><a href={link}
+                       rel={"noopener noreferrer"}
+                       onClick={() => onSearchResultClicked(title, formattedUrl, query)}>{title}</a></h4>
                 <p className={compStyles.url}>{formattedUrl}</p>
                 <p>{snippet}</p>
             </span>
         </div>
-    )
+    );
 }
 
 export default SiteSearchResult;
