@@ -135,6 +135,8 @@ module.exports = {
                                 "socials",
                                 "social-link",
                                 "social-twitter",
+                                "social-twitter-handle",
+                                "social-twitter-hashtag",
                                 "social-youtube",
                                 "style-guide-color-palette",
                                 "style-guide-download-logo",

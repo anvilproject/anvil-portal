@@ -1,0 +1,12 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL social twitter handle component.
+ */
+
+/* Handle. */
+span.handle {
+    color: #1da1f2;
+    font-weight: 300;
+}

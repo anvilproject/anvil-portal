@@ -23,6 +23,8 @@ import SiteSearch from "../site-search/site-search";
 import Socials from "../socials/socials";
 import SocialLink from "../socials/social-link/social-link";
 import SocialTwitter from "../socials/social-twitter/social-twitter";
+import SocialTwitterHandle from "../socials/social-twitter-handle/social-twitter-handle";
+import SocialTwitterHashTag from "../socials/social-twitter-hashtag/social-twitter-hashtag";
 import SocialYoutube from "../socials/social-youtube/social-youtube";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
@@ -86,6 +88,8 @@ class Markdown extends React.Component {
                 "socials": Socials,
                 "social-link": SocialLink,
                 "social-twitter": SocialTwitter,
+                "social-twitter-handle": SocialTwitterHandle,
+                "social-twitter-hashtag": SocialTwitterHashTag,
                 "social-youtube": SocialYoutube,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
