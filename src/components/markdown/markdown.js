@@ -20,6 +20,10 @@ import Hero from "../hero/hero";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
 import SiteSearch from "../site-search/site-search";
+import Socials from "../socials/socials";
+import SocialLink from "../socials/social-link/social-link";
+import SocialTwitter from "../socials/social-twitter/social-twitter";
+import SocialYoutube from "../socials/social-youtube/social-youtube";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
 import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
@@ -79,6 +83,10 @@ class Markdown extends React.Component {
                 "news": News,
                 "platforms": Platforms,
                 "site-search": SiteSearch,
+                "socials": Socials,
+                "social-link": SocialLink,
+                "social-twitter": SocialTwitter,
+                "social-youtube": SocialYoutube,
                 "style-guide-color-palette": StyleGuideColorPalette,
                 "style-guide-download-logo": StyleGuideDownloadLogo,
                 "style-guide-typography": StyleGuideTypography,

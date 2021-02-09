@@ -3,71 +3,38 @@
  * https://www.anvilproject.org
  *
  * The AnVIL - socials component.
+ * Wrapper for <social> components; facilitates flex styles to social icons.
+ * Use of this component within markdown is possible.
+ * <socials></socials>
+ *
+ * Props
+ * -----
+ * - articleBottom: a true value used by <article-socials> to apply additional wrapper styles.
+ *
+ * Children
+ * --------
+ * Children should be in the format:
+ * <SocialTwitter url="https://example.com"/>
+ *
+ * For example,
+ * <Socials><SocialTwitter url="https://example.com"/><Socials>
  */
 
 // Core dependencies
-import React, {useContext} from "react";
-
-// App dependencies
-import FrontmatterContext from "../context/frontmatter-context";
-import * as RedirectService from "../../utils/redirect.service";
+import React from "react";
 
 // Styles
 import compStyles from "./socials.module.css";
 
-// Images
-import linkedin from "../../../images/logo-linkedin.svg"
-import twitter from "../../../images/logo-twitter.svg";
+const classNames = require("classnames");
 
-function Socials() {
+function Socials(props) {
 
-    function getEmailHREF(encodedTitle) {
-
-        const encodedURL = getEncodedURL();
-
-        return `mailto:?subject=${encodedTitle}&body=${encodedURL}`;
-    }
-
-    function getEncodedURL() {
-
-        return encodeURIComponent(window.location.href);
-    }
-
-    function getLinkedinHREF() {
-
-        const encodedURL = getEncodedURL();
-
-        return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`;
-    }
-
-    function getTwitterHREF(encodedTitle) {
-
-        const encodedURL = getEncodedURL();
-
-        return `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}&via=useAnVIL`;
-    }
-
-    const frontmatterContext = useContext(FrontmatterContext),
-        {title} = frontmatterContext;
-    const encodedTitle = encodeURIComponent(`AnVIL - ${title}`).toString();
+    const {articleBottom, children} = props;
 
     return (
-        <div className={compStyles.socials}>
-            <button className={compStyles.twitter}
-                    type="button"
-                    onClick={() => RedirectService.redirect(getTwitterHREF(encodedTitle), title)}>
-                <img src={twitter} alt="twitter"/>
-            </button>
-            <button className={compStyles.linkedin}
-                    type="button"
-                    onClick={() => RedirectService.redirect(getLinkedinHREF(), title)}>
-                <img src={linkedin} alt="linkedin"/>
-            </button>
-            <button className={compStyles.email}
-                    type="button"
-                    onClick={() => RedirectService.redirect(getEmailHREF(encodedTitle), title)}>
-                <span className="material-icons-round">email</span>
-            </button>
+        <div className={classNames({[compStyles.articleBottom]: articleBottom}, compStyles.socials)}>
+            {children}
         </div>
     );
 }

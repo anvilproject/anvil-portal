@@ -15,7 +15,7 @@ import * as DOMService from "../../utils/dom.service";
 
 function SiteExternalLinkTracker(props) {
 
-    const {children, refSite} = props;
+    const {children, pageTitle, refSite} = props;
 
     const onHandleTrackingExternalLinks = (e) => {
 
@@ -30,7 +30,7 @@ function SiteExternalLinkTracker(props) {
 
         if ( DOMService.isHrefExternal(url) || DOMService.isMailTo(url) ) {
 
-            const linkText = target.innerText;
+            const linkText = target.innerText || pageTitle || "";
             AnvilGTMService.trackExternalLinkClicked(url, linkText);
         }
     };
