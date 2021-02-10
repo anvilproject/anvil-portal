@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
+import ContextSiteSearch from "../context-site-search/context-site-search";
 import SiteSearchForm from "../../site-search/site-search-form/site-search-form";
 
 // Styles
@@ -19,7 +19,7 @@ const classNames = require("classnames");
 
 function SiteSearchBar() {
 
-    const {searchBarOpen} = useContext(ContextAnVILPortal);
+    const {searchBarOpen} = useContext(ContextSiteSearch);
 
     return (
         <div className={classNames({[compStyles.expanded]: searchBarOpen}, compStyles.searchBar)}>

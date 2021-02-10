@@ -17,36 +17,13 @@ function ProviderAnVILPortal(props) {
     const {children} = props;
     const refDelayResize = useRef(0);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [searchBarOpen, setSearchBarOpen] = useState(false);
     const [siteScrollable, setSiteScrollable] = useState(true);
-    const [siteSearchLoading, setSiteSearchLoading] = useState(false);
-    const [siteSearchTerms, setSiteSearchTerms] = useState("");
     const menuSnapPoint = 720;
 
     const onSetMenuOpen = useCallback((expanded) => {
 
         setMenuOpen(expanded);
         setSiteScrollable(!expanded);
-    }, []);
-
-    const onSetSiteScrollable = useCallback((scrollable) => {
-
-        setSiteScrollable(scrollable);
-    }, []);
-
-    const onSetSiteSearchBarOpen = useCallback((expanded) => {
-
-        setSearchBarOpen(expanded);
-    }, []);
-
-    const onSetSiteSearchLoading = useCallback((loading) => {
-
-        setSiteSearchLoading(loading);
-    }, []);
-
-    const onSetSiteSearchTerms = useCallback((terms) => {
-
-        setSiteSearchTerms(terms);
     }, []);
 
     const handleResize = useCallback(() => {
@@ -86,9 +63,7 @@ function ProviderAnVILPortal(props) {
     }, [handleResize]);
 
     return (
-        <ContextAnVILPortal.Provider value={{menuOpen, onSetMenuOpen,
-            onSetSiteScrollable, onSetSiteSearchBarOpen, onSetSiteSearchLoading, onSetSiteSearchTerms,
-            searchBarOpen, siteScrollable, siteSearchLoading, siteSearchTerms}}>
+        <ContextAnVILPortal.Provider value={{menuOpen, onSetMenuOpen, siteScrollable}}>
             {children}
         </ContextAnVILPortal.Provider>
     )

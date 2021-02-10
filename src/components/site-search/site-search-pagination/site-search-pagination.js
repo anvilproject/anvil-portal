@@ -16,22 +16,20 @@ import compStyles from "./site-search-pagination.module.css";
 
 function SiteSearchPagination(props) {
 
-    const {nextPage, previousPage, setGCSEParams, startIndex} = props || {};
+    const {onSiteSearchPageRequest, nextPage, previousPage} = props;
 
     return (
         <div className={compStyles.pagination}>
             <SiteSearchPaginationButton icon={"arrow_back_ios"}
-                                        setGCSEParams={setGCSEParams}
+                                        onSiteSearchPageRequest={onSiteSearchPageRequest}
                                         showMore={previousPage}
-                                        sign={-1}
-                                        startIndex={startIndex}/>
+                                        sign={-1}/>
             <SiteSearchPaginationButton icon={"arrow_forward_ios"}
-                                        setGCSEParams={setGCSEParams}
+                                        onSiteSearchPageRequest={onSiteSearchPageRequest}
                                         showMore={nextPage}
-                                        sign={1}
-                                        startIndex={startIndex}/>
+                                        sign={1}/>
         </div>
     )
 }
 
-export default SiteSearchPagination;
+export default React.memo(SiteSearchPagination);

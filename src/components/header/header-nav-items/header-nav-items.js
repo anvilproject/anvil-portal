@@ -10,6 +10,7 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
+import ContextSiteSearch from "../../site-search/context-site-search/context-site-search";
 import HeaderNavItem from "../header-nav-item/header-nav-item";
 import * as HeaderService from "../../../utils/header.service";
 
@@ -21,7 +22,8 @@ const classNames = require("classnames");
 function HeaderNavItems(props) {
 
     const {ncpi} = props;
-    const {menuOpen, searchBarOpen} = useContext(ContextAnVILPortal);
+    const {menuOpen} = useContext(ContextAnVILPortal);
+    const {searchBarOpen} = useContext(ContextSiteSearch);
     const classNamesHeaderNavItems = classNames(
         compStyles.headerNavItems,
         {[compStyles.menuOpen]: menuOpen},

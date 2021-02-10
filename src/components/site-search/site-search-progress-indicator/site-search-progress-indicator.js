@@ -22,4 +22,4 @@ function SiteSearchProgressIndicator() {
     )
 }
 
-export default SiteSearchProgressIndicator;
+export default React.memo(SiteSearchProgressIndicator);

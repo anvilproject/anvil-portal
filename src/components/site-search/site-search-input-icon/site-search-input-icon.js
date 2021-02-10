@@ -24,5 +24,5 @@ function SiteSearchInputIcon() {
     )
 }
 
-export default SiteSearchInputIcon;
+export default React.memo(SiteSearchInputIcon);
 

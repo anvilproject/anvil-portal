@@ -25,4 +25,4 @@ function SiteSearchResults(props) {
     )
 }
 
-export default SiteSearchResults;
+export default React.memo(SiteSearchResults);
