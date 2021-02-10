@@ -7,22 +7,20 @@
 
 // Core dependencies
 import React, {useCallback, useContext, useEffect, useRef} from "react";
-import {useLocation} from "@reach/router";
 
 // App dependencies
-import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
+import ContextSiteSearch from "../context-site-search/context-site-search";
 import SiteSearchInputClear from "../site-search-input-clear/site-search-input-clear";
 import SiteSearchInputIcon from "../site-search-input-icon/site-search-input-icon";
 
 // Styles
 import compStyles from "./site-search-input.module.css";
 
-function SiteSearchInput(props) {
+function SiteSearchInput() {
 
-    const {query, setQuery} = props;
-    const {onSetSiteSearchBarOpen, onSetSiteSearchTerms, searchBarOpen} = useContext(ContextAnVILPortal);
-    const currentLocation = useLocation();
+    const {inputValue, onSetInputValue, onSetSiteSearchBarOpen, searchBarOpen} = useContext(ContextSiteSearch);
     const refInput = useRef(null);
+    const showClear = !!inputValue;
 
     const onHandleKeyDown = useCallback((e) => {
 
@@ -31,26 +29,6 @@ function SiteSearchInput(props) {
             onSetSiteSearchBarOpen(false);
         }
     }, [onSetSiteSearchBarOpen]);
-
-    const onInitializeInputValue = useCallback(() => {
-
-        const {search, state} = currentLocation || {},
-            {siteSearchTerms} = state || {};
-
-        /* Get the search params. */
-        const params = new URLSearchParams(search);
-        const query = params.get("q", params);
-
-        /* Grab the search terms from navigate state, or current URL search params. */
-        const terms = siteSearchTerms || query;
-
-        if ( terms ) {
-
-            /* Update AnVIL app provider and <input> value. */
-            onSetSiteSearchTerms(terms);
-            setQuery(terms);
-        }
-    }, [currentLocation, onSetSiteSearchTerms, setQuery]);
 
     const onInputBlur = (e) => {
 
@@ -69,13 +47,13 @@ function SiteSearchInput(props) {
         const {target} = e || {},
             {value: inputStr} = target || {};
 
-        setQuery(inputStr);
+        onSetInputValue(inputStr);
     };
 
     const onInputClear = () => {
 
         /* Clear value and maintain <input> focus. */
-        setQuery("");
+        onSetInputValue("");
         refInput.current.focus();
     };
 
@@ -94,13 +72,6 @@ function SiteSearchInput(props) {
             document.removeEventListener("keydown", onHandleKeyDown);
         }
     }, [onHandleKeyDown]);
-
-    /* useEffect - componentDidMount. */
-    /* Initialize <input> with any previous search value. */
-    useEffect(() => {
-
-        onInitializeInputValue();
-    }, [onInitializeInputValue]);
 
     /* useEffect - componentDidUpdate - searchBarOpen. */
     /* Blur input if search bar is collapsed. */
@@ -123,8 +94,8 @@ function SiteSearchInput(props) {
                ref={refInput}
                spellCheck="false"
                type="text"
-               value={query}/>
-        <SiteSearchInputClear onInputClear={onInputClear} query={query} searchBarOpen={searchBarOpen}/>
+               value={inputValue}/>
+        <SiteSearchInputClear onInputClear={onInputClear} searchBarOpen={searchBarOpen} showClear={showClear}/>
         </>
     )
 }

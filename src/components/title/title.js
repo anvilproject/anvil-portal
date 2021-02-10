@@ -9,7 +9,7 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
+import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
 
 // Styles
 import compStyles from "./title.module.css";
@@ -17,12 +17,13 @@ import compStyles from "./title.module.css";
 function Title(props) {
 
     const {title} = props;
-    const {siteSearchTerms} = useContext(ContextAnVILPortal);
+    const {siteSearch} = useContext(ContextSiteSearch),
+        {searchTerms} = siteSearch || {};
 
     return (
         <h1 className={compStyles.title}>
             <span>{title}</span>
-            {siteSearchTerms ? <span> for "{siteSearchTerms ? siteSearchTerms : null}"</span> : null}
+            {searchTerms ? <span> for "{searchTerms ? searchTerms : null}"</span> : null}
         </h1>
     );
 }

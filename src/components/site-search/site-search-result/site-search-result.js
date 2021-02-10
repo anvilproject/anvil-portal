@@ -24,9 +24,9 @@ import compStyles from "./site-search-result.module.css";
 
 function SiteSearchResult(props) {
 
-    const { result, query } = props,
-        { link, formattedUrl, pagemap, snippet, title } = result,
-        { cse_thumbnail } = pagemap || {};
+    const {result, query} = props,
+        {link, formattedUrl, pagemap, snippet, title} = result,
+        {cse_thumbnail} = pagemap || {};
     const firstThumbnail = cse_thumbnail ? cse_thumbnail[0] : null;
     const imgSrc = firstThumbnail ? firstThumbnail.src : searchPlaceholder;
 

@@ -18,10 +18,10 @@ const classNames = require("classnames");
 
 function SiteSearchInputClear(props) {
 
-    const {onInputClear, query, searchBarOpen} = props;
+    const {onInputClear, searchBarOpen, showClear} = props;
 
     return (
-        <span className={classNames(compStyles.clear, {[compStyles.active]: searchBarOpen && query})}
+        <span className={classNames(compStyles.clear, {[compStyles.active]: searchBarOpen && showClear})}
               onClick={() => onInputClear()}
               role={"presentation"}
               tabIndex={"-1"}>
@@ -30,4 +30,4 @@ function SiteSearchInputClear(props) {
     )
 }
 
-export default SiteSearchInputClear;
+export default React.memo(SiteSearchInputClear);

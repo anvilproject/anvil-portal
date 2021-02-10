@@ -10,7 +10,7 @@ import {Link} from "gatsby";
 import React, {useContext} from "react";
 
 // App dependencies
-import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
+import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
 
 // Images
 import gitHub from "../../../images/logo-git-hub.png";
@@ -30,10 +30,11 @@ const classNames = require("classnames");
 
 function Footer() {
 
-    const {siteSearchLoading} = useContext(ContextAnVILPortal);
+    const {siteSearch} = useContext(ContextSiteSearch),
+        {searchLoading} = siteSearch || {};
 
     return (
-        siteSearchLoading ? null :
+        searchLoading ? null :
         <div className={compStyles.footer}>
             <div className={classNames(globalStyles.container, compStyles.container, globalStyles.flex)}>
                 <div className={compStyles.logos}>
