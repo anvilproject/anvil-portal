@@ -12,8 +12,8 @@
     padding: 1.25rem 0 3.75rem; /* 20px 0 60px */
 }
 
-/* Accessing, events, featured, news, onboarding, roadmap, submitting, twitter */
-.accessing, .events, .featured, .news, .onboarding, .roadmap, .submitting, .twitter {
+/* Accessing, events, featured, news, onboarding, submitting, twitter */
+.accessing, .events, .featured, .news, .onboarding, .submitting, .twitter {
     padding-top: 3.75rem; /* 60px */
 }
 
