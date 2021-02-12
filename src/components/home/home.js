@@ -14,7 +14,6 @@ import {isBrowser} from "react-device-detect";
 import Carousel from "../carousel/carousel";
 import Events from "../events/events";
 import News from "../news/news";
-import RoadMap from "../road-map/road-map";
 import SectionBody from "../section/section-body";
 import SectionIntro from "../section/section-intro";
 import Stats from "../stats/stats";
@@ -87,10 +86,6 @@ class Home extends React.Component {
             <section className={compStyles.featured}>
                 <SectionIntro fileName={"featured-workspaces"} stretch/>
                 <SectionBody><Workspaces featured/></SectionBody>
-            </section>
-            <section className={compStyles.roadmap}>
-                <SectionIntro fileName={"road-map"} stretch/>
-                <SectionBody><RoadMap/></SectionBody>
             </section>
             <section className={compStyles.news}>
                 <SectionIntro sectionTitle={"News"} stretch/>
