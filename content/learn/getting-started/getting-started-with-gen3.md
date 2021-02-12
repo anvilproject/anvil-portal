@@ -32,15 +32,17 @@ Learn more about the datasets [here](https://anvilproject.org/data).
 
 In order to navigate and access data available on the Gen3 platform, please start by visiting the [login page](https://gen3.theanvil.io/login). You will need an eRA Commons account as well as access permissions through the [Database of Genotypes and Phenotypes (dbGaP)](https://www.ncbi.nlm.nih.gov/gap/). If you are a researcher, login using your [eRA Commons account](https://public.era.nih.gov/commons/public/login.do), via the “Login from NIH” option. AnVIL Gen3 consortia developers can login using their Google accounts. Please make sure to use the correct login method.
 
-![AnVIL Gen3 portal login](../_images/getting-started/gen3-login-page.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-login-page.png" alt="AnVIL Gen3 portal login"/>
 <figure-caption>Login page for the AnVIL Gen3 portal.</figure-caption>
+</figure>
 
 Once logged in, your username will appear in the upper right-hand corner of the page. You will also see a display with aggregate statistics for the total number of subjects, samples, and files available within the AnVIL Gen3 platform.
 
-![Gen3 home page](../_images/getting-started/gen3-home-page.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-home-page.png" alt="Gen3 home page"/>
 <figure-caption>Post-login view of the AnVIL Gen3 front page.</figure-caption>
+</figure>
 
 ### Helpful Account-related documentation and resources
 
@@ -58,9 +60,10 @@ To check your user access information, go to the website (<https://gen3.theanvil
 
 Users can request access to data by visiting the dbGaP homepage. Read more information on Data Access here and in this [section](#data-exploration) in the Documentation.
 
-![Checking access](../_images/getting-started/gen3-checking-access.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-checking-access.png" alt="Checking access"/>
 <figure-caption>Screenshot of checking what data you have access to in Gen3.</figure-caption>
+</figure>
 
 ### Profile page - API keys and Project Access
 
@@ -70,15 +73,17 @@ The profile page can be accessed from the top right-hand corner of the page and 
 
 If users want to download data files, an **API key** will be required in order to use the [gen3-client](https://gen3.org/resources/user/gen3-client/), which is the Gen3 tool to download data files.
 
-![Active API key](../_images/getting-started/gen3-active-api-key.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-active-api-key.png" alt="Active API key"/>
 <figure-caption>Profile page with an active API key.</figure-caption>
+</figure>
 
 To create a key on your local machine, click the “Create API key” button which will activate the following pop-up window:
 
-![API key creation](../_images/getting-started/gen3-api-key-creation.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-api-key-creation.png" alt="API key creation"/>
 <figure-caption>API key creation pop-up window.</figure-caption>
+</figure>
 
 Click the “Download json” button to save the credential file to the local machine. After completion, a new entry will appear in the API key(s) section of the Profile page. It will display the API key key_id and the expiration date. The user should delete the key after it has expired. If for any reason a user feels that their API key has been compromised, the key should be deleted before subsequently creating a new one.\
 **Caution: The key expires after one month after the key creation!**
@@ -89,9 +94,10 @@ Users can find project access information under “You have access to the follow
 
 If you are not seeing access to a specific study, please check that you have been granted access within [dbGaP](https://www.ncbi.nlm.nih.gov/gap/) first. If access has been granted for over a week, please contact the AnVIL Help Desk: <help@lists.anvilproject.org>.
 
-![Profile page](../_images/getting-started/gen3-profile-page.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-profile-page.png" alt="Profile page"/>
 <figure-caption>Profile page with an active key and access to projects.</figure-caption>
+</figure>
 
 ## Data Exploration
 
@@ -99,9 +105,10 @@ If you are not seeing access to a specific study, please check that you have bee
 
 As noted in the section [Login to the AnVIL Gen3 platform](#login-to-the-anvil-gen3-platform), users can leverage the **Data Access** panel at the top left-hand corner of the Exploration page in order to view studies they do or do not have access to. Each of the selections is explained in detail below.
 
-![Exploration data access panel](../_images/getting-started/gen3-exploration-data-access-panel.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-exploration-data-access-panel.png" alt="Exploration data access panel"/>
 <figure-caption>Data Access panel on the Exploration page. By default, all users are assigned to Data with Access.</figure-caption>
+</figure>
 
 ### Tiered Access
 
@@ -109,23 +116,26 @@ As noted in the section [Login to the AnVIL Gen3 platform](#login-to-the-anvil-g
 
 A user can view all of the summary data and associated study information they have access to, including but not limited to Project ID, file types, and clinical variables. For tutorial purposes, the Gen3 AnVIL portal has two projects available: `open_access-1000Genomes` and `tutorial-synthetic_data_set_1`.
 
-![Data with access](../_images/getting-started/gen3-data-with-access.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-data-with-access.png" alt="Data with access"/>
 <figure-caption>“Data with Access” displays all user-authorized studies.</figure-caption>
+</figure>
 
 #### Data without Access
 
 The “Data without Access” selection will display all of the studies that are currently not accessible by the user. Each of the studies will display a lock symbol next to the Project ID to indicate that subject-level access has not been granted. However, a minimal set of summary statistics will still be available to aid users with their search and exploration.
 
-![Data without access](../_images/getting-started/gen3-data-without-access.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-data-without-access.png" alt="Data without access"/>
 <figure-caption>Users may only view summary information for projects without access.</figure-caption>
+</figure>
 
 Projects will also be hidden if the select cohort contains fewer than 50 subjects (50 ↓, "You may only view summary information for this project. You do not have subject-level access", example below); grayed out boxes and locks will both appear.
 
-![Hidden projects](../_images/getting-started/gen3-hidden-projects.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-hidden-projects.png" alt="Hidden projects"/>
 <figure-caption>The grey box containing a downward-facing arrow and the number 50 indicates that the selected virtual cohort contains a subject count below 50. This symbol will be displayed only for studies that are not yet accessible by the user.</figure-caption>
+</figure>
 
 Users can request access by clicking on the “Get Access” button, visiting the [dbGaP homepage](https://dbgap.ncbi.nlm.nih.gov/), or following instructions reported [here](https://anvilproject.org/learn/accessing-data/requesting-data-access).
 
@@ -133,23 +143,26 @@ Users can request access by clicking on the “Get Access” button, visiting th
 
 Selecting the “All Data” option will display all data available on the AnVIL Gen3 data commons independent of user access. Studies not available to a user will be shown locked as demonstrated below.
 
-![Selecting all data](../_images/getting-started/gen3-selecting-all-data.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-selecting-all-data.png" alt="Selecting all data"/>
 <figure-caption>“All Data” in the Exploration page displays all studies hosted in Gen3 AnVIL. Locks appear when users do not have access to the shown studies.</figure-caption>
+</figure>
 
 ### The Data Tab
 
 #### Create artificial cohorts
 
-![Exploration page viewed as a user with data access](../_images/getting-started/gen3-exploration-with-user-access.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-exploration-with-user-access.png" alt="Exploration page viewed as a user with data access"/>
 <figure-caption>Exploration page viewed as a user with “Data Access”. The Data Tab on the Exploration page hosts AnVIL-custom tabs, filters, export buttons, and summary statistics.</figure-caption>
+</figure>
 
 Under the “Data” Tab, users can leverage the AnVIL data model, designed by the AnVIL Phenotype WG and Data Processing WG, to create virtual cohorts. The selection of search facets will dynamically update the filtered options displayed on the page. If no facets have been selected, all of the data accessible to the user will be displayed. At this time, users can filter based on four categories of clinical information:
 
-![Data tab filter categories](../_images/getting-started/gen3-data-tab-filter-categories.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-data-tab-filter-categories.png" alt="Data tab filter categories"/>
 <figure-caption>Users can leverage 4 different filter categories under the Data tab (“Projects”, “Subject”, etc.) each with their own set of search facets. Caution: Multiple facets and filters can be selected anywhere under the Data Tab, but they cannot be combined with facets from the File Tab.</figure-caption>
+</figure>
 
 - **Projects**: Any specifically defined piece of work that is undertaken or attempted to meet a single investigative question of requirement. Users can create cohorts by selecting for instance the project name or dbGaP Phs.
 - **Subject**: The collection of all data related to a specific subject in the context of a specific experiment. Users can create subject-level cohorts, for example by selecting ancestry, age, sex, or phenotype group.
@@ -160,15 +173,17 @@ Under the “Data” Tab, users can leverage the AnVIL data model, designed by t
 
 The Data Tab contains a text-based search function for Subject IDs. Under the search bar, users are also presented with a list of suggestions while typing. By clicking on a displayed entry, users can build their virtual cohorts and export data accordingly. The selections can be clicked again from the selected created cohort.
 
-![Full text search](../_images/getting-started/gen3-full-text-search.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-full-text-search.png" alt="Full text search"/>
 <figure-caption>Full text search for the Subject IDs is available on the Data tab.</figure-caption>
+</figure>
 
 ### The Files Tab
 
-![Exploration page files tab](../_images/getting-started/gen3-files-tab.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-files-tab.png" alt="Exploration page files tab"/>
 <figure-caption>The Files tab on the Exploration page shows data files on the Gen3 AnVIL commons. The Files Tab can be used to create custom cohorts and export them to Terra.</figure-caption>
+</figure>
 
 The Files tab displays study files from the facets chosen on the left-side panel (“Project ID”, “Data Category”, “Data Type”, etc.). Unlike the subject-centric organization of the Data tab, the Files tab allows users to group search results and filters at the file level. A list of the selected files will be displayed in the table at the bottom right-hand corner of the page. The list will dynamically update based on your search filters.
 
@@ -176,9 +191,10 @@ The Files tab displays study files from the facets chosen on the left-side panel
 
 The Files Tab contains a text-based search function for File Names that will initiate a list of suggestions below the search bar. Click on a single _or_ on multiple suggestions in the list appearing underneath the search bar to create a cohort and export the data. The selections can be clicked again in order to remove them from the cohort.
 
-![File tab full text search](../_images/getting-started/gen3-files-tab-full-text-search.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-files-tab-full-text-search.png" alt="File tab full text search"/>
 <figure-caption>Full text search available on the File (tab) for File Names.</figure-caption>
+</figure>
 
 Each time a facet selection is made, the data summary and displays will update to reflect the applied filters. Once a cohort of data files is created, the user has the identical choices to export as shown for the Data Tab such as “Export to Terra”:
 
@@ -186,9 +202,10 @@ Each time a facet selection is made, the data summary and displays will update t
 
 ### Downloadable Data Tab and GTEx v8
 
-![Download tab](../_images/getting-started/gen3-download-tab.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-download-tab.png" alt="Download tab"/>
 <figure-caption>The Downloadable Tab shows object files and phenotypic data of the GTEx v8 project. Here, custom cohorts can be equally created and downloaded to the local environment.</figure-caption>
+</figure>
 
 The Downloadable Tab provides users with the tools needed to download data locally. Only the studies available for download will be displayed in this section of the Gen3 Exploration page. Currently, the GTEx v8 project data is available for free egress downloads [GTEx v8](https://gtexportal.org/home/). Users can create cohorts using search facets including but not limited to “Data Format,” “Data Type”, and “Data Category.”
 
@@ -201,9 +218,10 @@ The GTEx files on AnVIL are divided into object files and phenotype data. Users 
 
 After a cohort has been selected, the users have three different options for exporting the data.
 
-![Exporting data options](../_images/getting-started/gen3-exporting-options.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-exporting-options.png" alt="Exporting data options"/>
 <figure-caption>Three options for exporting the data.</figure-caption>
+</figure>
 
 - **Export All to Terra**: initiates a Portable Format for Bioinformatics (PFB)* file export of all clinical data and file GUIDs for the selected cohort to Terra. When the export is complete, users will be redirected to the Terra website, where users will be asked to select a new/existing workspace. From here, the user is advised to look at [Terra Documentation](https://support.terra.bio/hc/en-us/articles/360038087312-Understanding-and-using-Gen3-data-in-Terra).
 - **Export to PFB**: initiates a PFB file export of selected clinical data and file GUIDs, which can be downloaded and opened with another program (e.g. Firefox) or converted to a TSV file using [PyPFB](https://github.com/uc-cdis/pypfb).
@@ -224,35 +242,40 @@ On the AnVIL, the [dictionary page](https://gen3.theanvil.io/DD) contains an int
 
 The table view displays all nodes and their short descriptions as a list of entries grouped by their node category.
 
-![Table view](../_images/getting-started/gen3-table-view.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-table-view.png" alt="Table view"/>
 <figure-caption>The Table View of the Gen3 Data Dictionary lists all nodes, short descriptions, and available download templates (“JSON”, “TSV”) sorted by category (“Administrative”, “Clinical”, etc.). Clicking on one of the nodes will open the Properties view of the node. </figure-caption>
+</figure>
 
 ### Graph View
 
 The graph model view, as seen below, displays all of the nodes and relationships between nodes in a hierarchical view. The model further specifies the node types and links between nodes, as highlighted in the legend (top right-hand side of the Data Dictionary page).
 
-![Graph view](../_images/getting-started/gen3-graph-view.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-graph-view.png" alt="Graph view"/>
 <figure-caption>The interactive Gen3 Data Dictionary in graph view showing nodes in their hierarchical structure.</figure-caption>
+</figure>
 
 Users can click on any of the graph nodes in order to learn more about their respective properties. By clicking on a node, the graph will highlight that specific node and all associated links or edges that connect it to the Program node. A "Data Model Structure" list will also appear on the left side toolbar. This will display the node path required to reach the selected node from the Program node.
 
-![Example of a node](../_images/getting-started/gen3-example-node.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-example-node.png" alt="Example of a node"/>
 <figure-caption>An example of a node (“sequencing”) being selected in the interactive graph view. A pop-up window will display the number of required and optional properties belonging to the node. Click on “Open properties” to explore.</figure-caption>
+</figure>
 
 If additional nodes along the path are selected, other possible paths will be greyed out. The "Data Model Structure" list on the left side toolbar will also update accordingly.
 
-![Example of a second node](../_images/getting-started/gen3-example-second-node.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-example-second-node.png" alt="Example of a second node"/>
 <figure-caption>An example of a second node (“sample”) being selected in the path of the first selected node (“sequencing”).</figure-caption>
+</figure>
 
 The left-side toolbar has two options available - “Open properties” and “Download templates”. The Download templates option will download the submission files for all nodes in the "Data Model Structure" list. The Open properties option will open the node properties in a new pop-up window. The Open properties button can also be found on the node that was first selected.
 
-![Node properties](../_images/getting-started/gen3-node-properties.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-node-properties.png" alt="Node properties"/>
 <figure-caption>The node's property window after clicking on “Open properties”. Users can download the template as a TSV or JSON file (light blue button in the top-right corner), and also close the properties (“Close properties”, left side panel).</figure-caption>
+</figure>
 
 This property view will display all properties in the node and information about each property:
 
@@ -266,21 +289,24 @@ This property view will display all properties in the node and information about
 
 The Dictionary contains a text-based search function that will search through property names and descriptions. The function supports auto-complete in order to best help users identify and recognize desired search terms.
 
-![Autocomplete search](../_images/getting-started/gen3-autocomplete-search.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-autocomplete-search.png" alt="Autocomplete search"/>
 <figure-caption>Auto-complete helps users search through the graph more effectively.</figure-caption>
+</figure>
 
 Once a search term is entered, the Dictionary view will update dynamically and highlight the node(s) that contain the search term. Frames around the node boxes indicate whether the searched word was identified in the name of the node (full line) or in the node's description and properties' names/descriptions (dashed line).
 
-![Graph view search results](../_images/getting-started/gen3-graph-view-search-results.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-graph-view-search-results.png" alt="Graph view search results"/>
 <figure-caption>Search results for "sam" in the Graph View.</figure-caption>
+</figure>
 
 By clicking on one of the highlighted nodes, the search term will be highlighted either in the property name or property description sections. From here you can also download a template for uploading a file or that particular node type (light blue buttons). The file can be downloaded as a JSON or TSV file.
 
-![Search results highlighted](../_images/getting-started/gen3-search-results-highlighted.png)
-
+<figure>
+<img src="../_images/getting-started/gen3-search-results-highlighted.png" alt="Search results highlighted"/>
 <figure-caption>Search results are highlighted in orange color.</figure-caption>
+</figure>
 
 Click "Clear Result" to wipe the free text search if needed. The search history is saved below the search bar in the "Last Search" list. Click on an item here to display the results again. Click "Clear History" if needed.
 
