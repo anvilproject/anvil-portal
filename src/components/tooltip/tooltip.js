@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import ReactDOM from "react-dom";
 
 // App dependencies
@@ -15,73 +15,48 @@ import * as TooltipService from "../../utils/tooltip.service";
 // Styles
 import compStyles from "./tooltip.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
-class Tooltip extends React.Component {
+function Tooltip(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = ({show: false, mounted: false, tooltipPos: {}});
-        this.portalRoot = null;
-        this.tooltipRef = React.createRef();
-    }
+    const {children, label, multiline} = props;
+    const refTooltip = useRef(null);
+    const [portalEl, setPortalEl] = useState(null);
+    const tooltipEl = <div className={compStyles.tooltip} ref={refTooltip}>{label}</div>;
 
-    hideTooltip = () => {
+    const hideTooltip = () => {
 
-        return () => {
-
-            this.setState({show: false});
-        };
+        refTooltip.current.classList.remove(compStyles.show);
+        refTooltip.current.removeAttribute("style");
     };
 
-    componentDidMount() {
+    const showTooltip = (e) => {
 
-        this.portalRoot = document.getElementById("portal");
+        const currentTarget = e.currentTarget;
+        const tooltipPos = TooltipService.positionTooltip(currentTarget, refTooltip);
+        const {x, y} = tooltipPos;
 
-        this.isPortalMounted();
+        refTooltip.current.setAttribute("style", `left: ${x}px; top: ${y}px;`);
+        refTooltip.current.classList.add(compStyles.show);
     };
 
-    isPortalMounted = () => {
+    useEffect(() => {
 
-        if ( this.portalRoot ) {
+        const portal = document.getElementById("portal");
+        setPortalEl(portal);
+    }, []);
 
-            this.setState({mounted: true});
-        }
-    };
-
-    showTooltip = () => {
-
-        return (e) => {
-
-            const tooltipPos = TooltipService.positionTooltip(e.currentTarget, this.tooltipRef);
-
-            this.setState({tooltipPos: tooltipPos});
-            this.setState({show: true});
-        };
-    };
-
-    render() {
-        const {children, label, multiline} = this.props,
-            {show, mounted, tooltipPos} = this.state,
-            {x, y} = tooltipPos;
-        const identifier = Date.now();
-        const tooltipId = `tooltip${identifier}`;
-
-        const tooltip = <div ref={this.tooltipRef} style={{left: x, top: y}} className={classNames({[compStyles.show]: show}, compStyles.tooltip)}>{label}</div>;
-
-        return (
-            <>
-                {mounted ? ReactDOM.createPortal(tooltip, this.portalRoot) : null}
-                <span className={classNames({[compStyles.multiline]: multiline})}
-                      id={tooltipId}
-                      onBlur={this.hideTooltip()}
-                      onFocus={this.showTooltip()}
-                      onMouseOut={this.hideTooltip()}
-                      onMouseOver={this.showTooltip()}
-                      role="presentation">{children}</span>
-            </>
-        )
-    }
+    return (
+        <>
+        {portalEl ? ReactDOM.createPortal(tooltipEl, portalEl) : null}
+        <span className={classNames({[compStyles.multiline]: multiline}, compStyles.tt)}
+              onBlur={() => hideTooltip()}
+              onFocus={(e) => showTooltip(e)}
+              onMouseOut={() => hideTooltip()}
+              onMouseOver={(e) => showTooltip(e)}
+              role="presentation">{children}</span>
+        </>
+    )
 }
 
 export default Tooltip;
