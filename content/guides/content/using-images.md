@@ -31,13 +31,18 @@ Note the `../_images/` preceding the image name. This is required to tell the CM
 You can also add a caption to the image using an HTML style custom tag like:
 
 ```
+<figure>
+<img src="../_images/anvil-image.png" alt="AnVIL Portal Image."/>
 <figure-caption>Figure 1. The original AnVIL homepage image.</figure-caption>
+</figure>
 ```
 
 This renders like:
 
-![AnVIL Image](../_images/anvil-image.png "AnVIL Portal Image!")
+<figure>
+<img src="../_images/anvil-image.png" alt="AnVIL Portal Image"/>
 <figure-caption>Figure 1. The the image included using the markdown above.</figure-caption>
+</figure>
 
 >####TIP
 >You can check if the image link is correct by using the preview link in the markdown editor.

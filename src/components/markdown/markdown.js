@@ -13,7 +13,9 @@ import rehypeReact from "rehype-react";
 import DataDashboard from "../data-dashboard/data-dashboard";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
-import FigureCaption from "../figure-caption/figure-caption";
+import ExternalLink from "../anchor-element/external-link/external-link";
+import Figure from "../figure/figure";
+import FigureCaption from "../figure/figure-caption/figure-caption";
 import Hero from "../hero/hero";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
@@ -70,6 +72,8 @@ class Markdown extends React.Component {
                 "data-dashboard": DataDashboard,
                 "event-hero": EventHero,
                 "events": Events,
+                "external-link": ExternalLink,
+                "figure": Figure,
                 "figure-caption": FigureCaption,
                 "hero": Hero,
                 "news": News,

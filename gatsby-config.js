@@ -125,6 +125,8 @@ module.exports = {
                                 "data-dashboard",
                                 "event-hero",
                                 "events",
+                                "external-link",
+                                "figure",
                                 "figure-caption",
                                 "hero",
                                 "news",
