@@ -44,8 +44,10 @@ It is possible to link directly to any outline heading on an internal page as th
 
 You can find out the link to a page heading by clicking on link icon that appears when you hover over a heading. After you click on the link symbol, the url to that heading will be in your browsers address bar. Copy the link and stip off the method and domain to make a relative url. 
 
-![Link Icon](../_images/internal-link.png)
+<figure>
+<img src="../_images/internal-link.png" alt="Link Icon"/>
 <figure-caption>Figure 1: Hovering over a page heading to reveal the "copy to clipboard" link for the internal anchor.</figure-caption>
+</figure>
 
 Then use the path to create a link like so:
 

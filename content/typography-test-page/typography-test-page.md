@@ -47,8 +47,10 @@ For new pages, it may be helpful to start writing first in google doc or other w
 #### Add the page URL to the siteMap.js
 To get your page added to the siteMap and deployed, please open a pull request for for your new page in the [Github Project](https://github.com/anvilproject/anvil-portal/pulls) for the AnVIL portal repository.
 
-![app layer](./_images/app-layer.png)
+<figure>
+<img src="./_images/app-layer.png" alt="App layer."/>
 <figure-caption>Figure 1: A unified view of data and computer regardless of tools used.</figure-caption>
+</figure>
 
 ####Getting Content Reviewed
 ##### Creating a Pull Request Against Staging

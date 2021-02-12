@@ -1,0 +1,76 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL figure component.
+ */
+
+/* Caption */
+.figureContainer figcaption {
+    color: var(--black58);
+    font-size: 0.875rem; /* 14px */
+    letter-spacing: 0.8px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+/* Caption - gif images */
+.figureContainer img + figcaption {
+    margin: 8px auto 48px;
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 600px) {
+
+    /* Caption */
+    .figureContainer figcaption {
+        max-width: 75%;
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ */
+@media screen and (min-width: 840px) {
+
+    /* Caption */
+    .figureContainer figcaption {
+        max-width: 100%;
+    }
+}
+
+/**
+ * Large tablet portrait, small tablet landscape, small window.
+ */
+@media screen and (min-width: 960px) {
+
+    /* Caption */
+    .figureContainer figcaption {
+        max-width: 75%;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Caption */
+    .figureContainer figcaption {
+        max-width: 100%;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1280px) {
+
+    /* Caption */
+    .figureContainer figcaption {
+        max-width: 75%;
+    }
+}
