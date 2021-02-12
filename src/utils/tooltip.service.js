@@ -9,6 +9,7 @@
  * Returns the left and top position for the tooltip, specified by the tooltip target.
  *
  * @param target
+ * @param tooltip
  * @returns {{x: number, y: number}}
  */
 export function positionTooltip(target, tooltip) {
@@ -86,7 +87,7 @@ export function positionTooltip(target, tooltip) {
     }
 
     return {
-        x: x,
-        y: y
+        x: x.toFixed(1),
+        y: y.toFixed(1)
     };
 }
