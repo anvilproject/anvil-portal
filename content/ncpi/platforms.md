@@ -70,7 +70,7 @@ The ability to combine diverse data types and perform cross-domain analysis of l
 
 The CRDC will encompass and connect multiple cloud-based data repositories and serve as a central location to support public data sharing for NCI-funded programs.
 
-[Training](https://datacommons.cancer.gov/learn) | [ISB-CGC Tutorials](https://isb-cancer-genomics-cloud.readthedocs.io/en/latest/sections/TutorialsAndHow-ToGuides.html) | [ISB_GCG Videos](https://isb-cgc.appspot.com/videotutorials/)| [Support](mailto:support@sbgenomics.com)
+[Training](https://datacommons.cancer.gov/learn) | [ISB-CGC Tutorials](https://isb-cancer-genomics-cloud.readthedocs.io/en/latest/sections/TutorialsAndHow-ToGuides.html) | [ISB_GCG Videos](https://isb-cgc.appspot.com/videotutorials/) | [Support](mailto:support@sbgenomics.com)
 
 
 [CGC Webinars](https://www.cancergenomicscloud.org/webinars)
