@@ -1,0 +1,15 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard search component.
+ */
+
+/* Search. */
+.search {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin: 32px 0 24px; /** Padding bottom matches padding between tables */
+    width: 100%;
+}

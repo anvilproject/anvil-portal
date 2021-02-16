@@ -12,8 +12,7 @@ Open access datasets are accessible to all upon logging into [Terra](https://anv
 
 [Once your access is approved](/learn/accessing-data/requesting-data-access#once-your-access-is-granted), and assuming you have [linked your eRA Commons ID with your Terra acount](https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers), your new workspaces will appear in your Terra workspaces tab ready for you to [clone](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) and explore. 
 
-
-<data-dashboard></data-dashboard>
+<dashboard></dashboard>
 
 ## Notes
 

@@ -6,12 +6,12 @@
  */
 
 // App dependencies
-import DataTableRowCellDataTypes from "../../components/data-table-row-cell-data-types/data-table-row-cell-data-types";
-import DataTableRowCellEllipsis from "../../components/data-table-row-cell-ellipsis/data-table-row-cell-ellipsis";
-import DataTableRowCellGapId from "../../components/data-table-row-cell-gap-id/data-table-row-cell-gap-id";
-import DataTableRowCellProjectId from "../../components/data-table-row-cell-project-id/data-table-row-cell-project-id";
-import DataTableRowCellRedirect from "../../components/data-table-row-cell-redirect/data-table-row-cell-redirect";
-import DataTableRowCellX from "../../components/data-table-row-cell-x/data-table-row-cell-x";
+import DashboardTableRowCellDataTypes from "../../components/dashboard/dashboard-table-row-cell-data-types/dashboard-table-row-cell-data-types";
+import DashboardTableRowCellEllipsis from "../../components/dashboard/dashboard-table-row-cell-ellipsis/dashboard-table-row-cell-ellipsis";
+import DashboardTableRowCellGapId from "../../components/dashboard/dashboard-table-row-cell-gap-id/dashboard-table-row-cell-gap-id";
+import DashboardTableRowCellProjectId from "../../components/dashboard/dashboard-table-row-cell-project-id/dashboard-table-row-cell-project-id";
+import DashboardTableRowCellRedirect from "../../components/dashboard/dashboard-table-row-cell-redirect/dashboard-table-row-cell-redirect";
+import DashboardTableRowCellX from "../../components/dashboard/dashboard-table-row-cell-x/dashboard-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
 
@@ -98,22 +98,22 @@ export function getReactElementType(columnName, summaryTable) {
 
     if ( columnName === "consortium" && summaryTable ) {
 
-        return DataTableRowCellRedirect;
+        return DashboardTableRowCellRedirect;
     }
 
     switch (columnName) {
         case "accessType":
-            return DataTableRowCellRedirect;
+            return DashboardTableRowCellRedirect;
         case "dataTypes":
-            return DataTableRowCellDataTypes;
+            return DashboardTableRowCellDataTypes;
         case "diseases":
-            return DataTableRowCellEllipsis;
+            return DashboardTableRowCellEllipsis;
         case "gapId":
-            return DataTableRowCellGapId;
+            return DashboardTableRowCellGapId;
         case "projectId":
-            return DataTableRowCellProjectId;
+            return DashboardTableRowCellProjectId;
         default:
-            return DataTableRowCellX;
+            return DashboardTableRowCellX;
     }
 }
 

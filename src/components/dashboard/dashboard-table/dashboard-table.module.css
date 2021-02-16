@@ -1,0 +1,50 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard table component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ */
+
+/* Table wrapper */
+/* Allows for overflow on smaller screens */
+.wrapper {
+    color: var(--accent-blue-dark);
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+/* Summary table - wrapper */
+.wrapper[id^="summary"] {
+    margin-bottom: 24px;
+}
+
+/* Table */
+.wrapper table {
+    display: inline-table;
+    margin: 0;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
+ */
+@media screen and (min-width: 840px) {
+
+    /* Wrapper */
+    .wrapper {
+        max-width: calc(100vw - 24px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
+    }
+}
+
+/**
+ * Large window.
+ */
+@media screen and (min-width: 1440px) {
+
+    /*.wrapper {*/
+    /*    max-width: 1392px; !* Cap width of table on large devices *!*/
+    /*}*/
+}

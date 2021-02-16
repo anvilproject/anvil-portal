@@ -10,7 +10,7 @@ import React from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
-import DataDashboard from "../data-dashboard/data-dashboard";
+import Dashboard from "../dashboard/dashboard";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import ExternalLink from "../anchor-element/external-link/external-link";
@@ -75,7 +75,7 @@ class Markdown extends React.Component {
         const renderAst = new rehypeReact({
             createElement: React.createElement,
             components: {
-                "data-dashboard": DataDashboard,
+                "dashboard": Dashboard,
                 "event-hero": EventHero,
                 "events": Events,
                 "external-link": ExternalLink,
