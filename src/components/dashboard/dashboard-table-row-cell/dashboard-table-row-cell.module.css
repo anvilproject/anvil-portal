@@ -1,0 +1,92 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard table row cell component.
+ *
+ * "studies" identifier is for workspaces table with studies included.
+ * "summary" identifier is for the summary table.
+ */
+
+/* Row cells */
+[id^="studies"] td,
+[id^="summary"] td {
+    border-bottom: none;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+    height: 32px;
+    min-width: 62px;
+    padding: 0 4px;
+}
+
+/* Ellipsis */
+/* Studies table - "projectId" (ie Terra workspace name) */
+[id^="studies"] td[id^="projectId"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 233px; /* Matches studyName and diseases */
+}
+
+/* Studies table */
+/* Add padding to the right of cells for studies table to prevent long values from jamming up */
+[id^="studies"] td {
+    padding: 2px 8px 2px;
+}
+
+/* Studies table - "accessType" */
+[id^="studies"] td[id^="accessType"] {
+    width: 144px;
+}
+
+/* Studies table - "dataTypes" */
+[id^="studies"] td[id^="dataTypes"] {
+    width: 85px;
+}
+
+/* Studies table - "dataTypes" */
+[id^="studies"] td[id^="dataTypes"] span {
+    white-space: nowrap;
+}
+
+/* Studies table - "diseases" */
+[id^="studies"] td[id^="diseases"] {
+    max-width: 158px;
+}
+
+/* Studies table - "size" */
+[id^="studies"] td[id^="size"] {
+    width: 84px;
+}
+
+/* Studies table - "studyName" ("title") */
+[id^="studies"] td[id^="studyName"] {
+    max-width: 158px;
+}
+
+/* Studies table - "consortium" */
+[id^="studies"] td[id^="consortium"] {
+    width: 89px;
+}
+
+/* Studies table - "consortium" */
+[id^="studies"] td[id^="subjects"] {
+    width: 80px;
+}
+
+/* Summary table - "total" */
+[id^="summary"] td {
+    font-weight: inherit; /* Font weight specified by data table row */
+}
+
+/* Row cell - first */
+[id^="studies"] td:first-of-type,
+[id^="summary"] td:first-of-type {
+    padding-left: 2px; /* Scoot in first and last, matches header cell */
+}
+
+/* Row cell - last */
+[id^="studies"] td:last-of-type,
+[id^="summary"] td:last-of-type {
+    padding-right: 2px; /* Scoot in first and last, matches header cell */
+}

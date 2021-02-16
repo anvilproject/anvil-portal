@@ -122,7 +122,7 @@ module.exports = {
                         resolve: `gatsby-remark-component-parent2div`,
                         options: {
                             components: [
-                                "data-dashboard",
+                                "dashboard",
                                 "event-hero",
                                 "events",
                                 "external-link",

@@ -1,0 +1,12 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard table row cell redirect component.
+ */
+
+/* Row cell - linked cell */
+td.link {
+    color: var(--primary);
+    cursor: pointer;
+}
