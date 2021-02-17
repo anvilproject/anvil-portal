@@ -12,7 +12,8 @@ Members of these teams are also involved with platform and software development 
 
 ## Broad Institute
 - [Anthony Philippakis](https://www.broadinstitute.org/bios/anthony-philippakis-0)
-- Daniel MacArthur
+- Brian O'Connor
+- Anne O’Donnell Luria
 
 ## City University of New York
 - [Levi Waldron](https://waldronlab.io)
@@ -22,10 +23,10 @@ Members of these teams are also involved with platform and software development 
 
 ## Johns Hopkins University
 - Enis Afgan
-- [James Taylor](https://www.taylorlab.org)
 - Jeff Leek
 - Kasper Hansen
 - [Michael Schatz](http://schatz-lab.org)
+- Casey Overby Talo
 
 ## Oregon Health & Sciences University
 - [Jeremy Goecks](https://goeckslab.org)
@@ -47,6 +48,12 @@ Members of these teams are also involved with platform and software development 
 - [Robert Carroll](https://www.vumc.org/dbmi/person/robert-carroll-phd)
 
 ## Washington University
+- [Ting Wang](https://www.genome.wustl.edu/people/ting-wang/)
+
+## Carnigie Institution for Science
+- Fredrick Tan
+
+## Yale 
 - [Ira Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
 
 ## National Human Genome Research Institute
