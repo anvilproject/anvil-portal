@@ -37,6 +37,10 @@ AnVIL provides multiple entry points for data access and analysis, including exe
 ## Datasets
  AnVIL provides access to key [NHGRI datasets](/data), such as the CCDG (Centers for Common Disease Genomics), CMG (Centers for Mendelian Genomics), eMERGE (Electronic Medical Records and Genomics), as well as other relevant datasets.
 
+## Platform Interoperability
+AnVIL is a member of the [NIH Cloud Platform Interoperability Effort (NCPI)](/ncpi)  and is collaborating with the [NCPI working groups](/ncpi/working-groups) to establish and implement technical standards enabling cross platform authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis tools, and derived data.
+
+
 ## Platform Vision
  Long-term, the AnVIL will provide a unified platform for ingestion and organization for a multitude of current and future genomic and genome-related datasets. 
  
