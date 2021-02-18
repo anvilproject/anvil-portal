@@ -11,7 +11,7 @@ import {useLocation} from "@reach/router";
 import React, {useContext} from "react";
 
 // App dependencies
-import FrontmatterContext from "../context/frontmatter-context";
+import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import Socials from "../socials/socials";
 import SocialEmail from "../socials/social-email/social-email";
 import SocialLinkedIn from "../socials/social-linkedin/social-linkedin";
@@ -19,8 +19,8 @@ import SocialTwitter from "../socials/social-twitter/social-twitter";
 
 function ArticleSocials() {
 
-    const frontmatterContext = useContext(FrontmatterContext),
-        {title} = frontmatterContext;
+    const {frontmatter} = useContext(ContextFrontmatter),
+        {title} = frontmatter || {};
     const currentLocation = useLocation(),
         {href} = currentLocation || {};
     const encodedTitle = encodeURIComponent(`AnVIL - ${title}`).toString();

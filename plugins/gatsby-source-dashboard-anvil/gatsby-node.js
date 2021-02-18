@@ -1,17 +1,17 @@
 /**
  * The AnVIL
  * https://www.anvilproject.org
- * Custom source plugin for Dashboard studies.
+ * Custom source plugin for AnVIL dashboard.
  */
 
 // Core dependencies
 const path = require("path");
 
 // App dependencies
-const {getWorkspaceAccessType, getWorkspaceDiseases, getWorkspaceGapId, getWorkspaceStudyName} = require(path.resolve(__dirname, "dashboard-field-extension.service.js"));
-const {generateDashboardIndex} = require(path.resolve(__dirname, "dashboard-index.service.js"));
-const {getStudies} = require(path.resolve(__dirname, "dashboard-studies.service.js"));
-const {getWorkspaces} = require(path.resolve(__dirname, "dashboard-workspaces.service.js"));
+const {getFieldTypeWorkspaceAccessType, getFieldTypeWorkspaceDiseases, getFieldTypeWorkspaceGapId, getFieldTypeWorkspaceStudyName} = require(path.resolve(__dirname, "../utils/dashboard-field-extension-anvil.service.js"));
+const {generateAnVILDashboardIndex} = require(path.resolve(__dirname, "../utils/dashboard-indexing-anvil.service.js"));
+const {getStudies} = require(path.resolve(__dirname, "../utils/dashboard-studies-anvil.service.js"));
+const {getWorkspaces} = require(path.resolve(__dirname, "../utils/dashboard-workspaces-anvil.service.js"));
 
 exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
 
@@ -79,7 +79,7 @@ exports.createSchemaCustomization = ({actions}) => {
             return {
                 resolve(source, arg, context, info) {
                     const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getWorkspaceAccessType(source, studies);
+                    return getFieldTypeWorkspaceAccessType(source, studies);
                 },
             }
         }
@@ -91,7 +91,7 @@ exports.createSchemaCustomization = ({actions}) => {
             return {
                 resolve(source, arg, context, info) {
                     const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getWorkspaceDiseases(source, studies);
+                    return getFieldTypeWorkspaceDiseases(source, studies);
                 },
             }
         }
@@ -103,7 +103,7 @@ exports.createSchemaCustomization = ({actions}) => {
             return {
                 resolve(source, arg, context, info) {
                     const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getWorkspaceGapId(source, studies);
+                    return getFieldTypeWorkspaceGapId(source, studies);
                 },
             }
         }
@@ -115,7 +115,7 @@ exports.createSchemaCustomization = ({actions}) => {
             return {
                 resolve(source, arg, context, info) {
                     const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getWorkspaceStudyName(source, studies);
+                    return getFieldTypeWorkspaceStudyName(source, studies);
                 },
             }
         }
@@ -134,8 +134,8 @@ exports.createSchemaCustomization = ({actions}) => {
         consentsStat: Int
     }
     type GapId implements Node {
+        gapIdDisplay: String
         studyUrl: String
-        value: String
     }
     type Workspace implements Node {
         id: ID!
@@ -210,5 +210,5 @@ exports.onPostBootstrap = ({getNodesByType}) => {
     const studies = getNodesByType("Study");
 
     /* Generate the dashboard search index. */
-    generateDashboardIndex(studies, workspaces);
+    generateAnVILDashboardIndex(studies, workspaces);
 };

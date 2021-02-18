@@ -11,37 +11,36 @@
 import React from "react";
 
 // App dependencies
-import DashboardSearch from "./dashboard-search/dashboard-search";
-import DashboardSummary from "./dashboard-summary/dashboard-summary";
-import DashboardWorkspaces from "./dashboard-workspaces/dashboard-workspaces";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 import ProviderDashboard from "./provider-dashboard/provider-dashboard";
 import ProviderDashboardDownloads from "./provider-dashboard-downloads/provider-dashboard-downloads";
 import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.service";
 
-function Dashboard() {
+function Dashboard(props) {
 
-    const workspacesQuery = DashboardWorkspaceStaticQuery();
-    const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(workspacesQuery);
-    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm);
-    const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups();
+    const {children, countLabel, dashboardEntities, dashboardIndexFileName, dashboardPathname, dataset,
+        resultKey, searchFacets, summaryKey, tableHeadersEntities, tableHeadersSummary} = props;
+    const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(dashboardEntities, searchFacets);
+    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets);
+    const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups(searchFacets);
     const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
-    const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "size", "subjects"];
-    const tableHeadersSummary = ["consortium", "cohorts", "subjects", "samples","files", "sizeTB"];
+    const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTermDisplay(facetsByTerm);
 
     return (
-        <ProviderDashboard
-            checkboxGroups={checkboxGroups}
-            facetsByTerm={facetsByTerm}
-            setOfSearchGroups={setOfSearchGroups}
-            setOfTerms={setOfTerms}
-            tableHeadersEntities={tableHeadersEntities}
-            tableHeadersSummary={tableHeadersSummary}
-            workspacesQuery={workspacesQuery}>
-            <ProviderDashboardDownloads>
-                <DashboardSearch/>
-                <DashboardSummary/>
-                <DashboardWorkspaces/>
+        <ProviderDashboard checkboxGroups={checkboxGroups}
+                           countLabel={countLabel}
+                           dashboardEntities={dashboardEntities}
+                           dashboardIndexFileName={dashboardIndexFileName}
+                           dashboardPathname={dashboardPathname}
+                           facetsByTerm={facetsByTerm}
+                           resultKey={resultKey}
+                           setOfSearchGroups={setOfSearchGroups}
+                           setOfTerms={setOfTerms}
+                           summaryKey={summaryKey}
+                           tableHeadersEntities={tableHeadersEntities}
+                           tableHeadersSummary={tableHeadersSummary}
+                           termSearchValueByTermDisplay={termSearchValueByTermDisplay}>
+            <ProviderDashboardDownloads dataset={dataset}>
+                {children}
             </ProviderDashboardDownloads>
         </ProviderDashboard>
     )

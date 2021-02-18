@@ -19,8 +19,8 @@ import compStyles from "./dashboard-table.module.css";
 class DashboardTable extends React.Component {
 
     render() {
-        const {singleRow, studies, summary, tableHeaders, tableRow, tableRows} = this.props;
-        const tableName = DashboardTableService.getTableName(studies, summary);
+        const {ncpi, singleRow, studies, summary, tableHeaders, tableRow, tableRows} = this.props;
+        const tableName = DashboardTableService.getTableName(ncpi, studies, summary);
         const identifier = Date.now();
         const tableId = `${tableName}${identifier}`;
 

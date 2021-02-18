@@ -20,7 +20,7 @@ export const DashboardWorkspaceStaticQuery = () => {
                 files
                 gapId {
                   studyUrl
-                  value
+                  gapIdDisplay
                 }
                 projectId
                 samples

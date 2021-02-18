@@ -8,18 +8,20 @@
 /**
  * Returns the dashboard summary.
  *
- * @param workspaces
+ * @param entities
+ * @param entityKey
+ * @param entityKeys
  * @returns {*}
  */
-export function getDashboardSummary(workspaces) {
+export function getDashboardSummary(entities, entityKey, entityKeys) {
 
-    if ( workspaces.length === 0 ) {
+    if ( entities.length === 0 ) {
 
         return [];
     }
 
-    const summary = buildDashboardSummary(workspaces);
-    const summaryTotals = buildDashboardSummaryTotals(summary);
+    const summary = buildDashboardSummary(entities, entityKey, entityKeys);
+    const summaryTotals = buildDashboardSummaryTotals(summary, entityKey, entityKeys);
 
     return summary.concat(summaryTotals);
 }
@@ -27,25 +29,26 @@ export function getDashboardSummary(workspaces) {
 /**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
  *
- * @param workspaces
+ * @param entities
+ * @param entityKey
+ * @param entityKeys
  * @returns {Array}
  */
-function buildDashboardSummary(workspaces) {
+function buildDashboardSummary(entities, entityKey, entityKeys) {
 
-    const consortia = setOfConsortia(workspaces);
+    const setOfSummaryTerms = getSetOfSummaryTerms(entities, entityKey);
 
-    return [...consortia].map(consortium => {
+    return [...setOfSummaryTerms].map(term => {
 
-        const workspacesByConsortium = filterWorkspacesByConsortium(workspaces, consortium);
+        const filteredEntities = filterEntitiesByTerm(entities, term, entityKey);
 
-        return {
-            cohorts: countCohorts(workspacesByConsortium),
-            consortium: consortium,
-            files: sumFiles(workspacesByConsortium),
-            samples: sumSamples(workspacesByConsortium),
-            sizeTB: calculateSize(workspacesByConsortium),
-            subjects: sumSubjects(workspacesByConsortium)
-        }
+        return entityKeys.reduce((acc, key) => {
+
+            const object = {[key]: getObjectSummaryDisplayValue(key, entityKey, term, filteredEntities)};
+            acc = Object.assign(acc, object);
+
+            return acc;
+        }, {});
     });
 }
 
@@ -53,182 +56,112 @@ function buildDashboardSummary(workspaces) {
  * Returns the dashboard summary total counts.
  *
  * @param summary
+ * @param entityKey
+ * @param entityKeys
  * @returns {{cohorts: *, consortium: string, files: *, samples: *, sizeTB: *, subjects: *}}
  */
-function buildDashboardSummaryTotals(summary) {
+function buildDashboardSummaryTotals(summary, entityKey, entityKeys) {
 
-    return {
-        cohorts: totalCohorts(summary),
-        consortium: "Total",
-        files: totalFiles(summary),
-        samples: totalSamples(summary),
-        sizeTB: totalSize(summary),
-        subjects: totalSubjects(summary)
-    }
+    return entityKeys.reduce((acc, key) => {
+
+        const object = {[key]: getObjectSummaryTotal(key, entityKey, summary)};
+        acc = Object.assign(acc, object);
+
+        return acc;
+    }, {});
 }
 
 /**
- * Returns the total size.
- */
-function calculateSize(data) {
-
-    return data.reduce((accum, project) => {
-
-        accum += project.size;
-        return accum;
-    }, 0);
-}
-
-/**
- * Returns the number of cohorts.
- * @param data
- */
-function countCohorts(data) {
-
-    return data.length;
-}
-
-/**
- * Filter the projects by the specified consortium.
+ * Returns the number of entities.
  *
- * @param workspaces
- * @param consortium
+ * @param entities
  */
-function filterWorkspacesByConsortium(workspaces, consortium) {
+function countEntities(entities) {
 
-    return workspaces.filter(workspace => workspace.consortium === consortium);
+    return entities.length;
 }
 
 /**
- * Returns the total sum of the specified summary type.
+ * Filter the entities by the specified term.
  *
- * @param data
- * @param type
+ * @param entities
+ * @param term
+ * @param entityKey
+ */
+function filterEntitiesByTerm(entities, term, entityKey) {
+
+    return entities.filter(entity => entity[entityKey] === term);
+}
+
+/**
+ * Returns the objects count or display value for the specified summary key.
+ *
+ * @param key
+ * @param entityKey
+ * @param term
+ * @param entities
  * @returns {*}
  */
-function reduceSummaryByType(data, type) {
+function getObjectSummaryDisplayValue(key, entityKey, term, entities) {
 
-    return data.reduce((accum, summary) => {
-        accum += summary[type];
-        return accum;
-    }, 0);
+    /* Handle case key is the selected summary key. */
+    /* e.g. AnVIL summary key is "consortium"; return the consortium value to display as a summary item like "1000 Genomes". */
+    if ( key === entityKey ) {
+
+        return term;
+    }
+    /* Handle case key is the count associated with the selected summary key. */
+    /* e.g. AnVIL summary key is "consortium"; returns the count of "cohorts" for the specified consortium like "1000 Genomes". */
+    else if ( key === "cohorts" || key === "studies" ) {
+
+        return countEntities(entities);
+    }
+
+    /* Return the sum of node values for the key. */
+    return sumEntityNodeValues(entities, key);
 }
 
 /**
- * Returns the set of consortia.
+ * Returns the key's summary total.
  *
- * @param data
+ * @param key
+ * @param entityKey
+ * @param summary
+ * @returns {string}
+ */
+function getObjectSummaryTotal(key, entityKey, summary) {
+
+    if ( key === entityKey ) {
+
+        return "Total";
+    }
+
+    return sumEntityNodeValues(summary, key);
+}
+
+/**
+ * Returns the set of terms for the specified entity element.
+ *
+ * @param entities
+ * @param entityKey
  * @returns {Set}
  */
-function setOfConsortia(data) {
+function getSetOfSummaryTerms(entities, entityKey) {
 
-    return new Set(data.map(project => project.consortium));
+    return new Set(entities.map(entity => entity[entityKey]));
 }
 
 /**
- * Counts the total number of files.
+ * Sum the node value for the specified type, for the specified entities.
  *
- * @param data
+ * @param entities
+ * @param nodeType
  */
-function sumFiles(data) {
+function sumEntityNodeValues(entities, nodeType) {
 
-    return sumProjectFileValues(data);
-}
+    return entities.reduce((entityAccum, entity) => {
 
-/**
- * Sum the file value, for the group of projects.
- *
- * @param data
- * @returns {*}
- */
-function sumProjectFileValues(data) {
-
-    return data.reduce((projectAccum, project) => {
-
-        projectAccum += project.files;
-        return projectAccum;
+        entityAccum += entity[nodeType];
+        return entityAccum;
     }, 0);
-}
-
-/**
- * Sum the node value for the specified type, for the group of projects.
- */
-function sumProjectNodeValues(data, nodeType) {
-
-    return data.reduce((projectAccum, project) => {
-
-        projectAccum += project[nodeType];
-        return projectAccum;
-    }, 0);
-}
-
-/**
- * Counts the total number of samples.
- */
-function sumSamples(data) {
-
-    return sumProjectNodeValues(data, "samples");
-}
-
-/**
- * Counts the total number of subjects.
- */
-function sumSubjects(data) {
-
-    return sumProjectNodeValues(data, "subjects");
-}
-
-/**
- * Returns the total number of cohorts for all consortia.
- *
- * @param summary
- * @returns {*}
- */
-function totalCohorts(summary) {
-
-    return reduceSummaryByType(summary, "cohorts");
-}
-
-/**
- * Returns the total number of files for all consortia.
- *
- * @param summary
- * @returns {*}
- */
-function totalFiles(summary) {
-
-    return reduceSummaryByType(summary, "files");
-}
-
-/**
- * Returns the total number of samples for all consortia.
- *
- * @param summary
- * @returns {*}
- */
-function totalSamples(summary) {
-
-    return reduceSummaryByType(summary, "samples");
-}
-
-/**
- * Returns the total number of sizes for all consortia.
- *
- * @param summary
- * @returns {*}
- */
-function totalSize(summary) {
-
-    return reduceSummaryByType(summary, "sizeTB");
-}
-
-/**
- * Returns the total number of subjects for all consortia.
- *
- * @param summary
- * @returns {*}
- */
-function totalSubjects(summary) {
-
-    return reduceSummaryByType(summary, "subjects");
 }

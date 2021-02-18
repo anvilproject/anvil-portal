@@ -13,14 +13,13 @@ import compStyles from "./dashboard-search-panel.module.css";
 
 const classNames = require("classnames");
 
-class DashboardSearchPanel extends React.Component {
+function DashboardSearchPanel(props) {
 
-    render() {
-        const {children, stretch} = this.props;
-        return (
+    const {children, stretch} = props;
+
+    return (
             <div className={classNames(compStyles.panel, {[compStyles.stretch]: stretch})}>{children}</div>
         )
-    };
 }
 
 export default DashboardSearchPanel;

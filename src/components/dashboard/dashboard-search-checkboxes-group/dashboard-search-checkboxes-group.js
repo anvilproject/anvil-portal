@@ -6,26 +6,27 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchCheckbox from "../dashboard-search-checkbox/dashboard-search-checkbox";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 
-class DashboardSearchCheckboxesGroup extends React.Component {
+function DashboardSearchCheckboxesGroup(props) {
 
-    render() {
-        const {checkboxes, groupName} = this.props;
-        return (
-            <DashboardSearchPanel>
-                <span id="group">
-                    <span>{groupName}</span>
-                    <span>Cohorts</span>
-                </span>
-                {checkboxes.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>)}
-            </DashboardSearchPanel>
-        )
-    };
+    const {checkboxes, groupName} = props;
+    const {countLabel} = useContext(ContextDashboard);
+
+    return (
+        <DashboardSearchPanel>
+            <span id="group">
+                <span>{groupName}</span>
+                <span>{countLabel}</span>
+            </span>
+            {checkboxes.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>)}
+        </DashboardSearchPanel>
+    )
 }
 
 export default DashboardSearchCheckboxesGroup;

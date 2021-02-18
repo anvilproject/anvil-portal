@@ -54,8 +54,7 @@ export default (props) => {
     const {checkbox} = props,
         {label, value} = checkbox;
 
-    const searching = useContext(ContextDashboard),
-        {termsChecked, termsCount, onHandleChecked} = searching;
+    const {termsChecked, termsCount, onHandleChecked} = useContext(ContextDashboard);
 
     /* Get the count. */
     let count = 0;

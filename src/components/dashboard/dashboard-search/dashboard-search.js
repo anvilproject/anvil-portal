@@ -17,18 +17,16 @@ import DashboardSearchSelectedToolbar from "../dashboard-search-selected-toolbar
 // Styles
 import compStyles from "./dashboard-search.module.css";
 
-class DashboardSearch extends React.Component {
+function DashboardSearch() {
 
-    render() {
-        return (
-            <div className={compStyles.search}>
-                <DashboardSearchInput/>
-                <DashboardSearchCheckboxes/>
-                <DashboardSearchSelectedToolbar/>
-                <DashboardSearchEmptyResults/>
-            </div>
-        )
-    };
+    return (
+        <div className={compStyles.search}>
+            <DashboardSearchInput/>
+            <DashboardSearchCheckboxes/>
+            <DashboardSearchSelectedToolbar/>
+            <DashboardSearchEmptyResults/>
+        </div>
+    )
 }
 
 export default DashboardSearch;

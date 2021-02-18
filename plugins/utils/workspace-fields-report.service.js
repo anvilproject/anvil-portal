@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for reading workspaces JSON file and generating csv report.
+ * Service for reading AnVIL workspaces JSON file and generating csv report.
  */
 
 // Core dependencies

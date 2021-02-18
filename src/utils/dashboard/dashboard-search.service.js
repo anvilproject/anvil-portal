@@ -9,30 +9,23 @@
 import * as DashboardService from "./dashboard.service";
 import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
-import * as DashboardWorkspaceService from "./dashboard-workspace.service";
 
 // Template variables
 const setOfDenyListTerms = new Set(["NA", "--", "", null]);
 
 /* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":", "-"];
-
-/* Set of facets (selected from workspace property values) for the dashboard search function. */
-export const DashboardSearchFacets = [
-    "consortium",
-    "accessType",
-    "dataTypes"
-];
+export const DenyListInputs = ["^", "~", ":", "-", "+"];
 
 /**
  * Returns FE model of checkboxes by facet.
  *
  * @param facetsByTerm
+ * @param searchFacets
  * @returns {*}
  */
-export function buildDashboardCheckboxesByFacet(facetsByTerm) {
+export function buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets) {
 
-    return DashboardSearchFacets.reduce((acc, facet) => {
+    return searchFacets.reduce((acc, facet) => {
 
         const checkboxGroup = {
             checkboxes: buildCheckboxesByFacet(facet, facetsByTerm),
@@ -50,10 +43,11 @@ export function buildDashboardCheckboxesByFacet(facetsByTerm) {
  *
  * @param facetByTerm
  * @param setOfCountResultsByFacet
- * @param workspacesQuery
+ * @param entities
+ * @param resultKey
  * @returns {*}
  */
-export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, workspacesQuery) {
+export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, entities, resultKey) {
 
     if ( setOfCountResultsByFacet.size === 0 ) {
 
@@ -65,11 +59,11 @@ export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, workspace
         /* Get the corresponding setOfResults for the facet. */
         const setOfCountResults = setOfCountResultsByFacet.get(facet);
 
-        /* Filter the workspaces. */
-        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfCountResults);
+        /* Filter the entities. */
+        const fEntities = DashboardService.filterDashboardEntities(entities, setOfCountResults, resultKey);
 
         /* Get the counter for the term. */
-        const termCounter = getTermCounter(facet, term, workspaces);
+        const termCounter = getTermCounter(facet, term, fEntities);
         acc.set(term, termCounter);
 
         return acc;
@@ -80,22 +74,23 @@ export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, workspace
  * Returns a map object of facet by term.
  * Values are sorted alphabetically.
  *
- * @param workspacesQuery
+ * @param entities
+ * @param searchFacets
  * @returns {*}
  */
-export function getDashboardFacetsByTerm(workspacesQuery) {
+export function getDashboardFacetsByTerm(entities, searchFacets) {
 
-    const facetsByTerm = DashboardSearchFacets.reduce((acc, facet) => {
+    const facetsByTerm = searchFacets.reduce((acc, facet) => {
 
         /* Grab the terms. */
-        workspacesQuery.forEach(workspace => {
+        entities.forEach(entity => {
 
-            const term = workspace[facet];
+            const term = entity[facet];
 
             /* Handle case where term is an array. */
             if ( DashboardService.isArray(term) ) {
 
-                workspace[facet].forEach(term => {
+                entity[facet].forEach(term => {
 
                     if ( !setOfDenyListTerms.has(term) ) {
 
@@ -122,14 +117,15 @@ export function getDashboardFacetsByTerm(workspacesQuery) {
 /**
  * Returns a set of search groups.
  *
+ * @param searchFacets
  * @returns {Set}
  */
-export function getDashboardSetOfSearchGroups() {
+export function getDashboardSetOfSearchGroups(searchFacets) {
 
     const setOfSearchGroups = new Set();
 
     /* Add the facets, and the "input" to the set. */
-    DashboardSearchFacets.forEach(facet => setOfSearchGroups.add(facet));
+    searchFacets.forEach(facet => setOfSearchGroups.add(facet));
     setOfSearchGroups.add("input");
 
     return setOfSearchGroups;
@@ -147,6 +143,29 @@ export function getDashboardSetOfTerms(facetsByTerm) {
 }
 
 /**
+ * Returns a map object of term search value by term display where
+ * - term display is the term value
+ * - term search value is the term value, with white space, hyphens or brackets or slash are changed to an underscore.
+ * e.g. "GTEx (v8)" returns "GTEx__v8_".
+ *
+ * @param facetsByTerm
+ * @returns {Map}
+ */
+export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
+
+    const termSearchValueByTermDisplay = new Map();
+
+    [...facetsByTerm.keys()].forEach(termDisplay => {
+
+        /* Replace any white space, commas, hyphens or brackets with an underscore. */
+        const termSearchValue = termDisplay.replace(/(\/|,|-|\s|\(|\))/g, "_");
+        termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
+    });
+
+    return termSearchValueByTermDisplay;
+}
+
+/**
  * Builds a FE model of checkboxes for the specified facet.
  *
  * @param facet
@@ -160,7 +179,7 @@ function buildCheckboxesByFacet(facet, facetsByTerm) {
         if ( ft === facet ) {
 
             const checkbox = {
-                label: switchWorkspaceValueDisplayText(term),
+                label: switchCheckboxLabelDisplayText(term),
                 value: term
             };
 
@@ -176,17 +195,17 @@ function buildCheckboxesByFacet(facet, facetsByTerm) {
  *
  * @param facet
  * @param term
- * @param workspaces
+ * @param entities
  */
-function getTermCounter(facet, term, workspaces) {
+function getTermCounter(facet, term, entities) {
 
-    return workspaces.reduce((acc, workspace) => {
+    return entities.reduce((acc, entity) => {
 
-        if ( DashboardService.isArray(workspace[facet]) ) {
+        if ( DashboardService.isArray(entity[facet]) ) {
 
-            workspace[facet].forEach(wf => {
+            entity[facet].forEach(ef => {
 
-                if ( wf === term ) {
+                if ( ef === term ) {
 
                     acc++;
                 }
@@ -194,7 +213,7 @@ function getTermCounter(facet, term, workspaces) {
         }
         else {
 
-            if (workspace[facet] === term) {
+            if (entity[facet] === term) {
 
                 acc++;
             }
@@ -205,14 +224,22 @@ function getTermCounter(facet, term, workspaces) {
 }
 
 /**
- * Returns workspace text value in format compatible for display.
+ * Returns checkbox text value in format compatible for display.
  *
- * @param value
+ * @param label
  * @returns {*}
  */
-function switchWorkspaceValueDisplayText(value) {
+function switchCheckboxLabelDisplayText(label) {
 
-    switch (value) {
+    switch (label) {
+        case "anvil":
+            return DashboardTableService.switchStudyPlatform(label);
+        case "BDC":
+            return DashboardTableService.switchStudyPlatform(label);
+        case "CRDC":
+            return DashboardTableService.switchStudyPlatform(label);
+        case "KFDRC":
+            return DashboardTableService.switchStudyPlatform(label);
         case "WES":
             return "Whole Exome Sequencing";
         case "WGS":
@@ -220,6 +247,6 @@ function switchWorkspaceValueDisplayText(value) {
         case "VCF":
             return "Variant Call Format";
         default:
-            return value;
+            return label;
     }
 }

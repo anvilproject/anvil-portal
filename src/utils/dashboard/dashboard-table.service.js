@@ -11,6 +11,7 @@ import DashboardTableRowCellEllipsis from "../../components/dashboard/dashboard-
 import DashboardTableRowCellGapId from "../../components/dashboard/dashboard-table-row-cell-gap-id/dashboard-table-row-cell-gap-id";
 import DashboardTableRowCellProjectId from "../../components/dashboard/dashboard-table-row-cell-project-id/dashboard-table-row-cell-project-id";
 import DashboardTableRowCellRedirect from "../../components/dashboard/dashboard-table-row-cell-redirect/dashboard-table-row-cell-redirect";
+import DashboardTableRowCellValuesTooltip from "../../components/dashboard/dashboard-table-row-cell-values-tooltip/dashboard-table-row-cell-values-tooltip";
 import DashboardTableRowCellX from "../../components/dashboard/dashboard-table-row-cell-x/dashboard-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
@@ -38,6 +39,13 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
+        /* Handle column is "platform". */
+        if ( column === "platform" ) {
+
+            return switchStudyPlatform(value);
+        }
+
+        /* Handle column is "diseases". */
         if ( column === "diseases" ) {
 
             if ( value.length ) {
@@ -50,11 +58,13 @@ export function formatValue(value, column) {
             }
         }
 
+        /* Handle column is "sizeTB" or "size". */
         if ( column === "sizeTB" || column === "size" ) {
 
             return NumberFormatService.formatSizeToTB(value);
         }
 
+        /* Handle column with cell value as number. */
         if ( NumberFormatService.isNumber(value) ) {
 
             return value.toLocaleString();
@@ -104,6 +114,8 @@ export function getReactElementType(columnName, summaryTable) {
     switch (columnName) {
         case "accessType":
             return DashboardTableRowCellRedirect;
+        case "consentCodes":
+            return DashboardTableRowCellValuesTooltip;
         case "dataTypes":
             return DashboardTableRowCellDataTypes;
         case "diseases":
@@ -120,11 +132,17 @@ export function getReactElementType(columnName, summaryTable) {
 /**
  * Returns the table class name.
  *
+ * @param ncpi
  * @param studies
  * @param summary
  * @returns {*}
  */
-export function getTableName(studies, summary) {
+export function getTableName(ncpi, studies, summary) {
+
+    if ( ncpi ) {
+
+        return "ncpi";
+    }
 
     if ( studies ) {
 
@@ -177,6 +195,10 @@ export function switchDisplayColumnName(columnName) {
             return "Consent Groups";
         case "consents":
             return "Access";
+        case "consentCodes":
+            return "Consent Codes";
+        case "consentShortNames":
+            return "Consent Codes";
         case "consentStat":
             return "Subjects";
         case "consortia":
@@ -184,7 +206,7 @@ export function switchDisplayColumnName(columnName) {
         case "consortium":
             return "Consortium";
         case "dataTypes":
-            return "Data Type";
+            return "Data Types";
         case "demographics":
             return "Demographics";
         case "diagnosis":
@@ -201,15 +223,21 @@ export function switchDisplayColumnName(columnName) {
             return "dbGap Id";
         case "gapId":
             return "dbGap Id";
+        case "platform":
+            return "Platform";
         case "projectId":
             return "Terra Workspace Name";
         case "samples":
             return "Samples";
         case "search":
             return "Text Search";
+        case "studies":
+            return "Studies";
         case "studyName":
             return "Title";
         case "subjects":
+            return "Subjects";
+        case "subjectsTotal":
             return "Subjects";
         case "size":
             return "Size (TB)";
@@ -217,6 +245,32 @@ export function switchDisplayColumnName(columnName) {
             return "Size (TB)";
         default:
             return columnName;
+    }
+}
+
+/**
+ * Returns the platform display value.
+ * - "AnVIL" to "AnVIL"
+ * - "BDC" to "BioData Catalyst"
+ * - "NCRDC" to "Cancer Research Data Commons"
+ * - "KF" to "Kids First Data Resource Center"
+ *
+ * @param platform
+ * @returns {*}
+ */
+export function switchStudyPlatform(platform) {
+
+    switch (platform) {
+        case "AnVIL":
+            return "AnVIL";
+        case "BDC":
+            return "BioData Catalyst";
+        case "NCRDC":
+            return "Cancer Research Data Commons";
+        case "KF":
+            return "Kids First Data Resource Center";
+        default:
+            return "";
     }
 }
 

@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for formatting workspaces into FE model.
+ * Service for formatting AnVIL workspaces into FE model.
  */
 
 // Core dependencies

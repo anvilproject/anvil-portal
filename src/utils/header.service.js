@@ -20,7 +20,7 @@ export function getHeaderLinks(ncpiPost) {
     /* Build header links for NCPI pages. */
     if ( ncpiPost ) {
 
-        return [{name: "AnVIL", path: "/"}];
+        return [{name: "Overview", path: "/ncpi"}, {name: "Datasets", path: "/ncpi/data"}, {name: "AnVIL", path: "/"}];
     }
 
     /* Return header links for all other pages. */

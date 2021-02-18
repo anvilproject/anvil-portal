@@ -2,9 +2,10 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to The AnVIL dashboard summary component.
+ * Style definitions specific to The AnVIL dashboard table entities component.
  */
 
+/* Header - no border. */
 .headerNoBorder {
     border-bottom: 0;
     padding-bottom: 0;
