@@ -48,7 +48,7 @@ The Outreach working group provides training and support solutions for the AnVIL
 
 ### Co-Chairs
 - Jeff Leek (JHU)
-- Fred Tan (Carnigie)
+- Frederick Tan (Carnigie)
 - Stephen Mosher (JHU) organizer
 
 ## Technical Working Group
@@ -64,5 +64,5 @@ AnVIL's technical working provides direction and recommendations to the develope
 ### Co-Chairs
 - Chris Shay (AHA)
 - Mike Schatz (JHU)
-- Stephen Mosher (JHU) organizer
+- Julie Sizelove (AHA) organizer
 
