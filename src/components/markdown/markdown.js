@@ -114,4 +114,4 @@ class Markdown extends React.Component {
     }
 }
 
-export default Markdown;
+export default React.memo(Markdown);

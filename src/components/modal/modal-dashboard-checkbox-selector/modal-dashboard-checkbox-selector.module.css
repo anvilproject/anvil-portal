@@ -1,0 +1,47 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL modal dashboard checkbox selector component.
+ */
+
+/* Dashboard selector. */
+.selector {
+    composes: modal from "../modal.module.css";
+    margin: 72px;
+    overflow: auto;
+    padding: 24px;
+    position: relative; /* Positions modal close button. */
+    width: 100%;
+}
+
+/* Modal close button. */
+.selector button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Checkbox panel. */
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 48px;
+}
+
+/* Checkboxes. */
+.panel > span {
+    flex-basis: calc(100% / 4);
+    padding: 0 24px;
+}
+
+/* Checkboxes - lhs. */
+.panel > span:nth-of-type(4n+1) {
+    padding-left: 0;
+}
+
+/* Checkboxes - rhs. */
+.panel > span:nth-of-type(4n) {
+    padding-right: 0;
+}
