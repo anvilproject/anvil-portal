@@ -9,7 +9,7 @@
 import React from "react";
 
 const ContextModal = React.createContext({
-    modal: {modalComponent: null, showModal: false},
+    modal: {modalGroup: null, showModal: false},
     onCloseModal: () => {},
     onOpenModal: () => {}
 });

@@ -11,32 +11,30 @@ import React, {useCallback, useContext, useState} from "react";
 // App dependencies
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 import ContextModal from "../context-modal/context-modal";
-import Modal from "../modal";
 
 function ProviderModal(props) {
 
     const {children} = props;
     const {onSetSiteScrollable} = useContext(ContextAnVILPortal);
-    const [modal, setModal] = useState({modalComponent: null, showModal: false});
+    const [modal, setModal] = useState({modalGroup: null, showModal: false});
 
     const onCloseModal = useCallback(() => {
 
         /* Set state. */
-        setModal(modal => ({...modal, modalComponent: null, showModal: false}));
+        setModal({modalGroup: null, showModal: false});
         onSetSiteScrollable(true);
     }, [onSetSiteScrollable]);
 
-    const onOpenModal = useCallback((mComponent) => {
+    const onOpenModal = useCallback((mGroup) => {
 
         /* Set state. */
-        setModal(modal => ({...modal, modalComponent: mComponent, showModal: true}));
+        setModal({modalGroup: mGroup, showModal: true});
         onSetSiteScrollable(false);
     }, [onSetSiteScrollable]);
 
     return (
         <ContextModal.Provider value={{modal, onCloseModal, onOpenModal}}>
             {children}
-            <Modal/>
         </ContextModal.Provider>
     )
 }
