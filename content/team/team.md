@@ -26,7 +26,7 @@ Members of these teams are also involved with platform and software development 
 - Jeff Leek
 - Kasper Hansen
 - [Michael Schatz](http://schatz-lab.org)
-- Casey Overby Talo
+- Casey Overby Taylor
 
 ## Oregon Health & Sciences University
 - [Jeremy Goecks](https://goeckslab.org)
