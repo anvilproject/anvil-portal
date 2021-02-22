@@ -75,13 +75,14 @@ export function getOutline(outline) {
     const anchor = `#${outline.properties.id}`;
     const depth = Number(outline.tagName.charAt(1));
     const heading = reduceHtmlAstToHeadingValue(outline.children, 10);
+    const label = depth === 1 ? "On This Page" : heading;
 
     if ( !heading ) {
 
         return {};
     }
 
-    return {anchor: anchor, depth: depth, label: heading};
+    return {anchor: anchor, depth: depth, label: label};
 }
 
 /**
