@@ -48,7 +48,7 @@ The Outreach working group provides training and support solutions for the AnVIL
 
 ### Co-Chairs
 - Jeff Leek (JHU)
-- Frederick Tan (Carnigie)
+- Frederick Tan (Carnegie)
 - Stephen Mosher (JHU) organizer
 
 ## Technical Working Group
