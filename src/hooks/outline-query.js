@@ -9,9 +9,6 @@ export const OutlineStaticQuery = () => {
               slug: fieldValue
               nodes {
                 childMarkdownRemark {
-                  frontmatter {
-                    title
-                  }
                   htmlAst
                 }
               }
