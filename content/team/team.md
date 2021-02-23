@@ -50,8 +50,8 @@ Members of these teams are also involved with platform and software development 
 ## Washington University
 - [Ting Wang](https://www.genome.wustl.edu/people/ting-wang/)
 
-## Carnigie Institution for Science
-- Fredrick Tan
+## Carnegie Institution for Science
+- Frederick Tan
 
 ## Yale 
 - [Ira Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
