@@ -26,5 +26,8 @@ export const ScoopEventStaticQuery = () => {
         }
     `
     );
-    return allMarkdownRemark.edges.map(e => e.node).map(n => n);
+    return allMarkdownRemark.edges
+        .map(e => e.node)
+        .map(n => n)
+        .filter(n => n.fields.slug.startsWith("/events/"));
 };
