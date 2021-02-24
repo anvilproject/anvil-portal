@@ -18,7 +18,7 @@ An introduction to the AnVIL platform to enable CCDG and CMG researchers to anal
 In summer 2020, NHGRI plans to organize Massive Genome Informatics in the Cloud or MaGIC, a two-day, jamboree-style informatics event for introducing new users to the AnVIL platform for cloud-based genomics data analysis.
 
 ### Audience
-No computational expertise is required. Anyone from GSP who would like to learn about cloud based genomic analysis on AnVIL. This Jamboree will focus on highlighting interactive tools that are used from a graphical user interface.
+**No computational expertise is required. Anyone from GSP who would like to learn about cloud based genomic analysis on AnVIL. This Jamboree will focus on highlighting interactive tools that are used from a graphical user interface.**
 
 
 ### Virtual Event Agenda, all Times ET
@@ -49,4 +49,4 @@ No computational expertise is required. Anyone from GSP who would like to learn 
 | 2:30 PM | Breakout sessions |   |
 
 ### Contact
-Please feel free to pass on any questions to [Shurjo Sen](mailto:sensh@mail.nih.gov) or [Mo Heydarian](mailto:mheydar1@jhu.edu).
+Please feel free to pass on any questions to [Shurjo Sen](mailto:sensh@mail.nih.gov).
