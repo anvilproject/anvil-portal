@@ -46,8 +46,8 @@ function Layout(props) {
                                   styles={styles}>{children}</Main>
                             <BannerPrivacy setBannerHeight={setBannerHeight}/>
                             <Footer/>
-                            <div id="portal"/>
-                            <div id="portal-modal"/>
+                            <div id="modal-root"/>
+                            <div id="tooltip-root"/>
                         </SiteWrapper>
                     </SiteExternalLinkTracker>
                 </ProviderModal>

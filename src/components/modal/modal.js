@@ -7,6 +7,7 @@
 
 // Core dependencies
 import React, {useCallback, useContext, useEffect} from "react";
+import ReactDOM from "react-dom";
 
 // App dependencies
 import ContextModal from "./context-modal/context-modal";
@@ -16,10 +17,14 @@ import compStyles from "./modal.module.css";
 
 function Modal(props) {
 
-    const {children, group} = props;
-    const {modal, onCloseModal} = useContext(ContextModal),
-        {modalGroup, showModal} = modal;
-    const showGroup = group === modalGroup;
+    const {children} = props;
+    const {onCloseModal} = useContext(ContextModal);
+    const modalEl = document.getElementById("modal-root");
+    const portalEl =
+        <>
+        <div className={compStyles.modalOverlay} onClick={() => onCloseModal()} role={"presentation"}/>
+        <div className={compStyles.modalWrapper}>{children}</div>
+        </>;
 
     const onHandleKeyDown = useCallback((e) => {
 
@@ -42,11 +47,7 @@ function Modal(props) {
     }, [onHandleKeyDown]);
 
     return (
-        showModal && showGroup ?
-            <div>
-                <div className={compStyles.modalOverlay} onClick={() => onCloseModal()} role={"presentation"}/>
-                <div className={compStyles.modalWrapper}>{children}</div>
-            </div> : null
+        ReactDOM.createPortal(portalEl, modalEl)
     )
 }
 

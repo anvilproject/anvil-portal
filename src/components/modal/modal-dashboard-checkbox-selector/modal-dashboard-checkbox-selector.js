@@ -10,7 +10,7 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ContextModal from "../context-modal/context-modal";
-import DashboardSearchCheckbox from "../../dashboard/dashboard-search-checkbox/dashboard-search-checkbox";
+import Modal from "../modal";
 import ModalClose from "../modal-close/modal-close";
 
 // Styles
@@ -21,22 +21,22 @@ const classNames = require("classnames");
 
 function ModalDashboardCheckboxSelector(props) {
 
-    const {checkboxes, groupName, onHandleChecked, termsChecked, termsCount} = props;
-    const {onCloseModal} = useContext(ContextModal);
+    const {children, groupName} = props;
+    const {modal, onCloseModal} = useContext(ContextModal),
+        {modalGroup, showModal} = modal;
+    const showGroup = showModal && groupName === modalGroup;
 
     return (
-        <div className={classNames(globalStyles.container, compStyles.selector)}>
-            <ModalClose onCloseModal={onCloseModal}/>
-            <h1>{groupName}</h1>
-            <div className={compStyles.panel}>
-                {checkboxes.map((checkbox, c) =>
-                    <DashboardSearchCheckbox key={c}
-                                             checkbox={checkbox}
-                                             onHandleChecked={onHandleChecked}
-                                             termsChecked={termsChecked}
-                                             termsCount={termsCount}/>)}
-            </div>
-        </div>
+        showGroup ?
+            <Modal>
+                <div className={classNames(globalStyles.container, compStyles.selector)}>
+                    <ModalClose onCloseModal={onCloseModal}/>
+                    <h1>{groupName}</h1>
+                    <div className={compStyles.panel}>
+                        {children}
+                    </div>
+                </div>
+            </Modal> : null
     )
 }
 

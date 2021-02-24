@@ -42,7 +42,7 @@ function Tooltip(props) {
 
     useEffect(() => {
 
-        const portal = document.getElementById("portal");
+        const portal = document.getElementById("tooltip-root");
         setPortalEl(portal);
     }, []);
 

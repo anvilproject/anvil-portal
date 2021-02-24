@@ -6,7 +6,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
+
+// App dependencies
+import ContextDashboard from "../context-dashboard/context-dashboard";
 
 // Styles
 import compStyles from "./dashboard-search-checkbox.module.css";
@@ -15,8 +18,9 @@ const classNames = require("classnames");
 
 function DashboardSearchCheckbox(props) {
 
-    const {checkbox, onHandleChecked, termsCount, termsChecked} = props,
+    const {checkbox} = props,
         {label, value} = checkbox;
+    const {onHandleChecked, termsChecked, termsCount} = useContext(ContextDashboard);
     const count = termsCount.has(value) ? termsCount.get(value) : 0;
     const checked = termsChecked.get(value);
     const disabled = count === 0;

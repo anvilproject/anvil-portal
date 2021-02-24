@@ -15,12 +15,13 @@ import DashboardSearchCheckboxesGroup from "../dashboard-search-checkboxes-group
 
 function DashboardSearchCheckboxes() {
 
-    const {checkboxGroups} = useContext(ContextDashboard);
+    const {checkboxGroups, countLabel} = useContext(ContextDashboard);
 
         return (
             checkboxGroups.map((checkboxGroup, c) =>
                 <DashboardSearchCheckboxesGroup key={c}
                                                 checkboxes={checkboxGroup.checkboxes}
+                                                countLabel={countLabel}
                                                 groupName={checkboxGroup.groupName}/>)
         )
 }
