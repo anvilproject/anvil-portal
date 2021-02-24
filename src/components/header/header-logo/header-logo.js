@@ -7,10 +7,7 @@
 
 // Core dependencies
 import {Link} from "gatsby";
-import React, {useContext} from "react";
-
-// App dependencies
-import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
+import React from "react";
 
 // Images
 import logoNCPI from "../../../../images/cloud-ncpi.svg";
@@ -23,8 +20,7 @@ const classNames = require("classnames");
 
 function HeaderLogo(props) {
 
-    const {ncpi} = props;
-    const {searchBarOpen} = useContext(ContextAnVILPortal);
+    const {ncpi, searchBarOpen} = props;
     const classNamesLogo = classNames(compStyles.logo, {[compStyles.ncpi]: ncpi}, {[compStyles.searchBarOpen]: searchBarOpen});
     const imgAlt = ncpi ? "NCPI" : "AnVIL";
     const imgSrc = ncpi ? logoNCPI : logoAnvil;
@@ -37,4 +33,4 @@ function HeaderLogo(props) {
     );
 }
 
-export default HeaderLogo;
+export default React.memo(HeaderLogo);

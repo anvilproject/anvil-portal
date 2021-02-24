@@ -6,10 +6,9 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React from "react";
 
 // App dependencies
-import ContextSiteSearch from "../context-site-search/context-site-search";
 import SiteSearchForm from "../../site-search/site-search-form/site-search-form";
 
 // Styles
@@ -17,13 +16,13 @@ import compStyles from "./site-search-bar.module.css";
 
 const classNames = require("classnames");
 
-function SiteSearchBar() {
+function SiteSearchBar(props) {
 
-    const {searchBarOpen} = useContext(ContextSiteSearch);
+    const {onSubmitSiteSearch, searchBarOpen} = props;
 
     return (
         <div className={classNames({[compStyles.expanded]: searchBarOpen}, compStyles.searchBar)}>
-            <SiteSearchForm/>
+            <SiteSearchForm onSubmitSiteSearch={onSubmitSiteSearch} searchBarOpen={searchBarOpen}/>
         </div>
     )
 }

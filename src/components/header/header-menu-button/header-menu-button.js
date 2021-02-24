@@ -25,4 +25,4 @@ function HeaderMenuButton() {
     );
 }
 
-export default HeaderMenuButton;
+export default React.memo(HeaderMenuButton);
