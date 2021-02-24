@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
 conference: "ASHG 2020"
-description: "Attendees will use AnVIL to launch Galaxy and create, modify, and execute a Galaxy Workflow for GWAS analysis to demonstrate batch processing in Galaxy"
+description: "Attendees will use AnVIL to launch Galaxy and create, modify, and execute a Galaxy Workflow for GWAS analysis to demonstrate batch processing in Galaxy."
 eventType: "Workshop"
 featured: true
 location: "San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101"

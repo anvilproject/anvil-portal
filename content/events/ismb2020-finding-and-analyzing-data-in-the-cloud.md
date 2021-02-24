@@ -45,3 +45,32 @@ https://www.iscb.org/ismb2020-program/tutorials#tut2
 
 ### Registration
 https://www.iscb.org/ismb2020-registration
+
+## Workshop Videos
+
+Videos of this workshop can be found below. Videos for the entire ISMB 2020 event can be found on the event's [YouTube playlist](https://www.youtube.com/playlist?list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu)
+
+### TT02- I - Intro to Terra Overview - Tiffany Miller - Tutorials - ISMB 2020
+
+`video: https://www.youtube.com/watch?v=pDXU0E5peY0&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=2`
+
+### TT02-II - Get set up in Terra - Allie Hajian - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=l7iN_kx7O_Q&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=3`
+
+### TT02-III - Data and documentation in a Workspace - Tiffany Miller - Tutorials - ISMB 2
+`video: https://www.youtube.com/watch?v=ICMoaHGG0Xk&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=4`
+
+### TT02-IV - Find and import workflows in Dockstore - Tiffany Miller - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=1K5TYtYR-9s&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=5`
+
+### TT02-V - Set up and run your workflow - Tiffany Miller - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=dsjWZGYfCp8&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=6`
+
+### TT02-VI - Workflows outputs and troubleshooting - Jason Cerrato - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=GjNK_9bQVYQ&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=7`
+
+### TT02-VII - Interactive analysis plus Hail intro - Allie Hajian - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=uCiffYZMQJg&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=8`
+
+### TT02-VIII - Bioconductor for RNA seq analysis - Liz Kiernan - Tutorials - ISMB 2020
+`video: https://www.youtube.com/watch?v=uu89DvjKJ8o&list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu&index=9`
