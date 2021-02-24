@@ -25,7 +25,7 @@ function ProviderSiteSearch(props) {
     const [GCSEResponse, setGCSEResponse] = useState({GCSEAPI: {}});
     const [inputValue, setInputValue] = useState("");
     const [searchBarOpen, setSearchBarOpen] = useState(false);
-    const [siteSearch, setSiteSearch] = useState({searchError: false, searchLoading: true, searchPage: 1, searchTerms: ""});
+    const [siteSearch, setSiteSearch] = useState({searchError: false, searchLoading: false, searchPage: 1, searchTerms: ""});
     const {GCSEAPI} = GCSEResponse || {},
         {queries, items: siteSearchResults} = GCSEAPI || {},
         {nextPage, previousPage} = queries || {},
@@ -70,16 +70,17 @@ function ProviderSiteSearch(props) {
         setSiteSearch(siteSearch => ({...siteSearch, searchLoading: true, searchPage: nextIndex}));
     };
 
-    const onSubmitSiteSearch = (event) => {
+    const onSubmitSiteSearch = useCallback((event) => {
 
         event.preventDefault();
+        const searchStr = event.target.siteSearch.value;
 
         /* Only submit form if query is valid. */
-        if ( inputValue ) {
+        if ( searchStr ) {
 
             /* Set the search params. */
             const params = new URLSearchParams();
-            params.set("q", inputValue);
+            params.set("q", searchStr);
 
             /* Navigate with params. */
             navigate(`/search?${params.toString()}`);
@@ -91,9 +92,19 @@ function ProviderSiteSearch(props) {
             onSetMenuOpen(false);
 
             /* Track search */
-            AnvilGTMService.trackSiteSearch(inputValue);
+            AnvilGTMService.trackSiteSearch(searchStr);
         }
-    };
+    }, [onSetMenuOpen]);
+
+    useEffect(() => {
+
+        const {pathname} = currentLocation;
+
+        if ( pathname === "/search" ) {
+
+            setSiteSearch(siteSearch => ({...siteSearch, searchLoading: true}));
+        }
+    }, [currentLocation]);
 
     /* useEffect - componentDidMount/componentWillUnmount. */
     /* Initialize search value. */

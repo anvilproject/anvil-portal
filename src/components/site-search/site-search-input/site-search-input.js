@@ -90,6 +90,7 @@ function SiteSearchInput() {
                onBlur={(e) => onInputBlur(e)}
                onChange={(e) => onInputChange(e)}
                onFocus={() => onInputFocus()}
+               name={"siteSearch"}
                placeholder={"Search"}
                ref={refInput}
                spellCheck="false"

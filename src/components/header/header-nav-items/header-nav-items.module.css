@@ -36,6 +36,34 @@
     display: flex;
 }
 
+/* CSSTransition. */
+/* Search bar opening. */
+.searchBarOpen {
+    opacity: 1;
+    transition: visibility 300ms ease, opacity 300ms ease;
+    visibility: visible;
+}
+
+/* Search bar open. */
+.searchBarOpenActive {
+    opacity: 0;
+    transition: opacity 300ms ease, visibility 300ms ease;
+    visibility: collapse;
+}
+
+/* Search bar closing. */
+.searchBarClosed {
+    opacity: 0;
+    visibility: collapse;
+}
+
+/* Search bar closed. */
+.searchBarClosedActive {
+    opacity: 1;
+    transition: opacity 300ms ease 300ms, visibility 300ms;
+    visibility: visible;
+}
+
 /**
  * Large tablet portrait, large handset landscape, small window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
@@ -50,7 +78,7 @@
         flex-direction: row;
         height: inherit;
         justify-content: flex-end;
-        overflow-y: unset;
+        overflow: hidden; /* Required, for smooth expand/collapse animation of search. */
         padding: 0;
         position: unset;
         width: unset;
@@ -60,77 +88,5 @@
     /* Navigation items - open. */
     .headerNavItems, .menuOpen {
         display: flex;
-    }
-
-    /* Navigation - search collapsed. */
-    .headerNavItems {
-        animation: searchCollapsed 600ms ease;
-        opacity: 1;
-        overflow: hidden; /* Required, for smooth expand/collapse animation of search. */
-        visibility: visible;
-    }
-
-    /* Navigation - search expanded. */
-    .headerNavItems.searchBarOpen {
-        animation: searchExpanded 600ms ease;
-        opacity: 0;
-        visibility: collapse;
-    }
-
-    @keyframes searchCollapsed {
-        0% {
-            opacity: 0;
-            visibility: collapse;
-        }
-        50% {
-            opacity: 0;
-            visibility: collapse;
-        }
-        100% {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
-    @keyframes searchExpanded {
-        0% {
-            opacity: 1;
-            visibility: visible;
-        }
-        50% {
-            opacity: 0;
-            visibility: collapse;
-        }
-        100% {
-            opacity: 0;
-            visibility: collapse;
-        }
-    }
-}
-
-/**
- * Large tablet portrait, large tablet landscape, medium window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1280px) {
-
-    /* Search expanded. */
-    .headerNavItems.searchBarOpen {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    @keyframes searchCollapsed {
-        0%, 100% {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
-    @keyframes searchExpanded {
-        0%, 100% {
-            opacity: 1;
-            visibility: visible;
-        }
     }
 }
