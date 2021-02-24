@@ -59,7 +59,6 @@ module.exports = {
                 }
             }
         },
-        `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-robots-txt`,
         `gatsby-plugin-sharp`,
