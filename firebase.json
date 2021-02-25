@@ -90,12 +90,12 @@
     },
     {
       "source": "/learn/training/ncpi-train-your-colleagues-march-2020",
-      "destination": "/learn/workshop-videos",
+      "destination": "/learn/workshop-archive",
       "type": 301
     },
     {
       "source": "/learn/training/magic-jamboree-june-2020",
-      "destination": "/learn/workshop-videos",
+      "destination": "/learn/workshop-archive",
       "type": 301
       }
     ]

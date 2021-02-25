@@ -1,10 +1,10 @@
 ---
-title: "Workshop Videos"
+title: "Workshop Archive"
 author: "AnVIL"
-description: "A list of workshops and conferences with recorded proceedings featuring AnVIL tools and components."
+description: "The AnVIL Workshop Archive is a collection of workshops and conferences with recorded proceedings featuring AnVIL tools and components."
 ---
 
-# Workshop Videos
+# AnVIL Workshop Archive
 
 The workshops listed below have been recorded and posted to YouTube. Please see the individual workshops for links to the videos and slides.
 
