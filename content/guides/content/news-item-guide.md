@@ -1,5 +1,5 @@
 ---
-title: "Creating Press Releases"
+title: "Creating News Items"
 author: "Dave Rogers"
 description: "A basic guide for creating news items for the AnVIL portal."
 ---

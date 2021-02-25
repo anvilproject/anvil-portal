@@ -1,10 +1,10 @@
 ---
-title: "Adding and Updating Training Events"
+title: "Adding and Updating Events"
 author: "Dave Rogers"
 description: "A basic guide on how to create events for the AnVIL portal"
 ---
 
-#  Events
+#  Creating Events
 
 The AnVIL portal lists events:
 
