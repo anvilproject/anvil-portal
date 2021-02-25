@@ -127,8 +127,10 @@
           file: "/guides/content/adding-youtube-videos"
         - name: "Creating Links"
           file: "/guides/content/creating-links"
-        - name: "Events"
-          file: "/guides/content/events"
+        - name: "Creating Events"
+          file: "/guides/content/events-guide"
+        - name: "Creating News Items"
+          file: "/guides/content/news-item-guide"
     - name: "Style Guide"
       pathPartial: "/style"
       navigationItems:
