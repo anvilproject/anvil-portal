@@ -18,25 +18,21 @@ The AnVIL portal lists events:
 
 Events are implemented with markdown files in the  under the `/content/events` directory in the AnVIL Portal github repository.
 
-
-## URLS
+## URLS and File Names
 
 Events use the conference name as a prefix for the URL giving URLs like:
 
 `https://anvilproject.org/events/bcc2020-dockstore-fundamentals
 
-In the URL above, `bcc2020`is the conference name and `ockstore-fundamentals` is a shortened version of the event name.
+In the URL above, `bcc2020` is the conference name and `dockstore-fundamentals` is a shortened version of the event name.
+
 The URL for the event is determined by the event file name. For the URl above the corresponding markdown file is:
 
 `bcc2020-dockstore-fundamentals.md`
 
-
-## Creating Events
-
 When preparing to list an event on the AnVIL portal please collect / provide the following  information in either a Google doc or pull request.
 
-
-### Front Matter
+## Front Matter
 
 The front matter information controls how the event displays in lists, if it appears on the home page, and how the event
 appears when sharing on social media.  Front matter fields for events are:
@@ -50,9 +46,9 @@ appears when sharing on social media.  Front matter fields for events are:
 | featured:      | `true` if the event should appear on the home page events list. |
 | sessions:      | An array of session times. e.g. ` [{sessionEnd: "17 Jul 2020 3:00 PM", sessionStart: "17 Jul 2020 12:31 PM"}]` |
 | timezone:      | The timezone the session times are given in. e.g   `America/New_York` |
-| location:      | Optional - Physial or virtal "location" e.g. "_West Training 3_" or  "_San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101_" |
+| location:      | Optional - Physical or virtual "location" e.g. "_West Training 3_" or  "_San Diego Convention Center, 111 West Harbor Drive, San Diego, CA 92101_" |
 
-
+## Body Text
 ### Description
 The longer form description of the event for the event page (not the event lists). For example:
 
@@ -84,8 +80,6 @@ Similar to:
 * _No prior cloud-based experience is necessary._
 * _A wifi enabled laptop with RStudio installed._
 
-
-
 ### Event Details
 
 1. **Agenda**   - Titles, dates, times, speakers and length of sessions.
@@ -95,7 +89,6 @@ Similar to:
 1. **Conference website**
 1. **Contact Info** Who to contact at AnVIL for more information if applicable.
 1. **Hashtag** - The twitter hashtag for the event.
-
 
 ## Updating Events with Event Content
 

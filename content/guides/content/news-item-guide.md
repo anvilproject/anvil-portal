@@ -65,13 +65,13 @@ appears when sharing on social media.  Front matter fields for events are:
 | docType:       | "News" for a news item.
 
 
-## Content
-Some very general guidelines for writing news articles:
+## Body Text
 
+Some very general guidelines for writing news articles:
 
 * **Audience**: Media or Anvil Community? - News items can be be more formally written to address the media or targeted news to the AnVIL community.
 * **Third Person Voice** - "Today the AnVIL development team released..."
-* **Headline** - Brief and too the point.
+* **Headline** - Brief and to the point.
 * **Lead paragraph**  - summarizing the announcement.
 * **Two or Three body paragraphs** - with links, or quotes providing additional information.
 * **Platform/Component Descriptions** - very brief overview paragraphs for the AnVIL project or any involved components or tools.
