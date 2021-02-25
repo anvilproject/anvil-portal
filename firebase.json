@@ -87,7 +87,17 @@
       "source": "/training/featured-workspaces",
       "destination": "/learn/getting-started/using-example-workspaces",
       "type": 301
-    }
+    },
+    {
+      "source": "/learn/training/ncpi-train-your-colleagues-march-2020",
+      "destination": "/learn/workshop-videos",
+      "type": 301
+    },
+    {
+      "source": "/learn/training/magic-jamboree-june-2020",
+      "destination": "/learn/workshop-videos",
+      "type": 301
+      }
     ]
   }
 }
