@@ -37,16 +37,20 @@ const typography = new Typography({
         "Open Sans",
         "sans-serif"
     ],
+    headerLineHeight: 1.25,
     headerWeight: 400,
     scaleRatio: 2,
     overrideStyles: ({rhythm}) => {
         return {
-            "h2, h3, h4, h5,h6": {
+            "h2, h3, h4, h5, h6": {
                 marginTop: rhythm(1+1/3),
             },
             "h2":{
                 borderBottom: "1px solid rgba(var(--accent-blue-green-rgb), .58)",
                 paddingBottom: "6px"
+            },
+            "h4, h5, h6": {
+                lineHeight: 1.1
             },
             "ol, ul": {
                 margin: 0,
