@@ -1,7 +1,7 @@
 ---
 title: "Adding and Updating Training Events"
 author: "Dave Rogers"
-description: "When preparing to list an event on the AnVIL portal please collect / provide the following  information ... "
+description: "A basic guide on how to create events for the AnVIL portal"
 ---
 
 #  Events
