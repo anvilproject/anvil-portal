@@ -1,10 +1,10 @@
 ---
-title: "Workshop Recordings"
+title: "Workshop Videos"
 author: "AnVIL"
 description: "A list of workshops and conferences with recorded proceedings featuring AnVIL tools and components."
 ---
 
-# Training Workshops
+# Workshop Videos
 
 The workshops listed below have been recorded and posted to YouTube. Please see the individual workshops for links to the videos and slides.
 
