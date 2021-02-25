@@ -60,31 +60,7 @@ export function getOutline(outline) {
 
     const anchor = `#${outline.properties.id}`;
     const depth = Number(outline.tagName.charAt(1));
-    const heading = reduceHtmlAstToHeadingValue(outline.children, 10);
-    const label = depth === 1 ? "On This Page" : heading;
-
-    if ( !heading ) {
-
-        return {};
-    }
+    const label = outline.children?.find(child => child.type === "text")?.value || "";
 
     return {anchor: anchor, depth: depth, label: label};
-}
-
-/**
- * Returns the value of htmlAst element of type "text".
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
- * Reduction is recursive where if children exist, the element type cannot be of type "text.
- * @param array
- * @param d
- * @returns {*}
- */
-function reduceHtmlAstToHeadingValue(array, d = 1) {
-
-    if ( !array ) {
-
-        return;
-    }
-
-    return d > 0 ? array.reduce((acc, val) => val.children ? reduceHtmlAstToHeadingValue(val.children, d - 1) : val.value, []) : array.slice();
 }

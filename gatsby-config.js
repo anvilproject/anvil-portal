@@ -59,7 +59,6 @@ module.exports = {
                 }
             }
         },
-        `gatsby-plugin-manifest`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-robots-txt`,
         `gatsby-plugin-sharp`,
@@ -110,13 +109,6 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
-                    {
-                        resolve: `gatsby-remark-autolink-headers`,
-                        options: {
-                            offsetY: `152`,
-                            className: `anchor`,
-                        }
-                    },
                     `gatsby-remark-component`,
                     {
                         resolve: `gatsby-remark-component-parent2div`,
@@ -129,6 +121,7 @@ module.exports = {
                                 "figure",
                                 "figure-caption",
                                 "hero",
+                                "internal-link",
                                 "news",
                                 "platforms",
                                 "site-search",
@@ -180,6 +173,7 @@ module.exports = {
                             classPrefix: "language-",
                         },
                     },
+                    `gatsby-remark-autointernallink-headers`
                 ]
             }
         },
