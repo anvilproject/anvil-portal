@@ -5,7 +5,7 @@ description: "An overview of costs associated with cloud computing and important
 ---
 # Use Case: eQTL
 
-`video: https://youtu.be/nzONmqijg34`
+`video: https://www.youtube.com/watch?v=nzONmqijg34`
 
 ## Objectives
 The main objectives of this tutorial are to explain:

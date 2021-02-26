@@ -16,9 +16,9 @@ To include a YouTube video in your page:
 To reference the video we use markdown like:
 
 ```
-`video: https://www.youtube.com/watch?v=1JWOVGzzgMc&feature=youtu.be`
+`video: https://www.youtube.com/watch?v=1JWOVGzzgMc`
 ```
 
 This renders like:
 
-`video: https://www.youtube.com/watch?v=1JWOVGzzgMc&feature=youtu.be`
+`video: https://www.youtube.com/watch?v=1JWOVGzzgMc`

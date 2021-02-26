@@ -15,7 +15,7 @@ This webinar covers the basics of Dockstore, how it is useful for the community,
 
 This is the first in a series of regular tutorials we have planned for 2020.  Future sessions will focus on how to package tools with Docker, how to write portable workflows using CWL, WDL, and/or Nextflow, and how to use developer features of Dockstore to streamline workflow and tool sharing.
 
-`video: https://www.youtube.com/watch?v=1JWOVGzzgMc&feature=youtu.be`
+`video: https://www.youtube.com/watch?v=1JWOVGzzgMc`
 
 ### Webinar Slides
 <https://docs.google.com/presentation/d/1j4bB_bed5dJ36U3D5HQDHIewkpm_N5T-wSUlAAXj2VA/edit#slide=id.g7a57f04dce_0_151>

@@ -5,7 +5,7 @@ description: "An overview of different cloud computing platforms and the state o
 ---
 # Cloud Computing
 
-`video: https://youtu.be/AUCsYjU4Hus`
+`video: https://www.youtube.com/watch?v=AUCsYjU4Hus`
 
 ## Objectives
 
