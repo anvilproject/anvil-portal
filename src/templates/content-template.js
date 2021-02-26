@@ -21,13 +21,13 @@ import * as TemplateService from "../utils/template.service";
 
 export default ({data}) => {
     const post = data.markdownRemark,
-        {fields, frontmatter, headings, htmlAst} = post,
+        {fields, frontmatter, htmlAst} = post,
         {slug, styles} = fields,
         {description, showOutline, title} = frontmatter;
     const {context} = data.sitePage;
     const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
     const ncpi = slug.startsWith("/ncpi");
-    const h1 = TemplateService.getPageH1(headings);
+    const h1 = TemplateService.getPageTitle(htmlAst);
     const pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
@@ -70,10 +70,6 @@ query($slug: String!) {
         showOutline
         subTitle
         title
-      }
-      headings(depth: h1) {
-        depth
-        value
       }
       html
       htmlAst

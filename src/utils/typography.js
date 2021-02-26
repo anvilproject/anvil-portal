@@ -80,9 +80,6 @@ const typography = new Typography({
                 borderBottom: "none",
                 textDecoration: "none",
             },
-            ".anchor": { // Anchor links
-                borderBottom: "none !important"
-            },
             blockquote: {
                 borderLeft: "4px solid var(--accent-mustard)",
                 color: "var(--black58)",

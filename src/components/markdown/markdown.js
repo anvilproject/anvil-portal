@@ -17,6 +17,7 @@ import ExternalLink from "../anchor-element/external-link/external-link";
 import Figure from "../figure/figure";
 import FigureCaption from "../figure/figure-caption/figure-caption";
 import Hero from "../hero/hero";
+import InternalLink from "../internal-link/internal-link";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
 import SiteSearch from "../site-search/site-search";
@@ -82,6 +83,7 @@ class Markdown extends React.Component {
                 "figure": Figure,
                 "figure-caption": FigureCaption,
                 "hero": Hero,
+                "internal-link": InternalLink,
                 "news": News,
                 "platforms": Platforms,
                 "site-search": SiteSearch,
