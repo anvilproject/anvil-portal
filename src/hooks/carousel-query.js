@@ -11,7 +11,7 @@ export const CarouselStaticQuery = () => {
                   slug
                 }
                 frontmatter {
-                  blurb
+                  description
                   docType
                   logo {
                     childImageSharp {

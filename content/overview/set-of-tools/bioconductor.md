@@ -1,6 +1,6 @@
 ---
-blurb: "Tools for the analysis and comprehension of high-throughput genomic data using the R statistical programming language."
 carousel: true
+description: "Tools for the analysis and comprehension of high-throughput genomic data using the R statistical programming language."
 docType: "Tools"
 logo: ../_images/bioconductor.jpg
 title: "Bioconductor"
