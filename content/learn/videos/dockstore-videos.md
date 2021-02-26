@@ -8,7 +8,7 @@ Selected videos from the [Dockstore YouTube Channel](https://www.youtube.com/cha
  
 ##Dockstore: An Introduction
 
-`video: https://www.youtube.com/watch?v=1JWOVGzzgMc&t=185s`
+`video: https://www.youtube.com/watch?v=1JWOVGzzgMc`
 
 Dockstore is a platform for sharing portable, container-based tools and workflows written in CWL, WDL, and Nextflow. 
 
@@ -18,13 +18,13 @@ In this webinar, we will cover the basics of Dockstore, how it is useful for the
 
 ## Data Analysis on AnVIL - Use Cases
 
-`video: https://www.youtube.com/watch?v=VE2J6-4wSNM&t=18s`
+`video: https://www.youtube.com/watch?v=VE2J6-4wSNM`
 
 A presentation by Beth Sheets on Data Analysis on AnVIL - Use Cases, June 11, 2020. Slides are located [here](https://docs.google.com/presentation/d/12wykYlVHejSg2As1b83_ljkM8TRXpGQpwcWGmdUKrRU/edit#slide=id.p)
 
 ## Dockstore Fundamentals
 
-`video: https://www.youtube.com/watch?v=shMr_Bd01Ko&t=27s`
+`video: https://www.youtube.com/watch?v=shMr_Bd01Ko`
 
 This video is a hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows.
  

@@ -5,7 +5,7 @@ description: "An overview of the revolutions in DNA sequencing and computational
 ---
 # What is AnVIL?
 
-`video: https://youtu.be/PoNDxLoAf4k`
+`video: https://www.youtube.com/watch?v=PoNDxLoAf4k`
 
 ## Objectives
 

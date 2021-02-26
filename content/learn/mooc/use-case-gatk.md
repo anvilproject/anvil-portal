@@ -5,7 +5,7 @@ description: "An overview of the goals and architecture of the GATK platform and
 ---
 # Use Case: GATK
 
-`video: https://youtu.be/JQPX0vdIQ50`
+`video: https://www.youtube.com/watch?v=JQPX0vdIQ50`
 
 
 ## Objectives

@@ -13,7 +13,7 @@ description: "An overview of costs associated with cloud computing and important
 
 
 ## Video Presentation
-`video: https://youtu.be/XLR0Ol8vQaE`
+`video: https://www.youtube.com/watch?v=XLR0Ol8vQaE`
 
 ## Slides
 The slides for this tutorial are are located [here](https://docs.google.com/presentation/d/1DnNRX703nlwEi0VLNqwcBzvGC8vBI1yGR0x1qOCapdY).

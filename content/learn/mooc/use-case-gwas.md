@@ -6,7 +6,7 @@ description: "An overview of the scientific questions and datasets used in GWAS 
 
 # Use Case: GWAS
 
-`video: https://youtu.be/0OAYUM2Bym0`
+`video: https://www.youtube.com/watch?v=0OAYUM2Bym0`
 
 ## Objectives
 

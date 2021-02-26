@@ -9,7 +9,7 @@ Selected videos from the [AnVIL YouTube Channel](https://www.youtube.com/channel
 
 ## Reproducible Analysis in the Cloud with Dockstore and Terra
 
-`video: https://www.youtube.com/watch?v=m8Tt0KemKFI&t=584s&feature=youtu.be`
+`video: https://www.youtube.com/watch?v=m8Tt0KemKFI`
 
 This is a recording of the workshop "Reproducible Analysis in the Cloud with Dockstore and Terra" from the 2020 Bioinformatics Community Conference.
  
