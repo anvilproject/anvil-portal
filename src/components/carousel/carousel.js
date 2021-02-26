@@ -217,7 +217,7 @@ class Carousel extends React.Component {
 
             const {show, slot} = props,
                 {fields, frontmatter} = slot,
-                {blurb, docType, logo, title, url} = frontmatter || {},
+                {description, docType, logo, title, url} = frontmatter || {},
                 {slug} = fields,
                 {childImageSharp} = logo || {},
                 {fluid} = childImageSharp || {},
@@ -237,7 +237,7 @@ class Carousel extends React.Component {
                             <h4>{title}</h4>
                         </div>
                     </div>
-                    <p className={compStyles.ellipsis}>{blurb}</p>
+                    <p className={compStyles.ellipsis}>{description}</p>
                     <ClickHandler className={compStyles.learnMore}
                        clickAction={() => this.redirect(linkTo, openTab)} tag={"p"} label={title}>Learn More<img src={arrows} alt="learn more"/>
                     </ClickHandler>

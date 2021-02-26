@@ -141,7 +141,7 @@
 .slot .ellipsis {
     display: -webkit-box;
     margin-bottom: 12px;
-    min-height: 48px; /* Required for when blurb is a single line */
+    min-height: 48px; /* Required for when description is a single line */
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
