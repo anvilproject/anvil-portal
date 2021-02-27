@@ -47,7 +47,7 @@ The step-by-step tutorial below demonstrates how to compute quality metrics of u
 ![Step 5](../_images/getting-started/galaxy-step-5.png)
 1. Galaxy must be launched from a workspace. This can either be an existing workspace that has data already loaded, or could be from a new workspace. For this example, we will create a new workspace using the “Create New Workspace” dialog. Note you will also need to set up and select a Billing project to be associated with the Workspace.\
 ![Step 6](../_images/getting-started/galaxy-step-6.png)
-1. For this example, we will load (simulated) microbial sequencing data available here:  (<a href="./_files/asm.tgz" download>Download the FILE</a>) [asm.tgz](./_files/asm.tgz). After downloading the asm.tgz file, expand the archive and upload the data to the Terra workspace by dragging and dropping the files from your local computer (or using the + button) into the Files pane in the Data tab.\
+1. For this example, we will load (simulated) microbial sequencing data available here:  <a href="./_files/asm.tgz" download>asm.tgz</a>. After downloading the asm.tgz file, expand the archive and upload the data to the Terra workspace by dragging and dropping the files from your local computer (or using the + button) into the Files pane in the Data tab.\
 ![Step 7](../_images/getting-started/galaxy-step-7.png)
 ![Step 7 - loaded](../_images/getting-started/galaxy-step-7a.png)
 1. Next click on the “Notebooks” tab to find the “Create a Cloud Environment for Galaxy” button.\
