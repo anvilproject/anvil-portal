@@ -28,6 +28,19 @@ export function trackDashboardShared(url) {
 }
 
 /**
+ * Track download of TSV from dashboard.
+ *
+ * @param {string} url
+ */
+export function trackDashboardTSVDownloaded(url) {
+
+    const dimensions = {
+        [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
+    };
+    GTMService.trackEvent(GACategory.DASHBOARD, GAAction.DOWNLOAD, url, dimensions);
+}
+
+/**
  * Create and send a GA tracking event generated from the specified external link and label. Dimensions are calculated
  * from the specified URL.
  * 
