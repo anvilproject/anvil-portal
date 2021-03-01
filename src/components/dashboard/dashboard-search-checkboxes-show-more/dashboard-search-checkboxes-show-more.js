@@ -6,26 +6,19 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React from "react";
 
 // App dependencies
 import Button from "../../button/button";
-import ContextModal from "../../modal/context-modal/context-modal";
 
 // Styles
 import compStyles from "./dashboard-search-checkboxes-show-more.module.css";
 
 function DashboardSearchCheckboxesShowMore(props) {
 
-    const {groupName, moreCount} = props;
-    const {onOpenModal} = useContext(ContextModal);
+    const {moreCount, onShowMore} = props;
     const more = moreCount > 0;
     const buttonText = `+ ${moreCount} more`;
-
-    const onShowMore = () => {
-
-        onOpenModal(groupName);
-    };
 
     return (
         more ?

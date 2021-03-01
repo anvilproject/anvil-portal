@@ -2,11 +2,11 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to The AnVIL modal dashboard checkbox selector component.
+ * Style definitions specific to The AnVIL modal dashboard search checkboxes group component.
  */
 
-/* Dashboard selector. */
-.selector {
+/* Dashboard group. */
+.group {
     composes: modal from "../modal.module.css";
     overflow: auto;
     padding: 24px;
@@ -15,7 +15,7 @@
 }
 
 /* Modal close button. */
-.selector button {
+.group button {
     position: absolute;
     right: 0;
     top: 0;
@@ -52,8 +52,8 @@
  */
 @media screen and (min-width: 720px) {
 
-    /* Dashboard selector. */
-    .selector {
+    /* Dashboard group. */
+    .group {
         margin: 68px 24px 24px;
     }
 }
@@ -63,8 +63,8 @@
  */
 @media screen and (max-width: 840px) and (orientation: landscape) {
 
-    /* Dashboard selector. */
-    .selector {
+    /* Dashboard group. */
+    .group {
         margin: 0;
     }
 }
@@ -75,8 +75,8 @@
  */
 @media screen and (min-width: 1024px) {
 
-    /* Dashboard selector. */
-    .selector {
+    /* Dashboard group. */
+    .group {
         margin: 68px;
     }
 }

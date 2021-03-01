@@ -16,19 +16,19 @@ function ProviderModal(props) {
 
     const {children} = props;
     const {onSetSiteScrollable} = useContext(ContextAnVILPortal);
-    const [modal, setModal] = useState({modalGroup: null, showModal: false});
+    const [modal, setModal] = useState({modalProps: {}, showModal: false});
 
     const onCloseModal = useCallback(() => {
 
         /* Set state. */
-        setModal({modalGroup: null, showModal: false});
+        setModal(modal => ({...modal, modalProps: {}, showModal: false}));
         onSetSiteScrollable(true);
     }, [onSetSiteScrollable]);
 
-    const onOpenModal = useCallback((mGroup) => {
+    const onOpenModal = useCallback((mProps) => {
 
         /* Set state. */
-        setModal({modalGroup: mGroup, showModal: true});
+        setModal(modal => ({...modal, modalProps: mProps, showModal: true}));
         onSetSiteScrollable(false);
     }, [onSetSiteScrollable]);
 

@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL modal dashboard checkbox selector component.
+ * The AnVIL modal dashboard search checkboxes group component.
  */
 
 // Core dependencies
@@ -15,15 +15,16 @@ import ModalClose from "../modal-close/modal-close";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 
 // Styles
-import compStyles from "./modal-dashboard-checkbox-selector.module.css";
+import compStyles from "./modal-dashboard-search-checkboxes-group.module.css";
 import globalStyles from "../../../styles/global.module.css";
 
 const classNames = require("classnames");
 
-function ModalDashboardCheckboxSelector(props) {
+function ModalDashboardSearchCheckboxesGroup() {
 
-    const {children, groupName} = props;
-    const {onCloseModal} = useContext(ContextModal);
+    const {modal, onCloseModal} = useContext(ContextModal),
+        {modalProps} = modal,
+        {boxComponents, groupName} = modalProps || {};
     const refPanel = useRef(null);
     const [columns, setColumns] = useState([]);
     const [maxColumns, setMaxColumns] = useState(1);
@@ -65,12 +66,12 @@ function ModalDashboardCheckboxSelector(props) {
     /* useEffect - componentDidUpdate - maxColumns. */
     useEffect(() => {
 
-        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(children, maxColumns));
-    }, [children, maxColumns]);
+        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(boxComponents, maxColumns));
+    }, [boxComponents, maxColumns]);
 
     return (
         <Modal>
-            <div className={classNames(globalStyles.container, compStyles.selector)}>
+            <div className={classNames(globalStyles.container, compStyles.group)}>
                 <ModalClose onCloseModal={onCloseModal}/>
                 <h1>{groupName}</h1>
                 <div className={compStyles.panel} ref={refPanel}>
@@ -84,4 +85,4 @@ function ModalDashboardCheckboxSelector(props) {
     )
 }
 
-export default ModalDashboardCheckboxSelector;
+export default ModalDashboardSearchCheckboxesGroup;
