@@ -99,6 +99,40 @@ export function getDashboardCheckboxColumns(boxComponents, maxColumns) {
 }
 
 /**
+ * Returns the checkbox more count for the specified checkbox group.
+ * Excludes the checkboxes already on display in the search panel.
+ *
+ * @param checkboxes
+ * @param snippetCount
+ * @param termsCount
+ * @returns {number}
+ */
+export function getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount) {
+
+    if ( checkboxes ) {
+
+        /* Count the remaining checkboxes available for selection. */
+        return checkboxes
+            .slice(snippetCount)
+            .reduce((acc, checkbox) => {
+
+                const {value} = checkbox;
+                const count = termsCount.has(value) ? termsCount.get(value) : 0;
+
+                /* Accumulate if the count is valid. */
+                if ( count ) {
+
+                    acc += 1;
+                }
+
+                return acc;
+        }, 0);
+    }
+
+    return 0;
+}
+
+/**
  * Returns a map object of facet by term.
  * Values are sorted alphabetically.
  *
