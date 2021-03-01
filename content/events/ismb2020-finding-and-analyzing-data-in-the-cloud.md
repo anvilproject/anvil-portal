@@ -48,7 +48,7 @@ https://www.iscb.org/ismb2020-registration
 
 ## Workshop Videos
 
-Videos of this workshop can be found below. Videos for the entire ISMB 2020 event can be found on the event's [YouTube playlist](https://www.youtube.com/playlist?list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu)
+Videos of this workshop can be found below. Videos for the entire ISMB 2020 event can be found on the event's [YouTube playlist](https://www.youtube.com/playlist?list=PLmX8XnLr6zeHDOOwyoxrI-mMRTVnj3Btu).
 
 ### TT02- I - Intro to Terra Overview - Tiffany Miller - Tutorials - ISMB 2020
 
