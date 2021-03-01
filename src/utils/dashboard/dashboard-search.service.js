@@ -71,6 +71,29 @@ export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, entities,
 }
 
 /**
+ * Returns the search checkboxes, grouped by columns.
+ * Facilitates the display of checkboxes into columns, organised by alpha from top to bottom, left to right.
+ *
+ * @param children
+ * @param maxColumns
+ * @returns {Array}
+ */
+export function getDashboardCheckboxColumns(children, maxColumns) {
+
+    /* Calculate the max number of displayable rows per column. */
+    const maxRows = Math.round(children.length / maxColumns);
+
+    /* Return the checkboxes, regrouped into each column. */
+    return Array.from({length: maxColumns}).map((col, c) => {
+
+        const startSlice = c * maxRows;
+        const endSlice = (c + 1) * maxRows;
+
+        return children.slice(startSlice, endSlice);
+    });
+}
+
+/**
  * Returns a map object of facet by term.
  * Values are sorted alphabetically.
  *

@@ -8,7 +8,6 @@
 /* Dashboard selector. */
 .selector {
     composes: modal from "../modal.module.css";
-    margin: 72px;
     overflow: auto;
     padding: 24px;
     position: relative; /* Positions modal close button. */
@@ -25,23 +24,59 @@
 /* Checkbox panel. */
 .panel {
     display: flex;
-    flex-wrap: wrap;
-    flex: 1;
+    justify-content: space-between;
     margin-top: 48px;
 }
 
-/* Checkboxes. */
-.panel > span {
-    flex-basis: calc(100% / 4);
-    padding: 0 24px;
+/* Checkbox column. */
+.panel .col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 16px;
 }
 
-/* Checkboxes - lhs. */
-.panel > span:nth-of-type(4n+1) {
-    padding-left: 0;
+/* Checkbox column - first. */
+.panel .col:first-of-type {
+    margin-left: 0;
 }
 
-/* Checkboxes - rhs. */
-.panel > span:nth-of-type(4n) {
-    padding-right: 0;
+/* Checkbox column - last. */
+.panel .col:last-of-type {
+    margin-right: 0;
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Dashboard selector. */
+    .selector {
+        margin: 68px 24px 24px;
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window with landscape orientation.
+ */
+@media screen and (max-width: 840px) and (orientation: landscape) {
+
+    /* Dashboard selector. */
+    .selector {
+        margin: 0;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Dashboard selector. */
+    .selector {
+        margin: 68px;
+    }
 }
