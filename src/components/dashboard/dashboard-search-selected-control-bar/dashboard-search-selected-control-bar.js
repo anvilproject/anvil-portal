@@ -10,7 +10,6 @@ import React, {useContext} from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
-import DashboardSearchSelectedClearAll from "../dashboard-search-selected-clear-all/dashboard-search-selected-clear-all";
 import DashboardSearchSelectedFacets from "../dashboard-search-selected-facets/dashboard-search-selected-facets";
 
 // Styles
@@ -24,10 +23,10 @@ function DashboardSearchSelectedControlBar() {
     return (
         <div className={compStyles.controlBar}>
             {showController ?
-                <><DashboardSearchSelectedFacets onHandleClearFacet={onHandleClearFacet}
-                                                 onHandleClearTerm={onHandleClearTerm}
-                                                 selectedTermsByFacet={selectedTermsByFacet}/>
-                <DashboardSearchSelectedClearAll onHandleClearSearch={onHandleClearSearch}/></> :
+                <DashboardSearchSelectedFacets onHandleClearFacet={onHandleClearFacet}
+                                               onHandleClearSearch={onHandleClearSearch}
+                                               onHandleClearTerm={onHandleClearTerm}
+                                               selectedTermsByFacet={selectedTermsByFacet}/> :
                 <span>No selected terms.</span>}
         </div>
     )

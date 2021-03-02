@@ -25,6 +25,7 @@ function DashboardSearchSummary() {
 
     return (
         <DashboardSearchPanel inverted row>
+            <h4 className={compStyles.label}>Current selection:</h4>
             <h4 className={compStyles.stat}>{studiesCount} Studies</h4>
             <h4 className={compStyles.stat}>{subjectCount} Subjects</h4>
         </DashboardSearchPanel>

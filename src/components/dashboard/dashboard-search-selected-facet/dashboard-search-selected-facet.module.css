@@ -5,19 +5,8 @@
  * Style definitions specific to The AnVIL dashboard search selected facet component.
  */
 
-/* Facet. */
-.facet {
-    display: inline-flex;
-    flex-wrap: wrap;
-}
-
-/* Facet - last. */
-.facet:last-of-type {
-    padding-right: 8px;
-}
-
 /* Facet name. */
-.facet .facetName {
+.facetName {
     color: var(--black58);
     cursor: pointer;
     padding-right: 4px;
@@ -25,7 +14,7 @@
 }
 
 /* Facet name - hover. */
-.facet .facetName:hover {
+.facetName:hover {
     text-decoration: line-through;
 }
 

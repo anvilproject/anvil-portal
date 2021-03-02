@@ -23,11 +23,9 @@ function DashboardSearchSelectedFacet(props) {
 
     return (
         <>
-        <span className={compStyles.facet}>
-            {first ? null : <span className={compStyles.operator}>AND</span>}
-            <span className={compStyles.facetName} onClick={() => onHandleClearFacet(facet)} role={"presentation"}>{facetDisplay}</span>
-            <DashboardSearchSelectedTerms facet={facet} onHandleClearTerm={onHandleClearTerm} terms={terms}/>
-        </span>
+        {first ? null : <span className={compStyles.operator}>AND</span>}
+        <span className={compStyles.facetName} onClick={() => onHandleClearFacet(facet)} role={"presentation"}>{facetDisplay}</span>
+        <DashboardSearchSelectedTerms facet={facet} onHandleClearTerm={onHandleClearTerm} terms={terms}/>
         </>
     )
 }
