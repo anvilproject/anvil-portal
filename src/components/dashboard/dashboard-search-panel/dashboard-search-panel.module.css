@@ -16,6 +16,19 @@
     padding: 12px;
 }
 
+/* Inverted. */
+.panel.inverted {
+    background-color: transparent;
+    border: 1px solid var(--primary6);
+    flex-basis: unset;
+}
+
+/* Row. */
+.panel.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* Panel - first. */
 .panel:first-of-type {
     margin-top: 0;

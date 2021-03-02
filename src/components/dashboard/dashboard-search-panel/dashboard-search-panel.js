@@ -15,10 +15,15 @@ const classNames = require("classnames");
 
 function DashboardSearchPanel(props) {
 
-    const {children, stretch} = props;
+    const {children, inverted, row, stretch} = props;
+    const classNamesPanel = classNames(
+        compStyles.panel,
+        {[compStyles.inverted]: inverted},
+        {[compStyles.row]: row},
+        {[compStyles.stretch]: stretch});
 
     return (
-            <div className={classNames(compStyles.panel, {[compStyles.stretch]: stretch})}>{children}</div>
+            <div className={classNamesPanel}>{children}</div>
         )
 }
 

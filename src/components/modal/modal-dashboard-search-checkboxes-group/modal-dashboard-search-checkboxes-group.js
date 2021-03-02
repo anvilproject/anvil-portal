@@ -10,6 +10,10 @@ import React, {useCallback, useContext, useEffect, useRef, useState} from "react
 
 // App dependencies
 import ContextModal from "../context-modal/context-modal";
+import ContextDashboard from "../../dashboard/context-dashboard/context-dashboard";
+import DashboardSearchCheckbox from "../../dashboard/dashboard-search-checkbox/dashboard-search-checkbox";
+import DashboardSearchSelectedToolbar from "../../dashboard/dashboard-search-selected-toolbar/dashboard-search-selected-toolbar";
+import DashboardSearchSummary from "../../dashboard/dashboard-search-summary/dashboard-search-summary";
 import Modal from "../modal";
 import ModalClose from "../modal-close/modal-close";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
@@ -22,12 +26,15 @@ const classNames = require("classnames");
 
 function ModalDashboardSearchCheckboxesGroup() {
 
-    const {modal, onCloseModal} = useContext(ContextModal),
-        {modalProps} = modal,
-        {boxComponents, groupName} = modalProps || {};
+    const {checkboxGroups} = useContext(ContextDashboard);
+    const {modal, onCloseModal} = useContext(ContextModal);
     const refPanel = useRef(null);
     const [columns, setColumns] = useState([]);
     const [maxColumns, setMaxColumns] = useState(1);
+    const {modalProps} = modal,
+        {groupName} = modalProps || {};
+    const checkboxGroup = checkboxGroups.find(checkboxGroup => checkboxGroup.groupName === groupName);
+    const checkboxes = checkboxGroup.checkboxes;
     const checkboxWidth = 300;
 
     const onCalculateMaxColumns = useCallback(() => {
@@ -66,18 +73,20 @@ function ModalDashboardSearchCheckboxesGroup() {
     /* useEffect - componentDidUpdate - maxColumns. */
     useEffect(() => {
 
-        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(boxComponents, maxColumns));
-    }, [boxComponents, maxColumns]);
+        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(checkboxes, maxColumns));
+    }, [checkboxes, maxColumns]);
 
     return (
         <Modal>
-            <div className={classNames(globalStyles.container, compStyles.group)}>
+            <div className={classNames(globalStyles.container, compStyles.modalContent)}>
                 <ModalClose onCloseModal={onCloseModal}/>
                 <h1>{groupName}</h1>
-                <div className={compStyles.panel} ref={refPanel}>
-                    {columns.map((column, c) =>
-                        <span className={compStyles.col} key={c}>
-                            {column}
+                <DashboardSearchSummary/>
+                <DashboardSearchSelectedToolbar/>
+                <div className={compStyles.checkboxes} ref={refPanel}>
+                    {columns.map((cBoxes, b) =>
+                        <span className={compStyles.col} key={b}>
+                            {cBoxes.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>)}
                         </span>)}
                 </div>
             </div>

@@ -71,19 +71,19 @@ export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, entities,
 }
 
 /**
- * Returns the search checkbox components, grouped by columns.
- * Facilitates the display of the checkbox components into columns, organised by alpha from top to bottom, left to right.
+ * Returns the search checkboxes, grouped by columns.
+ * Facilitates the display of the checkboxes into columns, organised by alpha from top to bottom, left to right.
  *
- * @param boxComponents
+ * @param checkboxes
  * @param maxColumns
  * @returns {Array}
  */
-export function getDashboardCheckboxColumns(boxComponents, maxColumns) {
+export function getDashboardCheckboxColumns(checkboxes, maxColumns) {
 
-    if ( boxComponents ) {
+    if ( checkboxes ) {
 
         /* Calculate the max number of displayable rows per column. */
-        const maxRows = Math.round(boxComponents.length / maxColumns);
+        const maxRows = Math.round(checkboxes.length / maxColumns);
 
         /* Return the checkboxes, regrouped into each column. */
         return Array.from({length: maxColumns}).map((col, c) => {
@@ -91,7 +91,7 @@ export function getDashboardCheckboxColumns(boxComponents, maxColumns) {
             const startSlice = c * maxRows;
             const endSlice = (c + 1) * maxRows;
 
-            return boxComponents.slice(startSlice, endSlice);
+            return checkboxes.slice(startSlice, endSlice);
         });
     }
 

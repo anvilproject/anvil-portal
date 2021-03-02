@@ -21,7 +21,7 @@ function DashboardSearchSelectedFacets(props) {
 
     return (
         <>
-        <span className={compStyles.selectedFacets}>Results have</span>
+        <span className={compStyles.selectedFacets}>Current selection:</span>
         {[...selectedFacets].map((facet, f) =>
             <DashboardSearchSelectedFacet key={f}
                                           facet={facet}

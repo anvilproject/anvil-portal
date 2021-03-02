@@ -21,15 +21,13 @@ function DashboardSearchCheckboxesGroup(props) {
     const {checkboxes, countLabel, groupName} = props;
     const {termsCount} = useContext(ContextDashboard);
     const {onOpenModal} = useContext(ContextModal);
-    const boxComponents = checkboxes.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>);
     const snippetCount = 5; /* Only show the first five checkboxes. */
-    const checkboxCount = DashboardSearchService.getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount);
-    const moreCount = checkboxCount;
-    const snippets = checkboxes.slice(0, 5);
+    const moreCount = DashboardSearchService.getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount);
+    const snippets = checkboxes.slice(0, snippetCount);
 
     const onShowMore = () => {
 
-        onOpenModal({boxComponents: boxComponents, groupName: groupName});
+        onOpenModal({groupName: groupName});
     };
 
     return (

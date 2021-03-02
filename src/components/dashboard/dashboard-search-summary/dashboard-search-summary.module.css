@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard search summary component.
+ */
+
+/* Statistic. */
+.stat {
+    margin: 4px 0;
+    white-space: nowrap;
+}
+
+/* Statistics - not last. */
+.stat:not(:last-of-type) {
+    padding-right: 24px;
+}

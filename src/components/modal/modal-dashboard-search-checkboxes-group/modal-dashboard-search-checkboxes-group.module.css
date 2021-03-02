@@ -5,8 +5,8 @@
  * Style definitions specific to The AnVIL modal dashboard search checkboxes group component.
  */
 
-/* Dashboard group. */
-.group {
+/* Modal content. */
+.modalContent {
     composes: modal from "../modal.module.css";
     overflow: auto;
     padding: 24px;
@@ -15,34 +15,34 @@
 }
 
 /* Modal close button. */
-.group button {
+.modalContent > button {
     position: absolute;
     right: 0;
     top: 0;
 }
 
-/* Checkbox panel. */
-.panel {
+/* Checkboxes. */
+.checkboxes {
     display: flex;
     justify-content: space-between;
     margin-top: 48px;
 }
 
-/* Checkbox column. */
-.panel .col {
+/* Checkboxes column. */
+.checkboxes .col {
     display: flex;
     flex: 1;
     flex-direction: column;
     margin: 0 16px;
 }
 
-/* Checkbox column - first. */
-.panel .col:first-of-type {
+/* Checkboxes column - first. */
+.checkboxes .col:first-of-type {
     margin-left: 0;
 }
 
-/* Checkbox column - last. */
-.panel .col:last-of-type {
+/* Checkboxes column - last. */
+.checkboxes .col:last-of-type {
     margin-right: 0;
 }
 
@@ -52,8 +52,8 @@
  */
 @media screen and (min-width: 720px) {
 
-    /* Dashboard group. */
-    .group {
+    /* Modal content. */
+    .modalContent {
         margin: 68px 24px 24px;
     }
 }
@@ -63,8 +63,8 @@
  */
 @media screen and (max-width: 840px) and (orientation: landscape) {
 
-    /* Dashboard group. */
-    .group {
+    /* Modal content. */
+    .modalContent {
         margin: 0;
     }
 }
@@ -75,8 +75,8 @@
  */
 @media screen and (min-width: 1024px) {
 
-    /* Dashboard group. */
-    .group {
+    /* Modal content. */
+    .modalContent {
         margin: 68px;
     }
 }
