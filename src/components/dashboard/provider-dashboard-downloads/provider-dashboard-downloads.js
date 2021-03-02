@@ -110,7 +110,7 @@ function ProviderDashboardDownloads(props) {
                 /* Handle case where datum key is "gapId". */
                 else if ( key === "gapId" ) {
 
-                    return datum.value || "--";
+                    return datum.gapIdDisplay || "--";
                 }
             }
 
