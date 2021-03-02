@@ -83,7 +83,7 @@ export function getDashboardCheckboxColumns(checkboxes, maxColumns) {
     if ( checkboxes ) {
 
         /* Calculate the max number of displayable rows per column. */
-        const maxRows = Math.round(checkboxes.length / maxColumns);
+        const maxRows = Math.ceil(checkboxes.length / maxColumns);
 
         /* Return the checkboxes, regrouped into each column. */
         return Array.from({length: maxColumns}).map((col, c) => {

@@ -20,6 +20,7 @@ function DashboardSearchCheckboxes() {
     const {checkboxGroups, countLabel} = useContext(ContextDashboard);
     const {modal} = useContext(ContextModal);
     const {showModal} = modal;
+    const facetCount = checkboxGroups.length;
 
     return (
         <>
@@ -27,6 +28,7 @@ function DashboardSearchCheckboxes() {
             <DashboardSearchCheckboxesGroup key={c}
                                             checkboxes={checkboxGroup.checkboxes}
                                             countLabel={countLabel}
+                                            facetCount={facetCount}
                                             groupName={checkboxGroup.groupName}/>)}
         {showModal ? <ModalDashboardSearchCheckboxesGroup/> : null}
         </>
