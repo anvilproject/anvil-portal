@@ -22,6 +22,7 @@ const ContextDashboard = React.createContext({
     tableHeadersSummary: [],
     termsChecked: new Map(),
     termsCount: new Map(),
+    warning: null,
     onHandleChecked: () => {},
     onHandleClearFacet: () => {},
     onHandleClearInput: () => {},

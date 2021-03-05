@@ -39,10 +39,10 @@ export function formatValue(value, column) {
 
     if ( value ) {
 
-        /* Handle column is "platform". */
-        if ( column === "platform" ) {
+        /* Handle column is "platforms". */
+        if ( column === "platforms" ) {
 
-            return switchStudyPlatform(value);
+            return formatStudyPlatforms(value);
         }
 
         /* Handle column is "diseases". */
@@ -223,7 +223,7 @@ export function switchDisplayColumnName(columnName) {
             return "dbGap Id";
         case "gapId":
             return "dbGap Id";
-        case "platform":
+        case "platforms":
             return "Platform";
         case "projectId":
             return "Terra Workspace Name";
@@ -270,8 +270,25 @@ export function switchStudyPlatform(platform) {
         case "KF":
             return "Kids First Data Resource Center";
         default:
-            return "";
+            return platform;
     }
+}
+
+/**
+ * Returns a list of platforms, concatenated into a string.
+ *
+ * @param platforms
+ */
+function formatStudyPlatforms(platforms) {
+
+    if ( Array.isArray(platforms) ) {
+
+        return platforms
+            .map(platform => switchStudyPlatform(platform))
+            .join(", ");
+    }
+
+    return switchStudyPlatform(platforms);
 }
 
 /**

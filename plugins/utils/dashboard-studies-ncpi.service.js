@@ -28,11 +28,14 @@ const getNCPIStudies = async function getNCPIStudies() {
     /* Grab the dbGapId, accession and the corresponding platform. */
     const gapIdPlatforms = await buildGapIdPlatforms();
 
+    /* Make the studies distinct, as some platforms share the same study. */
+    const studyPlatforms = getDistinctStudies(gapIdPlatforms);
+
     /* Build the studies dashboard. */
-    const dashboardStudies = await buildNCPIDashboardStudies(gapIdPlatforms);
+    const dashboardNCPIStudies = await buildNCPIDashboardStudies(studyPlatforms);
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes(dashboardStudies, "platform", "studyName");
+    return sortDataByDuoTypes([...dashboardNCPIStudies], "platform", "studyName");
 };
 
 /**
@@ -71,7 +74,7 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
  */
 async function buildNCPIDashboardStudy(gapIdPlatform) {
 
-    const {dbGapIdAccession, platform} = gapIdPlatform;
+    const {dbGapIdAccession, platforms} = gapIdPlatform;
 
     /* Get the db gap readiness studies and subject report, dictionary queries and study urls. */
     const {studyExchange, subjectDictionary, subjectReport, urls} = await buildXMLStudy(dbGapIdAccession);
@@ -85,7 +88,8 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
     const consentShortNames = getConsentShortNames(consentCodes);
     const diseases = studyExchange.diseases;
     const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
-    const studyPlatform = platform;
+    const studyPlatform = getStudyPlatform(platforms);
+    const studyPlatforms = platforms;
     const studyName = studyExchange.name.shortName;
     const subjectsTotal = consents.consentsStat;
 
@@ -97,6 +101,7 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
         diseases: diseases,
         gapId: gapId,
         platform: studyPlatform,
+        platforms: studyPlatforms,
         studyName: studyName,
         studyUrl: urls.studyUrl,
         subjectsTotal: subjectsTotal
@@ -146,6 +151,101 @@ async function buildGapIdPlatforms() {
         console.log("Error: file dashboard-platform-by-gapid.text cannot be found.");
 
         return [];
+    }
+}
+
+/**
+ * Returns a distinct list of studies, with corresponding list of platforms (should there be more than one per study),
+ * and dbGapIds.
+ *
+ * @param gapIdPlatforms
+ */
+function getDistinctStudies(gapIdPlatforms) {
+
+    return gapIdPlatforms.reduce((acc, gapIdPlatform) => {
+
+        /* Some platforms share the same study. */
+        /* In this instance, we will add the additional platform to the existing study. */
+        const {dbGapId, dbGapIdAccession} = gapIdPlatform;
+
+        /* Skip the study, if it has already been accumulated. */
+        const studyAccumulated = acc.find(s => s.dbGapIdAccession === dbGapIdAccession);
+
+        if ( studyAccumulated ) {
+
+            return acc;
+        }
+
+        /* Grab a set of platforms that share the same study. */
+        const setOfPlatforms = gapIdPlatforms
+            .filter(study => study.dbGapIdAccession === dbGapIdAccession)
+            .reduce((acc, study) => {
+
+                acc.add(study.platform);
+                return acc;
+            }, new Set());
+
+        /* Sort the platforms by alpha. */
+        const platforms = [...setOfPlatforms];
+        platforms.sort();
+
+        /* Accumulate the study. */
+        acc.push({dbGapId: dbGapId, dbGapIdAccession: dbGapIdAccession, platforms: platforms});
+
+        return acc;
+    }, []);
+}
+
+/**
+ * Returns the platforms array as a string value; using the platform display value.
+ *
+ * @param platforms
+ */
+function getStudyPlatform(platforms) {
+
+    return formatStudyPlatforms(platforms);
+}
+
+/**
+ * Returns a list of platforms, concatenated into a string.
+ *
+ * @param platforms
+ */
+function formatStudyPlatforms(platforms) {
+
+    if ( Array.isArray(platforms) ) {
+
+        return platforms
+            .map(platform => switchStudyPlatform(platform))
+            .join(", ");
+    }
+
+    return switchStudyPlatform(platforms);
+}
+
+/**
+ * Returns the platform display value.
+ * - "AnVIL" to "AnVIL"
+ * - "BDC" to "BioData Catalyst"
+ * - "NCRDC" to "Cancer Research Data Commons"
+ * - "KF" to "Kids First Data Resource Center"
+ *
+ * @param platform
+ * @returns {*}
+ */
+function switchStudyPlatform(platform) {
+
+    switch (platform) {
+        case "AnVIL":
+            return "AnVIL";
+        case "BDC":
+            return "BioData Catalyst";
+        case "NCRDC":
+            return "Cancer Research Data Commons";
+        case "KF":
+            return "Kids First Data Resource Center";
+        default:
+            return platform;
     }
 }
 

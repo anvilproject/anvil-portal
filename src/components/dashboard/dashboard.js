@@ -18,10 +18,11 @@ import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.
 function Dashboard(props) {
 
     const {children, countLabel, dashboardEntities, dashboardIndexFileName, dashboardPathname, dataset,
-        resultKey, searchFacets, summaryKey, tableHeadersEntities, tableHeadersSummary} = props;
+        resultKey, searchFacets, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = props;
     const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(dashboardEntities, searchFacets);
     const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets);
     const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups(searchFacets);
+    const setOfSummaryKeyTerms = DashboardSearchService.getSetOfSummaryKeyTerms(facetsByTerm, summaryKey);
     const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
     const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTermDisplay(facetsByTerm);
 
@@ -34,11 +35,13 @@ function Dashboard(props) {
                            facetsByTerm={facetsByTerm}
                            resultKey={resultKey}
                            setOfSearchGroups={setOfSearchGroups}
+                           setOfSummaryKeyTerms={setOfSummaryKeyTerms}
                            setOfTerms={setOfTerms}
                            summaryKey={summaryKey}
                            tableHeadersEntities={tableHeadersEntities}
                            tableHeadersSummary={tableHeadersSummary}
-                           termSearchValueByTermDisplay={termSearchValueByTermDisplay}>
+                           termSearchValueByTermDisplay={termSearchValueByTermDisplay}
+                           totalsWarning={totalsWarning}>
             <ProviderDashboardDownloads dataset={dataset}>
                 {children}
             </ProviderDashboardDownloads>

@@ -194,6 +194,26 @@ export function getDashboardSetOfSearchGroups(searchFacets) {
 }
 
 /**
+ * Returns a set of summary key terms.
+ *
+ * @param facetsByTerm
+ * @param facet
+ * @returns {*}
+ */
+export function getSetOfSummaryKeyTerms(facetsByTerm, facet) {
+
+    return [...facetsByTerm].reduce((acc, [term, ft]) => {
+
+        if ( ft === facet ) {
+
+            acc.add(term);
+        }
+
+        return acc;
+    }, new Set());
+}
+
+/**
  * Returns the set of terms for all facets.
  *
  * @param facetsByTerm

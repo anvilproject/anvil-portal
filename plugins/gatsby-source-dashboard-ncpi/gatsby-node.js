@@ -55,6 +55,7 @@ exports.createSchemaCustomization = ({actions}) => {
         diseases: [String]
         gapId: GapId
         platform: String
+        platforms: [String]
         studyName: String!
         studyUrl: String!
         subjectsTotal: Int

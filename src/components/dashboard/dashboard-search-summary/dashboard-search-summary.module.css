@@ -7,7 +7,6 @@
 
 /* Stat label, stat. */
 .stat, .label {
-    flex-basis: 100%;
     margin: 4px 0;
     white-space: nowrap;
 }

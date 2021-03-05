@@ -6,6 +6,21 @@
  */
 
 /**
+ * Returns a lower case string, comprising of non alpha characters.
+ *
+ * @param str
+ * @returns {string}
+ */
+const removeNonAlphanumericValues = function removeNonAlphanumericValues(str) {
+
+    return str
+        .replace(/[^a-zA-Z0-9\s]/g, " ")
+        .replace(/\s\s+/g, " ")
+        .toLowerCase()
+        .trim();
+};
+
+/**
  * Sorts any dashboard data, by two specified types.
  * If the first type compared is the same value, then the data is sorted by the second type.
  *
@@ -55,20 +70,6 @@ function compareDataValues(value0, value1) {
 }
 
 /**
- * Removes characters of the specified string to be ignored during sort and returns the string converted into lower case.
- *
- * @param str
- * @returns {string}
- */
-function convertToSortableValue(str) {
-
-    const strSansNonAlpha = str.replace(/[-{()}/:_']|\s/g, "").toLowerCase().trim();
-    const strSansOpenSquare = strSansNonAlpha.replace(/[/[]/g, "");
-
-    return strSansOpenSquare.replace(/]/g, "");
-}
-
-/**
  * Sets up the comparison between two variables and returns the sorted value.
  *
  * @param data0
@@ -78,11 +79,12 @@ function convertToSortableValue(str) {
  */
 function sortDataValues(data0, data1, type) {
 
-    const type0 = convertToSortableValue(data0[type]);
-    const type1 = convertToSortableValue(data1[type]);
+    const type0 = removeNonAlphanumericValues(data0[type]);
+    const type1 = removeNonAlphanumericValues(data1[type]);
 
     /* Compare and then sort the two values. */
     return compareDataValues(type0, type1);
 }
 
+module.exports.removeNonAlphanumericValues = removeNonAlphanumericValues;
 module.exports.sortDataByDuoTypes = sortDataByDuoTypes;

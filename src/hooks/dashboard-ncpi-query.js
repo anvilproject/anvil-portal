@@ -20,6 +20,7 @@ export const DashboardNCPIStaticQuery = () => {
                   gapIdDisplay
                 }
                 platform
+                platforms
                 studyName
                 subjectsTotal
               }

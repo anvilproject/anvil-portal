@@ -5,6 +5,12 @@
  * Service for dashboard search index fields.
  */
 
+// Core dependencies
+const path = require("path");
+
+// App dependencies
+const {removeNonAlphanumericValues} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
+
 /**
  * Find the study for the specified dbGapIdAccession.
  *
@@ -199,7 +205,7 @@ const getIndexFieldStudyName = function getIndexFieldStudyName(studyName) {
 
     if ( studyName ) {
 
-        return convertToSortableValue(studyName);
+        return removeNonAlphanumericValues(studyName);
     }
 
     return "";
@@ -216,25 +222,11 @@ const getIndexFieldWorkspaceName = function getIndexFieldWorkspaceName(workspace
 
     if ( workspaceName ) {
 
-        return convertToSortableValue(workspaceName);
+        return removeNonAlphanumericValues(workspaceName);
     }
 
     return "";
 };
-
-/**
- * Removes characters of the specified string to be ignored during sort and returns the string converted into lower case.
- *
- * @param str
- * @returns {string}
- */
-function convertToSortableValue(str) {
-
-    const strSansNonAlpha = str.replace(/[-{()}/:_']|\s/g, " ").toLowerCase().trim();
-    const strSansOpenSquare = strSansNonAlpha.replace(/[/[]/g, " ");
-
-    return strSansOpenSquare.replace(/]/g, " ");
-}
 
 module.exports.findStudy = findStudy;
 module.exports.getIndexFieldAccessType = getIndexFieldAccessType;

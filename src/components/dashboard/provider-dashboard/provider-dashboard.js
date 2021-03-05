@@ -642,16 +642,20 @@ class ProviderDashboard extends React.Component {
     };
 
     render() {
-        const {children, checkboxGroups, countLabel, dashboardEntities, facetsByTerm, resultKey, summaryKey, tableHeadersEntities, tableHeadersSummary} = this.props,
+        const {children, checkboxGroups, countLabel, dashboardEntities, facetsByTerm, resultKey,
+                setOfSummaryKeyTerms, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = this.props,
             {inputValue, searchURL, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput} = this.state;
         const entities = DashboardService.filterDashboardEntities(dashboardEntities, setOfResults, resultKey);
-        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey ,tableHeadersSummary);
         const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, dashboardEntities, resultKey);
+        const selectedSummaryTerms = selectedTermsByFacet.get(summaryKey);
+        const setOfSummaryTerms = DashboardSummaryService.getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKeyTerms, selectedSummaryTerms);
+        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey ,tableHeadersSummary, setOfSummaryTerms);
+        const warning = totalsWarning ? <span><sup>* </sup>Totals are adjusted for project data hosted in multiple {summaryKey}.</span> : null;
         return (
             <ContextDashboard.Provider
                 value={{checkboxGroups, countLabel, entities, inputValue, searchURL, selectedTermsByFacet, setOfResults, summaries,
-                    tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount,
+                    tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, warning,
                     onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
             </ContextDashboard.Provider>

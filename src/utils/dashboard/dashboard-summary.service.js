@@ -5,46 +5,108 @@
  * Service for formatting data dashboard summary into FE model.
  */
 
+// App dependencies
+import * as DashboardTableService from "./dashboard-table.service";
+
+/**
+ * Returns the search summary snapshot.
+ *
+ * @param summaries
+ * @param summaryKeys
+ * @returns {Array}
+ */
+export function getDashboardSnapshotSummary(summaries, summaryKeys) {
+
+    if ( summaries && summaries.length > 0 ) {
+
+        const totalRow = summaries.slice(-1).find(t => t);
+        const summaryRows = summaries.slice(0, -1);
+
+        return summaryKeys.map((key, k) => {
+
+            const label = DashboardTableService.switchDisplayColumnName(key);
+
+            if ( k === 0 ) {
+
+                const count = summaryRows.length.toLocaleString();
+
+                return {count: count, label: `${label}s`}
+            }
+            else {
+
+                const count = totalRow[key].toLocaleString();
+
+                return {count: count, label: label}
+            }
+        });
+    }
+
+    return [];
+}
+
 /**
  * Returns the dashboard summary.
  *
  * @param entities
  * @param entityKey
  * @param entityKeys
+ * @param setOfSummaryTerms
  * @returns {*}
  */
-export function getDashboardSummary(entities, entityKey, entityKeys) {
+export function getDashboardSummary(entities, entityKey, entityKeys, setOfSummaryTerms) {
 
     if ( entities.length === 0 ) {
 
         return [];
     }
 
-    const summary = buildDashboardSummary(entities, entityKey, entityKeys);
-    const summaryTotals = buildDashboardSummaryTotals(summary, entityKey, entityKeys);
+    /* Some summary "terms" may share the same data, but in summarization we separate them out as their own line item. */
+    /* Summary counts may be duplicated in this instance. */
+    /* The summary totals are correct and calculated from the resulting entities, rather than the summary counts. */
+    const summary = buildDashboardSummary(entities, entityKey, entityKeys, setOfSummaryTerms);
+    const summaryTotals = buildDashboardSummaryTotals(entities, entityKey, entityKeys);
 
     return summary.concat(summaryTotals);
 }
 
 /**
+ * Returns the set of summary terms with valid counts.
+ * Will return all summary terms if none are selected, or only selected summary terms with a count of one or more.
+ *
+ * @param termsCount
+ * @param setOfSummaryKeyTerms
+ * @param selectedSummaryTerms
+ * @returns {*}
+ */
+export function getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKeyTerms, selectedSummaryTerms) {
+
+    /* Grab the set of summary terms. */
+    return [...setOfSummaryKeyTerms]
+        .filter(term => isSummaryTermSelected(selectedSummaryTerms, term))
+        .reduce((acc, term) => {
+
+            return isSummaryTermValidCount(acc, term, termsCount);
+        }, new Set());
+}
+
+/**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
  *
+ * @param setOfTerms
  * @param entities
  * @param entityKey
  * @param entityKeys
  * @returns {Array}
  */
-function buildDashboardSummary(entities, entityKey, entityKeys) {
+function buildDashboardSummary(entities, entityKey, entityKeys, setOfTerms) {
 
-    const setOfSummaryTerms = getSetOfSummaryTerms(entities, entityKey);
+    return [...setOfTerms].map(term => {
 
-    return [...setOfSummaryTerms].map(term => {
-
-        const filteredEntities = filterEntitiesByTerm(entities, term, entityKey);
+        const filteredEntities = filterEntitiesByTerm(entities, entityKey, term);
 
         return entityKeys.reduce((acc, key) => {
 
-            const object = {[key]: getObjectSummaryDisplayValue(key, entityKey, term, filteredEntities)};
+            const object = {[key]: getObjectSummaryDisplayValue(filteredEntities, entityKey, key, term)};
             acc = Object.assign(acc, object);
 
             return acc;
@@ -55,16 +117,16 @@ function buildDashboardSummary(entities, entityKey, entityKeys) {
 /**
  * Returns the dashboard summary total counts.
  *
- * @param summary
+ * @param entities
  * @param entityKey
  * @param entityKeys
  * @returns {{cohorts: *, consortium: string, files: *, samples: *, sizeTB: *, subjects: *}}
  */
-function buildDashboardSummaryTotals(summary, entityKey, entityKeys) {
+function buildDashboardSummaryTotals(entities, entityKey, entityKeys) {
 
     return entityKeys.reduce((acc, key) => {
 
-        const object = {[key]: getObjectSummaryTotal(key, entityKey, summary)};
+        const object = {[key]: getObjectSummaryTotal(entities, entityKey, key)};
         acc = Object.assign(acc, object);
 
         return acc;
@@ -85,24 +147,39 @@ function countEntities(entities) {
  * Filter the entities by the specified term.
  *
  * @param entities
- * @param term
  * @param entityKey
+ * @param term
  */
-function filterEntitiesByTerm(entities, term, entityKey) {
+function filterEntitiesByTerm(entities, entityKey, term) {
 
-    return entities.filter(entity => entity[entityKey] === term);
+    return entities.filter(entity => {
+
+        /* Handle case entity is an array of values. */
+        /* Duplicate entities are possible in this scenario. */
+        /* e.g. A combo platform "AnVIL, BioData Catalyst" share the same study. */
+        /* In this instance, we count the study and it's associated summary counts (subjects) twice. */
+        /* i.e. The count will be allocated to both the "AnVIL" and "BioData Catalyst" platform. */
+        /* For the summary count, we wish to capture if the term (string) exists within the entity's corresponding object (of type array). */
+        /* i.e. we filter for the term "AnVIL" in an entity where platform could be ["AnVIL"] or ["AnVIl", "BioData Catalyst"]. */
+        if ( Array.isArray(entity[entityKey]) ) {
+
+            return entity[entityKey].indexOf(term) >= 0;
+        }
+
+        return entity[entityKey] === term;
+    });
 }
 
 /**
  * Returns the objects count or display value for the specified summary key.
  *
- * @param key
- * @param entityKey
- * @param term
  * @param entities
+ * @param entityKey
+ * @param key
+ * @param term
  * @returns {*}
  */
-function getObjectSummaryDisplayValue(key, entityKey, term, entities) {
+function getObjectSummaryDisplayValue(entities, entityKey, key, term) {
 
     /* Handle case key is the selected summary key. */
     /* e.g. AnVIL summary key is "consortium"; return the consortium value to display as a summary item like "1000 Genomes". */
@@ -110,45 +187,81 @@ function getObjectSummaryDisplayValue(key, entityKey, term, entities) {
 
         return term;
     }
-    /* Handle case key is the count associated with the selected summary key. */
-    /* e.g. AnVIL summary key is "consortium"; returns the count of "cohorts" for the specified consortium like "1000 Genomes". */
-    else if ( key === "cohorts" || key === "studies" ) {
 
-        return countEntities(entities);
-    }
-
-    /* Return the sum of node values for the key. */
-    return sumEntityNodeValues(entities, key);
+    return getObjectTotal(entities, key);
 }
 
 /**
  * Returns the key's summary total.
  *
- * @param key
+ * @param entities
  * @param entityKey
- * @param summary
+ * @param key
  * @returns {string}
  */
-function getObjectSummaryTotal(key, entityKey, summary) {
+function getObjectSummaryTotal(entities, entityKey, key) {
 
     if ( key === entityKey ) {
 
-        return "Total";
+        return "Totals";
     }
 
-    return sumEntityNodeValues(summary, key);
+    return getObjectTotal(entities, key);
 }
 
 /**
- * Returns the set of terms for the specified entity element.
+ * Returns either a count or node total for the specified object (key).
  *
  * @param entities
- * @param entityKey
- * @returns {Set}
+ * @param key
  */
-function getSetOfSummaryTerms(entities, entityKey) {
+function getObjectTotal(entities, key) {
 
-    return new Set(entities.map(entity => entity[entityKey]));
+    /* Handle case key is the count associated with the selected summary key. */
+    /* e.g. AnVIL summary key is "consortium"; returns the count of "cohorts" for the specified consortium like "1000 Genomes". */
+    if ( key === "cohorts" || key === "studies" ) {
+
+        return countEntities(entities);
+    }
+
+    return sumEntityNodeValues(entities, key);
+}
+
+/**
+ * Returns true if there are no selected summary terms, or if the summary term is selected.
+ *
+ * @param selectedSummaryTerms
+ * @param term
+ * @returns {boolean}
+ */
+function isSummaryTermSelected(selectedSummaryTerms, term) {
+
+    if ( !selectedSummaryTerms ) {
+
+        return true;
+    }
+
+    return selectedSummaryTerms.includes(term);
+}
+
+/**
+ * Returns the term with a count of one or more, as an accumulated value.
+ *
+ * @param acc
+ * @param term
+ * @param termsCount
+ * @returns {*}
+ */
+function isSummaryTermValidCount(acc, term, termsCount) {
+
+    const count = termsCount.get(term);
+
+    if ( count ) {
+
+        acc.add(term);
+    }
+
+    return acc;
 }
 
 /**

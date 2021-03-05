@@ -15,5 +15,7 @@ export const RIGHT_ALIGN_COLUMNS = [
     "samples",
     "size",
     "sizeTB",
-    "subjects"
+    "studies",
+    "subjects",
+    "subjectsTotal"
 ];

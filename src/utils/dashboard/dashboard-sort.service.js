@@ -6,20 +6,6 @@
  */
 
 /**
- * Sorts an array of data.
- *
- * @param data
- */
-export function sortData(data) {
-
-    return data.sort(function (data0, data1) {
-
-        /* Compare and then sort the two values. */
-        return compareDataValues(data0, data1);
-    })
-}
-
-/**
  * Sorts a map object.
  *
  * @param mapObj

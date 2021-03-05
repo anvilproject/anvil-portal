@@ -24,10 +24,10 @@ const getStudies = async function getStudies(workspaces) {
     const studyWorkspaces = filterProjectsByDBGapReadiness(workspaces);
 
     /* Build the studies dashboard. */
-    const dashboardStudies = await buildDashboardStudies(studyWorkspaces);
+    const dashboardAnVILStudies = await buildDashboardStudies(studyWorkspaces);
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes(dashboardStudies, "consortium", "studyName");
+    return sortDataByDuoTypes([...dashboardAnVILStudies], "consortium", "studyName");
 };
 
 /**
