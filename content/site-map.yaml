@@ -248,6 +248,8 @@
           pathOverride: "/overview"
         - name: "Data Consortia Roadmap"
           file: "/overview/data-consortia"
+        - name: "Platform and Data Security"
+          file: "/overview/security"
         - name: "Supported by NHGRI"
           file: "/overview/project-sponsor"
 ## NCPI
