@@ -6,15 +6,27 @@
  */
 
 /**
- * Filters workspaces by results from the dashboard search.
+ * Returns the dashboard entities filtered by results from the search.
  *
- * @param workspaces
+ * @param entities
  * @param setOfResults
+ * @param resultKey
  * @returns {*}
  */
-export function filterWorkspacesBySearchResults(workspaces, setOfResults) {
+export function filterDashboardEntities(entities, setOfResults, resultKey) {
 
-    return workspaces.filter(workspace => setOfResults.has(workspace.projectId));
+    /* Set of results is empty. */
+    if ( setOfResults.size === 0 ) {
+
+        return [];
+    }
+
+    if ( entities ) {
+
+        return entities.filter(entity => setOfResults.has(entity[resultKey]));
+    }
+
+    return [];
 }
 
 /**

@@ -13,6 +13,7 @@ import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Main from "./main/main";
+import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
 import ProviderAnVILPortal from "./provider-anvil-portal/provider-anvil-portal";
 import SEO from "./seo/seo";
@@ -32,21 +33,24 @@ function Layout(props) {
             <ProviderSiteSearch>
                 <PageHead pageTitle={title} site={site}/>
                 <SEO description={description} ncpi={ncpi} site={site} title={title}/>
-                <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
-                    <SiteWrapper ref={refSite}>
-                        <Header ncpi={ncpi}/>
-                        <Main bannerHeight={bannerHeight}
-                              docPath={docPath}
-                              homePage={homePage}
-                              navigations={navigations}
-                              noSpy={noSpy}
-                              showOutline={showOutline}
-                              styles={styles}>{children}</Main>
-                        <BannerPrivacy setBannerHeight={setBannerHeight}/>
-                        <Footer/>
-                        <div id="portal"/>
-                    </SiteWrapper>
-                </SiteExternalLinkTracker>
+                <ProviderModal>
+                    <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
+                        <SiteWrapper ref={refSite}>
+                            <Header ncpi={ncpi}/>
+                            <Main bannerHeight={bannerHeight}
+                                  docPath={docPath}
+                                  homePage={homePage}
+                                  navigations={navigations}
+                                  noSpy={noSpy}
+                                  showOutline={showOutline}
+                                  styles={styles}>{children}</Main>
+                            <BannerPrivacy setBannerHeight={setBannerHeight}/>
+                            <Footer/>
+                            <div id="modal-root"/>
+                            <div id="tooltip-root"/>
+                        </SiteWrapper>
+                    </SiteExternalLinkTracker>
+                </ProviderModal>
             </ProviderSiteSearch>
         </ProviderAnVILPortal>
     )

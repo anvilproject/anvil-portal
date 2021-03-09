@@ -29,8 +29,7 @@ class DashboardSearchEmptyResults extends React.Component {
 export default () => {
 
     /* Dataset filtering props. */
-    const searching = useContext(ContextDashboard),
-        {setOfResults} = searching;
+    const {setOfResults} = useContext(ContextDashboard);
 
     const showEmptyResults = setOfResults.size === 0;
 

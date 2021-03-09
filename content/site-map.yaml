@@ -277,6 +277,16 @@
               file: "/ncpi/training/2020-03-17-train-your-colleague"
         - name: "Progress Updates"
           file: "/ncpi/progress-updates"
+## NCPI Datasets
+- menuItem: "NCPI Datasets"
+  pageTitle: "Datasets"
+  pathPartial: "/ncpi"
+  tabs:
+    - name: "Dataset Catalog"
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/ncpi/data"
 ## News
 - menuItem: "News"
   pageTitle: "News"

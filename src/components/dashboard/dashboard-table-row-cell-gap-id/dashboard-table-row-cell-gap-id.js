@@ -22,16 +22,16 @@ class DashboardTableRowCellGapId extends React.Component {
 
     render() {
         const {children, column, id} = this.props,
-            {studyUrl, value} = children || {};
-        const cellValue = DashboardTableService.formatValue(value, column);
+            {gapIdDisplay, studyUrl} = children || {};
+        const cellValue = DashboardTableService.formatValue(gapIdDisplay, column);
 
         return (
             studyUrl ?
                 <ClickHandler className={compStyles.link}
-                              clickAction={() => RedirectService.redirect(studyUrl, value)}
+                              clickAction={() => RedirectService.redirect(studyUrl, gapIdDisplay)}
                               id={id}
                               tag={"td"}
-                              label={value}><span className={globalStyles.asLink}>{value}</span></ClickHandler> :
+                              label={gapIdDisplay}><span className={globalStyles.asLink}>{gapIdDisplay}</span></ClickHandler> :
                 <td id={id}>{cellValue}</td>
         );
     }

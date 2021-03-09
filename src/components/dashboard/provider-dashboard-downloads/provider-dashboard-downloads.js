@@ -16,7 +16,7 @@ import * as NumberFormatService from "../../../utils/number-format.service";
 
 function ProviderDashboardDownloads(props) {
 
-    const {children} = props;
+    const {children, dataset} = props;
 
     const downloadDataset = (data, fileType) => {
 
@@ -28,7 +28,7 @@ function ProviderDashboardDownloads(props) {
         /* Set attributes including href, and the download attribute. */
         downloadEl.setAttribute("hidden", "");
         downloadEl.setAttribute("href", downloadURL);
-        downloadEl.setAttribute("download", `anvil-dataset-catalog-results.${fileType}`);
+        downloadEl.setAttribute("download", `${dataset}-dataset-catalog-results.${fileType}`);
 
         /* Append download element, execute click event (downloads the file). */
         document.body.appendChild(downloadEl);
@@ -110,7 +110,7 @@ function ProviderDashboardDownloads(props) {
                 /* Handle case where datum key is "gapId". */
                 else if ( key === "gapId" ) {
 
-                    return datum.value || "--";
+                    return datum.gapIdDisplay || "--";
                 }
             }
 

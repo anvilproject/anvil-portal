@@ -12,31 +12,27 @@ import React, {useContext} from "react";
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchCheckboxesGroup from "../dashboard-search-checkboxes-group/dashboard-search-checkboxes-group";
+import ContextModal from "../../modal/context-modal/context-modal";
+import ModalDashboardSearchCheckboxesGroup from "../../modal/modal-dashboard-search-checkboxes-group/modal-dashboard-search-checkboxes-group";
 
-class DashboardSearchCheckboxes extends React.Component {
+function DashboardSearchCheckboxes() {
 
-    shouldComponentUpdate(_) {
-
-        return false;
-    }
-
-    render() {
-        const {checkboxGroups} = this.props;
-        return (
-            checkboxGroups.map((checkboxGroup, c) =>
-                <DashboardSearchCheckboxesGroup key={c}
-                                                checkboxes={checkboxGroup.checkboxes}
-                                                groupName={checkboxGroup.groupName}/>)
-        )
-    };
-}
-
-export default () => {
-
-    const searching = useContext(ContextDashboard),
-    {checkboxGroups} = searching;
+    const {checkboxGroups, countLabel} = useContext(ContextDashboard);
+    const {modal} = useContext(ContextModal);
+    const {showModal} = modal;
+    const facetCount = checkboxGroups.length;
 
     return (
-        <DashboardSearchCheckboxes checkboxGroups={checkboxGroups}/>
-    )
+        <>
+        {checkboxGroups.map((checkboxGroup, c) =>
+            <DashboardSearchCheckboxesGroup key={c}
+                                            checkboxes={checkboxGroup.checkboxes}
+                                            countLabel={countLabel}
+                                            facetCount={facetCount}
+                                            groupName={checkboxGroup.groupName}/>)}
+        {showModal ? <ModalDashboardSearchCheckboxesGroup/> : null}
+        </>
+        )
 }
+
+export default DashboardSearchCheckboxes;

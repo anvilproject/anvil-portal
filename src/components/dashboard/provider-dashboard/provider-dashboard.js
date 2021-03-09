@@ -13,13 +13,10 @@ import React from "react";
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
+import * as DashboardService from "../../../utils/dashboard/dashboard.service";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
-import * as DashboardWorkspaceService from "../../../utils/dashboard/dashboard-workspace.service";
 import * as EnvironmentService from "../../../utils/environment/environment.service";
-
-// Template variables
-const DASHBOARD_INDEX = "/dashboard-index.json";
 
 class ProviderDashboard extends React.Component {
 
@@ -115,10 +112,10 @@ class ProviderDashboard extends React.Component {
         };
 
         this.state = ({
-            query: "", // Analytics-specific value, used to specify the current query state when tracking a change
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            query: "", // Analytics-specific value, used to specify the current query state when tracking a change
             searchURL: `${EnvironmentService.getCurrentEnvironmentURL()}data`,
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
@@ -151,20 +148,23 @@ class ProviderDashboard extends React.Component {
 
     componentDidUpdate(_, prevState) {
 
+        /* Dashboard index mounted - update results. */
         this.dashboardIndexMountedStateChanged(prevState);
 
+        /* Search state changed. */
         this.searchStateChanged(prevState);
 
+        /* Results state changed. */
         this.setOfResultsBySearchGroupsStateChanged(prevState);
     }
 
     componentWillUnmount() {
 
         this.setState = ({
-            query: "",
             dashboardIndex: [],
             dashboardIndexMounted: false,
             inputValue: "",
+            query: "",
             searchURL: "",
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
@@ -239,16 +239,17 @@ class ProviderDashboard extends React.Component {
 
     fetchDashboardIndex = () => {
 
-        fetch(DASHBOARD_INDEX)
-            .then(res => res.json())
-            .then(res => {
-                const dashboardIndex = lunr.Index.load(res);
+        const {dashboardIndexFileName} = this.props;
 
-                this.setState({dashboardIndex: dashboardIndex, dashboardIndexMounted: true})
+        fetch(dashboardIndexFileName)
+            .then(res => res.json())
+            .then(data => {
+                const index = lunr.Index.load(data);
+                this.setState({dashboardIndex: index, dashboardIndexMounted: true})
             })
             .catch(err => {
                 console.log(err, "Error loading index");
-            });
+            })
     };
 
     findIntersectionSetOfResults = (setOfResultsBySearchGroups) => {
@@ -278,15 +279,15 @@ class ProviderDashboard extends React.Component {
     getSelectedTermsByFacet = (facetsByTerm, inputValue, termsChecked) => {
 
         const selectedTermsByFacet = [...facetsByTerm.keys()]
-            .reduce((accum, term)=> {
+            .reduce((accum, term) => {
 
                 // Only add term to current query if it's currently selected
-                if ( termsChecked.get(term) ) {
+                if (termsChecked.get(term)) {
 
                     const facet = facetsByTerm.get(term);
 
                     // A term as already been added to the current query for this facet; add term to existing array
-                    if ( accum.has(facet) ) {
+                    if (accum.has(facet)) {
 
                         accum.get(facet).push(term);
                     }
@@ -299,7 +300,7 @@ class ProviderDashboard extends React.Component {
                 return accum;
             }, new Map());
 
-        if ( inputValue ) {
+        if (inputValue) {
 
             selectedTermsByFacet.set("search", inputValue.split(" "));
         }
@@ -307,13 +308,23 @@ class ProviderDashboard extends React.Component {
         return selectedTermsByFacet;
     };
 
+    getSelectedSearchTerms = (selectedTerms) => {
+
+        const {termSearchValueByTermDisplay} = this.props;
+
+        return selectedTerms.map(selectedTerm => termSearchValueByTermDisplay.get(selectedTerm));
+    };
+
     getSetOfFacetedResults = (facet) => {
 
         /* Grab any checked terms for the facet. */
         const selectedTerms = this.getTermsChecked(facet);
 
+        /* Convert the checked terms to a suitable search term format. */
+        const selectedSearchTerms = this.getSelectedSearchTerms(selectedTerms);
+
         /* Build the query string. */
-        const facetQueryString = this.buildFacetQueryString(selectedTerms, facet);
+        const facetQueryString = this.buildFacetQueryString(selectedSearchTerms, facet);
 
         return this.getResultsByQuery(facetQueryString);
     };
@@ -380,8 +391,8 @@ class ProviderDashboard extends React.Component {
 
     getTermsChecked = (facet) => {
 
-        const {facetsByTerm} = this.props,
-            {termsChecked} = this.state;
+        const {facetsByTerm} = this.props;
+        const {termsChecked} = this.state;
 
         return [...termsChecked].reduce((acc, [term, checked]) => {
 
@@ -462,8 +473,8 @@ class ProviderDashboard extends React.Component {
     onHandleUpdateFacets = (termsCheckedClone, value, checked) => {
 
         /** Get tracking values for selected facet */
-        const previousQuery = this.state.query;
         const {facetsByTerm} = this.props;
+        const previousQuery = this.state.query;
         const currentQuery = this.buildQuery(facetsByTerm, this.state.inputValue, termsCheckedClone);
 
         /* Update state. */
@@ -490,6 +501,7 @@ class ProviderDashboard extends React.Component {
         /* Track input */
         const previousQuery = this.state.query;
         const {facetsByTerm} = this.props;
+
         const currentQuery = this.buildQuery(facetsByTerm, inputValue, this.state.termsChecked);
 
         /* Update inputValue state. */
@@ -555,11 +567,13 @@ class ProviderDashboard extends React.Component {
 
     updateDashboardURL = () => {
 
+        const {dashboardPathname} = this.props;
         const {query} = this.state;
+        const pathname = dashboardPathname.slice(1);
 
         const params = new URLSearchParams();
         params.set("query", query);
-        const searchURL = `${EnvironmentService.getCurrentEnvironmentURL()}data?${params.toString()}`;
+        const searchURL = `${EnvironmentService.getCurrentEnvironmentURL()}${pathname}?${params.toString()}`;
 
         this.setState({searchURL: searchURL});
 
@@ -599,8 +613,8 @@ class ProviderDashboard extends React.Component {
 
     updateTermCounts = () => {
 
-        const {facetsByTerm} = this.props,
-            {setOfResultsBySearchGroups} = this.state;
+        const {facetsByTerm} = this.props;
+        const {setOfResultsBySearchGroups} = this.state;
 
         /* Get a set of facets. */
         const setOfFacets = new Set([...facetsByTerm.values()]);
@@ -628,16 +642,20 @@ class ProviderDashboard extends React.Component {
     };
 
     render() {
-        const {checkboxGroups, children, facetsByTerm, tableHeadersEntities, tableHeadersSummary, workspacesQuery} = this.props,
+        const {children, checkboxGroups, countLabel, dashboardEntities, facetsByTerm, resultKey,
+                setOfSummaryKeyTerms, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = this.props,
             {inputValue, searchURL, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput} = this.state;
-        const workspaces = DashboardWorkspaceService.getDashboardWorkspaces(workspacesQuery, setOfResults);
-        const summaries = DashboardSummaryService.getDashboardSummary(workspaces);
-        const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, workspacesQuery);
+        const entities = DashboardService.filterDashboardEntities(dashboardEntities, setOfResults, resultKey);
+        const termsCount = DashboardSearchService.getCountsByTerm(facetsByTerm, setOfCountResultsByFacet, dashboardEntities, resultKey);
+        const selectedSummaryTerms = selectedTermsByFacet.get(summaryKey);
+        const setOfSummaryTerms = DashboardSummaryService.getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKeyTerms, selectedSummaryTerms);
+        const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey ,tableHeadersSummary, setOfSummaryTerms);
+        const warning = totalsWarning ? <span><sup>* </sup>Totals are adjusted for project data hosted in multiple {summaryKey}.</span> : null;
         return (
             <ContextDashboard.Provider
-                value={{checkboxGroups, inputValue, searchURL, selectedTermsByFacet, setOfResults, summaries,
-                    tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, workspaces,
+                value={{checkboxGroups, countLabel, entities, inputValue, searchURL, selectedTermsByFacet, setOfResults, summaries,
+                    tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, warning,
                     onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
             </ContextDashboard.Provider>

@@ -1,0 +1,82 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL modal dashboard search checkboxes group component.
+ */
+
+/* Modal content. */
+.modalContent {
+    composes: modal from "../modal.module.css";
+    overflow: auto;
+    padding: 24px;
+    position: relative; /* Positions modal close button. */
+    width: 100%;
+}
+
+/* Modal close button. */
+.modalContent > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Checkboxes. */
+.checkboxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+
+/* Checkboxes column. */
+.checkboxes .col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 16px;
+}
+
+/* Checkboxes column - first. */
+.checkboxes .col:first-of-type {
+    margin-left: 0;
+}
+
+/* Checkboxes column - last. */
+.checkboxes .col:last-of-type {
+    margin-right: 0;
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+
+    /* Modal content. */
+    .modalContent {
+        margin: 68px 24px 24px;
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window with landscape orientation.
+ */
+@media screen and (max-width: 840px) and (orientation: landscape) {
+
+    /* Modal content. */
+    .modalContent {
+        margin: 0;
+    }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+
+    /* Modal content. */
+    .modalContent {
+        margin: 68px;
+    }
+}

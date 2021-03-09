@@ -13,6 +13,7 @@ const ContextAnVILPortal = React.createContext({
     menuOpen: false,
     siteScrollable: true,
     onSetMenuOpen: () => {},
+    onSetSiteScrollable: () => {}
 });
 
 export default ContextAnVILPortal;

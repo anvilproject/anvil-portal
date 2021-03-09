@@ -1,0 +1,16 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard search checkboxes show more component.
+ */
+
+/* Plus more. */
+.more {
+    composes: label from "../dashboard-search-checkbox/dashboard-search-checkbox.module.css";
+    color: var(--primary);
+    flex: 1;
+    margin-left: 25px; /* Checkbox 13px, label margin 12px. */
+    padding-top: 12px;
+    text-align: left;
+}

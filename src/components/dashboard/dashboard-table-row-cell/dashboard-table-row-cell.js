@@ -6,28 +6,30 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
+import ContextDashboard from "../context-dashboard/context-dashboard";
+import Tooltip from "../../tooltip/tooltip";
 import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
 
 // Styles
 import "./dashboard-table-row-cell.module.css";
 
-class DashboardTableRowCell extends React.Component {
+function DashboardTableRowCell(props) {
 
-    render() {
-        const {children, column, summary} = this.props;
-        const identifier = Date.now();
-        const id = `${column}${identifier}`;
-        const reactElementType = DashboardTableService.getReactElementType(column, summary);
-        const cellData = DashboardTableService.formatValue(children, column);
-        const rowCell = React.createElement(reactElementType, {...this.props, id}, cellData);
+    const {children, column, summary} = props;
+    const {warning} = useContext(ContextDashboard);
+    const identifier = Date.now();
+    const id = `${column}${identifier}`;
+    const reactElementType = DashboardTableService.getReactElementType(column, summary);
+    const showWarning = children === "Totals" && warning;
+    const cellData = showWarning ? <Tooltip label={warning}>Totals <sup>*</sup></Tooltip> : DashboardTableService.formatValue(children, column);
+    const rowCell = React.createElement(reactElementType, {...props, id}, cellData);
 
-        return (
-            rowCell
-        );
-    }
+    return (
+        rowCell
+    );
 }
 
 export default DashboardTableRowCell;

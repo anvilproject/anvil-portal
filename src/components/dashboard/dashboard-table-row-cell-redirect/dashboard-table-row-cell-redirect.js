@@ -25,12 +25,11 @@ class DashboardTableRowCellRedirect extends React.Component {
         const linkTo = DashboardTableService.getCellUrl(children, column);
 
         return (
-            linkTo ?
-                <ClickHandler className={compStyles.link}
-                              clickAction={() => RedirectService.redirect(linkTo, children)}
-                              id={id}
-                              tag={"td"}
-                              label={children}>
+            linkTo ? <ClickHandler className={compStyles.link}
+                                   clickAction={() => RedirectService.redirect(linkTo, children)}
+                                   id={id}
+                                   tag={"td"}
+                                   label={children}>
                     <span className={globalStyles.asLink}>{children}</span>
                 </ClickHandler> :
                 <td id={id}>{children}</td>

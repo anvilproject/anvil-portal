@@ -27,6 +27,11 @@ function ProviderAnVILPortal(props) {
         setSiteScrollable(!expanded);
     }, []);
 
+    const onSetSiteScrollable = useCallback((scrollable) => {
+
+        setSiteScrollable(scrollable);
+    }, []);
+
     const onBreakpoint720 = useCallback((mediaQuery) => {
 
         /* Set 720 breakpoint. */
@@ -64,7 +69,7 @@ function ProviderAnVILPortal(props) {
     }, [onBreakpoint1280, onBreakpoint720]);
 
     return (
-        <ContextAnVILPortal.Provider value={{breakpoints, menuOpen, onSetMenuOpen, siteScrollable}}>
+        <ContextAnVILPortal.Provider value={{breakpoints, menuOpen, onSetMenuOpen, onSetSiteScrollable, siteScrollable}}>
             {children}
         </ContextAnVILPortal.Provider>
     )

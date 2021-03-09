@@ -21,11 +21,11 @@ import compStyles from "./dashboard-download-tsv.module.css";
 function DashboardDownloadTSV() {
 
     const {onHandleDownloadTSV} = useContext(ContextDashboardDownload);
-    const {searchURL, tableHeadersEntities, workspaces} = useContext(ContextDashboard);
+    const {entities, searchURL, tableHeadersEntities} = useContext(ContextDashboard);
 
     const onDownloadResults = () => {
 
-        onHandleDownloadTSV(workspaces, tableHeadersEntities);
+        onHandleDownloadTSV(entities, tableHeadersEntities);
         AnvilGTMService.trackDashboardTSVDownloaded(searchURL);
     };
 

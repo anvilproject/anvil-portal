@@ -13,14 +13,20 @@ import compStyles from "./dashboard-search-panel.module.css";
 
 const classNames = require("classnames");
 
-class DashboardSearchPanel extends React.Component {
+function DashboardSearchPanel(props) {
 
-    render() {
-        const {children, stretch} = this.props;
-        return (
-            <div className={classNames(compStyles.panel, {[compStyles.stretch]: stretch})}>{children}</div>
+    const {children, facetCount, inverted, row, stretch} = props;
+    const panelX = `x${facetCount}`;
+    const classNamesPanel = classNames(
+        compStyles.panel,
+        {[compStyles.inverted]: inverted},
+        {[compStyles.row]: row},
+        {[compStyles.stretch]: stretch},
+        {[compStyles[panelX]]: facetCount});
+
+    return (
+            <div className={classNamesPanel}>{children}</div>
         )
-    };
 }
 
 export default DashboardSearchPanel;

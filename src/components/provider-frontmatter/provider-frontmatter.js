@@ -9,16 +9,16 @@
 import React from "react";
 
 // App dependencies
-import FrontmatterContext from "../context/frontmatter-context";
+import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 class ProviderFrontmatter extends React.Component {
 
     render() {
         const {children, frontmatter} = this.props;
         return (
-            <FrontmatterContext.Provider value={frontmatter}>
+            <ContextFrontmatter.Provider value={frontmatter}>
                 {children}
-            </FrontmatterContext.Provider>
+            </ContextFrontmatter.Provider>
         )
     }
 }

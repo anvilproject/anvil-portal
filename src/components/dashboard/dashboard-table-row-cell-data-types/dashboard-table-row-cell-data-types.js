@@ -21,6 +21,7 @@ class DashboardTableRowCellDataTypes extends React.Component {
         const dataTypes = children;
         const dataTypesExist = DashboardService.isArray(dataTypes);
         const last = dataTypes.length - 1;
+        const showDataTypes = !!children;
 
         const DataType = (props) => {
 
@@ -35,9 +36,11 @@ class DashboardTableRowCellDataTypes extends React.Component {
 
         return (
             <td id={id}>
-                {dataTypesExist ?
-                    dataTypes.map((dataType, d) => <DataType key={d} dataType={dataType} last={last === d}/>) :
-                    <DataType dataType={children} last={true}/>}
+                {showDataTypes ?
+                    dataTypesExist ?
+                        dataTypes.map((dataType, d) =>
+                            <DataType key={d} dataType={dataType} last={last === d}/>) :
+                        <DataType dataType={children} last={true}/> : "--"}
             </td>
         );
     }
