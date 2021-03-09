@@ -6,14 +6,6 @@ description: "Guides helping users navigate their way through creating an accoun
 
 # Getting Started with AnVIL
 
-## Quick Start Guides
-
-- For PIs [[Set Up Lab Accounts](https://docs.google.com/document/d/18KsjJNVXWhW1-2aUZa2jdl1ibeyhtl2HQJrHDxajYv4)] [[Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc)]
-- For Analysts [Joining Your Lab]
-
-These Quick Start guides will help new AnVIL users get started as quickly as possible.  We’ve made sensible recommendations that will fit many (but not all) situations, and have included notes and links for users with more specialized situations.  For more detailed documentation covering the many ways you can make AnVIL work for your group, please refer to the sections below.
-
-
 ## Account Setup
 
 - [Set up a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account) - To register for a [Terra](https://anvil.terra.bio/#workspaces) account, you will need a Gmail account or another email account (an institutional email, for example) associated with a Google identity.
