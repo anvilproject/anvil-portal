@@ -12,7 +12,9 @@ Members of these teams are also involved with platform and software development 
 
 ## Broad Institute
 - [Anthony Philippakis](https://www.broadinstitute.org/bios/anthony-philippakis-0)
+- Eric Banks
 - Brian O'Connor
+- Jonathan Lawson
 - Anne O’Donnell Luria
 
 ## City University of New York
@@ -22,10 +24,10 @@ Members of these teams are also involved with platform and software development 
 - [Vince Carey](http://vjcitn.github.io)
 
 ## Johns Hopkins University
+- [Michael Schatz](http://schatz-lab.org)
 - Enis Afgan
 - Jeff Leek
 - Kasper Hansen
-- [Michael Schatz](http://schatz-lab.org)
 - Casey Overby Taylor
 
 ## Oregon Health & Sciences University
@@ -51,7 +53,7 @@ Members of these teams are also involved with platform and software development 
 - [Ting Wang](https://www.genome.wustl.edu/people/ting-wang/)
 
 ## Carnegie Institution for Science
-- Frederick Tan
+- [Frederick Tan](https://emb.carnegiescience.edu/science/faculty/frederick-tan)
 
 ## Yale 
 - [Ira Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
