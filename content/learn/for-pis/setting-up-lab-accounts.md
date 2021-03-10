@@ -5,10 +5,7 @@ description: "An overview of best practices for account setup in AnVIL to effect
 ---
 
 # Setting up Lab Accounts
-
-This guide provides an opinionated walkthrough on how to set up AnVIL for your lab.
-
-Following our recommendations will help you configure your team so that you 
+This guide provides an opinionated walkthrough on how to set up AnVIL for your lab. Following our recommendations will help you configure your team so that you 
 can more clearly see where charges are coming from and have greater
 control over which users can spend your money and access your data.
 
@@ -26,7 +23,7 @@ and analysis costs through a Google account linked to Terra.
 The costs are the standard Google Cloud Platform fees for storing and 
 moving data as well as executing an analysis. These costs are passed along through Terra without any markup.
 
-![PI Setp Overview](./_images/pi_setup_overview.png)
+![PI Setup Overview](./_images/pi_setup_overview.png)
  
 Coming Soon: This guide will shortly be updated to cover the following topics:
 
