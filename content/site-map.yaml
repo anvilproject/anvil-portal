@@ -225,6 +225,11 @@
               file: "/learn/reference/gtex-v8-free-egress-instructions"
             - name: "Cross Platform Data Access with GA4GH DRS in Terra"
               file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
+    - name: "PIs"
+      pathPartial: "/for-pis"
+      navigationItems:
+        - name: "Setting up Lab Accounts"
+          file: "/learn/for-pis/setting-up-lab-accounts"
     - name: "Consortia"
       pathPartial: "/for-consortia"
       navigationItems:
@@ -235,6 +240,7 @@
         - name: "Data Transfer into AnVIL"
           draft: "true"
           file: "/learn/for-consortia/data-transfer-into-anvil"
+
 ## Overview
 - menuItem: "Overview"
   pageTitle: "Overview"

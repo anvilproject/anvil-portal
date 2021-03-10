@@ -7,10 +7,19 @@ description: "Guides helping users navigate their way through creating an accoun
 # Getting Started with AnVIL
 ## Quick Start Guides
 
-- For PIs [[Set Up Lab Accounts](https://docs.google.com/document/d/18KsjJNVXWhW1-2aUZa2jdl1ibeyhtl2HQJrHDxajYv4)] [[Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc)]
-- For Analysts [Joining Your Lab]
+### For PIs
 
-These Quick Start guides will help new AnVIL users get started as quickly as possible.  We’ve made sensible recommendations that will fit many (but not all) situations, and have included notes and links for users with more specialized situations.  For more detailed documentation covering the many ways you can make AnVIL work for your group, please refer to the sections below.
+These Quick Start guides will help new AnVIL users get started as quickly as possible.
+We’ve made sensible recommendations that will fit many (but not all)
+situations, and have included notes and links for users
+with more specialized situations.
+
+For more detailed documentation covering the many ways you can make
+AnVIL work for you and your team, please refer to the [Account Setup](/learn#account-setup) section below.
+
+- [Set Up Lab Accounts](/learn/for-pis/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
+
+- [Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc) - Templates for calculating a budget and writing a budget justification for using AnVIL in your grant applications.
 
 ## Account Setup
 
