@@ -5,6 +5,21 @@ description: "Guides helping users navigate their way through creating an accoun
 ---
 
 # Getting Started with AnVIL
+## Quick Start Guides
+
+### For PIs
+
+These Quick Start guides will help new AnVIL users get started as quickly as possible.
+We’ve made sensible recommendations that will fit many (but not all)
+situations, and have included notes and links for users
+with more specialized situations.
+
+For more detailed documentation covering the many ways you can make
+AnVIL work for you and your team, please refer to the [Account Setup](/learn#account-setup) section below.
+
+- [Set Up Lab Accounts](/learn/for-pis/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
+
+- [Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc) - Templates for calculating a budget and writing a budget justification for using AnVIL in your grant applications.
 
 ## Account Setup
 
@@ -39,7 +54,7 @@ description: "Guides helping users navigate their way through creating an accoun
 ## Finding and Accessing Datasets
 - [Discovering datasets](/data) - Datasets of interest can be discovered in [AnVIL’s dataset catalog](/data), the [Gen3 Data Explorer](https://gen3.theanvil.io/) and by reviewing data-focused workspaces available to you once you are logged into Terra.
 
-- [Requsting dataset access](/learn/accessing-data/requesting-data-access) - AnVIL's open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces)  or [Gen3](https://gen3.theanvil.io). To request access for datasets with access restrictions, see AnVIL's guides for requesting access to [Controlled Access](#accessing-controlled-access-data) and [Consortium Access](#accessing-consortium-access-data) datasets. 
+- [Requesting dataset access](/learn/accessing-data/requesting-data-access) - AnVIL's open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces)  or [Gen3](https://gen3.theanvil.io). To request access for datasets with access restrictions, see AnVIL's guides for requesting access to [Controlled Access](#accessing-controlled-access-data) and [Consortium Access](#accessing-consortium-access-data) datasets. 
 
 - [Once your access is approved](/learn/accessing-data/requesting-data-access#once-your-access-is-granted) - the workspaces associated with your new datasets will be listed on your Terra workspaces tab.  [Clone](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) the workspace to begin working with the dataset.
 
