@@ -306,6 +306,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2021/03/10/announcing-seqr-in-anvil"
+              pathOverride: "/news/2021/03/10/announcing-seqr-in-anvil"
+            - name: ""
               file: "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data"
               pathOverride: "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data"
             - name: ""
