@@ -11,7 +11,8 @@ import * as DashboardSortService from "./dashboard-sort.service";
 import * as DashboardTableService from "./dashboard-table.service";
 
 // Template variables
-const setOfDenyListTerms = new Set(["NA", "--", "", null]);
+const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
+const setOfDenyListTerms = new Set(["N/A", "NA", "--", "", null]);
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
@@ -240,7 +241,11 @@ export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
     [...facetsByTerm.keys()].forEach(termDisplay => {
 
         /* Replace any white space, commas, hyphens or brackets with an underscore. */
-        const termSearchValue = termDisplay.replace(/(\/|,|-|\s|\(|\))/g, "_");
+        const termSearchValue = termDisplay
+            .toLowerCase()
+            .replace(regexSpecialChars, "_")
+            .replace(/\s/g, "_");
+
         termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
     });
 

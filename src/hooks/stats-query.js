@@ -1,27 +1,22 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
 export const StatsStaticQuery = () => {
-    const {allFiguresJson} = useStaticQuery(
+    const {allIngestedWorkspace} = useStaticQuery(
         graphql`
         query StatsStaticQuery {
-            allFiguresJson {
-                edges {
-                  node {
-                    projects {
-                      nodes {
-                        count
-                        type
-                      }
-                      project_id
-                      public
-                      size
-                      source
-                    }
-                  }
+            allIngestedWorkspace {
+              edges {
+                node {
+                  consortium
+                  projectId
+                  samples
+                  size
+                  subjects
                 }
+              }
             }
         }
     `
     );
-    return allFiguresJson.edges.map(n => n.node)[0];
+    return allIngestedWorkspace.edges.map(n => n.node);
 };

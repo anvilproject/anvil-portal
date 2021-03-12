@@ -134,12 +134,17 @@ const buildReport = async function buildReport(url) {
 };
 
 /**
- * Returns the study dbGap accession from dbGap.
+ * Returns the study accession from dbGapId. If no study exists an empty string is returned.
  *
  * @param dbGapId
- * @returns {Promise.<void>}
+ * @returns {Promise.<*>}
  */
 const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
+
+    if ( dbGapId && !dbGapId.startsWith("phs") ) {
+
+        return "";
+    }
 
     /* Get the study url. */
     const studyUrl = `${studyPath}${dbGapId}`;
@@ -164,6 +169,7 @@ const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
     catch(err) {
 
         console.log(`Error fetching ${studyUrl}`);
+        return "";
     }
 };
 
@@ -175,45 +181,49 @@ const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
  */
 const getXMLUrls = async function getXMLUrls(dbGapIdAccession) {
 
-    /* Get the dbGapId from the accession. */
-    const dbGapId = dbGapIdAccession.split(".")[0];
-
-    /* Get the study url. */
-    const studyURL = `${studyPath}${dbGapIdAccession}`;
-
-    /* Get the gap exchange url. */
-    const exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
-
-    /* Get the dictionary and report urls. */
-    /* Initialize dictionary and report urls. */
+    /* Initialize urls. */
     let dictURL = "";
+    let exchangeURL = "";
     let reportURL = "";
+    let studyURL = "";
 
-    /* Grab the gap index page. */
-    const indexURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/`;
+    if ( dbGapIdAccession ) {
 
-    /* Grab all <a> from the index page. */
-    const indexHTML = await fetchIndex(indexURL);
+        /* Get the dbGapId from the accession. */
+        const dbGapId = dbGapIdAccession.split(".")[0];
 
-    /* Get the subject dictionary and report XML URLs, if the gap index page exists. */
-    if ( indexHTML ) {
+        /* Get the study url. */
+        studyURL = `${studyPath}${dbGapIdAccession}`;
 
-        const {html} = indexHTML,
-            {body} = html,
-            {pre} = body,
-            {hr} = pre,
-            {a} = hr;
+        /* Get the gap exchange url. */
+        exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
 
-        /* Grab the corresponding href attribute. */
-        const indexRefs = a.filter(index => index.att).map(index => index.att.HREF);
+        /* Grab the gap index page. */
+        const indexURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/`;
 
-        /* Find the dict and report URL reference. */
-        const dictXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.data_dict"));
-        const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
+        /* Grab all <a> from the index page. */
+        const indexHTML = await fetchIndex(indexURL);
 
-        /* Subject dictionary and report XML URLs. */
-        dictURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${dictXMLRef}`;
-        reportURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${reportXMLRef}`;
+        /* Get the subject dictionary and report XML URLs, if the gap index page exists. */
+        if ( indexHTML ) {
+
+            const {html} = indexHTML,
+                {body} = html,
+                {pre} = body,
+                {hr} = pre,
+                {a} = hr;
+
+            /* Grab the corresponding href attribute. */
+            const indexRefs = a.filter(index => index.att).map(index => index.att.HREF);
+
+            /* Find the dict and report URL reference. */
+            const dictXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.data_dict"));
+            const reportXMLRef = indexRefs.find(ref => ref.toLowerCase().includes("subject.var_report"));
+
+            /* Subject dictionary and report XML URLs. */
+            dictURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${dictXMLRef}`;
+            reportURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/${reportXMLRef}`;
+        }
     }
 
     return {dict: dictURL, gapExchange: exchangeURL, report: reportURL, studyUrl: studyURL};

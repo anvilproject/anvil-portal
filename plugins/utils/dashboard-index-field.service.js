@@ -10,19 +10,24 @@ const path = require("path");
 
 // App dependencies
 const {removeNonAlphanumericValues} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
+const {getFieldTypeWorkspaceAccessType} = require(path.resolve(__dirname, "./dashboard-field-extension-anvil.service.js"));
+
+// Template variables
+const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
 
 /**
- * Find the study for the specified dbGapIdAccession.
+ * Find the study for the specified node.
  *
  * @param studies
- * @param dbGapIdAccession
+ * @param value
+ * @param nodeType
  * @returns {{}}
  */
-const findStudy = function findStudy(studies, dbGapIdAccession) {
+const findStudy = function findStudy(studies, value, nodeType) {
 
-    if ( studies && dbGapIdAccession ) {
+    if ( studies && value ) {
 
-        return studies.find(study => study.dbGapIdAccession === dbGapIdAccession);
+        return studies.find(study => study[nodeType] === value);
     }
 
     return {};
@@ -33,37 +38,20 @@ const findStudy = function findStudy(studies, dbGapIdAccession) {
  * Facilitates the indexing of access type into searchable checkbox values.
  * Indexes the facet "accessType" with unique term values.
  *
- * - "Controlled_Access" for "Controlled Access" when study exists
- * - "Open_Access" for "Open Access" when access: "Public"
- * - "Consortium_Access" for "Consortium Access" when access: "Private" (and without study)
+ * - "Controlled_Access" for "Controlled Access".
+ * - "Open_Access" for "Open Access".
+ * - "Consortium_Access" for "Consortium Access".
+ * TODO
  *
  * @param workspace
- * @param study
+ * @param studies
  * @returns {*}
  */
-const getIndexFieldAccessType = function getIndexFieldAccessType(workspace, study) {
+const getIndexFieldAccessType = function getIndexFieldAccessType(workspace, studies) {
 
-    const studyExits = Object.keys(study).length > 0;
+    const accessType = getFieldTypeWorkspaceAccessType(workspace, studies);
 
-    /* "researcher" - workspace with a study. */
-    if ( studyExits ) {
-
-        return "Controlled_Access";
-    }
-
-    /* "consortia" - private workspace. */
-    if ( workspace.access === "Private" ) {
-
-        return "Consortium_Access";
-    }
-
-    /* "public" - public workspace. */
-    if ( workspace.access === "Public" ) {
-
-        return "Open_Access";
-    }
-
-    return ""
+    return accessType.replace(/\s/g, "_");
 };
 
 /**
@@ -80,7 +68,7 @@ const getIndexFieldConsentShortNames = function getIndexFieldConsentShortNames(c
     if ( consentShortNames ) {
 
         /* Handle case where consent short name is hyphenated "-". */
-        return consentShortNames.map(shortName => shortName.replace(/(-|\s)/g, "_")).join(" ");
+        return consentShortNames.map(shortName => replaceStringSpecialChars(shortName)).join(" ");
     }
 
     return "";
@@ -99,7 +87,7 @@ const getIndexFieldConsortiumName = function getIndexFieldConsortiumName(consort
 
     if ( consortium ) {
 
-        return consortium.replace(/(,|-|\s|\(|\))/g, "_");
+        return replaceStringSpecialChars(consortium);
     }
 
     return "";
@@ -124,7 +112,7 @@ const getIndexFieldDataTypes = function getIndexFieldDataTypes(dataTypes) {
 
             if ( dataType ) {
 
-                const dataTypeSearchStr = dataType.replace(/(\/|,|-|\s|\(|\))/g, "_");
+                const dataTypeSearchStr = replaceStringSpecialChars(dataType);
 
                 /* Add dataType to accumulator. */
                 acc.push(dataTypeSearchStr);
@@ -165,7 +153,7 @@ const getIndexFieldDiseases = function getIndexFieldDiseases(diseases, consortiu
 
         return diseasesClone.reduce((acc, disease) => {
 
-            const diseaseStr = disease.replace(/(\/|,|-|\s|\(|\))/g, "_");
+            const diseaseStr = replaceStringSpecialChars(disease);
             acc.push(diseaseStr);
 
             return acc;
@@ -227,6 +215,20 @@ const getIndexFieldWorkspaceName = function getIndexFieldWorkspaceName(workspace
 
     return "";
 };
+
+/**
+ * Replaces any special characters or white space from the specified string with an underscore "_".
+ * Facilitates the indexing of any string value into a searchable facet term.
+ *
+ * @param str
+ * @returns {string}
+ */
+function replaceStringSpecialChars(str) {
+
+    return str.toLowerCase()
+        .replace(regexSpecialChars, "_")
+        .replace(/\s/g, "_");
+}
 
 module.exports.findStudy = findStudy;
 module.exports.getIndexFieldAccessType = getIndexFieldAccessType;
