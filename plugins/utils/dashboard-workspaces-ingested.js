@@ -16,7 +16,7 @@ const {getStudyGapAccession} = require(path.resolve(__dirname, "./dashboard-xml.
 // Template variables
 const ALLOW_LIST_WORKSPACE_FIELD_ARRAY = ["consentShortNames", "dataTypes", "diseases"];
 const ALLOW_LIST_WORKSPACE_FIELD_NUMBER = ["size", "samples", "subjects"];
-const DENY_LIST_TERMS = ["AttributeValue", "N/A", "NA", "", null];
+const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileAnVILDataIngestion = "anvil-data-ingestion-attributes.tsv";
 const fileTerraDataIngestion = "terra-data-ingestion-attributes.tsv";
 const WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE = {
@@ -177,7 +177,7 @@ function buildWorkspacePropertyAccessType(workspace, studyAccession) {
     const keyAccessType = HEADERS_TO_WORKSPACE_KEY.ACCESS_TYPE;
     const keyConsentShortNames = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES];
     const consentShortNames = workspace[keyConsentShortNames];
-    const openAccess = consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase());
+    const openAccess = consentShortNames? consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase()) : false;
 
     /* Let access type be "Consortium Access". This is true for any workspace that does not have a study, or is not "Open Access". */
     let accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONSORTIUM_ACCESS;
@@ -312,9 +312,7 @@ function formatIngestedDatum(datum, key) {
     /* Consortium. */
     if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM] ) {
 
-        const consortium = datum
-            .toUpperCase()
-            .replace(/\s/g, "_");
+        const consortium = datum ? datum.toUpperCase().replace(/\s/g, "_") : "";
 
         return WORKSPACE_CONSORTIUM_DISPLAY_VALUE[consortium] || consortium;
     }
@@ -322,10 +320,15 @@ function formatIngestedDatum(datum, key) {
     /* Disease. */
     if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES] ) {
 
-        if ( DENY_LIST_TERMS.includes(datum) ) {
+        if ( DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
 
             return "--";
         }
+    }
+
+    if ( !datum ) {
+
+        return "--";
     }
 
     return datum;

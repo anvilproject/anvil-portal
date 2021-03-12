@@ -45,7 +45,7 @@ const generateAnVILIngestedDashboardIndex = function generateAnVILIngestedDashbo
             /* Find the study, if it exists. */
             const study = findStudy(studies, workspace.dbGapIdAccession, "dbGapIdAccession");
 
-            const accessType = workspace.accessType.replace(/\s/g, "_"); // TODO
+            const accessType = workspace.accessType ? workspace.accessType.replace(/\s/g, "_") : ""; // TODO
             const consentShortNames = getIndexFieldConsentShortNames(workspace.consentShortNames);
             const consortium = getIndexFieldConsortiumName(workspace.consortium);
             const dataTypes = getIndexFieldDataTypes(workspace.dataTypes);
