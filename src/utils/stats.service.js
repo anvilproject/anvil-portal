@@ -11,60 +11,30 @@
 export function getStats(data) {
 
     return {
-        projects: countProjects(data),
+        cohorts: countCohorts(data),
+        consortia: countConsortia(data),
         samples: sumSamples(data),
-        size: calculateSize(data),
-        sources: countSources(data),
+        size: sumSize(data),
         subjects: sumSubjects(data)
     };
 }
 
 /**
- * Returns the total size.
- */
-function calculateSize(data) {
-
-    return data.projects.reduce((accum, project) => {
-
-        accum += project.size;
-        return accum;
-    }, 0);
-}
-
-/**
  * Returns the total number of projects.
  */
-function countProjects(data) {
+function countCohorts(data) {
 
-    return data.projects.length;
+    return data.length;
 }
 
 /**
- * Counts the total number of sources - sum unique project.source
+ * Counts the total number of consortium.
  */
-function countSources(data) {
+function countConsortia(data) {
 
-    const sources = data.projects.map(project => project.source);
-    return new Set(sources).size;
-}
+    const consortia = new Set(data.map(project => project.consortium));
 
-/**
- * Filter the project nodes by the specified type.
- */
-function filterProjectNodesByType(project, type) {
-
-    return project.nodes.filter(node => node.type === type) || [];
-}
-
-/**
- * Sum the specified node counts.
- */
-function sumNodeValues(nodes) {
-
-    return nodes.reduce((accum,  node) => {
-        accum += node.count;
-        return accum;
-    }, 0);
+    return consortia.size;
 }
 
 /**
@@ -72,9 +42,9 @@ function sumNodeValues(nodes) {
  */
 function sumProjectNodeValues(data, nodeType) {
 
-    return data.projects.reduce((projectAccum, project) => {
+    return data.reduce((projectAccum, project) => {
 
-        projectAccum += sumNodeValues(filterProjectNodesByType(project, nodeType));
+        projectAccum += project[nodeType];
         return projectAccum;
     }, 0);
 }
@@ -84,7 +54,15 @@ function sumProjectNodeValues(data, nodeType) {
  */
 function sumSamples(data) {
 
-    return sumProjectNodeValues(data, "Sample");
+    return sumProjectNodeValues(data, "samples");
+}
+
+/**
+ * Returns the total size.
+ */
+function sumSize(data) {
+
+    return sumProjectNodeValues(data, "size");
 }
 
 /**
@@ -92,5 +70,5 @@ function sumSamples(data) {
  */
 function sumSubjects(data) {
 
-    return sumProjectNodeValues(data, "Subject");
+    return sumProjectNodeValues(data, "subjects");
 }

@@ -16,20 +16,20 @@ import Dashboard from "./dashboard";
 import DashboardSearch from "./dashboard-search/dashboard-search";
 import DashboardTableEntities from "./dashboard-table-entities/dashboard-table-entities";
 import DashboardTableSummary from "./dashboard-table-summary/dashboard-table-summary";
-import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
+import {DashboardIngestedWorkspaceStaticQuery} from "../../hooks/dashboard-ingested-workspace-query";
 
 // Template variables
 const countLabel = "Cohorts";
 const dashboardIndexFileName = "/dashboard-index-anvil.json";
 const lunrIndexRefField = "projectId";
-const searchFacets = ["consortium", "accessType", "dataTypes"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
+const searchFacets = ["consortium", "diseases", "dataTypes", "accessType"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
-const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "size", "subjects"];
-const tableHeadersSummary = ["consortium", "cohorts", "subjects", "samples", "files", "size"];
+const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "samples", "subjects", "size"]; // add back access type
+const tableHeadersSummary = ["consortium", "cohorts", "samples", "subjects", "size"];
 
 function DashboardAnVIL() {
 
-    const dashboardEntities = DashboardWorkspaceStaticQuery();
+    const dashboardEntities = DashboardIngestedWorkspaceStaticQuery();
     const currentLocation = useLocation();
     const {pathname: dashboardPathname} = currentLocation || {};
 

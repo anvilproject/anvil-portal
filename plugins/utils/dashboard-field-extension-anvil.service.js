@@ -31,7 +31,7 @@ const getFieldTypeWorkspaceAccessType = function getFieldTypeWorkspaceAccessType
 
     if ( dbGapIdAccession ) {
 
-        studyExists = !!studies.find(study => study.dbGapIdAccession === dbGapIdAccession);
+        studyExists = studies.some(study => study.dbGapIdAccession === dbGapIdAccession);
     }
 
     if ( studyExists ) {
@@ -137,6 +137,11 @@ const getFieldTypeWorkspaceStudyName = function getFieldTypeWorkspaceStudyName(w
     /* Find the study, if it exists. */
     /* If the study does not exist, return empty value. */
     const study = studies.find(study => study.dbGapIdAccession === dbGapIdAccession);
+
+    if ( !study ) {
+
+        return "";
+    }
 
     /* Return the study node. */
     return study.studyName;

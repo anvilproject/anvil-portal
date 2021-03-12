@@ -34,7 +34,7 @@ export function getDashboardSnapshotSummary(summaries, summaryKeys) {
             }
             else {
 
-                const count = totalRow[key].toLocaleString();
+                const count = DashboardTableService.formatValue(totalRow[key], key);
 
                 return {count: count, label: label}
             }

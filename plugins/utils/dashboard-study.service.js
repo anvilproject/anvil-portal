@@ -117,6 +117,8 @@ const getSubjectConsents = function getSubjectConsents(subjectByStudy, consentId
         /* Build subject consents. */
         return buildSubjectConsents(variablesByStudy, studyConsentGroups);
     }
+
+    return {consents: [], consentsStat: 0}
 };
 
 /**

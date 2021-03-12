@@ -17,33 +17,25 @@ import * as StatsService from "../../utils/stats.service";
 // Styles
 import compStyles from "./stats.module.css";
 
-class Stats extends React.Component {
+function Stats() {
 
-    formatStats = (count) => {
+    const stats = StatsService.getStats(StatsStaticQuery());
+
+    const formatStats = (count) => {
         return NumberFormatService.format(count, {
             PB: 1
         });
     };
 
-    render() {
-        const {stats} = this.props;
-        return (
-            <div className={compStyles.stats}>
-                <Stat stat={this.formatStats(stats.sources)}>consortia</Stat>
-                <Stat stat={this.formatStats(stats.projects)}>cohorts</Stat>
-                <Stat stat={this.formatStats(stats.subjects)}>subjects</Stat>
-                <Stat stat={this.formatStats(stats.samples)}>samples</Stat>
-                <Stat stat={this.formatStats(stats.size)}>size</Stat>
-            </div>
-        );
-    }
-}
-
-export default () => {
-
-    const stats = StatsService.getStats(StatsStaticQuery());
-
     return (
-        <Stats stats={stats}/>
+        <div className={compStyles.stats}>
+            <Stat stat={formatStats(stats.consortia)}>consortia</Stat>
+            <Stat stat={formatStats(stats.cohorts)}>cohorts</Stat>
+            <Stat stat={formatStats(stats.subjects)}>subjects</Stat>
+            <Stat stat={formatStats(stats.samples)}>samples</Stat>
+            <Stat stat={formatStats(stats.size)}>size</Stat>
+        </div>
     );
 }
+
+export default Stats;
