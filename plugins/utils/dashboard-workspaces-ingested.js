@@ -94,6 +94,11 @@ const getIngestedWorkspaces = async function getIngestedWorkspaces() {
  */
 function buildIngestedDatum(datum, key) {
 
+    if ( ALLOW_LIST_WORKSPACE_FIELD_NUMBER.includes(key) ) {
+
+        return Number(datum.replace(/,/g, ""));
+    }
+
     const value = formatIngestedDatum(datum, key);
 
     if ( ALLOW_LIST_WORKSPACE_FIELD_ARRAY.includes(key) ) {
@@ -111,11 +116,6 @@ function buildIngestedDatum(datum, key) {
 
                 return acc;
             }, []);
-    }
-
-    if ( ALLOW_LIST_WORKSPACE_FIELD_NUMBER.includes(key) ) {
-
-        return Number(value.replace(/,/g, ""));
     }
 
     return value;
@@ -317,10 +317,21 @@ function formatIngestedDatum(datum, key) {
         return WORKSPACE_CONSORTIUM_DISPLAY_VALUE[consortium] || consortium;
     }
 
+    /* Data Types. */
+    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DATA_TYPES] ) {
+
+        // TODO review deny list duplication, multiple data types
+        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
+
+            return "--";
+        }
+    }
+
     /* Disease. */
     if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES] ) {
 
-        if ( DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
+        // TODO review multiple diseases
+        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
 
             return "--";
         }

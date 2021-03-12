@@ -12,7 +12,7 @@ import * as DashboardTableService from "./dashboard-table.service";
 
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
-const setOfDenyListTerms = new Set(["N/A", "NA", "--", "", null]);
+const setOfDenyListTerms = new Set(["AttributeValue", "N/A", "NA", "--", "", null]);
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
