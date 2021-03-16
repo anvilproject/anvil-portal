@@ -1,7 +1,7 @@
 ---
 title: "Step 1: Create a Google Account"
 author: "AnVIL"
-description: "An overview of best practices for account setup in AnVIL to effectively track and control cloud costs."
+description: "Instructions for completing the first step of AnVIL account setup - creating a Google Account."
 ---
 
 # Step 1: Create a Google Account
