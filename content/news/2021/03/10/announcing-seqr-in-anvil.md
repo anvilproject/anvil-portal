@@ -34,10 +34,10 @@ Seqr will enable researchers to analyze and annotate their data with Seqr in the
 
 ## Using Seqr in AnVIL
 Researchers will need to bring their joint call files to the AnVIL to make use of Seqr. 
-If a joint call file is needed, researchers can use [GATK tooling](https://anvilproject.org/learn/anvil-mooc/use-case-gatk), which is also available within AnVIL.  
+If a joint call file is needed, researchers can use [GATK tooling](https://anvilproject.org/learn/anvil-mooc/use-case-gatk), also available within AnVIL.  
 
 To launch Seqr on a Terra workspace, navigate to the workspaces' "Data" tab, select the "Files" subtab, and select
-the "Analyse in Seqr" in the top right of the page.
+ "Analyse in Seqr" in the top right of the page.
 
 ![Launching Seqr in Terra](./_images/seqr-in-terra.png)
 
