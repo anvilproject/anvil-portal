@@ -43,6 +43,7 @@ jobs:
 
       - run:
           name: Gatsby Build
+          no_output_timeout: 30m
           command: npm run build-ci
 
       - persist_to_workspace:
