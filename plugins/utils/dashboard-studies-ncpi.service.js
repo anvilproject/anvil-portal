@@ -86,7 +86,7 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
     const consentCodes = buildConsentCodes(consents);
     const consentShortNames = getConsentShortNames(consentCodes);
-    const diseases = studyExchange.diseases;
+    const diseases = study.diseases;
     const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
@@ -129,7 +129,7 @@ async function buildGapIdPlatforms() {
 
         if ( !contentRows ) {
 
-            return new Map();
+            return [];
         }
 
         /* From each content row, create a map object key-value pair of platform by dbGapId. */
