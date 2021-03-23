@@ -6,8 +6,6 @@ description: "Instructions for free egress download of GTEx v8 from the AnVIL Ge
 
 # GTEx v8 - Free Egress Instructions
 
-<warning>Note: GTEx Download is currently unavailable - maintenance activities are in progress.</warning>
-
 ## Overview
 The Genotype-Tissue Expression (GTEx) Program is a widely used data resource and tissue bank to study the relationship between genetic variants (inherited changes in DNA sequence) and gene expression (how genes are turned on and off) in multiple human tissues and across individuals. Previously, large genetic studies identified variants that are associated with human diseases. However, it is less clear how these variants affect gene expression and thereby contribute to human diseases. 
 
