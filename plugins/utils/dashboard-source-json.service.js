@@ -22,7 +22,7 @@ const studyJSONURLSuffix = "&_format=json";
 const buildJSONStudy = async function buildJSONStudy(dbGapIdAccession) {
 
     /* Initialize the study object. */
-    let study = {dataTypes: []};
+    let study = {dataTypes: [], diseases: []};
 
     if ( dbGapIdAccession ) {
 
@@ -100,12 +100,47 @@ function getMolecularCodes(coding) {
 }
 
 /**
+ * Returns a FE model of study.
+ *
+ * @param entries
+ * @param study
+ * @returns {*}
+ */
+function getStudy(entries, study) {
+
+    if ( entries ) {
+
+        return entries.reduce((acc, entry) => {
+
+            /* Grab the resource extensions. */
+            const {resource} = entry || {},
+                {focus} = resource || {};
+            const resourceExtensions = resource.extension;
+
+            /* Filter the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
+            const molecularDataTypes = findExtensionType(resourceExtensions, "moleculardatatypes");
+
+            /* Roll up the molecular codes. */
+            const dataTypes = rollUpDataTypes(molecularDataTypes, acc.dataTypes);
+
+            /* Roll up the diseases from the focus field's text field. */
+            const diseases = rollUpDiseases(focus, acc.diseases);
+
+            return {...acc, dataTypes: dataTypes, diseases: diseases};
+        }, study);
+    }
+
+    return study;
+}
+
+/**
  * Returns the molecular data types for the study.
  *
  * @param molecularDataTypes
+ * @param dataTypes
  * @returns {Array}
  */
-function getMolecularDataTypes(molecularDataTypes) {
+function rollUpDataTypes(molecularDataTypes, dataTypes) {
 
     if ( molecularDataTypes ) {
 
@@ -121,42 +156,34 @@ function getMolecularDataTypes(molecularDataTypes) {
                 const codes = getMolecularCodes(coding);
 
                 return acc.concat(codes);
-            }, []);
+            }, dataTypes);
         }
     }
 
-    return [];
+    return dataTypes;
 }
 
 /**
- * Returns a FE model of study.
+ * Returns the diseases, rolled up from focus field's text field.
  *
- * @param entries
- * @param study
+ * @param focuses
+ * @param diseases
  * @returns {*}
  */
-function getStudy(entries, study) {
+function rollUpDiseases(focuses, diseases) {
 
-    if ( entries ) {
+    if ( focuses ) {
 
-        return entries.reduce((acc, entry) => {
+        focuses.reduce((acc, focus) => {
 
-            /* Grab the resource extensions. */
-            const {resource} = entry || {};
-            const resourceExtensions = resource.extension;
+            const {text} = focus || {};
+            acc.push(text);
 
-            /* Filter the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
-            const molecularDataTypes = findExtensionType(resourceExtensions, "moleculardatatypes");
-
-            /* Grab the molecular codes. */
-            const molecularCodes = getMolecularDataTypes(molecularDataTypes);
-            const dataTypes = acc.dataTypes;
-
-            return {...acc, dataTypes: dataTypes.concat(molecularCodes)};
-        }, study);
+            return acc;
+        }, diseases)
     }
 
-    return study;
+    return diseases;
 }
 
 module.exports.buildJSONStudy = buildJSONStudy;
