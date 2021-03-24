@@ -174,7 +174,7 @@ function rollUpDiseases(focuses, diseases) {
 
     if ( focuses ) {
 
-        focuses.reduce((acc, focus) => {
+        return focuses.reduce((acc, focus) => {
 
             const {text} = focus || {};
             acc.push(text);
