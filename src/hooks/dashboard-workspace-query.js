@@ -7,17 +7,12 @@ export const DashboardWorkspaceStaticQuery = () => {
           allWorkspace {
             edges {
               node {
-                access
                 accessType
+                consentShortNames
                 consortium
                 dataTypes
                 dbGapId
-                dbGapIdAccession
-                demographics
-                diagnosis
                 diseases
-                families
-                files
                 gapId {
                   studyUrl
                   gapIdDisplay
