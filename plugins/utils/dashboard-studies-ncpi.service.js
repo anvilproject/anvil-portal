@@ -129,7 +129,7 @@ async function buildGapIdPlatforms() {
 
         if ( !contentRows ) {
 
-            return new Map();
+            return [];
         }
 
         /* From each content row, create a map object key-value pair of platform by dbGapId. */

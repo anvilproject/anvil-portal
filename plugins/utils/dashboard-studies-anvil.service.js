@@ -2,32 +2,25 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for formatting AnVIL data dashboard studies into FE model.
+ * Service for formatting AnVIL studies into FE model from workspaces data.
  */
 
 // Core dependencies
 const path = require("path");
 
 // App dependencies
-const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {buildGapId, buildXMLStudy, getSubjectConsents} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
 /**
  * Returns the AnVIL dashboard studies.
  *
  * @param workspaces
- * @returns {Promise.<void>}
+ * @returns {Promise.<*[]>}
  */
 const getStudies = async function getStudies(workspaces) {
 
-    /* Grab the workspaces that are dbGapId available. */
-    const studyWorkspaces = filterProjectsByDBGapReadiness(workspaces);
-
     /* Build the studies dashboard. */
-    const dashboardAnVILStudies = await buildDashboardStudies(studyWorkspaces);
-
-    /* Return the sorted studies. */
-    return sortDataByDuoTypes([...dashboardAnVILStudies], "consortium", "studyName");
+    return await buildDashboardStudies(workspaces);
 };
 
 /**
@@ -64,61 +57,23 @@ async function buildDashboardStudy(gapAccession, workspaces) {
 
     /* Assemble the study variables. */
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const consortium = findFirstWorkspaceNodeByType(workspacesByStudy, "consortium");
     const diseases = studyExchange.diseases;
     const gapId = buildGapId(gapAccession, urls.studyUrl);
     const studyName = studyExchange.name.shortName;
+    const studyUrl = urls.studyUrl;
     const subjectsCount = sumSubjectsValues(workspacesByStudy);
     const subjectsTotal = consents.consentsStat;
 
     return {
         consentGroup: consents,
-        consortium: consortium,
         dbGapIdAccession: gapAccession,
         diseases: diseases,
         gapId: gapId,
         studyName: studyName,
-        studyUrl: urls.studyUrl,
+        studyUrl: studyUrl,
         subjectsCount: subjectsCount,
         subjectsTotal: subjectsTotal
     };
-}
-
-/**
- * Returns a filtered set of workspaces, specified by dbGapId availability.
- * All projects with public data and any projects with accessible dbGapIds are considered as "readiness data".
- *
- * @param workspaces
- * @returns {*}
- */
-function filterProjectsByDBGapReadiness(workspaces) {
-
-    return workspaces.filter(workspace => {
-
-        const dbGapExists = !!workspace.dbGapIdAccession;
-
-        if ( workspace.access === "Public" ) {
-
-            return true;
-        }
-
-        return dbGapExists;
-    });
-}
-
-/**
- * Returns the first workspace's specified node value.
- *
- * @param workspacesByStudy
- * @param type
- * @returns {*}
- */
-function findFirstWorkspaceNodeByType(workspacesByStudy, type) {
-
-    if ( workspacesByStudy.length ) {
-
-        return workspacesByStudy[0][type];
-    }
 }
 
 /**
@@ -141,6 +96,7 @@ function setOfDbGapAccessions(workspaces) {
 function sumSubjectsValues(workspacesByStudy) {
 
     return workspacesByStudy.reduce((accum, workspace) => {
+
         accum += workspace.subjects;
         return accum;
     }, 0);

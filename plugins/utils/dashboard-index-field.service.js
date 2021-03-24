@@ -61,14 +61,17 @@ const getIndexFieldAccessType = function getIndexFieldAccessType(workspace, stud
  * e.g. "gru-irb" returns "gru_irb".
  *
  * @param consentShortNames
- * @returns {string}
+ * @returns {*}
  */
 const getIndexFieldConsentShortNames = function getIndexFieldConsentShortNames(consentShortNames) {
 
     if ( consentShortNames ) {
 
+        /* Clone data types. */
+        const cloneConsentShortNames = Array.from(consentShortNames);
+
         /* Handle case where consent short name is hyphenated "-". */
-        return consentShortNames.map(shortName => replaceStringSpecialChars(shortName)).join(" ");
+        return cloneConsentShortNames.map(shortName => replaceStringSpecialChars(shortName));
     }
 
     return "";

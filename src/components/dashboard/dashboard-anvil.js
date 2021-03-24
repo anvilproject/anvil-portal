@@ -16,7 +16,7 @@ import Dashboard from "./dashboard";
 import DashboardSearch from "./dashboard-search/dashboard-search";
 import DashboardTableEntities from "./dashboard-table-entities/dashboard-table-entities";
 import DashboardTableSummary from "./dashboard-table-summary/dashboard-table-summary";
-import {DashboardIngestedWorkspaceStaticQuery} from "../../hooks/dashboard-ingested-workspace-query";
+import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-query";
 
 // Template variables
 const countLabel = "Cohorts";
@@ -29,7 +29,7 @@ const tableHeadersSummary = ["consortium", "cohorts", "samples", "subjects", "si
 
 function DashboardAnVIL() {
 
-    const dashboardEntities = DashboardIngestedWorkspaceStaticQuery();
+    const dashboardEntities = DashboardWorkspaceStaticQuery();
     const currentLocation = useLocation();
     const {pathname: dashboardPathname} = currentLocation || {};
 

@@ -11,7 +11,7 @@ const lunr = require("lunr");
 const path = require("path");
 
 // App dependencies
-const {findStudy, getIndexFieldAccessType, getIndexFieldConsortiumName, getIndexFieldDataTypes, getIndexFieldDiseases, getIndexFieldGapNumber, getIndexFieldStudyName, getIndexFieldWorkspaceName} = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
+const {findStudy, getIndexFieldConsortiumName, getIndexFieldDataTypes, getIndexFieldDiseases, getIndexFieldGapNumber, getIndexFieldConsentShortNames, getIndexFieldStudyName, getIndexFieldWorkspaceName} = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
 
 /**
  * Generates the lunr search index for the AnVIL dashboard.
@@ -25,8 +25,8 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(studies
     const dashboardIndex = lunr(function () {
 
         this.ref("projectId");
-        this.field("access");
         this.field("accessType");
+        this.field("consentShortNames");
         this.field("consortium");
         this.field("dataTypes");
         this.field("dbGapId");
@@ -45,19 +45,20 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(studies
             /* Find the study, if it exists. */
             const study = findStudy(studies, workspace.dbGapIdAccession, "dbGapIdAccession");
 
-            const accessType = getIndexFieldAccessType(workspace, studies);
+            const accessType = workspace.accessType ? workspace.accessType.replace(/\s/g, "_") : ""; // TODO
+            const consentShortNames = getIndexFieldConsentShortNames(workspace.consentShortNames);
             const consortium = getIndexFieldConsortiumName(workspace.consortium);
             const dataTypes = getIndexFieldDataTypes(workspace.dataTypes);
             const dbGapId = workspace.dbGapId;
-            const dbGapIdAccession = study.dbGapIdAccession;
+            const dbGapIdAccession = workspace.dbGapIdAccession;
             const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
-            const diseases = getIndexFieldDiseases(study.diseases, workspace.consortium);
+            const diseases = getIndexFieldDiseases(workspace.diseases);
             const studyName = getIndexFieldStudyName(study.studyName);
             const workspaceName = getIndexFieldWorkspaceName(workspace.projectId);
 
             this.add({
-                "access": workspace.access,
                 "accessType": accessType,
+                "consentShortCodes": consentShortNames,
                 "consortium": consortium,
                 "dataTypes": dataTypes,
                 "dbGapId" : dbGapId,

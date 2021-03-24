@@ -2,245 +2,419 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for formatting AnVIL workspaces into FE model.
+ * Service for AnVIL dashboard workspaces data ingestion.
  */
 
 // Core dependencies
+const fs = require("fs");
 const path = require("path");
 
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
+const {getStudyGapAccession} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 // Template variables
-const statsJson = require(path.resolve(__dirname, "../../../client-apis/pyAnVIL/notebooks/figures/report-data.json"));
-
-/**
- * Returns the formatted workspaces JSON.
- *
- */
-const getWorkspaces = async function getWorkspaces() {
-
-    const projects = statsJson.projects;
-
-    /* Build up the FE-compatible model. */
-    const workspaces = buildDashboardWorkspace(projects);
-
-    /* Validate filtered workspaces. */
-    validateWorkspacesFiltering(workspaces);
-
-    /* Return the sorted dashboard. */
-    return sortDataByDuoTypes(workspaces, "consortium", "projectId");
+const ALLOW_LIST_WORKSPACE_FIELD_ARRAY = ["consentShortNames", "dataTypes", "diseases"];
+const ALLOW_LIST_WORKSPACE_FIELD_NUMBER = ["size", "samples", "subjects"];
+const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
+const fileAnVILDataIngestion = "anvil-data-ingestion-attributes.tsv";
+const fileTerraDataIngestion = "terra-data-ingestion-attributes.tsv";
+const WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE = {
+    "CONSORTIUM_ACCESS": "Consortium Access",
+    "CONTROLLED_ACCESS": "Controlled Access",
+    "OPEN_ACCESS": "Open Access",
+};
+const WORKSPACE_CONSORTIUM_DISPLAY_VALUE = {
+    "CCDG": "CCDG",
+    "CONVERGENT_NEURO": "Convergent Neuro",
+    "CMG": "CMG",
+    "EMERGE": "eMERGE",
+    "GTEX": "GTEx (v8)",
+    "NHGRI": "NHGRI",
+    "PAGE": "PAGE",
+    "THOUSANDGENOMES": "1000 Genomes",
+    "WGSPD1": "WGSPD1",
+    "1000G": "1000 Genomes"
+};
+const INGESTION_HEADERS_TO_WORKSPACE_KEY = {
+    "CONSENT_SHORT_NAMES": "library:dataUseRestriction",
+    "CONSORTIUM": "Consortium",
+    "DATA_TYPES": "library:datatype.items",
+    "DB_GAP_ID": "study_accession",
+    "DISEASES": "library:indication",
+    "PROJECT_ID": "name",
+    "LIBRARY_PROJECT_NAME": "library:projectName",
+    "SAMPLES": "Sample Count",
+    "SIZE": "File Size",
+    "SUBJECTS": "library:numSubjects",
+    "WORKSPACE": "Workspace"
+};
+const HEADERS_TO_WORKSPACE_KEY = {
+    "ACCESS_TYPE": "accessType",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES]: "consentShortNames",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM]: "consortium",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DATA_TYPES]: "dataTypes",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID]: "dbGapId",
+    "DB_GAP_ID_ACCESSION": "dbGapIdAccession",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES]: "diseases",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID]: "projectId",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SAMPLES]: "samples",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE]: "size",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SUBJECTS]: "subjects",
+    [INGESTION_HEADERS_TO_WORKSPACE_KEY.WORKSPACE]: "projectId"
 };
 
 /**
- * Parse the dashboard JSON and build up FE-compatible model of workspaces, to be displayed on the dashboard page.
+ * Returns the AnVIL workspaces from ingested data.
  *
- * @param projects
+ * @returns {Promise.<void>}
  */
-function buildDashboardWorkspace(projects) {
+const getWorkspaces = async function getWorkspaces() {
 
-    return projects.map(project => {
+    /* Build workspace counts. */
+    const countWorkspaces = await buildWorkspacesAttributes(fileTerraDataIngestion);
 
-        return {
-            access: formatAccess(project.public),
-            consortium: switchConsortiumName(project.source),
-            dataTypes: formatDataTypes(project.data_type),
-            demographics: getDemographicsCount(project),
-            diagnosis: getDiagnosisCount(project),
-            families: getFamiliesCount(project),
-            files: sumFileValues(project.files),
-            dbGapId: project.dbGAP_study_id,
-            dbGapIdAccession: project.dbGAP_acession,
-            projectId: project.project_id,
-            samples: getSamplesCount(project),
-            size: project.size,
-            subjects: getSubjectsCount(project)
-        }
-    });
+    /* Build the workspace attributes. */
+    const attributeWorkspaces = await buildWorkspacesAttributes(fileAnVILDataIngestion);
+
+    /* Merge the workspace data and build any additional rule based data. */
+    const workspaces = await buildWorkspaces(attributeWorkspaces, countWorkspaces);
+
+    /* Return the sorted dashboard. */
+    return sortDataByDuoTypes(workspaces, HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM], HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID]);
+};
+
+/**
+ * Returns the ingested datum, corrected for type.
+ * i.e. will return a number as Number, instead of a string.
+ *
+ * @param datum
+ * @param key
+ * @returns {*}
+ */
+function buildIngestedDatum(datum, key) {
+
+    if ( ALLOW_LIST_WORKSPACE_FIELD_NUMBER.includes(key) ) {
+
+        return Number(datum.replace(/,/g, ""));
+    }
+
+    const value = formatIngestedDatum(datum, key);
+
+    if ( ALLOW_LIST_WORKSPACE_FIELD_ARRAY.includes(key) ) {
+
+        return value
+            .split(",")
+            .reduce((acc, val) => {
+
+                const str = val.trim();
+
+                if ( str ) {
+
+                    acc.push(str);
+                }
+
+                return acc;
+            }, []);
+    }
+
+    return value;
 }
 
 /**
- * Find the project node by the specified type.
+ * Returns the ingested headers.
  *
- * @param project
- * @param type
+ * @param contentRows
+ * @returns {Array}
+ */
+function buildIngestedHeaders(contentRows) {
+
+    return contentRows
+        .slice(0, 1)
+        .toString()
+        .split("\t")
+}
+
+/**
+ * Returns the ingested row.
+ *
+ * @param contentRow
+ * @param headers
+ * @returns {*}
+ */
+function buildIngestedRow(contentRow, headers) {
+
+    /* Grab the ingested row data. */
+    return contentRow
+        .split("\t")
+        .reduce((acc, datum, i) => {
+
+            const header = headers[i];
+            const [key, value] = getIngestedDatumKeyValuePair(datum, header);
+
+            /* Only include data we are interested in. */
+            if ( key ) {
+
+                acc = Object.assign(acc, {[key]: value});
+            }
+
+            return acc;
+        }, {});
+}
+
+/**
+ * Returns the access type for the specified workspace.
+ * - "Consortium Access" for any workspace without a study.
+ * - "Controlled Access" for any workspace with a study.
+ * - "Open Access" for any workspace defined as open access in library:dataUseRestriction.
+ *
+ * @param workspace
+ * @param studyAccession
  * @returns {{}}
  */
-function findProjectNodeByType(project, type) {
+function buildWorkspacePropertyAccessType(workspace, studyAccession) {
 
-    return project.nodes.find(node => node.type === type) || {};
+    const keyAccessType = HEADERS_TO_WORKSPACE_KEY.ACCESS_TYPE;
+    const keyConsentShortNames = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES];
+    const consentShortNames = workspace[keyConsentShortNames];
+    const openAccess = consentShortNames? consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase()) : false;
+
+    /* Let access type be "Consortium Access". This is true for any workspace that does not have a study, or is not "Open Access". */
+    let accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONSORTIUM_ACCESS;
+
+    /* Let access type be "Controlled Access". This is true for any workspace that has a study, or is not "Open Access". */
+    if ( studyAccession ) {
+
+        accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONTROLLED_ACCESS;
+    }
+
+    /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
+    if ( openAccess ) {
+
+        accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS;
+    }
+
+    return {[keyAccessType]: accessType};
 }
 
 /**
- * Converts the public data boolean value into a corresponding "Public" or "Private" string value.
+ * Returns the study accession for the specified workspace.
  *
- * @param boolean
- * @returns {string}
+ * @param workspace
+ * @returns {Promise.<[null,null]>}
  */
-function formatAccess(boolean) {
+async function buildWorkspacePropertyStudyAccession(workspace) {
 
-    if ( boolean === true ) {
+    const keyStudyAccession = HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID_ACCESSION;
+    const keyStudyId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID];
+    const studyId = workspace[keyStudyId];
+    const studyAccession = await getStudyGapAccession(studyId);
 
-        return "Public";
+    return [{[keyStudyAccession]: studyAccession}, studyAccession];
+}
+
+/**
+ * Returns the merged workspace data and any additional workspace properties of interest.
+ *
+ * @param attributeWorkspaces
+ * @param countWorkspaces
+ * @returns {Promise.<*>}
+ */
+async function buildWorkspaces(attributeWorkspaces, countWorkspaces) {
+
+    return await attributeWorkspaces.reduce(async (promise, row) => {
+
+        let acc = await promise;
+
+        /* Build the property study accession. */
+        const [propertyStudyAccession, studyAccession] = await buildWorkspacePropertyStudyAccession(row);
+
+        /* Build the property accessType. */
+        const propertyAccessType = buildWorkspacePropertyAccessType(row, studyAccession);
+
+        /* Build the property counts. */
+        const countWorkspace = findCountWorkspace(row, countWorkspaces);
+
+        const keyFileSize = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE];
+        const size = countWorkspace[keyFileSize];
+
+        /* Only include workspace if there is a file size. */
+        if ( size && size > 0 ) {
+
+            /* Merge properties. */
+            const workspace = {...countWorkspace, ...row, ...propertyStudyAccession, ...propertyAccessType};
+
+            /* Accumulate. */
+            acc.push(workspace);
+        }
+
+        return acc;
+    }, Promise.resolve([]));
+}
+
+/**
+ * Returns the ingested data for the specified file.
+ * Will only return properties matching any ingestion headers workspace key.
+ *
+ * @param fileName
+ * @returns {Promise.<*[]>}
+ */
+async function buildWorkspacesAttributes(fileName) {
+
+    /* Grab the header and file contents. */
+    const [headers, contentRows] = await getIngestedData(fileName);
+
+    /* Grab from each content row the ingested data. */
+    return await Promise.all(contentRows
+        .slice(1)
+        .map(contentRow => buildIngestedRow(contentRow, headers)));
+}
+
+/**
+ * Returns the counts for the specified workspace.
+ *
+ * @param row
+ * @param countWorkspaces
+ * @returns {*}
+ */
+function findCountWorkspace(row, countWorkspaces) {
+
+    /* Grab the project id key. */
+    const keyProjectId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID];
+
+    /* Grab the project id value. */
+    const projectId = row[keyProjectId];
+
+    /* Find the corresponding workspaces counts. */
+    const countWorkspace = countWorkspaces.find(countWorkspace => countWorkspace[keyProjectId] === projectId);
+
+    /* Return the workspace counts if they exist. */
+    if ( countWorkspace ) {
+
+        return countWorkspace;
+    }
+
+    /* If there is no corresponding workspaces count, return the workspace count properties with a corresponding value of zero. */
+    const properties = getWorkspaceProperties(countWorkspaces);
+
+    return properties.reduce((acc, property) => Object.assign(acc, {[property]: 0}), {})
+}
+
+/**
+ * Returns formatted ingested datum, specified by key.
+ *
+ * @param datum
+ * @param key
+ * @returns {*}
+ */
+function formatIngestedDatum(datum, key) {
+
+    /* Consortium. */
+    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM] ) {
+
+        const consortium = datum ? datum.toUpperCase().replace(/\s/g, "_") : "";
+
+        return WORKSPACE_CONSORTIUM_DISPLAY_VALUE[consortium] || consortium;
+    }
+
+    /* Data Types. */
+    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DATA_TYPES] ) {
+
+        // TODO review deny list duplication, multiple data types
+        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
+
+            return "--";
+        }
+    }
+
+    /* Disease. */
+    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES] ) {
+
+        // TODO review multiple diseases
+        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
+
+            return "--";
+        }
+    }
+
+    if ( !datum ) {
+
+        return "--";
+    }
+
+    return datum;
+}
+
+/**
+ * Returns the contents of the specified file, as an array.
+ * Each element of the array represents a row (as a string value) from the file.
+ *
+ * @param fileName
+ * @returns {Promise.<Array>}
+ */
+async function getFileContents(fileName) {
+
+    /* Only return ingested workspaces if the file exists. */
+    if ( fs.existsSync(path.resolve(__dirname, fileName)) ) {
+
+        const filePath = path.resolve(__dirname, fileName);
+        const fileContent = await fs.readFileSync(filePath, "utf8");
+
+        /* Return the file content as an array. */
+        return fileContent.toString().split("\r\n");
     }
     else {
 
-        return "Private";
+        /* File does not exist. */
+        console.log(`Error: file ${fileName} cannot be found.`);
+        return [];
     }
 }
 
 /**
- * Formats and normalizes the data types, with its correct display value.
+ * Returns the ingested header and content for the specified file.
  *
- * @param dataTypes
- * @returns {*}
+ * @param fileName
+ * @returns {Promise.<[null,null]>}
  */
-function formatDataTypes(dataTypes) {
+async function getIngestedData(fileName) {
 
-    if ( dataTypes ) {
+    /* Grab the file contents. */
+    const contentRows = await getFileContents(fileName);
 
-        return dataTypes.map(dataType => switchDataType(dataType));
-    }
+    /* Grab the data header row. */
+    const headers = buildIngestedHeaders(contentRows);
 
-    return dataTypes;
+    return [headers, contentRows];
 }
 
 /**
- * Returns the demographics count.
+ * Returns the datum key (if it exists), and corresponding formatted value.
  *
- * @param project
+ * @param datum
+ * @param header
+ * @returns {[null,null]}
  */
-function getDemographicsCount(project) {
+function getIngestedDatumKeyValuePair(datum, header) {
 
-    return findProjectNodeByType(project, "Demographic").count;
+    const key = HEADERS_TO_WORKSPACE_KEY[header];
+    const value = buildIngestedDatum(datum, key);
+
+    return [key, value];
 }
 
 /**
- * Returns the diagnosis count.
- * @param project
- */
-function getDiagnosisCount(project) {
-
-    return findProjectNodeByType(project, "Diagnosis").count;
-}
-
-/**
- * Returns the families count.
- * @param project
- */
-function getFamiliesCount(project) {
-
-    return findProjectNodeByType(project, "Family").count;
-}
-
-/**
- * Returns the samples count.
- * @param project
- */
-function getSamplesCount(project) {
-
-    return findProjectNodeByType(project, "Sample").count;
-}
-
-/**
- * Returns the subjects count.
- * @param project
- */
-function getSubjectsCount(project) {
-
-    return findProjectNodeByType(project, "Subject").count;
-}
-
-/**
- * Sum the file counts.
- *
- * @param files
- * @returns {*}
- */
-function sumFileValues(files) {
-
-    return files.reduce((accum, file) => {
-        accum += file.count;
-        return accum;
-    }, 0);
-}
-
-/**
- * Returns the corresponding consortium display name.
- *
- * @param consortium
- * @returns {*}
- */
-function switchConsortiumName(consortium) {
-
-    switch (consortium) {
-        case "GTEx":
-            return "GTEx (v8)";
-        case "ThousandGenomes":
-            return "1000 Genomes";
-        default:
-            return consortium;
-    }
-}
-
-/**
- * Returns the corresponding data type display name.
- *
- * @param dataType
- * @returns {*}
- */
-function switchDataType(dataType) {
-
-    switch (dataType) {
-        case "Whole Genome":
-            return "WGS";
-        case "Whole genome":
-            return "WGS";
-        case "Exome":
-            return "WES";
-        case "Whole Exome":
-            return "WES";
-        default:
-            return dataType;
-    }
-}
-
-/**
- * Logs an error in the build process if the sum of filtered workspaces does not equal the total number of workspaces.
+ * Returns the properties of the specified workspace.
  *
  * @param workspaces
+ * @returns {Array}
  */
-function validateWorkspacesFiltering(workspaces) {
+function getWorkspaceProperties(workspaces) {
 
-    /* Consortium. */
-    const workspacesByConsortiaCount = workspaces.filter(workspace => {
+    const clonedWorkspaces = [...workspaces];
+    const workspace = clonedWorkspaces.pop();
 
-        const dbGapExists = !!workspace.dbGapIdAccession;
-
-        /* Prop "consortia" - return all private workspaces without a dbGapId accession. */
-        return ( workspace.access === "Private" ) && !dbGapExists;
-    }).length;
-
-    /* Public. */
-    const workspacesByPublicCount = workspaces.filter(workspace => {
-
-        const dbGapExists = !!workspace.dbGapIdAccession;
-
-        /* Prop "public" - return all public workspaces without a dbGapId accession. */
-        return ( workspace.access === "Public" ) && !dbGapExists;
-    }).length;
-
-    /* dbGapId accessible. */
-    const workspaceByAvailabilityCount = workspaces.filter(workspace => {
-
-        return !!workspace.dbGapIdAccession;
-    }).length;
-
-    if ( workspaceByAvailabilityCount + workspacesByConsortiaCount + workspacesByPublicCount !== workspaces.length ) {
-
-        console.log("Error - workspaces filtering invalid.")
-    }
-
+    return Object.keys(workspace);
 }
 
 module.exports.getWorkspaces = getWorkspaces;
