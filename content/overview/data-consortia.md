@@ -33,6 +33,10 @@ The Electronic and MEdical Records and Genomics project (eMERGE) is a national n
 ### [PAGE](https://www.genome.gov/Funded-Programs-Projects/Population-Architecture-Using-Genomics-and-Epidemiology)
 The Population Architecture Using Genomics and Epidemiology Consortium investigates ancestrally diverse populations to gain a better understanding of how genetic factors influence susceptibility to disease.
 
+### [HPRC](https://humanpangenome.org/)
+
+The Human Pangenome Reference Consortium aims to modernize the human reference to include a collection of diverse and highly accurate, haplotype-phased genome assemblies. This initiative will generate new technical standards in genome sequencing, scalable and reproducible assembly methods, and pangenomic tool development to ensure comprehensive variant discovery.
+
 ## Planned Consortia
 
 The following consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
@@ -40,7 +44,6 @@ The following consortia are planned for data ingestion. Additional consortia are
 * [Covid19hg](https://www.covid19hg.org) -  The COVID-19 host genetics initiative  
 * [CSER](https://cser-consortium.org ) - Clinical Sequencing Evidence-Generating Research
 * [GTExv9](https://gtexportal.org/home/) - Genotype-Tissue Expression Project
-* [HPP](https://humanpangenome.org/) - Human Pan Genome Reference Consortium
 * [NIA](https://www.nia.nih.gov/) - National Institute of Aging
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 * [UDN](https://undiagnosed.hms.harvard.edu/) - Undiagnosed Disease Network
