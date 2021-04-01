@@ -9,97 +9,49 @@
 const path = require("path");
 
 // App dependencies
-const {buildGapId, buildXMLStudy, getSubjectConsents} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {getStudyName} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {getStudyAccession, getUrlStudy} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 /**
- * Returns the AnVIL dashboard studies.
- *
+ * Returns a map object of key-value pair study accession and study name by db gap id.
  * @param workspaces
- * @returns {Promise.<*[]>}
+ * @returns {Promise.<*>}
  */
-const getStudies = async function getStudies(workspaces) {
+const getStudyPropertiesById = async function getStudyPropertiesById(workspaces) {
 
-    /* Build the studies dashboard. */
-    return await buildDashboardStudies(workspaces);
+    /* Grab the set of study ids. */
+    const setOfStudyIds = getSetOfStudyIds(workspaces);
+
+    /* Build the map object key-value pair of studies properties by id. */
+    return await [...setOfStudyIds].reduce(async (promise, studyId) => {
+
+        let acc = await promise;
+
+        /* Grab the current study associated with the specified db gap id. */
+        const studyAccession = await getStudyAccession(studyId);
+
+        /* Grab the current study's associated study name and url. */
+        const studyUrl = getUrlStudy(studyAccession);
+        const studyName = await getStudyName(studyId, studyAccession);
+
+        /* Accumulate the db gap id with any corresponding study properties. */
+        acc.set(studyId, {dbGapIdAccession: studyAccession, studyName: studyName, studyUrl: studyUrl});
+
+        return acc;
+    }, Promise.resolve(new Map()));
 };
 
 /**
- * Parse the dashboard studies JSON and build up FE-compatible model of data dashboard studies, to be displayed on the dashboard page.
- *
- * @param workspaces
- * @returns {Promise.<*[]>}
- */
-async function buildDashboardStudies(workspaces) {
-
-    const setOfAccessions = setOfDbGapAccessions(workspaces);
-
-    /* Build the studies dashboard. */
-    return await Promise.all([...setOfAccessions].map(gapAccession => {
-
-        return buildDashboardStudy(gapAccession, workspaces);
-    }));
-}
-
-/**
- * Builds the dashboard study into a FE-compatible model of a data dashboard study.
- *
- * @param gapAccession
- * @param workspaces
- * @returns {Promise.<{consentGroup: {consents, consentsStat}, consortium: *, dbGapIdAccession: *, diseases: *, studyName, subjectsCount: *, subjectsTotal}>}
- */
-async function buildDashboardStudy(gapAccession, workspaces) {
-
-    /* Get the db gap readiness studies and subject report, dictionary queries and study urls. */
-    const {studyExchange, subjectDictionary, subjectReport, urls} = await buildXMLStudy(gapAccession);
-
-    /* Filter workspaces specified by gapAccession. */
-    const workspacesByStudy = workspaces.filter(workspace => gapAccession.startsWith(workspace.dbGapIdAccession));
-
-    /* Assemble the study variables. */
-    const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const diseases = studyExchange.diseases;
-    const gapId = buildGapId(gapAccession, urls.studyUrl);
-    const studyName = studyExchange.name.shortName;
-    const studyUrl = urls.studyUrl;
-    const subjectsCount = sumSubjectsValues(workspacesByStudy);
-    const subjectsTotal = consents.consentsStat;
-
-    return {
-        consentGroup: consents,
-        dbGapIdAccession: gapAccession,
-        diseases: diseases,
-        gapId: gapId,
-        studyName: studyName,
-        studyUrl: studyUrl,
-        subjectsCount: subjectsCount,
-        subjectsTotal: subjectsTotal
-    };
-}
-
-/**
- * Returns the set of dbGaP accessions.
+ * Returns the set of dbGaP ids.
  *
  * @param workspaces
  * @returns {Set}
  */
-function setOfDbGapAccessions(workspaces) {
+function getSetOfStudyIds(workspaces) {
 
-    return new Set(workspaces.filter(workspace => workspace.dbGapIdAccession).map(workspace => workspace.dbGapIdAccession));
+    return new Set(workspaces
+        .filter(workspace => workspace.dbGapId)
+        .map(workspace => workspace.dbGapId));
 }
 
-/**
- * Sum the subjects counts.
- *
- * @param workspacesByStudy
- * @returns {*}
- */
-function sumSubjectsValues(workspacesByStudy) {
-
-    return workspacesByStudy.reduce((accum, workspace) => {
-
-        accum += workspace.subjects;
-        return accum;
-    }, 0);
-}
-
-module.exports.getStudies = getStudies;
+module.exports.getStudyPropertiesById = getStudyPropertiesById;

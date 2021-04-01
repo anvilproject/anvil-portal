@@ -11,7 +11,8 @@ const path = require("path");
 
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {getStudyGapAccession} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
+const {getStudyPropertiesById} = require(path.resolve(__dirname, "./dashboard-studies-anvil.service.js"));
+const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
 // Template variables
 const ALLOW_LIST_WORKSPACE_FIELD_ARRAY = ["consentShortNames", "dataTypes", "diseases"];
@@ -57,6 +58,7 @@ const HEADERS_TO_WORKSPACE_KEY = {
     [INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID]: "dbGapId",
     "DB_GAP_ID_ACCESSION": "dbGapIdAccession",
     [INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES]: "diseases",
+    "GAP_ID": "gapId",
     [INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID]: "projectId",
     [INGESTION_HEADERS_TO_WORKSPACE_KEY.SAMPLES]: "samples",
     [INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE]: "size",
@@ -77,11 +79,17 @@ const getWorkspaces = async function getWorkspaces() {
     /* Build the workspace attributes. */
     const attributeWorkspaces = await buildWorkspacesAttributes(fileAnVILDataIngestion);
 
-    /* Merge the workspace data and build any additional rule based data. */
-    const workspaces = await buildWorkspaces(attributeWorkspaces, countWorkspaces);
+    /* Create a map object key-value pair of study accession by study id. */
+    const studyPropertiesById = await getStudyPropertiesById(attributeWorkspaces);
 
-    /* Return the sorted dashboard. */
-    return sortDataByDuoTypes(workspaces, HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM], HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID]);
+    /* Merge the workspace data and build any additional rule based data, and associated study properties. */
+    const workspaces = buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesById);
+
+    /* Return the sorted dashboard, sorted first by consortium, then by project name. */
+    const keyConsortium = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM];
+    const keyProjectId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID];
+
+    return sortDataByDuoTypes(workspaces, keyConsortium, keyProjectId);
 };
 
 /**
@@ -104,7 +112,7 @@ function buildIngestedDatum(datum, key) {
     if ( ALLOW_LIST_WORKSPACE_FIELD_ARRAY.includes(key) ) {
 
         return value
-            .split(",")
+            .split(";")
             .reduce((acc, val) => {
 
                 const str = val.trim();
@@ -175,9 +183,6 @@ function buildIngestedRow(contentRow, headers) {
 function buildWorkspacePropertyAccessType(workspace, studyAccession) {
 
     const keyAccessType = HEADERS_TO_WORKSPACE_KEY.ACCESS_TYPE;
-    const keyConsentShortNames = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES];
-    const consentShortNames = workspace[keyConsentShortNames];
-    const openAccess = consentShortNames? consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase()) : false;
 
     /* Let access type be "Consortium Access". This is true for any workspace that does not have a study, or is not "Open Access". */
     let accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONSORTIUM_ACCESS;
@@ -189,7 +194,7 @@ function buildWorkspacePropertyAccessType(workspace, studyAccession) {
     }
 
     /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
-    if ( openAccess ) {
+    if ( isWorkspaceOpenAccess(workspace) ) {
 
         accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS;
     }
@@ -198,19 +203,21 @@ function buildWorkspacePropertyAccessType(workspace, studyAccession) {
 }
 
 /**
- * Returns the study accession for the specified workspace.
+ * Returns the gap id for the specified workspace.
+ * The gap id comprises of db gap identifier or study accession identifier and any corresponding study url.
  *
- * @param workspace
- * @returns {Promise.<[null,null]>}
+ * @param studyId
+ * @param studyAccession
+ * @param studyUrl
+ * @returns {{}}
  */
-async function buildWorkspacePropertyStudyAccession(workspace) {
+function buildWorkspacePropertyGapId(studyId, studyAccession, studyUrl) {
 
-    const keyStudyAccession = HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID_ACCESSION;
-    const keyStudyId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID];
-    const studyId = workspace[keyStudyId];
-    const studyAccession = await getStudyGapAccession(studyId);
+    const keyGapId = HEADERS_TO_WORKSPACE_KEY.GAP_ID;
+    const identifier = studyAccession || studyId;
+    const gapId = buildGapId(identifier, studyUrl);
 
-    return [{[keyStudyAccession]: studyAccession}, studyAccession];
+    return {[keyGapId]: gapId};
 }
 
 /**
@@ -218,23 +225,29 @@ async function buildWorkspacePropertyStudyAccession(workspace) {
  *
  * @param attributeWorkspaces
  * @param countWorkspaces
- * @returns {Promise.<*>}
+ * @param studyPropertiesById
  */
-async function buildWorkspaces(attributeWorkspaces, countWorkspaces) {
+function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesById) {
 
-    return await attributeWorkspaces.reduce(async (promise, row) => {
+    return attributeWorkspaces.reduce((acc, row) => {
 
-        let acc = await promise;
+        /* Grab the study id. */
+        const studyId = getWorkspaceStudyId(row);
 
-        /* Build the property study accession. */
-        const [propertyStudyAccession, studyAccession] = await buildWorkspacePropertyStudyAccession(row);
+        /* Grab the corresponding study properties. */
+        const propertyStudy = getWorkspaceStudy(studyId, studyPropertiesById),
+            {dbGapIdAccession, studyUrl} = propertyStudy || {};
 
         /* Build the property accessType. */
-        const propertyAccessType = buildWorkspacePropertyAccessType(row, studyAccession);
+        const propertyAccessType = buildWorkspacePropertyAccessType(row, dbGapIdAccession);
+
+        /* Build the property gapId. */
+        const propertyGapId = buildWorkspacePropertyGapId(studyId, dbGapIdAccession, studyUrl);
 
         /* Build the property counts. */
         const countWorkspace = findCountWorkspace(row, countWorkspaces);
 
+        /* Grab the workspace file size. */
         const keyFileSize = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE];
         const size = countWorkspace[keyFileSize];
 
@@ -242,14 +255,14 @@ async function buildWorkspaces(attributeWorkspaces, countWorkspaces) {
         if ( size && size > 0 ) {
 
             /* Merge properties. */
-            const workspace = {...countWorkspace, ...row, ...propertyStudyAccession, ...propertyAccessType};
+            const workspace = {...countWorkspace, ...row, ...propertyAccessType, ...propertyGapId, ...propertyStudy};
 
             /* Accumulate. */
             acc.push(workspace);
         }
 
         return acc;
-    }, Promise.resolve([]));
+    }, []);
 }
 
 /**
@@ -415,6 +428,51 @@ function getWorkspaceProperties(workspaces) {
     const workspace = clonedWorkspaces.pop();
 
     return Object.keys(workspace);
+}
+
+/**
+ * Returns the study for the specified workspace.
+ *
+ * @param studyId
+ * @param studyPropertiesById
+ */
+function getWorkspaceStudy(studyId, studyPropertiesById) {
+
+    return studyPropertiesById.get(studyId);
+}
+
+/**
+ * Returns the study id for the specified workspace.
+ *
+ * @param workspace
+ * @returns {*}
+ */
+function getWorkspaceStudyId(workspace) {
+
+    const keyStudyId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID];
+
+    return workspace[keyStudyId];
+}
+
+/**
+ * Returns true if the workspace consent name is "Open Access".
+ *
+ * @param workspace
+ * @returns {boolean}
+ */
+function isWorkspaceOpenAccess(workspace) {
+
+    /* Grab the consent names. */
+    const keyConsentShortNames = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES];
+    const consentShortNames = workspace[keyConsentShortNames];
+
+    /* Return true if any consent name is "Open Access", otherwise return false. */
+    if ( consentShortNames && consentShortNames.length > 0 ) {
+
+        return consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase())
+    }
+
+    return false;
 }
 
 module.exports.getWorkspaces = getWorkspaces;

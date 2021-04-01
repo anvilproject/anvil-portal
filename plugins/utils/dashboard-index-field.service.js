@@ -5,166 +5,8 @@
  * Service for dashboard search index fields.
  */
 
-// Core dependencies
-const path = require("path");
-
-// App dependencies
-const {removeNonAlphanumericValues} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {getFieldTypeWorkspaceAccessType} = require(path.resolve(__dirname, "./dashboard-field-extension-anvil.service.js"));
-
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
-
-/**
- * Find the study for the specified node.
- *
- * @param studies
- * @param value
- * @param nodeType
- * @returns {{}}
- */
-const findStudy = function findStudy(studies, value, nodeType) {
-
-    if ( studies && value ) {
-
-        return studies.find(study => study[nodeType] === value);
-    }
-
-    return {};
-};
-
-/**
- * Return the access type for the specified workspace.
- * Facilitates the indexing of access type into searchable checkbox values.
- * Indexes the facet "accessType" with unique term values.
- *
- * - "Controlled_Access" for "Controlled Access".
- * - "Open_Access" for "Open Access".
- * - "Consortium_Access" for "Consortium Access".
- * TODO
- *
- * @param workspace
- * @param studies
- * @returns {*}
- */
-const getIndexFieldAccessType = function getIndexFieldAccessType(workspace, studies) {
-
-    const accessType = getFieldTypeWorkspaceAccessType(workspace, studies);
-
-    return accessType.replace(/\s/g, "_");
-};
-
-/**
- * Returns the study's consent codes as a concatenated string value.
- * Facilitates the indexing of an array of consent codes into searchable checkbox values.
- * Replaces any white space, hyphens with an underscore.
- * e.g. "gru-irb" returns "gru_irb".
- *
- * @param consentShortNames
- * @returns {*}
- */
-const getIndexFieldConsentShortNames = function getIndexFieldConsentShortNames(consentShortNames) {
-
-    if ( consentShortNames ) {
-
-        /* Clone data types. */
-        const cloneConsentShortNames = Array.from(consentShortNames);
-
-        /* Handle case where consent short name is hyphenated "-". */
-        return cloneConsentShortNames.map(shortName => replaceStringSpecialChars(shortName));
-    }
-
-    return "";
-};
-
-/**
- * Returns the consortium.
- * Facilitates the indexing of consortium into a searchable checkbox value.
- * Replaces any white space, commas, hyphens or brackets with an underscore.
- * e.g. "1000 genomes" returns "1000_genomes" and "GTEx (v8)" returns "GTEx__v8_".
- *
- * @param consortium
- * @returns {string}
- */
-const getIndexFieldConsortiumName = function getIndexFieldConsortiumName(consortium) {
-
-    if ( consortium ) {
-
-        return replaceStringSpecialChars(consortium);
-    }
-
-    return "";
-};
-
-/**
- * Returns the dataTypes.
- * Facilitates the indexing of an array of data types into a searchable text or checkbox values.
- * Replaces any white space, commas, hyphens or brackets, or slash with an underscore.
- *
- * @param dataTypes
- * @returns {Array}
- */
-const getIndexFieldDataTypes = function getIndexFieldDataTypes(dataTypes) {
-
-    if ( dataTypes ) {
-
-        /* Clone data types. */
-        const dataTypesClone = Array.from(dataTypes);
-
-        return dataTypesClone.reduce((acc, dataType) => {
-
-            if ( dataType ) {
-
-                const dataTypeSearchStr = replaceStringSpecialChars(dataType);
-
-                /* Add dataType to accumulator. */
-                acc.push(dataTypeSearchStr);
-            }
-
-            return acc;
-        }, dataTypesClone);
-    }
-
-    return [];
-};
-
-/**
- * Returns the study's diseases.
- * Facilitates the indexing of diseases into a searchable text or checkbox value.
- * Replaces any white space, commas, hyphens or brackets or slash with an underscore.
- * e.g. "Hearing Loss, Sensorineural" returns "Hearing_Loss__Sensorineural".
- *
- * @param diseases
- * @param consortium
- * @returns {Array}
- */
-const getIndexFieldDiseases = function getIndexFieldDiseases(diseases, consortium = "") {
-
-    // We currently don't have a direct mapping between diseases and workspaces. We can assume each study's diseases
-    // apply to each workspace in the study, except for CMG (which we leave blank for now). Once we have direct
-    // mapping between workspace and diseases, we can update this to use the workspace-specific values, including
-    // for CMG.
-    if ( consortium.toLowerCase() === "cmg" ) {
-
-        return [];
-    }
-
-    if ( diseases && diseases.length ) {
-
-        /* Clone diseases. */
-        const diseasesClone = Array.from(diseases);
-
-        return diseasesClone.reduce((acc, disease) => {
-
-            const diseaseStr = replaceStringSpecialChars(disease);
-            acc.push(diseaseStr);
-
-            return acc;
-        }, diseasesClone);
-    }
-
-    return [];
-};
 
 /**
  * Returns the GapId and GapId's corresponding number.
@@ -186,59 +28,104 @@ const getIndexFieldGapNumber = function getIndexFieldGapNumber(gapId) {
 };
 
 /**
- * Returns the study name without special characters.
- * Indexes the study name, facilitating partial searches within the study name.
+ * Facilitates the indexing of an array of values into searchable text or checkbox values.
+ * Replaces any white space, hyphens etc with an underscore for searchable term values.
+ * Allows for flexible searching of an array of values either by checkbox selection or input text.
+ * e.g. "gru-irb" returns ["gru-irb", "gru_irb"] or ["Hearing Loss, Sensorineural"] returns ["Hearing Loss, Sensorineural", "Hearing_Loss__Sensorineural"].
  *
- * @param studyName
- * @returns {string}
+ * @param array
  */
-const getIndexFieldStudyName = function getIndexFieldStudyName(studyName) {
+const getIndexFieldTypeOfArray = function getIndexFieldTypeOfArray(array) {
 
-    if ( studyName ) {
+    return getSearchableTextOrCheckboxValues(array);
+};
 
-        return removeNonAlphanumericValues(studyName);
+/**
+ * Return the the string value, replacing any special characters with the specified replacement string value.
+ * Facilitates the indexing of the value into a searchable checkbox value or a searchable input value.
+ *
+ * For checkbox selection an exact match will be possible when the replacement string value is an underscore "_".
+ * For input text searching a partial match will be possible when the replacement string value is white space " ".
+ * i.e. searching "talkowki" will return the resulting workspace "asc_ndd_daly_talkowski_AGRE-FEMF_asd_exome".
+ *
+ * e.g. "asc_ndd_daly_talkowski_AGRE-FEMF_asd_exome" returns "asc ndd daly talkowski AGRE FEMF asd exome" or,
+ * "1000 genomes" returns "1000_genomes", "GTEx (v8)" returns "GTEx__v8_" or "gru-irb" returns "gru_irb".
+ *
+ * @param subStr
+ * @param newSubStr
+ */
+const getIndexFieldTypeOfString = function getIndexFieldTypeOfString(subStr, newSubStr) {
+
+    if ( subStr ) {
+
+        return replaceStringWithSearchableTerm(subStr, newSubStr);
     }
 
     return "";
 };
 
 /**
- * Returns the projectId (workspace name) without special characters e.g. "_" or "-".
- * Allows lunr to index the projectId facilitating partial searches within the projectId.
- * e.g. a search for "heart" will return the resulting workspace AnVIL_CMG_Broad_Heart_PCGC.
+ * Returns a new array of values; comprising of searchable text and checkbox values.
+ * The original values are retained for indexing searchable text.
+ * And, for the purpose of term selection via checkboxes, an equivalent value is added where any special characters are replaced by an underscore "_".
+ * e.g. ["1000 Genomes", "GTEx (v8)"] returns ["1000 Genomes", "GTEx (v8)", "1000_genomes", "gtex__v8_"].
  *
- * @param workspaceName
+ * @param array
+ * @returns {*}
  */
-const getIndexFieldWorkspaceName = function getIndexFieldWorkspaceName(workspaceName) {
+function getSearchableTextOrCheckboxValues(array) {
 
-    if ( workspaceName ) {
+    if ( array && array.length ) {
 
-        return removeNonAlphanumericValues(workspaceName);
+        /* Clone the array. */
+        const cloneArray = Array.from(array);
+
+        /* Return the new array. */
+        /* The new array will comprise of original values (for searchable text) and values with any special characters removed (for checkbox selection). */
+        return cloneArray.reduce((acc, value) => {
+
+            if ( value ) {
+
+                /* Replace any special characters with an underscore "_" for checkbox selection. */
+                const valueStr = replaceStringWithSearchableTerm(value, "_");
+
+                /* Accumulate any new values. */
+                if ( !acc.includes(valueStr) ) {
+
+                    acc.push(valueStr);
+                }
+            }
+
+            return acc;
+        }, cloneArray);
     }
 
-    return "";
-};
-
-/**
- * Replaces any special characters or white space from the specified string with an underscore "_".
- * Facilitates the indexing of any string value into a searchable facet term.
- *
- * @param str
- * @returns {string}
- */
-function replaceStringSpecialChars(str) {
-
-    return str.toLowerCase()
-        .replace(regexSpecialChars, "_")
-        .replace(/\s/g, "_");
+    return array;
 }
 
-module.exports.findStudy = findStudy;
-module.exports.getIndexFieldAccessType = getIndexFieldAccessType;
-module.exports.getIndexFieldConsentShortNames = getIndexFieldConsentShortNames;
-module.exports.getIndexFieldConsortiumName = getIndexFieldConsortiumName;
-module.exports.getIndexFieldDataTypes = getIndexFieldDataTypes;
-module.exports.getIndexFieldDiseases = getIndexFieldDiseases;
+/**
+ * Replaces any special characters from the specified string with the specified replacement string.
+ * Facilitates the indexing of any string value into a searchable term.
+ * Replacement string may be either an underscore "_" for searchable facet terms, or white space " " for searchable input values.
+ *
+ * @param subStr
+ * @param newSubStr
+ * @returns {*}
+ */
+function replaceStringWithSearchableTerm(subStr, newSubStr = "_") {
+
+    if ( subStr && typeof subStr === "string" ) {
+
+        return subStr
+            .toLowerCase()
+            .replace(regexSpecialChars, newSubStr)
+            .replace(/\s/g, newSubStr)
+            .trim()
+    }
+
+    return subStr;
+}
+
+module.exports.getIndexFieldTypeOfArray = getIndexFieldTypeOfArray;
+module.exports.getIndexFieldTypeOfString = getIndexFieldTypeOfString;
 module.exports.getIndexFieldGapNumber = getIndexFieldGapNumber;
-module.exports.getIndexFieldStudyName = getIndexFieldStudyName;
-module.exports.getIndexFieldWorkspaceName = getIndexFieldWorkspaceName;

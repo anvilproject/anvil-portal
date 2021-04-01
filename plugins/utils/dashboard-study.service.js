@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const {buildDict, buildExchange, buildReport, getXMLUrls} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
+const {buildDict, buildExchange, buildReport, getExchangeStudyName, getUrlExchange, getXMLUrls} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 /**
  * Returns a list of consent code short name as a display value, and consent code long name as value
@@ -101,6 +101,27 @@ const getConsentShortNames = function getConsentShortNames(consentCodes) {
 };
 
 /**
+ * Returns the study name from the XML Gap Exchange, for the specified dbGapIdAccession.
+ *
+ * @param gapId
+ * @param gapAccession
+ * @returns {Promise.<*>}
+ */
+const getStudyName = async function getStudyName(gapId, gapAccession) {
+
+    if ( gapAccession ) {
+
+        /* Grab the gap exchange URL. */
+        const urlExchange = getUrlExchange(gapId, gapAccession);
+
+        /* Return the study name. */
+        return await getExchangeStudyName(urlExchange);
+    }
+
+    return "";
+};
+
+/**
  * Returns the subject's consents specified by consentId.
  *
  * @param subjectByStudy
@@ -180,4 +201,5 @@ module.exports.buildConsentCodes = buildConsentCodes;
 module.exports.buildGapId = buildGapId;
 module.exports.buildXMLStudy = buildXMLStudy;
 module.exports.getConsentShortNames = getConsentShortNames;
+module.exports.getStudyName = getStudyName;
 module.exports.getSubjectConsents = getSubjectConsents;

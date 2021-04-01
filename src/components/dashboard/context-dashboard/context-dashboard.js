@@ -17,6 +17,7 @@ const ContextDashboard = React.createContext({
     searchURL: "",
     selectedTermsByFacet: new Map(),
     setOfResults: new Set(),
+    setOfSummaryKeyTerms: new Set(),
     summaries: [],
     tableHeadersEntities: [],
     tableHeadersSummary: [],

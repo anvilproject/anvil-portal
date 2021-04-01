@@ -134,12 +134,39 @@ const buildReport = async function buildReport(url) {
 };
 
 /**
+ * Returns the study name from gap exchange xml file.
+ *
+ * @param url
+ * @returns {Promise.<string>}
+ */
+const getExchangeStudyName = async function getExchangeStudyName(url) {
+
+    if ( url ) {
+
+        const exchangeHTML = await fetchXML(url);
+
+        if ( exchangeHTML ) {
+
+            const {GaPExchange} = exchangeHTML,
+                {Studies} = GaPExchange || {},
+                {Study} = Studies || {},
+                {Configuration} = Study || {},
+                {StudyNameEntrez} = Configuration || {};
+
+            return StudyNameEntrez;
+        }
+    }
+
+    return "";
+};
+
+/**
  * Returns the study accession from dbGapId. If no study exists an empty string is returned.
  *
  * @param dbGapId
  * @returns {Promise.<*>}
  */
-const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
+const getStudyAccession = async function getStudyAccession(dbGapId) {
 
     if ( dbGapId && !dbGapId.startsWith("phs") ) {
 
@@ -147,7 +174,7 @@ const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
     }
 
     /* Get the study url. */
-    const studyUrl = `${studyPath}${dbGapId}`;
+    const studyUrl = getUrlStudy(dbGapId);
     const regex = /.*?study_id=/gi;
 
     /* Return any redirected url. */
@@ -174,6 +201,39 @@ const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
 };
 
 /**
+ * Returns the gap exchange url for the specified study accession.
+ *
+ * @param dbGapId
+ * @param dbGapIdAccession
+ * @returns {*}
+ */
+const getUrlExchange = function getUrlExchange(dbGapId, dbGapIdAccession) {
+
+    if ( dbGapIdAccession ) {
+
+        return `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
+    }
+
+    return "";
+};
+
+/**
+ * Returns the study url for the specified study accession.
+ *
+ * @param dbGapIdAccession
+ * @returns {*}
+ */
+const getUrlStudy = function getUrlStudy(dbGapIdAccession) {
+
+    if ( dbGapIdAccession ) {
+
+        return `${studyPath}${dbGapIdAccession}`;
+    }
+
+    return "";
+};
+
+/**
  * Returns the XML urls (exchange, data_dict and var_report urls) for the specified dbGapIdAccession.
  *
  * @param dbGapIdAccession
@@ -193,10 +253,10 @@ const getXMLUrls = async function getXMLUrls(dbGapIdAccession) {
         const dbGapId = dbGapIdAccession.split(".")[0];
 
         /* Get the study url. */
-        studyURL = `${studyPath}${dbGapIdAccession}`;
+        studyURL = getUrlStudy(dbGapIdAccession);
 
         /* Get the gap exchange url. */
-        exchangeURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/GapExchange_${dbGapIdAccession}.xml`;
+        exchangeURL = getUrlExchange(dbGapId, dbGapIdAccession);
 
         /* Grab the gap index page. */
         const indexURL = `${ncbiPath}${dbGapId}/${dbGapIdAccession}/pheno_variable_summaries/`;
@@ -526,5 +586,8 @@ function parseXML(xml) {
 module.exports.buildDict = buildDict;
 module.exports.buildExchange = buildExchange;
 module.exports.buildReport = buildReport;
-module.exports.getStudyGapAccession = getStudyGapAccession;
+module.exports.getExchangeStudyName = getExchangeStudyName;
+module.exports.getStudyAccession = getStudyAccession;
+module.exports.getUrlExchange = getUrlExchange;
+module.exports.getUrlStudy = getUrlStudy;
 module.exports.getXMLUrls = getXMLUrls;

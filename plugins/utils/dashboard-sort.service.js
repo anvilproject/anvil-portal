@@ -6,21 +6,6 @@
  */
 
 /**
- * Returns a lower case string, comprising of non alpha characters.
- *
- * @param str
- * @returns {string}
- */
-const removeNonAlphanumericValues = function removeNonAlphanumericValues(str) {
-
-    return str
-        .replace(/[^a-zA-Z0-9\s]/g, " ")
-        .replace(/\s\s+/g, " ")
-        .toLowerCase()
-        .trim();
-};
-
-/**
  * Sorts any dashboard data, by two specified types.
  * If the first type compared is the same value, then the data is sorted by the second type.
  *
@@ -70,6 +55,21 @@ function compareDataValues(value0, value1) {
 }
 
 /**
+ * Returns a lower case string, comprising of non alpha characters.
+ *
+ * @param str
+ * @returns {string}
+ */
+function removeNonAlphanumericValues(str) {
+
+    return str
+        .replace(/[^a-zA-Z0-9\s]/g, " ")
+        .replace(/\s\s+/g, " ")
+        .toLowerCase()
+        .trim();
+}
+
+/**
  * Sets up the comparison between two variables and returns the sorted value.
  *
  * @param data0
@@ -86,5 +86,4 @@ function sortDataValues(data0, data1, type) {
     return compareDataValues(type0, type1);
 }
 
-module.exports.removeNonAlphanumericValues = removeNonAlphanumericValues;
 module.exports.sortDataByDuoTypes = sortDataByDuoTypes;

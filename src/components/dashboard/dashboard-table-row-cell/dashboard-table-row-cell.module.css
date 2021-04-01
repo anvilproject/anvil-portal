@@ -48,6 +48,11 @@
     width: 200px;
 }
 
+/* Studies table - "consentCodes" */
+[id^="studies"] td[id^="consentShortNames"] {
+    max-width: 158px;
+}
+
 /* NCPI table - "dataTypes" */
 [id^="ncpi"] td[id^="dataTypes"] {
     max-width: 158px;
@@ -55,7 +60,7 @@
 
 /* Studies table - "dataTypes" */
 [id^="studies"] td[id^="dataTypes"] {
-    width: 92px;
+    width: 158px;
 }
 
 /* Studies table - "dataTypes" */
