@@ -56,8 +56,8 @@ exports.createSchemaCustomization = ({actions}) => {
         gapId: GapId
         platform: String
         platforms: [String]
-        studyName: String!
-        studyUrl: String!
+        studyName: String
+        studyUrl: String
         subjectsTotal: Int
     }
     type RowCellValueTooltip implements Node {

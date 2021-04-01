@@ -11,7 +11,7 @@ const path = require("path");
 
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {buildJSONStudy} = require(path.resolve(__dirname, "./dashboard-source-json.service.js"));
+const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 const {buildConsentCodes, buildGapId, buildXMLStudy, getConsentShortNames, getSubjectConsents} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
 // Template variables
@@ -80,30 +80,32 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
     const {studyExchange, subjectDictionary, subjectReport, urls} = await buildXMLStudy(dbGapIdAccession);
 
     /* Get any study related data from the ncpi JSON. */
-    const study = await buildJSONStudy(dbGapIdAccession);
+    const study = await getFHIRStudy(dbGapIdAccession);
 
     /* Assemble the study variables. */
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
     const consentCodes = buildConsentCodes(consents);
     const consentShortNames = getConsentShortNames(consentCodes);
+    const dataTypes = study.dataTypes;
     const diseases = study.diseases;
     const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
-    const studyName = studyExchange.name.shortName;
+    const studyName = study.studyName;
+    const studyUrl = urls.studyUrl;
     const subjectsTotal = consents.consentsStat;
 
     return {
         consentCodes: consentCodes,
         consentShortNames: consentShortNames,
-        dataTypes: study.dataTypes,
+        dataTypes: dataTypes,
         dbGapIdAccession: dbGapIdAccession,
         diseases: diseases,
         gapId: gapId,
         platform: studyPlatform,
         platforms: studyPlatforms,
         studyName: studyName,
-        studyUrl: urls.studyUrl,
+        studyUrl: studyUrl,
         subjectsTotal: subjectsTotal
     };
 }

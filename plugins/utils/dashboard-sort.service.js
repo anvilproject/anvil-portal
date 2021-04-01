@@ -62,11 +62,16 @@ function compareDataValues(value0, value1) {
  */
 function removeNonAlphanumericValues(str) {
 
-    return str
-        .replace(/[^a-zA-Z0-9\s]/g, " ")
-        .replace(/\s\s+/g, " ")
-        .toLowerCase()
-        .trim();
+    if ( str && typeof str === "string" ) {
+
+        return str
+            .replace(/[^a-zA-Z0-9\s]/g, " ")
+            .replace(/\s\s+/g, " ")
+            .toLowerCase()
+            .trim();
+    }
+
+    return str;
 }
 
 /**

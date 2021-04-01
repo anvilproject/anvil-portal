@@ -51,10 +51,10 @@ const buildDict = async function buildDict(url) {
 
 /**
  * Build the study schema from gap exchange xml file.
- * Includes study accession, study name and diseases.
+ * Returns study consent groups.
  *
  * @param url
- * @returns {Promise.<{consentGroups, dbGapIdAccession: *, diseases, name: {longName, shortName}}>}
+ * @returns {Promise.<*>}
  */
 const buildExchange = async function buildExchange(url) {
 
@@ -68,33 +68,19 @@ const buildExchange = async function buildExchange(url) {
                 {Studies} = GaPExchange || {},
                 {Study} = Studies || {},
                 {Configuration} = Study || {},
-                {ConsentGroups, Diseases, StudyNameEntrez, StudyNameReportPage} = Configuration || {},
-                {ConsentGroup} = ConsentGroups || {},
-                {Disease} = Diseases || {};
-
-            /* Attributes - accession. */
-            const dbGapIdAccession = Study.att.accession;
-
-            /* Diseases, normalize and build. */
-            const diseasesNormalized = normalizeNodeData(Disease);
-            const diseases = buildStudyDiseases(diseasesNormalized);
+                {ConsentGroups} = Configuration || {},
+                {ConsentGroup} = ConsentGroups || {};
 
             /* Consent groups. */
             const consentGroups = buildStudyConsentGroups(ConsentGroup);
 
             return {
                 consentGroups: consentGroups,
-                dbGapIdAccession: dbGapIdAccession,
-                diseases: diseases,
-                name: {
-                    longName: StudyNameReportPage,
-                    shortName: StudyNameEntrez,
-                }
             };
         }
     }
 
-    return {consentGroups: [], dbGapIdAccession: "", diseases: [], name: {longName: "", shortName: ""}};
+    return {consentGroups: []};
 };
 
 /**
@@ -340,19 +326,6 @@ function buildStudyConsentGroups(consents) {
                 shortName: shortName
             }
         });
-    }
-}
-
-/**
- * Builds diseases from the "vocab_term".
- *
- * @param diseases
- */
-function buildStudyDiseases(diseases) {
-
-    if ( diseases ) {
-
-        return diseases.map(disease => disease.vocab_term);
     }
 }
 
