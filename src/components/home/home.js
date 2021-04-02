@@ -55,7 +55,7 @@ class Home extends React.Component {
                             </a>
                         </div>
                         <div className={compStyles.tile}>
-                            <a href="https://dockstore.org/organizations/anvil" rel="nofollow noopener noreferrer" target="_blank">
+                            <a href="https://dockstore.org" rel="nofollow noopener noreferrer" target="_blank">
                                 <img className={compStyles.tileLogo} src={logoDockstore} alt="Dockstore"/>
                                 <span>Discover and launch repeatable workflows with <span className={globalStyles.asLink}>Dockstore</span>.</span>
                             </a>
