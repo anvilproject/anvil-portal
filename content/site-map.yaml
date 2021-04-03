@@ -174,6 +174,8 @@
               file: "/learn/getting-started/using-example-workspaces"
             - name: "Getting Started with Galaxy"
               file: "/learn/getting-started/getting-started-with-galaxy"
+            - name: "Getting Started with R / Bioconductor"
+              file: "/learn/getting-started/getting-started-with-bioconductor"
 
         - name: "Accessing Data"
           file: ""
