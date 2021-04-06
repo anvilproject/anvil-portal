@@ -61,5 +61,5 @@ export function formatSizeToTB(size) {
  */
 export function isNumber(value) {
 
-    return !isNaN(value);
+    return typeof value === "number";
 }

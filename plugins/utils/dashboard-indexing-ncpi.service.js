@@ -24,7 +24,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
     const dashboardIndex = lunr(function () {
 
         this.ref("dbGapIdAccession");
-        this.field("consentShortNames");
+        this.field("consentCodes");
         this.field("dataTypes");
         this.field("dbGapIdNumber");
         this.field("diseases");
@@ -39,7 +39,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
 
         studies.forEach(study => {
 
-            const consentShortNames = getIndexFieldTypeOfArray(study.consentShortNames);
+            const consentCodes = getIndexFieldTypeOfArray(study.consentCodes);
             const dataTypes = getIndexFieldTypeOfArray(study.dataTypes);
             const dbGapIdAccession = study.dbGapIdAccession;
             const dbGapIdNumber = getIndexFieldGapNumber(study.dbGapIdAccession);
@@ -48,7 +48,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
             const studyName = getIndexFieldTypeOfString(study.studyName, inputSubStr);
 
             this.add({
-                "consentShortNames": consentShortNames,
+                "consentCodes": consentCodes,
                 "dataTypes": dataTypes,
                 "dbGapIdAccession": dbGapIdAccession,
                 "dbGapIdNumber": dbGapIdNumber,

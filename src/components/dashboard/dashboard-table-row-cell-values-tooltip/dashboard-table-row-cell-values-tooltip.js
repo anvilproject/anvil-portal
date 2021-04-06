@@ -6,6 +6,7 @@
  * Renders any property that is an array of node type RowCellValueTooltip where
  * - "displayValue" is the display text
  * - "tooltipValue" is the tooltip value.
+ * TODO review uses.
  */
 
 // Core dependencies
@@ -26,7 +27,7 @@ class DashboardTableRowCellValuesTooltip extends React.Component {
 
             const {datum, last} = props,
                 {displayValue, tooltipValue} = datum || {};
-            const displayDatum = last ? displayValue : `${displayValue}, `;
+            const displayDatum = last ? displayValue : `${displayValue}; `;
 
             return (
                 <Tooltip label={tooltipValue}>{displayDatum}</Tooltip>

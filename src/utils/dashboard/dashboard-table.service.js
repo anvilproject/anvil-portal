@@ -6,12 +6,10 @@
  */
 
 // App dependencies
-import DashboardTableRowCellDataTypes from "../../components/dashboard/dashboard-table-row-cell-data-types/dashboard-table-row-cell-data-types";
 import DashboardTableRowCellEllipsis from "../../components/dashboard/dashboard-table-row-cell-ellipsis/dashboard-table-row-cell-ellipsis";
 import DashboardTableRowCellGapId from "../../components/dashboard/dashboard-table-row-cell-gap-id/dashboard-table-row-cell-gap-id";
 import DashboardTableRowCellProjectId from "../../components/dashboard/dashboard-table-row-cell-project-id/dashboard-table-row-cell-project-id";
 import DashboardTableRowCellRedirect from "../../components/dashboard/dashboard-table-row-cell-redirect/dashboard-table-row-cell-redirect";
-import DashboardTableRowCellValuesTooltip from "../../components/dashboard/dashboard-table-row-cell-values-tooltip/dashboard-table-row-cell-values-tooltip";
 import DashboardTableRowCellX from "../../components/dashboard/dashboard-table-row-cell-x/dashboard-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import {RIGHT_ALIGN_COLUMNS} from "./right-align-columns";
@@ -28,8 +26,8 @@ export function cellAlignment(columnName) {
 }
 
 /**
- * Returns a formatted value as specified by either column type or value type (specifically if the value is a number).
- * Any null value will return "--".
+ * Returns a formatted value as specified by either column type or value type.
+ * Any unspecified values will return "--".
  *
  * @param value
  * @param column
@@ -37,46 +35,39 @@ export function cellAlignment(columnName) {
  */
 export function formatValue(value, column) {
 
-    if ( value ) {
+    /* Handle column is "platforms" - special case. */
+    if ( column === "platforms" ) {
 
-        /* Handle column is "platforms". */
-        if ( column === "platforms" ) {
-
-            return formatStudyPlatforms(value);
-        }
-
-        /* Handle column is "diseases". */
-        if ( column === "diseases" ) {
-
-            if ( value.length ) {
-
-                return value.join("; ");
-            }
-            else {
-
-                return "--"
-            }
-        }
-
-        /* Handle column is "sizeTB" or "size". */
-        if ( column === "sizeTB" || column === "size" ) {
-
-            return NumberFormatService.formatSizeToTB(value);
-        }
-
-        /* Handle column with cell value as number. */
-        if ( NumberFormatService.isNumber(value) ) {
-
-            return value.toLocaleString();
-        }
-
-        return value;
+        return formatStudyPlatforms(value);
     }
 
-    /* Handle case when value is zero. */
-    if ( value === 0 ) {
+    /* Handle column is "sizeTB" or "size"  - special case. */
+    if ( column === "sizeTB" || column === "size" ) {
 
         return NumberFormatService.formatSizeToTB(value);
+    }
+
+    /* Handle column with cell value as number. */
+    if ( NumberFormatService.isNumber(value) ) {
+
+        return value.toLocaleString();
+    }
+
+    /* Handle column with cell value of type array. */
+    if ( Array.isArray(value) ) {
+
+        if ( value.length > 0 ) {
+
+            return value.join("; ");
+        }
+
+        return "--";
+    }
+
+    /* Any other valid value is returned. */
+    if ( value ) {
+
+        return value;
     }
 
     return "--";
@@ -114,10 +105,6 @@ export function getReactElementType(columnName, summaryTable) {
     switch (columnName) {
         case "accessType":
             return DashboardTableRowCellRedirect;
-        case "consentCodes":
-            return DashboardTableRowCellValuesTooltip;
-        case "dataTypes":
-            return DashboardTableRowCellDataTypes;
         case "diseases":
             return DashboardTableRowCellEllipsis;
         case "gapId":

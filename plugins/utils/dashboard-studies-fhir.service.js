@@ -11,6 +11,12 @@ const fetch = require("node-fetch");
 // Template dependencies
 const urlPrefixFHIR = "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
 const urlSuffixFHIR = "&_format=json";
+const PROPERTIES_TO_PROPERTY_KEY = {
+    "CONSENT_CODES": "consentCodes",
+    "DATA_TYPES": "dataTypes",
+    "DISEASES": "diseases",
+    "STUDY_NAME": "studyName"
+};
 
 /**
  * Builds the study from the FHIR JSON.
@@ -27,7 +33,7 @@ const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
     const fhirJSON = await fetchFHIRJson(url);
 
     /* Initialize study. */
-    let study = {dataTypes: [], diseases: [], studyName: ""};
+    let study = initializeStudy();
 
     if ( fhirJSON ) {
 
@@ -53,21 +59,28 @@ function buildFHIRStudy(entries, study) {
 
         /* Grab the study name and assign to the study. */
         const studyName = getStudyName(entries);
-        const cloneStudy = Object.assign(study, {studyName: studyName});
+        const cloneStudy = Object.assign(study, {[PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: studyName});
 
         return entries.reduce((acc, entry) => {
 
             /* Grab the resource extensions. */
             const {resource} = entry || {};
 
+            /* Roll up the consent codes. */
+            const consentCodes = rollUpConsentCodes(resource, acc);
+
             /* Roll up the molecular codes. */
-            const dataTypes = rollUpDataTypes(resource, acc.dataTypes);
+            const dataTypes = rollUpDataTypes(resource, acc);
 
             /* Roll up the diseases. */
-            const diseases = rollUpDiseases(resource, acc.diseases);
+            const diseases = rollUpDiseases(resource, acc);
 
             /* Accumulate the values. */
-            return Object.assign(acc, {dataTypes: dataTypes, diseases: diseases});
+            return Object.assign(acc, {
+                [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: consentCodes,
+                [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: dataTypes,
+                [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: diseases
+            });
         }, cloneStudy);
     }
 
@@ -158,13 +171,68 @@ function getStudyName(entries) {
 }
 
 /**
+ * Returns the initialized study object.
+ *
+ * @returns {{}}
+ */
+function initializeStudy() {
+
+    return {
+        [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: [],
+        [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: [],
+        [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: [],
+        [PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: ""
+    };
+}
+
+/**
+ * Returns the consent codes for the study.
+ *
+ * @param resource
+ * @param acc
+ * @returns {*}
+ */
+function rollUpConsentCodes(resource, acc) {
+
+    /* Grab any accumulated consent codes. */
+    const consentCodes = acc[PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES];
+
+    if ( resource ) {
+
+        /* Filter the resource extensions for the study consents; the url ends with ~ResearchStudy-StudyConsents. */
+        const studyConsents = findExtensionType(resource, "researchstudy-studyconsents");
+
+        if ( studyConsents ) {
+
+            const {extension} = studyConsents;
+
+            if ( extension ) {
+
+                return extension.reduce((acc, node) => {
+
+                    const {valueCoding} = node || {},
+                        {display} = valueCoding || {};
+
+                    return acc.concat(display);
+                }, consentCodes);
+            }
+        }
+    }
+
+    return consentCodes;
+}
+
+/**
  * Returns the molecular data types for the study.
  *
  * @param resource
- * @param dataTypes
+ * @param acc
  * @returns {Array}
  */
-function rollUpDataTypes(resource, dataTypes) {
+function rollUpDataTypes(resource, acc) {
+
+    /* Grab any accumulated data types. */
+    const dataTypes = acc[PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES];
 
     if ( resource ) {
 
@@ -197,10 +265,13 @@ function rollUpDataTypes(resource, dataTypes) {
  * Returns the diseases, rolled up from focus field's text field.
  *
  * @param resource
- * @param diseases
+ * @param acc
  * @returns {*}
  */
-function rollUpDiseases(resource, diseases) {
+function rollUpDiseases(resource, acc) {
+
+    /* Grab any accumulated diseases. */
+    const diseases = acc[PROPERTIES_TO_PROPERTY_KEY.DISEASES];
 
     if ( resource ) {
 

@@ -84,8 +84,9 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
 
     /* Assemble the study variables. */
     const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const consentCodes = buildConsentCodes(consents);
-    const consentShortNames = getConsentShortNames(consentCodes);
+    const consentCodes = study.consentCodes;
+    // const consentCodes = buildConsentCodes(consents);
+    // const consentShortNames = getConsentShortNames(consentCodes);
     const dataTypes = study.dataTypes;
     const diseases = study.diseases;
     const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
@@ -97,7 +98,6 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
 
     return {
         consentCodes: consentCodes,
-        consentShortNames: consentShortNames,
         dataTypes: dataTypes,
         dbGapIdAccession: dbGapIdAccession,
         diseases: diseases,
