@@ -12,7 +12,8 @@ const path = require("path");
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
-const {buildConsentCodes, buildGapId, buildXMLStudy, getConsentShortNames, getSubjectConsents} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {getUrlStudy} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 // Template variables
 const denyListGapId = ["phs001642", "phs001486", "phs001766", "phs000463", "phs000464", "phs000465", "phs000515", "phs000466", "phs000469", "phs000467", "phs000468", "phs000470", "phs000471", "phs001184", "phs000527", "phs000528", "phs001878"]; // Access to publicly available data is available via a different study.
@@ -76,25 +77,21 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
 
     const {dbGapIdAccession, platforms} = gapIdPlatform;
 
-    /* Get the db gap readiness studies and subject report, dictionary queries and study urls. */
-    const {studyExchange, subjectDictionary, subjectReport, urls} = await buildXMLStudy(dbGapIdAccession);
-
     /* Get any study related data from the ncpi JSON. */
     const study = await getFHIRStudy(dbGapIdAccession);
 
+    /* Get the db gap study url. */
+    const studyUrl = getUrlStudy(dbGapIdAccession);
+
     /* Assemble the study variables. */
-    const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
     const consentCodes = study.consentCodes;
-    // const consentCodes = buildConsentCodes(consents);
-    // const consentShortNames = getConsentShortNames(consentCodes);
     const dataTypes = study.dataTypes;
     const diseases = study.diseases;
-    const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
+    const gapId = buildGapId(dbGapIdAccession, studyUrl);
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
     const studyName = study.studyName;
-    const studyUrl = urls.studyUrl;
-    const subjectsTotal = consents.consentsStat;
+    const subjectsTotal = study.subjectsTotal;
 
     return {
         consentCodes: consentCodes,

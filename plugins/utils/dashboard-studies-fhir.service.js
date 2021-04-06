@@ -15,14 +15,15 @@ const PROPERTIES_TO_PROPERTY_KEY = {
     "CONSENT_CODES": "consentCodes",
     "DATA_TYPES": "dataTypes",
     "DISEASES": "diseases",
-    "STUDY_NAME": "studyName"
+    "STUDY_NAME": "studyName",
+    "SUBJECTS_TOTAL": "subjectsTotal"
 };
 
 /**
  * Builds the study from the FHIR JSON.
  *
  * @param dbGapIdAccession
- * @returns {Promise.<{dataTypes: Array}>}
+ * @returns {Promise.<*>}
  */
 const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
 
@@ -75,11 +76,15 @@ function buildFHIRStudy(entries, study) {
             /* Roll up the diseases. */
             const diseases = rollUpDiseases(resource, acc);
 
+            /* Roll up subjects total. */
+            const subjectsTotal = rollUpSubjectsTotal(resource, acc);
+
             /* Accumulate the values. */
             return Object.assign(acc, {
                 [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: consentCodes,
                 [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: dataTypes,
-                [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: diseases
+                [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: diseases,
+                [PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL]: subjectsTotal
             });
         }, cloneStudy);
     }
@@ -107,7 +112,7 @@ async function fetchFHIRJson(url) {
  * @param stringSnippet
  * @returns {{}}
  */
-function findExtensionType(resource, stringSnippet) {
+function findExtensionType(resource, stringSnippet = "") {
 
     const resourceExtensions = resource.extension;
 
@@ -119,7 +124,9 @@ function findExtensionType(resource, stringSnippet) {
 
             if ( url ) {
 
-                return url.toLowerCase().includes(stringSnippet);
+                const subStr = stringSnippet.toLowerCase();
+
+                return url.toLowerCase().includes(subStr);
             }
 
             return false;
@@ -181,8 +188,29 @@ function initializeStudy() {
         [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: [],
         [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: [],
         [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: [],
-        [PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: ""
+        [PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: "",
+        [PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL]: 0
     };
+}
+
+/**
+ * Returns true if the specified extension type string is in the specified url.
+ *
+ * @param url
+ * @param extensionType
+ * @returns {boolean}
+ */
+function isExtensionType(url, extensionType = "") {
+
+    if ( url ) {
+
+        const extensionStr = extensionType.toLowerCase();
+        const urlStr = url.toLowerCase();
+
+        return urlStr.includes(extensionStr)
+    }
+
+    return false;
 }
 
 /**
@@ -194,13 +222,16 @@ function initializeStudy() {
  */
 function rollUpConsentCodes(resource, acc) {
 
+    /* Define the extension type of interest. */
+    const extensionType = "ResearchStudy-StudyConsents";
+
     /* Grab any accumulated consent codes. */
     const consentCodes = acc[PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES];
 
     if ( resource ) {
 
-        /* Filter the resource extensions for the study consents; the url ends with ~ResearchStudy-StudyConsents. */
-        const studyConsents = findExtensionType(resource, "researchstudy-studyconsents");
+        /* Find the resource extensions for the study consents; the url ends with ~ResearchStudy-StudyConsents. */
+        const studyConsents = findExtensionType(resource, extensionType);
 
         if ( studyConsents ) {
 
@@ -231,13 +262,16 @@ function rollUpConsentCodes(resource, acc) {
  */
 function rollUpDataTypes(resource, acc) {
 
+    /* Define the extension type of interest. */
+    const extensionType = "MolecularDataTypes";
+
     /* Grab any accumulated data types. */
     const dataTypes = acc[PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES];
 
     if ( resource ) {
 
-        /* Filter the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
-        const molecularDataType = findExtensionType(resource, "moleculardatatypes");
+        /* Find the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
+        const molecularDataType = findExtensionType(resource, extensionType);
 
         if ( molecularDataType ) {
 
@@ -291,6 +325,50 @@ function rollUpDiseases(resource, acc) {
     }
 
     return diseases;
+}
+
+/**
+ *
+ * @param resource
+ * @param acc
+ */
+function rollUpSubjectsTotal(resource, acc) {
+
+    /* Define the extension type of interest. */
+    const extensionType = "ResearchStudy-Content";
+    const extensionTypeCount = "ResearchStudy-Content-NumSubjects";
+
+    /* Grab any accumulated subjects totals. */
+    const subjectsTotal = acc[PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL];
+
+    if ( resource ) {
+
+        /* Find the resource extensions for the study content; the url ends with ~ResearchStudy-Content. */
+        const studyContent = findExtensionType(resource, extensionType);
+
+        if ( studyContent ) {
+
+            const {extension} = studyContent;
+
+            if ( extension ) {
+
+                return extension.reduce((acc, node) => {
+
+                    const {url, valueCount} = node || {},
+                        {value} = valueCount || {};
+
+                    if ( isExtensionType(url, extensionTypeCount) && value ) {
+
+                        acc += value;
+                    }
+
+                    return acc;
+                }, subjectsTotal);
+            }
+        }
+    }
+
+    return subjectsTotal;
 }
 
 module.exports.getFHIRStudy = getFHIRStudy;
