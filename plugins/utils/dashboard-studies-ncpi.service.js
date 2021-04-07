@@ -55,7 +55,8 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
             let acc = await promise;
             const study = await buildNCPIDashboardStudy(gapIdPlatform);
 
-            if ( study ) {
+            /* Accumulate studies with complete fields (title, subjectsTotal). */
+            if ( isStudyFieldsComplete(study) ) {
 
                 acc.push(study);
             }
@@ -220,6 +221,17 @@ function formatStudyPlatforms(platforms) {
     }
 
     return switchStudyPlatform(platforms);
+}
+
+/**
+ * Returns true if the study has a valid study name and subjects total.
+ *
+ * @param study
+ * @returns {*}
+ */
+function isStudyFieldsComplete(study) {
+
+    return study.studyName && study.subjectsTotal;
 }
 
 /**
