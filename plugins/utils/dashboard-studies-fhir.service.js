@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+const {decode} = require("html-entities");
 const fetch = require("node-fetch");
 
 // Template dependencies
@@ -170,8 +171,13 @@ function getStudyName(entries) {
 
     if ( resource ) {
 
+        const title = resource.title;
+
         /* Return study name. */
-        return resource.title || "";
+        if ( title ) {
+
+            return decode(title);
+        }
     }
 
     return "";
