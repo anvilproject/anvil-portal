@@ -53,6 +53,11 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
         return await gapIdPlatforms.reduce(async (promise, gapIdPlatform) => {
 
             let acc = await promise;
+
+            /* FHIR limits rate of requests per user. Use setTimeout between each fetch to avoid a HTTP 429 response. */
+            await new Promise(r => setTimeout(r, 2000));
+
+            /* Build the study. */
             const study = await buildNCPIDashboardStudy(gapIdPlatform);
 
             /* Accumulate studies with complete fields (title, subjectsTotal). */

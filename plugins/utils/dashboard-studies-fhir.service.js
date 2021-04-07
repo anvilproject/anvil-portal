@@ -101,9 +101,17 @@ function buildFHIRStudy(entries, study) {
  */
 async function fetchFHIRJson(url) {
 
-    return fetch(url)
-        .then(response => response.json())
-        .catch(error => console.error(`Fetch error: ${error}, ${url}`));
+    let fetchFHIR = await fetch(url);
+    const fetchStatus = fetchFHIR.status;
+
+    if ( fetchStatus === 200 ) {
+
+        return await fetchFHIR.json();
+    }
+    else {
+
+        console.log(`Fetch status error ${fetchStatus} for ${url}`);
+    }
 }
 
 /**
