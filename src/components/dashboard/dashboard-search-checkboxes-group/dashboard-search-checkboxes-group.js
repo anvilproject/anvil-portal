@@ -18,10 +18,10 @@ import * as DashboardSearchService from "../../../utils/dashboard/dashboard-sear
 
 function DashboardSearchCheckboxesGroup(props) {
 
-    const {checkboxes, countLabel, facetCount, groupName} = props;
+    const {checkboxes, countLabel, facetCount, groupName, setOfSummaryKeyTerms} = props;
     const {termsCount} = useContext(ContextDashboard);
     const {onOpenModal} = useContext(ContextModal);
-    const snippetCount = 5; /* Only show the first five checkboxes. */
+    const snippetCount = DashboardSearchService.getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms);
     const moreCount = DashboardSearchService.getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount);
     const snippets = checkboxes.slice(0, snippetCount);
 

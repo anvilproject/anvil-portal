@@ -11,7 +11,7 @@ const lunr = require("lunr");
 const path = require("path");
 
 // App dependencies
-const {getIndexFieldConsentShortNames, getIndexFieldDataTypes, getIndexFieldDiseases, getIndexFieldGapNumber, getIndexFieldStudyName} = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
+const {getIndexFieldGapNumber, getIndexFieldTypeOfArray, getIndexFieldTypeOfString} = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
 
 /**
  * Generates the lunr search index for the NCPI dashboard.
@@ -24,7 +24,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
     const dashboardIndex = lunr(function () {
 
         this.ref("dbGapIdAccession");
-        this.field("consentShortNames");
+        this.field("consentCodes");
         this.field("dataTypes");
         this.field("dbGapIdNumber");
         this.field("diseases");
@@ -34,19 +34,23 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
         this.pipeline.remove(lunr.stemmer);
         this.searchPipeline.remove(lunr.stemmer);
 
+        /* Special character replacement string options. */
+        const inputSubStr = " ";
+
         studies.forEach(study => {
 
-            const consentShortNames = getIndexFieldConsentShortNames(study.consentShortNames);
-            const dataTypes = getIndexFieldDataTypes(study.dataTypes);
+            const consentCodes = getIndexFieldTypeOfArray(study.consentCodes);
+            const dataTypes = getIndexFieldTypeOfArray(study.dataTypes);
+            const dbGapIdAccession = study.dbGapIdAccession;
             const dbGapIdNumber = getIndexFieldGapNumber(study.dbGapIdAccession);
-            const diseases = getIndexFieldDiseases(study.diseases);
+            const diseases = getIndexFieldTypeOfArray(study.diseases);
             const platforms = study.platforms;
-            const studyName = getIndexFieldStudyName(study.studyName);
+            const studyName = getIndexFieldTypeOfString(study.studyName, inputSubStr);
 
             this.add({
-                "consentShortNames": consentShortNames,
+                "consentCodes": consentCodes,
                 "dataTypes": dataTypes,
-                "dbGapIdAccession": study.dbGapIdAccession,
+                "dbGapIdAccession": dbGapIdAccession,
                 "dbGapIdNumber": dbGapIdNumber,
                 "diseases": diseases,
                 "platforms": platforms,

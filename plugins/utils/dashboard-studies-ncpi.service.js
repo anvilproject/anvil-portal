@@ -11,8 +11,9 @@ const path = require("path");
 
 // App dependencies
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {buildJSONStudy} = require(path.resolve(__dirname, "./dashboard-source-json.service.js"));
-const {buildConsentCodes, buildGapId, buildXMLStudy, getConsentShortNames, getSubjectConsents} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
+const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
+const {getUrlStudy} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 // Template variables
 const denyListGapId = ["phs001642", "phs001486", "phs001766", "phs000463", "phs000464", "phs000465", "phs000515", "phs000466", "phs000469", "phs000467", "phs000468", "phs000470", "phs000471", "phs001184", "phs000527", "phs000528", "phs001878"]; // Access to publicly available data is available via a different study.
@@ -52,9 +53,15 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
         return await gapIdPlatforms.reduce(async (promise, gapIdPlatform) => {
 
             let acc = await promise;
+
+            /* FHIR limits rate of requests per user. Use setTimeout between each fetch to avoid a HTTP 429 response. */
+            await new Promise(r => setTimeout(r, 2000));
+
+            /* Build the study. */
             const study = await buildNCPIDashboardStudy(gapIdPlatform);
 
-            if ( study ) {
+            /* Accumulate studies with complete fields (title, subjectsTotal). */
+            if ( isStudyFieldsComplete(study) ) {
 
                 acc.push(study);
             }
@@ -76,34 +83,32 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
 
     const {dbGapIdAccession, platforms} = gapIdPlatform;
 
-    /* Get the db gap readiness studies and subject report, dictionary queries and study urls. */
-    const {studyExchange, subjectDictionary, subjectReport, urls} = await buildXMLStudy(dbGapIdAccession);
-
     /* Get any study related data from the ncpi JSON. */
-    const study = await buildJSONStudy(dbGapIdAccession);
+    const study = await getFHIRStudy(dbGapIdAccession);
+
+    /* Get the db gap study url. */
+    const studyUrl = getUrlStudy(dbGapIdAccession);
 
     /* Assemble the study variables. */
-    const consents = getSubjectConsents(subjectReport, subjectDictionary.variableConsentId, studyExchange.consentGroups);
-    const consentCodes = buildConsentCodes(consents);
-    const consentShortNames = getConsentShortNames(consentCodes);
-    const diseases = studyExchange.diseases;
-    const gapId = buildGapId(dbGapIdAccession, urls.studyUrl);
+    const consentCodes = study.consentCodes;
+    const dataTypes = study.dataTypes;
+    const diseases = study.diseases;
+    const gapId = buildGapId(dbGapIdAccession, studyUrl);
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
-    const studyName = studyExchange.name.shortName;
-    const subjectsTotal = consents.consentsStat;
+    const studyName = study.studyName;
+    const subjectsTotal = study.subjectsTotal;
 
     return {
         consentCodes: consentCodes,
-        consentShortNames: consentShortNames,
-        dataTypes: study.dataTypes,
+        dataTypes: dataTypes,
         dbGapIdAccession: dbGapIdAccession,
         diseases: diseases,
         gapId: gapId,
         platform: studyPlatform,
         platforms: studyPlatforms,
         studyName: studyName,
-        studyUrl: urls.studyUrl,
+        studyUrl: studyUrl,
         subjectsTotal: subjectsTotal
     };
 }
@@ -129,7 +134,7 @@ async function buildGapIdPlatforms() {
 
         if ( !contentRows ) {
 
-            return new Map();
+            return [];
         }
 
         /* From each content row, create a map object key-value pair of platform by dbGapId. */
@@ -221,6 +226,17 @@ function formatStudyPlatforms(platforms) {
     }
 
     return switchStudyPlatform(platforms);
+}
+
+/**
+ * Returns true if the study has a valid study name and subjects total.
+ *
+ * @param study
+ * @returns {*}
+ */
+function isStudyFieldsComplete(study) {
+
+    return study.studyName && study.subjectsTotal;
 }
 
 /**

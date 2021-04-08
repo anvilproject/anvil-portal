@@ -48,21 +48,16 @@ exports.createSchemaCustomization = ({actions}) => {
     createTypes(`
     type DashboardNCPI implements Node {
         id: ID!
-        consentCodes: [RowCellValueTooltip]
-        consentShortNames: [String]
+        consentCodes: [String]
         dataTypes: [String]
         dbGapIdAccession: String!
         diseases: [String]
         gapId: GapId
         platform: String
         platforms: [String]
-        studyName: String!
-        studyUrl: String!
+        studyName: String
+        studyUrl: String
         subjectsTotal: Int
-    }
-    type RowCellValueTooltip implements Node {
-        displayValue: String
-        tooltipValue: String
     }`);
 };
 

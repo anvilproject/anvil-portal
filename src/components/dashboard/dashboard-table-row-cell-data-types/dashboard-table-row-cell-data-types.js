@@ -4,6 +4,7 @@
  *
  * The AnVIL - dashboard table row cell data types component.
  * Renders dataTypes property from workspaces.
+ * TODO review uses.
  */
 
 // Core dependencies
@@ -27,7 +28,7 @@ class DashboardTableRowCellDataTypes extends React.Component {
 
             const {dataType, last} = props;
             const label = DashboardTableService.switchDataTypeToTooltipLabel(dataType);
-            const displayValue = last ? dataType : `${dataType}, `;
+            const displayValue = last ? dataType : `${dataType}; `;
 
             return (
                 label ? <Tooltip label={label}>{displayValue}</Tooltip> : displayValue

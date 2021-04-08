@@ -12,7 +12,7 @@ import * as DashboardTableService from "./dashboard-table.service";
 
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
-const setOfDenyListTerms = new Set(["AttributeValue", "N/A", "NA", "--", "", null]);
+const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "NOT APPLICABLE", "N/A", "NA", "--", "", null];
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
@@ -100,6 +100,26 @@ export function getDashboardCheckboxColumns(checkboxes, maxColumns) {
 }
 
 /**
+ * Returns the maximum number of checkboxes displayed for the dashboard search quick pick.
+ * Additional checkboxes are displayed via the "+ x more" modal.
+ *
+ * @param setOfSummaryKeyTerms
+ * @returns {number}
+ */
+export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
+
+    /* Grab the total number of terms for the summary facet. */
+    const sizeSummaryKeyTerms = setOfSummaryKeyTerms.size;
+
+    if ( sizeSummaryKeyTerms > 4 ) {
+
+        return 4;
+    }
+
+    return sizeSummaryKeyTerms;
+}
+
+/**
  * Returns the checkbox more count for the specified checkbox group.
  * Excludes the checkboxes already on display in the search panel.
  *
@@ -155,7 +175,7 @@ export function getDashboardFacetsByTerm(entities, searchFacets) {
 
                 entity[facet].forEach(term => {
 
-                    if ( !setOfDenyListTerms.has(term) ) {
+                    if ( isTermAllowed(term) ) {
 
                         acc.set(term, facet);
                     }
@@ -163,7 +183,7 @@ export function getDashboardFacetsByTerm(entities, searchFacets) {
             }
             else {
 
-                if (!setOfDenyListTerms.has(term)) {
+                if ( isTermAllowed(term) ) {
 
                     acc.set(term, facet);
                 }
@@ -253,6 +273,16 @@ export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
 }
 
 /**
+ * Returns true, if the number of facets is odd and greater than four.
+ * @param facetCount
+ * @returns {boolean|number}
+ */
+export function isDashboardCheckboxesUneven(facetCount) {
+
+    return facetCount > 4 && facetCount % 2 === 1;
+}
+
+/**
  * Builds a FE model of checkboxes for the specified facet.
  *
  * @param facet
@@ -308,6 +338,18 @@ function getTermCounter(facet, term, entities) {
 
         return acc;
     }, 0);
+}
+
+/**
+ * Returns true if the term is allowable.
+ *
+ * @param term
+ */
+function isTermAllowed(term) {
+
+    const value = term.toUpperCase();
+
+    return !DENY_LIST_TERMS.includes(value);
 }
 
 /**

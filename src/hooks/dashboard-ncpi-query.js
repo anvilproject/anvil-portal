@@ -7,11 +7,7 @@ export const DashboardNCPIStaticQuery = () => {
           allDashboardNcpi {
             edges {
               node {
-                consentCodes {
-                  displayValue
-                  tooltipValue
-                }
-                consentShortNames
+                consentCodes
                 dataTypes
                 dbGapIdAccession
                 diseases

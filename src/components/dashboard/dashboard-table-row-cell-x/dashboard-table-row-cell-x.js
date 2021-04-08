@@ -25,7 +25,7 @@ class DashboardTableRowCellX extends React.Component {
 
         return (
             <td className={classNames({[compStyles.right]: rightAlign})} id={id}>{children}</td>
-        );
+        )
     }
 }
 

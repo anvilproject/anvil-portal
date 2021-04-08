@@ -654,7 +654,7 @@ class ProviderDashboard extends React.Component {
         const warning = totalsWarning ? <span><sup>* </sup>Totals are adjusted for project data hosted in multiple {summaryKey}.</span> : null;
         return (
             <ContextDashboard.Provider
-                value={{checkboxGroups, countLabel, entities, inputValue, searchURL, selectedTermsByFacet, setOfResults, summaries,
+                value={{checkboxGroups, countLabel, entities, inputValue, searchURL, selectedTermsByFacet, setOfResults, setOfSummaryKeyTerms, summaries,
                     tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, warning,
                     onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
