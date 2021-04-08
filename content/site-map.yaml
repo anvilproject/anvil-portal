@@ -308,10 +308,6 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
-              file: "/news/2021/04/02/announcing-anvil-cloud-cost-credits-program"
-              pathOverride: "/news/2021/04/02/announcing-anvil-cloud-cost-credits-program"
-              draft: "true"
-            - name: ""
               file: "/news/2021/03/10/announcing-seqr-in-anvil"
               pathOverride: "/news/2021/03/10/announcing-seqr-in-anvil"
             - name: ""
