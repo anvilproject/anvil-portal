@@ -60,6 +60,8 @@
           pathOverride: "/events"
           navigationItems:
             - name: ""
+              file: "/events/biology-of-genomes-2021"
+            - name: ""
               file: "/events/ashg-data-in-the-cloud"
             - name: ""
               file: "/events/gwas-analysis-with-galaxy"
