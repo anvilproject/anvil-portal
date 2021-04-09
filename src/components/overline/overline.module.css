@@ -12,8 +12,12 @@
     font-size: 0.75rem; /* 12px */
     line-height: 2rem; /* 32px */
     letter-spacing: 1px;
-    text-transform: uppercase;
     white-space: nowrap;
+}
+
+/* News posted date (only child), event type but not event name (not first child) */
+.overline > :only-child, .overline > :not(:first-child)  {
+    text-transform: uppercase;
 }
 
 /* Dot - excludes first for < 840, excludes last for >= 840 */
