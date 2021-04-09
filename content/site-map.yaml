@@ -176,7 +176,6 @@
               file: "/learn/getting-started/getting-started-with-galaxy"
             - name: "Getting Started with R / Bioconductor"
               file: "/learn/getting-started/getting-started-with-bioconductor"
-
         - name: "Accessing Data"
           file: ""
           pathPartial: "/accessing-data"
@@ -307,6 +306,9 @@
           file: "/news/news"
           pathOverride: "/news"
           navigationItems:
+            - name: ""
+              file: "/news/2021/03/11/hprc-on-anvil"
+              pathOverride: "/news/2021/03/11/hprc-on-anvil"
             - name: ""
               file: "/news/2021/03/10/announcing-seqr-in-anvil"
               pathOverride: "/news/2021/03/10/announcing-seqr-in-anvil"
