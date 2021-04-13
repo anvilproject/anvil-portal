@@ -2,23 +2,28 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for parsing fetched FHIR json into FE model.
+ * Service for fetched FHIR JSON.
  */
 
 // Core dependencies
 const {decode} = require("html-entities");
 const fetch = require("node-fetch");
+const path = require("path");
+
+// App dependencies
+const {cacheFile, readFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
 // Template dependencies
-const urlPrefixFHIR = "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
-const urlSuffixFHIR = "&_format=json";
-const PROPERTIES_TO_PROPERTY_KEY = {
+const dirCacheFHIR = "../../db-gap-cache";
+const FHIR_FIELD_KEY = {
     "CONSENT_CODES": "consentCodes",
     "DATA_TYPES": "dataTypes",
     "DISEASES": "diseases",
     "STUDY_NAME": "studyName",
     "SUBJECTS_TOTAL": "subjectsTotal"
 };
+const urlPrefixFHIR = "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
+const urlSuffixFHIR = "&_format=json";
 
 /**
  * Builds the study from the FHIR JSON.
@@ -28,40 +33,54 @@ const PROPERTIES_TO_PROPERTY_KEY = {
  */
 const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
 
-    /* Build the FHIR url. */
-    const url = `${urlPrefixFHIR}${dbGapIdAccession}${urlSuffixFHIR}`;
-
-    /* Fetch the JSON. */
-    const fhirJSON = await fetchFHIRJson(url);
-
     /* Initialize study. */
     let study = initializeStudy();
+
+    /* Grab the FHIR JSON. */
+    const fhirJSON = await getFHIRJSON(dbGapIdAccession);
+
+    /* Return the study. */
+    return buildFHIRStudy(fhirJSON, study);
+};
+
+/**
+ * Returns the FHIR JSON study name.
+ *
+ * @param dbGapIdAccession
+ * @returns {Promise.<*>}
+ */
+const getFHIRStudyName = async function getFHIRStudyName(dbGapIdAccession) {
+
+    /* Grab the FHIR JSON. */
+    const fhirJSON = await getFHIRJSON(dbGapIdAccession);
 
     if ( fhirJSON ) {
 
         const entries = fhirJSON.entry;
 
-        /* Return the study. */
-        return buildFHIRStudy(entries, study);
+        /* Return the study name. */
+        return getStudyName(entries);
     }
 
-    return study;
+    return "";
 };
 
 /**
  * Returns a FE model of study.
  *
- * @param entries
+ * @param fhirJSON
  * @param study
  * @returns {*}
  */
-function buildFHIRStudy(entries, study) {
+function buildFHIRStudy(fhirJSON, study) {
 
-    if ( entries ) {
+    if ( fhirJSON ) {
+
+        const entries = fhirJSON.entry;
 
         /* Grab the study name and assign to the study. */
         const studyName = getStudyName(entries);
-        const cloneStudy = Object.assign(study, {[PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: studyName});
+        const cloneStudy = Object.assign(study, {[FHIR_FIELD_KEY.STUDY_NAME]: studyName});
 
         return entries.reduce((acc, entry) => {
 
@@ -82,10 +101,10 @@ function buildFHIRStudy(entries, study) {
 
             /* Accumulate the values. */
             return Object.assign(acc, {
-                [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: consentCodes,
-                [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: dataTypes,
-                [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: diseases,
-                [PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL]: subjectsTotal
+                [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
+                [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
+                [FHIR_FIELD_KEY.DISEASES]: diseases,
+                [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
             });
         }, cloneStudy);
     }
@@ -94,23 +113,42 @@ function buildFHIRStudy(entries, study) {
 }
 
 /**
- * Fetches FHIR page specified by URL and returns corresponding raw JSON.
+ * Caches the FHIR JSON.
  *
- * @param url
+ * @param dbGapIdAccession
+ * @param fhirJSON
+ * @returns {Promise.<void>}
+ */
+async function cacheFHIR(dbGapIdAccession, fhirJSON) {
+
+    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+    console.log(`Caching FHIR JSON for ${file}`);
+
+    /* Cache the JSON. */
+    await cacheFile(file, JSON.stringify(fhirJSON));
+}
+
+/**
+ * Fetches FHIR page specified by URL and returns corresponding raw JSON.
+ * Valid FHIR JSON will be cached for future use.
+ *
+ * @param dbGapIdAccession
  * @returns {Promise.<*>}
  */
-async function fetchFHIRJson(url) {
+async function fetchFHIRJSON(dbGapIdAccession) {
 
-    let fetchFHIR = await fetch(url);
-    const fetchStatus = fetchFHIR.status;
+    const url = `${urlPrefixFHIR}${dbGapIdAccession}${urlSuffixFHIR}`;
+    const response = await fetch(url);
+    const status = response.status;
 
-    if ( fetchStatus === 200 ) {
+    /* Parse the response. */
+    if ( status === 200 ) {
 
-        return await fetchFHIR.json();
+        return await parseFHIRJSON(dbGapIdAccession, response);
     }
     else {
 
-        console.log(`Fetch status error ${fetchStatus} for ${url}`);
+        console.log(`FHIR fetch status error ${status} for ${url}`);
     }
 }
 
@@ -140,6 +178,32 @@ function findExtensionType(resource, stringSnippet = "") {
 
             return false;
         })
+    }
+}
+
+/**
+ * Returns FHIR JSON.
+ * JSON will be sourced from cache. If the JSON is not cached, then the JSON is fetched and stored into cache for future use.
+ *
+ * @returns {Promise.<*>}
+ * @param dbGapIdAccession
+ */
+async function getFHIRJSON(dbGapIdAccession) {
+
+    if ( dbGapIdAccession ) {
+
+        /* Grab the FHIR study JSON from cache. */
+        const fhirJSON = await readCacheFHIR(dbGapIdAccession);
+
+        /* Return the FHIR study from cache. */
+        if ( fhirJSON ) {
+
+            return fhirJSON;
+        }
+
+        /* Otherwise, fetch the FHIR study JSON. */
+        /* FHIR JSON are cached for future use. */
+        return await fetchFHIRJSON(dbGapIdAccession);
     }
 }
 
@@ -199,11 +263,11 @@ function getStudyName(entries) {
 function initializeStudy() {
 
     return {
-        [PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES]: [],
-        [PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES]: [],
-        [PROPERTIES_TO_PROPERTY_KEY.DISEASES]: [],
-        [PROPERTIES_TO_PROPERTY_KEY.STUDY_NAME]: "",
-        [PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL]: 0
+        [FHIR_FIELD_KEY.CONSENT_CODES]: [],
+        [FHIR_FIELD_KEY.DATA_TYPES]: [],
+        [FHIR_FIELD_KEY.DISEASES]: [],
+        [FHIR_FIELD_KEY.STUDY_NAME]: "",
+        [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
     };
 }
 
@@ -221,10 +285,54 @@ function isExtensionType(url, extensionType = "") {
         const extensionStr = extensionType.toLowerCase();
         const urlStr = url.toLowerCase();
 
-        return urlStr.includes(extensionStr)
+        return urlStr.includes(extensionStr);
     }
 
     return false;
+}
+
+/**
+ * Returns parsed FHIR JSON.
+ *
+ * @param dbGapIdAccession
+ * @param response
+ * @returns {Promise.<*>}
+ */
+async function parseFHIRJSON(dbGapIdAccession, response) {
+
+    /* Grab the JSON. */
+    const json = await response.json();
+
+    /* Only cache and return valid FHIR JSON. */
+    if ( json && json.entry ) {
+
+        await cacheFHIR(dbGapIdAccession, json);
+
+        return json;
+    }
+    else {
+
+        console.log(`FHIR response incomplete and will not be cached for ${dbGapIdAccession}`);
+    }
+}
+
+/**
+ * Returns the cached FHIR JSON.
+ *
+ * @param dbGapIdAccession
+ * @returns {Promise.<*>}
+ */
+async function readCacheFHIR(dbGapIdAccession) {
+
+    /* Grab the FHIR content from cache. */
+    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+    const content = await readFile(file);
+
+    /* Return the JSON. */
+    if ( content ) {
+
+        return await JSON.parse(content);
+    }
 }
 
 /**
@@ -240,7 +348,7 @@ function rollUpConsentCodes(resource, acc) {
     const extensionType = "ResearchStudy-StudyConsents";
 
     /* Grab any accumulated consent codes. */
-    const consentCodes = acc[PROPERTIES_TO_PROPERTY_KEY.CONSENT_CODES];
+    const consentCodes = acc[FHIR_FIELD_KEY.CONSENT_CODES];
 
     if ( resource ) {
 
@@ -280,7 +388,7 @@ function rollUpDataTypes(resource, acc) {
     const extensionType = "MolecularDataTypes";
 
     /* Grab any accumulated data types. */
-    const dataTypes = acc[PROPERTIES_TO_PROPERTY_KEY.DATA_TYPES];
+    const dataTypes = acc[FHIR_FIELD_KEY.DATA_TYPES];
 
     if ( resource ) {
 
@@ -319,7 +427,7 @@ function rollUpDataTypes(resource, acc) {
 function rollUpDiseases(resource, acc) {
 
     /* Grab any accumulated diseases. */
-    const diseases = acc[PROPERTIES_TO_PROPERTY_KEY.DISEASES];
+    const diseases = acc[FHIR_FIELD_KEY.DISEASES];
 
     if ( resource ) {
 
@@ -353,7 +461,7 @@ function rollUpSubjectsTotal(resource, acc) {
     const extensionTypeCount = "ResearchStudy-Content-NumSubjects";
 
     /* Grab any accumulated subjects totals. */
-    const subjectsTotal = acc[PROPERTIES_TO_PROPERTY_KEY.SUBJECTS_TOTAL];
+    const subjectsTotal = acc[FHIR_FIELD_KEY.SUBJECTS_TOTAL];
 
     if ( resource ) {
 
@@ -386,3 +494,4 @@ function rollUpSubjectsTotal(resource, acc) {
 }
 
 module.exports.getFHIRStudy = getFHIRStudy;
+module.exports.getFHIRStudyName = getFHIRStudyName;
