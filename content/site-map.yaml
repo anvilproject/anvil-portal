@@ -309,6 +309,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2021/04/12/announcing-anvil-cloud-cost-credits-program"
+              pathOverride: "/news/2021/04/12/announcing-anvil-cloud-cost-credits-program"
+            - name: ""
               file: "/news/2021/03/11/hprc-on-anvil"
               pathOverride: "/news/2021/03/11/hprc-on-anvil"
             - name: ""
