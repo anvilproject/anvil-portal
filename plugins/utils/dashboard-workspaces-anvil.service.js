@@ -6,26 +6,63 @@
  */
 
 // Core dependencies
-const fs = require("fs");
 const path = require("path");
 
 // App dependencies
+const {parseRows, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {getStudyPropertiesById} = require(path.resolve(__dirname, "./dashboard-studies-anvil.service.js"));
 const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
 // Template variables
-const ALLOW_LIST_WORKSPACE_FIELD_ARRAY = ["consentShortNames", "dataTypes", "diseases"];
-const ALLOW_LIST_WORKSPACE_FIELD_NUMBER = ["size", "samples", "subjects"];
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
-const fileAnVILDataIngestion = "anvil-data-ingestion-attributes.tsv";
-const fileTerraDataIngestion = "terra-data-ingestion-attributes.tsv";
-const WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE = {
+const fileSourceAnVIL = "dashboard-source-anvil.tsv";
+const fileSourceTerra = "dashboard-source-terra.tsv";
+const SOURCE_HEADER_KEY = {
+    "CONSENT_SHORT_NAMES": "library:datauserestriction",
+    "CONSORTIUM": "consortium",
+    "DATA_TYPES": "library:datatype.items",
+    "DB_GAP_ID": "study_accession",
+    "DISEASES": "library:indication",
+    "PROJECT_ID": "name",
+    "SAMPLES": "sample count",
+    "SIZE": "file size",
+    "SUBJECTS": "library:numsubjects",
+    "WORKSPACE": "workspace"
+};
+const SOURCE_FIELD_KEY = {
+    "ACCESS_TYPE": "accessType",
+    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]: "consentShortNames",
+    [SOURCE_HEADER_KEY.CONSORTIUM]: "consortium",
+    [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
+    [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
+    "DB_GAP_ID_ACCESSION": "dbGapIdAccession",
+    [SOURCE_HEADER_KEY.DISEASES]: "diseases",
+    "GAP_ID": "gapId",
+    [SOURCE_HEADER_KEY.PROJECT_ID]: "projectId",
+    [SOURCE_HEADER_KEY.SAMPLES]: "samples",
+    [SOURCE_HEADER_KEY.SIZE]: "size",
+    [SOURCE_HEADER_KEY.SUBJECTS]: "subjects",
+    [SOURCE_HEADER_KEY.WORKSPACE]: "projectId"
+};
+const SOURCE_FIELD_TYPE = {
+    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]: "array",
+    [SOURCE_HEADER_KEY.CONSORTIUM]: "string",
+    [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
+    [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
+    [SOURCE_HEADER_KEY.DISEASES]: "array",
+    [SOURCE_HEADER_KEY.PROJECT_ID]: "string",
+    [SOURCE_HEADER_KEY.SAMPLES]: "number",
+    [SOURCE_HEADER_KEY.SIZE]: "number",
+    [SOURCE_HEADER_KEY.SUBJECTS]: "number",
+    [SOURCE_HEADER_KEY.WORKSPACE]: "string"
+};
+const WORKSPACE_ACCESS_TYPE = {
     "CONSORTIUM_ACCESS": "Consortium Access",
     "CONTROLLED_ACCESS": "Controlled Access",
     "OPEN_ACCESS": "Open Access",
 };
-const WORKSPACE_CONSORTIUM_DISPLAY_VALUE = {
+const WORKSPACE_CONSORTIUM = {
     "CCDG": "CCDG",
     "CONVERGENT_NEURO": "Convergent Neuro",
     "CMG": "CMG",
@@ -37,34 +74,6 @@ const WORKSPACE_CONSORTIUM_DISPLAY_VALUE = {
     "WGSPD1": "WGSPD1",
     "1000G": "1000 Genomes"
 };
-const INGESTION_HEADERS_TO_WORKSPACE_KEY = {
-    "CONSENT_SHORT_NAMES": "library:dataUseRestriction",
-    "CONSORTIUM": "Consortium",
-    "DATA_TYPES": "library:datatype.items",
-    "DB_GAP_ID": "study_accession",
-    "DISEASES": "library:indication",
-    "PROJECT_ID": "name",
-    "LIBRARY_PROJECT_NAME": "library:projectName",
-    "SAMPLES": "Sample Count",
-    "SIZE": "File Size",
-    "SUBJECTS": "library:numSubjects",
-    "WORKSPACE": "Workspace"
-};
-const HEADERS_TO_WORKSPACE_KEY = {
-    "ACCESS_TYPE": "accessType",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES]: "consentShortNames",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM]: "consortium",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DATA_TYPES]: "dataTypes",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID]: "dbGapId",
-    "DB_GAP_ID_ACCESSION": "dbGapIdAccession",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES]: "diseases",
-    "GAP_ID": "gapId",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID]: "projectId",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SAMPLES]: "samples",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE]: "size",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.SUBJECTS]: "subjects",
-    [INGESTION_HEADERS_TO_WORKSPACE_KEY.WORKSPACE]: "projectId"
-};
 
 /**
  * Returns the AnVIL workspaces from ingested data.
@@ -74,10 +83,10 @@ const HEADERS_TO_WORKSPACE_KEY = {
 const getWorkspaces = async function getWorkspaces() {
 
     /* Build workspace counts. */
-    const countWorkspaces = await buildWorkspacesAttributes(fileTerraDataIngestion);
+    const countWorkspaces = await parseSource(fileSourceTerra);
 
     /* Build the workspace attributes. */
-    const attributeWorkspaces = await buildWorkspacesAttributes(fileAnVILDataIngestion);
+    const attributeWorkspaces = await parseSource(fileSourceAnVIL);
 
     /* Create a map object key-value pair of study accession by study id. */
     const studyPropertiesById = await getStudyPropertiesById(attributeWorkspaces);
@@ -86,89 +95,11 @@ const getWorkspaces = async function getWorkspaces() {
     const workspaces = buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesById);
 
     /* Return the sorted dashboard, sorted first by consortium, then by project name. */
-    const keyConsortium = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM];
-    const keyProjectId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID];
+    const keyConsortium = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSORTIUM];
+    const keyProjectId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PROJECT_ID];
 
     return sortDataByDuoTypes(workspaces, keyConsortium, keyProjectId);
 };
-
-/**
- * Returns the ingested datum, corrected for type.
- * i.e. will return a number as Number, instead of a string.
- *
- * @param datum
- * @param key
- * @returns {*}
- */
-function buildIngestedDatum(datum, key) {
-
-    if ( ALLOW_LIST_WORKSPACE_FIELD_NUMBER.includes(key) ) {
-
-        return Number(datum.replace(/,/g, ""));
-    }
-
-    const value = formatIngestedDatum(datum, key);
-
-    if ( ALLOW_LIST_WORKSPACE_FIELD_ARRAY.includes(key) ) {
-
-        return value
-            .split(";")
-            .reduce((acc, val) => {
-
-                const str = val.trim();
-
-                if ( str ) {
-
-                    acc.push(str);
-                }
-
-                return acc;
-            }, []);
-    }
-
-    return value;
-}
-
-/**
- * Returns the ingested headers.
- *
- * @param contentRows
- * @returns {Array}
- */
-function buildIngestedHeaders(contentRows) {
-
-    return contentRows
-        .slice(0, 1)
-        .toString()
-        .split("\t")
-}
-
-/**
- * Returns the ingested row.
- *
- * @param contentRow
- * @param headers
- * @returns {*}
- */
-function buildIngestedRow(contentRow, headers) {
-
-    /* Grab the ingested row data. */
-    return contentRow
-        .split("\t")
-        .reduce((acc, datum, i) => {
-
-            const header = headers[i];
-            const [key, value] = getIngestedDatumKeyValuePair(datum, header);
-
-            /* Only include data we are interested in. */
-            if ( key ) {
-
-                acc = Object.assign(acc, {[key]: value});
-            }
-
-            return acc;
-        }, {});
-}
 
 /**
  * Returns the access type for the specified workspace.
@@ -182,21 +113,21 @@ function buildIngestedRow(contentRow, headers) {
  */
 function buildWorkspacePropertyAccessType(workspace, studyAccession) {
 
-    const keyAccessType = HEADERS_TO_WORKSPACE_KEY.ACCESS_TYPE;
+    const keyAccessType = SOURCE_FIELD_KEY.ACCESS_TYPE;
 
     /* Let access type be "Consortium Access". This is true for any workspace that does not have a study, or is not "Open Access". */
-    let accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONSORTIUM_ACCESS;
+    let accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
 
     /* Let access type be "Controlled Access". This is true for any workspace that has a study, or is not "Open Access". */
     if ( studyAccession ) {
 
-        accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.CONTROLLED_ACCESS;
+        accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
     }
 
     /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
     if ( isWorkspaceOpenAccess(workspace) ) {
 
-        accessType = WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS;
+        accessType = WORKSPACE_ACCESS_TYPE.OPEN_ACCESS;
     }
 
     return {[keyAccessType]: accessType};
@@ -213,7 +144,7 @@ function buildWorkspacePropertyAccessType(workspace, studyAccession) {
  */
 function buildWorkspacePropertyGapId(studyId, studyAccession, studyUrl) {
 
-    const keyGapId = HEADERS_TO_WORKSPACE_KEY.GAP_ID;
+    const keyGapId = SOURCE_FIELD_KEY.GAP_ID;
     const identifier = studyAccession || studyId;
     const gapId = buildGapId(identifier, studyUrl);
 
@@ -241,6 +172,18 @@ function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesBy
         /* Build the property accessType. */
         const propertyAccessType = buildWorkspacePropertyAccessType(row, dbGapIdAccession);
 
+        /* Reformat the property consentShortNames. */
+        const propertyConsentShortNames = reformatWorkspacePropertyList(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]);
+
+        /* Reformat the property consortium. */
+        const propertyConsortium = reformatWorkspacePropertyConsortium(row);
+
+        /* Reformat the property dataTypes. */
+        const propertyDataTypes = reformatWorkspacePropertyList(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DATA_TYPES]);
+
+        /* Reformat the property diseases. */
+        const propertyDiseases = reformatWorkspacePropertyList(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DISEASES]);
+
         /* Build the property gapId. */
         const propertyGapId = buildWorkspacePropertyGapId(studyId, dbGapIdAccession, studyUrl);
 
@@ -248,39 +191,31 @@ function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesBy
         const countWorkspace = findCountWorkspace(row, countWorkspaces);
 
         /* Grab the workspace file size. */
-        const keyFileSize = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE];
+        const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
         const size = countWorkspace[keyFileSize];
 
         /* Only include workspace if there is a file size. */
         if ( size && size > 0 ) {
 
             /* Merge properties. */
-            const workspace = {...countWorkspace, ...row, ...propertyAccessType, ...propertyGapId, ...propertyStudy};
+            const workspace = {
+                ...countWorkspace,
+                ...row,
+                ...propertyAccessType,
+                ...propertyConsentShortNames,
+                ...propertyConsortium,
+                ...propertyDataTypes,
+                ...propertyDiseases,
+                ...propertyGapId,
+                ...propertyStudy
+            };
 
-            /* Accumulate. */
+            /* Accumulate the workspace. */
             acc.push(workspace);
         }
 
         return acc;
     }, []);
-}
-
-/**
- * Returns the ingested data for the specified file.
- * Will only return properties matching any ingestion headers workspace key.
- *
- * @param fileName
- * @returns {Promise.<*[]>}
- */
-async function buildWorkspacesAttributes(fileName) {
-
-    /* Grab the header and file contents. */
-    const [headers, contentRows] = await getIngestedData(fileName);
-
-    /* Grab from each content row the ingested data. */
-    return await Promise.all(contentRows
-        .slice(1)
-        .map(contentRow => buildIngestedRow(contentRow, headers)));
 }
 
 /**
@@ -293,7 +228,7 @@ async function buildWorkspacesAttributes(fileName) {
 function findCountWorkspace(row, countWorkspaces) {
 
     /* Grab the project id key. */
-    const keyProjectId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.PROJECT_ID];
+    const keyProjectId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PROJECT_ID];
 
     /* Grab the project id value. */
     const projectId = row[keyProjectId];
@@ -311,109 +246,6 @@ function findCountWorkspace(row, countWorkspaces) {
     const properties = getWorkspaceProperties(countWorkspaces);
 
     return properties.reduce((acc, property) => Object.assign(acc, {[property]: 0}), {})
-}
-
-/**
- * Returns formatted ingested datum, specified by key.
- *
- * @param datum
- * @param key
- * @returns {*}
- */
-function formatIngestedDatum(datum, key) {
-
-    /* Consortium. */
-    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSORTIUM] ) {
-
-        const consortium = datum ? datum.toUpperCase().replace(/\s/g, "_") : "";
-
-        return WORKSPACE_CONSORTIUM_DISPLAY_VALUE[consortium] || consortium;
-    }
-
-    /* Data Types. */
-    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DATA_TYPES] ) {
-
-        // TODO review deny list duplication, multiple data types
-        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
-
-            return "--";
-        }
-    }
-
-    /* Disease. */
-    if ( key === HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DISEASES] ) {
-
-        // TODO review multiple diseases
-        if ( datum && DENY_LIST_TERMS.includes(datum.toUpperCase()) ) {
-
-            return "--";
-        }
-    }
-
-    if ( !datum ) {
-
-        return "--";
-    }
-
-    return datum;
-}
-
-/**
- * Returns the contents of the specified file, as an array.
- * Each element of the array represents a row (as a string value) from the file.
- *
- * @param fileName
- * @returns {Promise.<Array>}
- */
-async function getFileContents(fileName) {
-
-    /* Only return ingested workspaces if the file exists. */
-    if ( fs.existsSync(path.resolve(__dirname, fileName)) ) {
-
-        const filePath = path.resolve(__dirname, fileName);
-        const fileContent = await fs.readFileSync(filePath, "utf8");
-
-        /* Return the file content as an array. */
-        return fileContent.toString().split("\r\n");
-    }
-    else {
-
-        /* File does not exist. */
-        console.log(`Error: file ${fileName} cannot be found.`);
-        return [];
-    }
-}
-
-/**
- * Returns the ingested header and content for the specified file.
- *
- * @param fileName
- * @returns {Promise.<[null,null]>}
- */
-async function getIngestedData(fileName) {
-
-    /* Grab the file contents. */
-    const contentRows = await getFileContents(fileName);
-
-    /* Grab the data header row. */
-    const headers = buildIngestedHeaders(contentRows);
-
-    return [headers, contentRows];
-}
-
-/**
- * Returns the datum key (if it exists), and corresponding formatted value.
- *
- * @param datum
- * @param header
- * @returns {[null,null]}
- */
-function getIngestedDatumKeyValuePair(datum, header) {
-
-    const key = HEADERS_TO_WORKSPACE_KEY[header];
-    const value = buildIngestedDatum(datum, key);
-
-    return [key, value];
 }
 
 /**
@@ -449,9 +281,30 @@ function getWorkspaceStudy(studyId, studyPropertiesById) {
  */
 function getWorkspaceStudyId(workspace) {
 
-    const keyStudyId = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.DB_GAP_ID];
+    const keyStudyId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID];
 
-    return workspace[keyStudyId];
+    return workspace[keyStudyId] || "--";
+}
+
+/**
+ * Returns true if the specified value is valid, does not already exist on the specified list and is not a deny list term.
+ *
+ * @param value
+ * @param list
+ * @returns {boolean}
+ */
+function isListValueAllowed(value, list) {
+
+    if ( value ) {
+
+        const listValueDistinct = !list.includes(value);
+        const testStr = value.toUpperCase();
+        const listValueDenied = DENY_LIST_TERMS.includes(testStr);
+
+        return listValueDistinct && !listValueDenied;
+    }
+
+    return false;
 }
 
 /**
@@ -463,16 +316,89 @@ function getWorkspaceStudyId(workspace) {
 function isWorkspaceOpenAccess(workspace) {
 
     /* Grab the consent names. */
-    const keyConsentShortNames = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.CONSENT_SHORT_NAMES];
+    const keyConsentShortNames = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES];
     const consentShortNames = workspace[keyConsentShortNames];
 
     /* Return true if any consent name is "Open Access", otherwise return false. */
     if ( consentShortNames && consentShortNames.length > 0 ) {
 
-        return consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE.OPEN_ACCESS.toLowerCase())
+        return consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE.OPEN_ACCESS.toLowerCase())
     }
 
     return false;
+}
+
+/**
+ * Returns the source data for the specified file.
+ * Will only return properties matching any source header key.
+ *
+ * @param fileName
+ * @returns {Promise.<*[]>}
+ */
+async function parseSource(fileName) {
+
+    /* Read the AnVIL source file. */
+    const content = await readFile(fileName, "utf8");
+
+    /* Split the file content into rows. */
+    const contentRows = splitContentToContentRows(content);
+
+    /* Parse and return the ingested data. */
+    return parseRows(contentRows, "\t", SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+}
+
+/**
+ * Returns the reformatted consortium workspace property.
+ *
+ * @param row
+ * @returns {{}}
+ */
+function reformatWorkspacePropertyConsortium(row) {
+
+    const keyConsortium = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSORTIUM];
+    const valueConsortium = row[keyConsortium];
+
+    if ( valueConsortium ) {
+
+        const key = valueConsortium.toUpperCase().replace(/\s/g, "_");
+        const consortium = WORKSPACE_CONSORTIUM[key];
+
+        return {[keyConsortium]: consortium};
+    }
+
+    return {[keyConsortium]: ""};
+}
+
+/**
+ * Returns the reformatted workspace property of specified key.
+ *
+ * @param row
+ * @param key
+ * @returns {{}}
+ */
+function reformatWorkspacePropertyList(row, key) {
+
+    const values = row[key];
+
+    /* Reformat the list. */
+    const list = values.reduce((acc, value) => {
+
+        /* Only accumulate valid values. */
+        if ( isListValueAllowed(value, acc) ) {
+
+            acc.push(value);
+        }
+
+        return acc;
+    }, ["--"]);
+
+    /* List has at least one valid value; remove placeholder element "--". */
+    if ( list.length > 1 ) {
+
+        list.shift();
+    }
+
+    return {[key]: list};
 }
 
 module.exports.getWorkspaces = getWorkspaces;

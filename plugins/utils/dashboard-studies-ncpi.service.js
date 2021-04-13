@@ -6,18 +6,38 @@
  */
 
 // Core dependencies
-const fs = require("fs");
 const path = require("path");
 
 // App dependencies
+const {parseRows, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
+const {getUrlStudy} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
-const {getUrlStudy} = require(path.resolve(__dirname, "./dashboard-xml.service.js"));
 
 // Template variables
-const denyListGapId = ["phs001642", "phs001486", "phs001766", "phs000463", "phs000464", "phs000465", "phs000515", "phs000466", "phs000469", "phs000467", "phs000468", "phs000470", "phs000471", "phs001184", "phs000527", "phs000528", "phs001878"]; // Access to publicly available data is available via a different study.
-const fileNameDashboardNCPI = "dashboard-ncpi.txt";
+const fileSource = "dashboard-source-ncpi.csv";
+const PLATFORM = {
+    "ANVIL": "AnVIL",
+    "BDC": "BioData Catalyst",
+    "NCRDC": "Cancer Research Data Commons",
+    "KF": "Kids First Data Resource Center"
+};
+const SOURCE_HEADER_KEY = {
+    "DB_GAP_ID": "identifier",
+    "DB_GAP_ID_ACCESSION": "study accession",
+    "PLATFORM": "platform",
+};
+const SOURCE_FIELD_KEY = {
+    [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
+    [SOURCE_HEADER_KEY.DB_GAP_ID_ACCESSION]: "dbGapIdAccession",
+    [SOURCE_HEADER_KEY.PLATFORM]: "platform"
+};
+const SOURCE_FIELD_TYPE = {
+    [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
+    [SOURCE_HEADER_KEY.DB_GAP_ID_ACCESSION]: "string",
+    [SOURCE_HEADER_KEY.PLATFORM]: "string"
+};
 
 /**
  * Returns the NCPI dashboard studies.
@@ -26,17 +46,17 @@ const fileNameDashboardNCPI = "dashboard-ncpi.txt";
  */
 const getNCPIStudies = async function getNCPIStudies() {
 
-    /* Grab the dbGapId, accession and the corresponding platform. */
-    const gapIdPlatforms = await buildGapIdPlatforms();
+    /* Parse the source file. */
+    const rows = await parseSource();
 
-    /* Make the studies distinct, as some platforms share the same study. */
-    const studyPlatforms = getDistinctStudies(gapIdPlatforms);
+    /* Make the studies distinct; some platforms share the same study. */
+    const studyPlatforms = getDistinctStudies(rows);
 
     /* Build the studies dashboard. */
-    const dashboardNCPIStudies = await buildNCPIDashboardStudies(studyPlatforms);
+    const studies = await buildDashboardStudies(studyPlatforms);
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes([...dashboardNCPIStudies], "platform", "studyName");
+    return sortDataByDuoTypes([...studies], "platform", "studyName");
 };
 
 /**
@@ -45,7 +65,7 @@ const getNCPIStudies = async function getNCPIStudies() {
  * @param gapIdPlatforms
  * @returns {Promise.<*[]>}
  */
-async function buildNCPIDashboardStudies(gapIdPlatforms) {
+async function buildDashboardStudies(gapIdPlatforms) {
 
     if ( gapIdPlatforms.length ) {
 
@@ -54,11 +74,8 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
 
             let acc = await promise;
 
-            /* FHIR limits rate of requests per user. Use setTimeout between each fetch to avoid a HTTP 429 response. */
-            await new Promise(r => setTimeout(r, 2000));
-
             /* Build the study. */
-            const study = await buildNCPIDashboardStudy(gapIdPlatform);
+            const study = await buildDashboardStudy(gapIdPlatform);
 
             /* Accumulate studies with complete fields (title, subjectsTotal). */
             if ( isStudyFieldsComplete(study) ) {
@@ -79,11 +96,11 @@ async function buildNCPIDashboardStudies(gapIdPlatforms) {
  * @returns {Promise.<*>}
  * @param gapIdPlatform
  */
-async function buildNCPIDashboardStudy(gapIdPlatform) {
+async function buildDashboardStudy(gapIdPlatform) {
 
     const {dbGapIdAccession, platforms} = gapIdPlatform;
 
-    /* Get any study related data from the ncpi JSON. */
+    /* Get any study related data from the FHIR JSON. */
     const study = await getFHIRStudy(dbGapIdAccession);
 
     /* Get the db gap study url. */
@@ -114,91 +131,67 @@ async function buildNCPIDashboardStudy(gapIdPlatform) {
 }
 
 /**
- * Returns an array of collections comprising of dbGapId, dbGapIdAccession and platform.
- * Input text file "dashboard-ncpi.txt" generates the list.
- * The text file comprises of rows of platform, gapId and accession values.
- * e.g. AnVIL,phs001272,phs001272.v1.p1
- *
- * @returns {Promise.<*>}
- */
-async function buildGapIdPlatforms() {
-
-    /* Only run plugin if the text file exists. */
-    if ( fs.existsSync(path.resolve(__dirname, fileNameDashboardNCPI)) ) {
-
-        const filePath = path.resolve(__dirname, fileNameDashboardNCPI);
-        const fileContent = await fs.readFileSync(filePath, "utf8");
-
-        /* Convert the file content into an array i.e. each string row representing an element. */
-        const contentRows = fileContent.toString().split("\n");
-
-        if ( !contentRows ) {
-
-            return [];
-        }
-
-        /* From each content row, create a map object key-value pair of platform by dbGapId. */
-        return contentRows.reduce((acc, contentRow) => {
-
-            const [platform, dbGapId, dbGapIdAccession] = contentRow.split(",");
-
-            if ( dbGapId && dbGapIdAccession && dbGapIdAccession.startsWith("phs")&& !denyListGapId.includes(dbGapId) ) {
-
-                acc.push({dbGapId: dbGapId, dbGapIdAccession: dbGapIdAccession, platform: platform});
-            }
-
-            return acc;
-        }, []);
-    }
-    else {
-
-        /* Text file does not exist. */
-        console.log("Error: file dashboard-platform-by-gapid.text cannot be found.");
-
-        return [];
-    }
-}
-
-/**
  * Returns a distinct list of studies, with corresponding list of platforms (should there be more than one per study),
  * and dbGapIds.
  *
- * @param gapIdPlatforms
+ * @param rows
  */
-function getDistinctStudies(gapIdPlatforms) {
+function getDistinctStudies(rows) {
 
-    return gapIdPlatforms.reduce((acc, gapIdPlatform) => {
+    return rows.reduce((acc, row) => {
 
         /* Some platforms share the same study. */
         /* In this instance, we will add the additional platform to the existing study. */
-        const {dbGapId, dbGapIdAccession} = gapIdPlatform;
+        const {dbGapId, dbGapIdAccession} = row;
 
-        /* Skip the study, if it has already been accumulated. */
-        const studyAccumulated = acc.find(s => s.dbGapIdAccession === dbGapIdAccession);
+        if ( dbGapIdAccession ) {
 
-        if ( studyAccumulated ) {
+            /* Skip the study, if it has already been accumulated. */
+            const studyAccumulated = acc.find(s => s.dbGapIdAccession === dbGapIdAccession);
 
-            return acc;
-        }
+            if ( studyAccumulated ) {
 
-        /* Grab a set of platforms that share the same study. */
-        const setOfPlatforms = gapIdPlatforms
-            .filter(study => study.dbGapIdAccession === dbGapIdAccession)
-            .reduce((acc, study) => {
-
-                acc.add(study.platform);
                 return acc;
-            }, new Set());
+            }
 
-        /* Sort the platforms by alpha. */
-        const platforms = [...setOfPlatforms];
-        platforms.sort();
+            /* Grab a set of platforms that share the same study. */
+            const setOfPlatforms = rows
+                .filter(study => study.dbGapIdAccession === dbGapIdAccession)
+                .reduce((acc, study) => {
 
-        /* Accumulate the study. */
-        acc.push({dbGapId: dbGapId, dbGapIdAccession: dbGapIdAccession, platforms: platforms});
+                    acc.add(study.platform);
+                    return acc;
+                }, new Set());
+
+            /* Sort the platforms by alpha. */
+            const platforms = [...setOfPlatforms];
+            platforms.sort();
+
+            /* Accumulate the study. */
+            acc.push({dbGapId: dbGapId, dbGapIdAccession: dbGapIdAccession, platforms: platforms});
+        }
 
         return acc;
     }, []);
+}
+
+/**
+ * Returns the platform display value.
+ *
+ * @param platform
+ * @returns {*}
+ */
+function getPlatformDisplayValue(platform) {
+
+    if ( platform ) {
+
+        const key = platform.toUpperCase();
+        const platformDisplayValue = PLATFORM[key];
+
+        return platformDisplayValue || platform;
+    }
+
+    return platform;
 }
 
 /**
@@ -208,24 +201,9 @@ function getDistinctStudies(gapIdPlatforms) {
  */
 function getStudyPlatform(platforms) {
 
-    return formatStudyPlatforms(platforms);
-}
-
-/**
- * Returns a list of platforms, concatenated into a string.
- *
- * @param platforms
- */
-function formatStudyPlatforms(platforms) {
-
-    if ( Array.isArray(platforms) ) {
-
-        return platforms
-            .map(platform => switchStudyPlatform(platform))
-            .join(", ");
-    }
-
-    return switchStudyPlatform(platforms);
+    return platforms
+        .map(platform => getPlatformDisplayValue(platform))
+        .join(", ");
 }
 
 /**
@@ -240,29 +218,20 @@ function isStudyFieldsComplete(study) {
 }
 
 /**
- * Returns the platform display value.
- * - "AnVIL" to "AnVIL"
- * - "BDC" to "BioData Catalyst"
- * - "NCRDC" to "Cancer Research Data Commons"
- * - "KF" to "Kids First Data Resource Center"
+ * Returns the source into an array, shaped by SOURCE_FIELD_KEY.
  *
- * @param platform
- * @returns {*}
+ * @returns {Promise.<Array>}
  */
-function switchStudyPlatform(platform) {
+async function parseSource() {
 
-    switch (platform) {
-        case "AnVIL":
-            return "AnVIL";
-        case "BDC":
-            return "BioData Catalyst";
-        case "NCRDC":
-            return "Cancer Research Data Commons";
-        case "KF":
-            return "Kids First Data Resource Center";
-        default:
-            return platform;
-    }
+    /* Read NCPI platform dbGapId source. */
+    const content = await readFile(fileSource, "utf8");
+
+    /* Split the file content into rows. */
+    const contentRows = splitContentToContentRows(content);
+
+    /* Parse and return the ingested data. */
+    return parseRows(contentRows, ",", SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
 }
 
 module.exports.getNCPIStudies = getNCPIStudies;
