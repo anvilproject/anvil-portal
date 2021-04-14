@@ -6,38 +6,63 @@ description: "An overview of best practices for account setup in AnVIL to effect
 
 # Setting up Lab Accounts
 
-
-This guide is intended to assist PIs or Lab Managers in configuring Terra 
-and Google Billing accounts to enable lab members to run analysis workflows 
+This guide is intended to assist PIs or Lab Managers in configuring Terra
+and Google Billing accounts to enable lab members to run analysis workflows
 in Terra.
 
-There are many ways to configure a lab to use AnVIL. This guide presents a
-that emphasizes control and const transparency for PIs and lab
-managers over convenience of data analysts.
+There are many ways to configure a lab to use AnVIL. This guide presents an approach
+that prioritizes cost control, transparency, and accountability and is designed for labs new to cloud computing that wish to start off with a more cautious albeit restrictive configuration.
 
+For additional information and approaches see [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).
 
-## Goals of this guide
+### Goals of this guide
+
 * Provide a conceptual overview of setting up a Lab Billing in AnVIL.
 * Teach key billing concepts and their relationships to each other.
-* Provide step-by-step instructions to help you set up your lab in a manner 
-  that emphasizes cost control, facilitates cost assignment and provides and 
-  transparency in accounting.
+* Provide step-by-step instructions to help you set up your lab in a manner that emphasizes cost control, facilitates cost assignment, and provides transparency in accounting.
 * Capture the $300 Google getting started credits.
+
+
+## Recommended Approach
+
+
+
+
+The key aspects of this approach are to:
+
+1. Create one Google Billing Account per funding source to help clearly allocate expenses to the appropriate funding sources.
+
+
+1. Create a single Terra Billing Project per lab member so that lab member spend can be individually tracked, monitored, and alerted on.
+
+
+1. Be restrictive and intentional about the lab members who are allowed to share workspaces with others who can then launch them and incur GCP costs on behalf of the lab. (By default disallow sharing with “can compute” enabled).
+
+
+1. Assign a lab manager who creates and shares workspaces with other lab members but who also ensures that lab managers can not share workspaces themselves.
+
+1. Setup monitoring and alerting on cloud cost spend.
+
+
+
+
 
 
 ## Billing Overview
 
-Terra, AnVIL's analysis platform runs in the Google Cloud Platform (GCP). 
+Terra, AnVIL's analysis platform runs in the Google Cloud Platform (GCP).
 
-Terra is free to use, you can browse showcase workspaces as soon as you 
-register for an account. Compute operations such as running 
-workflows, running Jupyter Notebooks, and accessing and storing data in Terra 
+Terra is free to use, you can browse showcase workspaces as soon as you
+register for an account. Compute operations such as running
+workflows, running Jupyter Notebooks, and accessing and storing data in Terra
 may incur Google Cloud Platform charges.
 
 These charges are billed by GCP and paid through your Google Cloud Platform payment method.
 
+For more information about cloud costs and current fees see [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs)
 
-### Key Concepts
+
+## Billing Concepts
 
 ![Key Concepts](./_images/key-concepts.png)
 
@@ -67,48 +92,61 @@ analysis tools. Uploading data into a workplace, storing data in a workspace ove
 ## Helpful Resources
 
 1. [Guide to Cloud Billing Resource Organization & Access Management](https://cloud.google.com/billing/docs/onboarding-checklist)
-   
+
 1. [Working With Workspaces](https://support.terra.
    bio/hc/en-us/articles/360024743371-Working-with-workspaces)
 
 
 ## Lab Setup Process
 
+### Before You Start
+
 ### Roles
 This guide assumes the following roles and permissions:
 
-1. **Lab Manager** - Will be assigned as a Terra Billing Project owner and 
-   will create wrokspaces for lab members. 
-1. **Lab Member** - Will be prevented from creating worksppaces and will 
-   instead be assigned to one or more Terra workspaces with "Can 
-   Compute" access. They wil be able to launch the workspace but not able to 
-   and share the workspace, but not give other collaborators "Can Compute" 
-   access to the workspace. This prevents anyone besides those assigned by 
-   the Lab Manager from incurring GCP costs on behalf of the lab.
+1. **Lab Manager** - Will be assigned as a Terra Billing Project owner and will create workspaces for lab members.
+1. **Lab Member** - Will be prevented from creating workspaces and will
+   instead be assigned to one or more Terra workspaces with "Can
+   Compute" access. They will be able to launch the workspace but not able to
+   and share the workspace, but not give other collaborators "Can Compute"
+   access to the workspace. This prevents anyone besides those assigned by the Lab Manager from incurring GCP costs on behalf of the lab.
 
-### Steps
+## Steps
 
-1. Identify which Google account to use, or create one. For more information 
-   see [Setting up a Terra account with a non-Google email](https://support.
-   terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with
-   -a-non-Google-email).
-1. Create a Terra account with the email address associated with the Google 
-Account. https://support.google.com/accounts/answer/27441
-1. Identify how many GCP Payment Accounts will need to be created - One per 
-   funding source is the recommended approach in this guide.
-1. Identify or create the Payment Methods to be used for each GCP Billing 
-   Account. For more information see [Create and manage your payments 
-   profile](https://support.google.
-   com/paymentscenter/answer/9028746?ref_topic=9017383).
+### 1 - Create Your Lab’s Google Accounts
+Identify which Google account to use, or create one. For more information see[Setting up a Terra account with a non-Google email](https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Google-email).
+
+### 2 - Create Your Lab’s Terra Accounts
+
+1. Create a Terra account with the email address associated with the Google
+   Account. https://support.google.com/accounts/answer/27441
+
+### 3 - Create Your Lab’s GCP Payment Accounts
+
+1. Identify how many GCP Payment Accounts will need to be created - One per funding source is the recommended approach in this guide.
+
+
+1. Identify or create the Payment Methods to be used for each GCP Billing
+   Account. For more information see [Create and manage your payments profile](https://support.google.com/paymentscenter/answer/9028746?ref_topic=9017383).
 1. Create the GCP Billing Accounts. For more information see [Create, modify,
    or close your Cloud Billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account).
-1. Add Terra as a user on each GCP Billing Account.
+
+### 4 Add Terra as “User” on each GCP Billing Account
+
+
+1. Add Terra as a user on each GCP Billing Account created.
+
+### 5 Create Terra Billing Projects per Lab Member
+
 1. Assign a Lab Manager who will be responsible for creating all workspaces.
-1. Create one or more Terra Billing Projects e.g. one per funding source or 
-   one per Data Analyst. Assign the Lab Manager the ability to create workspaces under each Terra Billing Project.
-1. Create budgets and alerts for GCP Billing Projects created by Terra when 
-   the Terra Billing Projects were created.
-1. Identify Lab Members who will be given “Can Compute” access to specific 
-   workspaces and create the workspaces and assign access while preventing lab members from sharing workspaces with other users who might then incur GCP charges.
+1. Create one or more Terra Billing Projects e.g. one per funding source or one per Data Analyst. Assign the Lab Manager the ability to create workspaces under each Terra Billing Project.
+
+### 6 Create Budgets and Alerts in GCP
+
+1. Create budgets and alerts for GCP Billing Projects created by Terra when the Terra Billing Projects were created.
+1. Identify Lab Members who will be given “Can Compute” access to specific workspaces and create the workspaces and assign access while preventing lab members from sharing workspaces with other users who might then incur GCP charges.
+
+
+
 
 

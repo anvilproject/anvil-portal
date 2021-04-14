@@ -1,13 +1,16 @@
 ---
-title: "Understanding Billing"
+title: "Understanding Cloud Costs"
 author: "AnVIL"
-description: "An overview of how cloud billing for Terra in AnVIL."
+description: "Understanding Cloud Costs in  AnVIL."
 ---
 
 # Understanding Cloud Costs
 
-AnVIL and all of its components are free to use. You can browse showcase workspaces and the Data Library as soon as you register for an account, however, compute operations in Terra - such as running workflows,
-running Jupyter Notebooks, and accessing and storing data - may incur Google Cloud Platform charges.
+AnVIL and all of its components are free to use. You can browse showcase workspaces and the Data Library as soon as you register for an account.
+
+Compute operations, however, such as running workflows, running Jupyter Notebooks, and accessing and storing data, may incur Google Cloud Platform charges. 
+
+This section provides an overview of the types of charges along with links to current GCP pricing. We also link to Terra articles describing approaches for monitoring and controlling cloud costs.
 
 ### Types of GCP Charges
 
