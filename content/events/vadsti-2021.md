@@ -9,7 +9,7 @@ featured: true
 logo: ./_images/anvil.png
 sessions: [{sessionEnd: "22 Apr 2021 1:30 PM", sessionStart: "22 Apr 2021 11:00 AM"},{sessionEnd: "23 Apr 2021 1:30 PM", sessionStart: "23 Apr 2021 11:00 AM"}]
 timezone: "America/New_York"
-title: "Tools for Applied Data Science Using Cloud-Based Platform"
+title: "Tools for Applied Data Science Using Cloud-Based Platforms"
 ---
 
 <event-hero></event-hero>
