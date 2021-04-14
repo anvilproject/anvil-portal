@@ -89,6 +89,8 @@
               file: "/events/ashg-gmkf-poster-session"
             - name: ""
               file: "/events/aises-workshop-genomic-analysis-with-galaxy-workbench"
+            - name: ""
+              file: "/events/vadsti-2021"
 ## FAQ
 - menuItem: "FAQ"
   pageTitle: "FAQ"
