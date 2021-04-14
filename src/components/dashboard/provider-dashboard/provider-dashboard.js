@@ -74,8 +74,24 @@ class ProviderDashboard extends React.Component {
 
         this.onHandleClearSearch = () => {
 
-            this.onHandleClearInput();
-            this.onHandleClearFacets();
+            /* Clear input and facet values. */
+            const inputValue = "";
+            const cloneTermsChecked = this.onHandleClearFacets();
+
+            /** Get tracking values. */
+            const previousQuery = this.state.query;
+            const {facetsByTerm} = this.props;
+            const currentQuery = this.buildQuery(facetsByTerm, inputValue, cloneTermsChecked);
+
+            /* Update inputValue state. */
+            this.setState({
+                inputValue: inputValue,
+                query: currentQuery,
+                termsChecked: cloneTermsChecked
+            });
+
+            /** Execute tracking for search input. */
+            AnvilGTMService.trackSearchInput(inputValue, currentQuery, previousQuery, GAEntityType.WORKSPACE);
         };
 
         this.onHandleClearTerm = (facet, term) => {
@@ -467,7 +483,7 @@ class ProviderDashboard extends React.Component {
             }
         });
 
-        this.onHandleUpdateFacets(termsCheckedClone);
+        return termsCheckedClone;
     };
 
     onHandleUpdateFacets = (termsCheckedClone, value, checked) => {
