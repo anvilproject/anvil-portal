@@ -26,7 +26,7 @@ The platform currently hosts more than 75,000 whole human genome data sets and o
 
 - Terra for large scale batch computing and interactive computing;
 - Gen3 for managing, analyzing, harmonizing, and sharing large datasets;
-- DockStore for sharing Docker-based analysis workflows;
+- Dockstore for sharing Docker-based analysis workflows;
 - Jupyter notebooks for organizing live code, equations, visualizations, and narrative text into a single document;
 - R Studio for interactive machine learning, statistical computing, and visualizations;
 - Bioconductor for community-driven interactive genomics with R;
