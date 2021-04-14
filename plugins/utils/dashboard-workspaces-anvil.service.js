@@ -68,6 +68,7 @@ const WORKSPACE_CONSORTIUM = {
     "CMG": "CMG",
     "EMERGE": "eMERGE",
     "GTEX": "GTEx (v8)",
+    "HPRC": "HPRC",
     "NHGRI": "NHGRI",
     "PAGE": "PAGE",
     "THOUSANDGENOMES": "1000 Genomes",
@@ -361,7 +362,7 @@ function reformatWorkspacePropertyConsortium(row) {
     if ( valueConsortium ) {
 
         const key = valueConsortium.toUpperCase().replace(/\s/g, "_");
-        const consortium = WORKSPACE_CONSORTIUM[key];
+        const consortium = WORKSPACE_CONSORTIUM[key] || valueConsortium;
 
         return {[keyConsortium]: consortium};
     }
