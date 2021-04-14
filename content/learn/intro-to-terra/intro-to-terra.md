@@ -1,8 +1,11 @@
 ---
-title: "Understanding Workspaces"
+title: "Introduction to Terra"
 author: "AnVIL"
 description: "AnVIL is creating a scalable training program with a focus on researchers and use cases."
 ---
+# Introduction to Terra
+
+This section lists selected articles from the Terra documentation to help you get started learning about and using Terra.
 
 ## General
 

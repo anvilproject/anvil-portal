@@ -4,11 +4,11 @@ description: "An overview and tutorial of getting started with Gen3."
 title: "Getting started with Gen3"
 ---
 
-# Getting started with Gen3
+# Introduction to Gen3
 
 ## Discovering Data on AnVIL Using Gen3
 
-### Introduction to Gen3
+
 
 Gen3 is a data platform for building data commons and data ecosystems. The Gen3 platform consists of open-source software that supports data ecosystems by enabling the interoperation and creation of cloud-based data resources. A selection of Gen3-hosted Data Commons can be found [here](https://gen3.org/powered-by-gen3/).
 More information, including a detailed User Guide on how to work with a Gen3 Data Commons, can be found below and by visiting [Gen3.org](https://gen3.org/).
