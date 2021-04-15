@@ -4,6 +4,9 @@ author: "AnVIL"
 description: "An overview of best practices for account setup in AnVIL to effectively track and control cloud costs."
 ---
 
+>STATUS: WIP Please see [Google Doc](https://docs.google.com/document/d/1IYDq59kT9IUNgxvPWxVUx7Ipq0HXqWvATaG5FGdYO2M/edit#) to comment or suggest.
+
+
 # Setting up Lab Accounts
 
 This guide is intended to assist PIs or Lab Managers in configuring Terra
@@ -64,11 +67,7 @@ For more information about cloud costs and current fees see [Understanding Cloud
 
 ![Key Concepts](./_images/key-concepts.png)
 
-
-
-
-
-**Google Cloud Account** - An individual or organizatio
+**Google Cloud Account** - An account on the Google Cloud Platform (GCP) created with the same Google ID (email address) you use for your Terra account.
 
 **Google Organization** - the individual, company, or institution owning the
 Google account and who will be responsible for payment.
@@ -157,13 +156,16 @@ Identify which Google account to use, or create one. For more information see [S
 
 1. Identify how many GCP Billing Accounts will need to be created - One per funding source is the recommended approach in this guide.
 
+
 1. Identify or create the Payment Methods to be used for each GCP Billing
    Account. For more information see [Create and manage your payments profile](https://support.google.com/paymentscenter/answer/9028746?ref_topic=9017383).
-   
+
+
 1. Create the GCP Billing Accounts. For more information see [Create, modify,
    or close your Cloud Billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account).
 
 ### 4 - Add Terra as “User” on each GCP Billing Account
+
 
 1. Add Terra as a user on each GCP Billing Account created.
 
