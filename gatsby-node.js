@@ -8,7 +8,7 @@ const {fmImagesToRelative} = require("gatsby-remark-relative-images");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
 const {buildDocumentTitleBySlug, buildMenuItems, buildSetOfNavItemsByMenuItem, buildSetOfSiteSlugs, buildSlugNavigations, getHeaders, getSlugComponent, isShouldCreatePage, validateHeaders} = require("./src/utils/node/create-pages.service");
-const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
+const {buildDateBubbleField, buildDateStartField, buildDeniedField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
 /**
  * Create new node fields.
@@ -215,6 +215,18 @@ exports.createSchemaCustomization = ({actions}) => {
             }
         }
     });
+    /* Create field "denied" of type Boolean. */
+    createFieldExtension({
+        name: "denied",
+        extend() {
+            return {
+                resolve(source, arg, context, info) {
+                    const items = context.nodeModel.getAllNodes({type: "SitePage"});
+                    return buildDeniedField(source, items);
+                },
+            }
+        }
+    });
     /* Create field "draft" of type boolean. */
     createFieldExtension({
         name: "draft",
@@ -308,6 +320,7 @@ exports.createSchemaCustomization = ({actions}) => {
         path: String
     }
     type MarkdownRemark implements Node {
+        denied: Boolean @denied
         frontmatter: Frontmatter
     }
     type NavigationItems implements Node {
