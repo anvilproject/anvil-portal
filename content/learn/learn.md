@@ -6,6 +6,8 @@ description: "A guided walk-through of the  AnVIL / Terra documentation with a f
 
 # Getting Started with AnVIL
 
+This document is a work in progress. See the [Google doc version](https://docs.google.com/document/d/1B9nEQWm0yww51csuB7leZKLpmeNUbVoJrWlAp5NbmiY/edit
+) during refinement to comments or  suggest.
   <!--- Add links! --->
 
 The AnVIL platform is an [NHGRI](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) supported data commons running on the Google Cloud Platform (GCP). AnVIL enables researchers to analyze high-value open and controlled access genomic [datasets](/data) with popular analysis tools in a [secure](/overview/security) cloud computing environment.
@@ -85,7 +87,7 @@ A workspace consists of:
 1. **Permissions**  for controlling who can view, clone, update or share a workspace and who can launch cloud environments in the workspace.
 1. **A Terra Billing Project** - for specifying the Google Cloud Billing Account charged for GCP cloud compute costs incurred by the workspace. When Tera Billing Projects are created, they are linked to a Google Cloud Billing Account. When a workspace is created, it is linked with a Terra Billing Project, and thereby to a Google Cloud Billing Account.
 
-<hero> See [Understanding Terra Workspaces](/learn/introduction/understanding-workspaces) for more information and links to Terra documentation and videos about workspaces.</hero>
+<hero> See [Introduction to Terra](/learn/introduction/intro-to-terra) for more information and links to Terra documentation and videos about workspaces.</hero>
 
 
 
@@ -157,16 +159,62 @@ Also note, that to clone a workspace, you must also be a member of a Terra Billi
 
 <hero> See [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs) for more information about cloud costs and current GCP pricing. .</hero>
 
-### Setting up Billing for Cloud Compute Costs
+### Cloud Billing Concepts
 
 AnVIL and all of its components are free to use, however, as  Terra runs on the Google Cloud Platform (GCP), certain workspace activities, such as running an analysis,  storing analysis results, or downloading data may incur Google Cloud Platform (GCP) fees.
 
-**Workspaces are linked to a single Terra Billing Project** - When a workspace is created either from scratch or by cloning another workspace, the workspace is linked to a Terra Billing Project.
-
-**Terra Billing Projects are Linked to a single Google Billing Account** - Terra Billing Projects are in turn,  linked with a single Google Cloud Billing Account. Through this mechanism, the costs associated with the workspace are passed through to the specified Google Cloud Billing Account.
+>Note that not all users will need to set up billing. If you are working for a lab for example  your lab manager may add you as a member to a lab  Terra Billing Project or give you write, can execute access to your own or a shared workspace.
 
 
-<hero> For additional information about Terra workspaces see [Understanding Workspaces](/learn/understanding-workspaces). </hero>
+
+**Google Cloud Account** - An account on the Google Cloud Platform (GCP) created with the same Google ID (email address) you use for your Terra account.
+
+**Google Organization** - the individual, company, or institution owning the
+Google Cloud Account and who will be responsible for payment.
+
+**Google Payments Profile** - A google resource for holding payment methods
+associated with the organization.
+
+**GCP Billing Account** - A Google Organization can have one or more billing
+accounts. Each billing account operates in a single currency and can be used
+to separate charges paid for by different funding sources.
+
+**Terra Billing Project** - Terra Billing Projects are linked to a single GCP Billing Account and one or more Terra workspaces. Any GCP fees incurred by the workspace  are billed to the Google Billing Account associated with the workspace’s Terra Billing Project. The user creating the Terra Billing Project is its “owner”. Owners can add other “Owners” or other “Members”. Members can use the Terra Billing Project but not share it.
+
+**GCP Billing Account Budget**  - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
+
+
+
+### Setting up Billing as an Individual
+
+Setting up GCP billing as an individual is a good way for all users to get started with the platform as Google funds new accounts with a $300 in free cloud cost fees. A high level overview of the account setup process is given below.
+
+To set up GCP billing as an individual,  create a Google Cloud Account and set up a payment method. Be sure to create the Google Cloud Account using the same Google ID (email address) you use for your Terra account.
+
+Next, create a Google Billing Account and link it to Terra by adding terra.something as a *user type*.
+
+Then, In Terra create a Terra Billing Account and use it to create or clone workspaces and pay for any compute, storage, or egress fees.
+
+Finally, set up a GCP Billing Account Budget and appropriate alerts.
+
+If you plan to share your Terra Billing Project or a workspace with others be sure you ( and they) have a basic understanding of cloud costs and how cloud costs flow through to the workspace‘s and not the users Terra Billing Account.
+
+
+<hero> For additional information and detailed instructions for setting up billing as an individual see  [Understanding Workspaces](/learn/understanding-workspaces). </hero>
+
+
+
+### Setting up Billing for a Lab
+
+Setting up cloud cost billing for a lab is similar except that you will need to plan out your account setup to aid the appropriate assignment of expenses to funding sources, and to enable cloud cost reporting, budgets and alerts to the appropriate granularity.
+
+Budgets, and alerts are set at the Terra Billing Project level so you may end up having a Terra Billing Project per lab member and per shared workspace.
+
+You will also want to deliberate in your planning about who can share Terra Billing Accounts and Terra workspaces with “can execute” permissions. For example you may assign a lab manager who creates workspaces for users and allows them to execute but not share the workspace.
+
+
+
+<hero> For additional information and approaches see [Setting Up Lab Billing Accounts](/learn/principal-investigators/setting-up-lab-accounts) and [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs) </hero>
 
 ### Getting Help
 
