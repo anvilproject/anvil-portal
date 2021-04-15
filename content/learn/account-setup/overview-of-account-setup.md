@@ -4,7 +4,7 @@ author: "AnVIL"
 description: ""
 ---
 
-# Account Setup
+# Overview of Account Setup
 
 To use AnVIL, you will need a Google account for authenticating with Terra
 and Gen3 and to associate your Terra account with a Google Cloud Platform (GCP) account.

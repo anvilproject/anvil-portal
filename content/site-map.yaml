@@ -190,7 +190,7 @@
           pathPartial: "/account-setup"
           navigationItems:
             - name: "Overview of Account Setup"
-              file: "/learn/account-setup/account-setup"
+              file: "/learn/account-setup/overview-of-account-setup"
             - name: "Obtaining a Google ID"
               file: "/learn/account-setup/obtaining-a-google-id"
             - name: "Creating a Terra Account"
