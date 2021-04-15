@@ -93,6 +93,7 @@ const typography = new Typography({
             },
             code: {
                 background: "#f6f7f4 !important",
+                fontSize: "0.85rem !important",
                 "overflow-wrap": "break-word", /* IE, Edge */
                 "word-break": "break-word"
             }
