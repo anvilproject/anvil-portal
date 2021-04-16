@@ -36,8 +36,7 @@ Budget Justification](https://docs.google.com/document/d/145JFLn2hviLmaYF-mO06gb
 for your proposal by including the information highlighted in pink (mostly
 copying entries from your AnVIL Cost Estimator Google Sheet).
 
-Be sure to check that the prices are up to date by using the links listed below
-or in the AnVIL Cost Estimator.
+Be sure to check that the prices are up to date by using the links listed above or in the AnVIL Cost Estimator.
 
 ### Budget Justification Example Text
 

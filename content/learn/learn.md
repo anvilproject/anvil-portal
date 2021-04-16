@@ -41,7 +41,7 @@ This section covers:
 1. An overview of cloud compute costs and setting up billing.
 
 
-### Account Setup
+### Creating and Linking Terra, and Gen3, and Dockstore Accounts
 
 All you need is a Google account to register with Terra and browse AnVIL’s publicly accessible workspaces.
 
@@ -54,7 +54,7 @@ To allow your dbGaP data request approvals to flow through to Terra and Gen3,  y
 
 <hero> For instructions on setting up accounts in Google, Terra, Gen3, and linking them together see  [Overview of Account Setup](/learn/account-setup/overview-of-account-setup).</hero>
 
-### Discovering and Accessing Data
+### Accessing AnVIL’s Datasets
 
 AnVIL holds genomic data for hundreds of thousands of study participants. Much of this data is controlled access.
 
@@ -111,7 +111,7 @@ There are many workspaces for you to choose from when thinking about cloning a w
 
 As mentioned above workspace permissions control if you can read, modify, or launch a workspace.
 
-When you have access to a workspace you may be an “Owner”, “Writer” or “Reader”. You may also have “Can Share’ or “Can Compute permissions depending on your role and the permissions you were granted when the workspace was shared with you. The possible workspace permissions are listed below by role.
+When you have access to a workspace you may be an Owner, Writer or Reader. You may also have can-share or can-compute permissions depending on your role and the permissions you were granted when the workspace was shared with you. The possible workspace permissions are listed below by role.
 
 Role | Can Read  | Can Modify | Can Compute | Can Share
 -- | -- -- | -- -- | -- -- | --
@@ -123,16 +123,16 @@ If you are an Owner, Writer or Reader of a workspace, the workspace will be list
 
 **Owner** - If you created a workspace you are it’s owner and can read, modify, share and execute the workspace. When sharing with Readers, you can allow them to share with other readers. When sharing with Writers, you can allow them to execute or share with other writers and readers. Workspace owners can also change the workspaces Terra Billing Project.
 
-**Writer** - If you have “Writer” access to a workspace you can read and modify the workspace. The person who shared the workspace with you may also have allowed you to execute or share the workspace with other readers or writers by giving you “Can Compute” or “Can Share” privileges.
+**Writer** - If you have “Writer” access to a workspace you can read and modify the workspace. The person who shared the workspace with you may also have allowed you to execute or share the workspace with other readers or writers by giving you can-compute or can-share privileges.
 
-**Reader** - If you have “Reader” access to a workspace you can read. The person who shared the workspace with you may also have allowed you to share the workspace with other readers by giving you “Can Share” privileges.
+**Reader** - If you have “Reader” access to a workspace you can read. The person who shared the workspace with you may also have allowed you to share the workspace with other readers by giving you can-share privileges.
 
 In general, if you can share a workspace, you can give the new user the same permissions you have or less.
 
 
 > Note that workspace billing charges flow through to the workspaces Terra Billing Project and Google Cloud Billing Account regardless of which “Writer” launched the workspace’s cloud environment.
 
-> Also, note that removing someone as a member from a Terra Billing Project will not prevent them from incurring charges on any workspace using the Terra Billing Project. If a user is a Writer with Can Execute permissions on a workspace they will be able to launch the workspace and incur compute charges even if they are not a member of the workspace’s Terra Billing Project.
+> Also, note that removing someone as a member from a Terra Billing Project will not prevent them from incurring charges on any workspace using the Terra Billing Project. If a user is a Writer with can-execute permissions on a workspace they will be able to launch the workspace and incur compute charges even if they are not a member of the workspace’s Terra Billing Project.
 
 
 
@@ -165,7 +165,7 @@ Also note, that to clone a workspace, you must also be a member of a Terra Billi
 
 AnVIL and all of its components are free to use, however, as  Terra runs on the Google Cloud Platform (GCP), certain workspace activities, such as running an analysis,  storing analysis results, or downloading data may incur Google Cloud Platform (GCP) fees.
 
->Note that not all users will need to set up billing. If you are working for a lab for example  your lab manager may add you as a member to a lab  Terra Billing Project or give you write, can execute access to your own or a shared workspace.
+>Note that not all users will need to set up billing. If you are working for a lab for example  your lab manager may add you as a member to a lab  Terra Billing Project or give you write, can-execute access to your own or a shared workspace.
 
 
 
@@ -212,7 +212,7 @@ Setting up cloud cost billing for a lab is similar except that you will need to 
 
 Budgets, and alerts are set at the Terra Billing Project level so you may end up having a Terra Billing Project per lab member and per shared workspace.
 
-You will also want to deliberate in your planning about who can share Terra Billing Accounts and Terra workspaces with “can execute” permissions. For example you may assign a lab manager who creates workspaces for users and allows them to execute but not share the workspace.
+You will also want to deliberate in your planning about who can-share Terra Billing Accounts and Terra workspaces with can-execute permissions. For example you may assign a lab manager who creates workspaces for users and allows them to execute but not share the workspace.
 
 
 
@@ -225,19 +225,3 @@ See [Getting Help](/help) for more information on how to obtain support for AnVI
 
 
  
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-

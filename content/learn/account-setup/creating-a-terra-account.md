@@ -4,7 +4,7 @@ author: "AnVIL"
 description: ""
 ---
 
-# Creating a Tera Account
+# Creating a Terra Account
 
 >TODO:
 

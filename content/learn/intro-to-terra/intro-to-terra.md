@@ -34,11 +34,3 @@ This section lists selected articles from the Terra documentation to help you ge
 `video: https://youtu.be/ONc1Wf7rEuw`
 
 
-## Running Analyses
-
-- [Running GATK workflows](https://support.terra.bio/hc/en-us/articles/360029034232-Getting-started-with-GATK-workflows-in-the-cloud-FAQs) - If you're new to running GATK on a cloud-based platform, or new to Terra, this information will help get you started. From pre-processing raw sequencing data through variant calling and joint calling, showcase workspaces provide fully reproducible workflows for  critical use-cases and include extensive documentation and sample data to practice on.
-
-- [Interactive analysis with Jupyter notebooks](https://support.terra.bio/hc/en-us/articles/360024898671-Interactive-analysis-with-Jupyter-notebooks) - Jupyter notebooks are an open-source analysis environment where you can visualize and analyze  data in real time to gain insight into study data. Import data including processed genomics, phenotype and transcriptomics data stored in the cloud and analyze with custom or pre-built libraries using R or Python.
-
-- [Visualizing genomic data with IGV](https://support.terra.bio/hc/en-us/articles/360029654831-Viewing-IGV-tracks-of-BAM-files-in-your-workspace-data) -This article explains three ways you can use the [Integrative Genomics Viewer](https://software.broadinstitute.org/software/igv/) (IGV) to examine tracks from BAM (.bam) files in Terra.
-

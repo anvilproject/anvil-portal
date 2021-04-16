@@ -6,7 +6,7 @@ description: "An overview of how cloud billing for Terra in AnVIL."
 
 # Setting Up  Billing
 
-TODO:
+>STATUS: TODO
 
   <!--- Add  requestor pays.--->
 
