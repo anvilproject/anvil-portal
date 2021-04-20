@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
@@ -40,16 +40,47 @@ import Workspaces from "../workspaces/workspaces";
 // Styles
 import compStyles from "./markdown.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
-class Markdown extends React.Component {
+function Markdown(props) {
 
-    componentDidMount() {
+    const {children, className} = props;
+    const refMarkdown = useRef(null);
+    const renderAst = new rehypeReact({
+        createElement: React.createElement,
+        components: {
+            "button": Button,
+            "dashboard-anvil": DashboardAnVIL,
+            "dashboard-ncpi": DashboardNCPI,
+            "event-hero": EventHero,
+            "events": Events,
+            "external-link": ExternalLink,
+            "figure": Figure,
+            "figure-caption": FigureCaption,
+            "hero": Hero,
+            "internal-link": InternalLink,
+            "news": News,
+            "platforms": Platforms,
+            "site-search": SiteSearch,
+            "socials": Socials,
+            "social-link": SocialLink,
+            "social-twitter": SocialTwitter,
+            "social-twitter-handle": SocialTwitterHandle,
+            "social-twitter-hashtag": SocialTwitterHashTag,
+            "social-youtube": SocialYoutube,
+            "style-guide-color-palette": StyleGuideColorPalette,
+            "style-guide-download-logo": StyleGuideDownloadLogo,
+            "style-guide-typography": StyleGuideTypography,
+            "style-guide-typography-example": StyleGuideTypographyExample,
+            "tools": Tools,
+            "warning": Warning,
+            "workspaces": Workspaces
+        }
+    }).Compiler;
+    const identifier = Date.now();
+    const markdownClassNames = classNames(className, compStyles.content);
 
-        this.addClassList();
-    }
-
-    addClassList = () => {
+    const addClassList = () => {
 
         /* Grab the content element. */
         const contentEl = document.querySelector('[id^="content"]');
@@ -73,45 +104,47 @@ class Markdown extends React.Component {
         videosEl.map(videoEl => videoEl.classList.add(compStyles.video));
     };
 
-    render() {
-        const {children, className} = this.props;
-        const renderAst = new rehypeReact({
-            createElement: React.createElement,
-            components: {
-                "button": Button,
-                "dashboard-anvil": DashboardAnVIL,
-                "dashboard-ncpi": DashboardNCPI,
-                "event-hero": EventHero,
-                "events": Events,
-                "external-link": ExternalLink,
-                "figure": Figure,
-                "figure-caption": FigureCaption,
-                "hero": Hero,
-                "internal-link": InternalLink,
-                "news": News,
-                "platforms": Platforms,
-                "site-search": SiteSearch,
-                "socials": Socials,
-                "social-link": SocialLink,
-                "social-twitter": SocialTwitter,
-                "social-twitter-handle": SocialTwitterHandle,
-                "social-twitter-hashtag": SocialTwitterHashTag,
-                "social-youtube": SocialYoutube,
-                "style-guide-color-palette": StyleGuideColorPalette,
-                "style-guide-download-logo": StyleGuideDownloadLogo,
-                "style-guide-typography": StyleGuideTypography,
-                "style-guide-typography-example": StyleGuideTypographyExample,
-                "tools": Tools,
-                "warning": Warning,
-                "workspaces": Workspaces
+    const insertTableWrapperNode = () => {
+
+        /* Grab any direct descendants of the markdown container. */
+        const markdownNodes = refMarkdown.current?.firstChild?.children;
+
+        if ( markdownNodes ) {
+
+            /* Grab only table elements that are direct descendants of the markdown. */
+            /* By filtering direct descendants, the dashboard tables are excluded from this process. */
+            const tableNodes = [...markdownNodes].filter(node => node.nodeName === "TABLE");
+
+            if ( tableNodes && tableNodes.length > 0 ) {
+
+                /* For each table node, wrap within a container element. */
+                tableNodes.forEach(tableEl => {
+
+                    /* Create the container with "table" class. */
+                    const containerEl = document.createElement("div");
+                    containerEl.classList.add(compStyles.table);
+
+                    /* Inset new container element before existing table element. */
+                    tableEl.parentNode.insertBefore(containerEl, tableEl);
+
+                    /* Append the table element to the new container element. */
+                    containerEl.appendChild(tableEl);
+                });
             }
-        }).Compiler;
-        const identifier = Date.now();
-        const markdownClassNames = classNames(className, compStyles.content);
-        return (
-            <div id={`content${identifier}`} className={markdownClassNames}>{renderAst(children)}</div>
-        );
-    }
+        }
+    };
+
+    /* useEffect - componentDidMount, componentWillUnmount. */
+    /* Set up class lists. */
+    useEffect(() => {
+
+        addClassList();
+        insertTableWrapperNode();
+    }, []);
+
+    return (
+        <div id={`content${identifier}`} className={markdownClassNames} ref={refMarkdown}>{renderAst(children)}</div>
+    );
 }
 
 export default React.memo(Markdown);

@@ -27,6 +27,11 @@
     border-bottom: none; /* Required to override link style */
 }
 
+/* Table. */
+.content .table {
+    overflow: auto;
+}
+
 /* Image. */
 .zoomIcon {
     box-shadow: rgba(0, 0, 0, 0.14) 0 12px 24px -4px, rgba(0, 0, 0, 0.24) 0 8px 16px -8px, rgba(0, 0, 0, 0.24) 0 -6px 16px -6px;
