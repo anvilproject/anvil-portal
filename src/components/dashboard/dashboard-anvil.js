@@ -22,9 +22,9 @@ import {DashboardWorkspaceStaticQuery} from "../../hooks/dashboard-workspace-que
 const countLabel = "Cohorts";
 const dashboardIndexFileName = "/dashboard-index-anvil.json";
 const lunrIndexRefField = "projectId";
-const searchFacets = ["consortium", "diseases", "dataTypes", "consentShortNames", "accessType"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
+const searchFacets = ["consortium", "diseases", "dataTypes", "consentShortName", "accessType"]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
-const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "consentShortNames", "samples", "subjects", "size"];
+const tableHeadersEntities = ["consortium", "projectId", "gapId", "studyName", "diseases", "accessType", "dataTypes", "consentShortName", "samples", "subjects", "size"];
 const tableHeadersSummary = ["consortium", "cohorts", "samples", "subjects", "size"];
 
 function DashboardAnVIL() {

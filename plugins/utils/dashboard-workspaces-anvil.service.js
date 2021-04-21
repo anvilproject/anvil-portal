@@ -19,7 +19,7 @@ const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const fileSourceTerra = "dashboard-source-terra.tsv";
 const SOURCE_HEADER_KEY = {
-    "CONSENT_SHORT_NAMES": "library:datauserestriction",
+    "CONSENT_SHORT_NAME": "library:datauserestriction",
     "CONSORTIUM": "consortium",
     "DATA_TYPES": "library:datatype.items",
     "DB_GAP_ID": "study_accession",
@@ -32,7 +32,7 @@ const SOURCE_HEADER_KEY = {
 };
 const SOURCE_FIELD_KEY = {
     "ACCESS_TYPE": "accessType",
-    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]: "consentShortNames",
+    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "consentShortName",
     [SOURCE_HEADER_KEY.CONSORTIUM]: "consortium",
     [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
     [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
@@ -46,7 +46,7 @@ const SOURCE_FIELD_KEY = {
     [SOURCE_HEADER_KEY.WORKSPACE]: "projectId"
 };
 const SOURCE_FIELD_TYPE = {
-    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]: "array",
+    [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
     [SOURCE_HEADER_KEY.CONSORTIUM]: "string",
     [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
     [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
@@ -173,8 +173,8 @@ function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesBy
         /* Build the property accessType. */
         const propertyAccessType = buildWorkspacePropertyAccessType(row, dbGapIdAccession);
 
-        /* Reformat the property consentShortNames. */
-        const propertyConsentShortNames = reformatWorkspacePropertyList(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES]);
+        /* Reformat the property consentShortName. */
+        const propertyConsentShortName = reformatWorkspacePropertyValue(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]);
 
         /* Reformat the property consortium. */
         const propertyConsortium = reformatWorkspacePropertyConsortium(row);
@@ -203,7 +203,7 @@ function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesBy
                 ...countWorkspace,
                 ...row,
                 ...propertyAccessType,
-                ...propertyConsentShortNames,
+                ...propertyConsentShortName,
                 ...propertyConsortium,
                 ...propertyDataTypes,
                 ...propertyDiseases,
@@ -299,10 +299,26 @@ function isListValueAllowed(value, list) {
     if ( value ) {
 
         const listValueDistinct = !list.includes(value);
-        const testStr = value.toUpperCase();
-        const listValueDenied = DENY_LIST_TERMS.includes(testStr);
+        const listValueAllowed = !isValueDenied(value);
 
-        return listValueDistinct && !listValueDenied;
+        return listValueDistinct && listValueAllowed;
+    }
+
+    return false;
+}
+
+/**
+ * Returns true if the value is on the deny list of terms.
+ *
+ * @param value
+ * @returns {boolean}
+ */
+function isValueDenied(value) {
+
+    if ( value ) {
+
+        const testStr = value.toUpperCase();
+        return DENY_LIST_TERMS.includes(testStr);
     }
 
     return false;
@@ -317,13 +333,13 @@ function isListValueAllowed(value, list) {
 function isWorkspaceOpenAccess(workspace) {
 
     /* Grab the consent names. */
-    const keyConsentShortNames = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAMES];
-    const consentShortNames = workspace[keyConsentShortNames];
+    const keyConsentShortName = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME];
+    const consentShortName = workspace[keyConsentShortName];
 
-    /* Return true if any consent name is "Open Access", otherwise return false. */
-    if ( consentShortNames && consentShortNames.length > 0 ) {
+    /* Return true if the consent name is "Open Access", otherwise return false. */
+    if ( consentShortName ) {
 
-        return consentShortNames.some(consentName => consentName.toLowerCase() === WORKSPACE_ACCESS_TYPE.OPEN_ACCESS.toLowerCase())
+        return consentShortName.toUpperCase() === WORKSPACE_ACCESS_TYPE.OPEN_ACCESS.toUpperCase();
     }
 
     return false;
@@ -371,7 +387,7 @@ function reformatWorkspacePropertyConsortium(row) {
 }
 
 /**
- * Returns the reformatted workspace property of specified key.
+ * Returns the reformatted workspace property of type "array" for the specified key.
  *
  * @param row
  * @param key
@@ -400,6 +416,25 @@ function reformatWorkspacePropertyList(row, key) {
     }
 
     return {[key]: list};
+}
+
+/**
+ * Returns the reformatted workspace property of type "string" for the specified key.
+ *
+ * @param row
+ * @param key
+ * @returns {{}}
+ */
+function reformatWorkspacePropertyValue(row, key) {
+
+    const value = row[key];
+
+    if ( value && !isValueDenied(value) ) {
+
+        return {[key]: value};
+    }
+
+    return {[key]: "--"};
 }
 
 module.exports.getWorkspaces = getWorkspaces;

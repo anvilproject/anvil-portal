@@ -184,6 +184,8 @@ export function switchDisplayColumnName(columnName) {
             return "Access";
         case "consentCodes":
             return "Consent Codes";
+        case "consentShortName":
+            return "Consent Code";
         case "consentShortNames":
             return "Consent Codes";
         case "consentStat":

@@ -123,7 +123,7 @@ function formatDatumAsArray(datum) {
     if ( datum ) {
 
         return datum
-            .split(";")
+            .split(",")
             .reduce((acc, val) => {
 
                 const str = val.trim();
