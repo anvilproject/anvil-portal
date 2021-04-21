@@ -4,10 +4,9 @@ export const CarouselStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query CarouselStaticQuery {
-          allMarkdownRemark(filter: {denied: {eq: false}, frontmatter: {carousel: {eq: true}}}) {
+          allMarkdownRemark(filter: {frontmatter: {carousel: {eq: true}}, pageCreated: {eq: true}}) {
             edges {
               node {
-                denied
                 fields {
                   slug
                 }
@@ -24,6 +23,7 @@ export const CarouselStaticQuery = () => {
                   title
                   url
                 }
+                pageCreated
               }
             }
           }

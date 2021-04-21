@@ -60,28 +60,6 @@ const buildDateStartField = function buildDateStartField(source) {
 };
 
 /**
- * Returns true if the markdown does not exist as a page (and is therefore flagged as denied).
- * This may be because the markdown is not in the site map, or the markdown is in draft mode.
- * Draft mode is defined by the site map field "draft".
- * Typically used by carousel, news and events static queries to ensure any draft documents are excluded when in draft mode.
- *
- * @param source
- * @param pages
- * @returns {boolean}
- */
-const buildDeniedField = function buildDeniedField(source, pages) {
-
-    if ( pages ) {
-
-        const pageCreated = pages.some(page => page.context.slug === source.fields.slug);
-
-        return !pageCreated;
-    }
-
-    return false;
-};
-
-/**
  * Returns an array of header values, comprising of header display name, and header path.
  *
  * @param source
@@ -117,6 +95,24 @@ const buildHeadersField = function buildHeadersField(source, items) {
     }
 
     return [];
+};
+
+/**
+ * Returns true if a page was created for the specified markdown.
+ * Typically used by carousel, news and events static queries to only include pages created during the build.
+ *
+ * @param source
+ * @param pages
+ * @returns {boolean}
+ */
+const buildPageCreatedField = function buildPageCreatedField(source, pages) {
+
+    if ( pages ) {
+
+        return pages.some(page => page.context.slug === source.fields.slug);
+    }
+
+    return false;
 };
 
 /**
@@ -259,6 +255,6 @@ function reformatToDisplayableSessions(sessions, timezone) {
 
 module.exports.buildDateBubbleField = buildDateBubbleField;
 module.exports.buildDateStartField = buildDateStartField;
-module.exports.buildDeniedField = buildDeniedField;
 module.exports.buildHeadersField = buildHeadersField;
+module.exports.buildPageCreatedField = buildPageCreatedField;
 module.exports.buildSessionsDisplayField = buildSessionsDisplayField;

@@ -4,10 +4,9 @@ export const ScoopEventStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query ScoopEventStaticQuery {
-          allMarkdownRemark(filter: {denied: {eq: false}, fields: {slug: {regex: "/events/", nin: "/events/events"}, privateEvent: {eq: false}}}, sort: {fields: [frontmatter___dateStart], order: ASC}) {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/events/", nin: "/events/events"}, privateEvent: {eq: false}}, pageCreated: {eq: true}}, sort: {fields: [frontmatter___dateStart], order: ASC}) {
             edges {
               node {
-                denied
                 fields {
                   slug
                 }
@@ -21,6 +20,7 @@ export const ScoopEventStaticQuery = () => {
                   title
                 }
                 htmlAst
+                pageCreated
               }
             }
           }

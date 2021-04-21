@@ -4,10 +4,9 @@ export const ScoopNewsStaticQuery = () => {
     const {allMarkdownRemark} = useStaticQuery(
         graphql`
         query ScoopNewsStaticQuery {
-          allMarkdownRemark(filter: {denied: {eq: false}, fields: {slug: {regex: "/news/", ne: "/news/news"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+          allMarkdownRemark(filter: {fields: {slug: {regex: "/news/", ne: "/news/news"}}, pageCreated: {eq: true}}, sort: {fields: [frontmatter___date], order: DESC}) {
             edges {
               node {
-                denied
                 fields {
                    slug
                 }
@@ -18,6 +17,7 @@ export const ScoopNewsStaticQuery = () => {
                    title
                 }
                 htmlAst
+                pageCreated
               }
             }
           }
