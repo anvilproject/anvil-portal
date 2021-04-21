@@ -109,7 +109,13 @@ const buildPageCreatedField = function buildPageCreatedField(source, pages) {
 
     if ( pages ) {
 
-        return pages.some(page => page.context.slug === source.fields.slug);
+        const slug = source?.fields?.slug;
+
+        return pages.some(page => {
+
+            const pageSlug = page?.context?.slug;
+            return slug === pageSlug;
+        });
     }
 
     return false;
