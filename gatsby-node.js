@@ -8,7 +8,7 @@ const {fmImagesToRelative} = require("gatsby-remark-relative-images");
 const {createFilePath} = require("gatsby-source-filesystem");
 const {buildPostSlug} = require("./src/utils/node/create-node.service");
 const {buildDocumentTitleBySlug, buildMenuItems, buildSetOfNavItemsByMenuItem, buildSetOfSiteSlugs, buildSlugNavigations, getHeaders, getSlugComponent, isShouldCreatePage, validateHeaders} = require("./src/utils/node/create-pages.service");
-const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
+const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildPageCreatedField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
 
 /**
  * Create new node fields.
@@ -259,6 +259,18 @@ exports.createSchemaCustomization = ({actions}) => {
             }
         }
     });
+    /* Create field "pageCreated" of type Boolean. */
+    createFieldExtension({
+        name: "pageCreated",
+        extend() {
+            return {
+                resolve(source, arg, context, info) {
+                    const items = context.nodeModel.getAllNodes({type: "SitePage"});
+                    return buildPageCreatedField(source, items);
+                },
+            }
+        }
+    });
     /* Create field "sessionsDisplay" of type string array. */
     createFieldExtension({
         name: "sessionsDisplay",
@@ -309,6 +321,7 @@ exports.createSchemaCustomization = ({actions}) => {
     }
     type MarkdownRemark implements Node {
         frontmatter: Frontmatter
+        pageCreated: Boolean @pageCreated
     }
     type NavigationItems implements Node {
         draft: Boolean @draft

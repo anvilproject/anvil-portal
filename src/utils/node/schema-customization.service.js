@@ -98,6 +98,24 @@ const buildHeadersField = function buildHeadersField(source, items) {
 };
 
 /**
+ * Returns true if a page was created for the specified markdown.
+ * Typically used by carousel, news and events static queries to only include pages created during the build.
+ *
+ * @param source
+ * @param pages
+ * @returns {boolean}
+ */
+const buildPageCreatedField = function buildPageCreatedField(source, pages) {
+
+    if ( pages ) {
+
+        return pages.some(page => page.context.slug === source.fields.slug);
+    }
+
+    return false;
+};
+
+/**
  * Returns the session in a displayable format.
  *
  * @param source
@@ -238,4 +256,5 @@ function reformatToDisplayableSessions(sessions, timezone) {
 module.exports.buildDateBubbleField = buildDateBubbleField;
 module.exports.buildDateStartField = buildDateStartField;
 module.exports.buildHeadersField = buildHeadersField;
+module.exports.buildPageCreatedField = buildPageCreatedField;
 module.exports.buildSessionsDisplayField = buildSessionsDisplayField;
