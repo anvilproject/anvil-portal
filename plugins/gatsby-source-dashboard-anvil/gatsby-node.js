@@ -54,7 +54,7 @@ exports.createSchemaCustomization = ({actions}) => {
     type Workspace implements Node {
         id: ID!
         accessType: String
-        consentShortNames: [String]
+        consentShortName: String
         consortium: String
         dataTypes: [String]
         dbGapId: String

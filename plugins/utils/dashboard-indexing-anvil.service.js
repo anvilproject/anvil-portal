@@ -25,7 +25,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
 
         this.ref("projectId");
         this.field("accessType");
-        this.field("consentShortNames");
+        this.field("consentShortName");
         this.field("consortium");
         this.field("dataTypes");
         this.field("dbGapId");
@@ -46,7 +46,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
         workspaces.forEach(workspace => {
 
             const accessType = getIndexFieldTypeOfString(workspace.accessType, facetSubStr);
-            const consentShortNames = getIndexFieldTypeOfArray(workspace.consentShortNames);
+            const consentShortName = getIndexFieldTypeOfString(workspace.consentShortName, facetSubStr);
             const consortium = getIndexFieldTypeOfString(workspace.consortium, facetSubStr);
             const dataTypes = getIndexFieldTypeOfArray(workspace.dataTypes);
             const dbGapId = workspace.dbGapId;
@@ -59,7 +59,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
 
             this.add({
                 "accessType": accessType,
-                "consentShortNames": consentShortNames,
+                "consentShortName": consentShortName,
                 "consortium": consortium,
                 "dataTypes": dataTypes,
                 "dbGapId" : dbGapId,

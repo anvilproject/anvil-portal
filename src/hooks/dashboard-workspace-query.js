@@ -8,7 +8,7 @@ export const DashboardWorkspaceStaticQuery = () => {
             edges {
               node {
                 accessType
-                consentShortNames
+                consentShortName
                 consortium
                 dataTypes
                 dbGapId
