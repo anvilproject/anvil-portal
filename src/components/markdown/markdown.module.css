@@ -27,8 +27,8 @@
     border-bottom: none; /* Required to override link style */
 }
 
-/* Table. */
-.content .table {
+/* Table container. */
+.content .tableContainer {
     overflow: auto;
 }
 

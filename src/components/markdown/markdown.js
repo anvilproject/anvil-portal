@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useEffect, useRef} from "react";
+import React, {useCallback, useEffect, useRef} from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
@@ -80,7 +80,7 @@ function Markdown(props) {
     const identifier = Date.now();
     const markdownClassNames = classNames(className, compStyles.content);
 
-    const addClassList = () => {
+    const initAddClassLists = useCallback(() => {
 
         /* Grab the content element. */
         const contentEl = document.querySelector('[id^="content"]');
@@ -90,21 +90,24 @@ function Markdown(props) {
         }
 
         /* Grab <span> that wraps the images for medium-zoom capability (therefore will exclude gif images). */
-        const imagesWithZoomEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
+        const imagesWithZoomEls = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
 
         /* Grab <div> that wraps a code block with gatsby-remark-prismjs. */
-        const prismsEl = Array.from(contentEl.getElementsByClassName("gatsby-highlight"));
+        const prismsEls = Array.from(contentEl.getElementsByClassName("gatsby-highlight"));
 
         /* Grab <div> that wraps videos. */
-        const videosEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
+        const videosEls = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
 
         /* Add class name. */
-        imagesWithZoomEl.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
-        prismsEl.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
-        videosEl.map(videoEl => videoEl.classList.add(compStyles.video));
-    };
+        imagesWithZoomEls.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
+        prismsEls.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
+        videosEls.map(videoEl => videoEl.classList.add(compStyles.video));
+    }, []);
 
-    const insertTableWrapperNode = () => {
+    /**
+     * Wraps a container around any markdown <table> elements to facilitate overflow styles on the table.
+     */
+    const initTableOverflow = useCallback(() => {
 
         /* Grab any direct descendants of the markdown container. */
         const markdownNodes = refMarkdown.current?.firstChild?.children;
@@ -115,32 +118,31 @@ function Markdown(props) {
             /* By filtering direct descendants, the dashboard tables are excluded from this process. */
             const tableNodes = [...markdownNodes].filter(node => node.nodeName === "TABLE");
 
-            if ( tableNodes && tableNodes.length > 0 ) {
-
-                /* For each table node, wrap within a container element. */
-                tableNodes.forEach(tableEl => {
-
-                    /* Create the container with "table" class. */
-                    const containerEl = document.createElement("div");
-                    containerEl.classList.add(compStyles.table);
-
-                    /* Inset new container element before existing table element. */
-                    tableEl.parentNode.insertBefore(containerEl, tableEl);
-
-                    /* Append the table element to the new container element. */
-                    containerEl.appendChild(tableEl);
-                });
-            }
+            /* For each table node, wrap within a container element. */
+            tableNodes.forEach(tableEl => insertTableOverflowNode(tableEl));
         }
+    }, []);
+
+    const insertTableOverflowNode = (tableEl) => {
+
+        /* Create the container with "tableContainer" class. */
+        const containerEl = document.createElement("div");
+        containerEl.classList.add(compStyles.tableContainer);
+
+        /* Inset new container element before existing table element. */
+        tableEl.parentNode.insertBefore(containerEl, tableEl);
+
+        /* Append the table element to the new container element. */
+        containerEl.appendChild(tableEl);
     };
 
     /* useEffect - componentDidMount, componentWillUnmount. */
     /* Set up class lists. */
     useEffect(() => {
 
-        addClassList();
-        insertTableWrapperNode();
-    }, []);
+        initAddClassLists();
+        initTableOverflow();
+    }, [initAddClassLists, initTableOverflow]);
 
     return (
         <div id={`content${identifier}`} className={markdownClassNames} ref={refMarkdown}>{renderAst(children)}</div>
