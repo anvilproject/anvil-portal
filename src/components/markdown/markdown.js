@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useCallback, useEffect, useRef} from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
@@ -40,16 +40,47 @@ import Workspaces from "../workspaces/workspaces";
 // Styles
 import compStyles from "./markdown.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
-class Markdown extends React.Component {
+function Markdown(props) {
 
-    componentDidMount() {
+    const {children, className} = props;
+    const refMarkdown = useRef(null);
+    const renderAst = new rehypeReact({
+        createElement: React.createElement,
+        components: {
+            "button": Button,
+            "dashboard-anvil": DashboardAnVIL,
+            "dashboard-ncpi": DashboardNCPI,
+            "event-hero": EventHero,
+            "events": Events,
+            "external-link": ExternalLink,
+            "figure": Figure,
+            "figure-caption": FigureCaption,
+            "hero": Hero,
+            "internal-link": InternalLink,
+            "news": News,
+            "platforms": Platforms,
+            "site-search": SiteSearch,
+            "socials": Socials,
+            "social-link": SocialLink,
+            "social-twitter": SocialTwitter,
+            "social-twitter-handle": SocialTwitterHandle,
+            "social-twitter-hashtag": SocialTwitterHashTag,
+            "social-youtube": SocialYoutube,
+            "style-guide-color-palette": StyleGuideColorPalette,
+            "style-guide-download-logo": StyleGuideDownloadLogo,
+            "style-guide-typography": StyleGuideTypography,
+            "style-guide-typography-example": StyleGuideTypographyExample,
+            "tools": Tools,
+            "warning": Warning,
+            "workspaces": Workspaces
+        }
+    }).Compiler;
+    const identifier = Date.now();
+    const markdownClassNames = classNames(className, compStyles.content);
 
-        this.addClassList();
-    }
-
-    addClassList = () => {
+    const initAddClassLists = useCallback(() => {
 
         /* Grab the content element. */
         const contentEl = document.querySelector('[id^="content"]');
@@ -59,59 +90,63 @@ class Markdown extends React.Component {
         }
 
         /* Grab <span> that wraps the images for medium-zoom capability (therefore will exclude gif images). */
-        const imagesWithZoomEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
+        const imagesWithZoomEls = Array.from(contentEl.getElementsByClassName("gatsby-resp-image-wrapper"));
 
         /* Grab <div> that wraps a code block with gatsby-remark-prismjs. */
-        const prismsEl = Array.from(contentEl.getElementsByClassName("gatsby-highlight"));
+        const prismsEls = Array.from(contentEl.getElementsByClassName("gatsby-highlight"));
 
         /* Grab <div> that wraps videos. */
-        const videosEl = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
+        const videosEls = Array.from(contentEl.getElementsByClassName("gatsby-resp-iframe-wrapper"));
 
         /* Add class name. */
-        imagesWithZoomEl.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
-        prismsEl.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
-        videosEl.map(videoEl => videoEl.classList.add(compStyles.video));
+        imagesWithZoomEls.map(imageEl => imageEl.classList.add(compStyles.zoomIcon));
+        prismsEls.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
+        videosEls.map(videoEl => videoEl.classList.add(compStyles.video));
+    }, []);
+
+    /**
+     * Wraps a container around any markdown <table> elements to facilitate overflow styles on the table.
+     */
+    const initTableOverflow = useCallback(() => {
+
+        /* Grab any direct descendants of the markdown container. */
+        const markdownNodes = refMarkdown.current?.firstChild?.children;
+
+        if ( markdownNodes ) {
+
+            /* Grab only table elements that are direct descendants of the markdown. */
+            /* By filtering direct descendants, the dashboard tables are excluded from this process. */
+            const tableNodes = [...markdownNodes].filter(node => node.nodeName === "TABLE");
+
+            /* For each table node, wrap within a container element. */
+            tableNodes.forEach(tableEl => insertTableOverflowNode(tableEl));
+        }
+    }, []);
+
+    const insertTableOverflowNode = (tableEl) => {
+
+        /* Create the container with "tableContainer" class. */
+        const containerEl = document.createElement("div");
+        containerEl.classList.add(compStyles.tableContainer);
+
+        /* Inset new container element before existing table element. */
+        tableEl.parentNode.insertBefore(containerEl, tableEl);
+
+        /* Append the table element to the new container element. */
+        containerEl.appendChild(tableEl);
     };
 
-    render() {
-        const {children, className} = this.props;
-        const renderAst = new rehypeReact({
-            createElement: React.createElement,
-            components: {
-                "button": Button,
-                "dashboard-anvil": DashboardAnVIL,
-                "dashboard-ncpi": DashboardNCPI,
-                "event-hero": EventHero,
-                "events": Events,
-                "external-link": ExternalLink,
-                "figure": Figure,
-                "figure-caption": FigureCaption,
-                "hero": Hero,
-                "internal-link": InternalLink,
-                "news": News,
-                "platforms": Platforms,
-                "site-search": SiteSearch,
-                "socials": Socials,
-                "social-link": SocialLink,
-                "social-twitter": SocialTwitter,
-                "social-twitter-handle": SocialTwitterHandle,
-                "social-twitter-hashtag": SocialTwitterHashTag,
-                "social-youtube": SocialYoutube,
-                "style-guide-color-palette": StyleGuideColorPalette,
-                "style-guide-download-logo": StyleGuideDownloadLogo,
-                "style-guide-typography": StyleGuideTypography,
-                "style-guide-typography-example": StyleGuideTypographyExample,
-                "tools": Tools,
-                "warning": Warning,
-                "workspaces": Workspaces
-            }
-        }).Compiler;
-        const identifier = Date.now();
-        const markdownClassNames = classNames(className, compStyles.content);
-        return (
-            <div id={`content${identifier}`} className={markdownClassNames}>{renderAst(children)}</div>
-        );
-    }
+    /* useEffect - componentDidMount, componentWillUnmount. */
+    /* Set up class lists. */
+    useEffect(() => {
+
+        initAddClassLists();
+        initTableOverflow();
+    }, [initAddClassLists, initTableOverflow]);
+
+    return (
+        <div id={`content${identifier}`} className={markdownClassNames} ref={refMarkdown}>{renderAst(children)}</div>
+    );
 }
 
 export default React.memo(Markdown);
