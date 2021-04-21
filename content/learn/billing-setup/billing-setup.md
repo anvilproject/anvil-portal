@@ -10,6 +10,24 @@ description: "An overview of how cloud billing for Terra in AnVIL."
 
   <!--- Add  requestor pays.--->
 
+## Billing Concepts
+
+**Google Cloud Account** - An account on the Google Cloud Platform (GCP) created with the same Google ID (email address) you use for your Terra account.
+
+**Google Organization** - the individual, company, or institution owning the
+Google Cloud Account and who will be responsible for payment.
+
+**Google Payments Profile** - A google resource for holding payment methods
+associated with the organization.
+
+**GCP Billing Account** - A Google Organization can have one or more billing
+accounts. Each billing account operates in a single currency and can be used
+to separate charges paid for by different funding sources.
+
+**Terra Billing Project** - Terra Billing Projects are linked to a single GCP Billing Account and one or more Terra workspaces. Any GCP fees incurred by the workspace  are billed to the Google Billing Account associated with the workspace’s Terra Billing Project. The user creating the Terra Billing Project is its “owner”. Owners can add other “Owners” or other “Members”. Members can use the Terra Billing Project but not share it.
+
+**GCP Billing Account Budget**  - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
+
 
 - [Understanding costs and billing in Terra](https://support.terra.bio/hc/en-us/articles/360048632271-Understanding-costs-and-billing-in-Terra) - This article outlines what operations in Terra have a GCP cost and how you will pay for GCP charges with a Terra billing project. It also explains the billing structure (GCP and Terra), how GCP calculates and bills Terra users for charges, and how Terra Billing projects act as a pass-through to pay for the GCP costs of your work in Terra.
 

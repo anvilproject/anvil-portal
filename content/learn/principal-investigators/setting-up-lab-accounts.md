@@ -14,7 +14,7 @@ and Google Cloud Billing to enable lab members to run analysis workflows
 in Terra.
 
 There are many ways to configure a lab to use AnVIL. This guide presents an approach
-priortazing transparency, and accountability and is designed for labs new to cloud computing that wish to start off with a more cautious, albeit restrictive, configuration.
+prioritizing transparency and accountability and is designed for labs new to cloud computing that wish to start off with a more cautious, albeit restrictive, configuration.
 
 For additional information and approaches see [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).
 
@@ -24,7 +24,7 @@ For additional information and approaches see [Best practices for managing share
 * Teach key billing concepts and their relationships to each other.
 * Provide step-by-step instructions to help you set up your lab in a manner that emphasizes cost control, facilitates cost assignment, and provides transparency in accounting.
 * Demonstrate how to monitor and manage spending.
-* Capture Google’s promotional  $300 getting started credits.
+* Capture Google’s promotional $300 getting started credits.
 
 
 ## Recommended Approach
@@ -46,12 +46,12 @@ The key aspects of this approach are to:
 
 ## Billing Overview
 
-Terra, AnVIL's analysis platform runs in the Google Cloud Platform (GCP).
+Terra, AnVIL's analysis platform, runs in the Google Cloud Platform (GCP).
 
-Terra is free to use, you can browse showcase workspaces as soon as you
+Terra is free to use; you can browse showcase workspaces as soon as you
 register for an account. Compute operations such as running
 workflows, running Jupyter Notebooks, and accessing and storing data in Terra
-may incur Google Cloud Platform charges.
+incur Google Cloud Platform charges.
 
 These charges are billed by GCP and paid through your Google Cloud Platform payment method.
 
@@ -64,7 +64,7 @@ For more information about cloud costs and current fees see [Understanding Cloud
 
 **Google Cloud Account** - An account on the Google Cloud Platform (GCP) created with the same Google ID (email address) you use for your Terra account.
 
-**Google Organization** - the individual, company, or institution owning the
+**Google Organization** - The individual, company, or institution owning the
 Google account and who will be responsible for payment.
 
 **Google Payments Profile** - A google resource for holding payment methods
@@ -82,9 +82,9 @@ Project to its GCP Billing Account.
 
 **GCP Billing Account Budget**  - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
 
-**Terra Billing Project** - Terra Billing Projects are linked to a single GCP Payment Account and one or more Terra workspaces. When compute is launched in a workspace, the compute charges are billed to the Google Billing Account associated with the workspace’s Terra Billing Project. When Terra Billing Project is created, its “twin” Google Billing Project is created, linking Tera to Google Billing.
+**Terra Billing Project** - Terra Billing Projects are linked to a single GCP Payment Account and one or more Terra workspaces. When compute is launched in a workspace, the compute charges are billed to the Google Billing Account associated with the workspace’s Terra Billing Project. When a Terra Billing Project is created, its “twin” Google Billing Project is created, linking Terra to Google Billing.
 
-**Terra Workspace** - A workspace is a Terra resource that can hold data and
+**Terra Workspace** - A workspace is a Terra resource that holds data and
 analysis tools. Uploading data into a workplace, storing data in a workspace over time, and running compute from within a workspace all incur GCP charges.
 
 ## Helpful Resources
@@ -101,10 +101,10 @@ analysis tools. Uploading data into a workplace, storing data in a workspace ove
 
 1.  You will need a credit card or bank account to activate your free trial and get started.
 
-> You won't be billed until you explicitly turn on automatic billing, but payment information is needed for verification purposes.
+> You will not be billed until you explicitly turn on automatic billing, but payment information is needed for verification purposes.
 
 
-2. Before setting up billing yourself, you may want to check with your institutional procurement office and see if they have a preferred account set-up method with Google (such as a third-party reseller or an existing account).
+2. Before setting up billing, check with your institutional procurement office for a preferred account set-up method with Google (such as a third-party reseller or an existing account).
 
 
 1. To add lab members, you will need to know the Google account they will use to access Terra.   You can always add additional lab members once you have completed the initial setup.
@@ -126,7 +126,7 @@ This guide assumes the following roles and permissions:
 1. Create one Google Billing Account per funding source.
 1. Link your Google Billing Accounts to Terra by  adding terra-billing@terra.bio as a Billing Account User to each Google Billing Account
 1. Create one Terra Billing Project for each lab member and assign the lab member as a member.
-1. Create one workspace per lab member and make each lab member writer with can-compute but true and “can-share false.
+1. Create one workspace per lab member and make each lab member writer with can-compute but true and can-share false.
 1. Setup bulling budgets and alerts for each Terra Billing Project.
 
 >Note that given this lab members will still be able to create their own workspaces where they will be owners with can-compute and can-share that are linked to their lab Terra Billing Project.
