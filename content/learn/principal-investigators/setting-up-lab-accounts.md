@@ -20,47 +20,37 @@ For additional information and approaches see [Best practices for managing share
 
 ### Goals of this Guide
 
-* Provide a conceptual overview of setting up a Lab Billing in AnVIL.
-* Teach key billing concepts and their relationships to each other.
-* Provide step-by-step instructions to help you set up your lab in a manner that emphasizes cost control, facilitates cost assignment, and provides transparency in accounting.
-* Demonstrate how to monitor and manage spending.
+* Outline a recommended lab billing configuration and describe how to set it up.
+* Describe prerequisites for configuring billing.
+* Demonstrate how to monitor spending.
 * Capture Google’s promotional $300 getting started credits.
 
+### Prerequisites
 
-## Recommended Approach
-
-The key aspects of this approach are to:
-
-1. Create one Google Billing Account per funding source to help clearly allocate expenses to the appropriate funding sources.
+Understand the key concepts presented on the [Learn Getting Started with AnVIL](/learn) page.
+Understand the key concepts presented in [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs).
 
 
-1. Create a single Terra Billing Project per lab member so that lab member spend can be individually tracked, monitored, and alerted on.
+> Check with your institutional procurement office for a preferred account set-up method with Google (such as a third-party reseller or an existing account).
 
 
-1. Be restrictive and intentional about the lab members who are allowed to share workspaces with others who can then launch them and incur GCP costs on behalf of the lab. (By default disallow sharing for workspace writers).
+
+## Recommended Setup
+
+In order to provide maximum control over who can incur GCP fees on behalf of you lab, and provide granular spend reporting we recommend the following:
+
+1. **Google Billing Account Per Funding Source** - Create one Google Billing Account per funding source to help clearly allocate expenses to the appropriate funding sources.
 
 
-1. Assign a lab manager who creates and shares workspaces with other lab members but who also ensures that lab managers can not share workspaces themselves.
+1. **Terra Billing Project Per Lab Member** -  Create a single Terra Billing Project per lab member so that lab member spend can be individually tracked, monitored, and alerted on.
 
-1. Setup monitoring and alerting on cloud cost spend.
+1. **Limit Sharing of Launchable Workspaces** - Be restrictive and intentional about the lab members who are enabled to share workspaces with others with “can-compute” privileges. Start by assigning a lab manager who creates and shares workspaces other lab members and who also ensures that lab members can not share workspaces themselves.
 
-## Billing Overview
-
-Terra, AnVIL's analysis platform, runs in the Google Cloud Platform (GCP).
-
-Terra is free to use; you can browse showcase workspaces as soon as you
-register for an account. Compute operations such as running
-workflows, running Jupyter Notebooks, and accessing and storing data in Terra
-incur Google Cloud Platform charges.
-
-These charges are billed by GCP and paid through your Google Cloud Platform payment method.
-
-For more information about cloud costs and current fees see [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs)
+1. **Setup Spend Alerts** - Setup granular monitoring and alerting on cloud cost spend.
 
 
-## Billing Concepts
+## Billing Concepts Review
 
-![Key Concepts](./_images/key-concepts.png)
 
 **Google Cloud Account** - An account on the Google Cloud Platform (GCP) created with the same Google ID (email address) you use for your Terra account.
 
@@ -80,24 +70,29 @@ GCP Billing project to assign expense and control
 access. Compute charges flow through the compute resource's GCP Billing
 Project to its GCP Billing Account.
 
-**GCP Billing Account Budget**  - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
 
 **Terra Billing Project** - Terra Billing Projects are linked to a single GCP Payment Account and one or more Terra workspaces. When compute is launched in a workspace, the compute charges are billed to the Google Billing Account associated with the workspace’s Terra Billing Project. When a Terra Billing Project is created, its “twin” Google Billing Project is created, linking Terra to Google Billing.
 
-**Terra Workspace** - A workspace is a Terra resource that holds data and
-analysis tools. Uploading data into a workplace, storing data in a workspace over time, and running compute from within a workspace all incur GCP charges.
+
+### Billing in a Nutshell
+
+![Key Concepts](./_images/key-concepts.png)
+
+To enable spend in Terra, you must add Terra as a user to a Google Cloud Billing Account. Then ,when you create a Terra Billing Project in Terra, you will be prompted to associate the Terra Billing Project with a Google Billing Account.
+
+During the creation of a Terra Billing Project, Terra creates a “sister” or “twin” Google Billing Project in the Google Cloud Billing console. This “sister” Google Billing Project is linked to the Terra Billing Project’s Google Cloud Billing Account.
 
 ## Helpful Resources
 
 1. [Guide to Cloud Billing Resource Organization & Access Management](https://cloud.google.com/billing/docs/onboarding-checklist)
 
-1. [Working With Workspaces](https://support.terra.
-   bio/hc/en-us/articles/360024743371-Working-with-workspaces)
 
 
 ## Lab Setup Process
 
 ### Before You Start
+
+1.  You will need
 
 1.  You will need a credit card or bank account to activate your free trial and get started.
 
@@ -182,4 +177,9 @@ Identify which Google account to use, or create one. For more information see [S
 
 
 
+
+**Terra Workspace** - A workspace is a Terra resource that holds data and
+analysis tools. Uploading data into a workplace, storing data in a workspace over time, and running compute from within a workspace all incur GCP charges.
+
+**GCP Billing Account Budget**  - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
 
