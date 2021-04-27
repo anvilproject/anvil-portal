@@ -227,7 +227,7 @@
           navigationItems:
             - name: "Running Jupyter Notebooks in Terra"
               file: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks"
-            - name: "Running Bioconductor in Terra"
+            - name: "Running R / Bioconductor in Terra"
               file: "/learn/interactive-analysis/getting-started-with-bioconductor"
             - name: "Running Galaxy in Terra"
               file: "/learn/interactive-analysis/getting-started-with-galaxy"
