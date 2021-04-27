@@ -97,6 +97,31 @@
       "source": "/learn/training/magic-jamboree-june-2020",
       "destination": "/learn/workshop-archive",
       "type": 301
+      },
+      {
+        "source": "/learn/getting-started/getting-started-with-gen3",
+        "destination": "/learn/introduction/getting-started-with-gen3",
+        "type": 301
+      },
+      {
+        "source": "/learn/getting-started/using-example-workspaces",
+        "destination": "/learn/introduction/using-example-workspaces",
+        "type": 301
+      },
+      {
+        "source": "/learn/getting-started/getting-started-with-galaxy",
+        "destination": "/learn/interactive-analysis/getting-started-with-galaxy",
+        "type": 301
+      },
+      {
+        "source": "/learn/getting-started/getting-started-with-bioconductor",
+        "destination": "/learn/interactive-analysis/getting-started-with-bioconductor",
+        "type": 301
+      },
+      {
+        "source": "/learn/for-pis/setting-up-lab-accounts",
+        "destination": "/learn/principal-investigators/setting-up-lab-accounts",
+        "type": 301
       }
     ]
   }

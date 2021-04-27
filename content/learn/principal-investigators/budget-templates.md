@@ -4,9 +4,6 @@ author: "AnVIL"
 description: "An overview of best practices for account setup in AnVIL to effectively track and control cloud costs."
 ---
 
->Status: PLEASE REVIEW See the backing [Google Doc](https://docs.google.com/document/d/1xKY6UY9wBkFb-fJbv7kRyTPwbGl0y1yRCVbWo1hAfvc/edit) to comment or suggest.
-
-
 # Preparing a Cloud Cost Budget Justification
 
 This document walks you through creating a budget justification paragraph for a grant proposal.

@@ -13,7 +13,7 @@ While there are many ways to configure a lab, the approach described here priori
 
 This approach is recommended for labs new to cloud computing as it enables detailed cloud cost accounting, provides users feedback on the costs of their analyses, and reduces the opportunity for unexpected cloud compute spend.
 
-For additional information and approaches see [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).
+<hero>For additional information and approaches see [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).</hero>
 
 ### Goals of this guide
 
