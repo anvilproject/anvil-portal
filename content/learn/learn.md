@@ -122,7 +122,7 @@ Basic actions that can be performed on workspaces are:
 
 **Clone** - Terra Billing Project Members can also clone an existing workspace.  Cloning a workspace copies its data and notebooks while possibly changing its Terra Billing Project or adding authorization domains.
 
-**Launch** - Users with “can-execute” permissions on a workspace can configure and launch cloud environments in the workspace to analyze the workspace’s data. Cloud costs for the launched environments will be passed through to the Google Billing Account associated with the workspace’s Terra Billing Project.
+**Launch** - Users with “can-compute” permissions on a workspace can configure and launch cloud environments in the workspace to analyze the workspace’s data. Cloud costs for the launched environments will be passed through to the Google Billing Account associated with the workspace’s Terra Billing Project.
 
 **Share** - Users with “can-share” permissions on a workspace can share the workspace and allow others to read and potentially update, launch, and share it.
 
@@ -154,7 +154,7 @@ Role | Can Read  | Can Modify | Can Compute | Can Share
 **Reader** - If you have “Reader” access to a workspace, you can see the workspace in your workspace list and view the workspace’s dashboard. The person who shared the workspace with you may also have allowed you to share the workspace with other readers by giving you can-share privileges.
 
 
-**Can-execute** - Writers may be given “can-execute” privileges allowing them to launch cloud environments.
+**Can-compute** - Writers may be given “can-compute” privileges allowing them to launch cloud environments.
 
 **Can-share** - Readers or Writers may be given “can-share” privileges allowing them to share the workspace with others.
 
@@ -181,13 +181,13 @@ Performing the following workspace activities will incur costs on GCP that will 
 1. Launching a Cloud Environment - The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace”.
 
 
-1. Storage for persistent disk associated with any paused cloud environments.
+1. Storage for persistent disk associated with any running or paused cloud environments.
 
 
 1. Storage for notebooks as these are saved in the workspace’s Cloud Storage bucket.
 
 
-1. Downloading data from the workspace’s Cloud Storage bucket unless this bucket is configured to be “requester pays”. For requester pays buckets, users must select one of their  Terra Billing Projects to pay for the GCP egress fees.
+1. Downloading data from the workspace’s Cloud Storage bucket unless this bucket is configured to be “requester pays”. For requester pays buckets, users must select their own Terra Billing Project to pay for the GCP egress fees.
 
 
 <hero> See [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs) for more information about cloud costs and current GCP pricing. .</hero>
@@ -196,7 +196,7 @@ Performing the following workspace activities will incur costs on GCP that will 
 
 ### Setting Up Cloud Billing
 
->Note that not all users will need to set up billing. If you are working for a lab for example  your lab manager may add you as a member to a lab  Terra Billing Project or give you write, can-execute access to your own or a shared workspace.
+>Note that not all users will need to set up billing. If you are working for a lab for example  your lab manager may add you as a member to a lab  Terra Billing Project or give you write, can-compute access to your own or a shared workspace.
 
 
 
@@ -212,14 +212,13 @@ To set up GCP billing as an individual the general process is:
 
 1. Set up a GCP Billing Account Budget and appropriate alerts.
 
-
 1. In Terra, create a Terra Billing Account and use it to create or clone workspaces and pay for any compute, storage, or egress fees.
 
 
 If you plan to share your Terra Billing Project or a workspace with others be sure you ( and they) have a basic understanding of cloud costs and how cloud costs flow through to the workspace‘s ( and not the user’s) Terra Billing Account.
 
 
-<hero> For additional information and detailed instructions for setting up billing as an individual see  [Understanding Workspaces](/learn/billing-setup/creating-a-google-cloud-account). </hero>
+<hero> For additional information and detailed instructions for setting up billing as an individual see  [How to Set Up Billing in Terra](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra). </hero>
 
 
 
@@ -229,7 +228,7 @@ Setting up cloud cost billing for a lab is similar except that you will need to 
 
 Budgets, and alerts are set at the Terra Billing Project level so you may end up having a Terra Billing Project per lab member and per shared workspace.
 
-You will also want to deliberate in your planning about who can-share Terra Billing Accounts and Terra workspaces with can-execute permissions. For example you may assign a lab manager who creates workspaces for users and allows them to execute but not share the workspace.
+You will also want to deliberate in your planning about who can-share Terra Billing Accounts and Terra workspaces with can-compute permissions. For example you may assign a lab manager who creates workspaces for users and allows them to execute but not share the workspace.
 
 
 

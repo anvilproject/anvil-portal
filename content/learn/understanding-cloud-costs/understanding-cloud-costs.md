@@ -12,6 +12,8 @@ Compute operations, however, such as running workflows, running Jupyter Notebook
 
 This section provides an overview of the types of charges along with links to current GCP pricing. We also link to Terra articles describing approaches for monitoring and controlling cloud costs.
 
+<hero> For additional detail see Terra's [Controlling Cloud Costs](https://support.terra.bio/hc/en-us/sections/360006459511-Controlling-Cloud-costs) documentation. </hero>
+
 ### Types of GCP Charges
 
 #### Compute
