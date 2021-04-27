@@ -6,14 +6,18 @@ title: "NIH Cloud Platform Interoperability Effort"
 # NIH Cloud Platform Interoperability Effort
 ### Helping to create a federated genomic data ecosystem
 
+
+
  <hero>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating cloud platforms and facilitate the realization of a trans-NIH, federated  data ecosystem.
  </hero>
 
 
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI and the NIH Common Fund.
 
-## Platforms
 ![HERO](./_images/ncpi-cloud-ncbi-2.png)
+
+## Platforms
+
 The NCPI's  participating platforms are:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#nhgri-anvil)
