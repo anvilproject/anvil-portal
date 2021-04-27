@@ -33,4 +33,7 @@ This section lists selected articles from the Terra documentation to help you ge
 
 `video: https://youtu.be/ONc1Wf7rEuw`
 
+## Analysis Workflows
+
+- [How to set up a workflow analysis](https://support.terra.bio/hc/en-us/articles/360026521831-How-to-set-up-a-workflow-analysis-) - This article explains how to set up (configure) your workflow analysis in the Terra UI. Note that this article is intended primarily for analyses using data from the workspace data table.
 

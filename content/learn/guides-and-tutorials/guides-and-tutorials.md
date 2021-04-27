@@ -5,7 +5,6 @@ description: "Overview of persona-specific guides and tutorials for the AnVIL pl
 ---
 
 # Guides and Tutorials
->STATUS: PLEASE REVIEW See the backing [Google Doc](https://docs.google.com/document/d/1h2hFLcV2YHCiockf22dEqFVCQYEdJk776cecQMYBt_s/edit) to suggest or comment.
 
 Key guides and tutorials grouped by user persona are listed below.  For a general onboarding and getting-started tour, see the [Learn](/learn) section. See [Getting Help with AnVIL Tools and Components](/help) to obtain personalized help for each of AnVIL's components and tools.
 
@@ -31,5 +30,3 @@ Key guides and tutorials grouped by user persona are listed below.  For a genera
 ### Data Contributing Consortia
 
 [Submitting Consortium Data](/learn/consortia/data-submission) -  An overview of the process of submitting data to AnVIL and confirming eligibility for submission.
-
-

@@ -199,8 +199,8 @@
           file: ""
           pathPartial: "/billing-setup"
           navigationItems:
-            - name: "Overview of Billing Setup"
-              file: "/learn/billing-setup/billing-setup"
+            - name: "Overview of Billing Concepts"
+              file: "/learn/billing-setup/billing-concepts"
 #            - name: "Creating a Google Cloud Account"
 #              file: "/learn/billing-setup/creating-a-google-cloud-account"
 #            - name: "Managing Google Cloud Billing Accounts"

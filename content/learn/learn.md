@@ -6,12 +6,6 @@ description: "A guided walk-through of the  AnVIL / Terra documentation with a f
 
 # Getting Started with AnVIL
 
->STATUS: WIP! See the [Google doc version](https://docs.google.com/document/d/1B9nEQWm0yww51csuB7leZKLpmeNUbVoJrWlAp5NbmiY/edit
-) during refinement to comment or  suggest.
-
-
-  <!--- Add links! --->
-
 The AnVIL platform is an [NHGRI](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) supported data commons running on the Google Cloud Platform (GCP). AnVIL enables researchers to analyze high-value open and controlled access genomic [datasets](/data) with popular analysis tools in a [secure](/overview/security) cloud computing environment.
 
 AnVIL uses [Terra](https://anvil.terra.bio/#workspaces) as its analysis platform, [Gen3](https://gen3.theanvil.io) for data search and artificial cohort creation, and [Dockstore](https://dockstore.org/) as a repository for Docker-based genomic analysis tools and workflows.
