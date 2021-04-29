@@ -32,6 +32,11 @@
     overflow: auto;
 }
 
+/* Table <td> - first column. */
+.content .tableContainer td:first-child {
+    min-width: 84px;
+}
+
 /* Image. */
 .zoomIcon {
     box-shadow: rgba(0, 0, 0, 0.14) 0 12px 24px -4px, rgba(0, 0, 0, 0.24) 0 8px 16px -8px, rgba(0, 0, 0, 0.24) 0 -6px 16px -6px;

@@ -76,6 +76,8 @@
             - name: ""
               file: "/events/bcc2020-r-bioconductor-in-the-cloud"
             - name: ""
+              file: "/events/bioconductor-popup-workshops"
+            - name: ""
               file: "/events/ismb2020-finding-and-analyzing-data-in-the-cloud"
             - name: ""
               file: "/events/magic2020"
