@@ -16,7 +16,7 @@ The guide indicates how to discover R / Bioconductor workspaces, and how the R /
 
 ## AnVIL Basics
 
-[Getting Started with AnVIL](https://anvilproject.org/learn) -  Provides essential information for setting up a Terra account, billing and cost management, use of Terra workspaces, finding and accessing (public as well as protected) consortium-scale data, and running workflows and interactive analyses.
+[Getting Started with AnVIL](/learn) -  Provides essential information for setting up a Terra account, billing and cost management, use of Terra workspaces, finding and accessing (public as well as protected) consortium-scale data, and running workflows and interactive analyses.
 
 ## R / Bioconductor with RStudio or Jupyter
 

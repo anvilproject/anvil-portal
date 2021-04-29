@@ -3,7 +3,7 @@
 
 <hero>AnVIL hosts high value datasets relevant to human health and disease.</hero>
 
-Through a combination of online courses, in-person workshops, and course materials, content will be created using the [FAIR data principles](https://www.nature.com/articles/sdata201618) and tailored to a variety of scenarios. Specific modules will be created for data consumers, data analysts, methods developers, and principal investigators.
+Through a combination of online courses, in-person workshops, and course materials, content will be created using the [FAIR data principles](https://www.nature.com/articles/sdata201618) and tailored to a variety of scenarios. Specific modules will be created for data consumers, data analysts, methods developers, and investigators.
 
 ##Responsibility for External Sites:
 This website may contain links to other web sites. Some of those web sites may be operated by third parties. We provide the links for your convenience, but we do not review, control, or monitor the privacy practices of web sites operated by others.

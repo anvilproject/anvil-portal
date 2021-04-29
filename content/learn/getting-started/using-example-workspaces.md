@@ -5,6 +5,8 @@ description: "The AnVIL project's featured workspaces demonstrate common genomic
 
 #Using Example Workspaces
 
+Browsing and cloning example workspaces is a great way to get started using AnVIL.
+
 The AnVIL project's example workspaces demonstrate common genomic analysis pipelines deployed using data and tools available on AnVIL.
  
  These analyses utilize unrestricted public data along with reproducible workflows, allowing researchers to clone and execute the workspaces as a learning exercise or for adapting to their own research.
