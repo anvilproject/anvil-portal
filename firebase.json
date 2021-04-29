@@ -120,7 +120,7 @@
       },
       {
         "source": "/learn/for-pis/setting-up-lab-accounts",
-        "destination": "/learn/principal-investigators/setting-up-lab-accounts",
+        "destination": "/learn/investigators/setting-up-lab-accounts",
         "type": 301
       }
     ]

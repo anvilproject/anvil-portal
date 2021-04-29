@@ -29,8 +29,7 @@ and [Google Cloud Local SSD Pricing](https://cloud.google.com/compute/all-pricin
 Egress applies to data being transferred out of a Cloud resource. In this context, a Cloud resource
 refers to a set of computers in a particular region. This would apply, for example, if you transferred data from Google’s East Coast computers to Amazon’s West Coast computers.
 
-In general, while it’s free to upload data to the Cloud, you will incur costs when downloading data to your local computer or between Cloud regions. For more information see [Google Cloud Network Pricing](https://cloud.google.
-com/storage/pricing#network-egress).
+In general, while it’s free to upload data to the Cloud, you will incur costs when downloading data to your local computer or between Cloud regions. For more information see [Google Cloud Network Pricing](https://cloud.google.com/storage/pricing#network-egress).
 
 ## Additional Cloud Cost Articles
 

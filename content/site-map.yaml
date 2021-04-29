@@ -282,13 +282,13 @@
 #      navigationItems:
 #        - name: "Analyzing Data"
 #          file: "/learn/data-analysts/data-analysts"
-    - name: "Principal Investigators"
-      pathPartial: "/principal-investigators"
+    - name: "Investigators"
+      pathPartial: "/investigators"
       navigationItems:
         - name: "Setting up Your Lab in AnVIL"
-          file: "/learn/principal-investigators/setting-up-lab-accounts"
+          file: "/learn/investigators/setting-up-lab-accounts"
         - name: "Preparing a Cloud Cost Budget Justification"
-          file: "/learn/principal-investigators/budget-templates"
+          file: "/learn/investigators/budget-templates"
     - name: "Consortia"
       pathPartial: "/consortia"
       navigationItems:

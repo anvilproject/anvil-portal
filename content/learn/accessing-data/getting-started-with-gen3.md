@@ -15,7 +15,7 @@ More information, including a detailed User Guide on how to work with a Gen3 Dat
 
 ### Types of Data hosted on AnVIL Gen3
 
-The [AnVIL](https://anvilproject.org/learn/anvil-mooc/what-is-anvil) by Gen3 currently hosts datasets and cohorts from the following projects and networks:
+The [AnVIL](/learn/anvil-mooc/what-is-anvil) by Gen3 currently hosts datasets and cohorts from the following projects and networks:
 - Open-access 1000 Genomes project
 - Center for Common Disease Genomics (CCDG)
 - Center for Mendelian Genomics (CMG)
@@ -24,7 +24,7 @@ The [AnVIL](https://anvilproject.org/learn/anvil-mooc/what-is-anvil) by Gen3 cur
 
 Datasets can consist of phenotypic, genomic, and/or clinical data.
 
-Learn more about the datasets [here](https://anvilproject.org/data).
+Learn more about the datasets [here](/data).
 
 ## Login to the AnVIL Gen3 platform
 
@@ -46,13 +46,13 @@ Once logged in, your username will appear in the upper right-hand corner of the 
 
 ### Helpful Account-related documentation and resources
 
-1. [Account Setup on AnVIL](https://anvilproject.org/learn#account-setup)
+1. [Account Setup on AnVIL](/learn#setting-up-and-linking-user-accounts)
 1. [Creating or editing an eRA account](https://era.nih.gov/register-accounts/create-and-edit-an-account.htm)
 1. [Creating a dbGaP account](https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login)
 1. [Setting up a Google account with a non-Google email](https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Google-email)
 1. [Linking Gen3 and AnVIL on Terra](https://support.terra.bio/hc/en-us/articles/360050390451-Linking-Gen3-and-AnVIL-on-Terra)
 1. [Linking controlled-access authorization (external servers)](https://support.terra.bio/hc/en-us/articles/360038086332)
-1. [Requesting Data Access on AnVIL](https://anvilproject.org/learn/accessing-data/requesting-data-access)
+1. [Requesting Data Access on AnVIL](/learn/accessing-data/requesting-data-access)
 
 ### How to check your data access on AnVIL Gen3
 
@@ -137,7 +137,7 @@ Projects will also be hidden if the select cohort contains fewer than 50 subject
 <figure-caption>The grey box containing a downward-facing arrow and the number 50 indicates that the selected virtual cohort contains a subject count below 50. This symbol will be displayed only for studies that are not yet accessible by the user.</figure-caption>
 </figure>
 
-Users can request access by clicking on the “Get Access” button, visiting the [dbGaP homepage](https://dbgap.ncbi.nlm.nih.gov/), or following instructions reported [here](https://anvilproject.org/learn/accessing-data/requesting-data-access).
+Users can request access by clicking on the “Get Access” button, visiting the [dbGaP homepage](https://dbgap.ncbi.nlm.nih.gov/), or following instructions reported [here](/learn/accessing-data/requesting-data-access).
 
 #### “All Data” Access
 
@@ -211,8 +211,8 @@ The Downloadable Tab provides users with the tools needed to download data local
 
 The GTEx files on AnVIL are divided into object files and phenotype data. Users can download phenotypic data as a PFB file and object files using a JSON file manifest, where the latter will require additional download steps using the [Gen3-Client](https://gen3.org/resources/user/gen3-client/). For a detailed description for downloading either phenotypic data or object files, refer to the links below:
 
-1. [Phenotypic Data Download](https://anvilproject.org/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-phenotypic-data)
-1. [Object Files Download](https://anvilproject.org/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-object-files)
+1. [Phenotypic Data Download](/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-phenotypic-data)
+1. [Object Files Download](/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-object-files)
 
 ### Export Data to Terra, PFB, and Workspaces
 
@@ -230,7 +230,7 @@ After a cohort has been selected, the users have three different options for exp
 ***Note**: The Portable Format for Bioinformatics (PFB) is an Avro-based file that bundles schema, data, ontologies/controlled vocabularies, and pointers to data files in a single, serializable format that can be sent easily across systems and has the flexibility for different data models. PFB export times can take up to 60 minutes, but often will complete in less than 10 minutes.
 
 The AnVIL provides a secure cloud environment for the analysis of large genomic and related datasets. For this purpose, Terra provides capabilities for large scale batch processing and interactive analysis over thousands of samples and Gen3 stores data on secured Requester Pays AWS buckets.
-Therefore, available for download to a local environment is currently only the [GTEx v8](https://gtexportal.org/home/) free egress Phenotypic Dataset under the “Downloadable” Tab. For more information see [here](https://anvilproject.org/learn/reference/gtex-v8-free-egress-instructions).
+Therefore, available for download to a local environment is currently only the [GTEx v8](https://gtexportal.org/home/) free egress Phenotypic Dataset under the “Downloadable” Tab. For more information see [here](/learn/reference/gtex-v8-free-egress-instructions).
 
 ## Understanding the Gen3 data model
 

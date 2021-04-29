@@ -17,7 +17,7 @@ By operating in the cloud, AnVIL users can scale analyses from a single computer
 ### About AnVIL’s Documentation
 AnVIL’s training materials curate, and augment existing component and tool documentation, and show how to use AnVIL’s parts together to accomplish the goals of AnVIL’s different user personas.
 
-To complement this onboarding and introductory section, the AnVIL team is in the process of developing persona-specific guides and tutorials. For example see the guides for  data analysts, [principal investigators](/learn/principal-investigators/setting-up-lab-accounts), developers, instructors, and [data contributors](/learn/consortia/data-submission).
+To complement this onboarding and introductory section, the AnVIL team is in the process of developing persona-specific guides and tutorials. For example see the guides for  data analysts, [investigators](/learn/investigators/setting-up-lab-accounts), developers, instructors, and [data contributors](/learn/consortia/data-submission).
 
 <!--hero>  For a full list of AnVIL guides and tutorials for each persona, see [Guides and Tutorials](/learn/guides-and-tutorials). </hero-->
 
@@ -85,7 +85,7 @@ There are several types of workspaces to consider when thinking about cloning a 
 
 **Example Workspaces** - The example workspaces, also referred to as “Featured” workspaces, are educational, tutorial workspaces demonstrating collections of best practices in analysis and reproducible science. For an example, see [Reproducing the paper: Variant analysis of Tetralogy of Fallot](https://app.terra.bio/#workspaces/help-gatk/Reproducibility_Case_Study_Tetralogy_of_Fallot).
 
-<hero>For more information on the different workspace types and how they can help you get started, see [Start with curated sample workspaces](https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-variety-of-use-cases) or [Using Example Workspaces](learn/getting-started/using-example-workspaces). </hero>
+<hero>For more information on the different workspace types and how they can help you get started, see [Start with curated sample workspaces](https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-variety-of-use-cases) or [Using Example Workspaces](learn/introduction/using-example-workspaces). </hero>
 
 
 
@@ -226,7 +226,7 @@ You will also want to deliberate in your planning about who can-share Terra Bill
 
 
 
-<hero> For additional information and approaches see [Setting Up Lab Billing Accounts](/learn/principal-investigators/setting-up-lab-accounts) and [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs) </hero>
+<hero> For additional information and approaches see [Setting Up Lab Billing Accounts](/learn/investigators/setting-up-lab-accounts) and [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs) </hero>
 
 ### Getting Help
 

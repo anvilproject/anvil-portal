@@ -30,11 +30,11 @@ This approach is recommended for labs new to cloud computing as it enables detai
 
 This guide is organized into three main sections.
 
-**[Section 1:  Prerequisites](/learn/principal-investigators/setting-up-lab-accounts#prerequisites)** - The first section provides an overview of the concepts, resources and roles related to billing and account setup.
+**[Section 1:  Prerequisites](/learn/investigators/setting-up-lab-accounts#prerequisites)** - The first section provides an overview of the concepts, resources and roles related to billing and account setup.
 
-**[Section 2: Lab Setup Design](/learn/principal-investigators/setting-up-lab-accounts#lab-setup-design)** -  The second section describes the recommended setup design used by this guide and discusses the tradeoffs made and options to refine the setup for your specific needs.
+**[Section 2: Lab Setup Design](/learn/investigators/setting-up-lab-accounts#lab-setup-design)** -  The second section describes the recommended setup design used by this guide and discusses the tradeoffs made and options to refine the setup for your specific needs.
 
-**[Section 3: Lab Setup Guide](/learn/principal-investigators/setting-up-lab-accounts#lab-setup-guide)** -  The third section walks you through the steps necessary to implement the suggested lab setup. Along the way, we also present choices to help you optimize your lab setup to your specific needs and situation.
+**[Section 3: Lab Setup Guide](/learn/investigators/setting-up-lab-accounts#lab-setup-guide)** -  The third section walks you through the steps necessary to implement the suggested lab setup. Along the way, we also present choices to help you optimize your lab setup to your specific needs and situation.
 
 ##  Prerequisites
 

@@ -12,11 +12,11 @@ Key guides and tutorials grouped by user persona are listed below.  For a genera
 
 [Getting Started](/learn#getting-started) - An overview of AnVIL with a focus on onboarding and preparing new users to run genomic analyses in the cloud.
 
-### Principal Investigators
+### Investigators
 
-- [Setting Up Lab Accounts](/learn/principal-investigators/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
+- [Setting Up Lab Accounts](/learn/investigators/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
 
-- [Creating Cloud Cost Budget Justifications](/learn/principal-investigators/budget-templates) - Templates for calculating a cloud cost budget and writing a budget justification for using AnVIL in your grant applications.
+- [Creating Cloud Cost Budget Justifications](/learn/investigators/budget-templates) - Templates for calculating a cloud cost budget and writing a budget justification for using AnVIL in your grant applications.
 
 ### Data Analysts
 
