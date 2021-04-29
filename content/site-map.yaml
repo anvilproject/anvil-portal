@@ -267,6 +267,8 @@
               file: "/learn/videos/gen3-videos"
             - name: "Galaxy"
               file: "/learn/videos/galaxy-videos"
+            - name: "Seqr"
+              file: "/learn/videos/seqr-videos"
         - name: "Workshop Archive"
           file: "/learn/training/workshop-archive"
         - name: "Reference"
