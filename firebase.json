@@ -85,7 +85,7 @@
     },
     {
       "source": "/training/featured-workspaces",
-      "destination": "/learn/getting-started/using-example-workspaces",
+      "destination": "/learn/analysis-workflows/using-example-workspaces",
       "type": 301
     },
     {
@@ -105,7 +105,7 @@
       },
       {
         "source": "/learn/getting-started/using-example-workspaces",
-        "destination": "/learn/introduction/using-example-workspaces",
+        "destination": "/learn/analysis-workflows/using-example-workspaces",
         "type": 301
       },
       {

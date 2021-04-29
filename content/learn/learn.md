@@ -85,7 +85,7 @@ There are several types of workspaces to consider when thinking about cloning a 
 
 **Example Workspaces** - The example workspaces, also referred to as “Featured” workspaces, are educational, tutorial workspaces demonstrating collections of best practices in analysis and reproducible science. For an example, see [Reproducing the paper: Variant analysis of Tetralogy of Fallot](https://app.terra.bio/#workspaces/help-gatk/Reproducibility_Case_Study_Tetralogy_of_Fallot).
 
-<hero>For more information on the different workspace types and how they can help you get started, see [Start with curated sample workspaces](https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-variety-of-use-cases) or [Using Example Workspaces](learn/introduction/using-example-workspaces). </hero>
+<hero>For more information on the different workspace types and how they can help you get started, see [Start with curated sample workspaces](https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-variety-of-use-cases) or [Using Example Workspaces](learn/analysis-workflows/using-example-workspaces). </hero>
 
 
 
