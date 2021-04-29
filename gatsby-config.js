@@ -5,7 +5,6 @@
  * The AnVIL configuration file.
  */
 
-let statsJsonPath = `../client-apis/pyAnVIL/notebooks/figures/report-data.json`;
 let contentPath = `./content`;
 let yamlPath = `./content`;
 let roadMapPath = `./content/roadmap/`;
@@ -78,13 +77,6 @@ module.exports = {
         `gatsby-source-dashboard-anvil`,
         `gatsby-source-dashboard-ncpi`,
         `gatsby-transformer-json`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: statsJsonPath,
-                name: 'json-schema',
-            },
-        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
