@@ -17,7 +17,7 @@ import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.
 
 function Dashboard(props) {
 
-    const {children, countLabel, dashboardEntities, dashboardIndexFileName, dashboardPathname, dataset,
+    const {children, countLabel, dashboardEntities, dashboardIndexFileName, dashboardURL, dataset,
         resultKey, searchFacets, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = props;
     const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(dashboardEntities, searchFacets);
     const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets);
@@ -31,7 +31,7 @@ function Dashboard(props) {
                            countLabel={countLabel}
                            dashboardEntities={dashboardEntities}
                            dashboardIndexFileName={dashboardIndexFileName}
-                           dashboardPathname={dashboardPathname}
+                           dashboardURL={dashboardURL}
                            facetsByTerm={facetsByTerm}
                            resultKey={resultKey}
                            setOfSearchGroups={setOfSearchGroups}

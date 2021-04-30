@@ -16,7 +16,6 @@ import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
 import * as DashboardService from "../../../utils/dashboard/dashboard.service";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
-import * as EnvironmentService from "../../../utils/environment/environment.service";
 
 class ProviderDashboard extends React.Component {
 
@@ -132,7 +131,7 @@ class ProviderDashboard extends React.Component {
             dashboardIndexMounted: false,
             inputValue: "",
             query: "", // Analytics-specific value, used to specify the current query state when tracking a change
-            searchURL: `${EnvironmentService.getCurrentEnvironmentURL()}data`,
+            searchURL: "",
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
@@ -583,18 +582,28 @@ class ProviderDashboard extends React.Component {
 
     updateDashboardURL = () => {
 
-        const {dashboardPathname} = this.props;
+        const {dashboardURL} = this.props;
         const {query} = this.state;
-        const pathname = dashboardPathname.slice(1);
+        const url = new URL(dashboardURL);
 
-        const params = new URLSearchParams();
-        params.set("query", query);
-        const searchURL = `${EnvironmentService.getCurrentEnvironmentURL()}${pathname}?${params.toString()}`;
+        if ( query ) {
 
-        this.setState({searchURL: searchURL});
+            /* Set the search params. */
+            url.searchParams.set("query", query);
+        }
+        else {
 
-        /* Push to URL. */
-        window.history.pushState(null, "", `?${params.toString()}`);
+            /* Delete the search params. */
+            url.searchParams.delete("query");
+        }
+
+        /* Grab the new url string. */
+        const {href} = url;
+
+        this.setState({searchURL: href});
+
+        /* Add the new url to the session history stack. */
+        window.history.pushState(null, "", href);
     };
 
     updateSelectedTermsByFacet = () => {

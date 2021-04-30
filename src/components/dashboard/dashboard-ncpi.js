@@ -31,13 +31,14 @@ function DashboardNCPI() {
 
     const dashboardEntities = DashboardNCPIStaticQuery();
     const currentLocation = useLocation();
-    const {pathname: dashboardPathname} = currentLocation || {};
+    const {origin, pathname} = currentLocation || {};
+    const dashboardURL = `${origin}${pathname}`;
 
     return (
         <Dashboard countLabel={countLabel}
                    dashboardEntities={dashboardEntities}
                    dashboardIndexFileName={dashboardIndexFileName}
-                   dashboardPathname={dashboardPathname}
+                   dashboardURL={dashboardURL}
                    dataset={"ncpi"}
                    resultKey={lunrIndexRefField}
                    searchFacets={searchFacets}
