@@ -16,7 +16,6 @@ import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
 import * as DashboardService from "../../../utils/dashboard/dashboard.service";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
-import * as EnvironmentService from "../../../utils/environment/environment.service";
 
 class ProviderDashboard extends React.Component {
 
@@ -132,7 +131,7 @@ class ProviderDashboard extends React.Component {
             dashboardIndexMounted: false,
             inputValue: "",
             query: "", // Analytics-specific value, used to specify the current query state when tracking a change
-            searchURL: `${EnvironmentService.getCurrentEnvironmentURL()}data`,
+            searchURL: "",
             selectedTermsByFacet: new Map(),
             setOfCountResultsByFacet: new Map(),
             setOfResults: new Set(),
@@ -290,6 +289,21 @@ class ProviderDashboard extends React.Component {
         const results = dashboardIndex.search(queryString);
 
         return new Set(results.map(result => result.ref));
+    };
+
+    getSearchParamStr = () => {
+
+        const {query} = this.state;
+
+        if ( query ) {
+
+            const params = new URLSearchParams();
+            params.set("query", query);
+
+            return `?${params.toString()}`;
+        }
+
+        return "";
     };
 
     getSelectedTermsByFacet = (facetsByTerm, inputValue, termsChecked) => {
@@ -583,18 +597,18 @@ class ProviderDashboard extends React.Component {
 
     updateDashboardURL = () => {
 
-        const {dashboardPathname} = this.props;
-        const {query} = this.state;
-        const pathname = dashboardPathname.slice(1);
+        const {dashboardURL} = this.props;
 
-        const params = new URLSearchParams();
-        params.set("query", query);
-        const searchURL = `${EnvironmentService.getCurrentEnvironmentURL()}${pathname}?${params.toString()}`;
+        /* Grab the current search params string. */
+        const searchStr = this.getSearchParamStr();
 
-        this.setState({searchURL: searchURL});
+        /* Grab the current url, updated with any search params. */
+        const url = `${dashboardURL}${searchStr}`;
+
+        this.setState({searchURL: url});
 
         /* Push to URL. */
-        window.history.pushState(null, "", `?${params.toString()}`);
+        window.history.pushState(null, "", url);
     };
 
     updateSelectedTermsByFacet = () => {
