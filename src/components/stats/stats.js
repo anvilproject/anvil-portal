@@ -12,14 +12,13 @@ import React from "react";
 import {StatsStaticQuery} from "../../hooks/stats-query";
 import Stat from "../stat/stat";
 import * as NumberFormatService from "../../utils/number-format.service";
-import * as StatsService from "../../utils/stats.service";
 
 // Styles
 import compStyles from "./stats.module.css";
 
 function Stats() {
 
-    const stats = StatsService.getStats(StatsStaticQuery());
+    const stats = StatsStaticQuery();
 
     const formatStats = (count) => {
         return NumberFormatService.format(count, {
