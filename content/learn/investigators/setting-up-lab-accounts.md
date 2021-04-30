@@ -167,7 +167,9 @@ Once lab members have a Google ID they can use that email address to create a Te
 
 **All Lab Members**
 
-Each Lab Manager will need a Google Cloud Account created with the Google ID (email) they use to sign in to Terra.  To create a Google Cloud Account:
+Each Lab Manager will need a Google Cloud Account created with the Google ID (email) they use to sign in to Terra. 
+
+**To create a Google Cloud Account:**
 
 1. Navigate to <https://cloud.google.com/>
 1. Select the “Get started for free” button.
