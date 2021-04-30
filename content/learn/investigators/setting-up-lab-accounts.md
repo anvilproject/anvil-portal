@@ -143,7 +143,7 @@ Before you start you will want to plan out your setup and:
 
 ### 1- Make sure each lab member has a Google ID
 
-**All Lab Members**
+_All Lab Members_
 
 
 All lab members that wish to use Terra will need a Google ID to create a Tera account.
@@ -158,14 +158,14 @@ Lab members without Google IDs can see [Create Your Google Account](https://acco
 
 ### 2 - Have each lab member create a Terra account
 
-**All Lab Members**
+_All Lab Members_
 
 Once lab members have a Google ID they can use that email address to create a Terra account. Then create Gen3 and Docstore accounts as well and link their accounts according to the instructions provided in the [Account Setup Guide](/learn/account-setup/overview-of-account-setup) if required.
 
 
 ### 3- Have each Lab Manager create a Google Cloud Account
 
-**All Lab Members**
+_All Lab Members_
 
 Each Lab Manager will need a Google Cloud Account created with the Google ID (email) they use to sign in to Terra. 
 
@@ -173,15 +173,17 @@ Each Lab Manager will need a Google Cloud Account created with the Google ID (em
 
 1. Navigate to <https://cloud.google.com/>
 1. Select the “Get started for free” button.
-1. On the following screen select “Create account”.
+1. On the following screen select **“Create account”**.
 1. When prompted, choose “For myself” and follow the instructions. This will allow you to create an individual Google Cloud account.
 
 
 ### 4 - Create Your Lab’s Google Cloud Account
 
-**PI or Account Administrator**
+_PI or Account Administrator_
 
-If you will be creating a Google Cloud Account for the Lab, create it using the email address the PI will use to sign into Terra (or other Google ID as appropriate).  To create a Google Cloud Account:
+If you will be creating a Google Cloud Account for the Lab, create it using the email address the PI will use to sign into Terra (or other Google ID as appropriate).  
+
+**To create a Google Cloud Account:**
 
 1. Determine the email address to use for the lab’s Google Cloud Account (possibly the PI’s GoogleID)
 1. Navigate to <https://cloud.google.com/>
@@ -192,18 +194,18 @@ If you will be creating a Google Cloud Account for the Lab, create it using the 
 
 ### 5 -  Create Your Lab’s GCP Billing Accounts
 
-**PI or Account Administrator**
+_PI or Account Administrator_
 
-For each GCP Billing account required:
+**For each GCP Billing account required:**
 
 1. Sign in to the google cloud console by navigating to <https://cloud.google.com/> and selecting “Sign in”.
 1. Navigate to <https://console.cloud.google.com/billing> (or select “Billing” from the top left Navigation menu).
 1. Select your lab from the “Select an organization” dropdown.
-1. Select the “ADD BILLING ACCOUNT” button.
+1. Select the **“ADD BILLING ACCOUNT”** button.
 1. Enter the name for your new Google BIlling Account .
 1. Select your country and optionally currency if applicable.
-1. Select “CONTINUE” and attach or create a Google Payments Profile to fund the new Google Billing Account.
-1. Select “SUBMIT AND ENABLE BILLING”.
+1. Select **“CONTINUE”** and attach or create a Google Payments Profile to fund the new Google Billing Account.
+1. Select **“SUBMIT AND ENABLE BILLING”.**
 
 If this is the first Google Billing Account created for your lab’s new GCP Account you will now have $300 in cloud cost credits that you can use for 90 days. See [Google Cloud Free Program](https://cloud.google.com/free/docs/gcp-free-tier) to understand more about Google’s 90-day, $300 free trial and free tier.
 
@@ -211,7 +213,7 @@ For more information on creating billing accounts, see [Create, modify, or close
 
 ### 6 - Add Terra as a “Billing Account User” on each GCP Billing Account
 
-**PI or Account Administrator**
+_PI or Account Administrator_
 
 To link your new GCP Billing Accounts to Terra, for each new GCP Billing Account created:
 
@@ -229,7 +231,7 @@ To link your new GCP Billing Accounts to Terra, for each new GCP Billing Account
 
 ### 7 - Add each Lab Manager as a “Billing Account User” on your GCP Billing Accounts
 
-**PI or Account Administrator**
+_PI or Account Administrator_
 
 Once a Lab Manage is added as a “_Billing Account User_”, and the Google Billing Account is linked to Terra, the Lab Manager will be able to create Terra Billing Projects using the linked Google Billing Account.
 
@@ -249,7 +251,7 @@ The lab manager should now be able to see the linked Google Billing Account when
 
 ### 8 - Create a Terra Billing Project to track spending for each Data Analyst
 
-**Lab Manager**
+_Lab Manager_
 
 Name the Terra Billing Projects so that you can identify the Data Analyst by the project name. If you require finer grained reporting and monitoring you may create a Terra Billing Project for each Data Analyst’s workspace in the case they have multiple workspaces.
 
@@ -267,7 +269,7 @@ To create a Terra Billing Project:
 
 ### 9 - Create Budgets and Alerts in GCP for each Terra Billing Project
 
-**Lab Manager**
+_Lab Manager_
 
 As discussed, when a Terra Billing Project is created, Terra creates a “twin” GCP Billing Project and associates it with the Terra Billing Project’s GCP Billing Account. The “twin” GCP Billing Projects are used to scope individual budgets on their GCP Billing Account.
 
@@ -295,7 +297,7 @@ To create a GCP Budget For each Terra Billing Project:
 
 ### 10 -  Create or Clone Workspaces and add Data Analysts as “Writers” with “can-compute”
 
-**Lab Manager**
+_Lab Manager_
 
 To create workspaces for Data Analysts:
 
