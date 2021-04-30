@@ -22,18 +22,18 @@
 
     /* Side nav container - required to "add" fixed side nav to the flow */
     .sideNavContainer {
-        min-width: 280px;
+        min-width: 260px;
     }
 
     /* Side nav */
     .sideNav {
         border-right: 1px solid var(--accent-blue-light);
         height: 100%;
-        left: 24px; /* Gutter */
+        left: 16px; /* To left align arrow icon with gutter. */
         margin: 0;
         max-width: unset;
         padding: 0 2px 0 0;
         position: fixed;
-        width: 280px;
+        width: 260px;
     }
 }

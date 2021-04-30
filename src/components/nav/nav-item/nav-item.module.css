@@ -33,6 +33,7 @@
 /* Link - active. */
 .navItem > span:not(.button).active {
     color: var(--primary);
+    font-weight: 600;
 }
 
 /* Link - hover. */
