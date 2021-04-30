@@ -22,7 +22,7 @@
 
     /* Side nav container - required to "add" fixed side nav to the flow */
     .sideNavContainer {
-        min-width: 200px;
+        min-width: 280px;
     }
 
     /* Side nav */
@@ -34,22 +34,6 @@
         max-width: unset;
         padding: 0 2px 0 0;
         position: fixed;
-        width: 200px;
-    }
-}
-
-/**
- * Large tablet landscape, medium window. Widen nav.
- */
-@media screen and (min-width: 1280px) {
-
-    /* Side nav container - required to "add" fixed side nav to the flow */
-    .sideNavContainer {
-        min-width: 280px;
-    }
-
-    /* Side nav */
-    .sideNav {
         width: 280px;
     }
 }
