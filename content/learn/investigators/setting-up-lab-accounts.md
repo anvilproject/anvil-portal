@@ -230,7 +230,7 @@ In order to create and launch workspaces and consume Google Cloud resources, Ter
 <figure>
 <img src="./_images/link-terra.png" alt="Linking Terra to a Google Billing Account"/>
 <figure-caption>Figure 1. Adding Terra as a Billing Account User to a Google Billing Account.</figure-caption>
-</figure
+</figure>
 
 
 ### 7 - Add each Lab Manager as a Billing Account User on the lab’s Google Billing Accounts
