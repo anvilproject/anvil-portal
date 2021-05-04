@@ -4,14 +4,14 @@
  *
  * Style definitions specific to The AnVIL dashboard table header cell component.
  *
+ * "anvil" identifier is for AnVIL dashboard.
  * "ncpi" identifier is for ncpi dashboard.
- * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
  */
 
 /* Header cell */
+[id^="anvil"] th,
 [id^="ncpi"] th,
-[id^="studies"] th,
 [id^="summary"] th {
     border-bottom: none;
     color: inherit;
@@ -26,24 +26,24 @@ th.right {
     text-align: right;
 }
 
-/* Studies table */
+/* AnVIL table */
 /* NCPI table */
-/* Add padding to the right of cells for studies table to prevent long values from jamming up. */
-[id^="ncpi"] th,
-[id^="studies"] th {
+/* Add padding to the right of cells for AnVIL table to prevent long values from jamming up. */
+[id^="anvil"] th,
+[id^="ncpi"] th {
     padding: 0 8px 4px;
 }
 
 /* Header cell - first */
+[id^="anvil"] th:first-of-type,
 [id^="ncpi"] th:first-of-type,
-[id^="studies"] th:first-of-type,
 [id^="summary"] th:first-of-type {
     padding-left: 2px; /* Scoot in first and last, matches cell */
 }
 
 /* Header cell - last */
+[id^="anvil"] th:last-of-type,
 [id^="ncpi"] th:last-of-type,
-[id^="studies"] th:last-of-type,
 [id^="summary"] th:last-of-type {
     padding-right: 2px; /* Scoot in first and last, matches cell */
 }

@@ -4,43 +4,64 @@
  *
  * Style definitions specific to The AnVIL dashboard table row cell component.
  *
+ * "anvil" identifier is for AnVIL dashboard.
  * "ncpi" identifier is for ncpi dashboard.
- * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
  */
 
 /* Row cells */
+[id^="anvil"] td,
 [id^="ncpi"] td,
-[id^="studies"] td,
 [id^="summary"] td {
     border-bottom: none;
     font-size: 0.875rem; /* 14px */
     font-weight: 400;
     height: 32px;
     min-width: 62px;
-    padding: 0 4px;
+}
+
+/* Padding */
+/* AnVIL table */
+/* NCPI table */
+/* Summary table */
+/* Add padding to the right of cells for AnVIL table to prevent long values from jamming up */
+[id^="anvil"] td,
+[id^="ncpi"] td,
+[id^="summary"] td {
+    padding: 8px;
+}
+
+/* Row cell - first */
+[id^="anvil"] td:first-of-type,
+[id^="ncpi"] td:first-of-type,
+[id^="summary"] td:first-of-type {
+    padding-left: 2px; /* Scoot in first and last, matches header cell */
+}
+
+/* Row cell - last */
+[id^="anvil"] td:last-of-type,
+[id^="ncpi"] td td:last-of-type,
+[id^="summary"] td:last-of-type {
+    padding-right: 2px; /* Scoot in first and last, matches header cell */
 }
 
 /* Ellipsis */
-/* Studies table - "projectId" (ie Terra workspace name) */
-[id^="studies"] td[id^="projectId"] {
+/* AnVIL table - "projectId" (ie Terra workspace name) */
+[id^="anvil"] td[id^="projectId"] {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 233px; /* Matches studyName and diseases */
 }
 
-/* NCPI table */
-/* Studies table */
-/* Add padding to the right of cells for studies table to prevent long values from jamming up */
-[id^="ncpi"] td,
-[id^="studies"] td {
-    padding: 2px 8px 2px;
+/* AnVIL table - "accessType" */
+[id^="anvil"] td[id^="accessType"] {
+    width: 144px;
 }
 
-/* Studies table - "accessType" */
-[id^="studies"] td[id^="accessType"] {
-    width: 144px;
+/* AnVIL table - "consentCodes" */
+[id^="anvil"] td[id^="consentShortNames"] {
+    max-width: 158px;
 }
 
 /* NCPI table - "consentCodes" */
@@ -48,9 +69,9 @@
     width: 200px;
 }
 
-/* Studies table - "consentCodes" */
-[id^="studies"] td[id^="consentShortNames"] {
-    max-width: 158px;
+/* AnVIL table - "dataTypes" */
+[id^="anvil"] td[id^="dataTypes"] {
+    width: 158px;
 }
 
 /* NCPI table - "dataTypes" */
@@ -58,14 +79,14 @@
     max-width: 158px;
 }
 
-/* Studies table - "dataTypes" */
-[id^="studies"] td[id^="dataTypes"] {
-    width: 158px;
+/* AnVIL table - "dataTypes" */
+[id^="anvil"] td[id^="dataTypes"] span {
+    white-space: nowrap;
 }
 
-/* Studies table - "dataTypes" */
-[id^="studies"] td[id^="dataTypes"] span {
-    white-space: nowrap;
+/* AnVIL table - "diseases" */
+[id^="anvil"] td[id^="diseases"] {
+    max-width: 158px;
 }
 
 /* NCPI table - "diseases" */
@@ -73,14 +94,14 @@
     max-width: 158px;
 }
 
-/* Studies table - "diseases" */
-[id^="studies"] td[id^="diseases"] {
-    max-width: 158px;
+/* AnVIL table - "size" */
+[id^="anvil"] td[id^="size"] {
+    width: 84px;
 }
 
-/* Studies table - "size" */
-[id^="studies"] td[id^="size"] {
-    width: 84px;
+/* AnVIL table - "studyName" ("title") */
+[id^="anvil"] td[id^="studyName"] {
+    max-width: 158px;
 }
 
 /* NCPI table - "studyName" ("title") */
@@ -88,18 +109,13 @@
     max-width: 400px;
 }
 
-/* Studies table - "studyName" ("title") */
-[id^="studies"] td[id^="studyName"] {
-    max-width: 158px;
-}
-
-/* Studies table - "consortium" */
-[id^="studies"] td[id^="consortium"] {
+/* AnVIL table - "consortium" */
+[id^="anvil"] td[id^="consortium"] {
     width: 89px;
 }
 
-/* Studies table - "consortium" */
-[id^="studies"] td[id^="subjects"] {
+/* AnVIL table - "subjects" */
+[id^="anvil"] td[id^="subjects"] {
     width: 80px;
 }
 
@@ -111,16 +127,4 @@
 /* Summary table - "total" */
 [id^="summary"] td {
     font-weight: inherit; /* Font weight specified by data table row */
-}
-
-/* Row cell - first */
-[id^="studies"] td:first-of-type,
-[id^="summary"] td:first-of-type {
-    padding-left: 2px; /* Scoot in first and last, matches header cell */
-}
-
-/* Row cell - last */
-[id^="studies"] td:last-of-type,
-[id^="summary"] td:last-of-type {
-    padding-right: 2px; /* Scoot in first and last, matches header cell */
 }

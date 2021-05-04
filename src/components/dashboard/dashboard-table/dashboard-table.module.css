@@ -4,8 +4,8 @@
  *
  * Style definitions specific to The AnVIL dashboard table component.
  *
+ * "anvil" identifier is for anvil dashboard.
  * "ncpi" identifier is for ncpi dashboard.
- * "studies" identifier is for workspaces table with studies included.
  * "summary" identifier is for the summary table.
  */
 
@@ -38,14 +38,4 @@
     .wrapper {
         max-width: calc(100vw - 24px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
     }
-}
-
-/**
- * Large window.
- */
-@media screen and (min-width: 1440px) {
-
-    /*.wrapper {*/
-    /*    max-width: 1392px; !* Cap width of table on large devices *!*/
-    /*}*/
 }

@@ -47,7 +47,7 @@ function DashboardAnVIL() {
                    tableHeadersSummary={tableHeadersSummary}>
             <DashboardSearch/>
             <DashboardTableSummary/>
-            <DashboardTableEntities studies/>
+            <DashboardTableEntities dataset={"anvil"}/>
         </Dashboard>
     )
 }
