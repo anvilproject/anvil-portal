@@ -1,6 +1,7 @@
 ---
 author: "AnVIL"
 conference: "Bioconductor"
+description: "A Bioconductor popup workshop providing a one-hour virtual session to highlight specific parts of the Terra / AnVIL ecosystem for R and Bioconductor users."
 docType: "Event"
 eventType: "Popup Workshop"
 featured: true
