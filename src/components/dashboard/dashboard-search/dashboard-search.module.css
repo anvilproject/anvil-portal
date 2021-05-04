@@ -13,3 +13,8 @@
     margin: 32px 0 24px; /** Padding bottom matches padding between tables */
     width: 100%;
 }
+
+/* NCPI dashboard. */
+.ncpi {
+    margin-top: 0;
+}
