@@ -31,13 +31,14 @@ function DashboardAnVIL() {
 
     const dashboardEntities = DashboardWorkspaceStaticQuery();
     const currentLocation = useLocation();
-    const {pathname: dashboardPathname} = currentLocation || {};
+    const {origin, pathname} = currentLocation || {};
+    const dashboardURL = `${origin}${pathname}`;
 
     return (
         <Dashboard countLabel={countLabel}
                    dashboardEntities={dashboardEntities}
                    dashboardIndexFileName={dashboardIndexFileName}
-                   dashboardPathname={dashboardPathname}
+                   dashboardURL={dashboardURL}
                    dataset={"anvil"}
                    resultKey={lunrIndexRefField}
                    searchFacets={searchFacets}
