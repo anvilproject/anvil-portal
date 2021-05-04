@@ -12,7 +12,6 @@
 /* Table wrapper */
 /* Allows for overflow on smaller screens */
 .wrapper {
-    color: var(--accent-blue-dark);
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
