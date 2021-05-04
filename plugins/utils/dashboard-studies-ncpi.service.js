@@ -98,7 +98,7 @@ async function buildDashboardStudies(gapIdPlatforms) {
  */
 async function buildDashboardStudy(gapIdPlatform) {
 
-    const {dbGapIdAccession, platforms} = gapIdPlatform;
+    const {dbGapId, dbGapIdAccession, platforms} = gapIdPlatform;
 
     /* Get any study related data from the FHIR JSON. */
     const study = await getFHIRStudy(dbGapIdAccession);
@@ -110,7 +110,7 @@ async function buildDashboardStudy(gapIdPlatform) {
     const consentCodes = study.consentCodes;
     const dataTypes = study.dataTypes;
     const diseases = study.diseases;
-    const gapId = buildGapId(dbGapIdAccession, studyUrl);
+    const gapId = buildGapId(dbGapId, studyUrl);
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
     const studyName = study.studyName;

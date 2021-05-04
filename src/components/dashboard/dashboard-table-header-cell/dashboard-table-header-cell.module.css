@@ -47,3 +47,42 @@ th.right {
 [id^="summary"] th:last-of-type {
     padding-right: 2px; /* Scoot in first and last, matches cell */
 }
+
+/* NCPI cell - "gapId" - "dbGap Id" */
+[id^="ncpi"] th[id^="gapId"] {
+    width: 132px;
+}
+
+/* NCPI cell - "platforms" */
+[id^="ncpi"] th[id^="platforms"] {
+    width: 100px;
+}
+
+/* NCPI cell - "subjectsTotal" - "subjects" */
+[id^="ncpi"] th[id^="subjectsTotal"] {
+    width: 100px;
+}
+
+/**
+ * Large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* NCPI cell - "studyName" - "title" */
+    [id^="ncpi"] th[id^="studyName"] {
+        width: 300px;
+    }
+}
+
+/**
+ * Large tablet landscape, large window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1600px) {
+
+    /* NCPI cell - "studyName" - "title" */
+    [id^="ncpi"] th[id^="studyName"] {
+        width: 500px;
+    }
+}
