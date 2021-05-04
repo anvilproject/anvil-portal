@@ -6,6 +6,7 @@
  */
 
 .event {
+    align-self: stretch;
     margin: 32px 0;
 }
 
