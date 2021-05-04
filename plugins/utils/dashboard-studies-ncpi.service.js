@@ -19,9 +19,9 @@ const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.
 const fileSource = "dashboard-source-ncpi.csv";
 const PLATFORM = {
     "ANVIL": "AnVIL",
-    "BDC": "BioData Catalyst",
-    "NCRDC": "Cancer Research Data Commons",
-    "KF": "Kids First Data Resource Center"
+    "BDC": "BDC",
+    "GMKF": "GMKF",
+    "KFDRC": "KFDRC"
 };
 const SOURCE_HEADER_KEY = {
     "DB_GAP_ID": "identifier",

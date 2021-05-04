@@ -35,12 +35,6 @@ export function cellAlignment(columnName) {
  */
 export function formatValue(value, column) {
 
-    /* Handle column is "platforms" - special case. */
-    if ( column === "platforms" ) {
-
-        return formatStudyPlatforms(value);
-    }
-
     /* Handle column is "sizeTB" or "size"  - special case. */
     if ( column === "sizeTB" || column === "size" ) {
 
@@ -235,49 +229,6 @@ export function switchDisplayColumnName(columnName) {
         default:
             return columnName;
     }
-}
-
-/**
- * Returns the platform display value.
- * - "AnVIL" to "AnVIL"
- * - "BDC" to "BioData Catalyst"
- * - "NCRDC" to "Cancer Research Data Commons"
- * - "KF" to "Kids First Data Resource Center"
- *
- * @param platform
- * @returns {*}
- */
-export function switchStudyPlatform(platform) {
-
-    switch (platform) {
-        case "AnVIL":
-            return "AnVIL";
-        case "BDC":
-            return "BioData Catalyst";
-        case "NCRDC":
-            return "Cancer Research Data Commons";
-        case "KF":
-            return "Kids First Data Resource Center";
-        default:
-            return platform;
-    }
-}
-
-/**
- * Returns a list of platforms, concatenated into a string.
- *
- * @param platforms
- */
-function formatStudyPlatforms(platforms) {
-
-    if ( Array.isArray(platforms) ) {
-
-        return platforms
-            .map(platform => switchStudyPlatform(platform))
-            .join(", ");
-    }
-
-    return switchStudyPlatform(platforms);
 }
 
 /**
