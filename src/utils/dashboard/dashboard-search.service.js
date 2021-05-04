@@ -361,14 +361,6 @@ function isTermAllowed(term) {
 function switchCheckboxLabelDisplayText(label) {
 
     switch (label) {
-        case "anvil":
-            return DashboardTableService.switchStudyPlatform(label);
-        case "BDC":
-            return DashboardTableService.switchStudyPlatform(label);
-        case "CRDC":
-            return DashboardTableService.switchStudyPlatform(label);
-        case "KFDRC":
-            return DashboardTableService.switchStudyPlatform(label);
         case "WES":
             return "Whole Exome Sequencing";
         case "WGS":
