@@ -11,7 +11,6 @@ import React from "react";
 // App dependencies
 import DashboardTableBody from "../dashboard-table-body/dashboard-table-body";
 import DashboardTableHeader from "../dashboard-table-header/dashboard-table-header";
-import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
 
 // Styles
 import compStyles from "./dashboard-table.module.css";
