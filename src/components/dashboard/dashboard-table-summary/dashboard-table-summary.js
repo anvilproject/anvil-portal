@@ -22,7 +22,7 @@ class DashboardTableSummary extends React.Component {
         return (
             <>
             <h2 className={compStyles.headerNoBorder}>Search Summary</h2>
-            <DashboardTable summary tableHeaders={tableHeaders} tableRows={summaries}/>
+            <DashboardTable dataset={"summary"} tableHeaders={tableHeaders} tableRows={summaries}/>
             </>
         );
     }

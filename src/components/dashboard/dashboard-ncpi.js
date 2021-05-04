@@ -48,7 +48,7 @@ function DashboardNCPI() {
                    totalsWarning>
             <DashboardSearch/>
             <DashboardTableSummary/>
-            <DashboardTableEntities ncpi/>
+            <DashboardTableEntities dataset={"ncpi"}/>
         </Dashboard>
     )
 }

@@ -19,17 +19,16 @@ import compStyles from "./dashboard-table.module.css";
 class DashboardTable extends React.Component {
 
     render() {
-        const {ncpi, singleRow, studies, summary, tableHeaders, tableRow, tableRows} = this.props;
-        const tableName = DashboardTableService.getTableName(ncpi, studies, summary);
+        const {dataset, singleRow, tableHeaders, tableRow, tableRows} = this.props;
         const identifier = Date.now();
-        const tableId = `${tableName}${identifier}`;
+        const tableId = `${dataset}${identifier}`;
 
         return (
             <div className={compStyles.wrapper} id={tableId}>
                 <table>
                     <DashboardTableHeader tableHeaders={tableHeaders}/>
-                    <DashboardTableBody singleRow={singleRow}
-                                        summary={summary}
+                    <DashboardTableBody dataset={dataset}
+                                        singleRow={singleRow}
                                         tableHeaders={tableHeaders}
                                         tableRow={tableRow}
                                         tableRows={tableRows}/>

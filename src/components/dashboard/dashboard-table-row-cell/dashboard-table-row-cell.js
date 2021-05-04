@@ -18,11 +18,11 @@ import "./dashboard-table-row-cell.module.css";
 
 function DashboardTableRowCell(props) {
 
-    const {children, column, summary} = props;
+    const {children, column, dataset} = props;
     const {warning} = useContext(ContextDashboard);
     const identifier = Date.now();
     const id = `${column}${identifier}`;
-    const reactElementType = DashboardTableService.getReactElementType(column, summary);
+    const reactElementType = DashboardTableService.getReactElementType(column, dataset);
     const showWarning = children === "Totals" && warning;
     const cellData = showWarning ? <Tooltip label={warning}>Totals <sup>*</sup></Tooltip> : DashboardTableService.formatValue(children, column);
     const rowCell = React.createElement(reactElementType, {...props, id}, cellData);

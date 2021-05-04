@@ -17,15 +17,15 @@ import compStyles from "./dashboard-table-row.module.css";
 class DashboardTableRow extends React.Component {
 
     render() {
-        const {order, row, summary} = this.props;
+        const {dataset, order, row} = this.props;
 
         return (
             <tr className={compStyles.row}>
                 {order.map((key, c) =>
                     <DashboardTableRowCell
                         key={c}
-                        column={key}
-                        summary={summary}>{row[key]}</DashboardTableRowCell>)}
+                        dataset={dataset}
+                        column={key}>{row[key]}</DashboardTableRowCell>)}
             </tr>
         );
     }

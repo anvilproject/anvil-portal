@@ -86,12 +86,12 @@ export function getCellUrl(value, column) {
  * Returns the corresponding react element type for the specified column name.
  *
  * @param columnName
- * @param summaryTable
+ * @param dataset
  * @returns {*}
  */
-export function getReactElementType(columnName, summaryTable) {
+export function getReactElementType(columnName, dataset) {
 
-    if ( columnName === "consortium" && summaryTable ) {
+    if ( columnName === "consortium" && dataset === "summary" ) {
 
         return DashboardTableRowCellRedirect;
     }
@@ -108,34 +108,6 @@ export function getReactElementType(columnName, summaryTable) {
         default:
             return DashboardTableRowCellX;
     }
-}
-
-/**
- * Returns the table class name.
- *
- * @param ncpi
- * @param studies
- * @param summary
- * @returns {*}
- */
-export function getTableName(ncpi, studies, summary) {
-
-    if ( ncpi ) {
-
-        return "ncpi";
-    }
-
-    if ( studies ) {
-
-        return "studies";
-    }
-
-    if ( summary ) {
-
-        return "summary";
-    }
-
-    return "";
 }
 
 /**
