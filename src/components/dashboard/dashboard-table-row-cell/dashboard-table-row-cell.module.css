@@ -17,18 +17,20 @@
     font-size: 0.875rem; /* 14px */
     font-weight: 400;
     height: 32px;
-    min-width: 62px;
 }
 
 /* Padding */
 /* AnVIL table */
 /* NCPI table */
-/* Summary table */
 /* Add padding to the right of cells for AnVIL table to prevent long values from jamming up */
 [id^="anvil"] td,
-[id^="ncpi"] td,
-[id^="summary"] td {
+[id^="ncpi"] td {
     padding: 8px;
+}
+
+/* Summary table */
+[id^="summary"] td {
+    padding: 4px;
 }
 
 /* Row cell - first */
@@ -59,24 +61,14 @@
     width: 144px;
 }
 
-/* AnVIL table - "consentCodes" */
-[id^="anvil"] td[id^="consentShortNames"] {
-    max-width: 158px;
-}
-
-/* NCPI table - "consentCodes" */
-[id^="ncpi"] td[id^="consentCodes"] {
-    width: 200px;
+/* AnVIL table - "consortium" */
+[id^="anvil"] td[id^="consortium"] {
+    width: 89px;
 }
 
 /* AnVIL table - "dataTypes" */
 [id^="anvil"] td[id^="dataTypes"] {
     width: 158px;
-}
-
-/* NCPI table - "dataTypes" */
-[id^="ncpi"] td[id^="dataTypes"] {
-    max-width: 158px;
 }
 
 /* AnVIL table - "dataTypes" */
@@ -86,11 +78,6 @@
 
 /* AnVIL table - "diseases" */
 [id^="anvil"] td[id^="diseases"] {
-    max-width: 158px;
-}
-
-/* NCPI table - "diseases" */
-[id^="ncpi"] td[id^="diseases"] {
     max-width: 158px;
 }
 
@@ -104,24 +91,9 @@
     max-width: 158px;
 }
 
-/* NCPI table - "studyName" ("title") */
-[id^="ncpi"] td[id^="studyName"] {
-    max-width: 400px;
-}
-
-/* AnVIL table - "consortium" */
-[id^="anvil"] td[id^="consortium"] {
-    width: 89px;
-}
-
 /* AnVIL table - "subjects" */
 [id^="anvil"] td[id^="subjects"] {
     width: 80px;
-}
-
-/* NCPI table - "platform" */
-[id^="ncpi"] td[id^="platform"] {
-    width: 240px;
 }
 
 /* Summary table - "total" */
