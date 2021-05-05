@@ -28,21 +28,20 @@
     margin: 0;
 }
 
-/* NCPI table. */
+/* AnVIL, NCPI table. */
+[id^="anvil"] table,
 [id^="ncpi"] table {
-    min-width: 1280px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
     table-layout: fixed;
 }
 
-/**
- * Large handset portrait, small handset landscape, extra small window - left nav is stacked below this point
- */
-@media screen and (min-width: 840px) {
+/* AnVIL table. */
+[id^="anvil"] table {
+    min-width: 1600px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
+}
 
-    /* Wrapper */
-    .wrapper {
-        max-width: calc(100vw - 24px - 24px); /* Allow table to stretch to right-hand side of device, to indicate more */
-    }
+/* NCPI table. */
+[id^="ncpi"] table {
+    min-width: 1280px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
 }
 
 /**
@@ -53,6 +52,18 @@
 
     /* NCPI table. */
     [id^="ncpi"] table {
+        min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
+    }
+}
+
+/**
+ * Large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1280px) {
+
+    /* AnVIL table. */
+    [id^="anvil"] table {
         min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
     }
 }

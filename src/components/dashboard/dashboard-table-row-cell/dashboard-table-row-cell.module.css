@@ -15,8 +15,7 @@
 [id^="summary"] td {
     border-bottom: none;
     font-size: 0.875rem; /* 14px */
-    font-weight: 400;
-    height: 32px;
+    line-height: 1.3;
 }
 
 /* Padding */
@@ -45,58 +44,4 @@
 [id^="ncpi"] td td:last-of-type,
 [id^="summary"] td:last-of-type {
     padding-right: 2px; /* Scoot in first and last, matches header cell */
-}
-
-/* Ellipsis */
-/* AnVIL table - "projectId" (ie Terra workspace name) */
-[id^="anvil"] td[id^="projectId"] {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 233px; /* Matches studyName and diseases */
-}
-
-/* AnVIL table - "accessType" */
-[id^="anvil"] td[id^="accessType"] {
-    width: 144px;
-}
-
-/* AnVIL table - "consortium" */
-[id^="anvil"] td[id^="consortium"] {
-    width: 89px;
-}
-
-/* AnVIL table - "dataTypes" */
-[id^="anvil"] td[id^="dataTypes"] {
-    width: 158px;
-}
-
-/* AnVIL table - "dataTypes" */
-[id^="anvil"] td[id^="dataTypes"] span {
-    white-space: nowrap;
-}
-
-/* AnVIL table - "diseases" */
-[id^="anvil"] td[id^="diseases"] {
-    max-width: 158px;
-}
-
-/* AnVIL table - "size" */
-[id^="anvil"] td[id^="size"] {
-    width: 84px;
-}
-
-/* AnVIL table - "studyName" ("title") */
-[id^="anvil"] td[id^="studyName"] {
-    max-width: 158px;
-}
-
-/* AnVIL table - "subjects" */
-[id^="anvil"] td[id^="subjects"] {
-    width: 80px;
-}
-
-/* Summary table - "total" */
-[id^="summary"] td {
-    font-weight: inherit; /* Font weight specified by data table row */
 }
