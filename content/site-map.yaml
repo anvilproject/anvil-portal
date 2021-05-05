@@ -38,10 +38,10 @@
 
 ## Datasets
 - menuItem: "Datasets"
-  pageTitle: "Datasets"
+  pageTitle: "AnVIL Dataset Catalog"
   pathPartial: "/data"
   tabs:
-    - name: "Dataset Catalog"
+    - name: ""
       pathPartial: ""
       navigationItems:
         - name: ""

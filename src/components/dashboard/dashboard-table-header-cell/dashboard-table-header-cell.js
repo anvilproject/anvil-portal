@@ -24,9 +24,10 @@ class DashboardTableHeaderCell extends React.Component {
         const rightAlign = DashboardTableService.cellAlignment(column);
         const identifier = Date.now();
         const id = `${column}${identifier}`;
+        const classNamesCell = rightAlign && {className: classNames({[compStyles.right]: rightAlign})};
 
         return (
-            <th id={id} className={classNames({[compStyles.right]: rightAlign})}>{headerCell}</th>
+            <th id={id} {...classNamesCell}>{headerCell}</th>
         );
     }
 }

@@ -11,7 +11,6 @@
 
 /* Row */
 .row {
-    border-bottom: 1px solid var(--shade-light-green);
     transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); /* For hover */
 }
 
@@ -20,12 +19,16 @@
     background-color: var(--black3);
 }
 
-/* AnVIL table */
-/* NCPI table */
-/* Vertical align to the top for AnVIL table - there will always be multi-line cells due to long titles */
+/* AnVIL, NCPI row. */
 [id^="anvil"] .row,
 [id^="ncpi"] .row {
-    vertical-align: top;
+    border-bottom: 1px solid var(--black12);
+    vertical-align: top; /* Vertical align to the top for AnVIL table - there will always be multi-line cells due to long titles */
+}
+
+/* Summary row. */
+[id^="summary"] .row {
+    border-bottom: 1px solid var(--shade-light-green);
 }
 
 /* Summary table - last before "total" row */

@@ -186,7 +186,7 @@ function buildWorkspaces(attributeWorkspaces, countWorkspaces, studyPropertiesBy
         const propertyDiseases = reformatWorkspacePropertyList(row, SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DISEASES]);
 
         /* Build the property gapId. */
-        const propertyGapId = buildWorkspacePropertyGapId(studyId, dbGapIdAccession, studyUrl);
+        const propertyGapId = buildWorkspacePropertyGapId(studyId, "", studyUrl);
 
         /* Build the property counts. */
         const countWorkspace = findCountWorkspace(row, countWorkspaces);

@@ -22,9 +22,10 @@ class DashboardTableRowCellX extends React.Component {
     render() {
         const {children, column, id} = this.props;
         const rightAlign = DashboardTableService.cellAlignment(column);
+        const classNamesCell = rightAlign && {className: classNames({[compStyles.right]: rightAlign})};
 
         return (
-            <td className={classNames({[compStyles.right]: rightAlign})} id={id}>{children}</td>
+            <td {...classNamesCell} id={id}>{children}</td>
         )
     }
 }
