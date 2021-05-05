@@ -8,14 +8,13 @@ title: "Getting started with Gen3"
 
 ## Discovering Data on AnVIL Using Gen3
 
-
-
 Gen3 is a data platform for building data commons and data ecosystems. The Gen3 platform consists of open-source software that supports data ecosystems by enabling the interoperation and creation of cloud-based data resources. A selection of Gen3-hosted Data Commons can be found [here](https://gen3.org/powered-by-gen3/).
 More information, including a detailed User Guide on how to work with a Gen3 Data Commons, can be found below and by visiting [Gen3.org](https://gen3.org/).
 
 ### Types of Data hosted on AnVIL Gen3
 
 The [AnVIL](/learn/anvil-mooc/what-is-anvil) by Gen3 currently hosts datasets and cohorts from the following projects and networks:
+
 - Open-access 1000 Genomes project
 - Center for Common Disease Genomics (CCDG)
 - Center for Mendelian Genomics (CMG)
@@ -209,7 +208,7 @@ Each time a facet selection is made, the data summary and displays will update t
 
 The Downloadable Tab provides users with the tools needed to download data locally. Only the studies available for download will be displayed in this section of the Gen3 Exploration page. Currently, the GTEx v8 project data is available for free egress downloads [GTEx v8](https://gtexportal.org/home/). Users can create cohorts using search facets including but not limited to “Data Format,” “Data Type”, and “Data Category.”
 
-The GTEx files on AnVIL are divided into object files and phenotype data. Users can download phenotypic data as a PFB file and object files using a JSON file manifest, where the latter will require additional download steps using the [Gen3-Client](https://gen3.org/resources/user/gen3-client/). For a detailed description for downloading either phenotypic data or object files, refer to the links below:
+The GTEx files on AnVIL are divided into object files and phenotype data. Users can download **phenotypic data** as a PFB file and **object files** using a JSON file manifest, where the latter will require additional download steps using the [Gen3-Client](https://gen3.org/resources/user/gen3-client/). For a detailed description for downloading either phenotypic data or object files, refer to the links below:
 
 1. [Phenotypic Data Download](/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-phenotypic-data)
 1. [Object Files Download](/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-object-files)
@@ -220,12 +219,13 @@ After a cohort has been selected, the users have three different options for exp
 
 <figure>
 <img src="../_images/getting-started/gen3-exporting-options.png" alt="Exporting data options"/>
-<figure-caption>Three options for exporting the data.</figure-caption>
+<figure-caption>Four options for exporting the data.</figure-caption>
 </figure>
 
+- **Download Manifest**: initiates a file manifest download, which contains information on the data files such as md5sum, file name, GUID and file size. This file manifest is needed if users want to download files in batches using the [gen3-client](/learn/reference/gtex-v8-free-egress-instructions#downloading-gtex-v8-object-files).
+- **Export to Workspace**: exports a manifest to the user’s workspace and makes the case-associated data files available in the workspace under the **/pd/data** directory.
+- **Export All to PFB**: initiates a PFB file export of selected clinical data and file GUIDs, which can be downloaded and opened with another program (e.g. Firefox) or converted to a TSV file using [PyPFB](https://github.com/uc-cdis/pypfb).
 - **Export All to Terra**: initiates a Portable Format for Bioinformatics (PFB)* file export of all clinical data and file GUIDs for the selected cohort to Terra. When the export is complete, users will be redirected to the Terra website, where users will be asked to select a new/existing workspace. From here, the user is advised to look at [Terra Documentation](https://support.terra.bio/hc/en-us/articles/360038087312-Understanding-and-using-Gen3-data-in-Terra).
-- **Export to PFB**: initiates a PFB file export of selected clinical data and file GUIDs, which can be downloaded and opened with another program (e.g. Firefox) or converted to a TSV file using [PyPFB](https://github.com/uc-cdis/pypfb).
-- **Export to Workspace**: exports a manifest to the user’s workspace and makes the case-associated data files available in the workspace under the `/pd/data` directory.
 
 ***Note**: The Portable Format for Bioinformatics (PFB) is an Avro-based file that bundles schema, data, ontologies/controlled vocabularies, and pointers to data files in a single, serializable format that can be sent easily across systems and has the flexibility for different data models. PFB export times can take up to 60 minutes, but often will complete in less than 10 minutes.
 
