@@ -366,7 +366,7 @@
           file: "/ncpi/progress-updates"
 ## NCPI Datasets
 - menuItem: "NCPI Datasets"
-  pageTitle: "Dataset Catalog"
+  pageTitle: "NCPI Dataset Catalog"
   pathPartial: "/ncpi"
   tabs:
     - name: ""
