@@ -49,12 +49,12 @@ For help or support executing the instructions below please reach out to the Gen
 1. Navigate to the **Exploration Page** (<https://gen3.theanvil.io/explorer>)
 1. Click on the “**Downloadable**” tab and select “**CF-GTEx**” under “Project Id”
 1. Please choose a single **Data Type** from the Data Type filter on the left
-![Step 2 - Export to PFB](../_images/reference/gtex-step-2-export-all-to-pfb.png)
+![Step 2 - Select Single Data Type](../_images/reference/gtex-step-2-select-data-type.png)
 1. Click on the “**Export All to PFB**” button. Please wait patiently for this step - can take 30 - 60s - and please do not navigate away while the export is in progress
-![Step 2 - Export in progress](../_images/reference/gtex-step2-export-in-progress.png)
-![Step 2 - Please wait while exporting](../_images/reference/gtex-step-2-export-wait-indicator.png)
+![Step 2 - Export in Progress](../_images/reference/gtex-step-2-export-in-progress.png)
+![Step 2 - Please Wait While Exporting](../_images/reference/gtex-step-2-export-wait-indicator.png)
 1. Download generated PFB file\
-![Step 2 - Download generated PFB file](../_images/reference/gtex-step-2-download-pfb.png)
+![Step 2 - Download Generated PFB File](../_images/reference/gtex-step-2-download-pfb.png)
 
 #### Optional - Filter Facets and Cohort Generation
 
