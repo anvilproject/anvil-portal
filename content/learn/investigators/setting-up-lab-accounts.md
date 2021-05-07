@@ -168,9 +168,6 @@ _PI or Account Administrator_
 
 
 1. Navigate to <https://console.cloud.google.com/billing> (or select “Billing” from the top left navigation menu).
-
-    <button-link href="https://console.cloud.google.com/billing" target="_blank">Google Cloud Billing</button-link>
-
 2. Select your lab from the “**Select an organization”** dropdown if available.
 1. Select the **”ADD BILLING ACCOUNT”** or **”CREATE ACCOUNT”** button.
 1. Enter the name for your new Google Billing Account.

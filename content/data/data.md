@@ -6,12 +6,6 @@ showOutline: false
 title: "Data"
 ---
 
-Search AnVIL's datasets and associated Terra workspaces for datasets of interest.
-
-Open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces)  or [Gen3](https://gen3.theanvil.io). To request access for datasets with access restrictions, see AnVIL's guides for requesting access to [Controlled Access](/learn/accessing-data/requesting-data-access#accessing-controlled-access-data) and [Consortium Access](/learn/accessing-data/requesting-data-access#accessing-consortium-access-data) datasets.
-
-[Once your access is approved](/learn/accessing-data/requesting-data-access#once-your-access-is-granted), and assuming you have [linked your eRA Commons ID with your Terra acount](https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers), your new workspaces will appear in your Terra workspaces tab ready for you to [clone](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) and explore. 
-
 <dashboard-anvil></dashboard-anvil>
 
 ## Notes
