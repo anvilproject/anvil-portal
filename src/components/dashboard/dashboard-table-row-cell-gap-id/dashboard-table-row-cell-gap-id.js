@@ -16,7 +16,6 @@ import * as RedirectService from "../../../utils/redirect.service";
 
 // Styles
 import compStyles from "./dashboard-table-row-cell-gap-id.module.css";
-import globalStyles from "../../../styles/global.module.css";
 
 class DashboardTableRowCellGapId extends React.Component {
 
@@ -31,7 +30,7 @@ class DashboardTableRowCellGapId extends React.Component {
                               clickAction={() => RedirectService.redirect(studyUrl, gapIdDisplay)}
                               id={id}
                               tag={"td"}
-                              label={gapIdDisplay}><span className={globalStyles.asLink}>{gapIdDisplay}</span></ClickHandler> :
+                              label={gapIdDisplay}>{gapIdDisplay}</ClickHandler> :
                 <td id={id}>{cellValue}</td>
         );
     }

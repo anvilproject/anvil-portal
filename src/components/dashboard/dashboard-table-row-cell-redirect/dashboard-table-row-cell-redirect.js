@@ -16,7 +16,6 @@ import * as RedirectService from "../../../utils/redirect.service";
 
 // Styles
 import compStyles from "./dashboard-table-row-cell-redirect.module.css";
-import globalStyles from "../../../styles/global.module.css";
 
 class DashboardTableRowCellRedirect extends React.Component {
 
@@ -29,9 +28,7 @@ class DashboardTableRowCellRedirect extends React.Component {
                                    clickAction={() => RedirectService.redirect(linkTo, children)}
                                    id={id}
                                    tag={"td"}
-                                   label={children}>
-                    <span className={globalStyles.asLink}>{children}</span>
-                </ClickHandler> :
+                                   label={children}>{children}</ClickHandler> :
                 <td id={id}>{children}</td>
         );
     }

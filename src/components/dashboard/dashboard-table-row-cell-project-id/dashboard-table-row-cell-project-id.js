@@ -16,7 +16,6 @@ import * as RedirectService from "../../../utils/redirect.service";
 
 // Styles
 import compStyles from "./dashboard-table-row-cell-project-id.module.css";
-import globalStyles from "../../../styles/global.module.css";
 
 class DashboardTableRowCellProjectId extends React.Component {
 
@@ -41,7 +40,7 @@ class DashboardTableRowCellProjectId extends React.Component {
                           id={id}
                           tag={"td"}
                           label={children}>
-                <Tooltip label={children}><span className={globalStyles.asLink}>{projectDisplayText}</span></Tooltip>
+                <Tooltip label={children}>{projectDisplayText}</Tooltip>
             </ClickHandler>
         );
     }
