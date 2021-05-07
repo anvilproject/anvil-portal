@@ -58,7 +58,7 @@
 
 /* Outline - list - not last. */
 .outline li {
-    margin: 8px 0;
+    margin: 6px 0;
 }
 
 /* Outline - "On This Page". */
@@ -123,8 +123,8 @@
 
 /* Link - hover and active line indented - second level. */
 .outline li a.active.indent::after, .outline li:hover a.indent::after {
-    left: -38px;
-    width: 38px;
+    left: -34px;
+    width: 34px;
 }
 
 /* Link - hover and active ball indicator. */
@@ -142,7 +142,7 @@
 
 /* Link - hover and active ball indicator - second level. */
 .outline li a.active.indent::before, .outline li:hover a.indent::before {
-    left: -43px;
+    left: -39px;
 }
 
 /* Link - indicator colors - active. */
@@ -162,7 +162,7 @@
 
 /* Link - indentation - second level. */
 .outline .indent {
-    margin-left: 16px;
+    margin-left: 12px;
 }
 
 /**
