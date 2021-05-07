@@ -108,6 +108,7 @@ module.exports = {
                         options: {
                             components: [
                                 "button",
+                                "button-link",
                                 "dashboard-anvil",
                                 "dashboard-ncpi",
                                 "event-hero",
