@@ -52,7 +52,7 @@ export function formatValue(value, column) {
 
         if ( value.length > 0 ) {
 
-            return value.join("; ");
+            return value.join(", ");
         }
 
         return "--";
