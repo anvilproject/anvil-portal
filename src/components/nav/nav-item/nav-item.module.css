@@ -18,7 +18,7 @@
 
 /* Nav item level 2. */
 .navItem .navItem {
-    padding-left: 24px;
+    padding-left: 14px;
 }
 
 /* Link or button. */
@@ -27,7 +27,7 @@
     color: var(--black87);
     cursor: pointer;
     display: flex;
-    padding: 8px 40px 8px 0; /* 40px to match content margins. */
+    padding: 6px 40px 6px 0; /* 40px to match content margins. */
 }
 
 /* Link - active. */
