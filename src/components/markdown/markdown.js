@@ -11,6 +11,7 @@ import rehypeReact from "rehype-react";
 
 // App dependencies
 import Button from "../button/button";
+import ButtonLink from "../button-link/button-link";
 import DashboardAnVIL from "../dashboard/dashboard-anvil";
 import DashboardNCPI from "../dashboard/dashboard-ncpi";
 import EventHero from "../event-hero/event-hero";
@@ -50,6 +51,7 @@ function Markdown(props) {
         createElement: React.createElement,
         components: {
             "button": Button,
+            "button-link": ButtonLink,
             "dashboard-anvil": DashboardAnVIL,
             "dashboard-ncpi": DashboardNCPI,
             "event-hero": EventHero,

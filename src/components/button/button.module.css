@@ -23,7 +23,7 @@
 }
 
 /* Button - dark, light. */
-.button.dark, .button.light {
+.dark, .light {
     border-radius: 4px;
     height: 36px;
     min-width: 64px;
@@ -31,13 +31,13 @@
 }
 
 /* Button - dark */
-.button.dark {
+.dark {
     background-color: var(--primary);
     color: var(--white);
 }
 
 /* Button - dark hover state */
-.button.dark:hover {
+.dark:hover {
     background-color: rgba(3, 92, 148, 0.87);
 }
 
@@ -55,12 +55,12 @@
 }
 
 /* Button - light */
-.button.light {
+.light {
     background-color: var(--shade-light);
     color: var(--shade-dark);
 }
 
 /* Button - light hover state */
-.button.light:hover {
+.light:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)), linear-gradient(rgba(246, 247, 244, 1), rgba(246, 247, 244, 1));
 }
