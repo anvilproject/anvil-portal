@@ -11,22 +11,20 @@ import React from "react";
 // App dependencies
 import DashboardCopyURL from "../dashboard-copy-url/dashboard-copy-url";
 import DashboardDownloadTSV from "../dashboard-download-tsv/dashboard-download-tsv";
+import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 
 // Styles
 import compStyles from "./dashboard-table-toolbar.module.css";
 
-function DashboardTableToolbar(props) {
-
-    const {children} = props;
+function DashboardTableToolbar() {
 
     return (
-        <div className={compStyles.toolbar}>
-            {children}
+        <DashboardSearchPanel stretch>
             <span className={compStyles.tools}>
                 <DashboardDownloadTSV/>
                 <DashboardCopyURL/>
             </span>
-        </div>
+        </DashboardSearchPanel>
     );
 }
 
