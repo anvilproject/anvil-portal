@@ -166,8 +166,10 @@ _PI or Account Administrator_
 
 **For each Google Billing account required:**
 
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-1. Navigate to <https://console.cloud.google.com/billing> (or select “Billing” from the top left navigation menu).
+    <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP - Manage Billing Accounts</button-link>
+
 2. Select your lab from the “**Select an organization”** dropdown if available.
 1. Select the **”ADD BILLING ACCOUNT”** or **”CREATE ACCOUNT”** button.
 1. Enter the name for your new Google Billing Account.
@@ -178,7 +180,7 @@ _PI or Account Administrator_
 
 For more information on creating billing accounts, see [Create, modify, or close your Cloud Billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account).
 
-### 4 - Link Terra to each Google Billing Account created
+### 4 - Link Terra to your Google Billing Accounts
 
 _PI or Account Administrator_
 
@@ -186,8 +188,10 @@ To create and launch workspaces and consume Google Cloud resources, Terra needs 
 
 **To add Terra as _Billing Account User_ to a Google Billing Account:**
 
-1. Sign in to the google cloud console by navigating to <https://cloud.google.com/> and selecting **“Sign in”**.
-1. Navigate to <https://console.cloud.google.com/billing> (or select “**Billing**” from the top left navigation menu).
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
+
+   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP - Manage Billing Accounts</button-link>
+   
 1. Select your lab from the “Select an organization” dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:

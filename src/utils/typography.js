@@ -32,7 +32,7 @@ const typography = new Typography({
             styles: ["400", "600", "700"]
         }
     ],
-    headerColor: "var(--shade-dark)",
+    headerColor:  "var(--primary)",
     headerFontFamily: [
         "Open Sans",
         "sans-serif"

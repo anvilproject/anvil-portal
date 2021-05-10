@@ -77,9 +77,7 @@
 
 /* Link, "On This Page". */
 .outline li a, .outline li span {
-    color: var(--black87);
     display: inline-block;
-    font-family: "Open Sans", sans-serif;
     font-size: 0.8125rem; /* 13px */
     font-weight: 400;
     padding: 4px 8px; /* For background color indicators */
