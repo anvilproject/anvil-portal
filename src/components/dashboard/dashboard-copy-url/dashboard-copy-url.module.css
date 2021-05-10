@@ -7,7 +7,7 @@
 
 /* Copy URL - icon and text. */
 .copy, .copy + i {
-    color: var(--accent-blue-green);
+    color: var(--primary);
 }
 
 /* Copy URL - text. */

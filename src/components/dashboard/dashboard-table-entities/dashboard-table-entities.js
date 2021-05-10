@@ -11,7 +11,6 @@ import React, {useContext} from "react";
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardTable from "../dashboard-table/dashboard-table";
-import DashboardTableToolbar from "../dashboard-table-toolbar/dashboard-table-toolbar";
 
 // Styles
 import compStyles from "./dashboard-table-entities.module.css";
@@ -25,9 +24,7 @@ function DashboardTableEntities(props) {
     return (
         showEntities ?
             <>
-            <DashboardTableToolbar>
-                <h2 className={compStyles.headerNoBorder}>Search Results</h2>
-            </DashboardTableToolbar>
+            <h2 className={compStyles.headerNoBorder}>Search Results</h2>
             <DashboardTable studies tableHeaders={tableHeadersEntities} tableRows={entities} {...props}/>
             </> : null
     );

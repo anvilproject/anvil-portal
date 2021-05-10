@@ -7,7 +7,7 @@
 
 /* Download - icon and text. */
 .download, .download + i {
-    color: var(--accent-blue-green);
+    color: var(--primary);
 }
 
 /* Download - text. */
