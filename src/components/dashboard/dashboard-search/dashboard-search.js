@@ -17,15 +17,10 @@ import DashboardSearchSelectedToolbar from "../dashboard-search-selected-toolbar
 // Styles
 import compStyles from "./dashboard-search.module.css";
 
-const classNames = require("classnames");
-
-function DashboardSearch(props) {
-
-    const {dataset} = props;
-    const classNamesSearch = classNames(compStyles[dataset], compStyles.search);
+function DashboardSearch() {
 
     return (
-        <div className={classNamesSearch}>
+        <div className={compStyles.search}>
             <DashboardSearchInput/>
             <DashboardSearchCheckboxes/>
             <DashboardSearchSelectedToolbar/>

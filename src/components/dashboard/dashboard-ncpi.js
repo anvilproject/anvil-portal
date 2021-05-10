@@ -46,7 +46,7 @@ function DashboardNCPI() {
                    tableHeadersEntities={tableHeadersEntities}
                    tableHeadersSummary={tableHeadersSummary}
                    totalsWarning>
-            <DashboardSearch dataset={"ncpi"}/>
+            <DashboardSearch/>
             <DashboardTableSummary/>
             <DashboardTableEntities dataset={"ncpi"}/>
         </Dashboard>
