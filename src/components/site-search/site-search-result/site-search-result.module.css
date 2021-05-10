@@ -13,6 +13,11 @@
     padding: 16px 0 24px;
 }
 
+/* Snippet - first. */
+.snippet:first-of-type {
+    padding-top: 0;
+}
+
 /* Snippet - all. */
 .snippet * {
     margin: 0;
