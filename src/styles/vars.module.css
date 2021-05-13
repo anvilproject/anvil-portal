@@ -9,7 +9,8 @@
     --accent-blue-light: #AEEBF2;
     --accent-blue-light-rbg: 174, 235, 242;
     --accent-mustard: #E0DD10;
-    --default-text: #333333;
+    --default-text: rgb(36, 41, 46);
+;
     --black: #000000;
     --black1: rgba(0, 0, 0, 0.01);
     --black3: rgba(0, 0, 0, 0.03);

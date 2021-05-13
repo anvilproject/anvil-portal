@@ -36,7 +36,7 @@ This guide is organized into three main sections.
 
 **[Section 3: Lab Setup Guide](/learn/investigators/setting-up-lab-accounts#lab-setup-guide)** -  The third section walks you through the steps necessary to implement the suggested lab setup. Along the way, we also present choices to help you optimize your lab setup to your specific needs and situation.
 
-##  Prerequisites
+###  Prerequisites
 
 Before working through the setup guide, it will be helpful to be familiar with Terra workspaces and permissions, the basics of cloud costs, and understand the basic billing concepts.
 
@@ -152,7 +152,7 @@ Lab members without Google IDs can see [Create Your Google Account](https://acco
 
 _All Lab Members_
 
-Once lab members have a Google ID, they can use that email address to create a Terra account. Next lab members can create Gen3 and Docstore accounts as well and link their accounts.
+Once lab members have a Google ID, they can use that email address to create a Terra account. Next, lab members can create Gen3 and Docstore accounts as well and link their accounts.
 
 To create a Terra account:
 
@@ -166,8 +166,10 @@ _PI or Account Administrator_
 
 **For each Google Billing account required:**
 
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-1. Navigate to <https://console.cloud.google.com/billing> (or select “Billing” from the top left navigation menu).
+   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+
 2. Select your lab from the “**Select an organization”** dropdown if available.
 1. Select the **”ADD BILLING ACCOUNT”** or **”CREATE ACCOUNT”** button.
 1. Enter the name for your new Google Billing Account.
@@ -178,7 +180,7 @@ _PI or Account Administrator_
 
 For more information on creating billing accounts, see [Create, modify, or close your Cloud Billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account).
 
-### 4 - Link Terra to each Google Billing Account created
+### 4 - Link Terra to your Google Billing Accounts
 
 _PI or Account Administrator_
 
@@ -186,8 +188,10 @@ To create and launch workspaces and consume Google Cloud resources, Terra needs 
 
 **To add Terra as _Billing Account User_ to a Google Billing Account:**
 
-1. Sign in to the google cloud console by navigating to <https://cloud.google.com/> and selecting **“Sign in”**.
-1. Navigate to <https://console.cloud.google.com/billing> (or select “**Billing**” from the top left navigation menu).
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
+
+   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+
 1. Select your lab from the “Select an organization” dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:
@@ -210,8 +214,9 @@ Once a Lab Manage is added as a “_Billing Account User_” and the Google Bill
 
 **To add a Lab Manager as a _Billing Account User_ to a Google Billing Account:**
 
-1. Sign in to the google cloud console by navigating to <https://cloud.google.com/> and selecting **“Sign in”**.
-1. Navigate to <https://console.cloud.google.com/billing> (or select “Billing” from the top left navigation menu).
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
+
+   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 1. Select your lab from the **“Select an organization”** dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:
@@ -232,7 +237,10 @@ Name the Terra Billing Project so that you can identify the Data Analyst by the 
 
 **To create a Terra Billing Project:**
 
-1. Navigate to <https://anvil.terra.bio/#billing>
+1. Log into Terra manage billing page.
+
+   <button-link href="https://anvil.terra.bio/#billing" target="_blank">Sign in to Terra Manage Billing</button-link>
+
 1. If prompted, select **“Sign in with Google”**.
 1. Select **“CREATE”**  in the top left.
 1. Enter a unique name for the Terra Billing Project that will help you identify the Data Analyst.
@@ -254,12 +262,13 @@ To monitor spending for each _Data Analyst_ create a GCP Budget.
 
 >As discussed, when a Terra Billing Project is created, Terra creates a “twin” GCP Billing Project and associates it with the Terra Billing Project’s Google Billing Account. The “twin” GCP Billing Projects are used to scope individual budgets on their Google Billing Account.
 
-You can create multiple budgets on a Google BIlling Account.  This guide recommends creating a budget for every “twin” Google Billing Project on the Google Billing Account.
+You can create multiple budgets on a Google Billing Account.  This guide recommends creating a budget for every “twin” Google Billing Project on the Google Billing Account.
 
 **To create a budget For each Terra Billing Project:**
 
-1. Sign in to the Google Cloud console by navigating to <https://cloud.google.com/> and selecting “Sign in.”
-1. Navigate to <https://console.cloud.google.com/billing> (or select **“Billing”** from the top left navigation menu).
+1. Sign in to the Manage billing accounts page in the Google Cloud Console.
+
+   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 1. Select your lab from the **“Select an organization”** dropdown.
 1. In the list of billing accounts, select the account you wish to add alerts for.
 1. In the left navigation, select “**Budgets and Alerts”**
@@ -285,7 +294,9 @@ _Lab Manager_
 
 **To create workspaces for Data Analysts:**
 
-1. Navigate to <https://anvil.terra.bio/#workspaces>
+1. Log in to the Terra workspaces screen.
+
+   <button-link href="https://anvil.terra.bio/#workspaces" target="_blank">Sign in to Terra  Workspaces</button-link>
 1. If prompted, select **“Sign in with Google”**.
 1. Decide if you will create or clone a workspace:
    1. To create a new workspace, select the “+” button on the top left of the workspaces screen.
@@ -314,6 +325,8 @@ _Lab Manager_
 We would love to hear about your experiences attempting to implement this guide and discuss what worked or any omissions or points that need further clarification.
 
 <hero>For questions, comments, pain points, successes in following this guide, reach out to the AnVIL support from the AnVIL [Help](/help) page.</hero>
+
+
 
 
 

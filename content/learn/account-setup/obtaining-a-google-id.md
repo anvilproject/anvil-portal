@@ -13,7 +13,11 @@ A Google ID is simply an email address. This email address must be either: a non
 
 If you do not have a Google ID and wish to create one: 
 
-1. See [Create Your Google Account](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to register for a Gmail account or create an account with your non-Google email address.
+
+
+1. Register for a Gmail account or create an account with your non-Google email address.
+
+    <button-link href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp" target="_blank">Create Your Google Account</button-link>
 
 
 >To create a Google ID with a non-Google email address select “Use my current email address instead” on the signup form.
