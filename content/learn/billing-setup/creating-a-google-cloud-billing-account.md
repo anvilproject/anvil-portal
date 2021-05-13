@@ -24,7 +24,10 @@ Before setting up your Google Cloud Billing Account:
 
 **To create your first Google Cloud Billing Account:**
 
-1. Navigate to <https://console.cloue.google.com/billing>. If this is your first time logging into GCP, you will be asked to agree to the terms of service.
+1. Sign in to the Manage billing accounts page in the Google Cloud Console. If this is your first time logging into GCP, you will be asked to agree to the terms of service.
+
+    <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+
 1. Login with, or switch to, the correct Google ID (email).
 1. Select your organization from the Select your lab from the “**Select an organization”** if the dropdown is available.
 1. If you are not already on the  **“MY BILLING ACCOUNTS”** tab, select it.

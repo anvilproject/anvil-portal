@@ -30,8 +30,7 @@
 
 /* Link - active. */
 .navItem > span:not(.button).active {
-    color: var(--accent-blue-green);
-
+    color: var(--primary);
 }
 
 /* Link - hover. */
