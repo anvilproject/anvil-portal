@@ -8,16 +8,16 @@ AnVIL includes a diverse set of studies with a wide variety of phenotypic data c
 
 - All phenotypic data is provided such that it can be clearly linked to a subject and the subject is clearly linked to other data provided (e.g. genome, exome, RNASeq, array, etc.)
 - Where possible, phenotypic data is provided with structured values, ideally these values are concept codes from established ontologies including, but not limited to:
-    - NCIt - A robust vocabulary for a diverse set of biological concepts (e.g. disease, phenotype, relationship, anatomy, etc.)
-    - SNOMED - A robust vocabulary focused on concepts related to clinical data (license required)
-    - UMLS Metathesaurus - A robust resource that links concepts form multiple vocabularies and ontologies (license required, free to individuals in USA, includes access to SNOMED)
-    - UBERON - A vocabulary focused on anatomical structure
-    - HPO - An ontology focused on phenotypic abnormalities
-    - OMIM - An ontology for rare mendelian diseases
-    - Orphanet - An ontology for orphan drugs and rare diseases
-    - ICD - An ontology for US billing code
-    - MeSH - An robust ontology for biomedical and health-related information
-    - RxNorm - A resource for normalized names for clinical drugs and links its names to many of the drug vocabularies
+    - [NCIt](https://ncithesaurus.nci.nih.gov/ncitbrowser/) - A robust vocabulary for a diverse set of biological concepts (e.g. disease, phenotype, relationship, anatomy, etc.)
+    - [SNOMED](https://www.snomed.org/) - A robust vocabulary focused on concepts related to clinical data (license required)
+    - [UMLS Metathesaurus](https://www.nlm.nih.gov/research/umls/index.html) - A robust resource that links concepts form multiple vocabularies and ontologies (license required, free to individuals in USA, includes access to SNOMED)
+    - [UBERON](https://www.ebi.ac.uk/ols/ontologies/uberon) - A vocabulary focused on anatomical structure
+    - [HPO](https://hpo.jax.org/app/) - An ontology focused on phenotypic abnormalities
+    - [OMIM](https://www.omim.org/) - An ontology for rare mendelian diseases
+    - [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) - An ontology for orphan drugs and rare diseases
+    - [ICD](https://icd.codes/) - An ontology for US billing code
+    - [MeSH](https://meshb.nlm.nih.gov/search) - An robust ontology for biomedical and health-related information
+    - [RxNorm](https://mor.nlm.nih.gov/RxNav/) - A resource for normalized names for clinical drugs and links its names to many of the drug vocabularies
 
 ### Data Models
 Data submitted for hosting by the AnVIL will be consistent with data mode(s in the AnVIL system when possible. This can either be accomplished by submitting data consistent with the existing data models, or by working directly with the AnVIL Phenotype WG and Data Processing WG to integrate into an existing data model.
@@ -51,8 +51,8 @@ maternal_id | 2 | - | 2 | 1
 proband_relationship | 2 | - | 2 | -
 
 
-1 - Required
-2 - Required if there are trios or other relationship data in the study
+- 1 - Required
+- 2 - Required if there are trios or other relationship data in the study
 
 
 ## Required Tables for All Studies (csv, tsv, json? format)
