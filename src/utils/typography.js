@@ -57,8 +57,8 @@ const typography = new Typography({
                 paddingLeft: rhythm(1+1/3)
             },
             "li": {
-                marginBottom: rhythm(2/3),
-                marginTop: rhythm(2/3),
+                marginBottom: rhythm(.33),
+                marginTop: rhythm(.33),
             },
             // Children lists
             "li > ol, li > ul": {

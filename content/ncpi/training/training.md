@@ -10,57 +10,67 @@ title: "NCPI: Training Resources"
 The purpose of this document is to aggregate information about training, video, and social media from the four NCPI resources.
 
 ## AnVIL
-
-![](https://i.imgur.com/nasU4jg.png)
-
 An extensive collection of training resources covering major AnVIL components including [Terra](https://terra.bio/), [Gen3](https://gen3.org/), [Galaxy](https://galaxyproject.org), and [DockStore](https://dockstore.org/). Includes information about setting up and managing accounts, accessing data, running analysis workflows and performing interactive analyses:
 
+#### Training Resources
 - [Documentation](https://anvilproject.org/learn) 
 - [Video tutorials](https://anvilproject.org/learn/videos/anvil-videos)
-- Social links
-      - [Twitter](https://twitter.com/useAnVIL)
-      - [Slack](https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg)
-      - [GitHub](https://github.com/anvilproject) 
-      - [YouTube](https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw)
+
+#### User Support
+- [Help Desk](/help)
+
+#### Social links
+- [Twitter](https://twitter.com/useAnVIL)
+- [Slack](https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg)
+- [GitHub](https://github.com/anvilproject)
+- [YouTube](https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw)
+
+## BioData Catalyst
+
+Documentation on data access, analysis as well as information about underlying software components.
+
+#### Training Resources
+- [Documentation](https://bdcatalyst.gitbook.io)
+
+#### User Support
+- [Support forum / knowledgebase](https://bdcatalyst.freshdesk.com/)
+
+#### Social links
+- [Twitter](https://twitter.com/search?q=%23BioDataCatalyst)
+
 
 ## CRDC
-
-![](https://i.imgur.com/i7kkmDk.png )![](https://i.imgur.com/txK2fIU.png)
-
 A comprehensive collection of training resources developed by Seven Bridges targeting users with different skill sets.
 
+#### Training Resources
 - [Documentation](https://docs.cancergenomicscloud.org/)
 - [Tutorials and how-to guides](https://isb-cancer-genomics-cloud.readthedocs.io)
 - [Apps gallery](https://cgc.sbgenomics.com/public/apps)
 - [Video tutorials](https://isb-cgc.appspot.com/videotutorials/)
-- User support
-      - [Office hours](https://www.cancergenomicscloud.org/officehours)
-      - [Webinars](https://www.cancergenomicscloud.org/webinars)
-      -[Email support](mailto:support@sbgenomics.com)
-- Social links 
-      - [#NCICommons](https://twitter.com/search?q=%23ncicommons&lang=en) 
-      - [@genomicscloud](https://twitter.com/search?q=%40genomicscloud) 
-      - [@BroadFireCloud](https://twitter.com/search?q=%40BroadFireCloud)
-      - [@isb_cgc](https://twitter.com/isb_cgc?lang=en)
+- [Webinars](https://www.cancergenomicscloud.org/webinars)
+  
+#### User Support
+- [Office hours](https://www.cancergenomicscloud.org/officehours) 
+- [Email support](mailto:support@sbgenomics.com)
 
-## BioDataCatalyst
-![](https://i.imgur.com/VYECVPH.png)
+#### Social links 
+- [#NCICommons](https://twitter.com/search?q=%23ncicommons&lang=en)
+- [@genomicscloud](https://twitter.com/search?q=%40genomicscloud)
+- [@BroadFireCloud](https://twitter.com/search?q=%40BroadFireCloud)
+- [@isb_cgc](https://twitter.com/isb_cgc?lang=en)
 
-Documentation on data access, analysis as well as information about underlying software components.
-
-- [Documentation](https://bdcatalyst.gitbook.io)
-- [Support forum / knowledgebase](https://bdcatalyst.freshdesk.com/)
-- [Twitter](https://twitter.com/search?q=%23BioDataCatalyst)
 
 ## KF
-![](https://i.imgur.com/XQzEpa3.png)
-
 Extensive documentation resources including information about datasets, analyses, and interpretation.
+#### Training Resources
 
-- Documentation 
-      - [KF Help Center](https://www.notion.so/Kids-First-DRC-Help-Center-c26b36ff66564417834f3f264475d10a)
-      - [Analysis with Cavatica](https://docs.cavatica.org/)
-      - [Common Fund](https://training.nih-cfde.org/en/latest/Bioinformatics-Skills/Kids-First/)
+- [KF Help Center](https://www.notion.so/Kids-First-DRC-Help-Center-c26b36ff66564417834f3f264475d10a)
+- [Analysis with Cavatica](https://docs.cavatica.org/)
+- [Common Fund](https://training.nih-cfde.org/en/latest/Bioinformatics-Skills/Kids-First/)
 - [YouTube](https://www.youtube.com/channel/UCK9sPu0j4_ci4m3nNFa6gVw/featured)
-- [Twitter](https://twitter.com/kidsfirstdrc?lang=en)
+
+#### User Support
 - [Support](mailto:support@kidsfirstdrc.org)
+
+#### Social links 
+- [Twitter](https://twitter.com/kidsfirstdrc?lang=en)
