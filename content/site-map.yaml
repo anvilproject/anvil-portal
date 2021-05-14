@@ -356,12 +356,6 @@
           file: "/ncpi/interoperating-principles"
         - name: "Working Groups"
           file: "/ncpi/working-groups"
-        - name: "Training Materials"
-          file: ""
-          pathPartial: "/training"
-          navigationItems:
-            - name: "Train Your Colleague"
-              file: "/ncpi/training/2020-03-17-train-your-colleague"
         - name: "Progress Updates"
           file: "/ncpi/progress-updates"
 ## NCPI Datasets
@@ -374,6 +368,19 @@
       navigationItems:
         - name: ""
           file: "/ncpi/data"
+## NCPI Training
+- menuItem: "NCPI Training"
+  pageTitle: "Training"
+  pathPartial: "/ncpi/training"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Training Materials"
+          file: "/ncpi/training/training"
+          pathOverride: "/ncpi/training"
+        - name: "Train Your Colleague"
+          file: "/ncpi/training/2020-03-17-train-your-colleague"
 ## News
 - menuItem: "News"
   pageTitle: "News"
