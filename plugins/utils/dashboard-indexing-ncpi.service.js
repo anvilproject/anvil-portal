@@ -29,6 +29,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
         this.field("dbGapIdNumber");
         this.field("diseases");
         this.field("platforms");
+        this.field("studyDesigns");
         this.field("studyName");
 
         this.pipeline.remove(lunr.stemmer);
@@ -45,6 +46,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
             const dbGapIdNumber = getIndexFieldGapNumber(study.dbGapIdAccession);
             const diseases = getIndexFieldTypeOfArray(study.diseases);
             const platforms = study.platforms;
+            const studyDesigns = getIndexFieldTypeOfArray(study.studyDesigns);
             const studyName = getIndexFieldTypeOfString(study.studyName, inputSubStr);
 
             this.add({
@@ -54,6 +56,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(studies) 
                 "dbGapIdNumber": dbGapIdNumber,
                 "diseases": diseases,
                 "platforms": platforms,
+                "studyDesigns": studyDesigns,
                 "studyName": studyName,
             });
         });

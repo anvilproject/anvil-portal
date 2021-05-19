@@ -17,6 +17,7 @@ export const DashboardNCPIStaticQuery = () => {
                 }
                 platform
                 platforms
+                studyDesigns
                 studyName
                 subjectsTotal
               }

@@ -188,6 +188,8 @@ export function switchDisplayColumnName(columnName) {
             return "Text Search";
         case "studies":
             return "Studies";
+        case "studyDesigns":
+            return "Study Design";
         case "studyName":
             return "Title";
         case "subjects":

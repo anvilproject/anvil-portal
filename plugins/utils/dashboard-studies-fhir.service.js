@@ -19,6 +19,7 @@ const FHIR_FIELD_KEY = {
     "CONSENT_CODES": "consentCodes",
     "DATA_TYPES": "dataTypes",
     "DISEASES": "diseases",
+    "STUDY_DESIGNS": "studyDesigns",
     "STUDY_NAME": "studyName",
     "SUBJECTS_TOTAL": "subjectsTotal"
 };
@@ -96,6 +97,9 @@ function buildFHIRStudy(fhirJSON, study) {
             /* Roll up the diseases. */
             const diseases = rollUpDiseases(resource, acc);
 
+            /* Roll up the study designs. */
+            const studyDesigns = rollUpStudyDesigns(resource, acc);
+
             /* Roll up subjects total. */
             const subjectsTotal = rollUpSubjectsTotal(resource, acc);
 
@@ -104,6 +108,7 @@ function buildFHIRStudy(fhirJSON, study) {
                 [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
                 [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
                 [FHIR_FIELD_KEY.DISEASES]: diseases,
+                [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
                 [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
             });
         }, cloneStudy);
@@ -208,6 +213,33 @@ async function getFHIRJSON(dbGapIdAccession) {
 }
 
 /**
+ * Returns a list of system design codes belonging to the specified system type.
+ *
+ * @param coding
+ * @param systemType
+ * @returns {*[]}
+ */
+function getDesignCodes(coding, systemType) {
+
+    if ( coding ) {
+
+        return coding.reduce((acc, designCode) => {
+
+            const {code, system} = designCode;
+
+            if ( system && isStrPartialMatch(system, systemType) ) {
+
+                acc.push(code);
+            }
+
+            return acc;
+        }, []);
+    }
+
+    return [];
+}
+
+/**
  * Returns the molecular data types.
  *
  * @param coding
@@ -266,6 +298,7 @@ function initializeStudy() {
         [FHIR_FIELD_KEY.CONSENT_CODES]: [],
         [FHIR_FIELD_KEY.DATA_TYPES]: [],
         [FHIR_FIELD_KEY.DISEASES]: [],
+        [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
         [FHIR_FIELD_KEY.STUDY_NAME]: "",
         [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
     };
@@ -286,6 +319,26 @@ function isExtensionType(url, extensionType = "") {
         const urlStr = url.toLowerCase();
 
         return urlStr.includes(extensionStr);
+    }
+
+    return false;
+}
+
+/**
+ * Returns true if the specified search string partially matches the specified string.
+ *
+ * @param str
+ * @param searchStr
+ * @returns {boolean}
+ */
+function isStrPartialMatch(str, searchStr) {
+
+    if ( str ) {
+
+        const lowerCStr = str.toLowerCase();
+        const lowerCSearchStr = searchStr.toLowerCase();
+
+        return lowerCStr.includes(lowerCSearchStr);
     }
 
     return false;
@@ -447,6 +500,42 @@ function rollUpDiseases(resource, acc) {
     }
 
     return diseases;
+}
+
+/**
+ * Returns the study designs for the study.
+ *
+ * @param resource
+ * @param acc
+ * @returns {*}
+ */
+function rollUpStudyDesigns(resource, acc) {
+
+    /* Define the system type of interest. */
+    const systemType = "ResearchStudy-StudyDesign";
+
+    /* Grab any accumulated study designs. */
+    const studyDesigns = acc[FHIR_FIELD_KEY.STUDY_DESIGNS];
+
+    if ( resource ) {
+
+        /* Grab the category array. */
+        const categories = resource.category;
+
+        if ( categories ) {
+
+            /* Accumulate any codes belonging to study design. */
+            return categories.reduce((acc, category) => {
+
+                const {coding} = category || {};
+                const codes = getDesignCodes(coding, systemType);
+
+                return acc.concat(codes);
+            }, studyDesigns)
+        }
+    }
+
+    return studyDesigns;
 }
 
 /**
