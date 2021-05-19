@@ -22,9 +22,9 @@ import {DashboardNCPIStaticQuery} from "../../hooks/dashboard-ncpi-query";
 const countLabel = "Studies";
 const dashboardIndexFileName = "/dashboard-index-ncpi.json";
 const lunrIndexRefField = "dbGapIdAccession";
-const searchFacets = ["platforms", "diseases", "dataTypes", "consentCodes"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
+const searchFacets = ["platforms", "diseases", "dataTypes", "studyDesigns", "consentCodes"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
 const summaryKey = "platforms";
-const tableHeadersEntities = ["platforms", "gapId", "studyName", "diseases", "dataTypes", "consentCodes", "subjectsTotal"];
+const tableHeadersEntities = ["platforms", "gapId", "studyName", "diseases", "dataTypes", "studyDesigns", "consentCodes", "subjectsTotal"];
 const tableHeadersSummary = ["platforms", "studies", "subjectsTotal"];
 
 function DashboardNCPI() {
