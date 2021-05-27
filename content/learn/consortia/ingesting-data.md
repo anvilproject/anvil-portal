@@ -1,3 +1,9 @@
+---
+title: "Ingesting Data"
+author: "AnVIL"
+description: "An overview of the AnVIL data ingestion process."
+---
+
 #Ingesting Data
 ##Data Transfer
 Once data is in a format that meets the above requirements and have been approved by the Data Ingestion Committee, data submitters will contact a designated POC at the AnVIL team to shepherd the data into the AnVIL data storage repository.
