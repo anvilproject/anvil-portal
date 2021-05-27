@@ -5,7 +5,7 @@ description: "An overview of the approval process for submitting data to AnVIL."
 ---
 # Data Approval Process
 
-### Overview
+
 In order to deposit data into AnVIL, the data submitters must complete the following steps:
 - Gain NHGRI attestation
 - Apply to deposit data in AnVIL

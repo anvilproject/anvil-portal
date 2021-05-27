@@ -6,7 +6,7 @@ description: "An overview of the AnVIL data submission process."
 
 # Submitting Data
 
-### Overview
+
 After your data set has been approved by the AnVIL data ingestion committee, these are the major steps for submitting data to the AnVIL:
 
 1. Obtain a Terra account.
