@@ -41,7 +41,7 @@ The form gathers study information needed to create the deposit workspace includ
 
 
 
-<button-link href="https://docs.google.com/forms/d/1cJ0ujFtDv6AX1ckYLl9-d3Fb_etVc7jUWlHrrxPmg-s/edit" target="_blank">Launch AnVIL Data Submission Form</button-link>
+<button-link href="https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform" target="_blank">Launch AnVIL Data Submission Form</button-link>
 
 
 ### 3 - Prepare data for submission
@@ -49,7 +49,7 @@ The form gathers study information needed to create the deposit workspace includ
 
 >For information on formatting requirements for data tables and template upload files, see [this article](https://support.terra.bio/hc/en-us/articles/360059242671-Adding-data-to-a-workspace-with-a-template).
 
-- See the [Data Requirements](/learn/data-submitters/data-requirements) section for more information about data/metadata requirements.
+- See the [Data Requirements](/learn/consortia/data-requirements) section for more information about data/metadata requirements.
 
 ### 4. Deposit data into the AnVIL
 - AnVIL Data Ingest Team will provide deposit workspace URL.

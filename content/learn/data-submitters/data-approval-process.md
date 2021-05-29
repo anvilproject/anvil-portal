@@ -6,7 +6,7 @@ description: "An overview of the approval process for submitting data to AnVIL."
 
 # Data Approval Process
 
-To deposit data into AnVIL, data submitters must first get approval from :
+To deposit data into AnVIL, data submitters must first get approval from:
 - NHGRI
 - The AnVIL ingestion committee
 
