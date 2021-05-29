@@ -122,6 +122,16 @@
         "source": "/learn/for-pis/setting-up-lab-accounts",
         "destination": "/learn/investigators/setting-up-lab-accounts",
         "type": 301
+      },
+      {
+        "source": "/learn/consortia/data-submission",
+        "destination": "/learn/data-submitters/data-submission",
+        "type": 301
+      },
+      {
+        "source": "/learn/consortia/consortium-data-access-guidelines",
+        "destination": "/learn/data-submitters/consortium-data-access-guidelines",
+        "type": 301
       }
     ]
   }

@@ -17,7 +17,7 @@ By operating in the cloud, AnVIL users can scale analyses from a single computer
 ## About AnVIL’s Documentation
 AnVIL’s training materials curate, and augment existing component and tool documentation, and show how to use AnVIL’s parts together to accomplish the goals of AnVIL’s different user personas.
 
-To complement this onboarding and introductory section, the AnVIL team is in the process of developing persona-specific guides and tutorials. For example see the guides for  data analysts, [investigators](/learn/investigators/setting-up-lab-accounts), developers, instructors, and [data contributors](/learn/consortia/data-submission).
+To complement this onboarding and introductory section, the AnVIL team is in the process of developing persona-specific guides and tutorials. For example see the guides for  data analysts, [investigators](/learn/investigators/setting-up-lab-accounts), developers, instructors, and [data contributors](/learn/data-submitters/data-submission).
 
 <!--hero>  For a full list of AnVIL guides and tutorials for each persona, see [Guides and Tutorials](/learn/guides-and-tutorials). </hero-->
 

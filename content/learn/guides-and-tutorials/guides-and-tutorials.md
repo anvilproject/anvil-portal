@@ -29,4 +29,4 @@ Key guides and tutorials grouped by user persona are listed below.  For a genera
 
 ### Data Contributing Consortia
 
-[Submitting Consortium Data](/learn/consortia/data-submission) -  An overview of the process of submitting data to AnVIL and confirming eligibility for submission.
+[Submitting Consortium Data](/learn/data-submitters/data-submission) -  An overview of the process of submitting data to AnVIL and confirming eligibility for submission.
