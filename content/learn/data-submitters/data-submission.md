@@ -60,7 +60,7 @@ The form gathers study information needed to create the deposit workspace includ
 
 
 
-### Review AnVIL training
+#### Review AnVIL training
 - For a video introduction to Terra, see [Terra Videos](/learn/videos/terra-videos).
 - For an overview of the AnVIL platform and key concepts, see [Getting Started with AnVIL](/learn) and the [Workshop Archive](/learn/workshop-archive).
 - Please contact the AnVIL Outreach team with support and training requests at <help@lists.anvilproject.org>
