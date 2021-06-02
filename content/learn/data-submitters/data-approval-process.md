@@ -25,7 +25,7 @@ Data must also be submitted in a way that is consistent with the requirements of
 The AnVIL team can provide an Institutional Certification template form.
 
 
-### AnVIL Data Ingestion Committee Approval
+## AnVIL Data Ingestion Committee Approval
 
 The AnVIL data ingestion committee includes NHGRI program officers and AnVIL leadership team members who evaluate ingestion applications to ensure data deposited into AnVIL meets the high quality of the  NIH Genomic Data Sharing (GDS) data standards.
 
