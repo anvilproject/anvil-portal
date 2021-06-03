@@ -100,7 +100,6 @@ async function getStudiesByStudyId(rows) {
             /* Assemble general study fields. */
             const studyUrl = getStudyUrl(studyAccession);
             const studyGapId = buildGapId(dbGapId, studyUrl);
-
             Object.assign(study, {dbGapIdAccession: studyAccession, gapId: studyGapId, studyUrl: studyUrl});
         }
 
@@ -147,21 +146,18 @@ function getStudyPlatformDisplayValue(platform) {
 }
 
 /**
- * Returns a distinct list of platforms for the study.
+ * Returns a list of platforms for the study.
  *
  * @param studyPlatforms
  * @param platform
- * @returns {any[]}
+ * @returns {*[]}
  */
 function getStudyPlatforms(studyPlatforms = [], platform) {
 
-    /* Create a collection of the study's platforms. */
-    const setOfPlatforms = new Set(studyPlatforms);
-
     /* Add platform to the study's platforms. */
-    setOfPlatforms.add(platform);
+    studyPlatforms.push(platform);
 
-    return [...setOfPlatforms];
+    return studyPlatforms;
 }
 
 /**

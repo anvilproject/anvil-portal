@@ -44,7 +44,10 @@ const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
     const fhirStudy = buildFHIRStudy(fhirJSON, study);
 
     /* Cache the study for future use; if it has not already been stored. */
-    await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
+    if ( fhirJSON && !fhirJSON.cacheHit ) {
+
+        await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
+    }
 
     return fhirStudy;
 };
@@ -209,16 +212,22 @@ function findExtensionType(resource, stringSnippet = "") {
 async function getFHIRJSON(dbGapIdAccession) {
 
     /* Grab the FHIR study JSON from cache. */
-    const fhirJSON = await readCacheFHIR(dbGapIdAccession);
+    let fhirJSON = await readCacheFHIR(dbGapIdAccession);
+    let cacheHit = true;
 
-    /* Return the FHIR study from cache. */
-    if ( fhirJSON ) {
+    if ( !fhirJSON ) {
 
-        return fhirJSON;
+        /* Otherwise, fetch the FHIR study JSON. */
+        fhirJSON = await fetchFHIRJSON(dbGapIdAccession);
+        cacheHit = false;
+
+        if ( !fhirJSON ) {
+
+            return fhirJSON; // Returning null if json is not cached and not complete in dbGap.
+        }
     }
 
-    /* Otherwise, fetch the FHIR study JSON. */
-    return await fetchFHIRJSON(dbGapIdAccession);
+    return Object.assign(fhirJSON, {cacheHit: cacheHit});
 }
 
 /**

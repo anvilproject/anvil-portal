@@ -19,17 +19,15 @@ const path = require("path");
  */
 const cacheFile = async function cacheFile(file, content, options = null) {
 
-    if ( file && content ) {
+    if ( !file || !content ) {
 
-        const absPath = path.resolve(__dirname, file);
-
-        try {
-
-            fs.writeFileSync(absPath, content, options);
-            console.log(`Caching ${file}`);
-        }
-        catch (err) {}
+        throw `Error cacheFile file or content is null or empty; ${file}, ${content}`;
     }
+
+    const absPath = path.resolve(__dirname, file);
+
+    fs.writeFileSync(absPath, content, options);
+    console.log(`Caching ${file}`);
 };
 
 /**
