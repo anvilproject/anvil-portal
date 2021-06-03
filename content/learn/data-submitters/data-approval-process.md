@@ -35,9 +35,9 @@ After the AnVIL data ingestion committee approves datasets for ingestion, an app
 
 ### Ethical Review
 
-All scientific investigations should be undertaken with the highest priority given to the ethical requirements of such inquiries. As such, the ethical collection of both the data and of the submitting parties itself will be evaluated by AnVIL Program Directors and DIC before a determination for inclusion in the AnVIL.
+All scientific investigations should be undertaken with the highest priority given to the ethical requirements of such inquiries. AnVIL Program Directors and DIC will evaluate the ethical collection of both the data and of the submitting parties before approving for inclusion in the AnVIL.
 
 ### Data Retention
 
-During the initial discussions and vetting with the Data Ingestion Committee, the committee will coordinate with the dataset stewards to determine a reasonable timeframe for retention of data within the AnVIL, as well as any other provisions around the long term storage, archival, and availability of the data.
+The committee will coordinate with the dataset stewards to determine a reasonable timeframe for retention of data within the AnVIL, as well as any other provisions around the long-term storage, archival, and availability of the data. This will happen during the initial discussions and vetting with the Data Ingestion Committee
 
