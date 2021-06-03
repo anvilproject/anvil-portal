@@ -1,9 +1,11 @@
 ---
-title: "AnVIL Data Requirements"
+title: "AnVIL Data Model Requirements"
 author: "AnVIL"
 description: "An overview of the required data and metadata formats for submitting data to AnVIL."
 ---
-#Data Requirements
+# Data Model Requirements
+
+> Make any changes to the [AnVIL Data Submitters - Data Model Requirements  - Markdown](https://docs.google.com/document/d/14WcYvggZoj2iFH2tsxx1lkl07PGBhe6WaIV8Qo_T7-A/edit) Google Doc.
 
 This section describes the data needed for AnVIL studies in order to support that datasets are not only useful to the researchers who created them but also for research where data can be analyzed collectively across studies.
 

@@ -6,6 +6,8 @@ description: "An overview of the AnVIL data submission process."
 
 # Submitting Data
 
+>Make any changes to the [AnVIL Data Submitters - Submitting Data - Markdown](https://docs.google.com/document/d/136CzYX8yse-nylxb8JNxWet7J7NDB-hZocwkAPOY80w/edit) Google doc.
+
 
 After your dataset has been approved by the AnVIL data ingestion committee, follow these steps to submit data to the AnVIL:
 
@@ -66,6 +68,7 @@ The form gathers study information needed to create the deposit workspace includ
 - Please contact the AnVIL Outreach team with support and training requests at <help@lists.anvilproject.org>
 
 >While there are no charges for uploading and storing your data in AnVIL, in order to complete an analysis, you will need to connect a Google Billing Account to your Terra account. See [Overview of Billing Concepts](/learn/billing-setup/billing-concepts) and [Creating a Google Cloud Billing Account](/learn/billing-setup/creating-a-google-cloud-billing-account) for more information. 
+
 
 
 

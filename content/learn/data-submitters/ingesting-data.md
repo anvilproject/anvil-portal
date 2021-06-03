@@ -5,6 +5,9 @@ description: "An overview of the AnVIL data ingestion process."
 ---
 
 #Ingesting Data
+
+> Make any changes to the [AnVIL Data Submitters - Ingesting Data - Markdown](https://docs.google.com/document/d/1khl9xQhlqwwy65W7405iE4k6aKHGj7MtR4bfFvUNEoQ/edit) Google doc.
+
 ##Data Transfer
 Once data is in a format that meets the above requirements and have been approved by the Data Ingestion Committee, data submitters will contact a designated POC at the AnVIL team to shepherd the data into the AnVIL data storage repository.
 
@@ -38,4 +41,5 @@ Studies submitted to the AnVIL will still need to be registered with dbGaP, thou
 
 ##Access Control
 Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/accessing-data/data-access-controls).
+
 
