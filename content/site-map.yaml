@@ -320,7 +320,7 @@
               file: "/learn/data-submitters/data-approval-process"
             - name: "Preliminary Steps"
               file: "/learn/data-submitters/preliminary-steps"
-            - name: "Submitting Data"
+            - name: "Preparing Submission"
               file: "/learn/data-submitters/data-submission"
             - name: "Ingesting Data"
               file: "/learn/data-submitters/ingesting-data"
