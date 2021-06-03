@@ -44,3 +44,12 @@ The Howard University Research Centers in Minority Institutions, RCMI, Program w
 
 ### More Information / Registration
 For more information and to register see [Virtual Applied Data Science Training Institute (VADSTI)](https://www.the1joshuagroup.com/VADSTI/#faq)
+
+## Workshop Videos
+
+### Tools for Applied Data Science Using Cloud-Based Platform, Module 7, Day 1
+`video: https://www.youtube.com/watch?v=CdqoGck2ht8`
+
+
+### Tools for Applied Data Science Using Cloud-Based Platform - Module 7, Day 2
+`video: https://www.youtube.com/watch?v=6S0yOvgISVI`
