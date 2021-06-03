@@ -10,6 +10,7 @@ title: "AnVIL Hosts Release 1 of the Human Pangenome Reference Consortium Data"
 ---
 
 # AnVIL Hosts Release 1 of the Human Pangenome Reference Consortium Data
+##### Posted: March 11, 2021
 
 ![HPRC Home](./_images/hprc-home.png)
 
