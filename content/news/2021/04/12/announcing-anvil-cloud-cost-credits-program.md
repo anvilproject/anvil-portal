@@ -10,6 +10,8 @@ title: "Announcing the AnVIL Cloud Credits Program (AC2)"
 ---
 
 # Announcing the AnVIL Cloud Credits Program (AC2)
+##### Posted: April 12, 2021
+
 NHGRI’s [Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) ](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) cloud genomics platform is pleased to announce the AnVIL Cloud Credits Program (AC2).
 
 Through AC2, we invite genomic researchers to submit proposals that use the AnVIL platform for large-scale data analysis with cloud computing credits supported by NHGRI through the [NIH STRIDES](https://datascience.nih.gov/strides) program.
