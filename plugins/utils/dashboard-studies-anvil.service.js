@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const {getStudyAccession, getUrlStudy} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
+const {getStudyAccession, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const {getFHIRStudyName} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 
 /**
@@ -31,7 +31,7 @@ const getStudyPropertiesById = async function getStudyPropertiesById(workspaces)
         const studyAccession = await getStudyAccession(studyId);
 
         /* Grab the current study's associated study name and url. */
-        const studyUrl = getUrlStudy(studyAccession);
+        const studyUrl = getStudyUrl(studyAccession);
         const studyName = await getFHIRStudyName(studyAccession);
 
         /* Accumulate the db gap id with any corresponding study properties. */
