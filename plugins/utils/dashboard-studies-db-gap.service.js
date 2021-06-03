@@ -45,7 +45,7 @@ const getStudyAccession = async function getStudyAccession(studyId) {
  * @param studyAccession
  * @returns {*}
  */
-const getUrlStudy = function getUrlStudy(studyAccession) {
+const getStudyUrl = function getStudyUrl(studyAccession) {
 
     if ( studyAccession ) {
 
@@ -86,7 +86,7 @@ async function fetchStudyAccession(studyId) {
     /* Return the study id. */
     /* dbGaP will redirect to the latest study accession. */
     /* Site redirects to "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=". */
-    const url = getUrlStudy(studyId);
+    const url = getStudyUrl(studyId);
     const response = await fetch(url);
     const status = response.status;
     const redirected = response.redirected;
@@ -149,4 +149,4 @@ function isStudyCached(row, studyId) {
 }
 
 module.exports.getStudyAccession = getStudyAccession;
-module.exports.getUrlStudy = getUrlStudy;
+module.exports.getStudyUrl = getStudyUrl;

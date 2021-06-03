@@ -11,7 +11,7 @@ const path = require("path");
 // App dependencies
 const {parseRows, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
-const {getUrlStudy} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
+const {getStudyAccession, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
@@ -20,22 +20,20 @@ const fileSource = "dashboard-source-ncpi.csv";
 const PLATFORM = {
     "ANVIL": "AnVIL",
     "BDC": "BDC",
+    "CRDC": "CRDC",
     "GMKF": "GMKF",
     "KFDRC": "KFDRC"
 };
 const SOURCE_HEADER_KEY = {
     "DB_GAP_ID": "identifier",
-    "DB_GAP_ID_ACCESSION": "study accession",
     "PLATFORM": "platform",
 };
 const SOURCE_FIELD_KEY = {
     [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
-    [SOURCE_HEADER_KEY.DB_GAP_ID_ACCESSION]: "dbGapIdAccession",
     [SOURCE_HEADER_KEY.PLATFORM]: "platform"
 };
 const SOURCE_FIELD_TYPE = {
     [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
-    [SOURCE_HEADER_KEY.DB_GAP_ID_ACCESSION]: "string",
     [SOURCE_HEADER_KEY.PLATFORM]: "string"
 };
 
@@ -49,132 +47,84 @@ const getNCPIStudies = async function getNCPIStudies() {
     /* Parse the source file. */
     const rows = await parseSource();
 
-    /* Make the studies distinct; some platforms share the same study. */
-    const studyPlatforms = getDistinctStudies(rows);
-
-    /* Build the studies dashboard. */
-    const studies = await buildDashboardStudies(studyPlatforms);
+    /* Build the studies. */
+    const studiesByStudyId = await getStudiesByStudyId(rows);
+    const studies = [...studiesByStudyId.values()];
 
     /* Return the sorted studies. */
-    return sortDataByDuoTypes([...studies], "platform", "studyName");
+    return sortDataByDuoTypes(studies, "platform", "studyName");
 };
 
 /**
- * Build up FE-compatible model of NCPI dashboard studies, to be displayed on the NCPI dashboard.
- *
- * @param gapIdPlatforms
- * @returns {Promise.<*[]>}
- */
-async function buildDashboardStudies(gapIdPlatforms) {
-
-    if ( gapIdPlatforms.length ) {
-
-        /* Build the studies dashboard. */
-        return await gapIdPlatforms.reduce(async (promise, gapIdPlatform) => {
-
-            let acc = await promise;
-
-            /* Build the study. */
-            const study = await buildDashboardStudy(gapIdPlatform);
-
-            /* Accumulate studies with complete fields (title, subjectsTotal). */
-            if ( isStudyFieldsComplete(study) ) {
-
-                acc.push(study);
-            }
-
-            return acc;
-        }, Promise.resolve([]));
-    }
-
-    return [];
-}
-
-/**
- * Builds the NCPI dashboard study into a FE-compatible model of a data dashboard study.
- *
- * @returns {Promise.<*>}
- * @param gapIdPlatform
- */
-async function buildDashboardStudy(gapIdPlatform) {
-
-    const {dbGapId, dbGapIdAccession, platforms} = gapIdPlatform;
-
-    /* Get any study related data from the FHIR JSON. */
-    const study = await getFHIRStudy(dbGapIdAccession);
-
-    /* Get the db gap study url. */
-    const studyUrl = getUrlStudy(dbGapIdAccession);
-
-    /* Assemble the study variables. */
-    const consentCodes = study.consentCodes;
-    const dataTypes = study.dataTypes;
-    const diseases = study.diseases;
-    const gapId = buildGapId(dbGapId, studyUrl);
-    const studyDesigns = study.studyDesigns;
-    const studyPlatform = getStudyPlatform(platforms);
-    const studyPlatforms = platforms;
-    const studyName = study.studyName;
-    const subjectsTotal = study.subjectsTotal;
-
-    return {
-        consentCodes: consentCodes,
-        dataTypes: dataTypes,
-        dbGapIdAccession: dbGapIdAccession,
-        diseases: diseases,
-        gapId: gapId,
-        platform: studyPlatform,
-        platforms: studyPlatforms,
-        studyDesigns: studyDesigns,
-        studyName: studyName,
-        studyUrl: studyUrl,
-        subjectsTotal: subjectsTotal
-    };
-}
-
-/**
- * Returns a distinct list of studies, with corresponding list of platforms (should there be more than one per study),
- * and dbGapIds.
+ * Returns a map object key-value pair of study by study id.
  *
  * @param rows
+ * @returns {Promise<Map<any, any>>}
  */
-function getDistinctStudies(rows) {
+async function getStudiesByStudyId(rows) {
 
-    return rows.reduce((acc, row) => {
+    let studiesByStudyId = new Map();
 
-        /* Some platforms share the same study. */
-        /* In this instance, we will add the additional platform to the existing study. */
-        const {dbGapId, dbGapIdAccession} = row;
+    for ( let row of rows ) {
 
-        if ( dbGapIdAccession ) {
+        /* Grab the study accession, if it exists. */
+        const {dbGapId, platform} = row;
+        const studyAccession = await getStudyAccession(dbGapId);
 
-            /* Skip the study, if it has already been accumulated. */
-            const studyAccumulated = acc.find(s => s.dbGapIdAccession === dbGapIdAccession);
+        /* Continue when the study does not have a study accession. */
+        if ( !studyAccession ) {
 
-            if ( studyAccumulated ) {
-
-                return acc;
-            }
-
-            /* Grab a set of platforms that share the same study. */
-            const setOfPlatforms = rows
-                .filter(study => study.dbGapIdAccession === dbGapIdAccession)
-                .reduce((acc, study) => {
-
-                    acc.add(study.platform);
-                    return acc;
-                }, new Set());
-
-            /* Sort the platforms by alpha. */
-            const platforms = [...setOfPlatforms];
-            platforms.sort();
-
-            /* Accumulate the study. */
-            acc.push({dbGapId: dbGapId, dbGapIdAccession: dbGapIdAccession, platforms: platforms});
+            continue;
         }
 
-        return acc;
-    }, []);
+        /* Grab or build the study. */
+        let study;
+
+        if ( studiesByStudyId.has(dbGapId) ) {
+
+            /* The study already exists in studiesByStudyId. */
+            study = studiesByStudyId.get(dbGapId);
+        }
+        else {
+
+            /* The study does not exist in studiesByStudyId. */
+            /* Build the study from FHIR. */
+            study = await getFHIRStudy(studyAccession);
+
+            /* Continue when the study is incomplete. */
+            if ( !isStudyFieldsComplete(study) ) {
+
+                continue;
+            }
+
+            /* Assemble general study fields. */
+            const studyUrl = getStudyUrl(studyAccession);
+            const studyGapId = buildGapId(dbGapId, studyUrl);
+
+            Object.assign(study, {dbGapIdAccession: studyAccession, gapId: studyGapId, studyUrl: studyUrl});
+        }
+
+        /* Grab or build the study platforms. */
+        /* Add the platform to an existing study platforms or assemble. */
+        const studyPlatforms = getStudyPlatforms(study.platforms, platform);
+        const studyPlatform = getStudyPlatform(studyPlatforms);
+        Object.assign(study, {platform: studyPlatform, platforms: studyPlatforms});
+        studiesByStudyId.set(dbGapId, study);
+    }
+
+    return studiesByStudyId;
+}
+
+/**
+ * Returns the platforms array as a string value; using the platform display value.
+ *
+ * @param platforms
+ */
+function getStudyPlatform(platforms) {
+
+    return platforms
+        .map(platform => getStudyPlatformDisplayValue(platform))
+        .join(", ");
 }
 
 /**
@@ -183,7 +133,7 @@ function getDistinctStudies(rows) {
  * @param platform
  * @returns {*}
  */
-function getPlatformDisplayValue(platform) {
+function getStudyPlatformDisplayValue(platform) {
 
     if ( platform ) {
 
@@ -197,15 +147,21 @@ function getPlatformDisplayValue(platform) {
 }
 
 /**
- * Returns the platforms array as a string value; using the platform display value.
+ * Returns a distinct list of platforms for the study.
  *
- * @param platforms
+ * @param studyPlatforms
+ * @param platform
+ * @returns {any[]}
  */
-function getStudyPlatform(platforms) {
+function getStudyPlatforms(studyPlatforms = [], platform) {
 
-    return platforms
-        .map(platform => getPlatformDisplayValue(platform))
-        .join(", ");
+    /* Create a collection of the study's platforms. */
+    const setOfPlatforms = new Set(studyPlatforms);
+
+    /* Add platform to the study's platforms. */
+    setOfPlatforms.add(platform);
+
+    return [...setOfPlatforms];
 }
 
 /**

@@ -40,8 +40,13 @@ const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
     /* Grab the FHIR JSON. */
     const fhirJSON = await getFHIRJSON(dbGapIdAccession);
 
-    /* Return the study. */
-    return buildFHIRStudy(fhirJSON, study);
+    /* Build the study. */
+    const fhirStudy = buildFHIRStudy(fhirJSON, study);
+
+    /* Cache the study for future use; if it has not already been stored. */
+    await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
+
+    return fhirStudy;
 };
 
 /**
@@ -122,20 +127,28 @@ function buildFHIRStudy(fhirJSON, study) {
  *
  * @param dbGapIdAccession
  * @param fhirJSON
+ * @param fhirStudy
  * @returns {Promise.<void>}
  */
-async function cacheFHIR(dbGapIdAccession, fhirJSON) {
+async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
 
-    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
-    console.log(`Caching FHIR JSON for ${file}`);
+    if ( isFHIRComplete(fhirStudy) ) {
 
-    /* Cache the JSON. */
-    await cacheFile(file, JSON.stringify(fhirJSON));
+        const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+
+        /* Cache the FHIR JSON. */
+        /* If the file exists, it will not be re-cached. */
+        /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "wx"}. */
+        await cacheFile(file, JSON.stringify(fhirJSON), {"flag": "wx"});
+    }
+    else {
+
+        console.log(`FHIR response incomplete and will not be cached for ${dbGapIdAccession}`);
+    }
 }
 
 /**
  * Fetches FHIR page specified by URL and returns corresponding raw JSON.
- * Valid FHIR JSON will be cached for future use.
  *
  * @param dbGapIdAccession
  * @returns {Promise.<*>}
@@ -188,28 +201,24 @@ function findExtensionType(resource, stringSnippet = "") {
 
 /**
  * Returns FHIR JSON.
- * JSON will be sourced from cache. If the JSON is not cached, then the JSON is fetched and stored into cache for future use.
+ * JSON will be sourced from cache. If the JSON is not cached, then the JSON is fetched.
  *
  * @returns {Promise.<*>}
  * @param dbGapIdAccession
  */
 async function getFHIRJSON(dbGapIdAccession) {
 
-    if ( dbGapIdAccession ) {
+    /* Grab the FHIR study JSON from cache. */
+    const fhirJSON = await readCacheFHIR(dbGapIdAccession);
 
-        /* Grab the FHIR study JSON from cache. */
-        const fhirJSON = await readCacheFHIR(dbGapIdAccession);
+    /* Return the FHIR study from cache. */
+    if ( fhirJSON ) {
 
-        /* Return the FHIR study from cache. */
-        if ( fhirJSON ) {
-
-            return fhirJSON;
-        }
-
-        /* Otherwise, fetch the FHIR study JSON. */
-        /* FHIR JSON are cached for future use. */
-        return await fetchFHIRJSON(dbGapIdAccession);
+        return fhirJSON;
     }
+
+    /* Otherwise, fetch the FHIR study JSON. */
+    return await fetchFHIRJSON(dbGapIdAccession);
 }
 
 /**
@@ -325,6 +334,17 @@ function isExtensionType(url, extensionType = "") {
 }
 
 /**
+ * Returns true if the FHIR study has a valid name and subjects total.
+ *
+ * @param study
+ * @returns {*}
+ */
+function isFHIRComplete(study) {
+
+    return study.studyName && study.subjectsTotal;
+}
+
+/**
  * Returns true if the specified search string partially matches the specified string.
  *
  * @param str
@@ -349,23 +369,17 @@ function isStrPartialMatch(str, searchStr) {
  *
  * @param dbGapIdAccession
  * @param response
- * @returns {Promise.<*>}
+ * @returns {Promise<{entry}|*>}
  */
 async function parseFHIRJSON(dbGapIdAccession, response) {
 
     /* Grab the JSON. */
     const json = await response.json();
 
-    /* Only cache and return valid FHIR JSON. */
+    /* Only return valid FHIR JSON. */
     if ( json && json.entry ) {
 
-        await cacheFHIR(dbGapIdAccession, json);
-
         return json;
-    }
-    else {
-
-        console.log(`FHIR response incomplete and will not be cached for ${dbGapIdAccession}`);
     }
 }
 

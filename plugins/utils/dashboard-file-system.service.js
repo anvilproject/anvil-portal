@@ -23,7 +23,12 @@ const cacheFile = async function cacheFile(file, content, options = null) {
 
         const absPath = path.resolve(__dirname, file);
 
-        fs.writeFileSync(absPath, content, options);
+        try {
+
+            fs.writeFileSync(absPath, content, options);
+            console.log(`Caching ${file}`);
+        }
+        catch (err) {}
     }
 };
 
@@ -38,18 +43,13 @@ const cacheFile = async function cacheFile(file, content, options = null) {
  */
 const parseRows = function parseRows(contentRows, delimiter = ",", FIELD, FIELD_TYPE) {
 
-    if ( contentRows && Array.isArray(contentRows) ) {
+    /* Build the header row. */
+    const headers = buildFileHeaders(contentRows, delimiter);
 
-        /* Build the header row. */
-        const headers = buildFileHeaders(contentRows, delimiter);
-
-        /* Parse each content row. */
-        return contentRows
-            .slice(1)
-            .map(contentRow => parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE));
-    }
-
-    return [];
+    /* Parse each content row. */
+    return contentRows
+        .slice(1)
+        .map(contentRow => parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE));
 };
 
 /**
@@ -60,18 +60,12 @@ const parseRows = function parseRows(contentRows, delimiter = ",", FIELD, FIELD_
  */
 const readFile = async function readFile(file, options = null) {
 
-    /* Grab the file contents. */
-    if ( fs.existsSync(path.resolve(__dirname, file)) ) {
+    try {
 
         const filePath = path.resolve(__dirname, file);
-
-        return await fs.readFileSync(filePath, options);
+        return fs.readFileSync(filePath, options);
     }
-    else {
-
-        /* File does not exist. */
-        console.log(`File does not exist ${file}`);
-    }
+    catch (err) {}
 };
 
 /**
@@ -82,18 +76,18 @@ const readFile = async function readFile(file, options = null) {
  */
 const splitContentToContentRows = function splitContentToContentRows(content) {
 
-    if ( content ) {
+    if ( !content ) {
 
-        /* Split the file content into rows. */
-        /* Each element of the array represents a row (as a string value) from the file. */
-        /* e.g. [first_line, second_line, third_line, and so on...]. */
-        return content
-            .toString()
-            .trim()
-            .split(/\r?\n/);
+        throw `Error splitContentToContentRows is null or empty; ${content}`;
     }
 
-    return [];
+    /* Split the file content into rows. */
+    /* Each element of the array represents a row (as a string value) from the file. */
+    /* e.g. [first_line, second_line, third_line, and so on...]. */
+    return content
+        .toString()
+        .trim()
+        .split(/\r?\n/);
 };
 
 /**
