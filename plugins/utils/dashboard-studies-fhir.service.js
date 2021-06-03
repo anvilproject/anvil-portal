@@ -13,7 +13,7 @@ const path = require("path");
 // App dependencies
 const {cacheFile, readFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
-// Template dependencies
+// Template variables
 const dirCacheFHIR = "../../db-gap-cache";
 const FHIR_FIELD_KEY = {
     "CONSENT_CODES": "consentCodes",

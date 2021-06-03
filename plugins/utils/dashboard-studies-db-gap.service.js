@@ -12,7 +12,7 @@ const path = require("path");
 // App dependencies
 const {cacheFile, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
-// Template dependencies
+// Template variables
 const fileDBGAPs = "../../db-gap-cache/db-gap-id-accessions.csv";
 const studyPath = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=";
 
