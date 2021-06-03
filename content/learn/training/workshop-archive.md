@@ -15,7 +15,7 @@ Check the AnVIL [events](/events) page for upcoming interactive workshops.
 ### VADSTI 2021 Module 7 - Tools for Applied Data Science Using Cloud-Based Platforms (April 2021)
 [Event](/events/vadsti-2021), [Video](/events/vadsti-2021#workshop-videos)
 
-In April 2021, The AnVIL team presented an overview of the AnVIL platform to participants in the VADSTI 2021 virtual conference organized by The Howard University Research Centers in Minority Institutions, RCMI.
+In April 2021, the AnVIL team presented an overview of the AnVIL platform to participants in the VADSTI 2021 virtual conference organized by The Howard University Research Centers in Minority Institutions, RCMI.
 
 Participants were introduced to the platform, tools, and functionality for data science projects.
 
