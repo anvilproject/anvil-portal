@@ -11,9 +11,9 @@ const fetch = require("node-fetch");
 const path = require("path");
 
 // App dependencies
-const {cacheFile, readFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
+const {readFile, writeFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
-// Template dependencies
+// Template variables
 const dirCacheFHIR = "../../db-gap-cache";
 const FHIR_FIELD_KEY = {
     "CONSENT_CODES": "consentCodes",
@@ -142,7 +142,7 @@ async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
         /* Cache the FHIR JSON. */
         /* If the file exists, it will not be re-cached. */
         /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "wx"}. */
-        await cacheFile(file, JSON.stringify(fhirJSON), {"flag": "wx"});
+        await writeFile(file, JSON.stringify(fhirJSON), {"flag": "wx"});
     }
     else {
 

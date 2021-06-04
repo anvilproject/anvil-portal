@@ -10,27 +10,6 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- * Caches the specified content to the specified file.
- *
- * @param file
- * @param content
- * @param options
- * @returns {Promise.<void>}
- */
-const cacheFile = async function cacheFile(file, content, options = null) {
-
-    if ( !file || !content ) {
-
-        throw `Error cacheFile file or content is null or empty; ${file}, ${content}`;
-    }
-
-    const absPath = path.resolve(__dirname, file);
-
-    fs.writeFileSync(absPath, content, options);
-    console.log(`Caching ${file}`);
-};
-
-/**
  * Returns the file contents parsed into a model shaped by FIELD.
  *
  * @param contentRows
@@ -86,6 +65,27 @@ const splitContentToContentRows = function splitContentToContentRows(content) {
         .toString()
         .trim()
         .split(/\r?\n/);
+};
+
+/**
+ * Writes the specified content to the specified file.
+ *
+ * @param file
+ * @param content
+ * @param options
+ * @returns {Promise.<void>}
+ */
+const writeFile = async function writeFile(file, content, options = null) {
+
+    if ( !file || !content ) {
+
+        throw `Error writeFile file or content is null or empty; ${file}, ${content}`;
+    }
+
+    const absPath = path.resolve(__dirname, file);
+
+    fs.writeFileSync(absPath, content, options);
+    console.log(`Writing to file ${file}`);
 };
 
 /**
@@ -232,7 +232,7 @@ function parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE) {
         }, {});
 }
 
-module.exports.cacheFile = cacheFile;
 module.exports.parseRows = parseRows;
 module.exports.readFile = readFile;
 module.exports.splitContentToContentRows = splitContentToContentRows;
+module.exports.writeFile = writeFile;
