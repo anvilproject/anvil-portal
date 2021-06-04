@@ -17,18 +17,19 @@ const fileDBGAPs = "../../db-gap-cache/db-gap-id-accessions.csv";
 const studyPath = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=";
 
 /**
- * Returns the study accession from dbGapId.
+ * Returns the study accession for the specified study id.
  * If no study exists an empty string is returned.
  *
+ * @param studyAccessionsById
  * @param studyId
  * @returns {Promise.<*>}
  */
-const getStudyAccession = async function getStudyAccession(studyId) {
+const getStudyAccession = async function getStudyAccession(studyAccessionsById, studyId) {
 
-    /* Grab the study accession from cache. */
-    const studyAccession = await getCacheDBGAP(studyId);
+    /* Grab the study accession from studyAccessionsById (built from cache). */
+    const studyAccession = studyAccessionsById.get(studyId);
 
-    /* Return the study accession from cache. */
+    /* Return the study accession. */
     if ( studyAccession ) {
 
         return studyAccession;
@@ -38,6 +39,27 @@ const getStudyAccession = async function getStudyAccession(studyId) {
     /* The new study accession will be cached for future use. */
     return await fetchStudyAccession(studyId);
 };
+
+/**
+ * Returns a map object key-value pair of study id and study accession.
+ *
+ * @returns {Promise<Map<any, any>>}
+ */
+const getStudyAccessionsById = async function getStudyAccessionsById() {
+
+    /* Grab the dbGap cache. */
+    const rows = await getCacheDBGAP();
+
+    let studyAccessionsById = new Map();
+
+    for ( let row of rows ) {
+
+        const [studyId, studyAccession] = row.split(",");
+        studyAccessionsById.set(studyId, studyAccession);
+    }
+
+    return studyAccessionsById;
+}
 
 /**
  * Returns the study url for the specified study accession.
@@ -111,42 +133,17 @@ async function fetchStudyAccession(studyId) {
 /**
  * Returns the cached study accession for the specified study id.
  *
- * @param studyId
  * @returns {Promise<string | *>}
  */
-async function getCacheDBGAP(studyId) {
+async function getCacheDBGAP() {
 
     /* Grab the dbGaPs from cache. */
     const content = await readFile(fileDBGAPs, "utf8");
 
     /* Split the file content into rows. */
-    const contentRows = splitContentToContentRows(content);
-
-    /* Find the cached study. */
-    const cachedStudy = contentRows.find(row => isStudyCached(row, studyId));
-
-    /* If the study is cached, return the accession. */
-    if ( cachedStudy ) {
-
-        const [, studyAccession] = cachedStudy.split(",");
-
-        return studyAccession;
-    }
-}
-
-/**
- * Returns true if the study is cached.
- *
- * @param row
- * @param studyId
- * @returns {boolean}
- */
-function isStudyCached(row, studyId) {
-
-    const [dbGapId,] = row.split(",");
-
-    return dbGapId === studyId;
+    return splitContentToContentRows(content);
 }
 
 module.exports.getStudyAccession = getStudyAccession;
+module.exports.getStudyAccessionsById = getStudyAccessionsById;
 module.exports.getStudyUrl = getStudyUrl;

@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const {getStudyAccession, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
+const {getStudyAccession, getStudyAccessionsById, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const {getFHIRStudyName} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 
 /**
@@ -22,23 +22,30 @@ const getStudyPropertiesById = async function getStudyPropertiesById(workspaces)
     /* Grab the set of study ids. */
     const setOfStudyIds = getSetOfStudyIds(workspaces);
 
-    /* Build the map object key-value pair of studies properties by id. */
-    return await [...setOfStudyIds].reduce(async (promise, studyId) => {
+    /* Grab the study accessions by study id. */
+    const studyAccessionsById = await getStudyAccessionsById();
 
-        let acc = await promise;
+    /* Build the map object key-value pair of study id and study. */
+    let studyByStudyId = new Map();
 
-        /* Grab the current study associated with the specified db gap id. */
-        const studyAccession = await getStudyAccession(studyId);
+    for ( let studyId of [...setOfStudyIds] ) {
 
-        /* Grab the current study's associated study name and url. */
-        const studyUrl = getStudyUrl(studyAccession);
+        /* Grab the study accession from studyAccessionsById, or fetch from dbGap. */
+        const studyAccession = await getStudyAccession(studyAccessionsById, studyId);
+
+        /* Continue when the study accession is not available. */
+        if ( !studyAccession ) {
+
+            continue;
+        }
+
+        /* Assemble general study fields. */
         const studyName = await getFHIRStudyName(studyAccession);
+        const studyUrl = getStudyUrl(studyAccession);
+        studyByStudyId.set(studyId, {dbGapIdAccession: studyAccession, studyName: studyName, studyUrl: studyUrl});
+    }
 
-        /* Accumulate the db gap id with any corresponding study properties. */
-        acc.set(studyId, {dbGapIdAccession: studyAccession, studyName: studyName, studyUrl: studyUrl});
-
-        return acc;
-    }, Promise.resolve(new Map()));
+    return studyByStudyId;
 };
 
 /**

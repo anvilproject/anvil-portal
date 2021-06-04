@@ -268,10 +268,18 @@ function getWorkspaceProperties(workspaces) {
  *
  * @param studyId
  * @param studyPropertiesById
+ * @returns {{dbGapIdAccession: string, studyName: string, studyUrl: string}|*}
  */
 function getWorkspaceStudy(studyId, studyPropertiesById) {
 
-    return studyPropertiesById.get(studyId);
+    const study = studyPropertiesById.get(studyId);
+
+    if ( study ) {
+
+        return study;
+    }
+
+    return {dbGapIdAccession: "", studyName: "", studyUrl: ""};
 }
 
 /**
