@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const {cacheFile, parseRows, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
+const {parseRows, readFile, splitContentToContentRows, writeFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {getCRDCStudyIds} = require(path.resolve(__dirname, "./dashboard-studies-crdc.service.js"));
 const {getStudyAccession, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
@@ -55,23 +55,6 @@ const getNCPIStudies = async function getNCPIStudies() {
     /* Return the sorted studies. */
     return sortDataByDuoTypes(studies, "platform", "studyName");
 };
-
-/**
- * Caches the platform and study id.
- *
- * @param platform
- * @param studyId
- * @returns {Promise<void>}
- */
-async function cacheStudyIdPlatform(platform, studyId) {
-
-    const content = `${platform},${studyId}`;
-    console.log(`Caching NCPI study for ${platform}: ${studyId}`);
-
-    /* If the file does not exist, it will be created. */
-    /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "as+"}. */
-    await cacheFile(fileSource, content, {"flag": "as+"});
-}
 
 /**
  * Returns a set of study ids, for the specified platform.
@@ -156,23 +139,23 @@ async function getStudyIdPlatforms() {
     /* Parse the source file. */
     const rows = await parseSource();
 
-    /* Grab the set of CRDC study ids. */
-    const setOfStudyIds = getSetStudyIds(rows, PLATFORM.CRDC);
+    /* Grab the existing set of CRDC study ids. */
+    const setOfExistingCRDCStudyIds = getSetStudyIds(rows, PLATFORM.CRDC);
 
-    /* Grab the list of CRDC study ids from the NCI api. */
+    /* Grab the current list of CRDC study ids from the NCI api. */
     const studyIds = await getCRDCStudyIds();
 
     /* Merge any new studies. */
     for ( let studyId of studyIds ) {
 
         /* Merge any new CRDC study ids with rows. */
-        /* Cache any new study ids to the source file. */
-        if ( !setOfStudyIds.has(studyId) ) {
+        /* Save any new study ids to the NCPI source file. */
+        if ( !setOfExistingCRDCStudyIds.has(studyId) ) {
 
             const keyStudyId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID];
             const keyPlatform = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PLATFORM];
             rows.push({[keyStudyId]: studyId, [keyPlatform]: PLATFORM.CRDC});
-            await cacheStudyIdPlatform(PLATFORM.CRDC, studyId);
+            await saveStudyIdPlatform(PLATFORM.CRDC, studyId);
         }
     }
 
@@ -251,6 +234,23 @@ async function parseSource() {
 
     /* Parse and return the ingested data. */
     return parseRows(contentRows, ",", SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+}
+
+/**
+ * Saves the platform and study id.
+ *
+ * @param platform
+ * @param studyId
+ * @returns {Promise<void>}
+ */
+async function saveStudyIdPlatform(platform, studyId) {
+
+    const content = `${platform},${studyId}`;
+    console.log(`Saving NCPI study for ${platform}: ${studyId}`);
+
+    /* If the file does not exist, it will be created. */
+    /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "as+"}. */
+    await writeFile(fileSource, content, {"flag": "as+"});
 }
 
 module.exports.getNCPIStudies = getNCPIStudies;

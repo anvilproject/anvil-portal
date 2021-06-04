@@ -31,7 +31,7 @@ const getCRDCStudyIds = async function getCRDCStudyIds() {
 /**
  * Fetches CRDC page specified by URL and returns corresponding raw JSON.
  *
- * @returns {Promise.<*>}
+ * @returns {Promise<*|*[]>}
  */
 async function fetchCRDCJSON() {
 
@@ -47,7 +47,8 @@ async function fetchCRDCJSON() {
     }
     else {
 
-        throw `Error fetchCRDCJSON returns fetch error; ${status}`;
+        console.log(`Error fetchCRDCJSON returns fetch error; ${status}`);
+        return [];
     }
 }
 

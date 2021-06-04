@@ -10,7 +10,7 @@ const fetch = require("node-fetch");
 const path = require("path");
 
 // App dependencies
-const {cacheFile, readFile, splitContentToContentRows} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
+const {readFile, splitContentToContentRows, writeFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
 // Template variables
 const fileDBGAPs = "../../db-gap-cache/db-gap-id-accessions.csv";
@@ -71,7 +71,7 @@ async function cacheDBGAP(studyId, studyAccession) {
 
         /* If the file does not exist, it will be created. */
         /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "as+"}. */
-        await cacheFile(fileDBGAPs, content, {"flag": "as+"});
+        await writeFile(fileDBGAPs, content, {"flag": "as+"});
     }
 }
 
