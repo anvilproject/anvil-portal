@@ -12,7 +12,7 @@ const path = require("path");
 const {parseRows, readFile, splitContentToContentRows, writeFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const {sortDataByDuoTypes} = require(path.resolve(__dirname, "./dashboard-sort.service.js"));
 const {getCRDCStudyIds} = require(path.resolve(__dirname, "./dashboard-studies-crdc.service.js"));
-const {getStudyAccession, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
+const {getStudyAccession, getStudyAccessionsById, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 const {buildGapId} = require(path.resolve(__dirname, "./dashboard-study.service.js"));
 
@@ -78,13 +78,16 @@ function getSetStudyIds(rows, platform) {
  */
 async function getStudiesByStudyId(rows) {
 
+    /* Grab the study accessions by study id. */
+    const studyAccessionsById = await getStudyAccessionsById();
+
     let studiesByStudyId = new Map();
 
     for ( let row of rows ) {
 
-        /* Grab the study accession, if it exists. */
+        /* Grab the study accession from studyAccessionsById, or fetch from dbGap. */
         const {dbGapId, platform} = row;
-        const studyAccession = await getStudyAccession(dbGapId);
+        const studyAccession = await getStudyAccession(studyAccessionsById, dbGapId);
 
         /* Continue when the study does not have a study accession. */
         if ( !studyAccession ) {
