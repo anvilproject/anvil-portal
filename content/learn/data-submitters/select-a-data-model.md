@@ -6,7 +6,7 @@ description: "This doc outlines how to select your data model, and additional re
 
 # Set Up Data Model
 
-> Make any changes to the [AnVIL Data Submitters - Preliminary steps - Markdown]( https://docs.google.com/document/d/1jzRCnDXSQ0-RRTUX9jjTaNchQXppx6Tely-MN_-aueI/edit) Google doc.
+> Make any changes to the [AnVIL Data Submitters - Setup Data Model - Markdown]( https://docs.google.com/document/d/1jzRCnDXSQ0-RRTUX9jjTaNchQXppx6Tely-MN_-aueI/edit) Google doc.
 
 
 After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model. You can choose from one of two template data models and adjust to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this. You’ll end this step by completing an intake form to send the Data Model (in a data dictionary spreadsheet) and all the information the AnVIL team needs to set up your data workspace on the AnVIL.
@@ -28,9 +28,11 @@ AnVIL data are stored and organized in a “data [workspace](https://youtu.be/ON
 ### organizing data by nodes (tables)
 The Data Model describes the structure of the study data. Each node in the AnVIL Data Model (i.e. “Program” or “Subject” etc. in the graphical representation below) includes different types of data (called “properties”). Nodes are connected to each other by unique IDs.
 
+
+
 <figure>
-<img src="./_images/gen3-model.png" alt="Data model diagram."/>
-<figure-caption>TODO  - figure caption for gen3 data model image</figure-caption>
+<img src="./_images/gen3-model.png" alt="Data Model"/>
+<figure-caption>Todo: Caption for data model image.</figure-caption>
 </figure>
 
 In the AnVIL data workspace, data and metadata from the Biospecimen, Clinical, and Data File nodes are in integrated spreadsheet-like tables. Every row in a table is a distinct “entity” and every column is a different property.
@@ -39,9 +41,19 @@ In the AnVIL data workspace, data and metadata from the Biospecimen, Clinical, a
 A collection of basic information and phentotypic data about a subject (e.g., demographics, age, sex, or race)
 
 
+
+<figure>
+<img src="./_images/sample-table.png" alt="Data Model"/>
+<figure-caption>Todo: Sample table caption.</figure-caption>
+</figure>
+
 **Example sample table**    
 Organizes biospecimen information such as genomic data files associated with subjects in the subject table.
 
+<figure>
+<img src="./_images/subject-table.png" alt="Data Model"/>
+<figure-caption>Todo: Subject table caption.</figure-caption>
+</figure>
 
 
 #### Understanding tables in the AnVIL
