@@ -15,25 +15,35 @@ You’ll deposit genomic data files and all TSV files into AnVIL owned bucket(s)
 
 For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.
 
-## Data Transfer Instructions
-### 1 - Move files to workspace bucket
+## 1 -
+
+Move files to workspace bucket
+
+### 1 - Register service account
 - [Register service account to move data](https://github.com/broadinstitute/firecloud-tools/tree/master/scripts/register_service_account)
 
-- Launch gsutil in a terminal on local system
+### 2 - Install gsutil locally
+> *gsutil is a Python application that lets you access Cloud Storage from the command line in a terminal. It’s more efficient than using the AnVIL UI to move large numbers and/or large files. You will need to install gsutil from the terminal on your local machine.*
 
-- Get full path to workspace bucket
+**[How to install gsutil](https://cloud.google.com/sdk/docs/install)**
 
-- Run gsutil to copy the following files to the workspace bucket
-    - All genomic data files
-    - All TSV load files in the Data Model
-        - `subject.tsv`
-        - `sample.tsv`
-        - `sequencing.tsv`
-        - `discovery.tsv`
-        - `family.tsv` (optional)
-        - Any additional optional tables
+### 3 - Copy files
+Once you have installed gsutil, run the following code in the terminal to copy files to the workspace bucket.   
+`gsutil cp local directory/filename gs://fc-your-workspace-bucket-id`
 
-**For step-by-step instructions on copying files to a workspace bucket using gsutil**, see[Moving data to or from a  workspace Google bucket](https://support.terra.bio/hc/en-us/articles/360024056512-Moving-data-to-from-a-workspace-or-external-Google-bucket-).
+You can use `*` in place of filenames to copy everything in a directory. So, for example, `cp * gs://fc-12345` will copy all files in the root directory where the terminal is running to the workspace bucket `gs://fc-12345`.
+
+**Files to copy**
+- All genomic data files
+- All TSV load files in the Data Model
+    - `subject.tsv`
+    - `sample.tsv`
+    - `sequencing.tsv`
+    - `discovery.tsv`
+    - `family.tsv` (optional)
+    - Any additional optional tables
+
+**For additional instructions on copying files to a workspace bucket using gsutil**, see[Moving data to or from a  workspace Google bucket](https://support.terra.bio/hc/en-us/articles/360024056512-Moving-data-to-from-a-workspace-or-external-Google-bucket-).
 
 ## Validation Steps
 
