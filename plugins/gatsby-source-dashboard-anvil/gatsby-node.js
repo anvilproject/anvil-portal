@@ -108,6 +108,7 @@ exports.createSchemaCustomization = ({actions}) => {
         projectId: String
         samples: Int
         size: Float
+        studyDesigns: [String]
         studyName: String
         subjects: Int
     }`);

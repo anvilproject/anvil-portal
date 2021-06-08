@@ -33,6 +33,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
         this.field("dbGapIdNumber");
         this.field("diseases");
         this.field("projectId");
+        this.field("studyDesigns");
         this.field("studyName");
         this.field("workspaceName");
 
@@ -54,6 +55,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
             const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
             const diseases = getIndexFieldTypeOfArray(workspace.diseases);
             const projectId = workspace.projectId;
+            const studyDesigns = getIndexFieldTypeOfArray(workspace.studyDesigns);
             const studyName = getIndexFieldTypeOfString(workspace.studyName, inputSubStr);
             const workspaceName = getIndexFieldTypeOfString(workspace.projectId, inputSubStr);
 
@@ -67,6 +69,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(workspa
                 "dbGapIdNumber": dbGapIdNumber,
                 "diseases": diseases,
                 "projectId": projectId,
+                "studyDesigns": studyDesigns,
                 "studyName": studyName,
                 "workspaceName": workspaceName
             });

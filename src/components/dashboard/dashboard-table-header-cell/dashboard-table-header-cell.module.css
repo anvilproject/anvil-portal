@@ -183,8 +183,10 @@ th.right {
 
     /* AnVIL cell - "accessType" */
     /* AnVIL cell - "diseases" */
+    /* AnVIL cell - "studyDesigns" */
     [id^="anvil"] th[id^="accessType"],
-    [id^="anvil"] th[id^="diseases"] {
+    [id^="anvil"] th[id^="diseases"],
+    [id^="anvil"] th[id^="studyDesigns"] {
         width: 200px;
     }
 
