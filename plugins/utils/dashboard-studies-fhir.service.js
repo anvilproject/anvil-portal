@@ -53,28 +53,6 @@ const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
 };
 
 /**
- * Returns the FHIR JSON study name.
- *
- * @param dbGapIdAccession
- * @returns {Promise.<*>}
- */
-const getFHIRStudyName = async function getFHIRStudyName(dbGapIdAccession) {
-
-    /* Grab the FHIR JSON. */
-    const fhirJSON = await getFHIRJSON(dbGapIdAccession);
-
-    if ( fhirJSON ) {
-
-        const entries = fhirJSON.entry;
-
-        /* Return the study name. */
-        return getStudyName(entries);
-    }
-
-    return "";
-};
-
-/**
  * Returns a FE model of study.
  *
  * @param fhirJSON
@@ -606,4 +584,3 @@ function rollUpSubjectsTotal(resource, acc) {
 }
 
 module.exports.getFHIRStudy = getFHIRStudy;
-module.exports.getFHIRStudyName = getFHIRStudyName;

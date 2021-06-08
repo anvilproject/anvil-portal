@@ -10,7 +10,7 @@ const path = require("path");
 
 // App dependencies
 const {getStudyAccession, getStudyAccessionsById, getStudyUrl} = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
-const {getFHIRStudyName} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
+const {getFHIRStudy} = require(path.resolve(__dirname, "./dashboard-studies-fhir.service.js"));
 
 /**
  * Returns a map object of key-value pair study accession and study name by db gap id.
@@ -40,9 +40,15 @@ const getStudyPropertiesById = async function getStudyPropertiesById(workspaces)
         }
 
         /* Assemble general study fields. */
-        const studyName = await getFHIRStudyName(studyAccession);
+        const study = await getFHIRStudy(studyAccession);
+        const studyDesigns = study?.studyDesigns
+        const studyName = study?.studyName;
         const studyUrl = getStudyUrl(studyAccession);
-        studyByStudyId.set(studyId, {dbGapIdAccession: studyAccession, studyName: studyName, studyUrl: studyUrl});
+        studyByStudyId.set(studyId, {
+            dbGapIdAccession: studyAccession,
+            studyDesigns: studyDesigns,
+            studyName: studyName,
+            studyUrl: studyUrl});
     }
 
     return studyByStudyId;

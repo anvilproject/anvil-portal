@@ -21,6 +21,7 @@ export const DashboardWorkspaceStaticQuery = () => {
                 samples
                 size
                 studyName
+                studyDesigns
                 subjects
               }
             }

@@ -30,7 +30,9 @@
 }
 
 /* Panel - 3x facets. */
-.panel.x3 {
+/* Panel - 6x facets. */
+.panel.x3,
+.panel.x6 {
     min-width: 180px;
 }
 
@@ -84,22 +86,27 @@
         flex-basis: 100%;
     }
 
-    /* Panel - 3x, 4x, 5x facets. */
-    .panel.x3, .panel.x4, .panel.x5 {
+    /* Panel - 3x, 4x, 5x, 6x facets. */
+    .panel.x3,
+    .panel.x4,
+    .panel.x5,
+    .panel.x6 {
         margin: 1px;
     }
 
-    /* Panel - 3x, 4x, 5x facets - remove left side margin. */
+    /* Panel - 3x, 4x, 5x, 6x facets - remove left side margin. */
     .panel.x3:nth-of-type(2),
     .panel.x4:nth-of-type(2), .panel.x4:nth-of-type(4),
-    .panel.x5:nth-of-type(2), .panel.x5:nth-of-type(4), .panel.x5:nth-of-type(6) {
+    .panel.x5:nth-of-type(2), .panel.x5:nth-of-type(4), .panel.x5:nth-of-type(6),
+    .panel.x6:nth-of-type(2), .panel.x6:nth-of-type(5) {
         margin-left: 0;
     }
 
-    /* Panel - 3x, 4x, 5x facets - remove right side margin. */
+    /* Panel - 3x, 4x, 5x, 6x facets - remove right side margin. */
     .panel.x3:nth-of-type(4),
     .panel.x4:nth-of-type(3), .panel.x4:nth-of-type(5),
-    .panel.x5:nth-of-type(3), .panel.x5:nth-of-type(5), .panel.x5:nth-of-type(7) {
+    .panel.x5:nth-of-type(3), .panel.x5:nth-of-type(5), .panel.x5:nth-of-type(7),
+    .panel.x6:nth-of-type(4), .panel.x6:nth-of-type(7) {
         margin-right: 0;
     }
 
@@ -112,12 +119,28 @@
 /**
  * Large tablet portrait, large handset landscape, small window.
  */
+@media screen and (min-width: 720px) {
+
+    /* Panel - 6x facets (3x columns). */
+    .panel.x6 {
+        min-width: 220px; /* Maintains 3 across. */
+    }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ */
 @media screen and (min-width: 840px) {
 
     /* Panel - 4x facets. */
     /* Panel - 5x facets. */
     .panel.x4, .panel.x5 {
         min-width: 304px;
+    }
+
+    /* Panel - 6x facets (3x columns). */
+    .panel.x6 {
+        min-width: 260px; /* Maintains 3 across. */
     }
 }
 
@@ -176,9 +199,10 @@
  */
 @media screen and (min-width: 1024px) {
 
-    /* Panel 5x (3 x columns, with placeholder). */
-    /* Panel - 5x facets. */
-    .panel.x5 {
+    /* Panel - 5x facets (3 x columns, with placeholder). */
+    /* Panel - 6x facets (3x columns). */
+    .panel.x5,
+    .panel.x6 {
         min-width: 308px; /* Maintains 3 across. */
     }
 }
@@ -199,30 +223,38 @@
         display: none;
     }
 
-    /* Panel 3x & 4x. */
-    /* Panel - 3x and 4x facets. */
-    .panel.x3, .panel.x4 {
+    /* Panel - 5x facets (no placeholder). */
+    /* Panel - 6x facets. */
+    .panel.x5,
+    .panel.x6 {
+        min-width: unset;
+    }
+
+    /* Panel 3x, 4x, 5x, 6x. */
+    .panel.x3,
+    .panel.x4,
+    .panel.x5,
+    .panel.x6 {
         margin-top: 0;
     }
 
-    /* Panel - 3x and 4x facets - first facet. */
-    .panel.x3:nth-of-type(2), .panel.x4:nth-of-type(2) {
+    /* Panel - 3x, 4x, 5x, 6x facets - first facet. */
+    .panel.x3:nth-of-type(2),
+    .panel.x4:nth-of-type(2),
+    .panel.x5:nth-of-type(2),
+    .panel.x6:nth-of-type(2) {
         margin-left: 1px;
     }
 
-    /* Panel 5x (5 x columns, no placeholder). */
-    /* Panel - 5x facets. */
-    .panel.x5 {
-        min-width: unset; /* Maintains 5 across. */
-    }
-
-    /* Panel - 5x facets - restore right side margin. */
-    .panel.x5:nth-of-type(4) {
+    /* Panel - 5x, 6x facets - restore right side margin. */
+    .panel.x5:nth-of-type(4),
+    .panel.x6:nth-of-type(4) {
         margin-right: 1px;
     }
 
-    /* Panel - 5x facets - restore left side margin. */
-    .panel.x5:nth-of-type(5) {
+    /* Panel - 5x, 6x facets - restore left side margin. */
+    .panel.x5:nth-of-type(5),
+    .panel.x6:nth-of-type(5) {
         margin-left: 1px;
     }
 }
