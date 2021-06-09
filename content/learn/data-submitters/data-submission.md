@@ -4,12 +4,18 @@ author: "AnVIL"
 description: "How to organize and format data tables for ingest to the AnVIL"
 ---
 
-# Prepare for Submission
+# Step 3 - Prepare for Submission
 
 To prepare data for submission, you will generate a spreadsheet file (TSV/TXT/CSV format) for each table in the data workspace (node in the Data Dictionary).  Each individual entity (subject, sample, etc.) in the table has its own row. Each column is a distinct type of data.
 
+### Understanding Tables in AnVIL
 
-## Generate Table Load Files (TSV, CSV or TXT format)
+To learn how to use workspace tables to store and organize data in the AnVIL, see [Managing Data with Workspace Tables](https://support.terra.bio/hc/en-us/articles/360025758392-Managing-data-with-workspace-tables-) (estimated read time 15 minutes).
+
+If you prefer a video, you can watch this [“Introduction to data tables”](https://youtu.be/IeLywroCNNA) video on YouTube (5:25 min).
+
+
+## 3.1 Generate Table Load Files (TSV, CSV or TXT format)
 
 Your spreadsheet can include an almost unlimited number of rows (individual entities) and columns (entity properties). A video walkthrough of generating a TSV file from a template is available below:
 

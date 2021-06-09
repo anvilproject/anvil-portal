@@ -4,63 +4,59 @@ author: "AnVIL"
 description: "This doc outlines how to select your data model, and additional required steps to arrange for ingestion"
 ---
 
-# Select a Data Model
+# Step 2 - Select a Data Model
 
 After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model.
 
-You can choose from one of two template data models and adjust to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this.
+You can choose to start with one of two template data models and adjust the model to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this.
 
-You’ll end this step by completing an intake form to send the Data Model (in a data dictionary spreadsheet) and all the information the AnVIL team needs to set up your data workspace on the AnVIL.
+You’ll end this step by completing an intake form to send the data model (in a data dictionary spreadsheet) and all the information the AnVIL team needs to set up your data workspace on the AnVIL.
 
 
-## 1 -  Getting Started
+## 2.1 -  First Steps
 
-### Coordinate with the AnVIL Data Ingest team
-- Email <anvil-data@broadinstitute.org> to arrange an AnVIL kickoff meeting
+- **Coordinate with the AnVIL Data Ingest Team** - Email <anvil-data@broadinstitute.org> to arrange an AnVIL kickoff meeting to discuss your data, data model, and ingest timeline.
 
-### Register for a Terra Account
 
-AnVIL data are stored and organized in a “data [workspace](https://youtu.be/ONc1Wf7rEuw)” in Terra. If you do not already have an account on Terra, you will find step-by-step instructions to register at [/learn/account-setup/creating-a-terra-account](/learn/account-setup/creating-a-terra-account).
+- **Register for a Terra Account** - AnVIL data are stored and organized in Terra data-oriented workspaces. You will need a Terra Account to upload data into AnVIL. If you do not already have an account on Terra, you will find step-by-step instructions to register at [Creating a Terra Account](/learn/account-setup/creating-a-terra-account).
 
 >*While there are no charges for uploading and storing your data in AnVIL, in order to complete an analysis, you will need to connect a Google Billing Account to your Terra account. See [Overview of Billing Concepts](/learn/billing-setup/billing-concepts) and [Creating a Google Cloud Billing Account](/learn/billing-setup/creating-a-google-cloud-billing-account) for more information.*
 
 
-## 2 - Select/Refine Data Model
+## 2.2 - Create Your Data Model
 
-### Data Model Overview
 The Data Model describes the structure of the study data. Each node in the AnVIL Data Model (i.e. “Program” or “Subject” etc. in the graphical representation below) includes different types of data (called “properties”). Nodes are connected to each other by unique IDs.
 
 
 
 <figure>
 <img src="./_images/gen3-model.png" alt="Data Model"/>
-<figure-caption>Todo: Caption for data model image.</figure-caption>
+<figure-caption>An AnVIL data model.</figure-caption>
 </figure>
 
 Data submitters will submit data and metadata from the Biospecimen, Clinical, and Data File nodes in spreadsheet-like files that will be displayed in the data workspace as integrated tables. Each row is a distinct “entity” and each column is a different property (type of data).
 
-**Example subject table**    
-A collection of basic information and phentotypic data about a subject (e.g., demographics, age, sex, or race)
+**Example subject table**
+
+
+<figure>
+<img src="./_images/subject-table.png" alt="Data Model"/>
+<figure-caption>The subject table contans a collection of basic information and phentotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
+</figure>
+
+**Example sample table**
+
+
 
 
 
 <figure>
 <img src="./_images/sample-table.png" alt="Data Model"/>
-<figure-caption>Todo: Sample table caption.</figure-caption>
+<figure-caption>The sample table organizes biospecimen information such as genomic data files associated with subjects in the subject table. 
+</figure-caption>
 </figure>
 
-**Example sample table**    
-Organizes biospecimen information such as genomic data files associated with subjects in the subject table.
 
-<figure>
-<img src="./_images/subject-table.png" alt="Data Model"/>
-<figure-caption>Todo: Subject table caption.</figure-caption>
-</figure>
-
-#### Understanding tables in the AnVIL
-***To learn how to use workspace tables to store and organize data in the AnVIL***, *see [Managing Data with Workspace Tables](https://support.terra.bio/hc/en-us/articles/360025758392-Managing-data-with-workspace-tables-) (estimated read time 15 minutes).*
-
-***If you prefer a video,*** *you can watch this [“Introduction to data tables”](https://youtu.be/IeLywroCNNA) video on YouTube* (5:25 min).
 
 ### Data Model Requirements
 Some data properties and formatting constraints are required for AnVIL Data Models. These requirements help ensure AnVIL datasets are not only useful to the researchers who created them but enable others to analyze data collectively across studies.
@@ -81,7 +77,7 @@ All studies must submit:
 
 
 ### Template Data Models
-Data submitted for hosting by the AnVIL should be consistent with data models in the AnVIL system when possible. To ensure this, it is recommended that you adopt or modify one of the Data Model templates below. These guidelines are based on data already in AnVIL or in the process of being ingested into AnVIL.
+Data submitted for hosting by AnVIL should be consistent with data models in the AnVIL system when possible. To ensure this, it is recommended that you adopt or modify one of the Data Model templates below. These guidelines are based on data already in AnVIL or in the process of being ingested into AnVIL.
 
 - [Rare Disease - CMG Data Model](https://docs.google.com/spreadsheets/d/1zVFyuclXJrThLELM0zGVXCEui8mIfyHLBjH_Mdx6uj8/edit?usp=sharing)
 
@@ -91,13 +87,15 @@ Data submitted for hosting by the AnVIL should be consistent with data models in
 >*If your dataset has been accepted by AnVIL and has needs not described here, please reach out to the AnVIL Team at <help@lists.anvilproject.org>. You can work directly with the AnVIL Phenotype WG and Data Processing WG to integrate into one of these existing data models.*
 
 
-## 3 - Generate Data Dictionary
+## 2.3 - Generate Your Data Dictionary
 All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. The Data Dictionary includes field names, field descriptions, field types, tables where the field is found, enumeration values (where applicable), multi-value delimiter symbols used (where applicable).
 
 
 ### General Formatting Requirements
 
-Metadata formatting must be compatible with indexing once in AnVIL. In particular, ***no special characters (i.e. “%” or “*”) are allowed in any field or file name.***
+Metadata formatting must be compatible with indexing once in AnVIL.
+
+> In particular, no special characters (i.e. “%” or “*”) are allowed in any field or file name.
 
 The AnVIL team will provide metadata recommendations to ensure metadata are in an acceptable form to be incorporated into the broader AnVIL data model.
 
@@ -110,7 +108,6 @@ Data Processing WG and Phenotype WG will work with submission requesters to inge
 
 Currently, data stored in a phenotypic (“subject”) table will fall into one of four categories. Requirements for each category are below.
 
->***If your data does not fall into one of these categories**, please reach out to the AnVIL Team (help@lists.anvilproject.org).*
 
 - **Case/Control (or Case alone)** - Information around a particular disease or phenotype of interest for a selected cohort (Example: CMG, CCDG).
 
@@ -119,6 +116,9 @@ Currently, data stored in a phenotypic (“subject”) table will fall into one 
 - **Survey** - Data collected from surveying study subjects (Example: CSER).
 
 - **Family longitudinal** -  Data collected for multiple families for multiple generations (Example: AMISH).
+
+>If your data does not fall into one of the above categories, please reach out to the AnVIL Team (help@lists.anvilproject.org).
+
 
 ### Required Phenotypic Data
 To ensure cross-study functionality on AnVIL, dataset categories have the following requirements.
@@ -140,7 +140,7 @@ paternal_id | 2 | - | 2 | 1
 maternal_id | 2 | - | 2 | 1
 proband_relationship | 2 | - | 2 | -
 
-#### Ensuring Uniform Terminology
+### Ensuring Uniform Terminology
 AnVIL includes a diverse set of studies and a wide range of collected phenotypic data. To maximize useful information for search and synthetic cohort creation, all phenotypic data:
 
 - Must be clearly linked to a subject, and the subject must be clearly linked to other data (e.g., genome, exome, RNASeq, array, etc.).
@@ -158,9 +158,20 @@ AnVIL includes a diverse set of studies and a wide range of collected phenotypic
 
 ### Genomic Data Expectations
 <INSERT GENOMIC DATA TABLE SCREEN SHOT HERE>
+TODO: Complete this section or delete it for this round.
 
-## 4 - Complete the AnVIL Data Submission Form
-Once you have your data model and all information, you will be ready to complete the AnVIL Data Submission Form. The form gathers study information to create the deposit workspace. **To complete the form, you will need**
+
+### Access Restrictions
+
+Known Data Use Limitations (DUL) need to be clearly defined by the data depositor. This is the list of requirements for gaining access and using the data. There should be protocols in place for gaining access at the time of ingest.
+
+>Please contact your program officer and the NHGRI Genomic Program Administrator for assistance and/or questions about dbGaP registration and/or consent groups.
+
+
+
+
+## 2.4 - Complete the AnVIL Data Submission Form
+Once you have your data model and all information, you will be ready to complete the AnVIL Data Submission Form. The form gathers study information to create the deposit workspace. To complete the form, you will need:
 - dbGaP registration ID (phsID)
 - Consent groups
 - Consent codes
@@ -168,18 +179,10 @@ Once you have your data model and all information, you will be ready to complete
 - Number of samples
 - Submitter information (emails of all people who need access to the deposit workspace)
 
-### Access Restrictions
-
-Known Data Use Limitations (DUL) need to be clearly defined by the data depositor. This is the list of requirements for gaining access and using the data. There should be protocols in place for gaining access at the time of ingest.
-
-
->Please contact your program officer and the NHGRI Genomic Program Administrator for assistance and/or questions about dbGaP registration and/or consent groups.
-
-
 
 <button-link href="https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform" target="_blank">Launch AnVIL Data Submission Form</button-link>
 
-## Training/learning resources
+## Additional Resources
 
 ### Reading
 
@@ -191,6 +194,7 @@ Known Data Use Limitations (DUL) need to be clearly defined by the data deposito
 ### Videos
 
 - [Introduction to Data Tables in Terra](https://youtu.be/IeLywroCNNA) (5 minutes)
+
 ### Hands-on tutorial
-For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra Data Tables QuickStart tutorial (estimated time 30-40 minutes). 
+For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra [Data Tables QuickStart](https://app.terra.bio/#workspaces/fc-product-demo/Terra-Data-Tables-Quickstart) tutorial (estimated time 30-40 minutes). 
 
