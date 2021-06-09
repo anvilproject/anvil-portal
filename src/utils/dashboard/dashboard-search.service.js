@@ -150,8 +150,8 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
 
     /* Count the remaining terms available for selection. */
     return terms
-        .filter(term => term.count)
         .slice(snippetCount)
+        .filter(term => term.count)
         .length;
 }
 
