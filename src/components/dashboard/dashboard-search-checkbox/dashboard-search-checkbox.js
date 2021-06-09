@@ -18,24 +18,22 @@ const classNames = require("classnames");
 
 function DashboardSearchCheckbox(props) {
 
-    const {checkbox} = props,
-        {label, value} = checkbox;
-    const {onHandleChecked, termsChecked, termsCount} = useContext(ContextDashboard);
-    const count = termsCount.has(value) ? termsCount.get(value) : 0;
-    const checked = termsChecked.get(value);
+    const {term} = props,
+        {count, name, selected} = term;
+    const {onHandleChecked} = useContext(ContextDashboard);
     const disabled = count === 0;
 
     const onHandleClick = () => {
 
-        onHandleChecked({checked: !checked, value: value});
+        onHandleChecked({selected: !selected, term: name});
     };
 
     return (
-        <span className={classNames({[compStyles.active]: checked}, compStyles.checkbox, {[compStyles.disabled]: disabled})} onClick={() => onHandleClick()} role="presentation">
+        <span className={classNames({[compStyles.active]: selected}, compStyles.checkbox, {[compStyles.disabled]: disabled})} onClick={() => onHandleClick()} role="presentation">
             <span className={compStyles.check}>
                 <span className={classNames("material-icons-round", compStyles.icon)}>done</span>
             </span>
-            <span className={compStyles.label}>{label}</span>
+            <span className={compStyles.label}>{name}</span>
             <span className={compStyles.count}>{count}</span>
         </span>
     )

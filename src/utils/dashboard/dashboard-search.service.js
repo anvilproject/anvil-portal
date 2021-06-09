@@ -8,7 +8,6 @@
 // App dependencies
 import * as DashboardService from "./dashboard.service";
 import * as DashboardSortService from "./dashboard-sort.service";
-import * as DashboardTableService from "./dashboard-table.service";
 
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
@@ -18,25 +17,44 @@ const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "NOT APPLICABLE", "N/A", "NA", "--", 
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
 
 /**
- * Returns FE model of checkboxes by facet.
+ * Returns FE model of facets and facet terms.
  *
  * @param facetsByTerm
  * @param searchFacets
  * @returns {*}
  */
-export function buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets) {
+export function buildDashboardFacets(facetsByTerm, searchFacets) {
 
     return searchFacets.reduce((acc, facet) => {
 
-        const checkboxGroup = {
-            checkboxes: buildCheckboxesByFacet(facet, facetsByTerm),
-            groupName: DashboardTableService.switchDisplayColumnName(facet)
+        const facetTerms = {
+            terms: getFacetTerms(facet, facetsByTerm),
+            name: facet
         };
 
-        acc.push(checkboxGroup);
+        acc.push(facetTerms);
 
         return acc;
     }, [])
+}
+
+/**
+ * Returns the facet selector facets with filtered facet terms.
+ *
+ * @param facets
+ * @param termsCount
+ * @param termsSelected
+ * @returns {*}
+ */
+export function buildFacetSelectorFacets(facets, termsCount, termsSelected) {
+
+    return [...facets].map(facet => {
+
+        const facetClone = {...facet};
+        const terms = buildDashboardTerms(facetClone.terms, termsCount, termsSelected);
+
+        return Object.assign(facetClone, {terms: terms});
+    });
 }
 
 /**
@@ -120,37 +138,21 @@ export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
 }
 
 /**
- * Returns the checkbox more count for the specified checkbox group.
- * Excludes the checkboxes already on display in the search panel.
+ * Returns the facet selector more count for the specified facet.
+ * Excludes the terms already on display in the search panel.
+ * Excludes any terms selected with a zero count.
  *
- * @param checkboxes
+ * @param terms
  * @param snippetCount
- * @param termsCount
  * @returns {number}
  */
-export function getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount) {
+export function getDashboardCheckboxMoreCount(terms, snippetCount) {
 
-    if ( checkboxes ) {
-
-        /* Count the remaining checkboxes available for selection. */
-        return checkboxes
-            .slice(snippetCount)
-            .reduce((acc, checkbox) => {
-
-                const {value} = checkbox;
-                const count = termsCount.has(value) ? termsCount.get(value) : 0;
-
-                /* Accumulate if the count is valid. */
-                if ( count ) {
-
-                    acc += 1;
-                }
-
-                return acc;
-        }, 0);
-    }
-
-    return 0;
+    /* Count the remaining terms available for selection. */
+    return terms
+        .filter(term => term.count)
+        .slice(snippetCount)
+        .length;
 }
 
 /**
@@ -283,24 +285,50 @@ export function isDashboardCheckboxesUneven(facetCount) {
 }
 
 /**
- * Builds a FE model of checkboxes for the specified facet.
+ * Returns the FE model of dashboard term.
+ *
+ * @param term
+ * @param termsCount
+ * @param termsSelected
+ * @returns {{name, count, selected}}
+ */
+function buildDashboardTerm(term, termsCount, termsSelected) {
+
+    const count = termsCount.get(term);
+    const selected = termsSelected.get(term);
+
+    return {name: term, count: count, selected: selected};
+}
+
+/**
+ * Returns the filtered FE model of dashboard terms.
+ *
+ * @param terms
+ * @param termsCount
+ * @param termsSelected
+ * @returns {[]}
+ */
+function buildDashboardTerms(terms, termsCount, termsSelected) {
+
+    return terms
+        .map(term => buildDashboardTerm(term, termsCount, termsSelected))
+        .filter(term => isTermSelectable(term));
+}
+
+/**
+ * Returns the terms for the specified facet.
  *
  * @param facet
  * @param facetsByTerm
  * @returns {*}
  */
-function buildCheckboxesByFacet(facet, facetsByTerm) {
+function getFacetTerms(facet, facetsByTerm) {
 
     return [...facetsByTerm].reduce((acc, [term, ft]) => {
 
         if ( ft === facet ) {
 
-            const checkbox = {
-                label: switchCheckboxLabelDisplayText(term),
-                value: term
-            };
-
-            acc.push(checkbox);
+            acc.push(term);
         }
 
         return acc;
@@ -353,21 +381,15 @@ function isTermAllowed(term) {
 }
 
 /**
- * Returns checkbox text value in format compatible for display.
+ * Returns true if the term has a count greater than 0, or is selected.
  *
- * @param label
+ * @param term
  * @returns {*}
  */
-function switchCheckboxLabelDisplayText(label) {
+function isTermSelectable(term) {
 
-    switch (label) {
-        case "WES":
-            return "Whole Exome Sequencing";
-        case "WGS":
-            return "Whole Genome Sequencing";
-        case "VCF":
-            return "Variant Call Format";
-        default:
-            return label;
-    }
+    const {count, selected} = term;
+
+    return count || selected;
 }
+

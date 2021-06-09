@@ -24,16 +24,16 @@ class ProviderDashboard extends React.Component {
 
         this.onHandleChecked = (event) => {
 
-            const {checked, value} = event;
+            const {selected, term} = event;
 
             /* Clone state variable termsChecked. */
             const termsCheckedClone = new Map(this.state.termsChecked);
 
             /* Update clone. */
-            termsCheckedClone.set(value, checked);
+            termsCheckedClone.set(term, selected);
 
             /* Update termsChecked and query state and execute tracking. */
-            this.onHandleUpdateFacets(termsCheckedClone, value, checked);
+            this.onHandleUpdateFacets(termsCheckedClone, term, selected);
         };
 
         this.onHandleClearFacet = (facet) => {
@@ -114,7 +114,7 @@ class ProviderDashboard extends React.Component {
             else {
 
                 /* Handle change in term value. */
-                this.onHandleChecked({value: term, checked: false});
+                this.onHandleChecked({selected: false, term: term});
             }
         };
 
@@ -485,7 +485,7 @@ class ProviderDashboard extends React.Component {
         return termsCheckedClone;
     };
 
-    onHandleUpdateFacets = (termsCheckedClone, value, checked) => {
+    onHandleUpdateFacets = (termsCheckedClone, term, selected) => {
 
         /** Get tracking values for selected facet */
         const {facetsByTerm} = this.props;
@@ -499,10 +499,10 @@ class ProviderDashboard extends React.Component {
         });
 
         /* Execute tracking */
-        if ( value ) {
+        if ( term ) {
 
             AnvilGTMService.trackSearchFacetSelected(
-                facetsByTerm.get(value), value, checked, currentQuery, previousQuery, GAEntityType.WORKSPACE);
+                facetsByTerm.get(term), term, selected, currentQuery, previousQuery, GAEntityType.WORKSPACE);
         }
     };
 
@@ -667,7 +667,7 @@ class ProviderDashboard extends React.Component {
     };
 
     render() {
-        const {children, checkboxGroups, countLabel, dashboardEntities, facetsByTerm, resultKey,
+        const {children, countLabel, dashboardEntities, facets, facetsByTerm, resultKey,
                 setOfSummaryKeyTerms, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = this.props,
             {inputValue, searchURL, selectedTermsByFacet, setOfCountResultsByFacet, setOfResults, termsChecked,
                 onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput} = this.state;
@@ -677,9 +677,10 @@ class ProviderDashboard extends React.Component {
         const setOfSummaryTerms = DashboardSummaryService.getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKeyTerms, selectedSummaryTerms);
         const summaries = DashboardSummaryService.getDashboardSummary(entities, summaryKey ,tableHeadersSummary, setOfSummaryTerms);
         const warning = totalsWarning ? <span><sup>* </sup>Totals are adjusted for project data hosted in multiple {summaryKey}.</span> : null;
+        const facetSelectorFacets = DashboardSearchService.buildFacetSelectorFacets(facets, termsCount, termsChecked);
         return (
             <ContextDashboard.Provider
-                value={{checkboxGroups, countLabel, entities, inputValue, searchURL, selectedTermsByFacet, setOfResults, setOfSummaryKeyTerms, summaries,
+                value={{countLabel, entities, facetSelectorFacets, inputValue, searchURL, selectedTermsByFacet, setOfResults, setOfSummaryKeyTerms, summaries,
                     tableHeadersEntities, tableHeadersSummary, termsChecked, termsCount, warning,
                     onHandleChecked, onHandleClearFacet, onHandleClearInput, onHandleClearSearch, onHandleClearTerm, onHandleInput}}>
                 {children}
