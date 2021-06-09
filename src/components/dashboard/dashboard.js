@@ -20,18 +20,18 @@ function Dashboard(props) {
     const {children, countLabel, dashboardEntities, dashboardIndexFileName, dashboardURL, dataset,
         resultKey, searchFacets, summaryKey, tableHeadersEntities, tableHeadersSummary, totalsWarning} = props;
     const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(dashboardEntities, searchFacets);
-    const checkboxGroups = DashboardSearchService.buildDashboardCheckboxesByFacet(facetsByTerm, searchFacets);
+    const facets = DashboardSearchService.buildDashboardFacets(facetsByTerm, searchFacets);
     const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups(searchFacets);
     const setOfSummaryKeyTerms = DashboardSearchService.getSetOfSummaryKeyTerms(facetsByTerm, summaryKey);
     const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(facetsByTerm);
     const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTermDisplay(facetsByTerm);
 
     return (
-        <ProviderDashboard checkboxGroups={checkboxGroups}
-                           countLabel={countLabel}
+        <ProviderDashboard countLabel={countLabel}
                            dashboardEntities={dashboardEntities}
                            dashboardIndexFileName={dashboardIndexFileName}
                            dashboardURL={dashboardURL}
+                           facets={facets}
                            facetsByTerm={facetsByTerm}
                            resultKey={resultKey}
                            setOfSearchGroups={setOfSearchGroups}

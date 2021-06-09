@@ -17,6 +17,7 @@ import DashboardSearchSummary from "../../dashboard/dashboard-search-summary/das
 import Modal from "../modal";
 import ModalClose from "../modal-close/modal-close";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
+import {FacetSelectorNameDisplay} from "../../../utils/dashboard/facet-selector-name-display.model";
 
 // Styles
 import compStyles from "./modal-dashboard-search-checkboxes-group.module.css";
@@ -26,15 +27,15 @@ const classNames = require("classnames");
 
 function ModalDashboardSearchCheckboxesGroup() {
 
-    const {checkboxGroups} = useContext(ContextDashboard);
+    const {facetSelectorFacets} = useContext(ContextDashboard);
     const {modal, onCloseModal} = useContext(ContextModal);
     const refPanel = useRef(null);
     const [columns, setColumns] = useState([]);
     const [maxColumns, setMaxColumns] = useState(1);
     const {modalProps} = modal,
-        {groupName} = modalProps || {};
-    const checkboxGroup = checkboxGroups.find(checkboxGroup => checkboxGroup.groupName === groupName);
-    const checkboxes = checkboxGroup.checkboxes;
+        {facetName} = modalProps || {};
+    const facet = facetSelectorFacets.find(facet => facet.name === facetName);
+    const terms = facet.terms;
     const checkboxWidth = 300;
 
     const onCalculateMaxColumns = useCallback(() => {
@@ -73,20 +74,20 @@ function ModalDashboardSearchCheckboxesGroup() {
     /* useEffect - componentDidUpdate - maxColumns. */
     useEffect(() => {
 
-        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(checkboxes, maxColumns));
-    }, [checkboxes, maxColumns]);
+        setColumns(columns => DashboardSearchService.getDashboardCheckboxColumns(terms, maxColumns));
+    }, [terms, maxColumns]);
 
     return (
         <Modal>
             <div className={classNames(globalStyles.container, compStyles.modalContent)}>
                 <ModalClose onCloseModal={onCloseModal}/>
-                <h1>{groupName}</h1>
+                <h1>{FacetSelectorNameDisplay[facetName]}</h1>
                 <DashboardSearchSummary/>
                 <DashboardSearchSelectedToolbar/>
                 <div className={compStyles.checkboxes} ref={refPanel}>
                     {columns.map((cBoxes, b) =>
                         <span className={compStyles.col} key={b}>
-                            {cBoxes.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>)}
+                            {cBoxes.map((term, t) => <DashboardSearchCheckbox key={t} term={term}/>)}
                         </span>)}
                 </div>
             </div>

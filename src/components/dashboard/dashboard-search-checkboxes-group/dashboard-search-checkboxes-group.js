@@ -9,34 +9,34 @@
 import React, {useContext} from "react";
 
 // App dependencies
-import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchCheckbox from "../dashboard-search-checkbox/dashboard-search-checkbox";
 import DashboardSearchCheckboxesShowMore from "../dashboard-search-checkboxes-show-more/dashboard-search-checkboxes-show-more";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 import ContextModal from "../../modal/context-modal/context-modal";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
+import {FacetSelectorNameDisplay} from "../../../utils/dashboard/facet-selector-name-display.model";
 
 function DashboardSearchCheckboxesGroup(props) {
 
-    const {checkboxes, countLabel, facetCount, groupName, setOfSummaryKeyTerms} = props;
-    const {termsCount} = useContext(ContextDashboard);
+    const {countLabel, facet, facetCount, setOfSummaryKeyTerms} = props,
+        {name, terms} = facet;
     const {onOpenModal} = useContext(ContextModal);
     const snippetCount = DashboardSearchService.getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms);
-    const moreCount = DashboardSearchService.getDashboardCheckboxMoreCount(checkboxes, snippetCount, termsCount);
-    const snippets = checkboxes.slice(0, snippetCount);
+    const moreCount = DashboardSearchService.getDashboardCheckboxMoreCount(terms, snippetCount);
+    const snippets = terms.slice(0, snippetCount);
 
     const onShowMore = () => {
 
-        onOpenModal({groupName: groupName});
+        onOpenModal({facetName: name});
     };
 
     return (
         <DashboardSearchPanel facetCount={facetCount}>
             <span id="group">
-                <span>{groupName}</span>
+                <span>{FacetSelectorNameDisplay[name]}</span>
                 <span>{countLabel}</span>
             </span>
-            {snippets.map((checkbox, c) => <DashboardSearchCheckbox key={c} checkbox={checkbox}/>)}
+            {snippets.map((term, t) => <DashboardSearchCheckbox key={t} term={term}/>)}
             <DashboardSearchCheckboxesShowMore moreCount={moreCount} onShowMore={onShowMore}/>
         </DashboardSearchPanel>
     )

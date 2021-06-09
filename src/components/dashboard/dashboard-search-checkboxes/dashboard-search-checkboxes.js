@@ -18,19 +18,18 @@ import ModalDashboardSearchCheckboxesGroup from "../../modal/modal-dashboard-sea
 
 function DashboardSearchCheckboxes() {
 
-    const {checkboxGroups, countLabel, setOfSummaryKeyTerms} = useContext(ContextDashboard);
+    const {countLabel, facetSelectorFacets, setOfSummaryKeyTerms} = useContext(ContextDashboard);
     const {modal} = useContext(ContextModal);
     const {showModal} = modal;
-    const facetCount = checkboxGroups.length;
+    const facetCount = facetSelectorFacets.length;
 
     return (
         <>
-        {checkboxGroups.map((checkboxGroup, c) =>
+        {facetSelectorFacets.map((facet, c) =>
             <DashboardSearchCheckboxesGroup key={c}
-                                            checkboxes={checkboxGroup.checkboxes}
                                             countLabel={countLabel}
+                                            facet={facet}
                                             facetCount={facetCount}
-                                            groupName={checkboxGroup.groupName}
                                             setOfSummaryKeyTerms={setOfSummaryKeyTerms}/>)}
         <DashboardSearchCheckboxesPlaceholder facetCount={facetCount}/>
         {showModal ? <ModalDashboardSearchCheckboxesGroup/> : null}

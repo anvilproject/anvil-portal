@@ -10,9 +10,9 @@
 import React from "react";
 
 const ContextDashboard = React.createContext({
-    checkboxGroups: [],
     countLabel: "",
     entities: [],
+    facetSelectorFacets: [],
     inputValue: "",
     searchURL: "",
     selectedTermsByFacet: new Map(),
