@@ -1,15 +1,16 @@
 ---
-title: "Set Up Data Model"
+title: "Select a Data Model"
 author: "AnVIL"
 description: "This doc outlines how to select your data model, and additional required steps to arrange for ingestion"
 ---
 
-# Set Up Data Model
+# Select a Data Model
 
-> Make any changes to the [AnVIL Data Submitters - Setup Data Model - Markdown]( https://docs.google.com/document/d/1jzRCnDXSQ0-RRTUX9jjTaNchQXppx6Tely-MN_-aueI/edit) Google doc.
+After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model.
 
+You can choose from one of two template data models and adjust to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this.
 
-After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model. You can choose from one of two template data models and adjust to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this. You’ll end this step by completing an intake form to send the Data Model (in a data dictionary spreadsheet) and all the information the AnVIL team needs to set up your data workspace on the AnVIL.
+You’ll end this step by completing an intake form to send the Data Model (in a data dictionary spreadsheet) and all the information the AnVIL team needs to set up your data workspace on the AnVIL.
 
 
 ## 1 -  Getting Started
@@ -25,7 +26,8 @@ AnVIL data are stored and organized in a “data [workspace](https://youtu.be/ON
 
 
 ## 2 - Select/Refine Data Model
-### organizing data by nodes (tables)
+
+### Data Model Overview
 The Data Model describes the structure of the study data. Each node in the AnVIL Data Model (i.e. “Program” or “Subject” etc. in the graphical representation below) includes different types of data (called “properties”). Nodes are connected to each other by unique IDs.
 
 
@@ -35,7 +37,7 @@ The Data Model describes the structure of the study data. Each node in the AnVIL
 <figure-caption>Todo: Caption for data model image.</figure-caption>
 </figure>
 
-In the AnVIL data workspace, data and metadata from the Biospecimen, Clinical, and Data File nodes are in integrated spreadsheet-like tables. Every row in a table is a distinct “entity” and every column is a different property.
+Data submitters will submit data and metadata from the Biospecimen, Clinical, and Data File nodes in spreadsheet-like files that will be displayed in the data workspace as integrated tables. Each row is a distinct “entity” and each column is a different property (type of data).
 
 **Example subject table**    
 A collection of basic information and phentotypic data about a subject (e.g., demographics, age, sex, or race)
@@ -55,16 +57,27 @@ Organizes biospecimen information such as genomic data files associated with sub
 <figure-caption>Todo: Subject table caption.</figure-caption>
 </figure>
 
-
 #### Understanding tables in the AnVIL
 ***To learn how to use workspace tables to store and organize data in the AnVIL***, *see [Managing Data with Workspace Tables](https://support.terra.bio/hc/en-us/articles/360025758392-Managing-data-with-workspace-tables-) (estimated read time 15 minutes).*
 
-***If you prefer a video,*** *you can watch this [“Introduction to data tables”](https://youtu.be/IeLywroCNNA) video on YouTube.*
+***If you prefer a video,*** *you can watch this [“Introduction to data tables”](https://youtu.be/IeLywroCNNA) video on YouTube* (5:25 min).
 
 ### Data Model Requirements
 Some data properties and formatting constraints are required for AnVIL Data Models. These requirements help ensure AnVIL datasets are not only useful to the researchers who created them but enable others to analyze data collectively across studies.
 
-**For the full list of requirements**, see <INSERT THE RIGHT LINK HERE>
+### Required Tables for All Studies (csv, tsv, txt, json format)
+All studies must submit:
+- **Data dictionary table**: Includes field names, field descriptions, field types, tables where field is found, enumeration values (where applicable), multi-value delimiter symbol used (where applicable)
+  - Basic data dictionary template here
+  - Data dictionary for CMG consortium data in AnVIL here
+- **Subject table**: Includes required information about the subjects with the subject_id as the key fields for that table
+- **Sample table**: Links the subject_ids to the sample_ids where the sample_id is the key fields for that table
+- **Sequencing table**: Includes required information about the sequence data linked to the sample_id where the filename is the key field for the table
+
+### Example Additional Tables (CSV format)
+- Family Table: Includes information about a particular family with the family_id as the key field (first column header `entity:family_id`) for the table. Data can include pedigrees or any other family-level information.
+- Discovery Table: Includes information about variants of interest that are linked to the subject_id (first column header `entity:discovery_id`; must include a `subject_id` column)
+
 
 
 ### Template Data Models
@@ -75,19 +88,16 @@ Data submitted for hosting by the AnVIL should be consistent with data models in
 - [Common Disease - CCDG Data Model](https://docs.google.com/spreadsheets/d/1GxKPgtDGMQxi9kPgrk4ApaOCXdsDzMjISSrX7LLUW7I/edit#gid=1507031680)
 
 
->*If your dataset has been accepted by AnVIL and has needs not described here, please reach out to the AnVIL Team at <help@lists.anvilproject.org>. You can work directly with the AnVIL Phenotype WG and Data Processing WG to integrate into one of these existing data models.
-*
-
+>*If your dataset has been accepted by AnVIL and has needs not described here, please reach out to the AnVIL Team at <help@lists.anvilproject.org>. You can work directly with the AnVIL Phenotype WG and Data Processing WG to integrate into one of these existing data models.*
 
 
 ## 3 - Generate Data Dictionary
-All AnVIL studies must submit a **Data dictionary table** spreadsheet that defines your complete data model. The Data Dictionary includes field names, field descriptions, field types, tables where the field is found, enumeration values (where applicable), multi-value delimiter symbols used (where applicable).
+All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. The Data Dictionary includes field names, field descriptions, field types, tables where the field is found, enumeration values (where applicable), multi-value delimiter symbols used (where applicable).
 
 
 ### General Formatting Requirements
 
 Metadata formatting must be compatible with indexing once in AnVIL. In particular, ***no special characters (i.e. “%” or “*”) are allowed in any field or file name.***
-
 
 The AnVIL team will provide metadata recommendations to ensure metadata are in an acceptable form to be incorporated into the broader AnVIL data model.
 
@@ -170,6 +180,7 @@ Known Data Use Limitations (DUL) need to be clearly defined by the data deposito
 <button-link href="https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform" target="_blank">Launch AnVIL Data Submission Form</button-link>
 
 ## Training/learning resources
+
 ### Reading
 
 - [Understanding entity types and the default entity types in the standard genomic model](https://support.terra.bio/hc/en-us/articles/360033913771-Understanding-entity-types-and-the-standard-genomic-data-model) (estimated time 10 minutes).

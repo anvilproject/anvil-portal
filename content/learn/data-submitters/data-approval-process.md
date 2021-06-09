@@ -1,12 +1,10 @@
 ---
-title: "AnVIL Data Approval Checklist"
+title: "Obtaining Data Approval"
 author: "AnVIL"
 description: "An overview of the approval process for submitting data to AnVIL."
 ---
 
-# Data Approval Checklist
-
-> Make any changes to the [AnVIL Data Submitters - Approval Checklist - Markdown](https://docs.google.com/document/d/1_sB6Dfazkw54UqRR9Ac_A_XO-yrCcmWbwb-c1Y_MUoc/edit) Google doc.
+# Step 1 - Obtain Data Approval
 
 To deposit data into AnVIL, data submitters must first get approval from:
 - National Human Genome Research Institute (NHGRI)
@@ -19,7 +17,7 @@ Make sure your data conforms to these overall data requirements, or contact the 
 
 - Studies must be registered in dbGaP. You will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX).
 
-- All data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).
+- All *consented individual-level human genomic data* must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).
 
 ## NHGRI Approval
 
