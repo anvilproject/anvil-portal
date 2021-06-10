@@ -22,42 +22,21 @@ Email <anvil-data@broadinstitute.org> to arrange an AnVIL kickoff meeting to dis
 ### Register for a Terra Account
 AnVIL data are stored and organized in Terra data-oriented workspaces. You will need a Terra Account to upload data into AnVIL. If you do not already have an account on Terra, you will find step-by-step instructions to register at [Creating a Terra Account](/learn/account-setup/creating-a-terra-account).
 
->*While there are no charges for uploading and storing your data in AnVIL, in order to complete an analysis, you will need to connect a Google Billing Account to your Terra account. See [Overview of Billing Concepts](/learn/billing-setup/billing-concepts) and [Creating a Google Cloud Billing Account](/learn/billing-setup/creating-a-google-cloud-billing-account) for more information.*
+>*Registering for  Terra account is free and the AnVIL pays all costs associated with  uploading and storing your data. Note that in order to complete an analysis, you will need to connect a Google Billing Account to your Terra account. See [Overview of Billing Concepts](/learn/billing-setup/billing-concepts) and [Creating a Google Cloud Billing Account](/learn/billing-setup/creating-a-google-cloud-billing-account) for more information.*
 
 
 ## 2.2 - Create Your Data Model
 
-Each node in the AnVIL Data Model (i.e. “Program” or “Subject” etc. in the graphical representation below) includes different types of data (called “properties”). Nodes are connected to each other by unique IDs.
+Nodes in the AnVIL Data Model (e.g. “Program” or “Subject” etc. in the diagram below) include different types of data (called “properties”). Each node is a table in a data workspace in AnVIL. Nodes are connected to each other by unique IDs.
 
 
 
 <figure>
 <img src="./_images/gen3-model.png" alt="Data Model"/>
-<figure-caption>An AnVIL data model.</figure-caption>
+<figure-caption>A graphic representation of an AnVIL data model</figure-caption>
 </figure>
 
 Data submitters will submit data and metadata from the Biospecimen, Clinical, and Data File nodes in spreadsheet-like files that will be displayed in the data workspace as integrated tables. Each row is a distinct “entity” and each column is a different property (type of data).
-
-#### Example Subject Table
-
-
-<figure>
-<img src="./_images/subject-table.png" alt="Data Model"/>
-<figure-caption>The subject table contans a collection of basic information and phentotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
-</figure>
-
-#### Example Sample Table
-
-
-
-
-
-<figure>
-<img src="./_images/sample-table.png" alt="Data Model"/>
-<figure-caption>The sample table organizes biospecimen information such as genomic data files associated with subjects in the subject table. 
-</figure-caption>
-</figure>
-
 
 
 ### Data Model Requirements
@@ -65,24 +44,25 @@ Please read the descriptions below carefully, and reach out to your AnVIL team c
 
 ### Required Tables for All Studies (csv, tsv, txt, json format)
 All studies must submit the following tables (scroll down for details and template tables):
-- **Data dictionary table**: Specifies the entire Data Model. It includes (for each separate table in the data model) field names, field descriptions, field types,, enumeration values (where applicable), multi-value delimiter symbol used (where applicable)
 
-- **Subject Table**: Includes required information about the subjects and (usually) associated phenotypic data. The subject_id (first column) is the key field for that table. This key is typically used in other tables to link additional data (i.e. genomic, sequencing, family) to the subject.
-- **Sample Table**: Links the subject_ids to the sample_ids where the sample_id (fist column) is the key fields for that table
-- **Sequencing Table**: Includes required information about and links to the sequence data associated with the sample_id where the filename is the key field for the table
+- **Data Dictionary Table**: Specifies the entire data model. It includes (for each separate table in the data model) field names, field descriptions, field types, enumeration values (where applicable), multi-value delimiter symbol used (where applicable)
+
+- **Subject Table**: Includes required information about the subjects and (usually) associated phenotypic data. The `subject_id` (first column) is the key field for that table. This key is typically used in other tables to link additional data (i.e. genomic, sequencing, family) to the subject.
+- **Sample Table**: Links the `subject_ids` to the `sample_ids` where the `sample_id` (first column) is the key fields for that table
+- **Sequencing Table**: Includes required information about and links to the sequence data associated with the `sample_id` where the filename is the key field for the table
 
 ### Example Additional Tables (CSV format)
-- Family Table: Includes information about a particular family with the family_id (first column) as the key field  for the table. Data can include pedigrees or any other family-level information.
-- Discovery Table: Includes information about variants of interest that are linked to the subject_id (must include a `subject_id` column)
+- **Family Table**: Includes information about a particular family with the `family_id` (first column) as the key field for the table. Data can include pedigrees or any other family-level information.
+- **Discovery Table**: Includes information about variants of interest that are linked to the  `subject_id` (must include a `subject_id` column)
 
 
 
 ### Template Data Models
 
-To enable cross-study analysis within the AnVIL, data submitted for hosting by AnVIL should be consistent with data models already in AnVIL or in the process of being ingested into AnVIL when possible. To ensure this, we recommend you adopt or modify one of the Data Model templates below.
-- [Rare Disease - CMG Data Model](https://docs.google.com/spreadsheets/d/1zVFyuclXJrThLELM0zGVXCEui8mIfyHLBjH_Mdx6uj8/edit?usp=sharing)
+To enable cross-study analysis within the AnVIL, data submitted for hosting by AnVIL should be consistent with data models already in AnVIL or in the process of being ingested into AnVIL when possible. To ensure this, we recommend you adopt or modify one of the Data Model templates below. **Note that these are read-only copies. You should make your own to modify.**
+- [Rare Disease - CMG Data Model](https://docs.google.com/spreadsheets/d/1-cBRCHQfzDTlpJj5PMrIT_xJglsIupwMzWm97XFhouM/edit?usp=sharing)
 
-- [Common Disease - CCDG Data Model](https://docs.google.com/spreadsheets/d/1GxKPgtDGMQxi9kPgrk4ApaOCXdsDzMjISSrX7LLUW7I/edit#gid=1507031680)
+- [Common Disease - CCDG Data Model](https://docs.google.com/spreadsheets/d/1_hN_9hbPSF_gjmkQCvbobOP4G8oPVcJBbvRzMRk8fRA/edit?usp=sharing)
 
 #### Non-standard Data Models
 
@@ -91,23 +71,22 @@ To enable cross-study analysis within the AnVIL, data submitted for hosting by A
 
 ## 2.3 - Generate Your Data Dictionary
 
-All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. The Data Dictionary specifies the entire Data Model. It includes field names, field descriptions, field types, examples, enumeration values (where applicable), and multi-value delimiter symbols used (where applicable) for each table in the Data Model.
+All AnVIL studies must submit a **Data dictionary table** (spreadsheet file) that defines your complete data model. It includes (for each table separately) field names, field descriptions, field types, examples, enumeration values (where applicable), and multi-value delimiter symbols used (where applicable) for each table in the data model.
 
 
 ### General Formatting Requirements
 
-Tot be compatible with indexing once in AnVIL, **special characters (i.e. “%” or “*”) cannot be used in any field or file name**. If your files contain special characters, they must all be removed/replaced before ingestion.
+To be compatible with indexing once in AnVIL, **special characters (i.e. “%” or “*”) cannot be used in any field or file name**. If your files contain special characters, they must all be removed/replaced before ingestion.
 
 
 
 ### Phenotypic Data Expectations
-**Example subject table**
 
 
 
 <figure>
 <img src="./_images/subject-table.png" alt="Data Model"/>
-<figure-caption>The subject table contans a collection of basic information and phentotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
+<figure-caption>The **subject table** (screenshot above) contans a collection of basic information and phentotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
 </figure>
 
 
@@ -163,10 +142,10 @@ AnVIL includes a diverse set of studies and a wide range of collected phenotypic
   - [RxNorm](https://mor.nlm.nih.gov/RxNav/) - Normalized names for clinical drugs and links to many of the drug vocabularies.
 
 ### Genomic Data Expectations
-**Example sample table**
+
 <figure>
 <img src="./_images/sample-table.png" alt="Data Model"/>
-<figure-caption>The sample table organizes biospecimen information such as genomic data files associated with subjects in the subject table. 
+<figure-caption>The **sample table** (screenshot above) organizes biospecimen information such as genomic data files associated with subjects in the subject table. Note the `subject_id` column that connects the sample data to the right subject. 
 </figure-caption>
 </figure>
 

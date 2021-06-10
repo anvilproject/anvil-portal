@@ -6,16 +6,14 @@ description: "An overview of the approval process for submitting data to AnVIL."
 
 # Step 1 - Obtain Approval
 
-<hero>“Data should be made as widely and freely available as possible while safeguarding the privacy of participants, and protecting confidential and proprietary data”
-[NIH - Data Sharing Guidance](https://grants.nih.gov/grants/policy/data_sharing/data_sharing_guidance.htm).</hero>
+<hero>AnVIL strives to balance the goals of ensuring that data is as widely and freely available as possible while safeguarding the rights and privacy of subjects who participate in NIH-sponsored research. This includes protecting the confidential and proprietary genomic and phenotypic data of individual human participants.
+(See [NIH - Data Sharing Guidance](https://grants.nih.gov/grants/policy/data_sharing/data_sharing_guidance.htm)).</hero>
 
-<hero>“The rights and privacy of human subjects who participate in NIH-sponsored research must be protected at all times.”
-[NIH Data Sharing Policy and Implementation Guidance](https://grants.nih.gov/grants/policy/data_sharing/data_sharing_guidance.htm).</hero>
 
 To deposit large-scale, individual-level data into AnVIL, data submitters must first obtain approval from:
 
-1. The National Human Genome Research Institute (NHGRI)
-1. The AnVIL ingestion committee
+1. The National Human Genome Research Institute (NHGRI).
+1. The AnVIL ingestion committee.
 
 ### General Data Requirements
 Make sure your data conforms to these overall data requirements, or contact the AnVIL data team.
@@ -42,9 +40,9 @@ Submitters must obtain a written attestation from the NHGRI Program Officer stat
 ### Institutional Certification (NIH Data Sharing Policy)
 Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). To ensure this, institutions will need to submit an Institutional Certification, which must include:
 
-1. Confirmation that data conform to all applicable laws
-2. Limitations for sharing, based on the informed consent of the research participants
-3. The NHGRI Genomic Program Administrator who currently registers the study
+1. Confirmation that data conform to all applicable laws.
+2. Limitations for sharing, based on the informed consent of the research participants.
+3. The NHGRI Genomic Program Administrator who currently registers the study.
 
 The AnVIL team can provide an Institutional Certification template form.
 
