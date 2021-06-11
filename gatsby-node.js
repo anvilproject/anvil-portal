@@ -100,9 +100,15 @@ exports.createPages = ({actions, graphql}) => {
                   file
                   name
                   pathOverride
+                  tutorial
+                  tutorialBackName
+                  tutorialBackPath
                 }
                 pathOverride
                 pathPartial
+                tutorial
+                tutorialBackName
+                tutorialBackPath
               }
             }
           }
@@ -147,7 +153,7 @@ exports.createPages = ({actions, graphql}) => {
         /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
         const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
 
-        /* Build a relationship between document slug associated document title. */
+        /* Build a relationship between document slug and associated document title. */
         /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
         const documentTitleBySlug = buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs);
 
@@ -175,7 +181,10 @@ exports.createPages = ({actions, graphql}) => {
                         navItems: slugNavigations.navItems,
                         slug: slug,
                         tabs: slugNavigations.tabs,
-                        title: slugNavigations.title
+                        title: slugNavigations.title,
+                        tutorial: slugNavigations.tutorial,
+                        tutorialBackName: slugNavigations.tutorialBackName,
+                        tutorialBackPath: slugNavigations.tutorialBackPath
                     }
                 });
             }
@@ -298,6 +307,54 @@ exports.createSchemaCustomization = ({actions}) => {
             }
         }
     });
+    /* Create field "tutorial" of type boolean. */
+    createFieldExtension({
+        name: "tutorial",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns false when tutorial is undefined. */
+                    if ( source.tutorial === undefined ) {
+
+                        return false;
+                    }
+                    return JSON.parse(source.tutorial.toLowerCase());
+                },
+            }
+        }
+    });
+    /* Create field "tutorialBackName" of type string. */
+    createFieldExtension({
+        name: "tutorialBackName",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns "" when tutorialBackName is undefined. */
+                    if ( source.tutorialBackName === undefined ) {
+
+                        return "";
+                    }
+                    return source.tutorialBackName;
+                },
+            }
+        }
+    });
+    /* Create field "tutorialBackPath" of type string. */
+    createFieldExtension({
+        name: "tutorialBackPath",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns "" when tutorialBackPath is undefined. */
+                    if ( source.tutorialBackPath === undefined ) {
+
+                        return "";
+                    }
+                    return source.tutorialBackPath;
+                },
+            }
+        }
+    });
 
     createTypes(`
     type Frontmatter {
@@ -330,6 +387,9 @@ exports.createSchemaCustomization = ({actions}) => {
         navigationItems: [NavigationItems]
         pathOverride: String
         pathPartial: String
+        tutorial: Boolean @tutorial
+        tutorialBackName: String @tutorialBackName
+        tutorialBackPath: String @tutorialBackPath
     }
     type Session {
         sessionEnd: String

@@ -58,11 +58,11 @@ class Outline extends React.Component {
         }
     };
 
-    componentDidUpdate(prevProp) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
 
         const {articleOffsetTop, bannerHeight} = this.props;
 
-        if ( prevProp.bannerHeight !== bannerHeight || prevProp.articleOffsetTop !== articleOffsetTop ) {
+        if ( prevProps.bannerHeight !== bannerHeight || prevProps.articleOffsetTop !== articleOffsetTop ) {
 
             this.updateNavStyles();
         }
@@ -107,7 +107,7 @@ class Outline extends React.Component {
         const {articleOffsetTop, bannerHeight} = this.props;
 
         // Calculates the outline container maxHeight.
-        const outlineStyles = ScrollingService.calculateNavStyles(bannerHeight, outlineEl, articleOffsetTop);
+        const outlineStyles = ScrollingService.calculateContainerStyles(bannerHeight, articleOffsetTop);
         this.setState({maxHeight: outlineStyles.maxHeight, top: outlineStyles.top});
     };
 

@@ -19,6 +19,11 @@
     color: var(--accent-blue-dark)
 }
 
+/* Icon - breadcrumb. */
+.icon.breadcrumb {
+    color: inherit;
+}
+
 /* Icon - show. */
 .icon.show {
     opacity: 1;

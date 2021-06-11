@@ -5,42 +5,16 @@
  * Style definitions specific to The AnVIL article component.
  */
 
-/* Article */
-.article {
+/* Section */
+.section {
     padding: 36px 0;
     position: relative; /* Positions tabs. */
 }
 
-/* Article container */
-.article .container {
+/* Section container */
+.section .container {
     display: flex;
     flex-direction: column;
-}
-
-/**
- * Large handset portrait, small handset landscape, extra small window
- */
-@media screen and (min-width: 840px) {
-
-    /* Content positioner */
-    .contentPositioner {
-        display: flex;
-        flex: 1;
-        padding: 0 0 0 40px; /* Padding left for space between left nav and content */
-        margin: 0 auto;
-        max-width: 840px;
-        min-width: 0; /* Required for <pre> tag to respect overflow conditions on article flexbox container. */
-    }
-
-    .contentPositioner.left {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Content container */
-    .contentContainer {
-        width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
-    }
 }
 
 /**
@@ -48,64 +22,9 @@
  */
 @media screen and (min-width: 840px) {
 
-    .article .container {
+    /* Section container */
+    .section .container {
         flex-direction: row;
         width: unset;
     }
-
-    .contentPositioner {
-        max-width: 1240px;
-    }
-
-    /* Content positioner - left alignment */
-    .contentPositioner.left {
-        margin: 0 auto 0 0;
-        max-width: unset;
-    }
-    
-    /* Cap width of content on left aligned pages */
-    .contentPositioner.left p {
-        max-width: 816px;
-    }
-
-    .contentPositioner.left .contentContainer {
-        max-width: unset;
-    }
-
-    .contentContainer {
-        display: flex;
-        margin: 0 auto 0 0;
-    }
 }
-
-/**
- * Outline is now visible, allow space for outline.
- */
-@media screen and (min-width: 1024px) {
-
-    .contentContainer {
-        max-width: calc(100% - 238px);
-    }
-}
-
-/**
- * Content has reached its max width.
- */
-@media screen and (min-width: 1386px) {
-
-    .contentContainer {
-        max-width: 780px;
-    }
-}
-
-/**
- * Content and outline are centered, rather than left-aligned
- */
-@media screen and (min-width: 1545px) {
-
-    .contentPositioner {
-        justify-content: center;
-    }
-}
-
-

@@ -1,13 +1,9 @@
 ---
-title: "Setting up Lab Accounts in AnVIL"
 author: "AnVIL"
 description: "An overview of best practices for account setup in AnVIL to effectively track and control cloud costs."
+title: "Setting up Lab Accounts and Billing in AnVIL"
+tutorialHero: "A guide intended to help PIs and lab managers set up and configure the accounts and billing resources required for data analysts to run analyses in Terra."
 ---
-
-# Setting up Lab Accounts and Billing
-
-
-This guide is intended to help PIs and lab managers set up and configure the accounts and billing resources required for data analysts to run analyses in Terra.
 
 While there are many ways to configure a lab, the approach described here prioritizes fine-grained monitoring, reporting, and alerting over ease of setup and restricts who can create and share Terra workspaces with a lab manager or other trusted individual.
 
@@ -134,7 +130,7 @@ Before you start, you will want to plan out your setup and:
 
 
 
-### 1- Obtain a Google ID for each lab member
+### 1 - Obtain a Google ID for each lab member
 
 _All Lab Members_
 

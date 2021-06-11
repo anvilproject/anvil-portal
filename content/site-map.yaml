@@ -24,11 +24,15 @@
 # - "file" is the relative path of the markdown document.
 # - "pathPartial" builds the path for the navigation item. Any parent partials are used to generate the full path.
 # - "pathOverride" overrides/replaces any path generated for the navigation item.
+# - "tutorial: true" are documents in tutorial layout.
+# - "tutorialBackName" is the display name for the tutorial back button.
+# - "tutorialBackPath" is the path for the tutorial back button.
 # - "navigationItems" are children navigationItems belonging to the navigation item.
 # ------
 # - "draft", "pathPartial", "pathOverride", and "navigationItems" are optional.
 # - "name" with an empty string will prevent the display of the navigation item. Typically used when only one page exists for the tab or menuItem. Also used by events/news.
 # - "draft" set to true, indicates the document is in draft mode. The document will be created into a page in local environment only.
+# - "tutorial" set to true, will create the document in tutorial layout.
 # - "file" as an empty string will convert the navigation item to a "toggle" button to open/close children navigationItems belonging to the navigation item.
 # - "pathPartial" as an empty string omits the partial from the navigation item's path.
 #    If "file" is valid, the partial will come from the markdown document file name.
@@ -253,6 +257,9 @@
               file: "/learn/interactive-analysis/getting-started-with-bioconductor"
             - name: "Running Galaxy in AnVIL"
               file: "/learn/interactive-analysis/getting-started-with-galaxy"
+              tutorial: "true"
+              tutorialBackName: "Running Interactive Analyses"
+              tutorialBackPath: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks"
         - name: "MOOC"
           file: ""
           pathPartial: "/anvil-mooc"
@@ -303,8 +310,14 @@
     - name: "Investigators"
       pathPartial: "/investigators"
       navigationItems:
+        - name: "Investigators Tutorial Overview"
+          file: "/learn/investigators/investigators-tutorial-overview"
+          pathOverride: "/learn/investigators/"
         - name: "Setting up Your Lab in AnVIL"
           file: "/learn/investigators/setting-up-lab-accounts"
+          tutorial: "true"
+          tutorialBackName: "Investigators Tutorial Overview"
+          tutorialBackPath: "/learn/investigators/"
         - name: "Preparing a Cloud Cost Budget Justification"
           file: "/learn/investigators/budget-templates"
     - name: "Data Submitters"

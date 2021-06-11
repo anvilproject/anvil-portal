@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL hero tutorial component.
+ */
+
+/* Hero sub title. */
+.heroSubTitle {
+    color: var(--accent-blue-dark);
+    font-size: 1.5rem;
+    font-weight: 300;
+}

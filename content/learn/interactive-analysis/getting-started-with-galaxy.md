@@ -1,12 +1,9 @@
 ---
 author: "AnVIL"
-title: " Alpha Version of Galaxy Running in AnVIL/Terra"
 description: "An overview and tutorial of how to use Galaxy on AnVIL."
+title: " Alpha Version of Galaxy Running in AnVIL/Terra"
+tutorialHero: "We are pleased to announce that Galaxy is now available within AnVIL."
 ---
-
-# Alpha Version of Galaxy Running in AnVIL/Terra
-
-We are pleased to announce that Galaxy (<https://galaxyproject.org>) is now available within AnVIL! 
 
 ## Overview of Galaxy in the Cloud
 
@@ -31,6 +28,7 @@ From the AnVIL branded version of Galaxy, users can browse files in their AnVIL/
 ![bcftools](../_images/getting-started/galaxy-bcf-tools.png)
 
 ## Step-by-Step Tutorial
+
 The step-by-step tutorial below demonstrates how to compute quality metrics of unaligned reads, align the reads to a reference genome using bowtie2, plot a coverage histogram, call variants using FreeBayes, and then summarize the variant calls using bcftools.
 
 ### I. Launching Galaxy
