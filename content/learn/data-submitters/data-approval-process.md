@@ -6,8 +6,16 @@ description: "An overview of the approval process for submitting data to AnVIL."
 
 # Step 1 - Obtain Approval
 
-<hero>AnVIL strives to balance the goals of ensuring that data is as widely and freely available as possible while safeguarding the rights and privacy of subjects who participate in NIH-sponsored research. This includes protecting the confidential and proprietary genomic and phenotypic data of individual human participants.
-(See [NIH - Data Sharing Guidance](https://grants.nih.gov/grants/policy/data_sharing/data_sharing_guidance.htm)).</hero>
+<hero>
+
+AnVIL strives to balance the goals of ensuring that data is as widely and freely available as possible while safeguarding the rights and privacy of subjects who participate in NIH-sponsored research.
+
+This includes protecting the confidential and proprietary genomic and phenotypic data of individual human participants.
+
+
+[NIH - Data Sharing Guidance](https://grants.nih.gov/grants/policy/data_sharing/data_sharing_guidance.htm)
+
+</hero>
 
 
 To deposit large-scale, individual-level data into AnVIL, data submitters must first obtain approval from:
