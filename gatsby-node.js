@@ -23,10 +23,10 @@ exports.onCreateNode = ({actions, getNode, node}) => {
     const {createNodeField} = actions;
     const {internal} = node,
         {type} = internal;
-    fmImagesToRelative(node);
 
     if ( type === "MarkdownRemark" ) {
 
+        fmImagesToRelative(node);
         const {frontmatter} = node,
             {pageAlignment, privateEvent} = frontmatter || {};
 
@@ -74,10 +74,15 @@ exports.createPages = ({actions, graphql}) => {
               slug
             }
             frontmatter {
+              breadcrumb {
+                link
+                name
+              }
               date
               dateStart
               description
               title
+              tutorial
             }
           }
         }
@@ -100,15 +105,9 @@ exports.createPages = ({actions, graphql}) => {
                   file
                   name
                   pathOverride
-                  tutorial
-                  tutorialBackName
-                  tutorialBackPath
                 }
                 pathOverride
                 pathPartial
-                tutorial
-                tutorialBackName
-                tutorialBackPath
               }
             }
           }
@@ -182,9 +181,6 @@ exports.createPages = ({actions, graphql}) => {
                         slug: slug,
                         tabs: slugNavigations.tabs,
                         title: slugNavigations.title,
-                        tutorial: slugNavigations.tutorial,
-                        tutorialBackName: slugNavigations.tutorialBackName,
-                        tutorialBackPath: slugNavigations.tutorialBackPath
                     }
                 });
             }
@@ -318,46 +314,19 @@ exports.createSchemaCustomization = ({actions}) => {
 
                         return false;
                     }
-                    return JSON.parse(source.tutorial.toLowerCase());
-                },
-            }
-        }
-    });
-    /* Create field "tutorialBackName" of type string. */
-    createFieldExtension({
-        name: "tutorialBackName",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns "" when tutorialBackName is undefined. */
-                    if ( source.tutorialBackName === undefined ) {
-
-                        return "";
-                    }
-                    return source.tutorialBackName;
-                },
-            }
-        }
-    });
-    /* Create field "tutorialBackPath" of type string. */
-    createFieldExtension({
-        name: "tutorialBackPath",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns "" when tutorialBackPath is undefined. */
-                    if ( source.tutorialBackPath === undefined ) {
-
-                        return "";
-                    }
-                    return source.tutorialBackPath;
+                    return source.tutorial;
                 },
             }
         }
     });
 
     createTypes(`
+    type Breadcrumb @dontInfer {
+        link: String
+        name: String
+    }
     type Frontmatter {
+        breadcrumb: Breadcrumb
         conference: String
         dateBubble: [String] @dateBubble
         dateStart: Date @dateStart
@@ -371,6 +340,7 @@ exports.createSchemaCustomization = ({actions}) => {
         subTitle: String
         timezone: String
         title: String
+        tutorial: Boolean @tutorial
     }
     type Header implements Node {
         name: String
@@ -387,9 +357,6 @@ exports.createSchemaCustomization = ({actions}) => {
         navigationItems: [NavigationItems]
         pathOverride: String
         pathPartial: String
-        tutorial: Boolean @tutorial
-        tutorialBackName: String @tutorialBackName
-        tutorialBackPath: String @tutorialBackPath
     }
     type Session {
         sessionEnd: String

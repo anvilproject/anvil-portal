@@ -117,6 +117,7 @@ module.exports = {
                                 "figure",
                                 "figure-caption",
                                 "hero",
+                                "hero-tutorial",
                                 "internal-link",
                                 "news",
                                 "platforms",

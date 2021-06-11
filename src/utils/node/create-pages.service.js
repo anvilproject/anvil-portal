@@ -127,7 +127,7 @@ const buildSetOfSiteSlugs = function buildSetOfSiteSlugs(menuItems) {
 const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     /* Default - slug as path, initialize navigations. */
-    const postNavigations = {navItems: [], path: slug, tabs: [], title: "", tutorial: false, tutorialBackName: "", tutorialBackPath: ""};
+    const postNavigations = {navItems: [], path: slug, tabs: [], title: ""};
 
     return buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations, documentTitleBySlug);
 };
@@ -330,9 +330,6 @@ function buildNavItems(navItems, pathPartials) {
     return navItems.reduce((acc, navItem) => {
 
         const {draft, file, name, navigationItems, pathPartial} = navItem || {};
-        const tutorial = navItem.tutorial ? navItem.tutorial : false;
-        const tutorialBackName = navItem.tutorialBackName ? navItem.tutorialBackName : "";
-        const tutorialBackPath = navItem.tutorialBackPath ? navItem.tutorialBackPath : "";
 
         /* Add the nav item if it isn't in draft mode. */
         /* Or, allow the nav item if the environment is LOCAL - all draft documents are available in this environment. */
@@ -348,10 +345,7 @@ function buildNavItems(navItems, pathPartials) {
             const items = {
                 file: file,
                 name: name,
-                path: path,
-                tutorial: tutorial,
-                tutorialBackName: tutorialBackName,
-                tutorialBackPath: tutorialBackPath
+                path: path
             };
 
             /* Build any nested navigationItems. */
@@ -502,7 +496,7 @@ function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavi
 function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem, documentTitleBySlug) {
 
     const {pageTitle, tabs} = menuItem;
-    const {path, tutorial, tutorialBackName, tutorialBackPath} = navItem;
+    const {path} = navItem;
 
     const postTabs = getPostTabs(tabs, t);
     const postNavItems = getPostNavItems(navItems);
@@ -514,10 +508,7 @@ function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem, 
         navItems: postNavItems,
         path: path,
         tabs: postTabs,
-        title: pageTitle,
-        tutorial: tutorial,
-        tutorialBackName: tutorialBackName,
-        tutorialBackPath: tutorialBackPath
+        title: pageTitle
     };
 }
 
@@ -536,7 +527,7 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
 
         if ( path ) {
 
-            setOfNavItems.add({...nItem, file: nItem.file, name: name, path: path});
+            setOfNavItems.add({file: nItem.file, name: name, path: path});
         }
 
         if ( nItem.navItems ) {

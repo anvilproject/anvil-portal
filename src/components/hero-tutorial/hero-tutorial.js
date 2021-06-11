@@ -6,27 +6,23 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React from "react";
 
 // App dependencies
 import Breadcrumb from "../breadcrumb/breadcrumb";
-import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 // Styles
 import compStyles from "./hero-tutorial.module.css";
 
 function HeroTutorial(props) {
 
-    const {navigations} = props,
-        {tutorialBackName, tutorialBackPath} = navigations || {};
-    const {title, tutorialHero} = useContext(ContextFrontmatter);
+    const {children} = props;
 
     return (
-        <>
-            {tutorialBackPath ? <Breadcrumb name={tutorialBackName} path={tutorialBackPath}/> : null}
-            <h1>{title}</h1>
-            <p className={compStyles.heroSubTitle}>{tutorialHero}</p>
-        </>
+        <div className={compStyles.hero}>
+            <Breadcrumb/>
+            {children}
+        </div>
     );
 }
 

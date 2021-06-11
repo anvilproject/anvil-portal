@@ -6,7 +6,7 @@
  */
 
 /* Hero sub title. */
-.heroSubTitle {
+.hero > p {
     color: var(--accent-blue-dark);
     font-size: 1.5rem;
     font-weight: 300;

@@ -60,6 +60,10 @@ query($slug: String!) {
       }
       frontmatter {
         author
+        breadcrumb {
+          link
+          name
+        }
         conference
         date(formatString: "MMMM DD, YYYY")
         description
@@ -70,7 +74,7 @@ query($slug: String!) {
         showOutline
         subTitle
         title
-        tutorialHero
+        tutorial
       }
       html
       htmlAst
@@ -103,9 +107,6 @@ query($slug: String!) {
           path
         }
         title
-        tutorial
-        tutorialBackName
-        tutorialBackPath
       }
     }
   }

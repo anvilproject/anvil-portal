@@ -6,8 +6,9 @@
  */
 
 /* Breadcrumb. */
-.breadcrumb {
+a.breadcrumb {
     align-items: center;
+    border-bottom: none;
     color: var(--black58);
     display: flex;
     font-size: 0.8125rem; /* 13px */
@@ -18,8 +19,9 @@
 }
 
 /* Breadcrumb - hover. */
-.breadcrumb:hover {
+a.breadcrumb:hover {
     color: var(--black87);
+    border-bottom: none;
 }
 
 /* Breadcrumb label. */

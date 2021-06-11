@@ -6,11 +6,12 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, {useContext} from "react";
 
 // App dependencies
 import Article from "../article/article";
 import ArticleTutorial from "../article-tutorial/article-tutorial";
+import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 // Styles
 import compStyles from "./main.module.css";
@@ -18,7 +19,7 @@ import compStyles from "./main.module.css";
 function Main(props) {
 
     const {bannerHeight, children, docPath, homePage, navigations, noSpy, showOutline, styles} = props;
-    const {tutorial} = navigations || {};
+    const {tutorial} = useContext(ContextFrontmatter);
 
     return (
         <main className={compStyles.main}>
@@ -27,8 +28,7 @@ function Main(props) {
                 tutorial ?
                     <ArticleTutorial
                         bannerHeight={bannerHeight}
-                        docPath={docPath}
-                        navigations={navigations}>
+                        docPath={docPath}>
                         {children}
                     </ArticleTutorial> :
                     <Article

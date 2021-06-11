@@ -11,7 +11,6 @@ import React, {useEffect, useRef, useState} from "react";
 // App dependencies
 import ArticleContentContainer from "../article-content-container/article-content-container";
 import ArticleContentPositioner from "../article-content-positioner/article-content-positioner";
-import HeroTutorial from "../hero-tutorial/hero-tutorial";
 import SideBar from "../side-bar/side-bar";
 import Spy from "../spy/spy";
 
@@ -23,7 +22,7 @@ const classNames = require("classnames");
 
 function ArticleTutorial(props) {
 
-    const {bannerHeight, children, docPath, navigations} = props;
+    const {bannerHeight, children, docPath} = props;
     const refArticle = useRef(null);
     const [articleOffsetTop, setArticleOffsetTop] = useState(0);
     const [activeOutline, setActiveOutline] = useState("");
@@ -45,7 +44,6 @@ function ArticleTutorial(props) {
                     docPath={docPath}/>
                 <ArticleContentPositioner>
                     <ArticleContentContainer>
-                        <HeroTutorial navigations={navigations}/>
                         <Spy
                             articleOffsetTop={articleOffsetTop}
                             setActiveOutline={setActiveOutline}>
