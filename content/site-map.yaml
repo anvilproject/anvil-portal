@@ -310,11 +310,11 @@
     - name: "Data Submitters"
       pathPartial: "/data-submitters"
       navigationItems:
-        - name: "Data Submission Process"
+        - name: "Data Submission Guide"
           file: ""
-          pathPartial: "/process"
+          pathPartial: "/submission-guide"
           navigationItems:
-            - name: "Process Overview"
+            - name: "Submission Process Overview"
               file: "/learn/data-submitters/data-submitters-overview"
             - name: "1 - Obtain Approvals"
               file: "/learn/data-submitters/data-approval-process"

@@ -27,6 +27,6 @@ Key guides and tutorials grouped by user persona are listed below.  For a genera
 
 - [Getting Started with Galaxy](/learn/interactive-analysis/getting-started-with-galaxy) - A step-by-step tutorial demonstrating how to compute quality metrics of unaligned reads, align the reads to a reference genome using bowtie2, plot a coverage histogram, call variants using FreeBayes, and then summarize the variant calls using bcftools.
 
-### Data Contributing Consortia
+### Data Submitters
 
-[Submitting Consortium Data](/learn/data-submitters/data-submission) -  An overview of the process of submitting data to AnVIL and confirming eligibility for submission.
+[Data Submission Guide](/learn/data-submitters/submission-guide/data-submitters-overview) -  An overview of the process of submitting data to AnVIL and confirming eligibility for submission.

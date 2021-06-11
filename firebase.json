@@ -132,6 +132,31 @@
         "source": "/learn/consortia/consortium-data-access-guidelines",
         "destination": "/learn/data-submitters/consortium-data-access-guidelines",
         "type": 301
+      },
+      {
+        "source": "/learn/data-submitters/data-approval-process",
+        "destination": "/learn/data-submitters/submission-guide/data-submitters-overview",
+        "type": 301
+      },
+      {
+        "source": "/learn/data-submitters/data-submission",
+        "destination": "/learn/data-submitters/submission-guide/prepare-for-submission",
+        "type": 301
+      },
+      {
+        "source": "/learn/data-submitters/data-submission",
+        "destination": "/learn/data-submitters/submission-guide/set-up-a-data-model",
+        "type": 301
+      },
+      {
+        "source": "/learn/data-submitters/ingesting-data",
+        "destination": "/learn/data-submitters/submission-guide/ingesting-data",
+        "type": 301
+      },
+      {
+        "source": "/learn/data-submitters/consortium-data-access-guidelines",
+        "destination": "/learn/data-submitters/resources/consortium-data-access-guidelines",
+        "type": 301
       }
     ]
   }
