@@ -19,7 +19,7 @@ const Hero = React.forwardRef((props, ref) => {
     const heroRef = ref ? {ref: ref} : null;
 
     return (
-        <p className={compStyles.hero} {...heroRef}>{children}</p>
+        <div className={compStyles.hero} {...heroRef}>{children}</div>
     );
 });
 
