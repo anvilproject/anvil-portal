@@ -295,11 +295,12 @@
               file: "/learn/reference/gtex-v8-free-egress-instructions"
             - name: "Cross Platform Data Access with GA4GH DRS in Terra"
               file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
-#    - name: "Data Analysts"
-#      pathPartial: "/data-analysts"
-#      navigationItems:
-#        - name: "Analyzing Data"
-#          file: "/learn/data-analysts/data-analysts"
+    - name: "Data Analysts"
+      pathPartial: "/data-analysts"
+      navigationItems:
+        - name: "Guides and Tutorials"
+          file: "/learn/data-analysts/data-analysts"
+          pathOverride: "/learn/data-analysts"
     - name: "Investigators"
       pathPartial: "/investigators"
       navigationItems:
