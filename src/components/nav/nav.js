@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 
 // App dependencies
 import NavList from "./nav-list/nav-list";
@@ -18,7 +18,6 @@ import compStyles from "./nav.module.css";
 function Nav(props) {
 
     const {articleOffsetTop, bannerHeight, docPath, navItems} = props;
-    const navRef = useRef(null);
     const [navStyles, setNavStyles] = useState({maxHeight: `unset`, top: `unset`});
     const {maxHeight, top} = navStyles || {};
     const showNav = navItems && navItems.length > 0;
@@ -26,7 +25,7 @@ function Nav(props) {
     const updateNavStyles = useCallback(() => {
 
         /* Sets the nav container maxHeight and top position. */
-        const styles = ScrollingService.calculateNavStyles(bannerHeight, navRef.current, articleOffsetTop);
+        const styles = ScrollingService.calculateContainerStyles(bannerHeight, articleOffsetTop);
 
         setNavStyles(navStyles => ({...navStyles, maxHeight: styles.maxHeight, top: styles.top}));
     }, [articleOffsetTop, bannerHeight]);
@@ -58,7 +57,7 @@ function Nav(props) {
     return (
         <div className={compStyles.sideNavContainer}>
             {showNav ?
-                <div className={compStyles.sideNav} ref={navRef} style={{maxHeight: maxHeight, top: top}}>
+                <div className={compStyles.sideNav} style={{maxHeight: maxHeight, top: top}}>
                     <NavList docPath={docPath} navItems={navItems}/>
                 </div> : null}
         </div>

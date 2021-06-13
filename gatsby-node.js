@@ -23,10 +23,10 @@ exports.onCreateNode = ({actions, getNode, node}) => {
     const {createNodeField} = actions;
     const {internal} = node,
         {type} = internal;
-    fmImagesToRelative(node);
 
     if ( type === "MarkdownRemark" ) {
 
+        fmImagesToRelative(node);
         const {frontmatter} = node,
             {pageAlignment, privateEvent} = frontmatter || {};
 
@@ -74,10 +74,15 @@ exports.createPages = ({actions, graphql}) => {
               slug
             }
             frontmatter {
+              breadcrumb {
+                link
+                name
+              }
               date
               dateStart
               description
               title
+              tutorial
             }
           }
         }
@@ -147,7 +152,7 @@ exports.createPages = ({actions, graphql}) => {
         /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
         const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
 
-        /* Build a relationship between document slug associated document title. */
+        /* Build a relationship between document slug and associated document title. */
         /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
         const documentTitleBySlug = buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs);
 
@@ -175,7 +180,7 @@ exports.createPages = ({actions, graphql}) => {
                         navItems: slugNavigations.navItems,
                         slug: slug,
                         tabs: slugNavigations.tabs,
-                        title: slugNavigations.title
+                        title: slugNavigations.title,
                     }
                 });
             }
@@ -298,9 +303,30 @@ exports.createSchemaCustomization = ({actions}) => {
             }
         }
     });
+    /* Create field "tutorial" of type boolean. */
+    createFieldExtension({
+        name: "tutorial",
+        extend() {
+            return {
+                resolve(source) {
+                    /* Returns false when tutorial is undefined. */
+                    if ( source.tutorial === undefined ) {
+
+                        return false;
+                    }
+                    return source.tutorial;
+                },
+            }
+        }
+    });
 
     createTypes(`
+    type Breadcrumb @dontInfer {
+        link: String
+        name: String
+    }
     type Frontmatter {
+        breadcrumb: Breadcrumb
         conference: String
         dateBubble: [String] @dateBubble
         dateStart: Date @dateStart
@@ -314,6 +340,7 @@ exports.createSchemaCustomization = ({actions}) => {
         subTitle: String
         timezone: String
         title: String
+        tutorial: Boolean @tutorial
     }
     type Header implements Node {
         name: String

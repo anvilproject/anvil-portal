@@ -12,6 +12,7 @@ import React, {useRef, useState} from "react";
 import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
+import Headline from "./headline/headline";
 import Main from "./main/main";
 import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
@@ -37,6 +38,7 @@ function Layout(props) {
                     <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
                         <SiteWrapper ref={refSite}>
                             <Header ncpi={ncpi}/>
+                            {homePage ? null : <Headline navigations={navigations}/>}
                             <Main bannerHeight={bannerHeight}
                                   docPath={docPath}
                                   homePage={homePage}

@@ -303,6 +303,9 @@
     - name: "Investigators"
       pathPartial: "/investigators"
       navigationItems:
+        - name: "Investigators Tutorial Overview"
+          file: "/learn/investigators/investigators-tutorial-overview"
+          pathOverride: "/learn/investigators/"
         - name: "Setting up Your Lab in AnVIL"
           file: "/learn/investigators/setting-up-lab-accounts"
         - name: "Preparing a Cloud Cost Budget Justification"

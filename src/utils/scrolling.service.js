@@ -28,11 +28,19 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
     // Clear required for the event listener "resize".
     elementIdsByAnchorFromTop.clear();
 
+    // Create dummy <h1> if the page does not have one.
+    if ( Number(contentAnchors[0].tagName.charAt(1)) !== 1 ) {
+
+        const h1El = document.createElement("h1");
+        h1El.setAttribute("id", "dummyHeading");
+        contentAnchors.unshift(h1El);
+    }
+
     // Grab each <h1> to <h3> anchor id and its position from the top of the page.
     contentAnchors.forEach(pageAnchor => {
 
         // Only grab <h1> to <h3>
-        if (Number(pageAnchor.tagName.charAt(1)) <= 3) {
+        if ( Number(pageAnchor.tagName.charAt(1)) <= 3 ) {
 
             elementIdsByAnchorFromTop.set((pageAnchor.offsetTop), pageAnchor.id);
         }
@@ -46,11 +54,10 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  * scrolling positions.
  *
  * @param bannerHt
- * @param navEl
  * @param articleOffsetTop
- * @returns {string}
+ * @returns {{top: string, maxHeight: string}}
  */
-export function calculateNavStyles(bannerHt, navEl, articleOffsetTop) {
+export function calculateContainerStyles(bannerHt, articleOffsetTop) {
 
     /* Intialize styles. */
     const navStyles = {maxHeight: `unset`, top: `unset`};
@@ -59,7 +66,7 @@ export function calculateNavStyles(bannerHt, navEl, articleOffsetTop) {
     // (Outline is dropped at 1388px, left nav is stacked at 840).
     // The outline and nav styles are defined by a different set of responsive settings for smaller screens.
 
-    if ( navEl && articleOffsetTop && window.innerWidth >= 840 ) {
+    if ( articleOffsetTop && window.innerWidth >= 840 ) {
 
         // Calculate the side nav style "maxHeight", taking into account the:
         // - sticky top position (calculated from articleRef on article component)

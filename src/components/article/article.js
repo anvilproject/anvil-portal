@@ -9,7 +9,8 @@
 import React, {useEffect, useRef, useState} from "react";
 
 // App dependencies
-import Headline from "../headline/headline";
+import ArticleContentContainer from "../article-content-container/article-content-container";
+import ArticleContentPositioner from "../article-content-positioner/article-content-positioner";
 import Nav from "../nav/nav";
 import Outline from "../outline/outline";
 import Spy from "../spy/spy";
@@ -33,33 +34,39 @@ function Article(props) {
     const useOutline = showOutline;
     const useSpy = showOutline && !noSpy;
 
+    /* useEffect - componentDidMount/componentWillUnmount. */
     useEffect(() => {
 
         setArticleOffsetTop(refArticle.current.offsetTop);
     }, []);
 
     return (
-        <>
-        <Headline navigations={navigations}/>
-        <section className={compStyles.article} ref={refArticle}>
+        <section className={compStyles.section} ref={refArticle}>
             <div className={classNames(globalStyles.container, compStyles.container)}>
-                {left ? null :
-                    <Nav articleOffsetTop={articleOffsetTop}
-                         bannerHeight={bannerHeight}
-                         docPath={docPath}
-                         navItems={navItems}/>}
-                <div className={classNames(compStyles.contentPositioner, {[compStyles.left]: left})}>
-                    <div className={compStyles.contentContainer}>
-                        {useSpy ? <Spy articleOffsetTop={articleOffsetTop} setActiveOutline={setActiveOutline}>{children}</Spy> : children}
-                        {useOutline ? <Outline activeOutline={activeOutline}
-                                               articleOffsetTop={articleOffsetTop}
-                                               bannerHeight={bannerHeight}
-                                               docPath={docPath}/> : null}
-                    </div>
-                </div>
+                {left ?
+                    null :
+                    <Nav
+                        articleOffsetTop={articleOffsetTop}
+                        bannerHeight={bannerHeight}
+                        docPath={docPath}
+                        navItems={navItems}/>}
+                <ArticleContentPositioner left={left}>
+                    <ArticleContentContainer left={left}>
+                        {useSpy ?
+                            <Spy
+                                articleOffsetTop={articleOffsetTop}
+                                setActiveOutline={setActiveOutline}>{children}
+                            </Spy> : children}
+                        {useOutline ?
+                            <Outline
+                                activeOutline={activeOutline}
+                                articleOffsetTop={articleOffsetTop}
+                                bannerHeight={bannerHeight}
+                                docPath={docPath}/> : null}
+                    </ArticleContentContainer>
+                </ArticleContentPositioner>
             </div>
         </section>
-        </>
     );
 }
 

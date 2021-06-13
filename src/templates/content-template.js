@@ -31,21 +31,21 @@ export default ({data}) => {
     const pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
 
     return (
-        <Layout navigations={context}
-                description={description}
-                docPath={slug}
-                ncpi={ncpi}
-                showOutline={showOutline}
-                styles={styles}
-                title={pageTitle}>
-            <ProviderFrontmatter frontmatter={frontmatter}>
-                <ArticleBody htmlAst={htmlAst}>
-                    <ArticleSocials/>
-                    <ArticleNavigation navigations={context}/>
-                    <ArticleEnd docPath={slug}/>
-                </ArticleBody>
-            </ProviderFrontmatter>
-        </Layout>
+        <ProviderFrontmatter frontmatter={frontmatter}>
+            <Layout navigations={context}
+                    description={description}
+                    docPath={slug}
+                    ncpi={ncpi}
+                    showOutline={showOutline}
+                    styles={styles}
+                    title={pageTitle}>
+                    <ArticleBody htmlAst={htmlAst}>
+                        <ArticleSocials/>
+                        <ArticleNavigation navigations={context}/>
+                        <ArticleEnd docPath={slug}/>
+                    </ArticleBody>
+            </Layout>
+        </ProviderFrontmatter>
     )
 }
 
@@ -60,6 +60,10 @@ query($slug: String!) {
       }
       frontmatter {
         author
+        breadcrumb {
+          link
+          name
+        }
         conference
         date(formatString: "MMMM DD, YYYY")
         description
@@ -70,6 +74,7 @@ query($slug: String!) {
         showOutline
         subTitle
         title
+        tutorial
       }
       html
       htmlAst

@@ -20,6 +20,7 @@ import ExternalLink from "../anchor-element/external-link/external-link";
 import Figure from "../figure/figure";
 import FigureCaption from "../figure/figure-caption/figure-caption";
 import Hero from "../hero/hero";
+import HeroTutorial from "../hero-tutorial/hero-tutorial";
 import InternalLink from "../internal-link/internal-link";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
@@ -60,6 +61,7 @@ function Markdown(props) {
             "figure": Figure,
             "figure-caption": FigureCaption,
             "hero": Hero,
+            "hero-tutorial": HeroTutorial,
             "internal-link": InternalLink,
             "news": News,
             "platforms": Platforms,

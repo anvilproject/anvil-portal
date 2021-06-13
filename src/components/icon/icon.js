@@ -15,9 +15,10 @@ const classNames = require("classnames");
 
 function Icon(props) {
 
-    const {blueDark, children, color, fontSize, showHover, showIcon} = props;
+    const {blueDark, breadcrumb, children, color, fontSize, showHover, showIcon} = props;
     const classNamesIcon = classNames(
         {[compStyles.blueDark]: blueDark},
+        {[compStyles.breadcrumb]: breadcrumb},
         {[compStyles.hover]: showHover},
         compStyles.icon,
         "material-icons-round",

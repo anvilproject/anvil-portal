@@ -19,8 +19,7 @@ import SocialTwitter from "../socials/social-twitter/social-twitter";
 
 function ArticleSocials() {
 
-    const {frontmatter} = useContext(ContextFrontmatter),
-        {title} = frontmatter || {};
+    const {title} = useContext(ContextFrontmatter);
     const currentLocation = useLocation(),
         {href} = currentLocation || {};
     const encodedTitle = encodeURIComponent(`AnVIL - ${title}`).toString();
