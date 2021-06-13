@@ -1,6 +1,6 @@
 ---
 author: "AnVIL"
-breadcrumb: {name: "Investigators Tutorial Overview", link: "/learn/investigators"}
+breadcrumb: {name: "Investigators - Guides and Tutorials", link: "/learn/investigators"}
 description: "An overview of best practices for account setup in AnVIL to effectively track and control cloud costs."
 title: "Setting up Lab Accounts and Billing in AnVIL"
 tutorial: true
@@ -14,34 +14,22 @@ A guide intended to help PIs and lab managers set up and configure the accounts 
 
 </hero-tutorial>
 
-While there are many ways to configure a lab, the approach described here prioritizes fine-grained monitoring, reporting, and alerting over ease of setup and restricts who can create and share Terra workspaces with a lab manager or other trusted individual.
+This guide presents a recommended approach for labs new to cloud computing to set up billing on AnVIL. It enables detailed cloud cost accounting, provides users feedback on the costs of their analyses, and reduces the opportunity for unexpected cloud compute costs.
 
-This approach is recommended for labs new to cloud computing. It enables detailed cloud cost accounting, provides users feedback on the costs of their analyses, and reduces the opportunity for unexpected cloud compute costs.
+While there are many ways to configure a lab, the approach described here prioritizes fine-grained monitoring, reporting, and alerting over ease of setup and restricts who can create and share Terra workspaces with a lab manager or other trusted individual.
 
 <hero>For additional information and approaches see [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).</hero>
 
-### Goals of this guide
+## Goals of this Guide
 
 * Provide a conceptual overview of cloud billing in Terra and GCP.
-* Describe a recommended approach for lab billing configuration.
-* Show you how to set up and use the recommended billing configuration.
+* Describe how to implement a recommended setup for lab billing.
+* Identify choices you can make to customize your lab setup to your needs.
 * Show you how to monitor cloud spending.
-* Identify choices you can make to customize your lab setup to your needs or specific situation.
 * Capture Google’s promotional $300 getting started credits.
 
 
-
-### Overview
-
-This guide is organized into three main sections.
-
-**[Section 1:  Prerequisites](/learn/investigators/setting-up-lab-accounts#prerequisites)** - The first section provides an overview of the concepts, resources, and roles related to billing and account setup.
-
-**[Section 2: Lab Setup Design](/learn/investigators/setting-up-lab-accounts#lab-setup-design)** -  The second section describes the recommended setup design used by this guide and discusses the tradeoffs made and options to refine the setup for your specific needs.
-
-**[Section 3: Lab Setup Guide](/learn/investigators/setting-up-lab-accounts#lab-setup-guide)** -  The third section walks you through the steps necessary to implement the suggested lab setup. Along the way, we also present choices to help you optimize your lab setup to your specific needs and situation.
-
-###  Prerequisites
+##  Prerequisites
 
 Before working through the setup guide, it will be helpful to be familiar with Terra workspaces and permissions, the basics of cloud costs, and understand the basic billing concepts.
 
@@ -70,7 +58,7 @@ The lab setup described here defines the following roles and responsibilities:
 **PI** - The PI sets up the lab’s Google Cloud Account, creates its Google Billing Account(s), and Google Payment Method(s), links Terra with GCP, and invites Lab Managers to be GCP “_Billing Account Users_.”
 
 <!--
-1. **Administrator** TODO Administrators have a great deal of power overspending.  If you have a lab or accounts manager responsible for expenses, it may make sense to add them as an administrator.  If this is primarily your responsibility, you likely want to keep yourself as the only admin. 
+1. **Administrator** TODO Administrators have a great deal of power overspending.  If you have a lab or accounts manager responsible for expenses, it may make sense to add them as an administrator.  If this is primarily your responsibility, you likely want to keep yourself as the only admin.
 1. **Viewers** -  TODO Viewers can see the activity in the Billing Account but can’t make any changes.  This can be useful for finance staff who need access to the reports or for lab members to see what their analyses are costing.
 
 -->
@@ -84,10 +72,10 @@ For data Data Analysts obtain access to the workspaces they require:
 
 1. Data Analysts request a Lab Manager to create or clone a new workspace.
 1. The Lab Manager:
-   1. Decides if a new Terra Billing Project needs to be created to track expenses associated with the new workspace.
-   1.  Sets up budgets and alerts for the new Terra Billing Project, if any, or adjusts the budget and alerts for the existing Terra Billing Project if required.
-   1. Creates or clones the workspace using the appropriate Terra Billing Project.
-   1. Adds and adds the Data Analyst as a “_Writer_” with “_can-execute_” but not “_can-share_” privileges on the new workspace.
+1. Decides if a new Terra Billing Project needs to be created to track expenses associated with the new workspace.
+1.  Sets up budgets and alerts for the new Terra Billing Project, if any, or adjusts the budget and alerts for the existing Terra Billing Project if required.
+1. Creates or clones the workspace using the appropriate Terra Billing Project.
+1. Adds and adds the Data Analyst as a “_Writer_” with “_can-execute_” but not “_can-share_” privileges on the new workspace.
 
 
 ### Budgets, Alerting, and Reporting
@@ -107,7 +95,7 @@ A few cautions to consider are:
 
 ## Lab Setup Guide
 
-### Before you start
+### Before you Start
 
 #### Determine if your lab needs to create a Google Cloud Billing Account
 
@@ -139,25 +127,28 @@ Before you start, you will want to plan out your setup and:
 
 
 
-### 1 - Obtain a Google ID for each lab member
+### 1 - Create the Team’s Google Accounts
 
 _All Lab Members_
 
 All lab members that wish to use Terra will need a Google ID to create a Tera account.
 
-As mentioned, a Google ID is an email address that may be:  a non-Google email that has been used to create a Google Account,  a Google email address set up in Gmail, Google Workspace, or Google Identity.
+A Google ID is an email address that may be:
+- a non-Google email that has been used to create a Google Account,
+- a Google email address set up in Gmail, Google Workspace, or Google Identity.
 
 This email must also be the Google ID that lab members will use to log in to Terra, Gen3, and associate with their ERA commons ID for accessing controlled-access data.
 
-Lab members without Google IDs can see [Create Your Google Account](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to register for a Gmail account or create an account with their current non-Google email address.
+If you already have a Google Id, you can skip this step. Lab members without Google IDs can see [Create Your Google Account](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to register for a Gmail account or create an account with their current non-Google email address.
 
 >To create a Google ID with a non-Google email address, select “Use my current email address instead” on the signup form.
 
-### 2 - Create a Terra Account for each lab member
+### 2 - Create the Team’s Terra Accounts
 
 _All Lab Members_
 
-Once lab members have a Google ID, they can use that email address to create a Terra account. Next, lab members can create Gen3 and Docstore accounts as well and link their accounts.
+Once lab members have a Google ID, they can use that email address to create a Terra account.
+
 
 To create a Terra account:
 
@@ -173,7 +164,7 @@ _PI or Account Administrator_
 
 1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+<button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 
 2. Select your lab from the “**Select an organization”** dropdown if available.
 1. Select the **”ADD BILLING ACCOUNT”** or **”CREATE ACCOUNT”** button.
@@ -195,14 +186,14 @@ To create and launch workspaces and consume Google Cloud resources, Terra needs 
 
 1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+<button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 
 1. Select your lab from the “Select an organization” dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:
-   1.  Add _<terra-billing@terra.bio>_ in the **“New members”** form field.
-   1. Under **“Select a Role”** select **“Billing”** and then **“Billing Account User”**
-   1. Select **“MANAGE ROLES”**
+1.  Add _<terra-billing@terra.bio>_ in the **“New members”** form field.
+1. Under **“Select a Role”** select **“Billing”** and then **“Billing Account User”**
+1. Select **“MANAGE ROLES”**
 
 <figure>
 <img src="./_images/link-terra.png" alt="Linking Terra to a Google Billing Account"/>
@@ -210,28 +201,28 @@ To create and launch workspaces and consume Google Cloud resources, Terra needs 
 </figure>
 
 
-### 5 - Add each Lab Manager as a Billing Account User on the lab’s Google Billing Accounts
+### 5 - Add Lab Managers as Billing Account Users
 
 _PI or Account Administrator_
 
-Once a Lab Manage is added as a “_Billing Account User_” and the Google Billing Account is linked to Terra, the Lab Manager can create Terra Billing Projects using the linked Google Billing Account.
+Once a Lab Manage is added as a “_Billing Account User_” on a Google Billing account and the Google Billing Account is linked to Terra, the Lab Manager can create Terra Billing Projects using the linked Google Billing Account.
 
 
 **To add a Lab Manager as a _Billing Account User_ to a Google Billing Account:**
 
 1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+<button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 1. Select your lab from the **“Select an organization”** dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:
-   1.  Add the lab member’s GoogleID (email address)  in the **“New members”** form field.
-   1. Under **“Select a Role”** select **“Billing”** and then **Billing Account User”**
-   1. Select **“MANAGE ROLES”**
+1.  Add the lab member’s GoogleID (email address)  in the **“New members”** form field.
+1. Under **“Select a Role”** select **“Billing”** and then **Billing Account User”**
+1. Select **“MANAGE ROLES”**
 
 The lab manager should now see the linked Google Billing Account when they attempt to create a Terra Billing Project in Terra.
 
-### 6 - Create a Terra Billing Project for each Data Analyst
+### 6 - Create Terra Billing Projects
 
 _Lab Manager_
 
@@ -244,7 +235,7 @@ Name the Terra Billing Project so that you can identify the Data Analyst by the 
 
 1. Log into Terra manage billing page.
 
-   <button-link href="https://anvil.terra.bio/#billing" target="_blank">Sign in to Terra Manage Billing</button-link>
+<button-link href="https://anvil.terra.bio/#billing" target="_blank">Sign in to Terra Manage Billing</button-link>
 
 1. If prompted, select **“Sign in with Google”**.
 1. Select **“CREATE”**  in the top left.
@@ -259,7 +250,7 @@ Once the Terra Billing Project has been created, _Lab Managers_ can see the new 
 
 
 
-### 7 - Create Budgets and Alerts in GCP for each Terra Billing Project
+### 7 - Create Budgets and Alerts
 
 _Lab Manager_
 
@@ -273,7 +264,7 @@ You can create multiple budgets on a Google Billing Account.  This guide recomme
 
 1. Sign in to the Manage billing accounts page in the Google Cloud Console.
 
-   <button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
+<button-link href="https://console.cloud.google.com/billing" target="_blank">Sign in to GCP Manage Billing Accounts</button-link>
 1. Select your lab from the **“Select an organization”** dropdown.
 1. In the list of billing accounts, select the account you wish to add alerts for.
 1. In the left navigation, select “**Budgets and Alerts”**
@@ -293,19 +284,18 @@ You can create multiple budgets on a Google Billing Account.  This guide recomme
 
 <hero>See [Set Budgets and Budget Alerts](https://cloud.google.com/billing/docs/how-to/budgets) for additional instructions on creating, modifying, and deleting budgets and alerts. </hero>
 
-### 8 -  Create or Clone Workspaces and add Data Analysts as “Writers” with “can-compute”
-
+### 8 -  Create Workspaces
 _Lab Manager_
 
 **To create workspaces for Data Analysts:**
 
 1. Log in to the Terra workspaces screen.
 
-   <button-link href="https://anvil.terra.bio/#workspaces" target="_blank">Sign in to Terra  Workspaces</button-link>
+<button-link href="https://anvil.terra.bio/#workspaces" target="_blank">Sign in to Terra  Workspaces</button-link>
 1. If prompted, select **“Sign in with Google”**.
 1. Decide if you will create or clone a workspace:
-   1. To create a new workspace, select the “+” button on the top left of the workspaces screen.
-   1. To clone a workspace, find the workspace in your workspaces list, select the “three dots” icon on the right, and select **“Clone”**.
+1. To create a new workspace, select the “+” button on the top left of the workspaces screen.
+1. To clone a workspace, find the workspace in your workspaces list, select the “three dots” icon on the right, and select **“Clone”**.
 1. Select a workspace name and Billing Project for the workspace, being careful to select the billing project created for the Data Analyst who will be computing with the workspace.
 1. Select **“CREATE WORKSPACE”** or **“CLONE WORKSPACE”** as appropriate.
 
@@ -314,8 +304,8 @@ _Lab Manager_
 1. Locate the workspace in the workspaces list by filtering on the workspace name.
 1. On the “three dots” button on the workspace row and select **“Share”**.
 1. On the Share Workspace popup menu:
-   1. Search for the Google ID of the Data Analyst in the **“User email”**section.
-   1. Select the Data Analysts email address when it appears below the User email select box.
+1. Search for the Google ID of the Data Analyst in the **“User email”**section.
+1. Select the Data Analysts email address when it appears below the User email select box.
 1. When the Data Analyst appears under the “Current Collaborators” section of the form, make the Data Analyst a **“Writer”** and select **“Can compute”**. Do not select “Can share.”
 
 <figure>
@@ -325,11 +315,12 @@ _Lab Manager_
 
 <hero>For additional information see [Cloning a Workspace](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) in the Terra documentation. For additional information see [How to Share a Workspace](https://support.terra.bio/hc/en-us/articles/360034540171-How-to-share-a-workspace) in the Terra documentation. </hero>
 
-## We would love your feedback
+## Providing Feedback
 
 We would love to hear about your experiences attempting to implement this guide and discuss what worked or any omissions or points that need further clarification.
 
 <hero>For questions, comments, pain points, successes in following this guide, reach out to the AnVIL support from the AnVIL [Help](/help) page.</hero>
+
 
 
 
