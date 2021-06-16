@@ -14,10 +14,12 @@ title: "NCPI Progress Updates"
 
 #### Day 1
 * [Video](https://cbiit.webex.com/recordingservice/sites/cbiit/recording/8899a02f8e4e1039b7ef00505681aa7a/playback) (3:15)
+* [Presentation Slides](https://docs.google.com/presentation/d/1OGnNApHhNyf1qyML9tCw2_-lEMZea0M3e7R5n_GVphA/edit#slide=id.gd851b67b9c_0_982)  
 * [Meeting Summary](https://docs.google.com/document/d/1_U7QoERBgRs0fsfnsoAg_-27z7DnweREr6UqodK6OVU/edit)
 
 #### Day 2
 * [Video](https://cbiit.webex.com/recordingservice/sites/cbiit/recording/e403162f8f171039adbf0050568cfa13/playback) (3:22)
+* [Presentation Slides](https://docs.google.com/presentation/d/1_Ydwmyo5mpHqeL3KReHmX0Hn8GxUB9dcIwWlEowF4VA/edit)  
 * [Meeting Summary](https://docs.google.com/document/d/1CVn-Ug39-ABIWzUJFonf5pUxVyOfk_ODNTOHmcxgYT4/edit)
 
 ## 3rd NCPI Workshop - October 30th, 2020 
