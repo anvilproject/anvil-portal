@@ -72,19 +72,27 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 - Clone the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace
     - Unique workspace name
     - Billing project: deeppilots-bioconductor-may10
+      <figure-styles shadowless=true>
       ![Clone Bioconductor-Workflow-DESeq2](_images/running-workflow-clone-bioconductor-workflow.png)
+      </figure-styles>
 
 #### Workspace tour
 
 - DATA
     - participant, participant_set TABLES
     - Files in google bucket contain only notebooks
-    ![Workspace Tour](_images/running-workflow-workspace-tour.png)
+      <figure-styles shadowless=true>
+      ![Workspace Tour](_images/running-workflow-workspace-tour.png)
+      </figure-styles>
 - NOTEBOOK
     - How to use all aspects of the workspace for bulk RNASeq differential expression analysis.
-    ![Notebook](_images/running-workflow-notebook.png)
+      <figure-styles shadowless=true>
+      ![Notebook](_images/running-workflow-notebook.png)
+      </figure-styles>
 - WORKFLOW
+  <figure-styles shadowless=true>
   ![Workflow](_images/running-workflow-workflows.png)
+  </figure-styles>
 
 ### Running a Workflow
 
@@ -101,22 +109,34 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 
 - SELECT DATA from participant_set
 - Connect workflow INPUTS to columns in the participant table (FASTQ files), workspace bucket (transcriptome FASTA file), or direct entry (transcriptome name)
+  <figure-styles shadowless=true>
   ![Connect Workflow Inputs to Columns](_images/running-workflow-launch.png)
+  </figure-styles>
 - Use default OUTPUTS
 - SAVE
 - RUN ANALYSIS
+  <figure-styles shadowless=true>
   ![Run Analysis](_images/running-workflow-analysis.png)
+  </figure-styles>
 
 #### Monitor
 
+<figure-styles shadowless=true>
+
 ![Monitor](_images/running-workflow-monitor.png)
+
+</figure-styles>
 
 #### Runtime
 
 - In a new tab... some preliminary work, necessary until the image is updated in the next 2 months.
 - Start a Jupyter Notebook interactive environment
+  <figure-styles shadowless=true>
   ![Start Jupyter Notebook Environment](_images/running-workflow-start-jupyter-1.png)
+  </figure-styles>
+  <figure-styles width="680">
   ![Start Jupyter Notebook Environment](_images/running-workflow-start-jupyter-2.png)
+  </figure-styles>
 - When the runtime is ready, launch an interactive shell to update packages
   ![Launch Interative Shell to Update Packages](_images/running-workflow-runtime-ready.png)
 - An interactive shell is 'better' for updating packages because we can see progress / errors; these are hidden by the Jupyter notebook
@@ -166,7 +186,7 @@ BiocManager::install(pkgs)  # latest AnVIL package
 
 - Extracts relevant files from the workflow output to the local disk
 - Open in 'EDIT' mode
-- Enter each evaluation cell and press <return>
+- Enter each evaluation cell and press \<return>
 
 #### Notebook E_DESeq2Analysis
 

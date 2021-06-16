@@ -246,7 +246,11 @@ STRIDES pricing below current as of March 30, 2021.
 
 With modest compute requirements, the costs on Google Cloud are very low. AnVIL/Terra’s auto-off feature prevents unintentional costs from leaving a runtime on. Typical running cloud compute cost in AnVIL/Terra is $0.25 per hour (4 CPUs, 26GB RAM); maximum is $5.69 per hr (96 CPUs, 624 GB RAM). However, one student willingly running up the costs could necessitate shutting down the free offering. I don’t currently know how to identify that student if it were to happen.
 
+<figure-styles width="500">
+
 ![Google Cloud Costs](_images/using-anvil-costs.png)
+
+</figure-styles>
 
 ## Alternatives to AnVIL/Terra
 

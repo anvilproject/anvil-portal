@@ -65,33 +65,53 @@ This week we'll explore how workspaces provide a framework for managing data and
 
 - Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course, and navigate (via the HAMBURGER) to Workspaces.
 - If you cloned the Bioconductor-Workshop-Popup workspace last week, delete it now.
+  <figure-styles shadowless=true>
   ![Delete Cloned Bioconductor Workshop Popup](_images/package-delete-clone.png)
+  </figure-styles>
 - Clone the Bioconductor-Workshop-Popup.
+  <figure-styles shadowless=true>
   ![Clone Bioconductor Workshop Popup](_images/package-clone-workshop.png)
+  </figure-styles>
 - Start an RStudio cloud environment.
+  <figure-styles shadowless=true>
   ![Start an RStudio Cloud Environment](_images/package-start-rstudio-1.png)
+  </figure-styles>
+  <figure-styles shadowless=true>
   ![Start an RStudio Cloud Environment](_images/package-start-rstudio-2.png)
+  </figure-styles>
+  <figure-styles shadowless=true>
   ![Start an RStudio Cloud Environment](_images/package-start-rstudio-3.png)
+  </figure-styles>
 - Launch the cloud environment.
+  <figure-styles shadowless=true>
   ![Launch the Cloud Environment](_images/package-launch-cloud-environment.png)
+  </figure-styles>
 - Copy the [week-2-demo.R](https://gist.githubusercontent.com/mtmorgan/855b303cecd5416ef9402d04ba72e61f/raw/) script into a file on your cloud environment.
   ![Copy the Script](_images/package-copy-script.png)
 
 ### Workflows
 
 - In a new browser tab / window, navigate (via the HAMBURGER) to the [HCA Optimus Pipeline](https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline) workspace. This workspace demonstrates how scRNA-seq fastq files can be transformed to a 'count matrix' for interactive analysis.
+  <figure-styles shadowless=true>
   ![Navigate to the HCA Optimus Pipeline Workspace](_images/package-navigate-to-hca-optimus-pipeline-workspace.png)
+  </figure-styles>
 - Overall orientation: DATA TABLES serve as input to WORKFLOWS (scalable 'big data' computation).
+  <figure-styles shadowless=true>
   ![Data Tables Serve as Input to Workflows](_images/package-data-tables.png)
+  </figure-styles>
 - Workflows transform big data using 'Workflow Description Language' scripts producing outputs (logs, results).
+  <figure-styles shadowless=true>
   ![Workflows Transform Big Data](_images/package-workflow-transform-big-data.png)
+  </figure-styles>
   For this workflow:
     - Single-cell RNA seq analysis.
     - Inputs are fastq files from individual samples.
     - Scripts perform alignment, UMI processing, creating a 'count' matrix of gene x cell (sample) expression matrices, etc.
     - Primary output of interest is a 'loom' file summarizing the count matrix.
 - Workspace bucket / Files store workflow outputs (each workflow run has a unique identifier; logs and results are located under the identifier). Buckets also provide a location for storing and sharing interactive analysis results.
+  <figure-styles shadowless=true>
   ![Workspace bucket](_images/package-workspace-bucket.png)
+  </figure-styles>
 
 ### The AnVIL Package
 
@@ -171,7 +191,9 @@ sce = LoomExperiment::import("~/loom/pbmc_human_v3.loom")
 
 - Requires gcloud SDK installed on your computer.
 - Use sdk to register your gmail account and google billing project.
+  <figure-styles shadowless=true>
   ![Use SDK to Register Your GMail](_images/package-use-sdk-to-register.png)
+  </figure-styles>
 
 #### Access the AnVIL 'API'
 

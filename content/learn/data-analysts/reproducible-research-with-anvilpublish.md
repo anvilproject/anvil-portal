@@ -77,11 +77,17 @@ This week we'll explore elements of reproducible research with the AnVILPublish 
 #### Start a CUSTOM CLOUD ENVIRONMENT
 
 - 'Cloud Environment' in the top right of the workspace, choose 'Customize'
+  <figure-styles width="500">
   ![Customize Cloud Environment](_images/anvilpublish-customize-cloud-environment.png)
+  </figure-styles>
 - From the 'Application Configuration' dropdown, choose 'Custom Environment'
+  <figure-styles width="500">
   ![Select Custom Environment](_images/anvilpublish-selected-custom-environment.png)
+  </figure-styles>
 - For 'Container Image' enter gcr.io/bioconductor-anvil/anvil-rstudio-bioconductor-anvilpublish:3.12-0.0.2
+  <figure-styles width="500">
   ![Enter Container Image](_images/anvilpublish-container-image.png)
+  </figure-styles>
 
 ## R Packages
 

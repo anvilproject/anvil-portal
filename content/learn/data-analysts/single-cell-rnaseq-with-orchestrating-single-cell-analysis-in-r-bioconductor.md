@@ -67,21 +67,31 @@ TODO Dave - I think the `Wl` above should be `We` but I have not changed it.
 #### Workspaces and Billing
 
 - AnVIL data and computing resources are organized around Workspaces. Once you've signed, in, choose 'Workspaces' under the HAMBURGER menu.
+  <figure-styles shadowless=true>
   ![Choose Workspaces](_images/analysis-workspaces-tab.png)
+  </figure-styles>
 - There are a number of workspaces available to everyone under the 'NEW AND INTERESTING', 'FEATURED'. and 'PUBLIC' tabs; feel free to explore these on your own.
 - If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUP workspace under 'MY WORKSPACES'.
   ![Bioconductor Workshop](_images/analysis-bioconductor-workshop.png)
 - Enter the workspace by clicking on the [use-strides/Bioconductor-Workshop-OSCA-3-12](https://app.terra.bio/#workspaces/use-strides/Bioconductor-Workshop-OSCA-3-12) link. There are many components to the workspace; we'll cover many of these over the course of the PopUp workshops.
   ![Enter the Workspace](_images/analysis-enter-workspace.png)
 - Start by making a *clone* so that we can perform computations on our own copy of the workspace. Do this by clicking on the TEARDROP (three vertical dots) in the top right of the page, and choose 'Clone'
+  <figure-styles shadowless=true>
   ![Start by Making a Clone](_images/analysis-clone-menu.png)
+  </figure-styles>
 - If you see something like the following, then customize the 'Workspace name' to a globally unique name. In a previous workshop, the 'copy' suffix was converted to 'mtmorgan-popup'. It's convenient NOT to have spaces in a workspace name.
+  <figure-styles width="400">
   ![Customize Workspace Name](_images/analysis-customize-workspace-name.png)
+  </figure-styles>
   If instead you see a 'Billing project' that is NOT deeppilots-bioconductor, or if you see something like
+  <figure-styles width="400">
   ![Set up Billing Message](_images/analysis-billing-message.png)
+  </figure-styles>
   Then contact the workshop organizer with your AnVIL email address to be added to the deeppilots-bioconductor billing project. See the Frequently Asked Questions, below, for more information on billing projects.
 - Return, via the HAMBURGER menu or by clicking on the WORKSPACES element at the top of the page, to the list of WORKSPACES available to you. You'll see your own version of the workspace. Open it.
+  <figure-styles shadowless=true>
   ![Open the Cloned Workspace](_images/analysis-open-cloned-workspace.png)
+  </figure-styles>
 - Congratulations, you now have your own workspace associated with a billing account that allows you to perform computations in the AnVIL cloud!
 
 #### What you've accomplished:
@@ -97,21 +107,37 @@ TODO Dave - I think the `Wl` above should be `We` but I have not changed it.
 
 An AnVIL RStudio session is easy to start after you've cloned the OSCA workspace.  You'll see
 
+<figure-styles width="400">
+
 ![Starting RStudio](_images/analysis-starting-rstudio.png)
+
+</figure-styles>
 
 in the upper left corner, and when you click on the "gear" you'll have a widget
 
+<figure-styles width="500">
+
 ![RStudio Widget](_images/analysis-rstudio-widget.png)
+
+</figure-styles>
 
 and you click the CUSTOMIZE button to see
 
+<figure-styles width="500">
+
 ![Customize RStudio](_images/analysis-customize-rstudio.png)
+
+</figure-styles>
 
 This is what we need to configure.  Use the "Application configuration" dropdown to pick "Custom Environment" at the very bottom, enter `vjcitn/vjcosca:0.0.1` as the container , and pick a 4 CPU cloud compute profile.
 
 When you see
 
+<figure-styles width="500">
+
 ![Ready to Create](_images/analysis-ready-to-create.png)
+
+</figure-styles>
 
 you are ready to press CREATE at the bottom.  Your browser will refresh and a CRAN icon will show near upper right corner.  Click on it.  Then your runtime will be produced by AnVIL with a message indicating to wait 3-5 minutes.  You will soon get a notification to "LAUNCH ENVIRONMENT"
 
@@ -123,7 +149,11 @@ That's when Rstudio will appear.
 
 Our work with R and Bioconductor will all be governed by the contents of a github repository.  The first thing we'll do with RStudio is start a git-based project using the File/New project.../Version Control/Git, supplying `https://github.com/OSCA-source/OSCA` as the Repository URL and ~ as the folder.  (You need to "Browse" to home to get that "Create project as subdirectory of:" value.)  Then press "Create Project".
 
+<figure-styles width="500">
+
 ![Create Project](_images/analysis-create-project.png)
+
+</figure-styles>
 
 Once this is done, you have a refreshed RStudio session.  Use the terminal tab and issue the commands
 
