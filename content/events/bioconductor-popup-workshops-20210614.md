@@ -7,7 +7,7 @@ eventType: "Popup Workshop"
 featured: true
 sessions: [{sessionEnd: "14 Jun 2021 1:00 PM", sessionStart: "14 Jun 2021 12:00 PM"}]
 timezone: "America/New_York"
-title: "Participant stories"
+title: "Participant Stories"
 ---
 
 <event-hero></event-hero>

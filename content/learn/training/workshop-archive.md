@@ -12,6 +12,16 @@ Check the AnVIL [events](/events) page for upcoming interactive workshops.
 
 ## Workshops
 
+
+### Terra, AnVIL, R / Bioconductor Popup Workshops
+
+These popup workshops provide short (less than 1 hour) virtual sessions to highlight specific parts of the Terra / AnVIL ecosystem for R and Bioconductor users. The sessions are easy for participants to join and follow along, with minimal prerequisite skills or knowledge. The main goal is to engage and enable use of Terra / AnVIL by R users.
+
+For a workshop videos and tutorials see [Bioconductor Popup Workshops](/learn/data-analysts#bioconductor-popup-workshops).
+
+
+
+
 ### VADSTI 2021 Module 7 - Tools for Applied Data Science Using Cloud-Based Platforms (April 2021)
 [Event](/events/vadsti-2021), [Video](/events/vadsti-2021#workshop-videos)
 
