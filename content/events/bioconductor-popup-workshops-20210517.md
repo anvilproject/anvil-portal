@@ -20,6 +20,9 @@ Sessions will have short presentations, with abundant opportunity for questions 
 
 The main goal is to engage and enable the use of AnVIL / Terra by R users. All sessions will be recorded and available after the workshop. Each workshop will include a short one-page summary of key learning objectives.
 
+## Tutorials and Videos
+For a tutorial based on the workshop with an accompanying tutorial see [Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor](/learn/data-analysts/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor).
+
 ## To Register
 
 Please [SIGN UP][3] to receive connection information for each workshop.

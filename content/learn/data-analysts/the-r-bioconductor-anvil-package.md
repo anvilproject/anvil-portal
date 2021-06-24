@@ -38,14 +38,14 @@ This week we'll explore how workspaces provide a framework for managing data and
 
 - Notes and recorded session: [Using R / Bioconductor in AnVIL](/learn/data-analysts/using-r-bioconductor-in-anvil)
 
-### Essential steps
+### Essential Steps
 
 - Login
 - Workspaces
 - Billing accounts
 - Cloud environment -- (R-based) Jupyter notebooks or RStudio
 
-### Cloud computing environment
+### Cloud Computing Environment
 
 - Runtime and persistent disk
 - A 'personal' cloud computing environment
@@ -55,15 +55,15 @@ This week we'll explore how workspaces provide a framework for managing data and
 ### FAQs
 
 - Persistent disk mounted at
-    - R / Jupyter: `/home/jupyter-user/notebooks`
-    - RStudio: `/home/rstudio`
+  - R / Jupyter: `/home/jupyter-user/notebooks`
+  - RStudio: `/home/rstudio`
 - Startup script or custom docker file for 'sudo'-like access, and for complete reproducibility
 
 ## Workshop Activities
 
 ### Setup
 
-- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course, and navigate (via the HAMBURGER) to Workspaces.
+- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course and navigate (via the HAMBURGER) to Workspaces.
 - If you cloned the Bioconductor-Workshop-Popup workspace last week, delete it now.
   <figure-styles shadowless=true>
   ![Delete Cloned Bioconductor Workshop Popup](_images/package-delete-clone.png)
@@ -91,7 +91,7 @@ This week we'll explore how workspaces provide a framework for managing data and
 
 ### Workflows
 
-- In a new browser tab / window, navigate (via the HAMBURGER) to the [HCA Optimus Pipeline](https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline) workspace. This workspace demonstrates how scRNA-seq fastq files can be transformed to a 'count matrix' for interactive analysis.
+- In a new browser tab/window, navigate (via the HAMBURGER) to the [HCA Optimus Pipeline](https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline) workspace. This workspace demonstrates how scRNA-seq fastq files can be transformed to a 'count matrix' for interactive analysis.
   <figure-styles shadowless=true>
   ![Navigate to the HCA Optimus Pipeline Workspace](_images/package-navigate-to-hca-optimus-pipeline-workspace.png)
   </figure-styles>
@@ -104,10 +104,10 @@ This week we'll explore how workspaces provide a framework for managing data and
   ![Workflows Transform Big Data](_images/package-workflow-transform-big-data.png)
   </figure-styles>
   For this workflow:
-    - Single-cell RNA seq analysis.
-    - Inputs are fastq files from individual samples.
-    - Scripts perform alignment, UMI processing, creating a 'count' matrix of gene x cell (sample) expression matrices, etc.
-    - Primary output of interest is a 'loom' file summarizing the count matrix.
+  - Single-cell RNA seq analysis.
+  - Inputs are fastq files from individual samples.
+  - Scripts perform alignment, UMI processing, creating a 'count' matrix of gene x cell (sample) expression matrices, etc.
+  - Primary output of interest is a 'loom' file summarizing the count matrix.
 - Workspace bucket / Files store workflow outputs (each workflow run has a unique identifier; logs and results are located under the identifier). Buckets also provide a location for storing and sharing interactive analysis results.
   <figure-styles shadowless=true>
   ![Workspace bucket](_images/package-workspace-bucket.png)
@@ -115,7 +115,7 @@ This week we'll explore how workspaces provide a framework for managing data and
 
 ### The AnVIL Package
 
-#### AnVIL workspaces
+#### AnVIL Workspaces
 
 ```shell
 hca = "featured-workspaces-hca/HCA_Optimus_Pipeline"
@@ -126,7 +126,7 @@ avworkspace()    # current workspace
 avworkspace(hca) # set to HCA workspace
 ```
 
-#### DATA TABLE access
+#### DATA TABLE Access
 
 ```shell
 avtables()
@@ -164,7 +164,7 @@ dir.create("~/loom")
 gsutil_cp(tbl$loom_output_file, "~/loom/")  # see also gsutil_rsync()
 dir("~/loom")
 
-## workspace bucket -- 'backup' or share persistent disk to workspace bucket
+## Workspace Bucket -- 'backup' or share persistent disk to workspace bucket
 
 avbucket()  # bucket associated with this workspace
 gsutil_ls(avbucket())
@@ -173,7 +173,7 @@ avfiles_backup("~/scripts", recursive = TRUE) # see also avfiles_restore()
 gsutil_ls(avbucket(), recursive = TRUE)
 ```
 
-#### Fast binary package installation
+#### Fast Binary Package Installation
 
 ```shell
 ## do NOT update out-of-date packages yet
@@ -187,10 +187,10 @@ AnVIL::install("LoomExperiment") # about 40 seconds, rather than 10's of minutes
 sce = LoomExperiment::import("~/loom/pbmc_human_v3.loom")
 ```
 
-#### Access AnVIL from outside AnVIL
+#### Access AnVIL from Outside AnVIL
 
 - Requires gcloud SDK installed on your computer.
-- Use sdk to register your gmail account and google billing project.
+- Use sdk to register your Gmail account and google billing project.
   <figure-styles shadowless=true>
   ![Use SDK to Register Your GMail](_images/package-use-sdk-to-register.png)
   </figure-styles>
@@ -224,7 +224,7 @@ wkspc
 
 - Elements of workflow structure -- DATA TABLE inputs, scripts, File outputs
 
-#### AnVIL package
+#### AnVIL Package
 
 - Selecting workspaces
 - Managing DATA TABLEs
@@ -236,12 +236,15 @@ wkspc
 
 - Follow instructions at [Set up billing with $300 Google credits to explore Terra](https://support.terra.bio/hc/en-us/articles/360046295092) to enable billing for your own projects.
 
-## Frequently Asked Question
+## Frequently Asked Questions
 
 - Uploading workflows -- through GitHub / Dockstore, but also the Broad Methods Repository ([YouTube](https://www.youtube.com/watch?v=VtKlYqWBW6A)); see also the [WDL Puzzles](https://app.terra.bio/#workspaces/help-gatk/WDL-puzzles) workspace.
-- Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default I had
+- Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default, I had
 ```shell
 > avworkspace()
 [1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
 ```
 - `gsutil_cp(): CommandException: Downloading this composite object requires integrity checking with CRC32c, but your crcmod installation isn’t using...` This is a bug that should be fixed in the underlying image for the runtime.
+
+
+

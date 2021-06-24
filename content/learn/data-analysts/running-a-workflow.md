@@ -8,7 +8,7 @@ tutorial: true
 
 <hero-tutorial>
 
-# Running a workflow: Bulk RNASeq differential expression from FASTQ files to top table (Martin Morgan, Kayla Interdonato)
+# Running a Workflow: Bulk RNASeq differential expression from FASTQ files to top table (Martin Morgan, Kayla Interdonato)
 
 How to configure and run a workflow, based on the Bioconductor-Workflow-DESeq2 workspace. The workflow starts with FASTQ files and transforms them using salmon to the inputs required for Bioconductor DESeq2 analysis of differential expression.
 
@@ -23,7 +23,7 @@ How to configure and run a workflow, based on the Bioconductor-Workflow-DESeq2 w
 
 ## Learning Objectives
 
-This week we'll configure and run a workflow, based on the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace (access required via course registration or email to mtmorgan.bioc at gmail.com). The workspace allows a complete bulk RNASeq differential expression analysis. The workflow starts with FASTQ files and transforms them using [salmon](https://combine-lab.github.io/salmon/) to the inputs required for Bioconductor [DESeq2](https://www.google.com/url?q=https://bioconductor.org/packages/DESeq2&sa=D&source=editors&ust=1623650069971000&usg=AOvVaw2PuO_j45x4KJTPxyGDHS18) analysis of differential expression. Notebooks describe how the workspace was set up (so that it can be tailored to individual analyses) and also how the outputs of a successful workflow can be marshalled as inputs to an interactive DESeq2 analysis.
+This week we'll configure and run a workflow, based on the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace (access required via course registration or email to mtmorgan.bioc at gmail.com). The workspace allows a complete bulk RNASeq differential expression analysis. The workflow starts with FASTQ files and transforms them using [salmon](https://combine-lab.github.io/salmon/) to the inputs required for Bioconductor [DESeq2](https://www.google.com/url?q=https://bioconductor.org/packages/DESeq2&sa=D&source=editors&ust=1623650069971000&usg=AOvVaw2PuO_j45x4KJTPxyGDHS18) analysis of differential expression. Notebooks describe how the workspace was set up (so that it can be tailored to individual analyses) and also how the outputs of a successful workflow can be marshaled as inputs to an interactive DESeq2 analysis.
 
 ## Key Resources
 
@@ -48,14 +48,14 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 
 #### Cloud computing environment
 
-- Runtime and persistent disk
-- Workspace DATA and buckets
-- AnVIL package for interaction with workspace components
+- Runtime and persistent disk.
+- Workspace DATA and buckets.
+- AnVIL package for interaction with workspace components.
 
 #### FAQ answers
 
 - We upload workflows through GitHub / Dockstore, but also the Broad Methods Repository ([YouTube](https://www.youtube.com/watch?v=VtKlYqWBW6A)); see also the [WDL Puzzles](https://app.terra.bio/#workspaces/help-gatk/WDL-puzzles) workspace.
-- Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default I had
+- Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default, I had
 ```shell
 > avworkspace()
 [1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
@@ -68,7 +68,7 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 
 #### Setup
 
-- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course, and navigate (via the HAMBURGER) to Workspaces.
+- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course and navigate (via the HAMBURGER) to Workspaces.
 - Clone the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace
     - Unique workspace name
     - Billing project: deeppilots-bioconductor-may10
@@ -172,15 +172,15 @@ BiocManager::install(pkgs)  # latest AnVIL package
 
 - Local development
     - Use Cromwell (Java application) to run locally.
-    - Develop individual tasks on small subsets of data
-    - Transition to cloud for large scale testing / full workflow
-- Dockstore / github
+    - Develop individual tasks on small subsets of data.
+    - Transition to the cloud for large scale testing / full workflow.
+- Dockstore / GitHub
 
 ### Interactive Analysis
 
 #### Setup
 
-- Notebooks A, B and C describe how the workspace was set up; review at your leisure. This material may be useful when running on your own data.
+- Notebooks A, B, and C describe how the workspace was set up; review at your leisure. This material may be useful when running on your own data.
 
 #### Notebook D_ManagingWorkflowOutput
 
@@ -196,30 +196,30 @@ BiocManager::install(pkgs)  # latest AnVIL package
 
 ### What You've Accomplished
 
-#### Running a workflow
+#### Running a Workflow
 
 - Bulk RNASeq analysis from FASTQ files to 'top table' for interactive analysis.
 - Relationship between DATA TABLEs, workspace bucket, and workflow inputs and outputs.
-- Launch and monitor workflow progress
+- Launch and monitor workflow progress.
 
-#### Workflow components
+#### Workflow Components
 
-- Brief introduction to WDL task and workflow components, scatter operation and runtime environments
-- Steps to developing your own workflow using local execution on small example data
+- Brief introduction to WDL task and workflow components, scatter operation, and runtime environments.
+- Steps to developing your own workflow using local execution on small example data.
 
-#### Interactive analysis
+#### Interactive Analysis
 
-- Launch and use Jupyter notebooks
-- Workflow output retrieval from workspace bucket to local disk
-- Management of data for input to DESeq2
+- Launch and use Jupyter notebooks.
+- Workflow output retrieval from workspace bucket to local disk.
+- Management of data for input to DESeq2.
 
 ## Next Steps
 
 - Follow instructions at [Set up billing with $300 Google credits to explore Terra](https://support.terra.bio/hc/en-us/articles/360046295092) to enable billing for your own projects.
 
-## Frequently Asked Question
+## Frequently Asked Questions
 
 - (From Liz) This article discusses the differences between your Cloud Environment VM and the one that is created when you run workflows: [Understanding the Terra ecosystem and how your files live in it](https://support.terra.bio/hc/en-us/articles/360058163311) and it links to this article on [What happens when you launch a workflow?](https://support.terra.bio/hc/en-us/articles/360055105051) The articles also discuss where your files are.
 - (From a participant) "Got error at step E: Error in system(paste(which, shQuote(names[i])), intern = TRUE, ignore.stderr = TRUE): cannot popen ‘/usr/bin/which ‘gcloud’ 2>/dev/null’, probable reason ‘Cannot allocate memory’. Anyway to fix it? Thanks."
 
-  Superficially, this sounds like you ran out of memory on your runtime. A first step might be to restart the 'kernel' in the Jupyter notebook via one of the menu items. This would mean that you'd have to re-do all computations in the notebook that the cell you're going to evaluate depends on. Another solution might be to restart the 'Cloud Environment' but with more than the default, very modest, 3.75 GB. But actually this seems like an unusual error and it would be great to understand what perhaps unusual steps you took to get into this situation...
+  Superficially, this sounds like you ran out of memory on your runtime. A first step might be to restart the 'kernel' in the Jupyter notebook via one of the menu items. This would mean that you'd have to re-do all computations in the notebook that the cell you're going to evaluate depends on. Another solution might be to restart the 'Cloud Environment' but with more than the default, very modest, 3.75 GB. But actually, this seems like an unusual error and it would be great to understand what perhaps unusual steps you took to get into this situation.

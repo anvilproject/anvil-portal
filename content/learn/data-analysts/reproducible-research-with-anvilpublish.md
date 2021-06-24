@@ -1,16 +1,16 @@
 ---
 author: "AnVIL"
 breadcrumb: {name: "Data Analysts - Guides and Tutorials", link: "/learn/data-analysts"}
-description: "An exploration of elements of reproducible research with the AnVILPublish package. We will illustrate how to make a docker container tailored publishing AnVIL packages and then emphasize the merits of an R package structure for organizing research activities in a manner that emphasizes provenance and reproducibility."
+description: "An exploration of elements of reproducible research with the AnVILPublish package. We will illustrate how to make a docker container tailored for publishing AnVIL packages and then emphasize the merits of an R package structure for organizing research activities in a manner that emphasizes provenance and reproducibility."
 title: "Reproducible research with AnVILPublish"
 tutorial: true
 ---
 
 <hero-tutorial>
 
-# Reproducible research with AnVILPublish
+# Reproducible Research with AnVILPublish
 
-An exploration of elements of reproducible research with the AnVILPublish package. We will illustrate how to make a docker container tailored publishing AnVIL packages and then emphasize the merits of an R package structure for organizing research activities in a manner that emphasizes provenance and reproducibility.
+An exploration of elements of reproducible research with the AnVILPublish package. We will illustrate how to make a docker container tailored for publishing AnVIL packages and then emphasize the merits of an R package structure for organizing research activities in a manner that emphasizes provenance and reproducibility.
 
 </hero-tutorial>
 
@@ -37,14 +37,14 @@ This week we'll explore elements of reproducible research with the AnVILPublish 
 
 - The [course schedule](/events/bioconductor-popup-workshops-20210531#other-sessions) contains links and videos of previous sessions
 
-#### Essential steps
+#### Essential Steps
 
 - Login
 - Workspaces
 - Billing accounts
 - (R-based) Jupyter notebooks or RStudio for interactive analysis
 
-#### Cloud computing environment
+#### Cloud Computing Environment
 
 - Runtime and persistent disk
 - Workspace DATA and buckets
@@ -56,7 +56,7 @@ This week we'll explore elements of reproducible research with the AnVILPublish 
 
 - RStudio provides a rich environment for working in R, but Jupyter notebooks are also relevant, e.g., providing a focused analysis for less-experienced collaborators to walk through.
 - We'd like to be able to provide users with documentation that is accessible in either environment.
-- The documentation should be consistent across environments
+- The documentation should be consistent across environments.
 
 #### Provenance is important
 
@@ -67,12 +67,10 @@ This week we'll explore elements of reproducible research with the AnVILPublish 
 
 ### Setup
 
-#### Setup
-
-- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course, and navigate (via the HAMBURGER) to Workspaces.
+- Log in to [AnVIL](https://anvil.terra.bio) using the email address you used to register for the course and navigate (via the HAMBURGER) to Workspaces.
 - Clone the [Bioconductor-Workshop-AnVILPublish](http://Bioconductor-Workshop-AnVILPublish) workspace
-    - Unique workspace name
-    - Billing project: deeppilots-bioconductor-jun7
+  - Unique workspace name
+  - Billing project: deeppilots-bioconductor-jun7
 
 #### Start a CUSTOM CLOUD ENVIRONMENT
 
@@ -98,7 +96,7 @@ system2("git", c("clone", "https://github.com/Bioconductor/AnVILPublish"))
 system2("git", c("clone", "https://github.com/mtmorgan/AnVILPublishDemo"))
 ```
 
-Simple text-based files organize R code, help pages, vignettes and metadata.
+Simple text-based files organize R code, help pages, vignettes, and metadata.
 
 ```
 AnVILPublishDemo$ tree
@@ -215,3 +213,4 @@ Transforming packages to notebooks and workspaces
 - What docker images can be used as base images for customization? The main images derive from [terra-jupyter-bioconductor](https://github.com/DataBiosphere/terra-docker/tree/master/terra-jupyter-bioconductor) (for Jupyter-based images) and [anvil-rstudio-bioconductor](https://github.com/anvilproject/anvil-docker/tree/master/anvil-rstudio-bioconductor) (for RStudio-based images). Any container can be used in a workflow.
 - Can you specify the runtime environment as part of the workspace? This does not seem to be possible at the moment. One could include a notebook or other code that checked the runtime to see that it meets particular conditions, but this would rely on the user running the code.
 - Enhance reproducibility by 'fixing' package versions, e.g., using packr? Instead, specify precise package versions in a customized Dockerfile.
+

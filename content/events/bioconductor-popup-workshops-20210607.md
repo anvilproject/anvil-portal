@@ -7,7 +7,7 @@ eventType: "Popup Workshop"
 featured: true
 sessions: [{sessionEnd: "7 Jun 2021 1:00 PM", sessionStart: "7 Jun 2021 12:00 PM"}]
 timezone: "America/New_York"
-title: "Managing costs with AnVILBilling"
+title: "Managing Costs with AnVILBilling"
 ---
 
 <event-hero></event-hero>

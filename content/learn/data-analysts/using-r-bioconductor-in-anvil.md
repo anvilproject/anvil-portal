@@ -28,7 +28,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
 
 ## Key Resources
 
-- Visit [https://anvilproject.org](/) for an introduction to AnVIL. AnVIL provides secure access to open and controlled data resources, and the computational environment required to effectively analyse the data. AnVIL can be used for large scale workflows processing very large data sets, and for interactive analysis of derived or more modest datasets.
+- Visit [https://anvilproject.org](/) for an introduction to AnVIL. AnVIL provides secure access to open and controlled data resources, and the computational environment required to effectively analyze the data. AnVIL can be used for large-scale workflows processing very large data sets, and for interactive analysis of derived or more modest datasets.
 - Visit <https://anvil.terra.bio> to use the AnVIL platform.
 
 ## Workshop Activities
@@ -47,7 +47,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   ![Expand the Menu](_images/using-bioconductor-menu.png)
 - Click the 'Sign in with Google' icon and follow the prompts.
   ![Sign In With Google](_images/using-bioconductor-sign-in.png)
-- There are lots of support documents in AnVIL; see [How to register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account) to navigate this step. 
+- There are lots of support documents in AnVIL; see [How to register for a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account) to navigate this step.
 
 #### Workspaces and Billing
 
@@ -55,7 +55,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   <figure-styles shadowless=true>
   ![Choose Workspaces](_images/using-bioconductor-workspaces-tab.png)
   </figure-styles>
-- There are a number of workspaces available to everyone under the 'NEW AND INTERETSING', 'FEATURED'. and 'PUBLIC' tabs; feel free to explore these on your own.
+- There are a number of workspaces available to everyone under the 'NEW AND INTERESTING, 'FEATURED'. and 'PUBLIC' tabs; feel free to explore these on your own.
 - If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUP workspace under 'MY WORKSPACES'.
   <figure-styles shadowless=true>
   ![Bioconductor Workshop](_images/using-bioconductor-workspace-workshop.png)
@@ -72,12 +72,12 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   <figure-styles width="400">
   ![Customize Workspace Name](_images/using-bioconductor-customize-workspace-name.png)
   </figure-styles>
-  If instead you see a 'Billing project' that is NOT deeppilots-bioconductor, or if you see something like
+  If instead, you see a 'Billing project' that is NOT deeppilots-bioconductor, or if you see something like
   <figure-styles width="400">
   ![Set up Billing Message](_images/using-bioconductor-billing-message.png)
   </figure-styles>
   then contact the workshop organizer with your AnVIL email address to be added to the deeppilots-bioconductor billing project. See the [Frequently Asked Questions](#frequently-asked-questions), below, for more information on billing projects.
-- Return, via the HAMBURGER menu or by clicking no the WORKSPACES element at the top of the page, to the list of WORKSPACES available to you. You'll see your own version of the workspace. Open it.
+- Return, via the HAMBURGER menu or by clicking on the WORKSPACES element at the top of the page, to the list of WORKSPACES available to you. You'll see your own version of the workspace. Open it.
   <figure-styles shadowless=true>
   ![Open the Cloned Workspace](_images/using-bioconductor-open-cloned-workspace.png)
   </figure-styles>
@@ -106,7 +106,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   <figure-styles shadowless=true>
   ![Customized Cloud Environments](_images/using-bioconductor-customized-cloud-environment.png)
   </figure-styles>
-- After pressing the CREATE button, note the Cloud Environment icon at the top right of the NOTEBOOKS tab. Initially it indicates that the cloud environment is being created...
+- After pressing the CREATE button, note the Cloud Environment icon at the top right of the NOTEBOOKS tab. Initially, it indicates that the cloud environment is being created...
   <figure-styles width="400">
   ![Cloud Environment Icon in Creating Indicator](_images/using-bioconductor-cloud-environment-icon-creating-mode.png)
   </figure-styles>
@@ -132,7 +132,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   ![Jupyter Notebook Interface](_images/using-bioconductor-jupyter-notebook-interface.png)
   </figure-styles>
 - The notebook is automatically saved to a location on your persistent disk.
-- Here I've entered a simple mathematical expression in the first cell, and pressed the Run tool. This evaluated the expression, and opened a new cell. I used the Cell tool to switch to Markdown, and entered some text.
+- Here I've entered a simple mathematical expression in the first cell and pressed the Run tool. This evaluated the expression and opened a new cell. I used the Cell tool to switch to Markdown and entered some text.
   <figure-styles shadowless=true>
   ![Run a Simple Mathematical Expression](_images/using-bioconductor-run-simple-expression.png)
   </figure-styles>
@@ -141,8 +141,8 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   ![Run with R Commands](_images/using-bioconductor-run-with-r-commands.png)
   </figure-styles>
 - The notebook is based on a docker image, and the image follows the philosophy of 'bioconductor_docker'
-    - The runtime has the system dependencies required to install almost all Bioconductor and CRAN packages, but the packages themselves may require installation.
-    - BiocManager is installed, so one can validate the current installation with BiocManager::valid() and update packages (this will take some time…) with BiocManager::install(ask = FALSE).
+  - The runtime has the system dependencies required to install almost all Bioconductor and CRAN packages, but the packages themselves may require installation.
+  - BiocManager is installed, so one can validate the current installation with BiocManager::valid() and update packages (this will take some time…) with BiocManager::install(ask = FALSE).
 - See [Terra's Jupyter Notebooks environment Part II: Key operations](https://support.terra.bio/hc/en-us/articles/360027083172-Terra-s-Jupyter-Notebooks-environment-Part-II-Key-operations) for additional material on using notebooks in Terra.
 
 #### What we've accomplished
@@ -165,8 +165,8 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   ![RStudio Custom Environment](_images/using-bioconductor-rstudio-custom-environment.png)
   </figure-styles>
 - What's happening?
-    - Jupyter runtime is being replaced by RStudio runtime.
-    - Persistent disk (user home directories) remain across runtimes.
+  - Jupyter runtime is being replaced by RStudio runtime.
+  - Persistent disk (user home directories) remain across runtimes.
 
 #### RStudio in AnVIL
 
@@ -181,8 +181,8 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
 - Persistent disk mounted at `/home/rstudio`.
 - Notebooks from the Jupyter runtime under the workspace folder.
 - BiocManager available
-    - Fast binary installation of CRAN packages.
-    - 'bioconductor_docker' philosophy: system requirements for most Bioconductor / CRAN packages already installed.
+  - Fast binary installation of CRAN packages.
+  - 'bioconductor_docker' philosophy: system requirements for most Bioconductor / CRAN packages already installed.
 - Terminal access via the Tools menu.
 
 ## Summary
@@ -216,15 +216,16 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
 
 ### Frequently Asked Questions
 
-- AnVIL or Terra or ??? Terra is the name of the platform. AnVIL is a particular 'flavor' of Terra tailored to the needs of US National Human Genome Research Institute (NHGRI) users. Bioconductor is supported by NHGRI, and participates in the development of AnVIL.
-- What's a 'billing project?' You (or someone!) will be billed for the cost of computing while in AnVIL. During the workshop, we will pay the bills using resources from DeepPilots program from the NHGRI.
+- AnVIL or Terra or ??? Terra is the name of the platform. AnVIL is a particular 'flavor' of Terra tailored to the needs of US National Human Genome Research Institute (NHGRI) users. Bioconductor is supported by NHGRI and participates in the development of AnVIL.
+- What's a 'billing project?' You (or someone!) will be billed for the cost of computing while in AnVIL. During the workshop, we will pay the bills using resources from the DeepPilots program from the NHGRI.
 
-  You'll eventually need to establish your own billing projects, usually linked to an institutional account (or perhaps a personal credit card if you're just 'dabbling'). See [How to set up billing in Terra](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra) (the information about free credits is out-of-date, unfortunately; see for instance the section [Set up billing in Terra from scratch - in three steps](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra#h_6c933857-ed4d-4031-97cb-d29297ea6fb8)).
+You'll eventually need to establish your own billing projects, usually linked to an institutional account (or perhaps a personal credit card if you're just 'dabbling'). See [How to set up billing in Terra](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra) (the information about free credits is out-of-date, unfortunately; see for instance the section [Set up billing in Terra from scratch - in three steps](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra#h_6c933857-ed4d-4031-97cb-d29297ea6fb8)).
 
-  Although the cloud is infamous for costs that get completely out of control, our use of AnVIL will cost only a couple of dollars per participant over the course of the workshops.
+Although the cloud is infamous for costs that get completely out of control, our use of AnVIL will cost only a couple of dollars per participant over the course of the workshops.
 - Can one add system dependencies to a runtime, e.g., libraries required for specific packages? [Using a startup script to launch a pre-configured Jupyter notebook](https://support.terra.bio/hc/en-us/articles/360058193872) discusses using a 'startup script' to customize the environment with, e.g., sudo commands.
 - Sharing data between Jupyter notebooks & RStudio -- what is the structure of the persistent disk? The persistent disk is mounted at /home/jupyter-user/notebooks when using a Jupyter notebook runtime, but /home/rstudio under the RStudio environment. So in our workshop when I saved a file at /home/jupyter-user/mtcars.csv I was NOT saving the file to a location on the persistent disk -- switching from a Jupyter to RStudio and back to Jupyter runtime meant that the mtcars.csv file was lost. It would have persisted if I'd saved it as /home/jupyter-user/notebbooks/mtcars.csv, and would have been visible in RStudio as /home/rstudio/mtcars.csv.
 - Is it possible to use a custom docker image? Yes. [DataBiosphere/terra-docker](https://github.com/databiosphere/terra-docker#terra-base-images) contains suitable R / Juptyer base images; [anvilproject/anvil-docker](https://github.com/anvilproject/anvil-docker) contains RStudio images. Select the image as part of a 'Custom' Cloud Environment.
   <figure-styles shadowless=true>
   ![Custom Docker Image](_images/using-bioconductor-custom-docker-image.png)
   </figure-styles>
+

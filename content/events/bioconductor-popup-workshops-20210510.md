@@ -7,7 +7,7 @@ eventType: "Popup Workshop"
 featured: true
 sessions: [{sessionEnd: "10 May 2021 1:00 PM", sessionStart: "10 May 2021 12:00 PM"}]
 timezone: "America/New_York"
-title: "Running a workflow: Bulk RNASeq differential expression from FASTQ files to top table"
+title: "Running a Workflow: Bulk RNASeq Differential Expression from FASTQ Files to Top Table"
 ---
 
 <event-hero></event-hero>
@@ -19,6 +19,9 @@ The sessions are easy for participants to join and follow along, with minimal pr
 Sessions will have short presentations, with abundant opportunity for questions and ‘round table’ discussion about the topic of the workshop or other AnVIL-related activities.
 
 The main goal is to engage and enable the use of AnVIL / Terra by R users. All sessions will be recorded and available after the workshop. Each workshop will include a short one-page summary of key learning objectives.
+
+## Tutorials and Videos
+For a tutorial based on the workshop with an accompanying tutorial see [Running a Workflow: Bulk RNASeq Differential Expression from FASTQ Files to Top Table](/learn/data-analysts/running-a-workflow).
 
 ## To Register
 
