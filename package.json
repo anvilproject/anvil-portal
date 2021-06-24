@@ -71,8 +71,6 @@
     "build-ci": "echo $GATSBY_ENV  && gatsby build --verbose",
     "build": "source keys.sh && source ./start.sh && gatsby build --verbose",
     "start": "source keys.sh && source ./start.sh && gatsby develop",
-	"build-windows": "start-windows.bat && gatsby build --verbose",
-	"start-windows": "start-windows.bat && gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",

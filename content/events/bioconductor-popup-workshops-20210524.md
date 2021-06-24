@@ -7,7 +7,7 @@ eventType: "Popup Workshop"
 featured: true
 sessions: [{sessionEnd: "24 May 2021 1:00 PM", sessionStart: "24 May 2021 12:00 PM"}]
 timezone: "America/New_York"
-title: "Using AnVIL for Teaching R / Bioconductor"
+title: "Using AnVIL for teaching R / Bioconductor"
 ---
 
 <event-hero></event-hero>
@@ -19,9 +19,6 @@ The sessions are easy for participants to join and follow along, with minimal pr
 Sessions will have short presentations, with abundant opportunity for questions and ‘round table’ discussion about the topic of the workshop or other AnVIL-related activities.
 
 The main goal is to engage and enable the use of AnVIL / Terra by R users. All sessions will be recorded and available after the workshop. Each workshop will include a short one-page summary of key learning objectives.
-
-## Tutorials and Videos
-For a tutorial based on the workshop with an accompanying tutorial see [Using AnVIL for teaching R / Bioconductor](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor).
 
 ## To Register
 

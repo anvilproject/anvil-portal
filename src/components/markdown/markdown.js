@@ -18,8 +18,7 @@ import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
 import ExternalLink from "../anchor-element/external-link/external-link";
 import Figure from "../figure/figure";
-import FigureCaption from "../figure/figure-caption/figure-caption"
-import FigureStyles from "../figure/figure-styles/figure-styles";
+import FigureCaption from "../figure/figure-caption/figure-caption";
 import Hero from "../hero/hero";
 import HeroTutorial from "../hero-tutorial/hero-tutorial";
 import InternalLink from "../internal-link/internal-link";
@@ -61,7 +60,6 @@ function Markdown(props) {
             "external-link": ExternalLink,
             "figure": Figure,
             "figure-caption": FigureCaption,
-            "figure-styles": FigureStyles,
             "hero": Hero,
             "hero-tutorial": HeroTutorial,
             "internal-link": InternalLink,

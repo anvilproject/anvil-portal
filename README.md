@@ -13,7 +13,7 @@ Information about creating/modifying the site content can be found here: [https:
 
 ### Requirements
 
-* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 14.16.0. 
+* `Node.js` ([https://nodejs.org/en/](https://nodejs.org/en/)), version 10.16.0. 
 
 * We recommend using `n` ([https://github.com/tj/n](https://github.com/tj/n)) as the Node.js package manger. 
 
@@ -48,10 +48,6 @@ Run the following command from the root directory:
 
 `npm start`
 
-Or if using Windows:
-
-`npm run start-windows`
-
 The development server can be viewed at:
 
 `localhost:8000`
@@ -62,10 +58,6 @@ Run the following command to build the application:
 
 `npm run-script build`
 
-Or on Windows:
-
-`npm run build-windows`
-
 #### Local Production Version
 
 Run the following command to view a built version of the application, locally:
@@ -75,10 +67,4 @@ Run the following command to view a built version of the application, locally:
 The built version can be viewed at:
 
 `localhost:9000`
-
-### Troubleshooting installation on Windows
-
-* Make sure that Python and Visual C++ Build Tools are installed (see [Gatsby documentation](https://www.gatsbyjs.com/docs/how-to/local-development/gatsby-on-windows/)).
-
-* If Gatsby crashes because of missing files, running `npm rebuild` may help.
 
