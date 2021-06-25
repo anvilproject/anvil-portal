@@ -18,12 +18,13 @@
 import React from "react";
 
 function SocialLink(props) {
+  const { url } = props;
 
-    const {url} = props;
-
-    return (
-        <a href={url} rel={"noopener noreferrer"} target={"_blank"}>{url}</a>
-    );
+  return (
+    <a href={url} rel={"noopener noreferrer"} target={"_blank"}>
+      {url}
+    </a>
+  );
 }
 
 export default SocialLink;

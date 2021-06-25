@@ -17,15 +17,14 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 import compStyles from "./dashboard-table-toolbar.module.css";
 
 function DashboardTableToolbar() {
-
-    return (
-        <DashboardSearchPanel stretch>
-            <span className={compStyles.tools}>
-                <DashboardDownloadTSV/>
-                <DashboardCopyURL/>
-            </span>
-        </DashboardSearchPanel>
-    );
+  return (
+    <DashboardSearchPanel stretch>
+      <span className={compStyles.tools}>
+        <DashboardDownloadTSV />
+        <DashboardCopyURL />
+      </span>
+    </DashboardSearchPanel>
+  );
 }
 
 export default DashboardTableToolbar;

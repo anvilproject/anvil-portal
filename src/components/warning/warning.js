@@ -12,12 +12,9 @@ import React from "react";
 import compStyles from "./warning.module.css";
 
 function Warning(props) {
+  const { children } = props;
 
-    const {children} = props;
-
-    return (
-        <p className={compStyles.warning}>{children}</p>
-    );
+  return <p className={compStyles.warning}>{children}</p>;
 }
 
 export default Warning;

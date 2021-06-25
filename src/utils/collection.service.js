@@ -12,24 +12,19 @@
  * @returns {*}
  */
 export function findCardCollectionAnchorElements(className) {
+  const secondaryEls = Array.from(document.getElementsByClassName(className));
 
-    const secondaryEls = Array.from(document.getElementsByClassName(className));
+  if (secondaryEls) {
+    return secondaryEls.reduce((acc, val) => {
+      const anchorEls = Array.from(val.querySelectorAll("a"));
 
-    if ( secondaryEls ) {
+      if (anchorEls.length) {
+        return acc.concat(anchorEls);
+      }
 
-        return secondaryEls.reduce((acc, val) => {
-
-            const anchorEls = Array.from(val.querySelectorAll("a"));
-
-            if (anchorEls.length) {
-
-                return acc.concat(anchorEls)
-            }
-
-            return acc;
-
-        }, []);
-    }
+      return acc;
+    }, []);
+  }
 }
 
 /**
@@ -40,28 +35,23 @@ export function findCardCollectionAnchorElements(className) {
  * @returns {*}
  */
 export function getCollection(type, collections) {
+  if (!collections) {
+    return;
+  }
 
-    if ( !collections ) {
+  const collection = collections[type.collection];
+  const collectionType = type.collection;
+  const collectionStatus = type.status;
 
-        return;
+  if (collection) {
+    if (collectionType === "tools" && collection[collectionStatus]) {
+      return collection[collectionStatus];
     }
 
-    const collection = collections[type.collection];
-    const collectionType = type.collection;
-    const collectionStatus = type.status;
-
-    if ( collection ) {
-
-        if ( collectionType === "tools" && collection[collectionStatus] ) {
-
-            return collection[collectionStatus];
-        }
-
-        if ( collectionType === "platforms" ) {
-
-            return collection;
-        }
+    if (collectionType === "platforms") {
+      return collection;
     }
+  }
 }
 
 /**
@@ -73,18 +63,15 @@ export function getCollection(type, collections) {
  * @returns {*}
  */
 export function filterTools(props, tools) {
+  const { coming, current } = props;
 
-    const {coming, current} = props;
+  if (coming || coming === "") {
+    return tools.filter(tool => tool.fields.slug.includes("coming"));
+  }
 
-    if ( coming || coming === "" ) {
+  if (current || current === "") {
+    return tools.filter(tool => !tool.fields.slug.includes("coming"));
+  }
 
-        return tools.filter(tool => tool.fields.slug.includes("coming"));
-    }
-
-    if ( current || current === "" ) {
-
-        return tools.filter(tool => !tool.fields.slug.includes("coming"));
-    }
-
-    return tools;
+  return tools;
 }

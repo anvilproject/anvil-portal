@@ -1,1 +1,717 @@
-{"resourceType":"Bundle","id":"890d3778-71f4-4cb8-9c36-c2002037c072","meta":{"lastUpdated":"2021-04-09T06:50:39.864-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001207.v2.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001207.v2.p1","resource":{"resourceType":"ResearchStudy","id":"phs001207.v2.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:48:01.007-04:00","source":"#NyPd35NgEJjamGsW","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001207.v2.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2020-02-21"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001207.v2.p1 - 0","display":"NRUP"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001207.v2.p1 - 1","display":"DS-SAR-IRB"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":5,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":52,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":937,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":934,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFO"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":39,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFA"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":884,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":5,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc38"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001207.v2.p1"}],"title":"NHLBI TOPMed: African American Sarcoidosis Genetics Resource","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Family/Twin/Trios","display":"Family/Twin/Trios"}],"text":"Family/Twin/Trios"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012507","display":"Sarcoidosis"}],"text":"Sarcoidosis"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012507","display":"Sarcoidosis"}],"text":"Sarcoidosis"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier Boeck Disease","display":"Besnier Boeck Disease"}],"text":"Besnier Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier Boeck Schaumann Syndrome","display":"Besnier Boeck Schaumann Syndrome"}],"text":"Besnier Boeck Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier-Boeck Disease","display":"Besnier-Boeck Disease"}],"text":"Besnier-Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier-Boeck-Schaumann Syndrome","display":"Besnier-Boeck-Schaumann Syndrome"}],"text":"Besnier-Boeck-Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck Disease","display":"Boeck Disease"}],"text":"Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck's Disease","display":"Boeck's Disease"}],"text":"Boeck's Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck's Sarcoid","display":"Boeck's Sarcoid"}],"text":"Boeck's Sarcoid"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boecks Disease","display":"Boecks Disease"}],"text":"Boecks Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boecks Sarcoid","display":"Boecks Sarcoid"}],"text":"Boecks Sarcoid"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Disease, Schaumann","display":"Disease, Schaumann"}],"text":"Disease, Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Sarcoid, Boeck's","display":"Sarcoid, Boeck's"}],"text":"Sarcoid, Boeck's"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Sarcoidoses","display":"Sarcoidoses"}],"text":"Sarcoidoses"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann Disease","display":"Schaumann Disease"}],"text":"Schaumann Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann Syndrome","display":"Schaumann Syndrome"}],"text":"Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann's Syndrome","display":"Schaumann's Syndrome"}],"text":"Schaumann's Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann's Syndromes","display":"Schaumann's Syndromes"}],"text":"Schaumann's Syndromes"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Besnier-Boeck-Schaumann","display":"Syndrome, Besnier-Boeck-Schaumann"}],"text":"Syndrome, Besnier-Boeck-Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Schaumann","display":"Syndrome, Schaumann"}],"text":"Syndrome, Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Schaumann's","display":"Syndrome, Schaumann's"}],"text":"Syndrome, Schaumann's"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0036202","display":"Sarcoidosis"}],"text":"Sarcoidosis"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012507","display":"Sarcoidosis"}],"text":"Sarcoidosis"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier Boeck Disease","display":"Besnier Boeck Disease"}],"text":"Besnier Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier Boeck Schaumann Syndrome","display":"Besnier Boeck Schaumann Syndrome"}],"text":"Besnier Boeck Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier-Boeck Disease","display":"Besnier-Boeck Disease"}],"text":"Besnier-Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Besnier-Boeck-Schaumann Syndrome","display":"Besnier-Boeck-Schaumann Syndrome"}],"text":"Besnier-Boeck-Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck Disease","display":"Boeck Disease"}],"text":"Boeck Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck's Disease","display":"Boeck's Disease"}],"text":"Boeck's Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boeck's Sarcoid","display":"Boeck's Sarcoid"}],"text":"Boeck's Sarcoid"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boecks Disease","display":"Boecks Disease"}],"text":"Boecks Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Boecks Sarcoid","display":"Boecks Sarcoid"}],"text":"Boecks Sarcoid"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Disease, Schaumann","display":"Disease, Schaumann"}],"text":"Disease, Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Sarcoid, Boeck's","display":"Sarcoid, Boeck's"}],"text":"Sarcoid, Boeck's"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Sarcoidoses","display":"Sarcoidoses"}],"text":"Sarcoidoses"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann Disease","display":"Schaumann Disease"}],"text":"Schaumann Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann Syndrome","display":"Schaumann Syndrome"}],"text":"Schaumann Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann's Syndrome","display":"Schaumann's Syndrome"}],"text":"Schaumann's Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Schaumann's Syndromes","display":"Schaumann's Syndromes"}],"text":"Schaumann's Syndromes"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Besnier-Boeck-Schaumann","display":"Syndrome, Besnier-Boeck-Schaumann"}],"text":"Syndrome, Besnier-Boeck-Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Schaumann","display":"Syndrome, Schaumann"}],"text":"Syndrome, Schaumann"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012507 entry term: Syndrome, Schaumann's","display":"Syndrome, Schaumann's"}],"text":"Syndrome, Schaumann's"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0036202","display":"Sarcoidosis"}],"text":"Sarcoidosis"}],"description":"\nThis study aims to comprehensively interrogate the genomes of African American sarcoidosis families. Sarcoidosis is characterized by a hyperimmune response resulting in granuloma formation in multiple organs. It affects African Americans (AAs) more frequently and more severely than whites. While previous linkage, admixture, candidate gene and genome-wide association (GWA) studies show statistically compelling effects, causal variants are still unknown and much of sarcoidosis heritability is yet to be explained. This \"missing\" heritability likely includes effects of both common (minor allele frequency (MAF)&gt;5%) and rare variants (MAF&lt;5%), since, in AAs, the former are inadequately represented and the latter are completely unexplored by commercial genotyping arrays. These facts, coupled with the availability of next-generation sequencing compel us to perform an exhaustive search for genetic variants that form the basis of sarcoidosis. The data generated are certain to identify candidate causal variants, provide fundamental insight for functional studies and lead to important new hypotheses of inflammation resulting in new treatments in not only sarcoidosis but other inflammatory diseases as well.\n","enrollment":[{"reference":"Group/phs001207.v2.p1-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "890d3778-71f4-4cb8-9c36-c2002037c072",
+  "meta": { "lastUpdated": "2021-04-09T06:50:39.864-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001207.v2.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001207.v2.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001207.v2.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:48:01.007-04:00",
+          "source": "#NyPd35NgEJjamGsW",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001207.v2.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2020-02-21"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001207.v2.p1 - 0",
+                  "display": "NRUP"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001207.v2.p1 - 1",
+                  "display": "DS-SAR-IRB"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 5,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 52,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 937,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 934,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFO"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 39,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 884,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 5,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc38"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001207.v2.p1"
+          }
+        ],
+        "title": "NHLBI TOPMed: African American Sarcoidosis Genetics Resource",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Family/Twin/Trios",
+                "display": "Family/Twin/Trios"
+              }
+            ],
+            "text": "Family/Twin/Trios"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012507",
+                "display": "Sarcoidosis"
+              }
+            ],
+            "text": "Sarcoidosis"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012507",
+                "display": "Sarcoidosis"
+              }
+            ],
+            "text": "Sarcoidosis"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier Boeck Disease",
+                "display": "Besnier Boeck Disease"
+              }
+            ],
+            "text": "Besnier Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier Boeck Schaumann Syndrome",
+                "display": "Besnier Boeck Schaumann Syndrome"
+              }
+            ],
+            "text": "Besnier Boeck Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier-Boeck Disease",
+                "display": "Besnier-Boeck Disease"
+              }
+            ],
+            "text": "Besnier-Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier-Boeck-Schaumann Syndrome",
+                "display": "Besnier-Boeck-Schaumann Syndrome"
+              }
+            ],
+            "text": "Besnier-Boeck-Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck Disease",
+                "display": "Boeck Disease"
+              }
+            ],
+            "text": "Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck's Disease",
+                "display": "Boeck's Disease"
+              }
+            ],
+            "text": "Boeck's Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck's Sarcoid",
+                "display": "Boeck's Sarcoid"
+              }
+            ],
+            "text": "Boeck's Sarcoid"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boecks Disease",
+                "display": "Boecks Disease"
+              }
+            ],
+            "text": "Boecks Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boecks Sarcoid",
+                "display": "Boecks Sarcoid"
+              }
+            ],
+            "text": "Boecks Sarcoid"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Disease, Schaumann",
+                "display": "Disease, Schaumann"
+              }
+            ],
+            "text": "Disease, Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Sarcoid, Boeck's",
+                "display": "Sarcoid, Boeck's"
+              }
+            ],
+            "text": "Sarcoid, Boeck's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Sarcoidoses",
+                "display": "Sarcoidoses"
+              }
+            ],
+            "text": "Sarcoidoses"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann Disease",
+                "display": "Schaumann Disease"
+              }
+            ],
+            "text": "Schaumann Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann Syndrome",
+                "display": "Schaumann Syndrome"
+              }
+            ],
+            "text": "Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann's Syndrome",
+                "display": "Schaumann's Syndrome"
+              }
+            ],
+            "text": "Schaumann's Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann's Syndromes",
+                "display": "Schaumann's Syndromes"
+              }
+            ],
+            "text": "Schaumann's Syndromes"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Besnier-Boeck-Schaumann",
+                "display": "Syndrome, Besnier-Boeck-Schaumann"
+              }
+            ],
+            "text": "Syndrome, Besnier-Boeck-Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Schaumann",
+                "display": "Syndrome, Schaumann"
+              }
+            ],
+            "text": "Syndrome, Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Schaumann's",
+                "display": "Syndrome, Schaumann's"
+              }
+            ],
+            "text": "Syndrome, Schaumann's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0036202",
+                "display": "Sarcoidosis"
+              }
+            ],
+            "text": "Sarcoidosis"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012507",
+                "display": "Sarcoidosis"
+              }
+            ],
+            "text": "Sarcoidosis"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier Boeck Disease",
+                "display": "Besnier Boeck Disease"
+              }
+            ],
+            "text": "Besnier Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier Boeck Schaumann Syndrome",
+                "display": "Besnier Boeck Schaumann Syndrome"
+              }
+            ],
+            "text": "Besnier Boeck Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier-Boeck Disease",
+                "display": "Besnier-Boeck Disease"
+              }
+            ],
+            "text": "Besnier-Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Besnier-Boeck-Schaumann Syndrome",
+                "display": "Besnier-Boeck-Schaumann Syndrome"
+              }
+            ],
+            "text": "Besnier-Boeck-Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck Disease",
+                "display": "Boeck Disease"
+              }
+            ],
+            "text": "Boeck Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck's Disease",
+                "display": "Boeck's Disease"
+              }
+            ],
+            "text": "Boeck's Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boeck's Sarcoid",
+                "display": "Boeck's Sarcoid"
+              }
+            ],
+            "text": "Boeck's Sarcoid"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boecks Disease",
+                "display": "Boecks Disease"
+              }
+            ],
+            "text": "Boecks Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Boecks Sarcoid",
+                "display": "Boecks Sarcoid"
+              }
+            ],
+            "text": "Boecks Sarcoid"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Disease, Schaumann",
+                "display": "Disease, Schaumann"
+              }
+            ],
+            "text": "Disease, Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Sarcoid, Boeck's",
+                "display": "Sarcoid, Boeck's"
+              }
+            ],
+            "text": "Sarcoid, Boeck's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Sarcoidoses",
+                "display": "Sarcoidoses"
+              }
+            ],
+            "text": "Sarcoidoses"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann Disease",
+                "display": "Schaumann Disease"
+              }
+            ],
+            "text": "Schaumann Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann Syndrome",
+                "display": "Schaumann Syndrome"
+              }
+            ],
+            "text": "Schaumann Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann's Syndrome",
+                "display": "Schaumann's Syndrome"
+              }
+            ],
+            "text": "Schaumann's Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Schaumann's Syndromes",
+                "display": "Schaumann's Syndromes"
+              }
+            ],
+            "text": "Schaumann's Syndromes"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Besnier-Boeck-Schaumann",
+                "display": "Syndrome, Besnier-Boeck-Schaumann"
+              }
+            ],
+            "text": "Syndrome, Besnier-Boeck-Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Schaumann",
+                "display": "Syndrome, Schaumann"
+              }
+            ],
+            "text": "Syndrome, Schaumann"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012507 entry term: Syndrome, Schaumann's",
+                "display": "Syndrome, Schaumann's"
+              }
+            ],
+            "text": "Syndrome, Schaumann's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0036202",
+                "display": "Sarcoidosis"
+              }
+            ],
+            "text": "Sarcoidosis"
+          }
+        ],
+        "description": "\nThis study aims to comprehensively interrogate the genomes of African American sarcoidosis families. Sarcoidosis is characterized by a hyperimmune response resulting in granuloma formation in multiple organs. It affects African Americans (AAs) more frequently and more severely than whites. While previous linkage, admixture, candidate gene and genome-wide association (GWA) studies show statistically compelling effects, causal variants are still unknown and much of sarcoidosis heritability is yet to be explained. This \"missing\" heritability likely includes effects of both common (minor allele frequency (MAF)&gt;5%) and rare variants (MAF&lt;5%), since, in AAs, the former are inadequately represented and the latter are completely unexplored by commercial genotyping arrays. These facts, coupled with the availability of next-generation sequencing compel us to perform an exhaustive search for genetic variants that form the basis of sarcoidosis. The data generated are certain to identify candidate causal variants, provide fundamental insight for functional studies and lead to important new hypotheses of inflammation resulting in new treatments in not only sarcoidosis but other inflammatory diseases as well.\n",
+        "enrollment": [{ "reference": "Group/phs001207.v2.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

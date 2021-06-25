@@ -27,17 +27,16 @@ import twitter from "../../../../images/logo-twitter.svg";
 import compStyles from "./social-twitter-hashtag.module.css";
 
 function SocialTwitterHashTag(props) {
+  const { hashtag, showbird: showBird } = props;
+  const showLogo = showBird === "true";
+  const url = `https://twitter.com/hashtag/${hashtag}`;
 
-    const {hashtag, showbird: showBird} = props;
-    const showLogo = showBird === "true";
-    const url = `https://twitter.com/hashtag/${hashtag}`;
-
-    return (
-        <Social url={url}>
-            {showLogo ? <img alt={"Twitter"} src={twitter}/> : null}
-            <span className={compStyles.hashtag}>#{hashtag}</span>
-        </Social>
-    );
+  return (
+    <Social url={url}>
+      {showLogo ? <img alt={"Twitter"} src={twitter} /> : null}
+      <span className={compStyles.hashtag}>#{hashtag}</span>
+    </Social>
+  );
 }
 
 export default SocialTwitterHashTag;

@@ -1,1 +1,445 @@
-{"resourceType":"Bundle","id":"12d117ba-cb5f-443f-8c59-262b7ad40174","meta":{"lastUpdated":"2021-04-09T06:51:19.143-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001402.v2.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001402.v2.p1","resource":{"resourceType":"ResearchStudy","id":"phs001402.v2.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:48:16.635-04:00","source":"#r8uc0YWQHF5sRA2Q","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001402.v2.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2019-10-18"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001402.v2.p1 - 1","display":"GRU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":4,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":58,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":1535,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":1534,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EUR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1318,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFA"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":5,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LEN"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":14,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OAS"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"SAS"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OTR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc38"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001402.v2.p1"}],"title":"NHLBI TOPMed: Whole Genome Sequencing of Venous Thromboembolism (WGS of VTE)","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Case Set","display":"Case Set"}],"text":"Case Set"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D054556","display":"Venous Thromboembolism"}],"text":"Venous Thromboembolism"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D054556","display":"Venous Thromboembolism"}],"text":"Venous Thromboembolism"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D054556 entry term: Thromboembolism, Venous","display":"Thromboembolism, Venous"}],"text":"Thromboembolism, Venous"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C1861172","display":"Venous Thromboembolism"}],"text":"Venous Thromboembolism"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D054556","display":"Venous Thromboembolism"}],"text":"Venous Thromboembolism"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D054556 entry term: Thromboembolism, Venous","display":"Thromboembolism, Venous"}],"text":"Thromboembolism, Venous"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C1861172","display":"Venous Thromboembolism"}],"text":"Venous Thromboembolism"}],"description":"\nThis study consists of 338 VTE cases from an inception cohort of Olmsted County, MN residents (OC) with a first lifetime objectively-diagnosed idiopathic VTE during the 40-year study period, 1966-2005. All living study subjects were invited to provide a whole blood sample at the Mayo Clinical Research Unit for leukocyte genomic DNA and plasma collection. For living study subjects who did not provide a blood sample, we retrieved any leftover blood (\"waste\" blood) from samples collected as part of routine clinical diagnostic testing and used this to extract DNA after obtaining patient consent. For deceased cases, with IRB approval, we extracted DNA from any available stored tissue within the Mayo Tissue Archive. This \"tissue\" DNA has been successfully genotyped in prior studies. Three trained and experienced study nurse abstractors reviewed the complete medical records in the community of all potential cases.\n\nNote: WGS sample IDs for the previous GENEVA study cases ([phs000289](./study.cgi?study_id=phs000289)) are included in this dataset. The phenotypes for the GENEVA study are located under the above phs number.\n","enrollment":[{"reference":"Group/phs001402.v2.p1-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "12d117ba-cb5f-443f-8c59-262b7ad40174",
+  "meta": { "lastUpdated": "2021-04-09T06:51:19.143-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001402.v2.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001402.v2.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001402.v2.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:48:16.635-04:00",
+          "source": "#r8uc0YWQHF5sRA2Q",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001402.v2.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2019-10-18"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001402.v2.p1 - 1",
+                  "display": "GRU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 4,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 58,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 1535,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 1534,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EUR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1318,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 3,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 5,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LEN"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 14,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OAS"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 2,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "SAS"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OTR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 2,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc38"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001402.v2.p1"
+          }
+        ],
+        "title": "NHLBI TOPMed: Whole Genome Sequencing of Venous Thromboembolism (WGS of VTE)",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Case Set",
+                "display": "Case Set"
+              }
+            ],
+            "text": "Case Set"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D054556",
+                "display": "Venous Thromboembolism"
+              }
+            ],
+            "text": "Venous Thromboembolism"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D054556",
+                "display": "Venous Thromboembolism"
+              }
+            ],
+            "text": "Venous Thromboembolism"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D054556 entry term: Thromboembolism, Venous",
+                "display": "Thromboembolism, Venous"
+              }
+            ],
+            "text": "Thromboembolism, Venous"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C1861172",
+                "display": "Venous Thromboembolism"
+              }
+            ],
+            "text": "Venous Thromboembolism"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D054556",
+                "display": "Venous Thromboembolism"
+              }
+            ],
+            "text": "Venous Thromboembolism"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D054556 entry term: Thromboembolism, Venous",
+                "display": "Thromboembolism, Venous"
+              }
+            ],
+            "text": "Thromboembolism, Venous"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C1861172",
+                "display": "Venous Thromboembolism"
+              }
+            ],
+            "text": "Venous Thromboembolism"
+          }
+        ],
+        "description": "\nThis study consists of 338 VTE cases from an inception cohort of Olmsted County, MN residents (OC) with a first lifetime objectively-diagnosed idiopathic VTE during the 40-year study period, 1966-2005. All living study subjects were invited to provide a whole blood sample at the Mayo Clinical Research Unit for leukocyte genomic DNA and plasma collection. For living study subjects who did not provide a blood sample, we retrieved any leftover blood (\"waste\" blood) from samples collected as part of routine clinical diagnostic testing and used this to extract DNA after obtaining patient consent. For deceased cases, with IRB approval, we extracted DNA from any available stored tissue within the Mayo Tissue Archive. This \"tissue\" DNA has been successfully genotyped in prior studies. Three trained and experienced study nurse abstractors reviewed the complete medical records in the community of all potential cases.\n\nNote: WGS sample IDs for the previous GENEVA study cases ([phs000289](./study.cgi?study_id=phs000289)) are included in this dataset. The phenotypes for the GENEVA study are located under the above phs number.\n",
+        "enrollment": [{ "reference": "Group/phs001402.v2.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

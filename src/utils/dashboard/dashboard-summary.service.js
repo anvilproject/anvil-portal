@@ -16,32 +16,26 @@ import * as DashboardTableService from "./dashboard-table.service";
  * @returns {Array}
  */
 export function getDashboardSnapshotSummary(summaries, summaryKeys) {
+  if (summaries && summaries.length > 0) {
+    const totalRow = summaries.slice(-1).find(t => t);
+    const summaryRows = summaries.slice(0, -1);
 
-    if ( summaries && summaries.length > 0 ) {
+    return summaryKeys.map((key, k) => {
+      const label = DashboardTableService.switchDisplayColumnName(key);
 
-        const totalRow = summaries.slice(-1).find(t => t);
-        const summaryRows = summaries.slice(0, -1);
+      if (k === 0) {
+        const count = summaryRows.length.toLocaleString();
 
-        return summaryKeys.map((key, k) => {
+        return { count: count, label: `${label}s` };
+      } else {
+        const count = DashboardTableService.formatValue(totalRow[key], key);
 
-            const label = DashboardTableService.switchDisplayColumnName(key);
+        return { count: count, label: label };
+      }
+    });
+  }
 
-            if ( k === 0 ) {
-
-                const count = summaryRows.length.toLocaleString();
-
-                return {count: count, label: `${label}s`}
-            }
-            else {
-
-                const count = DashboardTableService.formatValue(totalRow[key], key);
-
-                return {count: count, label: label}
-            }
-        });
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -53,20 +47,32 @@ export function getDashboardSnapshotSummary(summaries, summaryKeys) {
  * @param setOfSummaryTerms
  * @returns {*}
  */
-export function getDashboardSummary(entities, entityKey, entityKeys, setOfSummaryTerms) {
+export function getDashboardSummary(
+  entities,
+  entityKey,
+  entityKeys,
+  setOfSummaryTerms
+) {
+  if (entities.length === 0) {
+    return [];
+  }
 
-    if ( entities.length === 0 ) {
+  /* Some summary "terms" may share the same data, but in summarization we separate them out as their own line item. */
+  /* Summary counts may be duplicated in this instance. */
+  /* The summary totals are correct and calculated from the resulting entities, rather than the summary counts. */
+  const summary = buildDashboardSummary(
+    entities,
+    entityKey,
+    entityKeys,
+    setOfSummaryTerms
+  );
+  const summaryTotals = buildDashboardSummaryTotals(
+    entities,
+    entityKey,
+    entityKeys
+  );
 
-        return [];
-    }
-
-    /* Some summary "terms" may share the same data, but in summarization we separate them out as their own line item. */
-    /* Summary counts may be duplicated in this instance. */
-    /* The summary totals are correct and calculated from the resulting entities, rather than the summary counts. */
-    const summary = buildDashboardSummary(entities, entityKey, entityKeys, setOfSummaryTerms);
-    const summaryTotals = buildDashboardSummaryTotals(entities, entityKey, entityKeys);
-
-    return summary.concat(summaryTotals);
+  return summary.concat(summaryTotals);
 }
 
 /**
@@ -78,15 +84,17 @@ export function getDashboardSummary(entities, entityKey, entityKeys, setOfSummar
  * @param selectedSummaryTerms
  * @returns {*}
  */
-export function getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKeyTerms, selectedSummaryTerms) {
-
-    /* Grab the set of summary terms. */
-    return [...setOfSummaryKeyTerms]
-        .filter(term => isSummaryTermSelected(selectedSummaryTerms, term))
-        .reduce((acc, term) => {
-
-            return isSummaryTermValidCount(acc, term, termsCount);
-        }, new Set());
+export function getDashboardSummarySetOfSummaryTerms(
+  termsCount,
+  setOfSummaryKeyTerms,
+  selectedSummaryTerms
+) {
+  /* Grab the set of summary terms. */
+  return [...setOfSummaryKeyTerms]
+    .filter(term => isSummaryTermSelected(selectedSummaryTerms, term))
+    .reduce((acc, term) => {
+      return isSummaryTermValidCount(acc, term, termsCount);
+    }, new Set());
 }
 
 /**
@@ -99,19 +107,23 @@ export function getDashboardSummarySetOfSummaryTerms(termsCount, setOfSummaryKey
  * @returns {Array}
  */
 function buildDashboardSummary(entities, entityKey, entityKeys, setOfTerms) {
+  return [...setOfTerms].map(term => {
+    const filteredEntities = filterEntitiesByTerm(entities, entityKey, term);
 
-    return [...setOfTerms].map(term => {
+    return entityKeys.reduce((acc, key) => {
+      const object = {
+        [key]: getObjectSummaryDisplayValue(
+          filteredEntities,
+          entityKey,
+          key,
+          term
+        )
+      };
+      acc = Object.assign(acc, object);
 
-        const filteredEntities = filterEntitiesByTerm(entities, entityKey, term);
-
-        return entityKeys.reduce((acc, key) => {
-
-            const object = {[key]: getObjectSummaryDisplayValue(filteredEntities, entityKey, key, term)};
-            acc = Object.assign(acc, object);
-
-            return acc;
-        }, {});
-    });
+      return acc;
+    }, {});
+  });
 }
 
 /**
@@ -123,14 +135,12 @@ function buildDashboardSummary(entities, entityKey, entityKeys, setOfTerms) {
  * @returns {{cohorts: *, consortium: string, files: *, samples: *, sizeTB: *, subjects: *}}
  */
 function buildDashboardSummaryTotals(entities, entityKey, entityKeys) {
+  return entityKeys.reduce((acc, key) => {
+    const object = { [key]: getObjectSummaryTotal(entities, entityKey, key) };
+    acc = Object.assign(acc, object);
 
-    return entityKeys.reduce((acc, key) => {
-
-        const object = {[key]: getObjectSummaryTotal(entities, entityKey, key)};
-        acc = Object.assign(acc, object);
-
-        return acc;
-    }, {});
+    return acc;
+  }, {});
 }
 
 /**
@@ -139,8 +149,7 @@ function buildDashboardSummaryTotals(entities, entityKey, entityKeys) {
  * @param entities
  */
 function countEntities(entities) {
-
-    return entities.length;
+  return entities.length;
 }
 
 /**
@@ -151,23 +160,20 @@ function countEntities(entities) {
  * @param term
  */
 function filterEntitiesByTerm(entities, entityKey, term) {
+  return entities.filter(entity => {
+    /* Handle case entity is an array of values. */
+    /* Duplicate entities are possible in this scenario. */
+    /* e.g. A combo platform "AnVIL, BioData Catalyst" share the same study. */
+    /* In this instance, we count the study and it's associated summary counts (subjects) twice. */
+    /* i.e. The count will be allocated to both the "AnVIL" and "BioData Catalyst" platform. */
+    /* For the summary count, we wish to capture if the term (string) exists within the entity's corresponding object (of type array). */
+    /* i.e. we filter for the term "AnVIL" in an entity where platform could be ["AnVIL"] or ["AnVIl", "BioData Catalyst"]. */
+    if (Array.isArray(entity[entityKey])) {
+      return entity[entityKey].indexOf(term) >= 0;
+    }
 
-    return entities.filter(entity => {
-
-        /* Handle case entity is an array of values. */
-        /* Duplicate entities are possible in this scenario. */
-        /* e.g. A combo platform "AnVIL, BioData Catalyst" share the same study. */
-        /* In this instance, we count the study and it's associated summary counts (subjects) twice. */
-        /* i.e. The count will be allocated to both the "AnVIL" and "BioData Catalyst" platform. */
-        /* For the summary count, we wish to capture if the term (string) exists within the entity's corresponding object (of type array). */
-        /* i.e. we filter for the term "AnVIL" in an entity where platform could be ["AnVIL"] or ["AnVIl", "BioData Catalyst"]. */
-        if ( Array.isArray(entity[entityKey]) ) {
-
-            return entity[entityKey].indexOf(term) >= 0;
-        }
-
-        return entity[entityKey] === term;
-    });
+    return entity[entityKey] === term;
+  });
 }
 
 /**
@@ -180,15 +186,13 @@ function filterEntitiesByTerm(entities, entityKey, term) {
  * @returns {*}
  */
 function getObjectSummaryDisplayValue(entities, entityKey, key, term) {
+  /* Handle case key is the selected summary key. */
+  /* e.g. AnVIL summary key is "consortium"; return the consortium value to display as a summary item like "1000 Genomes". */
+  if (key === entityKey) {
+    return term;
+  }
 
-    /* Handle case key is the selected summary key. */
-    /* e.g. AnVIL summary key is "consortium"; return the consortium value to display as a summary item like "1000 Genomes". */
-    if ( key === entityKey ) {
-
-        return term;
-    }
-
-    return getObjectTotal(entities, key);
+  return getObjectTotal(entities, key);
 }
 
 /**
@@ -200,13 +204,11 @@ function getObjectSummaryDisplayValue(entities, entityKey, key, term) {
  * @returns {string}
  */
 function getObjectSummaryTotal(entities, entityKey, key) {
+  if (key === entityKey) {
+    return "Totals";
+  }
 
-    if ( key === entityKey ) {
-
-        return "Totals";
-    }
-
-    return getObjectTotal(entities, key);
+  return getObjectTotal(entities, key);
 }
 
 /**
@@ -216,15 +218,13 @@ function getObjectSummaryTotal(entities, entityKey, key) {
  * @param key
  */
 function getObjectTotal(entities, key) {
+  /* Handle case key is the count associated with the selected summary key. */
+  /* e.g. AnVIL summary key is "consortium"; returns the count of "cohorts" for the specified consortium like "1000 Genomes". */
+  if (key === "cohorts" || key === "studies") {
+    return countEntities(entities);
+  }
 
-    /* Handle case key is the count associated with the selected summary key. */
-    /* e.g. AnVIL summary key is "consortium"; returns the count of "cohorts" for the specified consortium like "1000 Genomes". */
-    if ( key === "cohorts" || key === "studies" ) {
-
-        return countEntities(entities);
-    }
-
-    return sumEntityNodeValues(entities, key);
+  return sumEntityNodeValues(entities, key);
 }
 
 /**
@@ -235,13 +235,11 @@ function getObjectTotal(entities, key) {
  * @returns {boolean}
  */
 function isSummaryTermSelected(selectedSummaryTerms, term) {
+  if (!selectedSummaryTerms) {
+    return true;
+  }
 
-    if ( !selectedSummaryTerms ) {
-
-        return true;
-    }
-
-    return selectedSummaryTerms.includes(term);
+  return selectedSummaryTerms.includes(term);
 }
 
 /**
@@ -253,15 +251,13 @@ function isSummaryTermSelected(selectedSummaryTerms, term) {
  * @returns {*}
  */
 function isSummaryTermValidCount(acc, term, termsCount) {
+  const count = termsCount.get(term);
 
-    const count = termsCount.get(term);
+  if (count) {
+    acc.add(term);
+  }
 
-    if ( count ) {
-
-        acc.add(term);
-    }
-
-    return acc;
+  return acc;
 }
 
 /**
@@ -271,10 +267,8 @@ function isSummaryTermValidCount(acc, term, termsCount) {
  * @param nodeType
  */
 function sumEntityNodeValues(entities, nodeType) {
-
-    return entities.reduce((entityAccum, entity) => {
-
-        entityAccum += entity[nodeType];
-        return entityAccum;
-    }, 0);
+  return entities.reduce((entityAccum, entity) => {
+    entityAccum += entity[nodeType];
+    return entityAccum;
+  }, 0);
 }

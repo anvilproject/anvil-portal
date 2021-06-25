@@ -24,14 +24,13 @@ import youtube from "../../../../images/logo-youtube-red.png";
 import compStyles from "./social-youtube.module.css";
 
 function SocialYoutube(props) {
+  const { url } = props;
 
-    const {url} = props;
-
-    return (
-        <Social imgSrc={youtube} media={"Youtube"} url={url}>
-            <img className={compStyles.youtube} src={youtube} alt={"Youtube"}/>
-        </Social>
-    );
+  return (
+    <Social imgSrc={youtube} media={"Youtube"} url={url}>
+      <img className={compStyles.youtube} src={youtube} alt={"Youtube"} />
+    </Social>
+  );
 }
 
 export default SocialYoutube;

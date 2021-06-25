@@ -15,16 +15,16 @@ import Tab from "./tab/tab";
 import compStyles from "./tabs.module.css";
 
 function Tabs(props) {
+  const { tabs } = props;
+  const showTabs = tabs && tabs.length > 0;
 
-    const {tabs} = props;
-    const showTabs = tabs && tabs.length > 0;
-
-    return (
-        showTabs ?
-            <span className={compStyles.tabs}>
-                {tabs.map((tab, t) => <Tab key={t} tab={tab}/>)}
-            </span> : null
-    );
+  return showTabs ? (
+    <span className={compStyles.tabs}>
+      {tabs.map((tab, t) => (
+        <Tab key={t} tab={tab} />
+      ))}
+    </span>
+  ) : null;
 }
 
 export default Tabs;

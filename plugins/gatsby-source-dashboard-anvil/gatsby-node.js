@@ -8,9 +8,18 @@
 const path = require("path");
 
 // App dependencies
-const {generateAnVILDashboardIndex} = require(path.resolve(__dirname, "../utils/dashboard-indexing-anvil.service.js"));
-const {buildStats} = require(path.resolve(__dirname, "../utils/dashboard-statistics.service.js"));
-const {getWorkspaces} = require(path.resolve(__dirname, "../utils/dashboard-workspaces-anvil.service.js"));
+const { generateAnVILDashboardIndex } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-indexing-anvil.service.js"
+));
+const { buildStats } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-statistics.service.js"
+));
+const { getWorkspaces } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-workspaces-anvil.service.js"
+));
 
 /**
  * Creates node for specified node type.
@@ -22,25 +31,31 @@ const {getWorkspaces} = require(path.resolve(__dirname, "../utils/dashboard-work
  * @param id
  * @param type
  */
-function addNode(createNode, createNodeId, createContentDigest, content, id, type) {
+function addNode(
+  createNode,
+  createNodeId,
+  createContentDigest,
+  content,
+  id,
+  type
+) {
+  /* Create node. */
+  const nodeContent = JSON.stringify(content);
 
-    /* Create node. */
-    const nodeContent = JSON.stringify(content);
+  const nodeMeta = {
+    id: createNodeId(id),
+    parent: null,
+    children: [],
+    internal: {
+      type: type,
+      mediaType: `application/json`,
+      content: nodeContent,
+      contentDigest: createContentDigest(content)
+    }
+  };
 
-    const nodeMeta = {
-        id: createNodeId(id),
-        parent: null,
-        children: [],
-        internal: {
-            type: type,
-            mediaType: `application/json`,
-            content: nodeContent,
-            contentDigest: createContentDigest(content),
-        },
-    };
-
-    const node = Object.assign({}, content, nodeMeta);
-    createNode(node);
+  const node = Object.assign({}, content, nodeMeta);
+  createNode(node);
 }
 
 /**
@@ -51,27 +66,36 @@ function addNode(createNode, createNodeId, createContentDigest, content, id, typ
  * @param createContentDigest
  * @returns {Promise.<void>}
  */
-exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest
+}) => {
+  const { createNode } = actions;
 
-    const {createNode} = actions;
+  /* Build up the workspaces model from the ingested attributes. */
+  const workspaces = await getWorkspaces();
 
-    /* Build up the workspaces model from the ingested attributes. */
-    const workspaces = await getWorkspaces();
+  /* Build the statistics model for AnVIL home page. */
+  const stat = buildStats(workspaces);
 
-    /* Build the statistics model for AnVIL home page. */
-    const stat = buildStats(workspaces);
+  /* Create node - stats. */
+  addNode(createNode, createNodeId, createContentDigest, stat, `stat`, `Stat`);
 
-    /* Create node - stats. */
-    addNode(createNode, createNodeId, createContentDigest, stat, `stat`, `Stat`);
+  /* Create nodes - workspaces. */
+  workspaces.forEach(workspace => {
+    const workspaceId = `${workspace.consortium}${workspace.projectId}`;
 
-    /* Create nodes - workspaces. */
-    workspaces.forEach(workspace => {
-
-        const workspaceId = `${workspace.consortium}${workspace.projectId}`;
-
-        /* Create node - workspace. */
-        addNode(createNode, createNodeId, createContentDigest, workspace, workspaceId, `Workspace`);
-    });
+    /* Create node - workspace. */
+    addNode(
+      createNode,
+      createNodeId,
+      createContentDigest,
+      workspace,
+      workspaceId,
+      `Workspace`
+    );
+  });
 };
 
 /**
@@ -79,11 +103,10 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
  *
  * @param actions
  */
-exports.createSchemaCustomization = ({actions}) => {
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
 
-    const {createTypes} = actions;
-
-    createTypes(`
+  createTypes(`
     type GapId implements Node {
         gapIdDisplay: String
         studyUrl: String
@@ -119,11 +142,10 @@ exports.createSchemaCustomization = ({actions}) => {
  *
  * @param getNodesByType
  */
-exports.onPostBootstrap = ({getNodesByType}) => {
+exports.onPostBootstrap = ({ getNodesByType }) => {
+  /* Get the workspaces. */
+  const workspaces = getNodesByType("Workspace");
 
-    /* Get the workspaces. */
-    const workspaces = getNodesByType("Workspace");
-
-    /* Generate the dashboard search index. */
-    generateAnVILDashboardIndex(workspaces);
+  /* Generate the dashboard search index. */
+  generateAnVILDashboardIndex(workspaces);
 };

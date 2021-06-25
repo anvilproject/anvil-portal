@@ -12,13 +12,14 @@ import React from "react";
 import compStyles from "./logo-font.module.css";
 
 const LogoFont = React.forwardRef((props, ref) => {
+  const { children } = props;
+  const logoRef = ref ? { ref: ref } : null;
 
-    const {children} = props;
-    const logoRef = ref ? {ref: ref} : null;
-
-    return (
-        <span className={compStyles.logoFont} {...logoRef}>{children}</span>
-    );
+  return (
+    <span className={compStyles.logoFont} {...logoRef}>
+      {children}
+    </span>
+  );
 });
 
 export default LogoFont;

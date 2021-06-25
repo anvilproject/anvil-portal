@@ -22,7 +22,7 @@
 import React from "react";
 
 // App dependencies
-import {ScoopEventStaticQuery} from "../../hooks/scoop-event-query";
+import { ScoopEventStaticQuery } from "../../hooks/scoop-event-query";
 import Scoop from "../scoops/scoop";
 import * as ScoopsService from "../../utils/scoops.service";
 
@@ -30,26 +30,33 @@ import * as ScoopsService from "../../utils/scoops.service";
 import compStyles from "./events.module.css";
 
 class Events extends React.Component {
-
-    render() {
-        const {featuredOnly, scoops, type} = this.props;
-        return (
-            <Scoop className={compStyles.event} noEvents={compStyles.noEvents} featuredOnly={featuredOnly} scoops={scoops} type={type}/>
-        );
-    }
-}
-
-export default (props) => {
-
-    const {featured, filter, past} = props;
-    const featuredOnly = featured || featured === "";
-    const pastEvent = past === "";
-    const scoops = ScoopEventStaticQuery();
-    const scoopsByDate = ScoopsService.filterScoopsByDate(scoops, pastEvent);
-    const scoopsByFilter = ScoopsService.filterScoopsByFrontmatter(scoopsByDate, filter);
-    const type = pastEvent ? "past events" : "upcoming events";
-
+  render() {
+    const { featuredOnly, scoops, type } = this.props;
     return (
-        <Events featuredOnly={featuredOnly} scoops={scoopsByFilter} type={type}/>
-    )
+      <Scoop
+        className={compStyles.event}
+        noEvents={compStyles.noEvents}
+        featuredOnly={featuredOnly}
+        scoops={scoops}
+        type={type}
+      />
+    );
+  }
 }
+
+export default props => {
+  const { featured, filter, past } = props;
+  const featuredOnly = featured || featured === "";
+  const pastEvent = past === "";
+  const scoops = ScoopEventStaticQuery();
+  const scoopsByDate = ScoopsService.filterScoopsByDate(scoops, pastEvent);
+  const scoopsByFilter = ScoopsService.filterScoopsByFrontmatter(
+    scoopsByDate,
+    filter
+  );
+  const type = pastEvent ? "past events" : "upcoming events";
+
+  return (
+    <Events featuredOnly={featuredOnly} scoops={scoopsByFilter} type={type} />
+  );
+};

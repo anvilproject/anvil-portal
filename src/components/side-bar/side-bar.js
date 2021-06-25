@@ -15,18 +15,18 @@ import SideBarOutline from "../side-bar-outline/side-bar-outline";
 import compStyles from "./side-bar.module.css";
 
 function SideBar(props) {
+  const { activeOutline, articleOffsetTop, bannerHeight, docPath } = props;
 
-    const {activeOutline, articleOffsetTop, bannerHeight, docPath} = props;
-
-    return (
-        <div className={compStyles.sideBar}>
-            <SideBarOutline
-                activeOutline={activeOutline}
-                articleOffsetTop={articleOffsetTop}
-                bannerHeight={bannerHeight}
-                docPath={docPath}/>
-        </div>
-    );
+  return (
+    <div className={compStyles.sideBar}>
+      <SideBarOutline
+        activeOutline={activeOutline}
+        articleOffsetTop={articleOffsetTop}
+        bannerHeight={bannerHeight}
+        docPath={docPath}
+      />
+    </div>
+  );
 }
 
 export default SideBar;

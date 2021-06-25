@@ -11,7 +11,15 @@ import * as DashboardSortService from "./dashboard-sort.service";
 
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
-const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "NOT APPLICABLE", "N/A", "NA", "--", "", null];
+const DENY_LIST_TERMS = [
+  "ATTRIBUTEVALUE",
+  "NOT APPLICABLE",
+  "N/A",
+  "NA",
+  "--",
+  "",
+  null
+];
 
 /* Search input deny list. */
 export const DenyListInputs = ["^", "~", ":", "-", "+"];
@@ -24,18 +32,16 @@ export const DenyListInputs = ["^", "~", ":", "-", "+"];
  * @returns {*}
  */
 export function buildDashboardFacets(facetsByTerm, searchFacets) {
+  return searchFacets.reduce((acc, facet) => {
+    const facetTerms = {
+      terms: getFacetTerms(facet, facetsByTerm),
+      name: facet
+    };
 
-    return searchFacets.reduce((acc, facet) => {
+    acc.push(facetTerms);
 
-        const facetTerms = {
-            terms: getFacetTerms(facet, facetsByTerm),
-            name: facet
-        };
-
-        acc.push(facetTerms);
-
-        return acc;
-    }, [])
+    return acc;
+  }, []);
 }
 
 /**
@@ -47,14 +53,16 @@ export function buildDashboardFacets(facetsByTerm, searchFacets) {
  * @returns {*}
  */
 export function buildFacetSelectorFacets(facets, termsCount, termsSelected) {
+  return [...facets].map(facet => {
+    const facetClone = { ...facet };
+    const terms = buildDashboardTerms(
+      facetClone.terms,
+      termsCount,
+      termsSelected
+    );
 
-    return [...facets].map(facet => {
-
-        const facetClone = {...facet};
-        const terms = buildDashboardTerms(facetClone.terms, termsCount, termsSelected);
-
-        return Object.assign(facetClone, {terms: terms});
-    });
+    return Object.assign(facetClone, { terms: terms });
+  });
 }
 
 /**
@@ -66,27 +74,33 @@ export function buildFacetSelectorFacets(facets, termsCount, termsSelected) {
  * @param resultKey
  * @returns {*}
  */
-export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, entities, resultKey) {
+export function getCountsByTerm(
+  facetByTerm,
+  setOfCountResultsByFacet,
+  entities,
+  resultKey
+) {
+  if (setOfCountResultsByFacet.size === 0) {
+    return new Map();
+  }
 
-    if ( setOfCountResultsByFacet.size === 0 ) {
+  return [...facetByTerm].reduce((acc, [term, facet]) => {
+    /* Get the corresponding setOfResults for the facet. */
+    const setOfCountResults = setOfCountResultsByFacet.get(facet);
 
-        return new Map();
-    }
+    /* Filter the entities. */
+    const fEntities = DashboardService.filterDashboardEntities(
+      entities,
+      setOfCountResults,
+      resultKey
+    );
 
-    return [...facetByTerm].reduce((acc, [term, facet]) => {
+    /* Get the counter for the term. */
+    const termCounter = getTermCounter(facet, term, fEntities);
+    acc.set(term, termCounter);
 
-        /* Get the corresponding setOfResults for the facet. */
-        const setOfCountResults = setOfCountResultsByFacet.get(facet);
-
-        /* Filter the entities. */
-        const fEntities = DashboardService.filterDashboardEntities(entities, setOfCountResults, resultKey);
-
-        /* Get the counter for the term. */
-        const termCounter = getTermCounter(facet, term, fEntities);
-        acc.set(term, termCounter);
-
-        return acc;
-    }, new Map());
+    return acc;
+  }, new Map());
 }
 
 /**
@@ -98,23 +112,20 @@ export function getCountsByTerm(facetByTerm, setOfCountResultsByFacet, entities,
  * @returns {Array}
  */
 export function getDashboardCheckboxColumns(checkboxes, maxColumns) {
+  if (checkboxes) {
+    /* Calculate the max number of displayable rows per column. */
+    const maxRows = Math.ceil(checkboxes.length / maxColumns);
 
-    if ( checkboxes ) {
+    /* Return the checkboxes, regrouped into each column. */
+    return Array.from({ length: maxColumns }).map((col, c) => {
+      const startSlice = c * maxRows;
+      const endSlice = (c + 1) * maxRows;
 
-        /* Calculate the max number of displayable rows per column. */
-        const maxRows = Math.ceil(checkboxes.length / maxColumns);
+      return checkboxes.slice(startSlice, endSlice);
+    });
+  }
 
-        /* Return the checkboxes, regrouped into each column. */
-        return Array.from({length: maxColumns}).map((col, c) => {
-
-            const startSlice = c * maxRows;
-            const endSlice = (c + 1) * maxRows;
-
-            return checkboxes.slice(startSlice, endSlice);
-        });
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -125,16 +136,14 @@ export function getDashboardCheckboxColumns(checkboxes, maxColumns) {
  * @returns {number}
  */
 export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
+  /* Grab the total number of terms for the summary facet. */
+  const sizeSummaryKeyTerms = setOfSummaryKeyTerms.size;
 
-    /* Grab the total number of terms for the summary facet. */
-    const sizeSummaryKeyTerms = setOfSummaryKeyTerms.size;
+  if (sizeSummaryKeyTerms > 4) {
+    return 4;
+  }
 
-    if ( sizeSummaryKeyTerms > 4 ) {
-
-        return 4;
-    }
-
-    return sizeSummaryKeyTerms;
+  return sizeSummaryKeyTerms;
 }
 
 /**
@@ -147,12 +156,8 @@ export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
  * @returns {number}
  */
 export function getDashboardCheckboxMoreCount(terms, snippetCount) {
-
-    /* Count the remaining terms available for selection. */
-    return terms
-        .slice(snippetCount)
-        .filter(term => term.count)
-        .length;
+  /* Count the remaining terms available for selection. */
+  return terms.slice(snippetCount).filter(term => term.count).length;
 }
 
 /**
@@ -164,39 +169,30 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
  * @returns {*}
  */
 export function getDashboardFacetsByTerm(entities, searchFacets) {
+  const facetsByTerm = searchFacets.reduce((acc, facet) => {
+    /* Grab the terms. */
+    entities.forEach(entity => {
+      const term = entity[facet];
 
-    const facetsByTerm = searchFacets.reduce((acc, facet) => {
-
-        /* Grab the terms. */
-        entities.forEach(entity => {
-
-            const term = entity[facet];
-
-            /* Handle case where term is an array. */
-            if ( DashboardService.isArray(term) ) {
-
-                entity[facet].forEach(term => {
-
-                    if ( isTermAllowed(term) ) {
-
-                        acc.set(term, facet);
-                    }
-                })
-            }
-            else {
-
-                if ( isTermAllowed(term) ) {
-
-                    acc.set(term, facet);
-                }
-            }
+      /* Handle case where term is an array. */
+      if (DashboardService.isArray(term)) {
+        entity[facet].forEach(term => {
+          if (isTermAllowed(term)) {
+            acc.set(term, facet);
+          }
         });
+      } else {
+        if (isTermAllowed(term)) {
+          acc.set(term, facet);
+        }
+      }
+    });
 
-        return acc;
-    }, new Map());
+    return acc;
+  }, new Map());
 
-    /* Return sorted facetsByTerm. */
-    return DashboardSortService.sortMap(facetsByTerm);
+  /* Return sorted facetsByTerm. */
+  return DashboardSortService.sortMap(facetsByTerm);
 }
 
 /**
@@ -206,14 +202,13 @@ export function getDashboardFacetsByTerm(entities, searchFacets) {
  * @returns {Set}
  */
 export function getDashboardSetOfSearchGroups(searchFacets) {
+  const setOfSearchGroups = new Set();
 
-    const setOfSearchGroups = new Set();
+  /* Add the facets, and the "input" to the set. */
+  searchFacets.forEach(facet => setOfSearchGroups.add(facet));
+  setOfSearchGroups.add("input");
 
-    /* Add the facets, and the "input" to the set. */
-    searchFacets.forEach(facet => setOfSearchGroups.add(facet));
-    setOfSearchGroups.add("input");
-
-    return setOfSearchGroups;
+  return setOfSearchGroups;
 }
 
 /**
@@ -224,16 +219,13 @@ export function getDashboardSetOfSearchGroups(searchFacets) {
  * @returns {*}
  */
 export function getSetOfSummaryKeyTerms(facetsByTerm, facet) {
+  return [...facetsByTerm].reduce((acc, [term, ft]) => {
+    if (ft === facet) {
+      acc.add(term);
+    }
 
-    return [...facetsByTerm].reduce((acc, [term, ft]) => {
-
-        if ( ft === facet ) {
-
-            acc.add(term);
-        }
-
-        return acc;
-    }, new Set());
+    return acc;
+  }, new Set());
 }
 
 /**
@@ -243,8 +235,7 @@ export function getSetOfSummaryKeyTerms(facetsByTerm, facet) {
  * @returns {*}
  */
 export function getDashboardSetOfTerms(facetsByTerm) {
-
-    return new Set([...facetsByTerm.keys()]);
+  return new Set([...facetsByTerm.keys()]);
 }
 
 /**
@@ -257,21 +248,19 @@ export function getDashboardSetOfTerms(facetsByTerm) {
  * @returns {Map}
  */
 export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
+  const termSearchValueByTermDisplay = new Map();
 
-    const termSearchValueByTermDisplay = new Map();
+  [...facetsByTerm.keys()].forEach(termDisplay => {
+    /* Replace any white space, commas, hyphens or brackets with an underscore. */
+    const termSearchValue = termDisplay
+      .toLowerCase()
+      .replace(regexSpecialChars, "_")
+      .replace(/\s/g, "_");
 
-    [...facetsByTerm.keys()].forEach(termDisplay => {
+    termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
+  });
 
-        /* Replace any white space, commas, hyphens or brackets with an underscore. */
-        const termSearchValue = termDisplay
-            .toLowerCase()
-            .replace(regexSpecialChars, "_")
-            .replace(/\s/g, "_");
-
-        termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
-    });
-
-    return termSearchValueByTermDisplay;
+  return termSearchValueByTermDisplay;
 }
 
 /**
@@ -280,8 +269,7 @@ export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
  * @returns {boolean|number}
  */
 export function isDashboardCheckboxesUneven(facetCount) {
-
-    return facetCount > 4 && facetCount % 2 === 1;
+  return facetCount > 4 && facetCount % 2 === 1;
 }
 
 /**
@@ -293,11 +281,10 @@ export function isDashboardCheckboxesUneven(facetCount) {
  * @returns {{name, count, selected}}
  */
 function buildDashboardTerm(term, termsCount, termsSelected) {
+  const count = termsCount.get(term);
+  const selected = termsSelected.get(term);
 
-    const count = termsCount.get(term);
-    const selected = termsSelected.get(term);
-
-    return {name: term, count: count, selected: selected};
+  return { name: term, count: count, selected: selected };
 }
 
 /**
@@ -309,10 +296,9 @@ function buildDashboardTerm(term, termsCount, termsSelected) {
  * @returns {[]}
  */
 function buildDashboardTerms(terms, termsCount, termsSelected) {
-
-    return terms
-        .map(term => buildDashboardTerm(term, termsCount, termsSelected))
-        .filter(term => isTermSelectable(term));
+  return terms
+    .map(term => buildDashboardTerm(term, termsCount, termsSelected))
+    .filter(term => isTermSelectable(term));
 }
 
 /**
@@ -323,16 +309,13 @@ function buildDashboardTerms(terms, termsCount, termsSelected) {
  * @returns {*}
  */
 function getFacetTerms(facet, facetsByTerm) {
+  return [...facetsByTerm].reduce((acc, [term, ft]) => {
+    if (ft === facet) {
+      acc.push(term);
+    }
 
-    return [...facetsByTerm].reduce((acc, [term, ft]) => {
-
-        if ( ft === facet ) {
-
-            acc.push(term);
-        }
-
-        return acc;
-    }, []);
+    return acc;
+  }, []);
 }
 
 /**
@@ -343,29 +326,21 @@ function getFacetTerms(facet, facetsByTerm) {
  * @param entities
  */
 function getTermCounter(facet, term, entities) {
-
-    return entities.reduce((acc, entity) => {
-
-        if ( DashboardService.isArray(entity[facet]) ) {
-
-            entity[facet].forEach(ef => {
-
-                if ( ef === term ) {
-
-                    acc++;
-                }
-            })
+  return entities.reduce((acc, entity) => {
+    if (DashboardService.isArray(entity[facet])) {
+      entity[facet].forEach(ef => {
+        if (ef === term) {
+          acc++;
         }
-        else {
+      });
+    } else {
+      if (entity[facet] === term) {
+        acc++;
+      }
+    }
 
-            if (entity[facet] === term) {
-
-                acc++;
-            }
-        }
-
-        return acc;
-    }, 0);
+    return acc;
+  }, 0);
 }
 
 /**
@@ -374,10 +349,9 @@ function getTermCounter(facet, term, entities) {
  * @param term
  */
 function isTermAllowed(term) {
+  const value = term.toUpperCase();
 
-    const value = term.toUpperCase();
-
-    return !DENY_LIST_TERMS.includes(value);
+  return !DENY_LIST_TERMS.includes(value);
 }
 
 /**
@@ -387,9 +361,7 @@ function isTermAllowed(term) {
  * @returns {*}
  */
 function isTermSelectable(term) {
+  const { count, selected } = term;
 
-    const {count, selected} = term;
-
-    return count || selected;
+  return count || selected;
 }
-

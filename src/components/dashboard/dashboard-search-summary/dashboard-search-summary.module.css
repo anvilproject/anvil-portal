@@ -6,23 +6,25 @@
  */
 
 /* Stat label, stat. */
-.stat, .label {
-    margin: 4px 0;
-    white-space: nowrap;
+.stat,
+.label {
+  margin: 4px 0;
+  white-space: nowrap;
 }
 
 /* Stat label, statistics - not last. */
-.label, .stat:not(:last-of-type) {
-    padding-right: 12px;
+.label,
+.stat:not(:last-of-type) {
+  padding-right: 12px;
 }
 
 /**
  * Small tablet portrait, medium handset landscape, small window
  */
 @media screen and (min-width: 600px) {
-
-    /* Stat label, stat. */
-    .stat, .label {
-        flex-basis: unset;
-    }
+  /* Stat label, stat. */
+  .stat,
+  .label {
+    flex-basis: unset;
+  }
 }

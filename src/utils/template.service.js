@@ -12,18 +12,16 @@
  * @returns {string}
  */
 export function getPageTitle(htmlAst) {
+  if (!htmlAst) {
+    return "";
+  }
 
-    if ( !htmlAst ) {
-        return "";
-    }
+  // Find the top-level of the page
+  const h1 = htmlAst.children.find(child => child.tagName === "h1");
+  if (!h1) {
+    return "";
+  }
 
-    // Find the top-level of the page
-    const h1 = htmlAst.children.find(child => child.tagName === "h1");
-    if ( !h1 ) {
-        return "";
-    }
-
-    // Return text node of h1
-    return h1.children.find(child => child.type === "text").value || "";
+  // Return text node of h1
+  return h1.children.find(child => child.type === "text").value || "";
 }
-

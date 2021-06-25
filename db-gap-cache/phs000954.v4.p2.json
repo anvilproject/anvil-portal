@@ -1,1 +1,820 @@
-{"resourceType":"Bundle","id":"b0b77701-f5aa-4152-a218-6bb526786f41","meta":{"lastUpdated":"2021-06-02T20:13:26.693-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs000954.v4.p2"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs000954.v4.p2","resource":{"resourceType":"ResearchStudy","id":"phs000954.v4.p2","meta":{"versionId":"1","lastUpdated":"2021-06-01T05:35:57.531-04:00","source":"#WJqTsQTAybshtFed","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000954.v4.p2"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2021-05-18"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs000954.v4.p2 - 1","display":"DS-HLBS-IRB-NPU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":14,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":1293,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":1293,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EUR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":613,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFO"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":9,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EAS"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFA"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":655,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":9,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LEN"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OAS"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OTR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc38"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"De-novo Mutations (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs000954.v4.p2"}],"title":"NHLBI TOPMed: The Cleveland Family Study (CFS)","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Prospective Longitudinal Cohort","display":"Prospective Longitudinal Cohort"}],"text":"Prospective Longitudinal Cohort"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012891","display":"Sleep Apnea Syndromes"}],"text":"Sleep Apnea Syndromes"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012891","display":"Sleep Apnea Syndromes"}],"text":"Sleep Apnea Syndromes"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea Syndrome, Sleep","display":"Apnea Syndrome, Sleep"}],"text":"Apnea Syndrome, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea Syndromes, Sleep","display":"Apnea Syndromes, Sleep"}],"text":"Apnea Syndromes, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea, Sleep","display":"Apnea, Sleep"}],"text":"Apnea, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apneas, Sleep","display":"Apneas, Sleep"}],"text":"Apneas, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Breathing, Sleep-Disordered","display":"Breathing, Sleep-Disordered"}],"text":"Breathing, Sleep-Disordered"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypersomnia with Periodic Respiration","display":"Hypersomnia with Periodic Respiration"}],"text":"Hypersomnia with Periodic Respiration"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypopnea, Sleep","display":"Hypopnea, Sleep"}],"text":"Hypopnea, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypopneas, Sleep","display":"Hypopneas, Sleep"}],"text":"Hypopneas, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Central and Obstructive Sleep Apnea","display":"Mixed Central and Obstructive Sleep Apnea"}],"text":"Mixed Central and Obstructive Sleep Apnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Sleep Apnea","display":"Mixed Sleep Apnea"}],"text":"Mixed Sleep Apnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Sleep Apneas","display":"Mixed Sleep Apneas"}],"text":"Mixed Sleep Apneas"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea Syndrome","display":"Sleep Apnea Syndrome"}],"text":"Sleep Apnea Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea, Mixed","display":"Sleep Apnea, Mixed"}],"text":"Sleep Apnea, Mixed"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea, Mixed Central and Obstructive","display":"Sleep Apnea, Mixed Central and Obstructive"}],"text":"Sleep Apnea, Mixed Central and Obstructive"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apneas","display":"Sleep Apneas"}],"text":"Sleep Apneas"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apneas, Mixed","display":"Sleep Apneas, Mixed"}],"text":"Sleep Apneas, Mixed"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Hypopnea","display":"Sleep Hypopnea"}],"text":"Sleep Hypopnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Hypopneas","display":"Sleep Hypopneas"}],"text":"Sleep Hypopneas"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0020529","display":"Sleep Apnea Syndrome"}],"text":"Sleep Apnea Syndrome"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012891","display":"Sleep Apnea Syndromes"}],"text":"Sleep Apnea Syndromes"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea Syndrome, Sleep","display":"Apnea Syndrome, Sleep"}],"text":"Apnea Syndrome, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea Syndromes, Sleep","display":"Apnea Syndromes, Sleep"}],"text":"Apnea Syndromes, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apnea, Sleep","display":"Apnea, Sleep"}],"text":"Apnea, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Apneas, Sleep","display":"Apneas, Sleep"}],"text":"Apneas, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Breathing, Sleep-Disordered","display":"Breathing, Sleep-Disordered"}],"text":"Breathing, Sleep-Disordered"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypersomnia with Periodic Respiration","display":"Hypersomnia with Periodic Respiration"}],"text":"Hypersomnia with Periodic Respiration"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypopnea, Sleep","display":"Hypopnea, Sleep"}],"text":"Hypopnea, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Hypopneas, Sleep","display":"Hypopneas, Sleep"}],"text":"Hypopneas, Sleep"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Central and Obstructive Sleep Apnea","display":"Mixed Central and Obstructive Sleep Apnea"}],"text":"Mixed Central and Obstructive Sleep Apnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Sleep Apnea","display":"Mixed Sleep Apnea"}],"text":"Mixed Sleep Apnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Mixed Sleep Apneas","display":"Mixed Sleep Apneas"}],"text":"Mixed Sleep Apneas"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea Syndrome","display":"Sleep Apnea Syndrome"}],"text":"Sleep Apnea Syndrome"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea, Mixed","display":"Sleep Apnea, Mixed"}],"text":"Sleep Apnea, Mixed"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apnea, Mixed Central and Obstructive","display":"Sleep Apnea, Mixed Central and Obstructive"}],"text":"Sleep Apnea, Mixed Central and Obstructive"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apneas","display":"Sleep Apneas"}],"text":"Sleep Apneas"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Apneas, Mixed","display":"Sleep Apneas, Mixed"}],"text":"Sleep Apneas, Mixed"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Hypopnea","display":"Sleep Hypopnea"}],"text":"Sleep Hypopnea"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012891 entry term: Sleep Hypopneas","display":"Sleep Hypopneas"}],"text":"Sleep Hypopneas"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0020529","display":"Sleep Apnea Syndrome"}],"text":"Sleep Apnea Syndrome"}],"description":"\nThe [Cleveland Family Study](study.cgi?study_id=phs000284) (CFS) is one cohort involved in the WGS project. The CFS was designed to provide fundamental epidemiological data on genetic and non-genetic risk factors for sleep disordered breathing (SDB). In brief, the CFS is a family-based study that enrolled a total of 2284 individuals from 361 families between 1990 and 2006. The sample was selected by identifying affected probands who had laboratory diagnosed obstructive sleep apnea. All first degree relatives, spouses and available second degree relatives of affected probands were studied. In addition, during the first 5 study years, neighborhood control families were identified through a neighborhood proband, and his/her spouses and first degree relatives. Each exam, occurring at approximately 4 year intervals, included new enrollment as well as follow up exams for previously enrolled subjects. For the first three visits, data, including an overnight sleep study, were collected in the participants' homes while the last visit occurred in a general clinical research center (GCRC). Phenotypic characterization of the entire cohort included overnight sleep apnea studies, blood pressure, spirometry, anthropometry and questionnaires. The GCRC exam (n=735 selected individuals) included more comprehensive phenotype data on a focused subsample of the larger cohort, to permit linking SDB phenotypes with cardio-metabolic phenotypes, with an interest in identifying genetic loci that are associated with these related phenotypes. In this last round of data collection, a subset of 735 individuals was selected based on expected genetic informativity by choosing pedigrees where siblings had extremes of the apnea hypopnea index (AHI). Participants underwent detailed phenotyping including laboratory polysomnography (PSG), ECG, spirometry, nasal and oral acoustic reflectometry, vigilance testing, and blood and urine collection before and after sleep and after an oral glucose tolerance test. A wide range of biochemical measures of inflammation and metabolism were assayed by a Core Laboratory at the University of Vermont.\n\n994 individuals were sequenced as part of TOPMed Phase 1, including 507 African-Americans and 487 European-Americans. Among the sequenced individuals, 156 were probands with diagnosed sleep apnea, an additional 706 were members of families with probands, and 132 were from neighborhood control families. \n\n298 individuals were sequenced as part of TOPMed Phase 3.5, including 169 African-Americans and 129 European-Americans. Among the newly sequenced individuals, 33 were probands with diagnosed sleep apnea, an additional 214 were members of families with probands, and 51 were from neighborhood control families.\n\nPlease note: Phenotype and pedigree data are available through \"NHLBI Cleveland Family Study (CFS) Candidate Gene Association Resource (CARe)\", [phs000284](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000284). \n","enrollment":[{"reference":"Group/phs000954.v4.p2-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "b0b77701-f5aa-4152-a218-6bb526786f41",
+  "meta": { "lastUpdated": "2021-06-02T20:13:26.693-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs000954.v4.p2"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs000954.v4.p2",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs000954.v4.p2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-06-01T05:35:57.531-04:00",
+          "source": "#WJqTsQTAybshtFed",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000954.v4.p2"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2021-05-18"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs000954.v4.p2 - 1",
+                  "display": "DS-HLBS-IRB-NPU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 3,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 3,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 14,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 1293,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 1293,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EUR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 613,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFO"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 9,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EAS"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 655,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 9,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LEN"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OAS"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OTR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 3,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc38"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "De-novo Mutations (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs000954.v4.p2"
+          }
+        ],
+        "title": "NHLBI TOPMed: The Cleveland Family Study (CFS)",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Prospective Longitudinal Cohort",
+                "display": "Prospective Longitudinal Cohort"
+              }
+            ],
+            "text": "Prospective Longitudinal Cohort"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012891",
+                "display": "Sleep Apnea Syndromes"
+              }
+            ],
+            "text": "Sleep Apnea Syndromes"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012891",
+                "display": "Sleep Apnea Syndromes"
+              }
+            ],
+            "text": "Sleep Apnea Syndromes"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea Syndrome, Sleep",
+                "display": "Apnea Syndrome, Sleep"
+              }
+            ],
+            "text": "Apnea Syndrome, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea Syndromes, Sleep",
+                "display": "Apnea Syndromes, Sleep"
+              }
+            ],
+            "text": "Apnea Syndromes, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea, Sleep",
+                "display": "Apnea, Sleep"
+              }
+            ],
+            "text": "Apnea, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apneas, Sleep",
+                "display": "Apneas, Sleep"
+              }
+            ],
+            "text": "Apneas, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Breathing, Sleep-Disordered",
+                "display": "Breathing, Sleep-Disordered"
+              }
+            ],
+            "text": "Breathing, Sleep-Disordered"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypersomnia with Periodic Respiration",
+                "display": "Hypersomnia with Periodic Respiration"
+              }
+            ],
+            "text": "Hypersomnia with Periodic Respiration"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypopnea, Sleep",
+                "display": "Hypopnea, Sleep"
+              }
+            ],
+            "text": "Hypopnea, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypopneas, Sleep",
+                "display": "Hypopneas, Sleep"
+              }
+            ],
+            "text": "Hypopneas, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Central and Obstructive Sleep Apnea",
+                "display": "Mixed Central and Obstructive Sleep Apnea"
+              }
+            ],
+            "text": "Mixed Central and Obstructive Sleep Apnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Sleep Apnea",
+                "display": "Mixed Sleep Apnea"
+              }
+            ],
+            "text": "Mixed Sleep Apnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Sleep Apneas",
+                "display": "Mixed Sleep Apneas"
+              }
+            ],
+            "text": "Mixed Sleep Apneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea Syndrome",
+                "display": "Sleep Apnea Syndrome"
+              }
+            ],
+            "text": "Sleep Apnea Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea, Mixed",
+                "display": "Sleep Apnea, Mixed"
+              }
+            ],
+            "text": "Sleep Apnea, Mixed"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea, Mixed Central and Obstructive",
+                "display": "Sleep Apnea, Mixed Central and Obstructive"
+              }
+            ],
+            "text": "Sleep Apnea, Mixed Central and Obstructive"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apneas",
+                "display": "Sleep Apneas"
+              }
+            ],
+            "text": "Sleep Apneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apneas, Mixed",
+                "display": "Sleep Apneas, Mixed"
+              }
+            ],
+            "text": "Sleep Apneas, Mixed"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Hypopnea",
+                "display": "Sleep Hypopnea"
+              }
+            ],
+            "text": "Sleep Hypopnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Hypopneas",
+                "display": "Sleep Hypopneas"
+              }
+            ],
+            "text": "Sleep Hypopneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0020529",
+                "display": "Sleep Apnea Syndrome"
+              }
+            ],
+            "text": "Sleep Apnea Syndrome"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012891",
+                "display": "Sleep Apnea Syndromes"
+              }
+            ],
+            "text": "Sleep Apnea Syndromes"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea Syndrome, Sleep",
+                "display": "Apnea Syndrome, Sleep"
+              }
+            ],
+            "text": "Apnea Syndrome, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea Syndromes, Sleep",
+                "display": "Apnea Syndromes, Sleep"
+              }
+            ],
+            "text": "Apnea Syndromes, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apnea, Sleep",
+                "display": "Apnea, Sleep"
+              }
+            ],
+            "text": "Apnea, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Apneas, Sleep",
+                "display": "Apneas, Sleep"
+              }
+            ],
+            "text": "Apneas, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Breathing, Sleep-Disordered",
+                "display": "Breathing, Sleep-Disordered"
+              }
+            ],
+            "text": "Breathing, Sleep-Disordered"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypersomnia with Periodic Respiration",
+                "display": "Hypersomnia with Periodic Respiration"
+              }
+            ],
+            "text": "Hypersomnia with Periodic Respiration"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypopnea, Sleep",
+                "display": "Hypopnea, Sleep"
+              }
+            ],
+            "text": "Hypopnea, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Hypopneas, Sleep",
+                "display": "Hypopneas, Sleep"
+              }
+            ],
+            "text": "Hypopneas, Sleep"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Central and Obstructive Sleep Apnea",
+                "display": "Mixed Central and Obstructive Sleep Apnea"
+              }
+            ],
+            "text": "Mixed Central and Obstructive Sleep Apnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Sleep Apnea",
+                "display": "Mixed Sleep Apnea"
+              }
+            ],
+            "text": "Mixed Sleep Apnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Mixed Sleep Apneas",
+                "display": "Mixed Sleep Apneas"
+              }
+            ],
+            "text": "Mixed Sleep Apneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea Syndrome",
+                "display": "Sleep Apnea Syndrome"
+              }
+            ],
+            "text": "Sleep Apnea Syndrome"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea, Mixed",
+                "display": "Sleep Apnea, Mixed"
+              }
+            ],
+            "text": "Sleep Apnea, Mixed"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apnea, Mixed Central and Obstructive",
+                "display": "Sleep Apnea, Mixed Central and Obstructive"
+              }
+            ],
+            "text": "Sleep Apnea, Mixed Central and Obstructive"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apneas",
+                "display": "Sleep Apneas"
+              }
+            ],
+            "text": "Sleep Apneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Apneas, Mixed",
+                "display": "Sleep Apneas, Mixed"
+              }
+            ],
+            "text": "Sleep Apneas, Mixed"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Hypopnea",
+                "display": "Sleep Hypopnea"
+              }
+            ],
+            "text": "Sleep Hypopnea"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012891 entry term: Sleep Hypopneas",
+                "display": "Sleep Hypopneas"
+              }
+            ],
+            "text": "Sleep Hypopneas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0020529",
+                "display": "Sleep Apnea Syndrome"
+              }
+            ],
+            "text": "Sleep Apnea Syndrome"
+          }
+        ],
+        "description": "\nThe [Cleveland Family Study](study.cgi?study_id=phs000284) (CFS) is one cohort involved in the WGS project. The CFS was designed to provide fundamental epidemiological data on genetic and non-genetic risk factors for sleep disordered breathing (SDB). In brief, the CFS is a family-based study that enrolled a total of 2284 individuals from 361 families between 1990 and 2006. The sample was selected by identifying affected probands who had laboratory diagnosed obstructive sleep apnea. All first degree relatives, spouses and available second degree relatives of affected probands were studied. In addition, during the first 5 study years, neighborhood control families were identified through a neighborhood proband, and his/her spouses and first degree relatives. Each exam, occurring at approximately 4 year intervals, included new enrollment as well as follow up exams for previously enrolled subjects. For the first three visits, data, including an overnight sleep study, were collected in the participants' homes while the last visit occurred in a general clinical research center (GCRC). Phenotypic characterization of the entire cohort included overnight sleep apnea studies, blood pressure, spirometry, anthropometry and questionnaires. The GCRC exam (n=735 selected individuals) included more comprehensive phenotype data on a focused subsample of the larger cohort, to permit linking SDB phenotypes with cardio-metabolic phenotypes, with an interest in identifying genetic loci that are associated with these related phenotypes. In this last round of data collection, a subset of 735 individuals was selected based on expected genetic informativity by choosing pedigrees where siblings had extremes of the apnea hypopnea index (AHI). Participants underwent detailed phenotyping including laboratory polysomnography (PSG), ECG, spirometry, nasal and oral acoustic reflectometry, vigilance testing, and blood and urine collection before and after sleep and after an oral glucose tolerance test. A wide range of biochemical measures of inflammation and metabolism were assayed by a Core Laboratory at the University of Vermont.\n\n994 individuals were sequenced as part of TOPMed Phase 1, including 507 African-Americans and 487 European-Americans. Among the sequenced individuals, 156 were probands with diagnosed sleep apnea, an additional 706 were members of families with probands, and 132 were from neighborhood control families. \n\n298 individuals were sequenced as part of TOPMed Phase 3.5, including 169 African-Americans and 129 European-Americans. Among the newly sequenced individuals, 33 were probands with diagnosed sleep apnea, an additional 214 were members of families with probands, and 51 were from neighborhood control families.\n\nPlease note: Phenotype and pedigree data are available through \"NHLBI Cleveland Family Study (CFS) Candidate Gene Association Resource (CARe)\", [phs000284](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000284). \n",
+        "enrollment": [{ "reference": "Group/phs000954.v4.p2-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

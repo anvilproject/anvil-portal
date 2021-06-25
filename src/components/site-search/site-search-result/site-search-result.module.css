@@ -7,39 +7,39 @@
 
 /* Snippet. */
 .snippet {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    padding: 16px 0 24px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 24px;
 }
 
 /* Snippet - first. */
 .snippet:first-of-type {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 /* Snippet - all. */
 .snippet * {
-    margin: 0;
+  margin: 0;
 }
 
 /* Title. */
 .snippet h4 {
-    line-height: 24px;
+  line-height: 24px;
 }
 
 /* URL. */
 .snippet .url {
-    font-size: 12px;
-    margin: 12px 0 8px;
+  font-size: 12px;
+  margin: 12px 0 8px;
 }
 
 /* Image. */
 .snippet img {
-    display: block;
-    height: auto;
-    margin-right: 16px;
-    width: 60px;
+  display: block;
+  height: auto;
+  margin-right: 16px;
+  width: 60px;
 }
 
 /**
@@ -47,9 +47,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
-
-    /* Snippet. */
-    .snippet {
-        flex-direction: row;
-    }
+  /* Snippet. */
+  .snippet {
+    flex-direction: row;
+  }
 }

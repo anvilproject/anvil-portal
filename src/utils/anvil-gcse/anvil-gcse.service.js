@@ -6,7 +6,7 @@
  */
 
 // App dependencies
-import {GCSEParameter} from "./gcse-parameter.model";
+import { GCSEParameter } from "./gcse-parameter.model";
 
 /**
  * Returns http request URL for Google Custom Search Engine.
@@ -16,15 +16,14 @@ import {GCSEParameter} from "./gcse-parameter.model";
  * @param start
  */
 export function getGCSERequestURL(query, start) {
+  const paramGCSEId = `${GCSEParameter.ID}=${process.env.GATSBY_GCSE_CX}`;
+  const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;
+  const paramQuery = `${GCSEParameter.QUERY}=${query}`;
+  const paramSafe = `${GCSEParameter.SAFE}=active`;
+  const paramStart = `${GCSEParameter.START}=${start}`;
+  const parameters = `${paramGCSEKey}&${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
 
-    const paramGCSEId = `${GCSEParameter.ID}=${process.env.GATSBY_GCSE_CX}`;
-    const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;
-    const paramQuery = `${GCSEParameter.QUERY}=${query}`;
-    const paramSafe = `${GCSEParameter.SAFE}=active`;
-    const paramStart = `${GCSEParameter.START}=${start}`;
-    const parameters = `${paramGCSEKey}&${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
-
-    return `https://www.googleapis.com/customsearch/v1?${encodeURI(parameters)}`;
+  return `https://www.googleapis.com/customsearch/v1?${encodeURI(parameters)}`;
 }
 
 /**
@@ -34,11 +33,9 @@ export function getGCSERequestURL(query, start) {
  * @returns {{}}
  */
 export function getGCSERequest(requests) {
+  if (requests) {
+    return requests.find(request => request.searchTerms);
+  }
 
-    if ( requests ) {
-
-        return requests.find(request => request.searchTerms);
-    }
-
-    return {};
+  return {};
 }

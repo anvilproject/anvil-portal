@@ -14,20 +14,18 @@ import compStyles from "./dashboard-search-panel.module.css";
 const classNames = require("classnames");
 
 function DashboardSearchPanel(props) {
+  const { children, facetCount, inverted, placeholder, row, stretch } = props;
+  const panelX = `x${facetCount}`;
+  const classNamesPanel = classNames(
+    { [compStyles.inverted]: inverted },
+    compStyles.panel,
+    { [compStyles.placeholder]: placeholder },
+    { [compStyles.row]: row },
+    { [compStyles.stretch]: stretch },
+    { [compStyles[panelX]]: facetCount }
+  );
 
-    const {children, facetCount, inverted, placeholder, row, stretch} = props;
-    const panelX = `x${facetCount}`;
-    const classNamesPanel = classNames(
-        {[compStyles.inverted]: inverted},
-        compStyles.panel,
-        {[compStyles.placeholder]: placeholder},
-        {[compStyles.row]: row},
-        {[compStyles.stretch]: stretch},
-        {[compStyles[panelX]]: facetCount});
-
-    return (
-        <div className={classNamesPanel}>{children}</div>
-    )
+  return <div className={classNamesPanel}>{children}</div>;
 }
 
 export default DashboardSearchPanel;

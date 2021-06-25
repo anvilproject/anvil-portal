@@ -6,9 +6,9 @@
  */
 
 export const GCSEParameter = {
-    "ID": "cx",
-    "KEY": "key",
-    "QUERY": "q",
-    "SAFE": "safe",
-    "START": "start",
+  ID: "cx",
+  KEY: "key",
+  QUERY: "q",
+  SAFE: "safe",
+  START: "start"
 };

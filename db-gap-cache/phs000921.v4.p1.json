@@ -1,1 +1,559 @@
-{"resourceType":"Bundle","id":"413195d7-7b03-4c5c-b89c-b9f4bc228105","meta":{"lastUpdated":"2021-04-09T06:49:29.911-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs000921.v4.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs000921.v4.p1","resource":{"resourceType":"ResearchStudy","id":"phs000921.v4.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:47:38.639-04:00","source":"#lEbNXC3ngH9YXaP8","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000921.v4.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2020-01-06"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs000921.v4.p1 - 2","display":"DS-LD-IRB-COL"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":4,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":26,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":2106,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":2105,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EUR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFO"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":19,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFA"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1736,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":35,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"SAS"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OTR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":47,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc38"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Title","valueString":"A Genome-wide Association and Admixture Mapping Study of Bronchodilator Drug Response in African Americans with Asthma"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Url","valueUrl":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6414286"}]}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs000921.v4.p1"}],"title":"NHLBI TOPMed: Study of African Americans, Asthma, Genes and Environment (SAGE)","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Case-Control","display":"Case-Control"}],"text":"Case-Control"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D008171","display":"Lung Diseases"}],"text":"Lung Diseases"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D008171","display":"Lung Diseases"}],"text":"Lung Diseases"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Disease, Lung","display":"Disease, Lung"}],"text":"Disease, Lung"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Disease, Pulmonary","display":"Disease, Pulmonary"}],"text":"Disease, Pulmonary"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Diseases, Lung","display":"Diseases, Lung"}],"text":"Diseases, Lung"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Diseases, Pulmonary","display":"Diseases, Pulmonary"}],"text":"Diseases, Pulmonary"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Lung Diseases","display":"Lung Diseases"}],"text":"Lung Diseases"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Pulmonary Disease","display":"Pulmonary Disease"}],"text":"Pulmonary Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Pulmonary Diseases","display":"Pulmonary Diseases"}],"text":"Pulmonary Diseases"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0024115","display":"Lung Diseases"}],"text":"Lung Diseases"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D008171","display":"Lung Diseases"}],"text":"Lung Diseases"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Disease, Lung","display":"Disease, Lung"}],"text":"Disease, Lung"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Disease, Pulmonary","display":"Disease, Pulmonary"}],"text":"Disease, Pulmonary"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Diseases, Lung","display":"Diseases, Lung"}],"text":"Diseases, Lung"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Diseases, Pulmonary","display":"Diseases, Pulmonary"}],"text":"Diseases, Pulmonary"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Lung Diseases","display":"Lung Diseases"}],"text":"Lung Diseases"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Pulmonary Disease","display":"Pulmonary Disease"}],"text":"Pulmonary Disease"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D008171 entry term: Pulmonary Diseases","display":"Pulmonary Diseases"}],"text":"Pulmonary Diseases"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0024115","display":"Lung Diseases"}],"text":"Lung Diseases"}],"description":"\nThis is a parallel case-control pharmacogenetic study of bronchodilator drug response among African American children with and without asthma. Each participant had spirometry measured using the KoKo PFT System. Asthmatic participants were administered with 4 puffs of HFA Albuterol. Healthy participants were given a baseline spirometry test. The overall goal is to identify genetic factors which are predictive of drug response in children with asthma. The principal tools include a questionnaire and biological specimen collection. Participants were 8-21 years old at time of recruitment. Children with asthma have physician-diagnosed asthma, symptoms and medications.\n","enrollment":[{"reference":"Group/phs000921.v4.p1-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "413195d7-7b03-4c5c-b89c-b9f4bc228105",
+  "meta": { "lastUpdated": "2021-04-09T06:49:29.911-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs000921.v4.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs000921.v4.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs000921.v4.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:47:38.639-04:00",
+          "source": "#lEbNXC3ngH9YXaP8",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000921.v4.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2020-01-06"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs000921.v4.p1 - 2",
+                  "display": "DS-LD-IRB-COL"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 4,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 26,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 2106,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 2105,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EUR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFO"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 19,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1736,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 35,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "SAS"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 2,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OTR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 47,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc38"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Title",
+                    "valueString": "A Genome-wide Association and Admixture Mapping Study of Bronchodilator Drug Response in African Americans with Asthma"
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Url",
+                    "valueUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6414286"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs000921.v4.p1"
+          }
+        ],
+        "title": "NHLBI TOPMed: Study of African Americans, Asthma, Genes and Environment (SAGE)",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Case-Control",
+                "display": "Case-Control"
+              }
+            ],
+            "text": "Case-Control"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D008171",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D008171",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Disease, Lung",
+                "display": "Disease, Lung"
+              }
+            ],
+            "text": "Disease, Lung"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Disease, Pulmonary",
+                "display": "Disease, Pulmonary"
+              }
+            ],
+            "text": "Disease, Pulmonary"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Diseases, Lung",
+                "display": "Diseases, Lung"
+              }
+            ],
+            "text": "Diseases, Lung"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Diseases, Pulmonary",
+                "display": "Diseases, Pulmonary"
+              }
+            ],
+            "text": "Diseases, Pulmonary"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Lung Diseases",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Pulmonary Disease",
+                "display": "Pulmonary Disease"
+              }
+            ],
+            "text": "Pulmonary Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Pulmonary Diseases",
+                "display": "Pulmonary Diseases"
+              }
+            ],
+            "text": "Pulmonary Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0024115",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D008171",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Disease, Lung",
+                "display": "Disease, Lung"
+              }
+            ],
+            "text": "Disease, Lung"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Disease, Pulmonary",
+                "display": "Disease, Pulmonary"
+              }
+            ],
+            "text": "Disease, Pulmonary"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Diseases, Lung",
+                "display": "Diseases, Lung"
+              }
+            ],
+            "text": "Diseases, Lung"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Diseases, Pulmonary",
+                "display": "Diseases, Pulmonary"
+              }
+            ],
+            "text": "Diseases, Pulmonary"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Lung Diseases",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Pulmonary Disease",
+                "display": "Pulmonary Disease"
+              }
+            ],
+            "text": "Pulmonary Disease"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D008171 entry term: Pulmonary Diseases",
+                "display": "Pulmonary Diseases"
+              }
+            ],
+            "text": "Pulmonary Diseases"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0024115",
+                "display": "Lung Diseases"
+              }
+            ],
+            "text": "Lung Diseases"
+          }
+        ],
+        "description": "\nThis is a parallel case-control pharmacogenetic study of bronchodilator drug response among African American children with and without asthma. Each participant had spirometry measured using the KoKo PFT System. Asthmatic participants were administered with 4 puffs of HFA Albuterol. Healthy participants were given a baseline spirometry test. The overall goal is to identify genetic factors which are predictive of drug response in children with asthma. The principal tools include a questionnaire and biological specimen collection. Participants were 8-21 years old at time of recruitment. Children with asthma have physician-diagnosed asthma, symptoms and medications.\n",
+        "enrollment": [{ "reference": "Group/phs000921.v4.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

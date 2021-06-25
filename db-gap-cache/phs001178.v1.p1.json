@@ -1,1 +1,744 @@
-{"resourceType":"Bundle","id":"8f1deab8-20b8-4eb9-8b5c-ca1f017279f6","meta":{"lastUpdated":"2021-04-09T06:53:16.090-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001178.v1.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001178.v1.p1","resource":{"resourceType":"ResearchStudy","id":"phs001178.v1.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:47:58.270-04:00","source":"#Numih38J26WIthHP","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001178.v1.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2019-03-19"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001178.v1.p1 - 1","display":"GRU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":4,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":20,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":300,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":300,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc37"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001178.v1.p1"}],"title":"UCLA/Gabriella Miller Kids First Disorders of Sex Development Study","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Family/Twin/Trios","display":"Family/Twin/Trios"}],"text":"Family/Twin/Trios"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012734","display":"Disorders of Sex Development"}],"text":"Disorders of Sex Development"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012734","display":"Disorders of Sex Development"}],"text":"Disorders of Sex Development"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguities, Genital","display":"Ambiguities, Genital"}],"text":"Ambiguities, Genital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguity, Genital","display":"Ambiguity, Genital"}],"text":"Ambiguity, Genital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguous Genitalia","display":"Ambiguous Genitalia"}],"text":"Ambiguous Genitalia"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Condition, Intersex","display":"Condition, Intersex"}],"text":"Condition, Intersex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Conditions, Intersex","display":"Conditions, Intersex"}],"text":"Conditions, Intersex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorder, Sex","display":"Differentiation Disorder, Sex"}],"text":"Differentiation Disorder, Sex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorder, Sexual","display":"Differentiation Disorder, Sexual"}],"text":"Differentiation Disorder, Sexual"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorders, Sex","display":"Differentiation Disorders, Sex"}],"text":"Differentiation Disorders, Sex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorders, Sexual","display":"Differentiation Disorders, Sexual"}],"text":"Differentiation Disorders, Sexual"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorder, Sex Differentiation","display":"Disorder, Sex Differentiation"}],"text":"Disorder, Sex Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorder, Sexual Differentiation","display":"Disorder, Sexual Differentiation"}],"text":"Disorder, Sexual Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders of Sexual Development","display":"Disorders of Sexual Development"}],"text":"Disorders of Sexual Development"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders, Sex Differentiation","display":"Disorders, Sex Differentiation"}],"text":"Disorders, Sex Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders, Sexual Differentiation","display":"Disorders, Sexual Differentiation"}],"text":"Disorders, Sexual Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genital Ambiguities","display":"Genital Ambiguities"}],"text":"Genital Ambiguities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genital Ambiguity","display":"Genital Ambiguity"}],"text":"Genital Ambiguity"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genitalia, Ambiguous","display":"Genitalia, Ambiguous"}],"text":"Genitalia, Ambiguous"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Intersex Condition","display":"Intersex Condition"}],"text":"Intersex Condition"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Intersexualities","display":"Intersexualities"}],"text":"Intersexualities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Development Disorder","display":"Sex Development Disorder"}],"text":"Sex Development Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Development Disorders","display":"Sex Development Disorders"}],"text":"Sex Development Disorders"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Differentiation Disorder","display":"Sex Differentiation Disorder"}],"text":"Sex Differentiation Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Development Disorder","display":"Sexual Development Disorder"}],"text":"Sexual Development Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Development Disorders","display":"Sexual Development Disorders"}],"text":"Sexual Development Disorders"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Differentiation Disorders","display":"Sexual Differentiation Disorders"}],"text":"Sexual Differentiation Disorders"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C2930618","display":"Disorders of sex development"}],"text":"Disorders of sex development"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012734","display":"Disorders of Sex Development"}],"text":"Disorders of Sex Development"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguities, Genital","display":"Ambiguities, Genital"}],"text":"Ambiguities, Genital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguity, Genital","display":"Ambiguity, Genital"}],"text":"Ambiguity, Genital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Ambiguous Genitalia","display":"Ambiguous Genitalia"}],"text":"Ambiguous Genitalia"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Condition, Intersex","display":"Condition, Intersex"}],"text":"Condition, Intersex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Conditions, Intersex","display":"Conditions, Intersex"}],"text":"Conditions, Intersex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorder, Sex","display":"Differentiation Disorder, Sex"}],"text":"Differentiation Disorder, Sex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorder, Sexual","display":"Differentiation Disorder, Sexual"}],"text":"Differentiation Disorder, Sexual"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorders, Sex","display":"Differentiation Disorders, Sex"}],"text":"Differentiation Disorders, Sex"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Differentiation Disorders, Sexual","display":"Differentiation Disorders, Sexual"}],"text":"Differentiation Disorders, Sexual"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorder, Sex Differentiation","display":"Disorder, Sex Differentiation"}],"text":"Disorder, Sex Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorder, Sexual Differentiation","display":"Disorder, Sexual Differentiation"}],"text":"Disorder, Sexual Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders of Sexual Development","display":"Disorders of Sexual Development"}],"text":"Disorders of Sexual Development"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders, Sex Differentiation","display":"Disorders, Sex Differentiation"}],"text":"Disorders, Sex Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Disorders, Sexual Differentiation","display":"Disorders, Sexual Differentiation"}],"text":"Disorders, Sexual Differentiation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genital Ambiguities","display":"Genital Ambiguities"}],"text":"Genital Ambiguities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genital Ambiguity","display":"Genital Ambiguity"}],"text":"Genital Ambiguity"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Genitalia, Ambiguous","display":"Genitalia, Ambiguous"}],"text":"Genitalia, Ambiguous"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Intersex Condition","display":"Intersex Condition"}],"text":"Intersex Condition"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Intersexualities","display":"Intersexualities"}],"text":"Intersexualities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Development Disorder","display":"Sex Development Disorder"}],"text":"Sex Development Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Development Disorders","display":"Sex Development Disorders"}],"text":"Sex Development Disorders"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sex Differentiation Disorder","display":"Sex Differentiation Disorder"}],"text":"Sex Differentiation Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Development Disorder","display":"Sexual Development Disorder"}],"text":"Sexual Development Disorder"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Development Disorders","display":"Sexual Development Disorders"}],"text":"Sexual Development Disorders"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012734 entry term: Sexual Differentiation Disorders","display":"Sexual Differentiation Disorders"}],"text":"Sexual Differentiation Disorders"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C2930618","display":"Disorders of sex development"}],"text":"Disorders of sex development"}],"description":"\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource). Both childhood cancers and structural birth defects are critical and costly conditions associated with substantial morbidity and mortality. Elucidating the underlying genetic etiology of these diseases has the potential to profoundly improve preventative measures, diagnostics, and therapeutic interventions.\n\nWhole Genome Sequence (WGS) and phenotypic data from this study are accessible through dbGaP and [kidsfirstdrc.org](https://kidsfirstdrc.org/), where other Kids First datasets can also be accessed. Disorders/Differences of Sex Development (DSD) are congenital conditions in which development of chromosomal, gonadal, or anatomic sex is atypical. DSD are chronic medical conditions collectively affecting &#126;1&#37; of the population, frequently requiring life-long care by multiple specialists, and carrying a significant public health burden. Some are associated with life-threatening events, such as adrenal crises in Congenital Adrenal Hyperplasia (CAH). DSD are also associated with increased infertility, cancer, gender dysphoria risks, psychosocial distress and pervasive challenges to health-related quality of life (HRQoL) for patients and families. DSD are broadly classified into three categories: sex chromosome DSD, 46,XY DSD and 46,XX DSD, and further classified according to the type of gonad found in the patient (ovary, testis, ovotestis). \n\nWe were able to increase significantly the diagnostic success for DSD using Whole Exome Sequencing (WES), with the identification of disease-causing and likely pathogenic variants in a third of a cohort of 46,XY patients. We have therefore proposed a shift in the diagnostic approach to DSD to use next-gen sequencing as a first-line clinical test, which could lead to faster and more accurate diagnosis, and orient further clinical management, limiting unnecessary, costly, and often invasive endocrine testing and imaging. However many remain unexplained (over half of the XY cases, a significant minority of XX cases, including most ovotesticular DSD, and most syndromic cases). In addition, the very large phenotypic variability in cases with known variants in the same gene is unexplained. \n\nWe here propose to use Whole-Genome Sequencing (WGS), which dramatically improves upon exome sequencing, covering both coding and non-coding parts of the genome more uniformly, as an approach to not only improve diagnostic yield, but also to identify novel genes and regulatory elements involved in DSD.\n","enrollment":[{"reference":"Group/phs001178.v1.p1-all-subjects"}],"sponsor":{"reference":"Organization/NCI","type":"Organization","display":"National Cancer Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "8f1deab8-20b8-4eb9-8b5c-ca1f017279f6",
+  "meta": { "lastUpdated": "2021-04-09T06:53:16.090-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001178.v1.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001178.v1.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001178.v1.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:47:58.270-04:00",
+          "source": "#Numih38J26WIthHP",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001178.v1.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2019-03-19"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001178.v1.p1 - 1",
+                  "display": "GRU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 4,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 1,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 20,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 300,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 300,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc37"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001178.v1.p1"
+          }
+        ],
+        "title": "UCLA/Gabriella Miller Kids First Disorders of Sex Development Study",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Family/Twin/Trios",
+                "display": "Family/Twin/Trios"
+              }
+            ],
+            "text": "Family/Twin/Trios"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012734",
+                "display": "Disorders of Sex Development"
+              }
+            ],
+            "text": "Disorders of Sex Development"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012734",
+                "display": "Disorders of Sex Development"
+              }
+            ],
+            "text": "Disorders of Sex Development"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguities, Genital",
+                "display": "Ambiguities, Genital"
+              }
+            ],
+            "text": "Ambiguities, Genital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguity, Genital",
+                "display": "Ambiguity, Genital"
+              }
+            ],
+            "text": "Ambiguity, Genital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguous Genitalia",
+                "display": "Ambiguous Genitalia"
+              }
+            ],
+            "text": "Ambiguous Genitalia"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Condition, Intersex",
+                "display": "Condition, Intersex"
+              }
+            ],
+            "text": "Condition, Intersex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Conditions, Intersex",
+                "display": "Conditions, Intersex"
+              }
+            ],
+            "text": "Conditions, Intersex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorder, Sex",
+                "display": "Differentiation Disorder, Sex"
+              }
+            ],
+            "text": "Differentiation Disorder, Sex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorder, Sexual",
+                "display": "Differentiation Disorder, Sexual"
+              }
+            ],
+            "text": "Differentiation Disorder, Sexual"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorders, Sex",
+                "display": "Differentiation Disorders, Sex"
+              }
+            ],
+            "text": "Differentiation Disorders, Sex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorders, Sexual",
+                "display": "Differentiation Disorders, Sexual"
+              }
+            ],
+            "text": "Differentiation Disorders, Sexual"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorder, Sex Differentiation",
+                "display": "Disorder, Sex Differentiation"
+              }
+            ],
+            "text": "Disorder, Sex Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorder, Sexual Differentiation",
+                "display": "Disorder, Sexual Differentiation"
+              }
+            ],
+            "text": "Disorder, Sexual Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders of Sexual Development",
+                "display": "Disorders of Sexual Development"
+              }
+            ],
+            "text": "Disorders of Sexual Development"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders, Sex Differentiation",
+                "display": "Disorders, Sex Differentiation"
+              }
+            ],
+            "text": "Disorders, Sex Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders, Sexual Differentiation",
+                "display": "Disorders, Sexual Differentiation"
+              }
+            ],
+            "text": "Disorders, Sexual Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genital Ambiguities",
+                "display": "Genital Ambiguities"
+              }
+            ],
+            "text": "Genital Ambiguities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genital Ambiguity",
+                "display": "Genital Ambiguity"
+              }
+            ],
+            "text": "Genital Ambiguity"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genitalia, Ambiguous",
+                "display": "Genitalia, Ambiguous"
+              }
+            ],
+            "text": "Genitalia, Ambiguous"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Intersex Condition",
+                "display": "Intersex Condition"
+              }
+            ],
+            "text": "Intersex Condition"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Intersexualities",
+                "display": "Intersexualities"
+              }
+            ],
+            "text": "Intersexualities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Development Disorder",
+                "display": "Sex Development Disorder"
+              }
+            ],
+            "text": "Sex Development Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Development Disorders",
+                "display": "Sex Development Disorders"
+              }
+            ],
+            "text": "Sex Development Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Differentiation Disorder",
+                "display": "Sex Differentiation Disorder"
+              }
+            ],
+            "text": "Sex Differentiation Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Development Disorder",
+                "display": "Sexual Development Disorder"
+              }
+            ],
+            "text": "Sexual Development Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Development Disorders",
+                "display": "Sexual Development Disorders"
+              }
+            ],
+            "text": "Sexual Development Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Differentiation Disorders",
+                "display": "Sexual Differentiation Disorders"
+              }
+            ],
+            "text": "Sexual Differentiation Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C2930618",
+                "display": "Disorders of sex development"
+              }
+            ],
+            "text": "Disorders of sex development"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012734",
+                "display": "Disorders of Sex Development"
+              }
+            ],
+            "text": "Disorders of Sex Development"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguities, Genital",
+                "display": "Ambiguities, Genital"
+              }
+            ],
+            "text": "Ambiguities, Genital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguity, Genital",
+                "display": "Ambiguity, Genital"
+              }
+            ],
+            "text": "Ambiguity, Genital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Ambiguous Genitalia",
+                "display": "Ambiguous Genitalia"
+              }
+            ],
+            "text": "Ambiguous Genitalia"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Condition, Intersex",
+                "display": "Condition, Intersex"
+              }
+            ],
+            "text": "Condition, Intersex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Conditions, Intersex",
+                "display": "Conditions, Intersex"
+              }
+            ],
+            "text": "Conditions, Intersex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorder, Sex",
+                "display": "Differentiation Disorder, Sex"
+              }
+            ],
+            "text": "Differentiation Disorder, Sex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorder, Sexual",
+                "display": "Differentiation Disorder, Sexual"
+              }
+            ],
+            "text": "Differentiation Disorder, Sexual"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorders, Sex",
+                "display": "Differentiation Disorders, Sex"
+              }
+            ],
+            "text": "Differentiation Disorders, Sex"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Differentiation Disorders, Sexual",
+                "display": "Differentiation Disorders, Sexual"
+              }
+            ],
+            "text": "Differentiation Disorders, Sexual"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorder, Sex Differentiation",
+                "display": "Disorder, Sex Differentiation"
+              }
+            ],
+            "text": "Disorder, Sex Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorder, Sexual Differentiation",
+                "display": "Disorder, Sexual Differentiation"
+              }
+            ],
+            "text": "Disorder, Sexual Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders of Sexual Development",
+                "display": "Disorders of Sexual Development"
+              }
+            ],
+            "text": "Disorders of Sexual Development"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders, Sex Differentiation",
+                "display": "Disorders, Sex Differentiation"
+              }
+            ],
+            "text": "Disorders, Sex Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Disorders, Sexual Differentiation",
+                "display": "Disorders, Sexual Differentiation"
+              }
+            ],
+            "text": "Disorders, Sexual Differentiation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genital Ambiguities",
+                "display": "Genital Ambiguities"
+              }
+            ],
+            "text": "Genital Ambiguities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genital Ambiguity",
+                "display": "Genital Ambiguity"
+              }
+            ],
+            "text": "Genital Ambiguity"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Genitalia, Ambiguous",
+                "display": "Genitalia, Ambiguous"
+              }
+            ],
+            "text": "Genitalia, Ambiguous"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Intersex Condition",
+                "display": "Intersex Condition"
+              }
+            ],
+            "text": "Intersex Condition"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Intersexualities",
+                "display": "Intersexualities"
+              }
+            ],
+            "text": "Intersexualities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Development Disorder",
+                "display": "Sex Development Disorder"
+              }
+            ],
+            "text": "Sex Development Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Development Disorders",
+                "display": "Sex Development Disorders"
+              }
+            ],
+            "text": "Sex Development Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sex Differentiation Disorder",
+                "display": "Sex Differentiation Disorder"
+              }
+            ],
+            "text": "Sex Differentiation Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Development Disorder",
+                "display": "Sexual Development Disorder"
+              }
+            ],
+            "text": "Sexual Development Disorder"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Development Disorders",
+                "display": "Sexual Development Disorders"
+              }
+            ],
+            "text": "Sexual Development Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012734 entry term: Sexual Differentiation Disorders",
+                "display": "Sexual Differentiation Disorders"
+              }
+            ],
+            "text": "Sexual Differentiation Disorders"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C2930618",
+                "display": "Disorders of sex development"
+              }
+            ],
+            "text": "Disorders of sex development"
+          }
+        ],
+        "description": "\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource). Both childhood cancers and structural birth defects are critical and costly conditions associated with substantial morbidity and mortality. Elucidating the underlying genetic etiology of these diseases has the potential to profoundly improve preventative measures, diagnostics, and therapeutic interventions.\n\nWhole Genome Sequence (WGS) and phenotypic data from this study are accessible through dbGaP and [kidsfirstdrc.org](https://kidsfirstdrc.org/), where other Kids First datasets can also be accessed. Disorders/Differences of Sex Development (DSD) are congenital conditions in which development of chromosomal, gonadal, or anatomic sex is atypical. DSD are chronic medical conditions collectively affecting &#126;1&#37; of the population, frequently requiring life-long care by multiple specialists, and carrying a significant public health burden. Some are associated with life-threatening events, such as adrenal crises in Congenital Adrenal Hyperplasia (CAH). DSD are also associated with increased infertility, cancer, gender dysphoria risks, psychosocial distress and pervasive challenges to health-related quality of life (HRQoL) for patients and families. DSD are broadly classified into three categories: sex chromosome DSD, 46,XY DSD and 46,XX DSD, and further classified according to the type of gonad found in the patient (ovary, testis, ovotestis). \n\nWe were able to increase significantly the diagnostic success for DSD using Whole Exome Sequencing (WES), with the identification of disease-causing and likely pathogenic variants in a third of a cohort of 46,XY patients. We have therefore proposed a shift in the diagnostic approach to DSD to use next-gen sequencing as a first-line clinical test, which could lead to faster and more accurate diagnosis, and orient further clinical management, limiting unnecessary, costly, and often invasive endocrine testing and imaging. However many remain unexplained (over half of the XY cases, a significant minority of XX cases, including most ovotesticular DSD, and most syndromic cases). In addition, the very large phenotypic variability in cases with known variants in the same gene is unexplained. \n\nWe here propose to use Whole-Genome Sequencing (WGS), which dramatically improves upon exome sequencing, covering both coding and non-coding parts of the genome more uniformly, as an approach to not only improve diagnostic yield, but also to identify novel genes and regulatory elements involved in DSD.\n",
+        "enrollment": [{ "reference": "Group/phs001178.v1.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NCI",
+          "type": "Organization",
+          "display": "National Cancer Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

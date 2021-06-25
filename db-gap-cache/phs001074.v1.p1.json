@@ -1,1 +1,423 @@
-{"resourceType":"Bundle","id":"8ab35385-2e54-4ea1-af9e-ad5335360af0","meta":{"lastUpdated":"2021-04-09T06:50:23.073-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001074.v1.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001074.v1.p1","resource":{"resourceType":"ResearchStudy","id":"phs001074.v1.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:47:49.582-04:00","source":"#J4hdQQQaNFRKFNCU","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001074.v1.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2016-08-23"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001074.v1.p1 - 0","display":"NRUP"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001074.v1.p1 - 2","display":"DS-CVD-IRB-NPU-RD"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":5,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":125,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":10,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":250,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":440,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EUR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":136,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFO"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"AFA"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":108,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"OTR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"HumanExome-12v1"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"MEGA_Consortium"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP Genotypes (Array)"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Title","valueString":"Integrity of Induced Pluripotent Stem Cell (iPSC) Derived Megakaryocytes as Assessed by Genetic and Transcriptomic Analysis"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Url","valueUrl":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5249236"}]}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001074.v1.p1"}],"title":"GeneSTAR NextGen Functional Genomics of Platelet Aggregation","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Prospective Longitudinal Cohort","display":"Prospective Longitudinal Cohort"}],"text":"Prospective Longitudinal Cohort"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D010974","display":"Platelet Aggregation"}],"text":"Platelet Aggregation"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D010974","display":"Platelet Aggregation"}],"text":"Platelet Aggregation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D010974 entry term: Aggregation, Platelet","display":"Aggregation, Platelet"}],"text":"Aggregation, Platelet"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D010974 entry term: Platelet Aggregation","display":"Platelet Aggregation"}],"text":"Platelet Aggregation"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D010974","display":"Platelet Aggregation"}],"text":"Platelet Aggregation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D010974 entry term: Aggregation, Platelet","display":"Aggregation, Platelet"}],"text":"Aggregation, Platelet"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D010974 entry term: Platelet Aggregation","display":"Platelet Aggregation"}],"text":"Platelet Aggregation"}],"description":"\nThe causal mechanisms of common diseases and their therapies have been only marginally illuminated by genetic variants identified in genome wide association studies (GWAS) utilizing single nucleotide polymorphism (SNPs). Platelet activation pathways reflecting hemostasis and thrombosis are the underlying substrate for many cardiovascular diseases and related acute events. To overcome GWAS limitations, genomic studies are needed that integrate molecular surrogates for platelet-related phenotypes assayed in cell-based models derived from individuals of known genotypes and phenotypes. In our GWAS study of native platelet aggregation phenotypes and aggregation in response to low dose aspirin in 2200 subjects (GeneSTAR, Genetic Study of Aspirin Responsiveness), important genome wide \"signals\" (p&lt;5x10-8) associated with native platelet aggregation and important \"signals\" associated with platelet responsiveness to aspirin were identified and replicated. Although we are currently performing functional genomics studies to elucidate our most promising findings in known genes (PEAR1, MET, PIKC3G), most \"signals\" occurred in intergenic regions or in introns. Mechanistic interpretation is limited by uncertainty as to which gene(s) are up- or down-regulated in the presence of most SNP modifications. In this 3 phase proposal, we will (1) create pluripotent stem cells (iPS) from peripheral blood mononuclear cells, and then differentiate these stem cells into megakaryocytes (2) develop an efficient strategy to produce iPS and megakaryocytes using a novel pooling method, and (3) produce iPS and megakaryocytes from 250 subjects in GeneSTAR (European Americans and African Americans), selected based on specific hypotheses derived from GWAS signals in native and post aspirin platelet function; characterize genetic mRNA transcripts using a comprehensive Affymetrix array; measure protein expression for transcripts of interest using mass spectrometry; examine mRNA and protein expression patterns for each GWAS signal to determine the functional pathway(s) involved in native platelet phenotypes; and examine the functional genomics of variations in responsiveness to aspirin using our prior genotyped and phenotyped population. Precise information about the exact functional processes in megakaryocytes and platelets may lead to innovative and tailored approaches to risk assessment and novel therapeutic targets to prevent first and recurrent cardiovascular and related thrombotic events.\n","enrollment":[{"reference":"Group/phs001074.v1.p1-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "8ab35385-2e54-4ea1-af9e-ad5335360af0",
+  "meta": { "lastUpdated": "2021-04-09T06:50:23.073-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001074.v1.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001074.v1.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001074.v1.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:47:49.582-04:00",
+          "source": "#J4hdQQQaNFRKFNCU",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001074.v1.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2016-08-23"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001074.v1.p1 - 0",
+                  "display": "NRUP"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001074.v1.p1 - 2",
+                  "display": "DS-CVD-IRB-NPU-RD"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 5,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 1,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 125,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 10,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 250,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 440,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EUR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 136,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFO"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 2,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "AFA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 108,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 3,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "OTR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "HumanExome-12v1"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "MEGA_Consortium"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP Genotypes (Array)"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Title",
+                    "valueString": "Integrity of Induced Pluripotent Stem Cell (iPSC) Derived Megakaryocytes as Assessed by Genetic and Transcriptomic Analysis"
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Citers-Citer-Url",
+                    "valueUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5249236"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001074.v1.p1"
+          }
+        ],
+        "title": "GeneSTAR NextGen Functional Genomics of Platelet Aggregation",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Prospective Longitudinal Cohort",
+                "display": "Prospective Longitudinal Cohort"
+              }
+            ],
+            "text": "Prospective Longitudinal Cohort"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D010974",
+                "display": "Platelet Aggregation"
+              }
+            ],
+            "text": "Platelet Aggregation"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D010974",
+                "display": "Platelet Aggregation"
+              }
+            ],
+            "text": "Platelet Aggregation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D010974 entry term: Aggregation, Platelet",
+                "display": "Aggregation, Platelet"
+              }
+            ],
+            "text": "Aggregation, Platelet"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D010974 entry term: Platelet Aggregation",
+                "display": "Platelet Aggregation"
+              }
+            ],
+            "text": "Platelet Aggregation"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D010974",
+                "display": "Platelet Aggregation"
+              }
+            ],
+            "text": "Platelet Aggregation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D010974 entry term: Aggregation, Platelet",
+                "display": "Aggregation, Platelet"
+              }
+            ],
+            "text": "Aggregation, Platelet"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D010974 entry term: Platelet Aggregation",
+                "display": "Platelet Aggregation"
+              }
+            ],
+            "text": "Platelet Aggregation"
+          }
+        ],
+        "description": "\nThe causal mechanisms of common diseases and their therapies have been only marginally illuminated by genetic variants identified in genome wide association studies (GWAS) utilizing single nucleotide polymorphism (SNPs). Platelet activation pathways reflecting hemostasis and thrombosis are the underlying substrate for many cardiovascular diseases and related acute events. To overcome GWAS limitations, genomic studies are needed that integrate molecular surrogates for platelet-related phenotypes assayed in cell-based models derived from individuals of known genotypes and phenotypes. In our GWAS study of native platelet aggregation phenotypes and aggregation in response to low dose aspirin in 2200 subjects (GeneSTAR, Genetic Study of Aspirin Responsiveness), important genome wide \"signals\" (p&lt;5x10-8) associated with native platelet aggregation and important \"signals\" associated with platelet responsiveness to aspirin were identified and replicated. Although we are currently performing functional genomics studies to elucidate our most promising findings in known genes (PEAR1, MET, PIKC3G), most \"signals\" occurred in intergenic regions or in introns. Mechanistic interpretation is limited by uncertainty as to which gene(s) are up- or down-regulated in the presence of most SNP modifications. In this 3 phase proposal, we will (1) create pluripotent stem cells (iPS) from peripheral blood mononuclear cells, and then differentiate these stem cells into megakaryocytes (2) develop an efficient strategy to produce iPS and megakaryocytes using a novel pooling method, and (3) produce iPS and megakaryocytes from 250 subjects in GeneSTAR (European Americans and African Americans), selected based on specific hypotheses derived from GWAS signals in native and post aspirin platelet function; characterize genetic mRNA transcripts using a comprehensive Affymetrix array; measure protein expression for transcripts of interest using mass spectrometry; examine mRNA and protein expression patterns for each GWAS signal to determine the functional pathway(s) involved in native platelet phenotypes; and examine the functional genomics of variations in responsiveness to aspirin using our prior genotyped and phenotyped population. Precise information about the exact functional processes in megakaryocytes and platelets may lead to innovative and tailored approaches to risk assessment and novel therapeutic targets to prevent first and recurrent cardiovascular and related thrombotic events.\n",
+        "enrollment": [{ "reference": "Group/phs001074.v1.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

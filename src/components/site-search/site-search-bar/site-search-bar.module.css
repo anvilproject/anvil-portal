@@ -7,15 +7,15 @@
 
 /* Search bar. */
 .searchBar {
-    align-items: center;
-    display: flex;
-    flex-basis: 36px;
-    justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  flex-basis: 36px;
+  justify-content: flex-end;
 }
 
 /* Search bar - expanded. */
 .searchBar.expanded {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 /**
@@ -23,21 +23,21 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
+  /* Search bar. */
+  .searchBar {
+    margin-left: 32px;
+  }
 
-    /* Search bar. */
-    .searchBar {
-        margin-left: 32px;
-    }
+  /* Search bar - expanded. */
+  .searchBar.expanded {
+    flex-basis: 400px;
+  }
 
-    /* Search bar - expanded. */
-    .searchBar.expanded {
-        flex-basis: 400px;
-    }
-
-    /* Search bar, and expanded. */
-    .searchBar, .searchBar.expanded {
-        transition: flex-basis 300ms ease;
-    }
+  /* Search bar, and expanded. */
+  .searchBar,
+  .searchBar.expanded {
+    transition: flex-basis 300ms ease;
+  }
 }
 
 /**
@@ -45,16 +45,15 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
+  /* Search bar. */
+  .searchBar {
+    margin-left: 16px;
+  }
 
-    /* Search bar. */
-    .searchBar {
-        margin-left: 16px;
-    }
-
-    /* Search bar - expanded. */
-    .searchBar.expanded {
-        transition: flex-basis 300ms ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
-    }
+  /* Search bar - expanded. */
+  .searchBar.expanded {
+    transition: flex-basis 300ms ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
+  }
 }
 
 /**
@@ -62,11 +61,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 840px) {
-
-    /* Search bar. */
-    .searchBar {
-        margin-left: 24px;
-    }
+  /* Search bar. */
+  .searchBar {
+    margin-left: 24px;
+  }
 }
 
 /**
@@ -74,11 +72,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-    /* Search bar. */
-    .searchBar {
-        margin-left: 32px;
-    }
+  /* Search bar. */
+  .searchBar {
+    margin-left: 32px;
+  }
 }
 
 /**
@@ -86,11 +83,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
-
-    /* Search bar. */
-    .searchBar {
-        flex-basis: 200px;
-    }
+  /* Search bar. */
+  .searchBar {
+    flex-basis: 200px;
+  }
 }
 
 /**
@@ -98,14 +94,13 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1280px) {
+  /* Search bar. */
+  .searchBar {
+    transition: flex-basis 300ms ease 300ms; /* Delay improves access to header links while search bar is open. */
+  }
 
-    /* Search bar. */
-    .searchBar {
-        transition: flex-basis 300ms ease 300ms; /* Delay improves access to header links while search bar is open. */
-    }
-
-    /* Search bar - expanded. */
-    .searchBar.expanded {
-        transition: flex-basis 300ms ease;
-    }
+  /* Search bar - expanded. */
+  .searchBar.expanded {
+    transition: flex-basis 300ms ease;
+  }
 }

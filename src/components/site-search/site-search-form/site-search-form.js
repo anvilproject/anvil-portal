@@ -15,14 +15,13 @@ import SiteSearchInput from "../site-search-input/site-search-input";
 import compStyles from "./site-search-form.module.css";
 
 function SiteSearchForm(props) {
+  const { onSubmitSiteSearch } = props;
 
-    const {onSubmitSiteSearch} = props;
-
-    return (
-        <form className={compStyles.form} onSubmit={(e) => onSubmitSiteSearch(e)}>
-            <SiteSearchInput/>
-        </form>
-    )
+  return (
+    <form className={compStyles.form} onSubmit={e => onSubmitSiteSearch(e)}>
+      <SiteSearchInput />
+    </form>
+  );
 }
 
 export default React.memo(SiteSearchForm);

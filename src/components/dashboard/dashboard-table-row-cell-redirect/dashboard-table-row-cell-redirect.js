@@ -18,20 +18,24 @@ import * as RedirectService from "../../../utils/redirect.service";
 import compStyles from "./dashboard-table-row-cell-redirect.module.css";
 
 class DashboardTableRowCellRedirect extends React.Component {
+  render() {
+    const { children, column, id } = this.props;
+    const linkTo = DashboardTableService.getCellUrl(children, column);
 
-    render() {
-        const {children, column, id} = this.props;
-        const linkTo = DashboardTableService.getCellUrl(children, column);
-
-        return (
-            linkTo ? <ClickHandler className={compStyles.link}
-                                   clickAction={() => RedirectService.redirect(linkTo, children)}
-                                   id={id}
-                                   tag={"td"}
-                                   label={children}>{children}</ClickHandler> :
-                <td id={id}>{children}</td>
-        );
-    }
+    return linkTo ? (
+      <ClickHandler
+        className={compStyles.link}
+        clickAction={() => RedirectService.redirect(linkTo, children)}
+        id={id}
+        tag={"td"}
+        label={children}
+      >
+        {children}
+      </ClickHandler>
+    ) : (
+      <td id={id}>{children}</td>
+    );
+  }
 }
 
 export default DashboardTableRowCellRedirect;

@@ -15,19 +15,15 @@ import Button from "../../button/button";
 import compStyles from "./dashboard-search-checkboxes-show-more.module.css";
 
 function DashboardSearchCheckboxesShowMore(props) {
+  const { moreCount, onShowMore } = props;
+  const more = moreCount > 0;
+  const buttonText = `+ ${moreCount} more`;
 
-    const {moreCount, onShowMore} = props;
-    const more = moreCount > 0;
-    const buttonText = `+ ${moreCount} more`;
-
-    return (
-        more ?
-        <Button clickAction={() => onShowMore()}>
-            <span className={compStyles.more}>
-                {buttonText}
-            </span>
-        </Button> : null
-    );
+  return more ? (
+    <Button clickAction={() => onShowMore()}>
+      <span className={compStyles.more}>{buttonText}</span>
+    </Button>
+  ) : null;
 }
 
 export default DashboardSearchCheckboxesShowMore;

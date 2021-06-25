@@ -25,14 +25,18 @@ import React from "react";
 import compStyles from "./social.module.css";
 
 function Social(props) {
+  const { children, url } = props;
 
-    const {children, url} = props;
-
-    return (
-        <a className={compStyles.social} href={url} rel={"noopener noreferrer"} target={"_blank"}>
-            {children}
-        </a>
-    );
+  return (
+    <a
+      className={compStyles.social}
+      href={url}
+      rel={"noopener noreferrer"}
+      target={"_blank"}
+    >
+      {children}
+    </a>
+  );
 }
 
 export default Social;

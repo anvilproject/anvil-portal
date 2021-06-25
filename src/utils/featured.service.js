@@ -13,11 +13,9 @@
  * @returns {*}
  */
 export function filterFeaturedPosts(featured, posts) {
+  if (!featured) {
+    return posts;
+  }
 
-    if ( !featured ) {
-
-        return posts;
-    }
-
-    return posts.filter(post => post.frontmatter.featured);
+  return posts.filter(post => post.frontmatter.featured);
 }

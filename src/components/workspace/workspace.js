@@ -21,38 +21,36 @@ import * as DOMService from "../../utils/dom.service";
 import compStyles from "./workspace.module.css";
 
 class Workspace extends React.Component {
+  redirect = (linkTo, linkText) => {
+    window.open(linkTo);
 
-    redirect = (linkTo, linkText) => {
-
-        window.open(linkTo);
-
-        // Track click to external sites
-        if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {
-            AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
-        }
-    };
-
-    render() {
-        const {workspace} = this.props,
-            {frontmatter, htmlAst} = workspace,
-            {logo, title, url} = frontmatter || {},
-            {childImageSharp} = logo || {},
-            {fluid} = childImageSharp || {},
-            {src} = fluid || {};
-        return (
-            <div className={compStyles.workspace}>
-                <ListItem redirectTo={() => this.redirect(url, title)} label={title}>
-                    <ListItemIcon>
-                        <BrandIcon src={src} alt={title}/>
-                    </ListItemIcon>
-                    <ListItemContent>
-                        <h3>{title}</h3>
-                        <Markdown>{htmlAst}</Markdown>
-                    </ListItemContent>
-                </ListItem>
-            </div>
-        );
+    // Track click to external sites
+    if (DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo)) {
+      AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
     }
+  };
+
+  render() {
+    const { workspace } = this.props,
+      { frontmatter, htmlAst } = workspace,
+      { logo, title, url } = frontmatter || {},
+      { childImageSharp } = logo || {},
+      { fluid } = childImageSharp || {},
+      { src } = fluid || {};
+    return (
+      <div className={compStyles.workspace}>
+        <ListItem redirectTo={() => this.redirect(url, title)} label={title}>
+          <ListItemIcon>
+            <BrandIcon src={src} alt={title} />
+          </ListItemIcon>
+          <ListItemContent>
+            <h3>{title}</h3>
+            <Markdown>{htmlAst}</Markdown>
+          </ListItemContent>
+        </ListItem>
+      </div>
+    );
+  }
 }
 
 export default Workspace;

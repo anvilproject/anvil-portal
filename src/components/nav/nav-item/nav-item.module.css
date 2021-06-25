@@ -9,35 +9,35 @@
 
 /* Nav item. */
 .navItem {
-    font-size: 0.875rem; /* 14px. */
-    font-weight: 400;
-    line-height: 1.25rem; /* 20px. */
-    margin: 0; /* Override default li margin. */
+  font-size: 0.875rem; /* 14px. */
+  font-weight: 400;
+  line-height: 1.25rem; /* 20px. */
+  margin: 0; /* Override default li margin. */
 }
 
 /* Nav item level 2. */
 .navItem .navItem {
-    padding-left: 14px;
+  padding-left: 14px;
 }
 
 /* Link or button. */
 .navItem > span {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    padding: 4px 40px 4px 0; /* 40px to match content margins. */
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 4px 40px 4px 0; /* 40px to match content margins. */
 }
 
 /* Link - active. */
 .navItem > span:not(.button).active {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* Link - hover. */
 .navItem > span:not(.button):not(.active):hover {
-    color: var(--black58);
+  color: var(--black58);
 }
 
 .navItem .navItem:last-child {
-    padding-bottom: 8px;
+  padding-bottom: 8px;
 }

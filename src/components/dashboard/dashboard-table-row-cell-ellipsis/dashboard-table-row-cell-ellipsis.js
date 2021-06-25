@@ -13,18 +13,23 @@ import React from "react";
 import Tooltip from "../../tooltip/tooltip";
 
 class DashboardTableRowCellEllipsis extends React.Component {
+  render() {
+    const { children, id } = this.props;
+    const showEllipsis = children.length > 50;
+    const truncated = `${children.substring(0, 47)}...`;
 
-    render() {
-        const {children, id} = this.props;
-        const showEllipsis = children.length > 50;
-        const truncated = `${children.substring(0, 47)}...`;
-
-        return (
-            <td id={id}>
-                {showEllipsis ? <Tooltip label={children} multiline>{truncated}</Tooltip> : children}
-            </td>
-        );
-    }
+    return (
+      <td id={id}>
+        {showEllipsis ? (
+          <Tooltip label={children} multiline>
+            {truncated}
+          </Tooltip>
+        ) : (
+          children
+        )}
+      </td>
+    );
+  }
 }
 
 export default DashboardTableRowCellEllipsis;

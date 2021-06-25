@@ -13,22 +13,23 @@
  * @param type0
  * @param type1
  */
-const sortDataByDuoTypes = function sortDataByDuoTypes(dashboardData, type0, type1) {
+const sortDataByDuoTypes = function sortDataByDuoTypes(
+  dashboardData,
+  type0,
+  type1
+) {
+  return dashboardData.sort(function(data0, data1) {
+    /* Sort by first specified type. */
+    const firstSort = sortDataValues(data0, data1, type0);
 
-    return dashboardData.sort(function (data0, data1) {
+    /* If the first sort has the same value, sort by second specified type and return the sorted outcome. */
+    if (firstSort === 0) {
+      return sortDataValues(data0, data1, type1);
+    }
 
-        /* Sort by first specified type. */
-        const firstSort = sortDataValues(data0, data1, type0);
-
-        /* If the first sort has the same value, sort by second specified type and return the sorted outcome. */
-        if ( firstSort === 0 ) {
-
-            return sortDataValues(data0, data1, type1)
-        }
-
-        /* Return the sorted outcome. */
-        return firstSort;
-    });
+    /* Return the sorted outcome. */
+    return firstSort;
+  });
 };
 
 /**
@@ -40,18 +41,15 @@ const sortDataByDuoTypes = function sortDataByDuoTypes(dashboardData, type0, typ
  * @returns {number}
  */
 function compareDataValues(value0, value1) {
+  if (value0 < value1) {
+    return -1;
+  }
 
-    if ( value0 < value1 ) {
+  if (value0 > value1) {
+    return 1;
+  }
 
-        return -1;
-    }
-
-    if ( value0 > value1) {
-
-        return 1;
-    }
-
-    return 0;
+  return 0;
 }
 
 /**
@@ -61,17 +59,15 @@ function compareDataValues(value0, value1) {
  * @returns {string}
  */
 function removeNonAlphanumericValues(str) {
+  if (str && typeof str === "string") {
+    return str
+      .replace(/[^a-zA-Z0-9\s]/g, " ")
+      .replace(/\s\s+/g, " ")
+      .toLowerCase()
+      .trim();
+  }
 
-    if ( str && typeof str === "string" ) {
-
-        return str
-            .replace(/[^a-zA-Z0-9\s]/g, " ")
-            .replace(/\s\s+/g, " ")
-            .toLowerCase()
-            .trim();
-    }
-
-    return str;
+  return str;
 }
 
 /**
@@ -83,12 +79,11 @@ function removeNonAlphanumericValues(str) {
  * @returns {number}
  */
 function sortDataValues(data0, data1, type) {
+  const type0 = removeNonAlphanumericValues(data0[type]);
+  const type1 = removeNonAlphanumericValues(data1[type]);
 
-    const type0 = removeNonAlphanumericValues(data0[type]);
-    const type1 = removeNonAlphanumericValues(data1[type]);
-
-    /* Compare and then sort the two values. */
-    return compareDataValues(type0, type1);
+  /* Compare and then sort the two values. */
+  return compareDataValues(type0, type1);
 }
 
 module.exports.sortDataByDuoTypes = sortDataByDuoTypes;

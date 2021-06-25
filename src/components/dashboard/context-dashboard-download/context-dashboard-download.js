@@ -9,7 +9,7 @@
 import React from "react";
 
 const ContextDashboardDownload = React.createContext({
-    onHandleDownloadTSV: () => {},
+  onHandleDownloadTSV: () => {}
 });
 
 export default ContextDashboardDownload;

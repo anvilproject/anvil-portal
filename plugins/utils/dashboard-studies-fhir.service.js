@@ -6,24 +6,28 @@
  */
 
 // Core dependencies
-const {decode} = require("html-entities");
+const { decode } = require("html-entities");
 const fetch = require("node-fetch");
 const path = require("path");
 
 // App dependencies
-const {readFile, writeFile} = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
+const { readFile, writeFile } = require(path.resolve(
+  __dirname,
+  "./dashboard-file-system.service.js"
+));
 
 // Template variables
 const dirCacheFHIR = "../../db-gap-cache";
 const FHIR_FIELD_KEY = {
-    "CONSENT_CODES": "consentCodes",
-    "DATA_TYPES": "dataTypes",
-    "DISEASES": "diseases",
-    "STUDY_DESIGNS": "studyDesigns",
-    "STUDY_NAME": "studyName",
-    "SUBJECTS_TOTAL": "subjectsTotal"
+  CONSENT_CODES: "consentCodes",
+  DATA_TYPES: "dataTypes",
+  DISEASES: "diseases",
+  STUDY_DESIGNS: "studyDesigns",
+  STUDY_NAME: "studyName",
+  SUBJECTS_TOTAL: "subjectsTotal"
 };
-const urlPrefixFHIR = "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
+const urlPrefixFHIR =
+  "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
 const urlSuffixFHIR = "&_format=json";
 
 /**
@@ -33,23 +37,21 @@ const urlSuffixFHIR = "&_format=json";
  * @returns {Promise.<*>}
  */
 const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
+  /* Initialize study. */
+  let study = initializeStudy();
 
-    /* Initialize study. */
-    let study = initializeStudy();
+  /* Grab the FHIR JSON. */
+  const fhirJSON = await getFHIRJSON(dbGapIdAccession);
 
-    /* Grab the FHIR JSON. */
-    const fhirJSON = await getFHIRJSON(dbGapIdAccession);
+  /* Build the study. */
+  const fhirStudy = buildFHIRStudy(fhirJSON, study);
 
-    /* Build the study. */
-    const fhirStudy = buildFHIRStudy(fhirJSON, study);
+  /* Cache the study for future use; if it has not already been stored. */
+  if (fhirJSON && !fhirJSON.cacheHit) {
+    await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
+  }
 
-    /* Cache the study for future use; if it has not already been stored. */
-    if ( fhirJSON && !fhirJSON.cacheHit ) {
-
-        await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
-    }
-
-    return fhirStudy;
+  return fhirStudy;
 };
 
 /**
@@ -60,47 +62,46 @@ const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
  * @returns {*}
  */
 function buildFHIRStudy(fhirJSON, study) {
+  if (fhirJSON) {
+    const entries = fhirJSON.entry;
 
-    if ( fhirJSON ) {
+    /* Grab the study name and assign to the study. */
+    const studyName = getStudyName(entries);
+    const cloneStudy = Object.assign(study, {
+      [FHIR_FIELD_KEY.STUDY_NAME]: studyName
+    });
 
-        const entries = fhirJSON.entry;
+    return entries.reduce((acc, entry) => {
+      /* Grab the resource extensions. */
+      const { resource } = entry || {};
 
-        /* Grab the study name and assign to the study. */
-        const studyName = getStudyName(entries);
-        const cloneStudy = Object.assign(study, {[FHIR_FIELD_KEY.STUDY_NAME]: studyName});
+      /* Roll up the consent codes. */
+      const consentCodes = rollUpConsentCodes(resource, acc);
 
-        return entries.reduce((acc, entry) => {
+      /* Roll up the molecular codes. */
+      const dataTypes = rollUpDataTypes(resource, acc);
 
-            /* Grab the resource extensions. */
-            const {resource} = entry || {};
+      /* Roll up the diseases. */
+      const diseases = rollUpDiseases(resource, acc);
 
-            /* Roll up the consent codes. */
-            const consentCodes = rollUpConsentCodes(resource, acc);
+      /* Roll up the study designs. */
+      const studyDesigns = rollUpStudyDesigns(resource, acc);
 
-            /* Roll up the molecular codes. */
-            const dataTypes = rollUpDataTypes(resource, acc);
+      /* Roll up subjects total. */
+      const subjectsTotal = rollUpSubjectsTotal(resource, acc);
 
-            /* Roll up the diseases. */
-            const diseases = rollUpDiseases(resource, acc);
+      /* Accumulate the values. */
+      return Object.assign(acc, {
+        [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
+        [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
+        [FHIR_FIELD_KEY.DISEASES]: diseases,
+        [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
+        [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
+      });
+    }, cloneStudy);
+  }
 
-            /* Roll up the study designs. */
-            const studyDesigns = rollUpStudyDesigns(resource, acc);
-
-            /* Roll up subjects total. */
-            const subjectsTotal = rollUpSubjectsTotal(resource, acc);
-
-            /* Accumulate the values. */
-            return Object.assign(acc, {
-                [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
-                [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
-                [FHIR_FIELD_KEY.DISEASES]: diseases,
-                [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
-                [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
-            });
-        }, cloneStudy);
-    }
-
-    return study;
+  return study;
 }
 
 /**
@@ -112,20 +113,18 @@ function buildFHIRStudy(fhirJSON, study) {
  * @returns {Promise.<void>}
  */
 async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
+  if (isFHIRComplete(fhirStudy)) {
+    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
 
-    if ( isFHIRComplete(fhirStudy) ) {
-
-        const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
-
-        /* Cache the FHIR JSON. */
-        /* If the file exists, it will not be re-cached. */
-        /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "wx"}. */
-        await writeFile(file, JSON.stringify(fhirJSON), {"flag": "wx"});
-    }
-    else {
-
-        console.log(`FHIR response incomplete and will not be cached for ${dbGapIdAccession}`);
-    }
+    /* Cache the FHIR JSON. */
+    /* If the file exists, it will not be re-cached. */
+    /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "wx"}. */
+    await writeFile(file, JSON.stringify(fhirJSON), { flag: "wx" });
+  } else {
+    console.log(
+      `FHIR response incomplete and will not be cached for ${dbGapIdAccession}`
+    );
+  }
 }
 
 /**
@@ -135,20 +134,16 @@ async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
  * @returns {Promise.<*>}
  */
 async function fetchFHIRJSON(dbGapIdAccession) {
+  const url = `${urlPrefixFHIR}${dbGapIdAccession}${urlSuffixFHIR}`;
+  const response = await fetch(url);
+  const status = response.status;
 
-    const url = `${urlPrefixFHIR}${dbGapIdAccession}${urlSuffixFHIR}`;
-    const response = await fetch(url);
-    const status = response.status;
-
-    /* Parse the response. */
-    if ( status === 200 ) {
-
-        return await parseFHIRJSON(dbGapIdAccession, response);
-    }
-    else {
-
-        console.log(`FHIR fetch status error ${status} for ${url}`);
-    }
+  /* Parse the response. */
+  if (status === 200) {
+    return await parseFHIRJSON(dbGapIdAccession, response);
+  } else {
+    console.log(`FHIR fetch status error ${status} for ${url}`);
+  }
 }
 
 /**
@@ -159,25 +154,21 @@ async function fetchFHIRJSON(dbGapIdAccession) {
  * @returns {{}}
  */
 function findExtensionType(resource, stringSnippet = "") {
+  const resourceExtensions = resource.extension;
 
-    const resourceExtensions = resource.extension;
+  if (resourceExtensions) {
+    return resourceExtensions.find(extensions => {
+      const { url } = extensions;
 
-    if ( resourceExtensions ) {
+      if (url) {
+        const subStr = stringSnippet.toLowerCase();
 
-        return resourceExtensions.find(extensions => {
+        return url.toLowerCase().includes(subStr);
+      }
 
-            const {url} = extensions;
-
-            if ( url ) {
-
-                const subStr = stringSnippet.toLowerCase();
-
-                return url.toLowerCase().includes(subStr);
-            }
-
-            return false;
-        })
-    }
+      return false;
+    });
+  }
 }
 
 /**
@@ -188,24 +179,21 @@ function findExtensionType(resource, stringSnippet = "") {
  * @param dbGapIdAccession
  */
 async function getFHIRJSON(dbGapIdAccession) {
+  /* Grab the FHIR study JSON from cache. */
+  let fhirJSON = await readCacheFHIR(dbGapIdAccession);
+  let cacheHit = true;
 
-    /* Grab the FHIR study JSON from cache. */
-    let fhirJSON = await readCacheFHIR(dbGapIdAccession);
-    let cacheHit = true;
+  if (!fhirJSON) {
+    /* Otherwise, fetch the FHIR study JSON. */
+    fhirJSON = await fetchFHIRJSON(dbGapIdAccession);
+    cacheHit = false;
 
-    if ( !fhirJSON ) {
-
-        /* Otherwise, fetch the FHIR study JSON. */
-        fhirJSON = await fetchFHIRJSON(dbGapIdAccession);
-        cacheHit = false;
-
-        if ( !fhirJSON ) {
-
-            return fhirJSON; // Returning null if json is not cached and not complete in dbGap.
-        }
+    if (!fhirJSON) {
+      return fhirJSON; // Returning null if json is not cached and not complete in dbGap.
     }
+  }
 
-    return Object.assign(fhirJSON, {cacheHit: cacheHit});
+  return Object.assign(fhirJSON, { cacheHit: cacheHit });
 }
 
 /**
@@ -216,23 +204,19 @@ async function getFHIRJSON(dbGapIdAccession) {
  * @returns {*[]}
  */
 function getDesignCodes(coding, systemType) {
+  if (coding) {
+    return coding.reduce((acc, designCode) => {
+      const { code, system } = designCode;
 
-    if ( coding ) {
+      if (system && isStrPartialMatch(system, systemType)) {
+        acc.push(code);
+      }
 
-        return coding.reduce((acc, designCode) => {
+      return acc;
+    }, []);
+  }
 
-            const {code, system} = designCode;
-
-            if ( system && isStrPartialMatch(system, systemType) ) {
-
-                acc.push(code);
-            }
-
-            return acc;
-        }, []);
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -242,18 +226,15 @@ function getDesignCodes(coding, systemType) {
  * @returns {Array}
  */
 function getMolecularCodes(coding) {
+  if (coding) {
+    return coding.reduce((acc, molecularCode) => {
+      const { code } = molecularCode;
 
-    if ( coding ) {
+      return acc.concat(code);
+    }, []);
+  }
 
-        return coding.reduce((acc, molecularCode) => {
-
-            const {code} = molecularCode;
-
-            return acc.concat(code);
-        }, [])
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -264,23 +245,20 @@ function getMolecularCodes(coding) {
  * @param entries
  */
 function getStudyName(entries) {
+  /* Grab the first entry's resource property. */
+  const entry = entries[0];
+  const resource = entry.resource;
 
-    /* Grab the first entry's resource property. */
-    const entry = entries[0];
-    const resource = entry.resource;
+  if (resource) {
+    const title = resource.title;
 
-    if ( resource ) {
-
-        const title = resource.title;
-
-        /* Return study name. */
-        if ( title ) {
-
-            return decode(title);
-        }
+    /* Return study name. */
+    if (title) {
+      return decode(title);
     }
+  }
 
-    return "";
+  return "";
 }
 
 /**
@@ -289,15 +267,14 @@ function getStudyName(entries) {
  * @returns {{}}
  */
 function initializeStudy() {
-
-    return {
-        [FHIR_FIELD_KEY.CONSENT_CODES]: [],
-        [FHIR_FIELD_KEY.DATA_TYPES]: [],
-        [FHIR_FIELD_KEY.DISEASES]: [],
-        [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
-        [FHIR_FIELD_KEY.STUDY_NAME]: "",
-        [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
-    };
+  return {
+    [FHIR_FIELD_KEY.CONSENT_CODES]: [],
+    [FHIR_FIELD_KEY.DATA_TYPES]: [],
+    [FHIR_FIELD_KEY.DISEASES]: [],
+    [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
+    [FHIR_FIELD_KEY.STUDY_NAME]: "",
+    [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
+  };
 }
 
 /**
@@ -308,16 +285,14 @@ function initializeStudy() {
  * @returns {boolean}
  */
 function isExtensionType(url, extensionType = "") {
+  if (url) {
+    const extensionStr = extensionType.toLowerCase();
+    const urlStr = url.toLowerCase();
 
-    if ( url ) {
+    return urlStr.includes(extensionStr);
+  }
 
-        const extensionStr = extensionType.toLowerCase();
-        const urlStr = url.toLowerCase();
-
-        return urlStr.includes(extensionStr);
-    }
-
-    return false;
+  return false;
 }
 
 /**
@@ -327,8 +302,7 @@ function isExtensionType(url, extensionType = "") {
  * @returns {*}
  */
 function isFHIRComplete(study) {
-
-    return study.studyName && study.subjectsTotal;
+  return study.studyName && study.subjectsTotal;
 }
 
 /**
@@ -339,16 +313,14 @@ function isFHIRComplete(study) {
  * @returns {boolean}
  */
 function isStrPartialMatch(str, searchStr) {
+  if (str) {
+    const lowerCStr = str.toLowerCase();
+    const lowerCSearchStr = searchStr.toLowerCase();
 
-    if ( str ) {
+    return lowerCStr.includes(lowerCSearchStr);
+  }
 
-        const lowerCStr = str.toLowerCase();
-        const lowerCSearchStr = searchStr.toLowerCase();
-
-        return lowerCStr.includes(lowerCSearchStr);
-    }
-
-    return false;
+  return false;
 }
 
 /**
@@ -359,15 +331,13 @@ function isStrPartialMatch(str, searchStr) {
  * @returns {Promise<{entry}|*>}
  */
 async function parseFHIRJSON(dbGapIdAccession, response) {
+  /* Grab the JSON. */
+  const json = await response.json();
 
-    /* Grab the JSON. */
-    const json = await response.json();
-
-    /* Only return valid FHIR JSON. */
-    if ( json && json.entry ) {
-
-        return json;
-    }
+  /* Only return valid FHIR JSON. */
+  if (json && json.entry) {
+    return json;
+  }
 }
 
 /**
@@ -377,16 +347,14 @@ async function parseFHIRJSON(dbGapIdAccession, response) {
  * @returns {Promise.<*>}
  */
 async function readCacheFHIR(dbGapIdAccession) {
+  /* Grab the FHIR content from cache. */
+  const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+  const content = await readFile(file);
 
-    /* Grab the FHIR content from cache. */
-    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
-    const content = await readFile(file);
-
-    /* Return the JSON. */
-    if ( content ) {
-
-        return await JSON.parse(content);
-    }
+  /* Return the JSON. */
+  if (content) {
+    return await JSON.parse(content);
+  }
 }
 
 /**
@@ -397,36 +365,31 @@ async function readCacheFHIR(dbGapIdAccession) {
  * @returns {*}
  */
 function rollUpConsentCodes(resource, acc) {
+  /* Define the extension type of interest. */
+  const extensionType = "ResearchStudy-StudyConsents";
 
-    /* Define the extension type of interest. */
-    const extensionType = "ResearchStudy-StudyConsents";
+  /* Grab any accumulated consent codes. */
+  const consentCodes = acc[FHIR_FIELD_KEY.CONSENT_CODES];
 
-    /* Grab any accumulated consent codes. */
-    const consentCodes = acc[FHIR_FIELD_KEY.CONSENT_CODES];
+  if (resource) {
+    /* Find the resource extensions for the study consents; the url ends with ~ResearchStudy-StudyConsents. */
+    const studyConsents = findExtensionType(resource, extensionType);
 
-    if ( resource ) {
+    if (studyConsents) {
+      const { extension } = studyConsents;
 
-        /* Find the resource extensions for the study consents; the url ends with ~ResearchStudy-StudyConsents. */
-        const studyConsents = findExtensionType(resource, extensionType);
+      if (extension) {
+        return extension.reduce((acc, node) => {
+          const { valueCoding } = node || {},
+            { display } = valueCoding || {};
 
-        if ( studyConsents ) {
-
-            const {extension} = studyConsents;
-
-            if ( extension ) {
-
-                return extension.reduce((acc, node) => {
-
-                    const {valueCoding} = node || {},
-                        {display} = valueCoding || {};
-
-                    return acc.concat(display);
-                }, consentCodes);
-            }
-        }
+          return acc.concat(display);
+        }, consentCodes);
+      }
     }
+  }
 
-    return consentCodes;
+  return consentCodes;
 }
 
 /**
@@ -437,38 +400,33 @@ function rollUpConsentCodes(resource, acc) {
  * @returns {Array}
  */
 function rollUpDataTypes(resource, acc) {
+  /* Define the extension type of interest. */
+  const extensionType = "MolecularDataTypes";
 
-    /* Define the extension type of interest. */
-    const extensionType = "MolecularDataTypes";
+  /* Grab any accumulated data types. */
+  const dataTypes = acc[FHIR_FIELD_KEY.DATA_TYPES];
 
-    /* Grab any accumulated data types. */
-    const dataTypes = acc[FHIR_FIELD_KEY.DATA_TYPES];
+  if (resource) {
+    /* Find the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
+    const molecularDataType = findExtensionType(resource, extensionType);
 
-    if ( resource ) {
+    if (molecularDataType) {
+      const { extension } = molecularDataType;
 
-        /* Find the resource extensions for the molecular data types; the url ends with ~MolecularDataTypes. */
-        const molecularDataType = findExtensionType(resource, extensionType);
+      if (extension) {
+        return extension.reduce((acc, node) => {
+          const { valueCodeableConcept } = node || {},
+            { coding } = valueCodeableConcept || {};
 
-        if ( molecularDataType ) {
+          const codes = getMolecularCodes(coding);
 
-            const {extension} = molecularDataType;
-
-            if ( extension ) {
-
-                return extension.reduce((acc, node) => {
-
-                    const {valueCodeableConcept} = node || {},
-                        {coding} = valueCodeableConcept || {};
-
-                    const codes = getMolecularCodes(coding);
-
-                    return acc.concat(codes);
-                }, dataTypes);
-            }
-        }
+          return acc.concat(codes);
+        }, dataTypes);
+      }
     }
+  }
 
-    return dataTypes;
+  return dataTypes;
 }
 
 /**
@@ -479,28 +437,24 @@ function rollUpDataTypes(resource, acc) {
  * @returns {*}
  */
 function rollUpDiseases(resource, acc) {
+  /* Grab any accumulated diseases. */
+  const diseases = acc[FHIR_FIELD_KEY.DISEASES];
 
-    /* Grab any accumulated diseases. */
-    const diseases = acc[FHIR_FIELD_KEY.DISEASES];
+  if (resource) {
+    /* Grab the focus array. */
+    const focuses = resource.focus;
 
-    if ( resource ) {
+    if (focuses) {
+      return focuses.reduce((acc, focus) => {
+        const { text } = focus || {};
+        acc.push(text);
 
-        /* Grab the focus array. */
-        const focuses = resource.focus;
-
-        if ( focuses ) {
-
-            return focuses.reduce((acc, focus) => {
-
-                const {text} = focus || {};
-                acc.push(text);
-
-                return acc;
-            }, diseases)
-        }
+        return acc;
+      }, diseases);
     }
+  }
 
-    return diseases;
+  return diseases;
 }
 
 /**
@@ -511,32 +465,28 @@ function rollUpDiseases(resource, acc) {
  * @returns {*}
  */
 function rollUpStudyDesigns(resource, acc) {
+  /* Define the system type of interest. */
+  const systemType = "ResearchStudy-StudyDesign";
 
-    /* Define the system type of interest. */
-    const systemType = "ResearchStudy-StudyDesign";
+  /* Grab any accumulated study designs. */
+  const studyDesigns = acc[FHIR_FIELD_KEY.STUDY_DESIGNS];
 
-    /* Grab any accumulated study designs. */
-    const studyDesigns = acc[FHIR_FIELD_KEY.STUDY_DESIGNS];
+  if (resource) {
+    /* Grab the category array. */
+    const categories = resource.category;
 
-    if ( resource ) {
+    if (categories) {
+      /* Accumulate any codes belonging to study design. */
+      return categories.reduce((acc, category) => {
+        const { coding } = category || {};
+        const codes = getDesignCodes(coding, systemType);
 
-        /* Grab the category array. */
-        const categories = resource.category;
-
-        if ( categories ) {
-
-            /* Accumulate any codes belonging to study design. */
-            return categories.reduce((acc, category) => {
-
-                const {coding} = category || {};
-                const codes = getDesignCodes(coding, systemType);
-
-                return acc.concat(codes);
-            }, studyDesigns)
-        }
+        return acc.concat(codes);
+      }, studyDesigns);
     }
+  }
 
-    return studyDesigns;
+  return studyDesigns;
 }
 
 /**
@@ -545,42 +495,36 @@ function rollUpStudyDesigns(resource, acc) {
  * @param acc
  */
 function rollUpSubjectsTotal(resource, acc) {
+  /* Define the extension type of interest. */
+  const extensionType = "ResearchStudy-Content";
+  const extensionTypeCount = "ResearchStudy-Content-NumSubjects";
 
-    /* Define the extension type of interest. */
-    const extensionType = "ResearchStudy-Content";
-    const extensionTypeCount = "ResearchStudy-Content-NumSubjects";
+  /* Grab any accumulated subjects totals. */
+  const subjectsTotal = acc[FHIR_FIELD_KEY.SUBJECTS_TOTAL];
 
-    /* Grab any accumulated subjects totals. */
-    const subjectsTotal = acc[FHIR_FIELD_KEY.SUBJECTS_TOTAL];
+  if (resource) {
+    /* Find the resource extensions for the study content; the url ends with ~ResearchStudy-Content. */
+    const studyContent = findExtensionType(resource, extensionType);
 
-    if ( resource ) {
+    if (studyContent) {
+      const { extension } = studyContent;
 
-        /* Find the resource extensions for the study content; the url ends with ~ResearchStudy-Content. */
-        const studyContent = findExtensionType(resource, extensionType);
+      if (extension) {
+        return extension.reduce((acc, node) => {
+          const { url, valueCount } = node || {},
+            { value } = valueCount || {};
 
-        if ( studyContent ) {
+          if (isExtensionType(url, extensionTypeCount) && value) {
+            acc += value;
+          }
 
-            const {extension} = studyContent;
-
-            if ( extension ) {
-
-                return extension.reduce((acc, node) => {
-
-                    const {url, valueCount} = node || {},
-                        {value} = valueCount || {};
-
-                    if ( isExtensionType(url, extensionTypeCount) && value ) {
-
-                        acc += value;
-                    }
-
-                    return acc;
-                }, subjectsTotal);
-            }
-        }
+          return acc;
+        }, subjectsTotal);
+      }
     }
+  }
 
-    return subjectsTotal;
+  return subjectsTotal;
 }
 
 module.exports.getFHIRStudy = getFHIRStudy;

@@ -12,15 +12,10 @@ import React from "react";
 import compStyles from "./list-item-icon.module.css";
 
 class ListItemIcon extends React.Component {
-
-    render() {
-        const {children} = this.props;
-        return (
-            <div className={compStyles.listItemIcon}>
-                {children}
-            </div>
-        );
-    }
+  render() {
+    const { children } = this.props;
+    return <div className={compStyles.listItemIcon}>{children}</div>;
+  }
 }
 
 export default ListItemIcon;

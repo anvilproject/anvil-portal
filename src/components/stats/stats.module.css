@@ -7,11 +7,11 @@
 
 /* Stats */
 .stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: -12px;
-    padding-top: 2.5rem; /* 40px */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -12px;
+  padding-top: 2.5rem; /* 40px */
 }
 
 /**
@@ -19,11 +19,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 360px) {
-
-    /* Stats */
-    .stats {
-        margin: -2px;
-    }
+  /* Stats */
+  .stats {
+    margin: -2px;
+  }
 }
 
 /**
@@ -31,11 +30,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 400px) {
-
-    /* Stats */
-    .stats {
-        margin: -8px;
-    }
+  /* Stats */
+  .stats {
+    margin: -8px;
+  }
 }
 
 /**
@@ -43,12 +41,11 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
-
-    /* Stats */
-    .stats {
-        margin: -12px auto;
-        max-width: 500px;
-    }
+  /* Stats */
+  .stats {
+    margin: -12px auto;
+    max-width: 500px;
+  }
 }
 
 /**
@@ -56,11 +53,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 600px) {
-
-    /* Stats */
-    .stats {
-        justify-content: space-between;
-        margin: 0;
-        max-width: unset;
-    }
+  /* Stats */
+  .stats {
+    justify-content: space-between;
+    margin: 0;
+    max-width: unset;
+  }
 }

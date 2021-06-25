@@ -6,7 +6,7 @@
  */
 
 // App dependencies
-import {HeaderStaticQuery} from "../hooks/header-query";
+import { HeaderStaticQuery } from "../hooks/header-query";
 
 /**
  * Returns the header links specified by the page.
@@ -16,13 +16,15 @@ import {HeaderStaticQuery} from "../hooks/header-query";
  * @param ncpiPost
  */
 export function getHeaderLinks(ncpiPost) {
+  /* Build header links for NCPI pages. */
+  if (ncpiPost) {
+    return [
+      { name: "Overview", path: "/ncpi" },
+      { name: "Datasets", path: "/ncpi/data" },
+      { name: "Training", path: "/ncpi/training" }
+    ];
+  }
 
-    /* Build header links for NCPI pages. */
-    if ( ncpiPost ) {
-
-        return [{name: "Overview", path: "/ncpi"},  {name: "Datasets", path: "/ncpi/data"}, {name: "Training", path: "/ncpi/training"}];
-    }
-
-    /* Return header links for all other pages. */
-    return HeaderStaticQuery();
+  /* Return header links for all other pages. */
+  return HeaderStaticQuery();
 }

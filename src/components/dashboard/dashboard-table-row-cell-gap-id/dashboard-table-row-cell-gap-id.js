@@ -18,22 +18,25 @@ import * as RedirectService from "../../../utils/redirect.service";
 import compStyles from "./dashboard-table-row-cell-gap-id.module.css";
 
 class DashboardTableRowCellGapId extends React.Component {
+  render() {
+    const { children, column, id } = this.props,
+      { gapIdDisplay, studyUrl } = children || {};
+    const cellValue = DashboardTableService.formatValue(gapIdDisplay, column);
 
-    render() {
-        const {children, column, id} = this.props,
-            {gapIdDisplay, studyUrl} = children || {};
-        const cellValue = DashboardTableService.formatValue(gapIdDisplay, column);
-
-        return (
-            studyUrl ?
-                <ClickHandler className={compStyles.link}
-                              clickAction={() => RedirectService.redirect(studyUrl, gapIdDisplay)}
-                              id={id}
-                              tag={"td"}
-                              label={gapIdDisplay}>{gapIdDisplay}</ClickHandler> :
-                <td id={id}>{cellValue}</td>
-        );
-    }
+    return studyUrl ? (
+      <ClickHandler
+        className={compStyles.link}
+        clickAction={() => RedirectService.redirect(studyUrl, gapIdDisplay)}
+        id={id}
+        tag={"td"}
+        label={gapIdDisplay}
+      >
+        {gapIdDisplay}
+      </ClickHandler>
+    ) : (
+      <td id={id}>{cellValue}</td>
+    );
+  }
 }
 
 export default DashboardTableRowCellGapId;

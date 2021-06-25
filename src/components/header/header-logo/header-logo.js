@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 
 // Images
@@ -19,18 +19,21 @@ import compStyles from "./header-logo.module.css";
 const classNames = require("classnames");
 
 function HeaderLogo(props) {
+  const { ncpi, searchBarOpen } = props;
+  const classNamesLogo = classNames(
+    compStyles.logo,
+    { [compStyles.ncpi]: ncpi },
+    { [compStyles.searchBarOpen]: searchBarOpen }
+  );
+  const imgAlt = ncpi ? "NCPI" : "AnVIL";
+  const imgSrc = ncpi ? logoNCPI : logoAnvil;
+  const linkTo = ncpi ? "/ncpi" : "/";
 
-    const {ncpi, searchBarOpen} = props;
-    const classNamesLogo = classNames(compStyles.logo, {[compStyles.ncpi]: ncpi}, {[compStyles.searchBarOpen]: searchBarOpen});
-    const imgAlt = ncpi ? "NCPI" : "AnVIL";
-    const imgSrc = ncpi ? logoNCPI : logoAnvil;
-    const linkTo = ncpi ? "/ncpi" : "/";
-
-    return (
-        <Link to={linkTo} className={classNamesLogo}>
-            <img alt={imgAlt} src={imgSrc}/>
-        </Link>
-    );
+  return (
+    <Link to={linkTo} className={classNamesLogo}>
+      <img alt={imgAlt} src={imgSrc} />
+    </Link>
+  );
 }
 
 export default React.memo(HeaderLogo);

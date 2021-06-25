@@ -17,14 +17,21 @@ import compStyles from "./site-search-bar.module.css";
 const classNames = require("classnames");
 
 function SiteSearchBar(props) {
+  const { onSubmitSiteSearch, searchBarOpen } = props;
 
-    const {onSubmitSiteSearch, searchBarOpen} = props;
-
-    return (
-        <div className={classNames({[compStyles.expanded]: searchBarOpen}, compStyles.searchBar)}>
-            <SiteSearchForm onSubmitSiteSearch={onSubmitSiteSearch} searchBarOpen={searchBarOpen}/>
-        </div>
-    )
+  return (
+    <div
+      className={classNames(
+        { [compStyles.expanded]: searchBarOpen },
+        compStyles.searchBar
+      )}
+    >
+      <SiteSearchForm
+        onSubmitSiteSearch={onSubmitSiteSearch}
+        searchBarOpen={searchBarOpen}
+      />
+    </div>
+  );
 }
 
 export default React.memo(SiteSearchBar);

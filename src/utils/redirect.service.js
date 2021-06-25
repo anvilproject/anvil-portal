@@ -16,18 +16,14 @@ import * as DOMService from "./dom.service";
  * @param linkText
  */
 export function redirect(linkTo, linkText) {
+  if (linkTo && linkTo.startsWith("/")) {
+    window.open(linkTo, "_self");
+  } else {
+    window.open(linkTo);
+  }
 
-    if ( linkTo && linkTo.startsWith("/") ) {
-
-        window.open(linkTo, "_self")
-    }
-    else {
-
-        window.open(linkTo);
-    }
-
-    // Track click to external sites
-    if ( DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo) ) {
-        AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
-    }
+  // Track click to external sites
+  if (DOMService.isHrefExternal(linkTo) || DOMService.isMailTo(linkTo)) {
+    AnvilGTMService.trackExternalLinkClicked(linkTo, linkText);
+  }
 }

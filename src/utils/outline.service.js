@@ -12,37 +12,39 @@
  * @param docPath
  */
 export function filterHtmlAstByHeading(posts, docPath) {
+  if (!docPath || !posts) {
+    return;
+  }
 
-    if (!docPath || !posts) {
+  const slug = docPath.slice(1);
 
-        return;
-    }
+  const page = posts.find(post => post.slug.slice(0, -3) === slug);
 
-    const slug = docPath.slice(1);
+  if (!page) {
+    return;
+  }
 
-    const page = posts.find(post => post.slug.slice(0, -3) === slug);
+  /* Grab any <h2> or <h3> headings. */
+  const pageNode = page.nodes[0];
 
-    if (!page) {
+  const { childMarkdownRemark } = pageNode,
+    { htmlAst } = childMarkdownRemark || {},
+    { children } = htmlAst;
 
-        return;
-    }
+  const headings = children.filter(
+    child => child.tagName === "h2" || child.tagName === "h3"
+  );
 
-    /* Grab any <h2> or <h3> headings. */
-    const pageNode = page.nodes[0];
+  /* Only show outline if there are some <h2> or <h3> headings. */
+  if (
+    !headings.some(
+      heading => heading.tagName === "h2" || heading.tagName === "h3"
+    )
+  ) {
+    return;
+  }
 
-    const {childMarkdownRemark} = pageNode,
-        {htmlAst} = childMarkdownRemark || {},
-        {children} = htmlAst;
-
-    const headings = children.filter(child => child.tagName === "h2" || child.tagName === "h3");
-
-    /* Only show outline if there are some <h2> or <h3> headings. */
-    if ( !headings.some(heading => heading.tagName === "h2" || heading.tagName === "h3") ) {
-
-        return;
-    }
-
-    return headings;
+  return headings;
 }
 
 /**
@@ -52,15 +54,14 @@ export function filterHtmlAstByHeading(posts, docPath) {
  * @returns {*}
  */
 export function getOutline(outline) {
+  if (!outline) {
+    return;
+  }
 
-    if ( !outline ) {
+  const anchor = `#${outline.properties.id}`;
+  const depth = Number(outline.tagName.charAt(1));
+  const label =
+    outline.children?.find(child => child.type === "text")?.value || "";
 
-        return;
-    }
-
-    const anchor = `#${outline.properties.id}`;
-    const depth = Number(outline.tagName.charAt(1));
-    const label = outline.children?.find(child => child.type === "text")?.value || "";
-
-    return {anchor: anchor, depth: depth, label: label};
+  return { anchor: anchor, depth: depth, label: label };
 }

@@ -19,16 +19,15 @@ import DashboardTableToolbar from "../dashboard-table-toolbar/dashboard-table-to
 import compStyles from "./dashboard-search.module.css";
 
 function DashboardSearch() {
-
-    return (
-        <div className={compStyles.search}>
-            <DashboardSearchInput/>
-            <DashboardSearchCheckboxes/>
-            <DashboardSearchSelectedToolbar/>
-            <DashboardTableToolbar/>
-            <DashboardSearchEmptyResults/>
-        </div>
-    )
+  return (
+    <div className={compStyles.search}>
+      <DashboardSearchInput />
+      <DashboardSearchCheckboxes />
+      <DashboardSearchSelectedToolbar />
+      <DashboardTableToolbar />
+      <DashboardSearchEmptyResults />
+    </div>
+  );
 }
 
 export default DashboardSearch;

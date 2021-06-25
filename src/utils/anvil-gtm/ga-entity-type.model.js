@@ -6,16 +6,16 @@
  */
 
 export const GAEntityType = {
-    "BIOGRAPHY": "Biography",
-    "DATA_CONSORTIUM": "Data Consortium",
-    "CONTACT": "Contact",
-    "FORM": "Form",
-    "GITTER": "Gitter",
-    "PLATFORM_COMPONENT": "Platform Component",
-    "QUERY": "Query",
-    "REFERENCE": "Reference",
-    "STUDY": "Study",
-    "TOOL": "Tool",
-    "WORKSPACE": "Workspace",
-    "UNSPECIFIED": "Unspecified"
+  BIOGRAPHY: "Biography",
+  DATA_CONSORTIUM: "Data Consortium",
+  CONTACT: "Contact",
+  FORM: "Form",
+  GITTER: "Gitter",
+  PLATFORM_COMPONENT: "Platform Component",
+  QUERY: "Query",
+  REFERENCE: "Reference",
+  STUDY: "Study",
+  TOOL: "Tool",
+  WORKSPACE: "Workspace",
+  UNSPECIFIED: "Unspecified"
 };

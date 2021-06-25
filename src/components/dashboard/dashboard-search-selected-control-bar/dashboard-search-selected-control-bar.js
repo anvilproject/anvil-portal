@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
@@ -16,20 +16,28 @@ import DashboardSearchSelectedFacets from "../dashboard-search-selected-facets/d
 import compStyles from "./dashboard-search-selected-control-bar.module.css";
 
 function DashboardSearchSelectedControlBar() {
+  const {
+    selectedTermsByFacet,
+    onHandleClearFacet,
+    onHandleClearSearch,
+    onHandleClearTerm
+  } = useContext(ContextDashboard);
+  const showController = selectedTermsByFacet.size > 0;
 
-    const {selectedTermsByFacet, onHandleClearFacet, onHandleClearSearch, onHandleClearTerm} = useContext(ContextDashboard);
-    const showController = selectedTermsByFacet.size > 0;
-
-    return (
-        <div className={compStyles.controlBar}>
-            {showController ?
-                <DashboardSearchSelectedFacets onHandleClearFacet={onHandleClearFacet}
-                                               onHandleClearSearch={onHandleClearSearch}
-                                               onHandleClearTerm={onHandleClearTerm}
-                                               selectedTermsByFacet={selectedTermsByFacet}/> :
-                <span>No selected terms.</span>}
-        </div>
-    )
+  return (
+    <div className={compStyles.controlBar}>
+      {showController ? (
+        <DashboardSearchSelectedFacets
+          onHandleClearFacet={onHandleClearFacet}
+          onHandleClearSearch={onHandleClearSearch}
+          onHandleClearTerm={onHandleClearTerm}
+          selectedTermsByFacet={selectedTermsByFacet}
+        />
+      ) : (
+        <span>No selected terms.</span>
+      )}
+    </div>
+  );
 }
 
 export default DashboardSearchSelectedControlBar;

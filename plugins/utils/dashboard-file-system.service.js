@@ -18,15 +18,21 @@ const path = require("path");
  * @param FIELD_TYPE
  * @returns {Array}
  */
-const parseRows = function parseRows(contentRows, delimiter = ",", FIELD, FIELD_TYPE) {
+const parseRows = function parseRows(
+  contentRows,
+  delimiter = ",",
+  FIELD,
+  FIELD_TYPE
+) {
+  /* Build the header row. */
+  const headers = buildFileHeaders(contentRows, delimiter);
 
-    /* Build the header row. */
-    const headers = buildFileHeaders(contentRows, delimiter);
-
-    /* Parse each content row. */
-    return contentRows
-        .slice(1)
-        .map(contentRow => parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE));
+  /* Parse each content row. */
+  return contentRows
+    .slice(1)
+    .map(contentRow =>
+      parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE)
+    );
 };
 
 /**
@@ -36,13 +42,10 @@ const parseRows = function parseRows(contentRows, delimiter = ",", FIELD, FIELD_
  * @param options
  */
 const readFile = async function readFile(file, options = null) {
-
-    try {
-
-        const filePath = path.resolve(__dirname, file);
-        return fs.readFileSync(filePath, options);
-    }
-    catch (err) {}
+  try {
+    const filePath = path.resolve(__dirname, file);
+    return fs.readFileSync(filePath, options);
+  } catch (err) {}
 };
 
 /**
@@ -52,19 +55,17 @@ const readFile = async function readFile(file, options = null) {
  * @returns {Array}
  */
 const splitContentToContentRows = function splitContentToContentRows(content) {
+  if (!content) {
+    throw `Error splitContentToContentRows is null or empty; ${content}`;
+  }
 
-    if ( !content ) {
-
-        throw `Error splitContentToContentRows is null or empty; ${content}`;
-    }
-
-    /* Split the file content into rows. */
-    /* Each element of the array represents a row (as a string value) from the file. */
-    /* e.g. [first_line, second_line, third_line, and so on...]. */
-    return content
-        .toString()
-        .trim()
-        .split(/\r?\n/);
+  /* Split the file content into rows. */
+  /* Each element of the array represents a row (as a string value) from the file. */
+  /* e.g. [first_line, second_line, third_line, and so on...]. */
+  return content
+    .toString()
+    .trim()
+    .split(/\r?\n/);
 };
 
 /**
@@ -76,16 +77,14 @@ const splitContentToContentRows = function splitContentToContentRows(content) {
  * @returns {Promise.<void>}
  */
 const writeFile = async function writeFile(file, content, options = null) {
+  if (!file || !content) {
+    throw `Error writeFile file or content is null or empty; ${file}, ${content}`;
+  }
 
-    if ( !file || !content ) {
+  const absPath = path.resolve(__dirname, file);
 
-        throw `Error writeFile file or content is null or empty; ${file}, ${content}`;
-    }
-
-    const absPath = path.resolve(__dirname, file);
-
-    fs.writeFileSync(absPath, content, options);
-    console.log(`Writing to file ${file}`);
+  fs.writeFileSync(absPath, content, options);
+  console.log(`Writing to file ${file}`);
 };
 
 /**
@@ -96,12 +95,11 @@ const writeFile = async function writeFile(file, content, options = null) {
  * @returns {Array}
  */
 function buildFileHeaders(contentRows, delimiter) {
-
-    return contentRows
-        .slice(0, 1)
-        .toString()
-        .toLowerCase()
-        .split(delimiter);
+  return contentRows
+    .slice(0, 1)
+    .toString()
+    .toLowerCase()
+    .split(delimiter);
 }
 
 /**
@@ -111,25 +109,19 @@ function buildFileHeaders(contentRows, delimiter) {
  * @returns {*}
  */
 function formatDatumAsArray(datum) {
+  if (datum) {
+    return datum.split(",").reduce((acc, val) => {
+      const str = val.trim();
 
-    if ( datum ) {
+      if (str) {
+        acc.push(str);
+      }
 
-        return datum
-            .split(",")
-            .reduce((acc, val) => {
+      return acc;
+    }, []);
+  }
 
-                const str = val.trim();
-
-                if ( str ) {
-
-                    acc.push(str);
-                }
-
-                return acc;
-            }, []);
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -139,20 +131,17 @@ function formatDatumAsArray(datum) {
  * @returns {number}
  */
 function formatDatumAsNumber(datum) {
+  if (!datum) {
+    return 0;
+  }
 
-    if ( !datum ) {
+  const value = datum.replace(/,/g, "");
 
-        return 0;
-    }
+  if (isNaN(value)) {
+    return 0;
+  }
 
-    const value = datum.replace(/,/g, "");
-
-    if ( isNaN(value) ) {
-
-        return 0;
-    }
-
-    return Number(value);
+  return Number(value);
 }
 
 /**
@@ -162,13 +151,11 @@ function formatDatumAsNumber(datum) {
  * @returns {string}
  */
 function formatDatumAsString(datum) {
+  if (datum) {
+    return datum.trim();
+  }
 
-    if ( datum ) {
-
-        return datum.trim();
-    }
-
-    return "";
+  return "";
 }
 
 /**
@@ -179,25 +166,21 @@ function formatDatumAsString(datum) {
  * @param fieldType
  */
 function parseDatumValue(datum, fieldType) {
+  /* Format datum as number. */
+  if (fieldType === "number") {
+    return formatDatumAsNumber(datum);
+  }
 
-    /* Format datum as number. */
-    if ( fieldType === "number" ) {
+  /* Format datum as array. */
+  if (fieldType === "array") {
+    return formatDatumAsArray(datum);
+  }
 
-        return formatDatumAsNumber(datum);
-    }
+  if (fieldType === "string") {
+    return formatDatumAsString(datum);
+  }
 
-    /* Format datum as array. */
-    if ( fieldType === "array" ) {
-
-        return formatDatumAsArray(datum);
-    }
-
-    if ( fieldType === "string" ) {
-
-        return formatDatumAsString(datum);
-    }
-
-    return datum;
+  return datum;
 }
 
 /**
@@ -211,25 +194,20 @@ function parseDatumValue(datum, fieldType) {
  * @returns {*}
  */
 function parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE) {
+  /* Parse the row data. */
+  return contentRow.split(delimiter).reduce((acc, datum, i) => {
+    const header = headers[i];
+    const key = FIELD[header];
+    const fieldType = FIELD_TYPE[header];
 
-    /* Parse the row data. */
-    return contentRow
-        .split(delimiter)
-        .reduce((acc, datum, i) => {
+    /* Only include data we are interested in. */
+    if (key) {
+      const value = parseDatumValue(datum, fieldType);
+      acc = Object.assign(acc, { [key]: value });
+    }
 
-            const header = headers[i];
-            const key = FIELD[header];
-            const fieldType = FIELD_TYPE[header];
-
-            /* Only include data we are interested in. */
-            if ( key ) {
-
-                const value = parseDatumValue(datum, fieldType);
-                acc = Object.assign(acc, {[key]: value});
-            }
-
-            return acc;
-        }, {});
+    return acc;
+  }, {});
 }
 
 module.exports.parseRows = parseRows;

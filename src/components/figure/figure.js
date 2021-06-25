@@ -31,14 +31,9 @@ import React from "react";
 import compStyles from "./figure.module.css";
 
 function Figure(props) {
+  const { children } = props;
 
-    const {children} = props;
-
-    return (
-        <figure className={compStyles.figureContainer}>
-            {children}
-        </figure>
-    );
+  return <figure className={compStyles.figureContainer}>{children}</figure>;
 }
 
 export default Figure;

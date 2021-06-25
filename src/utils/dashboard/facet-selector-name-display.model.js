@@ -6,12 +6,12 @@
  */
 
 export const FacetSelectorNameDisplay = {
-    "accessType": "Access Type",
-    "consentCodes": "Consent Code",
-    "consentShortName": "Consent Code",
-    "consortium": "Consortium",
-    "dataTypes": "Data Type",
-    "diseases": "Disease",
-    "platforms": "Platform",
-    "studyDesigns": "Study Design",
+  accessType: "Access Type",
+  consentCodes: "Consent Code",
+  consentShortName: "Consent Code",
+  consortium: "Consortium",
+  dataTypes: "Data Type",
+  diseases: "Disease",
+  platforms: "Platform",
+  studyDesigns: "Study Design"
 };

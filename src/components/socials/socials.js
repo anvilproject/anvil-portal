@@ -29,14 +29,18 @@ import compStyles from "./socials.module.css";
 const classNames = require("classnames");
 
 function Socials(props) {
+  const { articleBottom, children } = props;
 
-    const {articleBottom, children} = props;
-
-    return (
-        <div className={classNames({[compStyles.articleBottom]: articleBottom}, compStyles.socials)}>
-            {children}
-        </div>
-    );
+  return (
+    <div
+      className={classNames(
+        { [compStyles.articleBottom]: articleBottom },
+        compStyles.socials
+      )}
+    >
+      {children}
+    </div>
+  );
 }
 
 export default Socials;

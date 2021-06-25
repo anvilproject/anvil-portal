@@ -1,1 +1,420 @@
-{"resourceType":"Bundle","id":"35435175-d846-4dfd-9e95-10709ee7a0d4","meta":{"lastUpdated":"2021-04-09T06:53:19.281-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001228.v1.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001228.v1.p1","resource":{"resourceType":"ResearchStudy","id":"phs001228.v1.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:48:03.038-04:00","source":"#0LqZlkYHol76tVIc","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001228.v1.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2018-06-18"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001228.v1.p1 - 1","display":"GRU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":4,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":1112,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":1112,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001228.v1.p1"}],"title":"Kids First Pediatric Research Program in Susceptibility to Ewing Sarcoma Based on Germline Risk and Familial History of Cancer","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Family/Twin/Trios","display":"Family/Twin/Trios"}],"text":"Family/Twin/Trios"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012512","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012512","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing Sarcoma","display":"Ewing Sarcoma"}],"text":"Ewing Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing Tumor","display":"Ewing Tumor"}],"text":"Ewing Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing's Sarcoma","display":"Ewing's Sarcoma"}],"text":"Ewing's Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing's Tumor","display":"Ewing's Tumor"}],"text":"Ewing's Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewings Sarcoma","display":"Ewings Sarcoma"}],"text":"Ewings Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewings Tumor","display":"Ewings Tumor"}],"text":"Ewings Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewing","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewing's","display":"Sarcoma, Ewing's"}],"text":"Sarcoma, Ewing's"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewings","display":"Sarcoma, Ewings"}],"text":"Sarcoma, Ewings"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Tumor, Ewing","display":"Tumor, Ewing"}],"text":"Tumor, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Tumor, Ewing's","display":"Tumor, Ewing's"}],"text":"Tumor, Ewing's"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0553580","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D012512","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing Sarcoma","display":"Ewing Sarcoma"}],"text":"Ewing Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing Tumor","display":"Ewing Tumor"}],"text":"Ewing Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing's Sarcoma","display":"Ewing's Sarcoma"}],"text":"Ewing's Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewing's Tumor","display":"Ewing's Tumor"}],"text":"Ewing's Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewings Sarcoma","display":"Ewings Sarcoma"}],"text":"Ewings Sarcoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Ewings Tumor","display":"Ewings Tumor"}],"text":"Ewings Tumor"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewing","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewing's","display":"Sarcoma, Ewing's"}],"text":"Sarcoma, Ewing's"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Sarcoma, Ewings","display":"Sarcoma, Ewings"}],"text":"Sarcoma, Ewings"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Tumor, Ewing","display":"Tumor, Ewing"}],"text":"Tumor, Ewing"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D012512 entry term: Tumor, Ewing's","display":"Tumor, Ewing's"}],"text":"Tumor, Ewing's"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0553580","display":"Sarcoma, Ewing"}],"text":"Sarcoma, Ewing"}],"description":"\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nEwing sarcoma (EWS) is a deadly bone cancer that occurs in children and adolescents. Mounting evidence suggests that a genetic predisposition exists for this pediatric cancer, although the specific genetic contribution has yet to be identified. EWS has never been linked to a specific cancer predisposition syndrome, although several case reports have been published that describe siblings and cousins with EWS. Furthermore, neuroectodermal tumors appear to occur more commonly in families with EWS. The two consistent epidemiology findings in EWS include a very strong Caucasian predilection and increased rates of hernia in EWS patients and their family members. Finally, the role of genetic microsatellite repeats in EWS tumorigenesis has been recently described, and these GGAA microsatellites are polymorphic in repeat size and location across the genome.\n\nThe study goals of this Kids First project include (1) To identify cancer predisposition genes in EWS trios increasing disease risk, (2) To identify genome-wide GGAA microsatellite repeats in EWS trios increasing disease risk, and (3) To identity de novo mutation and structural variant rates in EWS trios reflecting underlying DNA repair defects that increase disease risk. As part of the Kids First Common Fund initiative, this study proposal will further elucidate the genetic contribution to pediatric cancer development. Around 375 of these trios were selected for whole genome sequencing as part of the Gabriella Miller Kids First fund. The EWS trios have been collected as part of the Children&#39;s Oncology Group&#39;s AEPI10N5 Study (\"Genetic Epidemiology of Ewing Sarcoma\"), and each trio has associated phenotypic data including a detailed family history. We will interrogate the sequence data using our genomic analysis pipeline at the University of Utah and the Utah Science Technology and Research initiative&#39;s (USTAR) Center for Genetic Discovery. We will look for the genetic contribution to ES and the sequence data with be shared in a repository designated by the Kids First Common Fund.\n\nAll of the WGS and phenotype data from this study is accessible through [kidsfirstdrc.org](https://kidsfirstdrc.org/), where other Kids First datasets can also be accessed. The WGS of these ~375 EWS trios will help us to understand the genetic origins of a deadly childhood cancer and may lead to novel strategies for prevention and treatment.\n","enrollment":[{"reference":"Group/phs001228.v1.p1-all-subjects"}],"sponsor":{"reference":"Organization/NCI","type":"Organization","display":"National Cancer Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "35435175-d846-4dfd-9e95-10709ee7a0d4",
+  "meta": { "lastUpdated": "2021-04-09T06:53:19.281-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001228.v1.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001228.v1.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001228.v1.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:48:03.038-04:00",
+          "source": "#0LqZlkYHol76tVIc",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001228.v1.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2018-06-18"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001228.v1.p1 - 1",
+                  "display": "GRU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 4,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 1112,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 1112,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001228.v1.p1"
+          }
+        ],
+        "title": "Kids First Pediatric Research Program in Susceptibility to Ewing Sarcoma Based on Germline Risk and Familial History of Cancer",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Family/Twin/Trios",
+                "display": "Family/Twin/Trios"
+              }
+            ],
+            "text": "Family/Twin/Trios"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012512",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012512",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing Sarcoma",
+                "display": "Ewing Sarcoma"
+              }
+            ],
+            "text": "Ewing Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing Tumor",
+                "display": "Ewing Tumor"
+              }
+            ],
+            "text": "Ewing Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing's Sarcoma",
+                "display": "Ewing's Sarcoma"
+              }
+            ],
+            "text": "Ewing's Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing's Tumor",
+                "display": "Ewing's Tumor"
+              }
+            ],
+            "text": "Ewing's Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewings Sarcoma",
+                "display": "Ewings Sarcoma"
+              }
+            ],
+            "text": "Ewings Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewings Tumor",
+                "display": "Ewings Tumor"
+              }
+            ],
+            "text": "Ewings Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewing",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewing's",
+                "display": "Sarcoma, Ewing's"
+              }
+            ],
+            "text": "Sarcoma, Ewing's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewings",
+                "display": "Sarcoma, Ewings"
+              }
+            ],
+            "text": "Sarcoma, Ewings"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Tumor, Ewing",
+                "display": "Tumor, Ewing"
+              }
+            ],
+            "text": "Tumor, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Tumor, Ewing's",
+                "display": "Tumor, Ewing's"
+              }
+            ],
+            "text": "Tumor, Ewing's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0553580",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D012512",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing Sarcoma",
+                "display": "Ewing Sarcoma"
+              }
+            ],
+            "text": "Ewing Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing Tumor",
+                "display": "Ewing Tumor"
+              }
+            ],
+            "text": "Ewing Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing's Sarcoma",
+                "display": "Ewing's Sarcoma"
+              }
+            ],
+            "text": "Ewing's Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewing's Tumor",
+                "display": "Ewing's Tumor"
+              }
+            ],
+            "text": "Ewing's Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewings Sarcoma",
+                "display": "Ewings Sarcoma"
+              }
+            ],
+            "text": "Ewings Sarcoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Ewings Tumor",
+                "display": "Ewings Tumor"
+              }
+            ],
+            "text": "Ewings Tumor"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewing",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewing's",
+                "display": "Sarcoma, Ewing's"
+              }
+            ],
+            "text": "Sarcoma, Ewing's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Sarcoma, Ewings",
+                "display": "Sarcoma, Ewings"
+              }
+            ],
+            "text": "Sarcoma, Ewings"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Tumor, Ewing",
+                "display": "Tumor, Ewing"
+              }
+            ],
+            "text": "Tumor, Ewing"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D012512 entry term: Tumor, Ewing's",
+                "display": "Tumor, Ewing's"
+              }
+            ],
+            "text": "Tumor, Ewing's"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0553580",
+                "display": "Sarcoma, Ewing"
+              }
+            ],
+            "text": "Sarcoma, Ewing"
+          }
+        ],
+        "description": "\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nEwing sarcoma (EWS) is a deadly bone cancer that occurs in children and adolescents. Mounting evidence suggests that a genetic predisposition exists for this pediatric cancer, although the specific genetic contribution has yet to be identified. EWS has never been linked to a specific cancer predisposition syndrome, although several case reports have been published that describe siblings and cousins with EWS. Furthermore, neuroectodermal tumors appear to occur more commonly in families with EWS. The two consistent epidemiology findings in EWS include a very strong Caucasian predilection and increased rates of hernia in EWS patients and their family members. Finally, the role of genetic microsatellite repeats in EWS tumorigenesis has been recently described, and these GGAA microsatellites are polymorphic in repeat size and location across the genome.\n\nThe study goals of this Kids First project include (1) To identify cancer predisposition genes in EWS trios increasing disease risk, (2) To identify genome-wide GGAA microsatellite repeats in EWS trios increasing disease risk, and (3) To identity de novo mutation and structural variant rates in EWS trios reflecting underlying DNA repair defects that increase disease risk. As part of the Kids First Common Fund initiative, this study proposal will further elucidate the genetic contribution to pediatric cancer development. Around 375 of these trios were selected for whole genome sequencing as part of the Gabriella Miller Kids First fund. The EWS trios have been collected as part of the Children&#39;s Oncology Group&#39;s AEPI10N5 Study (\"Genetic Epidemiology of Ewing Sarcoma\"), and each trio has associated phenotypic data including a detailed family history. We will interrogate the sequence data using our genomic analysis pipeline at the University of Utah and the Utah Science Technology and Research initiative&#39;s (USTAR) Center for Genetic Discovery. We will look for the genetic contribution to ES and the sequence data with be shared in a repository designated by the Kids First Common Fund.\n\nAll of the WGS and phenotype data from this study is accessible through [kidsfirstdrc.org](https://kidsfirstdrc.org/), where other Kids First datasets can also be accessed. The WGS of these ~375 EWS trios will help us to understand the genetic origins of a deadly childhood cancer and may lead to novel strategies for prevention and treatment.\n",
+        "enrollment": [{ "reference": "Group/phs001228.v1.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NCI",
+          "type": "Organization",
+          "display": "National Cancer Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

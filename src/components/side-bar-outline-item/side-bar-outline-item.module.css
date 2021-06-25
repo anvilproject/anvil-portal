@@ -7,34 +7,33 @@
 
 /* Outline item. */
 .outlineItem {
-    font-size: 0.875rem; /* 14px */
-    line-height: 1.25rem; /* 20px */
-    margin: 0;
-    padding: 4px 40px 4px 0; /* Matches nav. */
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  margin: 0;
+  padding: 4px 40px 4px 0; /* Matches nav. */
 }
 
 /* Outline item - active. */
 .outlineItem.active {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* Outline item - hover. */
 .outlineItem:not(.active):hover {
-    color: var(--black58);
+  color: var(--black58);
 }
 
 /* Outline item - indent. */
 .outlineItem.indent {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 /* Outline item - indent. */
 .outlineItem.indent + .outlineItem:not(.indent) {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 /* Outline item link. */
 .outlineItem > * {
-    color: inherit;
+  color: inherit;
 }
-

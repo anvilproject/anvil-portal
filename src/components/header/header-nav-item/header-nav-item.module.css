@@ -7,39 +7,40 @@
 
 /* Navigation item */
 .headerNavItem {
-    align-items: center;
-    display: flex;
-    font-weight: 400;
-    margin-bottom: 8px;
-    padding-left: 24px;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  margin-bottom: 8px;
+  padding-left: 24px;
 }
 
 /* Link */
 .headerNavItem a {
-    color: var(--accent-blue-dark);
-    font-family: "Open Sans", sans-serif;
-    position: relative;
+  color: var(--accent-blue-dark);
+  font-family: "Open Sans", sans-serif;
+  position: relative;
 }
 
 /* Link - active */
-.headerNavItem a.active:before, .headerNavItem a:hover:before {
-    border-radius: 1px;
-    bottom: 2px;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    transition: opacity .25s ease;
-    width: 24px;
+.headerNavItem a.active:before,
+.headerNavItem a:hover:before {
+  border-radius: 1px;
+  bottom: 2px;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.25s ease;
+  width: 24px;
 }
 
 /* Link - hover */
 .headerNavItem a:not(.active):hover:before {
-    border: 1px solid rgba(174, 235, 242, 0.34);
+  border: 1px solid rgba(174, 235, 242, 0.34);
 }
 
 .headerNavItem a.active:before {
-    border: 1px solid var(--accent-blue-light);
+  border: 1px solid var(--accent-blue-light);
 }
 
 /**
@@ -47,35 +48,35 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
+  /* Navigation item */
+  .headerNavItem {
+    height: inherit;
+    margin: 0 0 0 16px;
+    overflow-y: unset;
+    padding: 0;
+  }
 
-    /* Navigation item */
-    .headerNavItem {
-        height: inherit;
-        margin: 0 0 0 16px;
-        overflow-y: unset;
-        padding: 0;
-    }
+  /* Link */
+  .headerNavItem a {
+    white-space: nowrap;
+  }
 
-    /* Link */
-    .headerNavItem a {
-        white-space: nowrap;
-    }
+  /* Link - active */
+  .headerNavItem a.active:before,
+  .headerNavItem a:hover:before {
+    border-radius: 2px;
+    bottom: -4px;
+    width: 100%;
+  }
 
-    /* Link - active */
-    .headerNavItem a.active:before, .headerNavItem a:hover:before {
-        border-radius: 2px;
-        bottom: -4px;
-        width: 100%;
-    }
+  /* Link - hover */
+  .headerNavItem a:not(.active):hover:before {
+    border: 2px solid var(--black12);
+  }
 
-    /* Link - hover */
-    .headerNavItem a:not(.active):hover:before {
-        border: 2px solid var(--black12);
-    }
-
-    .headerNavItem a.active:before {
-        border: 2px solid var(--accent-blue-light);
-    }
+  .headerNavItem a.active:before {
+    border: 2px solid var(--accent-blue-light);
+  }
 }
 
 /**
@@ -83,11 +84,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 840px) {
-
-    /* Navigation item */
-    .headerNavItem {
-        margin: 0 0 0 24px;
-    }
+  /* Navigation item */
+  .headerNavItem {
+    margin: 0 0 0 24px;
+  }
 }
 
 /**
@@ -95,9 +95,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 960px) {
-
-    /* Navigation item */
-    .headerNavItem {
-        margin: 0 0 0 32px;
-    }
+  /* Navigation item */
+  .headerNavItem {
+    margin: 0 0 0 32px;
+  }
 }

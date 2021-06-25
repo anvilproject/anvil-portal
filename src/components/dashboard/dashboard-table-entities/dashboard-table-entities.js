@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
@@ -16,18 +16,21 @@ import DashboardTable from "../dashboard-table/dashboard-table";
 import compStyles from "./dashboard-table-entities.module.css";
 
 function DashboardTableEntities(props) {
+  /* Grab the entities. */
+  const { entities, tableHeadersEntities } = useContext(ContextDashboard);
+  const showEntities = entities.length > 0;
 
-    /* Grab the entities. */
-    const {entities, tableHeadersEntities} = useContext(ContextDashboard);
-    const showEntities = entities.length > 0;
-
-    return (
-        showEntities ?
-            <>
-            <h2 className={compStyles.headerNoBorder}>Search Results</h2>
-            <DashboardTable studies tableHeaders={tableHeadersEntities} tableRows={entities} {...props}/>
-            </> : null
-    );
+  return showEntities ? (
+    <>
+      <h2 className={compStyles.headerNoBorder}>Search Results</h2>
+      <DashboardTable
+        studies
+        tableHeaders={tableHeadersEntities}
+        tableRows={entities}
+        {...props}
+      />
+    </>
+  ) : null;
 }
 
 export default DashboardTableEntities;

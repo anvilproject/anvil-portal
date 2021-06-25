@@ -7,10 +7,10 @@
 
 // Template variables
 const WORKSPACE_FIELD_KEY = {
-    "CONSORTIUM": "consortium",
-    "SAMPLES": "samples",
-    "SIZE": "size",
-    "SUBJECTS": "subjects",
+  CONSORTIUM: "consortium",
+  SAMPLES: "samples",
+  SIZE: "size",
+  SUBJECTS: "subjects"
 };
 
 /**
@@ -20,22 +20,20 @@ const WORKSPACE_FIELD_KEY = {
  * @returns {{cohorts, consortia: number, samples, size, subjects}}
  */
 const buildStats = function buildStats(workspaces) {
-
-    return {
-        cohorts: countCohorts(workspaces),
-        consortia: countConsortia(workspaces),
-        samples: sumSamples(workspaces),
-        size: sumSize(workspaces),
-        subjects: sumSubjects(workspaces)
-    };
+  return {
+    cohorts: countCohorts(workspaces),
+    consortia: countConsortia(workspaces),
+    samples: sumSamples(workspaces),
+    size: sumSize(workspaces),
+    subjects: sumSubjects(workspaces)
+  };
 };
 
 /**
  * Returns the total number of workspaces.
  */
 function countCohorts(workspaces) {
-
-    return workspaces.length;
+  return workspaces.length;
 }
 
 /**
@@ -45,10 +43,11 @@ function countCohorts(workspaces) {
  * @returns {number}
  */
 function countConsortia(workspaces) {
+  const consortia = new Set(
+    workspaces.map(workspace => workspace[WORKSPACE_FIELD_KEY.CONSORTIUM])
+  );
 
-    const consortia = new Set(workspaces.map(workspace => workspace[WORKSPACE_FIELD_KEY.CONSORTIUM]));
-
-    return consortia.size;
+  return consortia.size;
 }
 
 /**
@@ -58,20 +57,17 @@ function countConsortia(workspaces) {
  * @param nodeType
  */
 function sumWorkspaceNodeValues(workspaces, nodeType) {
-
-    return workspaces.reduce((workspaceAccum, workspace) => {
-
-        workspaceAccum += workspace[nodeType];
-        return workspaceAccum;
-    }, 0);
+  return workspaces.reduce((workspaceAccum, workspace) => {
+    workspaceAccum += workspace[nodeType];
+    return workspaceAccum;
+  }, 0);
 }
 
 /**
  * Counts the total number of samples.
  */
 function sumSamples(workspaces) {
-
-    return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SAMPLES);
+  return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SAMPLES);
 }
 
 /**
@@ -80,8 +76,7 @@ function sumSamples(workspaces) {
  * @param workspaces
  */
 function sumSize(workspaces) {
-
-    return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SIZE);
+  return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SIZE);
 }
 
 /**
@@ -90,8 +85,7 @@ function sumSize(workspaces) {
  * @param workspaces
  */
 function sumSubjects(workspaces) {
-
-    return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SUBJECTS);
+  return sumWorkspaceNodeValues(workspaces, WORKSPACE_FIELD_KEY.SUBJECTS);
 }
 
 module.exports.buildStats = buildStats;

@@ -1,1 +1,424 @@
-{"resourceType":"Bundle","id":"bbc2fa94-9ca6-445f-8f83-955e83a739c6","meta":{"lastUpdated":"2021-04-09T06:53:09.173-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001138.v3.p2"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001138.v3.p2","resource":{"resourceType":"ResearchStudy","id":"phs001138.v3.p2","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:47:55.926-04:00","source":"#kLsiJutz94NlxaNX","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001138.v3.p2"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2019-03-26"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001138.v3.p2 - 1","display":"HMB"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001138.v3.p2 - 2","display":"DS-CHD"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":3,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":10,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":2208,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":2229,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"WGS"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001138.v3.p2"}],"title":"GMKF: Kids First Pediatric Research Program in Congenital Heart Disease","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Family/Twin/Trios","display":"Family/Twin/Trios"}],"text":"Family/Twin/Trios"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D006330","display":"Heart Defects, Congenital"}],"text":"Heart Defects, Congenital"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D006330","display":"Heart Defects, Congenital"}],"text":"Heart Defects, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Abnormalities, Heart","display":"Abnormalities, Heart"}],"text":"Abnormalities, Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Abnormality, Heart","display":"Abnormality, Heart"}],"text":"Abnormality, Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Congenital Heart Defect","display":"Congenital Heart Defect"}],"text":"Congenital Heart Defect"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Defect, Congenital Heart","display":"Defect, Congenital Heart"}],"text":"Defect, Congenital Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Defects, Congenital Heart","display":"Defects, Congenital Heart"}],"text":"Defects, Congenital Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Abnormalities","display":"Heart Abnormalities"}],"text":"Heart Abnormalities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Abnormality","display":"Heart Abnormality"}],"text":"Heart Abnormality"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Defect, Congenital","display":"Heart Defect, Congenital"}],"text":"Heart Defect, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Defects, Congenital","display":"Heart Defects, Congenital"}],"text":"Heart Defects, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart, Malformation Of","display":"Heart, Malformation Of"}],"text":"Heart, Malformation Of"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0018798","display":"Congenital Heart Defect"}],"text":"Congenital Heart Defect"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D006330","display":"Heart Defects, Congenital"}],"text":"Heart Defects, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Abnormalities, Heart","display":"Abnormalities, Heart"}],"text":"Abnormalities, Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Abnormality, Heart","display":"Abnormality, Heart"}],"text":"Abnormality, Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Congenital Heart Defect","display":"Congenital Heart Defect"}],"text":"Congenital Heart Defect"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Defect, Congenital Heart","display":"Defect, Congenital Heart"}],"text":"Defect, Congenital Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Defects, Congenital Heart","display":"Defects, Congenital Heart"}],"text":"Defects, Congenital Heart"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Abnormalities","display":"Heart Abnormalities"}],"text":"Heart Abnormalities"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Abnormality","display":"Heart Abnormality"}],"text":"Heart Abnormality"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Defect, Congenital","display":"Heart Defect, Congenital"}],"text":"Heart Defect, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart Defects, Congenital","display":"Heart Defects, Congenital"}],"text":"Heart Defects, Congenital"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D006330 entry term: Heart, Malformation Of","display":"Heart, Malformation Of"}],"text":"Heart, Malformation Of"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0018798","display":"Congenital Heart Defect"}],"text":"Congenital Heart Defect"}],"description":"\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nMulti-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 300 probands and their parents, and family of interest collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD.\n\nThis Kids First project represents a subset of the PCGC data. Other PCGC data can be accessed through [phs001194](study.cgi?study_id=phs001194) and other Kids First data can be accessed through [kidsfirstdrc.org](https://kidsfirstdrc.org/).\n","enrollment":[{"reference":"Group/phs001138.v3.p2-all-subjects"}],"sponsor":{"reference":"Organization/NCI","type":"Organization","display":"National Cancer Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "bbc2fa94-9ca6-445f-8f83-955e83a739c6",
+  "meta": { "lastUpdated": "2021-04-09T06:53:09.173-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001138.v3.p2"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001138.v3.p2",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001138.v3.p2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:47:55.926-04:00",
+          "source": "#kLsiJutz94NlxaNX",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001138.v3.p2"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2019-03-26"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001138.v3.p2 - 1",
+                  "display": "HMB"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001138.v3.p2 - 2",
+                  "display": "DS-CHD"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 3,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 10,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 2208,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 2229,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "WGS"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001138.v3.p2"
+          }
+        ],
+        "title": "GMKF: Kids First Pediatric Research Program in Congenital Heart Disease",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Family/Twin/Trios",
+                "display": "Family/Twin/Trios"
+              }
+            ],
+            "text": "Family/Twin/Trios"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D006330",
+                "display": "Heart Defects, Congenital"
+              }
+            ],
+            "text": "Heart Defects, Congenital"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D006330",
+                "display": "Heart Defects, Congenital"
+              }
+            ],
+            "text": "Heart Defects, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Abnormalities, Heart",
+                "display": "Abnormalities, Heart"
+              }
+            ],
+            "text": "Abnormalities, Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Abnormality, Heart",
+                "display": "Abnormality, Heart"
+              }
+            ],
+            "text": "Abnormality, Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Congenital Heart Defect",
+                "display": "Congenital Heart Defect"
+              }
+            ],
+            "text": "Congenital Heart Defect"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Defect, Congenital Heart",
+                "display": "Defect, Congenital Heart"
+              }
+            ],
+            "text": "Defect, Congenital Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Defects, Congenital Heart",
+                "display": "Defects, Congenital Heart"
+              }
+            ],
+            "text": "Defects, Congenital Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Abnormalities",
+                "display": "Heart Abnormalities"
+              }
+            ],
+            "text": "Heart Abnormalities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Abnormality",
+                "display": "Heart Abnormality"
+              }
+            ],
+            "text": "Heart Abnormality"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Defect, Congenital",
+                "display": "Heart Defect, Congenital"
+              }
+            ],
+            "text": "Heart Defect, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Defects, Congenital",
+                "display": "Heart Defects, Congenital"
+              }
+            ],
+            "text": "Heart Defects, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart, Malformation Of",
+                "display": "Heart, Malformation Of"
+              }
+            ],
+            "text": "Heart, Malformation Of"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0018798",
+                "display": "Congenital Heart Defect"
+              }
+            ],
+            "text": "Congenital Heart Defect"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D006330",
+                "display": "Heart Defects, Congenital"
+              }
+            ],
+            "text": "Heart Defects, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Abnormalities, Heart",
+                "display": "Abnormalities, Heart"
+              }
+            ],
+            "text": "Abnormalities, Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Abnormality, Heart",
+                "display": "Abnormality, Heart"
+              }
+            ],
+            "text": "Abnormality, Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Congenital Heart Defect",
+                "display": "Congenital Heart Defect"
+              }
+            ],
+            "text": "Congenital Heart Defect"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Defect, Congenital Heart",
+                "display": "Defect, Congenital Heart"
+              }
+            ],
+            "text": "Defect, Congenital Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Defects, Congenital Heart",
+                "display": "Defects, Congenital Heart"
+              }
+            ],
+            "text": "Defects, Congenital Heart"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Abnormalities",
+                "display": "Heart Abnormalities"
+              }
+            ],
+            "text": "Heart Abnormalities"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Abnormality",
+                "display": "Heart Abnormality"
+              }
+            ],
+            "text": "Heart Abnormality"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Defect, Congenital",
+                "display": "Heart Defect, Congenital"
+              }
+            ],
+            "text": "Heart Defect, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart Defects, Congenital",
+                "display": "Heart Defects, Congenital"
+              }
+            ],
+            "text": "Heart Defects, Congenital"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D006330 entry term: Heart, Malformation Of",
+                "display": "Heart, Malformation Of"
+              }
+            ],
+            "text": "Heart, Malformation Of"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0018798",
+                "display": "Congenital Heart Defect"
+              }
+            ],
+            "text": "Congenital Heart Defect"
+          }
+        ],
+        "description": "\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nMulti-center, prospective observational cohort study of individuals with congenital heart defects (CHD). Phenotypic data and source DNA derived from 300 probands and their parents, and family of interest collected to investigate relationships between genetic factors and phenotypic and clinical outcomes in patients with CHD.\n\nThis Kids First project represents a subset of the PCGC data. Other PCGC data can be accessed through [phs001194](study.cgi?study_id=phs001194) and other Kids First data can be accessed through [kidsfirstdrc.org](https://kidsfirstdrc.org/).\n",
+        "enrollment": [{ "reference": "Group/phs001138.v3.p2-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NCI",
+          "type": "Organization",
+          "display": "National Cancer Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

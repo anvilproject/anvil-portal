@@ -17,13 +17,17 @@ import compStyles from "./tab.module.css";
 const classNames = require("classnames");
 
 function Tab(props) {
+  const { tab } = props,
+    { active, name, path } = tab || {};
 
-    const {tab} = props,
-        {active, name, path} = tab || {};
-
-    return (
-        <Link className={classNames({[compStyles.active]: active}, compStyles.tab)} to={path}>{name}</Link>
-    );
+  return (
+    <Link
+      className={classNames({ [compStyles.active]: active }, compStyles.tab)}
+      to={path}
+    >
+      {name}
+    </Link>
+  );
 }
 
 export default Tab;

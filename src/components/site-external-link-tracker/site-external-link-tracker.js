@@ -7,7 +7,7 @@
  */
 
 // Core dependencies
-import {useCallback, useEffect} from "react";
+import { useCallback, useEffect } from "react";
 
 // App dependencies
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
@@ -17,51 +17,49 @@ import * as DOMService from "../../utils/dom.service";
 import socialStyles from "../socials/social/social.module.css";
 
 function SiteExternalLinkTracker(props) {
+  const { children, pageTitle, refSite } = props;
 
-    const {children, pageTitle, refSite} = props;
+  const onHandleTrackingExternalLinks = useCallback(
+    e => {
+      const target = e.target;
 
-    const onHandleTrackingExternalLinks = useCallback((e) => {
+      if (!DOMService.isAnchor(target)) {
+        return;
+      }
 
-        const target = e.target;
+      const url = target.getAttribute("href");
 
-        if ( !DOMService.isAnchor(target) ) {
+      if (DOMService.isHrefExternal(url) || DOMService.isMailTo(url)) {
+        /* Grab link text. */
+        let linkText = target.innerText;
 
-            return;
+        /* If target belongs to <social> component, assign the page title to link text instead. */
+        if (target.classList && target.value === socialStyles.social) {
+          linkText = pageTitle;
         }
 
-        const url = target.getAttribute("href");
+        AnvilGTMService.trackExternalLinkClicked(url, linkText);
+      }
+    },
+    [pageTitle]
+  );
 
-        if ( DOMService.isHrefExternal(url) || DOMService.isMailTo(url) ) {
+  /* useEffect - componentDidMount, componentWillUnmount. */
+  /* Set up tracking of external links - add event listener. */
+  useEffect(() => {
+    const siteEl = refSite.current;
+    siteEl.addEventListener("click", onHandleTrackingExternalLinks, {
+      passive: true
+    });
 
-            /* Grab link text. */
-            let linkText = target.innerText;
+    return () => {
+      siteEl.removeEventListener("click", onHandleTrackingExternalLinks, {
+        passive: true
+      });
+    };
+  }, [onHandleTrackingExternalLinks, refSite]);
 
-            /* If target belongs to <social> component, assign the page title to link text instead. */
-            if ( target.classList && target.value === socialStyles.social ) {
-
-                linkText = pageTitle;
-            }
-
-            AnvilGTMService.trackExternalLinkClicked(url, linkText);
-        }
-    }, [pageTitle]);
-
-    /* useEffect - componentDidMount, componentWillUnmount. */
-    /* Set up tracking of external links - add event listener. */
-    useEffect(() => {
-
-        const siteEl = refSite.current;
-        siteEl.addEventListener("click", onHandleTrackingExternalLinks, {passive: true});
-
-        return() => {
-
-            siteEl.removeEventListener("click", onHandleTrackingExternalLinks, {passive: true});
-        }
-    }, [onHandleTrackingExternalLinks, refSite]);
-
-    return (
-        children
-    )
+  return children;
 }
 
 export default SiteExternalLinkTracker;

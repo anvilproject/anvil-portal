@@ -8,9 +8,11 @@
 
 /* Button */
 .button {
-    composes: button from "../button/button.module.css";
-    composes: dark from "../button/button.module.css";
-    border-bottom: none !important; /* Required to override markdown <a> styles. */
-    color: var(--white) !important; /* Required to override markdown <a> styles. */
-    margin-bottom: 16px;
+  composes: button from "../button/button.module.css";
+  composes: dark from "../button/button.module.css";
+  border-bottom: none !important; /* Required to override markdown <a> styles. */
+  color: var(
+    --white
+  ) !important; /* Required to override markdown <a> styles. */
+  margin-bottom: 16px;
 }

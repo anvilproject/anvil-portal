@@ -1,1 +1,220 @@
-{"resourceType":"Bundle","id":"e1a825cc-fcdf-42a1-9b72-8358a61379f4","meta":{"lastUpdated":"2021-04-09T06:53:32.272-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001436.v1.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001436.v1.p1","resource":{"resourceType":"ResearchStudy","id":"phs001436.v1.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:48:18.941-04:00","source":"#uBtt04wcgbDlAoUe","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001436.v1.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2019-09-25"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001436.v1.p1 - 1","display":"GRU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":2,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":6,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":1694,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":2281,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001436.v1.p1"}],"title":"Discovering the Genetic Basis of Human Neuroblastoma: A Kids First Project","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Tumor vs. Matched-Normal","display":"Tumor vs. Matched-Normal"}],"text":"Tumor vs. Matched-Normal"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D009447","display":"Neuroblastoma"}],"text":"Neuroblastoma"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D009447","display":"Neuroblastoma"}],"text":"Neuroblastoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D009447 entry term: Neuroblastomas","display":"Neuroblastomas"}],"text":"Neuroblastomas"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0027819","display":"Neuroblastoma"}],"text":"Neuroblastoma"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D009447","display":"Neuroblastoma"}],"text":"Neuroblastoma"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D009447 entry term: Neuroblastomas","display":"Neuroblastomas"}],"text":"Neuroblastomas"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0027819","display":"Neuroblastoma"}],"text":"Neuroblastoma"}],"description":"\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nAll of the WGS and phenotypic data from this study are accessible through dbGaP and [kidsfirstdrc.org](kidsfirstdrc.org), where other Kids First datasets can also be accessed.\n\nChildren with disseminated neuroblastoma have a very high risk of treatment failure and death despite receiving intensified chemotherapy, radiation therapy and immunotherapy. The *long-term goal* of our research program is to ultimately improve neuroblastoma cure rates by first comprehensively defining the genetic basis of the disease. The *central hypothesis* to be tested here is that neuroblastoma arises largely due to the epistatic interaction of common and rare heritable DNA variation. Here we will perform a comprehensive whole genome sequencing of 563 quartets of neuroblastoma patient germline and diagnostic tumor DNAs and germline DNAs from both parents. The case series was recently collected through a Children&#39;s Oncology Group epidemiology clinical trial and is robustly annotated with complete demographic (age, sex, race, ethnicity), clinical (e.g. age at diagnosis, stage, risk group), epidemiologic (parental dietary and exposure questionnaire) and biological (e.g. tumor *MYCN* status and multiple other tumor genomic measures) co-variates. Subjects were consented for genetic research and DNA is immediately available for shipment for sequencing. We propose Illumina-based whole genome sequencing in the 593 \"trio\" germline samples (**Aim 1**; due to missing parent: 487 full neuroblastoma triads, 106 child-single parent dyads = 1673 whole genome sequences) and matched diagnostic tumor DNA (**Aim 2**; N=366) at 30x sequencing depth (N=2039 whole genome sequences). Also in Aim 2 we will perform whole exome (100x) and RNA sequencing on the 366 tumor DNA and 228 tumor RNA samples from this cohort. Finally, we propose a pilot study of structural variation using long-range sequencing in 10 non-overlapping tumor samples chosen based on potentially relevant chromosomal alterations discovered with conventional NGS. Thus, a total of 2277 individual samples and 2655 sequences will be generated. We will use our established analytic pipeline that is currently being used to study the germline genomes of all cases sequenced through the NCI supported Therapeutically Applicable Research to Generate Effective Treatments program. We plan a three-stage analytic approach, first focusing on classic *de novo* and inherited Mendelian damaging alterations. We will next integrate our extensive epigenomic data from human neuroblastoma cell lines and genome-wide association study data (N=5,703 neuroblastoma cases to date) to guide a comprehensive assessment of noncoding variants that influence tumor initiation with a recently established analytic pipeline. Finally, we will utilize the tumor DNA analyses to inform relevance via somatic gain or loss of function effects at the sequence and/or copy number levels. All data generated in this project will be immediately placed into the Genomic Data Commons (GDC) and we will compute within this environment by importing our analytic pipelines into the GDC. These data will be fully integrated into the Kids First Data Resource and freely shared with all academically qualified petitioners. This comprehensive data set derived from a large and richly phenotyped series of neuroblastoma DNA quartets will be integrated with existing germline and/or tumor genomic data from over 6,000 neuroblastoma subjects (but none with matched patient-parent germline sequencing data) to provide an unparalleled opportunity to comprehensively discover the genetic basis of neuroblastoma.\n","enrollment":[{"reference":"Group/phs001436.v1.p1-all-subjects"}],"sponsor":{"reference":"Organization/NCI","type":"Organization","display":"National Cancer Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "e1a825cc-fcdf-42a1-9b72-8358a61379f4",
+  "meta": { "lastUpdated": "2021-04-09T06:53:32.272-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001436.v1.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001436.v1.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001436.v1.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:48:18.941-04:00",
+          "source": "#uBtt04wcgbDlAoUe",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001436.v1.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2019-09-25"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001436.v1.p1 - 1",
+                  "display": "GRU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 2,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 6,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 1694,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 2281,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001436.v1.p1"
+          }
+        ],
+        "title": "Discovering the Genetic Basis of Human Neuroblastoma: A Kids First Project",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Tumor vs. Matched-Normal",
+                "display": "Tumor vs. Matched-Normal"
+              }
+            ],
+            "text": "Tumor vs. Matched-Normal"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D009447",
+                "display": "Neuroblastoma"
+              }
+            ],
+            "text": "Neuroblastoma"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D009447",
+                "display": "Neuroblastoma"
+              }
+            ],
+            "text": "Neuroblastoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D009447 entry term: Neuroblastomas",
+                "display": "Neuroblastomas"
+              }
+            ],
+            "text": "Neuroblastomas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0027819",
+                "display": "Neuroblastoma"
+              }
+            ],
+            "text": "Neuroblastoma"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D009447",
+                "display": "Neuroblastoma"
+              }
+            ],
+            "text": "Neuroblastoma"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D009447 entry term: Neuroblastomas",
+                "display": "Neuroblastomas"
+              }
+            ],
+            "text": "Neuroblastomas"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0027819",
+                "display": "Neuroblastoma"
+              }
+            ],
+            "text": "Neuroblastoma"
+          }
+        ],
+        "description": "\nThe Gabriella Miller Kids First Pediatric Research Program (Kids First) is a trans-NIH effort initiated in response to the 2014 Gabriella Miller Kids First Research Act and supported by the NIH Common Fund. This program focuses on gene discovery in pediatric cancers and structural birth defects and the development of the Gabriella Miller Kids First Pediatric Data Resource (Kids First Data Resource).\n\nAll of the WGS and phenotypic data from this study are accessible through dbGaP and [kidsfirstdrc.org](kidsfirstdrc.org), where other Kids First datasets can also be accessed.\n\nChildren with disseminated neuroblastoma have a very high risk of treatment failure and death despite receiving intensified chemotherapy, radiation therapy and immunotherapy. The *long-term goal* of our research program is to ultimately improve neuroblastoma cure rates by first comprehensively defining the genetic basis of the disease. The *central hypothesis* to be tested here is that neuroblastoma arises largely due to the epistatic interaction of common and rare heritable DNA variation. Here we will perform a comprehensive whole genome sequencing of 563 quartets of neuroblastoma patient germline and diagnostic tumor DNAs and germline DNAs from both parents. The case series was recently collected through a Children&#39;s Oncology Group epidemiology clinical trial and is robustly annotated with complete demographic (age, sex, race, ethnicity), clinical (e.g. age at diagnosis, stage, risk group), epidemiologic (parental dietary and exposure questionnaire) and biological (e.g. tumor *MYCN* status and multiple other tumor genomic measures) co-variates. Subjects were consented for genetic research and DNA is immediately available for shipment for sequencing. We propose Illumina-based whole genome sequencing in the 593 \"trio\" germline samples (**Aim 1**; due to missing parent: 487 full neuroblastoma triads, 106 child-single parent dyads = 1673 whole genome sequences) and matched diagnostic tumor DNA (**Aim 2**; N=366) at 30x sequencing depth (N=2039 whole genome sequences). Also in Aim 2 we will perform whole exome (100x) and RNA sequencing on the 366 tumor DNA and 228 tumor RNA samples from this cohort. Finally, we propose a pilot study of structural variation using long-range sequencing in 10 non-overlapping tumor samples chosen based on potentially relevant chromosomal alterations discovered with conventional NGS. Thus, a total of 2277 individual samples and 2655 sequences will be generated. We will use our established analytic pipeline that is currently being used to study the germline genomes of all cases sequenced through the NCI supported Therapeutically Applicable Research to Generate Effective Treatments program. We plan a three-stage analytic approach, first focusing on classic *de novo* and inherited Mendelian damaging alterations. We will next integrate our extensive epigenomic data from human neuroblastoma cell lines and genome-wide association study data (N=5,703 neuroblastoma cases to date) to guide a comprehensive assessment of noncoding variants that influence tumor initiation with a recently established analytic pipeline. Finally, we will utilize the tumor DNA analyses to inform relevance via somatic gain or loss of function effects at the sequence and/or copy number levels. All data generated in this project will be immediately placed into the Genomic Data Commons (GDC) and we will compute within this environment by importing our analytic pipelines into the GDC. These data will be fully integrated into the Kids First Data Resource and freely shared with all academically qualified petitioners. This comprehensive data set derived from a large and richly phenotyped series of neuroblastoma DNA quartets will be integrated with existing germline and/or tumor genomic data from over 6,000 neuroblastoma subjects (but none with matched patient-parent germline sequencing data) to provide an unparalleled opportunity to comprehensively discover the genetic basis of neuroblastoma.\n",
+        "enrollment": [{ "reference": "Group/phs001436.v1.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NCI",
+          "type": "Organization",
+          "display": "National Cancer Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}

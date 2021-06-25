@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Utility class for Google Tag Manager-related functionality. 
+ * Utility class for Google Tag Manager-related functionality.
  */
 
 // App dependencies
@@ -10,25 +10,28 @@ import { GADimension } from "../anvil-gtm/ga-dimension.model";
 
 /**
  * Send custom event to GTM/GA.
- * 
+ *
  * @param {string} category
  * @param {string} action
  * @param {string} label
  * @param {any} dimensions
  */
 export function trackEvent(category, action, label, dimensions) {
+  if (!isTrackingEnabled()) {
+    return;
+  }
 
-    if ( !isTrackingEnabled() ) {
-        return;
-    }
+  const eventConfig = Object.assign(
+    getDefaultDimensions(),
+    {
+      event: category,
+      eventAction: action,
+      eventLabel: label
+    },
+    dimensions
+  );
 
-    const eventConfig = Object.assign(getDefaultDimensions(), {
-        event: category,
-        eventAction: action,
-        eventLabel: label
-    }, dimensions);
-
-    getDataLayer().push(eventConfig);
+  getDataLayer().push(eventConfig);
 }
 
 /**
@@ -37,8 +40,7 @@ export function trackEvent(category, action, label, dimensions) {
  * @returns {{}}
  */
 function getDataLayer() {
-
-    return window.dataLayer;
+  return window.dataLayer;
 }
 
 /**
@@ -47,13 +49,12 @@ function getDataLayer() {
  * @returns {[key: string]: string}
  */
 function getDefaultDimensions() {
+  const defaultDimensions = {};
+  for (let i in GADimension) {
+    defaultDimensions[GADimension[i]] = undefined;
+  }
 
-    const defaultDimensions = {};
-    for ( let i in GADimension ) {
-        defaultDimensions[GADimension[i]] = undefined;
-    }
-
-    return defaultDimensions;
+  return defaultDimensions;
 }
 
 /**
@@ -62,6 +63,5 @@ function getDefaultDimensions() {
  * @returns {boolean}
  */
 function isTrackingEnabled() {
-
-    return !!getDataLayer();
+  return !!getDataLayer();
 }

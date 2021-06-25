@@ -7,16 +7,16 @@
 
 /* Main list item content container */
 .listItemContent {
-    flex: 1;
-    padding-bottom: 16px;
+  flex: 1;
+  padding-bottom: 16px;
 }
 
 /* Last paragraph in list item content */
 .listItemContent p:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* If the title is the first child in the content, add margin top (overline has own margin top and doesn't need this */
 .listItemContent > h3:first-child {
-    margin-top: 4px;
+  margin-top: 4px;
 }

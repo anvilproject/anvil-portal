@@ -21,14 +21,15 @@ import compStyles from "./social-email.module.css";
 const classNames = require("classnames");
 
 function SocialEmail(props) {
+  const { url } = props;
 
-    const {url} = props;
-
-    return (
-        <Social url={url}>
-            <span className={classNames("material-icons-round", compStyles.email)}>email</span>
-        </Social>
-    );
+  return (
+    <Social url={url}>
+      <span className={classNames("material-icons-round", compStyles.email)}>
+        email
+      </span>
+    </Social>
+  );
 }
 
 export default SocialEmail;

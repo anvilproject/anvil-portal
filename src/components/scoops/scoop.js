@@ -23,74 +23,86 @@ import compStyles from "./scoop.module.css";
 let classNames = require("classnames");
 
 class Scoop extends React.Component {
+  getScoops = () => {
+    const { featuredOnly, scoops } = this.props;
 
-    getScoops = () => {
+    if (!featuredOnly) {
+      // Returns all
+      return scoops;
+    }
 
-        const {featuredOnly, scoops} = this.props;
+    // Return only the featured scoops
+    return scoops.filter(scoop => scoop.frontmatter.featured === true);
+  };
 
-        if ( !featuredOnly ) {
+  render() {
+    const { className, noEvents, scoops, type } = this.props;
 
-            // Returns all
-            return scoops;
-        }
+    // Determine type of scoop - catch "events" for home page, or "upcoming events" and "past events" for events list
+    const scoopTypeEvents = /events/.test(type);
+    const pastEvents = /past/.test(type);
 
-        // Return only the featured scoops
-        return scoops.filter(scoop => scoop.frontmatter.featured === true);
+    const Headline = props => {
+      const { scoop } = props,
+        { fields, frontmatter } = scoop,
+        {
+          conference,
+          date,
+          dateBubble,
+          description,
+          eventType,
+          title
+        } = frontmatter,
+        { slug } = fields;
+
+      // Validate and format dates for display
+      const dateNews = ScoopsService.validateDate(date);
+
+      return (
+        <div
+          className={classNames(
+            contentStyles.content,
+            compStyles.scoop,
+            className
+          )}
+        >
+          <ListItem linkTo={slug}>
+            {scoopTypeEvents ? (
+              <>
+                <ListItemIcon>
+                  <BubbleDate dateBubble={dateBubble} disabled={pastEvents} />
+                </ListItemIcon>
+                <ListItemContent>
+                  <Overline>
+                    <span>{conference}</span>
+                    <span>{eventType}</span>
+                  </Overline>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </ListItemContent>
+              </>
+            ) : (
+              <ListItemContent>
+                <h3>{title}</h3>
+                <Overline>
+                  <span>Posted: {dateNews}</span>
+                </Overline>
+                <p>{description}</p>
+              </ListItemContent>
+            )}
+          </ListItem>
+        </div>
+      );
     };
 
-    render() {
-        
-        const {className, noEvents, scoops, type} = this.props;
-
-        // Determine type of scoop - catch "events" for home page, or "upcoming events" and "past events" for events list
-        const scoopTypeEvents = /events/.test(type);
-        const pastEvents = /past/.test(type);
-
-        const Headline = (props) => {
-
-            const {scoop} = props,
-                {fields, frontmatter} = scoop,
-                {conference, date, dateBubble, description, eventType, title} = frontmatter,
-                {slug} = fields;
-
-            // Validate and format dates for display
-            const dateNews = ScoopsService.validateDate(date);
-
-            return (
-                <div className={classNames(contentStyles.content, compStyles.scoop, className)}>
-                    <ListItem linkTo={slug}>
-                        {scoopTypeEvents ? 
-                            <>
-                                <ListItemIcon>
-                                    <BubbleDate dateBubble={dateBubble} disabled={pastEvents}/>
-                                </ListItemIcon>
-                                <ListItemContent>
-                                    <Overline>
-                                        <span>{conference}</span>
-                                        <span>{eventType}</span>
-                                    </Overline>
-                                    <h3>{title}</h3>
-                                    <p>{description}</p>
-                                </ListItemContent>
-                            </> :
-                            <ListItemContent>
-                                <h3>{title}</h3>
-                                <Overline>
-                                    <span>Posted: {dateNews}</span>
-                                </Overline>
-                                <p>{description}</p>
-                            </ListItemContent>}
-                    </ListItem>
-                </div>
-            )
-        };
-
-        return (
-            scoops.length ? this.getScoops().map((scoop, i) =>
-                    <Headline key={i} scoop={scoop}/>) :
-                <p className={classNames(compStyles.scoopless, noEvents)}>Currently, we have no {type}.</p>
-        );
-    }
+    return scoops.length ? (
+      this.getScoops().map((scoop, i) => <Headline key={i} scoop={scoop} />)
+    ) : (
+      <p className={classNames(compStyles.scoopless, noEvents)}>
+        Currently, we have no {type}.
+      </p>
+    );
+  }
 }
 
 export default Scoop;

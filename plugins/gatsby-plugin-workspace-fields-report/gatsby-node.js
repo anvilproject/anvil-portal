@@ -8,10 +8,12 @@
 const path = require("path");
 
 // App dependencies
-const {generateWorkspaceFieldsReportCSV} = require(path.resolve(__dirname, "../utils/workspace-fields-report.service.js"));
+const { generateWorkspaceFieldsReportCSV } = require(path.resolve(
+  __dirname,
+  "../utils/workspace-fields-report.service.js"
+));
 
 exports.onPostBootstrap = ({}) => {
-
-    /* Read workspaces JSON file and generate csv report. */
-    generateWorkspaceFieldsReportCSV();
+  /* Read workspaces JSON file and generate csv report. */
+  generateWorkspaceFieldsReportCSV();
 };

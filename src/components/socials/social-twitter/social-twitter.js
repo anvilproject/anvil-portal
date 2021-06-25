@@ -21,14 +21,13 @@ import Social from "../social/social";
 import twitter from "../../../../images/logo-twitter.svg";
 
 function SocialTwitter(props) {
+  const { url } = props;
 
-    const {url} = props;
-
-    return (
-        <Social url={url}>
-            <img alt={"Twitter"} src={twitter}/>
-        </Social>
-    );
+  return (
+    <Social url={url}>
+      <img alt={"Twitter"} src={twitter} />
+    </Social>
+  );
 }
 
 export default SocialTwitter;

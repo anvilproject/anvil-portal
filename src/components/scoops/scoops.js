@@ -12,13 +12,17 @@ import React from "react";
 import Scoop from "./scoop";
 
 class Scoops extends React.Component {
-
-    render() {
-        const {className, featuredOnly, scoops, type} = this.props;
-        return (
-            <Scoop className={className} featuredOnly={featuredOnly} scoops={scoops} type={type}/>
-        );
-    }
+  render() {
+    const { className, featuredOnly, scoops, type } = this.props;
+    return (
+      <Scoop
+        className={className}
+        featuredOnly={featuredOnly}
+        scoops={scoops}
+        type={type}
+      />
+    );
+  }
 }
 
 export default Scoops;

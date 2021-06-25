@@ -15,17 +15,22 @@ import globalStyles from "../../styles/global.module.css";
 let classNames = require("classnames");
 
 class SectionBody extends React.Component {
-
-    render() {
-        const {children, className} = this.props;
-        return (
-            <div className={classNames(compStyles.sectionBody, className)}>
-                <div className={classNames(globalStyles.grid, globalStyles.g750, compStyles.container)}>
-                    {children}
-                </div>
-            </div>
-        );
-    }
+  render() {
+    const { children, className } = this.props;
+    return (
+      <div className={classNames(compStyles.sectionBody, className)}>
+        <div
+          className={classNames(
+            globalStyles.grid,
+            globalStyles.g750,
+            compStyles.container
+          )}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default SectionBody;

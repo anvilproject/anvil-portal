@@ -8,16 +8,16 @@
 
 /* Header. */
 .header {
-    background: var(--white);
-    border-bottom: 1px solid var(--black12);
+  background: var(--white);
+  border-bottom: 1px solid var(--black12);
 }
 
 /* Header container. */
 .header > div {
-    align-items: center;
-    display: flex;
-    height: 60px;
-    justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: flex-end;
 }
 
 /**
@@ -25,21 +25,20 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
+  /* Header. */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 12; /* Above <Headline/>. */
+  }
 
-    /* Header. */
-    .header {
-        position: sticky;
-        top: 0;
-        z-index: 12; /* Above <Headline/>. */
-    }
+  /* Header container. */
+  .header > div {
+    height: 64px;
+  }
 
-    /* Header container. */
-    .header > div {
-        height: 64px;
-    }
-
-    /* Menu button. */
-    .header > div > button:last-of-type {
-        display: none;
-    }
+  /* Menu button. */
+  .header > div > button:last-of-type {
+    display: none;
+  }
 }

@@ -15,14 +15,13 @@ import compStyles from "./arrow.module.css";
 const classNames = require("classnames");
 
 function Arrow(props) {
+  const { children, reverse } = props;
+  const classNamesChild = children.props.className;
+  const classNamesArrow = classNames(classNamesChild, compStyles.arrow, {
+    [compStyles.reverse]: reverse
+  });
 
-    const {children, reverse} = props;
-    const classNamesChild = children.props.className;
-    const classNamesArrow = classNames(classNamesChild, compStyles.arrow, {[compStyles.reverse]: reverse});
-
-    return (
-        React.cloneElement(children, {className: classNamesArrow})
-    );
+  return React.cloneElement(children, { className: classNamesArrow });
 }
 
 export default Arrow;

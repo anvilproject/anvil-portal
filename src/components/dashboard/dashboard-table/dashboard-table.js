@@ -16,25 +16,32 @@ import DashboardTableHeader from "../dashboard-table-header/dashboard-table-head
 import compStyles from "./dashboard-table.module.css";
 
 class DashboardTable extends React.Component {
+  render() {
+    const {
+      dataset,
+      singleRow,
+      tableHeaders,
+      tableRow,
+      tableRows
+    } = this.props;
+    const identifier = Date.now();
+    const tableId = `${dataset}${identifier}`;
 
-    render() {
-        const {dataset, singleRow, tableHeaders, tableRow, tableRows} = this.props;
-        const identifier = Date.now();
-        const tableId = `${dataset}${identifier}`;
-
-        return (
-            <div className={compStyles.wrapper} id={tableId}>
-                <table>
-                    <DashboardTableHeader tableHeaders={tableHeaders}/>
-                    <DashboardTableBody dataset={dataset}
-                                        singleRow={singleRow}
-                                        tableHeaders={tableHeaders}
-                                        tableRow={tableRow}
-                                        tableRows={tableRows}/>
-                </table>
-            </div>
-        );
-    }
+    return (
+      <div className={compStyles.wrapper} id={tableId}>
+        <table>
+          <DashboardTableHeader tableHeaders={tableHeaders} />
+          <DashboardTableBody
+            dataset={dataset}
+            singleRow={singleRow}
+            tableHeaders={tableHeaders}
+            tableRow={tableRow}
+            tableRows={tableRows}
+          />
+        </table>
+      </div>
+    );
+  }
 }
 
 export default DashboardTable;

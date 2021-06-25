@@ -7,24 +7,24 @@
 
 /* Breadcrumb. */
 a.breadcrumb {
-    align-items: center;
-    border-bottom: none;
-    color: var(--black58);
-    display: flex;
-    font-size: 0.8125rem; /* 13px */
-    font-weight: 300;
-    letter-spacing: 0.075rem; /* 1.2px */
-    margin-bottom: 8px;
-    text-transform: uppercase;
+  align-items: center;
+  border-bottom: none;
+  color: var(--black58);
+  display: flex;
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 300;
+  letter-spacing: 0.075rem; /* 1.2px */
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 /* Breadcrumb - hover. */
 a.breadcrumb:hover {
-    color: var(--black87);
-    border-bottom: none;
+  color: var(--black87);
+  border-bottom: none;
 }
 
 /* Breadcrumb label. */
 .breadcrumbLabel {
-    margin-left: 4px;
+  margin-left: 4px;
 }

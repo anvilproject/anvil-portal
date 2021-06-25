@@ -7,30 +7,30 @@
 
 /* Icon. */
 .icon {
-    align-self: center;
-    color: var(--black34);
-    display: flex;
-    justify-content: center;
-    opacity: 0;
+  align-self: center;
+  color: var(--black34);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
 }
 
 /* Icon - blue dark. */
 .icon.blueDark {
-    color: var(--accent-blue-dark)
+  color: var(--accent-blue-dark);
 }
 
 /* Icon - breadcrumb. */
 .icon.breadcrumb {
-    color: inherit;
+  color: inherit;
 }
 
 /* Icon - show. */
 .icon.show {
-    opacity: 1;
-    transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 1;
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Icon - hover. */
 .icon.show.hover:hover {
-    color: var(--black58);
+  color: var(--black58);
 }

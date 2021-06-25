@@ -14,19 +14,16 @@
  * @returns {*}
  */
 export function filterDashboardEntities(entities, setOfResults, resultKey) {
-
-    /* Set of results is empty. */
-    if ( setOfResults.size === 0 ) {
-
-        return [];
-    }
-
-    if ( entities ) {
-
-        return entities.filter(entity => setOfResults.has(entity[resultKey]));
-    }
-
+  /* Set of results is empty. */
+  if (setOfResults.size === 0) {
     return [];
+  }
+
+  if (entities) {
+    return entities.filter(entity => setOfResults.has(entity[resultKey]));
+  }
+
+  return [];
 }
 
 /**
@@ -35,6 +32,5 @@ export function filterDashboardEntities(entities, setOfResults, resultKey) {
  * @param value
  */
 export function isArray(value) {
-
-    return Array.isArray(value);
+  return Array.isArray(value);
 }

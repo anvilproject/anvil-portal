@@ -1,102 +1,98 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
     ],
-    "redirects": [ {
-      "source": "/contact",
-      "destination": "/help",
-      "type": 301
-    },
-    {
-      "source": "/about",
-      "destination": "/overview",
-      "type": 301
-    },
-    {
-      "source": "/about/team",
-      "destination": "/team",
-      "type": 301
-    },
-    {
-      "source": "/about/working-groups",
-      "destination": "/team/working-groups",
-      "type": 301
-    },
-    {
-      "source": "/about/funding-and-oversight",
-      "destination": "/overview/project-sponsor",
-      "type": 301
-    },
-    {
-      "source": "/data/consortia",
-      "destination": "/overview/data-consortia",
-      "type": 301
-    }
-    ,
-    {
-      "source": "/data/requesting-data-access",
-      "destination": "/learn/accessing-data/requesting-data-access",
-      "type": 301
-    },
-    {
-      "source": "/data/data-access",
-      "destination": "/learn/reference/data-access-controls",
-      "type": 301
-    },
-    {
-      "source": "/data/data-submission",
-      "destination": "/learn/for-consortia/data-submission",
-      "type": 301
-    },
-    {
-      "source": "/data/bringing-your-own-data",
-      "destination": "/learn/accessing-data/bringing-your-own-data",
-      "type": 301
-    },
-    {
-      "source": "/tools",
-      "destination": "/overview#analysis-tools",
-      "type": 301
-    },
-    {
-      "source": "/overview/supported-analysis-tools",
-      "destination": "/overview#analysis-tools",
-      "type": 301
-    },
-    {
-      "source": "/training",
-      "destination": "/learn",
-      "type": 301
-    },
-    {
-      "source": "/training/guides",
-      "destination": "/learn",
-      "type": 301
-    },
-    {
-      "source": "/training/featured-workspaces",
-      "destination": "/learn/analysis-workflows/using-example-workspaces",
-      "type": 301
-    },
-    {
-      "source": "/learn/training/ncpi-train-your-colleagues-march-2020",
-      "destination": "/learn/workshop-archive",
-      "type": 301
-    },
-    {
-      "source": "/learn/training/magic-jamboree-june-2020",
-      "destination": "/learn/workshop-archive",
-      "type": 301
+    "redirects": [
+      {
+        "source": "/contact",
+        "destination": "/help",
+        "type": 301
+      },
+      {
+        "source": "/about",
+        "destination": "/overview",
+        "type": 301
+      },
+      {
+        "source": "/about/team",
+        "destination": "/team",
+        "type": 301
+      },
+      {
+        "source": "/about/working-groups",
+        "destination": "/team/working-groups",
+        "type": 301
+      },
+      {
+        "source": "/about/funding-and-oversight",
+        "destination": "/overview/project-sponsor",
+        "type": 301
+      },
+      {
+        "source": "/data/consortia",
+        "destination": "/overview/data-consortia",
+        "type": 301
+      },
+      {
+        "source": "/data/requesting-data-access",
+        "destination": "/learn/accessing-data/requesting-data-access",
+        "type": 301
+      },
+      {
+        "source": "/data/data-access",
+        "destination": "/learn/reference/data-access-controls",
+        "type": 301
+      },
+      {
+        "source": "/data/data-submission",
+        "destination": "/learn/for-consortia/data-submission",
+        "type": 301
+      },
+      {
+        "source": "/data/bringing-your-own-data",
+        "destination": "/learn/accessing-data/bringing-your-own-data",
+        "type": 301
+      },
+      {
+        "source": "/tools",
+        "destination": "/overview#analysis-tools",
+        "type": 301
+      },
+      {
+        "source": "/overview/supported-analysis-tools",
+        "destination": "/overview#analysis-tools",
+        "type": 301
+      },
+      {
+        "source": "/training",
+        "destination": "/learn",
+        "type": 301
+      },
+      {
+        "source": "/training/guides",
+        "destination": "/learn",
+        "type": 301
+      },
+      {
+        "source": "/training/featured-workspaces",
+        "destination": "/learn/analysis-workflows/using-example-workspaces",
+        "type": 301
+      },
+      {
+        "source": "/learn/training/ncpi-train-your-colleagues-march-2020",
+        "destination": "/learn/workshop-archive",
+        "type": 301
+      },
+      {
+        "source": "/learn/training/magic-jamboree-june-2020",
+        "destination": "/learn/workshop-archive",
+        "type": 301
       },
       {
         "source": "/learn/getting-started/getting-started-with-gen3",

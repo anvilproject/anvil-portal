@@ -1,1 +1,794 @@
-{"resourceType":"Bundle","id":"aeec6d89-f9fd-4015-9fe5-475d41ebf816","meta":{"lastUpdated":"2021-04-09T06:47:13.691-04:00"},"type":"searchset","total":1,"link":[{"relation":"self","url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001547.v1.p1"}],"entry":[{"fullUrl":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001547.v1.p1","resource":{"resourceType":"ResearchStudy","id":"phs001547.v1.p1","meta":{"versionId":"1","lastUpdated":"2021-04-08T02:48:59.293-04:00","source":"#GiygHIBBon7i2cD6","security":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent","code":"public","display":"public"}]},"extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl","valueUrl":"https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001547.v1.p1"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate","valueDate":"2020-05-05"},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent","valueCoding":{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent","code":"phs001547.v1.p1 - 1","display":"HMB-NPU"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets","valueCount":{"value":4,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables","valueCount":{"value":18,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects","valueCount":{"value":90,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples","valueCount":{"value":90,"system":"http://unitsofmeasure.org","code":"1"}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies","valueCount":{"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"EUR"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":89,"system":"http://unitsofmeasure.org","code":"1"}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry","code":"LAC"}]}},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count","valueCount":{"value":1,"system":"http://unitsofmeasure.org","code":"1"}}]}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset","code":"WGS_markerset_grc38"}]}}]},{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes","extension":[{"url":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType","valueCodeableConcept":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType","code":"SNP/CNV Genotypes (NGS)"}]}}]}],"identifier":[{"type":{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier","code":"dbgap_study_id","display":"dbgap_study_id"}]},"value":"phs001547.v1.p1"}],"title":"NHLBI TOPMed - NHGRI CCDG: The GENetics in Atrial Fibrillation (GENAF) Study","status":"completed","category":[{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign","code":"Case Set","display":"Case Set"}],"text":"Case Set"}],"focus":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D001281","display":"Atrial Fibrillation"}],"text":"Atrial Fibrillation"}],"condition":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D001281","display":"Atrial Fibrillation"}],"text":"Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Familial","display":"Atrial Fibrillation, Familial"}],"text":"Atrial Fibrillation, Familial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Paroxysmal","display":"Atrial Fibrillation, Paroxysmal"}],"text":"Atrial Fibrillation, Paroxysmal"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Persistent","display":"Atrial Fibrillation, Persistent"}],"text":"Atrial Fibrillation, Persistent"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations","display":"Atrial Fibrillations"}],"text":"Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Familial","display":"Atrial Fibrillations, Familial"}],"text":"Atrial Fibrillations, Familial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Paroxysmal","display":"Atrial Fibrillations, Paroxysmal"}],"text":"Atrial Fibrillations, Paroxysmal"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Persistent","display":"Atrial Fibrillations, Persistent"}],"text":"Atrial Fibrillations, Persistent"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Auricular Fibrillation","display":"Auricular Fibrillation"}],"text":"Auricular Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Auricular Fibrillations","display":"Auricular Fibrillations"}],"text":"Auricular Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Familial Atrial Fibrillation","display":"Familial Atrial Fibrillation"}],"text":"Familial Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Familial Atrial Fibrillations","display":"Familial Atrial Fibrillations"}],"text":"Familial Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Atrial","display":"Fibrillation, Atrial"}],"text":"Fibrillation, Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Auricular","display":"Fibrillation, Auricular"}],"text":"Fibrillation, Auricular"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Familial Atrial","display":"Fibrillation, Familial Atrial"}],"text":"Fibrillation, Familial Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Paroxysmal Atrial","display":"Fibrillation, Paroxysmal Atrial"}],"text":"Fibrillation, Paroxysmal Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Persistent Atrial","display":"Fibrillation, Persistent Atrial"}],"text":"Fibrillation, Persistent Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Atrial","display":"Fibrillations, Atrial"}],"text":"Fibrillations, Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Auricular","display":"Fibrillations, Auricular"}],"text":"Fibrillations, Auricular"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Familial Atrial","display":"Fibrillations, Familial Atrial"}],"text":"Fibrillations, Familial Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Paroxysmal Atrial","display":"Fibrillations, Paroxysmal Atrial"}],"text":"Fibrillations, Paroxysmal Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Persistent Atrial","display":"Fibrillations, Persistent Atrial"}],"text":"Fibrillations, Persistent Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Paroxysmal Atrial Fibrillation","display":"Paroxysmal Atrial Fibrillation"}],"text":"Paroxysmal Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Paroxysmal Atrial Fibrillations","display":"Paroxysmal Atrial Fibrillations"}],"text":"Paroxysmal Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Persistent Atrial Fibrillation","display":"Persistent Atrial Fibrillation"}],"text":"Persistent Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Persistent Atrial Fibrillations","display":"Persistent Atrial Fibrillations"}],"text":"Persistent Atrial Fibrillations"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0004238","display":"Atrial Fibrillation"}],"text":"Atrial Fibrillation"}],"keyword":[{"coding":[{"system":"urn:oid:2.16.840.1.113883.6.177","code":"D001281","display":"Atrial Fibrillation"}],"text":"Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Familial","display":"Atrial Fibrillation, Familial"}],"text":"Atrial Fibrillation, Familial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Paroxysmal","display":"Atrial Fibrillation, Paroxysmal"}],"text":"Atrial Fibrillation, Paroxysmal"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillation, Persistent","display":"Atrial Fibrillation, Persistent"}],"text":"Atrial Fibrillation, Persistent"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations","display":"Atrial Fibrillations"}],"text":"Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Familial","display":"Atrial Fibrillations, Familial"}],"text":"Atrial Fibrillations, Familial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Paroxysmal","display":"Atrial Fibrillations, Paroxysmal"}],"text":"Atrial Fibrillations, Paroxysmal"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Atrial Fibrillations, Persistent","display":"Atrial Fibrillations, Persistent"}],"text":"Atrial Fibrillations, Persistent"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Auricular Fibrillation","display":"Auricular Fibrillation"}],"text":"Auricular Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Auricular Fibrillations","display":"Auricular Fibrillations"}],"text":"Auricular Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Familial Atrial Fibrillation","display":"Familial Atrial Fibrillation"}],"text":"Familial Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Familial Atrial Fibrillations","display":"Familial Atrial Fibrillations"}],"text":"Familial Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Atrial","display":"Fibrillation, Atrial"}],"text":"Fibrillation, Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Auricular","display":"Fibrillation, Auricular"}],"text":"Fibrillation, Auricular"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Familial Atrial","display":"Fibrillation, Familial Atrial"}],"text":"Fibrillation, Familial Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Paroxysmal Atrial","display":"Fibrillation, Paroxysmal Atrial"}],"text":"Fibrillation, Paroxysmal Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillation, Persistent Atrial","display":"Fibrillation, Persistent Atrial"}],"text":"Fibrillation, Persistent Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Atrial","display":"Fibrillations, Atrial"}],"text":"Fibrillations, Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Auricular","display":"Fibrillations, Auricular"}],"text":"Fibrillations, Auricular"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Familial Atrial","display":"Fibrillations, Familial Atrial"}],"text":"Fibrillations, Familial Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Paroxysmal Atrial","display":"Fibrillations, Paroxysmal Atrial"}],"text":"Fibrillations, Paroxysmal Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Fibrillations, Persistent Atrial","display":"Fibrillations, Persistent Atrial"}],"text":"Fibrillations, Persistent Atrial"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Paroxysmal Atrial Fibrillation","display":"Paroxysmal Atrial Fibrillation"}],"text":"Paroxysmal Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Paroxysmal Atrial Fibrillations","display":"Paroxysmal Atrial Fibrillations"}],"text":"Paroxysmal Atrial Fibrillations"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Persistent Atrial Fibrillation","display":"Persistent Atrial Fibrillation"}],"text":"Persistent Atrial Fibrillation"},{"coding":[{"system":"https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm","code":"D001281 entry term: Persistent Atrial Fibrillations","display":"Persistent Atrial Fibrillations"}],"text":"Persistent Atrial Fibrillations"},{"coding":[{"system":"https://uts.nlm.nih.gov/metathesaurus.html","code":"C0004238","display":"Atrial Fibrillation"}],"text":"Atrial Fibrillation"}],"description":"\nThe Genetics in AF (GENAF) study enrolled individuals with early-onset lone AF before age 50 in Norway between 2009 and 2016. Early-onset was defined as diagnosis of AF before age 50. Lone AF was defined as AF in the absence of clinical or echocardiographic findings of cardiovascular disease, hypertension, metabolic or pulmonary disease. AF was documented in ECG. All participants underwent clinical examination, including ECG, echocardiography, and blood draw, from which DNA has been extracted. The study conforms to the principles of the Declaration of Helsinki and was approved by the Regional Ethics Committee (REK) in Norway (Protocol reference number: 2009/2224-5). All included patients gave written informed consent.\n","enrollment":[{"reference":"Group/phs001547.v1.p1-all-subjects"}],"sponsor":{"reference":"Organization/NHLBI","type":"Organization","display":"National Heart, Lung, and Blood Institute"}},"search":{"mode":"match"}}]}
+{
+  "resourceType": "Bundle",
+  "id": "aeec6d89-f9fd-4015-9fe5-475d41ebf816",
+  "meta": { "lastUpdated": "2021-04-09T06:47:13.691-04:00" },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_format=json&_id=phs001547.v1.p1"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy/phs001547.v1.p1",
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "phs001547.v1.p1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2021-04-08T02:48:59.293-04:00",
+          "source": "#GiygHIBBon7i2cD6",
+          "security": [
+            {
+              "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-SecurityStudyConsent",
+              "code": "public",
+              "display": "public"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyOverviewUrl",
+            "valueUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001547.v1.p1"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ReleaseDate",
+            "valueDate": "2020-05-05"
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyConsents-StudyConsent",
+                "valueCoding": {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyConsents-StudyConsent",
+                  "code": "phs001547.v1.p1 - 1",
+                  "display": "HMB-NPU"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumPhenotypeDatasets",
+                "valueCount": {
+                  "value": 4,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumMolecularDatasets",
+                "valueCount": {
+                  "value": 1,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumVariables",
+                "valueCount": {
+                  "value": 18,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumDocuments",
+                "valueCount": {
+                  "value": 1,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubjects",
+                "valueCount": {
+                  "value": 90,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSamples",
+                "valueCount": {
+                  "value": 90,
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-Content-NumSubStudies",
+                "valueCount": {
+                  "system": "http://unitsofmeasure.org",
+                  "code": "1"
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "EUR"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 89,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount",
+                "extension": [
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-ComputedAncestry-AncestryCount-Ancestry",
+                          "code": "LAC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-ComputedAncestry-AncestryCount-Count",
+                    "valueCount": {
+                      "value": 1,
+                      "system": "http://unitsofmeasure.org",
+                      "code": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyMarkersets-StudyMarkerset",
+                      "code": "WGS_markerset_grc38"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes",
+            "extension": [
+              {
+                "url": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/StructureDefinition/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-MolecularDataTypes-MolecularDataType",
+                      "code": "SNP/CNV Genotypes (NGS)"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/DbGaPConcept-DbGaPStudyIdentifier",
+                  "code": "dbgap_study_id",
+                  "display": "dbgap_study_id"
+                }
+              ]
+            },
+            "value": "phs001547.v1.p1"
+          }
+        ],
+        "title": "NHLBI TOPMed - NHGRI CCDG: The GENetics in Atrial Fibrillation (GENAF) Study",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/CodeSystem/ResearchStudy-StudyDesign",
+                "code": "Case Set",
+                "display": "Case Set"
+              }
+            ],
+            "text": "Case Set"
+          }
+        ],
+        "focus": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D001281",
+                "display": "Atrial Fibrillation"
+              }
+            ],
+            "text": "Atrial Fibrillation"
+          }
+        ],
+        "condition": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D001281",
+                "display": "Atrial Fibrillation"
+              }
+            ],
+            "text": "Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Familial",
+                "display": "Atrial Fibrillation, Familial"
+              }
+            ],
+            "text": "Atrial Fibrillation, Familial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Paroxysmal",
+                "display": "Atrial Fibrillation, Paroxysmal"
+              }
+            ],
+            "text": "Atrial Fibrillation, Paroxysmal"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Persistent",
+                "display": "Atrial Fibrillation, Persistent"
+              }
+            ],
+            "text": "Atrial Fibrillation, Persistent"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations",
+                "display": "Atrial Fibrillations"
+              }
+            ],
+            "text": "Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Familial",
+                "display": "Atrial Fibrillations, Familial"
+              }
+            ],
+            "text": "Atrial Fibrillations, Familial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Paroxysmal",
+                "display": "Atrial Fibrillations, Paroxysmal"
+              }
+            ],
+            "text": "Atrial Fibrillations, Paroxysmal"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Persistent",
+                "display": "Atrial Fibrillations, Persistent"
+              }
+            ],
+            "text": "Atrial Fibrillations, Persistent"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Auricular Fibrillation",
+                "display": "Auricular Fibrillation"
+              }
+            ],
+            "text": "Auricular Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Auricular Fibrillations",
+                "display": "Auricular Fibrillations"
+              }
+            ],
+            "text": "Auricular Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Familial Atrial Fibrillation",
+                "display": "Familial Atrial Fibrillation"
+              }
+            ],
+            "text": "Familial Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Familial Atrial Fibrillations",
+                "display": "Familial Atrial Fibrillations"
+              }
+            ],
+            "text": "Familial Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Atrial",
+                "display": "Fibrillation, Atrial"
+              }
+            ],
+            "text": "Fibrillation, Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Auricular",
+                "display": "Fibrillation, Auricular"
+              }
+            ],
+            "text": "Fibrillation, Auricular"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Familial Atrial",
+                "display": "Fibrillation, Familial Atrial"
+              }
+            ],
+            "text": "Fibrillation, Familial Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Paroxysmal Atrial",
+                "display": "Fibrillation, Paroxysmal Atrial"
+              }
+            ],
+            "text": "Fibrillation, Paroxysmal Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Persistent Atrial",
+                "display": "Fibrillation, Persistent Atrial"
+              }
+            ],
+            "text": "Fibrillation, Persistent Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Atrial",
+                "display": "Fibrillations, Atrial"
+              }
+            ],
+            "text": "Fibrillations, Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Auricular",
+                "display": "Fibrillations, Auricular"
+              }
+            ],
+            "text": "Fibrillations, Auricular"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Familial Atrial",
+                "display": "Fibrillations, Familial Atrial"
+              }
+            ],
+            "text": "Fibrillations, Familial Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Paroxysmal Atrial",
+                "display": "Fibrillations, Paroxysmal Atrial"
+              }
+            ],
+            "text": "Fibrillations, Paroxysmal Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Persistent Atrial",
+                "display": "Fibrillations, Persistent Atrial"
+              }
+            ],
+            "text": "Fibrillations, Persistent Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Paroxysmal Atrial Fibrillation",
+                "display": "Paroxysmal Atrial Fibrillation"
+              }
+            ],
+            "text": "Paroxysmal Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Paroxysmal Atrial Fibrillations",
+                "display": "Paroxysmal Atrial Fibrillations"
+              }
+            ],
+            "text": "Paroxysmal Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Persistent Atrial Fibrillation",
+                "display": "Persistent Atrial Fibrillation"
+              }
+            ],
+            "text": "Persistent Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Persistent Atrial Fibrillations",
+                "display": "Persistent Atrial Fibrillations"
+              }
+            ],
+            "text": "Persistent Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0004238",
+                "display": "Atrial Fibrillation"
+              }
+            ],
+            "text": "Atrial Fibrillation"
+          }
+        ],
+        "keyword": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.6.177",
+                "code": "D001281",
+                "display": "Atrial Fibrillation"
+              }
+            ],
+            "text": "Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Familial",
+                "display": "Atrial Fibrillation, Familial"
+              }
+            ],
+            "text": "Atrial Fibrillation, Familial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Paroxysmal",
+                "display": "Atrial Fibrillation, Paroxysmal"
+              }
+            ],
+            "text": "Atrial Fibrillation, Paroxysmal"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillation, Persistent",
+                "display": "Atrial Fibrillation, Persistent"
+              }
+            ],
+            "text": "Atrial Fibrillation, Persistent"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations",
+                "display": "Atrial Fibrillations"
+              }
+            ],
+            "text": "Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Familial",
+                "display": "Atrial Fibrillations, Familial"
+              }
+            ],
+            "text": "Atrial Fibrillations, Familial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Paroxysmal",
+                "display": "Atrial Fibrillations, Paroxysmal"
+              }
+            ],
+            "text": "Atrial Fibrillations, Paroxysmal"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Atrial Fibrillations, Persistent",
+                "display": "Atrial Fibrillations, Persistent"
+              }
+            ],
+            "text": "Atrial Fibrillations, Persistent"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Auricular Fibrillation",
+                "display": "Auricular Fibrillation"
+              }
+            ],
+            "text": "Auricular Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Auricular Fibrillations",
+                "display": "Auricular Fibrillations"
+              }
+            ],
+            "text": "Auricular Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Familial Atrial Fibrillation",
+                "display": "Familial Atrial Fibrillation"
+              }
+            ],
+            "text": "Familial Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Familial Atrial Fibrillations",
+                "display": "Familial Atrial Fibrillations"
+              }
+            ],
+            "text": "Familial Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Atrial",
+                "display": "Fibrillation, Atrial"
+              }
+            ],
+            "text": "Fibrillation, Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Auricular",
+                "display": "Fibrillation, Auricular"
+              }
+            ],
+            "text": "Fibrillation, Auricular"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Familial Atrial",
+                "display": "Fibrillation, Familial Atrial"
+              }
+            ],
+            "text": "Fibrillation, Familial Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Paroxysmal Atrial",
+                "display": "Fibrillation, Paroxysmal Atrial"
+              }
+            ],
+            "text": "Fibrillation, Paroxysmal Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillation, Persistent Atrial",
+                "display": "Fibrillation, Persistent Atrial"
+              }
+            ],
+            "text": "Fibrillation, Persistent Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Atrial",
+                "display": "Fibrillations, Atrial"
+              }
+            ],
+            "text": "Fibrillations, Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Auricular",
+                "display": "Fibrillations, Auricular"
+              }
+            ],
+            "text": "Fibrillations, Auricular"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Familial Atrial",
+                "display": "Fibrillations, Familial Atrial"
+              }
+            ],
+            "text": "Fibrillations, Familial Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Paroxysmal Atrial",
+                "display": "Fibrillations, Paroxysmal Atrial"
+              }
+            ],
+            "text": "Fibrillations, Paroxysmal Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Fibrillations, Persistent Atrial",
+                "display": "Fibrillations, Persistent Atrial"
+              }
+            ],
+            "text": "Fibrillations, Persistent Atrial"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Paroxysmal Atrial Fibrillation",
+                "display": "Paroxysmal Atrial Fibrillation"
+              }
+            ],
+            "text": "Paroxysmal Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Paroxysmal Atrial Fibrillations",
+                "display": "Paroxysmal Atrial Fibrillations"
+              }
+            ],
+            "text": "Paroxysmal Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Persistent Atrial Fibrillation",
+                "display": "Persistent Atrial Fibrillation"
+              }
+            ],
+            "text": "Persistent Atrial Fibrillation"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/NamingSystem/MeshEntryTerm",
+                "code": "D001281 entry term: Persistent Atrial Fibrillations",
+                "display": "Persistent Atrial Fibrillations"
+              }
+            ],
+            "text": "Persistent Atrial Fibrillations"
+          },
+          {
+            "coding": [
+              {
+                "system": "https://uts.nlm.nih.gov/metathesaurus.html",
+                "code": "C0004238",
+                "display": "Atrial Fibrillation"
+              }
+            ],
+            "text": "Atrial Fibrillation"
+          }
+        ],
+        "description": "\nThe Genetics in AF (GENAF) study enrolled individuals with early-onset lone AF before age 50 in Norway between 2009 and 2016. Early-onset was defined as diagnosis of AF before age 50. Lone AF was defined as AF in the absence of clinical or echocardiographic findings of cardiovascular disease, hypertension, metabolic or pulmonary disease. AF was documented in ECG. All participants underwent clinical examination, including ECG, echocardiography, and blood draw, from which DNA has been extracted. The study conforms to the principles of the Declaration of Helsinki and was approved by the Regional Ethics Committee (REK) in Norway (Protocol reference number: 2009/2224-5). All included patients gave written informed consent.\n",
+        "enrollment": [{ "reference": "Group/phs001547.v1.p1-all-subjects" }],
+        "sponsor": {
+          "reference": "Organization/NHLBI",
+          "type": "Organization",
+          "display": "National Heart, Lung, and Blood Institute"
+        }
+      },
+      "search": { "mode": "match" }
+    }
+  ]
+}
