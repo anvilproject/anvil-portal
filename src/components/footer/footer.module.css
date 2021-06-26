@@ -8,158 +8,160 @@
 
 /* Footer */
 .footer {
-    background: var(--shade-dark);
-    padding: 60px 0;
-    position: relative; /* Required for outline component */
-    z-index: 2; /* Required for 404 page */
+  background: var(--shade-dark);
+  padding: 60px 0;
+  position: relative; /* Required for outline component */
+  z-index: 2; /* Required for 404 page */
 }
 
 /* Footer container */
 .footer .container {
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Logos */
 .logos {
-    padding-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 /* Logo container */
 .logos > div {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Logo link */
 .logos a {
-    line-height: 0;
+  line-height: 0;
 }
 
 /* Logo - nhgri */
 .logos .nhgri {
-    box-sizing: content-box;
-    padding-bottom: 24px;
+  box-sizing: content-box;
+  padding-bottom: 24px;
 }
 
 /* Logo - nhgri, nih */
-.logos .nhgri, .logos .nih {
-    height: 28px;
+.logos .nhgri,
+.logos .nih {
+  height: 28px;
 }
 
 /* Logo - hhs, usa.gov */
-.logos .hhs, .logos .usaGov {
-    height: 40px;
+.logos .hhs,
+.logos .usaGov {
+  height: 40px;
 }
 
 /* Logo - hhs */
 .logos .hhs {
-    padding: 0 24px;
+  padding: 0 24px;
 }
 
 /* Logo */
 .logos img {
-    margin: 0;
+  margin: 0;
 }
 
 /* Socials */
 .socials {
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 24px;
 }
 
 /* Social - e.g. twitter, slack, github, youtube and links */
 .socials a {
-    color: var(--white);
-    flex-basis: calc(100% / 4);
-    padding: 24px 0 0;
-    text-align: center;
+  color: var(--white);
+  flex-basis: calc(100% / 4);
+  padding: 24px 0 0;
+  text-align: center;
 }
 
 /* Link - e.g. "privacy" */
 .socials .link {
-    flex-basis: 100%;
-    padding: 4px 0;
+  flex-basis: 100%;
+  padding: 4px 0;
 }
 
 /* Social - e.g. twitter, slack, github, youtube */
 .socials a:not(.link) {
-    line-height: 0;
+  line-height: 0;
 }
 
 /* Twitter, slack, github, youtube image */
 .socials img {
-    height: 24px;
-    margin: 0;
+  height: 24px;
+  margin: 0;
 }
 
 /* youtube image. */
 .socials img.youtube {
-    height: 20px;
+  height: 20px;
 }
 
 /**
  * Small tablet portrait, medium handset landscape, small window
  */
 @media screen and (min-width: 600px) {
+  /* Footer */
+  .footer {
+    padding: 32px 0;
+  }
 
-    /* Footer */
-    .footer {
-        padding: 32px 0;
-    }
+  /* Footer container */
+  .footer .container {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    /* Footer container */
-    .footer .container {
-        align-items: flex-start;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  /* Logos and socials */
+  .logos,
+  .socials {
+    padding: 0;
+  }
 
-    /* Logos and socials */
-    .logos, .socials {
-        padding: 0;
-    }
+  /* Logo - container */
+  .logos > div {
+    justify-content: flex-start;
+  }
 
-    /* Logo - container */
-    .logos > div {
-        justify-content: flex-start;
-    }
+  /* Social - e.g. link and twitter, slack, github etc */
+  .socials a,
+  .socials a.link {
+    flex-basis: unset;
+    padding: 0 12px;
+  }
 
-    /* Social - e.g. link and twitter, slack, github etc */
-    .socials a, .socials a.link {
-        flex-basis: unset;
-        padding: 0 12px;
-    }
-
-    .socials a:last-of-type {
-        padding: 0 0 0 12px;
-    }
+  .socials a:last-of-type {
+    padding: 0 0 0 12px;
+  }
 }
 
 /**
  *  Small tablet landscape, small window
  */
 @media screen and (min-width: 960px) {
+  /* Footer container */
+  .footer .container {
+    align-items: center;
+  }
 
-    /* Footer container */
-    .footer .container {
-        align-items: center;
-    }
+  /* Logos */
+  .footer .logos {
+    display: flex;
+  }
 
-    /* Logos */
-    .footer .logos {
-        display: flex;
-    }
+  /* nhgri logo */
+  .footer .logos .nhgri {
+    padding: 0 48px 0 0; /** Update padding on NHGRI logo from bottom to right (as logos are horizontal and not stacked) */
+  }
 
-    /* nhgri logo */
-    .footer .logos .nhgri {
-        padding: 0 48px 0 0; /** Update padding on NHGRI logo from bottom to right (as logos are horizontal and not stacked) */
-    }
-
-    /* Logo - hhs */
-    .footer .logos .hhs {
-        padding: 0 48px; /** Additional spacing between logos on larger devices */
-    }
+  /* Logo - hhs */
+  .footer .logos .hhs {
+    padding: 0 48px; /** Additional spacing between logos on larger devices */
+  }
 }

@@ -6,10 +6,11 @@
  */
 
 .event {
-    align-self: stretch;
-    margin: 32px 0;
+  align-self: stretch;
+  margin: 32px 0;
 }
 
-.event:last-child, p.noEvents {
-    margin-bottom: 32px;
+.event:last-child,
+p.noEvents {
+  margin-bottom: 32px;
 }

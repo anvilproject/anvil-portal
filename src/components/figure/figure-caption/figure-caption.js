@@ -19,12 +19,9 @@
 import React from "react";
 
 function FigureCaption(props) {
+  const { children } = props;
 
-    const {children} = props;
-
-    return (
-        <figcaption>{children}</figcaption>
-    );
+  return <figcaption>{children}</figcaption>;
 }
 
 export default FigureCaption;

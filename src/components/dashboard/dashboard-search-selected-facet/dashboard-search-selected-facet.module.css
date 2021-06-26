@@ -7,18 +7,18 @@
 
 /* Facet name. */
 .facetName {
-    color: var(--black58);
-    cursor: pointer;
-    padding-right: 4px;
-    white-space: nowrap;
+  color: var(--black58);
+  cursor: pointer;
+  padding-right: 4px;
+  white-space: nowrap;
 }
 
 /* Facet name - hover. */
 .facetName:hover {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 /* Operator "AND". */
 .operator {
-    padding-right: 4px;
+  padding-right: 4px;
 }

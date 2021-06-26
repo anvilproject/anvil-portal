@@ -7,8 +7,7 @@
 
 /* Form. */
 .form {
-    margin: 0;
-    position: relative; /* Positions search icon and clear button. */
-    width: 100%; /* Takes up all available width. */
+  margin: 0;
+  position: relative; /* Positions search icon and clear button. */
+  width: 100%; /* Takes up all available width. */
 }
-

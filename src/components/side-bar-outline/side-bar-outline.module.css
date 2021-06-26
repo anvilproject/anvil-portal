@@ -7,23 +7,23 @@
 
 /* Outline. */
 .outline {
-    overflow: auto;
-    position: sticky;
+  overflow: auto;
+  position: sticky;
 }
 
 /* Outline label. */
 .outlineLabel {
-    color: var(--black58);
-    font-size: 0.8125rem; /* 13px */
-    font-weight: 300;
-    letter-spacing: 0.075rem; /* 1.2px */
-    line-height: 20px; /* Matches breadcrumb arrow. */
-    margin-bottom: 8px;
-    text-transform: uppercase;
+  color: var(--black58);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 300;
+  letter-spacing: 0.075rem; /* 1.2px */
+  line-height: 20px; /* Matches breadcrumb arrow. */
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 /* Outline unordered list. */
 .outlineList {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }

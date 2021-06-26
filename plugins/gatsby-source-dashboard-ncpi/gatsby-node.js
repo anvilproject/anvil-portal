@@ -8,44 +8,51 @@
 const path = require("path");
 
 // App dependencies
-const {generateNCPIDashboardIndex} = require(path.resolve(__dirname, "../utils/dashboard-indexing-ncpi.service.js"));
-const {getNCPIStudies} = require(path.resolve(__dirname, "../utils/dashboard-studies-ncpi.service.js"));
+const { generateNCPIDashboardIndex } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-indexing-ncpi.service.js"
+));
+const { getNCPIStudies } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-studies-ncpi.service.js"
+));
 
-exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest
+}) => {
+  const { createNode } = actions;
 
-    const {createNode} = actions;
+  /* Build up the NCPI dashboard model. */
+  const studies = await getNCPIStudies();
 
-    /* Build up the NCPI dashboard model. */
-    const studies = await getNCPIStudies();
+  /* Create node - study. */
+  studies.forEach(study => {
+    const nodeContent = JSON.stringify(study);
 
-    /* Create node - study. */
-    studies.forEach(study => {
+    const nodeMeta = {
+      id: createNodeId(`${study.platform}${study.dbGapIdAccession}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: `DashboardNCPI`,
+        mediaType: `application/json`,
+        content: nodeContent,
+        contentDigest: createContentDigest(study)
+      }
+    };
 
-        const nodeContent = JSON.stringify(study);
+    const node = Object.assign({}, study, nodeMeta);
 
-        const nodeMeta = {
-            id: createNodeId(`${study.platform}${study.dbGapIdAccession}`),
-            parent: null,
-            children: [],
-            internal: {
-                type: `DashboardNCPI`,
-                mediaType: `application/json`,
-                content: nodeContent,
-                contentDigest: createContentDigest(study),
-            },
-        };
-
-        const node = Object.assign({}, study, nodeMeta);
-
-        createNode(node)
-    });
+    createNode(node);
+  });
 };
 
-exports.createSchemaCustomization = ({actions}) => {
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
 
-    const {createTypes} = actions;
-
-    createTypes(`
+  createTypes(`
     type DashboardNCPI implements Node {
         id: ID!
         consentCodes: [String]
@@ -62,11 +69,10 @@ exports.createSchemaCustomization = ({actions}) => {
     }`);
 };
 
-exports.onPostBootstrap = ({getNodesByType}) => {
+exports.onPostBootstrap = ({ getNodesByType }) => {
+  /* Get the NCPI dashboard studies. */
+  const studies = getNodesByType("DashboardNCPI");
 
-    /* Get the NCPI dashboard studies. */
-    const studies = getNodesByType("DashboardNCPI");
-
-    /* Generate the NCPI dashboard search index. */
-    generateNCPIDashboardIndex(studies);
+  /* Generate the NCPI dashboard search index. */
+  generateNCPIDashboardIndex(studies);
 };

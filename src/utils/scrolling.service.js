@@ -18,35 +18,33 @@ const sectionPaddingBottom = 60; /* Section padding bottom. */
  * @param elementIdsByAnchorFromTop
  * @returns {*}
  */
-export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByAnchorFromTop) {
+export function calculateElementIdsByAnchorFromTop(
+  contentAnchors,
+  elementIdsByAnchorFromTop
+) {
+  if (!contentAnchors) {
+    return;
+  }
 
-    if (!contentAnchors) {
+  // Clear required for the event listener "resize".
+  elementIdsByAnchorFromTop.clear();
 
-        return;
+  // Create dummy <h1> if the page does not have one.
+  if (Number(contentAnchors[0].tagName.charAt(1)) !== 1) {
+    const h1El = document.createElement("h1");
+    h1El.setAttribute("id", "dummyHeading");
+    contentAnchors.unshift(h1El);
+  }
+
+  // Grab each <h1> to <h3> anchor id and its position from the top of the page.
+  contentAnchors.forEach(pageAnchor => {
+    // Only grab <h1> to <h3>
+    if (Number(pageAnchor.tagName.charAt(1)) <= 3) {
+      elementIdsByAnchorFromTop.set(pageAnchor.offsetTop, pageAnchor.id);
     }
+  });
 
-    // Clear required for the event listener "resize".
-    elementIdsByAnchorFromTop.clear();
-
-    // Create dummy <h1> if the page does not have one.
-    if ( Number(contentAnchors[0].tagName.charAt(1)) !== 1 ) {
-
-        const h1El = document.createElement("h1");
-        h1El.setAttribute("id", "dummyHeading");
-        contentAnchors.unshift(h1El);
-    }
-
-    // Grab each <h1> to <h3> anchor id and its position from the top of the page.
-    contentAnchors.forEach(pageAnchor => {
-
-        // Only grab <h1> to <h3>
-        if ( Number(pageAnchor.tagName.charAt(1)) <= 3 ) {
-
-            elementIdsByAnchorFromTop.set((pageAnchor.offsetTop), pageAnchor.id);
-        }
-    });
-
-    return elementIdsByAnchorFromTop;
+  return elementIdsByAnchorFromTop;
 }
 
 /**
@@ -58,53 +56,54 @@ export function calculateElementIdsByAnchorFromTop(contentAnchors, elementIdsByA
  * @returns {{top: string, maxHeight: string}}
  */
 export function calculateContainerStyles(bannerHt, articleOffsetTop) {
+  /* Intialize styles. */
+  const navStyles = { maxHeight: `unset`, top: `unset` };
 
-    /* Intialize styles. */
-    const navStyles = {maxHeight: `unset`, top: `unset`};
+  // The styles are only required when the window innerWidth is equal to or greater than 840.
+  // (Outline is dropped at 1388px, left nav is stacked at 840).
+  // The outline and nav styles are defined by a different set of responsive settings for smaller screens.
 
-    // The styles are only required when the window innerWidth is equal to or greater than 840.
-    // (Outline is dropped at 1388px, left nav is stacked at 840).
-    // The outline and nav styles are defined by a different set of responsive settings for smaller screens.
+  if (articleOffsetTop && window.innerWidth >= 840) {
+    // Calculate the side nav style "maxHeight", taking into account the:
+    // - sticky top position (calculated from articleRef on article component)
+    // - section padding
+    // - footer
+    // - privacy banner height (if showing).
 
-    if ( articleOffsetTop && window.innerWidth >= 840 ) {
+    // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
+    // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
+    // sticky top position, until the content approaches end of scrolling.
+    // At near to end of scrolling (section padding and footer),
+    // the nav maxHeight will be such that the appearance of the nav's bottom edge matches the
+    // bottom edge of the content.
 
-        // Calculate the side nav style "maxHeight", taking into account the:
-        // - sticky top position (calculated from articleRef on article component)
-        // - section padding
-        // - footer
-        // - privacy banner height (if showing).
+    let elementHeight;
+    const stickyTopPos = articleOffsetTop + sectionPaddingTop;
 
-        // When there is main content overflow, the maxHeight should allow an nav/outline of length equal to
-        // available screen height.  The nav/outline will stretch taking up the remaining screen height, from the
-        // sticky top position, until the content approaches end of scrolling.
-        // At near to end of scrolling (section padding and footer),
-        // the nav maxHeight will be such that the appearance of the nav's bottom edge matches the
-        // bottom edge of the content.
+    // If the privacy banner is showing, and the scroll position has not reached the end of the content,
+    // a different set of rules will govern the "maxHeight".
+    // The "maxHeight" will be calculated by the available height provided by the window, taking into account the
+    // sticky top position, and the banner height. This rule remains effective until the last scrollable 160px
+    // is in play.
 
-        let elementHeight;
-        const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+    const bottomHt = footerHt + sectionPaddingBottom;
 
-        // If the privacy banner is showing, and the scroll position has not reached the end of the content,
-        // a different set of rules will govern the "maxHeight".
-        // The "maxHeight" will be calculated by the available height provided by the window, taking into account the
-        // sticky top position, and the banner height. This rule remains effective until the last scrollable 160px
-        // is in play.
-
-        const bottomHt = footerHt + sectionPaddingBottom;
-
-        if ( calculatePixelPositionFromEnd() < bottomHt ) {
-
-            elementHeight = document.body.clientHeight - window.scrollY - stickyTopPos - sectionPaddingBottom - footerHt - bannerHt;
-        }
-        else {
-
-            elementHeight = window.innerHeight - stickyTopPos - bannerHt;
-        }
-
-        Object.assign(navStyles, {maxHeight: elementHeight, top: stickyTopPos});
+    if (calculatePixelPositionFromEnd() < bottomHt) {
+      elementHeight =
+        document.body.clientHeight -
+        window.scrollY -
+        stickyTopPos -
+        sectionPaddingBottom -
+        footerHt -
+        bannerHt;
+    } else {
+      elementHeight = window.innerHeight - stickyTopPos - bannerHt;
     }
 
-    return navStyles;
+    Object.assign(navStyles, { maxHeight: elementHeight, top: stickyTopPos });
+  }
+
+  return navStyles;
 }
 
 /**
@@ -113,16 +112,14 @@ export function calculateContainerStyles(bannerHt, articleOffsetTop) {
  * @returns {Array}
  */
 export function getContentAnchors() {
+  // Grab any content element with an anchor "id".
+  const contentEl = document.querySelector('[id^="content"]');
 
-    // Grab any content element with an anchor "id".
-    const contentEl = document.querySelector('[id^="content"]');
+  if (!contentEl) {
+    return;
+  }
 
-    if ( !contentEl ) {
-
-        return;
-    }
-
-    return Array.from(contentEl.querySelectorAll("[id]"));
+  return Array.from(contentEl.querySelectorAll("[id]"));
 }
 
 /**
@@ -133,11 +130,16 @@ export function getContentAnchors() {
  * @returns {boolean}
  */
 export function isOutlineScrollable(htmlEls, outlineEl) {
+  const unorderedListLongerThanOutline =
+    outlineEl.children[0].offsetHeight >
+    outlineEl.getBoundingClientRect().height;
+  const unorderedListLongerThanWindowHeight =
+    outlineEl.children[0].offsetHeight > window.innerHeight;
 
-    const unorderedListLongerThanOutline = outlineEl.children[0].offsetHeight > outlineEl.getBoundingClientRect().height;
-    const unorderedListLongerThanWindowHeight = outlineEl.children[0].offsetHeight > window.innerHeight;
-
-    return htmlEls.length && (unorderedListLongerThanOutline || unorderedListLongerThanWindowHeight);
+  return (
+    htmlEls.length &&
+    (unorderedListLongerThanOutline || unorderedListLongerThanWindowHeight)
+  );
 }
 
 /**
@@ -147,50 +149,62 @@ export function isOutlineScrollable(htmlEls, outlineEl) {
  * @param outlineEl
  * @param articleOffsetTop
  */
-export function manageActiveOutlineScrollPosition(activeEls, outlineEl, articleOffsetTop) {
+export function manageActiveOutlineScrollPosition(
+  activeEls,
+  outlineEl,
+  articleOffsetTop
+) {
+  if (activeEls.length === 0) {
+    return;
+  }
 
-    if ( activeEls.length === 0 ) {
+  // Event handler that will reposition outline scroll if there is an active outline element,
+  // and the element is positioned above or below the bounds of the outline navigation.
+  let activeEl = activeEls[0];
 
-        return;
-    }
+  // Calculate the number of pixels from the end of the page
+  let pxToEndScroll = calculatePixelPositionFromEnd();
 
-    // Event handler that will reposition outline scroll if there is an active outline element,
-    // and the element is positioned above or below the bounds of the outline navigation.
-    let activeEl = activeEls[0];
+  // Outline container
+  const outlineContainerHeight = outlineEl.offsetHeight;
 
-    // Calculate the number of pixels from the end of the page
-    let pxToEndScroll = calculatePixelPositionFromEnd();
+  // Sticky top position
+  const stickyTopPos = articleOffsetTop + sectionPaddingTop;
 
-    // Outline container
-    const outlineContainerHeight = outlineEl.offsetHeight;
+  // Active outline positions
+  const activeTopPos = activeEl.getBoundingClientRect().top;
+  const activeBottomPos = activeEl.getBoundingClientRect().bottom;
+  const activeMidHeight = activeEl.offsetHeight / 2;
+  const posBelowScreen =
+    activeBottomPos - (outlineContainerHeight + stickyTopPos);
+  const posAboveScreen = stickyTopPos - activeTopPos;
 
-    // Sticky top position
-    const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+  // Scrolls to outline end as outline maxHeight is reduced.
+  if (pxToEndScroll < 160) {
+    scrollTo(outlineEl, outlineEl.scrollHeight - pxToEndScroll);
+  }
 
-    // Active outline positions
-    const activeTopPos = activeEl.getBoundingClientRect().top;
-    const activeBottomPos = activeEl.getBoundingClientRect().bottom;
-    const activeMidHeight = (activeEl.offsetHeight / 2);
-    const posBelowScreen = activeBottomPos - (outlineContainerHeight + stickyTopPos);
-    const posAboveScreen = stickyTopPos - activeTopPos;
+  // Repositions active outline to mid point if the active outline is positioned below the outline container.
+  if (activeBottomPos > outlineContainerHeight + stickyTopPos) {
+    scrollTo(
+      outlineEl,
+      outlineEl.scrollTop +
+        posBelowScreen +
+        outlineContainerHeight / 2 -
+        activeMidHeight
+    );
+  }
 
-    // Scrolls to outline end as outline maxHeight is reduced.
-    if ( pxToEndScroll < 160 ) {
-
-        scrollTo(outlineEl, outlineEl.scrollHeight - pxToEndScroll);
-    }
-
-    // Repositions active outline to mid point if the active outline is positioned below the outline container.
-    if ( activeBottomPos > outlineContainerHeight + stickyTopPos ) {
-
-        scrollTo(outlineEl, outlineEl.scrollTop + posBelowScreen + (outlineContainerHeight / 2) - activeMidHeight);
-    }
-
-    // Repositions active outline to mid point if the active outline is positioned above the outline container.
-    if ( activeTopPos < stickyTopPos ) {
-
-        scrollTo(outlineEl, (outlineEl.scrollTop - posAboveScreen - (outlineContainerHeight / 2) + activeMidHeight));
-    }
+  // Repositions active outline to mid point if the active outline is positioned above the outline container.
+  if (activeTopPos < stickyTopPos) {
+    scrollTo(
+      outlineEl,
+      outlineEl.scrollTop -
+        posAboveScreen -
+        outlineContainerHeight / 2 +
+        activeMidHeight
+    );
+  }
 }
 
 /**
@@ -201,57 +215,52 @@ export function manageActiveOutlineScrollPosition(activeEls, outlineEl, articleO
  * @param articleOffsetTop
  * @returns {*}
  */
-export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline, articleOffsetTop) {
+export function manageSpyScrollAction(
+  elementIdsByAnchorFromTop,
+  activeOutline,
+  articleOffsetTop
+) {
+  const stickyTopPos = articleOffsetTop + sectionPaddingTop;
+  let currentScrollPos = window.scrollY + sectionPaddingTop;
+  let endScrollPos =
+    document.body.clientHeight - window.innerHeight + stickyTopPos;
 
-    const stickyTopPos = articleOffsetTop + sectionPaddingTop;
-    let currentScrollPos = window.scrollY + sectionPaddingTop;
-    let endScrollPos = document.body.clientHeight - window.innerHeight + stickyTopPos;
+  // Check not at the bottom of the page
+  if (currentScrollPos !== endScrollPos) {
+    let currentAnchorPos;
 
-    // Check not at the bottom of the page
-    if ( currentScrollPos !== endScrollPos ) {
-
-        let currentAnchorPos;
-
-        // Find the anchor that is current for the scroll position
-        for ( let anchorPos of elementIdsByAnchorFromTop.keys() ) {
-
-            if ( currentScrollPos >= anchorPos ) {
-
-                currentAnchorPos = anchorPos;
-            }
-            else if ( currentScrollPos < [...elementIdsByAnchorFromTop][0][0]) {
-
-                /* Make the current anchor position the first element, if the current scroll position is above the first element. */
-                /* The first element of interest in the spy should represent the <h1> tag. */
-                currentAnchorPos = [...elementIdsByAnchorFromTop][0][0];
-            }
-            else {
-
-                break; // exit iterator
-            }
-        }
-
-        // Set the current element id
-        let currentElementId = `#${elementIdsByAnchorFromTop.get(currentAnchorPos)}`;
-
-        // Continue if the current element is different to the active outline (state variable).
-        if ( currentElementId !== activeOutline ) {
-
-            if ( currentAnchorPos !== undefined ) {
-
-                // Return state
-                return currentElementId;
-            }
-            else {
-
-                // Return state
-                return "";
-            }
-        }
+    // Find the anchor that is current for the scroll position
+    for (let anchorPos of elementIdsByAnchorFromTop.keys()) {
+      if (currentScrollPos >= anchorPos) {
+        currentAnchorPos = anchorPos;
+      } else if (currentScrollPos < [...elementIdsByAnchorFromTop][0][0]) {
+        /* Make the current anchor position the first element, if the current scroll position is above the first element. */
+        /* The first element of interest in the spy should represent the <h1> tag. */
+        currentAnchorPos = [...elementIdsByAnchorFromTop][0][0];
+      } else {
+        break; // exit iterator
+      }
     }
 
-    // Return state
-    return activeOutline;
+    // Set the current element id
+    let currentElementId = `#${elementIdsByAnchorFromTop.get(
+      currentAnchorPos
+    )}`;
+
+    // Continue if the current element is different to the active outline (state variable).
+    if (currentElementId !== activeOutline) {
+      if (currentAnchorPos !== undefined) {
+        // Return state
+        return currentElementId;
+      } else {
+        // Return state
+        return "";
+      }
+    }
+  }
+
+  // Return state
+  return activeOutline;
 }
 
 /**
@@ -260,25 +269,20 @@ export function manageSpyScrollAction(elementIdsByAnchorFromTop, activeOutline, 
  * @returns {number}
  */
 function calculatePixelPositionFromEnd() {
+  // Calculate the number of pixels from the end of the page
+  let currentScrollPos = window.scrollY;
+  let endScrollPos = document.body.clientHeight - window.innerHeight;
 
-    // Calculate the number of pixels from the end of the page
-    let currentScrollPos = window.scrollY;
-    let endScrollPos = document.body.clientHeight - window.innerHeight;
-
-    return endScrollPos - currentScrollPos;
+  return endScrollPos - currentScrollPos;
 }
 
 /*
  * Cross-browser scroll to functionality.
  */
 function scrollTo(el, scrollTop) {
-
-    if ( el.scrollTo ) {
-
-        el.scrollTo(0, scrollTop)
-    }
-    else {
-
-        el.scrollTop = scrollTop;
-    }
+  if (el.scrollTo) {
+    el.scrollTo(0, scrollTop);
+  } else {
+    el.scrollTop = scrollTop;
+  }
 }

@@ -6,9 +6,9 @@
  */
 
 .handler {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .handler:focus {
-    outline: none;
+  outline: none;
 }

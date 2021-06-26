@@ -6,59 +6,61 @@
  */
 
 .arrow {
-    position: relative; /* Positions forward and back arrows. */
+  position: relative; /* Positions forward and back arrows. */
 }
 
 /* Arrow. */
-.arrow::after, .arrow::before {
-    background-color: var(--primary);
-    content: "";
-    display: none;
-    height: 1px;
-    left: 100%;
-    margin-left: 8px;
-    position: absolute;
+.arrow::after,
+.arrow::before {
+  background-color: var(--primary);
+  content: "";
+  display: none;
+  height: 1px;
+  left: 100%;
+  margin-left: 8px;
+  position: absolute;
 }
 
 /* Arrow - lower. */
 .arrow::before {
-    bottom: calc(50% - 3px);
-    transform: rotate(-50deg);
-    width: 7px;
+  bottom: calc(50% - 3px);
+  transform: rotate(-50deg);
+  width: 7px;
 }
 
 /* Arrow - upper. */
 .arrow::after {
-    top: calc(50% - 3px);
-    transform: rotate(50deg);
-    width: 7px;
+  top: calc(50% - 3px);
+  transform: rotate(50deg);
+  width: 7px;
 }
 
 /* Arrow - reverse. */
-.arrow.reverse::after, .arrow.reverse::before {
-    left: unset;
-    margin-left: 0;
-    margin-right: 8px;
-    right: 100%;
+.arrow.reverse::after,
+.arrow.reverse::before {
+  left: unset;
+  margin-left: 0;
+  margin-right: 8px;
+  right: 100%;
 }
 
 /* Arrow - reverse - lower. */
 .arrow.reverse::before {
-    transform: rotate(50deg);
+  transform: rotate(50deg);
 }
 
 /* Arrow -rever - upper. */
 .arrow.reverse::after {
-    transform: rotate(-50deg);
+  transform: rotate(-50deg);
 }
 
 /**
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
-
-    /* Arrow. */
-    .arrow::after, .arrow::before {
-        display: block;
-    }
+  /* Arrow. */
+  .arrow::after,
+  .arrow::before {
+    display: block;
+  }
 }

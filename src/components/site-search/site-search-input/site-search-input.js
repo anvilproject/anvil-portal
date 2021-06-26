@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useCallback, useContext, useEffect, useRef} from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 
 // App dependencies
 import ContextSiteSearch from "../context-site-search/context-site-search";
@@ -17,88 +17,90 @@ import SiteSearchInputIcon from "../site-search-input-icon/site-search-input-ico
 import compStyles from "./site-search-input.module.css";
 
 function SiteSearchInput() {
+  const {
+    inputValue,
+    onSetInputValue,
+    onSetSiteSearchBarOpen,
+    searchBarOpen
+  } = useContext(ContextSiteSearch);
+  const refInput = useRef(null);
+  const showClear = !!inputValue;
 
-    const {inputValue, onSetInputValue, onSetSiteSearchBarOpen, searchBarOpen} = useContext(ContextSiteSearch);
-    const refInput = useRef(null);
-    const showClear = !!inputValue;
+  const onHandleKeyDown = useCallback(
+    e => {
+      if (e.key === "Escape") {
+        onSetSiteSearchBarOpen(false);
+      }
+    },
+    [onSetSiteSearchBarOpen]
+  );
 
-    const onHandleKeyDown = useCallback((e) => {
+  const onInputBlur = e => {
+    const { currentTarget, relatedTarget } = e || {},
+      { parentNode: formEl } = currentTarget;
+    const clearButtonClicked = formEl.contains(relatedTarget);
 
-        if ( e.key === "Escape" ) {
+    if (!clearButtonClicked) {
+      onSetSiteSearchBarOpen(false);
+    }
+  };
 
-            onSetSiteSearchBarOpen(false);
-        }
-    }, [onSetSiteSearchBarOpen]);
+  const onInputChange = e => {
+    const { target } = e || {},
+      { value: inputStr } = target || {};
 
-    const onInputBlur = (e) => {
+    onSetInputValue(inputStr);
+  };
 
-        const {currentTarget, relatedTarget} = e || {},
-            {parentNode: formEl} = currentTarget;
-        const clearButtonClicked = formEl.contains(relatedTarget);
+  const onInputClear = () => {
+    /* Clear value and maintain <input> focus. */
+    onSetInputValue("");
+    refInput.current.focus();
+  };
 
-        if ( !clearButtonClicked ) {
+  const onInputFocus = () => {
+    onSetSiteSearchBarOpen(true);
+  };
 
-            onSetSiteSearchBarOpen(false)
-        }
+  /* useEffect - componentDidMount, componentWillUnmount. */
+  /* Add & remove event listener - "keydown". */
+  useEffect(() => {
+    document.addEventListener("keydown", onHandleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onHandleKeyDown);
     };
+  }, [onHandleKeyDown]);
 
-    const onInputChange = (e) => {
+  /* useEffect - componentDidUpdate - searchBarOpen. */
+  /* Blur input if search bar is collapsed. */
+  useEffect(() => {
+    if (!searchBarOpen) {
+      refInput.current.blur();
+    }
+  }, [searchBarOpen]);
 
-        const {target} = e || {},
-            {value: inputStr} = target || {};
-
-        onSetInputValue(inputStr);
-    };
-
-    const onInputClear = () => {
-
-        /* Clear value and maintain <input> focus. */
-        onSetInputValue("");
-        refInput.current.focus();
-    };
-
-    const onInputFocus = () => {
-
-        onSetSiteSearchBarOpen(true);
-    };
-
-    /* useEffect - componentDidMount, componentWillUnmount. */
-    /* Add & remove event listener - "keydown". */
-    useEffect(() => {
-
-        document.addEventListener("keydown", onHandleKeyDown);
-        return () => {
-
-            document.removeEventListener("keydown", onHandleKeyDown);
-        }
-    }, [onHandleKeyDown]);
-
-    /* useEffect - componentDidUpdate - searchBarOpen. */
-    /* Blur input if search bar is collapsed. */
-    useEffect(() => {
-
-        if ( !searchBarOpen ) {
-
-            refInput.current.blur();
-        }
-    }, [searchBarOpen]);
-
-    return (
-        <>
-        <SiteSearchInputIcon/>
-        <input className={compStyles.input}
-               onBlur={(e) => onInputBlur(e)}
-               onChange={(e) => onInputChange(e)}
-               onFocus={() => onInputFocus()}
-               name={"siteSearch"}
-               placeholder={"Search"}
-               ref={refInput}
-               spellCheck="false"
-               type="text"
-               value={inputValue}/>
-        <SiteSearchInputClear onInputClear={onInputClear} searchBarOpen={searchBarOpen} showClear={showClear}/>
-        </>
-    )
+  return (
+    <>
+      <SiteSearchInputIcon />
+      <input
+        className={compStyles.input}
+        onBlur={e => onInputBlur(e)}
+        onChange={e => onInputChange(e)}
+        onFocus={() => onInputFocus()}
+        name={"siteSearch"}
+        placeholder={"Search"}
+        ref={refInput}
+        spellCheck="false"
+        type="text"
+        value={inputValue}
+      />
+      <SiteSearchInputClear
+        onInputClear={onInputClear}
+        searchBarOpen={searchBarOpen}
+        showClear={showClear}
+      />
+    </>
+  );
 }
 
 export default SiteSearchInput;

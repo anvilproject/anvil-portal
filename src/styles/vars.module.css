@@ -3,28 +3,27 @@
  */
 
 :root {
-    --accent-blue-dark: #25445A;
-    --accent-blue-green: #7EBAC0;
-    --accent-blue-green-rgb: 126, 186, 192;
-    --accent-blue-light: #AEEBF2;
-    --accent-blue-light-rbg: 174, 235, 242;
-    --accent-mustard: #E0DD10;
-    --default-text: rgb(36, 41, 46);
-;
-    --black: #000000;
-    --black1: rgba(0, 0, 0, 0.01);
-    --black3: rgba(0, 0, 0, 0.03);
-    --black6: rgba(0, 0, 0, 0.06);
-    --black12: rgba(0, 0, 0, 0.12);
-    --black34: rgba(0, 0, 0, 0.34);
-    --black58: rgba(0, 0, 0, 0.58);
-    --black87: rgba(0, 0, 0, 0.87);
-    --primary: #035C94;
-    --primary3: rgba(3, 92, 148, 0.03);
-    --primary6: rgba(3, 92, 148, 0.06);
-    --shade-dark: #012840;
-    --shade-light: #F6F7F4;
-    --shade-light-green: #F2F2F2;
-    --warning: rgba(255, 255, 0, 0.30);
-    --white: #FFFFFF;
+  --accent-blue-dark: #25445a;
+  --accent-blue-green: #7ebac0;
+  --accent-blue-green-rgb: 126, 186, 192;
+  --accent-blue-light: #aeebf2;
+  --accent-blue-light-rbg: 174, 235, 242;
+  --accent-mustard: #e0dd10;
+  --default-text: rgb(36, 41, 46);
+  --black: #000000;
+  --black1: rgba(0, 0, 0, 0.01);
+  --black3: rgba(0, 0, 0, 0.03);
+  --black6: rgba(0, 0, 0, 0.06);
+  --black12: rgba(0, 0, 0, 0.12);
+  --black34: rgba(0, 0, 0, 0.34);
+  --black58: rgba(0, 0, 0, 0.58);
+  --black87: rgba(0, 0, 0, 0.87);
+  --primary: #035c94;
+  --primary3: rgba(3, 92, 148, 0.03);
+  --primary6: rgba(3, 92, 148, 0.06);
+  --shade-dark: #012840;
+  --shade-light: #f6f7f4;
+  --shade-light-green: #f2f2f2;
+  --warning: rgba(255, 255, 0, 0.3);
+  --white: #ffffff;
 }

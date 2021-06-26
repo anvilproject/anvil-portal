@@ -16,13 +16,13 @@ import Icon from "../../icon/icon";
 import compStyles from "./site-search-input-icon.module.css";
 
 function SiteSearchInputIcon() {
-
-    return (
-        <span className={compStyles.searchIcon}>
-            <Icon fontSize={20} showHover={false} showIcon={true}>search</Icon>
-        </span>
-    )
+  return (
+    <span className={compStyles.searchIcon}>
+      <Icon fontSize={20} showHover={false} showIcon={true}>
+        search
+      </Icon>
+    </span>
+  );
 }
 
 export default React.memo(SiteSearchInputIcon);
-

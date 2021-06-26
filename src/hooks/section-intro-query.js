@@ -1,24 +1,26 @@
-import {useStaticQuery, graphql} from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 export const SectionIntroStaticQuery = () => {
-    const {allMarkdownRemark} = useStaticQuery(
-        graphql`
-        query SectionIntroStaticQuery {
-          allMarkdownRemark(filter: {fields: {slug: {regex: "/^/home/section-intro/"}}}) {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                }
-                htmlAst
+  const { allMarkdownRemark } = useStaticQuery(
+    graphql`
+      query SectionIntroStaticQuery {
+        allMarkdownRemark(
+          filter: { fields: { slug: { regex: "/^/home/section-intro/" } } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
               }
+              frontmatter {
+                title
+              }
+              htmlAst
             }
           }
         }
+      }
     `
-    );
-    return allMarkdownRemark.edges.map(e => e.node);
+  );
+  return allMarkdownRemark.edges.map(e => e.node);
 };

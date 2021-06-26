@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import Button from "../../button/button";
@@ -19,24 +19,24 @@ import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import compStyles from "./dashboard-download-tsv.module.css";
 
 function DashboardDownloadTSV() {
+  const { onHandleDownloadTSV } = useContext(ContextDashboardDownload);
+  const { entities, searchURL, tableHeadersEntities } = useContext(
+    ContextDashboard
+  );
 
-    const {onHandleDownloadTSV} = useContext(ContextDashboardDownload);
-    const {entities, searchURL, tableHeadersEntities} = useContext(ContextDashboard);
+  const onDownloadResults = () => {
+    onHandleDownloadTSV(entities, tableHeadersEntities);
+    AnvilGTMService.trackDashboardTSVDownloaded(searchURL);
+  };
 
-    const onDownloadResults = () => {
-
-        onHandleDownloadTSV(entities, tableHeadersEntities);
-        AnvilGTMService.trackDashboardTSVDownloaded(searchURL);
-    };
-
-    return (
-        <Tooltip label={"Download results in tsv format"}>
-            <Button clickAction={() => onDownloadResults()}>
-                <span className={compStyles.download}>Download TSV</span>
-                <i className={"material-icons-round"}>save_alt</i>
-            </Button>
-        </Tooltip>
-    );
+  return (
+    <Tooltip label={"Download results in tsv format"}>
+      <Button clickAction={() => onDownloadResults()}>
+        <span className={compStyles.download}>Download TSV</span>
+        <i className={"material-icons-round"}>save_alt</i>
+      </Button>
+    </Tooltip>
+  );
 }
 
 export default DashboardDownloadTSV;

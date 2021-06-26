@@ -9,9 +9,9 @@
 
 /* Tabs. */
 .tabs {
-    align-items: center;
-    display: inline-flex;
-    font-size: 14px;
-    line-height: 32px;
-    letter-spacing: 1px;
+  align-items: center;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 32px;
+  letter-spacing: 1px;
 }

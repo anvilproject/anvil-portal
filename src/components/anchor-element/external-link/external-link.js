@@ -23,12 +23,13 @@
 import React from "react";
 
 function ExternalLink(props) {
+  const { children, link } = props;
 
-    const {children, link} = props;
-
-    return (
-        <a href={link} rel={"noopener noreferrer"} target={"_blank"}>{children}</a>
-    );
+  return (
+    <a href={link} rel={"noopener noreferrer"} target={"_blank"}>
+      {children}
+    </a>
+  );
 }
 
 export default ExternalLink;

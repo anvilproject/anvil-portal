@@ -7,11 +7,11 @@
 
 /* Input search icon wrapper. */
 .searchIcon {
-    pointer-events: none;
-    position: absolute;
+  pointer-events: none;
+  position: absolute;
 }
 
 /* Input search icon. */
 .searchIcon i {
-    padding: 8px;
+  padding: 8px;
 }

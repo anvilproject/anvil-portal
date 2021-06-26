@@ -12,15 +12,14 @@ import React from "react";
 import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 class ProviderFrontmatter extends React.Component {
-
-    render() {
-        const {children, frontmatter} = this.props;
-        return (
-            <ContextFrontmatter.Provider value={frontmatter}>
-                {children}
-            </ContextFrontmatter.Provider>
-        )
-    }
+  render() {
+    const { children, frontmatter } = this.props;
+    return (
+      <ContextFrontmatter.Provider value={frontmatter}>
+        {children}
+      </ContextFrontmatter.Provider>
+    );
+  }
 }
 
 export default ProviderFrontmatter;

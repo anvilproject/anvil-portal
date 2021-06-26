@@ -13,12 +13,11 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 import DashboardSearchSelectedControlBar from "../dashboard-search-selected-control-bar/dashboard-search-selected-control-bar";
 
 function DashboardSearchSelectedToolbar() {
-
-    return (
-        <DashboardSearchPanel stretch>
-            <DashboardSearchSelectedControlBar/>
-        </DashboardSearchPanel>
-    )
+  return (
+    <DashboardSearchPanel stretch>
+      <DashboardSearchSelectedControlBar />
+    </DashboardSearchPanel>
+  );
 }
 
 export default DashboardSearchSelectedToolbar;

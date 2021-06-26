@@ -9,9 +9,7 @@
  * Large handset portrait, small handset landscape, extra small window
  */
 @media screen and (min-width: 840px) {
-
-    .articleBody {
-        width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
-    }
+  .articleBody {
+    width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
+  }
 }
-

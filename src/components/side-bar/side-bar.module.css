@@ -7,17 +7,16 @@
 
 /* Side bar. */
 .sideBar {
-    display: none;
+  display: none;
 }
 
 /**
  * Large handset portrait, small handset landscape, extra small window
  */
 @media screen and (min-width: 840px) {
-
-    /* Side bar. */
-    .sideBar {
-        display: block;
-        width: 260px;
-    }
+  /* Side bar. */
+  .sideBar {
+    display: block;
+    width: 260px;
+  }
 }

@@ -18,16 +18,19 @@ import compStyles from "./dashboard-table-row-cell-x.module.css";
 const classNames = require("classnames");
 
 class DashboardTableRowCellX extends React.Component {
+  render() {
+    const { children, column, id } = this.props;
+    const rightAlign = DashboardTableService.cellAlignment(column);
+    const classNamesCell = rightAlign && {
+      className: classNames({ [compStyles.right]: rightAlign })
+    };
 
-    render() {
-        const {children, column, id} = this.props;
-        const rightAlign = DashboardTableService.cellAlignment(column);
-        const classNamesCell = rightAlign && {className: classNames({[compStyles.right]: rightAlign})};
-
-        return (
-            <td {...classNamesCell} id={id}>{children}</td>
-        )
-    }
+    return (
+      <td {...classNamesCell} id={id}>
+        {children}
+      </td>
+    );
+  }
 }
 
 export default DashboardTableRowCellX;

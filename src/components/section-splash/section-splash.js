@@ -15,14 +15,22 @@ import compStyles from "./section-splash.module.css";
 let classNames = require("classnames");
 
 class SectionSplash extends React.Component {
+  render() {
+    const { children, end, start, stretch } = this.props;
 
-    render() {
-        const {children, end, start, stretch} = this.props;
-
-        return (
-            <div className={classNames({[compStyles.end]: end},  compStyles.splash, {[compStyles.start]: start}, {[compStyles.stretch]: stretch})}>{children}</div>
-        );
-    }
+    return (
+      <div
+        className={classNames(
+          { [compStyles.end]: end },
+          compStyles.splash,
+          { [compStyles.start]: start },
+          { [compStyles.stretch]: stretch }
+        )}
+      >
+        {children}
+      </div>
+    );
+  }
 }
 
 export default SectionSplash;

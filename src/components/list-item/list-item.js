@@ -18,26 +18,19 @@ import ClickHandler from "../click-handler/click-handler";
 import compStyles from "./list-item.module.css";
 
 class ListItem extends React.Component {
-
-    render() {
-        const {children, label, linkTo, redirectTo} = this.props;
-        return (
-            <div className={compStyles.listItem}>
-                {linkTo ? 
-                    <Link to={linkTo}>
-                        {children}
-                    </Link> :
-                    null
-                }
-                {redirectTo ?
-                    <ClickHandler clickAction={redirectTo} tag="span" label={label}>
-                        {children}
-                    </ClickHandler> :
-                    null
-                }
-            </div>
-        );
-    }
+  render() {
+    const { children, label, linkTo, redirectTo } = this.props;
+    return (
+      <div className={compStyles.listItem}>
+        {linkTo ? <Link to={linkTo}>{children}</Link> : null}
+        {redirectTo ? (
+          <ClickHandler clickAction={redirectTo} tag="span" label={label}>
+            {children}
+          </ClickHandler>
+        ) : null}
+      </div>
+    );
+  }
 }
 
 export default ListItem;

@@ -7,43 +7,40 @@
 
 /* Content container */
 .contentContainer {
-    width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
+  width: 100%; /* Required - to stretch markdown content with a few words e.g. "Contact" */
 }
 
 /**
  * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
 @media screen and (min-width: 840px) {
+  /* Content container - left alignment */
+  .contentContainer.left {
+    max-width: unset;
+  }
 
-    /* Content container - left alignment */
-    .contentContainer.left {
-        max-width: unset;
-    }
-
-    /* Content container */
-    .contentContainer {
-        margin: 0 auto 0 0;
-    }
+  /* Content container */
+  .contentContainer {
+    margin: 0 auto 0 0;
+  }
 }
 
 /**
  * Outline is now visible, allow space for outline.
  */
 @media screen and (min-width: 1024px) {
-
-    /* Content container */
-    .contentContainer {
-        max-width: calc(100% - 238px);
-    }
+  /* Content container */
+  .contentContainer {
+    max-width: calc(100% - 238px);
+  }
 }
 
 /**
  * Content has reached its max width.
  */
 @media screen and (min-width: 1386px) {
-
-    /* Content container */
-    .contentContainer {
-        max-width: 780px;
-    }
+  /* Content container */
+  .contentContainer {
+    max-width: 780px;
+  }
 }

@@ -7,33 +7,33 @@
 
 /* Logo - link. */
 .logo {
-    align-items: center;
-    display: flex;
-    flex: none;
-    margin-right: auto;
-    margin-top: -9px;
+  align-items: center;
+  display: flex;
+  flex: none;
+  margin-right: auto;
+  margin-top: -9px;
 }
 
 /* Logo - link - NCPI. */
 .logo.ncpi {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* AnVIL and NCPI image */
 .logo img {
-    align-self: center;
-    height: 32px;
-    margin: 0;
+  align-self: center;
+  height: 32px;
+  margin: 0;
 }
 
 /* NCPI image */
 .logo.ncpi img {
-    height: 44px;
+  height: 44px;
 }
 
 /* Logo - search expanded. */
 .logo.searchBarOpen {
-    display: none;
+  display: none;
 }
 
 /**
@@ -41,9 +41,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 480px) {
-
-    /* Search expanded. */
-    .logo.searchBarOpen {
-        display: flex;
-    }
+  /* Search expanded. */
+  .logo.searchBarOpen {
+    display: flex;
+  }
 }

@@ -6,18 +6,19 @@
  */
 
 /* Copy URL - icon and text. */
-.copy, .copy + i {
-    color: var(--primary);
+.copy,
+.copy + i {
+  color: var(--primary);
 }
 
 /* Copy URL - text. */
 .copy {
-    font-size: 14px;
-    line-height: 20px;
-    margin-right: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-right: 4px;
 }
 
 /* Copy URL - icon. */
 .copy + i {
-    font-size: 20px;
+  font-size: 20px;
 }

@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 
 // App dependencies
 import BannerPrivacy from "./banner-privacy/banner-privacy";
@@ -23,39 +23,53 @@ import ProviderSiteSearch from "./site-search/provider-site-search/provider-site
 import SiteWrapper from "./site-wrapper/site-wrapper";
 
 function Layout(props) {
+  const {
+    children,
+    description,
+    docPath,
+    homePage,
+    navigations,
+    ncpi,
+    noSpy,
+    showOutline,
+    styles,
+    title
+  } = props;
+  const refSite = useRef(null);
+  const [bannerHeight, setBannerHeight] = useState(0);
+  const site = ncpi ? "NCPI" : "The AnVIL";
 
-    const {children, description, docPath, homePage, navigations, ncpi, noSpy, showOutline, styles, title} = props;
-    const refSite = useRef(null);
-    const [bannerHeight, setBannerHeight] = useState(0);
-    const site = ncpi ? "NCPI" : "The AnVIL";
-
-    return (
-        <ProviderAnVILPortal>
-            <ProviderSiteSearch>
-                <PageHead pageTitle={title} site={site}/>
-                <SEO description={description} ncpi={ncpi} site={site} title={title}/>
-                <ProviderModal>
-                    <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
-                        <SiteWrapper ref={refSite}>
-                            <Header ncpi={ncpi}/>
-                            {homePage ? null : <Headline navigations={navigations}/>}
-                            <Main bannerHeight={bannerHeight}
-                                  docPath={docPath}
-                                  homePage={homePage}
-                                  navigations={navigations}
-                                  noSpy={noSpy}
-                                  showOutline={showOutline}
-                                  styles={styles}>{children}</Main>
-                            <BannerPrivacy setBannerHeight={setBannerHeight}/>
-                            <Footer/>
-                            <div id="modal-root"/>
-                            <div id="tooltip-root"/>
-                        </SiteWrapper>
-                    </SiteExternalLinkTracker>
-                </ProviderModal>
-            </ProviderSiteSearch>
-        </ProviderAnVILPortal>
-    )
+  return (
+    <ProviderAnVILPortal>
+      <ProviderSiteSearch>
+        <PageHead pageTitle={title} site={site} />
+        <SEO description={description} ncpi={ncpi} site={site} title={title} />
+        <ProviderModal>
+          <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
+            <SiteWrapper ref={refSite}>
+              <Header ncpi={ncpi} />
+              {homePage ? null : <Headline navigations={navigations} />}
+              <Main
+                bannerHeight={bannerHeight}
+                docPath={docPath}
+                homePage={homePage}
+                navigations={navigations}
+                noSpy={noSpy}
+                showOutline={showOutline}
+                styles={styles}
+              >
+                {children}
+              </Main>
+              <BannerPrivacy setBannerHeight={setBannerHeight} />
+              <Footer />
+              <div id="modal-root" />
+              <div id="tooltip-root" />
+            </SiteWrapper>
+          </SiteExternalLinkTracker>
+        </ProviderModal>
+      </ProviderSiteSearch>
+    </ProviderAnVILPortal>
+  );
 }
 
 export default Layout;

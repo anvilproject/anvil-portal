@@ -12,19 +12,19 @@ import React from "react";
 import DashboardSearchSelectedTerm from "../dashboard-search-selected-term/dashboard-search-selected-term";
 
 function DashboardSearchSelectedTerms(props) {
+  const { facet, onHandleClearTerm, terms } = props;
+  const lastTerm = terms.length - 1;
 
-    const {facet, onHandleClearTerm, terms} = props;
-    const lastTerm = terms.length - 1;
-
-    return (
-        terms.map((term, t) =>
-            <DashboardSearchSelectedTerm key={t}
-                                         facet={facet}
-                                         first={t===0}
-                                         last={t===lastTerm}
-                                         onHandleClearTerm={onHandleClearTerm}
-                                         term={term}/>)
-    )
+  return terms.map((term, t) => (
+    <DashboardSearchSelectedTerm
+      key={t}
+      facet={facet}
+      first={t === 0}
+      last={t === lastTerm}
+      onHandleClearTerm={onHandleClearTerm}
+      term={term}
+    />
+  ));
 }
 
 export default DashboardSearchSelectedTerms;

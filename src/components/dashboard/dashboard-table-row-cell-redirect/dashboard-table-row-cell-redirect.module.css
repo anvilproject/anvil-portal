@@ -7,6 +7,6 @@
 
 /* Row cell - linked cell */
 td.link {
-    color: var(--primary);
-    cursor: pointer;
+  color: var(--primary);
+  cursor: pointer;
 }

@@ -7,6 +7,6 @@
 
 /* Header */
 .header {
-    border-bottom: 1px solid var(--accent-blue-green);
-    vertical-align: bottom;
+  border-bottom: 1px solid var(--accent-blue-green);
+  vertical-align: bottom;
 }

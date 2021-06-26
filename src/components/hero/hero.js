@@ -14,13 +14,14 @@ import React from "react";
 import compStyles from "./hero.module.css";
 
 const Hero = React.forwardRef((props, ref) => {
+  const { children } = props;
+  const heroRef = ref ? { ref: ref } : null;
 
-    const {children} = props;
-    const heroRef = ref ? {ref: ref} : null;
-
-    return (
-        <div className={compStyles.hero} {...heroRef}>{children}</div>
-    );
+  return (
+    <div className={compStyles.hero} {...heroRef}>
+      {children}
+    </div>
+  );
 });
 
 export default Hero;

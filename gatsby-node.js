@@ -4,11 +4,27 @@
  */
 
 const express = require("express");
-const {fmImagesToRelative} = require("gatsby-remark-relative-images");
-const {createFilePath} = require("gatsby-source-filesystem");
-const {buildPostSlug} = require("./src/utils/node/create-node.service");
-const {buildDocumentTitleBySlug, buildMenuItems, buildSetOfNavItemsByMenuItem, buildSetOfSiteSlugs, buildSlugNavigations, getHeaders, getSlugComponent, isShouldCreatePage, validateHeaders} = require("./src/utils/node/create-pages.service");
-const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildPageCreatedField, buildSessionsDisplayField} = require("./src/utils/node/schema-customization.service");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+const { createFilePath } = require("gatsby-source-filesystem");
+const { buildPostSlug } = require("./src/utils/node/create-node.service");
+const {
+  buildDocumentTitleBySlug,
+  buildMenuItems,
+  buildSetOfNavItemsByMenuItem,
+  buildSetOfSiteSlugs,
+  buildSlugNavigations,
+  getHeaders,
+  getSlugComponent,
+  isShouldCreatePage,
+  validateHeaders
+} = require("./src/utils/node/create-pages.service");
+const {
+  buildDateBubbleField,
+  buildDateStartField,
+  buildHeadersField,
+  buildPageCreatedField,
+  buildSessionsDisplayField
+} = require("./src/utils/node/schema-customization.service");
 
 /**
  * Create new node fields.
@@ -18,40 +34,38 @@ const {buildDateBubbleField, buildDateStartField, buildHeadersField, buildPageCr
  * @param getNode
  * @param node
  */
-exports.onCreateNode = ({actions, getNode, node}) => {
+exports.onCreateNode = ({ actions, getNode, node }) => {
+  const { createNodeField } = actions;
+  const { internal } = node,
+    { type } = internal;
 
-    const {createNodeField} = actions;
-    const {internal} = node,
-        {type} = internal;
+  if (type === "MarkdownRemark") {
+    fmImagesToRelative(node);
+    const { frontmatter } = node,
+      { pageAlignment, privateEvent } = frontmatter || {};
 
-    if ( type === "MarkdownRemark" ) {
+    /* Extended node fields. */
+    const filePath = createFilePath({ node, getNode, basePath: "" });
+    const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
+    const nodeValueSlug = buildPostSlug(filePath);
+    const nodeValueStyles = { alignment: pageAlignment };
 
-        fmImagesToRelative(node);
-        const {frontmatter} = node,
-            {pageAlignment, privateEvent} = frontmatter || {};
-
-        /* Extended node fields. */
-        const filePath = createFilePath({node, getNode, basePath: ""});
-        const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
-        const nodeValueSlug = buildPostSlug(filePath);
-        const nodeValueStyles = {alignment: pageAlignment};
-
-        createNodeField({
-            node,
-            name: "privateEvent",
-            value: nodeValuePrivateEvent,
-        });
-        createNodeField({
-            node,
-            name: "slug",
-            value: nodeValueSlug,
-        });
-        createNodeField({
-            node,
-            name: "styles",
-            value: nodeValueStyles,
-        });
-    }
+    createNodeField({
+      node,
+      name: "privateEvent",
+      value: nodeValuePrivateEvent
+    });
+    createNodeField({
+      node,
+      name: "slug",
+      value: nodeValueSlug
+    });
+    createNodeField({
+      node,
+      name: "styles",
+      value: nodeValueStyles
+    });
+  }
 };
 
 /**
@@ -60,11 +74,10 @@ exports.onCreateNode = ({actions, getNode, node}) => {
  * @param actions
  * @param graphql
  */
-exports.createPages = ({actions, graphql}) => {
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-    const {createPage} = actions;
-
-    return graphql(`
+  return graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -125,67 +138,71 @@ exports.createPages = ({actions, graphql}) => {
       }
     }
   `).then(result => {
+    /* If there is an error, return. */
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
 
-        /* If there is an error, return. */
-        if ( result.errors ) {
+    const { data } = result,
+      { allMarkdownRemark, allSiteMapYaml, allSiteMapHeaderYaml } = data;
 
-            return Promise.reject(result.errors);
-        }
+    /* Build menuItems where each site map document associates the slug with a path. */
+    /* This will be used to create the correct path for each post. */
+    const menuItems = buildMenuItems(allSiteMapYaml);
 
-        const {data} = result,
-            {allMarkdownRemark, allSiteMapYaml, allSiteMapHeaderYaml} = data;
+    /* Builds a set of navigation items for each menu item. */
+    /* Builds next and previous article links in order of appearance in the site map. */
+    const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
 
-        /* Build menuItems where each site map document associates the slug with a path. */
-        /* This will be used to create the correct path for each post. */
-        const menuItems = buildMenuItems(allSiteMapYaml);
+    /* Validate headers with available menu items and corresponding nav items. */
+    /* Grab the list of headers from site-map-header.yaml. */
+    /* We will use this to confirm each header has a legitimate path and associated document. */
+    const headers = getHeaders(allSiteMapHeaderYaml);
+    validateHeaders(headers, setOfNavItemsByMenuItem);
 
-        /* Builds a set of navigation items for each menu item. */
-        /* Builds next and previous article links in order of appearance in the site map. */
-        const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
+    /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
+    const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
 
-        /* Validate headers with available menu items and corresponding nav items. */
-        /* Grab the list of headers from site-map-header.yaml. */
-        /* We will use this to confirm each header has a legitimate path and associated document. */
-        const headers = getHeaders(allSiteMapHeaderYaml);
-        validateHeaders(headers, setOfNavItemsByMenuItem);
+    /* Build a relationship between document slug and associated document title. */
+    /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
+    const documentTitleBySlug = buildDocumentTitleBySlug(
+      allMarkdownRemark,
+      setOfSiteSlugs
+    );
 
-        /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
-        const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
+    /* For each markdown file create a post. */
+    allMarkdownRemark.edges.forEach(({ node }) => {
+      const { id, fields } = node,
+        { slug } = fields;
 
-        /* Build a relationship between document slug and associated document title. */
-        /* This will be used to create next/previous page links for each document, when "name" is undefined in the site map for any nav Item. */
-        const documentTitleBySlug = buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs);
+      /* Create a page, if there is a slug and the file exists on the site map. */
+      if (isShouldCreatePage(slug, setOfSiteSlugs)) {
+        /* Grab the slug's pageTitle, tabs, navItems and path. */
+        const slugNavigations = buildSlugNavigations(
+          slug,
+          menuItems,
+          setOfNavItemsByMenuItem,
+          documentTitleBySlug
+        );
+        const slugComponent = getSlugComponent();
 
-        /* For each markdown file create a post. */
-        allMarkdownRemark.edges.forEach(({node}) => {
-
-            const {id, fields} = node,
-                {slug} = fields;
-
-            /* Create a page, if there is a slug and the file exists on the site map. */
-            if ( isShouldCreatePage(slug, setOfSiteSlugs) ) {
-
-                /* Grab the slug's pageTitle, tabs, navItems and path. */
-                const slugNavigations = buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug);
-                const slugComponent = getSlugComponent();
-
-                /* Create page. */
-                createPage({
-                    path: slugNavigations.path,
-                    component: slugComponent,
-                    context: {
-                        id: id,
-                        navItemNext: slugNavigations.navItemNext,
-                        navItemPrevious: slugNavigations.navItemPrevious,
-                        navItems: slugNavigations.navItems,
-                        slug: slug,
-                        tabs: slugNavigations.tabs,
-                        title: slugNavigations.title,
-                    }
-                });
-            }
+        /* Create page. */
+        createPage({
+          path: slugNavigations.path,
+          component: slugComponent,
+          context: {
+            id: id,
+            navItemNext: slugNavigations.navItemNext,
+            navItemPrevious: slugNavigations.navItemPrevious,
+            navItems: slugNavigations.navItems,
+            slug: slug,
+            tabs: slugNavigations.tabs,
+            title: slugNavigations.title
+          }
         });
+      }
     });
+  });
 };
 
 /**
@@ -194,133 +211,128 @@ exports.createPages = ({actions, graphql}) => {
  * @param actions
  * @returns {*}
  */
-exports.createSchemaCustomization = ({actions}) => {
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createFieldExtension, createTypes } = actions;
 
-    const {createFieldExtension, createTypes} = actions;
+  /* Create field "dateBubble" of type string array. */
+  createFieldExtension({
+    name: "dateBubble",
+    extend() {
+      return {
+        resolve(source) {
+          return buildDateBubbleField(source);
+        }
+      };
+    }
+  });
+  /* Create field "dateStart" of type date. */
+  createFieldExtension({
+    name: "dateStart",
+    extend() {
+      return {
+        resolve(source) {
+          return buildDateStartField(source);
+        }
+      };
+    }
+  });
+  /* Create field "draft" of type boolean. */
+  createFieldExtension({
+    name: "draft",
+    extend() {
+      return {
+        resolve(source) {
+          /* Returns false when draft is undefined. */
+          if (source.draft === undefined) {
+            return false;
+          }
+          return JSON.parse(source.draft.toLowerCase());
+        }
+      };
+    }
+  });
+  /* Create field "featured" of type boolean. */
+  createFieldExtension({
+    name: "featured",
+    extend() {
+      return {
+        resolve(source) {
+          /* Returns false value when featured is undefined. */
+          if (source.featured === undefined) {
+            return false;
+          }
+          return source.featured;
+        }
+      };
+    }
+  });
+  /* Create field "headers" of type header array. */
+  createFieldExtension({
+    name: "headers",
+    extend() {
+      return {
+        resolve(source, arg, context, info) {
+          const items = context.nodeModel.getAllNodes({ type: "SiteMapYaml" });
+          return buildHeadersField(source, items);
+        }
+      };
+    }
+  });
+  /* Create field "pageCreated" of type Boolean. */
+  createFieldExtension({
+    name: "pageCreated",
+    extend() {
+      return {
+        resolve(source, arg, context, info) {
+          const items = context.nodeModel.getAllNodes({ type: "SitePage" });
+          return buildPageCreatedField(source, items);
+        }
+      };
+    }
+  });
+  /* Create field "sessionsDisplay" of type string array. */
+  createFieldExtension({
+    name: "sessionsDisplay",
+    extend() {
+      return {
+        resolve(source) {
+          return buildSessionsDisplayField(source);
+        }
+      };
+    }
+  });
+  /* Create field "showOutline" of type boolean. */
+  createFieldExtension({
+    name: "showOutline",
+    extend() {
+      return {
+        resolve(source) {
+          /* Returns true value when showOutline is undefined. */
+          if (source.showOutline === undefined) {
+            return true;
+          }
+          return source.showOutline;
+        }
+      };
+    }
+  });
+  /* Create field "tutorial" of type boolean. */
+  createFieldExtension({
+    name: "tutorial",
+    extend() {
+      return {
+        resolve(source) {
+          /* Returns false when tutorial is undefined. */
+          if (source.tutorial === undefined) {
+            return false;
+          }
+          return source.tutorial;
+        }
+      };
+    }
+  });
 
-    /* Create field "dateBubble" of type string array. */
-    createFieldExtension({
-        name: "dateBubble",
-        extend() {
-            return {
-                resolve(source) {
-                    return buildDateBubbleField(source);
-                },
-            }
-        }
-    });
-    /* Create field "dateStart" of type date. */
-    createFieldExtension({
-        name: "dateStart",
-        extend() {
-            return {
-                resolve(source) {
-                    return buildDateStartField(source);
-                },
-            }
-        }
-    });
-    /* Create field "draft" of type boolean. */
-    createFieldExtension({
-        name: "draft",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns false when draft is undefined. */
-                    if ( source.draft === undefined ) {
-
-                        return false;
-                    }
-                    return JSON.parse(source.draft.toLowerCase());
-                },
-            }
-        }
-    });
-    /* Create field "featured" of type boolean. */
-    createFieldExtension({
-        name: "featured",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns false value when featured is undefined. */
-                    if ( source.featured === undefined ) {
-
-                        return false;
-                    }
-                    return source.featured;
-                },
-            }
-        }
-    });
-    /* Create field "headers" of type header array. */
-    createFieldExtension({
-        name: "headers",
-        extend() {
-            return {
-                resolve(source, arg, context, info) {
-                    const items = context.nodeModel.getAllNodes({type: "SiteMapYaml"});
-                    return buildHeadersField(source, items);
-                },
-            }
-        }
-    });
-    /* Create field "pageCreated" of type Boolean. */
-    createFieldExtension({
-        name: "pageCreated",
-        extend() {
-            return {
-                resolve(source, arg, context, info) {
-                    const items = context.nodeModel.getAllNodes({type: "SitePage"});
-                    return buildPageCreatedField(source, items);
-                },
-            }
-        }
-    });
-    /* Create field "sessionsDisplay" of type string array. */
-    createFieldExtension({
-        name: "sessionsDisplay",
-        extend() {
-            return {
-                resolve(source) {
-                    return buildSessionsDisplayField(source);
-                },
-            }
-        }
-    });
-    /* Create field "showOutline" of type boolean. */
-    createFieldExtension({
-        name: "showOutline",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns true value when showOutline is undefined. */
-                    if ( source.showOutline === undefined ) {
-
-                        return true;
-                    }
-                    return source.showOutline;
-                },
-            }
-        }
-    });
-    /* Create field "tutorial" of type boolean. */
-    createFieldExtension({
-        name: "tutorial",
-        extend() {
-            return {
-                resolve(source) {
-                    /* Returns false when tutorial is undefined. */
-                    if ( source.tutorial === undefined ) {
-
-                        return false;
-                    }
-                    return source.tutorial;
-                },
-            }
-        }
-    });
-
-    createTypes(`
+  createTypes(`
     type Breadcrumb @dontInfer {
         link: String
         name: String
@@ -381,18 +393,17 @@ exports.createSchemaCustomization = ({actions}) => {
 // Required for Edge. This function can be removed once Gatsby upgrades to @babel-preset-gatsby@0.2.3. See:
 // https://github.com/gatsbyjs/gatsby/issues/14848
 exports.onCreateBabelConfig = ({ actions, stage }) => {
-    actions.setBabelPlugin({
-        name: `@babel/plugin-transform-spread`,
-        options: {
-            loose: false,
-        },
-    });
+  actions.setBabelPlugin({
+    name: `@babel/plugin-transform-spread`,
+    options: {
+      loose: false
+    }
+  });
 };
 
 // See: https://github.com/gatsbyjs/gatsby/issues/18213
 // See: https://github.com/gatsbyjs/gatsby/issues/13072
 // To access static folder while in develop mode
-exports.onCreateDevServer=({app})=>{
-
-    app.use(express.static("public"))
+exports.onCreateDevServer = ({ app }) => {
+  app.use(express.static("public"));
 };

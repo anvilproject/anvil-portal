@@ -8,59 +8,61 @@
 
 /* Button */
 .button {
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    padding: unset;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: unset;
 }
 
 /* Button - focus. */
 .button:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Button - dark, light. */
-.dark, .light {
-    border-radius: 4px;
-    height: 36px;
-    min-width: 64px;
-    padding: 0 16px;
+.dark,
+.light {
+  border-radius: 4px;
+  height: 36px;
+  min-width: 64px;
+  padding: 0 16px;
 }
 
 /* Button - dark */
 .dark {
-    background-color: var(--primary);
-    color: var(--white);
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* Button - dark hover state */
 .dark:hover {
-    background-color: rgba(3, 92, 148, 0.87);
+  background-color: rgba(3, 92, 148, 0.87);
 }
 
 /* Button - disabled. */
 .button.disabled {
-    opacity: 0.38;
-    pointer-events: none;
+  opacity: 0.38;
+  pointer-events: none;
 }
 
 /* Button - icon. */
 .button.icon {
-    background-color: transparent;
-    min-width: unset;
-    padding: 8px;
+  background-color: transparent;
+  min-width: unset;
+  padding: 8px;
 }
 
 /* Button - light */
 .light {
-    background-color: var(--shade-light);
-    color: var(--shade-dark);
+  background-color: var(--shade-light);
+  color: var(--shade-dark);
 }
 
 /* Button - light hover state */
 .light:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)), linear-gradient(rgba(246, 247, 244, 1), rgba(246, 247, 244, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)),
+    linear-gradient(rgba(246, 247, 244, 1), rgba(246, 247, 244, 1));
 }

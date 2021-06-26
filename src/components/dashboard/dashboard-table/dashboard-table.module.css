@@ -12,36 +12,36 @@
 /* Table wrapper */
 /* Allows for overflow on smaller screens */
 .wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
 }
 
 /* Summary table - wrapper */
 .wrapper[id^="summary"] {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 /* Table */
 .wrapper table {
-    display: inline-table;
-    margin: 0;
+  display: inline-table;
+  margin: 0;
 }
 
 /* AnVIL, NCPI table. */
 [id^="anvil"] table,
 [id^="ncpi"] table {
-    table-layout: fixed;
+  table-layout: fixed;
 }
 
 /* AnVIL table. */
 [id^="anvil"] table {
-    min-width: 1600px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
+  min-width: 1600px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
 }
 
 /* NCPI table. */
 [id^="ncpi"] table {
-    min-width: 1280px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
+  min-width: 1280px; /* Specified width coupled with table layout fixed enables table scrolling and maintains suitable cell widths. */
 }
 
 /**
@@ -49,11 +49,10 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1024px) {
-
-    /* NCPI table. */
-    [id^="ncpi"] table {
-        min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
-    }
+  /* NCPI table. */
+  [id^="ncpi"] table {
+    min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
+  }
 }
 
 /**
@@ -61,9 +60,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1280px) {
-
-    /* AnVIL table. */
-    [id^="anvil"] table {
-        min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
-    }
+  /* AnVIL table. */
+  [id^="anvil"] table {
+    min-width: unset; /* Unspecified width coupled with table layout fixed enables table to fill container - scroll is unnecessary at this point. */
+  }
 }

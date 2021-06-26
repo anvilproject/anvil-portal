@@ -14,28 +14,30 @@ import compStyles from "./button.module.css";
 const classNames = require("classnames");
 
 function Button(props) {
+  const { children, clickAction, dark, disabled, icon } = props;
+  const darkButton = dark === "" || dark === true;
+  const classNamesButton = classNames(
+    compStyles.button,
+    { [compStyles.dark]: darkButton },
+    { [compStyles.disabled]: disabled },
+    { [compStyles.icon]: icon }
+  );
 
-    const {children, clickAction, dark, disabled, icon} = props;
-    const darkButton = (dark === "") || dark === true;
-    const classNamesButton = classNames(
-        compStyles.button,
-        {[compStyles.dark]: darkButton},
-        {[compStyles.disabled]: disabled},
-        {[compStyles.icon]: icon});
+  const onHandleClickAction = () => {
+    if (clickAction) {
+      clickAction();
+    }
+  };
 
-    const onHandleClickAction = () => {
-
-        if ( clickAction ) {
-
-            clickAction();
-        }
-    };
-
-    return (
-        <button className={classNamesButton} onClick={() => onHandleClickAction()} type="button">
-            {children}
-        </button>
-    );
+  return (
+    <button
+      className={classNamesButton}
+      onClick={() => onHandleClickAction()}
+      type="button"
+    >
+      {children}
+    </button>
+  );
 }
 
 export default Button;

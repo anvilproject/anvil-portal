@@ -13,14 +13,15 @@ import Button from "../../button/button";
 import Icon from "../../icon/icon";
 
 function ModalClose(props) {
+  const { onCloseModal } = props;
 
-    const {onCloseModal} = props;
-
-    return (
-        <Button clickAction={() => onCloseModal()} icon>
-            <Icon showHover={true} showIcon={true}>close</Icon>
-        </Button>
-    )
+  return (
+    <Button clickAction={() => onCloseModal()} icon>
+      <Icon showHover={true} showIcon={true}>
+        close
+      </Icon>
+    </Button>
+  );
 }
 
 export default ModalClose;

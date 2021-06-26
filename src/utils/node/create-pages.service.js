@@ -17,24 +17,24 @@ const nodePath = require("path");
  * @param setOfSiteSlugs
  * @returns {*}
  */
-const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(allMarkdownRemark, setOfSiteSlugs) {
+const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(
+  allMarkdownRemark,
+  setOfSiteSlugs
+) {
+  /* Build for each valid site document, a relationship between document title and slug. */
+  return allMarkdownRemark.edges
+    .map(n => n.node)
+    .reduce((acc, markdown) => {
+      const { fields, frontmatter } = markdown,
+        { slug } = fields,
+        { title } = frontmatter;
 
-    /* Build for each valid site document, a relationship between document title and slug. */
-    return allMarkdownRemark.edges
-        .map(n => n.node)
-        .reduce((acc, markdown) => {
+      if (setOfSiteSlugs.has(slug)) {
+        acc.set(slug, title);
+      }
 
-        const {fields, frontmatter} = markdown,
-            {slug} = fields,
-            {title} = frontmatter;
-
-        if ( setOfSiteSlugs.has(slug) ) {
-
-            acc.set(slug, title);
-        }
-
-        return acc;
-        }, new Map());
+      return acc;
+    }, new Map());
 };
 
 /**
@@ -45,22 +45,19 @@ const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(allMarkdownRe
  * @returns {*}
  */
 const buildMenuItems = function buildMenuItems(siteMapYAML) {
+  /* Build the menu items. */
+  return siteMapYAML.edges
+    .map(n => n.node)
+    .reduce((acc, menuItem) => {
+      /* Build the menu. */
+      const mItem = buildMenuItem(menuItem);
 
-    /* Build the menu items. */
-    return siteMapYAML.edges
-        .map(n => n.node)
-        .reduce((acc, menuItem) => {
+      /* Only add the menu item if it has tabs, and nav items. */
+      if (mItem) {
+        acc.push(mItem);
+      }
 
-        /* Build the menu. */
-        const mItem = buildMenuItem(menuItem);
-
-        /* Only add the menu item if it has tabs, and nav items. */
-        if ( mItem ) {
-
-            acc.push(mItem);
-        }
-
-        return acc;
+      return acc;
     }, []);
 };
 
@@ -70,23 +67,22 @@ const buildMenuItems = function buildMenuItems(siteMapYAML) {
  *
  * @param menuItems
  */
-const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuItems) {
+const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(
+  menuItems
+) {
+  return menuItems.reduce((acc, menuItem) => {
+    const { pageTitle, tabs } = menuItem || {};
+    const setOfNavItems = new Set();
 
-    return menuItems.reduce((acc, menuItem) => {
+    tabs.forEach(tab => {
+      const { navItems } = tab;
+      buildSetOfNavItems(navItems, setOfNavItems);
+    });
 
-        const {pageTitle, tabs} = menuItem || {};
-        const setOfNavItems = new Set();
+    acc.set(pageTitle, setOfNavItems);
 
-        tabs.forEach(tab => {
-
-            const {navItems} = tab;
-            buildSetOfNavItems(navItems, setOfNavItems);
-        });
-
-        acc.set(pageTitle, setOfNavItems);
-
-        return acc;
-    }, new Map());
+    return acc;
+  }, new Map());
 };
 
 /**
@@ -97,22 +93,19 @@ const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(menuI
  * @returns {*}
  */
 const buildSetOfSiteSlugs = function buildSetOfSiteSlugs(menuItems) {
+  /* Grab the set of site slugs from the site map. */
+  return menuItems.reduce((acc, menuItem) => {
+    const { tabs } = menuItem || {};
 
-    /* Grab the set of site slugs from the site map. */
-    return menuItems.reduce((acc, menuItem) => {
+    tabs.forEach(tab => {
+      const { navItems } = tab;
 
-        const {tabs} = menuItem || {};
+      /* Add all navItems. */
+      addSetOfSiteSlugs(navItems, acc);
+    });
 
-        tabs.forEach(tab => {
-
-                const {navItems} = tab;
-
-                /* Add all navItems. */
-                addSetOfSiteSlugs(navItems, acc);
-            });
-
-        return acc;
-    }, new Set());
+    return acc;
+  }, new Set());
 };
 
 /**
@@ -124,12 +117,22 @@ const buildSetOfSiteSlugs = function buildSetOfSiteSlugs(menuItems) {
  * @param documentTitleBySlug
  * @returns {*}
  */
-const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setOfNavItemsByMenuItem, documentTitleBySlug) {
+const buildSlugNavigations = function buildSlugNavigations(
+  slug,
+  menuItems,
+  setOfNavItemsByMenuItem,
+  documentTitleBySlug
+) {
+  /* Default - slug as path, initialize navigations. */
+  const postNavigations = { navItems: [], path: slug, tabs: [], title: "" };
 
-    /* Default - slug as path, initialize navigations. */
-    const postNavigations = {navItems: [], path: slug, tabs: [], title: ""};
-
-    return buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations, documentTitleBySlug);
+  return buildPostNavigations(
+    slug,
+    menuItems,
+    setOfNavItemsByMenuItem,
+    postNavigations,
+    documentTitleBySlug
+  );
 };
 
 /**
@@ -139,20 +142,17 @@ const buildSlugNavigations = function buildSlugNavigations(slug, menuItems, setO
  * @returns {*}
  */
 const getHeaders = function getHeaders(siteMapHeaderYAML) {
+  return siteMapHeaderYAML.edges
+    .map(n => n.node)
+    .reduce((acc, n) => {
+      const { headers } = n;
 
-    return siteMapHeaderYAML.edges
-        .map(n => n.node)
-        .reduce((acc, n) => {
+      if (headers) {
+        acc.push(...headers);
+      }
 
-            const {headers} = n;
-
-            if ( headers ) {
-
-                acc.push(...headers);
-            }
-
-            return acc;
-        }, []);
+      return acc;
+    }, []);
 };
 
 /**
@@ -161,8 +161,7 @@ const getHeaders = function getHeaders(siteMapHeaderYAML) {
  * @returns {string}
  */
 const getSlugComponent = function getSlugComponent() {
-
-    return nodePath.resolve(componentPath);
+  return nodePath.resolve(componentPath);
 };
 
 /**
@@ -172,9 +171,11 @@ const getSlugComponent = function getSlugComponent() {
  * @param setOfNavItemSlugs
  * @returns {boolean}
  */
-const isShouldCreatePage = function isShouldCreatePage(slug, setOfNavItemSlugs) {
-
-    return setOfNavItemSlugs.has(slug);
+const isShouldCreatePage = function isShouldCreatePage(
+  slug,
+  setOfNavItemSlugs
+) {
+  return setOfNavItemSlugs.has(slug);
 };
 
 /**
@@ -185,38 +186,40 @@ const isShouldCreatePage = function isShouldCreatePage(slug, setOfNavItemSlugs) 
  * @param headers
  * @param setOfNavItemsByMenuItem
  */
-const validateHeaders = function validateHeaders(headers, setOfNavItemsByMenuItem) {
+const validateHeaders = function validateHeaders(
+  headers,
+  setOfNavItemsByMenuItem
+) {
+  headers.forEach(header => {
+    const { name, path } = header;
+    const setOfNavItems = setOfNavItemsByMenuItem.get(name);
+    const navItemExists =
+      setOfNavItems &&
+      [...setOfNavItems].some(navItem => navItem.path === path);
 
-    headers.forEach(header => {
-
-        const {name, path} = header;
-        const setOfNavItems = setOfNavItemsByMenuItem.get(name);
-        const navItemExists = setOfNavItems && [...setOfNavItems].some(navItem => navItem.path === path);
-
-        if ( !setOfNavItems ) {
-
-            /* Error message. */
-            /* A menu item does not exist for the corresponding header. */
-            /* Possible causes are... */
-            /* The menu item in the site-map-header.yaml file does not match a "menuItem" in site-map.yaml. */
-            /* The menu item in the site-map does not have a document. */
-            /* Note, check that there is at least one document exists, and the document is not in draft mode. */
-            console.log(`*** *** Error. The header "${name}" does not have a corresponding "menuItem".`);
-        }
-        else {
-
-
-            if ( !navItemExists ) {
-
-                /* Error message. */
-                /* Menu item exists for the corresponding header. However there is no path match for the header. */
-                /* Possible causes are... */
-                /* The menu item pathPartial in the site-map.yaml does not have a corresponding document path. */
-                /* Note, check that there is at least one document exists, and the document is not in draft mode. */
-                console.log(`*** *** Error. The header "${name}" of path "${path}" does not have a corresponding document in the site map.`);
-            }
-        }
-    })
+    if (!setOfNavItems) {
+      /* Error message. */
+      /* A menu item does not exist for the corresponding header. */
+      /* Possible causes are... */
+      /* The menu item in the site-map-header.yaml file does not match a "menuItem" in site-map.yaml. */
+      /* The menu item in the site-map does not have a document. */
+      /* Note, check that there is at least one document exists, and the document is not in draft mode. */
+      console.log(
+        `*** *** Error. The header "${name}" does not have a corresponding "menuItem".`
+      );
+    } else {
+      if (!navItemExists) {
+        /* Error message. */
+        /* Menu item exists for the corresponding header. However there is no path match for the header. */
+        /* Possible causes are... */
+        /* The menu item pathPartial in the site-map.yaml does not have a corresponding document path. */
+        /* Note, check that there is at least one document exists, and the document is not in draft mode. */
+        console.log(
+          `*** *** Error. The header "${name}" of path "${path}" does not have a corresponding document in the site map.`
+        );
+      }
+    }
+  });
 };
 
 /**
@@ -227,25 +230,20 @@ const validateHeaders = function validateHeaders(headers, setOfNavItemsByMenuIte
  * @returns {*}
  */
 function addSetOfSiteSlugs(nItems, acc) {
+  nItems.forEach(nItem => {
+    const { file, path, navItems } = nItem;
 
-    nItems.forEach(nItem => {
+    if (file && path) {
+      acc.add(file);
+    }
 
-        const {file, path, navItems} = nItem;
+    /* Add any nested navItems. */
+    if (navItems) {
+      addSetOfSiteSlugs(navItems, acc);
+    }
+  });
 
-        if ( file && path ) {
-
-            acc.add(file);
-
-        }
-
-        /* Add any nested navItems. */
-        if ( navItems ) {
-
-            addSetOfSiteSlugs(navItems, acc);
-        }
-    });
-
-    return acc;
+  return acc;
 }
 
 /**
@@ -255,15 +253,13 @@ function addSetOfSiteSlugs(nItems, acc) {
  * @returns {*}
  */
 function buildFilePartial(file) {
+  if (file) {
+    const filePartial = file.split("/").pop();
 
-    if ( file ) {
+    return `/${filePartial}`;
+  }
 
-        const filePartial = file.split("/").pop();
-
-        return `/${filePartial}`;
-    }
-
-    return "";
+  return "";
 }
 
 /**
@@ -273,21 +269,17 @@ function buildFilePartial(file) {
  * @param slugs
  */
 function buildListOfSlugs(navigationItems, slugs = []) {
+  return navigationItems.reduce((acc, navigationItem) => {
+    if (navigationItem.file) {
+      acc.push(navigationItem.file);
+    }
 
-    return navigationItems.reduce((acc, navigationItem) => {
+    if (navigationItem.navigationItems) {
+      buildListOfSlugs(navigationItem.navigationItems, acc);
+    }
 
-        if ( navigationItem.file ) {
-
-            acc.push(navigationItem.file);
-        }
-
-        if ( navigationItem.navigationItems ) {
-
-            buildListOfSlugs(navigationItem.navigationItems, acc);
-        }
-
-        return acc;
-    }, slugs);
+    return acc;
+  }, slugs);
 }
 
 /**
@@ -297,26 +289,24 @@ function buildListOfSlugs(navigationItems, slugs = []) {
  * @returns {*}
  */
 function buildMenuItem(menuItem) {
+  /* Grab the menuItem's title, partial path and tabs. */
+  const { pageTitle, pathPartial, tabs } = menuItem || {};
 
-    /* Grab the menuItem's title, partial path and tabs. */
-    const {pageTitle, pathPartial, tabs} = menuItem || {};
+  /* The partial paths will be used to build a full path for each post. */
+  const pathPartials = Array.of(pathPartial);
 
-    /* The partial paths will be used to build a full path for each post. */
-    const pathPartials = Array.of(pathPartial);
+  /* Build page tabs. */
+  const pageTabs = buildPageTabs(tabs, pathPartials);
 
-    /* Build page tabs. */
-    const pageTabs = buildPageTabs(tabs, pathPartials);
+  if (pageTabs && pageTabs.length > 0) {
+    return {
+      pageTitle: pageTitle,
+      path: pathPartial,
+      tabs: pageTabs
+    };
+  }
 
-    if ( pageTabs && pageTabs.length > 0 ) {
-
-        return {
-            pageTitle: pageTitle,
-            path: pathPartial,
-            tabs: pageTabs
-        };
-    }
-
-    return null;
+  return null;
 }
 
 /**
@@ -326,45 +316,44 @@ function buildMenuItem(menuItem) {
  * @param pathPartials
  */
 function buildNavItems(navItems, pathPartials) {
+  return navItems.reduce((acc, navItem) => {
+    const { draft, file, name, navigationItems, pathPartial } = navItem || {};
 
-    return navItems.reduce((acc, navItem) => {
+    /* Add the nav item if it isn't in draft mode. */
+    /* Or, allow the nav item if the environment is LOCAL - all draft documents are available in this environment. */
+    if (!draft || isEnvironmentLocal()) {
+      /* Clone the path partials for the navigation item. */
+      const partials = Array.from(pathPartials);
 
-        const {draft, file, name, navigationItems, pathPartial} = navItem || {};
+      /* Build the path. */
+      const path = buildPath(navItem, partials);
 
-        /* Add the nav item if it isn't in draft mode. */
-        /* Or, allow the nav item if the environment is LOCAL - all draft documents are available in this environment. */
-        if ( !draft || isEnvironmentLocal() ) {
+      /* Build the nav items. */
+      const items = {
+        file: file,
+        name: name,
+        path: path
+      };
 
-            /* Clone the path partials for the navigation item. */
-            const partials = Array.from(pathPartials);
+      /* Build any nested navigationItems. */
+      if (navigationItems) {
+        /* Grab any pathPartials on the current navigation item. */
+        partials.push(pathPartial);
 
-            /* Build the path. */
-            const path = buildPath(navItem, partials);
+        /* Grab any nested slugs (files) on the current navigation item. */
+        const slugs = buildListOfSlugs(navigationItems);
 
-            /* Build the nav items. */
-            const items = {
-                file: file,
-                name: name,
-                path: path
-            };
+        Object.assign(items, {
+          navItems: buildNavItems(navigationItems, partials),
+          slugs: slugs
+        });
+      }
 
-            /* Build any nested navigationItems. */
-            if ( navigationItems ) {
+      acc.push(items);
+    }
 
-                /* Grab any pathPartials on the current navigation item. */
-                partials.push(pathPartial);
-
-                /* Grab any nested slugs (files) on the current navigation item. */
-                const slugs = buildListOfSlugs(navigationItems);
-
-                Object.assign(items, {navItems: buildNavItems(navigationItems, partials), slugs: slugs});
-            }
-
-            acc.push(items);
-        }
-
-        return acc;
-    }, []);
+    return acc;
+  }, []);
 }
 
 /**
@@ -374,48 +363,43 @@ function buildNavItems(navItems, pathPartials) {
  * @param pathPartials
  */
 function buildPageTabs(tabs, pathPartials) {
+  if (tabs && tabs.length > 0) {
+    return tabs.reduce((acc, tab) => {
+      /* Grab the tab fields. */
+      const { name, navigationItems, pathPartial } = tab;
 
-    if ( tabs && tabs.length > 0 ) {
+      /* Initialize tab. */
+      /* Set active field to false for now. */
+      const pageTab = { active: false, name: name, path: "" };
 
-        return tabs.reduce((acc, tab) => {
+      /* Clone the path partials for the tab. */
+      const partials = Array.from(pathPartials);
 
-            /* Grab the tab fields. */
-            const {name, navigationItems, pathPartial} = tab;
+      /* Push tab partial on to page partial. */
+      partials.push(pathPartial);
 
-            /* Initialize tab. */
-            /* Set active field to false for now. */
-            const pageTab = {active: false, name: name, path: ""};
+      /* Build navigationItems for the tab. */
+      const navItems = buildNavItems(navigationItems, partials);
 
-            /* Clone the path partials for the tab. */
-            const partials = Array.from(pathPartials);
+      /* Only add the tab if there are nav items. */
+      if (navItems && navItems.length > 0) {
+        Object.assign(pageTab, { navItems: navItems });
 
-            /* Push tab partial on to page partial. */
-            partials.push(pathPartial);
+        /* Build the tab path from the first available navItem. */
+        if (name) {
+          /* Grab the tab path. */
+          const path = getTabPath(navItems);
+          Object.assign(pageTab, { path: path });
+        }
 
-            /* Build navigationItems for the tab. */
-            const navItems = buildNavItems(navigationItems, partials);
+        acc.push(pageTab);
+      }
 
-            /* Only add the tab if there are nav items. */
-            if ( navItems && navItems.length > 0 ) {
+      return acc;
+    }, []);
+  }
 
-                Object.assign(pageTab, {navItems: navItems});
-
-                /* Build the tab path from the first available navItem. */
-                if ( name ) {
-
-                    /* Grab the tab path. */
-                    const path = getTabPath(navItems);
-                    Object.assign(pageTab, {path: path});
-                }
-
-                acc.push(pageTab);
-            }
-
-            return acc;
-        }, [])
-    }
-
-    return [];
+  return [];
 }
 
 /**
@@ -426,33 +410,30 @@ function buildPageTabs(tabs, pathPartials) {
  * @returns {string}
  */
 function buildPath(navItem, pathPartials) {
+  const { file, pathOverride, pathPartial } = navItem || {};
 
-    const {file, pathOverride, pathPartial} = navItem || {};
+  /* Early exit - no path. */
+  /* Used by nav item toggle button. */
+  if (!file) {
+    return "";
+  }
 
-    /* Early exit - no path. */
-    /* Used by nav item toggle button. */
-    if ( !file ) {
+  /* Early exit - use pathOverride. */
+  if (pathOverride) {
+    return pathOverride;
+  }
 
-        return "";
-    }
+  /* Grab the final partial from the file. */
+  const filePartial = buildFilePartial(file);
 
-    /* Early exit - use pathOverride. */
-    if ( pathOverride ) {
+  /* Use the filePartial if there is no pathPartial. */
+  const partial = pathPartial || filePartial;
 
-        return pathOverride;
-    }
+  /* Push navigation path partial on to page partial. */
+  pathPartials.push(partial);
 
-    /* Grab the final partial from the file. */
-    const filePartial = buildFilePartial(file);
-
-    /* Use the filePartial if there is no pathPartial. */
-    const partial = pathPartial || filePartial;
-
-    /* Push navigation path partial on to page partial. */
-    pathPartials.push(partial);
-
-    /* Return path as a string. */
-    return pathPartials.join("");
+  /* Return path as a string. */
+  return pathPartials.join("");
 }
 
 /**
@@ -465,21 +446,35 @@ function buildPath(navItem, pathPartials) {
  * @param documentTitleBySlug
  * @returns {*}
  */
-function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavigations, documentTitleBySlug) {
+function buildPostNavigations(
+  slug,
+  menuItems,
+  setOfNavItemsByMenuItem,
+  postNavigations,
+  documentTitleBySlug
+) {
+  /* For each menuItem. */
+  for (const [, menuItem] of menuItems.entries()) {
+    /* For every tab. */
+    for (const [t, tab] of menuItem.tabs.entries()) {
+      const { navItems } = tab;
 
-    /* For each menuItem. */
-    for ( const [, menuItem] of menuItems.entries() ) {
-
-        /* For every tab. */
-        for ( const [t, tab] of menuItem.tabs.entries() ) {
-
-            const {navItems} = tab;
-
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItems, setOfNavItemsByMenuItem, documentTitleBySlug));
-        }
+      Object.assign(
+        postNavigations,
+        findPostNavigations(
+          slug,
+          menuItem,
+          tab,
+          t,
+          navItems,
+          setOfNavItemsByMenuItem,
+          documentTitleBySlug
+        )
+      );
     }
+  }
 
-    return postNavigations;
+  return postNavigations;
 }
 
 /**
@@ -493,23 +488,34 @@ function buildPostNavigations(slug, menuItems, setOfNavItemsByMenuItem, postNavi
  * @param documentTitleBySlug
  * @returns {{navItemNext: *, navItemPrevious: *, navItems, path: *, tabs: *, title: *}}
  */
-function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem, documentTitleBySlug) {
+function buildPostNavs(
+  menuItem,
+  navItems,
+  navItem,
+  t,
+  setOfNavItemsByMenuItem,
+  documentTitleBySlug
+) {
+  const { pageTitle, tabs } = menuItem;
+  const { path } = navItem;
 
-    const {pageTitle, tabs} = menuItem;
-    const {path} = navItem;
+  const postTabs = getPostTabs(tabs, t);
+  const postNavItems = getPostNavItems(navItems);
+  const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(
+    pageTitle,
+    path,
+    setOfNavItemsByMenuItem,
+    documentTitleBySlug
+  );
 
-    const postTabs = getPostTabs(tabs, t);
-    const postNavItems = getPostNavItems(navItems);
-    const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem, documentTitleBySlug);
-
-    return {
-        navItemNext: navItemNext,
-        navItemPrevious: navItemPrev,
-        navItems: postNavItems,
-        path: path,
-        tabs: postTabs,
-        title: pageTitle
-    };
+  return {
+    navItemNext: navItemNext,
+    navItemPrevious: navItemPrev,
+    navItems: postNavItems,
+    path: path,
+    tabs: postTabs,
+    title: pageTitle
+  };
 }
 
 /**
@@ -520,23 +526,19 @@ function buildPostNavs(menuItem, navItems, navItem, t, setOfNavItemsByMenuItem, 
  * @returns {Set}
  */
 function buildSetOfNavItems(nItems, setOfNavItems) {
+  nItems.forEach(nItem => {
+    const { name, path } = nItem || {};
 
-    nItems.forEach(nItem => {
+    if (path) {
+      setOfNavItems.add({ file: nItem.file, name: name, path: path });
+    }
 
-        const {name, path} = nItem || {};
+    if (nItem.navItems) {
+      buildSetOfNavItems(nItem.navItems, setOfNavItems);
+    }
+  });
 
-        if ( path ) {
-
-            setOfNavItems.add({file: nItem.file, name: name, path: path});
-        }
-
-        if ( nItem.navItems ) {
-
-            buildSetOfNavItems(nItem.navItems, setOfNavItems);
-        }
-    });
-
-    return setOfNavItems;
+  return setOfNavItems;
 }
 
 /**
@@ -551,26 +553,51 @@ function buildSetOfNavItems(nItems, setOfNavItems) {
  * @param documentTitleBySlug
  * @returns {{}}
  */
-function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenuItem, documentTitleBySlug) {
+function findPostNavigations(
+  slug,
+  menuItem,
+  tab,
+  t,
+  nItems,
+  setOfNavItemsByMenuItem,
+  documentTitleBySlug
+) {
+  const postNavigations = {};
 
-    const postNavigations = {};
-
-    for ( const [, navItem] of nItems.entries() ) {
-
-        /* Update post navigations with corresponding navigations. */
-        if ( navItem.file === slug ) {
-
-            Object.assign(postNavigations, buildPostNavs(menuItem, tab.navItems, navItem, t, setOfNavItemsByMenuItem, documentTitleBySlug));
-        }
-
-        /* Investigate nested navItems to find any slug matches and update the post navigations accordingly. */
-        if ( navItem.navItems ) {
-
-            Object.assign(postNavigations, findPostNavigations(slug, menuItem, tab, t, navItem.navItems, setOfNavItemsByMenuItem, documentTitleBySlug));
-        }
+  for (const [, navItem] of nItems.entries()) {
+    /* Update post navigations with corresponding navigations. */
+    if (navItem.file === slug) {
+      Object.assign(
+        postNavigations,
+        buildPostNavs(
+          menuItem,
+          tab.navItems,
+          navItem,
+          t,
+          setOfNavItemsByMenuItem,
+          documentTitleBySlug
+        )
+      );
     }
 
-    return postNavigations;
+    /* Investigate nested navItems to find any slug matches and update the post navigations accordingly. */
+    if (navItem.navItems) {
+      Object.assign(
+        postNavigations,
+        findPostNavigations(
+          slug,
+          menuItem,
+          tab,
+          t,
+          navItem.navItems,
+          setOfNavItemsByMenuItem,
+          documentTitleBySlug
+        )
+      );
+    }
+  }
+
+  return postNavigations;
 }
 
 /**
@@ -582,38 +609,45 @@ function findPostNavigations(slug, menuItem, tab, t, nItems, setOfNavItemsByMenu
  * @param documentTitleBySlug
  * @returns {Array}
  */
-function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem, documentTitleBySlug) {
+function getPostNavItemNextPrevious(
+  pageTitle,
+  path,
+  setOfNavItemsByMenuItem,
+  documentTitleBySlug
+) {
+  /* Grab the set of navItems for the specified menuItem. */
+  /* Find the index of the navItem within the set. */
+  const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
+  const navItems = [...setOfNavItems];
+  const indexOfNavItem = navItems.findIndex(nItem => nItem.path === path);
 
-    /* Grab the set of navItems for the specified menuItem. */
-    /* Find the index of the navItem within the set. */
-    const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
-    const navItems = [...setOfNavItems];
-    const indexOfNavItem = navItems.findIndex(nItem => nItem.path === path);
+  /* Initialize navItemNext/Prev. */
+  let navItemNext = null;
+  let navItemPrev = null;
 
-    /* Initialize navItemNext/Prev. */
-    let navItemNext = null;
-    let navItemPrev = null;
+  /* Update next/prev navItems from the set of navItems. */
+  if (indexOfNavItem >= 0) {
+    navItemNext = navItems[indexOfNavItem + 1] || null;
+    navItemPrev = navItems[indexOfNavItem - 1] || null;
 
-    /* Update next/prev navItems from the set of navItems. */
-    if ( indexOfNavItem >= 0 ) {
-
-        navItemNext = navItems[indexOfNavItem + 1] || null;
-        navItemPrev = navItems[indexOfNavItem - 1] || null;
-
-        /* Update navItemNext with a title from document frontmatter, if navItem "name" is undefined. */
-        if ( navItemNext ) {
-
-            Object.assign(navItemNext, getPostNextPreviousName(navItemNext, documentTitleBySlug));
-        }
-
-        /* Update navItemPrev with a title from document frontmatter, if navItem "name" is undefined. */
-        if ( navItemPrev ) {
-
-            Object.assign(navItemPrev, getPostNextPreviousName(navItemPrev, documentTitleBySlug))
-        }
+    /* Update navItemNext with a title from document frontmatter, if navItem "name" is undefined. */
+    if (navItemNext) {
+      Object.assign(
+        navItemNext,
+        getPostNextPreviousName(navItemNext, documentTitleBySlug)
+      );
     }
 
-    return Array.of(navItemNext, navItemPrev);
+    /* Update navItemPrev with a title from document frontmatter, if navItem "name" is undefined. */
+    if (navItemPrev) {
+      Object.assign(
+        navItemPrev,
+        getPostNextPreviousName(navItemPrev, documentTitleBySlug)
+      );
+    }
+  }
+
+  return Array.of(navItemNext, navItemPrev);
 }
 
 /**
@@ -622,19 +656,16 @@ function getPostNavItemNextPrevious(pageTitle, path, setOfNavItemsByMenuItem, do
  * @param navItems
  */
 function getPostNavItems(navItems) {
+  /* Return navItems - remove any unnamed nav items. */
+  return navItems.reduce((acc, navItem) => {
+    const { name } = navItem || {};
 
-    /* Return navItems - remove any unnamed nav items. */
-    return navItems.reduce((acc, navItem) => {
+    if (name) {
+      acc.push(navItem);
+    }
 
-        const {name} = navItem || {};
-
-        if ( name ) {
-
-            acc.push(navItem);
-        }
-
-        return acc;
-    }, []);
+    return acc;
+  }, []);
 }
 
 /**
@@ -647,24 +678,23 @@ function getPostNavItems(navItems) {
  * @returns {*}
  */
 function getPostNextPreviousName(navItem, documentTitleBySlug) {
+  const { name, file } = navItem || {};
 
-    const {name, file} = navItem || {};
+  if (!name) {
+    const navDisplayName = documentTitleBySlug.get(file) || "";
 
-    if ( !name ) {
-
-        const navDisplayName = documentTitleBySlug.get(file) || "";
-
-        if ( !navDisplayName ) {
-
-            /* Error message. */
-            /* Document requires frontmatter "title" for display of nav item next/previous. */
-            console.log(`*** *** Error. Document ${file} requires a "title" in the frontmatter.`)
-        }
-
-        return {name: navDisplayName};
+    if (!navDisplayName) {
+      /* Error message. */
+      /* Document requires frontmatter "title" for display of nav item next/previous. */
+      console.log(
+        `*** *** Error. Document ${file} requires a "title" in the frontmatter.`
+      );
     }
 
-    return {};
+    return { name: navDisplayName };
+  }
+
+  return {};
 }
 
 /**
@@ -676,23 +706,20 @@ function getPostNextPreviousName(navItem, documentTitleBySlug) {
  * @returns {*}
  */
 function getPostTabs(tabs, t) {
+  /* Update tab with active state. */
+  const tabsClone = [...tabs];
+  tabsClone[t] = Object.assign({ ...tabsClone[t] }, { active: true });
 
-    /* Update tab with active state. */
-    const tabsClone = [...tabs];
-    tabsClone[t] = Object.assign({...tabsClone[t]}, {active: true});
+  /* Return tabs - remove any unnamed tabs. */
+  return tabsClone.reduce((acc, tab) => {
+    const { name } = tab || {};
 
-    /* Return tabs - remove any unnamed tabs. */
-    return tabsClone.reduce((acc, tab) => {
+    if (name) {
+      acc.push(tab);
+    }
 
-        const {name} = tab || {};
-
-        if ( name ) {
-
-            acc.push(tab);
-        }
-
-        return acc;
-    }, [])
+    return acc;
+  }, []);
 }
 
 /**
@@ -702,24 +729,21 @@ function getPostTabs(tabs, t) {
  * @returns {string}
  */
 function getTabPath(navigationItems) {
+  if (navigationItems && navigationItems.length > 0) {
+    /* Locate the first navigation item partial path or override path. */
+    const [firstNavItem] = navigationItems;
+    const { file, navItems, path } = firstNavItem || {};
 
-    if ( navigationItems && navigationItems.length > 0 ) {
-
-        /* Locate the first navigation item partial path or override path. */
-        const [firstNavItem,] = navigationItems;
-        const {file, navItems, path} = firstNavItem || {};
-
-        /* Return the path, if a file exists. */
-        if ( file && path ) {
-
-            return path;
-        }
-
-        /* Find the next available file. */
-        return getTabPath(navItems);
+    /* Return the path, if a file exists. */
+    if (file && path) {
+      return path;
     }
 
-    return "";
+    /* Find the next available file. */
+    return getTabPath(navItems);
+  }
+
+  return "";
 }
 
 /**
@@ -728,8 +752,7 @@ function getTabPath(navigationItems) {
  * @returns {boolean}
  */
 function isEnvironmentLocal() {
-
-    return process.env.GATSBY_ENV === "LOCAL";
+  return process.env.GATSBY_ENV === "LOCAL";
 }
 
 module.exports.buildDocumentTitleBySlug = buildDocumentTitleBySlug;

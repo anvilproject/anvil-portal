@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
@@ -21,21 +21,28 @@ import compStyles from "./header.module.css";
 import globalStyles from "../../styles/global.module.css";
 
 function Header(props) {
+  const { ncpi } = props;
+  const { breakpoints, menuOpen } = useContext(ContextAnVILPortal);
+  const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch);
 
-    const {ncpi} = props;
-    const {breakpoints, menuOpen} = useContext(ContextAnVILPortal);
-    const {onSubmitSiteSearch, searchBarOpen} = useContext(ContextSiteSearch);
-
-    return (
-        <div className={compStyles.header}>
-            <div className={globalStyles.container}>
-                <HeaderLogo ncpi={ncpi} searchBarOpen={searchBarOpen}/>
-                <HeaderNavItems breakpoints={breakpoints} menuOpen={menuOpen} ncpi={ncpi} searchBarOpen={searchBarOpen}/>
-                <SiteSearchBar onSubmitSiteSearch={onSubmitSiteSearch} searchBarOpen={searchBarOpen}/>
-                <HeaderMenuButton/>
-            </div>
-        </div>
-    );
+  return (
+    <div className={compStyles.header}>
+      <div className={globalStyles.container}>
+        <HeaderLogo ncpi={ncpi} searchBarOpen={searchBarOpen} />
+        <HeaderNavItems
+          breakpoints={breakpoints}
+          menuOpen={menuOpen}
+          ncpi={ncpi}
+          searchBarOpen={searchBarOpen}
+        />
+        <SiteSearchBar
+          onSubmitSiteSearch={onSubmitSiteSearch}
+          searchBarOpen={searchBarOpen}
+        />
+        <HeaderMenuButton />
+      </div>
+    </div>
+  );
 }
 
 export default Header;

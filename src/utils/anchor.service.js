@@ -12,9 +12,11 @@
  * @returns {string}
  */
 export function buildAnchorIdentifier(title) {
+  let specialCharacters = /[:?.,()/]/g,
+    whiteSpace = /\s/g;
 
-    let specialCharacters = /[:?.,()/]/g,
-        whiteSpace = /\s/g;
-
-    return title.replace(whiteSpace, '-').replace(specialCharacters, '').toLowerCase();
+  return title
+    .replace(whiteSpace, "-")
+    .replace(specialCharacters, "")
+    .toLowerCase();
 }

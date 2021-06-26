@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Utility class for DOM-related functionality. 
+ * Utility class for DOM-related functionality.
  */
 
 /**
@@ -12,8 +12,7 @@
  * @returns {boolean}
  */
 export function isAnchor(element) {
-
-    return !!element && element.tagName === "A";
+  return !!element && element.tagName === "A";
 }
 
 /**
@@ -23,9 +22,8 @@ export function isAnchor(element) {
  * @returns {boolean}
  */
 export function isHrefExternal(url) {
-
-    const regex = /^https?:\/\/(?!anvilproject\.org)./i;
-    return regex.test(url);
+  const regex = /^https?:\/\/(?!anvilproject\.org)./i;
+  return regex.test(url);
 }
 
 /**
@@ -35,7 +33,6 @@ export function isHrefExternal(url) {
  * @returns {boolean}
  */
 export function isMailTo(url) {
-
-    const regex = /^mailto:/i;
-    return regex.test(url);
+  const regex = /^mailto:/i;
+  return regex.test(url);
 }

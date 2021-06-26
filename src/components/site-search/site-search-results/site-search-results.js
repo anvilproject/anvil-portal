@@ -3,7 +3,7 @@
  * https://www.anvilproject.org
  *
  * The AnVIL site search results component.
- * 
+ *
  * Props
  * *****
  * - results: the set of search results matching the entered search text
@@ -17,12 +17,11 @@ import React from "react";
 import SiteSearchResult from "../site-search-result/site-search-result";
 
 function SiteSearchResults(props) {
+  const { results, query } = props;
 
-    const {results, query} = props;
-
-    return (
-        results.map((result, r) => <SiteSearchResult key={r} result={result} query={query}/>)
-    )
+  return results.map((result, r) => (
+    <SiteSearchResult key={r} result={result} query={query} />
+  ));
 }
 
 export default React.memo(SiteSearchResults);
