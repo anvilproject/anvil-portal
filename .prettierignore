@@ -1,4 +1,5 @@
-# File types to ignore for Prettier
+# Stuff to ignore for Prettier
+db-gap-cache/
 *.md
 *.markdown
 
