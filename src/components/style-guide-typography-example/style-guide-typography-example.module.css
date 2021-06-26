@@ -8,13 +8,13 @@
 
 /* Example - paragraph only - last example */
 .example p:last-child {
-    margin-top: -16px;
-    padding-top: 16px;
+  margin-top: -16px;
+  padding-top: 16px;
 }
 
 /* Lorem ipsum... */
 .example .latin {
-    max-width: 75%;
+  max-width: 75%;
 }
 
 /**
@@ -22,9 +22,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 600px) {
-
-    /* Lorem ipsum... */
-    .example .latin {
-        max-width: 325px;
-    }
+  /* Lorem ipsum... */
+  .example .latin {
+    max-width: 325px;
+  }
 }

@@ -19,16 +19,15 @@ import globalStyles from "../../styles/global.module.css";
 const classNames = require("classnames");
 
 function Headline(props) {
+  const { navigations } = props,
+    { tabs, title } = navigations || {};
 
-    const {navigations} = props,
-        {tabs, title} = navigations || {};
-
-    return (
-        <div className={classNames(globalStyles.container, compStyles.headline)}>
-            <Title title={title}/>
-            <Tabs tabs={tabs}/>
-        </div>
-    );
+  return (
+    <div className={classNames(globalStyles.container, compStyles.headline)}>
+      <Title title={title} />
+      <Tabs tabs={tabs} />
+    </div>
+  );
 }
 
 export default Headline;

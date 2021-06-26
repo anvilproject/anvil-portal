@@ -8,193 +8,203 @@
 
 /* Outline container. */
 .outline {
-    bottom: 0;
-    display: none;
-    -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
-    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
-    padding-left: 2px; /* Required for indicator ball to be shown in overflow environment. */
-    position: fixed;
-    scrollbar-width: none; /* Hide scrollbar in Firefox. */
-    width: 200px;
+  bottom: 0;
+  display: none;
+  -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
+  overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+  padding-left: 2px; /* Required for indicator ball to be shown in overflow environment. */
+  position: fixed;
+  scrollbar-width: none; /* Hide scrollbar in Firefox. */
+  width: 200px;
 }
 
 /* Scrollbar hidden - Safari and Chrome. */
 .outline::-webkit-scrollbar {
-    display: none;
-    width: 0;
+  display: none;
+  width: 0;
 }
 
 .outline.empty {
-    pointer-events: none; /* Required for data search component. */
+  pointer-events: none; /* Required for data search component. */
 }
 
 /* Outline vertical line. */
 .outline:not(.empty)::before {
-    background-color: var(--accent-blue-light);
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 1px;
+  background-color: var(--accent-blue-light);
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 1px;
 }
 
 /* Outline ul and li. */
-.outline ul, .outline li {
-    list-style: none;
+.outline ul,
+.outline li {
+  list-style: none;
 }
 
 /* Outline - unordered list. */
 .outline ul {
-    border-left: 1px solid var(--accent-blue-light);
-    margin: 0;
-    padding: 0;
+  border-left: 1px solid var(--accent-blue-light);
+  margin: 0;
+  padding: 0;
 }
 
 /* Outline - list. */
 .outline li {
-    line-height: 18px;
-    padding-left: 24px;
+  line-height: 18px;
+  padding-left: 24px;
 }
 
 /* Outline - list - not last. */
 .outline li {
-    margin: 6px 0;
+  margin: 6px 0;
 }
 
 /* Outline - "On This Page". */
 .outline li:first-of-type {
-    position: relative; /* Positions first list "On This Page" line */
+  position: relative; /* Positions first list "On This Page" line */
 }
 
 /* Outline - "On This Page" line. */
 .outline li:first-of-type::after {
-    border-bottom: 1px solid var(--black12);
-    content: "";
-    display: block;
-    margin: 8px 0;
-    width: 50%;
+  border-bottom: 1px solid var(--black12);
+  content: "";
+  display: block;
+  margin: 8px 0;
+  width: 50%;
 }
 
 /* Link, "On This Page". */
-.outline li a, .outline li span {
-    display: inline-block;
-    font-size: 0.8125rem; /* 13px */
-    font-weight: 400;
-    padding: 4px 8px; /* For background color indicators */
-    position: relative; /* Positions indicators */
+.outline li a,
+.outline li span {
+  display: inline-block;
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 400;
+  padding: 4px 8px; /* For background color indicators */
+  position: relative; /* Positions indicators */
 }
 
 /* Link - background - active, hover. */
-.outline li a.active, .outline li:hover a {
-    border-radius: 4px;
+.outline li a.active,
+.outline li:hover a {
+  border-radius: 4px;
 }
 
 /* Link - background - active. */
 .outline li a.active {
-    background-color: rgba(174, 235, 242, 0.54);
-    color: var(--accent-blue-dark);
+  background-color: rgba(174, 235, 242, 0.54);
+  color: var(--accent-blue-dark);
 }
 
 /* Link - background - hover state only. */
 .outline li:hover a:not(.active) {
-    background-color: var(--black6);
+  background-color: var(--black6);
 }
 
 /* Link - indicators. */
-.outline li a::before, .outline li a::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.outline li a::before,
+.outline li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Link - hover and active line. */
-.outline li a.active::after, .outline li:hover a::after {
-    height: 1px;
+.outline li a.active::after,
+.outline li:hover a::after {
+  height: 1px;
 }
 
 /* Link - hover and active line - first level. */
-.outline li a.active:not(.indent)::after, .outline li:hover a:not(.indent)::after {
-    left: -22px;
-    width: 22px;
+.outline li a.active:not(.indent)::after,
+.outline li:hover a:not(.indent)::after {
+  left: -22px;
+  width: 22px;
 }
 
 /* Link - hover and active line indented - second level. */
-.outline li a.active.indent::after, .outline li:hover a.indent::after {
-    left: -34px;
-    width: 34px;
+.outline li a.active.indent::after,
+.outline li:hover a.indent::after {
+  left: -34px;
+  width: 34px;
 }
 
 /* Link - hover and active ball indicator. */
-.outline li a.active::before, .outline li:hover a::before {
-    border-radius: 50%;
-    bottom: -2px;
-    height: 5px;
-    width: 5px;
+.outline li a.active::before,
+.outline li:hover a::before {
+  border-radius: 50%;
+  bottom: -2px;
+  height: 5px;
+  width: 5px;
 }
 
 /* Link - hover and active ball indicator - first level. */
-.outline li a.active:not(.indent)::before, .outline li:hover a:not(.indent)::before {
-    left: -27px;
+.outline li a.active:not(.indent)::before,
+.outline li:hover a:not(.indent)::before {
+  left: -27px;
 }
 
 /* Link - hover and active ball indicator - second level. */
-.outline li a.active.indent::before, .outline li:hover a.indent::before {
-    left: -39px;
+.outline li a.active.indent::before,
+.outline li:hover a.indent::before {
+  left: -39px;
 }
 
 /* Link - indicator colors - active. */
-.outline li a.active::before, .outline li a.active::after {
-    background-color: var(--accent-blue-light);
+.outline li a.active::before,
+.outline li a.active::after {
+  background-color: var(--accent-blue-light);
 }
 
 /* Link - indicator colors - hover. */
-.outline li:hover a:not(.active)::before, .outline li:hover a:not(.active)::after {
-    background-color: var(--black12);
+.outline li:hover a:not(.active)::before,
+.outline li:hover a:not(.active)::after {
+  background-color: var(--black12);
 }
 
 /* Link - transitions - hover. */
-.outline li a, .outline li a::before, .outline li a::after {
-    transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+.outline li a,
+.outline li a::before,
+.outline li a::after {
+  transition: background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Link - indentation - second level. */
 .outline .indent {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 /**
  * Content and outline take up entire space, align outline with right-hand gutter.
  */
 @media screen and (min-width: 1024px) {
-
-    /* Outline container. */
-    .outline {
-        display: block;
-        right: 24px;
-    }
+  /* Outline container. */
+  .outline {
+    display: block;
+    right: 24px;
+  }
 }
 
 /**
  * Content has reached its max width (780px), align outline with content.
  */
 @media screen and (min-width: 1386px) {
-
-    /* Outline container. */
-    .outline {
-        left: 1168px;
-        right: unset;
-    }
+  /* Outline container. */
+  .outline {
+    left: 1168px;
+    right: unset;
+  }
 }
 
 /**
  * Content and outline are centered, rather than left-aligned.
  */
 @media screen and (min-width: 1545px) {
-
-    /* Outline container. */
-    .outline {
-        left: calc(50% + 395px);
-    }
+  /* Outline container. */
+  .outline {
+    left: calc(50% + 395px);
+  }
 }
-

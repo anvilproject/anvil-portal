@@ -27,17 +27,16 @@ import twitter from "../../../../images/logo-twitter.svg";
 import compStyles from "./social-twitter-handle.module.css";
 
 function SocialTwitterHandle(props) {
+  const { handle, showbird: showBird } = props;
+  const showLogo = showBird === "true";
+  const url = `https://twitter.com/${handle}`;
 
-    const {handle, showbird: showBird} = props;
-    const showLogo = showBird === "true";
-    const url = `https://twitter.com/${handle}`;
-
-    return (
-        <Social url={url}>
-            {showLogo ? <img alt={"Twitter"} src={twitter}/> : null}
-            <span className={compStyles.handle}>@{handle}</span>
-        </Social>
-    );
+  return (
+    <Social url={url}>
+      {showLogo ? <img alt={"Twitter"} src={twitter} /> : null}
+      <span className={compStyles.handle}>@{handle}</span>
+    </Social>
+  );
 }
 
 export default SocialTwitterHandle;

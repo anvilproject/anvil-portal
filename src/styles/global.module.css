@@ -22,46 +22,47 @@
 
 /* Grid */
 .grid {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* Container, grid */
-.container, .grid {
-    padding: 0 16px;
+.container,
+.grid {
+  padding: 0 16px;
 }
 
 /* Grid - 750px */
 .grid.g750 {
-    max-width: 750px;
+  max-width: 750px;
 }
 
 /* Grid - centered */
 .grid.centered {
-    text-align: center;
+  text-align: center;
 }
 
 /* Flex */
 .flex {
-    display: flex;
+  display: flex;
 }
 
 /* Dashed underline link style */
 .asLink {
-    color: var(--primary);
-    border-bottom: 1px dashed #aaaaaa;
+  color: var(--primary);
+  border-bottom: 1px dashed #aaaaaa;
 }
 
 .asLink:hover {
-    border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 }
 
 /**
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
-
-    /* Container, grid - update containers from 16px margin to 24px */
-    .container, .grid {
-        padding: 0 24px;
-    }
+  /* Container, grid - update containers from 16px margin to 24px */
+  .container,
+  .grid {
+    padding: 0 24px;
+  }
 }

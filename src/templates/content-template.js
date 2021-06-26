@@ -7,7 +7,7 @@
  */
 
 // Core dependencies
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -19,39 +19,41 @@ import Layout from "../components/layout";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import * as TemplateService from "../utils/template.service";
 
-export default ({data}) => {
-    const post = data.markdownRemark,
-        {fields, frontmatter, htmlAst} = post,
-        {slug, styles} = fields,
-        {description, showOutline, title} = frontmatter;
-    const {context} = data.sitePage;
-    const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
-    const ncpi = slug.startsWith("/ncpi");
-    const h1 = TemplateService.getPageTitle(htmlAst);
-    const pageTitle = h1 ? faq ? `FAQ - ${h1}` : h1 : title;
+export default ({ data }) => {
+  const post = data.markdownRemark,
+    { fields, frontmatter, htmlAst } = post,
+    { slug, styles } = fields,
+    { description, showOutline, title } = frontmatter;
+  const { context } = data.sitePage;
+  const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
+  const ncpi = slug.startsWith("/ncpi");
+  const h1 = TemplateService.getPageTitle(htmlAst);
+  const pageTitle = h1 ? (faq ? `FAQ - ${h1}` : h1) : title;
 
-    return (
-        <ProviderFrontmatter frontmatter={frontmatter}>
-            <Layout navigations={context}
-                    description={description}
-                    docPath={slug}
-                    ncpi={ncpi}
-                    showOutline={showOutline}
-                    styles={styles}
-                    title={pageTitle}>
-                    <ArticleBody htmlAst={htmlAst}>
-                        <ArticleSocials/>
-                        <ArticleNavigation navigations={context}/>
-                        <ArticleEnd docPath={slug}/>
-                    </ArticleBody>
-            </Layout>
-        </ProviderFrontmatter>
-    )
-}
+  return (
+    <ProviderFrontmatter frontmatter={frontmatter}>
+      <Layout
+        navigations={context}
+        description={description}
+        docPath={slug}
+        ncpi={ncpi}
+        showOutline={showOutline}
+        styles={styles}
+        title={pageTitle}
+      >
+        <ArticleBody htmlAst={htmlAst}>
+          <ArticleSocials />
+          <ArticleNavigation navigations={context} />
+          <ArticleEnd docPath={slug} />
+        </ArticleBody>
+      </Layout>
+    </ProviderFrontmatter>
+  );
+};
 
 export const query = graphql`
-query($slug: String!) {
-    markdownRemark(fields: {slug: {eq: $slug}}) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         styles {
           alignment
@@ -79,7 +81,7 @@ query($slug: String!) {
       html
       htmlAst
     }
-    sitePage(context: {slug: {eq: $slug }}) {
+    sitePage(context: { slug: { eq: $slug } }) {
       context {
         navItemNext {
           name

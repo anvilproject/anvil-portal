@@ -20,22 +20,21 @@ import compStyles from "./style-guide-typography-example.module.css";
 const examples = ["h1", "h2", "h3", "h4", "h5", "p"];
 
 function StyleGuideTypographyExample() {
-
-    const Example = (props) => {
-
-        const {example} = props;
-
-        return (
-            <div className={compStyles.example}>
-                <StyleGuideTypographyExampleHeading example={example}/>
-                <p className={compStyles.latin}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore et dolore magna aliqua.</p>
-            </div>
-        )
-    };
+  const Example = props => {
+    const { example } = props;
 
     return (
-        examples.map((example, e) => <Example key={e} example={example}/>)
+      <div className={compStyles.example}>
+        <StyleGuideTypographyExampleHeading example={example} />
+        <p className={compStyles.latin}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt utlabore et dolore magna aliqua.
+        </p>
+      </div>
     );
+  };
+
+  return examples.map((example, e) => <Example key={e} example={example} />);
 }
 
 export default StyleGuideTypographyExample;

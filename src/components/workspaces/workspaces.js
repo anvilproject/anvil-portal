@@ -13,7 +13,7 @@
 import React from "react";
 
 // App dependencies
-import {WorkspacesStaticQuery} from "../../hooks/workspaces-query";
+import { WorkspacesStaticQuery } from "../../hooks/workspaces-query";
 import * as FeaturedService from "../../utils/featured.service";
 import Workspace from "../workspace/workspace";
 
@@ -21,23 +21,24 @@ import Workspace from "../workspace/workspace";
 import compStyles from "./workspaces.module.css";
 
 class Workspaces extends React.Component {
-
-    render() {
-        const {workspaces} = this.props;
-        return (
-            <div className={compStyles.workspaces}>
-                {workspaces.map((workspace, w) => <Workspace key={w} workspace={workspace}/>)}
-            </div>
-        );
-    }
-}
-
-export default (props) => {
-
-    const {featured} = props;
-    const workspaces = FeaturedService.filterFeaturedPosts(featured, WorkspacesStaticQuery());
-
+  render() {
+    const { workspaces } = this.props;
     return (
-        workspaces ? <Workspaces workspaces={workspaces}/> : null
+      <div className={compStyles.workspaces}>
+        {workspaces.map((workspace, w) => (
+          <Workspace key={w} workspace={workspace} />
+        ))}
+      </div>
     );
+  }
 }
+
+export default props => {
+  const { featured } = props;
+  const workspaces = FeaturedService.filterFeaturedPosts(
+    featured,
+    WorkspacesStaticQuery()
+  );
+
+  return workspaces ? <Workspaces workspaces={workspaces} /> : null;
+};

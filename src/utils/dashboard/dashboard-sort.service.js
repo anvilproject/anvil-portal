@@ -12,11 +12,11 @@
  * @returns {Map}
  */
 export function sortMap(mapObj) {
-
-    return new Map([...mapObj].sort(function ([data0], [data1]) {
-
-        return compareDataValues(data0, data1);
-    }));
+  return new Map(
+    [...mapObj].sort(function([data0], [data1]) {
+      return compareDataValues(data0, data1);
+    })
+  );
 }
 
 /**
@@ -28,19 +28,16 @@ export function sortMap(mapObj) {
  * @returns {number}
  */
 function compareDataValues(value0, value1) {
+  const v0 = value0.toLowerCase();
+  const v1 = value1.toLowerCase();
 
-    const v0 = value0.toLowerCase();
-    const v1 = value1.toLowerCase();
+  if (v0 < v1) {
+    return -1;
+  }
 
-    if ( v0 < v1 ) {
+  if (v0 > v1) {
+    return 1;
+  }
 
-        return -1;
-    }
-
-    if ( v0 > v1) {
-
-        return 1;
-    }
-
-    return 0;
+  return 0;
 }

@@ -15,15 +15,14 @@ import Breadcrumb from "../breadcrumb/breadcrumb";
 import compStyles from "./hero-tutorial.module.css";
 
 function HeroTutorial(props) {
+  const { children } = props;
 
-    const {children} = props;
-
-    return (
-        <div className={compStyles.hero}>
-            <Breadcrumb/>
-            {children}
-        </div>
-    );
+  return (
+    <div className={compStyles.hero}>
+      <Breadcrumb />
+      {children}
+    </div>
+  );
 }
 
 export default HeroTutorial;

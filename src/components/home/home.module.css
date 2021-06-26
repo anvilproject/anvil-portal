@@ -8,92 +8,99 @@
 
 /* Section - padding */
 /* Hero */
-.hero, .hero.handheld {
-    padding: 1.25rem 0 3.75rem; /* 20px 0 60px */
+.hero,
+.hero.handheld {
+  padding: 1.25rem 0 3.75rem; /* 20px 0 60px */
 }
 
 /* Accessing, events, featured, news, onboarding, submitting, twitter */
-.accessing, .events, .featured, .news, .onboarding, .submitting, .twitter {
-    padding-top: 3.75rem; /* 60px */
+.accessing,
+.events,
+.featured,
+.news,
+.onboarding,
+.submitting,
+.twitter {
+  padding-top: 3.75rem; /* 60px */
 }
 
 /* Last section */
 section:last-child {
-    padding-bottom: 3.75rem; /* 60px */
+  padding-bottom: 3.75rem; /* 60px */
 }
 
 /* Section - styles */
 
 /* Hero - headline */
 .hero .headline {
-    color: var(--accent-blue-dark);
-    font-family: "Open Sans", sans-serif;
-    font-size: 3.75rem; /* 60px */
-    font-weight: 600;
-    line-height: 5.125rem; /* 82px */
-    margin: 0 0 2rem; /* 32px */
+  color: var(--accent-blue-dark);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.75rem; /* 60px */
+  font-weight: 600;
+  line-height: 5.125rem; /* 82px */
+  margin: 0 0 2rem; /* 32px */
 }
 
 /* Hero - subhead text */
 .hero .subhead {
-    color: var(--accent-blue-dark);
-    font-size: 1.5rem; /* 24px */
-    font-weight: 300;
-    line-height: 2rem; /* 32px */
-    margin: 0 0 2.5rem; /* 40px */
+  color: var(--accent-blue-dark);
+  font-size: 1.5rem; /* 24px */
+  font-weight: 300;
+  line-height: 2rem; /* 32px */
+  margin: 0 0 2.5rem; /* 40px */
 }
 
 /* Tiles - Terra, Gen3, Dockstore, NCPI */
 .tiles {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .tiles .tile {
-    cursor: pointer;
-    text-align: left;
-    margin-bottom: 3rem; /* 48px */
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 3rem; /* 48px */
 }
 
 .tiles .tile:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .tiles .tile a {
-    align-items: flex-start; /* Align text and logos to top, to allow for extra height in NCPI text */
-    display: flex;
+  align-items: flex-start; /* Align text and logos to top, to allow for extra height in NCPI text */
+  display: flex;
 }
 
 .tiles .tileLogo {
-    flex: none;
-    margin: 0 1.5rem 0 0; /* 24px */
-    vertical-align: middle;
-    width: 3rem; /* 48px */
+  flex: none;
+  margin: 0 1.5rem 0 0; /* 24px */
+  vertical-align: middle;
+  width: 3rem; /* 48px */
 }
 
 .tiles .tile span {
-    pointer-events: none; /* Allow parent anchor tag to capture clicks, which bubble to layout to trigger tracking */
-    cursor: pointer; /* Override global tooltip style */
+  pointer-events: none; /* Allow parent anchor tag to capture clicks, which bubble to layout to trigger tracking */
+  cursor: pointer; /* Override global tooltip style */
 }
 
 /* Stats caption, links to data dash */
 .statsCaption {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0 0; /* 24px */
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0; /* 24px */
 }
 
 /**
  * Up to large handset portrait OR update to small handset landscape
 */
-@media (max-width: 479px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape) {
-
-    .hero .headline {
-        font-size: 4.5vmax;
-        line-height: 7vmax;
-    }
+@media (max-width: 479px) and (orientation: portrait),
+  (max-width: 839px) and (orientation: landscape) {
+  .hero .headline {
+    font-size: 4.5vmax;
+    line-height: 7vmax;
+  }
 }
 
 /**
@@ -101,56 +108,53 @@ section:last-child {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
 */
 @media (max-width: 720px) and (max-height: 840px) {
+  /* Section - styles */
+  /* Hero - headline */
+  .hero.handheld .headline {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 400;
+    line-height: 2.75rem; /* 44px */
+    margin: 0 0 1rem; /* 16px */
+  }
 
-    /* Section - styles */
-    /* Hero - headline */
-    .hero.handheld .headline {
-        font-size: 2.5rem; /* 40px */
-        font-weight: 400;
-        line-height: 2.75rem; /* 44px */
-        margin: 0 0 1rem; /* 16px */
-    }
-
-    /* Hero - subhead text */
-    .hero.handheld .subhead {
-        font-size: 1.125rem; /* 18px */
-        line-height: 1.5rem; /* 24px */
-        margin: 0 0 0.5rem; /* 8px */
-    }
+  /* Hero - subhead text */
+  .hero.handheld .subhead {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5rem; /* 24px */
+    margin: 0 0 0.5rem; /* 8px */
+  }
 }
 
 /**
  * Large handset portrait, extra small window
  */
 @media (min-width: 480px) {
+  /* Tiles - Terra, Gen3, Dockstore, NCPI */
+  .tiles {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-    /* Tiles - Terra, Gen3, Dockstore, NCPI */
-    .tiles {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+  .tiles .tile {
+    width: calc(50% - 24px);
+  }
 
-    .tiles .tile {
-        width: calc(50% - 24px);
-    }
-    
-    .tiles .tile:nth-child(odd) {
-        margin-right: 24px;
-    }
+  .tiles .tile:nth-child(odd) {
+    margin-right: 24px;
+  }
 
-    .tiles .tile:first-child {
-        margin-bottom: 48px;
-    }
+  .tiles .tile:first-child {
+    margin-bottom: 48px;
+  }
 }
 
 /**
  * iPad portrait ~
  */
 @media (min-width: 1024px) and (max-height: 840px) {
-
-    /* Section - padding */
-    /* Hero */
-    .hero.handheld {
-        padding: 60px 0 40px;
-    }
+  /* Section - padding */
+  /* Hero */
+  .hero.handheld {
+    padding: 60px 0 40px;
+  }
 }

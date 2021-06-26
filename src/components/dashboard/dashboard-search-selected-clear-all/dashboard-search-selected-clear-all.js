@@ -12,12 +12,13 @@ import React from "react";
 import compStyles from "./dashboard-search-selected-clear-all.module.css";
 
 function DashboardSearchSelectedClearAll(props) {
+  const { onHandleClearSearch } = props;
 
-    const {onHandleClearSearch} = props;
-
-    return (
-        <button className={compStyles.clear} onClick={() => onHandleClearSearch()}>Clear All</button>
-    )
+  return (
+    <button className={compStyles.clear} onClick={() => onHandleClearSearch()}>
+      Clear All
+    </button>
+  );
 }
 
 export default DashboardSearchSelectedClearAll;

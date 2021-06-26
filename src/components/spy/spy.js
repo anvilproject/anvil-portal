@@ -13,78 +13,75 @@ import React from "react";
 import * as ScrollingService from "../../utils/scrolling.service";
 
 class Spy extends React.Component {
+  elementIdsByAnchorFromTop = new Map();
+  contentAnchors = [];
 
-    elementIdsByAnchorFromTop = new Map();
-    contentAnchors = [];
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-        super(props);
+    this.state = { activeOutline: "" };
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handleHashChange = this.handleHashChange.bind(this);
+  }
 
-        this.state = ({activeOutline: ""});
-        this.handleScroll = this.handleScroll.bind(this);
-        this.handleHashChange = this.handleHashChange.bind(this);
+  componentDidMount() {
+    this.contentAnchors = ScrollingService.getContentAnchors();
+    this.getPageAnchors();
+    this.setFirstActiveOutline();
+
+    window.addEventListener("resize", this.getPageAnchors);
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("hashchange", this.handleHashChange, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.getPageAnchors);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("hashchange", this.handleHashChange, false);
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.activeOutline !== this.state.activeOutline) {
+      const { setActiveOutline } = this.props;
+
+      setActiveOutline(this.state.activeOutline);
     }
+  }
 
-    componentDidMount() {
+  getPageAnchors = () => {
+    this.elementIdsByAnchorFromTop = ScrollingService.calculateElementIdsByAnchorFromTop(
+      this.contentAnchors,
+      this.elementIdsByAnchorFromTop
+    );
+  };
 
-        this.contentAnchors = ScrollingService.getContentAnchors();
-        this.getPageAnchors();
-        this.setFirstActiveOutline();
+  handleHashChange = () => {
+    this.setState({ activeOutline: window.location.hash });
+  };
 
-        window.addEventListener("resize", this.getPageAnchors);
-        window.addEventListener("scroll", this.handleScroll);
-        window.addEventListener("hashchange", this.handleHashChange, false);
-    };
+  handleScroll = () => {
+    const { articleOffsetTop } = this.props;
 
-    componentWillUnmount() {
+    let currentAction = ScrollingService.manageSpyScrollAction(
+      this.elementIdsByAnchorFromTop,
+      this.state.activeOutline,
+      articleOffsetTop
+    );
 
-        window.removeEventListener("resize", this.getPageAnchors);
-        window.removeEventListener("scroll", this.handleScroll);
-        window.removeEventListener("hashchange", this.handleHashChange, false);
-    };
-
-    componentDidUpdate(_, prevState) {
-
-        if ( prevState.activeOutline !== this.state.activeOutline ) {
-
-            const {setActiveOutline} = this.props;
-
-            setActiveOutline(this.state.activeOutline);
-        }
+    // Update state if required
+    if (currentAction !== this.state.activeOutline) {
+      this.setState({ activeOutline: currentAction });
     }
+  };
 
-    getPageAnchors = () => {
+  setFirstActiveOutline = () => {
+    const h1Anchor = [...this.elementIdsByAnchorFromTop][0][1];
+    this.setState({ activeOutline: `#${h1Anchor}` });
+  };
 
-        this.elementIdsByAnchorFromTop = ScrollingService.calculateElementIdsByAnchorFromTop(this.contentAnchors, this.elementIdsByAnchorFromTop);
-    };
-
-    handleHashChange = () => {
-
-        this.setState({activeOutline: window.location.hash});
-    };
-
-    handleScroll = () => {
-
-        const {articleOffsetTop} = this.props;
-
-        let currentAction = ScrollingService.manageSpyScrollAction(this.elementIdsByAnchorFromTop, this.state.activeOutline, articleOffsetTop);
-
-        // Update state if required
-        if ( currentAction !== this.state.activeOutline ) {
-
-            this.setState({activeOutline: currentAction});
-        }
-    };
-
-    setFirstActiveOutline = () => {
-
-        const h1Anchor = [...this.elementIdsByAnchorFromTop][0][1];
-        this.setState({activeOutline: `#${h1Anchor}`});
-    };
-
-    render() {
-        return this.props.children
-    }
+  render() {
+    return this.props.children;
+  }
 }
 
 export default Spy;

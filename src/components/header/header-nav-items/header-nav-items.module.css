@@ -7,61 +7,61 @@
 
 /* Navigation items. */
 .headerNavItems {
-    align-items: flex-start;
-    background-color: var(--white);
-    flex-direction: column;
-    display: none;
-    height: calc(100% - 60px);
-    left: 0;
-    list-style: none;
-    margin: 0;
-    overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
-    -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
-    padding: 16px 0;
-    position: fixed;
-    scrollbar-width: none; /* Hide scrollbar in Firefox. */
-    top: 60px;
-    width: 100%;
-    z-index: 10;
+  align-items: flex-start;
+  background-color: var(--white);
+  flex-direction: column;
+  display: none;
+  height: calc(100% - 60px);
+  left: 0;
+  list-style: none;
+  margin: 0;
+  overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+  -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
+  padding: 16px 0;
+  position: fixed;
+  scrollbar-width: none; /* Hide scrollbar in Firefox. */
+  top: 60px;
+  width: 100%;
+  z-index: 10;
 }
 
 /* Scrollbar hidden - Safari and Chrome */
 .headerNavItems::-webkit-scrollbar {
-    display: none;
-    width: 0;
+  display: none;
+  width: 0;
 }
 
 /* Menu open. */
 .headerNavItems.menuOpen {
-    display: flex;
+  display: flex;
 }
 
 /* CSSTransition. */
 /* Search bar opening. */
 .searchBarOpen {
-    opacity: 1;
-    transition: visibility 300ms ease, opacity 300ms ease;
-    visibility: visible;
+  opacity: 1;
+  transition: visibility 300ms ease, opacity 300ms ease;
+  visibility: visible;
 }
 
 /* Search bar open. */
 .searchBarOpenActive {
-    opacity: 0;
-    transition: opacity 300ms ease, visibility 300ms ease;
-    visibility: collapse;
+  opacity: 0;
+  transition: opacity 300ms ease, visibility 300ms ease;
+  visibility: collapse;
 }
 
 /* Search bar closing. */
 .searchBarClosed {
-    opacity: 0;
-    visibility: collapse;
+  opacity: 0;
+  visibility: collapse;
 }
 
 /* Search bar closed. */
 .searchBarClosedActive {
-    opacity: 1;
-    transition: opacity 300ms ease 300ms, visibility 300ms;
-    visibility: visible;
+  opacity: 1;
+  transition: opacity 300ms ease 300ms, visibility 300ms;
+  visibility: visible;
 }
 
 /**
@@ -69,24 +69,24 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
+  /* Navigation items. */
+  .headerNavItems {
+    align-items: center;
+    background-color: unset;
+    flex: 1;
+    flex-direction: row;
+    height: inherit;
+    justify-content: flex-end;
+    overflow: hidden; /* Required, for smooth expand/collapse animation of search. */
+    padding: 0;
+    position: unset;
+    width: unset;
+    z-index: unset;
+  }
 
-    /* Navigation items. */
-    .headerNavItems {
-        align-items: center;
-        background-color: unset;
-        flex: 1;
-        flex-direction: row;
-        height: inherit;
-        justify-content: flex-end;
-        overflow: hidden; /* Required, for smooth expand/collapse animation of search. */
-        padding: 0;
-        position: unset;
-        width: unset;
-        z-index: unset;
-    }
-
-    /* Navigation items - open. */
-    .headerNavItems, .menuOpen {
-        display: flex;
-    }
+  /* Navigation items - open. */
+  .headerNavItems,
+  .menuOpen {
+    display: flex;
+  }
 }

@@ -7,7 +7,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
@@ -18,15 +18,19 @@ import compStyles from "./site-wrapper.module.css";
 const classNames = require("classnames");
 
 const SiteWrapper = React.forwardRef((props, ref) => {
+  const { children } = props;
+  const { siteScrollable } = useContext(ContextAnVILPortal);
 
-    const {children} = props;
-    const {siteScrollable} = useContext(ContextAnVILPortal);
-
-    return (
-        <div className={classNames(compStyles.site, {[compStyles.noScroll]: !siteScrollable})} ref={ref}>
-            {children}
-        </div>
-    )
+  return (
+    <div
+      className={classNames(compStyles.site, {
+        [compStyles.noScroll]: !siteScrollable
+      })}
+      ref={ref}
+    >
+      {children}
+    </div>
+  );
 });
 
 export default SiteWrapper;

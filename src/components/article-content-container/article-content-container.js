@@ -15,15 +15,12 @@ import compStyles from "../article-content-container/article-content-container.m
 const classNames = require("classnames");
 
 function ArticleContentContainer(props) {
+  const { children, left } = props;
+  const classNamesContentContainer = classNames(compStyles.contentContainer, {
+    [compStyles.left]: left
+  });
 
-    const {children, left} = props;
-    const classNamesContentContainer = classNames(compStyles.contentContainer, {[compStyles.left]: left});
-
-    return (
-        <div className={classNamesContentContainer}>
-            {children}
-        </div>
-    );
+  return <div className={classNamesContentContainer}>{children}</div>;
 }
 
 export default ArticleContentContainer;

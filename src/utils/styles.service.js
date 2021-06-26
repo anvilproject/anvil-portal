@@ -7,7 +7,7 @@
 
 // Template variables
 const ALIGNMENT = {
-    "LEFT": "left"
+  LEFT: "left"
 };
 
 /**
@@ -17,6 +17,5 @@ const ALIGNMENT = {
  * @returns {boolean}
  */
 export function isPageAlignmentLeft(alignment) {
-
-    return alignment === ALIGNMENT.LEFT;
+  return alignment === ALIGNMENT.LEFT;
 }

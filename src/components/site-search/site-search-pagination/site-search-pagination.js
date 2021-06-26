@@ -15,21 +15,24 @@ import SiteSearchPaginationButton from "../site-search-pagination-button/site-se
 import compStyles from "./site-search-pagination.module.css";
 
 function SiteSearchPagination(props) {
+  const { onSiteSearchPageRequest, nextPage, previousPage } = props;
 
-    const {onSiteSearchPageRequest, nextPage, previousPage} = props;
-
-    return (
-        <div className={compStyles.pagination}>
-            <SiteSearchPaginationButton icon={"arrow_back_ios"}
-                                        onSiteSearchPageRequest={onSiteSearchPageRequest}
-                                        showMore={previousPage}
-                                        sign={-1}/>
-            <SiteSearchPaginationButton icon={"arrow_forward_ios"}
-                                        onSiteSearchPageRequest={onSiteSearchPageRequest}
-                                        showMore={nextPage}
-                                        sign={1}/>
-        </div>
-    )
+  return (
+    <div className={compStyles.pagination}>
+      <SiteSearchPaginationButton
+        icon={"arrow_back_ios"}
+        onSiteSearchPageRequest={onSiteSearchPageRequest}
+        showMore={previousPage}
+        sign={-1}
+      />
+      <SiteSearchPaginationButton
+        icon={"arrow_forward_ios"}
+        onSiteSearchPageRequest={onSiteSearchPageRequest}
+        showMore={nextPage}
+        sign={1}
+      />
+    </div>
+  );
 }
 
 export default React.memo(SiteSearchPagination);

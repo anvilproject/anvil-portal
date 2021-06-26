@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
@@ -16,24 +16,20 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 import compStyles from "./dashboard-search-empty-results.module.css";
 
 class DashboardSearchEmptyResults extends React.Component {
-
-    render() {
-        return (
-            <DashboardSearchPanel stretch>
-                <div className={compStyles.error}>No results</div>
-            </DashboardSearchPanel>
-        )
-    }
+  render() {
+    return (
+      <DashboardSearchPanel stretch>
+        <div className={compStyles.error}>No results</div>
+      </DashboardSearchPanel>
+    );
+  }
 }
 
 export default () => {
+  /* Dataset filtering props. */
+  const { setOfResults } = useContext(ContextDashboard);
 
-    /* Dataset filtering props. */
-    const {setOfResults} = useContext(ContextDashboard);
+  const showEmptyResults = setOfResults.size === 0;
 
-    const showEmptyResults = setOfResults.size === 0;
-
-    return (
-        showEmptyResults ? <DashboardSearchEmptyResults/> : null
-    )
-}
+  return showEmptyResults ? <DashboardSearchEmptyResults /> : null;
+};

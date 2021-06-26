@@ -32,84 +32,79 @@
  */
 
 // Core dependencies
-import React, {useCallback, useEffect, useRef} from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 function FigureStyles(props) {
+  const { children, shadowless, width } = props;
+  const refFigure = useRef(null);
+  const figureEl = children?.filter(child => child?.type); // Filter for React Elements.
+  const figureExists = figureEl && figureEl.length > 0;
 
-    const {children, shadowless, width} = props;
-    const refFigure = useRef(null);
-    const figureEl = children?.filter(child => child?.type); // Filter for React Elements.
-    const figureExists = figureEl && figureEl.length > 0;
+  const getComponentStyles = useCallback(() => {
+    /* Handles rehype shadowless prop boolean value. */
+    const removeBoxShadow = shadowless ? JSON.parse(shadowless) : false;
 
-    const getComponentStyles = useCallback(() => {
+    /* Build the new component styles. */
+    const styleBoxShadow = removeBoxShadow ? "box-shadow: none;" : null;
+    const styleMaxWidth = width ? `max-width: ${width}px;` : null;
+    const styles = Array.from([]);
 
-        /* Handles rehype shadowless prop boolean value. */
-        const removeBoxShadow = shadowless ? JSON.parse(shadowless) : false;
-
-        /* Build the new component styles. */
-        const styleBoxShadow = removeBoxShadow ? "box-shadow: none;" : null;
-        const styleMaxWidth = width ? `max-width: ${width}px;` : null;
-        const styles = Array.from([]);
-
-        /* Add new box shadow style. */
-        if ( styleBoxShadow ) {
-
-            styles.push(styleBoxShadow);
-        }
-
-        /* Add new max width style. */
-        if ( styleMaxWidth ) {
-
-            styles.push(styleMaxWidth);
-        }
-
-        return styles.join(" ");
-    }, [shadowless, width])
-
-    const getGatsbyRespImageWrapperEl = () => {
-
-        const el = refFigure.current;
-
-        if ( el?.classList.contains("gatsby-resp-image-wrapper") ) {
-
-            return el;
-        }
-
-        return el?.querySelector(".gatsby-resp-image-wrapper");
+    /* Add new box shadow style. */
+    if (styleBoxShadow) {
+      styles.push(styleBoxShadow);
     }
 
-    const getGatsbyRespImageWrapperStyles = useCallback((el) => {
+    /* Add new max width style. */
+    if (styleMaxWidth) {
+      styles.push(styleMaxWidth);
+    }
 
-        const wrapperStyles = el.getAttribute("style");
-        const componentStyles = getComponentStyles();
+    return styles.join(" ");
+  }, [shadowless, width]);
 
-        return wrapperStyles.concat(componentStyles);
-    }, [getComponentStyles])
+  const getGatsbyRespImageWrapperEl = () => {
+    const el = refFigure.current;
 
-    const mergeStyles = useCallback(() => {
+    if (el?.classList.contains("gatsby-resp-image-wrapper")) {
+      return el;
+    }
 
-        /* Grab the <span> element with classname gatsby-resp-image-wrapper. */
-        const el = getGatsbyRespImageWrapperEl();
+    return el?.querySelector(".gatsby-resp-image-wrapper");
+  };
 
-        if ( el ) {
+  const getGatsbyRespImageWrapperStyles = useCallback(
+    el => {
+      const wrapperStyles = el.getAttribute("style");
+      const componentStyles = getComponentStyles();
 
-            const styles = getGatsbyRespImageWrapperStyles(el);
-            el.setAttribute("style", styles);
-        }
-    }, [getGatsbyRespImageWrapperStyles])
+      return wrapperStyles.concat(componentStyles);
+    },
+    [getComponentStyles]
+  );
 
-    /* useEffect - componentDidMount/componentWillUnmount. */
-    useEffect(() => {
+  const mergeStyles = useCallback(() => {
+    /* Grab the <span> element with classname gatsby-resp-image-wrapper. */
+    const el = getGatsbyRespImageWrapperEl();
 
-        /* Merge styles. */
-        mergeStyles();
-    }, [mergeStyles]);
+    if (el) {
+      const styles = getGatsbyRespImageWrapperStyles(el);
+      el.setAttribute("style", styles);
+    }
+  }, [getGatsbyRespImageWrapperStyles]);
 
-    return (
-        figureExists ?
-            React.Children.map(figureEl, figEl => React.cloneElement(figEl, {ref: refFigure})) :
-            <p>** Image Render Error **</p>
+  /* useEffect - componentDidMount/componentWillUnmount. */
+  useEffect(() => {
+    /* Merge styles. */
+    mergeStyles();
+  }, [mergeStyles]);
+
+  return figureExists ? (
+    React.Children.map(figureEl, figEl =>
+      React.cloneElement(figEl, { ref: refFigure })
     )
+  ) : (
+    <p>** Image Render Error **</p>
+  );
 }
 
 export default FigureStyles;

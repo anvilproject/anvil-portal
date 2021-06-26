@@ -12,21 +12,32 @@ import React from "react";
 import DashboardTableRow from "../dashboard-table-row/dashboard-table-row";
 
 class DashboardTableBody extends React.Component {
+  render() {
+    const {
+      dataset,
+      singleRow,
+      tableHeaders,
+      tableRow,
+      tableRows
+    } = this.props;
 
-    render() {
-        const {dataset, singleRow, tableHeaders, tableRow, tableRows} = this.props;
-
-        return (
-            <tbody>
-                {singleRow ? <DashboardTableRow order={tableHeaders} row={tableRow}/> :
-                tableRows.map((tableRow, r) =>
-                    <DashboardTableRow key={r}
-                                       dataset={dataset}
-                                       order={tableHeaders}
-                                       row={tableRow}/>)}
-            </tbody>
-        );
-    }
+    return (
+      <tbody>
+        {singleRow ? (
+          <DashboardTableRow order={tableHeaders} row={tableRow} />
+        ) : (
+          tableRows.map((tableRow, r) => (
+            <DashboardTableRow
+              key={r}
+              dataset={dataset}
+              order={tableHeaders}
+              row={tableRow}
+            />
+          ))
+        )}
+      </tbody>
+    );
+  }
 }
 
 export default DashboardTableBody;

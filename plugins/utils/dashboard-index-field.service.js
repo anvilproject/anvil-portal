@@ -17,14 +17,12 @@ const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
  * @returns {*}
  */
 const getIndexFieldGapNumber = function getIndexFieldGapNumber(gapId) {
+  if (gapId) {
+    const gapNumber = gapId.replace(/(^phs0*|\..*$)/g, "");
+    return [gapId, gapNumber];
+  }
 
-    if ( gapId ) {
-
-        const gapNumber = gapId.replace(/(^phs0*|\..*$)/g, "");
-        return [gapId, gapNumber];
-    }
-
-    return [];
+  return [];
 };
 
 /**
@@ -36,8 +34,7 @@ const getIndexFieldGapNumber = function getIndexFieldGapNumber(gapId) {
  * @param array
  */
 const getIndexFieldTypeOfArray = function getIndexFieldTypeOfArray(array) {
-
-    return getSearchableTextOrCheckboxValues(array);
+  return getSearchableTextOrCheckboxValues(array);
 };
 
 /**
@@ -54,14 +51,15 @@ const getIndexFieldTypeOfArray = function getIndexFieldTypeOfArray(array) {
  * @param subStr
  * @param newSubStr
  */
-const getIndexFieldTypeOfString = function getIndexFieldTypeOfString(subStr, newSubStr) {
+const getIndexFieldTypeOfString = function getIndexFieldTypeOfString(
+  subStr,
+  newSubStr
+) {
+  if (subStr) {
+    return replaceStringWithSearchableTerm(subStr, newSubStr);
+  }
 
-    if ( subStr ) {
-
-        return replaceStringWithSearchableTerm(subStr, newSubStr);
-    }
-
-    return "";
+  return "";
 };
 
 /**
@@ -74,33 +72,28 @@ const getIndexFieldTypeOfString = function getIndexFieldTypeOfString(subStr, new
  * @returns {*}
  */
 function getSearchableTextOrCheckboxValues(array) {
+  if (array && array.length) {
+    /* Clone the array. */
+    const cloneArray = Array.from(array);
 
-    if ( array && array.length ) {
+    /* Return the new array. */
+    /* The new array will comprise of original values (for searchable text) and values with any special characters removed (for checkbox selection). */
+    return cloneArray.reduce((acc, value) => {
+      if (value) {
+        /* Replace any special characters with an underscore "_" for checkbox selection. */
+        const valueStr = replaceStringWithSearchableTerm(value, "_");
 
-        /* Clone the array. */
-        const cloneArray = Array.from(array);
+        /* Accumulate any new values. */
+        if (!acc.includes(valueStr)) {
+          acc.push(valueStr);
+        }
+      }
 
-        /* Return the new array. */
-        /* The new array will comprise of original values (for searchable text) and values with any special characters removed (for checkbox selection). */
-        return cloneArray.reduce((acc, value) => {
+      return acc;
+    }, cloneArray);
+  }
 
-            if ( value ) {
-
-                /* Replace any special characters with an underscore "_" for checkbox selection. */
-                const valueStr = replaceStringWithSearchableTerm(value, "_");
-
-                /* Accumulate any new values. */
-                if ( !acc.includes(valueStr) ) {
-
-                    acc.push(valueStr);
-                }
-            }
-
-            return acc;
-        }, cloneArray);
-    }
-
-    return array;
+  return array;
 }
 
 /**
@@ -113,17 +106,15 @@ function getSearchableTextOrCheckboxValues(array) {
  * @returns {*}
  */
 function replaceStringWithSearchableTerm(subStr, newSubStr = "_") {
+  if (subStr && typeof subStr === "string") {
+    return subStr
+      .toLowerCase()
+      .replace(regexSpecialChars, newSubStr)
+      .replace(/\s/g, newSubStr)
+      .trim();
+  }
 
-    if ( subStr && typeof subStr === "string" ) {
-
-        return subStr
-            .toLowerCase()
-            .replace(regexSpecialChars, newSubStr)
-            .replace(/\s/g, newSubStr)
-            .trim()
-    }
-
-    return subStr;
+  return subStr;
 }
 
 module.exports.getIndexFieldTypeOfArray = getIndexFieldTypeOfArray;

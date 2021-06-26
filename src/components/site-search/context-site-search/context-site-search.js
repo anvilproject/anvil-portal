@@ -9,17 +9,22 @@
 import React from "react";
 
 const ContextSiteSearch = React.createContext({
-    inputValue: "",
-    nextPage: {},
-    previousPage: {},
-    searchBarOpen: false,
-    showPagination: false,
-    siteSearch: {searchError: false, searchLoading: true, searchPage: 1, searchTerms: ""},
-    siteSearchResults: {},
-    onSetInputValue: () => {},
-    onSetSiteSearchBarOpen: () => {},
-    onSiteSearchPageRequest: () => {},
-    onSubmitSiteSearch: () => {},
+  inputValue: "",
+  nextPage: {},
+  previousPage: {},
+  searchBarOpen: false,
+  showPagination: false,
+  siteSearch: {
+    searchError: false,
+    searchLoading: true,
+    searchPage: 1,
+    searchTerms: ""
+  },
+  siteSearchResults: {},
+  onSetInputValue: () => {},
+  onSetSiteSearchBarOpen: () => {},
+  onSiteSearchPageRequest: () => {},
+  onSubmitSiteSearch: () => {}
 });
 
 export default ContextSiteSearch;

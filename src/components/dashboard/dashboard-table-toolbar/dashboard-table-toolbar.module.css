@@ -7,5 +7,5 @@
 
 /* Tool - not first. */
 .tools > *:not(:first-of-type) {
-    padding-left: 16px;
+  padding-left: 16px;
 }

@@ -20,24 +20,31 @@ import download from "../../../images/icon/download-grey.png";
 import compStyles from "./style-guide-download-logo.module.css";
 
 function StyleGuideDownloadLogo() {
-
-    return (
-        <>
-        <p>The AnVIL logos and icons are available for download below.</p>
-        <a className={compStyles.logo} download="anvil" href={anvil}>
-            <img src={anvil} alt="anvil"/>
-            <img src={download} alt="download"/>
-        </a>
-        <a className={compStyles.logo} download="anvilproject" href={anvilProject}>
-            <img src={anvilProject} alt="anvil project"/>
-            <img src={download} alt="download"/>
-        </a>
-        <a className={compStyles.logo} download="anvilprojectorg" href={anvilProjectOrg}>
-            <img src={anvilProjectOrg} alt="anvil project org"/>
-            <img src={download} alt="download"/>
-        </a>
-        </>
-    );
+  return (
+    <>
+      <p>The AnVIL logos and icons are available for download below.</p>
+      <a className={compStyles.logo} download="anvil" href={anvil}>
+        <img src={anvil} alt="anvil" />
+        <img src={download} alt="download" />
+      </a>
+      <a
+        className={compStyles.logo}
+        download="anvilproject"
+        href={anvilProject}
+      >
+        <img src={anvilProject} alt="anvil project" />
+        <img src={download} alt="download" />
+      </a>
+      <a
+        className={compStyles.logo}
+        download="anvilprojectorg"
+        href={anvilProjectOrg}
+      >
+        <img src={anvilProjectOrg} alt="anvil project org" />
+        <img src={download} alt="download" />
+      </a>
+    </>
+  );
 }
 
 export default StyleGuideDownloadLogo;

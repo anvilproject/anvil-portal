@@ -7,10 +7,10 @@
 
 /* Control bar. */
 .controlBar {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 13px;
-    font-weight: 300;
-    justify-content: flex-start;
-    line-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 300;
+  justify-content: flex-start;
+  line-height: 24px;
 }

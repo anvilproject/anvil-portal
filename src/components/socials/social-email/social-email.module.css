@@ -7,6 +7,6 @@
 
 /* Email. */
 span.email {
-    color: var(--primary);
-    font-size: 20px;
+  color: var(--primary);
+  font-size: 20px;
 }

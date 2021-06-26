@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import {RoadMapStaticQuery} from "../../hooks/road-map-query";
+import { RoadMapStaticQuery } from "../../hooks/road-map-query";
 
 // Styles
 import compStyles from "./road-map.module.css";
@@ -17,92 +17,96 @@ import compStyles from "./road-map.module.css";
 let classNames = require("classnames");
 
 class RoadMap extends React.Component {
+  /**
+   * Returns true if quarter should be displayed.
+   *
+   * @param quarter
+   * @returns {boolean}
+   */
+  showQuarter = quarter => {
+    const { display } = quarter;
 
-    /**
-     * Returns true if quarter should be displayed.
-     *
-     * @param quarter
-     * @returns {boolean}
-     */
-    showQuarter = (quarter) => {
+    if (!display) {
+      return false;
+    }
 
-        const {display} = quarter;
+    const { tools, platforms } = display;
 
-        if ( !display ) {
+    return tools || platforms;
+  };
 
-            return false;
-        }
+  /**
+   * Render quarters, bubbles and key.
+   */
+  render() {
+    const { roadMap } = this.props;
 
-        const {tools, platforms} = display;
+    const Bubble = props => {
+      const { className, item } = props,
+        { link, name } = item;
 
-        return tools || platforms;
+      return (
+        <a
+          href={link}
+          className={classNames(compStyles.bubble, className)}
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          {name}
+        </a>
+      );
     };
 
-    /**
-     * Render quarters, bubbles and key.
-     */
-    render() {
+    const Key = () => {
+      return (
+        <div className={compStyles.key}>
+          <span className={compStyles.tool}>Tools</span>
+          <span className={compStyles.platform}>Platforms</span>
+        </div>
+      );
+    };
 
-        const {roadMap} = this.props;
+    const Quarter = props => {
+      const { items } = props,
+        { quarter, display } = items,
+        { tools, platforms } = display;
 
-        const Bubble = (props) => {
+      return (
+        <div className={compStyles.quarter}>
+          <div className={compStyles.stack}>
+            {platforms
+              ? platforms.map((platform, k) => (
+                  <Bubble
+                    key={k}
+                    className={compStyles.platform}
+                    item={platform}
+                  />
+                ))
+              : null}
+            {tools
+              ? tools.map((tool, l) => (
+                  <Bubble key={l} className={compStyles.tool} item={tool} />
+                ))
+              : null}
+          </div>
+          <div className={compStyles.label}>{quarter}</div>
+        </div>
+      );
+    };
 
-            const {className, item} = props,
-                {link, name} = item;
-
-            return (
-                <a href={link}
-                   className={classNames(compStyles.bubble, className)}
-                   rel="nofollow noopener noreferrer"
-                   target="_blank">{name}</a>
-            )
-        };
-
-        const Key = () => {
-
-            return (
-                <div className={compStyles.key}>
-                    <span className={compStyles.tool}>Tools</span>
-                    <span className={compStyles.platform}>Platforms</span>
-                </div>
-            )
-        };
-
-        const Quarter = (props) => {
-
-            const {items} = props,
-                {quarter, display} = items,
-                {tools, platforms} = display;
-
-            return (
-                <div className={compStyles.quarter}>
-                    <div className={compStyles.stack}>
-                        {platforms ? platforms.map((platform, k) =>
-                            <Bubble key={k} className={compStyles.platform} item={platform}/>) : null}
-                        {tools ? tools.map((tool, l) =>
-                            <Bubble key={l} className={compStyles.tool} item={tool}/>) : null}
-                    </div>
-                    <div className={compStyles.label}>{quarter}</div>
-                </div>
-            )
-        };
-
-        return (
-            <div className={compStyles.roadmap}>
-                <Key/>
-                {roadMap.map((quarter, i) =>
-                    this.showQuarter(quarter) ? <Quarter key={i} items={quarter}/> : null
-                )}
-            </div>
-        );
-    }
+    return (
+      <div className={compStyles.roadmap}>
+        <Key />
+        {roadMap.map((quarter, i) =>
+          this.showQuarter(quarter) ? <Quarter key={i} items={quarter} /> : null
+        )}
+      </div>
+    );
+  }
 }
 
 export default () => {
+  const roadMap = RoadMapStaticQuery();
 
-    const roadMap = RoadMapStaticQuery();
-
-    return (
-        roadMap ? <RoadMap roadMap={roadMap}/> : null
-    );
-}
+  return roadMap ? <RoadMap roadMap={roadMap} /> : null;
+};

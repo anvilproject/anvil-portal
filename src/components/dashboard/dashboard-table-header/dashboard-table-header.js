@@ -15,18 +15,19 @@ import DashboardTableHeaderCell from "../dashboard-table-header-cell/dashboard-t
 import compStyles from "./dashboard-table-header.module.css";
 
 class DashboardTableHeader extends React.Component {
+  render() {
+    const { tableHeaders } = this.props;
 
-    render() {
-        const {tableHeaders} = this.props;
-
-        return (
-            <thead>
-                <tr className={compStyles.header}>
-                    {tableHeaders.map((tableHeader, h) => <DashboardTableHeaderCell key={h} column={tableHeader}/>)}
-                </tr>
-            </thead>
-        );
-    }
+    return (
+      <thead>
+        <tr className={compStyles.header}>
+          {tableHeaders.map((tableHeader, h) => (
+            <DashboardTableHeaderCell key={h} column={tableHeader} />
+          ))}
+        </tr>
+      </thead>
+    );
+  }
 }
 
 export default DashboardTableHeader;

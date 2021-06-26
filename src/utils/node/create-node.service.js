@@ -12,14 +12,12 @@
  * @returns {*}
  */
 const buildPostSlug = function buildPostSlug(filePath) {
+  if (filePath) {
+    /* Strip the file path's tailing "/". */
+    return filePath.replace(/\/$/, "");
+  }
 
-    if ( filePath ) {
-
-        /* Strip the file path's tailing "/". */
-        return filePath.replace(/\/$/, "");
-    }
-
-    return filePath;
+  return filePath;
 };
 
 module.exports.buildPostSlug = buildPostSlug;

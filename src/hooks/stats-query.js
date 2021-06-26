@@ -1,22 +1,22 @@
-import {useStaticQuery, graphql} from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby";
 
 export const StatsStaticQuery = () => {
-    const {allStat} = useStaticQuery(
-        graphql`
-        query StatsStaticQuery {
-          allStat {
-            edges {
-              node {
-                cohorts
-                consortia
-                samples
-                size
-                subjects
-              }
+  const { allStat } = useStaticQuery(
+    graphql`
+      query StatsStaticQuery {
+        allStat {
+          edges {
+            node {
+              cohorts
+              consortia
+              samples
+              size
+              subjects
             }
           }
         }
+      }
     `
-    );
-    return allStat.edges.map(n => n.node)[0];
+  );
+  return allStat.edges.map(n => n.node)[0];
 };

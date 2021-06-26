@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
@@ -15,17 +15,18 @@ import ContextSiteSearch from "../site-search/context-site-search/context-site-s
 import compStyles from "./title.module.css";
 
 function Title(props) {
+  const { title } = props;
+  const { siteSearch } = useContext(ContextSiteSearch),
+    { searchTerms } = siteSearch || {};
 
-    const {title} = props;
-    const {siteSearch} = useContext(ContextSiteSearch),
-        {searchTerms} = siteSearch || {};
-
-    return (
-        <h1 className={compStyles.title}>
-            <span>{title}</span>
-            {searchTerms ? <span> for "{searchTerms ? searchTerms : null}"</span> : null}
-        </h1>
-    );
+  return (
+    <h1 className={compStyles.title}>
+      <span>{title}</span>
+      {searchTerms ? (
+        <span> for "{searchTerms ? searchTerms : null}"</span>
+      ) : null}
+    </h1>
+  );
 }
 
 export default Title;

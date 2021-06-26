@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
@@ -22,21 +22,32 @@ import compStyles from "./404.module.css";
 let classNames = require("classnames");
 
 class PageNotFound extends React.Component {
-
-    render() {
-        return (
-            <Layout noSpy title={"The AnVIL"}>
-                <div className={classNames(compStyles.error)}>
-                    <h1>Oh Dear!</h1>
-                    <h2>We can’t find the page you were looking for.</h2>
-                    <p>Try these working links instead:</p>
-                    <img className={compStyles.bubbles} alt="Page Not Found" src={bubbles}/>
-                    <p><Link className={globalStyles.link} to="/">Home</Link></p>
-                    <p><Link className={globalStyles.link} to="/help">Help</Link></p>
-                </div>
-            </Layout>
-        );
-    }
+  render() {
+    return (
+      <Layout noSpy title={"The AnVIL"}>
+        <div className={classNames(compStyles.error)}>
+          <h1>Oh Dear!</h1>
+          <h2>We can’t find the page you were looking for.</h2>
+          <p>Try these working links instead:</p>
+          <img
+            className={compStyles.bubbles}
+            alt="Page Not Found"
+            src={bubbles}
+          />
+          <p>
+            <Link className={globalStyles.link} to="/">
+              Home
+            </Link>
+          </p>
+          <p>
+            <Link className={globalStyles.link} to="/help">
+              Help
+            </Link>
+          </p>
+        </div>
+      </Layout>
+    );
+  }
 }
 
 export default PageNotFound;

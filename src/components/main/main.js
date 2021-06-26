@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import Article from "../article/article";
@@ -17,31 +17,40 @@ import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import compStyles from "./main.module.css";
 
 function Main(props) {
+  const {
+    bannerHeight,
+    children,
+    docPath,
+    homePage,
+    navigations,
+    noSpy,
+    showOutline,
+    styles
+  } = props;
+  const { tutorial } = useContext(ContextFrontmatter);
 
-    const {bannerHeight, children, docPath, homePage, navigations, noSpy, showOutline, styles} = props;
-    const {tutorial} = useContext(ContextFrontmatter);
-
-    return (
-        <main className={compStyles.main}>
-            {homePage ?
-                children :
-                tutorial ?
-                    <ArticleTutorial
-                        bannerHeight={bannerHeight}
-                        docPath={docPath}>
-                        {children}
-                    </ArticleTutorial> :
-                    <Article
-                        bannerHeight={bannerHeight}
-                        docPath={docPath}
-                        navigations={navigations}
-                        noSpy={noSpy}
-                        showOutline={showOutline}
-                        styles={styles}>
-                        {children}
-                    </Article>}
-        </main>
-    );
+  return (
+    <main className={compStyles.main}>
+      {homePage ? (
+        children
+      ) : tutorial ? (
+        <ArticleTutorial bannerHeight={bannerHeight} docPath={docPath}>
+          {children}
+        </ArticleTutorial>
+      ) : (
+        <Article
+          bannerHeight={bannerHeight}
+          docPath={docPath}
+          navigations={navigations}
+          noSpy={noSpy}
+          showOutline={showOutline}
+          styles={styles}
+        >
+          {children}
+        </Article>
+      )}
+    </main>
+  );
 }
 
 export default Main;

@@ -14,11 +14,10 @@
  * @returns {{gapIdDisplay: *, studyUrl: string}}
  */
 const buildGapId = function buildGapId(gapAccession, studyUrl = "") {
-
-    return {
-        gapIdDisplay: gapAccession,
-        studyUrl: studyUrl
-    }
+  return {
+    gapIdDisplay: gapAccession,
+    studyUrl: studyUrl
+  };
 };
 
 module.exports.buildGapId = buildGapId;

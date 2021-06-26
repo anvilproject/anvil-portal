@@ -17,17 +17,22 @@ import compStyles from "./site-search-input-clear.module.css";
 const classNames = require("classnames");
 
 function SiteSearchInputClear(props) {
+  const { onInputClear, searchBarOpen, showClear } = props;
 
-    const {onInputClear, searchBarOpen, showClear} = props;
-
-    return (
-        <span className={classNames(compStyles.clear, {[compStyles.active]: searchBarOpen && showClear})}
-              onClick={() => onInputClear()}
-              role={"presentation"}
-              tabIndex={"-1"}>
-            <Icon fontSize={20} showHover={true} showIcon={true}>close</Icon>
-        </span>
-    )
+  return (
+    <span
+      className={classNames(compStyles.clear, {
+        [compStyles.active]: searchBarOpen && showClear
+      })}
+      onClick={() => onInputClear()}
+      role={"presentation"}
+      tabIndex={"-1"}
+    >
+      <Icon fontSize={20} showHover={true} showIcon={true}>
+        close
+      </Icon>
+    </span>
+  );
 }
 
 export default React.memo(SiteSearchInputClear);

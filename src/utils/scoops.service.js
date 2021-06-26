@@ -12,8 +12,7 @@
  * @returns {Date}
  */
 function getDate(date) {
-
-    return new Date(date);
+  return new Date(date);
 }
 
 /**
@@ -23,52 +22,42 @@ function getDate(date) {
  * @param past
  */
 export function filterScoopsByDate(scoops, past) {
+  if (!scoops) {
+    return;
+  }
 
-    if ( !scoops ) {
+  const today = new Date();
 
-        return;
+  const scoopsByDate = scoops.filter(scoop => {
+    const { frontmatter } = scoop,
+      { dateStart } = frontmatter;
+
+    const date = validateDate(dateStart);
+    const dateObj = getDate(date);
+
+    // For any valid dates
+    if (date) {
+      if (past) {
+        // Returns scoops if date is older than today
+        return dateObj.getTime() <= today.getTime();
+      } else {
+        // Returns scoops if date is upcoming
+        return dateObj.getTime() > today.getTime();
+      }
+    } else {
+      // Return any invalid dates as upcoming events
+      // This will highlight any issues with date rendering
+      return !past;
     }
+  });
 
-    const today = new Date();
+  /* Return past events, sorted from latest to earliest. */
+  if (past) {
+    return scoopsByDate.reverse();
+  }
 
-    const scoopsByDate = scoops.filter(scoop => {
-
-        const {frontmatter} = scoop,
-            {dateStart} = frontmatter;
-
-        const date = validateDate(dateStart);
-        const dateObj = getDate(date);
-
-        // For any valid dates
-        if ( date ) {
-
-            if ( past ) {
-
-                // Returns scoops if date is older than today
-                return dateObj.getTime() <= today.getTime();
-            }
-            else {
-
-                // Returns scoops if date is upcoming
-                return dateObj.getTime() > today.getTime();
-            }
-        }
-        else {
-
-            // Return any invalid dates as upcoming events
-            // This will highlight any issues with date rendering
-            return !past;
-        }
-    });
-
-    /* Return past events, sorted from latest to earliest. */
-    if ( past ) {
-
-        return scoopsByDate.reverse();
-    }
-
-    /* Return future events, sorted from earliest to latest. */
-    return scoopsByDate;
+  /* Return future events, sorted from earliest to latest. */
+  return scoopsByDate;
 }
 
 /**
@@ -79,19 +68,18 @@ export function filterScoopsByDate(scoops, past) {
  * @returns {*}
  */
 export function filterScoopsByFrontmatter(scoops, filterStr) {
+  if (!filterStr || !isJSONStringValid(filterStr) || !scoops.length > 0) {
+    return scoops;
+  }
 
-    if ( !filterStr || !isJSONStringValid(filterStr) || !scoops.length > 0 ) {
+  const filterTerms = JSON.parse(filterStr);
+  const filterNodes = Object.keys(filterTerms);
 
-        return scoops;
-    }
-
-    const filterTerms = JSON.parse(filterStr);
-    const filterNodes = Object.keys(filterTerms);
-
-    return scoops.filter(scoop => {
-
-        return filterNodes.every(node => filterTerms[node] === scoop.frontmatter[node]);
-    })
+  return scoops.filter(scoop => {
+    return filterNodes.every(
+      node => filterTerms[node] === scoop.frontmatter[node]
+    );
+  });
 }
 
 /**
@@ -101,13 +89,11 @@ export function filterScoopsByFrontmatter(scoops, filterStr) {
  * @returns {*}
  */
 export function validateDate(date) {
+  if (date && date.toLowerCase() === "invalid date") {
+    return "";
+  }
 
-    if ( date && date.toLowerCase() === "invalid date" ) {
-
-        return "";
-    }
-
-    return date;
+  return date;
 }
 
 /**
@@ -117,16 +103,11 @@ export function validateDate(date) {
  * @returns {boolean}
  */
 function isJSONStringValid(str) {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
 
-    try {
-
-        JSON.parse(str);
-    }
-
-    catch (e) {
-
-        return false;
-    }
-
-    return true;
+  return true;
 }

@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Utility class for AnVIL-specific Google Tag Manager functionality. 
+ * Utility class for AnVIL-specific Google Tag Manager functionality.
  */
 
 // App dependencies
@@ -20,11 +20,10 @@ import * as GTMService from "../gtm/gtm.service";
  * @param {string} url
  */
 export function trackDashboardShared(url) {
-
-    const dimensions = {
-        [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
-    };
-    GTMService.trackEvent(GACategory.DASHBOARD, GAAction.SHARE, url, dimensions);
+  const dimensions = {
+    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY
+  };
+  GTMService.trackEvent(GACategory.DASHBOARD, GAAction.SHARE, url, dimensions);
 }
 
 /**
@@ -33,70 +32,90 @@ export function trackDashboardShared(url) {
  * @param {string} url
  */
 export function trackDashboardTSVDownloaded(url) {
-
-    const dimensions = {
-        [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
-    };
-    GTMService.trackEvent(GACategory.DASHBOARD, GAAction.DOWNLOAD, url, dimensions);
+  const dimensions = {
+    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY
+  };
+  GTMService.trackEvent(
+    GACategory.DASHBOARD,
+    GAAction.DOWNLOAD,
+    url,
+    dimensions
+  );
 }
 
 /**
  * Create and send a GA tracking event generated from the specified external link and label. Dimensions are calculated
  * from the specified URL.
- * 
+ *
  * @param {string} url
  * @param {string} linkText
  */
 export function trackExternalLinkClicked(url, linkText) {
-
-    const dimensions = createExternalLinkDimensions(url);
-    GTMService.trackEvent(GACategory.EXTERNAL_LINK, GAAction.CLICK, linkText, dimensions);
+  const dimensions = createExternalLinkDimensions(url);
+  GTMService.trackEvent(
+    GACategory.EXTERNAL_LINK,
+    GAAction.CLICK,
+    linkText,
+    dimensions
+  );
 }
 
 /**
  * Track select of search facet from dashboard.
  */
-export function trackSearchFacetSelected(facet, term, selected, query, previousQuery, entityType) {
-
-    GTMService.trackEvent(GACategory.SEARCH, selected ? GAAction.SELECT : GAAction.DESELECT, term, {
-        [GADimension.ENTITY_TYPE]: entityType,
-        [GADimension.FACET]: facet,
-        [GADimension.TERM]: term,
-        [GADimension.PREVIOUS_QUERY]: previousQuery,
-        [GADimension.QUERY]: query
-    });
+export function trackSearchFacetSelected(
+  facet,
+  term,
+  selected,
+  query,
+  previousQuery,
+  entityType
+) {
+  GTMService.trackEvent(
+    GACategory.SEARCH,
+    selected ? GAAction.SELECT : GAAction.DESELECT,
+    term,
+    {
+      [GADimension.ENTITY_TYPE]: entityType,
+      [GADimension.FACET]: facet,
+      [GADimension.TERM]: term,
+      [GADimension.PREVIOUS_QUERY]: previousQuery,
+      [GADimension.QUERY]: query
+    }
+  );
 }
 
 /**
  * Track input of search text from dashboard.
  */
 export function trackSearchInput(value, query, previousQuery, entityType) {
-
-    GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
-        [GADimension.ENTITY_TYPE]: entityType,
-        [GADimension.PREVIOUS_QUERY]: previousQuery,
-        [GADimension.QUERY]: query
-    });
+  GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
+    [GADimension.ENTITY_TYPE]: entityType,
+    [GADimension.PREVIOUS_QUERY]: previousQuery,
+    [GADimension.QUERY]: query
+  });
 }
 
 /**
  * Track site search.
  */
 export function trackSiteSearch(value) {
-
-    GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SEARCH, value, {});
+  GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SEARCH, value, {});
 }
-
 
 /**
  * Track click on site search result.
  */
 export function trackSiteSearchResultClicked(title, url, query) {
-
-    GTMService.trackEvent(GACategory.SITE_SEARCH, GAAction.SELECT_SEARCH_RESULT, title, {
-        [GADimension.ENTITY_URL]: url,
-        [GADimension.QUERY]: query
-    });
+  GTMService.trackEvent(
+    GACategory.SITE_SEARCH,
+    GAAction.SELECT_SEARCH_RESULT,
+    title,
+    {
+      [GADimension.ENTITY_URL]: url,
+      [GADimension.QUERY]: query
+    }
+  );
 }
 
 /**
@@ -108,25 +127,22 @@ export function trackSiteSearchResultClicked(title, url, query) {
  * @returns {string}
  */
 function calculateEntityName(url) {
+  const { entityName } = GADimensionsByHref[url] || {};
+  if (entityName) {
+    return entityName;
+  }
 
-    const {entityName} = GADimensionsByHref[url] || {};
-    if ( entityName ) {
-        return entityName;
-    }
+  if (isURLTerraWorkspace(url)) {
+    // Return the workspace name, which is specified after the last / in the URL
+    return /[^/]*$/.exec(url)[0];
+  }
 
-    if ( isURLTerraWorkspace(url) ) {
+  if (isDbGaP(url)) {
+    // Return the dbGap ID which is specified after the = in the URL
+    return /[^=]*$/.exec(url)[0];
+  }
 
-        // Return the workspace name, which is specified after the last / in the URL
-        return /[^/]*$/.exec(url)[0];
-    }
-
-    if ( isDbGaP(url) ) {
-
-        // Return the dbGap ID which is specified after the = in the URL
-        return /[^=]*$/.exec(url)[0];
-    }
-
-    return GAEntityName.UNSPECIFIED;
+  return GAEntityName.UNSPECIFIED;
 }
 
 /**
@@ -138,40 +154,36 @@ function calculateEntityName(url) {
  * @returns {string}
  */
 function calculateEntityType(url) {
+  const { entityType } = GADimensionsByHref[url] || {};
+  if (entityType) {
+    return entityType;
+  }
 
-    const {entityType} = GADimensionsByHref[url] || {};
-    if ( entityType ) {
-        return entityType;
-    }
+  if (isURLTerraWorkspace(url)) {
+    return GAEntityType.WORKSPACE;
+  }
 
-    if ( isURLTerraWorkspace(url) ) {
+  if (isDbGaP(url)) {
+    return GAEntityType.STUDY;
+  }
 
-        return GAEntityType.WORKSPACE;
-    }
-
-    if ( isDbGaP(url) ) {
-
-        return GAEntityType.STUDY;
-    }
-
-    return GAEntityType.UNSPECIFIED;
+  return GAEntityType.UNSPECIFIED;
 }
 
 /**
- * Returns dimension values that are required when tracking click event: entity name, entity type, entity URL and 
+ * Returns dimension values that are required when tracking click event: entity name, entity type, entity URL and
  * source URL.
  *
  * @param {string} url
  * @returns {any}
  */
 function createExternalLinkDimensions(url) {
-
-    return {
-        entityName: calculateEntityName(url),
-        entityType: calculateEntityType(url),
-        entityUrl: url,
-        sourceUrl: window.location.pathname
-    };
+  return {
+    entityName: calculateEntityName(url),
+    entityType: calculateEntityType(url),
+    entityUrl: url,
+    sourceUrl: window.location.pathname
+  };
 }
 
 /**
@@ -181,17 +193,17 @@ function createExternalLinkDimensions(url) {
  * @returns {boolean}
  */
 function isDbGaP(url) {
-
-    return url.match(/^https:\/\/www\.ncbi\.nlm\.nih\.gov\/projects\/gap\/cgi-bin\/study\.cgi\?study_id=/);
+  return url.match(
+    /^https:\/\/www\.ncbi\.nlm\.nih\.gov\/projects\/gap\/cgi-bin\/study\.cgi\?study_id=/
+  );
 }
 
 /**
  * Returns true if the specified URL is a link to a Terra workspace.
- * 
+ *
  * @param {string} url
  * @returns {boolean}
  */
 function isURLTerraWorkspace(url) {
-
-    return url.match(/^https:\/\/anvil\.terra\.bio\/#workspaces\//);
+  return url.match(/^https:\/\/anvil\.terra\.bio\/#workspaces\//);
 }

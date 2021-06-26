@@ -13,17 +13,17 @@
 [id^="anvil"] th,
 [id^="ncpi"] th,
 [id^="summary"] th {
-    border-bottom: none;
-    color: inherit;
-    font-size: 0.875rem; /* 14px */
-    font-weight: 500;
-    line-height: 1.5;
-    padding: 0 4px 4px;
+  border-bottom: none;
+  color: inherit;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0 4px 4px;
 }
 
 /* Header cell - right */
 th.right {
-    text-align: right;
+  text-align: right;
 }
 
 /* AnVIL table */
@@ -31,46 +31,46 @@ th.right {
 /* Add padding to the right of cells for AnVIL table to prevent long values from jamming up. */
 [id^="anvil"] th,
 [id^="ncpi"] th {
-    padding: 0 8px 4px;
+  padding: 0 8px 4px;
 }
 
 /* Header cell - first */
 [id^="anvil"] th:first-of-type,
 [id^="ncpi"] th:first-of-type,
 [id^="summary"] th:first-of-type {
-    padding-left: 2px; /* Scoot in first and last, matches cell */
+  padding-left: 2px; /* Scoot in first and last, matches cell */
 }
 
 /* Header cell - last */
 [id^="anvil"] th:last-of-type,
 [id^="ncpi"] th:last-of-type,
 [id^="summary"] th:last-of-type {
-    padding-right: 2px; /* Scoot in first and last, matches cell */
+  padding-right: 2px; /* Scoot in first and last, matches cell */
 }
 
 /* AnVIL cell - "consortium" */
 [id^="anvil"] th[id^="consortium"] {
-    width: 90px;
+  width: 90px;
 }
 
 /* AnVIL cell - "dataTypes" */
 [id^="anvil"] th[id^="dataTypes"] {
-    width: 116px;
+  width: 116px;
 }
 
 /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
 [id^="anvil"] th[id^="gapId"] {
-    width: 112px;
+  width: 112px;
 }
 
 /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
 [id^="anvil"] th[id^="projectId"] {
-    width: 280px;
+  width: 280px;
 }
 
 /* AnVIL cell - "studyName" - i.e. "Title" */
 [id^="anvil"] th[id^="studyName"] {
-    width: 232px;
+  width: 232px;
 }
 
 /* AnVIL cell - "samples" */
@@ -79,22 +79,22 @@ th.right {
 [id^="anvil"] th[id^="samples"],
 [id^="anvil"] th[id^="size"],
 [id^="anvil"] th[id^="subjects"] {
-    width: 80px;
+  width: 80px;
 }
 
 /* NCPI cell - "gapId" - "dbGap Id" */
 [id^="ncpi"] th[id^="gapId"] {
-    width: 132px;
+  width: 132px;
 }
 
 /* NCPI cell - "platforms" */
 [id^="ncpi"] th[id^="platforms"] {
-    width: 100px;
+  width: 100px;
 }
 
 /* NCPI cell - "subjectsTotal" - "subjects" */
 [id^="ncpi"] th[id^="subjectsTotal"] {
-    width: 100px;
+  width: 100px;
 }
 
 /**
@@ -102,31 +102,30 @@ th.right {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1280px) {
+  /* AnVIL cell - "dataTypes" */
+  [id^="anvil"] th[id^="dataTypes"] {
+    width: unset;
+  }
 
-    /* AnVIL cell - "dataTypes" */
-    [id^="anvil"] th[id^="dataTypes"] {
-        width: unset;
-    }
+  /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
+  [id^="anvil"] th[id^="gapId"] {
+    width: 100px;
+  }
 
-    /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
-    [id^="anvil"] th[id^="gapId"] {
-        width: 100px;
-    }
+  /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
+  [id^="anvil"] th[id^="projectId"] {
+    width: 176px; /* Consistent with "studyName". */
+  }
 
-    /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
-    [id^="anvil"] th[id^="projectId"] {
-        width: 176px; /* Consistent with "studyName". */
-    }
+  /* AnVIL cell - "studyName" - i.e. "Title" */
+  [id^="anvil"] th[id^="studyName"] {
+    width: 176px; /* Consistent with "projectId". */
+  }
 
-    /* AnVIL cell - "studyName" - i.e. "Title" */
-    [id^="anvil"] th[id^="studyName"] {
-        width: 176px; /* Consistent with "projectId". */
-    }
-
-    /* NCPI cell - "studyName" - "title" */
-    [id^="ncpi"] th[id^="studyName"] {
-        width: 300px;
-    }
+  /* NCPI cell - "studyName" - "title" */
+  [id^="ncpi"] th[id^="studyName"] {
+    width: 300px;
+  }
 }
 
 /**
@@ -134,18 +133,17 @@ th.right {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1440px) {
+  /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
+  [id^="anvil"] th[id^="gapId"] {
+    width: 112px;
+  }
 
-    /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
-    [id^="anvil"] th[id^="gapId"] {
-        width: 112px;
-    }
-
-    /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
-    /* AnVIL cell - "studyName" - i.e. "Title" */
-    [id^="anvil"] th[id^="projectId"],
-    [id^="anvil"] th[id^="studyName"] {
-        width: 200px;
-    }
+  /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
+  /* AnVIL cell - "studyName" - i.e. "Title" */
+  [id^="anvil"] th[id^="projectId"],
+  [id^="anvil"] th[id^="studyName"] {
+    width: 200px;
+  }
 }
 
 /**
@@ -153,26 +151,25 @@ th.right {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1600px) {
+  /* AnVIL cell - "dataTypes" */
+  [id^="anvil"] th[id^="dataTypes"] {
+    width: 116px;
+  }
 
-    /* AnVIL cell - "dataTypes" */
-    [id^="anvil"] th[id^="dataTypes"] {
-        width: 116px;
-    }
+  /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
+  [id^="anvil"] th[id^="projectId"] {
+    width: 280px;
+  }
 
-    /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
-    [id^="anvil"] th[id^="projectId"] {
-        width: 280px;
-    }
+  /* AnVIL cell - "studyName" - i.e. "Title" */
+  [id^="anvil"] th[id^="studyName"] {
+    width: 232px;
+  }
 
-    /* AnVIL cell - "studyName" - i.e. "Title" */
-    [id^="anvil"] th[id^="studyName"] {
-        width: 232px;
-    }
-
-    /* NCPI cell - "studyName" - "title" */
-    [id^="ncpi"] th[id^="studyName"] {
-        width: 500px;
-    }
+  /* NCPI cell - "studyName" - "title" */
+  [id^="ncpi"] th[id^="studyName"] {
+    width: 500px;
+  }
 }
 
 /**
@@ -180,41 +177,40 @@ th.right {
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 1920px) {
+  /* AnVIL cell - "accessType" */
+  /* AnVIL cell - "diseases" */
+  /* AnVIL cell - "studyDesigns" */
+  [id^="anvil"] th[id^="accessType"],
+  [id^="anvil"] th[id^="diseases"],
+  [id^="anvil"] th[id^="studyDesigns"] {
+    width: 200px;
+  }
 
-    /* AnVIL cell - "accessType" */
-    /* AnVIL cell - "diseases" */
-    /* AnVIL cell - "studyDesigns" */
-    [id^="anvil"] th[id^="accessType"],
-    [id^="anvil"] th[id^="diseases"],
-    [id^="anvil"] th[id^="studyDesigns"] {
-        width: 200px;
-    }
+  /* AnVIL cell - "consentShortName" */
+  [id^="anvil"] th[id^="consentShortName"] {
+    width: 160px;
+  }
 
-    /* AnVIL cell - "consentShortName" */
-    [id^="anvil"] th[id^="consentShortName"] {
-        width: 160px;
-    }
+  /* AnVIL cell - "consortium" */
+  /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
+  [id^="anvil"] th[id^="consortium"],
+  [id^="anvil"] th[id^="gapId"] {
+    width: 120px;
+  }
 
-    /* AnVIL cell - "consortium" */
-    /* AnVIL cell - "gapId" - i.e. "dbGap Id" */
-    [id^="anvil"] th[id^="consortium"],
-    [id^="anvil"] th[id^="gapId"] {
-        width: 120px;
-    }
+  /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
+  /* AnVIL cell - "studyName" - i.e. "Title" */
+  [id^="anvil"] th[id^="projectId"],
+  [id^="anvil"] th[id^="studyName"] {
+    width: unset;
+  }
 
-    /* AnVIL cell - "projectId" - i.e. "Terra Workspace Name" */
-    /* AnVIL cell - "studyName" - i.e. "Title" */
-    [id^="anvil"] th[id^="projectId"],
-    [id^="anvil"] th[id^="studyName"] {
-        width: unset;
-    }
-
-    /* AnVIL cell - "samples" */
-    /* AnVIL cell - "size" - i.e. "Size (TB)" */
-    /* AnVIL cell - "subjects" */
-    [id^="anvil"] th[id^="samples"],
-    [id^="anvil"] th[id^="size"],
-    [id^="anvil"] th[id^="subjects"] {
-        width: 116px;
-    }
+  /* AnVIL cell - "samples" */
+  /* AnVIL cell - "size" - i.e. "Size (TB)" */
+  /* AnVIL cell - "subjects" */
+  [id^="anvil"] th[id^="samples"],
+  [id^="anvil"] th[id^="size"],
+  [id^="anvil"] th[id^="subjects"] {
+    width: 116px;
+  }
 }

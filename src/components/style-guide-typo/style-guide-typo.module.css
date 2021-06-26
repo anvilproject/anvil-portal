@@ -8,26 +8,26 @@
 
 /* Styles. */
 .styles {
-    display: block;
-    font-size: 0.875rem; /* 14px */
-    margin-bottom: 48px;
+  display: block;
+  font-size: 0.875rem; /* 14px */
+  margin-bottom: 48px;
 }
 
 /* Overline - spacing. */
 .styles div {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 /* Label. */
 .styles .label {
-    color: var(--black58);
-    font-weight: 300;
+  color: var(--black58);
+  font-weight: 300;
 }
 
 /* Style. */
 .styles .style {
-    display: block;
-    margin: 0 0 2px;
+  display: block;
+  margin: 0 0 2px;
 }
 
 /* Style - "AnVIL" - hide fontSize, lineHeight, margin, padding. */
@@ -35,5 +35,5 @@
 .styles:nth-of-type(2) .style:nth-of-type(5),
 .styles:nth-of-type(2) .style:nth-of-type(6),
 .styles:nth-of-type(2) .style:nth-of-type(7) {
-    display: none;
+  display: none;
 }

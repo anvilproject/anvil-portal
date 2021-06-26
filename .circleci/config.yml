@@ -16,7 +16,6 @@ jobs:
 
     working_directory: ~/anvil-deploy
     steps:
-
       - checkout
 
       # Download and cache dependencies
@@ -47,17 +46,17 @@ jobs:
           command: npm run build-ci
 
       - persist_to_workspace:
-                    # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
-                    # taken to be the root directory of the workspace.
-                    root: ~/anvil-deploy
-                    # Must be relative path from root
-                    paths:
-                      - public
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: ~/anvil-deploy
+          # Must be relative path from root
+          paths:
+            - public
 
   deploy:
     docker:
-          # specify the version you desire here
-          - image: circleci/node:10.16
+      # specify the version you desire here
+      - image: circleci/node:10.16
 
     working_directory: ~/anvil-deploy
     steps:
@@ -75,36 +74,36 @@ jobs:
           command: ./node_modules/.bin/firebase  deploy -P "$BRANCH" --token "$FIREBASE_TOKEN"
 
 workflows:
-    version: 2
-    build-n-deploy-staging:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only:
-                  - staging
-                  - ux-dev
-            context: anvil-portal-staging
-        - deploy:
-            requires:
-              - build
-            filters:
-              branches:
-                only:
-                  - staging
-                  - ux-dev
-            context: anvil-portal-staging
-    build-n-deploy-prod:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only: master
-            context: anvil-portal-prod
-        - deploy:
-            requires:
-              - build
-            filters:
-              branches:
-                only: master
-            context: anvil-portal-prod
+  version: 2
+  build-n-deploy-staging:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - staging
+                - ux-dev
+          context: anvil-portal-staging
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - staging
+                - ux-dev
+          context: anvil-portal-staging
+  build-n-deploy-prod:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+          context: anvil-portal-prod
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+          context: anvil-portal-prod

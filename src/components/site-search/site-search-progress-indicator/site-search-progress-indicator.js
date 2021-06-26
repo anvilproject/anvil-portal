@@ -12,14 +12,13 @@ import React from "react";
 import compStyles from "./site-search-progress-indicator.module.css";
 
 function SiteSearchProgressIndicator() {
-
-    return (
-        <div className={compStyles.progressIndicator}>
-            <span/>
-            <span/>
-            <span/>
-        </div>
-    )
+  return (
+    <div className={compStyles.progressIndicator}>
+      <span />
+      <span />
+      <span />
+    </div>
+  );
 }
 
 export default React.memo(SiteSearchProgressIndicator);

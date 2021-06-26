@@ -6,16 +6,16 @@
  */
 
 export const RIGHT_ALIGN_COLUMNS = [
-    "cohorts",
-    "consentStat",
-    "demographics",
-    "diagnosis",
-    "families",
-    "files",
-    "samples",
-    "size",
-    "sizeTB",
-    "studies",
-    "subjects",
-    "subjectsTotal"
+  "cohorts",
+  "consentStat",
+  "demographics",
+  "diagnosis",
+  "families",
+  "files",
+  "samples",
+  "size",
+  "sizeTB",
+  "studies",
+  "subjects",
+  "subjectsTotal"
 ];

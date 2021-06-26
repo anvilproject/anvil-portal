@@ -26,25 +26,30 @@
  */
 
 // Core dependencies
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 
 // Styles
 import compStyles from "./button-link.module.css";
 
 function ButtonLink(props) {
+  const { children, href = "/", target = "_self" } = props;
+  const linkExternal = target === "_blank";
 
-    const {children, href = "/", target = "_self"} = props;
-    const linkExternal = target === "_blank";
-
-    return (
-        linkExternal ?
-            <a className={compStyles.button}
-               href={href}
-               rel={"nofollow noopener noreferrer"}
-               target={target}>{children}</a> :
-            <Link className={compStyles.button} to={href}>{children}</Link>
-    );
+  return linkExternal ? (
+    <a
+      className={compStyles.button}
+      href={href}
+      rel={"nofollow noopener noreferrer"}
+      target={target}
+    >
+      {children}
+    </a>
+  ) : (
+    <Link className={compStyles.button} to={href}>
+      {children}
+    </Link>
+  );
 }
 
 export default ButtonLink;

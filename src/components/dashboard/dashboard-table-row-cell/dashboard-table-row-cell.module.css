@@ -13,9 +13,9 @@
 [id^="anvil"] td,
 [id^="ncpi"] td,
 [id^="summary"] td {
-    border-bottom: none;
-    font-size: 0.875rem; /* 14px */
-    line-height: 1.3;
+  border-bottom: none;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.3;
 }
 
 /* Padding */
@@ -24,24 +24,24 @@
 /* Add padding to the right of cells for AnVIL table to prevent long values from jamming up */
 [id^="anvil"] td,
 [id^="ncpi"] td {
-    padding: 8px;
+  padding: 8px;
 }
 
 /* Summary table */
 [id^="summary"] td {
-    padding: 4px;
+  padding: 4px;
 }
 
 /* Row cell - first */
 [id^="anvil"] td:first-of-type,
 [id^="ncpi"] td:first-of-type,
 [id^="summary"] td:first-of-type {
-    padding-left: 2px; /* Scoot in first and last, matches header cell */
+  padding-left: 2px; /* Scoot in first and last, matches header cell */
 }
 
 /* Row cell - last */
 [id^="anvil"] td:last-of-type,
 [id^="ncpi"] td td:last-of-type,
 [id^="summary"] td:last-of-type {
-    padding-right: 2px; /* Scoot in first and last, matches header cell */
+  padding-right: 2px; /* Scoot in first and last, matches header cell */
 }

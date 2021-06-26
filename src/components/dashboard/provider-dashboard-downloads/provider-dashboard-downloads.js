@@ -15,116 +15,107 @@ import * as DashboardTableService from "../../../utils/dashboard/dashboard-table
 import * as NumberFormatService from "../../../utils/number-format.service";
 
 function ProviderDashboardDownloads(props) {
+  const { children, dataset } = props;
 
-    const {children, dataset} = props;
+  const downloadDataset = (data, fileType) => {
+    /* Create blob and new download element. */
+    const blob = new Blob([data], { type: `text/${fileType}` });
+    const downloadURL = window.URL.createObjectURL(blob);
+    const downloadEl = document.createElement("a");
 
-    const downloadDataset = (data, fileType) => {
+    /* Set attributes including href, and the download attribute. */
+    downloadEl.setAttribute("hidden", "");
+    downloadEl.setAttribute("href", downloadURL);
+    downloadEl.setAttribute(
+      "download",
+      `${dataset}-dataset-catalog-results.${fileType}`
+    );
 
-        /* Create blob and new download element. */
-        const blob = new Blob([data], {type: `text/${fileType}`});
-        const downloadURL = window.URL.createObjectURL(blob);
-        const downloadEl = document.createElement("a");
+    /* Append download element, execute click event (downloads the file). */
+    document.body.appendChild(downloadEl);
+    downloadEl.click();
 
-        /* Set attributes including href, and the download attribute. */
-        downloadEl.setAttribute("hidden", "");
-        downloadEl.setAttribute("href", downloadURL);
-        downloadEl.setAttribute("download", `${dataset}-dataset-catalog-results.${fileType}`);
+    /* Remove download element. */
+    document.body.removeChild(downloadEl);
+  };
 
-        /* Append download element, execute click event (downloads the file). */
-        document.body.appendChild(downloadEl);
-        downloadEl.click();
+  const reformatJSON = (dataset, headers, columnSeperator) => {
+    if (dataset) {
+      let rows = [];
 
-        /* Remove download element. */
-        document.body.removeChild(downloadEl);
-    };
+      /* Handle headers - add to rows. */
+      const rowHeaders = headers.map(header =>
+        DashboardTableService.switchDisplayColumnName(header)
+      );
+      const rowHeaderStr = rowHeaders.join(columnSeperator);
+      rows.push(rowHeaderStr);
 
-    const reformatJSON = (dataset, headers, columnSeperator) => {
+      /* Handle each dataset row - add to rows. */
+      dataset.reduce((acc, dataRow) => {
+        /* Only add data that corresponds with the headers. */
+        const row = headers.map(key => {
+          /* Grab the value. */
+          const datum = dataRow[key];
 
-        if ( dataset ) {
+          /* Handle a variety of value types. */
+          /* i.e. Type could be a number, object, array or null value. */
+          return parseDatum(datum, key);
+        });
 
-            let rows = [];
+        const rowStr = row.join(columnSeperator);
+        acc.push(rowStr);
 
-            /* Handle headers - add to rows. */
-            const rowHeaders = headers.map(header => DashboardTableService.switchDisplayColumnName(header));
-            const rowHeaderStr = rowHeaders.join(columnSeperator);
-            rows.push(rowHeaderStr);
+        return acc;
+      }, rows);
 
-            /* Handle each dataset row - add to rows. */
-            dataset.reduce((acc, dataRow) => {
+      /* Return the reformatted JSON. */
+      return rows.join("\n");
+    }
 
-                /* Only add data that corresponds with the headers. */
-                const row = headers.map(key => {
+    return "";
+  };
 
-                    /* Grab the value. */
-                    const datum = dataRow[key];
+  const onHandleDownloadTSV = (dataset, headers) => {
+    /* Build the dataset JSON, reformatted into a string. */
+    /* Data is delimitered by "tab" i.e. "\t". */
+    const reformattedDataset = reformatJSON(dataset, headers, "\t");
 
-                    /* Handle a variety of value types. */
-                    /* i.e. Type could be a number, object, array or null value. */
-                    return parseDatum(datum, key);
-                });
+    /* Execute download of the tsv file. */
+    downloadDataset(reformattedDataset, "tsv");
+  };
 
-                const rowStr = row.join(columnSeperator);
-                acc.push(rowStr);
+  const parseDatum = (datum, key) => {
+    /* Handle case where datum exists, or is a number (for when 0 is a valid value). */
+    if (datum || typeof datum === "number") {
+      /* Handle case where datum is a number in TB. */
+      if (key === "sizeTB" || key === "size") {
+        return NumberFormatService.formatSizeToTB(datum);
+      }
 
-                return acc;
-            }, rows);
-
-            /* Return the reformatted JSON. */
-            return rows.join("\n");
+      /* Handle case where datum is object. */
+      /* e.g. key "diseases" is an array. */
+      /* e.g. key "gapId" is an object with keys studyUrl and value. */
+      if (typeof datum === "object") {
+        /* Handle case where datum is an array. */
+        if (Array.isArray(datum)) {
+          return datum.join("; ") || "--";
+        } else if (key === "gapId") {
+        /* Handle case where datum key is "gapId". */
+          return datum.gapIdDisplay || "--";
         }
+      }
 
-        return "";
-    };
+      return datum;
+    }
 
-    const onHandleDownloadTSV = (dataset, headers) => {
+    return "--";
+  };
 
-        /* Build the dataset JSON, reformatted into a string. */
-        /* Data is delimitered by "tab" i.e. "\t". */
-        const reformattedDataset = reformatJSON(dataset, headers, "\t");
-
-        /* Execute download of the tsv file. */
-        downloadDataset(reformattedDataset, "tsv");
-    };
-
-    const parseDatum = (datum, key) => {
-
-        /* Handle case where datum exists, or is a number (for when 0 is a valid value). */
-        if ( datum || typeof datum === "number" ) {
-
-            /* Handle case where datum is a number in TB. */
-            if ( key === "sizeTB" || key === "size" ) {
-
-                return NumberFormatService.formatSizeToTB(datum);
-            }
-
-            /* Handle case where datum is object. */
-            /* e.g. key "diseases" is an array. */
-            /* e.g. key "gapId" is an object with keys studyUrl and value. */
-            if ( typeof datum === "object" ) {
-
-                /* Handle case where datum is an array. */
-                if ( Array.isArray(datum) ) {
-
-                    return datum.join("; ") || "--";
-                }
-                /* Handle case where datum key is "gapId". */
-                else if ( key === "gapId" ) {
-
-                    return datum.gapIdDisplay || "--";
-                }
-            }
-
-            return datum;
-        }
-
-        return "--";
-    };
-
-    return (
-        <ContextDashboardDownload.Provider value={{onHandleDownloadTSV}}>
-            {children}
-        </ContextDashboardDownload.Provider>
-    )
+  return (
+    <ContextDashboardDownload.Provider value={{ onHandleDownloadTSV }}>
+      {children}
+    </ContextDashboardDownload.Provider>
+  );
 }
 
 export default ProviderDashboardDownloads;

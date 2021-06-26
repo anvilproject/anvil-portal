@@ -7,63 +7,64 @@
 
 /* Search - "input" container. */
 .search {
-    max-width: 246px;
-    position: relative; /* Required for icon. */
+  max-width: 246px;
+  position: relative; /* Required for icon. */
 }
 
 /* Clear icon. */
 .search .icon {
-    color: var(--black34);
-    cursor: pointer;
-    font-size: 20px;
-    opacity: 0;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    top: 0;
+  color: var(--black34);
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* Clear icon - hover. */
 .search .icon.active:hover {
-    color: var(--black58);
+  color: var(--black58);
 }
 
 /* Clear icon - active. */
 .search .icon.active {
-    opacity: 1;
-    transition: opacity 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Input. */
 .input {
-    -webkit-appearance: none; /* Removes inner shadow on mobile. */
-    color: var(--black87);
-    background-color: transparent;
-    border: 1px solid var(--primary);
-    border-radius: 2px;
-    display: block;
-    font-size: 16px;
-    height: 30px;
-    overflow: hidden;
-    padding: 0 30px 0 4px;
-    text-overflow: ellipsis;
-    width: 100%;
+  -webkit-appearance: none; /* Removes inner shadow on mobile. */
+  color: var(--black87);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  overflow: hidden;
+  padding: 0 30px 0 4px;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 /* Input focus. */
 .input:focus {
-    border-color: var(--accent-blue-green);
-    outline: none;
+  border-color: var(--accent-blue-green);
+  outline: none;
 }
 
 /* Input, placeholder. */
-.input, .input::placeholder {
-    line-height: 30px;
+.input,
+.input::placeholder {
+  line-height: 30px;
 }
 
 /* Input - placeholder. */
 .input::placeholder {
-    color: var(--default-text);
-    font-size: 12px;
-    opacity: 0.87;
+  color: var(--default-text);
+  font-size: 12px;
+  opacity: 0.87;
 }
