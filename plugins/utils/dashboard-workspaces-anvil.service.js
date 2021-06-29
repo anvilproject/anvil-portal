@@ -269,7 +269,7 @@ function findCountWorkspace(row, countWorkspaces) {
 
   /* Find the corresponding workspaces counts. */
   const countWorkspace = countWorkspaces.find(
-    countWorkspace => countWorkspace[keyProjectId] === projectId
+    countWorkspace => countWorkspace[keyProjectId].toLowerCase() === projectId.toLowerCase()
   );
 
   /* Return the workspace counts if they exist. */

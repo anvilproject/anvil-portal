@@ -19,8 +19,8 @@ anvil_nhgri_broad_ibd_daly_kugathasan_wes	fc-secure-0ca0c5e6-26ca-47ea-b509-ec4e
 AnVIL_CCDG_Broad_NP_Epilepsy_AUSAUS_EPI_BA_ID_MDS_WES	fc-secure-0de89e54-2149-4e06-81f9-da5af48c68a3	0	0	24	24	0	4.46E+10
 AnVIL_PAGE_BioMe_GRU_WGS	fc-secure-0e71f746-0db3-4ff7-ba65-4a454d8ff0e1	0	0	0	307	307	7.99E+12
 AnVIL_CMG_Broad_Orphan_VCGS-White_WES	fc-secure-0e876de4-dc38-4e3d-98c0-822963e9df17	447	447	230	677	447	1.06E+12
-anvil_ccdg_broad_ai_ibd_niddk_daly_silverberg_wes	fc-secure-0eba3dae-89be-4642-8982-9a80a7428cd2	0	0	1062	1062	0	1.37E+12
-AnVIL_CCDG_Broad_CVD_AF_Darbar_UIC_Controls_WES	fc-0ed1ef2d-1039-4c8a-a0a9-91c3e385200a	0	0	159	159	0	1.39E+11
+anvil_ccdg_broad_ai_ibd_niddk_daly_silverberg_wes	fc-secure-0eba3dae-89be-4642-8982-9a80a7428cd2	0	0	1389	1389	0	1.65E+12
+AnVIL_CCDG_Broad_CVD_AF_Darbar_UIC_Controls_WES	fc-0ed1ef2d-1039-4c8a-a0a9-91c3e385200a	0	0	305	305	0	2.70E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_FINKPH_EPIL_CO_MORBIDI_MDS_WES	fc-secure-0f948ad2-2ae8-433c-9f0c-941c4c5e4a89	0	0	904	904	0	1.37E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_DEUUTB_HMB-NPU-MDS_WES	fc-secure-0fc5a889-f57e-40a1-9859-c5b1e8a196d1	0	0	1654	1654	0	2.31E+12
 AnVIL_CCDG_Broad_CVD_AFib_Penn_WGS	fc-secure-10b393b7-8607-4999-b1c5-18b9aabb49d6	0	0	418	418	0	8.56E+12
@@ -34,6 +34,7 @@ anvil_ccdg_broad_ai_ibd_daly_vermeire_wes	fc-secure-1614d6d2-d053-4de0-9b97-cc4b
 AnVIL_CMG_Broad_Heart_Ware_WES	fc-secure-16d26258-a516-4b26-b5d1-f17d785fbc70	10	10	0	10	10	1.82E+10
 AnVIL_ccdg_asc_ndd_daly_talkowski_lattig_asd_exome	fc-secure-16e0c63c-847a-42ef-91ca-3523b3668357	0	0	487	487	0	4.37E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_TURBZU_GRU_WES	fc-secure-17d8dbc9-d1d8-4d5d-8eb7-c1b82bef24d8	0	0	208	208	0	3.43E+11
+testworkspace1	fc-secure-18155064-0b29-448a-ae08-8857d0b9a91a	0	0	0	0	0	0
 AnVIL_CCDG_Broad_NP_Epilepsy_AUSRMB_DS-EAED-MDS-NPU-IRB_WES	fc-18d7b17f-0ab3-4ab1-b730-61402c7ab4d0	0	0	110	110	0	9.78E+10
 AnVIL_CCDG_WashU_CVD_EOCAD_Harvard-Costa-Rica_WGS	fc-secure-19ae92b3-86a1-4ec5-a8dc-f9d1ea226c4c	0	0	3088	3088	0	4.41E+13
 AnVIL_CCDG_WashU_CVD_EOCAD_WashU-CAD_GRU-IRB_WGS	fc-secure-1a841909-2e43-4c83-8b66-ba15aceecfee	0	0	265	265	0	4.75E+12
@@ -41,13 +42,14 @@ AnVIL_CCDG_Broad_CVD_EOCAD_VIRGO_WGS	fc-secure-1b2f65a3-61f8-4ce1-93ad-65b690c1f
 AnVIL_CCDG_Baylor_CVD_HemStroke_Yale_HMB_WGS	fc-secure-1d07990d-3332-4233-ad22-18d701ae7ead	0	0	185	185	0	3.15E+12
 AnVIL_CCDG_Broad_CVD_AFib_AFLMU_WGS	fc-secure-1e391fda-00d2-4dc9-94f2-845e59d57117	0	0	248	248	0	5.37E+12
 AnVIL_CMG_Broad_Muscle_Beggs_WES	fc-secure-1e74f991-d0bb-4b99-b3fc-aad5cf94069c	109	222	439	439	109	3.96E+11
-AnVIL_CCDG_Broad_CVD_AFib_GENAF_WGS	fc-secure-1fb85b31-9a1e-46ef-a206-41040d151f94	0	0	90	90	0	1.87E+12
+AnVIL_CCDG_Broad_CVD_AFib_GENAF_WGS	fc-secure-1fb85b31-9a1e-46ef-a206-41040d151f94	0	0	90	90	0	1.88E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_DEUUPM_HMB_MDS_WES	fc-secure-1fc9933f-3f2f-441e-97f2-c0b2a6081d3d	0	0	112	112	0	877465719
 AnVIL_CCDG_WashU_CVD_EOCAD_METSIM_WGS	fc-secure-2011b97c-a9c9-4a13-8911-f3833be31253	0	0	9477	9477	0	1.34E+14
 AnVIL_CCDG_NYGC_NP_Autism_HFA_DS_WGS	fc-secure-203efee5-de46-4cb1-9374-3c5be56e5a5e	0	0	509	509	0	1.02E+13
 AnVIL_CMG_Broad_Blood_Sankaran_WGS	fc-secure-2069fdfd-aef5-4321-a69f-94bdff6396d8	0	0	96	96	0	1.61E+12
 AnVIL_CCDG_Broad_CVD_AFib_JHU_WGS	fc-secure-2085a664-58a9-404c-ae57-210fb19806fb	0	0	290	290	0	5.45E+12
 AnVIL_CCDG_Broad_CVD_AFib_MPP_WGS	fc-secure-20d7c83f-35a7-4b7e-9a1b-c40bfdff29b2	0	0	118	118	0	2.55E+12
+AnVIL_CCDG_Broad_NP_Epilepsy_GBRSWU_CARDI_NEURO_GSA-MD	fc-secure-20f0ccf9-097d-423e-a1f1-5f8f4ee4882b	0	0	0	0	0	0
 AnVIL_CCDG_WashU_CVD_EOCAD_Finland-CHD_WGS	fc-secure-215c5ec0-940a-4808-9353-667f3a3af3c3	0	0	155	155	0	3.09E+12
 AnVIL_ccdg_asc_ndd_daly_talkowski_puura_asd_exome	fc-secure-2180b508-ce9d-4535-aa9f-f07d5917025c	0	0	209	209	0	3.29E+11
 AnVIL_CCDG_NYGC_NP_Alz_LOAD_WGS	fc-secure-21c6905e-06c8-45f2-b6ed-ffba467f7f75	0	0	0	1049	1049	2.45E+13
@@ -58,8 +60,9 @@ anvil_ccdg_broad_ai_ibd_daly_faubion_share_wes	fc-secure-228fd6fd-e0f7-4895-a246
 AnVIL_CCDG_Broad_NP_Epilepsy_CHEUBB_HMB_IRB_MDS_WES	fc-secure-240e1629-6d73-42ab-a373-1abeec17824c	0	0	47	47	0	4.39E+10
 AnVIL_CCDG_WashU_CVD_Kanazawa_WGS	fc-secure-2513a28a-aff0-422a-b650-9c05fa6800c3	0	0	273	273	0	3.05E+12
 AnVIL_CCDG_WashU_CVD_EOCAD_Penn_WGS	fc-secure-25f8efc0-42fc-48d5-9a39-53c131c4d6ef	0	0	1356	1356	0	2.70E+13
+TestWorkspace3	fc-secure-261c3585-dde8-4231-b671-e4143e4bbf08	0	0	0	0	0	0
 AnVIL_CCDG_Broad_CVD_AF_EAST_WES	fc-282a8e0b-df88-42de-9059-2b7447d9f9c7	0	0	1565	1565	0	
-AnVIL_CCDG_Broad_CVD_AF_Ellinor_MGH_WES	fc-2836a560-113a-4239-acab-5cce58019b73	0	0	442	442	0	4.12E+11
+AnVIL_CCDG_Broad_CVD_AF_Ellinor_MGH_WES	fc-2836a560-113a-4239-acab-5cce58019b73	0	0	489	489	0	4.71E+11
 AnVIL_CCDG_NYGC_NP_Autism_ACE2_DS-MDS_WGS	fc-secure-285cdab6-0292-4c49-b22f-5232df22e9a7	0	0	0	146	146	3.19E+12
 AnVIL_PAGE_MEC_GRU_WGS	fc-secure-286b80a7-cd88-4feb-bc4b-b497c13b7fa2	0	0	0	70	70	1.71E+12
 anvil_ccdg_broad_ai_ibd_niddk_daly_brant_wes	fc-secure-29cd113f-7eca-4526-aa52-dde1b8cb41d0	0	0	914	914	0	9.38E+11
@@ -69,10 +72,11 @@ AnVIL_CCDG_Broad_CVD_AF_TMDU_Cases_WES	fc-2b68ae78-57af-4c65-8020-6f5ed4ae9408	0
 AnVIL_CCDG_Broad_CVD_AF_VAFAR_WES	fc-2bcebe36-5d83-486a-947a-bbb5a606701d	0	0	1548	1548	0	1.37E+12
 AnVIL_eMERGE_PGRNseq	fc-secure-2c07111e-8696-439c-9183-64a9ecb083a7	0	0	9010	9010	0	2525144003
 AnVIL_CCDG_Broad_CVD_AFib_MGH_WGS	fc-secure-2c4bf327-7583-4aee-b2c2-4575abdea4ca	0	0	105	105	0	2.32E+12
+AnVIL_CCDG_Broad_CVD_AF_Rienstra_WES	fc-2d61b7df-571f-4201-a674-1107c84711df	0	0	2012	2013	0	1.79E+12
 AnVIL_ccdg_asc_ndd_daly_talkowski_kolevzon_asd_wgs	fc-secure-2e284171-99ef-45b5-9261-b99a9208b241	0	0	27	27	0	4.70E+11
 AnVIL_CCDG_Baylor_CVD_Oregon_SUDS_GRU_WGS	fc-secure-2ecd823d-d20c-453d-a798-7fe21c195be7	0	0	2216	2216	0	3.85E+13
 AnVIL_CCDG_NYGC_AI_Asthma_Gala2_WGS	fc-secure-2f25349b-e646-426d-8aa7-3a7e779d70fa	0	0	0	1171	1171	2.87E+13
-anvil_ccdg_broad_ai_ibd_daly_newberry_share_wes	fc-secure-2fa3df40-c189-41ee-b5ba-484a0b77ef77	0	0	885	885	0	8.07E+11
+anvil_ccdg_broad_ai_ibd_daly_newberry_share_wes	fc-secure-2fa3df40-c189-41ee-b5ba-484a0b77ef77	0	0	925	925	0	8.75E+11
 AnVIL_CCDG_WashU_CVD_PAGE_HMB-NPU_WGS	fc-secure-3003014b-05be-4ee1-8aa5-cc10e9a51293	0	0	38	38	0	9.15E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_GBRUNL_GRU_WES	fc-secure-315a127f-649d-4928-b4e0-cdca7d898e05	0	0	55	55	0	1.19E+11
 AnVIL_CCDG_Broad_MI_BRAVE_GRU_WES	fc-secure-31d85e96-7fa0-4c2e-a89a-fe5c70845fd7	0	0	1496	1496	0	2.47E+12
@@ -88,7 +92,7 @@ anvil_ccdg_broad_ai_ibd_daly_sartor_share_wes	fc-secure-382fb414-642b-45ef-9a85-
 AnVIL_CCDG_Broad_AI_IBD_McGovern_WGS	fc-secure-386d1d06-75c7-4683-b1ca-62e0d7ac3700	0	0	1633	1633	0	2.34E+13
 AnVIL_CMG_Broad_Blood_Gazda_WGS	fc-secure-391028be-a06b-460c-b2fd-409feee6a275	0	0	0	0	0	0
 AnVIL_CCDG_Broad_NP_Epilepsy_USAUPN_Marsh_GRU_NPU_WES	fc-secure-39458ab6-c2d3-49e2-b6d5-8bb3bae9a245	0	0	41	41	0	4.26E+10
-Nareh_Test_Workspace	fc-secure-39abe354-d777-45f6-8355-b0d12088ea8b	0	0	0	0	0	0
+Nareh_Test_Workspace	fc-secure-39abe354-d777-45f6-8355-b0d12088ea8b	0	0	0	0	0	1.79E+10
 AnVIL_CCDG_WashU_CVD_EOCAD_BioImage_WGS	fc-secure-3aa171b5-8208-4467-8743-c7879f3da6da	0	0	0	922	0	1.76E+13
 AnVIL_CMG_Broad_Orphan_Estonia-Ounap_WES	fc-secure-3b2bc739-bbc0-4b14-80fa-65dcf17eac3b	31	31	0	31	31	7.62E+10
 AnVIL_CCDG_Broad_NP_Epilepsy_IRLRCI_GRU_IRB_WES	fc-secure-3b588f92-0298-4ad6-b75d-fa16de8b718d	0	0	933	933	0	1.53E+12
@@ -100,10 +104,10 @@ AnVIL_CCDG_WASHU_PAGE	fc-secure-40b4ead9-fdee-42e4-98c8-24b241568138	0	0	0	0	0	1
 anvil_ccdg_broad_ai_ibd_daly_xavier_kastner_fmf_wes	fc-41c77566-33d0-4523-a89e-fdad0b94f324	0	0	27	27	0	2.36E+10
 AnVIL_CMG_Broad_Orphan_Estonia-Ounap_WGS	fc-secure-4220b594-e88e-4468-b4ff-ef782fd51d15	115	115	0	115	115	2.03E+12
 AnVIL_CMG_Broad_Muscle_Topf_WES	fc-secure-42c87858-73f5-49bf-bbc1-05974a4262b4	722	722	1	723	722	1.20E+12
-AnVIL_HPRC	fc-4310e737-a388-4a10-8c9e-babe06aaf0cf	0	0	47	57	0	1.49E+14
+AnVIL_HPRC	fc-4310e737-a388-4a10-8c9e-babe06aaf0cf	0	0	47	57	0	1.60E+14
 anvil_ccdg_broad_ai_ibd_daly_sands_msccr_wes	fc-secure-43207dac-0905-4fdd-b816-a34bd2ccebdd	0	0	1435	1435	0	1.21E+12
 AnVIL_T2T	fc-47de7dae-e8e6-429c-b760-b4ba49136eee	0	0	0	0	0	4.93E+14
-AnVIL_CCDG_Broad_NP_Epilepsy_AUSRMB_DS-EAED-MDS_WES	fc-secure-4931149d-9e71-4865-9f41-3e4c998ffb38	0	0	383	383	0	5.80E+11
+AnVIL_CCDG_Broad_NP_Epilepsy_AUSRMB_DS-EAED-MDS_WES	fc-secure-4931149d-9e71-4865-9f41-3e4c998ffb38	0	0	383	383	0	5.81E+11
 AnVIL_CCDG_Broad_AI_IBD_Cho_WGS	fc-secure-4984306f-6ceb-48a0-87d5-a6c4ef499867	0	0	345	344	0	5.26E+12
 AnVIL_CCDG_NYGC_NP_Autism_SAGE_WGS	fc-secure-4a5440e0-1b04-42c6-a1b4-e8249a578727	0	0	0	1501	1501	3.16E+13
 AnVIL_CCDG_Broad_Spalletta_HMB_NPU_MDS_WES	fc-secure-4c07a18a-8c79-4b81-acbe-91083298f1e4	0	0	102	102	0	1.64E+11
@@ -119,8 +123,8 @@ AnVIL_ccdg_asc_ndd_daly_talkowski_menashe_asd_exome	fc-secure-51a26e99-63eb-442a
 AnVIL_ccdg_asc_ndd_daly_talkowski_AGRE_asd_exome	fc-secure-538d85ea-c436-43f9-b001-4db614ed96bf	0	0	844	844	0	1.54E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_GHAKNT_GRU_WES	fc-secure-550ffe2e-04fd-4763-b7d2-09f0c59083e4	0	0	642	642	0	5.57E+11
 AnVIL_ccdg_asc_ndd_daly_talkowski_domenici_asd_exome	fc-secure-55225e12-ec4c-42e0-a5d1-986c87c6d129	0	0	713	713	0	1.20E+12
-AnVIL_CMG_Broad_Brain_Walsh_WES	fc-secure-55694600-0349-4174-980d-716fa1371e6a	767	767	0	767	767	1.69E+12
-anvil_ccdg_broad_ai_ibd_daly_rioux_niddk_wes	fc-secure-55efa443-810c-48c8-90bb-f07beba0e560	0	0	908	908	0	1.40E+12
+AnVIL_CMG_Broad_Brain_Walsh_WES	fc-secure-55694600-0349-4174-980d-716fa1371e6a	767	767	6	773	767	1.69E+12
+anvil_ccdg_broad_ai_ibd_daly_rioux_niddk_wes	fc-secure-55efa443-810c-48c8-90bb-f07beba0e560	0	0	993	993	0	1.47E+12
 1000G-high-coverage-2019	fc-56ac46ea-efc4-4683-b6d5-6d95bed41c5e	0	0	3202	3202	0	7.30E+13
 AnVIL_CCDG_Baylor_CVD_HemStroke_ERICH_WGS	fc-secure-585ef3f0-76a9-40ae-8ed3-a47190c3148f	0	0	2558	2558	0	5.02E+13
 AnVIL_CCDG_NYGC_NP_Alz_EFIGA_WGS	fc-secure-588b9330-ec2f-4652-86cd-f6f57b4aecbf	0	0	1875	1875	0	4.23E+13
@@ -137,7 +141,7 @@ AnVIL_NIMH_Broad_WGSPD1_McCarroll_Pato_GRU_WGS	fc-secure-60efd02c-dae9-4272-a926
 AnVIL_CCDG_Broad_CVD_AF_BioVU_HMB_GSO_WES	fc-secure-6513d7e1-2dbb-41a2-baea-3f7fdbcbb620	0	0	5031	5031	0	4.65E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_LEBABM_DS_Epilepsy_WES	fc-secure-652024de-0ecd-4de3-8360-c8c5bfcafd72	0	0	392	392	0	4.64E+11
 AnVIL_ccdg_asc_ndd_daly_talkowski_passos-bueno_asd_exome	fc-secure-6537d7f6-f29f-432b-b66e-8cf2204b7920	0	0	941	941	0	1.31E+12
-AnVIL_CMG_Broad_Muscle_OGrady_WES	fc-secure-65d7db7a-ceca-4b3a-aada-d45ec1c7b541	73	73	0	73	73	1.13E+11
+AnVIL_CMG_Broad_Muscle_OGrady_WES	fc-secure-65d7db7a-ceca-4b3a-aada-d45ec1c7b541	73	73	24	97	73	1.35E+11
 AnVIL_CCDG_WashU_CVD_Indiana_WGS	fc-secure-65eb240a-fda1-4c9b-90ff-2476751bc967	0	0	1175	1175	0	1.20E+13
 AnVIL_CCDG_Broad_NP_Epilepsy_TURIBU_DS_NEURO_AD_NPU_WES	fc-secure-674fbd89-9eeb-4e43-8a6f-97d6e50708e0	0	0	163	163	0	2.93E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_FINUVH_HMB_NPU_MDS_WES	fc-secure-678eccb8-3463-4a72-8b57-69dfc8c77002	0	0	100	100	0	1.74E+11
@@ -155,11 +159,11 @@ AnVIL_CMG_UWash_GRU	fc-secure-723963fa-faec-4de1-bf37-12d3c22a417a	0	0	0	0	486	2
 AnVIL_CCDG_NYGC_NP_Autism_PELPHREY_ACE_GRU_WGS	fc-secure-7248d8b7-e064-487c-9514-28a7cf0e271c	0	0	197	197	0	3.09E+12
 anvil_nhgri_broad_ibd_daly_winter_wes	fc-secure-72a949c5-0b7d-45c9-96c3-ff4d25815ed5	0	0	412	412	0	7.73E+11
 anvil_ccdg_broad_ai_ibd_daly_louis_wes	fc-secure-73036e74-c8b0-4e6f-9f4f-ca55b599d5d1	0	0	2120	2120	0	2.84E+12
-AnVIL_PAGE_WHI_HMB-IRB_WGS	fc-secure-756b92cc-ad23-41f2-8566-3620b1016886	0	0	0	235	235	5.42E+12
+AnVIL_PAGE_WHI_HMB-IRB_WGS	fc-secure-756b92cc-ad23-41f2-8566-3620b1016886	0	0	0	235	235	5.43E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_CANUTN_DS-EP_WES	fc-secure-75f95e44-299f-4666-bed3-46dd679b12d8	0	0	143	143	0	2.31E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_ITAUMC_DS_NEURO_MDS_WES	fc-secure-7a160245-84eb-4383-80ed-f41c2411e702	0	0	412	412	0	6.43E+11
 AnVIL_CCDG_WashU_CVD_SCCS_WGS	fc-secure-7c502c02-435a-4cc6-a9bc-b2406d8079be	0	0	4326	4326	0	5.76E+13
-AnVIL_CCDG_Broad_NP_Epilepsy_LEBABM_GRU_WES	fc-secure-7c845669-3781-4ac0-bb59-1495d68d1d85	0	0	845	845	0	9.85E+11
+AnVIL_CCDG_Broad_NP_Epilepsy_LEBABM_GRU_WES	fc-secure-7c845669-3781-4ac0-bb59-1495d68d1d85	0	0	845	845	0	9.91E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_USALCH_HMB_MDS_WES	fc-7dbe58d0-8579-48d7-abf8-215651316013	0	0	7	7	0	5934036582
 AnVIL_ccdg_asc_ndd_daly_talkowski_renieri_asd_exome	fc-secure-7e0893cd-4f31-41e4-b1d2-3e656097824a	0	0	765	765	0	9.36E+11
 anvil_ccdg_broad_ai_ibd_daly_chung_gider_wes	fc-secure-7e9fe869-643a-4828-a1b7-0245e34745ae	0	0	627	627	0	5.32E+11
@@ -168,7 +172,7 @@ AnVIL_CCDG_Broad_NP_Epilepsy_USAMON_HMB_NPU_MDS_WES	fc-7fc7dc2b-f68e-4499-8384-3
 JKK_Anvil_Arrays_Test	fc-secure-80724e98-b0ba-4897-8855-9b01e403f678	0	0	0	0	0	0
 AnVIL_CCDG_Broad_NP_Epilepsy_AUTMUV_DS_NS_MDS_NPU_WES	fc-82bbaf50-f3d4-48e9-bd76-3874638fa714	0	0	102	102	0	
 AnVIL_CCDG_Freeze2_VCFs	fc-secure-83bea9db-38e6-4142-8fe7-6e94f471f8c2	0	0	0	0	0	3.76E+13
-AnVIL_CCDG_Broad_NP_Epilepsy_HKGHKK_HMB_MDS_WES	fc-secure-84e57da6-4df9-45de-9f82-8a550887a7fa	0	0	665	665	0	6.44E+11
+AnVIL_CCDG_Broad_NP_Epilepsy_HKGHKK_HMB_MDS_WES	fc-secure-84e57da6-4df9-45de-9f82-8a550887a7fa	0	0	665	665	0	6.45E+11
 AnVIL_CCDG_Broad_NP_Autism_State-Sanders_WGS	fc-secure-86684396-82a0-4f1b-a918-b90b039b922c	0	0	534	534	0	8.64E+12
 AnVIL_ccdg_asc_ndd_daly_talkowski_barbosa_asd_exome	fc-secure-86cbdfa9-cbc0-40fb-adfa-3dd467ae1062	0	0	213	213	0	3.50E+11
 anvil_ccdg_broad_ai_ibd_niddk_daly_duerr_wes	fc-secure-877e6c8c-72ef-46d0-b3f3-37dd175771fe	0	0	841	841	0	8.01E+11
@@ -181,11 +185,12 @@ AnVIL_ccdg_asc_ndd_daly_talkowski_herman_asd_exome	fc-secure-8a297961-e042-4d02-
 AnVIL_CCDG_Broad_NP_Epilepsy_AUSALF_HMB_IRB_GSRS_WES	fc-8da94069-2edc-4e37-8c96-5a25740aeb32	0	0	16	16	0	
 AnVIL_CCDG_WashU_CVD_EOCAD_BioVu_WGS	fc-secure-8e933d1a-d546-4267-967f-bc00d03f4880	0	0	624	624	0	1.19E+13
 AnVIL_CCDG_Broad_NP_Epilepsy_DEUUKB_HMB_NPU_MDS_WES	fc-secure-8ec82876-176f-4f33-ae98-0a3cae871ed4	0	0	2498	2498	0	3.78E+12
+anvil_ccdg_broad_ai_ibd_daly_rioux_igenomed_wes	fc-9197a911-c2f8-4f5f-91f9-389d191626d0	0	0	182	182	0	
 AnVIL_CMG_Broad_Blood_Gazda_WES	fc-secure-91c2f2c0-a04f-4147-a5e4-971e3e8cbd8a	0	0	51	51	0	7.84E+10
-anvil_ccdg_broad_ai_ibd_daly_mcgovern_niddk_wes	fc-secure-91f9e579-b064-4992-8b00-c789ca48f861	0	0	9610	9610	0	1.08E+13
+anvil_ccdg_broad_ai_ibd_daly_mcgovern_niddk_wes	fc-secure-91f9e579-b064-4992-8b00-c789ca48f861	0	0	9263	9263	0	9.94E+12
 AnVIL_NIMH_Broad_WGSPD1_McCarroll_Escamilla_DS_WGS	fc-secure-945a70d2-6f85-4130-b624-038a2e171811	0	0	85	85	0	3.45E+12
 AnVIL_CCDG_NYGC_NP_Autism_CAG_DS_WGS	fc-secure-9472fed0-5f8d-4a1c-a778-9ae44d90462d	0	0	734	734	0	1.34E+13
-AnVIL_CCDG_Broad_NP_Epilepsy_TWNCGM_HMB-NPU-ADULTS_GSA-MD	fc-secure-94bb3dcb-4e58-4031-97d8-8764c44fcdb0	0	0	0	0	0	0
+AnVIL_CCDG_Broad_NP_Epilepsy_TWNCGM_HMB-NPU-ADULTS_GSA-MD	fc-secure-94bb3dcb-4e58-4031-97d8-8764c44fcdb0	0	0	558	558	0	9.74E+10
 AnVIL_CCDG_Broad_NP_Epilepsy_CYPCYP_HMB_NPU_MDS_WES	fc-secure-94c90c12-376d-419a-96d9-ed37e1b1a5bb	0	0	179	179	0	2.90E+11
 AnVIL_CSER_CHARM	fc-secure-957b7ac5-293b-4be4-b7ce-d0452c1c9f38	0	0	0	0	0	4.36E+12
 ANVIL_CMG_Yale_GRU	fc-secure-95f51891-4082-405c-8373-457ce9fd0bce	0	759	1716	1731	0	1.54E+12
@@ -200,7 +205,7 @@ AnVIL_CMG_Broad_Muscle_Beggs_WGS	fc-secure-9ada5f40-88a5-413a-971e-8feb61f4030c	
 AnVIL_ccdg_asc_ndd_daly_talkowski_hertz-picciotto_asd_exome	fc-secure-9befa92f-ef34-4fcf-8df5-d085656e26dd	0	0	1537	1537	0	2.56E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_AUSAUS_EPIL_BA_MDS_WES	fc-secure-9c348df7-4da1-428a-a785-e06db3a9f208	0	0	12	12	0	2.19E+10
 AnVIL_CMG_Broad_Orphan_Manton_WES	fc-secure-9cd5bace-0607-49c0-b62c-837aa8cf195d	452	452	0	452	452	1.08E+12
-anvil_ccdg_broad_ai_ibd_daly_chung_gider_gsa	fc-secure-9ce99808-d26f-4f79-a884-75b608b9c623	0	0	0	0	0	0
+anvil_ccdg_broad_ai_ibd_daly_chung_gider_gsa	fc-secure-9ce99808-d26f-4f79-a884-75b608b9c623	0	0	628	628	0	1.08E+11
 AnVIL_CMG_BaylorHopkins_HMB-IRB-NPU_WES	fc-secure-9defae14-71f1-4096-a992-e24684ac890d	0	0	0	807	804	3.22E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_TWNCGM_HMB-NPU-ADULTS_WES	fc-secure-9f2f0267-2df4-44e9-a6ae-dd1d3a43cca5	0	0	1017	1017	0	1.22E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_USAUPN_Rader_GRU_WES	fc-secure-a065288d-5bb4-441c-95e9-0ffb20a6cf40	0	0	822	822	0	9.52E+11
@@ -215,7 +220,7 @@ AnVIL_CCDG_NYGC_NP_Autism_TASC_WGS	fc-secure-a8d262fb-151c-4c3d-ac09-7957a168fd5
 AnVIL_CCDG_WashU_CVD_EOCAD_Emory_WGS	fc-secure-a941f3d7-5afc-4886-a4ab-c9d6a6459b1f	0	0	430	430	0	8.79E+12
 AnVIL_CCDG_Broad_NP_Epilepsy_CANCAL_GRU_WES	fc-a9e7890c-3902-4647-8b82-273490a7ce54	0	0	267	267	0	2.39E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_USACRW_DS_EP_MDS_WES	fc-secure-ab235723-ed31-4242-b5ab-23c177a0e79c	0	0	326	326	0	6.07E+11
-anvil_ccdg_broad_ai_ibd_daly_xavier_share_wes	fc-secure-abc7f058-0260-4e82-a911-abfec3dcb676	0	0	732	732	0	6.71E+11
+anvil_ccdg_broad_ai_ibd_daly_xavier_share_wes	fc-secure-abc7f058-0260-4e82-a911-abfec3dcb676	0	0	733	733	0	6.73E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_KENKIL_GRU_WES	fc-secure-ac202043-c5ef-4fb7-8ccb-62a274c1b8ec	0	0	448	448	0	3.92E+11
 anvil_ccdg_broad_ai_ibd_daly_moayyedi_imagine_wes	fc-secure-ac588f86-da2d-4a92-9f45-be2aeedd5fac	0	0	1301	1301	0	1.08E+12
 AnvilArraysTestWorkspace	fc-secure-ad0c7e3c-6ac2-43fb-9997-935ff0a50daf	0	0	1	0	0	0
@@ -234,12 +239,12 @@ anvil_ccdg_broad_daly_igsr_1kg_twist_wes	fc-secure-b41964ad-0c8a-47da-8504-f8636
 AnVIL_CCDG_Broad_AI_IBD_Kugathasan_WGS	fc-secure-b4316f22-8920-4b86-a8cd-2a4a7b356f0d	0	0	1351	1351	0	1.73E+13
 AnVIL_CCDG_NYGC_NP_Autism_ACE2_GRU-MDS_WGS	fc-secure-b6e37dad-6d9c-49b3-ba96-042a7de9f47c	0	0	0	839	839	1.74E+13
 AnVIL_CMG_Broad_Kidney_Pollak_WES	fc-secure-b70f8e79-a3c6-4a0a-916a-be77d77db610	0	0	147	147	0	2.55E+11
-AnvilArraysWorkspace	fc-secure-b79d3b99-7d76-4c3b-af85-607214cad5c8	0	0	1	1	0	905793397
+AnvilArraysWorkspace	fc-secure-b79d3b99-7d76-4c3b-af85-607214cad5c8	0	0	1	1	0	747211199
 AnVIL_CCDG_Baylor_CVD_HemStroke_GOCHA_DS_WGS	fc-secure-b94a3f83-a0ad-4850-a05a-8736eb893577	0	0	1093	1093	0	1.90E+13
 AnVIL_CCDG_Broad_NP_Epilepsy_USACRW_DS_SEIZD_WES	fc-secure-b9906df4-3012-4c7b-a008-3c5708885971	0	0	152	152	0	3.10E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_USACCF_HMB-MDS_GSA-MD	fc-secure-b9f24f68-e734-4e8c-9f7b-0c6ef659aed6	0	0	336	336	0	5.93E+10
 AnVIL_CCDG_WashU_CVD_MultiEthnic_WGS	fc-secure-bae8180f-5cb1-4f57-b480-79ba9cfdd90e	0	0	7319	7319	0	7.72E+13
-AnVIL_CCDG_Broad_CVD_AF_Figtree_BioHeart_WES	fc-bb71bb7a-fdb1-427a-9e56-eb08b6fd7955	0	0	510	510	0	4.52E+11
+AnVIL_CCDG_Broad_CVD_AF_Figtree_BioHeart_WES	fc-bb71bb7a-fdb1-427a-9e56-eb08b6fd7955	0	0	938	938	0	8.33E+11
 AnVIL_CMG_Yale_HMB	fc-secure-bb7de72b-c51a-44a2-b275-c47b0650a65f	0	123	0	124	124	8.65E+10
 AnVIL_CMG_Broad_Orphan_Scott_WES	fc-secure-bc05aae4-fc19-427f-bbbf-da1cd17618b0	0	0	236	237	0	3.10E+11
 AnVIL_CCDG_Broad_NP_Epilepsy_USAMON_GRU_NPU_WES	fc-secure-bcc5d428-aed0-4814-aefc-f717b97d5106	0	0	4	4	0	3878409202
@@ -253,9 +258,9 @@ AnVIL_CCDG_Broad_NP_Epilepsy_HRVUZG_HMB_MDS_WES	fc-secure-bfe6497b-69a1-4917-8a7
 AnVIL_CMG_Broad_Heart_Seidman_WES	fc-secure-bff96058-f8a8-40c2-808d-2b3627fb995f	129	129	0	129	129	2.23E+11
 AnVIL_NIMH_Broad_ConvergentNeuro_McCarroll_Eggan_CIRM_GRU_WGS	fc-secure-c0ec29b0-a7f4-4090-a479-fe826e0aeed1	0	0	299	303	0	5.30E+12
 Anvil_Test_Workspace	fc-secure-c1027c43-5f57-4e42-bb1a-3f48f20595dd	0	0	11	13	0	7.67E+10
-AnVIL_CCDG_Broad_CVD_AF_Olesen_WES	fc-c1701683-c10e-4f73-a636-f774e8b650c2	0	0	50	50	0	4.35E+10
+AnVIL_CCDG_Broad_CVD_AF_Olesen_WES	fc-c1701683-c10e-4f73-a636-f774e8b650c2	0	0	55	55	0	4.80E+10
 AnVIL_CCDG_NYGC_NP_Alz_WHICAP_WGS	fc-secure-c327926b-a5aa-4b40-93b8-e092fa116e88	0	0	0	148	148	3.65E+12
-anvil_ccdg_broad_ai_ibd_daly_xavier_prism_wes	fc-secure-c40af798-8afc-4ab3-9b66-946955811d3b	0	0	2838	2838	0	5.13E+12
+anvil_ccdg_broad_ai_ibd_daly_xavier_prism_wes	fc-secure-c40af798-8afc-4ab3-9b66-946955811d3b	0	0	2838	2838	0	5.12E+12
 AnVIL_CCDG_WashU_CVD-NP-AI_Controls_VCControls_WGS	fc-secure-c5377331-3721-4e3b-b8d0-03715d9b428a	0	0	112	112	0	2.65E+12
 AnVIL_ccdg_asc_ndd_daly_talkowski_mcpartland_asd_exome	fc-secure-c53831f7-0431-44e5-abe6-308270690c3b	0	0	518	518	0	5.12E+11
 AnVIL_CCDG_WashU_CVD_Corogene_WGS	fc-secure-c53f7f30-6128-4fbc-8ae4-2559a8dbc752	0	0	547	547	0	8.97E+12
@@ -271,7 +276,7 @@ AnVIL_CCDG_Baylor_CVD_HHRC_Brownsville_GRU_WGS	fc-secure-ced72bfc-ed3b-4ffe-838c
 AnVIL_ccdg_asc_ndd_daly_talkowski_brusco_asd_exome	fc-secure-d157fd3c-57ff-4640-a084-cecda832e575	0	0	2231	2231	0	2.87E+12
 AnVIL_CCDG_NYGC_NP_Autism_GASD_GRU_WGS	fc-secure-d24a56f9-7a81-48b7-b1be-1d0e0ae0ac06	0	0	392	392	0	6.32E+12
 anvil_ccdg_broad_ai_ibd_daly_hyams_protect_wes	fc-secure-d2c84e56-8f0d-420a-96a4-942e92009433	0	0	418	418	0	3.60E+11
-AnVIL_CCDG_Broad_CVD_AF_Darbar_UIC_Cases_WES	fc-d3e9eb24-cb19-47d8-b2c6-d85fd34b4ff1	0	0	172	172	0	1.47E+11
+AnVIL_CCDG_Broad_CVD_AF_Darbar_UIC_Cases_WES	fc-d3e9eb24-cb19-47d8-b2c6-d85fd34b4ff1	0	0	304	304	0	2.65E+11
 AnVIL_NIMH_Broad_WGSPD1_McCarroll_Braff_DS_WGS	fc-secure-d464ac64-ee30-4105-a70b-6e3cc29cbde9	0	0	864	864	0	2.01E+13
 AnVIL_CCDG_Broad_CVD_AFib_Vanderbilt-Ablation_WGS	fc-secure-d51e93aa-adc1-4628-a6f2-e0dd1f0900c8	0	0	2	2	0	3.98E+10
 AnVIL_CCDG_Broad_AI_IBD_Brant_HMB_WGS	fc-secure-d55d1c0c-b1e3-42e9-b452-20a81be1f84a	0	0	904	904	0	1.24E+13
@@ -297,7 +302,7 @@ AnVIL_CCDG_Broad_NP_Epilepsy_USACCF_HMB-MDS_WES	fc-secure-e4b45d7c-3fee-479f-83e
 AnVIL_ccdg_asc_ndd_daly_talkowski_minshew_asd_exome	fc-secure-e5676c90-7028-4b68-b620-c6944514d52c	0	0	239	239	0	3.80E+11
 AnVIL_CMG_Broad_Blood_Fleming_WES	fc-secure-e64f388d-9f45-4833-b118-6aaa0e62adb2	0	0	0	0	0	0
 AnVIL_CCDG_WashU_CVD_EOCAD_Duke_WGS	fc-secure-e66447ae-c1b8-4a5b-a3e6-2bed1ca59d8f	0	0	1051	1051	0	2.18E+13
-AnVIL_CCDG_Broad_CVD_AF_Marcus_UCSF_WES	fc-e7051891-25c8-4776-80ed-26b1af860277	0	0	441	441	0	
+AnVIL_CCDG_Broad_CVD_AF_Marcus_UCSF_WES	fc-e7051891-25c8-4776-80ed-26b1af860277	0	0	599	599	0	
 AnVIL_CCDG_Broad_NP_Epilepsy_GBRUCL_DS_EARET_MDS_WES	fc-secure-e92b8081-5e6a-440c-af83-4d428f505529	0	0	684	684	0	1.25E+12
 anvil_ccdg_broad_ai_ibd_daly_franchimont_wes	fc-secure-e99706c4-48f9-4a69-baf4-70d1c5eaac5c	0	0	2848	2848	0	4.01E+12
 AnVIL_CCDG_Broad_CVD_EOCAD_PartnersBiobank_HMB_WES	fc-secure-ead0ff8d-eee9-4299-bb54-8404ffe9fa22	0	0	13332	13332	0	1.29E+13
@@ -315,6 +320,7 @@ AnVIL_CMG_Broad_Muscle_Myoseq_WGS	fc-secure-f2f4cf5f-bda3-4608-89b4-0c218f6dc6e8
 AnVIL_CCDG_Baylor_CVD_ARIC	fc-secure-f5d884c0-a24c-46e6-8c29-cad7f5b158c7	0	0	0	8975	8975	2.30E+14
 AnVIL_CMG_Broad_Muscle_Kang_WGS	fc-secure-f71ce5b2-bdd4-461b-a7fd-833d9c9a6b85	2	2	0	2	2	3.75E+10
 AnVIL_CCDG_Baylor_CVD_AFib_Groningen_WGS	fc-secure-f7f06a5e-1c5f-4d2e-b195-dd668d9d4b55	0	0	0	639	639	1.39E+13
+AnVIL_ccdg_asc_ndd_daly_talkowski_schloesser_asd_exome	fc-secure-f8b9ce8d-efc0-4aa1-ad71-c0378d8d7194	0	0	152	152	0	1.36E+11
 anvil_ccdg_broad_ai_ibd_daly_burnstein_utsw_wes	fc-f9f4111b-027e-4d27-923c-499f607cfa61	0	0	65	65	0	5.93E+10
 anvil_ccdg_broad_ai_ibd_daly_stampfer_wes	fc-secure-fba19c6f-984e-4616-b253-6d9e6ea5cec5	0	0	1489	1489	0	1.41E+12
 AnVIL_CMG_Broad_Eye_Pierce_WGS	fc-secure-fc0f573c-c14b-4a98-8e94-b8728fd2a1a1	35	35	0	35	35	6.37E+11
