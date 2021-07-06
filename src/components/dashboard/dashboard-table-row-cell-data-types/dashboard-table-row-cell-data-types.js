@@ -12,14 +12,13 @@ import React from "react";
 
 // App dependencies
 import Tooltip from "../../tooltip/tooltip";
-import * as DashboardService from "../../../utils/dashboard/dashboard.service";
 import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
 
 class DashboardTableRowCellDataTypes extends React.Component {
   render() {
     const { children, id } = this.props;
     const dataTypes = children;
-    const dataTypesExist = DashboardService.isArray(dataTypes);
+    const dataTypesExist = Array.isArray(dataTypes);
     const last = dataTypes.length - 1;
     const showDataTypes = !!children;
 

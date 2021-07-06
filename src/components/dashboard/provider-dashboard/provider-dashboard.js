@@ -7,552 +7,642 @@
 
 // Core dependencies
 import lunr from "lunr";
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
-import * as DashboardService from "../../../utils/dashboard/dashboard.service";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
 
-class ProviderDashboard extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onHandleChecked = event => {
-      const { selected, term } = event;
-
-      /* Clone state variable termsChecked. */
-      const termsCheckedClone = new Map(this.state.termsChecked);
-
-      /* Update clone. */
-      termsCheckedClone.set(term, selected);
-
-      /* Update termsChecked and query state and execute tracking. */
-      this.onHandleUpdateFacets(termsCheckedClone, term, selected);
-    };
-
-    this.onHandleClearFacet = facet => {
-      /* Clear search. */
-      if (facet === "search") {
-        this.onHandleClearInput();
-      } else {
-      /* Clear facet. */
-        const { facetsByTerm } = this.props;
-        const { termsChecked } = this.state;
-        const termsCheckedClone = new Map(termsChecked);
-
-        /* Update clone. */
-        [...termsChecked].forEach(([term, checked]) => {
-          const termFacet = facetsByTerm.get(term);
-
-          if (termFacet === facet && checked) {
-            termsCheckedClone.set(term, false);
-          }
-        });
-
-        this.onHandleUpdateFacets(termsCheckedClone);
-      }
-    };
-
-    this.onHandleClearInput = () => {
-      /* Handle change in search value. */
-      this.onHandleUpdateSearch("");
-    };
-
-    this.onHandleClearSearch = () => {
-      /* Clear input and facet values. */
-      const inputValue = "";
-      const cloneTermsChecked = this.onHandleClearFacets();
-
-      /** Get tracking values. */
-      const previousQuery = this.state.query;
-      const { facetsByTerm } = this.props;
-      const currentQuery = this.buildQuery(
-        facetsByTerm,
-        inputValue,
-        cloneTermsChecked
-      );
-
-      /* Update inputValue state. */
-      this.setState({
-        inputValue: inputValue,
-        query: currentQuery,
-        termsChecked: cloneTermsChecked
-      });
-
-      /** Execute tracking for search input. */
-      AnvilGTMService.trackSearchInput(
-        inputValue,
-        currentQuery,
-        previousQuery,
-        GAEntityType.WORKSPACE
-      );
-    };
-
-    this.onHandleClearTerm = (facet, term) => {
-      /* Update search. */
-      if (facet === "search") {
-        const { inputValue } = this.state;
-
-        /* Split inputValue into terms. */
-        /* Remove the term from the terms and create a new inputValue string. */
-        const terms = inputValue.split(" ");
-        const termIndex = terms.findIndex(input => input === term);
-        terms.splice(termIndex, 1);
-        const inputValueStr = terms.join(" ");
-
-        /* Update search with new inputValue string. */
-        this.onHandleUpdateSearch(inputValueStr);
-      } else {
-      /* Update facet. */
-        /* Handle change in term value. */
-        this.onHandleChecked({ selected: false, term: term });
-      }
-    };
-
-    this.onHandleInput = event => {
-      const inputValue = event.target.value;
-
-      /* Handle change in search value. */
-      this.onHandleUpdateSearch(inputValue);
-    };
-
-    this.state = {
-      dashboardIndex: [],
-      dashboardIndexMounted: false,
-      inputValue: "",
-      query: "", // Analytics-specific value, used to specify the current query state when tracking a change
-      searchURL: "",
-      selectedTermsByFacet: new Map(),
-      setOfCountResultsByFacet: new Map(),
-      setOfResults: new Set(),
-      setOfResultsBySearchGroups: new Map(),
-      termsChecked: new Map(),
-      onHandleChecked: this.onHandleChecked,
-      onHandleClearFacet: this.onHandleClearFacet,
-      onHandleClearInput: this.onHandleClearInput,
-      onHandleClearSearch: this.onHandleClearSearch,
-      onHandleClearTerm: this.onHandleClearTerm,
-      onHandleInput: this.onHandleInput
-    };
-  }
-
-  componentDidMount() {
-    /* Grab the index. */
-    this.fetchDashboardIndex();
-
-    /* Initialize the state "searchURL". */
-    this.initializeSearchURL();
-
-    /* Initialize the state "inputValue". */
-    this.initializeInputValue();
-
-    /* Initialize the state "termsChecked". */
-    this.initializeTermsChecked();
-  }
-
-  componentDidUpdate(_, prevState) {
-    /* Dashboard index mounted - update results. */
-    this.dashboardIndexMountedStateChanged(prevState);
-
-    /* Search state changed. */
-    this.searchStateChanged(prevState);
-
-    /* Results state changed. */
-    this.setOfResultsBySearchGroupsStateChanged(prevState);
-  }
-
-  componentWillUnmount() {
-    this.setState = {
-      dashboardIndex: [],
-      dashboardIndexMounted: false,
-      inputValue: "",
-      query: "",
-      searchURL: "",
-      selectedTermsByFacet: new Map(),
-      setOfCountResultsByFacet: new Map(),
-      setOfResults: new Set(),
-      setOfResultsBySearchGroups: new Map(),
-      termsChecked: new Map()
-    };
-  }
-
-  buildFacetQueryString = (selectedTerms, facet) => {
-    if (selectedTerms.length) {
-      return selectedTerms
-        .map(selectedTerm => `${facet}: ${selectedTerm}`)
-        .join(" ");
-    }
-
-    return "";
-  };
-
-  buildInputValueString = inputValue => {
-    if (inputValue) {
-      /* Multiple input values. */
-      if (inputValue.includes(" ")) {
-        const values = inputValue.split(" ");
-
-        return values.map(value => `+${value}*`).join(" ");
-      }
-
-      /* Singular input value. */
-      return `+${inputValue}*`;
-    }
-
-    return "";
-  };
+function ProviderDashboard(props) {
+  const {
+    children,
+    countLabel,
+    dashboardEntities,
+    dashboardIndexFileName,
+    dashboardURL,
+    resultKey,
+    setOfEntities,
+    setOfSummaryKeyTerms,
+    setOfTermsByFacet,
+    summaryKey,
+    tableHeadersEntities,
+    tableHeadersSummary,
+    termSearchValueByTermDisplay,
+    totalsWarning
+  } = props;
+  const inputValueRef = useRef("");
+  const lastHitRef = useRef({ facet: "", selected: false, term: "" });
+  const searchURLRef = useRef(null);
+  const selectedTermsByFacetRef = useRef(new Map());
+  const setOfResultsByFacetRef = useRef(new Map());
+  const setOfSelectedTermsByFacetRef = useRef(new Map());
+  const [dashboardIndex, setDashboardIndex] = useState({
+    index: {},
+    indexMounted: false
+  });
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState({
+    entities: [],
+    facets: [],
+    summaries: []
+  });
+  const { index, indexMounted } = dashboardIndex;
+  const { entities, facets, summaries } = results;
+  const regSpecialChars = /[^a-zA-Z0-9\s]/g;
+  const regWhiteSpace = /\s\s+/g;
+  const warning = totalsWarning ? (
+    <span>
+      <sup>* </sup>Totals are adjusted for project data hosted in multiple{" "}
+      {summaryKey}.
+    </span>
+  ) : null;
 
   /**
-   * Build the query string from the specified set of selected facet terms and input value.
-   *
-   * @param facetsByTerm
-   * @param inputValue
-   * @param termsChecked
+   * Updates the dashboard url.
+   * @type {(function(*=): void)|*}
    */
-  buildQuery = (facetsByTerm, inputValue, termsChecked) => {
-    const selectedTermsByFacet = this.getSelectedTermsByFacet(
-      facetsByTerm,
-      inputValue,
-      termsChecked
-    );
+  const updateDashboardURL = useCallback(
+    currentQuery => {
+      /* Create new url from the dashboard url. */
+      const url = new URL(dashboardURL);
 
-    /* Update state selectedTermsByFacet. */
-    this.setState({ selectedTermsByFacet: new Map(selectedTermsByFacet) });
+      /* Add or remove search params from the url. */
+      if (currentQuery) {
+        /* Set the search params. */
+        url.searchParams.set("query", currentQuery);
+      } else {
+        /* Delete the search params. */
+        url.searchParams.delete("query");
+      }
 
-    // Convert selected terms to valid query string object
-    return new URLSearchParams(selectedTermsByFacet).toString();
-  };
+      /* Grab the new url string. */
+      const { href } = url;
 
-  dashboardIndexMountedStateChanged = prevState => {
-    const { dashboardIndexMounted } = this.state;
+      /* Update ref searchURL. */
+      searchURLRef.current = href;
 
-    const stateChanged =
-      prevState.dashboardIndexMounted !== dashboardIndexMounted;
+      /* Add the new url to the session history stack. */
+      window.history.pushState(null, "", href);
+    },
+    [dashboardURL]
+  );
 
-    if (stateChanged) {
-      /* Update selected terms by facet. */
-      this.updateSelectedTermsByFacet();
+  /**
+   * Updates state query, dashboard url, and executes tracking.
+   * @type {(function(): void)|*}
+   */
+  const updateQueryAndExecuteTracking = useCallback(() => {
+    /* Grab the current selectedTermsByFacet. */
+    /* Update the ref selectedTermsByFacet. */
+    const selectedTermsByFacet = getSelectedTermsByFacet();
+    selectedTermsByFacetRef.current = selectedTermsByFacet;
 
-      /* Update set of results. */
-      this.updateSetOfResults();
+    /* Convert selected terms to valid query string object. */
+    const newQuery = new URLSearchParams(selectedTermsByFacet).toString();
+
+    /* Grab the current query. */
+    const currentQuery = getCurrentQuery();
+
+    /* Update dashboard url and ref SearchURL. */
+    updateDashboardURL(newQuery);
+
+    const { facet, selected, term } = lastHitRef.current;
+
+    /** Execute tracking for facet "search". */
+    if (facet === "search") {
+      AnvilGTMService.trackSearchInput(
+        term,
+        newQuery,
+        currentQuery,
+        GAEntityType.WORKSPACE
+      );
+    } else {
+      /* Execute tracking for all other facets. */
+      if (term) {
+        AnvilGTMService.trackSearchFacetSelected(
+          facet,
+          term,
+          selected,
+          newQuery,
+          currentQuery,
+          GAEntityType.WORKSPACE
+        );
+      }
     }
-  };
 
-  fetchDashboardIndex = () => {
-    const { dashboardIndexFileName } = this.props;
+    /* Update state query. */
+    setQuery(newQuery);
+  }, [updateDashboardURL]);
 
+  /**
+   * Returns the facets with filtered facet terms.
+   *
+   * @type {function(*): *[]}
+   */
+  const buildFacets = useCallback(
+    entitiesByFacet => {
+      const _facets = [];
+
+      for (const [facet, setOfTerms] of setOfTermsByFacet) {
+        /* "search" facet is not part of the checkbox group. */
+        if (facet === "search") {
+          continue;
+        }
+
+        const _terms = [];
+        const _entities = entitiesByFacet.get(facet);
+        const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+        const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
+
+        for (const term of setOfTerms) {
+          const count = DashboardSearchService.getDashboardTermCount(
+            facet,
+            term,
+            _entities
+          );
+          const selected = setOfSelectedTerms.has(term);
+
+          if (count || selected) {
+            _terms.push({ name: term, count: count, selected: selected });
+          }
+        }
+
+        _facets.push({ name: facet, terms: _terms });
+      }
+
+      return _facets;
+    },
+    [setOfTermsByFacet]
+  );
+
+  /**
+   * Returns the index query string for the specified facet and selected terms.
+   *
+   * @param facet
+   * @param setOfSelectedTerms
+   * @returns {string}
+   */
+  const buildQueryString = useCallback(
+    (facet, setOfSelectedTerms) => {
+      return [...setOfSelectedTerms]
+        .map(selectedTerm => {
+          /* Build the facet "search" query. */
+          if (facet === "search") {
+            /* Prevents lunr errors from characters like "+" or "~" when searching the index. */
+            const regChars = /[^a-zA-Z0-9\s]/g;
+            const regWS = /\s\s+/g;
+            const term = selectedTerm
+              .toLowerCase()
+              .replace(regChars, "_")
+              .replace(regWS, " ")
+              .trim();
+
+            return `+${term}*`;
+          }
+          /* Build non "search" facet query. */
+          const term =
+            termSearchValueByTermDisplay.get(selectedTerm) || selectedTerm;
+          return `${facet}: ${term}`;
+        })
+        .join(" ");
+    },
+    [termSearchValueByTermDisplay]
+  );
+
+  /**
+   * Returns the summary.
+   * @type {function(*=, *): *}
+   */
+  const buildSummaries = useCallback(
+    (_entities, _facets) => {
+      /* Grab the set of selected terms for the summary key. */
+      const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+      const setOfSelectedTerms = setOfSelectedTermsByFacet.get(summaryKey);
+      const facetUnselected = setOfSelectedTerms.size === 0;
+
+      /* Grab the set of summary terms. */
+      const setOfSummaryTerms = new Set(
+        _facets
+          .find(facet => facet.name === summaryKey)
+          .terms.filter(term => facetUnselected || term.selected)
+          .filter(term => term.count)
+          .map(term => term.name)
+      );
+
+      /* Return the summaries. */
+      return DashboardSummaryService.getDashboardSummary(
+        _entities,
+        summaryKey,
+        tableHeadersSummary,
+        setOfSummaryTerms
+      );
+    },
+    [summaryKey, tableHeadersSummary]
+  );
+
+  /**
+   * Fetches the lunr dashboard index.
+   * @type {(function(): void)|*}
+   */
+  const fetchDashboardIndex = useCallback(() => {
     fetch(dashboardIndexFileName)
       .then(res => res.json())
       .then(data => {
         const index = lunr.Index.load(data);
-        this.setState({ dashboardIndex: index, dashboardIndexMounted: true });
+        setDashboardIndex(dashboardIndex => ({
+          ...dashboardIndex,
+          index: index,
+          indexMounted: true
+        }));
       })
       .catch(err => {
         console.log(err, "Error loading index");
       });
-  };
+  }, [dashboardIndexFileName]);
 
-  findIntersectionSetOfResults = setOfResultsBySearchGroups => {
+  /**
+   * Returns the entities filtered from the results.
+   *
+   * @type {function(*=): *}
+   */
+  const filterEntities = useCallback(
+    setOfResults => {
+      /* Early exit - set of results is empty. */
+      if (setOfResults.size === 0) {
+        return [];
+      }
+
+      return dashboardEntities.filter(entity =>
+        setOfResults.has(entity[resultKey])
+      );
+    },
+    [dashboardEntities, resultKey]
+  );
+
+  /**
+   * Returns any intersecting sets of results.
+   * Represents an "AND" join between facets.
+   *
+   * @param setOfResultsByFacet
+   * @returns {Set<T>}
+   */
+  const findIntersectionSetOfResults = useCallback(setOfResultsByFacet => {
     /* Sort the set of results by set size. */
-    const sortedSetsOfResults = this.sortSetsOfResults(
-      setOfResultsBySearchGroups
-    );
+    const sortedSetsOfResults = sortSetsOfResults(setOfResultsByFacet);
+
+    /* Grab the first set. */
     const firstSetOfResults = sortedSetsOfResults.shift();
 
+    /* Find any intersecting sets of results. i.e. searching will be "AND" between facets. */
     /* Create a new set of intersection results. */
     /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
     return new Set(
-      [...firstSetOfResults].filter(result => {
-        return sortedSetsOfResults.every(setOfResults =>
-          setOfResults.has(result)
+      [...firstSetOfResults].filter(result =>
+        sortedSetsOfResults.every(setOfResults => setOfResults.has(result))
+      )
+    );
+  }, []);
+
+  /**
+   * Returns the current query.
+   * @returns {string}
+   */
+  const getCurrentQuery = () => {
+    const url = new URL(searchURLRef.current);
+    return url.searchParams.get("query") || "";
+  };
+
+  /**
+   * Returns a map object key-value pair of facet and entities.
+   * @type {function(*): Map<any, any>}
+   */
+  const getEntitiesByFacet = useCallback(
+    setOfResultsByFacet => {
+      const entitiesByFacet = new Map();
+      const facets = setOfTermsByFacet.keys();
+
+      for (const facet of facets) {
+        /* Clone the setOfResultsByFacet. */
+        const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
+
+        /* Remove the facet from the setOfResultsByFacetClone */
+        /* We are only interested in the intersection of results between the other facets/input. */
+        setOfResultsByFacetClone.delete(facet);
+
+        /* Get the intersection of results. */
+        const setOfResults = findIntersectionSetOfResults(
+          setOfResultsByFacetClone
         );
-      })
-    );
-  };
 
-  getResultsByQuery = query => {
-    const { dashboardIndex } = this.state;
+        /* Filter the entities. */
+        const _entities = filterEntities(setOfResults);
 
-    const queryString = `${query}`;
-    const results = dashboardIndex.search(queryString);
+        entitiesByFacet.set(facet, _entities);
+      }
 
-    return new Set(results.map(result => result.ref));
-  };
+      return entitiesByFacet;
+    },
+    [filterEntities, findIntersectionSetOfResults, setOfTermsByFacet]
+  );
 
-  getSelectedTermsByFacet = (facetsByTerm, inputValue, termsChecked) => {
-    const selectedTermsByFacet = [...facetsByTerm.keys()].reduce(
-      (accum, term) => {
-        // Only add term to current query if it's currently selected
-        if (termsChecked.get(term)) {
-          const facet = facetsByTerm.get(term);
+  /**
+   * Returns the results from querying the index.
+   *
+   * @type {function(*): Set<any>}
+   */
+  const getIndexResults = useCallback(
+    query => {
+      const queryString = `${query}`;
+      const results = index.search(queryString);
 
-          // A term as already been added to the current query for this facet; add term to existing array
-          if (accum.has(facet)) {
-            accum.get(facet).push(term);
-          }
-          // This is the first term selected for the facet, create new array containing term
-          else {
-            accum.set(facet, [term]);
-          }
-        }
-        return accum;
-      },
-      new Map()
-    );
+      return results.map(result => result.ref);
+    },
+    [index]
+  );
 
-    if (inputValue) {
-      selectedTermsByFacet.set("search", inputValue.split(" "));
+  /**
+   * Returns map object key-value pair of facet and selected terms.
+   *
+   * @returns {Map<any, any>}
+   */
+  const getSelectedTermsByFacet = () => {
+    /* Grab the ref setOfSelectedTermsByFacet. */
+    const selectedTermsByFacet = new Map();
+    const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+
+    for (const [facet, setOfSelectedTerms] of setOfSelectedTermsByFacet) {
+      /* Only add facets with selected terms. */
+      if (setOfSelectedTerms.size > 0) {
+        selectedTermsByFacet.set(facet, [...setOfSelectedTerms]);
+      }
     }
 
     return selectedTermsByFacet;
   };
 
-  getSelectedSearchTerms = selectedTerms => {
-    const { termSearchValueByTermDisplay } = this.props;
+  /**
+   * Returns a map key-value pair of facet and set of results.
+   *
+   * @type {function(): Map<any, any>}
+   */
+  const getSetOfResultsByFacet = useCallback(() => {
+    const setOfResultsByFacet = setOfResultsByFacetRef.current;
+    const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+    const lastFacetHit = lastHitRef.current.facet;
 
-    return selectedTerms.map(selectedTerm =>
-      termSearchValueByTermDisplay.get(selectedTerm)
-    );
-  };
+    for (const [
+      facet,
+      setOfSelectedTerms
+    ] of setOfSelectedTermsByFacet.entries()) {
+      /* Init setOfResults. */
+      /* Calculate setOfResults for first pass after component has mounted or when a facet's set of terms has been updated (last hit). */
+      if (!lastFacetHit || lastFacetHit === facet) {
+        /* Skip querying index - no selected terms and therefore update setOfResults with setOfEntities. */
+        /* Continue. */
+        if (setOfSelectedTerms.size === 0) {
+          setOfResultsByFacet.set(facet, setOfEntities);
+          continue;
+        }
 
-  getSetOfFacetedResults = facet => {
-    /* Grab any checked terms for the facet. */
-    const selectedTerms = this.getTermsChecked(facet);
-
-    /* Convert the checked terms to a suitable search term format. */
-    const selectedSearchTerms = this.getSelectedSearchTerms(selectedTerms);
-
-    /* Build the query string. */
-    const facetQueryString = this.buildFacetQueryString(
-      selectedSearchTerms,
-      facet
-    );
-
-    return this.getResultsByQuery(facetQueryString);
-  };
-
-  getSetOfInputResults = () => {
-    const { inputValue } = this.state;
-    const inputString = this.buildInputValueString(inputValue);
-
-    return new Set(this.getResultsByQuery(inputString));
-  };
-
-  getSetOfResults = () => {
-    /* Get the set of results by search groups. */
-    const setOfResultsBySearchGroups = this.getSetOfResultsBySearchGroups();
-
-    /* Update set of results by search group. */
-    this.updateSetOfResultsBySearchGroups(setOfResultsBySearchGroups);
-
-    /* Return any intersecting sets of results. i.e. searching will be "AND" between facets and input. */
-    return this.findIntersectionSetOfResults(setOfResultsBySearchGroups);
-  };
-
-  getSetOfResultsBySearchGroup = searchGroup => {
-    /* Return a set of results for the search group "input". */
-    if (searchGroup === "input") {
-      return this.getSetOfInputResults();
+        /* Build the query string, query the index, and set the setOfResults to the facet. */
+        const queryString = buildQueryString(facet, setOfSelectedTerms);
+        const results = getIndexResults(queryString);
+        setOfResultsByFacet.set(facet, new Set(results));
+      }
     }
 
-    /* Return a set of results for the faceted search group. */
-    return this.getSetOfFacetedResults(searchGroup);
-  };
+    return setOfResultsByFacet;
+  }, [buildQueryString, getIndexResults, setOfEntities]);
 
-  getSetOfResultsBySearchGroups = () => {
-    const { setOfSearchGroups } = this.props;
-
-    return [...setOfSearchGroups].reduce((acc, searchGroup) => {
-      const resultsBySearchGroup = this.getSetOfResultsBySearchGroup(
-        searchGroup
-      );
-      acc.set(searchGroup, resultsBySearchGroup);
-
-      return acc;
-    }, new Map());
-  };
-
-  getSetOfURLParams = () => {
-    /* Grab the URL params. */
-    const params = [...this.getURLParams().values()];
-
-    /* Return a set of the URL params. */
-    return params.reduce((acc, param) => {
-      const paramsByFacet = param.split(",");
-      paramsByFacet.forEach(param => acc.add(param));
-
-      return acc;
-    }, new Set());
-  };
-
-  getTermsChecked = facet => {
-    const { facetsByTerm } = this.props;
-    const { termsChecked } = this.state;
-
-    return [...termsChecked].reduce((acc, [term, checked]) => {
-      const termInFacet = facetsByTerm.get(term) === facet;
-
-      if (termInFacet && checked) {
-        acc.push(term);
-      }
-
-      return acc;
-    }, []);
-  };
-
-  getURLParams = () => {
-    /* Grab the search parameters. */
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    const currentQuery = urlSearchParams.get("query");
+  /**
+   * Returns the url search params.
+   *
+   * @returns {URLSearchParams}
+   */
+  const getURLSearchParams = () => {
+    /* Grab the search params. */
+    const currentQuery = getCurrentQuery();
 
     return new URLSearchParams(currentQuery);
   };
 
-  initializeInputValue = () => {
-    const inputValueStr = this.getURLParams().get("search") || "";
-    const inputStr = inputValueStr.replace(/,/g, " ");
+  /**
+   * Init inputValue.
+   * @type {(function(): void)|*}
+   */
+  const initInputValue = useCallback(() => {
+    const setOfSearchTermsByFacet = setOfSelectedTermsByFacetRef.current;
+    const setOfTerms = setOfSearchTermsByFacet.get("search");
+    const terms = [...setOfTerms];
+    inputValueRef.current = terms ? terms.join(" ") : "";
+  }, []);
 
-    this.setState({ inputValue: inputStr });
-  };
+  /**
+   * Init state query and execute tracking.
+   * @type {(function(): void)|*}
+   */
+  const initQuery = useCallback(() => {
+    updateQueryAndExecuteTracking();
+  }, [updateQueryAndExecuteTracking]);
 
-  initializeSearchURL = () => {
-    this.setState({ searchURL: window.location.href });
-  };
+  /**
+   * Init searchURL.
+   *
+   * @type {(function(): void)|*}
+   */
+  const initSearchURL = useCallback(() => {
+    searchURLRef.current = dashboardURL;
+  }, [dashboardURL]);
 
-  initializeTermsChecked = () => {
-    const { setOfTerms } = this.props;
-
-    const termsChecked = new Map();
-
-    /* Grab checkbox values from the URL - any input values will be ignored. */
-    const setOfURLParamValues = this.getSetOfURLParams();
-
-    [...setOfTerms].forEach(term => {
-      /* Checkbox value will be true, if the URL has the checkbox value. */
-      const checked = setOfURLParamValues.has(term);
-
-      termsChecked.set(term, checked);
-    });
-
-    this.setState({ termsChecked: termsChecked });
-  };
-
-  isInputDenied = inputValue => {
-    return DashboardSearchService.DenyListInputs.some(deniedInput =>
-      inputValue.includes(deniedInput)
-    );
-  };
-
-  onHandleClearFacets = () => {
-    const { termsChecked } = this.state;
-    const termsCheckedClone = new Map(termsChecked);
-
-    [...termsCheckedClone].forEach(([term, checked]) => {
-      if (checked) {
-        termsCheckedClone.set(term, false);
-      }
-    });
-
-    return termsCheckedClone;
-  };
-
-  onHandleUpdateFacets = (termsCheckedClone, term, selected) => {
-    /** Get tracking values for selected facet */
-    const { facetsByTerm } = this.props;
-    const previousQuery = this.state.query;
-    const currentQuery = this.buildQuery(
-      facetsByTerm,
-      this.state.inputValue,
-      termsCheckedClone
-    );
-
-    /* Update state. */
-    this.setState({
-      termsChecked: termsCheckedClone,
-      query: currentQuery
-    });
-
-    /* Execute tracking */
-    if (term) {
-      AnvilGTMService.trackSearchFacetSelected(
-        facetsByTerm.get(term),
-        term,
-        selected,
-        currentQuery,
-        previousQuery,
-        GAEntityType.WORKSPACE
-      );
+  /**
+   * Init setOfResultsByFacet.
+   * Each facet maps to complete set of entities.
+   *
+   * @type {(function(): void)|*}
+   */
+  const initSetOfResultsByFacet = useCallback(() => {
+    /* For each facet, init the set of results using the set of entities. */
+    for (const facet of setOfTermsByFacet.keys()) {
+      setOfResultsByFacetRef.current.set(facet, setOfEntities);
     }
+  }, [setOfEntities, setOfTermsByFacet]);
+
+  /**
+   * Init setOfSelectedTermsByFacet.
+   * Queries the url for any pre-selected terms.
+   * Used when the dashboard url is shared.
+   *
+   * @type {(function(): void)|*}
+   */
+  const initSetOfSelectedTermsByFacet = useCallback(() => {
+    /* Get the search params. */
+    const urlSearchParams = getURLSearchParams();
+
+    /* For each facet, init the set of selected terms. */
+    for (const facet of setOfTermsByFacet.keys()) {
+      const termList = urlSearchParams.get(facet);
+      const terms = termList?.split(",");
+      const setOfSelectedTerms = new Set();
+
+      /* Add any selected terms to the set. */
+      if (terms) {
+        terms.forEach(term => setOfSelectedTerms.add(term));
+      }
+
+      /* Update the ref. */
+      setOfSelectedTermsByFacetRef.current.set(facet, setOfSelectedTerms);
+    }
+  }, [setOfTermsByFacet]);
+
+  /**
+   * Returns true if no action is required.
+   * True when there is no change to the facet "search" term.
+   * @returns {boolean}
+   * @param facet
+   * @param term
+   */
+  const isNoActionRequired = (facet, term) => {
+    /* If the facet is "search" check for no changes since last entry. */
+    if (facet === "search") {
+      /* Get the current ref setOfSelectedTermsByFacet. */
+      const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+      const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
+      /* Compare the new term with the current term. */
+      const currentTerm = [...setOfSelectedTerms].join(" ");
+
+      return term === currentTerm;
+    }
+
+    return false;
   };
 
-  onHandleUpdateSearch = inputValue => {
-    if (this.isInputDenied(inputValue)) {
+  /**
+   * Clears all selected terms.
+   */
+  const onHandleClearAll = () => {
+    /* Update the current ref lastHit. */
+    lastHitRef.current = { facet: "", selected: false, term: "" };
+
+    /* Update the current ref setOfSelectedTermsByFacet. */
+    const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+    const facets = setOfSelectedTermsByFacet.keys();
+    for (const facet of facets) {
+      setOfSelectedTermsByFacetRef.current.set(facet, new Set());
+    }
+
+    /* Update search <input> uncontrolled value. */
+    updateInputValueRef("search");
+
+    /* Update query, dashboard url and execute tracking. */
+    updateQueryAndExecuteTracking();
+  };
+
+  /**
+   * Clears all selected terms for the specified facet.
+   * @param facet
+   */
+  const onHandleClearFacet = facet => {
+    /* Update the current ref lastHit. */
+    lastHitRef.current = { facet: facet, selected: false, term: "" };
+
+    /* Update the current ref setOfSelectedTermsByFacet. */
+    setOfSelectedTermsByFacetRef.current.set(facet, new Set());
+
+    /* Update search <input> uncontrolled value. */
+    updateInputValueRef(facet);
+
+    /* Update query, dashboard url and execute tracking. */
+    updateQueryAndExecuteTracking();
+  };
+
+  /**
+   * Clears the specified term.
+   * @param facet
+   * @param term
+   */
+  const onHandleClearTerm = (facet, term) => {
+    /* Update the current ref lastHit. */
+    lastHitRef.current = { facet: facet, selected: false, term: term };
+
+    /* Update the current ref setOfSelectedTermsByFacet. */
+    const setOfSelectedTerms = setOfSelectedTermsByFacetRef.current.get(facet);
+    setOfSelectedTerms.delete(term);
+    setOfSelectedTermsByFacetRef.current.set(facet, setOfSelectedTerms);
+
+    /* Update search <input> uncontrolled value. */
+    updateInputValueRef(facet, term);
+
+    /* Update query, dashboard url and execute tracking. */
+    updateQueryAndExecuteTracking();
+  };
+
+  /**
+   * Updates the selected terms.
+   * @param event
+   */
+  const onHandleUpdateFacet = event => {
+    /* Update the term with search appropriate characters. */
+    /* Typically used by "search" facet. */
+    const { facet, selected, term } = event;
+    const newTerm = term.replace(regWhiteSpace, " ").trim();
+
+    /* Early exit, no action required. */
+    /* Used if the "search" facet term has not changed. */
+    if (isNoActionRequired(facet, newTerm)) {
       return;
     }
 
-    /* Track input */
-    const previousQuery = this.state.query;
-    const { facetsByTerm } = this.props;
+    /* Update the current ref lastHit. */
+    lastHitRef.current = {
+      facet: facet,
+      selected: selected,
+      term: newTerm
+    };
 
-    const currentQuery = this.buildQuery(
-      facetsByTerm,
-      inputValue,
-      this.state.termsChecked
-    );
+    /* Grab the current setOfSelectedTerms for the specified facet. */
+    const setOfSelectedTerms = setOfSelectedTermsByFacetRef.current.get(facet);
 
-    /* Update inputValue state. */
-    this.setState({
-      inputValue: inputValue,
-      query: currentQuery
-    });
+    /* Update all terms for the search facet. */
+    if (facet === "search") {
+      /* Clear any previously selected terms. */
+      setOfSelectedTerms.clear();
 
-    /** Execute tracking */
-    AnvilGTMService.trackSearchInput(
-      inputValue,
-      currentQuery,
-      previousQuery,
-      GAEntityType.WORKSPACE
-    );
-  };
+      /* Update search <input> uncontrolled value. */
+      inputValueRef.current = term;
 
-  searchStateChanged = prevState => {
-    const { dashboardIndexMounted, inputValue, termsChecked } = this.state;
-
-    const inputValueChanged = prevState.inputValue !== inputValue;
-    const termsCheckedChanged = prevState.termsChecked !== termsChecked;
-
-    const stateChanged = inputValueChanged || termsCheckedChanged;
-
-    if (dashboardIndexMounted && stateChanged) {
-      /* Update selected terms by facet. */
-      this.updateSelectedTermsByFacet();
-
-      /* Update set of results. */
-      this.updateSetOfResults();
-
-      /* Update dashboard URL with query. */
-      this.updateDashboardURL();
+      /* Only add non empty terms. */
+      if (newTerm) {
+        const newTerms = newTerm.split(" ");
+        /* Add the new selected terms. */
+        newTerms.forEach(nTerm => setOfSelectedTerms.add(nTerm));
+      }
+    } else {
+      /* Update the term for the specified facet. */
+      if (selected) {
+        setOfSelectedTerms.add(term);
+      } else {
+        setOfSelectedTerms.delete(term);
+      }
     }
+
+    /* Update the current ref setOfSelectedTermsByFacet. */
+    setOfSelectedTermsByFacetRef.current.set(facet, setOfSelectedTerms);
+
+    /* Update query, dashboard url and execute tracking. */
+    updateQueryAndExecuteTracking();
   };
 
-  setOfResultsBySearchGroupsStateChanged = prevState => {
-    const { dashboardIndexMounted, setOfResultsBySearchGroups } = this.state;
-
-    const stateChanged =
-      prevState.setOfResultsBySearchGroups !== setOfResultsBySearchGroups;
-
-    if (dashboardIndexMounted && stateChanged) {
-      /* Update term counts. */
-      this.updateTermCounts();
-    }
-  };
-
-  sortSetsOfResults = setOfResultsBySearchGroups => {
-    return [...setOfResultsBySearchGroups.values()].sort(function(set0, set1) {
+  /**
+   * Returns a list of the setOfResults sorted by set size.
+   *
+   * @param setOfResultsByFacet
+   * @returns {*[]}
+   */
+  const sortSetsOfResults = setOfResultsByFacet => {
+    return [...setOfResultsByFacet.values()].sort(function(set0, set1) {
       if (set0.size > set1.size) {
         return 1;
       } else {
@@ -561,184 +651,140 @@ class ProviderDashboard extends React.Component {
     });
   };
 
-  updateDashboardURL = () => {
-    const { dashboardURL } = this.props;
-    const { query } = this.state;
-    const url = new URL(dashboardURL);
-
-    if (query) {
-      /* Set the search params. */
-      url.searchParams.set("query", query);
-    } else {
-      /* Delete the search params. */
-      url.searchParams.delete("query");
+  /**
+   * Updates the ref inputValue.
+   * @param facet
+   * @param term
+   */
+  const updateInputValueRef = (facet, term = "") => {
+    if (facet === "search") {
+      /* Update the ref inputValue. */
+      if (term) {
+        const regWildCard = term.replace(regSpecialChars, ".?");
+        const regExp = new RegExp(`(${regWildCard})`, "g");
+        const currentInputValue = inputValueRef.current;
+        inputValueRef.current = currentInputValue
+          .replace(regExp, "")
+          .replace(regWhiteSpace, " ")
+          .trim();
+      } else {
+        inputValueRef.current = "";
+      }
     }
-
-    /* Grab the new url string. */
-    const { href } = url;
-
-    this.setState({ searchURL: href });
-
-    /* Add the new url to the session history stack. */
-    window.history.pushState(null, "", href);
   };
 
-  updateSelectedTermsByFacet = () => {
-    const { facetsByTerm } = this.props;
-    const { inputValue, termsChecked } = this.state;
+  /**
+   * Generates the results.
+   * @type {function(): [*, *[], *]}
+   */
+  const generateResults = useCallback(() => {
+    /* Get set of results by facet. */
+    const setOfResultsByFacet = getSetOfResultsByFacet();
 
-    const selectedTermsByFacet = this.getSelectedTermsByFacet(
-      facetsByTerm,
-      inputValue,
-      termsChecked
-    );
+    /* Get set of results. */
+    const setOfResults = findIntersectionSetOfResults(setOfResultsByFacet);
 
-    /* Update state selectedTermsByFacet. */
-    this.setState({ selectedTermsByFacet: new Map(selectedTermsByFacet) });
-  };
+    /* Get the resultant entities. */
+    const _entities = filterEntities(setOfResults);
 
-  updateSetOfResults = () => {
-    /* Get the set of results. */
-    const setOfResults = this.getSetOfResults();
+    /* Get the entities by facet. */
+    /* Used to calculate term counts. */
+    const entitiesByFacet = getEntitiesByFacet(setOfResultsByFacet);
 
-    /* Clone setOfResults, and update state. */
-    const setOfResultsClone = new Set(setOfResults);
+    /* Build the facets. */
+    const _facets = buildFacets(entitiesByFacet);
 
-    this.setState({ setOfResults: setOfResultsClone });
-  };
+    /* Build the summaries. */
+    const _summaries = buildSummaries(_entities, _facets);
 
-  updateSetOfResultsBySearchGroups = setOfResultsBySearchGroups => {
-    /* Clone setOfResultsBySearchGroups and update state. */
-    const setOfResultsBySearchGroupsClone = new Map(setOfResultsBySearchGroups);
+    /* Update ref for setOfResultsByFacet. */
+    setOfResultsByFacetRef.current = setOfResultsByFacet;
 
-    this.setState({
-      setOfResultsBySearchGroups: setOfResultsBySearchGroupsClone
-    });
-  };
+    return [_entities, _facets, _summaries];
+  }, [
+    buildSummaries,
+    filterEntities,
+    findIntersectionSetOfResults,
+    buildFacets,
+    getEntitiesByFacet,
+    getSetOfResultsByFacet
+  ]);
 
-  updateTermCounts = () => {
-    const { facetsByTerm } = this.props;
-    const { setOfResultsBySearchGroups } = this.state;
+  /* useEffect - componentDidMount/componentWillUnmount. */
+  /* Fetch index. */
+  useEffect(() => {
+    /* Grab the index. */
+    fetchDashboardIndex();
+  }, [fetchDashboardIndex]);
 
-    /* Get a set of facets. */
-    const setOfFacets = new Set([...facetsByTerm.values()]);
+  /* useEffect - componentDidUpdate - searchValue, indexMounted. */
+  /* Update setOfResultsBySearchGroups when index is mounted or with change in searchValue. */
+  useEffect(() => {
+    if (indexMounted) {
+      /* Initialize the state "searchURL". */
+      initSearchURL();
 
-    /* Get the results for each facet. */
-    const setOfCountResultsByFacet = [...setOfFacets].reduce((acc, facet) => {
-      /* Clone the setOfResultsBySearchGroups. */
-      const setOfResultsBySearchGroupsClone = new Map(
-        setOfResultsBySearchGroups
-      );
+      /* Init the ref setOfSelectedTermsByFacetRef. */
+      initSetOfSelectedTermsByFacet();
 
-      /* Remove the facet from the setOfResultsBySearchGroups */
-      /* We are only interested in the intersection of results between the other facets/input. */
-      setOfResultsBySearchGroupsClone.delete(facet);
+      /* Init search facet search input. */
+      initInputValue();
 
-      /* Get the intersection of results. */
-      const setOfResults = this.findIntersectionSetOfResults(
-        setOfResultsBySearchGroupsClone
-      );
+      /* Init the ref setOfResultsByFacetRef. */
+      initSetOfResultsByFacet();
 
-      acc.set(facet, setOfResults);
+      /* Init state query. */
+      initQuery();
+    }
+  }, [
+    indexMounted,
+    initQuery,
+    initInputValue,
+    initSearchURL,
+    initSetOfResultsByFacet,
+    initSetOfSelectedTermsByFacet
+  ]);
 
-      return acc;
-    }, new Map());
+  /* useEffect - componentDidUpdate - searchValue, indexMounted. */
+  /* Update setOfResultsBySearchGroups when index is mounted or with change in searchValue. */
+  useEffect(() => {
+    if (indexMounted) {
+      /* Generate results. */
+      const [_entities, _facets, _summaries] = generateResults();
 
-    /* Update state. */
-    this.setState({ setOfCountResultsByFacet: setOfCountResultsByFacet });
-  };
+      setResults(results => ({
+        ...results,
+        entities: _entities,
+        facets: _facets,
+        summaries: _summaries
+      }));
+    }
+  }, [generateResults, indexMounted, query]);
 
-  render() {
-    const {
-        children,
+  return (
+    <ContextDashboard.Provider
+      value={{
         countLabel,
-        dashboardEntities,
+        entities,
         facets,
-        facetsByTerm,
-        resultKey,
+        inputValue: inputValueRef.current,
+        onHandleClearAll,
+        onHandleClearFacet,
+        onHandleClearTerm,
+        onHandleUpdateFacet,
+        results,
+        selectedTermsByFacet: selectedTermsByFacetRef.current,
+        searchURL: searchURLRef.current,
         setOfSummaryKeyTerms,
-        summaryKey,
+        summaries,
         tableHeadersEntities,
         tableHeadersSummary,
-        totalsWarning
-      } = this.props,
-      {
-        inputValue,
-        searchURL,
-        selectedTermsByFacet,
-        setOfCountResultsByFacet,
-        setOfResults,
-        termsChecked,
-        onHandleChecked,
-        onHandleClearFacet,
-        onHandleClearInput,
-        onHandleClearSearch,
-        onHandleClearTerm,
-        onHandleInput
-      } = this.state;
-    const entities = DashboardService.filterDashboardEntities(
-      dashboardEntities,
-      setOfResults,
-      resultKey
-    );
-    const termsCount = DashboardSearchService.getCountsByTerm(
-      facetsByTerm,
-      setOfCountResultsByFacet,
-      dashboardEntities,
-      resultKey
-    );
-    const selectedSummaryTerms = selectedTermsByFacet.get(summaryKey);
-    const setOfSummaryTerms = DashboardSummaryService.getDashboardSummarySetOfSummaryTerms(
-      termsCount,
-      setOfSummaryKeyTerms,
-      selectedSummaryTerms
-    );
-    const summaries = DashboardSummaryService.getDashboardSummary(
-      entities,
-      summaryKey,
-      tableHeadersSummary,
-      setOfSummaryTerms
-    );
-    const warning = totalsWarning ? (
-      <span>
-        <sup>* </sup>Totals are adjusted for project data hosted in multiple{" "}
-        {summaryKey}.
-      </span>
-    ) : null;
-    const facetSelectorFacets = DashboardSearchService.buildFacetSelectorFacets(
-      facets,
-      termsCount,
-      termsChecked
-    );
-    return (
-      <ContextDashboard.Provider
-        value={{
-          countLabel,
-          entities,
-          facetSelectorFacets,
-          inputValue,
-          searchURL,
-          selectedTermsByFacet,
-          setOfResults,
-          setOfSummaryKeyTerms,
-          summaries,
-          tableHeadersEntities,
-          tableHeadersSummary,
-          termsChecked,
-          termsCount,
-          warning,
-          onHandleChecked,
-          onHandleClearFacet,
-          onHandleClearInput,
-          onHandleClearSearch,
-          onHandleClearTerm,
-          onHandleInput
-        }}
-      >
-        {children}
-      </ContextDashboard.Provider>
-    );
-  }
+        warning
+      }}
+    >
+      {children}
+    </ContextDashboard.Provider>
+  );
 }
 
 export default ProviderDashboard;

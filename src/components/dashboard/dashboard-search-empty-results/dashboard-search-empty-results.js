@@ -15,21 +15,15 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 // Styles
 import compStyles from "./dashboard-search-empty-results.module.css";
 
-class DashboardSearchEmptyResults extends React.Component {
-  render() {
-    return (
-      <DashboardSearchPanel stretch>
-        <div className={compStyles.error}>No results</div>
-      </DashboardSearchPanel>
-    );
-  }
+function DashboardSearchEmptyResults() {
+  const { entities } = useContext(ContextDashboard);
+  const showEmptyResults = entities.length === 0;
+
+  return showEmptyResults ? (
+    <DashboardSearchPanel stretch>
+      <div className={compStyles.error}>No results</div>
+    </DashboardSearchPanel>
+  ) : null;
 }
 
-export default () => {
-  /* Dataset filtering props. */
-  const { setOfResults } = useContext(ContextDashboard);
-
-  const showEmptyResults = setOfResults.size === 0;
-
-  return showEmptyResults ? <DashboardSearchEmptyResults /> : null;
-};
+export default DashboardSearchEmptyResults;

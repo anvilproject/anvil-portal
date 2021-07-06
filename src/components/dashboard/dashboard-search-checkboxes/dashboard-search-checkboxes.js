@@ -17,18 +17,18 @@ import ContextModal from "../../modal/context-modal/context-modal";
 import ModalDashboardSearchCheckboxesGroup from "../../modal/modal-dashboard-search-checkboxes-group/modal-dashboard-search-checkboxes-group";
 
 function DashboardSearchCheckboxes() {
-  const { countLabel, facetSelectorFacets, setOfSummaryKeyTerms } = useContext(
+  const { countLabel, facets, setOfSummaryKeyTerms } = useContext(
     ContextDashboard
   );
   const { modal } = useContext(ContextModal);
   const { showModal } = modal;
-  const facetCount = facetSelectorFacets.length;
+  const facetCount = facets.length;
 
   return (
     <>
-      {facetSelectorFacets.map((facet, c) => (
+      {facets.map((facet, f) => (
         <DashboardSearchCheckboxesGroup
-          key={c}
+          key={f}
           countLabel={countLabel}
           facet={facet}
           facetCount={facetCount}

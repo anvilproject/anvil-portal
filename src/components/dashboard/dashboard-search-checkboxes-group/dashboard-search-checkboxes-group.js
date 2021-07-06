@@ -40,7 +40,7 @@ function DashboardSearchCheckboxesGroup(props) {
         <span>{countLabel}</span>
       </span>
       {snippets.map((term, t) => (
-        <DashboardSearchCheckbox key={t} term={term} />
+        <DashboardSearchCheckbox key={t} facet={name} term={term} />
       ))}
       <DashboardSearchCheckboxesShowMore
         moreCount={moreCount}

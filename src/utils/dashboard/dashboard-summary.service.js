@@ -76,28 +76,6 @@ export function getDashboardSummary(
 }
 
 /**
- * Returns the set of summary terms with valid counts.
- * Will return all summary terms if none are selected, or only selected summary terms with a count of one or more.
- *
- * @param termsCount
- * @param setOfSummaryKeyTerms
- * @param selectedSummaryTerms
- * @returns {*}
- */
-export function getDashboardSummarySetOfSummaryTerms(
-  termsCount,
-  setOfSummaryKeyTerms,
-  selectedSummaryTerms
-) {
-  /* Grab the set of summary terms. */
-  return [...setOfSummaryKeyTerms]
-    .filter(term => isSummaryTermSelected(selectedSummaryTerms, term))
-    .reduce((acc, term) => {
-      return isSummaryTermValidCount(acc, term, termsCount);
-    }, new Set());
-}
-
-/**
  * Parse the dashboard JSON and build up FE-compatible model of data dashboard summary, to be displayed on the dashboard page.
  *
  * @param setOfTerms
@@ -225,39 +203,6 @@ function getObjectTotal(entities, key) {
   }
 
   return sumEntityNodeValues(entities, key);
-}
-
-/**
- * Returns true if there are no selected summary terms, or if the summary term is selected.
- *
- * @param selectedSummaryTerms
- * @param term
- * @returns {boolean}
- */
-function isSummaryTermSelected(selectedSummaryTerms, term) {
-  if (!selectedSummaryTerms) {
-    return true;
-  }
-
-  return selectedSummaryTerms.includes(term);
-}
-
-/**
- * Returns the term with a count of one or more, as an accumulated value.
- *
- * @param acc
- * @param term
- * @param termsCount
- * @returns {*}
- */
-function isSummaryTermValidCount(acc, term, termsCount) {
-  const count = termsCount.get(term);
-
-  if (count) {
-    acc.add(term);
-  }
-
-  return acc;
 }
 
 /**

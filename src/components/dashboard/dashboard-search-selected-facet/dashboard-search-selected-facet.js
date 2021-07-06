@@ -10,7 +10,7 @@ import React from "react";
 
 // App dependencies
 import DashboardSearchSelectedTerms from "../dashboard-search-selected-terms/dashboard-search-selected-terms";
-import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
+import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
 
 // Styles
 import compStyles from "./dashboard-search-selected-facet.module.css";
@@ -23,7 +23,7 @@ function DashboardSearchSelectedFacet(props) {
     onHandleClearTerm,
     selectedTermsByFacet
   } = props;
-  const facetDisplay = DashboardTableService.switchDisplayColumnName(facet);
+  const facetDisplay = FacetSelectorNameDisplay[facet];
   const terms = selectedTermsByFacet.get(facet);
 
   return (

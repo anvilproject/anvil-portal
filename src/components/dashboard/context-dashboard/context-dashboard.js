@@ -12,24 +12,19 @@ import React from "react";
 const ContextDashboard = React.createContext({
   countLabel: "",
   entities: [],
-  facetSelectorFacets: [],
+  facets: [],
   inputValue: "",
   searchURL: "",
   selectedTermsByFacet: new Map(),
-  setOfResults: new Set(),
   setOfSummaryKeyTerms: new Set(),
   summaries: [],
   tableHeadersEntities: [],
   tableHeadersSummary: [],
-  termsChecked: new Map(),
-  termsCount: new Map(),
   warning: null,
-  onHandleChecked: () => {},
+  onHandleClearAll: () => {},
   onHandleClearFacet: () => {},
-  onHandleClearInput: () => {},
-  onHandleClearSearch: () => {},
   onHandleClearTerm: () => {},
-  onHandleInput: () => {}
+  onHandleUpdateFacet: () => {}
 });
 
 export default ContextDashboard;

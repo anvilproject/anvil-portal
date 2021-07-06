@@ -17,13 +17,13 @@ import compStyles from "./dashboard-search-checkbox.module.css";
 const classNames = require("classnames");
 
 function DashboardSearchCheckbox(props) {
-  const { term } = props,
+  const { facet, term } = props,
     { count, name, selected } = term;
-  const { onHandleChecked } = useContext(ContextDashboard);
+  const { onHandleUpdateFacet } = useContext(ContextDashboard);
   const disabled = count === 0;
 
   const onHandleClick = () => {
-    onHandleChecked({ selected: !selected, term: name });
+    onHandleUpdateFacet({ facet: facet, selected: !selected, term: name });
   };
 
   return (

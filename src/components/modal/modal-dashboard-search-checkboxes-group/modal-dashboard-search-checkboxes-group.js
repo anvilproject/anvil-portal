@@ -32,14 +32,14 @@ import globalStyles from "../../../styles/global.module.css";
 const classNames = require("classnames");
 
 function ModalDashboardSearchCheckboxesGroup() {
-  const { facetSelectorFacets } = useContext(ContextDashboard);
+  const { facets } = useContext(ContextDashboard);
   const { modal, onCloseModal } = useContext(ContextModal);
   const refPanel = useRef(null);
   const [columns, setColumns] = useState([]);
   const [maxColumns, setMaxColumns] = useState(1);
   const { modalProps } = modal,
     { facetName } = modalProps || {};
-  const facet = facetSelectorFacets.find(facet => facet.name === facetName);
+  const facet = facets.find(facet => facet.name === facetName);
   const terms = facet.terms;
   const checkboxWidth = 300;
 
@@ -91,7 +91,11 @@ function ModalDashboardSearchCheckboxesGroup() {
           {columns.map((cBoxes, b) => (
             <span className={compStyles.col} key={b}>
               {cBoxes.map((term, t) => (
-                <DashboardSearchCheckbox key={t} term={term} />
+                <DashboardSearchCheckbox
+                  key={t}
+                  facet={facetName}
+                  term={term}
+                />
               ))}
             </span>
           ))}

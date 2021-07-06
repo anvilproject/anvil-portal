@@ -56,7 +56,9 @@ const getIndexFieldTypeOfString = function getIndexFieldTypeOfString(
   newSubStr
 ) {
   if (subStr) {
-    return replaceStringWithSearchableTerm(subStr, newSubStr);
+    const str0 = replaceStringWithSearchableTerm(subStr, newSubStr);
+    const str1 = replaceStringWithSearchableTerm(subStr, "_");
+    return str0.concat(" ", str1);
   }
 
   return "";

@@ -5,10 +5,6 @@
  * Services data dashboard search.
  */
 
-// App dependencies
-import * as DashboardService from "./dashboard.service";
-import * as DashboardSortService from "./dashboard-sort.service";
-
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
 const DENY_LIST_TERMS = [
@@ -20,88 +16,6 @@ const DENY_LIST_TERMS = [
   "",
   null
 ];
-
-/* Search input deny list. */
-export const DenyListInputs = ["^", "~", ":", "-", "+"];
-
-/**
- * Returns FE model of facets and facet terms.
- *
- * @param facetsByTerm
- * @param searchFacets
- * @returns {*}
- */
-export function buildDashboardFacets(facetsByTerm, searchFacets) {
-  return searchFacets.reduce((acc, facet) => {
-    const facetTerms = {
-      terms: getFacetTerms(facet, facetsByTerm),
-      name: facet
-    };
-
-    acc.push(facetTerms);
-
-    return acc;
-  }, []);
-}
-
-/**
- * Returns the facet selector facets with filtered facet terms.
- *
- * @param facets
- * @param termsCount
- * @param termsSelected
- * @returns {*}
- */
-export function buildFacetSelectorFacets(facets, termsCount, termsSelected) {
-  return [...facets].map(facet => {
-    const facetClone = { ...facet };
-    const terms = buildDashboardTerms(
-      facetClone.terms,
-      termsCount,
-      termsSelected
-    );
-
-    return Object.assign(facetClone, { terms: terms });
-  });
-}
-
-/**
- * Returns a map of counts for each term.
- *
- * @param facetByTerm
- * @param setOfCountResultsByFacet
- * @param entities
- * @param resultKey
- * @returns {*}
- */
-export function getCountsByTerm(
-  facetByTerm,
-  setOfCountResultsByFacet,
-  entities,
-  resultKey
-) {
-  if (setOfCountResultsByFacet.size === 0) {
-    return new Map();
-  }
-
-  return [...facetByTerm].reduce((acc, [term, facet]) => {
-    /* Get the corresponding setOfResults for the facet. */
-    const setOfCountResults = setOfCountResultsByFacet.get(facet);
-
-    /* Filter the entities. */
-    const fEntities = DashboardService.filterDashboardEntities(
-      entities,
-      setOfCountResults,
-      resultKey
-    );
-
-    /* Get the counter for the term. */
-    const termCounter = getTermCounter(facet, term, fEntities);
-    acc.set(term, termCounter);
-
-    return acc;
-  }, new Map());
-}
 
 /**
  * Returns the search checkboxes, grouped by columns.
@@ -161,161 +75,49 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
 }
 
 /**
- * Returns a map object of facet by term.
- * Values are sorted alphabetically.
+ * Returns the entire set of entities for the result key.
  *
  * @param entities
- * @param searchFacets
- * @returns {*}
+ * @param resultKey
+ * @returns {Set<any>}
  */
-export function getDashboardFacetsByTerm(entities, searchFacets) {
-  const facetsByTerm = searchFacets.reduce((acc, facet) => {
-    /* Grab the terms. */
-    entities.forEach(entity => {
-      const term = entity[facet];
+export function getDashboardSetOfEntities(entities, resultKey) {
+  return new Set(entities.map(entity => entity[resultKey]));
+}
 
-      /* Handle case where term is an array. */
-      if (DashboardService.isArray(term)) {
-        entity[facet].forEach(term => {
-          if (isTermAllowed(term)) {
-            acc.set(term, facet);
-          }
-        });
-      } else {
+/**
+ * Returns a map object of set of terms by facet.
+ *
+ * @param entities
+ * @param facets
+ * @returns {Map<any, any>}
+ */
+export function getDashboardSetOfTermsByFacet(entities, facets) {
+  /* Init setOfTermsByFacet and the setOfTerms for each facet. */
+  const setOfTermsByFacet = new Map();
+  facets.forEach(facet => setOfTermsByFacet.set(facet, new Set()));
+
+  /* Grab all possible terms for each facet, from the entities. */
+  for (const entity of entities) {
+    for (const facet of facets) {
+      /* Grab the set of terms and the entity value for the specified facet. */
+      const setOfTerms = setOfTermsByFacet.get(facet);
+      const value = entity[facet];
+
+      /* Handle case where term is not an array - make a single term an array of single length. */
+      const terms = Array.isArray(value) ? value : Array.of(value);
+
+      /* Add to the set of terms. */
+      terms.forEach(term => {
         if (isTermAllowed(term)) {
-          acc.set(term, facet);
+          setOfTerms.add(term);
         }
-      }
-    });
-
-    return acc;
-  }, new Map());
-
-  /* Return sorted facetsByTerm. */
-  return DashboardSortService.sortMap(facetsByTerm);
-}
-
-/**
- * Returns a set of search groups.
- *
- * @param searchFacets
- * @returns {Set}
- */
-export function getDashboardSetOfSearchGroups(searchFacets) {
-  const setOfSearchGroups = new Set();
-
-  /* Add the facets, and the "input" to the set. */
-  searchFacets.forEach(facet => setOfSearchGroups.add(facet));
-  setOfSearchGroups.add("input");
-
-  return setOfSearchGroups;
-}
-
-/**
- * Returns a set of summary key terms.
- *
- * @param facetsByTerm
- * @param facet
- * @returns {*}
- */
-export function getSetOfSummaryKeyTerms(facetsByTerm, facet) {
-  return [...facetsByTerm].reduce((acc, [term, ft]) => {
-    if (ft === facet) {
-      acc.add(term);
+      });
     }
+  }
+  setOfTermsByFacet.set("search", new Set());
 
-    return acc;
-  }, new Set());
-}
-
-/**
- * Returns the set of terms for all facets.
- *
- * @param facetsByTerm
- * @returns {*}
- */
-export function getDashboardSetOfTerms(facetsByTerm) {
-  return new Set([...facetsByTerm.keys()]);
-}
-
-/**
- * Returns a map object of term search value by term display where
- * - term display is the term value
- * - term search value is the term value, with white space, hyphens or brackets or slash are changed to an underscore.
- * e.g. "GTEx (v8)" returns "GTEx__v8_".
- *
- * @param facetsByTerm
- * @returns {Map}
- */
-export function getDashboardTermSearchValueByTermDisplay(facetsByTerm) {
-  const termSearchValueByTermDisplay = new Map();
-
-  [...facetsByTerm.keys()].forEach(termDisplay => {
-    /* Replace any white space, commas, hyphens or brackets with an underscore. */
-    const termSearchValue = termDisplay
-      .toLowerCase()
-      .replace(regexSpecialChars, "_")
-      .replace(/\s/g, "_");
-
-    termSearchValueByTermDisplay.set(termDisplay, termSearchValue);
-  });
-
-  return termSearchValueByTermDisplay;
-}
-
-/**
- * Returns true, if the number of facets is odd and greater than four.
- * @param facetCount
- * @returns {boolean|number}
- */
-export function isDashboardCheckboxesUneven(facetCount) {
-  return facetCount > 4 && facetCount % 2 === 1;
-}
-
-/**
- * Returns the FE model of dashboard term.
- *
- * @param term
- * @param termsCount
- * @param termsSelected
- * @returns {{name, count, selected}}
- */
-function buildDashboardTerm(term, termsCount, termsSelected) {
-  const count = termsCount.get(term);
-  const selected = termsSelected.get(term);
-
-  return { name: term, count: count, selected: selected };
-}
-
-/**
- * Returns the filtered FE model of dashboard terms.
- *
- * @param terms
- * @param termsCount
- * @param termsSelected
- * @returns {[]}
- */
-function buildDashboardTerms(terms, termsCount, termsSelected) {
-  return terms
-    .map(term => buildDashboardTerm(term, termsCount, termsSelected))
-    .filter(term => isTermSelectable(term));
-}
-
-/**
- * Returns the terms for the specified facet.
- *
- * @param facet
- * @param facetsByTerm
- * @returns {*}
- */
-function getFacetTerms(facet, facetsByTerm) {
-  return [...facetsByTerm].reduce((acc, [term, ft]) => {
-    if (ft === facet) {
-      acc.push(term);
-    }
-
-    return acc;
-  }, []);
+  return setOfTermsByFacet;
 }
 
 /**
@@ -325,9 +127,9 @@ function getFacetTerms(facet, facetsByTerm) {
  * @param term
  * @param entities
  */
-function getTermCounter(facet, term, entities) {
+export function getDashboardTermCount(facet, term, entities) {
   return entities.reduce((acc, entity) => {
-    if (DashboardService.isArray(entity[facet])) {
+    if (Array.isArray(entity[facet])) {
       entity[facet].forEach(ef => {
         if (ef === term) {
           acc++;
@@ -344,6 +146,45 @@ function getTermCounter(facet, term, entities) {
 }
 
 /**
+ * Returns a map object of term search value by term display where
+ * - term display is the term value
+ * - term search value is the term value, with white space, hyphens or brackets or slash are changed to an underscore.
+ * e.g. "GTEx (v8)" returns "GTEx__v8_".
+ *
+ * @param setOfTermsByFacet
+ * @returns {Map}
+ */
+export function getDashboardTermSearchValueByTerm(setOfTermsByFacet) {
+  /* Init termSearchValueByTerm. */
+  const termSearchValueByTerm = new Map();
+
+  /* For each facet, grab the setOfTerms. */
+  for (const setOfTerms of [...setOfTermsByFacet.values()]) {
+    /* For each term, add the key-value pair of term and term search value. */
+    for (const term of [...setOfTerms]) {
+      /* Replace any white space, commas, hyphens or brackets with an underscore. */
+      const termSearchValue = term
+        .toLowerCase()
+        .replace(regexSpecialChars, "_")
+        .replace(/\s/g, "_");
+
+      termSearchValueByTerm.set(term, termSearchValue);
+    }
+  }
+
+  return termSearchValueByTerm;
+}
+
+/**
+ * Returns true, if the number of facets is odd and greater than four.
+ * @param facetCount
+ * @returns {boolean|number}
+ */
+export function isDashboardCheckboxesUneven(facetCount) {
+  return facetCount > 4 && facetCount % 2 === 1;
+}
+
+/**
  * Returns true if the term is allowable.
  *
  * @param term
@@ -352,16 +193,4 @@ function isTermAllowed(term) {
   const value = term.toUpperCase();
 
   return !DENY_LIST_TERMS.includes(value);
-}
-
-/**
- * Returns true if the term has a count greater than 0, or is selected.
- *
- * @param term
- * @returns {*}
- */
-function isTermSelectable(term) {
-  const { count, selected } = term;
-
-  return count || selected;
 }
