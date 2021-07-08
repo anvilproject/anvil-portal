@@ -20,10 +20,9 @@ function ProviderDashboard(props) {
   const {
     children,
     countLabel,
-    dashboardEntities,
     dashboardIndexFileName,
     dashboardURL,
-    resultKey,
+    rowsByRowKey,
     setOfEntities,
     setOfSummaryKeyTerms,
     setOfTermsByFacet,
@@ -51,7 +50,6 @@ function ProviderDashboard(props) {
   });
   const { index, indexMounted } = dashboardIndex;
   const { entities, facets, summaries } = results;
-  const regSpecialChars = /[^a-zA-Z0-9\s]/g;
   const regWhiteSpace = /\s\s+/g;
   const warning = totalsWarning ? (
     <span>
@@ -306,21 +304,23 @@ function ProviderDashboard(props) {
   }, [dashboardIndexFileName]);
 
   /**
-   * Returns the entities filtered from the results.
+   * Returns the rows filtered from the results.
    * @type {function(*=): *}
    */
   const filterEntities = useCallback(
     setOfResults => {
-      /* Early exit - set of results is empty. */
-      if (setOfResults.size === 0) {
-        return [];
+      /* Build the entities. */
+      const _entities = [];
+
+      /* Push any row data with a "hit" in the set of results. */
+      for (const result of [...setOfResults]) {
+        const row = rowsByRowKey.get(result);
+        _entities.push(row);
       }
 
-      return dashboardEntities.filter(entity =>
-        setOfResults.has(entity[resultKey])
-      );
+      return _entities;
     },
-    [dashboardEntities, resultKey]
+    [rowsByRowKey]
   );
 
   /**
@@ -330,6 +330,13 @@ function ProviderDashboard(props) {
    * @returns {Set<T>}
    */
   const findIntersectionSetOfResults = useCallback(setOfResultsByFacet => {
+
+    /* Early exit, return a full set of results. */
+    /* No terms are selected. */
+    if ( setOfResultsByFacet.size === 0 ) {
+      return setOfEntities;
+    }
+
     /* Sort the set of results by set size. */
     const sortedSetsOfResults = sortSetsOfResults(setOfResultsByFacet);
 
@@ -344,7 +351,7 @@ function ProviderDashboard(props) {
         sortedSetsOfResults.every(setOfResults => setOfResults.has(result))
       )
     );
-  }, []);
+  }, [setOfEntities]);
 
   /**
    * Returns a map object key-value pair of facet and entities.
@@ -490,8 +497,7 @@ function ProviderDashboard(props) {
     const setOfSelectedTerms = setOfSelectedTermsByFacet.get("search");
     const terms = [...setOfSelectedTerms];
     /* Convert the terms to a (string) list of terms. */
-    const termsStr = terms ? terms.join(" ") : "";
-    inputValueRef.current = termsStr;
+    inputValueRef.current = terms ? terms.join(" ") : "";
   }, []);
 
   /**
@@ -728,11 +734,9 @@ function ProviderDashboard(props) {
         // e.g. onHandleClearTerm will need to be reflected in the uncontrolled <input/>.
         // Using replace and regex we are able to "strip" out the term of interest from
         // the ref inputValue, which in turn will update the <input/> with the new value.
-        const regWildCard = term.replace(regSpecialChars, ".?");
-        const regExp = new RegExp(`(${regWildCard})`, "g");
         const currentInputValue = inputValueRef.current;
         inputValueRef.current = currentInputValue
-          .replace(regExp, "")
+          .replace(term, "")
           .replace(regWhiteSpace, " ")
           .trim();
       } else {
@@ -751,15 +755,26 @@ function ProviderDashboard(props) {
     /* Get the set of results by facet. */
     const setOfResultsByFacet = getSetOfResultsByFacet();
 
+    /* Clone the setOfResultsByFacet and remove any facets with unselected terms. */
+    const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
+    const facets = setOfTermsByFacet.keys();
+    for (const facet of facets) {
+      const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+      const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
+      if ( setOfSelectedTerms.size === 0 ) {
+        setOfResultsByFacetClone.delete(facet);
+      }
+    }
+
     /* Get the intersecting set of results. */
-    const setOfResults = findIntersectionSetOfResults(setOfResultsByFacet);
+    const setOfResults = findIntersectionSetOfResults(setOfResultsByFacetClone);
 
     /* Get the resultant entities. */
     const _entities = filterEntities(setOfResults);
 
     /* Get the entities by facet. */
     /* Used to calculate term counts. */
-    const entitiesByFacet = getEntitiesByFacet(setOfResultsByFacet);
+    const entitiesByFacet = getEntitiesByFacet(setOfResultsByFacetClone);
 
     /* Build the facets. */
     const _facets = buildFacets(entitiesByFacet);
@@ -778,7 +793,8 @@ function ProviderDashboard(props) {
     findIntersectionSetOfResults,
     buildFacets,
     getEntitiesByFacet,
-    getSetOfResultsByFacet
+    getSetOfResultsByFacet,
+    setOfTermsByFacet
   ]);
 
   /**

@@ -45,15 +45,14 @@ const tableHeadersSummary = ["platforms", "studies", "subjectsTotal"];
 function DashboardNCPI() {
   const dashboardEntities = DashboardNCPIStaticQuery();
   const currentLocation = useLocation();
-  const { origin, pathname } = currentLocation || {};
-  const dashboardURL = `${origin}${pathname}`;
+  const { href } = currentLocation || {};
 
   return (
     <Dashboard
       countLabel={countLabel}
       dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
-      dashboardURL={dashboardURL}
+      dashboardURL={href}
       dataset={"ncpi"}
       resultKey={lunrIndexRefField}
       searchFacets={searchFacets}

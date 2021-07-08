@@ -34,6 +34,7 @@ function Dashboard(props) {
     dashboardEntities,
     resultKey
   );
+  const rowsByRowKey = DashboardSearchService.getDashboardRowsByRowKey(dashboardEntities, resultKey);
   const setOfTermsByFacet = DashboardSearchService.getDashboardSetOfTermsByFacet(
     dashboardEntities,
     searchFacets
@@ -46,10 +47,9 @@ function Dashboard(props) {
   return (
     <ProviderDashboard
       countLabel={countLabel}
-      dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={dashboardURL}
-      resultKey={resultKey}
+      rowsByRowKey={rowsByRowKey}
       setOfEntities={setOfEntities}
       setOfSummaryKeyTerms={setOfSummaryKeyTerms}
       setOfTermsByFacet={setOfTermsByFacet}

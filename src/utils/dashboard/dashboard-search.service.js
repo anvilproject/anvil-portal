@@ -5,6 +5,9 @@
  * Services data dashboard search.
  */
 
+// App dependencies
+import { sortTerms } from "./dashboard-sort.service";
+
 // Template variables
 const regexSpecialChars = /[^a-zA-Z0-9\s]/g;
 const DENY_LIST_TERMS = [
@@ -86,6 +89,25 @@ export function getDashboardSetOfEntities(entities, resultKey) {
 }
 
 /**
+ * Returns a map object key-value pair entity key and row data.
+ *
+ * @param entities
+ * @param resultKey
+ * @returns {Map<any, any>}
+ */
+export function getDashboardRowsByRowKey(entities, resultKey) {
+  /* Build the rows by row key. */
+  const rowsByRowKey = new Map();
+  /* For each row, set the entity key and row data. */
+  entities.forEach(entity => {
+    const key = entity[resultKey];
+    rowsByRowKey.set(key, entity);
+  });
+
+  return rowsByRowKey;
+}
+
+/**
  * Returns a map object of set of terms by facet.
  *
  * @param entities
@@ -98,10 +120,10 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
   facets.forEach(facet => setOfTermsByFacet.set(facet, new Set()));
 
   /* Grab all possible terms for each facet, from the entities. */
-  for (const entity of entities) {
-    for (const facet of facets) {
-      /* Grab the set of terms and the entity value for the specified facet. */
-      const setOfTerms = setOfTermsByFacet.get(facet);
+  for (const facet of facets) {
+    const setOfTerms = new Set();
+    for (const entity of entities) {
+      /* Grab the value for the facet. */
       const value = entity[facet];
 
       /* Handle case where term is not an array - make a single term an array of single length. */
@@ -114,7 +136,13 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
         }
       });
     }
+
+    /* Sort terms and set with corresponding facet. */
+    const terms = [...setOfTerms];
+    const sortedTerms = sortTerms(terms);
+    setOfTermsByFacet.set(facet, new Set(sortedTerms));
   }
+  /* Add the "search" facet. */
   setOfTermsByFacet.set("search", new Set());
 
   return setOfTermsByFacet;
