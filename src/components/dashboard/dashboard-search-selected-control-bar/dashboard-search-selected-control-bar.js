@@ -18,8 +18,8 @@ import compStyles from "./dashboard-search-selected-control-bar.module.css";
 function DashboardSearchSelectedControlBar() {
   const {
     selectedTermsByFacet,
+    onHandleClearAll,
     onHandleClearFacet,
-    onHandleClearSearch,
     onHandleClearTerm
   } = useContext(ContextDashboard);
   const showController = selectedTermsByFacet.size > 0;
@@ -28,8 +28,8 @@ function DashboardSearchSelectedControlBar() {
     <div className={compStyles.controlBar}>
       {showController ? (
         <DashboardSearchSelectedFacets
+          onHandleClearAll={onHandleClearAll}
           onHandleClearFacet={onHandleClearFacet}
-          onHandleClearSearch={onHandleClearSearch}
           onHandleClearTerm={onHandleClearTerm}
           selectedTermsByFacet={selectedTermsByFacet}
         />

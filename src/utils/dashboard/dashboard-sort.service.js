@@ -6,17 +6,15 @@
  */
 
 /**
- * Sorts a map object.
+ * Sorts the terms.
  *
- * @param mapObj
- * @returns {Map}
+ * @param terms
+ * @returns {*}
  */
-export function sortMap(mapObj) {
-  return new Map(
-    [...mapObj].sort(function([data0], [data1]) {
-      return compareDataValues(data0, data1);
-    })
-  );
+export function sortTerms(terms) {
+  return terms.sort(function(term0, term1) {
+    return compareDataValues(term0, term1);
+  });
 }
 
 /**
@@ -28,8 +26,8 @@ export function sortMap(mapObj) {
  * @returns {number}
  */
 function compareDataValues(value0, value1) {
-  const v0 = value0.toLowerCase();
-  const v1 = value1.toLowerCase();
+  const v0 = removeNonAlphanumericValues(value0);
+  const v1 = removeNonAlphanumericValues(value1);
 
   if (v0 < v1) {
     return -1;
@@ -40,4 +38,18 @@ function compareDataValues(value0, value1) {
   }
 
   return 0;
+}
+
+/**
+ * Returns a lower case string, comprising of non alpha characters.
+ *
+ * @param str
+ * @returns {string}
+ */
+function removeNonAlphanumericValues(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s\s+/g, "")
+    .trim();
 }

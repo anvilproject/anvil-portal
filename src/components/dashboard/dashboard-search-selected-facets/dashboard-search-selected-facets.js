@@ -17,8 +17,8 @@ import compStyles from "./dashboard-search-selected-facets.module.css";
 
 function DashboardSearchSelectedFacets(props) {
   const {
+    onHandleClearAll,
     onHandleClearFacet,
-    onHandleClearSearch,
     onHandleClearTerm,
     selectedTermsByFacet
   } = props;
@@ -37,9 +37,7 @@ function DashboardSearchSelectedFacets(props) {
           selectedTermsByFacet={selectedTermsByFacet}
         />
       ))}
-      <DashboardSearchSelectedClearAll
-        onHandleClearSearch={onHandleClearSearch}
-      />
+      <DashboardSearchSelectedClearAll onHandleClearAll={onHandleClearAll} />
     </span>
   );
 }

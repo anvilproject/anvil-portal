@@ -56,15 +56,14 @@ const tableHeadersSummary = [
 function DashboardAnVIL() {
   const dashboardEntities = DashboardWorkspaceStaticQuery();
   const currentLocation = useLocation();
-  const { origin, pathname } = currentLocation || {};
-  const dashboardURL = `${origin}${pathname}`;
+  const { href } = currentLocation || {};
 
   return (
     <Dashboard
       countLabel={countLabel}
       dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
-      dashboardURL={dashboardURL}
+      dashboardURL={href}
       dataset={"anvil"}
       resultKey={lunrIndexRefField}
       searchFacets={searchFacets}

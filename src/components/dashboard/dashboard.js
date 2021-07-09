@@ -30,40 +30,29 @@ function Dashboard(props) {
     tableHeadersSummary,
     totalsWarning
   } = props;
-  const facetsByTerm = DashboardSearchService.getDashboardFacetsByTerm(
+  const setOfEntities = DashboardSearchService.getDashboardSetOfEntities(
+    dashboardEntities,
+    resultKey
+  );
+  const rowsByRowKey = DashboardSearchService.getDashboardRowsByRowKey(dashboardEntities, resultKey);
+  const setOfTermsByFacet = DashboardSearchService.getDashboardSetOfTermsByFacet(
     dashboardEntities,
     searchFacets
   );
-  const facets = DashboardSearchService.buildDashboardFacets(
-    facetsByTerm,
-    searchFacets
-  );
-  const setOfSearchGroups = DashboardSearchService.getDashboardSetOfSearchGroups(
-    searchFacets
-  );
-  const setOfSummaryKeyTerms = DashboardSearchService.getSetOfSummaryKeyTerms(
-    facetsByTerm,
-    summaryKey
-  );
-  const setOfTerms = DashboardSearchService.getDashboardSetOfTerms(
-    facetsByTerm
-  );
-  const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTermDisplay(
-    facetsByTerm
+  const setOfSummaryKeyTerms = setOfTermsByFacet.get(summaryKey);
+  const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTerm(
+    setOfTermsByFacet
   );
 
   return (
     <ProviderDashboard
       countLabel={countLabel}
-      dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={dashboardURL}
-      facets={facets}
-      facetsByTerm={facetsByTerm}
-      resultKey={resultKey}
-      setOfSearchGroups={setOfSearchGroups}
+      rowsByRowKey={rowsByRowKey}
+      setOfEntities={setOfEntities}
       setOfSummaryKeyTerms={setOfSummaryKeyTerms}
-      setOfTerms={setOfTerms}
+      setOfTermsByFacet={setOfTermsByFacet}
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
       tableHeadersSummary={tableHeadersSummary}
