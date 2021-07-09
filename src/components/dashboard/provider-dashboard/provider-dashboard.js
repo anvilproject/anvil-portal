@@ -156,7 +156,7 @@ function ProviderDashboard(props) {
   const buildFacets = useCallback(
     entitiesByFacet => {
       /* Build the facets object. */
-      const _facets = [];
+      const newFacets = [];
 
       /* Loop through each facet and the corresponding set of terms. */
       for (const [facet, setOfTerms] of setOfTermsByFacet) {
@@ -166,13 +166,13 @@ function ProviderDashboard(props) {
         }
 
         /* Grab the resultant entities for the facet. */
-        const _entities = entitiesByFacet.get(facet);
+        const newEntities = entitiesByFacet.get(facet);
         /* Grab the set of selected terms for the facet. */
         const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
         const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
 
         /* Build the terms object. */
-        const _terms = [];
+        const newTerms = [];
         /* For each term calculate the corresponding term count. */
         for (const term of setOfTerms) {
           /* Grab whether the term is selected. */
@@ -181,22 +181,22 @@ function ProviderDashboard(props) {
           const count = DashboardSearchService.getDashboardTermCount(
             facet,
             term,
-            _entities
+            newEntities
           );
 
           // Add the term to the terms object if
           // there is a count,
           // or it is selected
           if (count || selected) {
-            _terms.push({ name: term, count: count, selected: selected });
+            newTerms.push({ name: term, count: count, selected: selected });
           }
         }
 
         // Push the facet to the facets object. */
-        _facets.push({ name: facet, terms: _terms });
+        newFacets.push({ name: facet, terms: newTerms });
       }
 
-      return _facets;
+      return newFacets;
     },
     [setOfTermsByFacet]
   );
@@ -250,7 +250,7 @@ function ProviderDashboard(props) {
    * @type {function(*=, *): *}
    */
   const buildSummaries = useCallback(
-    (_entities, _facets) => {
+    (newEntities, newFacets) => {
       /* Grab the set of selected terms for the summary key. */
       const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
       const setOfSelectedTerms = setOfSelectedTermsByFacet.get(summaryKey);
@@ -265,7 +265,7 @@ function ProviderDashboard(props) {
       // then filter only the terms with a count,
       // then grab the result term name.
       const setOfSummaryTerms = new Set(
-        _facets
+        newFacets
           .find(facet => facet.name === summaryKey)
           .terms.filter(term => facetUnselected || term.selected)
           .filter(term => term.count)
@@ -274,13 +274,33 @@ function ProviderDashboard(props) {
 
       /* Return the summaries. */
       return DashboardSummaryService.getDashboardSummary(
-        _entities,
+        newEntities,
         summaryKey,
         tableHeadersSummary,
         setOfSummaryTerms
       );
     },
     [summaryKey, tableHeadersSummary]
+  );
+
+  /**
+   * Returns the rows filtered from the results.
+   * @type {function(*=): *}
+   */
+  const getEntities = useCallback(
+    setOfResults => {
+      /* Build the entities. */
+      const newEntities = [];
+
+      /* Push any row data with a "hit" in the set of results. */
+      for (const result of [...setOfResults]) {
+        const row = rowsByRowKey.get(result);
+        newEntities.push(row);
+      }
+
+      return newEntities;
+    },
+    [rowsByRowKey]
   );
 
   /**
@@ -302,26 +322,6 @@ function ProviderDashboard(props) {
         console.log(err, "Error loading index");
       });
   }, [dashboardIndexFileName]);
-
-  /**
-   * Returns the rows filtered from the results.
-   * @type {function(*=): *}
-   */
-  const filterEntities = useCallback(
-    setOfResults => {
-      /* Build the entities. */
-      const _entities = [];
-
-      /* Push any row data with a "hit" in the set of results. */
-      for (const result of [...setOfResults]) {
-        const row = rowsByRowKey.get(result);
-        _entities.push(row);
-      }
-
-      return _entities;
-    },
-    [rowsByRowKey]
-  );
 
   /**
    * Returns the intersecting sets of results.
@@ -378,13 +378,13 @@ function ProviderDashboard(props) {
         );
 
         /* Grab the entities and set the entities for the facet. */
-        const _entities = filterEntities(setOfResults);
-        entitiesByFacet.set(facet, _entities);
+        const newEntities = getEntities(setOfResults);
+        entitiesByFacet.set(facet, newEntities);
       }
 
       return entitiesByFacet;
     },
-    [filterEntities, findIntersectionSetOfResults, setOfTermsByFacet]
+    [findIntersectionSetOfResults, getEntities, setOfTermsByFacet]
   );
 
   /**
@@ -770,28 +770,28 @@ function ProviderDashboard(props) {
     const setOfResults = findIntersectionSetOfResults(setOfResultsByFacetClone);
 
     /* Get the resultant entities. */
-    const _entities = filterEntities(setOfResults);
+    const newEntities = getEntities(setOfResults);
 
     /* Get the entities by facet. */
     /* Used to calculate term counts. */
     const entitiesByFacet = getEntitiesByFacet(setOfResultsByFacetClone);
 
     /* Build the facets. */
-    const _facets = buildFacets(entitiesByFacet);
+    const newFacets = buildFacets(entitiesByFacet);
 
     /* Build the summaries. */
-    const _summaries = buildSummaries(_entities, _facets);
+    const newSummaries = buildSummaries(newEntities, newFacets);
 
     /* Update ref for setOfResultsByFacet. */
     /* Now that the results are complete, update the set of results by facet ref value. */
     setOfResultsByFacetRef.current = setOfResultsByFacet;
 
-    return [_entities, _facets, _summaries];
+    return [newEntities, newFacets, newSummaries];
   }, [
-    buildSummaries,
-    filterEntities,
-    findIntersectionSetOfResults,
     buildFacets,
+    buildSummaries,
+    findIntersectionSetOfResults,
+    getEntities,
     getEntitiesByFacet,
     getSetOfResultsByFacet,
     setOfTermsByFacet
@@ -844,14 +844,14 @@ function ProviderDashboard(props) {
     /* Executes only when index is mounted. */
     if (indexMounted) {
       /* Generate results. */
-      const [_entities, _facets, _summaries] = generateResults();
+      const [newEntities, newFacets, newSummaries] = generateResults();
 
       /* Set state results. */
       setResults(results => ({
         ...results,
-        entities: _entities,
-        facets: _facets,
-        summaries: _summaries
+        entities: newEntities,
+        facets: newFacets,
+        summaries: newSummaries
       }));
     }
   }, [generateResults, indexMounted, query]);
