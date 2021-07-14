@@ -30,7 +30,7 @@ function ProviderModal(props) {
       /* Set state. */
       setModal(modal => ({ ...modal, modalProps: {}, showModal: false }));
       onSetSiteScrollable(true);
-    }, 450);
+    }, 400);
   }, [onSetSiteScrollable]);
 
   const onOpenModal = useCallback(

@@ -21,7 +21,7 @@ import ModalDrawer from "../modal-drawer/modal-drawer";
 import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
 
 // Styles
-import compStyles from "./modal-dashbard-facet-term-selector.module.css";
+import compStyles from "./modal-dashboard-facet-term-selector.module.css";
 
 function ModalDashboardFacetTermSelector() {
   const { countLabel, facets } = useContext(ContextDashboard);
