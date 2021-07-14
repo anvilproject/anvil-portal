@@ -57,6 +57,9 @@ const typography = new Typography({
         marginBottom: rhythm(0.33),
         marginTop: rhythm(0.33)
       },
+      "li:last-of-type": {
+        marginBottom: rhythm(2 / 3),
+      },
       // Children lists
       "li > ol, li > ul": {
         margin: 0,
