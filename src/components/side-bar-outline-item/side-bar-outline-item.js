@@ -23,6 +23,7 @@ function SideBarOutlineItem(props) {
   const { anchor, depth, label } = outline;
   const indent = depth === 3;
   const active = anchor === activeOutline;
+  const item = OutlineService.getOutlineItem(label, compStyles.ordered);
   const classNamesOutlineItem = classNames(
     { [compStyles.active]: active },
     { [compStyles.indent]: indent },
@@ -31,7 +32,7 @@ function SideBarOutlineItem(props) {
 
   return (
     <li className={classNamesOutlineItem}>
-      <Link to={anchor}>{label}</Link>
+      <Link to={anchor}>{item}</Link>
     </li>
   );
 }

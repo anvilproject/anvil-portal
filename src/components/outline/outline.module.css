@@ -28,6 +28,11 @@
   pointer-events: none; /* Required for data search component. */
 }
 
+/* Outline - text indent (numbered). */
+.outline .ordered {
+  display: flex;
+}
+
 /* Outline vertical line. */
 .outline:not(.empty)::before {
   background-color: var(--accent-blue-light);
@@ -78,7 +83,7 @@
 
 /* Link, "On This Page". */
 .outline li a,
-.outline li span {
+.outline li > span {
   display: inline-block;
   font-size: 0.8125rem; /* 13px */
   font-weight: 400;
