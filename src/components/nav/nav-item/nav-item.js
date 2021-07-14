@@ -11,6 +11,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 // App dependencies
 import NavArrow from "../nav-arrow/nav-arrow";
+import * as OutlineService from "../../../utils/outline.service";
 
 // Styles
 import compStyles from "./nav-item.module.css";
@@ -25,6 +26,8 @@ function NavItem(props) {
   const [itemOpen, setItemOpen] = useState(false);
   const showArrow = navItems && navItems.length > 0;
   const showNestedLinks = navItems && itemOpen;
+  const item = OutlineService.getOutlineItem(name, compStyles.ordered);
+
   const classNamesItem = classNames(
     { [compStyles.active]: itemActive },
     { [compStyles.button]: itemButton }
@@ -55,7 +58,7 @@ function NavItem(props) {
         onClick={() => onHandleClick()}
       >
         <NavArrow rotate={itemOpen} showArrow={showArrow} />
-        <span>{name}</span>
+        <span>{item}</span>
       </span>
       {showNestedLinks ? (
         <ul>
