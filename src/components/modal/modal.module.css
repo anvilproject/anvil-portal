@@ -15,7 +15,7 @@
 
 /* Modal overlay. */
 .modalOverlay {
-  background-color: var(--black12);
+  background-color: var(--black34);
   bottom: 0;
   right: 0;
   z-index: 20; /* Above header. */
@@ -29,14 +29,4 @@
   pointer-events: none;
   width: 100%;
   z-index: 24; /* Above overlay. */
-}
-
-/* Modal. */
-/* Used by modals with composes. */
-/* e.g. composes: modal from "../modal.module.css". */
-.modal {
-  background-color: var(--white);
-  box-shadow: 0 2px 4px var(--black12);
-  pointer-events: auto;
-  position: relative; /* Positions close button. */
 }

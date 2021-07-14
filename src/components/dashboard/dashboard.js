@@ -30,6 +30,7 @@ function Dashboard(props) {
     tableHeadersSummary,
     totalsWarning
   } = props;
+  const facetCount = searchFacets.length;
   const setOfEntities = DashboardSearchService.getDashboardSetOfEntities(
     dashboardEntities,
     resultKey
@@ -49,6 +50,7 @@ function Dashboard(props) {
       countLabel={countLabel}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={dashboardURL}
+      facetCount={facetCount}
       rowsByRowKey={rowsByRowKey}
       setOfEntities={setOfEntities}
       setOfSummaryKeyTerms={setOfSummaryKeyTerms}

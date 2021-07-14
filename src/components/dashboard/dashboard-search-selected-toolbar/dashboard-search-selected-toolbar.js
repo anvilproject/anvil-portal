@@ -14,7 +14,7 @@ import DashboardSearchSelectedControlBar from "../dashboard-search-selected-cont
 
 function DashboardSearchSelectedToolbar() {
   return (
-    <DashboardSearchPanel stretch>
+    <DashboardSearchPanel spanGrid>
       <DashboardSearchSelectedControlBar />
     </DashboardSearchPanel>
   );
