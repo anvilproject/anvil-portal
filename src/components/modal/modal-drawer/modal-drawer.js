@@ -32,7 +32,7 @@ function ModalDrawer(props) {
       classNames={classNamesTransition}
       in={showDrawer}
       mountOnEnter
-      timeout={450}
+      timeout={250}
       unmountOnExit
     >
       <div className={compStyles.drawer}>{children}</div>
