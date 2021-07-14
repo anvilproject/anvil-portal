@@ -20,7 +20,7 @@ function DashboardSearchEmptyResults() {
   const showEmptyResults = entities.length === 0;
 
   return showEmptyResults ? (
-    <DashboardSearchPanel stretch>
+    <DashboardSearchPanel spanGrid>
       <div className={compStyles.error}>No results</div>
     </DashboardSearchPanel>
   ) : null;

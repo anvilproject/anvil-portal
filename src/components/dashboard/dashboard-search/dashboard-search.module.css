@@ -7,9 +7,5 @@
 
 /* Search. */
 .search {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
   margin: 0 0 24px; /** Padding bottom matches padding between tables */
-  width: 100%;
 }

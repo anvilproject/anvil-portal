@@ -18,7 +18,7 @@ import compStyles from "./dashboard-table-toolbar.module.css";
 
 function DashboardTableToolbar() {
   return (
-    <DashboardSearchPanel stretch>
+    <DashboardSearchPanel spanGrid>
       <span className={compStyles.tools}>
         <DashboardDownloadTSV />
         <DashboardCopyURL />

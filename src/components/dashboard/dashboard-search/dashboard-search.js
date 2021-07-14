@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import DashboardGrid from "../dashboard-grid/dashboard-grid";
 import DashboardSearchCheckboxes from "../dashboard-search-checkboxes/dashboard-search-checkboxes";
 import DashboardSearchEmptyResults from "../dashboard-search-empty-results/dashboard-search-empty-results";
 import DashboardSearchInput from "../dashboard-search-input/dashboard-search-input";
@@ -21,11 +22,13 @@ import compStyles from "./dashboard-search.module.css";
 function DashboardSearch() {
   return (
     <div className={compStyles.search}>
-      <DashboardSearchInput />
-      <DashboardSearchCheckboxes />
-      <DashboardSearchSelectedToolbar />
-      <DashboardTableToolbar />
-      <DashboardSearchEmptyResults />
+      <DashboardGrid>
+        <DashboardSearchInput />
+        <DashboardSearchCheckboxes />
+        <DashboardSearchSelectedToolbar />
+        <DashboardTableToolbar />
+        <DashboardSearchEmptyResults />
+      </DashboardGrid>
     </div>
   );
 }

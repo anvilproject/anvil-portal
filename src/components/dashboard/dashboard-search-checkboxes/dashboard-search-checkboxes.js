@@ -14,15 +14,15 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchCheckboxesGroup from "../dashboard-search-checkboxes-group/dashboard-search-checkboxes-group";
 import DashboardSearchCheckboxesPlaceholder from "../dashboard-search-checkboxes-placeholder/dashboard-search-checkboxes-placeholder";
 import ContextModal from "../../modal/context-modal/context-modal";
-import ModalDashboardSearchCheckboxesGroup from "../../modal/modal-dashboard-search-checkboxes-group/modal-dashboard-search-checkboxes-group";
+import ModalDashboardFacetTermSelector from "../../modal/modal-dashboard-facet-term-selector/modal-dashboard-facet-term-selector";
 
 function DashboardSearchCheckboxes() {
-  const { countLabel, facets, setOfSummaryKeyTerms } = useContext(
+  const { countLabel, facetCount, facets, setOfSummaryKeyTerms } = useContext(
     ContextDashboard
   );
   const { modal } = useContext(ContextModal);
   const { showModal } = modal;
-  const facetCount = facets.length;
+  const loading = facets.length === 0;
 
   return (
     <>
@@ -31,12 +31,14 @@ function DashboardSearchCheckboxes() {
           key={f}
           countLabel={countLabel}
           facet={facet}
-          facetCount={facetCount}
           setOfSummaryKeyTerms={setOfSummaryKeyTerms}
         />
       ))}
-      <DashboardSearchCheckboxesPlaceholder facetCount={facetCount} />
-      {showModal ? <ModalDashboardSearchCheckboxesGroup /> : null}
+      <DashboardSearchCheckboxesPlaceholder
+        facetCount={facetCount}
+        loading={loading}
+      />
+      {showModal ? <ModalDashboardFacetTermSelector /> : null}
     </>
   );
 }

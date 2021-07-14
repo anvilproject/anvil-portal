@@ -14,14 +14,13 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 
 function DashboardSearchCheckboxesPlaceholder(props) {
-  const { facetCount } = props;
-  const showPlaceholder = DashboardSearchService.isDashboardCheckboxesUneven(
+  const { facetCount, loading } = props;
+  const facetCountUneven = DashboardSearchService.isDashboardCheckboxesUneven(
     facetCount
   );
+  const showPlaceholder = !loading && facetCountUneven;
 
-  return showPlaceholder ? (
-    <DashboardSearchPanel facetCount={facetCount} placeholder />
-  ) : null;
+  return showPlaceholder ? <DashboardSearchPanel placeholder /> : null;
 }
 
 export default DashboardSearchCheckboxesPlaceholder;

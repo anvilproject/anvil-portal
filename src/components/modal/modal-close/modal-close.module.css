@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL modal close component.
+ */
+
+/* Close button positioner. */
+.modalClose {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
