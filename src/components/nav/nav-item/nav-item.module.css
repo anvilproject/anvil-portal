@@ -38,6 +38,11 @@
   color: var(--black58);
 }
 
+/* Nav item - text indent (numbered). */
+.navItem .ordered {
+  display: flex;
+}
+
 .navItem .navItem:last-child {
   padding-bottom: 8px;
 }
