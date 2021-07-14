@@ -17,7 +17,7 @@ import * as DashboardSearchService from "../../../utils/dashboard/dashboard-sear
 import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
 
 function DashboardSearchCheckboxesGroup(props) {
-  const { countLabel, facet, facetCount, setOfSummaryKeyTerms } = props,
+  const { countLabel, facet, setOfSummaryKeyTerms } = props,
     { name, terms } = facet;
   const { onOpenModal } = useContext(ContextModal);
   const snippetCount = DashboardSearchService.getDashboardCheckboxMaxDisplayCount(
@@ -34,7 +34,7 @@ function DashboardSearchCheckboxesGroup(props) {
   };
 
   return (
-    <DashboardSearchPanel facetCount={facetCount}>
+    <DashboardSearchPanel>
       <span id="group">
         <span>{FacetSelectorNameDisplay[name]}</span>
         <span>{countLabel}</span>

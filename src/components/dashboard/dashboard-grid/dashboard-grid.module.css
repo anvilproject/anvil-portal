@@ -1,0 +1,65 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard grid component.
+ */
+
+/* Grid. */
+.grid {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+/* Grid loading. */
+.grid.gridLoading {
+  grid-template-columns: 1fr; /* Grid is 1 column. */
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ */
+@media screen and (min-width: 600px) {
+  /* Grid. */
+  .grid {
+    grid-template-columns: repeat(6, 1fr) /* Grid is 2 columns. */;
+  }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1280px) {
+  /* Grid x5. */
+  .x5 {
+    grid-template-columns: repeat(5, 1fr); /* Grid is 5 columns. */
+  }
+
+  /* Grid x6. */
+  .x6 {
+    grid-template-columns: repeat(6, 1fr); /* Grid is 6 columns. */
+  }
+}
+
+/**
+ * 1600px - Large tablet landscape, large window
+ */
+@media screen and (min-width: 1600px) {
+  /* Grid x5. */
+  .x5 {
+    grid-template-columns: repeat(
+      6,
+      1fr
+    ); /* Search bar inline with facets row. */
+  }
+
+  /* Grid x6. */
+  .x6 {
+    grid-template-columns: repeat(
+      7,
+      1fr
+    ); /* Search bar inline with facets row. */
+  }
+}

@@ -22,6 +22,7 @@ function ProviderDashboard(props) {
     countLabel,
     dashboardIndexFileName,
     dashboardURL,
+    facetCount,
     rowsByRowKey,
     setOfEntities,
     setOfSummaryKeyTerms,
@@ -192,7 +193,7 @@ function ProviderDashboard(props) {
           }
         }
 
-        // Push the facet to the facets object. */
+        /* Push the facet to the facets object. */
         newFacets.push({ name: facet, terms: newTerms });
       }
 
@@ -329,29 +330,31 @@ function ProviderDashboard(props) {
    * @param setOfResultsByFacet
    * @returns {Set<T>}
    */
-  const findIntersectionSetOfResults = useCallback(setOfResultsByFacet => {
+  const findIntersectionSetOfResults = useCallback(
+    setOfResultsByFacet => {
+      /* Early exit, return a full set of results. */
+      /* No terms are selected. */
+      if (setOfResultsByFacet.size === 0) {
+        return setOfEntities;
+      }
 
-    /* Early exit, return a full set of results. */
-    /* No terms are selected. */
-    if ( setOfResultsByFacet.size === 0 ) {
-      return setOfEntities;
-    }
+      /* Sort the set of results by set size. */
+      const sortedSetsOfResults = sortSetsOfResults(setOfResultsByFacet);
 
-    /* Sort the set of results by set size. */
-    const sortedSetsOfResults = sortSetsOfResults(setOfResultsByFacet);
+      /* Grab the first set. */
+      const firstSetOfResults = sortedSetsOfResults.shift();
 
-    /* Grab the first set. */
-    const firstSetOfResults = sortedSetsOfResults.shift();
-
-    /* Find any intersecting sets of results. i.e. searching will be "AND" between facets. */
-    /* Create a new set of intersection results. */
-    /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
-    return new Set(
-      [...firstSetOfResults].filter(result =>
-        sortedSetsOfResults.every(setOfResults => setOfResults.has(result))
-      )
-    );
-  }, [setOfEntities]);
+      /* Find any intersecting sets of results. i.e. searching will be "AND" between facets. */
+      /* Create a new set of intersection results. */
+      /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
+      return new Set(
+        [...firstSetOfResults].filter(result =>
+          sortedSetsOfResults.every(setOfResults => setOfResults.has(result))
+        )
+      );
+    },
+    [setOfEntities]
+  );
 
   /**
    * Returns a map object key-value pair of facet and entities.
@@ -359,12 +362,11 @@ function ProviderDashboard(props) {
    */
   const getEntitiesByFacet = useCallback(
     setOfResultsByFacet => {
-      /* Grab the facets. */
-      const facets = setOfTermsByFacet.keys();
+      /* Build entities by facet. */
       const entitiesByFacet = new Map();
 
       /* Loop through each facet and grab the resultant entities for that facet. */
-      for (const facet of facets) {
+      for (const facet of setOfTermsByFacet.keys()) {
         /* Clone the setOfResultsByFacet. */
         const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
 
@@ -535,11 +537,9 @@ function ProviderDashboard(props) {
   const initSetOfSelectedTermsByFacet = useCallback(() => {
     /* Get the search params. */
     const urlSearchParams = getURLSearchParams();
-    /* Grab the facets. */
-    const facets = setOfTermsByFacet.keys();
 
     /* For each facet, init the set of selected terms. */
-    for (const facet of facets) {
+    for (const facet of setOfTermsByFacet.keys()) {
       /* From the search params, for the facet, grab the term list. */
       const termList = urlSearchParams.get(facet);
       /* Split the term list into an array of terms. */
@@ -589,9 +589,8 @@ function ProviderDashboard(props) {
 
     /* Update the current ref setOfSelectedTermsByFacet. */
     const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
-    const facets = setOfSelectedTermsByFacet.keys();
     /* For each facet clear the set of selected terms. */
-    for (const facet of facets) {
+    for (const facet of setOfSelectedTermsByFacet.keys()) {
       setOfSelectedTermsByFacetRef.current.set(facet, new Set());
     }
 
@@ -757,11 +756,10 @@ function ProviderDashboard(props) {
 
     /* Clone the setOfResultsByFacet and remove any facets with unselected terms. */
     const setOfResultsByFacetClone = new Map(setOfResultsByFacet);
-    const facets = setOfTermsByFacet.keys();
-    for (const facet of facets) {
+    for (const facet of setOfTermsByFacet.keys()) {
       const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
       const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
-      if ( setOfSelectedTerms.size === 0 ) {
+      if (setOfSelectedTerms.size === 0) {
         setOfResultsByFacetClone.delete(facet);
       }
     }
@@ -861,6 +859,7 @@ function ProviderDashboard(props) {
       value={{
         countLabel,
         entities,
+        facetCount,
         facets,
         inputValue: inputValueRef.current,
         onHandleClearAll,
