@@ -33,6 +33,11 @@
   margin-top: 8px;
 }
 
+/* Outline item - text indent (numbered). */
+.outlineItem .ordered {
+  display: flex;
+}
+
 /* Outline item link. */
 .outlineItem > * {
   color: inherit;
