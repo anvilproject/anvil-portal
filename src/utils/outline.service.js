@@ -95,14 +95,14 @@ export function getOutlineItem(outlineItem, classNameOutlineItem) {
   const separator = hasSeparator ? words.shift() : "";
 
   /* Recreate the outline item without number or separator. */
-  const word = words.join(" ");
+  const text = words.join(" ");
 
   /* Return the outlined number wrapped in <span/>. */
   return (
     <span className={classNameOutlineItem}>
       <span>{number}</span>
       {separator ? <span>&nbsp;{separator}&nbsp;</span> : <span>&nbsp;</span>}
-      <span>{word}</span>
+      <span>{text}</span>
     </span>
   );
 }
