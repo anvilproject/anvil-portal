@@ -138,7 +138,6 @@ class Outline extends React.Component {
       const outline = OutlineService.getOutline(heading);
       const { depth, anchor, label } = outline;
       const indent = depth === 3;
-      const item = OutlineService.getOutlineItem(label, compStyles.ordered);
 
       return (
         <li>
@@ -149,7 +148,7 @@ class Outline extends React.Component {
             )}
             href={anchor}
           >
-            {item}
+            {label}
           </a>
         </li>
       );
