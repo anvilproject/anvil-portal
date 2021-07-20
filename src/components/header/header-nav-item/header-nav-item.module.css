@@ -10,8 +10,13 @@
   align-items: center;
   display: flex;
   font-weight: 400;
-  margin-bottom: 8px;
   padding-left: 24px;
+}
+
+/* Navigation item & last item */
+.headerNavItem,
+.headerNavItem:last-of-type {
+  margin-bottom: 8px; /* Overrides typography li:last-of-type style. */
 }
 
 /* Link */
@@ -54,6 +59,12 @@
     margin: 0 0 0 16px;
     overflow-y: unset;
     padding: 0;
+  }
+
+  /* Navigation item & last item */
+  .headerNavItem,
+  .headerNavItem:last-of-type {
+    margin-bottom: 0; /* Overrides typography li:last-of-type style. */
   }
 
   /* Link */
