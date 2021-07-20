@@ -14,15 +14,19 @@ import ContextModal from "./context-modal/context-modal";
 
 // Styles
 import compStyles from "./modal.module.css";
+const classNames = require("classnames");
 
 function Modal(props) {
   const { children } = props;
-  const { onCloseModal } = useContext(ContextModal);
+  const { onCloseModal, modal } = useContext(ContextModal);
+  const { showDrawer } = modal;
   const modalEl = document.getElementById("modal-root");
   const portalEl = (
     <>
       <div
-        className={compStyles.modalOverlay}
+        className={classNames(compStyles.modalOverlay, {
+          [compStyles.show]: showDrawer
+        })}
         onClick={() => onCloseModal()}
         role={"presentation"}
       />

@@ -24,7 +24,7 @@ function DashboardSearchSummary() {
   );
 
   return (
-    <DashboardSearchPanel inverted row>
+    <DashboardSearchPanel inverted row spanGrid>
       <h4 className={compStyles.label}>Current selection:</h4>
       {searchSummaries && searchSummaries.length ? (
         searchSummaries.map((summary, s) => (

@@ -15,10 +15,38 @@
 
 /* Modal overlay. */
 .modalOverlay {
-  background-color: var(--black12);
+  animation: hideOverlay 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: var(--black6);
   bottom: 0;
+  opacity: 0;
   right: 0;
   z-index: 20; /* Above header. */
+}
+
+/* Modal overlay show. */
+.modalOverlay.show {
+  animation: showOverlay 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 1;
+}
+
+/* Animation - show overlay. */
+@keyframes showOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation - hide overlay. */
+@keyframes hideOverlay {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Modal wrapper. */
@@ -29,14 +57,4 @@
   pointer-events: none;
   width: 100%;
   z-index: 24; /* Above overlay. */
-}
-
-/* Modal. */
-/* Used by modals with composes. */
-/* e.g. composes: modal from "../modal.module.css". */
-.modal {
-  background-color: var(--white);
-  box-shadow: 0 2px 4px var(--black12);
-  pointer-events: auto;
-  position: relative; /* Positions close button. */
 }
