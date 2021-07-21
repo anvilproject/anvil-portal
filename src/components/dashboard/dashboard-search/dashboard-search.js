@@ -19,12 +19,13 @@ import DashboardTableToolbar from "../dashboard-table-toolbar/dashboard-table-to
 // Styles
 import compStyles from "./dashboard-search.module.css";
 
-function DashboardSearch() {
+function DashboardSearch(props) {
+  const { dataset } = props;
   return (
     <div className={compStyles.search}>
       <DashboardGrid>
         <DashboardSearchInput />
-        <DashboardSearchCheckboxes />
+        <DashboardSearchCheckboxes dataset={dataset} />
         <DashboardSearchSelectedToolbar />
         <DashboardTableToolbar />
         <DashboardSearchEmptyResults />

@@ -23,11 +23,16 @@ import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selecto
 // Styles
 import compStyles from "./modal-dashboard-facet-term-selector.module.css";
 
-function ModalDashboardFacetTermSelector() {
+function ModalDashboardFacetTermSelector(props) {
+  const { dataset } = props;
   const { countLabel, facets } = useContext(ContextDashboard);
   const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
     { facetName } = modalProps || {};
+  const datasetNCPI = dataset === "ncpi";
+  const facetDiseases = facetName === "diseases";
+  let facetDisplayName = FacetSelectorNameDisplay[facetName];
+  if (datasetNCPI && facetDiseases) facetDisplayName = "Focus / Disease";
   const facet = facets.find(facet => facet.name === facetName);
   const terms = facet?.terms;
 
@@ -35,7 +40,7 @@ function ModalDashboardFacetTermSelector() {
     <Modal onClose={onCloseDrawer}>
       <ModalDrawer>
         <ModalClose onClose={onCloseDrawer} />
-        <h1>{FacetSelectorNameDisplay[facetName]}</h1>
+        <h1>{facetDisplayName}</h1>
         <div className={compStyles.facetSnapshot}>
           <DashboardSearchSummary />
           <DashboardSearchSelectedToolbar />
