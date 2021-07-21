@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 // App dependencies
@@ -19,8 +19,8 @@ const classNames = require("classnames");
 function Modal(props) {
   const { children, onClose } = props;
   const { modal } = useContext(ContextModal);
+  const modalElRef = useRef(null);
   const { showDrawer, showModal } = modal;
-  const modalEl = document.getElementById("modal-root");
   const portalEl = (
     <>
       <div
@@ -53,7 +53,12 @@ function Modal(props) {
     };
   }, [onHandleKeyDown]);
 
-  return showModal ? ReactDOM.createPortal(portalEl, modalEl) : null;
+  /* useEffect - componentDidMount. */
+  useEffect(() => {
+    modalElRef.current = document.getElementById("modal-root");
+  }, []);
+
+  return showModal ? ReactDOM.createPortal(portalEl, modalElRef.current) : null;
 }
 
 export default Modal;
