@@ -17,13 +17,14 @@ import compStyles from "./modal-drawer.module.css";
 
 function ModalDrawer(props) {
   const { children } = props;
-  const { modal } = useContext(ContextModal);
+  const { modal, onCloseModal } = useContext(ContextModal);
   const { showDrawer } = modal;
   const classNamesTransition = {
     appear: compStyles.drawerAppear,
     appearActive: compStyles.drawerAppearActive,
     exit: compStyles.drawerClosed,
-    exitActive: compStyles.drawerClosedActive
+    exitActive: compStyles.drawerClosedActive,
+    exitDone: compStyles.drawerExitDone
   };
 
   return (
@@ -31,9 +32,10 @@ function ModalDrawer(props) {
       appear
       classNames={classNamesTransition}
       in={showDrawer}
-      mountOnEnter
+      mountOnEnter={true}
+      onExited={() => onCloseModal()}
       timeout={250}
-      unmountOnExit
+      unmountOnExit={true}
     >
       <div className={compStyles.drawer}>{children}</div>
     </CSSTransition>

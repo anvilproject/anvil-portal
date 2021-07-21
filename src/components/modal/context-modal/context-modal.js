@@ -10,6 +10,7 @@ import React from "react";
 
 const ContextModal = React.createContext({
   modal: { modalProps: {}, showModal: false },
+  onCloseDrawer: () => {},
   onCloseModal: () => {},
   onOpenModal: () => {}
 });

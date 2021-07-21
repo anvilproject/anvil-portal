@@ -16,7 +16,7 @@
 /* Modal overlay. */
 .modalOverlay {
   animation: hideOverlay 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: var(--black6);
+  background-color: var(--black12);
   bottom: 0;
   opacity: 0;
   right: 0;

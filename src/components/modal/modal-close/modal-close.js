@@ -16,11 +16,11 @@ import Icon from "../../icon/icon";
 import compStyles from "./modal-close.module.css";
 
 function ModalClose(props) {
-  const { onCloseModal } = props;
+  const { onClose } = props;
 
   return (
     <div className={compStyles.modalClose}>
-      <Button clickAction={() => onCloseModal()} icon>
+      <Button clickAction={() => onClose()} icon>
         <Icon showHover={true} showIcon={true}>
           close
         </Icon>
