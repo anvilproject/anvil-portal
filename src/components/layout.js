@@ -17,7 +17,7 @@ import Main from "./main/main";
 import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
 import ProviderAnVILPortal from "./provider-anvil-portal/provider-anvil-portal";
-import SEO from "./seo/seo";
+import SEO from "./seo/SEO";
 import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-link-tracker";
 import ProviderSiteSearch from "./site-search/provider-site-search/provider-site-search";
 import SiteWrapper from "./site-wrapper/site-wrapper";

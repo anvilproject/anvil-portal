@@ -6,7 +6,8 @@
  */
 
 // App dependencies
-import { EnvironmentUrl } from "./environment-url.model";
+import { EnvironmentUrls } from "./environment-url.model";
+
 
 // Template variables
 const GATSBY_ENV = process.env.GATSBY_ENV;
@@ -14,17 +15,17 @@ const GATSBY_ENV = process.env.GATSBY_ENV;
 /**
  * Returns the name of the current environment.
  */
-export function getCurrentEnvironment() {
-  return GATSBY_ENV;
+export function getCurrentEnvironment(): string {
+  return GATSBY_ENV as string; //TODO revisit process.env typing
 }
 
 /**
  * Returns the current environment's url.
  */
 export function getCurrentEnvironmentURL() {
-  const currentEnvironment = getCurrentEnvironment().toUpperCase();
+  const currentEnvironment : string = getCurrentEnvironment().toUpperCase();
 
-  return EnvironmentUrl[currentEnvironment];
+  return EnvironmentUrls.get(currentEnvironment);
 }
 
 /**
