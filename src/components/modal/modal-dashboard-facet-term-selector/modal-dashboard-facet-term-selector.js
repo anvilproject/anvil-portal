@@ -25,16 +25,16 @@ import compStyles from "./modal-dashboard-facet-term-selector.module.css";
 
 function ModalDashboardFacetTermSelector() {
   const { countLabel, facets } = useContext(ContextDashboard);
-  const { modal, onCloseModal } = useContext(ContextModal);
+  const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
     { facetName } = modalProps || {};
   const facet = facets.find(facet => facet.name === facetName);
-  const terms = facet.terms;
+  const terms = facet?.terms;
 
   return (
-    <Modal>
+    <Modal onClose={onCloseDrawer}>
       <ModalDrawer>
-        <ModalClose onCloseModal={onCloseModal} />
+        <ModalClose onClose={onCloseDrawer} />
         <h1>{FacetSelectorNameDisplay[facetName]}</h1>
         <div className={compStyles.facetSnapshot}>
           <DashboardSearchSummary />
@@ -43,9 +43,14 @@ function ModalDashboardFacetTermSelector() {
             <span id="group">
               <span>{countLabel}</span>
             </span>
-            {terms.map((term, t) => (
-              <DashboardSearchCheckbox key={t} facet={facetName} term={term} />
-            ))}
+            {terms &&
+              terms.map((term, t) => (
+                <DashboardSearchCheckbox
+                  key={t}
+                  facet={facetName}
+                  term={term}
+                />
+              ))}
           </DashboardSearchPanel>
         </div>
       </ModalDrawer>

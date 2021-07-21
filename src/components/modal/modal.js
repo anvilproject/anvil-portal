@@ -17,9 +17,9 @@ import compStyles from "./modal.module.css";
 const classNames = require("classnames");
 
 function Modal(props) {
-  const { children } = props;
-  const { onCloseModal, modal } = useContext(ContextModal);
-  const { showDrawer } = modal;
+  const { children, onClose } = props;
+  const { modal } = useContext(ContextModal);
+  const { showDrawer, showModal } = modal;
   const modalEl = document.getElementById("modal-root");
   const portalEl = (
     <>
@@ -27,7 +27,7 @@ function Modal(props) {
         className={classNames(compStyles.modalOverlay, {
           [compStyles.show]: showDrawer
         })}
-        onClick={() => onCloseModal()}
+        onClick={() => onClose()}
         role={"presentation"}
       />
       <div className={compStyles.modalWrapper}>{children}</div>
@@ -37,10 +37,10 @@ function Modal(props) {
   const onHandleKeyDown = useCallback(
     e => {
       if (e.key === "Escape") {
-        onCloseModal();
+        onClose();
       }
     },
-    [onCloseModal]
+    [onClose]
   );
 
   /* useEffect - componentDidMount, componentWillUnmount. */
@@ -53,7 +53,7 @@ function Modal(props) {
     };
   }, [onHandleKeyDown]);
 
-  return ReactDOM.createPortal(portalEl, modalEl);
+  return showModal ? ReactDOM.createPortal(portalEl, modalEl) : null;
 }
 
 export default Modal;

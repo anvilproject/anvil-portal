@@ -13,15 +13,12 @@ import React, { useContext } from "react";
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchCheckboxesGroup from "../dashboard-search-checkboxes-group/dashboard-search-checkboxes-group";
 import DashboardSearchCheckboxesPlaceholder from "../dashboard-search-checkboxes-placeholder/dashboard-search-checkboxes-placeholder";
-import ContextModal from "../../modal/context-modal/context-modal";
 import ModalDashboardFacetTermSelector from "../../modal/modal-dashboard-facet-term-selector/modal-dashboard-facet-term-selector";
 
 function DashboardSearchCheckboxes() {
   const { countLabel, facetCount, facets, setOfSummaryKeyTerms } = useContext(
     ContextDashboard
   );
-  const { modal } = useContext(ContextModal);
-  const { showModal } = modal;
   const loading = facets.length === 0;
 
   return (
@@ -38,7 +35,7 @@ function DashboardSearchCheckboxes() {
         facetCount={facetCount}
         loading={loading}
       />
-      {showModal ? <ModalDashboardFacetTermSelector /> : null}
+      <ModalDashboardFacetTermSelector />
     </>
   );
 }

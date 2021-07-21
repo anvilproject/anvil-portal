@@ -21,16 +21,16 @@ function ProviderModal(props) {
     showModal: false
   });
 
-  const onCloseModal = useCallback(() => {
+  const onCloseDrawer = useCallback(() => {
     /* Close modal drawer before the modal is removed from portal. */
     /* Required for animation of modal drawer closing. */
     setModal(modal => ({ ...modal, showDrawer: false }));
+  }, []);
 
-    setTimeout(() => {
-      /* Set state. */
-      setModal(modal => ({ ...modal, modalProps: {}, showModal: false }));
-      onSetSiteScrollable(true);
-    }, 400);
+  const onCloseModal = useCallback(() => {
+    /* Close modal. Modal is removed from portal. */
+    onSetSiteScrollable(true);
+    setModal(modal => ({ ...modal, modalProps: {}, showModal: false }));
   }, [onSetSiteScrollable]);
 
   const onOpenModal = useCallback(
@@ -48,7 +48,9 @@ function ProviderModal(props) {
   );
 
   return (
-    <ContextModal.Provider value={{ modal, onCloseModal, onOpenModal }}>
+    <ContextModal.Provider
+      value={{ modal, onCloseDrawer, onCloseModal, onOpenModal }}
+    >
       {children}
     </ContextModal.Provider>
   );
