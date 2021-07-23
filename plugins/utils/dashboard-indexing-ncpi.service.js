@@ -31,7 +31,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
     this.field("consentCodes");
     this.field("dataTypes");
     this.field("dbGapIdNumber");
-    this.field("diseases");
+    this.field("focuses");
     this.field("platforms");
     this.field("studyDesigns");
     this.field("studyName");
@@ -47,7 +47,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
       const dataTypes = getIndexFieldTypeOfArray(study.dataTypes);
       const dbGapIdAccession = study.dbGapIdAccession;
       const dbGapIdNumber = getIndexFieldGapNumber(study.dbGapIdAccession);
-      const diseases = getIndexFieldTypeOfArray(study.diseases);
+      const focuses = getIndexFieldTypeOfArray(study.focuses);
       const platforms = study.platforms;
       const studyDesigns = getIndexFieldTypeOfArray(study.studyDesigns);
       const studyName = getIndexFieldTypeOfString(study.studyName, inputSubStr);
@@ -57,7 +57,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
         dataTypes: dataTypes,
         dbGapIdAccession: dbGapIdAccession,
         dbGapIdNumber: dbGapIdNumber,
-        diseases: diseases,
+        focuses: focuses,
         platforms: platforms,
         studyDesigns: studyDesigns,
         studyName: studyName

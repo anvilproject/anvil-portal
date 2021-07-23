@@ -6,6 +6,8 @@
  */
 
 // App dependencies
+import { DashboardSummarySnapshotPluralPropertyNameDisplay } from "./dashboard-summary-snapshot-plural-property-name-display.model";
+import { DashboardSummarySnapshotSingularPropertyNameDisplay } from "./dashboard-summary-snapshot-singular-property-name-display.model";
 import * as DashboardTableService from "./dashboard-table.service";
 
 /**
@@ -21,17 +23,20 @@ export function getDashboardSnapshotSummary(summaries, summaryKeys) {
     const summaryRows = summaries.slice(0, -1);
 
     return summaryKeys.map((key, k) => {
-      const label = DashboardTableService.switchDisplayColumnName(key);
+      /* Grab the count. */
+      const count =
+        k === 0 ? summaryRows.length.toLocaleString() : totalRow[key];
+      /* Format the count. */
+      const countDisplayValue = DashboardTableService.formatValue(count, key);
 
-      if (k === 0) {
-        const count = summaryRows.length.toLocaleString();
+      /* Grab the label. */
+      const label =
+        count > 1
+          ? DashboardSummarySnapshotPluralPropertyNameDisplay[key]
+          : DashboardSummarySnapshotSingularPropertyNameDisplay[key];
 
-        return { count: count, label: `${label}s` };
-      } else {
-        const count = DashboardTableService.formatValue(totalRow[key], key);
-
-        return { count: count, label: label };
-      }
+      /* Return the label and count display value. */
+      return { count: countDisplayValue, label: label };
     });
   }
 

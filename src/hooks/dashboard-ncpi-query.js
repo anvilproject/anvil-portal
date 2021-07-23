@@ -10,7 +10,7 @@ export const DashboardNCPIStaticQuery = () => {
               consentCodes
               dataTypes
               dbGapIdAccession
-              diseases
+              focuses
               gapId {
                 studyUrl
                 gapIdDisplay

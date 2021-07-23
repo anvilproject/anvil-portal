@@ -21,7 +21,7 @@ const dirCacheFHIR = "../../db-gap-cache";
 const FHIR_FIELD_KEY = {
   CONSENT_CODES: "consentCodes",
   DATA_TYPES: "dataTypes",
-  DISEASES: "diseases",
+  FOCUSES: "focuses",
   STUDY_DESIGNS: "studyDesigns",
   STUDY_NAME: "studyName",
   SUBJECTS_TOTAL: "subjectsTotal"
@@ -81,8 +81,8 @@ function buildFHIRStudy(fhirJSON, study) {
       /* Roll up the molecular codes. */
       const dataTypes = rollUpDataTypes(resource, acc);
 
-      /* Roll up the diseases. */
-      const diseases = rollUpDiseases(resource, acc);
+      /* Roll up the focus (diseases). */
+      const focuses = rollUpFocuses(resource, acc);
 
       /* Roll up the study designs. */
       const studyDesigns = rollUpStudyDesigns(resource, acc);
@@ -94,7 +94,7 @@ function buildFHIRStudy(fhirJSON, study) {
       return Object.assign(acc, {
         [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
         [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
-        [FHIR_FIELD_KEY.DISEASES]: diseases,
+        [FHIR_FIELD_KEY.FOCUSES]: focuses,
         [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
         [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
       });
@@ -270,7 +270,7 @@ function initializeStudy() {
   return {
     [FHIR_FIELD_KEY.CONSENT_CODES]: [],
     [FHIR_FIELD_KEY.DATA_TYPES]: [],
-    [FHIR_FIELD_KEY.DISEASES]: [],
+    [FHIR_FIELD_KEY.FOCUSES]: [],
     [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
     [FHIR_FIELD_KEY.STUDY_NAME]: "",
     [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
@@ -430,15 +430,15 @@ function rollUpDataTypes(resource, acc) {
 }
 
 /**
- * Returns the diseases, rolled up from focus field's text field.
+ * Returns the focuses (diseases), rolled up from focus field's text field.
  *
  * @param resource
  * @param acc
  * @returns {*}
  */
-function rollUpDiseases(resource, acc) {
-  /* Grab any accumulated diseases. */
-  const diseases = acc[FHIR_FIELD_KEY.DISEASES];
+function rollUpFocuses(resource, acc) {
+  /* Grab any accumulated focuses. */
+  const accFocuses = acc[FHIR_FIELD_KEY.FOCUSES];
 
   if (resource) {
     /* Grab the focus array. */
@@ -450,11 +450,11 @@ function rollUpDiseases(resource, acc) {
         acc.push(text);
 
         return acc;
-      }, diseases);
+      }, accFocuses);
     }
   }
 
-  return diseases;
+  return accFocuses;
 }
 
 /**

@@ -58,7 +58,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         consentCodes: [String]
         dataTypes: [String]
         dbGapIdAccession: String!
-        diseases: [String]
+        focuses: [String]
         gapId: GapId
         platform: String
         platforms: [String]

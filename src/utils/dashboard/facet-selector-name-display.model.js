@@ -12,6 +12,7 @@ export const FacetSelectorNameDisplay = {
   consortium: "Consortium",
   dataTypes: "Data Type",
   diseases: "Disease",
+  focuses: "Focus / Disease",
   platforms: "Platform",
   search: "Text Search",
   studyDesigns: "Study Design"
