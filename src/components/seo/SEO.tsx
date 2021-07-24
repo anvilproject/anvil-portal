@@ -11,13 +11,7 @@ import Helmet from "react-helmet";
 
 // App dependencies
 import * as EnvironmentService from "../../utils/environment/environment.service";
-
-interface SeoProps {
-    description: string;
-    ncpi: boolean;
-    site: string;
-    title: string;
-}
+import {SeoProps} from "./seo-props";
 
 class SEO extends React.Component<SeoProps>  {
   render() {
