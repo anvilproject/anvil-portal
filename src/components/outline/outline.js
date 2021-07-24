@@ -125,7 +125,7 @@ class Outline extends React.Component {
     );
     this.setState({
       maxHeight: outlineStyles.maxHeight,
-      top: outlineStyles.top
+      top: outlineStyles.top,
     });
   };
 
@@ -157,7 +157,7 @@ class Outline extends React.Component {
     return (
       <div
         className={classNames(compStyles.outline, {
-          [compStyles.empty]: !headings
+          [compStyles.empty]: !headings,
         })}
         id="outline"
         style={{ maxHeight: maxHeight, top: top }}
