@@ -10,7 +10,6 @@
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
-    "files": ["./src/typings/css.d.ts"]
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noEmit": true,

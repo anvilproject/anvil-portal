@@ -14,14 +14,14 @@ import SideBarOutline from "../side-bar-outline/side-bar-outline";
 // Styles
 import compStyles from "./side-bar.module.css";
 
-interface SideBarProps{
-    activeOutline: boolean,
-    articleOffsetTop: number,
-    bannerHeight: number,
-    docPath: string
+interface SideBarProps {
+  activeOutline: boolean;
+  articleOffsetTop: number;
+  bannerHeight: number;
+  docPath: string;
 }
 
-function SideBar(props: SideBarProps) {
+function SideBar(props: SideBarProps): JSX.Element {
   const { activeOutline, articleOffsetTop, bannerHeight, docPath } = props;
 
   return (
