@@ -11,9 +11,9 @@ import Helmet from "react-helmet";
 
 // App dependencies
 import * as EnvironmentService from "../../utils/environment/environment.service";
-import {SeoProps} from "./seo-props";
+import { SeoProps } from "./seo-props";
 
-class SEO extends React.Component<SeoProps>  {
+class SEO extends React.Component<SeoProps> {
   render() {
     const { description, ncpi, site, title } = this.props,
       siteURL = EnvironmentService.getCurrentEnvironmentURL(),
@@ -21,7 +21,6 @@ class SEO extends React.Component<SeoProps>  {
       imgUrl = `${siteURL}images/${imgFileName}`;
     return (
       <Helmet>
-          pizza
         <meta property="og:title" content={title} />
         <meta property="og:site_name" content={site} />
         <meta property="twitter:title" content={title} />
