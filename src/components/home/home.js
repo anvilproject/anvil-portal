@@ -38,7 +38,7 @@ class Home extends React.Component {
       <>
         <section
           className={classNames(compStyles.hero, {
-            [compStyles.handheld]: !isBrowser
+            [compStyles.handheld]: !isBrowser,
           })}
         >
           <div
@@ -137,7 +137,6 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <Carousel />
         <section className={compStyles.onboarding}>
           <SectionIntro end fileName={"get-started"} />
         </section>
