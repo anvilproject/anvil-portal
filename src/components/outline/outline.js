@@ -16,7 +16,7 @@ import * as ScrollingService from "../../utils/scrolling.service";
 // Styles
 import compStyles from "./outline.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 let htmlCollection, outlineEl;
 
 class Outline extends React.Component {
@@ -125,7 +125,7 @@ class Outline extends React.Component {
     );
     this.setState({
       maxHeight: outlineStyles.maxHeight,
-      top: outlineStyles.top
+      top: outlineStyles.top,
     });
   };
 
@@ -133,7 +133,7 @@ class Outline extends React.Component {
     const { activeOutline, headings } = this.props;
     const { maxHeight, top } = this.state;
 
-    const OutlineItem = props => {
+    const OutlineItem = (props) => {
       const { activeOutline, heading } = props;
       const outline = OutlineService.getOutline(heading);
       const { depth, anchor, label } = outline;
@@ -157,7 +157,7 @@ class Outline extends React.Component {
     return (
       <div
         className={classNames(compStyles.outline, {
-          [compStyles.empty]: !headings
+          [compStyles.empty]: !headings,
         })}
         id="outline"
         style={{ maxHeight: maxHeight, top: top }}
@@ -183,7 +183,7 @@ class Outline extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const docPath = props.docPath;
   const headings = OutlineService.filterHtmlAstByHeading(
     OutlineStaticQuery(),

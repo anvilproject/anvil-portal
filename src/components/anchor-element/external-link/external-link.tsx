@@ -22,11 +22,16 @@
 // Core dependencies
 import React from "react";
 
-function ExternalLink(props) {
+interface ExternalLinkProps {
+  children: React.ReactElement;
+  link: string;
+}
+
+function ExternalLink(props: ExternalLinkProps): JSX.Element {
   const { children, link } = props;
 
   return (
-    <a href={link} rel={"noopener noreferrer"} target={"_blank"}>
+    <a href={link} rel="noopener noreferrer" target="_blank">
       {children}
     </a>
   );

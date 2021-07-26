@@ -11,13 +11,15 @@ import Helmet from "react-helmet";
 
 // App dependencies
 import * as EnvironmentService from "../../utils/environment/environment.service";
+import { SeoProps } from "./seo-props";
 
-class SEO extends React.Component {
+class SEO extends React.Component<SeoProps> {
   render() {
-    const { description, ncpi, site, title } = this.props,
-      siteURL = EnvironmentService.getCurrentEnvironmentURL(),
-      imgFileName = ncpi ? "twitter-ncpi.png" : "twitter-anvil.png",
-      imgUrl = `${siteURL}images/${imgFileName}`;
+    const { description, ncpi, site, title } = this.props;
+    const siteURL = EnvironmentService.getCurrentEnvironmentURL();
+    const imgFileName = ncpi ? "twitter-ncpi.png" : "twitter-anvil.png";
+    const imgUrl = `${siteURL}images/${imgFileName}`;
+
     return (
       <Helmet>
         <meta property="og:title" content={title} />
@@ -45,7 +47,7 @@ class SEO extends React.Component {
                 content={imgUrl}
                 key="twitter:image"
               />,
-              <meta name="og:image" content={imgUrl} key="og:image" />
+              <meta name="og:image" content={imgUrl} key="og:image" />,
             ]
           : null}
         <meta name="twitter:card" content="summary" />
