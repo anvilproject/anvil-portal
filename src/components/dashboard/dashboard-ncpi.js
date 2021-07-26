@@ -24,7 +24,7 @@ const dashboardIndexFileName = "/dashboard-index-ncpi.json";
 const lunrIndexRefField = "dbGapIdAccession";
 const searchFacets = [
   "platforms",
-  "diseases",
+  "focuses",
   "dataTypes",
   "studyDesigns",
   "consentCodes"
@@ -34,7 +34,7 @@ const tableHeadersEntities = [
   "platforms",
   "gapId",
   "studyName",
-  "diseases",
+  "focuses",
   "dataTypes",
   "studyDesigns",
   "consentCodes",
@@ -61,7 +61,7 @@ function DashboardNCPI() {
       tableHeadersSummary={tableHeadersSummary}
       totalsWarning
     >
-      <DashboardSearch dataset={"ncpi"} />
+      <DashboardSearch />
       <DashboardTableSummary />
       <DashboardTableEntities dataset={"ncpi"} />
     </Dashboard>

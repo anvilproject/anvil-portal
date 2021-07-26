@@ -11,13 +11,13 @@ import React from "react";
 
 // App dependencies
 import ContextDashboardDownload from "../context-dashboard-download/context-dashboard-download";
-import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
+import { DashboardEntityPropertyNameDisplay } from "../../../utils/dashboard/dashboard-entity-property-name-display.model";
 import * as NumberFormatService from "../../../utils/number-format.service";
 
 function ProviderDashboardDownloads(props) {
   const { children, dataset } = props;
 
-  const downloadDataset = (data, fileType) => {
+  const downloadResultSet = (data, fileType) => {
     /* Create blob and new download element. */
     const blob = new Blob([data], { type: `text/${fileType}` });
     const downloadURL = window.URL.createObjectURL(blob);
@@ -39,23 +39,23 @@ function ProviderDashboardDownloads(props) {
     document.body.removeChild(downloadEl);
   };
 
-  const reformatJSON = (dataset, headers, columnSeperator) => {
-    if (dataset) {
+  const reformatJSON = (resultSet, headers, columnSeperator) => {
+    if (resultSet) {
       let rows = [];
 
       /* Handle headers - add to rows. */
-      const rowHeaders = headers.map(header =>
-        DashboardTableService.switchDisplayColumnName(header)
+      const rowHeaders = headers.map(
+        header => DashboardEntityPropertyNameDisplay[header] || header
       );
       const rowHeaderStr = rowHeaders.join(columnSeperator);
       rows.push(rowHeaderStr);
 
-      /* Handle each dataset row - add to rows. */
-      dataset.reduce((acc, dataRow) => {
+      /* Handle each result set row - add to rows. */
+      resultSet.reduce((acc, resultRow) => {
         /* Only add data that corresponds with the headers. */
         const row = headers.map(key => {
           /* Grab the value. */
-          const datum = dataRow[key];
+          const datum = resultRow[key];
 
           /* Handle a variety of value types. */
           /* i.e. Type could be a number, object, array or null value. */
@@ -75,13 +75,13 @@ function ProviderDashboardDownloads(props) {
     return "";
   };
 
-  const onHandleDownloadTSV = (dataset, headers) => {
-    /* Build the dataset JSON, reformatted into a string. */
+  const onHandleDownloadTSV = (resultSet, headers) => {
+    /* Build the result set JSON, reformatted into a string. */
     /* Data is delimitered by "tab" i.e. "\t". */
-    const reformattedDataset = reformatJSON(dataset, headers, "\t");
+    const reformattedResultSet = reformatJSON(resultSet, headers, "\t");
 
     /* Execute download of the tsv file. */
-    downloadDataset(reformattedDataset, "tsv");
+    downloadResultSet(reformattedResultSet, "tsv");
   };
 
   const parseDatum = (datum, key) => {
@@ -100,7 +100,7 @@ function ProviderDashboardDownloads(props) {
         if (Array.isArray(datum)) {
           return datum.join("; ") || "--";
         } else if (key === "gapId") {
-        /* Handle case where datum key is "gapId". */
+          /* Handle case where datum key is "gapId". */
           return datum.gapIdDisplay || "--";
         }
       }

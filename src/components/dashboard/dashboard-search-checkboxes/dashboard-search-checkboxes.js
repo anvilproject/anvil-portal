@@ -15,8 +15,7 @@ import DashboardSearchCheckboxesGroup from "../dashboard-search-checkboxes-group
 import DashboardSearchCheckboxesPlaceholder from "../dashboard-search-checkboxes-placeholder/dashboard-search-checkboxes-placeholder";
 import ModalDashboardFacetTermSelector from "../../modal/modal-dashboard-facet-term-selector/modal-dashboard-facet-term-selector";
 
-function DashboardSearchCheckboxes(props) {
-  const { dataset } = props;
+function DashboardSearchCheckboxes() {
   const { countLabel, facetCount, facets, setOfSummaryKeyTerms } = useContext(
     ContextDashboard
   );
@@ -28,7 +27,6 @@ function DashboardSearchCheckboxes(props) {
         <DashboardSearchCheckboxesGroup
           key={f}
           countLabel={countLabel}
-          dataset={dataset}
           facet={facet}
           setOfSummaryKeyTerms={setOfSummaryKeyTerms}
         />
@@ -37,7 +35,7 @@ function DashboardSearchCheckboxes(props) {
         facetCount={facetCount}
         loading={loading}
       />
-      <ModalDashboardFacetTermSelector dataset={dataset} />
+      <ModalDashboardFacetTermSelector />
     </>
   );
 }

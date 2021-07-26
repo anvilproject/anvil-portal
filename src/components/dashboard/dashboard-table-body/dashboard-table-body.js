@@ -13,28 +13,18 @@ import DashboardTableRow from "../dashboard-table-row/dashboard-table-row";
 
 class DashboardTableBody extends React.Component {
   render() {
-    const {
-      dataset,
-      singleRow,
-      tableHeaders,
-      tableRow,
-      tableRows
-    } = this.props;
+    const { dataset, tableHeaders, tableRows } = this.props;
 
     return (
       <tbody>
-        {singleRow ? (
-          <DashboardTableRow order={tableHeaders} row={tableRow} />
-        ) : (
-          tableRows.map((tableRow, r) => (
-            <DashboardTableRow
-              key={r}
-              dataset={dataset}
-              order={tableHeaders}
-              row={tableRow}
-            />
-          ))
-        )}
+        {tableRows.map((tableRow, r) => (
+          <DashboardTableRow
+            key={r}
+            dataset={dataset}
+            order={tableHeaders}
+            row={tableRow}
+          />
+        ))}
       </tbody>
     );
   }

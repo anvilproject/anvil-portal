@@ -16,13 +16,17 @@ import compStyles from "./dashboard-table-header.module.css";
 
 class DashboardTableHeader extends React.Component {
   render() {
-    const { tableHeaders } = this.props;
+    const { dataset, tableHeaders } = this.props;
 
     return (
       <thead>
         <tr className={compStyles.header}>
           {tableHeaders.map((tableHeader, h) => (
-            <DashboardTableHeaderCell key={h} column={tableHeader} />
+            <DashboardTableHeaderCell
+              key={h}
+              column={tableHeader}
+              dataset={dataset}
+            />
           ))}
         </tr>
       </thead>
