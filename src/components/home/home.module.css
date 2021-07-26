@@ -10,7 +10,7 @@
 /* Hero */
 .hero,
 .hero.handheld {
-  padding: 1.25rem 0 3.75rem; /* 20px 0 60px */
+  padding: 1.25rem 0 0; /* 20px 0 60px */
 }
 
 /* Accessing, events, featured, news, onboarding, submitting, twitter */
