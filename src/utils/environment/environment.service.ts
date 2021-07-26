@@ -6,38 +6,36 @@
  */
 
 // App dependencies
-import { EnvironmentUrls } from "./environment-url.model";
-
+import EnvironmentUrls from "./environment-url.model";
 
 // Template variables
-const GATSBY_ENV = process.env.GATSBY_ENV;
+const { GATSBY_ENV } = process.env;
 
 /**
  * Returns the name of the current environment.
  */
 export function getCurrentEnvironment(): string {
-  return GATSBY_ENV as string; //TODO revisit process.env typing
+  return GATSBY_ENV as string; // TODO revisit process.env typing
 }
 
 /**
  * Returns the current environment's url.
  */
-export function getCurrentEnvironmentURL() {
-  const currentEnvironment : string = getCurrentEnvironment().toUpperCase();
-
-  return EnvironmentUrls.get(currentEnvironment);
+export function getCurrentEnvironmentURL(): string {
+  const currentEnvironment: string = getCurrentEnvironment().toUpperCase();
+  return EnvironmentUrls.get(currentEnvironment) || "";
 }
 
 /**
  * Returns true if the current environment is production.
  */
-export function isProd() {
+export function isProd(): boolean {
   return GATSBY_ENV === "master";
 }
 
 /**
  * Returns true if the current environment is staging.
  */
-export function isStaging() {
+export function isStaging(): boolean {
   return GATSBY_ENV === "staging";
 }
