@@ -50,15 +50,11 @@ For additional instructions on copying files to a workspace bucket using gsutil,
 - Sample IDs are consistent with phenotype and linked to a subject and consent.
 
 
-### Quality Assurance Monitoring
-
-The transfer of data will be monitored and logged to ensure the integrity of the transfer and be included in the Ingestion certification of analysis (see below).  This includes automated confirmation that the file transfers were successful and MD5sums are intact, performed by the GCP services at the time of transfer.
-
 ### Ingestion Validation (automated)
 
-To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer.  These tests will be documented in the Ingestion protocol/pipeline execution plan and executed once data has been ported to AnVIL.
+To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer.  These tests will be documented in the ingestion protocol/pipeline execution plan and executed once data has been ported to AnVIL.
 
-### Data Indexing
+### Data Indexing (genomic object files)
 
 Once in the workspace buckets, object files, such as sequencing data, are indexed with a global unique ID (GUID). This allows for access across AnVIL tools, without requiring copies to be created and transferred across environments.
 
