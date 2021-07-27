@@ -340,6 +340,8 @@
               file: "/learn/data-submitters/prepare-for-submission"
             - name: "4 - Ingest Data"
               file: "/learn/data-submitters/ingesting-data"
+            - name: "5 - QC Data"
+              file: "/learn/data-submitters/qc-data"
         - name: "Data Submission Resources"
           file: ""
           pathPartial: "/resources"
