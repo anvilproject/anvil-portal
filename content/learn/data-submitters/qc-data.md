@@ -55,6 +55,7 @@ The output from the QC aggregator is a QC summary results TSV file.  Data submit
 ## Additional Resources - Upcoming AnVIL Tools
 AnVIL Data Processing Working Group is evaluating two tools to add to the submission process to calculate gender and compare that to reported gender.  The goal is to identify at a cohort level any major issues seen between the genomic data and the reported phenotype data.
 ### Exome QC Processing
+_Coming soon_
 ### Gender Check
-
+_Coming soon_
 
