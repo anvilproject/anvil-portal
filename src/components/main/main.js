@@ -22,10 +22,10 @@ function Main(props) {
     children,
     docPath,
     homePage,
-    navigations,
+    navigation,
     noSpy,
     showOutline,
-    styles
+    styles,
   } = props;
   const { tutorial } = useContext(ContextFrontmatter);
 
@@ -41,7 +41,7 @@ function Main(props) {
         <Article
           bannerHeight={bannerHeight}
           docPath={docPath}
-          navigations={navigations}
+          navigation={navigation}
           noSpy={noSpy}
           showOutline={showOutline}
           styles={styles}

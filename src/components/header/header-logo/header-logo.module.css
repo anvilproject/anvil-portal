@@ -10,7 +10,6 @@
   align-items: center;
   display: flex;
   flex: none;
-  margin-right: auto;
   margin-top: -9px;
 }
 
@@ -29,20 +28,4 @@
 /* NCPI image */
 .logo.ncpi img {
   height: 44px;
-}
-
-/* Logo - search expanded. */
-.logo.searchBarOpen {
-  display: none;
-}
-
-/**
- * Large handset portrait, extra small window
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 480px) {
-  /* Search expanded. */
-  .logo.searchBarOpen {
-    display: flex;
-  }
 }

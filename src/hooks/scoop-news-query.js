@@ -31,7 +31,7 @@ export const ScoopNewsStaticQuery = () => {
     `
   );
   return allMarkdownRemark.edges
-    .map(e => e.node)
-    .map(n => n)
-    .filter(n => n.fields.slug.startsWith("/news/"));
+    .map((e) => e.node)
+    .map((n) => n)
+    .filter((n) => n.fields.slug.startsWith("/news/"));
 };

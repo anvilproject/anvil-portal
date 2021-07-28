@@ -16,8 +16,8 @@ import Arrow from "../arrow/arrow";
 import compStyles from "./article-navigation.module.css";
 
 function ArticleNavigation(props) {
-  const { navigations } = props,
-    { navItemNext, navItemPrevious } = navigations || {};
+  const { navigation } = props,
+    { navItemNext, navItemPrevious } = navigation || {};
   const showArticleNavigation = navItemNext || navItemPrevious;
 
   return showArticleNavigation ? (

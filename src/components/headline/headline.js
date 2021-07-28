@@ -19,8 +19,8 @@ import globalStyles from "../../styles/global.module.css";
 const classNames = require("classnames");
 
 function Headline(props) {
-  const { navigations } = props,
-    { tabs, title } = navigations || {};
+  const { navigation } = props,
+    { tabs, title } = navigation || {};
 
   return (
     <div className={classNames(globalStyles.container, compStyles.headline)}>

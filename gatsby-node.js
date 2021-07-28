@@ -13,17 +13,15 @@ const {
   buildSetOfNavItemsByMenuItem,
   buildSetOfSiteSlugs,
   buildSlugNavigations,
-  getHeaders,
   getSlugComponent,
   isShouldCreatePage,
-  validateHeaders
 } = require("./src/utils/node/create-pages.service");
 const {
   buildDateBubbleField,
   buildDateStartField,
-  buildHeadersField,
+  buildMenuItemsField,
   buildPageCreatedField,
-  buildSessionsDisplayField
+  buildSessionsDisplayField,
 } = require("./src/utils/node/schema-customization.service");
 
 /**
@@ -53,17 +51,17 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
     createNodeField({
       node,
       name: "privateEvent",
-      value: nodeValuePrivateEvent
+      value: nodeValuePrivateEvent,
     });
     createNodeField({
       node,
       name: "slug",
-      value: nodeValueSlug
+      value: nodeValueSlug,
     });
     createNodeField({
       node,
       name: "styles",
-      value: nodeValueStyles
+      value: nodeValueStyles,
     });
   }
 };
@@ -129,7 +127,7 @@ exports.createPages = ({ actions, graphql }) => {
       allSiteMapHeaderYaml {
         edges {
           node {
-            headers {
+            menuItems {
               name
               path
             }
@@ -137,7 +135,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     /* If there is an error, return. */
     if (result.errors) {
       return Promise.reject(result.errors);
@@ -148,17 +146,12 @@ exports.createPages = ({ actions, graphql }) => {
 
     /* Build menuItems where each site map document associates the slug with a path. */
     /* This will be used to create the correct path for each post. */
-    const menuItems = buildMenuItems(allSiteMapYaml);
+    const siteMapNodes = allSiteMapYaml.edges.map((n) => n.node);
+    const menuItems = buildMenuItems(siteMapNodes);
 
     /* Builds a set of navigation items for each menu item. */
     /* Builds next and previous article links in order of appearance in the site map. */
     const setOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem(menuItems);
-
-    /* Validate headers with available menu items and corresponding nav items. */
-    /* Grab the list of headers from site-map-header.yaml. */
-    /* We will use this to confirm each header has a legitimate path and associated document. */
-    const headers = getHeaders(allSiteMapHeaderYaml);
-    validateHeaders(headers, setOfNavItemsByMenuItem);
 
     /* Build the complete set of site document slugs (allowable slugs to be created into a page). */
     const setOfSiteSlugs = buildSetOfSiteSlugs(menuItems);
@@ -192,13 +185,15 @@ exports.createPages = ({ actions, graphql }) => {
           component: slugComponent,
           context: {
             id: id,
+            menuPath: slugNavigations.menuPath,
             navItemNext: slugNavigations.navItemNext,
             navItemPrevious: slugNavigations.navItemPrevious,
             navItems: slugNavigations.navItems,
             slug: slug,
+            tabPath: slugNavigations.tabPath,
             tabs: slugNavigations.tabs,
-            title: slugNavigations.title
-          }
+            title: slugNavigations.title,
+          },
         });
       }
     });
@@ -221,9 +216,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       return {
         resolve(source) {
           return buildDateBubbleField(source);
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "dateStart" of type date. */
   createFieldExtension({
@@ -232,9 +227,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       return {
         resolve(source) {
           return buildDateStartField(source);
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "draft" of type boolean. */
   createFieldExtension({
@@ -247,9 +242,9 @@ exports.createSchemaCustomization = ({ actions }) => {
             return false;
           }
           return JSON.parse(source.draft.toLowerCase());
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "featured" of type boolean. */
   createFieldExtension({
@@ -262,21 +257,23 @@ exports.createSchemaCustomization = ({ actions }) => {
             return false;
           }
           return source.featured;
-        }
+        },
       };
-    }
+    },
   });
-  /* Create field "headers" of type header array. */
+  /* Create field "menuItem" of type MenuItem array. */
   createFieldExtension({
-    name: "headers",
+    name: "menuItems",
     extend() {
       return {
         resolve(source, arg, context, info) {
-          const items = context.nodeModel.getAllNodes({ type: "SiteMapYaml" });
-          return buildHeadersField(source, items);
-        }
+          const siteMapNodes = context.nodeModel.getAllNodes({
+            type: "SiteMapYaml",
+          });
+          return buildMenuItemsField(source, siteMapNodes);
+        },
       };
-    }
+    },
   });
   /* Create field "pageCreated" of type Boolean. */
   createFieldExtension({
@@ -286,9 +283,9 @@ exports.createSchemaCustomization = ({ actions }) => {
         resolve(source, arg, context, info) {
           const items = context.nodeModel.getAllNodes({ type: "SitePage" });
           return buildPageCreatedField(source, items);
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "sessionsDisplay" of type string array. */
   createFieldExtension({
@@ -297,9 +294,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       return {
         resolve(source) {
           return buildSessionsDisplayField(source);
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "showOutline" of type boolean. */
   createFieldExtension({
@@ -312,9 +309,9 @@ exports.createSchemaCustomization = ({ actions }) => {
             return true;
           }
           return source.showOutline;
-        }
+        },
       };
-    }
+    },
   });
   /* Create field "tutorial" of type boolean. */
   createFieldExtension({
@@ -327,9 +324,9 @@ exports.createSchemaCustomization = ({ actions }) => {
             return false;
           }
           return source.tutorial;
-        }
+        },
       };
-    }
+    },
   });
 
   createTypes(`
@@ -354,13 +351,14 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String
         tutorial: Boolean @tutorial
     }
-    type Header implements Node {
-        name: String
-        path: String
-    }
     type MarkdownRemark implements Node {
         frontmatter: Frontmatter
         pageCreated: Boolean @pageCreated
+    }
+    type MenuItem implements Node {
+        name: String
+        path: String
+        subMenuItems: [MenuItem]
     }
     type NavigationItems implements Node {
         draft: Boolean @draft
@@ -381,7 +379,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         tabs: [Tab]
     }
     type SiteMapHeaderYaml implements Node {
-        headers: [Header] @headers
+        menuItems: [MenuItem] @menuItems
     }
     type Tab implements Node {
         name: String
@@ -396,8 +394,8 @@ exports.onCreateBabelConfig = ({ actions, stage }) => {
   actions.setBabelPlugin({
     name: `@babel/plugin-transform-spread`,
     options: {
-      loose: false
-    }
+      loose: false,
+    },
   });
 };
 

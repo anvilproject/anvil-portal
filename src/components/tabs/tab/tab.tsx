@@ -10,15 +10,20 @@ import { Link } from "gatsby";
 import React from "react";
 
 // App dependencies
+import { Tab as ITab } from "../../../typings/tab";
 
 // Styles
 import compStyles from "./tab.module.css";
 
 const classNames = require("classnames");
 
-function Tab(props) {
-  const { tab } = props,
-    { active, name, path } = tab || {};
+interface TabProps {
+  tab: ITab;
+}
+
+function Tab(props: TabProps): JSX.Element {
+  const { tab } = props;
+  const { active, name, path } = tab || {};
 
   return (
     <Link

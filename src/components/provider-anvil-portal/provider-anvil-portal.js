@@ -14,30 +14,30 @@ import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
 
 function ProviderAnVILPortal(props) {
   const { children } = props;
-  const [breakpoints, setBreakpoints] = useState({
+  const [breakpoint, setBreakpoint] = useState({
     bp720: false,
-    bp1280: false
+    bp1280: false,
   });
   const [menuOpen, setMenuOpen] = useState(false);
   const [siteScrollable, setSiteScrollable] = useState(true);
   const mediaQueryFrom720 = "(min-width: 720px)";
   const mediaQueryFrom1280 = "(min-width: 1280px)";
 
-  const onSetMenuOpen = useCallback(expanded => {
+  const onSetMenuOpen = useCallback((expanded) => {
     setMenuOpen(expanded);
     setSiteScrollable(!expanded);
   }, []);
 
-  const onSetSiteScrollable = useCallback(scrollable => {
+  const onSetSiteScrollable = useCallback((scrollable) => {
     setSiteScrollable(scrollable);
   }, []);
 
   const onBreakpoint720 = useCallback(
-    mediaQuery => {
+    (mediaQuery) => {
       /* Set 720 breakpoint. */
-      setBreakpoints(breakpoints => ({
-        ...breakpoints,
-        bp720: mediaQuery.matches
+      setBreakpoint((breakpoint) => ({
+        ...breakpoint,
+        bp720: mediaQuery.matches,
       }));
 
       if (mediaQuery.matches) {
@@ -48,10 +48,10 @@ function ProviderAnVILPortal(props) {
     [onSetMenuOpen]
   );
 
-  const onBreakpoint1280 = useCallback(mediaQuery => {
-    setBreakpoints(breakpoints => ({
-      ...breakpoints,
-      bp1280: mediaQuery.matches
+  const onBreakpoint1280 = useCallback((mediaQuery) => {
+    setBreakpoint((breakpoint) => ({
+      ...breakpoint,
+      bp1280: mediaQuery.matches,
     }));
   }, []);
 
@@ -75,11 +75,11 @@ function ProviderAnVILPortal(props) {
   return (
     <ContextAnVILPortal.Provider
       value={{
-        breakpoints,
+        breakpoint,
         menuOpen,
         onSetMenuOpen,
         onSetSiteScrollable,
-        siteScrollable
+        siteScrollable,
       }}
     >
       {children}

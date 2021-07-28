@@ -13,17 +13,21 @@ import Button from "../../button/button";
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 import Icon from "../../icon/icon";
 
-function HeaderMenuButton() {
+// Styles
+import compStyles from "./header-menu-button.module.css";
+
+function HeaderMenuButton(): JSX.Element {
   const { menuOpen, onSetMenuOpen } = useContext(ContextAnVILPortal);
-  const menuIcon = menuOpen ? "close" : "menu";
 
   return (
-    <Button clickAction={() => onSetMenuOpen(!menuOpen)} icon>
-      <Icon blueDark showHover={false} showIcon={true}>
-        {menuIcon}
-      </Icon>
-    </Button>
+    <div className={compStyles.menu}>
+      <Button clickAction={() => onSetMenuOpen(!menuOpen)}>
+        <Icon fontSize={32} showHover={false} showIcon>
+          menu
+        </Icon>
+      </Button>
+    </div>
   );
 }
 
-export default React.memo(HeaderMenuButton);
+export default HeaderMenuButton;

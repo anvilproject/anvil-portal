@@ -2,16 +2,13 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Style definitions specific to the AnVIL tabs component.
+ * Style definitions specific to The AnVIL header menu button component.
  */
 
-/* Tabs. */
-.tabs {
-  align-items: center;
-  display: none;
-  font-size: 14px;
-  line-height: 32px;
-  letter-spacing: 1px;
+/* Menu. */
+.menu {
+  display: flex;
+  margin-right: 16px;
 }
 
 /**
@@ -19,8 +16,8 @@
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
 @media screen and (min-width: 720px) {
-  /* Tabs. */
-  .tabs {
-    display: inline-flex;
+  /* Menu. */
+  .menu {
+    display: none;
   }
 }

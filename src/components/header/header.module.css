@@ -13,7 +13,7 @@
 }
 
 /* Header container. */
-.header > div {
+.headerContainer {
   align-items: center;
   display: flex;
   height: 60px;
@@ -33,12 +33,7 @@
   }
 
   /* Header container. */
-  .header > div {
+  .headerContainer {
     height: 64px;
-  }
-
-  /* Menu button. */
-  .header > div > button:last-of-type {
-    display: none;
   }
 }
