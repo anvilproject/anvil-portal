@@ -14,11 +14,6 @@
   opacity: 0;
 }
 
-/* Icon - blue dark. */
-.icon.blueDark {
-  color: var(--accent-blue-dark);
-}
-
 /* Icon - breadcrumb. */
 .icon.breadcrumb {
   color: inherit;

@@ -392,13 +392,14 @@
 ## NCPI Datasets
 - menuItem: "NCPI Datasets"
   pageTitle: "NCPI Dataset Catalog"
-  pathPartial: "/ncpi"
+  pathPartial: "/ncpi/data"
   tabs:
     - name: ""
       pathPartial: ""
       navigationItems:
         - name: ""
           file: "/ncpi/data"
+          pathOverride: "/ncpi/data"
 ## NCPI Training
 - menuItem: "NCPI Training"
   pageTitle: "Training"

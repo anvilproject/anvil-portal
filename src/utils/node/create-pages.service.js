@@ -23,7 +23,7 @@ const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(
 ) {
   /* Build for each valid site document, a relationship between document title and slug. */
   return allMarkdownRemark.edges
-    .map(n => n.node)
+    .map((n) => n.node)
     .reduce((acc, markdown) => {
       const { fields, frontmatter } = markdown,
         { slug } = fields,
@@ -41,24 +41,22 @@ const buildDocumentTitleBySlug = function buildDocumentTitleBySlug(
  * Returns an object built from the site map grouped by menuItem comprising of tabs, navigation and post path and post slug
  * i.e. corresponding markdown file path.
  *
- * @param siteMapYAML
+ * @param nodes
  * @returns {*}
  */
-const buildMenuItems = function buildMenuItems(siteMapYAML) {
+const buildMenuItems = function buildMenuItems(nodes) {
   /* Build the menu items. */
-  return siteMapYAML.edges
-    .map(n => n.node)
-    .reduce((acc, menuItem) => {
-      /* Build the menu. */
-      const mItem = buildMenuItem(menuItem);
+  return nodes.reduce((acc, node) => {
+    /* Build the menu. */
+    const mItem = buildMenuItem(node);
 
-      /* Only add the menu item if it has tabs, and nav items. */
-      if (mItem) {
-        acc.push(mItem);
-      }
+    /* Only add the menu item if it has tabs, and nav items. */
+    if (mItem) {
+      acc.push(mItem);
+    }
 
-      return acc;
-    }, []);
+    return acc;
+  }, []);
 };
 
 /**
@@ -74,7 +72,7 @@ const buildSetOfNavItemsByMenuItem = function buildSetOfNavItemsByMenuItem(
     const { pageTitle, tabs } = menuItem || {};
     const setOfNavItems = new Set();
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       const { navItems } = tab;
       buildSetOfNavItems(navItems, setOfNavItems);
     });
@@ -97,7 +95,7 @@ const buildSetOfSiteSlugs = function buildSetOfSiteSlugs(menuItems) {
   return menuItems.reduce((acc, menuItem) => {
     const { tabs } = menuItem || {};
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       const { navItems } = tab;
 
       /* Add all navItems. */
@@ -124,7 +122,14 @@ const buildSlugNavigations = function buildSlugNavigations(
   documentTitleBySlug
 ) {
   /* Default - slug as path, initialize navigations. */
-  const postNavigations = { navItems: [], path: slug, tabs: [], title: "" };
+  const postNavigations = {
+    menuPath: "",
+    navItems: [],
+    path: slug,
+    tabPath: "",
+    tabs: [],
+    title: "",
+  };
 
   return buildPostNavigations(
     slug,
@@ -133,26 +138,6 @@ const buildSlugNavigations = function buildSlugNavigations(
     postNavigations,
     documentTitleBySlug
   );
-};
-
-/**
- * Returns a list of header (path and name) for the site.
- *
- * @param siteMapHeaderYAML
- * @returns {*}
- */
-const getHeaders = function getHeaders(siteMapHeaderYAML) {
-  return siteMapHeaderYAML.edges
-    .map(n => n.node)
-    .reduce((acc, n) => {
-      const { headers } = n;
-
-      if (headers) {
-        acc.push(...headers);
-      }
-
-      return acc;
-    }, []);
 };
 
 /**
@@ -179,50 +164,6 @@ const isShouldCreatePage = function isShouldCreatePage(
 };
 
 /**
- * Validates all header paths.
- * No return.
- * Logs any path errors during build.
- *
- * @param headers
- * @param setOfNavItemsByMenuItem
- */
-const validateHeaders = function validateHeaders(
-  headers,
-  setOfNavItemsByMenuItem
-) {
-  headers.forEach(header => {
-    const { name, path } = header;
-    const setOfNavItems = setOfNavItemsByMenuItem.get(name);
-    const navItemExists =
-      setOfNavItems &&
-      [...setOfNavItems].some(navItem => navItem.path === path);
-
-    if (!setOfNavItems) {
-      /* Error message. */
-      /* A menu item does not exist for the corresponding header. */
-      /* Possible causes are... */
-      /* The menu item in the site-map-header.yaml file does not match a "menuItem" in site-map.yaml. */
-      /* The menu item in the site-map does not have a document. */
-      /* Note, check that there is at least one document exists, and the document is not in draft mode. */
-      console.log(
-        `*** *** Error. The header "${name}" does not have a corresponding "menuItem".`
-      );
-    } else {
-      if (!navItemExists) {
-        /* Error message. */
-        /* Menu item exists for the corresponding header. However there is no path match for the header. */
-        /* Possible causes are... */
-        /* The menu item pathPartial in the site-map.yaml does not have a corresponding document path. */
-        /* Note, check that there is at least one document exists, and the document is not in draft mode. */
-        console.log(
-          `*** *** Error. The header "${name}" of path "${path}" does not have a corresponding document in the site map.`
-        );
-      }
-    }
-  });
-};
-
-/**
  * Returns the set of site document files (slugs), built from all navItems and any nested items.
  *
  * @param nItems
@@ -230,7 +171,7 @@ const validateHeaders = function validateHeaders(
  * @returns {*}
  */
 function addSetOfSiteSlugs(nItems, acc) {
-  nItems.forEach(nItem => {
+  nItems.forEach((nItem) => {
     const { file, path, navItems } = nItem;
 
     if (file && path) {
@@ -285,12 +226,12 @@ function buildListOfSlugs(navigationItems, slugs = []) {
 /**
  * Returns the menuItem with its tabs and navItems and their corresponding paths.
  *
- * @param menuItem
+ * @param node
  * @returns {*}
  */
-function buildMenuItem(menuItem) {
+function buildMenuItem(node) {
   /* Grab the menuItem's title, partial path and tabs. */
-  const { pageTitle, pathPartial, tabs } = menuItem || {};
+  const { menuItem, pageTitle, pathPartial, tabs } = node || {};
 
   /* The partial paths will be used to build a full path for each post. */
   const pathPartials = Array.of(pathPartial);
@@ -300,9 +241,10 @@ function buildMenuItem(menuItem) {
 
   if (pageTabs && pageTabs.length > 0) {
     return {
+      key: menuItem,
       pageTitle: pageTitle,
       path: pathPartial,
-      tabs: pageTabs
+      tabs: pageTabs,
     };
   }
 
@@ -332,7 +274,7 @@ function buildNavItems(navItems, pathPartials) {
       const items = {
         file: file,
         name: name,
-        path: path
+        path: path,
       };
 
       /* Build any nested navigationItems. */
@@ -345,7 +287,7 @@ function buildNavItems(navItems, pathPartials) {
 
         Object.assign(items, {
           navItems: buildNavItems(navigationItems, partials),
-          slugs: slugs
+          slugs: slugs,
         });
       }
 
@@ -500,6 +442,7 @@ function buildPostNavs(
   const { path } = navItem;
 
   const postTabs = getPostTabs(tabs, t);
+  const postTabPath = postTabs.find((tab) => tab.active)?.path || "";
   const postNavItems = getPostNavItems(navItems);
   const [navItemNext, navItemPrev] = getPostNavItemNextPrevious(
     pageTitle,
@@ -509,12 +452,14 @@ function buildPostNavs(
   );
 
   return {
+    menuPath: menuItem.path,
     navItemNext: navItemNext,
     navItemPrevious: navItemPrev,
     navItems: postNavItems,
     path: path,
+    tabPath: postTabPath,
     tabs: postTabs,
-    title: pageTitle
+    title: pageTitle,
   };
 }
 
@@ -526,7 +471,7 @@ function buildPostNavs(
  * @returns {Set}
  */
 function buildSetOfNavItems(nItems, setOfNavItems) {
-  nItems.forEach(nItem => {
+  nItems.forEach((nItem) => {
     const { name, path } = nItem || {};
 
     if (path) {
@@ -619,7 +564,7 @@ function getPostNavItemNextPrevious(
   /* Find the index of the navItem within the set. */
   const setOfNavItems = setOfNavItemsByMenuItem.get(pageTitle);
   const navItems = [...setOfNavItems];
-  const indexOfNavItem = navItems.findIndex(nItem => nItem.path === path);
+  const indexOfNavItem = navItems.findIndex((nItem) => nItem.path === path);
 
   /* Initialize navItemNext/Prev. */
   let navItemNext = null;
@@ -760,7 +705,5 @@ module.exports.buildMenuItems = buildMenuItems;
 module.exports.buildSetOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem;
 module.exports.buildSetOfSiteSlugs = buildSetOfSiteSlugs;
 module.exports.buildSlugNavigations = buildSlugNavigations;
-module.exports.getHeaders = getHeaders;
 module.exports.getSlugComponent = getSlugComponent;
 module.exports.isShouldCreatePage = isShouldCreatePage;
-module.exports.validateHeaders = validateHeaders;

@@ -28,12 +28,12 @@ function Layout(props) {
     description,
     docPath,
     homePage,
-    navigations,
+    navigation,
     ncpi,
     noSpy,
     showOutline,
     styles,
-    title
+    title,
   } = props;
   const refSite = useRef(null);
   const [bannerHeight, setBannerHeight] = useState(0);
@@ -47,13 +47,13 @@ function Layout(props) {
         <ProviderModal>
           <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
             <SiteWrapper ref={refSite}>
-              <Header ncpi={ncpi} />
-              {homePage ? null : <Headline navigations={navigations} />}
+              <Header navigation={navigation} ncpi={ncpi} />
+              {homePage ? null : <Headline navigation={navigation} />}
               <Main
                 bannerHeight={bannerHeight}
                 docPath={docPath}
                 homePage={homePage}
-                navigations={navigations}
+                navigation={navigation}
                 noSpy={noSpy}
                 showOutline={showOutline}
                 styles={styles}

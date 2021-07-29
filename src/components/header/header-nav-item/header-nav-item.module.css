@@ -7,8 +7,6 @@
 
 /* Navigation item */
 .headerNavItem {
-  align-items: center;
-  display: flex;
   font-weight: 400;
   padding-left: 24px;
 }
@@ -22,6 +20,7 @@
 /* Link */
 .headerNavItem a {
   color: var(--accent-blue-dark);
+  display: block;
   font-family: "Open Sans", sans-serif;
   position: relative;
 }
@@ -36,7 +35,7 @@
   left: 0;
   position: absolute;
   transition: opacity 0.25s ease;
-  width: 24px;
+  width: 100%;
 }
 
 /* Link - hover */
@@ -77,7 +76,6 @@
   .headerNavItem a:hover:before {
     border-radius: 2px;
     bottom: -4px;
-    width: 100%;
   }
 
   /* Link - hover */

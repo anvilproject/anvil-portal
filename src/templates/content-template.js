@@ -33,9 +33,9 @@ export default ({ data }) => {
   return (
     <ProviderFrontmatter frontmatter={frontmatter}>
       <Layout
-        navigations={context}
         description={description}
         docPath={slug}
+        navigation={context}
         ncpi={ncpi}
         showOutline={showOutline}
         styles={styles}
@@ -43,7 +43,7 @@ export default ({ data }) => {
       >
         <ArticleBody htmlAst={htmlAst}>
           <ArticleSocials />
-          <ArticleNavigation navigations={context} />
+          <ArticleNavigation navigation={context} />
           <ArticleEnd docPath={slug} />
         </ArticleBody>
       </Layout>
@@ -83,6 +83,7 @@ export const query = graphql`
     }
     sitePage(context: { slug: { eq: $slug } }) {
       context {
+        menuPath
         navItemNext {
           name
           path
@@ -103,6 +104,7 @@ export const query = graphql`
           slugs
         }
         slug
+        tabPath
         tabs {
           active
           name

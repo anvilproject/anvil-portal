@@ -27,12 +27,12 @@ function Article(props) {
       bannerHeight,
       children,
       docPath,
-      navigations,
+      navigation,
       noSpy,
       showOutline,
-      styles
+      styles,
     } = props,
-    { navItems } = navigations || {},
+    { navItems } = navigation || {},
     { alignment } = styles || {};
   const refArticle = useRef(null);
   const [activeOutline, setActiveOutline] = useState("");

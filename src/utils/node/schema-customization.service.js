@@ -5,6 +5,7 @@
  * Basic service supporting gatsby-node schema customization.
  */
 
+const { buildMenuItems } = require("./create-pages.service");
 const moment = require("moment-timezone");
 
 /**
@@ -56,35 +57,40 @@ const buildDateStartField = function buildDateStartField(source) {
 };
 
 /**
- * Returns an array of header values, comprising of header display name, and header path.
+ * Returns an array of menu item values, comprising of display name, and path and any corresponding sub menu items (tabs).
  *
  * @param source
- * @param items
+ * @param nodes
  * @returns {Array}
  */
-const buildHeadersField = function buildHeadersField(source, items) {
-  const { menuItems } = source;
+const buildMenuItemsField = function buildMenuItemsField(source, nodes) {
+  /* Build the menus with corresponding tabs from the site map nodes. */
+  const menus = buildMenuItems(nodes);
 
-  if (items && items.length && menuItems && menuItems.length) {
-    return menuItems.reduce((acc, menuItem) => {
-      const header = items.find(item => item.menuItem === menuItem);
+  /* Build the menu items.*/
+  const menuItems = [];
 
-      /* Accumulate header if it exists. */
-      if (header && Object.keys(header).length > 0) {
-        const name = header.menuItem;
-        const path = header.pathPartial;
-
-        const item = { name: name, path: path };
-        acc.push(item);
-      } else {
-        console.log(`*** *** Error. Header ${menuItem} not found.`);
-      }
-
-      return acc;
-    }, []);
+  for (const menuKey of source.menuItems) {
+    /* Find the menu item for the specified menu key. */
+    const menu = menus.find((menuItem) => menuItem.key === menuKey);
+    /* Add menu item to menu items. */
+    if (menu) {
+      const { key, path, tabs } = menu;
+      /* Map tabs to sub menu items. */
+      const subMenuItems = tabs.map((tab) => {
+        return { name: tab.name, path: tab.path };
+      });
+      menuItems.push({
+        name: key,
+        path: path,
+        subMenuItems: subMenuItems,
+      });
+    } else {
+      console.log(`*** *** Error. Header ${menuKey} not found.`);
+    }
   }
 
-  return [];
+  return menuItems;
 };
 
 /**
@@ -99,7 +105,7 @@ const buildPageCreatedField = function buildPageCreatedField(source, pages) {
   if (pages) {
     const slug = source?.fields?.slug;
 
-    return pages.some(page => {
+    return pages.some((page) => {
       const pageSlug = page?.context?.slug;
       return slug === pageSlug;
     });
@@ -151,7 +157,7 @@ function getSetOfSessions(sessions, timezone) {
   /* Grab a complete set of sessions. */
   const setOfSessions = new Set();
 
-  sessions.forEach(session => {
+  sessions.forEach((session) => {
     const { sessionEnd, sessionStart } = session || {};
 
     if (sessionEnd) {
@@ -194,7 +200,7 @@ function getFirstSession(setOfSessions) {
  * @returns {Array}
  */
 function reformatToDisplayableSessions(sessions, timezone) {
-  return sessions.map(session => {
+  return sessions.map((session) => {
     const { sessionEnd, sessionStart } = session || {};
 
     /* Grab the various formatting styles for display of each session. */
@@ -248,6 +254,6 @@ function reformatToDisplayableSessions(sessions, timezone) {
 
 module.exports.buildDateBubbleField = buildDateBubbleField;
 module.exports.buildDateStartField = buildDateStartField;
-module.exports.buildHeadersField = buildHeadersField;
+module.exports.buildMenuItemsField = buildMenuItemsField;
 module.exports.buildPageCreatedField = buildPageCreatedField;
 module.exports.buildSessionsDisplayField = buildSessionsDisplayField;

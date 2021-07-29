@@ -24,11 +24,14 @@ module.exports = {
     "react/jsx-indent": "off",
     "@typescript-eslint/indent": "off",
 
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off",
+
     // Specify double quotes, turn off base and override.
     quotes: "off",
-    "@typescript-eslint/quotes": ["error","double"],
+    "@typescript-eslint/quotes": ["error", "double"],
 
     // Allow react class based components for now
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
   },
 };

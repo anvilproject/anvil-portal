@@ -37,7 +37,7 @@ export const ScoopEventStaticQuery = () => {
     `
   );
   return allMarkdownRemark.edges
-    .map(e => e.node)
-    .map(n => n)
-    .filter(n => n.fields.slug.startsWith("/events/"));
+    .map((e) => e.node)
+    .map((n) => n)
+    .filter((n) => n.fields.slug.startsWith("/events/"));
 };

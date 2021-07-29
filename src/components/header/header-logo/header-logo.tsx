@@ -18,13 +18,15 @@ import compStyles from "./header-logo.module.css";
 
 const classNames = require("classnames");
 
-function HeaderLogo(props) {
-  const { ncpi, searchBarOpen } = props;
-  const classNamesLogo = classNames(
-    compStyles.logo,
-    { [compStyles.ncpi]: ncpi },
-    { [compStyles.searchBarOpen]: searchBarOpen }
-  );
+interface HeaderLogoProps {
+  ncpi: boolean;
+}
+
+function HeaderLogo(props: HeaderLogoProps): JSX.Element {
+  const { ncpi } = props;
+  const classNamesLogo = classNames(compStyles.logo, {
+    [compStyles.ncpi]: ncpi,
+  });
   const imgAlt = ncpi ? "NCPI" : "AnVIL";
   const imgSrc = ncpi ? logoNCPI : logoAnvil;
   const linkTo = ncpi ? "/ncpi" : "/";

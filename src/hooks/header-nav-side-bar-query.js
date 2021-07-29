@@ -1,15 +1,19 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const HeaderStaticQuery = () => {
+export const HeaderNavSideBarStaticQuery = () => {
   const { allSiteMapHeaderYaml } = useStaticQuery(
     graphql`
-      query HeaderStaticQuery {
+      query HeaderNavSideBarStaticQuery {
         allSiteMapHeaderYaml {
           edges {
             node {
-              headers {
+              menuItems {
                 name
                 path
+                subMenuItems {
+                  name
+                  path
+                }
               }
             }
           }
@@ -17,5 +21,5 @@ export const HeaderStaticQuery = () => {
       }
     `
   );
-  return allSiteMapHeaderYaml.edges.find(e => e.node).node.headers;
+  return allSiteMapHeaderYaml.edges.find((e) => e.node).node.menuItems;
 };
