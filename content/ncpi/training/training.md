@@ -60,17 +60,21 @@ A comprehensive collection of training resources developed by Seven Bridges targ
 - [@isb_cgc](https://twitter.com/isb_cgc?lang=en)
 
 
-## KF
-Extensive documentation resources including information about datasets, analyses, and interpretation.
+## Kids First
+The Kids First DRC supports the [Kids First Data Resource Portal](https://portal.kidsfirstdrc.org/) for building virtual cohorts and identifying data files. The Portal is integrated with [CAVATICA](https://cavatica.sbgenomics.com/), a cloud-based storage, sharing, and analysis platform developed by Seven Bridges.
 #### Training Resources
 
-- [KF Help Center](https://www.notion.so/Kids-First-DRC-Help-Center-c26b36ff66564417834f3f264475d10a)
-- [Analysis with Cavatica](https://docs.cavatica.org/)
-- [Common Fund](https://training.nih-cfde.org/en/latest/Bioinformatics-Skills/Kids-First/)
-- [YouTube](https://www.youtube.com/channel/UCK9sPu0j4_ci4m3nNFa6gVw/featured)
+- [Kids First Help Center](https://www.notion.so/Kids-First-DRC-Help-Center-c26b36ff66564417834f3f264475d10a)
+- [Cavatica Support Documentation](https://docs.cavatica.org/)
+- [CFDE Training Documents for the Kids First Portal and Cavatica](https://training.nih-cfde.org/en/latest/Common-Fund-Tools/Kids-First/index.html)
+- [Recorded Webinars and Demonstrations (YouTube)](https://www.youtube.com/channel/UCK9sPu0j4_ci4m3nNFa6gVw/featured)
 
 #### User Support
-- [Support](mailto:support@kidsfirstdrc.org)
+- [Support Inbox](mailto:support@kidsfirstdrc.org) - support@kidsfirstdrc.org
+- [Monthly Office Hours](https://www.notion.so/d3b/Kids-First-Office-Hours-a77f6aa5889c4df4ae72302f92c51aa2) - 2nd Tuesday of Each Month
+- [Kids First Forum](https://forum.kidsfirstdrc.org) - Announcements and Questions
 
-#### Social links 
+#### Social Links 
+- [GitHub](https://github.com/kids-first)
+- [Facebook](https://www.facebook.com/kidsfirstDRC/?ref=bookmarks)
 - [Twitter](https://twitter.com/kidsfirstdrc?lang=en)
