@@ -9,10 +9,10 @@
 import React from "react";
 
 // App dependencies
-import { Breakpoint } from "./breakpoint";
+import { IBreakpoint } from "../breakpoint/IBreakpoint";
 
 interface AnVILPortalContext {
-  breakpoint: Breakpoint;
+  breakpoint: IBreakpoint;
   menuOpen: boolean;
   siteScrollable: boolean;
   onSetMenuOpen(expanded: boolean): void;

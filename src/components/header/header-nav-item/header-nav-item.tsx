@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 // App dependencies
 // eslint-disable-next-line import/no-cycle
 import HeaderNavItems from "../header-nav-items/header-nav-items";
-import { MenuItem } from "../menu-item";
+import { IMenuItem } from "../../menu-item/menu-item";
 
 // Styles
 import compStyles from "./header-nav-item.module.css";
@@ -21,7 +21,7 @@ const classNames = require("classnames");
 
 interface HeaderNavItemProps {
   activePath: string;
-  menuItem: MenuItem;
+  menuItem: IMenuItem;
 }
 
 function HeaderNavItem(props: HeaderNavItemProps): JSX.Element {

@@ -9,13 +9,16 @@
 import { Link } from "gatsby";
 import React from "react";
 
-// App dependencies
-import { Tab as ITab } from "../../../typings/tab";
-
 // Styles
 import compStyles from "./tab.module.css";
 
 const classNames = require("classnames");
+
+export interface ITab {
+  active: boolean;
+  name: string;
+  path: string;
+}
 
 interface TabProps {
   tab: ITab;

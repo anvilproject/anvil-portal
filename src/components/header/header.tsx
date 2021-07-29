@@ -16,10 +16,10 @@ import HeaderNavBar from "./header-nav-bar/header-nav-bar";
 import HeaderNavItems from "./header-nav-items/header-nav-items";
 import HeaderNavSideBar from "./header-nav-side-bar/header-nav-side-bar";
 import HeaderNavSideBarHero from "./header-nav-side-bar-hero/header-nav-side-bar-hero";
-import { MenuItem } from "./menu-item";
+import { IMenuItem } from "../menu-item/menu-item";
+import { INavigation } from "../navigation/navigation";
 import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
 import SiteSearchBar from "../site-search/site-search-bar/site-search-bar";
-import { Navigation } from "../../typings/navigation";
 import * as HeaderService from "../../utils/header.service";
 
 // Styles
@@ -29,15 +29,15 @@ import globalStyles from "../../styles/global.module.css";
 const classNames = require("classnames");
 
 interface HeaderProps {
-  navigation: Navigation;
+  navigation: INavigation;
   ncpi: boolean;
 }
 
 function Header(props: HeaderProps): JSX.Element {
   const { navigation, ncpi } = props;
   const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch);
-  const navBarMenuItems: MenuItem[] = HeaderService.getNavBarMenuItems(ncpi);
-  const navSideBarMenuItems: MenuItem[] = HeaderService.getNavSideBarMenuItems(
+  const navBarMenuItems: IMenuItem[] = HeaderService.getNavBarMenuItems(ncpi);
+  const navSideBarMenuItems: IMenuItem[] = HeaderService.getNavSideBarMenuItems(
     ncpi
   );
   const { menuPath, tabPath } = navigation || {};

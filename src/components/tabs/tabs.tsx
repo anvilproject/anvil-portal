@@ -9,8 +9,7 @@
 import React from "react";
 
 // App dependencies
-import Tab from "./tab/tab";
-import { Tab as ITab } from "../../typings/tab";
+import Tab, { ITab } from "./tab/tab";
 
 // Styles
 import compStyles from "./tabs.module.css";
