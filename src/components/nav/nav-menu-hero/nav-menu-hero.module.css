@@ -1,0 +1,15 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL nav menu hero component.
+ */
+
+/* Nav menu hero. */
+.navMenuHero {
+  composes: header from "../../header/header.module.css";
+  composes: headerContainer from "../../header/header.module.css";
+  composes: container from "../../../styles/global.module.css";
+  box-sizing: content-box;
+  justify-content: flex-start;
+}

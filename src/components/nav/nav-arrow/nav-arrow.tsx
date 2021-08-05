@@ -13,13 +13,18 @@ import compStyles from "./nav-arrow.module.css";
 
 const classNames = require("classnames");
 
-function NavArrow(props) {
+interface NavArrowProps {
+  rotate: boolean;
+  showArrow: boolean;
+}
+
+function NavArrow(props: NavArrowProps) {
   const { rotate, showArrow } = props;
 
   return showArrow ? (
     <span
       className={classNames(compStyles.arrow, "material-icons-round", {
-        [compStyles.rotate]: rotate
+        [compStyles.rotate]: rotate,
       })}
     >
       keyboard_arrow_right

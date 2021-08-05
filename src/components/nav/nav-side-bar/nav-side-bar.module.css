@@ -1,0 +1,38 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL nav side bar component.
+ */
+
+/* Nav side bar container. */
+/* Nav side bar. */
+.navSideBarContainer,
+.navSideBar {
+  display: none;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window. Nav side bar is sitting next to article.
+ */
+@media screen and (min-width: 840px) {
+  /* Nav side bar container - required to "add" fixed side nav to the flow */
+  .navSideBarContainer {
+    display: block;
+    min-width: 260px;
+  }
+
+  /* Nav side bar. */
+  .navSideBar {
+    border-right: 1px solid var(--accent-blue-light);
+    display: block;
+    height: 100%;
+    left: 16px; /* To left align arrow icon with gutter. */
+    margin: 0;
+    max-width: unset;
+    overflow-y: scroll;
+    padding: 0 2px 0 0;
+    position: fixed;
+    width: 260px;
+  }
+}

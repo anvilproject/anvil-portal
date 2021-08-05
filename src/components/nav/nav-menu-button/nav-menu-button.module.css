@@ -1,0 +1,21 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL nav menu button component.
+ */
+
+/* Nav menu button. */
+.navMenuButton {
+  align-self: center;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window. Nav side bar is sitting next to article.
+ */
+@media screen and (min-width: 840px) {
+  /* Nav menu button. */
+  .navMenuButton {
+    display: none;
+  }
+}

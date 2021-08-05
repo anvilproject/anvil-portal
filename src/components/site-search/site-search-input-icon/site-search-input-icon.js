@@ -18,7 +18,7 @@ import compStyles from "./site-search-input-icon.module.css";
 function SiteSearchInputIcon() {
   return (
     <span className={compStyles.searchIcon}>
-      <Icon fontSize={20} showHover={false} showIcon={true}>
+      <Icon fontSize={24} showHover={false} showIcon={true}>
         search
       </Icon>
     </span>

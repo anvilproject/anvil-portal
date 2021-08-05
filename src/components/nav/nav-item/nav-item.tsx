@@ -11,20 +11,27 @@ import React, { useCallback, useEffect, useState } from "react";
 
 // App dependencies
 import NavArrow from "../nav-arrow/nav-arrow";
+import { INavItem } from "../../navigation/navigation";
 import * as OutlineService from "../../../utils/outline.service";
 
 // Styles
 import compStyles from "./nav-item.module.css";
 
-let classNames = require("classnames");
+const classNames = require("classnames");
 
-function NavItem(props) {
-  const { docPath, navItem } = props,
-    { file, name, navItems, path, slugs } = navItem || {};
+interface NavItemProps {
+  docPath: string;
+  navItem: INavItem;
+}
+
+function NavItem(props: NavItemProps) {
+  const { docPath, navItem } = props;
+  const { file, name, navItems, path, slugs } = navItem || {};
   const [itemActive] = useState(docPath === file);
   const [itemButton] = useState(!file);
   const [itemOpen, setItemOpen] = useState(false);
-  const showArrow = navItems && navItems.length > 0;
+  const openNav = slugs?.includes(docPath) || false;
+  const showArrow = (navItems && navItems.length > 0) || false;
   const showNestedLinks = navItems && itemOpen;
   const item = OutlineService.getOutlineItem(name, compStyles.ordered);
 
@@ -34,13 +41,12 @@ function NavItem(props) {
   );
 
   const initializeNavItem = useCallback(() => {
-    const nestedSlug = slugs && slugs.includes(docPath);
-    setItemOpen(nestedSlug);
-  }, [docPath, slugs]);
+    setItemOpen(openNav);
+  }, [openNav]);
 
   const onHandleClick = () => {
     if (navItems) {
-      setItemOpen(itemOpen => !itemOpen);
+      setItemOpen(!itemOpen);
     } else {
       navigate(path);
     }
@@ -54,7 +60,7 @@ function NavItem(props) {
     <li className={compStyles.navItem}>
       <span
         className={classNamesItem}
-        role={"presentation"}
+        role="presentation"
         onClick={() => onHandleClick()}
       >
         <NavArrow rotate={itemOpen} showArrow={showArrow} />
@@ -62,13 +68,18 @@ function NavItem(props) {
       </span>
       {showNestedLinks ? (
         <ul>
-          {navItems.map((nestedItem, k) => (
-            <NavItem key={k} docPath={docPath} navItem={nestedItem} />
-          ))}
+          {navItems &&
+            navItems.map((nestedItem) => (
+              <NavItem
+                key={nestedItem.name}
+                docPath={docPath}
+                navItem={nestedItem}
+              />
+            ))}
         </ul>
       ) : null}
     </li>
   );
 }
 
-export default React.memo(NavItem);
+export default NavItem;

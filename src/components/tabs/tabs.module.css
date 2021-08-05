@@ -22,5 +22,6 @@
   /* Tabs. */
   .tabs {
     display: inline-flex;
+    flex-basis: 100%; /* To take up full width of viewport and wrap to new line. */
   }
 }

@@ -2,27 +2,31 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL nav component.
+ * The AnVIL nav side bar component.
  */
 
 // Core dependencies
 import React, { useCallback, useEffect, useState } from "react";
 
 // App dependencies
-import NavList from "./nav-list/nav-list";
-import * as ScrollingService from "../../utils/scrolling.service";
+import * as ScrollingService from "../../../utils/scrolling.service";
 
 // Styles
-import compStyles from "./nav.module.css";
+import compStyles from "./nav-side-bar.module.css";
 
-function Nav(props) {
-  const { articleOffsetTop, bannerHeight, docPath, navItems } = props;
+interface NavSideBarProps {
+  articleOffsetTop: number;
+  bannerHeight: number;
+  children: React.ReactElement;
+}
+
+function NavSideBar(props: NavSideBarProps) {
+  const { articleOffsetTop, bannerHeight, children } = props;
   const [navStyles, setNavStyles] = useState({
-    maxHeight: `unset`,
-    top: `unset`
+    maxHeight: "unset",
+    top: "unset",
   });
   const { maxHeight, top } = navStyles || {};
-  const showNav = navItems && navItems.length > 0;
 
   const updateNavStyles = useCallback(() => {
     /* Sets the nav container maxHeight and top position. */
@@ -31,10 +35,10 @@ function Nav(props) {
       articleOffsetTop
     );
 
-    setNavStyles(navStyles => ({
-      ...navStyles,
+    setNavStyles((currentNavStyles) => ({
+      ...currentNavStyles,
       maxHeight: styles.maxHeight,
-      top: styles.top
+      top: styles.top,
     }));
   }, [articleOffsetTop, bannerHeight]);
 
@@ -60,17 +64,12 @@ function Nav(props) {
   }, [updateNavStyles]);
 
   return (
-    <div className={compStyles.sideNavContainer}>
-      {showNav ? (
-        <div
-          className={compStyles.sideNav}
-          style={{ maxHeight: maxHeight, top: top }}
-        >
-          <NavList docPath={docPath} navItems={navItems} />
-        </div>
-      ) : null}
+    <div className={compStyles.navSideBarContainer}>
+      <div className={compStyles.navSideBar} style={{ maxHeight, top }}>
+        {children}
+      </div>
     </div>
   );
 }
 
-export default Nav;
+export default NavSideBar;

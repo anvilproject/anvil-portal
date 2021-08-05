@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import ArticleContentContainer from "../article-content-container/article-content-container";
@@ -28,11 +28,11 @@ function Article(props) {
       children,
       docPath,
       navigation,
+      ncpi,
       noSpy,
       showOutline,
       styles,
     } = props,
-    { navItems } = navigation || {},
     { alignment } = styles || {};
   const refArticle = useRef(null);
   const [activeOutline, setActiveOutline] = useState("");
@@ -41,10 +41,23 @@ function Article(props) {
   const useOutline = showOutline;
   const useSpy = showOutline && !noSpy;
 
-  /* useEffect - componentDidMount/componentWillUnmount. */
-  useEffect(() => {
+  const updateArticleOffsetTop = useCallback(() => {
     setArticleOffsetTop(refArticle.current.offsetTop);
   }, []);
+
+  /* useEffect - componentDidMount, componentWillUnmount. */
+  useEffect(() => {
+    /* Initialize article offset top. */
+    updateArticleOffsetTop();
+
+    /* Add event listeners "scroll" and "resize". */
+    window.addEventListener("resize", updateArticleOffsetTop);
+
+    return () => {
+      /* Remove event listeners. */
+      window.removeEventListener("resize", updateArticleOffsetTop);
+    };
+  }, [updateArticleOffsetTop]);
 
   return (
     <section className={compStyles.section} ref={refArticle}>
@@ -54,7 +67,8 @@ function Article(props) {
             articleOffsetTop={articleOffsetTop}
             bannerHeight={bannerHeight}
             docPath={docPath}
-            navItems={navItems}
+            navigation={navigation}
+            ncpi={ncpi}
           />
         )}
         <ArticleContentPositioner left={left}>
