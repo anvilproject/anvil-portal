@@ -1,0 +1,35 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL nav items component.
+ */
+
+/* List style - <ul> */
+.navItems,
+.navItems ul {
+  list-style: none;
+}
+
+/* Nav items. */
+.navItems {
+  composes: container from "../../../styles/global.module.css";
+  margin-top: 24px;
+}
+
+/* List style - <ul> */
+.navItems ul {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window. Nav side bar is sitting next to article.
+ */
+@media screen and (min-width: 840px) {
+  /* Nav items. */
+  .navItems {
+    margin: 0;
+    padding: 0;
+  }
+}

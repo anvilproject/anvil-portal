@@ -19,6 +19,8 @@ function ProviderAnVILPortal(props) {
     bp1280: false,
   });
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navMenuOpen, setNavMenuOpen] = useState(false);
+  const [showNavMenuButton, setShowNavMenuButton] = useState(false);
   const [siteScrollable, setSiteScrollable] = useState(true);
   const mediaQueryFrom720 = "(min-width: 720px)";
   const mediaQueryFrom1280 = "(min-width: 1280px)";
@@ -26,6 +28,15 @@ function ProviderAnVILPortal(props) {
   const onSetMenuOpen = useCallback((expanded) => {
     setMenuOpen(expanded);
     setSiteScrollable(!expanded);
+  }, []);
+
+  const onSetNavMenuOpen = useCallback((expanded) => {
+    setNavMenuOpen(expanded);
+    setSiteScrollable(!expanded);
+  }, []);
+
+  const onSetShowNavMenuButton = useCallback((show) => {
+    setShowNavMenuButton(show);
   }, []);
 
   const onSetSiteScrollable = useCallback((scrollable) => {
@@ -77,7 +88,11 @@ function ProviderAnVILPortal(props) {
       value={{
         breakpoint,
         menuOpen,
+        navMenuOpen,
+        showNavMenuButton,
         onSetMenuOpen,
+        onSetNavMenuOpen,
+        onSetShowNavMenuButton,
         onSetSiteScrollable,
         siteScrollable,
       }}

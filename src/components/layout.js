@@ -35,6 +35,7 @@ function Layout(props) {
     styles,
     title,
   } = props;
+  const { tabs, title: headlineTitle } = navigation || {};
   const refSite = useRef(null);
   const [bannerHeight, setBannerHeight] = useState(0);
   const site = ncpi ? "NCPI" : "The AnVIL";
@@ -48,12 +49,13 @@ function Layout(props) {
           <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
             <SiteWrapper ref={refSite}>
               <Header navigation={navigation} ncpi={ncpi} />
-              {homePage ? null : <Headline navigation={navigation} />}
+              {homePage ? null : <Headline tabs={tabs} title={headlineTitle} />}
               <Main
                 bannerHeight={bannerHeight}
                 docPath={docPath}
                 homePage={homePage}
                 navigation={navigation}
+                ncpi={ncpi}
                 noSpy={noSpy}
                 showOutline={showOutline}
                 styles={styles}

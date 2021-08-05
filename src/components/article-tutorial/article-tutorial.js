@@ -6,7 +6,7 @@
  */
 
 // Core dependencies
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import ArticleContentContainer from "../article-content-container/article-content-container";
@@ -26,11 +26,23 @@ function ArticleTutorial(props) {
   const [articleOffsetTop, setArticleOffsetTop] = useState(0);
   const [activeOutline, setActiveOutline] = useState("");
 
-  /* useEffect - componentDidMount/componentWillUnmount. */
-  useEffect(() => {
-    const offsetTop = refArticle.current.offsetTop;
-    setArticleOffsetTop(offsetTop);
+  const updateArticleOffsetTop = useCallback(() => {
+    setArticleOffsetTop(refArticle.current.offsetTop);
   }, []);
+
+  /* useEffect - componentDidMount, componentWillUnmount. */
+  useEffect(() => {
+    /* Initialize article offset top. */
+    updateArticleOffsetTop();
+
+    /* Add event listeners "scroll" and "resize". */
+    window.addEventListener("resize", updateArticleOffsetTop);
+
+    return () => {
+      /* Remove event listeners. */
+      window.removeEventListener("resize", updateArticleOffsetTop);
+    };
+  }, [updateArticleOffsetTop]);
 
   return (
     <section className={articleStyles.section} ref={refArticle}>
