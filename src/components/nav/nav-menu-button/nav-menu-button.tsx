@@ -24,7 +24,7 @@ function NavMenuButton() {
   return showNavMenuButton ? (
     <div className={compStyles.navMenuButton}>
       <Button clickAction={() => onSetNavMenuOpen(!navMenuOpen)} icon>
-        <Icon fontSize={20} showHover={false} showIcon>
+        <Icon fontSize={24} showHover={false} showIcon>
           {icon}
         </Icon>
       </Button>
