@@ -45,7 +45,7 @@ Studies submitted to the AnVIL will still need to be registered with dbGaP. Thou
 ### NIH/NHGRI Data Sharing Policy compliance   
 Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).    
 
-#### Working from a NIH grant? 
+### Working from a NIH grant? 
 If your grant explicitly states that grantees are expected to share data in the AnVIL, you have this covered by default. Submit a copy of your grant award and [NHGRI Extramural Genomic Data Sharing Plan and dbGaP Submission Information](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) to your AnVIL contact.  
 
 ### Other funding options    
