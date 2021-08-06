@@ -42,24 +42,34 @@ Studies submitted to the AnVIL will still need to be registered with dbGaP. Thou
 
 ## 1.1 - Obtain NHGRI Approval
 
-### NHGRI program Officer Attestation
-Submitters must obtain a written attestation from the NHGRI Program Officer stating the AnVIL team has permission to store, index, and access data on the AnVIL. This document must also include a list of people designated to speak and make decisions on behalf of the institution.
+### NIH/NHGRI Data Sharing Policy compliance   
+Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).    
 
-### Institutional Certification (NIH Data Sharing Policy)
-Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). To ensure this, institutions will need to submit an Institutional Certification, which must include:
+#### Working from a NIH grant? 
+If your grant explicitly states that grantees are expected to share data in the AnVIL, you have this covered by default. Submit a copy of your grant award and [NHGRI Extramural Genomic Data Sharing Plan and dbGaP Submission Information](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) to your AnVIL contact.  
 
-1. Confirmation that data conform to all applicable laws.
-2. Limitations for sharing, based on the informed consent of the research participants.
-3. The NHGRI Genomic Program Administrator who currently registers the study.
+#### Other funding options    
+For other work, including Parent Announcements where data deposition in a certain repository wasn’t described, PIs should do **one of** the following:    
 
-The AnVIL team can provide an Institutional Certification template form.
+- Submit a copy of the [NHGRI Genomic Data Sharing Plan template](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) - with AnVIL checked off at the bottom of the first page - to your  AnVIL approval contact. You may have already filled out this doc, or you can fill out just for this purpose.  
+
+       or submit **both** of the following    
+     
+- Email from PD to stating the AnVIL team has permission to store, index, and access data on the AnVIL and including a list of people designated to speak and make decisions on behalf of the institution **and**   
+
+- Institutional Certification, which must include: 
+   - Confirmation that data conform to all applicable laws
+   - Limitations for sharing, based on the informed consent of the research participants
+   - The NHGRI Genomic Program Administrator who currently registers the study
+   
+The AnVIL team can provide an Institutional Certification template form. 
 
 
 ## 1.2 - Obtain AnVIL Data Ingestion Committee Approval
 
 The AnVIL data ingestion committee will evaluate ingestion applications to ensure data deposited into AnVIL meets the high quality of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). The committee includes NHGRI program officers and AnVIL leadership team members.
 
-After the AnVIL data ingestion committee approves datasets for ingestion, an approval notice will be sent via email to the applicant.
+When the AnVIL data ingestion committee approves datasets for ingestion, the applicant will receive an approval notice via email.     
 
 ### Ethical Review
 
