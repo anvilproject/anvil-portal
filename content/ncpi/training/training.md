@@ -25,15 +25,17 @@ An extensive collection of training resources covering major AnVIL components in
 - [GitHub](https://github.com/anvilproject)
 - [YouTube](https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw)
 
-## BioData Catalyst
+## NHBLI BioData Catalyst
 
-Documentation on data access, analysis as well as information about underlying software components.
+Documentation on data access, exploration, and analysis, as well as information about the several platforms and services it leverages to offer its tools, applications, and workflows in secure workspaces.
 
 #### Training Resources
 - [Documentation](https://bdcatalyst.gitbook.io)
+- [Learning Resources](https://biodatacatalyst.nhlbi.nih.gov/resources/learn)
 
 #### User Support
 - [Support forum / knowledgebase](https://bdcatalyst.freshdesk.com/)
+- [Help Desk](https://biodatacatalyst.nhlbi.nih.gov/contact)
 
 #### Social links
 - [Twitter](https://twitter.com/search?q=%23BioDataCatalyst)
