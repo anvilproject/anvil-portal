@@ -48,20 +48,21 @@ Submitted data must be consistent with the requirements of the [NIH Genomic Data
 #### Working from a NIH grant? 
 If your grant explicitly states that grantees are expected to share data in the AnVIL, you have this covered by default. Submit a copy of your grant award and [NHGRI Extramural Genomic Data Sharing Plan and dbGaP Submission Information](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) to your AnVIL contact.  
 
-#### Other funding options    
+### Other funding options    
 For other work, including Parent Announcements where data deposition in a certain repository wasn’t described, PIs should do **one of** the following:    
 
-- Submit a copy of the [NHGRI Genomic Data Sharing Plan template](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) - with AnVIL checked off at the bottom of the first page - to your  AnVIL approval contact. You may have already filled out this doc, or you can fill out just for this purpose.  
+**Option 1**:  Submit a copy of the [NHGRI Genomic Data Sharing Plan template](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) - with AnVIL checked off at the bottom of the first page - to your  AnVIL approval contact. You may have already filled out this doc, or you can fill out just for this purpose.  
 
-       or submit **both** of the following    
-     
-- Email from PD to stating the AnVIL team has permission to store, index, and access data on the AnVIL and including a list of people designated to speak and make decisions on behalf of the institution **and**   
+or
 
-- Institutional Certification, which must include: 
-   - Confirmation that data conform to all applicable laws
+**Option 2**: Submit **both** of the following    
+ 1. Email (from PD) stating the AnVIL team has permission to store, index, and access data on the AnVIL and including a list of people designated to speak and make decisions on behalf of the institution **and**   
+
+2. An Institutional Certification, which must include: 
+   - Confirmation that data conform to all applicable laws 
    - Limitations for sharing, based on the informed consent of the research participants
-   - The NHGRI Genomic Program Administrator who currently registers the study
-   
+   - The NHGRI Genomic Program Administrator who currently registers the study 
+
 The AnVIL team can provide an Institutional Certification template form. 
 
 
