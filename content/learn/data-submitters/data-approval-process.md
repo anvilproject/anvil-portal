@@ -28,7 +28,7 @@ Make sure your data conforms to these overall data requirements, or contact the 
 
 - All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38.
 
-- Studies must be registered in dbGaP. You will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX).
+- Studies must be registered in dbGaP. You will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX). For more information, see the [NIH's Guide for Submitting Genomic and Phenotypic Data](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators). 
 
 - All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.
 
