@@ -72,4 +72,4 @@ The following Terra / AnVIL R / Bioconductor Popup Workshops were held in 2021 f
 
 ## R / Bioconductor resources
 
-- **Participate in the R / Bioconductor Community** - Ask general questions about using Bioconductor packages on the [Bioconductor support forum](https://support.bioconductor.org). Participate in the [Bioconductor community slack](https://community-bioc.slack.com) [signup](https://bioc-community.herokuapp.com/)) for more in-depth conversation. Terra / AnVIL provides extensive support through the [support](https://support.terra.bio/hc/en-us) feature of the Terra website.
+- **Participate in the R / Bioconductor Community** - Ask general questions about using Bioconductor packages on the [Bioconductor support forum](https://support.bioconductor.org). [Sign up](https://bioc-community.herokuapp.com/) to participate in the [Bioconductor community slack](https://community-bioc.slack.com) and join our #AnVIL channel for more in-depth conversations. Terra / AnVIL provides extensive support through the [support](https://support.terra.bio/hc/en-us) feature of the Terra website. 
