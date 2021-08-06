@@ -13,11 +13,15 @@ const {
   parseRows,
   readFile,
   splitContentToContentRows,
-  writeFile
+  writeFile,
 } = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 const { sortDataByDuoTypes } = require(path.resolve(
   __dirname,
   "./dashboard-sort.service.js"
+));
+const { getBDCStudyIds } = require(path.resolve(
+  __dirname,
+  "./dashboard-studies-bdc.service"
 ));
 const { getCRDCStudyIds } = require(path.resolve(
   __dirname,
@@ -26,7 +30,7 @@ const { getCRDCStudyIds } = require(path.resolve(
 const {
   getStudyAccession,
   getStudyAccessionsById,
-  getStudyUrl
+  getStudyUrl,
 } = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const { getFHIRStudy } = require(path.resolve(
   __dirname,
@@ -44,19 +48,19 @@ const PLATFORM = {
   BDC: "BDC",
   CRDC: "CRDC",
   GMKF: "GMKF",
-  KFDRC: "KFDRC"
+  KFDRC: "KFDRC",
 };
 const SOURCE_HEADER_KEY = {
   DB_GAP_ID: "identifier",
-  PLATFORM: "platform"
+  PLATFORM: "platform",
 };
 const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
-  [SOURCE_HEADER_KEY.PLATFORM]: "platform"
+  [SOURCE_HEADER_KEY.PLATFORM]: "platform",
 };
 const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
-  [SOURCE_HEADER_KEY.PLATFORM]: "string"
+  [SOURCE_HEADER_KEY.PLATFORM]: "string",
 };
 
 /**
@@ -75,23 +79,6 @@ const getNCPIStudies = async function getNCPIStudies() {
   /* Return the sorted studies. */
   return sortDataByDuoTypes(studies, "platform", "studyName");
 };
-
-/**
- * Returns a set of study ids, for the specified platform.
- *
- * @param rows
- * @param platform
- * @returns {Set<any>}
- */
-function getSetStudyIds(rows, platform) {
-  return new Set(
-    rows
-      .filter(
-        row => row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PLATFORM]] === platform
-      )
-      .map(row => row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID]])
-  );
-}
 
 /**
  * Returns a map object key-value pair of study by study id.
@@ -140,7 +127,7 @@ async function getStudiesByStudyId(rows) {
       Object.assign(study, {
         dbGapIdAccession: studyAccession,
         gapId: studyGapId,
-        studyUrl: studyUrl
+        studyUrl: studyUrl,
       });
     }
 
@@ -150,12 +137,40 @@ async function getStudiesByStudyId(rows) {
     const studyPlatform = getStudyPlatform(studyPlatforms);
     Object.assign(study, {
       platform: studyPlatform,
-      platforms: studyPlatforms
+      platforms: studyPlatforms,
     });
     studiesByStudyId.set(dbGapId, study);
   }
 
   return studiesByStudyId;
+}
+
+/**
+ * Returns a map object key value pair of study id and set of platforms.
+ *
+ * @param rows
+ * @returns {Map<any, any>}
+ */
+function getStudyIdBySetOfPlatforms(rows) {
+  const studyIdBySetOfPlatforms = new Map();
+
+  for (const row of rows) {
+    /* Grab the row study id and platform. */
+    const studyId = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID]];
+    const platform = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PLATFORM]];
+
+    /* Set the study id with set of corresponding platforms. */
+    if (studyIdBySetOfPlatforms.has(studyId)) {
+      const setOfPlatforms = studyIdBySetOfPlatforms.get(studyId);
+      setOfPlatforms.add(platform);
+    } else {
+      const setOfPlatforms = new Set();
+      setOfPlatforms.add(platform);
+      studyIdBySetOfPlatforms.set(studyId, setOfPlatforms);
+    }
+  }
+
+  return studyIdBySetOfPlatforms;
 }
 
 /**
@@ -167,25 +182,40 @@ async function getStudyIdPlatforms() {
   /* Parse the source file. */
   const rows = await parseSource();
 
-  /* Grab the existing set of CRDC study ids. */
-  const setOfExistingCRDCStudyIds = getSetStudyIds(rows, PLATFORM.CRDC);
+  /* Grab study id by set of platforms. */
+  const studyIdBySetOfPlatforms = getStudyIdBySetOfPlatforms(rows);
 
-  /* Grab the current list of CRDC study ids from the NCI api. */
-  const studyIds = await getCRDCStudyIds();
+  /* Grab the study ids from available API. */
+  const studyIds = await getStudyIds();
 
   /* Merge any new studies. */
-  for (let studyId of studyIds) {
-    /* Merge any new CRDC study ids with rows. */
+  for (let [platform, studyId] of studyIds) {
+    /* Merge any new platform study ids with rows. */
     /* Save any new study ids to the NCPI source file. */
-    if (!setOfExistingCRDCStudyIds.has(studyId)) {
+    if (shouldMergeStudy(platform, studyId, studyIdBySetOfPlatforms)) {
       const keyStudyId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID];
       const keyPlatform = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PLATFORM];
-      rows.push({ [keyStudyId]: studyId, [keyPlatform]: PLATFORM.CRDC });
-      await saveStudyIdPlatform(PLATFORM.CRDC, studyId);
+      rows.push({ [keyStudyId]: studyId, [keyPlatform]: platform });
+      await saveStudyIdPlatform(platform, studyId);
     }
   }
 
   return rows;
+}
+
+/**
+ * Returns all platform study ids sourced from API.
+ *
+ * @returns {Promise<*[]>}
+ */
+async function getStudyIds() {
+  /* Grab the current list of CRDC study ids from the NCI api. */
+  const crdcStudyIds = await getCRDCStudyIds(PLATFORM.CRDC);
+
+  /* Grab the current list of BDC study ids from the api. */
+  const bdcStudyIds = await getBDCStudyIds(PLATFORM.BDC);
+
+  return crdcStudyIds.concat(bdcStudyIds);
 }
 
 /**
@@ -195,7 +225,7 @@ async function getStudyIdPlatforms() {
  */
 function getStudyPlatform(platforms) {
   return platforms
-    .map(platform => getStudyPlatformDisplayValue(platform))
+    .map((platform) => getStudyPlatformDisplayValue(platform))
     .join(", ");
 }
 
@@ -264,12 +294,27 @@ async function parseSource() {
  * @returns {Promise<void>}
  */
 async function saveStudyIdPlatform(platform, studyId) {
-  const content = `${platform},${studyId}`;
+  const content = `${platform},${studyId}\n`;
   console.log(`Saving NCPI study for ${platform}: ${studyId}`);
 
   /* If the file does not exist, it will be created. */
   /* See https://nodejs.org/api/fs.html#fs_file_system_flags {"flag": "as+"}. */
   await writeFile(fileSource, content, { flag: "as+" });
+}
+
+/**
+ * Returns true if the platform and corresponding study do not currently exist in source file.
+ *
+ * @param platform
+ * @param studyId
+ * @param studyIdBySetOfPlatforms
+ * @returns {*|boolean}
+ */
+function shouldMergeStudy(platform, studyId, studyIdBySetOfPlatforms) {
+  /* Grab the set of platforms for the study id. */
+  const setOfPlatforms = studyIdBySetOfPlatforms.get(studyId);
+
+  return !(setOfPlatforms && setOfPlatforms.has(platform));
 }
 
 module.exports.getNCPIStudies = getNCPIStudies;

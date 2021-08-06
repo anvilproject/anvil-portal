@@ -2,15 +2,21 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * Service for fetched CRDC JSON.
+ * Service for fetched CRDC API.
  */
 
 // Core dependencies
-const fetch = require("node-fetch");
+const path = require("path");
+
+// App dependencies
+const { fetchAPI } = require(path.resolve(
+  __dirname,
+  "./dashboard-api.service"
+));
 
 // Template variables
 const SOURCE_FIELD_KEY = {
-  DB_GAP_ID: "dbgap_accession_number"
+  DB_GAP_ID: "dbgap_accession_number",
 };
 const urlCRDC =
   "https://api.gdc.cancer.gov/projects?from=0&size=100&sort=project_id:asc&pretty=true";
@@ -18,49 +24,34 @@ const urlCRDC =
 /**
  * Returns the CRDC study ids from the CRDC JSON.
  *
- * @returns {Promise<void>}
+ * @param platform
+ * @returns {Promise<*[]|*>}
  */
-const getCRDCStudyIds = async function getCRDCStudyIds() {
-  /* Fetch the CRDC JSON. */
-  const crdcJSON = await fetchCRDCJSON();
+const getCRDCStudyIds = async function getCRDCStudyIds(platform) {
+  /* Fetch the CRDC API. */
+  const api = await fetchAPI(urlCRDC);
 
   /* Return the CRDC study ids. */
-  return getStudyIds(crdcJSON);
+  return getStudyIds(api, platform);
 };
-
-/**
- * Fetches CRDC page specified by URL and returns corresponding raw JSON.
- *
- * @returns {Promise<*|*[]>}
- */
-async function fetchCRDCJSON() {
-  /* Fetch the CRDC JSON. */
-  const response = await fetch(urlCRDC);
-  const status = response.status;
-
-  /* Parse the response. */
-  if (status === 200) {
-    /* Return the JSON. */
-    return await response.json();
-  } else {
-    console.log(`Error fetchCRDCJSON returns fetch error; ${status}`);
-    return [];
-  }
-}
 
 /**
  * Returns the study ids.
  *
  * @param studies
+ * @param platform
  * @returns {*[]|*}
  */
-function getStudyIds(studies) {
+function getStudyIds(studies, platform) {
   const { data } = studies,
     { hits } = data;
 
   /* Grab a set of study ids. */
   const setOfStudyIds = new Set(
-    hits?.map(hit => hit[SOURCE_FIELD_KEY.DB_GAP_ID]).filter(hit => hit)
+    hits
+      ?.map((hit) => hit[SOURCE_FIELD_KEY.DB_GAP_ID])
+      .filter((studyId) => studyId)
+      .map((studyId) => [platform, studyId])
   );
 
   return [...setOfStudyIds];
