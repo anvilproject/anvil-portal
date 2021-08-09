@@ -20,7 +20,7 @@ const { getNCPIStudies } = require(path.resolve(
 exports.sourceNodes = async ({
   actions,
   createNodeId,
-  createContentDigest
+  createContentDigest,
 }) => {
   const { createNode } = actions;
 
@@ -28,7 +28,7 @@ exports.sourceNodes = async ({
   const studies = await getNCPIStudies();
 
   /* Create node - study. */
-  studies.forEach(study => {
+  studies.forEach((study) => {
     const nodeContent = JSON.stringify(study);
 
     const nodeMeta = {
@@ -39,8 +39,8 @@ exports.sourceNodes = async ({
         type: `DashboardNCPI`,
         mediaType: `application/json`,
         content: nodeContent,
-        contentDigest: createContentDigest(study)
-      }
+        contentDigest: createContentDigest(study),
+      },
     };
 
     const node = Object.assign({}, study, nodeMeta);
