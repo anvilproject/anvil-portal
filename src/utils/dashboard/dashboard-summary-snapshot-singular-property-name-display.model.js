@@ -13,6 +13,6 @@ export const DashboardSummarySnapshotSingularPropertyNameDisplay = {
   samples: "Sample",
   size: "Size (TB)",
   studies: "Study",
-  subjects: "Subject",
-  subjectsTotal: "Subject"
+  subjects: "Participant",
+  subjectsTotal: "Participant",
 };
