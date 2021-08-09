@@ -36,9 +36,6 @@ const { buildGapId } = require(path.resolve(
 ));
 
 // Template variables
-const API_FIELD_KEY = {
-  DB_GAP_ID: "dbgap_accession_number",
-};
 const PLATFORM = {
   ANVIL: "AnVIL",
   BDC: "BDC",
@@ -104,7 +101,7 @@ function crdcStudyIdParser(studies) {
 
   /* Grab a set of study ids. */
   return hits
-    ?.map((hit) => hit[API_FIELD_KEY.DB_GAP_ID])
+    ?.map((hit) => hit.dbgap_accession_number)
     .filter((studyId) => studyId);
 }
 
