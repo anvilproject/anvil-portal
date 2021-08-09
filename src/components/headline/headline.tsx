@@ -27,10 +27,11 @@ interface HeadlineProps {
 
 function Headline(props: HeadlineProps) {
   const { tabs, title } = props;
+  const subTitle = tabs?.find((tab) => tab.active)?.name || "";
 
   return (
     <div className={classNames(globalStyles.container, compStyles.headline)}>
-      <Title title={title} />
+      <Title subTitle={subTitle} title={title} />
       <NavMenuButton />
       <Tabs tabs={tabs} />
     </div>
