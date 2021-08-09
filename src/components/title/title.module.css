@@ -7,7 +7,8 @@
 
 /* Title. */
 .title {
-  font-size: 1.5rem; /* 24px */
+  align-self: center;
+  font-size: 1rem; /* 16px */
   margin: 0;
   padding: 4px 0;
 }
@@ -15,6 +16,22 @@
 /* Title - excludes search term. */
 .title > span:first-of-type {
   text-transform: capitalize;
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 720px) {
+  /* Title. */
+  .title {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  /* Sub title. */
+  .subTitle {
+    display: none;
+  }
 }
 
 /**
