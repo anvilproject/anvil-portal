@@ -79,7 +79,7 @@ th.right {
 [id^="anvil"] th[id^="samples"],
 [id^="anvil"] th[id^="size"],
 [id^="anvil"] th[id^="subjects"] {
-  width: 80px;
+  width: 100px;
 }
 
 /* NCPI cell - "gapId" - "dbGap Id" */

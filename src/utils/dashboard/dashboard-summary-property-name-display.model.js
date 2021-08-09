@@ -12,6 +12,6 @@ export const DashboardSummaryPropertyNameDisplay = {
   samples: "Samples",
   size: "Size (TB)",
   studies: "Studies",
-  subjects: "Subjects",
-  subjectsTotal: "Subjects"
+  subjects: "Participants",
+  subjectsTotal: "Participants",
 };

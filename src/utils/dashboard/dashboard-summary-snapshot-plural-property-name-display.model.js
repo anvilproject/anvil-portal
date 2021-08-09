@@ -13,6 +13,6 @@ export const DashboardSummarySnapshotPluralPropertyNameDisplay = {
   samples: "Samples",
   size: "Size (TB)",
   studies: "Studies",
-  subjects: "Subjects",
-  subjectsTotal: "Subjects"
+  subjects: "Participants",
+  subjectsTotal: "Participants",
 };
