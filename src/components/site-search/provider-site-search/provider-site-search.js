@@ -18,7 +18,7 @@ import * as AnVILGCSEService from "../../../utils/anvil-gcse/anvil-gcse.service"
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 function ProviderSiteSearch(props) {
-  const { children } = props;
+  const { children, ncpi } = props;
   const { onSetMenuOpen } = useContext(ContextAnVILPortal);
   const currentLocation = useLocation();
   const [GCSEResponse, setGCSEResponse] = useState({ GCSEAPI: {} });
@@ -28,7 +28,7 @@ function ProviderSiteSearch(props) {
     searchError: false,
     searchLoading: false,
     searchPage: 1,
-    searchTerms: ""
+    searchTerms: "",
   });
   const { GCSEAPI } = GCSEResponse || {},
     { queries, items: siteSearchResults } = GCSEAPI || {},
@@ -50,37 +50,37 @@ function ProviderSiteSearch(props) {
     /* Update searchTerms with query, and reset all other search props, e.g. set searchLoading to true. */
     if (query) {
       setInputValue(query);
-      setSiteSearch(siteSearch => ({
+      setSiteSearch((siteSearch) => ({
         ...siteSearch,
         searchError: false,
         searchLoading: true,
         searchPage: 1,
-        searchTerms: query
+        searchTerms: query,
       }));
     }
   }, [currentLocation]);
 
-  const onSetInputValue = useCallback(inputStr => {
-    setInputValue(inputValue => inputStr);
+  const onSetInputValue = useCallback((inputStr) => {
+    setInputValue(inputStr);
   }, []);
 
-  const onSetSiteSearchBarOpen = useCallback(open => {
-    setSearchBarOpen(searchBarOpen => open);
+  const onSetSiteSearchBarOpen = useCallback((open) => {
+    setSearchBarOpen(open);
   }, []);
 
-  const onSiteSearchPageRequest = sign => {
+  const onSiteSearchPageRequest = (sign) => {
     const nextIndex = startIndex + sign * 10;
 
     /* Update start with page request (page 1, 11, 21 etc). */
-    setSiteSearch(siteSearch => ({
+    setSiteSearch((siteSearch) => ({
       ...siteSearch,
       searchLoading: true,
-      searchPage: nextIndex
+      searchPage: nextIndex,
     }));
   };
 
   const onSubmitSiteSearch = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       const searchStr = event.target.siteSearch.value;
 
@@ -91,7 +91,10 @@ function ProviderSiteSearch(props) {
         params.set("q", searchStr);
 
         /* Navigate with params. */
-        navigate(`/search?${params.toString()}`);
+        const navigateTo = ncpi
+          ? `/ncpi/search?${params.toString()}`
+          : `/search?${params.toString()}`;
+        navigate(navigateTo);
 
         /* Close search bar. */
         setSearchBarOpen(false);
@@ -110,7 +113,7 @@ function ProviderSiteSearch(props) {
     const { pathname } = currentLocation;
 
     if (pathname === "/search") {
-      setSiteSearch(siteSearch => ({ ...siteSearch, searchLoading: true }));
+      setSiteSearch((siteSearch) => ({ ...siteSearch, searchLoading: true }));
     }
   }, [currentLocation]);
 
@@ -127,21 +130,25 @@ function ProviderSiteSearch(props) {
       /* Grab the Google Custom SE request URL. */
       const GCSERequestURL = AnVILGCSEService.getGCSERequestURL(
         searchTerms,
-        searchPage
+        searchPage,
+        ncpi
       );
 
       /* Fetch the SE results. */
       fetch(GCSERequestURL)
-        .then(res => res.json())
-        .then(res => {
-          setGCSEResponse(GCSEResponse => ({ ...GCSEResponse, GCSEAPI: res }));
-          setSiteSearch(siteSearch => ({
+        .then((res) => res.json())
+        .then((res) => {
+          setGCSEResponse((GCSEResponse) => ({
+            ...GCSEResponse,
+            GCSEAPI: res,
+          }));
+          setSiteSearch((siteSearch) => ({
             ...siteSearch,
             searchError: false,
-            searchLoading: false
+            searchLoading: false,
           }));
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err, "Error requesting Google Custom SE.");
         });
     }
@@ -149,16 +156,16 @@ function ProviderSiteSearch(props) {
     /* End site search progress indicator if searchLoading and undefined searchTerms. */
     if (searchLoading && !searchTerms) {
       const delayProgressIndicatorFinish = setTimeout(() => {
-        setSiteSearch(siteSearch => ({
+        setSiteSearch((siteSearch) => ({
           ...siteSearch,
           searchError: true,
-          searchLoading: false
+          searchLoading: false,
         }));
       }, 1000);
 
       return () => clearTimeout(delayProgressIndicatorFinish);
     }
-  }, [searchLoading, searchPage, searchTerms]);
+  }, [ncpi, searchLoading, searchPage, searchTerms]);
 
   return (
     <ContextSiteSearch.Provider
@@ -173,7 +180,7 @@ function ProviderSiteSearch(props) {
         searchBarOpen,
         showPagination,
         siteSearch,
-        siteSearchResults
+        siteSearchResults,
       }}
     >
       {children}
