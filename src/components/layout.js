@@ -42,7 +42,7 @@ function Layout(props) {
 
   return (
     <ProviderAnVILPortal>
-      <ProviderSiteSearch>
+      <ProviderSiteSearch ncpi={ncpi}>
         <PageHead pageTitle={title} site={site} />
         <SEO description={description} ncpi={ncpi} site={site} title={title} />
         <ProviderModal>

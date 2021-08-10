@@ -14,9 +14,13 @@ import { GCSEParameter } from "./gcse-parameter.model";
  *
  * @param query
  * @param start
+ * @param ncpi
  */
-export function getGCSERequestURL(query, start) {
-  const paramGCSEId = `${GCSEParameter.ID}=${process.env.GATSBY_GCSE_CX}`;
+export function getGCSERequestURL(query, start, ncpi) {
+  const searchEngineId = ncpi
+    ? process.env.GATSBY_NCPI_GCSE_CX
+    : process.env.GATSBY_GCSE_CX;
+  const paramGCSEId = `${GCSEParameter.ID}=${searchEngineId}`;
   const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;
   const paramQuery = `${GCSEParameter.QUERY}=${query}`;
   const paramSafe = `${GCSEParameter.SAFE}=active`;
@@ -34,7 +38,7 @@ export function getGCSERequestURL(query, start) {
  */
 export function getGCSERequest(requests) {
   if (requests) {
-    return requests.find(request => request.searchTerms);
+    return requests.find((request) => request.searchTerms);
   }
 
   return {};

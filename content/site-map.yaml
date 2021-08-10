@@ -400,6 +400,17 @@
         - name: ""
           file: "/ncpi/data"
           pathOverride: "/ncpi/data"
+## NCPI Search
+- menuItem: "NCPI Search"
+  pageTitle: "Search"
+  pathPartial: "/ncpi/search"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/ncpi/search/search"
+          pathOverride: "/ncpi/search"
 ## NCPI Training
 - menuItem: "NCPI Training"
   pageTitle: "Training"
