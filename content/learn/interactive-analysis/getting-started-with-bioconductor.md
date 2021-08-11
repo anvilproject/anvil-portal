@@ -52,6 +52,8 @@ The [AnVIL package](https://bioconductor.org/packages/AnVIL) R / Bioconductor pa
 
 ### Terra / AnVIL R / Bioconductor Popup Workshops
 
+- [Introduction to the Terra AnVIL Cloud-based Genomics Platform](https://youtu.be/N83iDYE2yQM) by Sehyun Oh and Levi Waldron at Bioc2021
+
 The following Terra / AnVIL R / Bioconductor Popup Workshops were held in 2021 from April to June.
 
 - Week 1: [Using R / Bioconductor in AnVIL](https://docs.google.com/document/d/18aNzWpt55I-dni9l0IZTB2G3oDOU4X07PyKGXFGyb40/edit) ([video](https://www.youtube.com/watch?v=8Ccj__2GqJ4)) with Martin Morgan
