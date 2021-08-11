@@ -16,10 +16,44 @@ To make the data useful, especially for cross-study analysis requires standardiz
 
 In order to submit data into AnVIL you will need to:
 
-1. [Obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
-1. [Set up your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
-1. [Prepare your data for submission](/learn/data-submitters/submission-guide/prepare-for-submission).
-1. [Ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
+1. [obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
+1. [set up your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
+1. [prepare your data for submission](/learn/data-submitters/submission-guide/prepare-for-submission).
+1. [ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
+1. [QC ingested data](/learn/data-submitters/submission-guide/qc-data)
+
+<hero>
+## Preliminary step     
+Before starting, you will want to make sure your data are compatible. This includes registering your data with dbGaP. ***Note that you can take care of the dbGaP registration in parallel with the steps outlined in this Data Submitters doc. However, you will significantly streamline the process (especially Steps XX and XX) by starting early.**       
+   
+#### NHGRI-funded researcher?   
+- Submit this form **XX - include right stuff here)**  
+- Contact **insert correct contact here**     
+
+#### NIH-funded researcher? 
+- Submit this form **XX - include right stuff here)**  
+- Contact **insert correct contact here**     
+
+#### non-NIH-funded?
+See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap. 
+</hero>
+
+## General Data Requirements 
+Make sure your data conforms to these overall data requirements, or contact the AnVIL data team. 
+
+- All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38.
+
+- **Studies must be registered in dbGaP**. You will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX). You can register your data in dbGaP at the same time you obtain approval ([Step 1](/learn/data-submitters/submission-guide/data-approval-process)). 
+
+- All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.    
+
+### Access Control
+Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/accessing-data/data-access-controls).
+
+### dbGaP Submission Requirements
+Studies submitted to the AnVIL will still need to be registered with dbGaP. Though there will be no requirement to submit source files or individual samples through the dbGaP portal, the dbGaP consent codes will be used to determine data access. Studies with multiple consent codes will be split into individual data workspaces based on cohort and consent pairings. External researchers can use dbGaP to apply for access, and a completed and approved DAR will permit dbGaP to link this access grant to Terra.
+
+
 
 ## Getting Help
 
