@@ -21,7 +21,10 @@ To move your files to a workspace bucket:
 
 2. **Install gsutil locally**  -  gsutil is a Python application that lets you access Google Cloud Storage from the command line in a terminal. It’s more efficient than using the AnVIL UI to move large numbers and/or large files. You will need to install gsutil from the terminal on your local machine. See [How to install gsutil](https://cloud.google.com/sdk/docs/install) for instructions.
 
-3. **Copy files** - Once you have installed gsutil, run the following code in the terminal to copy files to the workspace bucket: `gsutil cp local directory/filename gs://fc-your-workspace-bucket-id`
+3. **Copy files** - Once you have installed gsutil, run the following code in the terminal to copy files to the workspace bucket: `gsutil cp -L local directory/filename gs://fc-your-workspace-bucket-id`     
+
+The `-L` gsutil option  assures the integrity of the copied file and stores the md5 value in the destination workspace bucket.     
+
 
 ### Copying Multiple Files
 
@@ -37,7 +40,7 @@ You can use `*` in place of filenames to copy everything in a directory. So, for
   - `family.tsv` (optional)
   - Any additional optional tables
 
-For additional instructions on copying files to a workspace bucket using gsutil, see [Moving data to or from a  workspace Google bucket](https://support.terra.bio/hc/en-us/articles/360024056512-Moving-data-to-from-a-workspace-or-external-Google-bucket-).
+For additional instructions on copying files to a workspace bucket using gsutil, see [Moving data to or from a  workspace Google bucket](https://support.terra.bio/hc/en-us/articles/360024056512-Moving-data-to-from-a-workspace-or-external-Google-bucket-). **Note that you will need to add the `-L` option to the directions in the documentation.**    
 
 ## 4.2 Validation Steps (Automated)
 
