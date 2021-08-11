@@ -24,28 +24,29 @@ In order to submit data into AnVIL you will need to:
 
 ## Preliminary step      
 
-Before starting, you will want to make sure your data are compatible. This includes registering your data with dbGaP. ***Note that you can take care of the dbGaP registration in parallel with the steps outlined in this Data Submitters doc. However, you will significantly streamline the process (especially Steps XX and XX) by starting early.**       
+Before starting, you will want to make sure your data are compatible and register your data with dbGaP. This will significantly streamline the data submission process (especially Steps  and XX). The exact steps to register with dbGaP depend on how your study is funded.          
+
+**Note that you can take care of the dbGaP registration in parallel with the steps outlined in the rest of the Data Submitters docs.**       
    
 ### NHGRI-funded researcher?    
 
-- Submit this form **XX - include right stuff here)**  
-- Contact **insert correct contact here**     
+- Submit this form (**XX - include link and form name here**)  
+- Contact (**insert correct contact here**)         
 
 ### NIH-funded researcher?   
 
-- Submit this form **XX - include right stuff here)**  
-- Contact **insert correct contact here**     
+- Submit this form (**XX - include link and form name here**)      
+- Contact (**insert correct contact here**)     
 
 ### non-NIH-funded?   
 
-See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap. 
+See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap.     
+
 
 ## General Data Requirements 
 Make sure your data conforms to these overall data requirements, or contact the AnVIL data team. 
 
-- All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38.
-
-- **Studies must be registered in dbGaP**. You will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX). You can register your data in dbGaP at the same time you obtain approval ([Step 1](/learn/data-submitters/submission-guide/data-approval-process)). 
+- All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38. 
 
 - All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.    
 
