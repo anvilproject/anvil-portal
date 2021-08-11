@@ -55,7 +55,7 @@ For additional instructions on copying files to a workspace bucket using gsutil,
 
 ### Ingestion Validation (automated)
 
-To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer.  These tests will be documented in the ingestion protocol/pipeline execution plan and executed once data has been ported to AnVIL.
+To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer.  These tests will be executed once data has been ported to AnVIL.
 
 ### Data Indexing (genomic object files)
 
