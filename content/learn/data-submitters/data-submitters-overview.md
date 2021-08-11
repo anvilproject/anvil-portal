@@ -22,21 +22,23 @@ In order to submit data into AnVIL you will need to:
 1. [ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
 1. [QC ingested data](/learn/data-submitters/submission-guide/qc-data)
 
-<hero>
-## Preliminary step     
+## Preliminary step      
+
 Before starting, you will want to make sure your data are compatible. This includes registering your data with dbGaP. ***Note that you can take care of the dbGaP registration in parallel with the steps outlined in this Data Submitters doc. However, you will significantly streamline the process (especially Steps XX and XX) by starting early.**       
    
-#### NHGRI-funded researcher?   
+### NHGRI-funded researcher?    
+
 - Submit this form **XX - include right stuff here)**  
 - Contact **insert correct contact here**     
 
-#### NIH-funded researcher? 
+### NIH-funded researcher?   
+
 - Submit this form **XX - include right stuff here)**  
 - Contact **insert correct contact here**     
 
-#### non-NIH-funded?
+### non-NIH-funded?   
+
 See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap. 
-</hero>
 
 ## General Data Requirements 
 Make sure your data conforms to these overall data requirements, or contact the AnVIL data team. 
