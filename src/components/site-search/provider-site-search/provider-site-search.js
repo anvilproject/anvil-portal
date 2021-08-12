@@ -28,37 +28,97 @@ function ProviderSiteSearch(props) {
     searchError: false,
     searchLoading: false,
     searchPage: 1,
+    searchPartner: "",
     searchTerms: "",
   });
+  const [partners, setPartners] = useState([
+    { active: true, label: "AnVIL Ecosystem", value: "" },
+    { active: false, label: "AnVIL Site", value: "anvil-only" },
+    { active: false, label: "Terra", value: "terra-only" },
+    { active: false, label: "Gen3", value: "gen3-only" },
+    { active: false, label: "Dockstore", value: "dockstore-only" },
+    { active: false, label: "Bioconductor", value: "bioconductor-only" },
+    { active: false, label: "Galaxy", value: "galaxy-only" },
+  ]);
   const { GCSEAPI } = GCSEResponse || {},
     { queries, items: siteSearchResults } = GCSEAPI || {},
     { nextPage, previousPage } = queries || {},
     { request: requests } = queries || {};
   const request = AnVILGCSEService.getGCSERequest(requests),
     { startIndex } = request;
-  const { searchLoading, searchPage, searchTerms } = siteSearch || {};
+  const { searchLoading, searchPage, searchPartner, searchTerms } =
+    siteSearch || {};
   const showPagination = nextPage || previousPage;
 
-  const onInitializeInputValue = useCallback(() => {
-    const { search } = currentLocation || {};
+  const getSiteSearchURL = (query, partner) => {
+    /* Set the search params. */
+    const params = new URLSearchParams();
+    params.set("q", query);
 
-    /* Get the search params from the current URL search params. */
-    const params = new URLSearchParams(search);
-    const query = params.get("q", params);
+    /* Set the selected partner params. */
+    if (partner) {
+      params.set("partner", partner);
+    }
 
-    /* Update inputValue for <input> text display. */
-    /* Update searchTerms with query, and reset all other search props, e.g. set searchLoading to true. */
-    if (query) {
-      setInputValue(query);
-      setSiteSearch((siteSearch) => ({
-        ...siteSearch,
-        searchError: false,
-        searchLoading: true,
-        searchPage: 1,
-        searchTerms: query,
-      }));
+    /* Return url with params. */
+    return ncpi
+      ? `/ncpi/search?${params.toString()}`
+      : `/search?${params.toString()}`;
+  };
+
+  const onInitInputValue = useCallback(() => {
+    /* Grab the current location. */
+    const { pathname, search } = currentLocation || {};
+
+    /* Init search input value for search pages. */
+    if (pathname === "/search" || pathname === "/ncpi/search") {
+      /* Get the search params from the current URL search params. */
+      const params = new URLSearchParams(search);
+      const query = params.get("q", params);
+      const queryPartner = params.get("partner", params);
+
+      /* Update inputValue for <input> text display. */
+      /* Update searchTerms with query, and reset all other search props, e.g. set searchLoading to true. */
+      if (query) {
+        setInputValue(query);
+        setSiteSearch((siteSearch) => ({
+          ...siteSearch,
+          searchError: false,
+          searchLoading: true,
+          searchPage: 1,
+          searchPartner: queryPartner || "",
+          searchTerms: query,
+        }));
+      }
     }
   }, [currentLocation]);
+
+  const onSelectSiteSearchPartner = useCallback(
+    (selectedPartner) => {
+      /* Grab the updated url. */
+      const href = getSiteSearchURL(searchTerms, selectedPartner);
+
+      /* Add the updated url to the session history stack. */
+      window.history.pushState(null, "", href);
+
+      /* Update state site search. */
+      setSiteSearch((siteSearch) => ({
+        ...siteSearch,
+        searchLoading: true,
+        searchPage: 1,
+        searchPartner: selectedPartner,
+      }));
+
+      /* Update state partners. */
+      const newPartners = Array.from(partners).map((partner) => {
+        const active = partner.value === selectedPartner;
+        return Object.assign(partner, { active: active });
+      });
+
+      setPartners(newPartners);
+    },
+    [searchTerms]
+  );
 
   const onSetInputValue = useCallback((inputStr) => {
     setInputValue(inputStr);
@@ -86,15 +146,9 @@ function ProviderSiteSearch(props) {
 
       /* Only submit form if query is valid. */
       if (searchStr) {
-        /* Set the search params. */
-        const params = new URLSearchParams();
-        params.set("q", searchStr);
-
-        /* Navigate with params. */
-        const navigateTo = ncpi
-          ? `/ncpi/search?${params.toString()}`
-          : `/search?${params.toString()}`;
-        navigate(navigateTo);
+        /* Navigate to search page with params. */
+        const href = getSiteSearchURL(searchStr, searchPartner);
+        navigate(href);
 
         /* Close search bar. */
         setSearchBarOpen(false);
@@ -103,25 +157,18 @@ function ProviderSiteSearch(props) {
         onSetMenuOpen(false);
 
         /* Track search */
+        /* TODO review tracking. */
         AnvilGTMService.trackSiteSearch(searchStr);
       }
     },
-    [onSetMenuOpen]
+    [onSetMenuOpen, searchPartner]
   );
-
-  useEffect(() => {
-    const { pathname } = currentLocation;
-
-    if (pathname === "/search") {
-      setSiteSearch((siteSearch) => ({ ...siteSearch, searchLoading: true }));
-    }
-  }, [currentLocation]);
 
   /* useEffect - componentDidMount/componentWillUnmount. */
   /* Initialize search value. */
   useEffect(() => {
-    onInitializeInputValue();
-  }, [onInitializeInputValue]);
+    onInitInputValue();
+  }, [onInitInputValue]);
 
   /* useEffect - componentDidUpdate - search. */
   /* Fetch GCSE results with any change to searchPage or searchTerms when searchLoading is true. */
@@ -130,6 +177,7 @@ function ProviderSiteSearch(props) {
       /* Grab the Google Custom SE request URL. */
       const GCSERequestURL = AnVILGCSEService.getGCSERequestURL(
         searchTerms,
+        searchPartner,
         searchPage,
         ncpi
       );
@@ -165,17 +213,19 @@ function ProviderSiteSearch(props) {
 
       return () => clearTimeout(delayProgressIndicatorFinish);
     }
-  }, [ncpi, searchLoading, searchPage, searchTerms]);
+  }, [ncpi, searchLoading, searchPage, searchPartner, searchTerms]);
 
   return (
     <ContextSiteSearch.Provider
       value={{
         inputValue,
+        onSelectSiteSearchPartner,
         onSetInputValue,
         onSetSiteSearchBarOpen,
         onSiteSearchPageRequest,
         onSubmitSiteSearch,
         nextPage,
+        partners,
         previousPage,
         searchBarOpen,
         showPagination,

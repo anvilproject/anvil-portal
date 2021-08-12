@@ -11,7 +11,7 @@ import React from "react";
 // App dependencies
 import { IBreakpoint } from "../breakpoint/IBreakpoint";
 
-interface AnVILPortalContext {
+interface AnVILPortalContextProps {
   breakpoint: IBreakpoint;
   menuOpen: boolean;
   navMenuOpen: boolean;
@@ -23,7 +23,7 @@ interface AnVILPortalContext {
   onSetSiteScrollable(scrollable: boolean): void;
 }
 
-const ContextAnVILPortal = React.createContext<AnVILPortalContext>({
+const ContextAnVILPortal = React.createContext<AnVILPortalContextProps>({
   breakpoint: { bp720: false, bp1280: false },
   menuOpen: false,
   navMenuOpen: false,

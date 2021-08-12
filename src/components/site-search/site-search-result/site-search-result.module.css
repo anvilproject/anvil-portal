@@ -36,7 +36,7 @@
 
 /* Image. */
 .snippet img {
-  display: block;
+  display: none;
   height: auto;
   margin-right: 16px;
   width: 60px;
@@ -50,5 +50,15 @@
   /* Snippet. */
   .snippet {
     flex-direction: row;
+  }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window. Nav side bar is sitting next to article.
+ */
+@media screen and (min-width: 840px) {
+  /* Image. */
+  .snippet img {
+    display: block;
   }
 }
