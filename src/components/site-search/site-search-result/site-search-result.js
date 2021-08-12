@@ -40,16 +40,14 @@ function SiteSearchResult(props) {
     <div className={compStyles.snippet}>
       <img src={imgSrc} alt={"Search Result"} />
       <span>
-        <h4>
-          <a
-            href={link}
-            rel={"noopener noreferrer"}
-            onClick={() => onSearchResultClicked(title, formattedUrl, query)}
-          >
-            {title}
-          </a>
-        </h4>
-        <p className={compStyles.url}>{formattedUrl}</p>
+        <a
+          href={link}
+          rel={"noopener noreferrer"}
+          onClick={() => onSearchResultClicked(title, formattedUrl, query)}
+        >
+          <h4>{title}</h4>
+          <p className={compStyles.url}>{formattedUrl}</p>
+        </a>
         <p>{snippet}</p>
       </span>
     </div>
