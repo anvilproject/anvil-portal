@@ -25,13 +25,16 @@
 
 /* Title. */
 .snippet h4 {
+  color: inherit;
+  display: inline-block;
   line-height: 24px;
 }
 
 /* URL. */
 .snippet .url {
+  color: var(--accent-blue-dark);
   font-size: 12px;
-  margin: 12px 0 8px;
+  padding: 12px 0 8px;
 }
 
 /* Image. */
