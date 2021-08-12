@@ -15,9 +15,10 @@ import SiteSearchPartner from "../site-search-partner/site-search-partner";
 // Styles
 import compStyles from "./site-search-partners.module.css";
 
-function SiteSearchPartners(): JSX.Element {
+function SiteSearchPartners(): JSX.Element | null {
   const { onSelectSiteSearchPartner, partners } = useContext(ContextSiteSearch);
-  return (
+  const showParters = partners.length > 1;
+  return showParters ? (
     <ul className={compStyles.partners}>
       {partners.map((partner) => (
         <SiteSearchPartner
@@ -27,7 +28,7 @@ function SiteSearchPartners(): JSX.Element {
         />
       ))}
     </ul>
-  );
+  ) : null;
 }
 
 export default SiteSearchPartners;

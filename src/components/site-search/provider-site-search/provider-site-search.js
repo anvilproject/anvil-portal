@@ -19,6 +19,18 @@ import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 function ProviderSiteSearch(props) {
   const { children, ncpi } = props;
+  const ncpiSearchConfigs = [
+    { active: true, label: "NCPI", value: "ncpi-only" },
+  ];
+  const anvilSearchConfigs = [
+    { active: true, label: "AnVIL Ecosystem", value: "" },
+    { active: false, label: "AnVIL Site", value: "anvil-only" },
+    { active: false, label: "Terra", value: "terra-only" },
+    { active: false, label: "Gen3", value: "gen3-only" },
+    { active: false, label: "Dockstore", value: "dockstore-only" },
+    { active: false, label: "Bioconductor", value: "bioconductor-only" },
+    { active: false, label: "Galaxy", value: "galaxy-only" },
+  ];
   const { onSetMenuOpen } = useContext(ContextAnVILPortal);
   const currentLocation = useLocation();
   const [GCSEResponse, setGCSEResponse] = useState({ GCSEAPI: {} });
@@ -31,15 +43,8 @@ function ProviderSiteSearch(props) {
     searchPartner: "",
     searchTerms: "",
   });
-  const [partners, setPartners] = useState([
-    { active: true, label: "AnVIL Ecosystem", value: "" },
-    { active: false, label: "AnVIL Site", value: "anvil-only" },
-    { active: false, label: "Terra", value: "terra-only" },
-    { active: false, label: "Gen3", value: "gen3-only" },
-    { active: false, label: "Dockstore", value: "dockstore-only" },
-    { active: false, label: "Bioconductor", value: "bioconductor-only" },
-    { active: false, label: "Galaxy", value: "galaxy-only" },
-  ]);
+  const searchConfigs = ncpi ? ncpiSearchConfigs : anvilSearchConfigs;
+  const [partners, setPartners] = useState(searchConfigs);
   const { GCSEAPI } = GCSEResponse || {},
     { queries, items: siteSearchResults } = GCSEAPI || {},
     { nextPage, previousPage } = queries || {},
