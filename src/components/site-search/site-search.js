@@ -11,6 +11,7 @@ import React, { useContext } from "react";
 // App dependencies
 import ContextSiteSearch from "./context-site-search/context-site-search";
 import SiteSearchPagination from "./site-search-pagination/site-search-pagination";
+import SiteSearchPartners from "./site-search-partners/site-search-partners";
 import SiteSearchProgressIndicator from "./site-search-progress-indicator/site-search-progress-indicator";
 import SiteSearchResults from "./site-search-results/site-search-results";
 
@@ -21,30 +22,54 @@ function SiteSearch() {
       previousPage,
       siteSearch,
       showPagination,
-      siteSearchResults
+      siteSearchResults,
     } = useContext(ContextSiteSearch),
     { searchError, searchLoading, searchTerms } = siteSearch || {};
 
-  return searchLoading ? (
-    <SiteSearchProgressIndicator />
-  ) : searchTerms ? (
-    siteSearchResults ? (
+  if (searchLoading) {
+    /* Return progress indicator. */
+    return (
       <>
-        <SiteSearchResults results={siteSearchResults} query={searchTerms} />
-        {showPagination ? (
-          <SiteSearchPagination
-            onSiteSearchPageRequest={onSiteSearchPageRequest}
-            nextPage={nextPage}
-            previousPage={previousPage}
-          />
-        ) : null}
+        <SiteSearchPartners />
+        <SiteSearchProgressIndicator />
       </>
-    ) : (
-      <p>No results.</p>
-    )
-  ) : searchError ? (
-    <p>Please enter a query in the search box.</p>
-  ) : null;
+    );
+  }
+  if (searchTerms) {
+    if (siteSearchResults) {
+      /* Return search results. */
+      return (
+        <>
+          <SiteSearchPartners />
+          <SiteSearchResults query={searchTerms} results={siteSearchResults} />
+          {showPagination ? (
+            <SiteSearchPagination
+              onSiteSearchPageRequest={onSiteSearchPageRequest}
+              nextPage={nextPage}
+              previousPage={previousPage}
+            />
+          ) : null}
+        </>
+      );
+    }
+    /* No search results for the search term. */
+    return (
+      <>
+        <SiteSearchPartners />
+        <p>No results.</p>
+      </>
+    );
+  }
+  if (searchError) {
+    /* Search error - search term is not defined. */
+    return (
+      <>
+        <SiteSearchPartners />
+        <p>Please enter a query in the search box.</p>
+      </>
+    );
+  }
+  return null;
 }
 
 export default SiteSearch;

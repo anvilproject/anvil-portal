@@ -5,11 +5,6 @@
  * Style definitions specific to The AnVIL site search progress indicator component.
  */
 
-/* Site search progress indicator. */
-.progressIndicator {
-  padding: 16px 0;
-}
-
 /* Indicator. */
 .progressIndicator span {
   animation: indicator 1s ease infinite;

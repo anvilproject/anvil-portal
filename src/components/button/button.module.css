@@ -11,6 +11,7 @@
   align-items: center;
   background-color: transparent;
   border: none;
+  color: inherit;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;

@@ -6,10 +6,7 @@
  */
 
 // Core dependencies
-import React, { useContext } from "react";
-
-// App dependencies
-import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
+import React from "react";
 
 // Styles
 import compStyles from "./title.module.css";
@@ -21,19 +18,15 @@ interface TitleProps {
 
 function Title(props: TitleProps) {
   const { subTitle, title } = props;
-  const { siteSearch } = useContext(ContextSiteSearch);
-  const { searchTerms } = siteSearch || {};
-  const showSubTitle = subTitle && !searchTerms;
 
   return (
     <h1 className={compStyles.title}>
       <span>
         <span>{title}</span>
-        {showSubTitle && (
+        {subTitle && (
           <span className={compStyles.subTitle}> &gt; {subTitle}</span>
         )}
       </span>
-      {searchTerms ? <span> for &quot;{searchTerms || null}&quot;</span> : null}
     </h1>
   );
 }

@@ -1,0 +1,40 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL site search partner component.
+ */
+
+/* Partner. */
+.partner {
+  color: var(--black58);
+  margin: 0 0 8px;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Partner - last. */
+.partner:last-of-type {
+  margin: 0;
+}
+
+/* Active partner. */
+.partner.active::before {
+  border-bottom: 2px solid var(--accent-mustard);
+  bottom: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  transition: opacity .25s ease;
+  width: 100%;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window. Nav side bar is sitting next to article.
+ */
+@media screen and (min-width: 840px) {
+  /* Partner. */
+  .partner {
+    margin: 0 32px 0 0;
+  }
+}
