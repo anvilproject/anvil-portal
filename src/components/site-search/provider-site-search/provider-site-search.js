@@ -71,6 +71,16 @@ function ProviderSiteSearch(props) {
       : `/search?${params.toString()}`;
   };
 
+  const updatePartners = (selectedPartner) => {
+    /* Update state partners. */
+    const newPartners = Array.from(partners).map((partner) => {
+      const active = partner.value === selectedPartner;
+      return Object.assign(partner, { active: active });
+    });
+
+    setPartners(newPartners);
+  };
+
   const onInitInputValue = useCallback(() => {
     /* Grab the current location. */
     const { pathname, search } = currentLocation || {};
@@ -80,7 +90,7 @@ function ProviderSiteSearch(props) {
       /* Get the search params from the current URL search params. */
       const params = new URLSearchParams(search);
       const query = params.get("q", params);
-      const queryPartner = params.get("partner", params);
+      const queryPartner = params.get("partner", params) || "";
 
       /* Update inputValue for <input> text display. */
       /* Update searchTerms with query, and reset all other search props, e.g. set searchLoading to true. */
@@ -91,9 +101,12 @@ function ProviderSiteSearch(props) {
           searchError: false,
           searchLoading: true,
           searchPage: 1,
-          searchPartner: queryPartner || "",
+          searchPartner: queryPartner,
           searchTerms: query,
         }));
+
+        /* Update partners. */
+        updatePartners(queryPartner);
       }
     }
   }, [currentLocation]);
@@ -114,13 +127,8 @@ function ProviderSiteSearch(props) {
         searchPartner: selectedPartner,
       }));
 
-      /* Update state partners. */
-      const newPartners = Array.from(partners).map((partner) => {
-        const active = partner.value === selectedPartner;
-        return Object.assign(partner, { active: active });
-      });
-
-      setPartners(newPartners);
+      /* Update partners. */
+      updatePartners(selectedPartner);
     },
     [searchTerms]
   );
