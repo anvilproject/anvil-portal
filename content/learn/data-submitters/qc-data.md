@@ -45,7 +45,7 @@ Data Submitters are responsible for running the WDL on their data to generate th
 `video: https://www.youtube.com/watch?v=WLpnoXySuIw`
 
 ## 5.3 Post QC Processing to AnVIL Workspaces
-The output from the QC aggregator is a QC summary results TSV file.  Data submitters will pass off the QC summary results file to AnVIL ingestion team.  The AnVIL team will push the QC summary results to the workspaces, which will contain the QC status including those that fail QC or have no QC. The example below is the qc results table in 1000 Genomes workspace.
+The output from the QC aggregator is a QC summary results TSV file.  Data submitters will pass off the QC summary results file to AnVIL ingestion team.  The AnVIL team will push the QC summary results to the workspaces, which will contain the QC status including those that fail QC or have no QC. The example below is the QC results table in 1000 Genomes workspace.
 ### Sample QC Results Table
 <figure>
 <img src="./_images/qc-results.png" alt="QC Results."/>
@@ -53,9 +53,9 @@ The output from the QC aggregator is a QC summary results TSV file.  Data submit
 </figure>
 
 ## Additional Resources - Upcoming AnVIL Tools
-AnVIL Data Processing Working Group is evaluating two tools to add to the submission process to calculate gender and compare that to reported gender.  The goal is to identify at a cohort level any major issues seen between the genomic data and the reported phenotype data.
+AnVIL Data Processing Working Group is evaluating two tools to add to the submission process to calculate (genetic) sex and compare that to reported sex.  The goal is to identify at a cohort level any major issues between the genomic data and the reported phenotype data. Note that QC tools cannot calculate gender, but they can estimate genetic sex. Variation in sex chromosome copy number (e.g., XXY, XO, somatic mosaicism) means that genetic sex prediction is not 100% accurate, although it is an excellent tool for detecting major cohort-level issues.
 ### Exome QC Processing
 _Coming soon_
-### Gender Check
+### Sex Check
 _Coming soon_
 
