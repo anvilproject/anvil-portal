@@ -13,7 +13,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 4; /* Above footer. */
+  z-index: 12; /* Above footer. */
 }
 
 /* CSSTransition. */
@@ -45,12 +45,12 @@
 }
 
 /**
- * Large tablet portrait, large handset landscape, small window.
+ * Large tablet portrait, large tablet landscape, medium window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
   /* Side bar overlay. */
-  .headerNavSideBarOverlay {
+  .sideBarOverlay {
     display: none;
   }
 }

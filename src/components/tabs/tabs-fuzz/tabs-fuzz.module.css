@@ -1,0 +1,17 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to the AnVIL tabs fuzz component.
+ */
+
+/* Fuzz. */
+.tabsFuzz {
+  background: -webkit-linear-gradient(0deg,transparent,var(--white));
+  bottom: 1px;
+  height: 31px; /* Considers headline box shadow. */
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  width: 16px;
+}

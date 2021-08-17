@@ -21,13 +21,13 @@ function SiteSearchInput() {
     inputValue,
     onSetInputValue,
     onSetSiteSearchBarOpen,
-    searchBarOpen
+    searchBarOpen,
   } = useContext(ContextSiteSearch);
   const refInput = useRef(null);
   const showClear = !!inputValue;
 
   const onHandleKeyDown = useCallback(
-    e => {
+    (e) => {
       if (e.key === "Escape") {
         onSetSiteSearchBarOpen(false);
       }
@@ -35,7 +35,7 @@ function SiteSearchInput() {
     [onSetSiteSearchBarOpen]
   );
 
-  const onInputBlur = e => {
+  const onInputBlur = (e) => {
     const { currentTarget, relatedTarget } = e || {},
       { parentNode: formEl } = currentTarget;
     const clearButtonClicked = formEl.contains(relatedTarget);
@@ -45,7 +45,7 @@ function SiteSearchInput() {
     }
   };
 
-  const onInputChange = e => {
+  const onInputChange = (e) => {
     const { target } = e || {},
       { value: inputStr } = target || {};
 
@@ -76,6 +76,8 @@ function SiteSearchInput() {
   useEffect(() => {
     if (!searchBarOpen) {
       refInput.current.blur();
+    } else {
+      refInput.current.focus();
     }
   }, [searchBarOpen]);
 
@@ -84,8 +86,8 @@ function SiteSearchInput() {
       <SiteSearchInputIcon />
       <input
         className={compStyles.input}
-        onBlur={e => onInputBlur(e)}
-        onChange={e => onInputChange(e)}
+        onBlur={(e) => onInputBlur(e)}
+        onChange={(e) => onInputChange(e)}
         onFocus={() => onInputFocus()}
         name={"siteSearch"}
         placeholder={"Search"}

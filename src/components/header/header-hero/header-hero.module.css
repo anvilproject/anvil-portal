@@ -7,21 +7,8 @@
 
 /* Header hero. */
 .headerHero {
+  align-items: center;
   display: flex;
-  margin-right: auto;
-}
-
-/* Hide hero. */
-.headerHero.hide {
-  display: none;
-}
-
-/**
- * Small tablet portrait, medium handset landscape, small window.
- */
-@media screen and (min-width: 600px) {
-  /* Hide hero - always show. */
-  .headerHero.hide {
-    display: flex;
-  }
+  flex: 1 ;
+  height: 64px; 
 }

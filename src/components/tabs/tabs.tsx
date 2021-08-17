@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import TabsFuzz from "./tabs-fuzz/tabs-fuzz";
 import Tab, { ITab } from "./tab/tab";
 
 // Styles
@@ -23,11 +24,14 @@ function Tabs(props: TabsProps): JSX.Element | null {
   const showTabs = tabs && tabs.length > 0;
 
   return showTabs ? (
-    <span className={compStyles.tabs}>
-      {tabs.map((tab) => (
-        <Tab key={tab.name} tab={tab} />
-      ))}
-    </span>
+    <>
+      <div className={compStyles.tabs}>
+        {tabs.map((tab) => (
+          <Tab key={tab.name} tab={tab} />
+        ))}
+      </div>
+      <TabsFuzz />
+    </>
   ) : null;
 }
 

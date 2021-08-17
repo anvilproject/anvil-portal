@@ -11,40 +11,15 @@
   height: inherit;
 }
 
-/* CSSTransition. */
-/* Search bar opening. */
-.searchBarOpen {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Search bar open. */
-.searchBarOpenActive {
-  opacity: 0;
-  transition: opacity 300ms ease, visibility 300ms ease;
-  visibility: collapse;
-}
-
-/* Search bar closing. */
-.searchBarClosed {
-  opacity: 0;
-  visibility: collapse;
-}
-
-/* Search bar closed. */
-.searchBarClosedActive {
-  opacity: 1;
-  transition: opacity 300ms ease 300ms, visibility 300ms;
-  visibility: visible;
-}
-
 /**
- * Large tablet portrait, large handset landscape, small window.
+ * Large tablet portrait, large tablet landscape, medium window.
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
   /* Header nav bar. */
   .headerNavBar {
     display: flex;
+    flex-basis: 100%;
+    height: 64px;
   }
 }

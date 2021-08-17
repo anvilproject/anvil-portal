@@ -24,7 +24,7 @@ interface NavItemProps {
   navItem: INavItem;
 }
 
-function NavItem(props: NavItemProps) {
+function NavItem(props: NavItemProps): JSX.Element {
   const { docPath, navItem } = props;
   const { file, name, navItems, path, slugs } = navItem || {};
   const [itemActive] = useState(docPath === file);

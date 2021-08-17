@@ -55,7 +55,6 @@ function Layout(props) {
                 docPath={docPath}
                 homePage={homePage}
                 navigation={navigation}
-                ncpi={ncpi}
                 noSpy={noSpy}
                 showOutline={showOutline}
                 styles={styles}

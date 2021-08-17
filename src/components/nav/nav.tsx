@@ -10,12 +10,10 @@ import React, { useContext, useEffect } from "react";
 
 // App dependencies
 import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
-import HeaderLogo from "../header/header-logo/header-logo";
-import Headline from "../headline/headline";
+import NavDrawer from "./nav-drawer/nav-drawer";
+import NavDrawerHero from "./nav-drawer-hero/nav-drawer-hero";
 import { INavigation } from "../navigation/navigation";
 import NavList from "./nav-items/nav-items";
-import NavMenu from "./nav-menu/nav-menu";
-import NavMenuHero from "./nav-menu-hero/nav-menu-hero";
 import NavSideBar from "./nav-side-bar/nav-side-bar";
 
 interface NavProps {
@@ -23,28 +21,25 @@ interface NavProps {
   bannerHeight: number;
   docPath: string;
   navigation: INavigation;
-  ncpi: boolean;
 }
 
-function Nav(props: NavProps) {
-  const { articleOffsetTop, bannerHeight, docPath, navigation, ncpi } = props;
-  const { onSetShowNavMenuButton } = useContext(ContextAnVILPortal);
+function Nav(props: NavProps): JSX.Element | null {
+  const { articleOffsetTop, bannerHeight, docPath, navigation } = props;
+  const { onSetShowNavDrawerButton } = useContext(ContextAnVILPortal);
   const { navItems, tabs, title } = navigation || {};
   const showNav = navItems && navItems.length > 0;
+  const subTitle = tabs?.find((tab) => tab.active)?.name || "";
 
   useEffect(() => {
-    onSetShowNavMenuButton(showNav);
+    onSetShowNavDrawerButton(showNav);
   }, [showNav]);
 
   return showNav ? (
     <>
-      <NavMenu>
-        <NavMenuHero>
-          <HeaderLogo ncpi={ncpi} />
-        </NavMenuHero>
-        <Headline tabs={tabs} title={title} />
+      <NavDrawer>
+        <NavDrawerHero subTitle={subTitle} title={title} />
         <NavList docPath={docPath} navItems={navItems} />
-      </NavMenu>
+      </NavDrawer>
       <NavSideBar
         articleOffsetTop={articleOffsetTop}
         bannerHeight={bannerHeight}

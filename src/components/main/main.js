@@ -23,7 +23,6 @@ function Main(props) {
     docPath,
     homePage,
     navigation,
-    ncpi,
     noSpy,
     showOutline,
     styles,
@@ -43,7 +42,6 @@ function Main(props) {
           bannerHeight={bannerHeight}
           docPath={docPath}
           navigation={navigation}
-          ncpi={ncpi}
           noSpy={noSpy}
           showOutline={showOutline}
           styles={styles}

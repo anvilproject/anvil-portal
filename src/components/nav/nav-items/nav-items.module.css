@@ -13,8 +13,10 @@
 
 /* Nav items. */
 .navItems {
-  composes: container from "../../../styles/global.module.css";
+  left: -8px; /* To left align arrow icon with gutter. */
   margin-top: 24px;
+  padding: 0;
+  position: relative;
 }
 
 /* List style - <ul> */
@@ -29,7 +31,9 @@
 @media screen and (min-width: 840px) {
   /* Nav items. */
   .navItems {
+    left: unset;
     margin: 0;
     padding: 0;
+    position: unset;
   }
 }

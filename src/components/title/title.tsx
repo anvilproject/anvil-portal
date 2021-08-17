@@ -12,23 +12,13 @@ import React from "react";
 import compStyles from "./title.module.css";
 
 interface TitleProps {
-  subTitle: string;
   title: string;
 }
 
-function Title(props: TitleProps) {
-  const { subTitle, title } = props;
+function Title(props: TitleProps): JSX.Element {
+  const { title } = props;
 
-  return (
-    <h1 className={compStyles.title}>
-      <span>
-        <span>{title}</span>
-        {subTitle && (
-          <span className={compStyles.subTitle}> &gt; {subTitle}</span>
-        )}
-      </span>
-    </h1>
-  );
+  return <h1 className={compStyles.title}>{title}</h1>;
 }
 
 export default Title;

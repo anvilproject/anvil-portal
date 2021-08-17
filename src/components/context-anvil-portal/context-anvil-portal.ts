@@ -8,30 +8,25 @@
 // Core dependencies
 import React from "react";
 
-// App dependencies
-import { IBreakpoint } from "../breakpoint/IBreakpoint";
-
 interface AnVILPortalContextProps {
-  breakpoint: IBreakpoint;
   menuOpen: boolean;
-  navMenuOpen: boolean;
-  showNavMenuButton: boolean;
+  navDrawerOpen: boolean;
+  showNavDrawerButton: boolean;
   siteScrollable: boolean;
   onSetMenuOpen(expanded: boolean): void;
-  onSetNavMenuOpen(expanded: boolean): void;
-  onSetShowNavMenuButton(show: boolean): void;
+  onSetNavDrawerOpen(expanded: boolean): void;
+  onSetShowNavDrawerButton(show: boolean): void;
   onSetSiteScrollable(scrollable: boolean): void;
 }
 
 const ContextAnVILPortal = React.createContext<AnVILPortalContextProps>({
-  breakpoint: { bp720: false, bp1280: false },
   menuOpen: false,
-  navMenuOpen: false,
-  showNavMenuButton: false,
+  navDrawerOpen: false,
+  showNavDrawerButton: false,
   siteScrollable: true,
   onSetMenuOpen() {},
-  onSetNavMenuOpen() {},
-  onSetShowNavMenuButton() {},
+  onSetNavDrawerOpen() {},
+  onSetShowNavDrawerButton() {},
   onSetSiteScrollable() {},
 });
 

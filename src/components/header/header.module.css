@@ -9,15 +9,7 @@
 /* Header. */
 .header {
   background: var(--white);
-  border-bottom: 1px solid var(--black12);
-}
-
-/* Header container. */
-.headerContainer {
-  align-items: center;
-  display: flex;
-  height: 60px;
-  justify-content: flex-end;
+  padding: 0 16px;
 }
 
 /**
@@ -27,13 +19,9 @@
 @media screen and (min-width: 720px) {
   /* Header. */
   .header {
+    padding: 0 24px;
     position: sticky;
     top: 0;
     z-index: 12; /* Above <Headline/>. */
-  }
-
-  /* Header container. */
-  .headerContainer {
-    height: 64px;
   }
 }

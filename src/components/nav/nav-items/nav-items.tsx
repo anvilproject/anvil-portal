@@ -19,7 +19,7 @@ interface NavItemsProps {
   docPath: string;
   navItems: INavItem[];
 }
-function NavItems(props: NavItemsProps) {
+function NavItems(props: NavItemsProps): JSX.Element {
   const { docPath, navItems } = props;
 
   return (

@@ -8,15 +8,15 @@
 /* Input. */
 .input {
   background-color: var(--black6);
-  border: none;
+  border: 1px solid var(--black6);
   border-radius: 4px;
   box-sizing: border-box;
-  color: transparent;
-  display: inline-block;
+  color: var(--default-text);
+  font-size: 16px;
   font-weight: 400;
-  height: 36px;
+  height: 42px;
   overflow: hidden;
-  padding: 0;
+  padding: 0 42px;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
@@ -26,46 +26,9 @@
 .input:focus {
   color: var(--default-text);
   outline: none;
-  padding: 0 36px;
-}
-
-/* Input, placeholder */
-.input,
-.input[type="text"],
-.input::placeholder {
-  font-size: 16px;
 }
 
 /* Input - placeholder. */
 .input::placeholder {
-  color: transparent;
   font-weight: 300;
-}
-
-/**
- * Large tablet portrait, large handset landscape, small window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-  /* Input focus. */
-  .input:focus {
-    transition: color 0s ease 300ms, padding 0s ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
-  }
-}
-
-/**
- * Large tablet portrait, large tablet landscape, medium window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1024px) {
-  /* Input. */
-  .input {
-    padding: 0 36px;
-  }
-
-  /* Input - placeholder. */
-  .input::placeholder,
-  .input[type="text"] {
-    color: var(--default-text);
-  }
 }

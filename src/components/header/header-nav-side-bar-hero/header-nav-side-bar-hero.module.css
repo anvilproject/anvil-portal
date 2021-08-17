@@ -8,8 +8,7 @@
 /* Side bar hero. */
 .sideBarHero {
   composes: header from "../header.module.css";
-  composes: headerContainer from "../header.module.css";
-  composes: container from "../../../styles/global.module.css";
+  composes: headerHero from "../header-hero/header-hero.module.css";
   box-sizing: content-box;
   justify-content: flex-start;
 }

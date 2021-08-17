@@ -22,10 +22,11 @@ const classNames = require("classnames");
 interface HeaderNavItemProps {
   activePath: string;
   menuItem: IMenuItem;
+  ncpi: boolean;
 }
 
 function HeaderNavItem(props: HeaderNavItemProps): JSX.Element {
-  const { activePath, menuItem } = props;
+  const { activePath, menuItem, ncpi } = props;
   const [activeMenu, setActiveMenu] = useState(false);
   const { name, path, subMenuItems } = menuItem;
   const menuItems = subMenuItems || [];
@@ -41,12 +42,20 @@ function HeaderNavItem(props: HeaderNavItemProps): JSX.Element {
   }, [active]);
 
   return (
-    <li className={compStyles.headerNavItem}>
+    <li
+      className={classNames(compStyles.headerNavItem, {
+        [compStyles.ncpi]: ncpi,
+      })}
+    >
       <Link className={classNamesActive} to={path}>
         {name}
       </Link>
       {showSubMenuItems ? (
-        <HeaderNavItems activePath={activePath} menuItems={menuItems} />
+        <HeaderNavItems
+          activePath={activePath}
+          menuItems={menuItems}
+          ncpi={ncpi}
+        />
       ) : null}
     </li>
   );

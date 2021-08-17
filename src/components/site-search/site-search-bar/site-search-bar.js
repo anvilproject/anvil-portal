@@ -22,14 +22,11 @@ function SiteSearchBar(props) {
   return (
     <div
       className={classNames(
-        { [compStyles.expanded]: searchBarOpen },
+        { [compStyles.active]: searchBarOpen },
         compStyles.searchBar
       )}
     >
-      <SiteSearchForm
-        onSubmitSiteSearch={onSubmitSiteSearch}
-        searchBarOpen={searchBarOpen}
-      />
+      <SiteSearchForm onSubmitSiteSearch={onSubmitSiteSearch} />
     </div>
   );
 }
