@@ -8,7 +8,7 @@ tutorial: true
 
 <hero-tutorial>
 
-# Running a Workflow: Bulk RNASeq differential expression from FASTQ files to top table (Martin Morgan, Kayla Interdonato)
+# Running a Workflow (Martin Morgan, Kayla Interdonato)
 
 How to configure and run a workflow, based on the Bioconductor-Workflow-DESeq2 workspace. The workflow starts with FASTQ files and transforms them using salmon to the inputs required for Bioconductor DESeq2 analysis of differential expression.
 

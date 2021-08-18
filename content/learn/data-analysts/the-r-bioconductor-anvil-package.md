@@ -8,7 +8,7 @@ tutorial: true
 
 <hero-tutorial>
 
-# The R / Bioconductor AnVIL package for easy access to buckets, data, and workflows, and fast package installation (Martin Morgan, Nitesh Turaga)
+# The R / Bioconductor AnVIL Package (Martin Morgan, Nitesh Turaga)
 
 An exploration of how workspaces provide a framework for managing data and large-scale analyses using the HCA Optimus Pipeline and 1000G-high-coverage-2019 workspaces and R using the AnVIL package.
 
