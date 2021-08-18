@@ -31,7 +31,7 @@ function Tab(props: TabProps): JSX.Element {
   const { tab } = props;
   const { active, name, path } = tab || {};
 
-  const selectTab = (mouseEvent: MouseEvent<HTMLSpanElement>): void => {
+  const onSelectTab = (mouseEvent: MouseEvent<HTMLSpanElement>): void => {
     /* Grab <Tab> element. */
     const tabEl = mouseEvent.currentTarget;
     const scrollX = TabService.calculateTabsScrollLeft(tabEl);
@@ -42,7 +42,7 @@ function Tab(props: TabProps): JSX.Element {
   return (
     <span
       className={classNames({ [compStyles.active]: active }, compStyles.tab)}
-      onClick={(mouseEvent) => selectTab(mouseEvent)}
+      onClick={(mouseEvent) => onSelectTab(mouseEvent)}
       role="presentation"
     >
       {name}
