@@ -32,7 +32,7 @@ function Tabs(props: TabsProps): JSX.Element | null {
   const location = useLocation();
   const tabsRef = useRef<HTMLDivElement>(null);
   const state = location.state as LocationState;
-  const { scrollX } = state;
+  const { scrollX } = state || {};
   const showTabs = tabs && tabs.length > 0;
 
   useEffect(() => {
