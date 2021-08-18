@@ -10,12 +10,18 @@ description: "AnVIL is a collaboration between the Broad, JHU, UChicago, RPCI, U
 
 Members of these teams are also involved with platform and software development representing the Terra, Galaxy, Bioconductor, Gen3, and Dockstore teams.
 
+## American Heart Association
+- [Jennifer Hall](https://www.heart.org/en/about-us/jennifer-hall)
+
 ## Broad Institute
 - [Anthony Philippakis](https://www.broadinstitute.org/bios/anthony-philippakis-0)
 - Eric Banks
 - Brian O'Connor
 - Jonathan Lawson
 - Anne O’Donnell Luria
+
+## Carnegie Institution for Science
+- [Frederick Tan](https://emb.carnegiescience.edu/science/faculty/frederick-tan)
 
 ## City University of New York
 - [Levi Waldron](https://waldronlab.io)
@@ -51,9 +57,6 @@ Members of these teams are also involved with platform and software development 
 
 ## Washington University
 - [Ting Wang](https://www.genome.wustl.edu/people/ting-wang/)
-
-## Carnegie Institution for Science
-- [Frederick Tan](https://emb.carnegiescience.edu/science/faculty/frederick-tan)
 
 ## Yale 
 - [Ira Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
