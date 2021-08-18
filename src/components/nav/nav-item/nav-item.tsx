@@ -13,6 +13,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import NavArrow from "../nav-arrow/nav-arrow";
 import { INavItem } from "../../navigation/navigation";
 import * as OutlineService from "../../../utils/outline.service";
+import * as TabService from "../../../utils/tab.service";
 
 // Styles
 import compStyles from "./nav-item.module.css";
@@ -48,7 +49,9 @@ function NavItem(props: NavItemProps): JSX.Element {
     if (navItems) {
       setItemOpen(!itemOpen);
     } else {
-      navigate(path);
+      navigate(path, {
+        state: { scrollX: TabService.getTabsScrollLeftForActiveTab() },
+      });
     }
   };
 

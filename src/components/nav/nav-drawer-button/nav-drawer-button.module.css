@@ -16,19 +16,8 @@
 
 /* Nav drawer button. */
 .navDrawerButton button {
-  animation: mountButton 1000ms ease;
   background-color: var(--primary6);
   border-radius: 30%;
-}
-
-/* Animation - show overlay. */
-@keyframes mountButton {
-  0% {
-    background-color: var(--primary58);
-  }
-  100% {
-    background-color: var(--primary6);
-  }
 }
 
 /* Nav drawer icon. */
