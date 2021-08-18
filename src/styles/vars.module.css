@@ -9,6 +9,7 @@
   --accent-blue-light: #aeebf2;
   --accent-blue-light-rbg: 174, 235, 242;
   --accent-mustard: #e0dd10;
+  --accent-mustard54: rgba(224, 221, 16, 0.54);
   --default-text: rgb(36, 41, 46);
   --black: #000000;
   --black1: rgba(0, 0, 0, 0.01);
@@ -22,6 +23,8 @@
   --primary: #035c94;
   --primary3: rgba(3, 92, 148, 0.03);
   --primary6: rgba(3, 92, 148, 0.06);
+  --primary-ncpi: #1b578c;
+  --primary-ncpi12: rgba(27, 87, 140, 0.12);
   --shade-dark: #012840;
   --shade-light: #f6f7f4;
   --shade-light-green: #f2f2f2;

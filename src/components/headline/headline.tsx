@@ -9,31 +9,27 @@
 import React from "react";
 
 // App dependencies
-import NavMenuButton from "../nav/nav-menu-button/nav-menu-button";
+import NavDrawerButton from "../nav/nav-drawer-button/nav-drawer-button";
 import Tabs from "../tabs/tabs";
 import { ITab } from "../tabs/tab/tab";
 import Title from "../title/title";
 
 // Styles
 import compStyles from "./headline.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
 
 interface HeadlineProps {
   tabs: ITab[];
   title: string;
 }
 
-function Headline(props: HeadlineProps) {
+function Headline(props: HeadlineProps): JSX.Element {
   const { tabs, title } = props;
-  const subTitle = tabs?.find((tab) => tab.active)?.name || "";
 
   return (
-    <div className={classNames(globalStyles.container, compStyles.headline)}>
-      <Title subTitle={subTitle} title={title} />
-      <NavMenuButton />
+    <div className={compStyles.headline}>
+      <Title title={title} />
       <Tabs tabs={tabs} />
+      <NavDrawerButton />
     </div>
   );
 }

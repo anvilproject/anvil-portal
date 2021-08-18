@@ -22,7 +22,7 @@ function HeaderMenuButton(): JSX.Element {
   return (
     <div className={compStyles.menu}>
       <Button clickAction={() => onSetMenuOpen(!menuOpen)}>
-        <Icon fontSize={32} showHover={false} showIcon>
+        <Icon showHover={false} showIcon>
           menu
         </Icon>
       </Button>

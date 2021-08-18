@@ -28,7 +28,6 @@ function Article(props) {
       children,
       docPath,
       navigation,
-      ncpi,
       noSpy,
       showOutline,
       styles,
@@ -68,7 +67,6 @@ function Article(props) {
             bannerHeight={bannerHeight}
             docPath={docPath}
             navigation={navigation}
-            ncpi={ncpi}
           />
         )}
         <ArticleContentPositioner left={left}>

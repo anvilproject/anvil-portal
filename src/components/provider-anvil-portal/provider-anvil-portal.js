@@ -14,85 +14,85 @@ import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
 
 function ProviderAnVILPortal(props) {
   const { children } = props;
-  const [breakpoint, setBreakpoint] = useState({
-    bp720: false,
-    bp1280: false,
-  });
   const [menuOpen, setMenuOpen] = useState(false);
-  const [navMenuOpen, setNavMenuOpen] = useState(false);
-  const [showNavMenuButton, setShowNavMenuButton] = useState(false);
+  const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [showNavDrawerButton, setShowNavDrawerButton] = useState(false);
   const [siteScrollable, setSiteScrollable] = useState(true);
-  const mediaQueryFrom720 = "(min-width: 720px)";
-  const mediaQueryFrom1280 = "(min-width: 1280px)";
+  const mediaQueryFrom840 = "(min-width: 840px)";
+  const mediaQueryFrom1024 = "(min-width: 1024px)";
+
+  const onChangeBreakpoint = useCallback((mediaQuery, breakpointParser) => {
+    /* Execute action with corresponding media query match. */
+    if (mediaQuery.matches) {
+      breakpointParser();
+    }
+  }, []);
 
   const onSetMenuOpen = useCallback((expanded) => {
     setMenuOpen(expanded);
     setSiteScrollable(!expanded);
   }, []);
 
-  const onSetNavMenuOpen = useCallback((expanded) => {
-    setNavMenuOpen(expanded);
-    setSiteScrollable(!expanded);
+  const onSetNavDrawerOpen = useCallback((expanded) => {
+    if (expanded) {
+      const posY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${posY}px`;
+      document.body.style.width = "100vw";
+      setScrollY(posY);
+    }
+    setNavDrawerOpen(expanded);
   }, []);
 
-  const onSetShowNavMenuButton = useCallback((show) => {
-    setShowNavMenuButton(show);
+  const onSetShowNavDrawerButton = useCallback((show) => {
+    setShowNavDrawerButton(show);
   }, []);
 
   const onSetSiteScrollable = useCallback((scrollable) => {
     setSiteScrollable(scrollable);
   }, []);
 
-  const onBreakpoint720 = useCallback(
-    (mediaQuery) => {
-      /* Set 720 breakpoint. */
-      setBreakpoint((breakpoint) => ({
-        ...breakpoint,
-        bp720: mediaQuery.matches,
-      }));
-
-      if (mediaQuery.matches) {
-        /* Close menu. */
-        onSetMenuOpen(false);
-      }
-    },
-    [onSetMenuOpen]
-  );
-
-  const onBreakpoint1280 = useCallback((mediaQuery) => {
-    setBreakpoint((breakpoint) => ({
-      ...breakpoint,
-      bp1280: mediaQuery.matches,
-    }));
-  }, []);
-
   /* useEffect - componentDidMount/componentWillUnmount. */
   /* Listeners - media queries. */
   useEffect(() => {
-    const bpointFrom720 = window.matchMedia(mediaQueryFrom720);
-    bpointFrom720.addListener(onBreakpoint720);
-    onBreakpoint720(bpointFrom720);
+    const bpFrom840 = window.matchMedia(mediaQueryFrom840);
+    bpFrom840.addEventListener("change", () =>
+      onChangeBreakpoint(bpFrom840, () => onSetNavDrawerOpen(false))
+    );
 
-    const bpointFrom1280 = window.matchMedia(mediaQueryFrom1280);
-    bpointFrom1280.addListener(onBreakpoint1280);
-    onBreakpoint1280(bpointFrom1280);
+    const bpFrom1024 = window.matchMedia(mediaQueryFrom1024);
+    bpFrom1024.addEventListener("change", () =>
+      onChangeBreakpoint(bpFrom1024, () => onSetMenuOpen(false))
+    );
 
     return () => {
-      bpointFrom720.removeListener(onBreakpoint720);
-      bpointFrom1280.removeListener(onBreakpoint1280);
+      bpFrom840.removeEventListener("change", () =>
+        onChangeBreakpoint(bpFrom840, () => onSetNavDrawerOpen(false))
+      );
+      bpFrom1024.removeEventListener("change", () =>
+        onChangeBreakpoint(bpFrom1024, () => onSetMenuOpen(false))
+      );
     };
-  }, [onBreakpoint1280, onBreakpoint720]);
+  }, [onChangeBreakpoint, onSetMenuOpen, onSetNavDrawerOpen]);
+
+  /* useEffect - componentDidUpdate - navDrawerOpen. */
+  useEffect(() => {
+    if (!navDrawerOpen) {
+      document.body.style = null;
+      window.scroll(0, scrollY);
+    }
+  }, [navDrawerOpen, scrollY]);
 
   return (
     <ContextAnVILPortal.Provider
       value={{
-        breakpoint,
         menuOpen,
-        navMenuOpen,
-        showNavMenuButton,
+        navDrawerOpen,
+        showNavDrawerButton,
         onSetMenuOpen,
-        onSetNavMenuOpen,
-        onSetShowNavMenuButton,
+        onSetNavDrawerOpen,
+        onSetShowNavDrawerButton,
         onSetSiteScrollable,
         siteScrollable,
       }}

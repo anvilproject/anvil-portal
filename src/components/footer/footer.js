@@ -13,7 +13,7 @@ import React, { useContext } from "react";
 import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
 
 // Images
-import gitHub from "../../../images/logo-git-hub.png";
+import gitHub from "../../../images/logo-github.png";
 import hhs from "../../../images/logo-hhs.svg";
 import nhgri from "../../../images/logo-nhgri.svg";
 import nih from "../../../images/logo-nih.svg";

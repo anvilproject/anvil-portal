@@ -7,8 +7,54 @@
 
 // App dependencies
 import { IMenuItem } from "../components/menu-item/menu-item";
+import { Social } from "../components/socials/social/social.model";
+import { SocialImage } from "../components/socials/social/social-image.model";
+import { SocialUrlAnVIL } from "../components/socials/social/social-url-anvil.model";
+import { SocialUrlNCPI } from "../components/socials/social/social-url-ncpi.model";
 import { HeaderNavBarStaticQuery } from "../hooks/header-nav-bar-query";
 import { HeaderNavSideBarStaticQuery } from "../hooks/header-nav-side-bar-query";
+
+export function getHeaderSocials(ncpi: boolean) {
+  /* Return socials for NCPI. */
+  if (ncpi) {
+    return [
+      {
+        imageSrc: SocialImage.YOUTUBE,
+        name: Social.YOUTUBE,
+        url: SocialUrlNCPI.YOUTUBE,
+      },
+    ];
+  }
+
+  /* Returns socials for AnVIL. */
+  return [
+    {
+      imageSrc: SocialImage.TWITTER,
+      name: Social.TWITTER,
+      url: SocialUrlAnVIL.TWITTER,
+    },
+    {
+      imageSrc: SocialImage.YOUTUBE,
+      name: Social.YOUTUBE,
+      url: SocialUrlAnVIL.YOUTUBE,
+    },
+    {
+      imageSrc: SocialImage.DISCOURSE,
+      name: Social.DISCOURSE,
+      url: SocialUrlAnVIL.DISCOURSE,
+    },
+    {
+      imageSrc: SocialImage.GITHUB,
+      name: Social.GITHUB,
+      url: SocialUrlAnVIL.GITHUB,
+    },
+    {
+      imageSrc: SocialImage.SLACK,
+      name: Social.SLACK,
+      url: SocialUrlAnVIL.SLACK,
+    },
+  ];
+}
 
 /**
  * Returns the header navigation nav bar links.

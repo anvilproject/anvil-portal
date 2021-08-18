@@ -12,6 +12,7 @@ import React, { useContext } from "react";
 // App dependencies
 import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import Icon from "../icon/icon";
+import * as TabService from "../../utils/tab.service";
 
 // Styles
 import compStyles from "./breadcrumb.module.css";
@@ -22,7 +23,11 @@ function Breadcrumb() {
     { name } = breadcrumb || "Back";
 
   return link ? (
-    <Link className={compStyles.breadcrumb} to={link}>
+    <Link
+      className={compStyles.breadcrumb}
+      state={{ scrollX: TabService.getTabsScrollLeftForActiveTab() }}
+      to={link}
+    >
       <Icon breadcrumb fontSize={20} showIcon>
         arrow_back
       </Icon>

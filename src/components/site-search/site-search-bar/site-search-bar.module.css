@@ -7,37 +7,20 @@
 
 /* Search bar. */
 .searchBar {
+  display: none;
+}
+
+/* Search bar - active. */
+.searchBar.active {
   align-items: center;
+  background-color: var(--white);
   display: flex;
-  flex-basis: 36px;
-  justify-content: flex-end;
-}
-
-/* Search bar - expanded. */
-.searchBar.expanded {
-  flex-basis: 100%;
-}
-
-/**
- * Large handset portrait, extra small window
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 480px) {
-  /* Search bar. */
-  .searchBar {
-    margin-left: 32px;
-  }
-
-  /* Search bar - expanded. */
-  .searchBar.expanded {
-    flex-basis: 400px;
-  }
-
-  /* Search bar, and expanded. */
-  .searchBar,
-  .searchBar.expanded {
-    transition: flex-basis 300ms ease;
-  }
+  height: 64px;
+  left: 0;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 /**
@@ -47,45 +30,18 @@
 @media screen and (min-width: 720px) {
   /* Search bar. */
   .searchBar {
-    margin-left: 16px;
+    display: flex;
+    flex-basis: 360px;
   }
 
-  /* Search bar - expanded. */
-  .searchBar.expanded {
-    transition: flex-basis 300ms ease 300ms; /* Delay transition to allow navigation item opacity transition to execute first. */
-  }
-}
-
-/**
- * Large handset portrait, small handset landscape, extra small window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 840px) {
-  /* Search bar. */
-  .searchBar {
-    margin-left: 24px;
-  }
-}
-
-/**
- * Large tablet portrait, small tablet landscape, small window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 960px) {
-  /* Search bar. */
-  .searchBar {
-    margin-left: 32px;
-  }
-}
-
-/**
- * Large tablet portrait, large tablet landscape, medium window.
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 1024px) {
-  /* Search bar. */
-  .searchBar {
-    flex-basis: 200px;
+  /* Search bar - active. */
+  .searchBar.active {
+    height: unset;
+    left: unset;
+    padding: unset;
+    position: relative;
+    top: unset;
+    width: unset;
   }
 }
 
@@ -96,11 +52,6 @@
 @media screen and (min-width: 1280px) {
   /* Search bar. */
   .searchBar {
-    transition: flex-basis 300ms ease 300ms; /* Delay improves access to header links while search bar is open. */
-  }
-
-  /* Search bar - expanded. */
-  .searchBar.expanded {
-    transition: flex-basis 300ms ease;
+    flex-basis: 400px;
   }
 }

@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL nav menu button component.
+ * The AnVIL nav drawer button component.
  */
 
 // Core dependencies
@@ -14,22 +14,21 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./nav-menu-button.module.css";
+import compStyles from "./nav-drawer-button.module.css";
 
-function NavMenuButton() {
-  const { navMenuOpen, showNavMenuButton, onSetNavMenuOpen } = useContext(
+function NavDrawerButton(): JSX.Element | null {
+  const { navDrawerOpen, onSetNavDrawerOpen, showNavDrawerButton } = useContext(
     ContextAnVILPortal
   );
-  const icon = navMenuOpen ? "close" : "menu_open";
-  return showNavMenuButton ? (
-    <div className={compStyles.navMenuButton}>
-      <Button clickAction={() => onSetNavMenuOpen(!navMenuOpen)} icon>
+  return showNavDrawerButton ? (
+    <div className={compStyles.navDrawerButton}>
+      <Button clickAction={() => onSetNavDrawerOpen(!navDrawerOpen)}>
         <Icon fontSize={24} showHover={false} showIcon>
-          {icon}
+          more_vert
         </Icon>
       </Button>
     </div>
   ) : null;
 }
 
-export default NavMenuButton;
+export default NavDrawerButton;

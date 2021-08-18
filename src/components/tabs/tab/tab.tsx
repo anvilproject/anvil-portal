@@ -6,8 +6,11 @@
  */
 
 // Core dependencies
-import { Link } from "gatsby";
-import React from "react";
+import { navigate } from "gatsby";
+import React, { MouseEvent } from "react";
+
+// App dependencies
+import * as TabService from "../../../utils/tab.service";
 
 // Styles
 import compStyles from "./tab.module.css";
@@ -28,13 +31,22 @@ function Tab(props: TabProps): JSX.Element {
   const { tab } = props;
   const { active, name, path } = tab || {};
 
+  const onSelectTab = (mouseEvent: MouseEvent<HTMLSpanElement>): void => {
+    /* Grab <Tab> element. */
+    const tabEl = mouseEvent.currentTarget;
+    const scrollX = TabService.calculateTabsScrollLeft(tabEl);
+    /* TODO review type. */
+    navigate(path, { state: { scrollX } });
+  };
+
   return (
-    <Link
+    <span
       className={classNames({ [compStyles.active]: active }, compStyles.tab)}
-      to={path}
+      onClick={(mouseEvent) => onSelectTab(mouseEvent)}
+      role="presentation"
     >
       {name}
-    </Link>
+    </span>
   );
 }
 

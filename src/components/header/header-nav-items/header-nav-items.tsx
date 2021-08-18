@@ -19,10 +19,11 @@ import compStyles from "./header-nav-items.module.css";
 interface HeaderNavItemsProps {
   activePath: string;
   menuItems: IMenuItem[];
+  ncpi: boolean;
 }
 
 function HeaderNavItems(props: HeaderNavItemsProps): JSX.Element {
-  const { activePath, menuItems } = props;
+  const { activePath, menuItems, ncpi } = props;
 
   return (
     <ul className={compStyles.headerNavItems}>
@@ -31,6 +32,7 @@ function HeaderNavItems(props: HeaderNavItemsProps): JSX.Element {
           key={menuItem.name}
           activePath={activePath}
           menuItem={menuItem}
+          ncpi={ncpi}
         />
       ))}
     </ul>

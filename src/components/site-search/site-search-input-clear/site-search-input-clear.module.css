@@ -24,7 +24,7 @@
 
 /* Input clear icon. */
 .clear i {
-  padding: 8px;
+  padding: 11px; /* Total icon size 42px. */
 }
 
 /**

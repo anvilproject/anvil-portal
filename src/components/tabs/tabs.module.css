@@ -8,10 +8,20 @@
 /* Tabs. */
 .tabs {
   align-items: center;
-  display: none;
+  display: inline-flex;
   font-size: 14px;
   line-height: 32px;
-  letter-spacing: 1px;
+  overflow-x: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
+  -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
+  padding: 0 16px;
+  scrollbar-width: none; /* Hide scrollbar in Firefox. */
+  width: 100%;
+}
+
+/* Scrollbar hidden - Safari and Chrome */
+.tabs::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 /**
@@ -21,7 +31,6 @@
 @media screen and (min-width: 720px) {
   /* Tabs. */
   .tabs {
-    display: inline-flex;
-    flex-basis: 100%; /* To take up full width of viewport and wrap to new line. */
+    padding: 0 24px;
   }
 }

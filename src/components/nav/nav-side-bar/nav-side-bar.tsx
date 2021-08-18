@@ -20,7 +20,7 @@ interface NavSideBarProps {
   children: React.ReactElement;
 }
 
-function NavSideBar(props: NavSideBarProps) {
+function NavSideBar(props: NavSideBarProps): JSX.Element {
   const { articleOffsetTop, bannerHeight, children } = props;
   const [navStyles, setNavStyles] = useState({
     maxHeight: "unset",

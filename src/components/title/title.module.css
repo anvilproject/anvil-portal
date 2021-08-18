@@ -8,13 +8,11 @@
 /* Title. */
 .title {
   align-self: center;
-  font-size: 1rem; /* 16px */
-  margin: 0;
+  flex-basis: 100%;
+  font-size: 1.25rem; /* 20px */
+  margin: 0 16px;
+  overflow-x: auto;
   padding: 4px 0;
-}
-
-/* Title - excludes search term. */
-.title > span:first-of-type {
   text-transform: capitalize;
 }
 
@@ -26,11 +24,7 @@
   /* Title. */
   .title {
     font-size: 1.5rem; /* 24px */
-  }
-
-  /* Sub title. */
-  .subTitle {
-    display: none;
+    margin: 0 24px;
   }
 }
 

@@ -18,7 +18,7 @@ interface NavArrowProps {
   showArrow: boolean;
 }
 
-function NavArrow(props: NavArrowProps) {
+function NavArrow(props: NavArrowProps): JSX.Element {
   const { rotate, showArrow } = props;
 
   return showArrow ? (
