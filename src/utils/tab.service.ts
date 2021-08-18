@@ -45,15 +45,18 @@ export function calculateTabsScrollLeft(tabEl: HTMLSpanElement): number {
  * Ensures the selected "active" <Tab> is within the viewport.
  */
 export function getTabsScrollLeftForActiveTab(): number {
-  /* Grab the active <Tab> element. */
-  const activeTabEl = document.getElementsByClassName(
-    compStyles.active
-  )[0] as HTMLSpanElement;
-
+  /* Calculate scrollLeft. */
   let scrollLeft = 0;
 
-  if (activeTabEl) {
-    scrollLeft = calculateTabsScrollLeft(activeTabEl);
+  if (typeof document !== "undefined") {
+    /* Grab the active <Tab> element. */
+    const activeTabEl = document.getElementsByClassName(
+      compStyles.active
+    )[0] as HTMLSpanElement;
+
+    if (activeTabEl) {
+      scrollLeft = calculateTabsScrollLeft(activeTabEl);
+    }
   }
 
   return scrollLeft;
