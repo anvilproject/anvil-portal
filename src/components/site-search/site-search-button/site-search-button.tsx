@@ -10,11 +10,11 @@ import React, { useContext } from "react";
 
 // App dependencies
 import Button from "../../button/button";
+import ContextSiteSearch from "../context-site-search/context-site-search";
 import Icon from "../../icon/icon";
 
 // Styles
 import compStyles from "./site-search-button.module.css";
-import ContextSiteSearch from "../context-site-search/context-site-search";
 
 function SiteSearchButton(): JSX.Element {
   const { onSetSiteSearchBarOpen } = useContext(ContextSiteSearch);
