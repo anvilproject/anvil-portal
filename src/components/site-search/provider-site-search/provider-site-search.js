@@ -23,7 +23,7 @@ function ProviderSiteSearch(props) {
     { active: true, label: "NCPI", value: "ncpi-only" },
   ];
   const anvilSearchConfigs = [
-    { active: true, label: "AnVIL Ecosystem", value: "" },
+    { active: true, label: "All Results", value: "" },
     { active: false, label: "AnVIL Site", value: "anvil-only" },
     { active: false, label: "Terra", value: "terra-only" },
     { active: false, label: "Gen3", value: "gen3-only" },
