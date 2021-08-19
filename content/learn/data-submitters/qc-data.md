@@ -53,7 +53,7 @@ The output from the QC aggregator is a QC summary results TSV file.  Data submit
 </figure>
 
 ## Additional Resources - Upcoming AnVIL Tools
-AnVIL Data Processing Working Group is evaluating two tools to add to the submission process to calculate (genetic) sex and compare that to reported sex.  The goal is to identify at a cohort level any major issues between the genomic data and the reported phenotype data. Note that QC tools cannot calculate gender, but they can estimate genetic sex. Variation in sex chromosome copy number (e.g., XXY, XO, somatic mosaicism) means that genetic sex prediction is not 100% accurate, although it is an excellent tool for detecting major cohort-level issues.
+AnVIL Data Processing Working Group is evaluating two tools to add to the submission process to estimate (genetic) sex and compare that to reported sex.  The goal is to identify at a cohort level any major issues between the genomic data and the reported phenotype data. Variation in sex chromosome copy number (e.g., XXY, XO, somatic mosaicism) means that genetic sex prediction is not 100% accurate, although it is an excellent tool for detecting major cohort-level issues.
 ### Exome QC Processing
 _Coming soon_
 ### Sex Check
