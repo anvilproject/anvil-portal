@@ -20,6 +20,7 @@ This section lists guides, tutorials, and other resources to help data analysts 
 - [Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor](/learn/data-analysts/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor) - An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data.  The resource is a "computable book" written in R Markdown, published at https://bioconductor.org/books/release/OSCA/.
 - [Using AnVIL for Teaching R](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor) - A case study of using AnVIL to teach R for a Biostatistics course and provides essentials for using AnVIL for other instructional efforts.
 - [Reproducible Research with AnVILPublish](/learn/data-analysts/reproducible-research-with-anvilpublish) - An exploration of elements of reproducible research with the AnVILPublish package. We will illustrate how to make a docker container tailored publishing AnVIL packages and then emphasize the merits of an R package structure for organizing research activities in a manner that emphasizes provenance and reproducibility.
+- [Participant Stories](/learn/data-analysts/participant-stories) - Participants share their own use of AnVIL.
 
 ### Galaxy
 

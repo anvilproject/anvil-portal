@@ -313,6 +313,8 @@
           file: "/learn/data-analysts/using-anvil-for-teaching-r-bioconductor"
         - name: "Reproducible Research with AnVILPublish"
           file: "/learn/data-analysts/reproducible-research-with-anvilpublish"
+        - name: "Participant Stories"
+          file: "/learn/data-analysts/participant-stories"
     - name: "Investigators"
       pathPartial: "/investigators"
       navigationItems:
