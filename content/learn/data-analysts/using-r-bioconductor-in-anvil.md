@@ -8,7 +8,9 @@ tutorial: true
 
 <hero-tutorial>
 
-# Using R / Bioconductor in AnVIL (Martin Morgan)
+# Using R / Bioconductor in AnVIL
+
+#### Martin Morgan
 
 An introduction to the AnVIL cloud computing environment. We learn how to create a Google account to use in AnVIL. We explore key concepts related to workspaces and billing projects. We explore creating a Jupyter notebooks-based cloud environment, and an RStudio cloud environment.
 

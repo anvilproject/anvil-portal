@@ -8,7 +8,9 @@ tutorial: true
 
 <hero-tutorial>
 
-# Using AnVIL for teaching R / Bioconductor (Levi Waldron)
+# Using AnVIL for teaching R / Bioconductor
+
+#### Levi Waldron
 
 A case study of using AnVIL to teach R for a Biostatistics course and provides essentials for using AnVIL for other instructional efforts.
 

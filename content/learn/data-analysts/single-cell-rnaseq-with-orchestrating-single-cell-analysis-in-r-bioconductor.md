@@ -8,7 +8,9 @@ tutorial: true
 
 <hero-tutorial>
 
-# Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor (Vince Carey)
+# Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor
+
+#### Vince Carey
 
 An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data.  The resource is a "computable book" written in R Markdown, published at <https://bioconductor.org/books/release/OSCA/>.
 
