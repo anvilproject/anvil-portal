@@ -20,7 +20,12 @@ import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 function ProviderSiteSearch(props) {
   const { children, ncpi } = props;
   const ncpiSearchConfigs = [
-    { active: true, label: "NCPI", value: "ncpi-only" },
+    { active: true, label: "All Results", value: "" },
+    { active: false, label: "NCPI Site", value: "ncpi-only" },
+    { active: false, label: "AnVIL", value: "AnVIL" },
+    { active: false, label: "BDC", value: "bdc" },
+    { active: false, label: "CRDC", value: "crdc" },
+    { active: false, label: "Kids First", value: "kf" },
   ];
   const anvilSearchConfigs = [
     { active: true, label: "All Results", value: "" },
