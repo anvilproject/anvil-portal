@@ -4,7 +4,7 @@ author: "Bioconductor"
 description: "Guides helping R / Bioconductor users start RStudio or Jupyter for interactive analysis, and workflows for large-scale data processing."
 ---
 
-# Getting Started with R / Bioconductor
+# Getting Started with R / Bioconductor in AnVIL
 
 This guide helps R / Bioconductor users:
 
@@ -48,15 +48,32 @@ The [AnVIL package](https://bioconductor.org/packages/AnVIL) R / Bioconductor pa
 
 - **Workflow Inputs, Execution, and Outputs** - The [AnVIL package](https://bioconductor.org/packages/AnVIL) provides commands that make working with workflows, especially workflow inputs and outputs, easy for R / Bioconductor users.
 
-- A Bulk RNASeq Differential Expression Workflow.
+## Workshops
 
-### Advanced topics
+### Terra / AnVIL R / Bioconductor Popup Workshops
 
-Producing customized runtimes.
+The following Terra / AnVIL R / Bioconductor Popup Workshops were held in 2021 from April to June.
+
+- Week 1: [Using R / Bioconductor in AnVIL](/learn/data-analysts/using-r-bioconductor-in-anvil)  with Martin Morgan
+- Week 2: [The R / Bioconductor AnVIL Package](/learn/data-analysts/the-r-bioconductor-anvil-package) with Martin Morgan and Nitesh Turaga
+- Week 3: [Running a Workflow](/learn/data-analysts/running-a-workflow) with Martin Morgan and Kayla Interdonato
+- Week 4: [Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor](/learn/data-analysts/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor) with Vince Carey
+- Week 5: [Using AnVIL for Teaching R](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor) with Levi Waldron
+- Week 6: [Reproducible Research with AnVILPublish](/learn/data-analysts/reproducible-research-with-anvilpublish) with Martin Morgan
+- Week 7: [Participant Stories](/learn/data-analysts/participant-stories)
+
+[Introduction to the Terra AnVIL Cloud-based Genomics Platform](https://youtu.be/N83iDYE2yQM) by Sehyun Oh and Levi Waldron at Bioc2021
+
+[Terra in the Classroom](https://docs.google.com/presentation/d/1AvEt6UIIx-G5eTe4hlfkGOYsUcSQrKx8ySlnnfg7XH8/edit?usp=sharing) documents the experience of running a small course utilizing AnVIL. Includes some set up, learned positives and negatives from February 2020.
+
+## Workspaces
+
+- **Orchestrating Single-Cell Analysis** - [use-strides/Bioconductor-Workshop-OSCA-3-12](https://app.terra.bio/#workspaces/use-strides/Bioconductor-Workshop-OSCA-3-12) demonstrates using the OSCA book.
+
+- **RNA-seq using DESeq2** - [bioconductor-rpci-anvi/Bioconductor-Workflow-DESeq2](https://app.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) shows differential expression analysis of bulk RNA-seq using Bioconductor package DESeq2.
 
 ## R / Bioconductor resources
 
-- **Participate in the R / Bioconductor Community** - Ask general questions about using Bioconductor packages on the [Bioconductor support forum](https://support.bioconductor.org). Participate in the [Bioconductor community slack](https://community-bioc.slack.com) [signup](https://bioc-community.herokuapp.com/)) for more in-depth conversation. Terra / AnVIL provides extensive support through the [support](https://support.terra.bio/hc/en-us) feature of the Terra website.
+- **Participate in the R / Bioconductor Community** - Ask general questions about using Bioconductor packages on the [Bioconductor support forum](https://support.bioconductor.org). [Sign up](https://bioc-community.herokuapp.com/) to participate in the [Bioconductor community slack](https://community-bioc.slack.com) and join our #AnVIL channel for more in-depth conversations. Terra / AnVIL provides extensive support through the [support](https://support.terra.bio/hc/en-us) feature of the Terra website. 
 
-- Public Workspaces.
-
+- **Learn more about Bioconductor** - Visit [bioconductor.org](https://bioconductor.org) for available packages, learning materials, events, and getting involved with Bioconductor.
