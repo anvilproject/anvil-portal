@@ -4,7 +4,7 @@ author: "Bioconductor"
 description: "Guides helping R / Bioconductor users start RStudio or Jupyter for interactive analysis, and workflows for large-scale data processing."
 ---
 
-# Getting Started with R / Bioconductor
+# Getting Started with R / Bioconductor in AnVIL
 
 This guide helps R / Bioconductor users:
 
@@ -54,13 +54,13 @@ The [AnVIL package](https://bioconductor.org/packages/AnVIL) R / Bioconductor pa
 
 The following Terra / AnVIL R / Bioconductor Popup Workshops were held in 2021 from April to June.
 
-- Week 1: [Using R / Bioconductor in AnVIL](https://docs.google.com/document/d/18aNzWpt55I-dni9l0IZTB2G3oDOU4X07PyKGXFGyb40/edit) ([video](https://www.youtube.com/watch?v=8Ccj__2GqJ4)) with Martin Morgan
-- Week 2: [The R / Bioconductor AnVIL package](https://docs.google.com/document/d/1OnwhuzEtmn7urpcuJmTj8V_PT84BFt0sWMjohzU7F-0/edit) ([video](https://www.youtube.com/watch?v=DO6RjmGjIZA)) with Martin Morgan and Nitesh Turaga
-- Week 3: [Running a Workflow](https://docs.google.com/document/d/1qe_Fleh6qmXrQZn9zizptFPEzcWu5OszgXHuo4xzyFs/edit) ([video](https://www.youtube.com/watch?v=CT82tcJTA0c)) with Martin Morgan and Kayla Interdonato
-- Week 4: [Single-cell RNASeq with ‘Orchestrating Single Cell Analysis’ in R / Bioconductor](https://docs.google.com/document/d/1xG_r7tcAy0RJm-ONI8uFHHHgNehd99hebUESSGQXAF4/edit) ([video](https://www.youtube.com/watch?v=0LfpVe-MmGE)) with Vince Carey
-- Week 5: [Using AnVIL for Teaching R](https://docs.google.com/document/d/1fNNn3kleLrZLiXHsaUz7z2Et3kZ-IpIcBTlYzCYmscI/edit) ([video](https://www.youtube.com/watch?v=U28gdlVg958)) with Levi Waldron
-- Week 6: [Reproducible Research with AnVILPublish](https://docs.google.com/document/d/1KfAeZ4Tmg45AibOF8nugt7FnOo_KK6YFCTm13qYqoBI/edit) ([video](https://www.youtube.com/watch?v=19upPoqNpx0)) with Martin Morgan
-- Week 7: [Participant Stories](https://docs.google.com/document/d/1VCf1aOjW8BSrPO8Sf5m5rILWUYGdvdZNkZ0RwqVrkxs/edit) ([video](https://www.youtube.com/watch?v=77_keFofsu8))
+- Week 1: [Using R / Bioconductor in AnVIL](/learn/data-analysts/using-r-bioconductor-in-anvil)  with Martin Morgan
+- Week 2: [The R / Bioconductor AnVIL Package](/learn/data-analysts/the-r-bioconductor-anvil-package) with Martin Morgan and Nitesh Turaga
+- Week 3: [Running a Workflow](/learn/data-analysts/running-a-workflow) with Martin Morgan and Kayla Interdonato
+- Week 4: [Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor](/learn/data-analysts/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor) with Vince Carey
+- Week 5: [Using AnVIL for Teaching R](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor) with Levi Waldron
+- Week 6: [Reproducible Research with AnVILPublish](/learn/data-analysts/reproducible-research-with-anvilpublish) with Martin Morgan
+- Week 7: [Participant Stories](/learn/data-analysts/participant-stories)
 
 [Introduction to the Terra AnVIL Cloud-based Genomics Platform](https://youtu.be/N83iDYE2yQM) by Sehyun Oh and Levi Waldron at Bioc2021
 

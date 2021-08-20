@@ -308,6 +308,7 @@
         - name: ""
           file: "/learn/data-analysts/running-a-workflow"
         - name: ""
+          file: "/learn/data-analysts/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor"
         - name: ""
           file: "/learn/data-analysts/using-anvil-for-teaching-r-bioconductor"
         - name: ""
