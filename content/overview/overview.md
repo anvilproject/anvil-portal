@@ -21,9 +21,10 @@ The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Spac
 ## Platform Components
 The platform is built on a set of established components that have been used in a number of flagship scientific projects. The Terra platform provides a compute environment with secure data and analysis sharing capabilities. Dockstore provides standards based sharing of containerized tools and workflows. The Gen3 data commons framework provides data and metadata ingest, querying, and organization. Bioconductor and Galaxy provide environments for users at different skill levels to construct and execute analyses.
 
+![Inverting the Model of Data Sharing](./_images/anvil-overview.png)
+
 <Platforms></Platforms>
 
-![Inverting the Model of Data Sharing](./_images/anvil-overview.png)
 
 ## Analysis Tools
 
