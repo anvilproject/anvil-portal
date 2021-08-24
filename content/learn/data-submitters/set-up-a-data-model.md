@@ -6,7 +6,15 @@ description: "This doc outlines how to select your data model, and additional re
 
 # Step 2 - Set Up a Data Model
 
-After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model, which describes the complete structure of the study data.
+<hero> 
+After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model, specifting ***what data you have*** and ***how data are connected***. 
+
+An AnVIL data model is intended to:     
+- Accept/store as much data as possible     
+- Maximize data findability and usefulness, and facilitate cross-study analysis     
+
+The first goal requires a very flexible data model. The second requires some constraints on the data model. The guidelines below are intended to help meet those two goals.      
+</hero>
 
 You can choose to start with one of two template data models and adjust to meet your needs. You’ll coordinate with the AnVIL data ingest team to facilitate this. If your dataset has been accepted by AnVIL and does not easily fit into an existing template, reach out to the AnVIL Team at <help@lists.anvilproject.org>.
 
@@ -29,8 +37,6 @@ AnVIL data are stored and organized in Terra data-oriented workspaces. You will 
 
 Nodes in the AnVIL Data Model (e.g. “Program” or “Subject” etc. in the diagram below) include different types of data (called “properties”). Each node is a table in a data workspace in AnVIL. Nodes are connected to each other by unique IDs.
 
-
-
 <figure>
 <img src="./_images/gen3-model.png" alt="Data Model"/>
 <figure-caption>A graphic representation of an AnVIL data model</figure-caption>
@@ -38,9 +44,16 @@ Nodes in the AnVIL Data Model (e.g. “Program” or “Subject” etc. in the d
 
 Data submitters will submit data and metadata from the Biospecimen, Clinical, and Data File nodes in spreadsheet-like files that will be displayed in the data workspace as integrated tables. Each row is a distinct “entity” and each column is a different property (type of data).
 
+A data model consists of these components: 
+- **Entities:** the primary object the table contains with a unique key (i.e. a “subject” entity for phenotypic data or “sample” entity for genomic data). Each row in the table is a distinct entity identified by an ID key.
+- **Attributes/properties:** the columns in a database table (i.e. phenotypic data like demographic or lab results or genomic data metadata like  )
+- **Associations:** the unique identifiers that link data between tables (i.e.  a `subject_id` column in the sample table that links samples with the subject)      
+
 
 ### Data Model Requirements
-Please read the descriptions below carefully, and reach out to your AnVIL team contact with any questions. These requirements below help ensure AnVIL datasets are not only useful to the researchers who created them but enable others to analyze data collectively across studies.
+Please read the descriptions below carefully, and reach out to your AnVIL team contact with any questions. These requirements below help ensure AnVIL datasets are not only useful to the researchers who created them but enable others to analyze data collectively across studies.    
+
+Start by thinking of what data you have and how you have already organized it. Note that to accommodate the most data, AnVIL data models allow as many attribute columns as you need. The requirements help structure all AnVIL data similarly, and make it compatible with analysis in the AnVIL Terra platform.    
 
 ### Required Tables for All Studies (csv, tsv, txt, json format)
 All studies must submit the following tables (scroll down for details and template tables):
