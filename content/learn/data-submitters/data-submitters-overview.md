@@ -6,11 +6,11 @@ description: "A walkthrough of the AnVIL data submission process and requirement
 
 # AnVIL Data Submission Guide
 
-<hero>Welcome to the Data Submitters docs on AnVIL. We’re excited to have you here and helping to push the frontiers of  biomedicine.</hero>
+<hero>Welcome to the Data Submitters docs on AnVIL. We’re excited to have you here and helping to push the frontiers of  biomedicine.
 
 Our goal is to help researchers by providing robust and large datasets and making it easier for researchers to find and analyze the data they need. By contributing datasets, you are helping us achieve this goal.
 
-To make the data useful, especially for cross-study analysis requires standardized formatting and careful review. We are asking submitters to help us in this endeavor, by following the instructions in this guide.
+To make the data useful, especially for cross-study analysis requires standardized formatting and careful review. We are asking submitters to help us in this endeavor, by following the instructions in this guide.</hero>
 
 ## Overview
 
