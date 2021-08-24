@@ -16,45 +16,31 @@ To make the data useful, especially for cross-study analysis requires standardiz
 
 In order to submit data into AnVIL you will need to:
 
-1. [obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
+1. [obtain required approvals/register with dbGaP](/learn/data-submitters/submission-guide/data-approval-process).
 1. [set up your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
 1. [prepare your data for submission](/learn/data-submitters/submission-guide/prepare-for-submission).
 1. [ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
 1. [QC ingested data](/learn/data-submitters/submission-guide/qc-data)
 
-## Preliminary step      
-
-Before starting, you will want to make sure your data are compatible and register your data with dbGaP. This will significantly streamline the data submission process (especially Steps  and XX). The exact steps to register with dbGaP depend on how your study is funded.          
-
-**Note that you can take care of the dbGaP registration in parallel with the steps outlined in the rest of the Data Submitters docs.**       
-   
-### NHGRI-funded researcher?    
-
-- Submit this form (**XX - include link and form name here**)  
-- Contact (**insert correct contact here**)         
-
-### NIH-funded researcher?   
-
-- Submit this form (**XX - include link and form name here**)      
-- Contact (**insert correct contact here**)     
-
-### non-NIH-funded?   
-
-See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap.     
-
 
 ## General Data Requirements 
 Make sure your data conforms to these overall data requirements, or contact the AnVIL data team. 
 
-- All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38. 
+### Reference genome   
+All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38.  
 
-- All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.    
+### Register with dbGaP   
+Studies submitted to the AnVIL will still need to be registered with dbGaP as you will need to populate the data elements `dbGaP_study_ID` (phsXXXXXX).   
+
+**To streamline the data submission process, you can register your data in dbGaP at the same time you obtain approval ([Step 1](/learn/data-submitters/submission-guide/data-approval-process))**.    
+
+Though there will be no requirement to submit source files or individual samples through the dbGaP portal, the dbGaP consent codes will be used to determine data access. Studies with multiple consent codes will be split into individual data workspaces based on cohort and consent pairings. External researchers can use dbGaP to apply for access, and a completed and approved DAR will permit dbGaP to link this access grant to Terra.
+
+### Data Sharing 
+All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.    
 
 ### Access Control
 Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/accessing-data/data-access-controls).
-
-### dbGaP Submission Requirements
-Studies submitted to the AnVIL will still need to be registered with dbGaP. Though there will be no requirement to submit source files or individual samples through the dbGaP portal, the dbGaP consent codes will be used to determine data access. Studies with multiple consent codes will be split into individual data workspaces based on cohort and consent pairings. External researchers can use dbGaP to apply for access, and a completed and approved DAR will permit dbGaP to link this access grant to Terra.
 
 
 
