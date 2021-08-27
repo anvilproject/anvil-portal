@@ -106,6 +106,19 @@ function crdcStudyIdParser(studies) {
 }
 
 /**
+ * Returns the slug for the study detail page.
+ *
+ * @param studyId
+ * @returns {string}
+ */
+function getDashboardStudySlug(studyId) {
+  if (studyId && studyId.startsWith("phs")) {
+    return `/ncpi/data/studies/${studyId}`;
+  }
+  return "";
+}
+
+/**
  * Returns a map object key-value pair of study by study id.
  *
  * @param rows
@@ -152,6 +165,7 @@ async function getStudiesByStudyId(rows) {
       Object.assign(study, {
         dbGapIdAccession: studyAccession,
         gapId: studyGapId,
+        studySlug: getDashboardStudySlug(dbGapId),
         studyUrl: studyUrl,
       });
     }

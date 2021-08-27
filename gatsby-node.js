@@ -13,6 +13,7 @@ const {
   buildSetOfNavItemsByMenuItem,
   buildSetOfSiteSlugs,
   buildSlugNavigations,
+  ComponentPath,
   getSlugComponent,
   isShouldCreatePage,
 } = require("./src/utils/node/create-pages.service");
@@ -134,6 +135,24 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allDashboardStudy {
+        edges {
+          node {
+            id
+            studyId
+            studySlug
+          }
+        }
+      }
+      allDashboardNcpiStudy {
+        edges {
+          node {
+            id
+            studyId
+            studySlug
+          }
+        }
+      }
     }
   `).then((result) => {
     /* If there is an error, return. */
@@ -142,7 +161,12 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const { data } = result,
-      { allMarkdownRemark, allSiteMapYaml, allSiteMapHeaderYaml } = data;
+      {
+        allDashboardStudy,
+        allDashboardNcpiStudy,
+        allMarkdownRemark,
+        allSiteMapYaml,
+      } = data;
 
     /* Build menuItems where each site map document associates the slug with a path. */
     /* This will be used to create the correct path for each post. */
@@ -177,7 +201,7 @@ exports.createPages = ({ actions, graphql }) => {
           setOfNavItemsByMenuItem,
           documentTitleBySlug
         );
-        const slugComponent = getSlugComponent();
+        const slugComponent = getSlugComponent(ComponentPath.CONTENT);
 
         /* Create page. */
         createPage({
@@ -196,6 +220,44 @@ exports.createPages = ({ actions, graphql }) => {
           },
         });
       }
+    });
+
+    /* For each dashboard study create a detailed page. */
+    allDashboardStudy.edges.forEach(({ node }) => {
+      const { id, studyId, studySlug } = node;
+      const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
+
+      /* Create page. */
+      createPage({
+        path: studySlug,
+        component: slugComponent,
+        context: {
+          id: id,
+          menuPath: "/data",
+          slug: studySlug,
+          studyId: studyId,
+          title: `Study Detail`,
+        },
+      });
+    });
+
+    /* For each dashboard NCPI study create a detailed page. */
+    allDashboardNcpiStudy.edges.forEach(({ node }) => {
+      const { id, studyId, studySlug } = node;
+      const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
+
+      /* Create page. */
+      createPage({
+        path: studySlug,
+        component: slugComponent,
+        context: {
+          id: id,
+          menuPath: "/ncpi/data",
+          slug: studySlug,
+          studyId: studyId,
+          title: `Study Detail`,
+        },
+      });
     });
   });
 };

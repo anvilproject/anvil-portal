@@ -10,6 +10,7 @@ import DashboardTableRowCellEllipsis from "../../components/dashboard/dashboard-
 import DashboardTableRowCellGapId from "../../components/dashboard/dashboard-table-row-cell-gap-id/dashboard-table-row-cell-gap-id";
 import DashboardTableRowCellProjectId from "../../components/dashboard/dashboard-table-row-cell-project-id/dashboard-table-row-cell-project-id";
 import DashboardTableRowCellRedirect from "../../components/dashboard/dashboard-table-row-cell-redirect/dashboard-table-row-cell-redirect";
+import DashboardTableRowCellStudyName from "../../components/dashboard/dashboard-table-row-cell-study-name/dashboard-table-row-cell-study-name";
 import DashboardTableRowCellX from "../../components/dashboard/dashboard-table-row-cell-x/dashboard-table-row-cell-x";
 import * as NumberFormatService from "../number-format.service";
 import { RIGHT_ALIGN_COLUMNS } from "./right-align-columns";
@@ -94,6 +95,8 @@ export function getReactElementType(columnName, dataset) {
       return DashboardTableRowCellGapId;
     case "projectId":
       return DashboardTableRowCellProjectId;
+    case "studyName":
+      return DashboardTableRowCellStudyName;
     default:
       return DashboardTableRowCellX;
   }

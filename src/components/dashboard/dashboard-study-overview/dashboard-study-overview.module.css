@@ -1,0 +1,27 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study overview component.
+ */
+
+/* Overview links. */
+.studyOverview a {
+  color: var(--primary);
+}
+
+/* Overview last child. */
+.studyOverview *:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* Study overview. */
+  .studyOverview {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

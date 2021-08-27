@@ -1,0 +1,60 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study summary component.
+ */
+
+/* Summary. */
+.summary {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+/* Label. */
+.label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Label, value. */
+.label, .value {
+  display: block;
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window
+ */
+@media screen and (min-width: 600px) {
+  /* Dashboard summary. */
+  .summary {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 8px;
+  }
+
+  /* Summary - first. */
+  /* Label. */
+  .summary:first-of-type,
+  .label {
+    margin-top: 0;
+  }
+
+  /* Value. */
+  .value {
+    grid-column: 2;
+  }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+
+  /* Dashboard summary collection. */
+  .collection {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}

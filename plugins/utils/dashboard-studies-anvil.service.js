@@ -12,7 +12,7 @@ const path = require("path");
 const {
   getStudyAccession,
   getStudyAccessionsById,
-  getStudyUrl
+  getStudyUrl,
 } = require(path.resolve(__dirname, "./dashboard-studies-db-gap.service.js"));
 const { getFHIRStudy } = require(path.resolve(
   __dirname,
@@ -50,14 +50,16 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
 
     /* Assemble general study fields. */
     const study = await getFHIRStudy(studyAccession);
+    const studyDescription = study?.description;
     const studyDesigns = study?.studyDesigns;
     const studyName = study?.studyName;
     const studyUrl = getStudyUrl(studyAccession);
     studyByStudyId.set(studyId, {
       dbGapIdAccession: studyAccession,
+      studyDescription: studyDescription,
       studyDesigns: studyDesigns,
       studyName: studyName,
-      studyUrl: studyUrl
+      studyUrl: studyUrl,
     });
   }
 
@@ -74,9 +76,9 @@ function getSetOfStudyIds(workspaces) {
   return new Set(
     workspaces
       .filter(
-        workspace => workspace.dbGapId && workspace.dbGapId.startsWith("phs")
+        (workspace) => workspace.dbGapId && workspace.dbGapId.startsWith("phs")
       )
-      .map(workspace => workspace.dbGapId)
+      .map((workspace) => workspace.dbGapId)
   );
 }
 

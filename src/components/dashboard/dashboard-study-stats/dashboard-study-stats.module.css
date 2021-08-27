@@ -1,0 +1,103 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study stats component.
+ */
+
+/* Stats. */
+.stats {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Stat. */
+.stat {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+/* Label. */
+.label {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+}
+
+/* Label, value. */
+.label, .value {
+  display: block;
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window
+ */
+@media screen and (min-width: 600px) {
+  /* Stats. */
+  .stats {
+    display: grid;
+    grid-gap: 16px 8px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* Dashboard stat collection. */
+  .collection {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  /* Stat. */
+  .stat {
+    flex-direction: column;
+  }
+
+  /* Label. */
+  .label {
+    line-height: 30px;
+    letter-spacing: 1.2px;
+  }
+
+  /* Count. */
+  .count {
+    font-size: 20px;
+  }
+
+  /* Label. */
+  .label {
+    font-size: 14px;
+    grid-row: 2;
+    margin-top: -4px;
+  }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* Dashboard stat collection. */
+  .collection {
+    grid-column: 1;
+  }
+
+  /* Stats. */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 1024px) {
+  /* Stats. */
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

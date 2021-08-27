@@ -8,6 +8,10 @@
 const path = require("path");
 
 // App dependencies
+const { buildNCPIStudiesDetail } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-detail.service.js"
+));
 const { generateNCPIDashboardIndex } = require(path.resolve(
   __dirname,
   "../utils/dashboard-indexing-ncpi.service.js"
@@ -47,6 +51,27 @@ exports.sourceNodes = async ({
 
     createNode(node);
   });
+
+  /* Build the studies for the dashboard NCPI study page. */
+  const studiesDetail = buildNCPIStudiesDetail(studies);
+
+  /* Create nodes - dashboard study. */
+  studiesDetail.forEach((study) => {
+    const nodeContent = JSON.stringify(study);
+    const nodeMeta = {
+      id: createNodeId(study.studyId),
+      parent: null,
+      children: [],
+      internal: {
+        type: `DashboardNCPIStudy`,
+        mediaType: `application/json`,
+        content: nodeContent,
+        contentDigest: createContentDigest(study),
+      },
+    };
+    const node = Object.assign({}, study, nodeMeta);
+    createNode(node);
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -64,8 +89,19 @@ exports.createSchemaCustomization = ({ actions }) => {
         platforms: [String]
         studyDesigns: [String]
         studyName: String
+        studySlug: String
         studyUrl: String
         subjectsTotal: Int
+    }
+    type DashboardNCPIStudy implements Node {
+        id: ID!
+        studyAccession: String
+        studyDescription: String
+        studyId: String
+        studyName: String
+        studySummary: StudySummary
+        studySlug: String
+        studyUrl: String
     }`);
 };
 

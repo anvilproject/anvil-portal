@@ -7,26 +7,36 @@
 
 // Core dependencies
 import { Link } from "gatsby";
-import React, { useContext } from "react";
+import React from "react";
 
 // App dependencies
-import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import Icon from "../icon/icon";
 import * as TabService from "../../utils/tab.service";
 
 // Styles
 import compStyles from "./breadcrumb.module.css";
 
-function Breadcrumb() {
-  const { breadcrumb } = useContext(ContextFrontmatter),
-    { link } = breadcrumb,
-    { name } = breadcrumb || "Back";
+interface IBreadcrumb {
+  link: string;
+  name: string;
+}
+
+interface BreadcrumbProps {
+  breadcrumb: IBreadcrumb;
+}
+
+function Breadcrumb(props: BreadcrumbProps): JSX.Element | null {
+  const { breadcrumb } = props;
+  const { link } = breadcrumb;
+  const { name } = breadcrumb || "Back";
 
   return link ? (
     <Link
       className={compStyles.breadcrumb}
-      state={{ scrollX: TabService.getTabsScrollLeftForActiveTab() }}
       to={link}
+      state={{
+        scrollX: TabService.getTabsScrollLeftForActiveTab(),
+      }}
     >
       <Icon breadcrumb fontSize={20} showIcon>
         arrow_back

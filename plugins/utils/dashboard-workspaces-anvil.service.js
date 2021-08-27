@@ -41,7 +41,7 @@ const SOURCE_HEADER_KEY = {
   SIZE: "file size",
   STUDY_DESIGNS: "library:studydesign",
   SUBJECTS: "library:numsubjects",
-  WORKSPACE: "workspace"
+  WORKSPACE: "workspace",
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
@@ -57,7 +57,7 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.SIZE]: "size",
   [SOURCE_HEADER_KEY.STUDY_DESIGNS]: "studyDesigns",
   [SOURCE_HEADER_KEY.SUBJECTS]: "subjects",
-  [SOURCE_HEADER_KEY.WORKSPACE]: "projectId"
+  [SOURCE_HEADER_KEY.WORKSPACE]: "projectId",
 };
 const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
@@ -70,12 +70,12 @@ const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.SIZE]: "number",
   [SOURCE_HEADER_KEY.STUDY_DESIGNS]: "array",
   [SOURCE_HEADER_KEY.SUBJECTS]: "number",
-  [SOURCE_HEADER_KEY.WORKSPACE]: "string"
+  [SOURCE_HEADER_KEY.WORKSPACE]: "string",
 };
 const WORKSPACE_ACCESS_TYPE = {
   CONSORTIUM_ACCESS: "Consortium Access",
   CONTROLLED_ACCESS: "Controlled Access",
-  OPEN_ACCESS: "Open Access"
+  OPEN_ACCESS: "Open Access",
 };
 const WORKSPACE_CONSORTIUM = {
   CCDG: "CCDG",
@@ -88,7 +88,7 @@ const WORKSPACE_CONSORTIUM = {
   PAGE: "PAGE",
   THOUSANDGENOMES: "1000 Genomes",
   WGSPD1: "WGSPD1",
-  "1000G": "1000 Genomes"
+  "1000G": "1000 Genomes",
 };
 
 /**
@@ -167,6 +167,20 @@ function buildWorkspacePropertyGapId(studyId, studyAccession, studyUrl) {
 }
 
 /**
+ * Returns the slug for the study detail page.
+ *
+ * @param studyId
+ * @returns {{studySlug: string}}
+ */
+function buildWorkspacePropertyStudySlug(studyId) {
+  let slug = "";
+  if (studyId && studyId.startsWith("phs")) {
+    slug = `/data/studies/${studyId}`;
+  }
+  return { studySlug: slug };
+}
+
+/**
  * Returns the merged workspace data and any additional workspace properties of interest.
  *
  * @param attributeWorkspaces
@@ -225,6 +239,9 @@ function buildWorkspaces(
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.STUDY_DESIGNS]
     );
 
+    /* Build the property studySlug (for the study detail page). */
+    const propertyStudySlug = buildWorkspacePropertyStudySlug(studyId);
+
     /* Grab the workspace file size. */
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
     const size = countWorkspace[keyFileSize];
@@ -242,7 +259,8 @@ function buildWorkspaces(
         ...propertyDiseases,
         ...propertyGapId,
         ...propertyStudyDesigns,
-        ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */
+        ...propertyStudySlug,
+        ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
       };
 
       /* Accumulate the workspace. */
@@ -269,7 +287,8 @@ function findCountWorkspace(row, countWorkspaces) {
 
   /* Find the corresponding workspaces counts. */
   const countWorkspace = countWorkspaces.find(
-    countWorkspace => countWorkspace[keyProjectId].toLowerCase() === projectId.toLowerCase()
+    (countWorkspace) =>
+      countWorkspace[keyProjectId].toLowerCase() === projectId.toLowerCase()
   );
 
   /* Return the workspace counts if they exist. */
@@ -317,7 +336,7 @@ function getWorkspaceStudy(studyId, studyPropertiesById) {
     dbGapIdAccession: "",
     studyDesigns: [],
     studyName: "",
-    studyUrl: ""
+    studyUrl: "",
   };
 }
 

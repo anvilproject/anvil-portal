@@ -14,20 +14,24 @@ import DashboardTableRowCell from "../dashboard-table-row-cell/dashboard-table-r
 // Styles
 import compStyles from "./dashboard-table-row.module.css";
 
-class DashboardTableRow extends React.Component {
-  render() {
-    const { dataset, order, row } = this.props;
+function DashboardTableRow(props) {
+  const { dataset, order, row } = props;
+  const { studySlug } = row;
 
-    return (
-      <tr className={compStyles.row}>
-        {order.map((key, c) => (
-          <DashboardTableRowCell key={c} dataset={dataset} column={key}>
-            {row[key]}
-          </DashboardTableRowCell>
-        ))}
-      </tr>
-    );
-  }
+  return (
+    <tr className={compStyles.row}>
+      {order.map((key, c) => (
+        <DashboardTableRowCell
+          key={c}
+          column={key}
+          dataset={dataset}
+          studySlug={studySlug}
+        >
+          {row[key]}
+        </DashboardTableRowCell>
+      ))}
+    </tr>
+  );
 }
 
 export default DashboardTableRow;
