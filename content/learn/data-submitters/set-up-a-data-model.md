@@ -7,7 +7,7 @@ description: "This doc outlines how to select your data model, and additional re
 # Step 2 - Set Up a Data Model
 
 <hero> 
-After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model, specifting ***what data you have*** and ***how data are connected***. 
+After your dataset has been approved by the AnVIL data ingestion committee, you will need to set up and submit your data model, specifying **what data you have** and **how data are connected**. 
 
 An AnVIL data model is intended to:     
 - Accept/store as much data as possible     
