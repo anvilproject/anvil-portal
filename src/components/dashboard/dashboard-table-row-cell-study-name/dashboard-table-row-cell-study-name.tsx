@@ -27,6 +27,10 @@ function DashboardTableRowCellStudyName(
 ): JSX.Element {
   const { children, id, studySlug } = props;
   const { searchURL } = useContext(ContextDashboard);
+  // TODO review estlint.
+  // eslint-disable-next-line compat/compat
+  const { pathname, search } = new URL(searchURL);
+  const locationHistory = `${pathname}${search}`;
 
   return studySlug ? (
     <td
@@ -34,7 +38,7 @@ function DashboardTableRowCellStudyName(
       className={compStyles.studyName}
       onClick={() => {
         navigate(studySlug, {
-          state: { locationHistory: searchURL },
+          state: { locationHistory },
         });
       }}
       role="presentation"

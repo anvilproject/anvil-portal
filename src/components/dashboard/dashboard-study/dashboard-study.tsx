@@ -11,12 +11,9 @@ import React from "react";
 // App dependencies
 import DashboardStudyHeadline from "../dashboard-study-headline/dashboard-study-headline";
 import DashboardStudyOverview from "../dashboard-study-overview/dashboard-study-overview";
-import DashboardStudyStats, {
-  IStat,
-} from "../dashboard-study-stats/dashboard-study-stats";
-import DashboardStudySummary, {
-  IStudySummary,
-} from "../dashboard-study-summmary/dashboard-study-summary";
+import DashboardStudySnapshot from "../dashboard-study-snapshot/dashboard-study-snapshot";
+import { IStat } from "../dashboard-study-stats/dashboard-study-stats";
+import { IStudySummary } from "../dashboard-study-summmary/dashboard-study-summary";
 import DashboardStudyTable, {
   IStudyWorkspace,
 } from "../dashboard-study-table/dashboard-study-table";
@@ -29,7 +26,7 @@ export interface IStudy {
   studyConsortia?: string;
   studyDescription: string;
   studyName: string;
-  studyStat?: IStat;
+  studyStat: IStat;
   studySummary: IStudySummary;
   studyWorkspaces?: IStudyWorkspace[];
   studyUrl: string;
@@ -37,11 +34,12 @@ export interface IStudy {
 
 interface DashboardStudyProps {
   locationHistory: string;
+  ncpi: boolean;
   study: IStudy;
 }
 
 function DashboardStudy(props: DashboardStudyProps): JSX.Element {
-  const { locationHistory, study } = props;
+  const { locationHistory, ncpi, study } = props;
   const {
     studyAccession,
     studyConsortia,
@@ -62,9 +60,11 @@ function DashboardStudy(props: DashboardStudyProps): JSX.Element {
         studyName={studyName}
         studyUrl={studyUrl}
       />
-      {studyStat ? <DashboardStudyStats studyStat={studyStat} /> : null}
-      <DashboardStudyOverview studyDescription={studyDescription} />
-      <DashboardStudySummary studySummary={studySummary} />
+      <DashboardStudyOverview ncpi={ncpi} studyDescription={studyDescription} />
+      <DashboardStudySnapshot
+        studyStat={studyStat}
+        studySummary={studySummary}
+      />
       {studyWorkspaces ? (
         <DashboardStudyTable studyWorkspaces={studyWorkspaces} />
       ) : null}

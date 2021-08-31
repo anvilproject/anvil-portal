@@ -236,7 +236,7 @@ exports.createPages = ({ actions, graphql }) => {
           menuPath: "/data",
           slug: studySlug,
           studyId: studyId,
-          title: `Study Detail`,
+          title: `Study`,
         },
       });
     });
@@ -255,7 +255,7 @@ exports.createPages = ({ actions, graphql }) => {
           menuPath: "/ncpi/data",
           slug: studySlug,
           studyId: studyId,
-          title: `Study Detail`,
+          title: `Study`,
         },
       });
     });

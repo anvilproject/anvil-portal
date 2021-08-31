@@ -47,7 +47,7 @@ function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
   };
 
   return (
-    <div className={compStyles.collection}>
+    <>
       <h3>Summary</h3>
       <div className={compStyles.summaries}>
         {studyPlatforms ? (
@@ -103,7 +103,7 @@ function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
           </div>
         ) : null}
       </div>
-    </div>
+    </>
   );
 }
 

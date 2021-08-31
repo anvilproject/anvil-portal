@@ -35,7 +35,11 @@ export default ({ data, location }) => {
       styles={styles}
       title={title}
     >
-      <DashboardStudy locationHistory={locationHistory} study={study} />
+      <DashboardStudy
+        locationHistory={locationHistory}
+        ncpi={ncpi}
+        study={study}
+      />
     </Layout>
   );
 };

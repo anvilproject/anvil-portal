@@ -46,12 +46,6 @@
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
-  /* Dashboard stat collection. */
-  .collection {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
   /* Stat. */
   .stat {
     flex-direction: column;
@@ -80,11 +74,6 @@
  * Large handset portrait, small handset landscape, extra small window
  */
 @media screen and (min-width: 840px) {
-  /* Dashboard stat collection. */
-  .collection {
-    grid-column: 1;
-  }
-
   /* Stats. */
   .stats {
     grid-template-columns: repeat(2, 1fr);

@@ -5,6 +5,11 @@
  * Style definitions specific to The AnVIL dashboard study overview component.
  */
 
+/* Study overview. */
+.studyOverview {
+  grid-column: 1;
+}
+
 /* Overview links. */
 .studyOverview a {
   color: var(--primary);
@@ -15,13 +20,28 @@
   margin-bottom: 0;
 }
 
+/* Full text description. */
+.fullText {
+  display: block;
+}
+
+/* Shortened text description. */
+.shortText {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 12;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+
 /**
  * Large handset portrait, small handset landscape, extra small window
  */
 @media screen and (min-width: 840px) {
   /* Study overview. */
   .studyOverview {
-    grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
   }
 }

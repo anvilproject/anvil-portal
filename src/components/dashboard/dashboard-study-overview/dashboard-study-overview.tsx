@@ -6,24 +6,61 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+// App dependencies
+import More from "../../more/more";
 
 // Styles
 import compStyles from "./dashboard-study-overview.module.css";
 
+const classNames = require("classnames");
+
 interface DashboardStudyOverviewProps {
+  ncpi: boolean;
   studyDescription: string;
 }
 
 function DashboardStudyOverview(
   props: DashboardStudyOverviewProps
 ): JSX.Element {
-  const { studyDescription } = props;
+  const { ncpi, studyDescription } = props;
+  const refMore = useRef<HTMLDivElement>(null);
+  const [showToggleButton, setShowToggleButton] = useState(false);
+  const [truncateText, setTruncateText] = useState(false);
+
+  /* useEffect - componentDidMount. */
+  useEffect(() => {
+    if (!ncpi) {
+      const text = refMore.current;
+      if (text) {
+        const lineHeight = 24; /* <p> line height. */
+        const numberLines = text.clientHeight / lineHeight;
+        /* Truncate text when the number of lines are greater than 12. */
+        if (numberLines > 12) {
+          setTruncateText(true);
+          setShowToggleButton(true);
+        }
+      }
+    }
+  }, [ncpi]);
 
   return (
     <div className={compStyles.studyOverview}>
       <h3>Description</h3>
-      <div dangerouslySetInnerHTML={{ __html: studyDescription }} />
+      <div
+        className={classNames(
+          { [compStyles.shortText]: truncateText },
+          { [compStyles.fullText]: !truncateText }
+        )}
+        ref={refMore}
+      >
+        {/* eslint-disable-next-line react/no-danger */}
+        <div dangerouslySetInnerHTML={{ __html: studyDescription }} />
+      </div>
+      {showToggleButton ? (
+        <More setTruncateText={setTruncateText} truncateText={truncateText} />
+      ) : null}
     </div>
   );
 }

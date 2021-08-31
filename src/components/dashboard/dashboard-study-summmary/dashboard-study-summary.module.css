@@ -13,7 +13,7 @@
 
 /* Label. */
 .label {
-  font-weight: 600;
+  font-weight: 300;
   margin-top: 8px;
 }
 
@@ -44,17 +44,5 @@
   /* Value. */
   .value {
     grid-column: 2;
-  }
-}
-
-/**
- * Large handset portrait, small handset landscape, extra small window
- */
-@media screen and (min-width: 840px) {
-
-  /* Dashboard summary collection. */
-  .collection {
-    grid-column: 2;
-    grid-row: 3;
   }
 }

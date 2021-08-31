@@ -39,7 +39,7 @@ function DashboardStudyStats(props: DashboardStudyStatProps): JSX.Element {
   };
 
   return (
-    <div className={compStyles.collection}>
+    <>
       <h3>Stats</h3>
       <div className={compStyles.stats}>
         <div className={compStyles.stat}>
@@ -59,7 +59,7 @@ function DashboardStudyStats(props: DashboardStudyStatProps): JSX.Element {
           <span className={compStyles.label}>Size</span>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
