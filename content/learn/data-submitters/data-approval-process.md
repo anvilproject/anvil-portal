@@ -23,7 +23,7 @@ To deposit large-scale, individual-level data into AnVIL, data submitters must f
 1. The National Human Genome Research Institute (NHGRI)
 1. The AnVIL ingestion committee
 
-## 1.1. - Register with dbGaP 
+## 1.1. Register with dbGaP 
 Before beginning, you will want to make sure your data are compatible and register your data with dbGaP. This will significantly streamline the data submission process. The exact steps to register with dbGaP depend on how your study is funded.            
 
 **Note that AnVIL recommends you take care of the dbGaP registration in parallel with the steps outlined in the rest of the Data Submitters docs.**   
@@ -40,7 +40,7 @@ Before beginning, you will want to make sure your data are compatible and regist
 See [this doc](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators) for detailed steps of how to register your study with dbGap. 
 
 
-## 1.2 - Obtain NHGRI Approval
+## 1.2. Obtain NHGRI Approval
 
 ### NIH/NHGRI Data Sharing Policy compliance   
 Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).    
@@ -66,7 +66,7 @@ or
 The AnVIL team can provide an Institutional Certification template form. 
 
 
-## 1.2 - Obtain AnVIL Data Ingestion Committee Approval
+## 1.3. Obtain AnVIL Data Ingestion Committee Approval
 
 The AnVIL data ingestion committee will evaluate ingestion applications to ensure data deposited into AnVIL meets the high quality of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). The committee includes NHGRI program officers and AnVIL leadership team members.
 
