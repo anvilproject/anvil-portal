@@ -315,6 +315,12 @@
           file: "/learn/data-analysts/reproducible-research-with-anvilpublish"
         - name: ""
           file: "/learn/data-analysts/participant-stories"
+        - name: ""
+          file: "/learn/data-analysts/jupyter-gsg-video"
+        - name: ""
+          file: "/learn/data-analysts/galaxy-gsg-video"
+        - name: ""
+          file: "/learn/data-analysts/rstudio-gsg-video"
     - name: "Investigators"
       pathPartial: "/investigators"
       navigationItems:
