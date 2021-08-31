@@ -5,9 +5,11 @@ This section lists guides, tutorials, and other resources to help data analysts 
 </hero>
 
 
-### Bioconductor
+### Bioconductor / RStudio
 
 - [Getting Started with Bioconductor](/learn/interactive-analysis/getting-started-with-bioconductor) - Guides helping R / Bioconductor users start RStudio or Jupyter for interactive analysis and workflows for large-scale data processing.
+
+- [Starting RStudio on the AnVIL Platform](/learn/data-analysts/rstudio-gsg-video) - A video introduction to using RStudio on the AnVIL platform.
 
 #### 2021 Bioconductor Popup Workshops
 
@@ -24,7 +26,8 @@ Recordings and related materials for the 2021 Bioconductor popup workshops are l
 ### Galaxy
 
 - [Getting Started with Galaxy](/learn/interactive-analysis/getting-started-with-galaxy) - A step-by-step tutorial demonstrating how to compute quality metrics of unaligned reads, align the reads to a reference genome using bowtie2, plot a coverage histogram, call variants using FreeBayes, and then summarize the variant calls using bcftools.
+- [Starting Galaxy on the AnVIL Platform](/learn/data-analysts/galaxy-gsg-video) - A video introduction to using Galaxy on the AnVIL platform.
 
-### Gen3
+### Jupyter
 
-- [Getting Started with Gen3](/learn/introduction/getting-started-with-gen3) - An overview of the Gen3 platform and how to use Gen3 to access AnVIL datasets, create cohorts, and export them to Terra workspaces.
+- [Starting Jupyter on the AnVIL Platform](/learn/data-analysts/jupyter-gsg-video) - A video introduction to using Jupyter Notebooks on the AnVIL platform.
