@@ -5,8 +5,7 @@
  * Style definitions specific to The AnVIL dashboard table row cell project id component.
  */
 
-/* Row cell - linked cell */
-td.link {
-  color: var(--primary);
-  cursor: pointer;
+/* Project id. */
+a.projectId, a.projectId:hover {
+  border-bottom: none; /* Removes markdown link underline. */
 }
