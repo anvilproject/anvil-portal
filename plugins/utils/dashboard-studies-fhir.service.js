@@ -68,10 +68,12 @@ function buildFHIRStudy(fhirJSON, study) {
   if (fhirJSON) {
     const entries = fhirJSON.entry;
 
-    /* Grab the study name and assign to the study. */
+    /* Grab the study name and description and assign to the study. */
     const studyName = getStudyName(entries);
+    const description = getStudyDescription(entries);
     const cloneStudy = Object.assign(study, {
       [FHIR_FIELD_KEY.STUDY_NAME]: studyName,
+      [FHIR_FIELD_KEY.DESCRIPTION]: description,
     });
 
     return entries.reduce((acc, entry) => {
@@ -83,9 +85,6 @@ function buildFHIRStudy(fhirJSON, study) {
 
       /* Roll up the molecular codes. */
       const dataTypes = rollUpDataTypes(resource, acc);
-
-      const description = remark().use(html).processSync(resource?.description)
-        .contents;
 
       /* Roll up the focus (diseases). */
       const focuses = rollUpFocuses(resource, acc);
@@ -100,7 +99,6 @@ function buildFHIRStudy(fhirJSON, study) {
       return Object.assign(acc, {
         [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
         [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
-        [FHIR_FIELD_KEY.DESCRIPTION]: description,
         [FHIR_FIELD_KEY.FOCUSES]: focuses,
         [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
         [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal,
@@ -242,6 +240,28 @@ function getMolecularCodes(coding) {
   }
 
   return [];
+}
+
+/**
+ * Returns the study description in markdown formatted text.
+ *
+ * @param entries
+ * @returns {vfile.VFileContents|string}
+ */
+function getStudyDescription(entries) {
+  /* Grab the first entry's resource property. */
+  const entry = entries[0];
+  const resource = entry?.resource;
+
+  if (resource) {
+    const rawDescription = resource.description;
+    /* Replace any `\t` (tab) with a space - avoids markdown processing tab as <pre/>. */
+    if (rawDescription) {
+      const parsedDescription = rawDescription.replace(/\t/g, " ");
+      return remark().use(html).processSync(parsedDescription).contents;
+    }
+  }
+  return "";
 }
 
 /**
