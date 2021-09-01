@@ -24,15 +24,16 @@ function DashboardTableRowCellProjectId(
   const href = `https://anvil.terra.bio/#workspaces/anvil-datastorage/${children}`;
 
   return (
-    <a
-      className={compStyles.projectId}
-      href={href}
-      id={id}
-      rel="noreferrer"
-      target="_blank"
-    >
-      {children}
-    </a>
+    <td id={id}>
+      <a
+        className={compStyles.projectId}
+        href={href}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {children}
+      </a>
+    </td>
   );
 }
 

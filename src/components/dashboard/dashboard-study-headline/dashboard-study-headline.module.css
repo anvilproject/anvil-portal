@@ -1,0 +1,51 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study headline component.
+ */
+
+/* Study headline. */
+.studyHeadline {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* Study title. */
+.title {
+  border-bottom: none;
+  margin-bottom: 4px;
+  max-width: 600px;
+}
+
+/* Study consortia. */
+.studyConsortia {
+  width: 100%;
+}
+
+/* Overline dots. */
+/* Study accession. */
+span.studyAccession::before {
+  display: none;
+}
+
+/* Study overline dbGap link. */
+.studySource a {
+  color: var(--primary);
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window
+ */
+@media screen and (min-width: 600px) {
+  /* Study consortia. */
+  .studyConsortia {
+    width: unset;
+  }
+
+  /* Overline dots. */
+  /* Study accession. */
+  span.studyAccession::before {
+    display: inline;
+  }
+}

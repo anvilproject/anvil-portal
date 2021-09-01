@@ -22,6 +22,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               size
               studyName
               studyDesigns
+              studySlug
               subjects
             }
           }
@@ -29,5 +30,5 @@ export const DashboardWorkspaceStaticQuery = () => {
       }
     `
   );
-  return allWorkspace.edges.map(n => n.node);
+  return allWorkspace.edges.map((n) => n.node);
 };

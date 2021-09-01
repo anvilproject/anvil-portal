@@ -7,7 +7,10 @@
  */
 
 // Template variables
-const componentPath = "src/templates/content-template.js";
+const ComponentPath = {
+  CONTENT: "src/templates/content-template.js",
+  DATASET_STUDY: "src/templates/dashboard-study-template.js",
+};
 const nodePath = require("path");
 
 /**
@@ -143,10 +146,11 @@ const buildSlugNavigations = function buildSlugNavigations(
 /**
  * Returns the slug's template component path.
  *
+ * @param path
  * @returns {string}
  */
-const getSlugComponent = function getSlugComponent() {
-  return nodePath.resolve(componentPath);
+const getSlugComponent = function getSlugComponent(path) {
+  return nodePath.resolve(path);
 };
 
 /**
@@ -705,5 +709,6 @@ module.exports.buildMenuItems = buildMenuItems;
 module.exports.buildSetOfNavItemsByMenuItem = buildSetOfNavItemsByMenuItem;
 module.exports.buildSetOfSiteSlugs = buildSetOfSiteSlugs;
 module.exports.buildSlugNavigations = buildSlugNavigations;
+exports.ComponentPath = ComponentPath;
 module.exports.getSlugComponent = getSlugComponent;
 module.exports.isShouldCreatePage = isShouldCreatePage;

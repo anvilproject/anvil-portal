@@ -6,12 +6,13 @@
  */
 
 // Core dependencies
-/* TODO review eslint. */
+// TODO review eslint.
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocation } from "@reach/router";
 import React, { useEffect, useRef } from "react";
 
 // App dependencies
+import { ILocation } from "../location/location";
 import TabsFuzz from "./tabs-fuzz/tabs-fuzz";
 import Tab, { ITab } from "./tab/tab";
 import * as TabService from "../../utils/tab.service";
@@ -19,20 +20,16 @@ import * as TabService from "../../utils/tab.service";
 // Styles
 import compStyles from "./tabs.module.css";
 
-interface LocationState {
-  scrollX: number;
-}
-
 interface TabsProps {
   tabs: ITab[];
 }
 
 function Tabs(props: TabsProps): JSX.Element | null {
   const { tabs } = props;
-  const location = useLocation();
+  const location = useLocation() as ILocation; /* TODO review type. */
   const tabsRef = useRef<HTMLDivElement>(null);
-  const state = location.state as LocationState;
-  const { scrollX } = state || {};
+  const { state } = location || {};
+  const { scrollX } = state || 0;
   const showTabs = tabs && tabs.length > 0;
 
   useEffect(() => {

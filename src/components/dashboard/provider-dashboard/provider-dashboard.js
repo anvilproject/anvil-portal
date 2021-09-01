@@ -31,7 +31,7 @@ function ProviderDashboard(props) {
     tableHeadersEntities,
     tableHeadersSummary,
     termSearchValueByTermDisplay,
-    totalsWarning
+    totalsWarning,
   } = props;
   const inputValueRef = useRef("");
   const lastHitRef = useRef({ facet: "", selected: false, term: "" });
@@ -41,13 +41,13 @@ function ProviderDashboard(props) {
   const setOfSelectedTermsByFacetRef = useRef(new Map());
   const [dashboardIndex, setDashboardIndex] = useState({
     index: {},
-    indexMounted: false
+    indexMounted: false,
   });
   const [query, setQuery] = useState("");
   const [results, setResults] = useState({
     entities: [],
     facets: [],
-    summaries: []
+    summaries: [],
   });
   const { index, indexMounted } = dashboardIndex;
   const { entities, facets, summaries } = results;
@@ -75,7 +75,7 @@ function ProviderDashboard(props) {
    * @type {(function(*=): void)|*}
    */
   const updateDashboardURL = useCallback(
-    currentQuery => {
+    (currentQuery) => {
       /* Create new url from the existing dashboard url. */
       const url = new URL(dashboardURL);
 
@@ -155,7 +155,7 @@ function ProviderDashboard(props) {
    * @type {function(*): *[]}
    */
   const buildFacets = useCallback(
-    entitiesByFacet => {
+    (entitiesByFacet) => {
       /* Build the facets object. */
       const newFacets = [];
 
@@ -214,7 +214,7 @@ function ProviderDashboard(props) {
       return (
         [...setOfSelectedTerms]
           /* Each facet will return its own query. */
-          .map(selectedTerm => {
+          .map((selectedTerm) => {
             /* Build the facet "search" query. */
             /* The "search" query is joined by "AND". */
             if (facet === "search") {
@@ -267,10 +267,10 @@ function ProviderDashboard(props) {
       // then grab the result term name.
       const setOfSummaryTerms = new Set(
         newFacets
-          .find(facet => facet.name === summaryKey)
-          .terms.filter(term => facetUnselected || term.selected)
-          .filter(term => term.count)
-          .map(term => term.name)
+          .find((facet) => facet.name === summaryKey)
+          .terms.filter((term) => facetUnselected || term.selected)
+          .filter((term) => term.count)
+          .map((term) => term.name)
       );
 
       /* Return the summaries. */
@@ -289,7 +289,7 @@ function ProviderDashboard(props) {
    * @type {function(*=): *}
    */
   const getEntities = useCallback(
-    setOfResults => {
+    (setOfResults) => {
       /* Build the entities. */
       const newEntities = [];
 
@@ -310,16 +310,16 @@ function ProviderDashboard(props) {
    */
   const fetchDashboardIndex = useCallback(() => {
     fetch(dashboardIndexFileName)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         const index = lunr.Index.load(data);
-        setDashboardIndex(dashboardIndex => ({
+        setDashboardIndex((dashboardIndex) => ({
           ...dashboardIndex,
           index: index,
-          indexMounted: true
+          indexMounted: true,
         }));
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err, "Error loading index");
       });
   }, [dashboardIndexFileName]);
@@ -331,7 +331,7 @@ function ProviderDashboard(props) {
    * @returns {Set<T>}
    */
   const findIntersectionSetOfResults = useCallback(
-    setOfResultsByFacet => {
+    (setOfResultsByFacet) => {
       /* Early exit, return a full set of results. */
       /* No terms are selected. */
       if (setOfResultsByFacet.size === 0) {
@@ -348,8 +348,8 @@ function ProviderDashboard(props) {
       /* Create a new set of intersection results. */
       /* i.e. filter through the smallest set to confirm results exist in all other search group sets. */
       return new Set(
-        [...firstSetOfResults].filter(result =>
-          sortedSetsOfResults.every(setOfResults => setOfResults.has(result))
+        [...firstSetOfResults].filter((result) =>
+          sortedSetsOfResults.every((setOfResults) => setOfResults.has(result))
         )
       );
     },
@@ -361,7 +361,7 @@ function ProviderDashboard(props) {
    * @type {function(*): Map<any, any>}
    */
   const getEntitiesByFacet = useCallback(
-    setOfResultsByFacet => {
+    (setOfResultsByFacet) => {
       /* Build entities by facet. */
       const entitiesByFacet = new Map();
 
@@ -395,11 +395,11 @@ function ProviderDashboard(props) {
    */
   const getIndexResults = useCallback(
     /* Query the index and return the results key value. */
-    query => {
+    (query) => {
       const queryString = `${query}`;
       const results = index.search(queryString);
 
-      return results.map(result => result.ref);
+      return results.map((result) => result.ref);
     },
     [index]
   );
@@ -449,7 +449,7 @@ function ProviderDashboard(props) {
     // Facets with unselected terms return a full set of results i.e. setOfEntities.
     for (const [
       facet,
-      setOfSelectedTerms
+      setOfSelectedTerms,
     ] of setOfSelectedTermsByFacet.entries()) {
       /* Get the set of results for the facet. */
       // We will query the index when
@@ -550,7 +550,7 @@ function ProviderDashboard(props) {
 
       /* Add any selected terms to the set. */
       if (terms) {
-        terms.forEach(term => setOfSelectedTerms.add(term));
+        terms.forEach((term) => setOfSelectedTerms.add(term));
       }
 
       /* Update the ref. */
@@ -605,7 +605,7 @@ function ProviderDashboard(props) {
    * Clears all selected terms for the specified facet.
    * @param facet
    */
-  const onHandleClearFacet = facet => {
+  const onHandleClearFacet = (facet) => {
     /* Update the current ref lastHit. */
     lastHitRef.current = { facet: facet, selected: false, term: "" };
 
@@ -648,7 +648,7 @@ function ProviderDashboard(props) {
    * Updates the selected terms.
    * @param event
    */
-  const onHandleUpdateFacet = event => {
+  const onHandleUpdateFacet = (event) => {
     /* Grab the facet, term and selected values. */
     const { facet, selected, term } = event;
 
@@ -665,7 +665,7 @@ function ProviderDashboard(props) {
     lastHitRef.current = {
       facet: facet,
       selected: selected,
-      term: newTerm
+      term: newTerm,
     };
 
     /* Grab the current setOfSelectedTerms for the specified facet. */
@@ -683,7 +683,7 @@ function ProviderDashboard(props) {
       if (newTerm) {
         const newTerms = newTerm.split(" ");
         /* Add the new selected terms to the set. */
-        newTerms.forEach(nTerm => setOfSelectedTerms.add(nTerm));
+        newTerms.forEach((nTerm) => setOfSelectedTerms.add(nTerm));
       }
     } else {
       /* Update the term for the specified facet. */
@@ -709,8 +709,8 @@ function ProviderDashboard(props) {
    * @param setOfResultsByFacet
    * @returns {*[]}
    */
-  const sortSetsOfResults = setOfResultsByFacet => {
-    return [...setOfResultsByFacet.values()].sort(function(set0, set1) {
+  const sortSetsOfResults = (setOfResultsByFacet) => {
+    return [...setOfResultsByFacet.values()].sort(function (set0, set1) {
       if (set0.size > set1.size) {
         return 1;
       } else {
@@ -792,7 +792,7 @@ function ProviderDashboard(props) {
     getEntities,
     getEntitiesByFacet,
     getSetOfResultsByFacet,
-    setOfTermsByFacet
+    setOfTermsByFacet,
   ]);
 
   /**
@@ -805,8 +805,7 @@ function ProviderDashboard(props) {
   }, [fetchDashboardIndex]);
 
   /**
-   * useEffect - componentDidUpdate - searchValue, indexMounted.
-   * Update setOfResultsBySearchGroups when index is mounted or with change in searchValue.
+   * useEffect - componentDidUpdate - indexMounted.
    */
   useEffect(() => {
     if (indexMounted) {
@@ -831,12 +830,11 @@ function ProviderDashboard(props) {
     initInputValue,
     initSearchURL,
     initSetOfResultsByFacet,
-    initSetOfSelectedTermsByFacet
+    initSetOfSelectedTermsByFacet,
   ]);
 
   /**
    * useEffect - componentDidUpdate - query, indexMounted.
-   * Update setOfResultsBySearchGroups when index is mounted or with a change in query.
    */
   useEffect(() => {
     /* Executes only when index is mounted. */
@@ -845,11 +843,11 @@ function ProviderDashboard(props) {
       const [newEntities, newFacets, newSummaries] = generateResults();
 
       /* Set state results. */
-      setResults(results => ({
+      setResults((results) => ({
         ...results,
         entities: newEntities,
         facets: newFacets,
-        summaries: newSummaries
+        summaries: newSummaries,
       }));
     }
   }, [generateResults, indexMounted, query]);
@@ -873,7 +871,7 @@ function ProviderDashboard(props) {
         summaries,
         tableHeadersEntities,
         tableHeadersSummary,
-        warning
+        warning,
       }}
     >
       {children}

@@ -9,6 +9,8 @@
 const { decode } = require("html-entities");
 const fetch = require("node-fetch");
 const path = require("path");
+const remark = require("remark");
+const html = require("remark-html");
 
 // App dependencies
 const { readFile, writeFile } = require(path.resolve(
@@ -21,10 +23,11 @@ const dirCacheFHIR = "../../db-gap-cache";
 const FHIR_FIELD_KEY = {
   CONSENT_CODES: "consentCodes",
   DATA_TYPES: "dataTypes",
+  DESCRIPTION: "description",
   FOCUSES: "focuses",
   STUDY_DESIGNS: "studyDesigns",
   STUDY_NAME: "studyName",
-  SUBJECTS_TOTAL: "subjectsTotal"
+  SUBJECTS_TOTAL: "subjectsTotal",
 };
 const urlPrefixFHIR =
   "https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=";
@@ -68,7 +71,7 @@ function buildFHIRStudy(fhirJSON, study) {
     /* Grab the study name and assign to the study. */
     const studyName = getStudyName(entries);
     const cloneStudy = Object.assign(study, {
-      [FHIR_FIELD_KEY.STUDY_NAME]: studyName
+      [FHIR_FIELD_KEY.STUDY_NAME]: studyName,
     });
 
     return entries.reduce((acc, entry) => {
@@ -80,6 +83,9 @@ function buildFHIRStudy(fhirJSON, study) {
 
       /* Roll up the molecular codes. */
       const dataTypes = rollUpDataTypes(resource, acc);
+
+      const description = remark().use(html).processSync(resource?.description)
+        .contents;
 
       /* Roll up the focus (diseases). */
       const focuses = rollUpFocuses(resource, acc);
@@ -94,9 +100,10 @@ function buildFHIRStudy(fhirJSON, study) {
       return Object.assign(acc, {
         [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
         [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
+        [FHIR_FIELD_KEY.DESCRIPTION]: description,
         [FHIR_FIELD_KEY.FOCUSES]: focuses,
         [FHIR_FIELD_KEY.STUDY_DESIGNS]: studyDesigns,
-        [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
+        [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal,
       });
     }, cloneStudy);
   }
@@ -157,7 +164,7 @@ function findExtensionType(resource, stringSnippet = "") {
   const resourceExtensions = resource.extension;
 
   if (resourceExtensions) {
-    return resourceExtensions.find(extensions => {
+    return resourceExtensions.find((extensions) => {
       const { url } = extensions;
 
       if (url) {
@@ -270,10 +277,11 @@ function initializeStudy() {
   return {
     [FHIR_FIELD_KEY.CONSENT_CODES]: [],
     [FHIR_FIELD_KEY.DATA_TYPES]: [],
+    [FHIR_FIELD_KEY.DESCRIPTION]: "",
     [FHIR_FIELD_KEY.FOCUSES]: [],
     [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
     [FHIR_FIELD_KEY.STUDY_NAME]: "",
-    [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
+    [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0,
   };
 }
 

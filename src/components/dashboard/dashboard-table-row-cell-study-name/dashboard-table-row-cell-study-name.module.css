@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard table row cell study name component.
+ */
+
+/* Study name. */
+.studyName {
+  border-bottom: none;
+  color: var(--primary);
+  cursor: pointer;
+}

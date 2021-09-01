@@ -8,6 +8,10 @@
 const path = require("path");
 
 // App dependencies
+const { buildStudiesDetail } = require(path.resolve(
+  __dirname,
+  "../utils/dashboard-detail.service.js"
+));
 const { generateAnVILDashboardIndex } = require(path.resolve(
   __dirname,
   "../utils/dashboard-indexing-anvil.service.js"
@@ -20,7 +24,6 @@ const { getWorkspaces } = require(path.resolve(
   __dirname,
   "../utils/dashboard-workspaces-anvil.service.js"
 ));
-
 /**
  * Creates node for specified node type.
  *
@@ -50,8 +53,8 @@ function addNode(
       type: type,
       mediaType: `application/json`,
       content: nodeContent,
-      contentDigest: createContentDigest(content)
-    }
+      contentDigest: createContentDigest(content),
+    },
   };
 
   const node = Object.assign({}, content, nodeMeta);
@@ -69,21 +72,15 @@ function addNode(
 exports.sourceNodes = async ({
   actions,
   createNodeId,
-  createContentDigest
+  createContentDigest,
 }) => {
   const { createNode } = actions;
 
   /* Build up the workspaces model from the ingested attributes. */
   const workspaces = await getWorkspaces();
 
-  /* Build the statistics model for AnVIL home page. */
-  const stat = buildStats(workspaces);
-
-  /* Create node - stats. */
-  addNode(createNode, createNodeId, createContentDigest, stat, `stat`, `Stat`);
-
   /* Create nodes - workspaces. */
-  workspaces.forEach(workspace => {
+  workspaces.forEach((workspace) => {
     const workspaceId = `${workspace.consortium}${workspace.projectId}`;
 
     /* Create node - workspace. */
@@ -94,6 +91,28 @@ exports.sourceNodes = async ({
       workspace,
       workspaceId,
       `Workspace`
+    );
+  });
+
+  /* Build the statistics model for AnVIL home page. */
+  const stat = buildStats(workspaces);
+
+  /* Create node - stats. */
+  addNode(createNode, createNodeId, createContentDigest, stat, `stat`, `Stat`);
+
+  /* Build the studies for the dashboard study page. */
+  const studies = buildStudiesDetail(workspaces);
+
+  /* Create nodes - dashboard study. */
+  studies.forEach((study) => {
+    /* Create node - study. */
+    addNode(
+      createNode,
+      createNodeId,
+      createContentDigest,
+      study,
+      study.studyId,
+      `DashboardStudy`
     );
   });
 };
@@ -107,6 +126,19 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
   createTypes(`
+    type DashboardStudy implements Node {
+        id: ID!
+        studyAccession: String
+        studyConsortia: String
+        studyDescription: String
+        studyId: String
+        studyName: String
+        studyStat: Stat
+        studySummary: StudySummary
+        studyWorkspaces: [StudyWorkspace]
+        studySlug: String
+        studyUrl: String
+    }
     type GapId implements Node {
         gapIdDisplay: String
         studyUrl: String
@@ -116,6 +148,27 @@ exports.createSchemaCustomization = ({ actions }) => {
         consortia: Int
         samples: Int
         size: Float
+        subjects: Int
+    }
+    type StudySummary implements Node {
+        accessTypes: [String]
+        consentShortNames: [String]
+        dataTypes: [String]
+        diseases: [String]
+        focuses: [String]
+        studyDesigns: [String]
+        studyPlatforms: [String]
+        subjectsTotal: Int
+    }
+    type StudyWorkspace implements Node {
+        accessType: String
+        consentShortName: String
+        dataTypes: [String]
+        diseases: [String]
+        projectId: String
+        samples: Int
+        size: Float
+        studyDesigns: [String]
         subjects: Int
     }
     type Workspace implements Node {
@@ -133,6 +186,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         size: Float
         studyDesigns: [String]
         studyName: String
+        studySlug: String
         subjects: Int
     }`);
 };

@@ -19,6 +19,7 @@ export const DashboardNCPIStaticQuery = () => {
               platforms
               studyDesigns
               studyName
+              studySlug
               subjectsTotal
             }
           }
@@ -26,5 +27,5 @@ export const DashboardNCPIStaticQuery = () => {
       }
     `
   );
-  return allDashboardNcpi.edges.map(n => n.node);
+  return allDashboardNcpi.edges.map((n) => n.node);
 };

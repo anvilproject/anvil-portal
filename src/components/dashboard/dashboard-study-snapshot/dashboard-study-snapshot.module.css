@@ -1,0 +1,24 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study snapshot component.
+ */
+
+/* Snapshot. */
+.studySnapshot {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* Snapshot. */
+  .studySnapshot {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

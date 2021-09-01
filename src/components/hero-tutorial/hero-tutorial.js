@@ -6,20 +6,22 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, { useContext } from "react";
 
 // App dependencies
 import Breadcrumb from "../breadcrumb/breadcrumb";
+import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 // Styles
 import compStyles from "./hero-tutorial.module.css";
 
 function HeroTutorial(props) {
   const { children } = props;
+  const { breadcrumb } = useContext(ContextFrontmatter);
 
   return (
     <div className={compStyles.hero}>
-      <Breadcrumb />
+      <Breadcrumb breadcrumb={breadcrumb} />
       {children}
     </div>
   );
