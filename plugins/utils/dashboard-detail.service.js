@@ -44,6 +44,8 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
           studySlug: workspaceClone.studySlug,
           studyUrl: workspaceClone.studyUrl,
         };
+
+        studyByStudyId.set(dbGapId, study);
       }
 
       /* Remove the study related properties from the (cloned) workspace. */
@@ -56,14 +58,8 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
       delete workspaceClone.studySlug;
       delete workspaceClone.studyUrl;
 
-      /* Add workspace to study. */
-      /* Grab the study workspaces and add the new workspace. */
-      const { studyWorkspaces } = study;
-      studyWorkspaces.push(workspaceClone);
-
-      /* Assign the workspaces back to the study. */
-      Object.assign(study, { studyWorkspaces: studyWorkspaces });
-      studyByStudyId.set(dbGapId, study);
+      /* Add workspace to study's workspaces. */
+      study.studyWorkspaces.push(workspaceClone);
     }
   }
 
@@ -129,7 +125,12 @@ function buildStudySummary(workspaces) {
   for (const workspace of workspaces) {
     for (const key of keys) {
       /* Grab the set of values by key and add to the set any new workspace values. */
-      const setOfValues = setOfValuesBySummaryKey.get(key) || new Set();
+      let setOfValues = setOfValuesBySummaryKey.get(key);
+
+      if (!setOfValues) {
+        setOfValues = new Set();
+        setOfValuesBySummaryKey.set(key, setOfValues);
+      }
 
       /* Handle case where value is not an array - make a single value an array of single length. */
       const workspaceValues = Array.isArray(workspace[key])
@@ -142,7 +143,6 @@ function buildStudySummary(workspaces) {
           setOfValues.add(workspaceValue);
         }
       });
-      setOfValuesBySummaryKey.set(key, setOfValues);
     }
   }
 

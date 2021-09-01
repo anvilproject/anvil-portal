@@ -1,3 +1,4 @@
+/* TODO review type. */
 interface ILocationState {
   locationHistory: string;
   scrollX: number;

@@ -50,7 +50,11 @@ function DashboardStudyTable(props: DashboardStudyTableProps): JSX.Element {
         This study has been divided into the following workspaces by consent
         codes and optionally the originating laboratory.
       </p>
-      <DashboardTable tableHeaders={tableHeaders} tableRows={studyWorkspaces} />
+      <DashboardTable
+        dataset="anvil"
+        tableHeaders={tableHeaders}
+        tableRows={studyWorkspaces}
+      />
     </div>
   );
 }

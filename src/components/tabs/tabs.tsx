@@ -26,7 +26,7 @@ interface TabsProps {
 
 function Tabs(props: TabsProps): JSX.Element | null {
   const { tabs } = props;
-  const location = useLocation() as ILocation;
+  const location = useLocation() as ILocation; /* TODO review type. */
   const tabsRef = useRef<HTMLDivElement>(null);
   const { state } = location || {};
   const { scrollX } = state || 0;
