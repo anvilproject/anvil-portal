@@ -78,7 +78,7 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.0",
     "sockjs-client": "^1.5.1",
-    "type-fest": "^0.13.1",
+    "type-fest": "^2.1.0",
     "typescript": "^3.9.7",
     "utf-8-validate": "^5.0.5",
     "webpack-plugin-serve": "^1.4.1"
