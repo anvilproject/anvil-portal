@@ -15,7 +15,7 @@ This section lists selected articles from the Terra documentation to help you ge
 
 - [Navigating the Terra user interface](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra) - An overview of the Terra user interface covering how to manage your profile, setup billing, manage groups, access, clone and share workspaces, access tools, data and curated workspaces.
 
-- [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains) - Because research is frequently collaborative, you need to be able to keep sensitive genomic data secure, but still easy to share. Terra was designed to help you balance these competing requirement
+- [Data privacy and access](https://support.terra.bio/hc/en-us/articles/360026775691-Managing-data-privacy-and-access-with-Authorization-Domains) - Because research is frequently collaborative, you need to be able to keep sensitive genomic data secure, but still easy to share. Terra was designed to help you balance these competing requirements.
 
 
 
