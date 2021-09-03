@@ -37,4 +37,4 @@ In general, while it’s free to upload data to the Cloud, you will incur costs 
 
 - [Controlling Cloud costs - sample use cases](https://support.terra.bio/hc/en-us/articles/360029772212-Controlling-Cloud-costs-sample-use-cases) - This article examines some uses cases and provides a framework for their costs. Specific costs will vary based on software versions, data sizes, storage and access locations. 
 
-- [How much did a workflow cost?](https://support.terra.bio/hc/en-us/articles/360037862771-How-much-did-a-workflow-cost) - Executing jobs on the cloud can be frightening when you don't know how much you're spending. This article explains ways to view the cost of an executed workflow to give you the peace of mind that you're not going over a projected goal.. 
+- [How much did a workflow cost?](https://support.terra.bio/hc/en-us/articles/360037862771-How-much-did-a-workflow-cost) - Executing jobs on the cloud can be frightening when you don't know how much you're spending. This article explains ways to view the cost of an executed workflow to give you the peace of mind that you're not going over a projected goal. 
