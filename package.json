@@ -34,7 +34,7 @@
     "gatsby-transformer-remark": "^2.16.0",
     "gatsby-transformer-sharp": "^2.12.1",
     "gatsby-transformer-yaml": "^2.11.0",
-    "js-cookie": "^2.2.1",
+    "js-cookie": "^3.0.1",
     "lunr": "^2.3.9",
     "node-fetch": "^2.6.1",
     "prismjs": "^1.24.1",
