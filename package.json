@@ -55,7 +55,7 @@
     "@types/react-dom": "^16.9.14",
     "@types/react-helmet": "^5.0.17",
     "@types/react-transition-group": "^4.4.2",
-    "@types/webpack": "^4.41.30",
+    "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "bufferutil": "^4.0.3",
