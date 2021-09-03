@@ -72,7 +72,7 @@ Terra workspaces support interactive analysis with Jupyter notebooks, Bioconduct
 
 In general, to perform an analysis in a workspace,  you set up the data and workflows you require and then launch a cloud environment to execute the analysis over the data and write out results to the workspace storage bucket.
 
-You may start with a blank workspace, but typically you will start by cloning a workspace containing the data or analysis you require
+You may start with a blank workspace, but typically you will start by cloning a workspace containing the data or analysis you require.
 
 ### Workspace Types
 
@@ -100,10 +100,9 @@ A Terra workspace consists of:
 1. **Reference Data** - for holding links to a reference genome or other reference data such as hg38.
 1. **Workspace Data** - for holding additional key-value data pairs used for configuring the workspace.
 1. **Cloud Environments** -  for executing the workspace’s interactive analysis or workflows. Cloud environments may consist of a single machine or cluster of machines and be configured with various amounts of RAM and persistent disk.  Cloud environments may be in a running or stopped state. Note that even in the stopped state, cloud environments may continue to incur charges, for example, for persistent disk space allocated.
-   .
 1. **A Terra Billing Project** - for specifying the Google Cloud Billing Account charged for GCP cloud compute costs incurred by the workspace. When Terra Billing Projects are created, they are linked to a Google Cloud Billing Account. When a workspace is created, it is linked with a Terra Billing Project, and thereby to a Google Cloud Billing Account.
 
-1. **Permissions**  for controlling who can view, clone, update or share a workspace and who can launch cloud environments in the workspace
+1. **Permissions**  for controlling who can view, clone, update or share a workspace and who can launch cloud environments in the workspace.
 
 1. **Authorization Domains** - for controlling who can access a workspace’s data. When a workspace is created, it can be associated with zero or more authorization domains. Once a workspace is created its authorization domain’s can not be modified. When workspaces are cloned, the clone inherits all of the authorization domains on the original workspace. At the time of cloning, it is possible to add additional (but not remove)  authorization domains.  Members wishing to access the workspace’s data must be members of _all_ of the workspaces authorization domains.
 
@@ -114,7 +113,7 @@ Basic actions that can be performed on workspaces are:
 **Create** - Members of  Terra Billing Projects can create their own workspace from scratch and associate their Terra Billing Project with the workspace.
 
 
-**Clone** - Terra Billing Project Members can also clone an existing workspace.  Cloning a workspace copies its data and notebooks while possibly changing its Terra Billing Project or adding authorization domains.
+**Clone** - Terra Billing Project Members can also clone an existing workspace. Cloning a workspace copies its data and notebooks while possibly changing its Terra Billing Project or adding authorization domains.
 
 **Launch** - Users with “can-compute” permissions on a workspace can configure and launch cloud environments in the workspace to analyze the workspace’s data. Cloud costs for the launched environments will be passed through to the Google Billing Account associated with the workspace’s Terra Billing Project.
 
@@ -172,7 +171,7 @@ Performing the following workspace activities will incur costs on GCP that will 
 
 1. Uploading data to the workspace bucket - the upload network transfer or ingress is free however there will be a CGP fee for storing the data in the bucket over time.
 
-1. Launching a Cloud Environment - The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace”.
+1. Launching a Cloud Environment - The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace.”
 
 
 1. Storage for persistent disk associated with any running or paused cloud environments.
@@ -184,7 +183,7 @@ Performing the following workspace activities will incur costs on GCP that will 
 1. Downloading data from the workspace’s Cloud Storage bucket unless this bucket is configured to be “requester pays”. For requester pays buckets, users must select their own Terra Billing Project to pay for the GCP egress fees.
 
 
-<hero> See [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs) for more information about cloud costs and current GCP pricing. .</hero>
+<hero> See [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs) for more information about cloud costs and current GCP pricing. </hero>
 
 
 
@@ -209,7 +208,7 @@ To set up GCP billing as an individual the general process is:
 1. In Terra, create a Terra Billing Account and use it to create or clone workspaces and pay for any compute, storage, or egress fees.
 
 
-If you plan to share your Terra Billing Project or a workspace with others be sure you ( and they) have a basic understanding of cloud costs and how cloud costs flow through to the workspace‘s ( and not the user’s) Terra Billing Account.
+If you plan to share your Terra Billing Project or a workspace with others be sure you (and they) have a basic understanding of cloud costs and how cloud costs flow through to the workspace‘s (and not the user’s) Terra Billing Account.
 
 
 <hero> For additional information and detailed instructions for setting up billing as an individual see  [How to Set Up Billing in Terra](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra). </hero>
@@ -226,7 +225,7 @@ You will also want to deliberate in your planning about who can-share Terra Bill
 
 
 
-<hero> For additional information and approaches see [Setting Up Lab Billing Accounts](/learn/investigators/setting-up-lab-accounts) and [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs) </hero>
+<hero> For additional information and approaches see [Setting Up Lab Billing Accounts](/learn/investigators/setting-up-lab-accounts) and [Best practices for managing shared team costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs). </hero>
 
 ## Getting Help
 
