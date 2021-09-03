@@ -241,7 +241,7 @@
           navigationItems:
             - name: "Using Example Workspaces"
               file: "/learn/getting-started/using-example-workspaces"
-            - name: "Runing GATK on Terra"
+            - name: "Running GATK on Terra"
               file: "/learn/dockstore/running-gatk"
         - name: "Running Interactive Analyses"
           file: ""
