@@ -81,7 +81,7 @@ workflows:
           filters:
             branches:
               only:
-                - staging
+                - main
                 - ux-dev
           context: anvil-portal-staging
       - deploy:
@@ -90,7 +90,7 @@ workflows:
           filters:
             branches:
               only:
-                - staging
+                - main
                 - ux-dev
           context: anvil-portal-staging
   build-n-deploy-prod:
@@ -98,12 +98,12 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: prod
           context: anvil-portal-prod
       - deploy:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: prod
           context: anvil-portal-prod
