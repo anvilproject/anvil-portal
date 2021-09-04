@@ -53,13 +53,13 @@ To get your page added to the siteMap and deployed, please open a pull request f
 </figure>
 
 ####Getting Content Reviewed
-##### Creating a Pull Request Against Staging
-Once the file looks ok, submit a pull request against the staging branch, describing your changes and then request reviewers.
+##### Creating a Pull Request Against Main
+Once the file looks ok, submit a pull request against the `main` branch, describing your changes and then request reviewers.
 
 ##### PR Review Policy
 We will generally request 2 reviewers for any complex technical content, team consensus for any marketing/branding/value proposition issues and allow the site maintainers to make typo or grammar fixes without additional reviewers.
 
-> We use the **staging** branch of the  repository as the base for modifying the content.
+> We use the **main** branch of the  repository as the base for modifying the content.
 
 ###Contact Us
 Please feel free to reach out to us on the [AnVIL Gitter channel](https://gitter.im/anvil-project/Lobby) or email our [help desk](mailto:help@lists.anvilproject.org).

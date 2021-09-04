@@ -12,10 +12,10 @@ To edit a page:
 
 1. Find the page on the portal.
 1. Scroll to the bottom of the page and locate the "Improve this page" link there.
-1. Select the link which will take you the page's markdown file in github on the staging branch.
+1. Select the link which will take you the page's markdown file in github on the `main` branch.
 1. Edit the page using the github markdown editor.
 1. Preview the page using the github markdown editor.
-1. Submit a pull request to have your updates merged into the staging branch of the repository. 
+1. Submit a pull request to have your updates merged into the `main` branch of the repository. 
 
 <figure>
 <img src="../_images/improve-this-page.png" alt="Improve this page"/>
