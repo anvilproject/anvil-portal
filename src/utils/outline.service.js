@@ -21,7 +21,7 @@ export function filterHtmlAstByHeading(posts, docPath) {
 
   const slug = docPath.slice(1);
 
-  const page = posts.find(post => post.slug.slice(0, -3) === slug);
+  const page = posts.find((post) => post.slug.slice(0, -3) === slug);
 
   if (!page) {
     return;
@@ -35,13 +35,13 @@ export function filterHtmlAstByHeading(posts, docPath) {
     { children } = htmlAst;
 
   const headings = children.filter(
-    child => child.tagName === "h2" || child.tagName === "h3"
+    (child) => child.tagName === "h2" || child.tagName === "h3"
   );
 
   /* Only show outline if there are some <h2> or <h3> headings. */
   if (
     !headings.some(
-      heading => heading.tagName === "h2" || heading.tagName === "h3"
+      (heading) => heading.tagName === "h2" || heading.tagName === "h3"
     )
   ) {
     return;
@@ -64,7 +64,7 @@ export function getOutline(outline) {
   const anchor = `#${outline.properties.id}`;
   const depth = Number(outline.tagName.charAt(1));
   const label =
-    outline.children?.find(child => child.type === "text")?.value || "";
+    outline.children?.find((child) => child.type === "text")?.value || "";
 
   return { anchor: anchor, depth: depth, label: label };
 }

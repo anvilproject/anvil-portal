@@ -28,5 +28,5 @@ export const WorkspacesStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.edges.map(e => e.node);
+  return allMarkdownRemark.edges.map((e) => e.node);
 };

@@ -18,7 +18,7 @@ const sortDataByDuoTypes = function sortDataByDuoTypes(
   type0,
   type1
 ) {
-  return dashboardData.sort(function(data0, data1) {
+  return dashboardData.sort(function (data0, data1) {
     /* Sort by first specified type. */
     const firstSort = sortDataValues(data0, data1, type0);
 

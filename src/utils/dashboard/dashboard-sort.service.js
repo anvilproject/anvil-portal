@@ -12,7 +12,7 @@
  * @returns {*}
  */
 export function sortTerms(terms) {
-  return terms.sort(function(term0, term1) {
+  return terms.sort(function (term0, term1) {
     return compareDataValues(term0, term1);
   });
 }

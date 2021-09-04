@@ -32,7 +32,7 @@ function Tooltip(props) {
     refTooltip.current.removeAttribute("style");
   };
 
-  const showTooltip = e => {
+  const showTooltip = (e) => {
     const currentTarget = e.currentTarget;
     const tooltipPos = TooltipService.positionTooltip(
       currentTarget,
@@ -58,9 +58,9 @@ function Tooltip(props) {
           compStyles.tt
         )}
         onBlur={() => hideTooltip()}
-        onFocus={e => showTooltip(e)}
+        onFocus={(e) => showTooltip(e)}
         onMouseOut={() => hideTooltip()}
-        onMouseOver={e => showTooltip(e)}
+        onMouseOver={(e) => showTooltip(e)}
         role="presentation"
       >
         {children}

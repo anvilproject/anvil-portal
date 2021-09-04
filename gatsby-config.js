@@ -18,7 +18,7 @@ module.exports = {
     title: `The AnVIL`,
     description: `Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.`,
     author: `The AnVIL team`,
-    siteUrl: `https://anvilproject.org`
+    siteUrl: `https://anvilproject.org`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -38,8 +38,8 @@ module.exports = {
 
         // Specify optional GTM environment details.
         gtmAuth: gtmAuth,
-        gtmPreview: gtmEnvName
-      }
+        gtmPreview: gtmEnvName,
+      },
     },
     {
       resolve: `gatsby-plugin-favicon`,
@@ -54,9 +54,9 @@ module.exports = {
           favicons: true,
           firefox: true,
           yandex: false,
-          windows: false
-        }
-      }
+          windows: false,
+        },
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
@@ -64,8 +64,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -74,9 +74,9 @@ module.exports = {
           `/events/events-intro`,
           `/news/news-intro`,
           `/guides/content-guide/example-page`,
-          `/typography-test-page/typography-test-page`
-        ]
-      }
+          `/typography-test-page/typography-test-page`,
+        ],
+      },
     },
     // `gatsby-plugin-workspace-fields-report`,
     `gatsby-source-dashboard-anvil`,
@@ -86,22 +86,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: contentPath
-      }
+        path: contentPath,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `site-map`,
-        path: yamlPath
-      }
+        path: yamlPath,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `road-map`,
-        path: roadMapPath
-      }
+        path: roadMapPath,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -140,16 +140,16 @@ module.exports = {
                 "style-guide-typography-example",
                 "tools",
                 "warning",
-                "workspaces"
-              ]
-            }
+                "workspaces",
+              ],
+            },
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               // don't copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
-              ignoreFileExtensions: ["png", "jpg", "jpeg", "bmp", "tiff", "md"]
-            }
+              ignoreFileExtensions: ["png", "jpg", "jpeg", "bmp", "tiff", "md"],
+            },
           },
           {
             resolve: `gatsby-remark-embed-video`,
@@ -161,11 +161,11 @@ module.exports = {
               urlOverrides: [
                 {
                   id: "youtube",
-                  embedURL: videoId =>
-                    `https://www.youtube.com/embed/${videoId}?enablejsapi=1`
-                }
-              ]
-            }
+                  embedURL: (videoId) =>
+                    `https://www.youtube.com/embed/${videoId}?enablejsapi=1`,
+                },
+              ],
+            },
           },
           `gatsby-remark-external-links`,
           `gatsby-remark-responsive-iframe`,
@@ -174,21 +174,21 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 1000
-            }
+              maxWidth: 1000,
+            },
           },
           `gatsby-remark-images-medium-zoom`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-"
-            }
+              classPrefix: "language-",
+            },
           },
-          `gatsby-remark-autointernallink-headers`
-        ]
-      }
+          `gatsby-remark-autointernallink-headers`,
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-yaml`
-  ]
+    `gatsby-transformer-yaml`,
+  ],
 };

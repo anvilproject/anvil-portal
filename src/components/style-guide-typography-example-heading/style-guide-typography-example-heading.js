@@ -17,7 +17,7 @@ const headingLabels = {
   h2: "Heading Two",
   h3: "Heading Three",
   h4: "Heading Four",
-  h5: "Heading Five"
+  h5: "Heading Five",
 };
 
 function StyleGuideTypographyExampleHeading(props) {
@@ -25,7 +25,7 @@ function StyleGuideTypographyExampleHeading(props) {
   const headingRef = useRef(null);
   const [styles, setStyles] = useState({
     marginBottom: "0",
-    paddingBottom: "0"
+    paddingBottom: "0",
   });
   const { marginBottom, paddingBottom } = styles || {};
   const heading = headingLabels[example];
@@ -50,10 +50,10 @@ function StyleGuideTypographyExampleHeading(props) {
       const headingStyles = window.getComputedStyle(headingRef.current);
 
       /* Set the styles. */
-      setStyles(styles => ({
+      setStyles((styles) => ({
         ...styles,
         marginBottom: headingStyles.marginBottom,
-        paddingBottom: headingStyles.paddingBottom
+        paddingBottom: headingStyles.paddingBottom,
       }));
     }
   }, []);

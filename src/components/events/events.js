@@ -44,7 +44,7 @@ class Events extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { featured, filter, past } = props;
   const featuredOnly = featured || featured === "";
   const pastEvent = past === "";

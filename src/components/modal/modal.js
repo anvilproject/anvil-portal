@@ -25,7 +25,7 @@ function Modal(props) {
     <>
       <div
         className={classNames(compStyles.modalOverlay, {
-          [compStyles.show]: showDrawer
+          [compStyles.show]: showDrawer,
         })}
         onClick={() => onClose()}
         role={"presentation"}
@@ -35,7 +35,7 @@ function Modal(props) {
   );
 
   const onHandleKeyDown = useCallback(
-    e => {
+    (e) => {
       if (e.key === "Escape") {
         onClose();
       }

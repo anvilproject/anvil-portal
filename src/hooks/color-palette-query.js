@@ -16,5 +16,5 @@ export const ColorPaletteStaticQuery = () => {
       }
     `
   );
-  return allColorPaletteYaml.edges.map(n => n.node);
+  return allColorPaletteYaml.edges.map((n) => n.node);
 };

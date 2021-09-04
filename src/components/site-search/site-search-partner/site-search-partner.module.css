@@ -25,7 +25,7 @@
   content: "";
   display: block;
   position: absolute;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
   width: 100%;
 }
 

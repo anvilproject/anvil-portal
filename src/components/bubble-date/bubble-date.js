@@ -20,7 +20,7 @@ class BubbleDate extends React.Component {
     return (
       <div
         className={classNames(compStyles.bubbleDate, {
-          [compStyles.disabled]: disabled
+          [compStyles.disabled]: disabled,
         })}
       >
         <div className={compStyles.bubbleDateText}>

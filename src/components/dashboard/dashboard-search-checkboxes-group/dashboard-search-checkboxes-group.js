@@ -20,9 +20,10 @@ function DashboardSearchCheckboxesGroup(props) {
   const { countLabel, facet, setOfSummaryKeyTerms } = props,
     { name, terms } = facet || {};
   const { onOpenModal } = useContext(ContextModal);
-  const snippetCount = DashboardSearchService.getDashboardCheckboxMaxDisplayCount(
-    setOfSummaryKeyTerms
-  );
+  const snippetCount =
+    DashboardSearchService.getDashboardCheckboxMaxDisplayCount(
+      setOfSummaryKeyTerms
+    );
   const moreCount = DashboardSearchService.getDashboardCheckboxMoreCount(
     terms,
     snippetCount

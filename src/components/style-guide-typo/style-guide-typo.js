@@ -26,7 +26,7 @@ function StyleGuideTypo(props) {
     lineHeight: "",
     margin: "",
     padding: "",
-    showBackgroundColor: false
+    showBackgroundColor: false,
   });
   const {
     backgroundColor,
@@ -37,7 +37,7 @@ function StyleGuideTypo(props) {
     lineHeight,
     margin,
     padding,
-    showBackgroundColor
+    showBackgroundColor,
   } = styles || {};
 
   /* useEffect - componentDidMount. */
@@ -48,7 +48,7 @@ function StyleGuideTypo(props) {
       const typoStyles = window.getComputedStyle(typoRef.current);
 
       /* Set the styles. */
-      setStyles(styles => ({
+      setStyles((styles) => ({
         ...styles,
         backgroundColor: typoStyles.backgroundColor,
         color: typoStyles.color,
@@ -58,7 +58,7 @@ function StyleGuideTypo(props) {
         lineHeight: typoStyles.lineHeight,
         margin: typoStyles.margin,
         padding: typoStyles.padding,
-        showBackgroundColor: typoStyles.backgroundColor !== "rgba(0, 0, 0, 0)"
+        showBackgroundColor: typoStyles.backgroundColor !== "rgba(0, 0, 0, 0)",
       }));
     }
   }, []);

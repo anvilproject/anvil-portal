@@ -17,5 +17,5 @@ export const GAEntityType = {
   STUDY: "Study",
   TOOL: "Tool",
   WORKSPACE: "Workspace",
-  UNSPECIFIED: "Unspecified"
+  UNSPECIFIED: "Unspecified",
 };

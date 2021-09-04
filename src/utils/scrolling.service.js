@@ -37,7 +37,7 @@ export function calculateElementIdsByAnchorFromTop(
   }
 
   // Grab each <h1> to <h3> anchor id and its position from the top of the page.
-  contentAnchors.forEach(pageAnchor => {
+  contentAnchors.forEach((pageAnchor) => {
     // Only grab <h1> to <h3>
     if (Number(pageAnchor.tagName.charAt(1)) <= 3) {
       elementIdsByAnchorFromTop.set(pageAnchor.offsetTop, pageAnchor.id);

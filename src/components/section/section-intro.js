@@ -24,14 +24,8 @@ let classNames = require("classnames");
 
 class SectionIntro extends React.Component {
   render() {
-    const {
-        end,
-        sectionIntro,
-        sectionTitle,
-        start,
-        stretch,
-        wrap
-      } = this.props,
+    const { end, sectionIntro, sectionTitle, start, stretch, wrap } =
+        this.props,
       { frontmatter, htmlAst } = sectionIntro || {},
       { title } = frontmatter || {},
       intro = title || sectionTitle;
@@ -57,7 +51,7 @@ class SectionIntro extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { fileName } = props;
   const sectionIntro = HomeService.findSectionIntro(
     fileName,

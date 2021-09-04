@@ -64,7 +64,6 @@ html {
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
-
   html {
     font-size: 100%; /* 16px. */
   }

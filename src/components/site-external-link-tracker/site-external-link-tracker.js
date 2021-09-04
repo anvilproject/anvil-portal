@@ -20,7 +20,7 @@ function SiteExternalLinkTracker(props) {
   const { children, pageTitle, refSite } = props;
 
   const onHandleTrackingExternalLinks = useCallback(
-    e => {
+    (e) => {
       const target = e.target;
 
       if (!DOMService.isAnchor(target)) {
@@ -49,12 +49,12 @@ function SiteExternalLinkTracker(props) {
   useEffect(() => {
     const siteEl = refSite.current;
     siteEl.addEventListener("click", onHandleTrackingExternalLinks, {
-      passive: true
+      passive: true,
     });
 
     return () => {
       siteEl.removeEventListener("click", onHandleTrackingExternalLinks, {
-        passive: true
+        passive: true,
       });
     };
   }, [onHandleTrackingExternalLinks, refSite]);

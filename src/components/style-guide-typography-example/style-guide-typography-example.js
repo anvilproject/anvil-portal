@@ -20,7 +20,7 @@ import compStyles from "./style-guide-typography-example.module.css";
 const examples = ["h1", "h2", "h3", "h4", "h5", "p"];
 
 function StyleGuideTypographyExample() {
-  const Example = props => {
+  const Example = (props) => {
     const { example } = props;
 
     return (

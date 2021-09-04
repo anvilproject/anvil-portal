@@ -18,5 +18,5 @@ export const StatsStaticQuery = () => {
       }
     `
   );
-  return allStat.edges.map(n => n.node)[0];
+  return allStat.edges.map((n) => n.node)[0];
 };

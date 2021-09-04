@@ -15,9 +15,8 @@ import * as DashboardSearchService from "../../../utils/dashboard/dashboard-sear
 
 function DashboardSearchCheckboxesPlaceholder(props) {
   const { facetCount, loading } = props;
-  const facetCountUneven = DashboardSearchService.isDashboardCheckboxesUneven(
-    facetCount
-  );
+  const facetCountUneven =
+    DashboardSearchService.isDashboardCheckboxesUneven(facetCount);
   const showPlaceholder = !loading && facetCountUneven;
 
   return showPlaceholder ? <DashboardSearchPanel placeholder /> : null;

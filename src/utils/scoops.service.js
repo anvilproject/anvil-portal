@@ -28,7 +28,7 @@ export function filterScoopsByDate(scoops, past) {
 
   const today = new Date();
 
-  const scoopsByDate = scoops.filter(scoop => {
+  const scoopsByDate = scoops.filter((scoop) => {
     const { frontmatter } = scoop,
       { dateStart } = frontmatter;
 
@@ -75,9 +75,9 @@ export function filterScoopsByFrontmatter(scoops, filterStr) {
   const filterTerms = JSON.parse(filterStr);
   const filterNodes = Object.keys(filterTerms);
 
-  return scoops.filter(scoop => {
+  return scoops.filter((scoop) => {
     return filterNodes.every(
-      node => filterTerms[node] === scoop.frontmatter[node]
+      (node) => filterTerms[node] === scoop.frontmatter[node]
     );
   });
 }

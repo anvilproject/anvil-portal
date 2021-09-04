@@ -28,7 +28,7 @@ const searchFacets = [
   "dataTypes",
   "studyDesigns",
   "consentShortName",
-  "accessType"
+  "accessType",
 ]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
 const tableHeadersEntities = [
@@ -43,14 +43,14 @@ const tableHeadersEntities = [
   "dataTypes",
   "samples",
   "subjects",
-  "size"
+  "size",
 ];
 const tableHeadersSummary = [
   "consortium",
   "cohorts",
   "samples",
   "subjects",
-  "size"
+  "size",
 ];
 
 function DashboardAnVIL() {

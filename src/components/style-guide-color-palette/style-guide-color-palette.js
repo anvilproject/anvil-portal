@@ -22,7 +22,7 @@ const classNames = require("classnames");
 function StyleGuideColorPalette() {
   const colors = ColorPaletteStaticQuery();
 
-  const Swatch = props => {
+  const Swatch = (props) => {
     const { hex } = props;
 
     return (
@@ -30,7 +30,7 @@ function StyleGuideColorPalette() {
     );
   };
 
-  const Palette = props => {
+  const Palette = (props) => {
     const { palette } = props,
       { hex, name, variable } = palette;
 

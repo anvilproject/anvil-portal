@@ -79,8 +79,8 @@ function Markdown(props) {
       "style-guide-typography-example": StyleGuideTypographyExample,
       tools: Tools,
       warning: Warning,
-      workspaces: Workspaces
-    }
+      workspaces: Workspaces,
+    },
   }).Compiler;
   const identifier = Date.now();
   const markdownClassNames = classNames(className, compStyles.content);
@@ -109,11 +109,11 @@ function Markdown(props) {
     );
 
     /* Add class name. */
-    imagesWithZoomEls.map(imageEl =>
+    imagesWithZoomEls.map((imageEl) =>
       imageEl.classList.add(compStyles.zoomIcon)
     );
-    prismsEls.map(prismEl => prismEl.classList.add(compStyles.codeBlock));
-    videosEls.map(videoEl => videoEl.classList.add(compStyles.video));
+    prismsEls.map((prismEl) => prismEl.classList.add(compStyles.codeBlock));
+    videosEls.map((videoEl) => videoEl.classList.add(compStyles.video));
   }, []);
 
   /**
@@ -127,15 +127,15 @@ function Markdown(props) {
       /* Grab only table elements that are direct descendants of the markdown. */
       /* By filtering direct descendants, the dashboard tables are excluded from this process. */
       const tableNodes = [...markdownNodes].filter(
-        node => node.nodeName === "TABLE"
+        (node) => node.nodeName === "TABLE"
       );
 
       /* For each table node, wrap within a container element. */
-      tableNodes.forEach(tableEl => insertTableOverflowNode(tableEl));
+      tableNodes.forEach((tableEl) => insertTableOverflowNode(tableEl));
     }
   }, []);
 
-  const insertTableOverflowNode = tableEl => {
+  const insertTableOverflowNode = (tableEl) => {
     /* Create the container with "tableContainer" class. */
     const containerEl = document.createElement("div");
     containerEl.classList.add(compStyles.tableContainer);

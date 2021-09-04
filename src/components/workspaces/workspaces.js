@@ -33,7 +33,7 @@ class Workspaces extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { featured } = props;
   const workspaces = FeaturedService.filterFeaturedPosts(
     featured,

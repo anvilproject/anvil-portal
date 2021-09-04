@@ -18,7 +18,8 @@
 }
 
 /* Label, value. */
-.label, .value {
+.label,
+.value {
   display: block;
 }
 

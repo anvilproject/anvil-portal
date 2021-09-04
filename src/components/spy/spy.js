@@ -49,10 +49,11 @@ class Spy extends React.Component {
   }
 
   getPageAnchors = () => {
-    this.elementIdsByAnchorFromTop = ScrollingService.calculateElementIdsByAnchorFromTop(
-      this.contentAnchors,
-      this.elementIdsByAnchorFromTop
-    );
+    this.elementIdsByAnchorFromTop =
+      ScrollingService.calculateElementIdsByAnchorFromTop(
+        this.contentAnchors,
+        this.elementIdsByAnchorFromTop
+      );
   };
 
   handleHashChange = () => {

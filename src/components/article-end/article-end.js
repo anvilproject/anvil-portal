@@ -30,6 +30,6 @@ class ArticleEnd extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   return <ArticleEnd {...props} />;
 };

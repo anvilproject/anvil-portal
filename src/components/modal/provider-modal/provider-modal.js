@@ -18,29 +18,29 @@ function ProviderModal(props) {
   const [modal, setModal] = useState({
     modalProps: {},
     showDrawer: false,
-    showModal: false
+    showModal: false,
   });
 
   const onCloseDrawer = useCallback(() => {
     /* Close modal drawer before the modal is removed from portal. */
     /* Required for animation of modal drawer closing. */
-    setModal(modal => ({ ...modal, showDrawer: false }));
+    setModal((modal) => ({ ...modal, showDrawer: false }));
   }, []);
 
   const onCloseModal = useCallback(() => {
     /* Close modal. Modal is removed from portal. */
     onSetSiteScrollable(true);
-    setModal(modal => ({ ...modal, modalProps: {}, showModal: false }));
+    setModal((modal) => ({ ...modal, modalProps: {}, showModal: false }));
   }, [onSetSiteScrollable]);
 
   const onOpenModal = useCallback(
-    mProps => {
+    (mProps) => {
       /* Set state. */
-      setModal(modal => ({
+      setModal((modal) => ({
         ...modal,
         modalProps: mProps,
         showDrawer: true,
-        showModal: true
+        showModal: true,
       }));
       onSetSiteScrollable(false);
     },

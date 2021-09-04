@@ -23,7 +23,7 @@ class RoadMap extends React.Component {
    * @param quarter
    * @returns {boolean}
    */
-  showQuarter = quarter => {
+  showQuarter = (quarter) => {
     const { display } = quarter;
 
     if (!display) {
@@ -41,7 +41,7 @@ class RoadMap extends React.Component {
   render() {
     const { roadMap } = this.props;
 
-    const Bubble = props => {
+    const Bubble = (props) => {
       const { className, item } = props,
         { link, name } = item;
 
@@ -66,7 +66,7 @@ class RoadMap extends React.Component {
       );
     };
 
-    const Quarter = props => {
+    const Quarter = (props) => {
       const { items } = props,
         { quarter, display } = items,
         { tools, platforms } = display;

@@ -15,5 +15,5 @@ export const FacetSelectorNameDisplay = {
   focuses: "Focus / Disease",
   platforms: "Platform",
   search: "Text Search",
-  studyDesigns: "Study Design"
+  studyDesigns: "Study Design",
 };

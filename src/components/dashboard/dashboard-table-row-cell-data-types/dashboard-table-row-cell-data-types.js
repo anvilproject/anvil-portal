@@ -22,11 +22,10 @@ class DashboardTableRowCellDataTypes extends React.Component {
     const last = dataTypes.length - 1;
     const showDataTypes = !!children;
 
-    const DataType = props => {
+    const DataType = (props) => {
       const { dataType, last } = props;
-      const label = DashboardTableService.switchDataTypeToTooltipLabel(
-        dataType
-      );
+      const label =
+        DashboardTableService.switchDataTypeToTooltipLabel(dataType);
       const displayValue = last ? dataType : `${dataType}; `;
 
       return label ? (

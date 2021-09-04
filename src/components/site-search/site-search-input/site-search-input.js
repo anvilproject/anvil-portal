@@ -17,12 +17,8 @@ import SiteSearchInputIcon from "../site-search-input-icon/site-search-input-ico
 import compStyles from "./site-search-input.module.css";
 
 function SiteSearchInput() {
-  const {
-    inputValue,
-    onSetInputValue,
-    onSetSiteSearchBarOpen,
-    searchBarOpen,
-  } = useContext(ContextSiteSearch);
+  const { inputValue, onSetInputValue, onSetSiteSearchBarOpen, searchBarOpen } =
+    useContext(ContextSiteSearch);
   const refInput = useRef(null);
   const showClear = !!inputValue;
 

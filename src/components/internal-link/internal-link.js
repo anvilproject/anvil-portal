@@ -18,14 +18,14 @@ const classNames = require("classnames");
 function InternalLink(props) {
   const { anchor, relative } = props;
 
-  const onAnchorClicked = anchor => {
+  const onAnchorClicked = (anchor) => {
     navigate(`#${anchor}`);
   };
 
   return (
     <button
       className={classNames(compStyles.anchor, {
-        [compStyles.anchorRelative]: relative
+        [compStyles.anchorRelative]: relative,
       })}
       onClick={() => onAnchorClicked(anchor)}
       aria-label={anchor}

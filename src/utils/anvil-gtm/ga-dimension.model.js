@@ -13,5 +13,5 @@ export const GADimension = {
   PREVIOUS_QUERY: "previousQuery",
   QUERY: "query",
   SOURCE_URL: "sourceUrl",
-  TERM: "term"
+  TERM: "term",
 };

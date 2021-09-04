@@ -44,7 +44,7 @@ class Tools extends React.Component {
     this.removeAnchorInteractions();
   }
 
-  isValidUrl = link => {
+  isValidUrl = (link) => {
     try {
       new URL(link);
       return true;
@@ -67,19 +67,19 @@ class Tools extends React.Component {
   };
 
   removeAnchorInteractions = () => {
-    anchorEls.forEach(anchor => {
+    anchorEls.forEach((anchor) => {
       anchor.removeEventListener("click", this.onClickAnchor());
     });
   };
 
   setAnchorInteractions = () => {
-    anchorEls.forEach(anchor => {
+    anchorEls.forEach((anchor) => {
       anchor.addEventListener("click", this.onClickAnchor());
     });
   };
 
-  onClickAnchor = e => {
-    return e => {
+  onClickAnchor = (e) => {
+    return (e) => {
       const target = e.target;
       if (!DOMService.isAnchor(target)) {
         return;
@@ -98,7 +98,7 @@ class Tools extends React.Component {
   render() {
     const { tools } = this.props;
 
-    const Tool = props => {
+    const Tool = (props) => {
       const { tool } = props,
         { frontmatter, htmlAst } = tool,
         { logo, title, url } = frontmatter || {},
@@ -137,7 +137,7 @@ class Tools extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const tools = CollectionService.filterTools(props, ToolsStaticQuery());
 
   return tools ? <Tools tools={tools} /> : null;

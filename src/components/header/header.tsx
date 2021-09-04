@@ -38,9 +38,8 @@ function Header(props: HeaderProps): JSX.Element {
   const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch);
   const socials = HeaderService.getHeaderSocials(ncpi);
   const navBarMenuItems: IMenuItem[] = HeaderService.getNavBarMenuItems(ncpi);
-  const navSideBarMenuItems: IMenuItem[] = HeaderService.getNavSideBarMenuItems(
-    ncpi
-  );
+  const navSideBarMenuItems: IMenuItem[] =
+    HeaderService.getNavSideBarMenuItems(ncpi);
   const { menuPath, tabPath } = navigation || {};
 
   return (

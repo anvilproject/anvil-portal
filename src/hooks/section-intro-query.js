@@ -22,5 +22,5 @@ export const SectionIntroStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.edges.map(e => e.node);
+  return allMarkdownRemark.edges.map((e) => e.node);
 };

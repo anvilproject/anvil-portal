@@ -6,7 +6,8 @@
  */
 
 /* Project id. */
-.projectId a, .projectId a:hover {
+.projectId a,
+.projectId a:hover {
   border-bottom: none; /* Removes markdown link underline. */
   color: var(--primary);
 }

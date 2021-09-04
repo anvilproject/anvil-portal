@@ -28,7 +28,7 @@ class ListItemContent extends React.Component {
    */
   componentDidMount() {
     this.contentEl.current.addEventListener("click", this.onClick, {
-      passive: false
+      passive: false,
     });
   }
 
@@ -36,7 +36,7 @@ class ListItemContent extends React.Component {
    * Prevent propagation on anchors within the list item content. If we let the event bubble here, then any link action
    * on the parent list item container will be visit instead of the link that was clicked on in the content.
    */
-  onClick = e => {
+  onClick = (e) => {
     if (DOMService.isAnchor(e.target)) {
       e.stopPropagation();
     }

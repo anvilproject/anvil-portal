@@ -21,7 +21,7 @@ function DashboardSearchSelectedFacet(props) {
     first,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermsByFacet
+    selectedTermsByFacet,
   } = props;
   const facetDisplay = FacetSelectorNameDisplay[facet];
   const terms = selectedTermsByFacet.get(facet);

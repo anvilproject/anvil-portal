@@ -22,7 +22,7 @@ function SiteSearchInputClear(props) {
   return (
     <span
       className={classNames(compStyles.clear, {
-        [compStyles.active]: searchBarOpen && showClear
+        [compStyles.active]: searchBarOpen && showClear,
       })}
       onClick={() => onInputClear()}
       role={"presentation"}

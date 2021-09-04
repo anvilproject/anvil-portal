@@ -10,5 +10,5 @@ export const GCSEParameter = {
   KEY: "key",
   QUERY: "q",
   SAFE: "safe",
-  START: "start"
+  START: "start",
 };
