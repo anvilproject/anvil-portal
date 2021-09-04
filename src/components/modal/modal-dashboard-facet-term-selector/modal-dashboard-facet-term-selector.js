@@ -28,7 +28,7 @@ function ModalDashboardFacetTermSelector() {
   const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
     { facetName } = modalProps || {};
-  const facet = facets.find(facet => facet.name === facetName);
+  const facet = facets.find((facet) => facet.name === facetName);
   const terms = facet?.terms;
 
   return (

@@ -25,7 +25,7 @@ const ContextDashboard = React.createContext({
   onHandleClearAll: () => {},
   onHandleClearFacet: () => {},
   onHandleClearTerm: () => {},
-  onHandleUpdateFacet: () => {}
+  onHandleUpdateFacet: () => {},
 });
 
 export default ContextDashboard;

@@ -35,5 +35,5 @@ export const CarouselStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.edges.map(e => e.node);
+  return allMarkdownRemark.edges.map((e) => e.node);
 };

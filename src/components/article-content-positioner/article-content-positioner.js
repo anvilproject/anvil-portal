@@ -17,7 +17,7 @@ const classNames = require("classnames");
 function ArticleContentPositioner(props) {
   const { children, left } = props;
   const classNamesContentPositioner = classNames(compStyles.contentPositioner, {
-    [compStyles.left]: left
+    [compStyles.left]: left,
   });
 
   return <div className={classNamesContentPositioner}>{children}</div>;

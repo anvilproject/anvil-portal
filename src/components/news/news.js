@@ -33,7 +33,7 @@ class News extends React.Component {
   }
 }
 
-export default props => {
+export default (props) => {
   const { featured } = props;
   const featuredOnly = featured || featured === "";
   const newsScoops = ScoopNewsStaticQuery();

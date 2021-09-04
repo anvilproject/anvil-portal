@@ -20,7 +20,7 @@ function DashboardSearchSelectedControlBar() {
     selectedTermsByFacet,
     onHandleClearAll,
     onHandleClearFacet,
-    onHandleClearTerm
+    onHandleClearTerm,
   } = useContext(ContextDashboard);
   const showController = selectedTermsByFacet.size > 0;
 

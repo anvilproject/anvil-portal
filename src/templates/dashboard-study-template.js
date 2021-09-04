@@ -45,7 +45,7 @@ export default ({ data, location }) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     sitePage(context: { id: { eq: $id } }) {
       context {
         id

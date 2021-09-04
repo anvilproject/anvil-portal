@@ -41,7 +41,7 @@ class Platforms extends React.Component {
     this.removeAnchorInteractions();
   }
 
-  isValidUrl = link => {
+  isValidUrl = (link) => {
     try {
       new URL(link);
       return true;
@@ -64,19 +64,19 @@ class Platforms extends React.Component {
   };
 
   removeAnchorInteractions = () => {
-    anchorEls.forEach(anchor => {
+    anchorEls.forEach((anchor) => {
       anchor.removeEventListener("click", this.onClickAnchor());
     });
   };
 
   setAnchorInteractions = () => {
-    anchorEls.forEach(anchor => {
+    anchorEls.forEach((anchor) => {
       anchor.addEventListener("click", this.onClickAnchor());
     });
   };
 
-  onClickAnchor = e => {
-    return e => {
+  onClickAnchor = (e) => {
+    return (e) => {
       const target = e.target;
       if (!DOMService.isAnchor(target)) {
         return;
@@ -95,7 +95,7 @@ class Platforms extends React.Component {
   render() {
     const { platforms } = this.props;
 
-    const Platform = props => {
+    const Platform = (props) => {
       const { platform } = props,
         { frontmatter, htmlAst } = platform,
         { logo, title, url } = frontmatter || {},

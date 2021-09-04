@@ -14,7 +14,7 @@ const path = require("path");
 const {
   getIndexFieldGapNumber,
   getIndexFieldTypeOfArray,
-  getIndexFieldTypeOfString
+  getIndexFieldTypeOfString,
 } = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
 
 /**
@@ -26,7 +26,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
   studies
 ) {
   /* Add the studies to the search index. */
-  const dashboardIndex = lunr(function() {
+  const dashboardIndex = lunr(function () {
     this.ref("dbGapIdAccession");
     this.field("consentCodes");
     this.field("dataTypes");
@@ -42,7 +42,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
     /* Special character replacement string options. */
     const inputSubStr = " ";
 
-    studies.forEach(study => {
+    studies.forEach((study) => {
       const consentCodes = getIndexFieldTypeOfArray(study.consentCodes);
       const dataTypes = getIndexFieldTypeOfArray(study.dataTypes);
       const dbGapIdAccession = study.dbGapIdAccession;
@@ -60,7 +60,7 @@ const generateNCPIDashboardIndex = function generateNCPIDashboardIndex(
         focuses: focuses,
         platforms: platforms,
         studyDesigns: studyDesigns,
-        studyName: studyName
+        studyName: studyName,
       });
     });
   });

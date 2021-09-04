@@ -30,7 +30,7 @@ const parseRows = function parseRows(
   /* Parse each content row. */
   return contentRows
     .slice(1)
-    .map(contentRow =>
+    .map((contentRow) =>
       parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE)
     );
 };
@@ -62,10 +62,7 @@ const splitContentToContentRows = function splitContentToContentRows(content) {
   /* Split the file content into rows. */
   /* Each element of the array represents a row (as a string value) from the file. */
   /* e.g. [first_line, second_line, third_line, and so on...]. */
-  return content
-    .toString()
-    .trim()
-    .split(/\r?\n/);
+  return content.toString().trim().split(/\r?\n/);
 };
 
 /**
@@ -95,11 +92,7 @@ const writeFile = async function writeFile(file, content, options = null) {
  * @returns {Array}
  */
 function buildFileHeaders(contentRows, delimiter) {
-  return contentRows
-    .slice(0, 1)
-    .toString()
-    .toLowerCase()
-    .split(delimiter);
+  return contentRows.slice(0, 1).toString().toLowerCase().split(delimiter);
 }
 
 /**

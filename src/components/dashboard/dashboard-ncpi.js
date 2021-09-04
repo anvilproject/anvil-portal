@@ -27,7 +27,7 @@ const searchFacets = [
   "focuses",
   "dataTypes",
   "studyDesigns",
-  "consentCodes"
+  "consentCodes",
 ]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
 const summaryKey = "platforms";
 const tableHeadersEntities = [
@@ -38,7 +38,7 @@ const tableHeadersEntities = [
   "dataTypes",
   "studyDesigns",
   "consentCodes",
-  "subjectsTotal"
+  "subjectsTotal",
 ];
 const tableHeadersSummary = ["platforms", "studies", "subjectsTotal"];
 

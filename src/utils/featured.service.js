@@ -17,5 +17,5 @@ export function filterFeaturedPosts(featured, posts) {
     return posts;
   }
 
-  return posts.filter(post => post.frontmatter.featured);
+  return posts.filter((post) => post.frontmatter.featured);
 }

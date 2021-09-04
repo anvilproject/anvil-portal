@@ -24,5 +24,5 @@ export const RoadMapStaticQuery = () => {
       }
     `
   );
-  return allReleaseRoadmapYaml.edges.map(n => n.node);
+  return allReleaseRoadmapYaml.edges.map((n) => n.node);
 };

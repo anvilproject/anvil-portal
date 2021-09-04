@@ -19,7 +19,7 @@ import * as DashboardTableService from "./dashboard-table.service";
  */
 export function getDashboardSnapshotSummary(summaries, summaryKeys) {
   if (summaries && summaries.length > 0) {
-    const totalRow = summaries.slice(-1).find(t => t);
+    const totalRow = summaries.slice(-1).find((t) => t);
     const summaryRows = summaries.slice(0, -1);
 
     return summaryKeys.map((key, k) => {
@@ -90,7 +90,7 @@ export function getDashboardSummary(
  * @returns {Array}
  */
 function buildDashboardSummary(entities, entityKey, entityKeys, setOfTerms) {
-  return [...setOfTerms].map(term => {
+  return [...setOfTerms].map((term) => {
     const filteredEntities = filterEntitiesByTerm(entities, entityKey, term);
 
     return entityKeys.reduce((acc, key) => {
@@ -100,7 +100,7 @@ function buildDashboardSummary(entities, entityKey, entityKeys, setOfTerms) {
           entityKey,
           key,
           term
-        )
+        ),
       };
       acc = Object.assign(acc, object);
 
@@ -143,7 +143,7 @@ function countEntities(entities) {
  * @param term
  */
 function filterEntitiesByTerm(entities, entityKey, term) {
-  return entities.filter(entity => {
+  return entities.filter((entity) => {
     /* Handle case entity is an array of values. */
     /* Duplicate entities are possible in this scenario. */
     /* e.g. A combo platform "AnVIL, BioData Catalyst" share the same study. */

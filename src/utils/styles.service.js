@@ -7,7 +7,7 @@
 
 // Template variables
 const ALIGNMENT = {
-  LEFT: "left"
+  LEFT: "left",
 };
 
 /**

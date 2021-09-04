@@ -16,7 +16,7 @@ function Scroller(props) {
   const { articleOffsetTop, bannerHeight, children } = props;
   const [containerStyles, setContainerStyles] = useState({
     maxHeight: `unset`,
-    top: `unset`
+    top: `unset`,
   });
   const { maxHeight, top } = containerStyles || {};
 
@@ -26,10 +26,10 @@ function Scroller(props) {
       bannerHeight,
       articleOffsetTop
     );
-    setContainerStyles(containerStyles => ({
+    setContainerStyles((containerStyles) => ({
       ...containerStyles,
       maxHeight: styles.maxHeight,
-      top: styles.top
+      top: styles.top,
     }));
   }, [articleOffsetTop, bannerHeight]);
 
@@ -54,7 +54,7 @@ function Scroller(props) {
     updateContainerStyles();
   }, [updateContainerStyles]);
 
-  return React.Children.map(children, child =>
+  return React.Children.map(children, (child) =>
     React.cloneElement(child, { style: { maxHeight: maxHeight, top: top } })
   );
 }

@@ -16,14 +16,8 @@ import * as AnchorService from "../../utils/anchor.service";
 import compStyles from "./event-hero.module.css";
 
 function EventHero() {
-  const {
-    conference,
-    eventType,
-    location,
-    sessionsDisplay,
-    subTitle,
-    title
-  } = useContext(ContextFrontmatter);
+  const { conference, eventType, location, sessionsDisplay, subTitle, title } =
+    useContext(ContextFrontmatter);
   const identifier = AnchorService.buildAnchorIdentifier(title);
 
   return (

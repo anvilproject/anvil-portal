@@ -45,7 +45,7 @@ function ProviderDashboardDownloads(props) {
 
       /* Handle headers - add to rows. */
       const rowHeaders = headers.map(
-        header => DashboardEntityPropertyNameDisplay[header] || header
+        (header) => DashboardEntityPropertyNameDisplay[header] || header
       );
       const rowHeaderStr = rowHeaders.join(columnSeperator);
       rows.push(rowHeaderStr);
@@ -53,7 +53,7 @@ function ProviderDashboardDownloads(props) {
       /* Handle each result set row - add to rows. */
       resultSet.reduce((acc, resultRow) => {
         /* Only add data that corresponds with the headers. */
-        const row = headers.map(key => {
+        const row = headers.map((key) => {
           /* Grab the value. */
           const datum = resultRow[key];
 

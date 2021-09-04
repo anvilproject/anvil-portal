@@ -14,44 +14,51 @@ const workspacesFileName = "prod-workspaces-sb-all.json";
 const allowListWorkspaceFields = [
   "library:dataUseRestriction",
   "library:diseaseOntologyLabel",
-  "library:datatype"
+  "library:datatype",
 ];
 
-const generateWorkspaceFieldsReportCSV = async function generateWorkspaceFieldsReportCSV() {
-  /* Only run plugin if the workspace JSON file exists. */
-  if (fs.existsSync(path.resolve(__dirname, workspacesFileName))) {
-    console.log("Generating workspace fields report.");
+const generateWorkspaceFieldsReportCSV =
+  async function generateWorkspaceFieldsReportCSV() {
+    /* Only run plugin if the workspace JSON file exists. */
+    if (fs.existsSync(path.resolve(__dirname, workspacesFileName))) {
+      console.log("Generating workspace fields report.");
 
-    /* Grab the json file. */
-    const workspacesJSON = require(path.resolve(__dirname, workspacesFileName));
+      /* Grab the json file. */
+      const workspacesJSON = require(path.resolve(
+        __dirname,
+        workspacesFileName
+      ));
 
-    /* Generate the report headings. */
-    const reportHeadings = allowListWorkspaceFields.reduce((acc, fieldName) => {
-      return `${acc}, ${fieldName}`;
-    }, "Workspace Name");
+      /* Generate the report headings. */
+      const reportHeadings = allowListWorkspaceFields.reduce(
+        (acc, fieldName) => {
+          return `${acc}, ${fieldName}`;
+        },
+        "Workspace Name"
+      );
 
-    /* Filter for anvil workspaces only, and generate fields (of interest) for each workspace as a string. */
-    /* Concatenate each workspace with "\n" to format each workspace as it's own row in the CSV report. */
-    const fieldsByWorkspace = workspacesJSON
-      .map(ws => ws.workspace)
-      .filter(workspace => workspace.namespace.startsWith("anvil"))
-      .reduce((acc, workspace) => {
-        const { attributes, name } = workspace || {};
-        const workspaceString = `${name}${buildWorkspaceFieldsString(
-          attributes
-        )}`;
+      /* Filter for anvil workspaces only, and generate fields (of interest) for each workspace as a string. */
+      /* Concatenate each workspace with "\n" to format each workspace as it's own row in the CSV report. */
+      const fieldsByWorkspace = workspacesJSON
+        .map((ws) => ws.workspace)
+        .filter((workspace) => workspace.namespace.startsWith("anvil"))
+        .reduce((acc, workspace) => {
+          const { attributes, name } = workspace || {};
+          const workspaceString = `${name}${buildWorkspaceFieldsString(
+            attributes
+          )}`;
 
-        return acc.concat("\n", workspaceString);
-      }, reportHeadings);
+          return acc.concat("\n", workspaceString);
+        }, reportHeadings);
 
-    fs.writeFileSync("static/workspace-fields-report.csv", fieldsByWorkspace);
-  } else {
-  /* Return - file doesn't exist and plugin will not proceed. */
-    console.log(
-      "Generation of workspace fields report unable to run: workspaces JSON file not found."
-    );
-  }
-};
+      fs.writeFileSync("static/workspace-fields-report.csv", fieldsByWorkspace);
+    } else {
+      /* Return - file doesn't exist and plugin will not proceed. */
+      console.log(
+        "Generation of workspace fields report unable to run: workspaces JSON file not found."
+      );
+    }
+  };
 
 /**
  * Returns a concatenated string for each field of interest, recording whether the field key exists for the workspace,
@@ -78,4 +85,5 @@ function buildWorkspaceFieldsString(attributes) {
   }, "");
 }
 
-module.exports.generateWorkspaceFieldsReportCSV = generateWorkspaceFieldsReportCSV;
+module.exports.generateWorkspaceFieldsReportCSV =
+  generateWorkspaceFieldsReportCSV;

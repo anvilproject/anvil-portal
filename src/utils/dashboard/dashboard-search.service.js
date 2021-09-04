@@ -17,7 +17,7 @@ const DENY_LIST_TERMS = [
   "NA",
   "--",
   "",
-  null
+  null,
 ];
 
 /**
@@ -49,7 +49,7 @@ export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
  */
 export function getDashboardCheckboxMoreCount(terms, snippetCount) {
   /* Count the remaining terms available for selection. */
-  return terms.slice(snippetCount).filter(term => term.count).length;
+  return terms.slice(snippetCount).filter((term) => term.count).length;
 }
 
 /**
@@ -60,7 +60,7 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
  * @returns {Set<any>}
  */
 export function getDashboardSetOfEntities(entities, resultKey) {
-  return new Set(entities.map(entity => entity[resultKey]));
+  return new Set(entities.map((entity) => entity[resultKey]));
 }
 
 /**
@@ -74,7 +74,7 @@ export function getDashboardRowsByRowKey(entities, resultKey) {
   /* Build the rows by row key. */
   const rowsByRowKey = new Map();
   /* For each row, set the entity key and row data. */
-  entities.forEach(entity => {
+  entities.forEach((entity) => {
     const key = entity[resultKey];
     rowsByRowKey.set(key, entity);
   });
@@ -92,7 +92,7 @@ export function getDashboardRowsByRowKey(entities, resultKey) {
 export function getDashboardSetOfTermsByFacet(entities, facets) {
   /* Init setOfTermsByFacet and the setOfTerms for each facet. */
   const setOfTermsByFacet = new Map();
-  facets.forEach(facet => setOfTermsByFacet.set(facet, new Set()));
+  facets.forEach((facet) => setOfTermsByFacet.set(facet, new Set()));
 
   /* Grab all possible terms for each facet, from the entities. */
   for (const facet of facets) {
@@ -105,7 +105,7 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
       const terms = Array.isArray(value) ? value : Array.of(value);
 
       /* Add to the set of terms. */
-      terms.forEach(term => {
+      terms.forEach((term) => {
         if (isTermAllowed(term)) {
           setOfTerms.add(term);
         }
@@ -133,7 +133,7 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
 export function getDashboardTermCount(facet, term, entities) {
   return entities.reduce((acc, entity) => {
     if (Array.isArray(entity[facet])) {
-      entity[facet].forEach(ef => {
+      entity[facet].forEach((ef) => {
         if (ef === term) {
           acc++;
         }

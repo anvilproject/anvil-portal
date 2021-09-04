@@ -11,7 +11,7 @@ import React, {
   useContext,
   useEffect,
   useRef,
-  useState
+  useState,
 } from "react";
 
 // App dependencies
@@ -24,14 +24,13 @@ import compStyles from "./dashboard-search-input.module.css";
 const classNames = require("classnames");
 
 function DashboardSearchInput() {
-  const { inputValue, onHandleClearFacet, onHandleUpdateFacet } = useContext(
-    ContextDashboard
-  );
+  const { inputValue, onHandleClearFacet, onHandleUpdateFacet } =
+    useContext(ContextDashboard);
   const delaySearchRef = useRef(0);
   const inputRef = useRef(null);
   const [showClear, setShowClear] = useState(false);
   const classNamesClear = classNames(compStyles.icon, "material-icons-round", {
-    [compStyles.active]: showClear
+    [compStyles.active]: showClear,
   });
   const timer = 250;
 

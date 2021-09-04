@@ -13,5 +13,5 @@
  * @returns {*}
  */
 export function findSectionIntro(section, posts) {
-  return posts.find(post => post.fields.slug.includes(section));
+  return posts.find((post) => post.fields.slug.includes(section));
 }

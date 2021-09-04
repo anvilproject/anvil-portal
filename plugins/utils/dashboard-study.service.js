@@ -16,7 +16,7 @@
 const buildGapId = function buildGapId(gapAccession, studyUrl = "") {
   return {
     gapIdDisplay: gapAccession,
-    studyUrl: studyUrl
+    studyUrl: studyUrl,
   };
 };
 

@@ -12,7 +12,7 @@
   height: 100vh;
   left: 0;
   max-width: 400px;
-  overflow-y: auto;  /* Scroll - hide webkit scrollbar unless actively scrolling. */
+  overflow-y: auto; /* Scroll - hide webkit scrollbar unless actively scrolling. */
   -ms-overflow-style: none; /* Hide scrollbar in IE, Edge. */
   padding: 24px 16px;
   position: fixed; /* Positions drawer. */

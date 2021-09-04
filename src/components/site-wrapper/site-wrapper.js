@@ -24,7 +24,7 @@ const SiteWrapper = React.forwardRef((props, ref) => {
   return (
     <div
       className={classNames(compStyles.site, {
-        [compStyles.noScroll]: !siteScrollable
+        [compStyles.noScroll]: !siteScrollable,
       })}
       ref={ref}
     >

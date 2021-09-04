@@ -32,7 +32,7 @@ class Scoop extends React.Component {
     }
 
     // Return only the featured scoops
-    return scoops.filter(scoop => scoop.frontmatter.featured === true);
+    return scoops.filter((scoop) => scoop.frontmatter.featured === true);
   };
 
   render() {
@@ -42,17 +42,11 @@ class Scoop extends React.Component {
     const scoopTypeEvents = /events/.test(type);
     const pastEvents = /past/.test(type);
 
-    const Headline = props => {
+    const Headline = (props) => {
       const { scoop } = props,
         { fields, frontmatter } = scoop,
-        {
-          conference,
-          date,
-          dateBubble,
-          description,
-          eventType,
-          title
-        } = frontmatter,
+        { conference, date, dateBubble, description, eventType, title } =
+          frontmatter,
         { slug } = fields;
 
       // Validate and format dates for display

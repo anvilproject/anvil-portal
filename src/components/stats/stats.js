@@ -19,9 +19,9 @@ import compStyles from "./stats.module.css";
 function Stats() {
   const stats = StatsStaticQuery();
 
-  const formatStats = count => {
+  const formatStats = (count) => {
     return NumberFormatService.format(count, {
-      PB: 1
+      PB: 1,
     });
   };
 

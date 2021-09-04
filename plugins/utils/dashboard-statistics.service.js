@@ -10,7 +10,7 @@ const WORKSPACE_FIELD_KEY = {
   CONSORTIUM: "consortium",
   SAMPLES: "samples",
   SIZE: "size",
-  SUBJECTS: "subjects"
+  SUBJECTS: "subjects",
 };
 
 /**
@@ -25,7 +25,7 @@ const buildStats = function buildStats(workspaces) {
     consortia: countConsortia(workspaces),
     samples: sumSamples(workspaces),
     size: sumSize(workspaces),
-    subjects: sumSubjects(workspaces)
+    subjects: sumSubjects(workspaces),
   };
 };
 
@@ -44,7 +44,7 @@ function countCohorts(workspaces) {
  */
 function countConsortia(workspaces) {
   const consortia = new Set(
-    workspaces.map(workspace => workspace[WORKSPACE_FIELD_KEY.CONSORTIUM])
+    workspaces.map((workspace) => workspace[WORKSPACE_FIELD_KEY.CONSORTIUM])
   );
 
   return consortia.size;

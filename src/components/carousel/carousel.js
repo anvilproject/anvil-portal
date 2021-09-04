@@ -41,11 +41,11 @@ class Carousel extends React.Component {
     this.removeTouchInteractions();
   }
 
-  changedTouches = e => {
+  changedTouches = (e) => {
     return e.changedTouches ? e.changedTouches[0] : e;
   };
 
-  getActiveClassName = index => {
+  getActiveClassName = (index) => {
     return index === this.state.rotation;
   };
 
@@ -61,7 +61,7 @@ class Carousel extends React.Component {
     return url ? url : slug;
   };
 
-  isValidUrl = link => {
+  isValidUrl = (link) => {
     try {
       new URL(link);
       return true;
@@ -71,7 +71,7 @@ class Carousel extends React.Component {
   };
 
   preventScrollingWhenSwiping = () => {
-    return e => {
+    return (e) => {
       const dx = this.changedTouches(e).clientX - x0;
       const dy = this.changedTouches(e).clientY - y0;
 
@@ -98,14 +98,14 @@ class Carousel extends React.Component {
 
     slot.removeEventListener("mousedown", this.swipeStart());
     slot.removeEventListener("touchstart", this.swipeStart(), {
-      passive: true
+      passive: true,
     });
 
     slot.removeEventListener("mouseup", this.swipeEnd());
     slot.removeEventListener("touchend", this.swipeEnd());
 
     slot.addEventListener("touchmove", this.preventScrollingWhenSwiping(), {
-      passive: false
+      passive: false,
     });
   };
 
@@ -135,7 +135,7 @@ class Carousel extends React.Component {
     this.setState({ rotation: index });
   };
 
-  rotateTo = index => {
+  rotateTo = (index) => {
     this.setState({ rotation: index });
   };
 
@@ -149,12 +149,12 @@ class Carousel extends React.Component {
     slot.addEventListener("touchend", this.swipeEnd());
 
     slot.addEventListener("touchmove", this.preventScrollingWhenSwiping(), {
-      passive: false
+      passive: false,
     });
   };
 
   swipeEnd = () => {
-    return e => {
+    return (e) => {
       if (x0 || x0 === 0) {
         const dx = this.changedTouches(e).clientX - x0;
         const dy = this.changedTouches(e).clientY - y0;
@@ -178,7 +178,7 @@ class Carousel extends React.Component {
   };
 
   swipeStart = () => {
-    return e => {
+    return (e) => {
       x0 = this.changedTouches(e).clientX;
       y0 = this.changedTouches(e).clientY;
     };
@@ -187,7 +187,7 @@ class Carousel extends React.Component {
   render() {
     const { carousel } = this.props;
 
-    const Slot = props => {
+    const Slot = (props) => {
       const { show, slot } = props,
         { fields, frontmatter } = slot,
         { description, docType, logo, title, url } = frontmatter || {},
@@ -255,7 +255,7 @@ class Carousel extends React.Component {
                 <ClickHandler
                   key={i}
                   className={classNames({
-                    [compStyles.active]: this.getActiveClassName(i)
+                    [compStyles.active]: this.getActiveClassName(i),
                   })}
                   clickAction={() => this.rotateTo(i)}
                   tag={"span"}

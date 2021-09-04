@@ -17,9 +17,8 @@ import Icon from "../../icon/icon";
 import compStyles from "./nav-drawer-button.module.css";
 
 function NavDrawerButton(): JSX.Element | null {
-  const { navDrawerOpen, onSetNavDrawerOpen, showNavDrawerButton } = useContext(
-    ContextAnVILPortal
-  );
+  const { navDrawerOpen, onSetNavDrawerOpen, showNavDrawerButton } =
+    useContext(ContextAnVILPortal);
   return showNavDrawerButton ? (
     <div className={compStyles.navDrawerButton}>
       <Button clickAction={() => onSetNavDrawerOpen(!navDrawerOpen)}>

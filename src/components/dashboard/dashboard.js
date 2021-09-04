@@ -28,22 +28,25 @@ function Dashboard(props) {
     summaryKey,
     tableHeadersEntities,
     tableHeadersSummary,
-    totalsWarning
+    totalsWarning,
   } = props;
   const facetCount = searchFacets.length;
   const setOfEntities = DashboardSearchService.getDashboardSetOfEntities(
     dashboardEntities,
     resultKey
   );
-  const rowsByRowKey = DashboardSearchService.getDashboardRowsByRowKey(dashboardEntities, resultKey);
-  const setOfTermsByFacet = DashboardSearchService.getDashboardSetOfTermsByFacet(
+  const rowsByRowKey = DashboardSearchService.getDashboardRowsByRowKey(
     dashboardEntities,
-    searchFacets
+    resultKey
   );
+  const setOfTermsByFacet =
+    DashboardSearchService.getDashboardSetOfTermsByFacet(
+      dashboardEntities,
+      searchFacets
+    );
   const setOfSummaryKeyTerms = setOfTermsByFacet.get(summaryKey);
-  const termSearchValueByTermDisplay = DashboardSearchService.getDashboardTermSearchValueByTerm(
-    setOfTermsByFacet
-  );
+  const termSearchValueByTermDisplay =
+    DashboardSearchService.getDashboardTermSearchValueByTerm(setOfTermsByFacet);
 
   return (
     <ProviderDashboard

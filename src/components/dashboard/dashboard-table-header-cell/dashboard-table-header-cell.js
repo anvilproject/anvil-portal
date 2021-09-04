@@ -28,7 +28,7 @@ function DashboardTableHeaderCell(props) {
   const identifier = Date.now();
   const id = `${column}${identifier}`;
   const classNamesCell = rightAlign && {
-    className: classNames({ [compStyles.right]: rightAlign })
+    className: classNames({ [compStyles.right]: rightAlign }),
   };
 
   return (

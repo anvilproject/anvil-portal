@@ -28,7 +28,7 @@ class ClickHandler extends React.Component {
       clickAction,
       id,
       label,
-      tag: Tag
+      tag: Tag,
     } = this.props;
 
     return (
@@ -36,7 +36,7 @@ class ClickHandler extends React.Component {
         id={id}
         className={classNames(className, compStyles.handler)}
         onClick={clickAction}
-        onKeyDown={e => this.handleKeyDown(e, clickAction)}
+        onKeyDown={(e) => this.handleKeyDown(e, clickAction)}
         aria-label={label}
       >
         {children}

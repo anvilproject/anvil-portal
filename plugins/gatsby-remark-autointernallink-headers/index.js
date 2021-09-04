@@ -32,7 +32,7 @@ function patch(context, key, value) {
 module.exports = ({ markdownNode, markdownAST }) => {
   slugs.reset();
 
-  visit(markdownAST, "heading", function(node) {
+  visit(markdownAST, "heading", function (node) {
     // If elements array exists, do not create links for heading types not included in array
     const elements = node.elements;
     if (Array.isArray(elements) && !elements.includes("h" + node.depth)) {
@@ -54,7 +54,7 @@ module.exports = ({ markdownNode, markdownAST }) => {
     // Add anchor as child to heading tag
     const anchorNode = {
       type: "html",
-      value: `<internal-link anchor="${slug}"/>`
+      value: `<internal-link anchor="${slug}"/>`,
     };
     node.children.push(anchorNode);
   });

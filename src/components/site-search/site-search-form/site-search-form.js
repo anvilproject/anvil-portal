@@ -18,7 +18,7 @@ function SiteSearchForm(props) {
   const { onSubmitSiteSearch } = props;
 
   return (
-    <form className={compStyles.form} onSubmit={e => onSubmitSiteSearch(e)}>
+    <form className={compStyles.form} onSubmit={(e) => onSubmitSiteSearch(e)}>
       <SiteSearchInput />
     </form>
   );

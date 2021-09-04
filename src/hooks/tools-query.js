@@ -30,5 +30,5 @@ export const ToolsStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.edges.map(e => e.node).map(n => n);
+  return allMarkdownRemark.edges.map((e) => e.node).map((n) => n);
 };

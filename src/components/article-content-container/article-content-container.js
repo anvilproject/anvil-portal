@@ -17,7 +17,7 @@ const classNames = require("classnames");
 function ArticleContentContainer(props) {
   const { children, left } = props;
   const classNamesContentContainer = classNames(compStyles.contentContainer, {
-    [compStyles.left]: left
+    [compStyles.left]: left,
   });
 
   return <div className={classNamesContentContainer}>{children}</div>;

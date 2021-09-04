@@ -14,7 +14,7 @@ const path = require("path");
 const {
   getIndexFieldGapNumber,
   getIndexFieldTypeOfArray,
-  getIndexFieldTypeOfString
+  getIndexFieldTypeOfString,
 } = require(path.resolve(__dirname, "./dashboard-index-field.service.js"));
 
 /**
@@ -26,7 +26,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
   workspaces
 ) {
   /* Add the workspace to the search index. */
-  const dashboardIndex = lunr(function() {
+  const dashboardIndex = lunr(function () {
     this.ref("projectId");
     this.field("accessType");
     this.field("consentShortName");
@@ -48,7 +48,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
     const facetSubStr = "_";
     const inputSubStr = " ";
 
-    workspaces.forEach(workspace => {
+    workspaces.forEach((workspace) => {
       const accessType = getIndexFieldTypeOfString(
         workspace.accessType,
         facetSubStr
@@ -89,7 +89,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         projectId: projectId,
         studyDesigns: studyDesigns,
         studyName: studyName,
-        workspaceName: workspaceName
+        workspaceName: workspaceName,
       });
     });
   });

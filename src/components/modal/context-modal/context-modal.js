@@ -12,7 +12,7 @@ const ContextModal = React.createContext({
   modal: { modalProps: {}, showModal: false },
   onCloseDrawer: () => {},
   onCloseModal: () => {},
-  onOpenModal: () => {}
+  onOpenModal: () => {},
 });
 
 export default ContextModal;

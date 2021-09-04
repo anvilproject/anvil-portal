@@ -38,5 +38,5 @@ export const GAEntityName = {
   UCSC_GENOME_BROWSER: "UCSC Genome Browser",
   UNSPECIFIED: "Unspecified",
   USA: "USA",
-  WDL: "WDL"
+  WDL: "WDL",
 };

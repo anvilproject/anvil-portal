@@ -29,13 +29,13 @@ exports.onClientEntry = () => {
     ie: ">=6",
     edge: "~15",
     windows: {
-      safari: ">=1"
-    }
+      safari: ">=1",
+    },
   });
 
   // List of browsers requiring an "image" only unsupoorted page due to css inadequacies.
   const browserCSSNotSupported = browser.satisfies({
-    ie: "<=10"
+    ie: "<=10",
   });
 
   // Redirect to static "browser not supported" page, should browser be unsupported by the AnVIL site.

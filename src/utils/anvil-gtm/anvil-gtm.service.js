@@ -21,7 +21,7 @@ import * as GTMService from "../gtm/gtm.service";
  */
 export function trackDashboardShared(url) {
   const dimensions = {
-    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY
+    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
   };
   GTMService.trackEvent(GACategory.DASHBOARD, GAAction.SHARE, url, dimensions);
 }
@@ -33,7 +33,7 @@ export function trackDashboardShared(url) {
  */
 export function trackDashboardTSVDownloaded(url) {
   const dimensions = {
-    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY
+    [GADimension.ENTITY_TYPE]: GAEntityType.QUERY,
   };
   GTMService.trackEvent(
     GACategory.DASHBOARD,
@@ -80,7 +80,7 @@ export function trackSearchFacetSelected(
       [GADimension.FACET]: facet,
       [GADimension.TERM]: term,
       [GADimension.PREVIOUS_QUERY]: previousQuery,
-      [GADimension.QUERY]: query
+      [GADimension.QUERY]: query,
     }
   );
 }
@@ -92,7 +92,7 @@ export function trackSearchInput(value, query, previousQuery, entityType) {
   GTMService.trackEvent(GACategory.SEARCH, GAAction.ENTER_TEXT, value, {
     [GADimension.ENTITY_TYPE]: entityType,
     [GADimension.PREVIOUS_QUERY]: previousQuery,
-    [GADimension.QUERY]: query
+    [GADimension.QUERY]: query,
   });
 }
 
@@ -113,7 +113,7 @@ export function trackSiteSearchResultClicked(title, url, query) {
     title,
     {
       [GADimension.ENTITY_URL]: url,
-      [GADimension.QUERY]: query
+      [GADimension.QUERY]: query,
     }
   );
 }
@@ -182,7 +182,7 @@ function createExternalLinkDimensions(url) {
     entityName: calculateEntityName(url),
     entityType: calculateEntityType(url),
     entityUrl: url,
-    sourceUrl: window.location.pathname
+    sourceUrl: window.location.pathname,
   };
 }
 

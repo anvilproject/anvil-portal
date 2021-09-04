@@ -20,7 +20,7 @@ function DashboardSearchSelectedFacets(props) {
     onHandleClearAll,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermsByFacet
+    selectedTermsByFacet,
   } = props;
   const selectedFacets = selectedTermsByFacet.keys();
 

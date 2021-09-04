@@ -22,7 +22,7 @@ class DashboardTableRowCellValuesTooltip extends React.Component {
     const showCell = cellData && cellData.length;
     const last = cellData.length - 1;
 
-    const RowCellValueTooltip = props => {
+    const RowCellValueTooltip = (props) => {
       const { datum, last } = props,
         { displayValue, tooltipValue } = datum || {};
       const displayDatum = last ? displayValue : `${displayValue}; `;

@@ -13,5 +13,5 @@ export const GAAction = {
   SEARCH: "Search",
   SELECT: "Select",
   SELECT_SEARCH_RESULT: "Select Search Result",
-  SHARE: "Share"
+  SHARE: "Share",
 };

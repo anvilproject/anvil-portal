@@ -234,9 +234,8 @@ function ProviderDashboard(props) {
             /* These facets are joined by "OR". */
             /* Some terms may have special characters like "_" or "-". */
             /* To get an exact match we convert the selected term to a searchable value. */
-            const termSearchValue = termSearchValueByTermDisplay.get(
-              selectedTerm
-            );
+            const termSearchValue =
+              termSearchValueByTermDisplay.get(selectedTerm);
             const term = termSearchValue || selectedTerm;
             return `${facet}: ${term}`;
           })

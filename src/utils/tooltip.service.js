@@ -86,6 +86,6 @@ export function positionTooltip(target, tooltip) {
 
   return {
     x: x.toFixed(1),
-    y: y.toFixed(1)
+    y: y.toFixed(1),
   };
 }

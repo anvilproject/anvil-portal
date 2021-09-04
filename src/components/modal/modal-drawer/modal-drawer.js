@@ -24,7 +24,7 @@ function ModalDrawer(props) {
     appearActive: compStyles.drawerAppearActive,
     exit: compStyles.drawerClosed,
     exitActive: compStyles.drawerClosedActive,
-    exitDone: compStyles.drawerExitDone
+    exitDone: compStyles.drawerExitDone,
   };
 
   return (
