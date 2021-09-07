@@ -15,14 +15,14 @@ const GATSBY_ENV = process.env.GATSBY_ENV;
  * Returns the name of the current environment.
  */
 export function getCurrentEnvironment() {
-  return GATSBY_ENV;
+  return GATSBY_ENV.toUpperCase();
 }
 
 /**
  * Returns the current environment's url.
  */
 export function getCurrentEnvironmentURL() {
-  const currentEnvironment = getCurrentEnvironment().toUpperCase();
+  const currentEnvironment = getCurrentEnvironment();
 
   return EnvironmentUrl[currentEnvironment];
 }
@@ -31,12 +31,12 @@ export function getCurrentEnvironmentURL() {
  * Returns true if the current environment is production.
  */
 export function isProd() {
-  return GATSBY_ENV === "master";
+  return getCurrentEnvironment() === "PROD";
 }
 
 /**
  * Returns true if the current environment is staging.
  */
 export function isStaging() {
-  return GATSBY_ENV === "staging";
+  return getCurrentEnvironment() === "STAGING";
 }
