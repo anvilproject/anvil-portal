@@ -19,7 +19,7 @@ export const DashboardEntityPropertyNameDisplay = {
   samples: "Samples",
   size: "Size (TB)",
   studyDesigns: "Study Design",
-  studyName: "Title",
+  studyName: "Study",
   subjects: "Participants",
   subjectsTotal: "Participants",
 };
