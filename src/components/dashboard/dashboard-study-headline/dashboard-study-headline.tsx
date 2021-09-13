@@ -49,12 +49,20 @@ function DashboardStudyHeadline(
         ) : null}
         <span className={compStyles.studyAccession}>{studyAccession}</span>
         <span className={compStyles.studySource}>
-          <a href={studyUrl} target="_blank" rel="noreferrer">
+          <a // eslint-disable-line react/jsx-no-target-blank
+            href={studyUrl}
+            rel="noopener"
+            target="_blank"
+          >
             dbGap
           </a>
         </span>
         <span className={compStyles.studySource}>
-          <a href={fhirUrl} target="_blank" rel="noreferrer">
+          <a // eslint-disable-line react/jsx-no-target-blank
+            href={fhirUrl}
+            rel="noopener"
+            target="_blank"
+          >
             dbGap FHIR
           </a>
         </span>

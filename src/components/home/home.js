@@ -60,7 +60,7 @@ class Home extends React.Component {
               <div className={compStyles.tile}>
                 <a
                   href="https://anvil.terra.bio/#workspaces"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener"
                   target="_blank"
                 >
                   <img
@@ -77,7 +77,7 @@ class Home extends React.Component {
               <div className={compStyles.tile}>
                 <a
                   href="https://gen3.theanvil.io/"
-                  rel="nofollow noopener noreferrer"
+                  rel="noopener"
                   target="_blank"
                 >
                   <img
@@ -95,11 +95,7 @@ class Home extends React.Component {
                 </a>
               </div>
               <div className={compStyles.tile}>
-                <a
-                  href="https://dockstore.org"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                >
+                <a href="https://dockstore.org" rel="noopener" target="_blank">
                   <img
                     className={compStyles.tileLogo}
                     src={logoDockstore}

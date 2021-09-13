@@ -37,12 +37,7 @@ function ButtonLink(props) {
   const linkExternal = target === "_blank";
 
   return linkExternal ? (
-    <a
-      className={compStyles.button}
-      href={href}
-      rel={"nofollow noopener noreferrer"}
-      target={target}
-    >
+    <a className={compStyles.button} href={href} rel="noopener" target={target}>
       {children}
     </a>
   ) : (

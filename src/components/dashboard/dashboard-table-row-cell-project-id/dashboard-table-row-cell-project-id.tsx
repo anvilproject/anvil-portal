@@ -25,7 +25,11 @@ function DashboardTableRowCellProjectId(
 
   return (
     <td className={compStyles.projectId} id={id}>
-      <a href={href} rel="noreferrer" target="_blank">
+      <a // eslint-disable-line react/jsx-no-target-blank
+        href={href}
+        rel="noopener"
+        target="_blank"
+      >
         {children}
       </a>
     </td>

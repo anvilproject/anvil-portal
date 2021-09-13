@@ -28,12 +28,7 @@ function Social(props) {
   const { children, url } = props;
 
   return (
-    <a
-      className={compStyles.social}
-      href={url}
-      rel={"noopener noreferrer"}
-      target={"_blank"}
-    >
+    <a className={compStyles.social} href={url} rel="noopener" target="_blank">
       {children}
     </a>
   );

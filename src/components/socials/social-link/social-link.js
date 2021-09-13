@@ -21,7 +21,7 @@ function SocialLink(props) {
   const { url } = props;
 
   return (
-    <a href={url} rel={"noopener noreferrer"} target={"_blank"}>
+    <a href={url} rel="noopener" target="_blank">
       {url}
     </a>
   );

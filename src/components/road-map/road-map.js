@@ -49,7 +49,7 @@ class RoadMap extends React.Component {
         <a
           href={link}
           className={classNames(compStyles.bubble, className)}
-          rel="nofollow noopener noreferrer"
+          rel="noopener"
           target="_blank"
         >
           {name}

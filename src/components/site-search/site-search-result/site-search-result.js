@@ -42,7 +42,7 @@ function SiteSearchResult(props) {
       <span>
         <a
           href={link}
-          rel={"noopener noreferrer"}
+          rel="noopener"
           onClick={() => onSearchResultClicked(title, formattedUrl, query)}
         >
           <h4>{title}</h4>

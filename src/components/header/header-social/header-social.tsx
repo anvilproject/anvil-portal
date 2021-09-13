@@ -29,12 +29,12 @@ function HeaderSocial(props: HeaderSocialProps): JSX.Element {
   const { imageSrc, name, url } = social;
 
   return (
-    <a
+    <a // eslint-disable-line react/jsx-no-target-blank
       className={classNames(compStyles.headerSocial, {
         [compStyles.ncpi]: ncpi,
       })}
       href={url}
-      rel="noreferrer"
+      rel="noopener"
       target="_blank"
     >
       <img alt={name} src={imageSrc} />
