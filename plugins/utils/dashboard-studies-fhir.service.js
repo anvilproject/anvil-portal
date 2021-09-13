@@ -255,9 +255,15 @@ function getStudyDescription(entries) {
 
   if (resource) {
     const rawDescription = resource.description;
-    /* Replace any `\t` (tab) with a space - avoids markdown processing tab as <pre/>. */
     if (rawDescription) {
-      const parsedDescription = rawDescription.replace(/\t/g, " ");
+      /* Replace any `\t` (tab) with a space - avoids markdown processing tab as <pre/>. */
+      /* Replace any dbGap internal links with an external link to the dbGap study. */
+      const parsedDescription = rawDescription
+        .replace(/\t/g, " ")
+        .replace(
+          /study.cgi\?study_id=|.\/study.cgi\?study_id=/g,
+          "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id="
+        );
       return remark().use(html).processSync(parsedDescription).contents;
     }
   }
