@@ -43,34 +43,18 @@ function Footer() {
       >
         <div className={compStyles.logos}>
           <div>
-            <a
-              href="https://www.genome.gov"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <a href="https://www.genome.gov" rel="noopener" target="_blank">
               <img className={compStyles.nhgri} src={nhgri} alt="nhgri" />
             </a>
           </div>
           <div>
-            <a
-              href="https://www.nih.gov"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <a href="https://www.nih.gov" rel="noopener" target="_blank">
               <img className={compStyles.nih} src={nih} alt="nih" />
             </a>
-            <a
-              href="https://www.hhs.gov"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <a href="https://www.hhs.gov" rel="noopener" target="_blank">
               <img className={compStyles.hhs} src={hhs} alt="hhs" />
             </a>
-            <a
-              href="https://www.usa.gov"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <a href="https://www.usa.gov" rel="noopener" target="_blank">
               <img className={compStyles.usaGov} src={usaGov} alt="usa.gov" />
             </a>
           </div>
@@ -82,23 +66,19 @@ function Footer() {
           <Link className={compStyles.link} to="/privacy">
             Privacy
           </Link>
-          <a
-            href="https://twitter.com/useAnVIL"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <a href="https://twitter.com/useAnVIL" rel="noopener" target="_blank">
             <img src={twitter} alt="twitter" />
           </a>
           <a
             href=" https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg"
-            rel="noopener noreferrer"
+            rel="noopener"
             target="_blank"
           >
             <img src={slack} alt="slack" />
           </a>
           <a
             href="https://github.com/anvilproject"
-            rel="noopener noreferrer"
+            rel="noopener"
             target="_blank"
           >
             <img src={gitHub} alt="gitHub" />
@@ -106,7 +86,7 @@ function Footer() {
           <a
             className={compStyles.youtube}
             href="https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw"
-            rel="noopener noreferrer"
+            rel="noopener"
             target="_blank"
           >
             <img src={youtube} alt="youtube" />

@@ -31,7 +31,11 @@ function ExternalLink(props: ExternalLinkProps): JSX.Element {
   const { children, link } = props;
 
   return (
-    <a href={link} rel="noopener noreferrer" target="_blank">
+    <a // eslint-disable-line react/jsx-no-target-blank
+      href={link}
+      rel="noopener"
+      target="_blank"
+    >
       {children}
     </a>
   );
