@@ -30,6 +30,10 @@ const { buildGapId } = require(path.resolve(
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const fileSourceTerra = "dashboard-source-terra.tsv";
+const CONSENT_CODE_TYPE = {
+  NOT_APPLICABLE: "not applicable",
+  OPEN_ACCESS: "open access",
+};
 const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
@@ -122,28 +126,46 @@ const getWorkspaces = async function getWorkspaces() {
 
 /**
  * Returns the access type for the specified workspace.
- * - "Consortium Access" for any workspace without a study.
- * - "Controlled Access" for any workspace with a study.
- * - "Open Access" for any workspace defined as open access in library:dataUseRestriction.
+ * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "open access" in library:dataUseRestriction.
+ * - "Consortium Access" for any workspace without a study or defined as "not applicable" in library:dataUseRestriction.
+ * - "Open Access" for any workspace defined as "open access" in library:dataUseRestriction.
  *
  * @param workspace
+ * @param propertyConsentShortName
  * @param studyAccession
  * @returns {{}}
  */
-function buildWorkspacePropertyAccessType(workspace, studyAccession) {
+function buildWorkspacePropertyAccessType(
+  workspace,
+  propertyConsentShortName,
+  studyAccession
+) {
   const keyAccessType = SOURCE_FIELD_KEY.ACCESS_TYPE;
 
-  /* Let access type be "Consortium Access". This is true for any workspace that does not have a study, or is not "Open Access". */
-  let accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
+  /* Grab the consent code for the workspace. */
+  const consentShortName =
+    propertyConsentShortName[
+      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
+    ];
 
-  /* Let access type be "Controlled Access". This is true for any workspace that has a study, or is not "Open Access". */
-  if (studyAccession) {
-    accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
-  }
+  /* Let access type be "Controlled Access". */
+  /* This is true for any workspace with a study, and defined as anything other than "not applicable" in library:dataUseRestriction, or is not "Open Access". */
+  let accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
 
-  /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
-  if (isWorkspaceOpenAccess(workspace)) {
-    accessType = WORKSPACE_ACCESS_TYPE.OPEN_ACCESS;
+  if (consentShortName) {
+    /* Let access type be "Consortium Access". */
+    /* This is true for any workspace without a study. */
+    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction. */
+    if (
+      !studyAccession ||
+      consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NOT_APPLICABLE
+    ) {
+      accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
+    }
+    /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
+    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.OPEN_ACCESS) {
+      accessType = WORKSPACE_ACCESS_TYPE.OPEN_ACCESS;
+    }
   }
 
   return { [keyAccessType]: accessType };
@@ -200,16 +222,17 @@ function buildWorkspaces(
     const propertyStudy = getWorkspaceStudy(studyId, studyPropertiesById),
       { dbGapIdAccession, studyUrl } = propertyStudy || {};
 
-    /* Build the property accessType. */
-    const propertyAccessType = buildWorkspacePropertyAccessType(
-      row,
-      dbGapIdAccession
-    );
-
     /* Reformat the property consentShortName. */
     const propertyConsentShortName = reformatWorkspacePropertyValue(
       row,
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
+    );
+
+    /* Build the property accessType. */
+    const propertyAccessType = buildWorkspacePropertyAccessType(
+      row,
+      propertyConsentShortName,
+      dbGapIdAccession
     );
 
     /* Reformat the property consortium. */
@@ -380,29 +403,6 @@ function isValueDenied(value) {
   if (value) {
     const testStr = value.toUpperCase();
     return DENY_LIST_TERMS.includes(testStr);
-  }
-
-  return false;
-}
-
-/**
- * Returns true if the workspace consent name is "Open Access".
- *
- * @param workspace
- * @returns {boolean}
- */
-function isWorkspaceOpenAccess(workspace) {
-  /* Grab the consent names. */
-  const keyConsentShortName =
-    SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME];
-  const consentShortName = workspace[keyConsentShortName];
-
-  /* Return true if the consent name is "Open Access", otherwise return false. */
-  if (consentShortName) {
-    return (
-      consentShortName.toUpperCase() ===
-      WORKSPACE_ACCESS_TYPE.OPEN_ACCESS.toUpperCase()
-    );
   }
 
   return false;

@@ -26,20 +26,20 @@ function DashboardTableRowCell(props) {
     dataset
   );
   const showWarning = children === "Totals" && warning;
-  const cellData = showWarning ? (
-    <Tooltip label={warning}>
-      Totals <sup>*</sup>
-    </Tooltip>
-  ) : (
-    DashboardTableService.formatValue(children, column)
-  );
-  const rowCell = React.createElement(
-    reactElementType,
-    { ...props, id },
-    cellData
-  );
-
-  return rowCell;
+  let cellData = DashboardTableService.formatValue(children, column);
+  /* Summary total row - cell "Totals". */
+  if (showWarning) {
+    cellData = (
+      <Tooltip label={warning}>
+        Totals <sup>*</sup>
+      </Tooltip>
+    );
+  }
+  /* AnVIL "consentShortName" cell, "not applicable" values only. */
+  if (column === "consentShortName" && cellData === "not applicable") {
+    cellData = <Tooltip label={"Consortia Access Only"}>{cellData}</Tooltip>;
+  }
+  return React.createElement(reactElementType, { ...props, id }, cellData);
 }
 
 export default DashboardTableRowCell;
