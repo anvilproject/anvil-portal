@@ -4,17 +4,27 @@ author: "AnVIL"
 description: "Contact us on the AnVIL Discourse or email our help desk."
 ---
 
-## AnVIL
+## Getting Help With AnVIL 
 
+### Discourse/Help Desk
 To ask a question or provide feedback, please feel free to reach out to us on the
 [AnVIL Discourse](https://help.anvilproject.org/) or 
 email our [help desk](mailto:help@lists.anvilproject.org). 
 
-Refer to the following table for platform specific help.
 
-## Components and Tools
+### Requesting AnVIL Training
 
-| Project      | Sites                                     |    
+The AnVIL Project offers in-person training on a limited basis. Use the training request form to apply.
+
+<button-link href="https://docs.google.com/forms/d/1-PomtMVaabtw1HOc1kTDRx5uRw3_tSC1LgwsrxGJWjI/edit" target="_blank">Request AnVIL Training</button-link>
+
+
+
+## Getting Help with AnVIL Components and Tools
+
+Refer to the following table for help links for AnVIL platform components and tools.
+
+| Component      | Help Links                                     |    
 |--------------|-------------------------------------------| 
 | Bioconductor | [Help Hub](http://bioconductor.org/help/), [Help Forum](https://support.bioconductor.org/) |  
 | Dockstore    | [Help Forum](https://discuss.dockstore.org/) |   
