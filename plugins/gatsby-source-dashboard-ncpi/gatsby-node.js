@@ -97,6 +97,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         id: ID!
         studyAccession: String
         studyDescription: String
+        studyDescriptionShort: String
         studyId: String
         studyName: String
         studySummary: StudySummary
