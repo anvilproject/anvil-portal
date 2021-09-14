@@ -41,7 +41,7 @@ The portal working group organizes and publishes AnVIL's website.
 #### Co-Chairs
 - Benedict Paten (UCSC)
 - Mike Schatz (JHU)
-- Kevin Osborn (UCSC) organizer
+- Tim Harris (UCSC) organizer
 
 ## Outreach Working Group
 The Outreach working group provides training and support solutions for the AnVIL project.
