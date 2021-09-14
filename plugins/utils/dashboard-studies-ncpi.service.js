@@ -152,7 +152,7 @@ async function getStudiesByStudyId(rows) {
     } else {
       /* The study does not exist in studiesByStudyId. */
       /* Build the study from FHIR. */
-      study = await getFHIRStudy(studyAccession);
+      study = await getFHIRStudy(dbGapId);
 
       /* Continue when the study is incomplete. */
       if (!isStudyFieldsComplete(study)) {

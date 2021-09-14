@@ -35,6 +35,7 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
       if (!study) {
         /* Build new study if required. */
         study = {
+          fhirUrl: workspaceClone.fhirUrl,
           studyAccession: workspaceClone.dbGapIdAccession,
           studyConsortia: workspaceClone.consortium,
           studyDescription: workspaceClone.studyDescription,
@@ -53,6 +54,7 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
       delete workspaceClone.consortium;
       delete workspaceClone.dbGapIdAccession;
       delete workspaceClone.dbGapId;
+      delete workspaceClone.fhirUrl;
       delete workspaceClone.gapId;
       delete workspaceClone.studyDescription;
       delete workspaceClone.studyDescriptionShort;
@@ -83,6 +85,7 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
 const buildNCPIStudiesDetail = function buildNCPIStudiesDetail(studies) {
   return studies.map((study) => {
     return {
+      fhirUrl: study.fhirUrl,
       studyAccession: study.dbGapIdAccession,
       studyDescription: study.description,
       studyDescriptionShort: study.descriptionShort,

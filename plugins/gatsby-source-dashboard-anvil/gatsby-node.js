@@ -128,6 +128,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type DashboardStudy implements Node {
         id: ID!
+        fhirUrl: String
         studyAccession: String
         studyConsortia: String
         studyDescription: String

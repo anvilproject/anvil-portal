@@ -22,6 +22,7 @@ import DashboardStudyTable, {
 import compStyles from "./dashboard-study.module.css";
 
 export interface IStudy {
+  fhirUrl: string;
   studyAccession: string;
   studyConsortia?: string;
   studyDescription: string;
@@ -41,6 +42,7 @@ interface DashboardStudyProps {
 function DashboardStudy(props: DashboardStudyProps): JSX.Element {
   const { locationHistory, ncpi, study } = props;
   const {
+    fhirUrl,
     studyAccession,
     studyConsortia,
     studyDescription,
@@ -54,6 +56,7 @@ function DashboardStudy(props: DashboardStudyProps): JSX.Element {
   return (
     <div className={compStyles.dashboardStudy}>
       <DashboardStudyHeadline
+        fhirUrl={fhirUrl}
         locationHistory={locationHistory}
         studyAccession={studyAccession}
         studyConsortia={studyConsortia}

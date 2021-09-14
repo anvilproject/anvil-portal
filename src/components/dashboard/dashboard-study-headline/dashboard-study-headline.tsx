@@ -16,6 +16,7 @@ import Overline from "../../overline/overline";
 import compStyles from "./dashboard-study-headline.module.css";
 
 interface DashboardStudyHeadlineProps {
+  fhirUrl: string;
   locationHistory: string;
   studyAccession: string;
   studyConsortia: string | undefined;
@@ -27,6 +28,7 @@ function DashboardStudyHeadline(
   props: DashboardStudyHeadlineProps
 ): JSX.Element {
   const {
+    fhirUrl,
     locationHistory,
     studyAccession,
     studyConsortia,
@@ -37,7 +39,6 @@ function DashboardStudyHeadline(
     link: locationHistory,
     name: "Datasets",
   };
-  const fhirUrl = `https://dbgap-api.ncbi.nlm.nih.gov/fhir/x1/ResearchStudy?_id=${studyAccession}&_format=json`;
 
   return (
     <div className={compStyles.studyHeadline}>

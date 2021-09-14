@@ -37,22 +37,26 @@ const urlSuffixFHIR = "&_format=json";
 /**
  * Builds the study from the FHIR JSON.
  *
- * @param dbGapIdAccession
+ * @param dbGapId
  * @returns {Promise.<*>}
  */
-const getFHIRStudy = async function getFHIRStudy(dbGapIdAccession) {
+const getFHIRStudy = async function getFHIRStudy(dbGapId) {
   /* Initialize study. */
   let study = initializeStudy();
 
+  /* Init FHIR url and assign to study. */
+  const fhirUrl = getFHIRURL(dbGapId);
+  Object.assign(study, { fhirUrl: fhirUrl });
+
   /* Grab the FHIR JSON. */
-  const fhirJSON = await getFHIRJSON(dbGapIdAccession);
+  const fhirJSON = await getFHIRJSON(dbGapId);
 
   /* Build the study. */
   const fhirStudy = buildFHIRStudy(fhirJSON, study);
 
   /* Cache the study for future use; if it has not already been stored. */
   if (fhirJSON && !fhirJSON.cacheHit) {
-    await cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy);
+    await cacheFHIR(dbGapId, fhirJSON, fhirStudy);
   }
 
   return fhirStudy;
@@ -115,14 +119,14 @@ function buildFHIRStudy(fhirJSON, study) {
 /**
  * Caches the FHIR JSON.
  *
- * @param dbGapIdAccession
+ * @param dbGapId
  * @param fhirJSON
  * @param fhirStudy
  * @returns {Promise.<void>}
  */
-async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
+async function cacheFHIR(dbGapId, fhirJSON, fhirStudy) {
   if (isFHIRComplete(fhirStudy)) {
-    const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+    const file = `${dirCacheFHIR}/${dbGapId}.json`;
 
     /* Cache the FHIR JSON. */
     /* If the file exists, it will not be re-cached. */
@@ -130,7 +134,7 @@ async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
     await writeFile(file, JSON.stringify(fhirJSON), { flag: "wx" });
   } else {
     console.log(
-      `FHIR response incomplete and will not be cached for ${dbGapIdAccession}`
+      `FHIR response incomplete and will not be cached for ${dbGapId}`
     );
   }
 }
@@ -138,17 +142,17 @@ async function cacheFHIR(dbGapIdAccession, fhirJSON, fhirStudy) {
 /**
  * Fetches FHIR page specified by URL and returns corresponding raw JSON.
  *
- * @param dbGapIdAccession
+ * @param dbGapId
  * @returns {Promise.<*>}
  */
-async function fetchFHIRJSON(dbGapIdAccession) {
-  const url = `${urlPrefixFHIR}${dbGapIdAccession}${urlSuffixFHIR}`;
+async function fetchFHIRJSON(dbGapId) {
+  const url = getFHIRURL(dbGapId);
   const response = await fetch(url);
   const status = response.status;
 
   /* Parse the response. */
   if (status === 200) {
-    return await parseFHIRJSON(dbGapIdAccession, response);
+    return await parseFHIRJSON(dbGapId, response);
   } else {
     console.log(`FHIR fetch status error ${status} for ${url}`);
   }
@@ -184,16 +188,16 @@ function findExtensionType(resource, stringSnippet = "") {
  * JSON will be sourced from cache. If the JSON is not cached, then the JSON is fetched.
  *
  * @returns {Promise.<*>}
- * @param dbGapIdAccession
+ * @param dbGapId
  */
-async function getFHIRJSON(dbGapIdAccession) {
+async function getFHIRJSON(dbGapId) {
   /* Grab the FHIR study JSON from cache. */
-  let fhirJSON = await readCacheFHIR(dbGapIdAccession);
+  let fhirJSON = await readCacheFHIR(dbGapId);
   let cacheHit = true;
 
   if (!fhirJSON) {
     /* Otherwise, fetch the FHIR study JSON. */
-    fhirJSON = await fetchFHIRJSON(dbGapIdAccession);
+    fhirJSON = await fetchFHIRJSON(dbGapId);
     cacheHit = false;
 
     if (!fhirJSON) {
@@ -202,6 +206,15 @@ async function getFHIRJSON(dbGapIdAccession) {
   }
 
   return Object.assign(fhirJSON, { cacheHit: cacheHit });
+}
+
+/**
+ * Returns the FHIR url.
+ *
+ * @param dbGapId
+ */
+function getFHIRURL(dbGapId) {
+  return `${urlPrefixFHIR}${dbGapId}${urlSuffixFHIR}`;
 }
 
 /**
@@ -408,12 +421,12 @@ async function parseFHIRJSON(dbGapIdAccession, response) {
 /**
  * Returns the cached FHIR JSON.
  *
- * @param dbGapIdAccession
+ * @param dbGapId
  * @returns {Promise.<*>}
  */
-async function readCacheFHIR(dbGapIdAccession) {
+async function readCacheFHIR(dbGapId) {
   /* Grab the FHIR content from cache. */
-  const file = `${dirCacheFHIR}/${dbGapIdAccession}.json`;
+  const file = `${dirCacheFHIR}/${dbGapId}.json`;
   const content = await readFile(file);
 
   /* Return the JSON. */

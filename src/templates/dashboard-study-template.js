@@ -72,6 +72,7 @@ export const query = graphql`
       studyUrl
     }
     dashboardStudy(id: { eq: $id }) {
+      fhirUrl
       studyAccession
       studyConsortia
       studyDescription
