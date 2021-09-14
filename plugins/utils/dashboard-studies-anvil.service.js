@@ -51,12 +51,14 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
     /* Assemble general study fields. */
     const study = await getFHIRStudy(studyAccession);
     const studyDescription = study?.description;
+    const studyDescriptionShort = study?.descriptionShort;
     const studyDesigns = study?.studyDesigns;
     const studyName = study?.studyName;
     const studyUrl = getStudyUrl(studyAccession);
     studyByStudyId.set(studyId, {
       dbGapIdAccession: studyAccession,
       studyDescription: studyDescription,
+      studyDescriptionShort: studyDescriptionShort,
       studyDesigns: studyDesigns,
       studyName: studyName,
       studyUrl: studyUrl,

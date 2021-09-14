@@ -16,7 +16,7 @@ import Layout from "../components/layout";
 
 export default ({ data, location }) => {
   const { context } = data.sitePage;
-  const { slug, title } = context;
+  const { description, slug } = context;
   const study = data.dashboardStudy || data.dashboardNcpiStudy;
   const styles = { alignment: "left" };
   const ncpi = slug.startsWith("/ncpi");
@@ -28,12 +28,12 @@ export default ({ data, location }) => {
 
   return (
     <Layout
-      description={study.studyName}
+      description={description}
       docPath={slug}
       navigation={context}
       ncpi={ncpi}
       styles={styles}
-      title={title}
+      title={study.studyName}
     >
       <DashboardStudy
         locationHistory={locationHistory}
@@ -45,10 +45,11 @@ export default ({ data, location }) => {
 };
 
 export const query = graphql`
-  query ($id: String!) {
+  query($id: String!) {
     sitePage(context: { id: { eq: $id } }) {
       context {
         id
+        description
         menuPath
         slug
         studyId

@@ -139,6 +139,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            studyDescriptionShort
             studyId
             studySlug
           }
@@ -148,6 +149,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            studyDescriptionShort
             studyId
             studySlug
           }
@@ -224,7 +226,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     /* For each dashboard study create a detailed page. */
     allDashboardStudy.edges.forEach(({ node }) => {
-      const { id, studyId, studySlug } = node;
+      const { id, studyDescriptionShort, studyId, studySlug } = node;
       const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
 
       /* Create page. */
@@ -232,6 +234,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: studySlug,
         component: slugComponent,
         context: {
+          description: studyDescriptionShort,
           id: id,
           menuPath: "/data",
           slug: studySlug,
@@ -243,7 +246,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     /* For each dashboard NCPI study create a detailed page. */
     allDashboardNcpiStudy.edges.forEach(({ node }) => {
-      const { id, studyId, studySlug } = node;
+      const { id, studyDescriptionShort, studyId, studySlug } = node;
       const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
 
       /* Create page. */
@@ -251,6 +254,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: studySlug,
         component: slugComponent,
         context: {
+          description: studyDescriptionShort,
           id: id,
           menuPath: "/ncpi/data",
           slug: studySlug,

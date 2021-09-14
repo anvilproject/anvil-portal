@@ -24,6 +24,7 @@ const FHIR_FIELD_KEY = {
   CONSENT_CODES: "consentCodes",
   DATA_TYPES: "dataTypes",
   DESCRIPTION: "description",
+  DESCRIPTION_SHORT: "descriptionShort", // used by SEO for social sharing
   FOCUSES: "focuses",
   STUDY_DESIGNS: "studyDesigns",
   STUDY_NAME: "studyName",
@@ -71,9 +72,11 @@ function buildFHIRStudy(fhirJSON, study) {
     /* Grab the study name and description and assign to the study. */
     const studyName = getStudyName(entries);
     const description = getStudyDescription(entries);
+    const shortDescription = getStudyShortDescription(entries);
     const cloneStudy = Object.assign(study, {
-      [FHIR_FIELD_KEY.STUDY_NAME]: studyName,
       [FHIR_FIELD_KEY.DESCRIPTION]: description,
+      [FHIR_FIELD_KEY.DESCRIPTION_SHORT]: shortDescription,
+      [FHIR_FIELD_KEY.STUDY_NAME]: studyName,
     });
 
     return entries.reduce((acc, entry) => {
@@ -295,6 +298,33 @@ function getStudyName(entries) {
 }
 
 /**
+ * Returns the study description (shortened to the first 200 chars).
+ *
+ * @param entries
+ * @returns {string}
+ */
+function getStudyShortDescription(entries) {
+  /* Grab the first entry's resource property. */
+  const entry = entries[0];
+  const resource = entry?.resource;
+
+  if (resource) {
+    const rawDescription = resource.description;
+    if (rawDescription) {
+      /* Decode and truncate description at first 200 characters. */
+      let shortDescription = decode(rawDescription).slice(0, 200);
+      /* Remove any trailing periods. */
+      if (shortDescription.endsWith(".")) {
+        shortDescription = shortDescription.slice(0, -1);
+      }
+      /* Add ellipsis. */
+      return shortDescription.concat("...");
+    }
+  }
+  return "";
+}
+
+/**
  * Returns the initialized study object.
  *
  * @returns {{}}
@@ -304,6 +334,7 @@ function initializeStudy() {
     [FHIR_FIELD_KEY.CONSENT_CODES]: [],
     [FHIR_FIELD_KEY.DATA_TYPES]: [],
     [FHIR_FIELD_KEY.DESCRIPTION]: "",
+    [FHIR_FIELD_KEY.DESCRIPTION_SHORT]: "",
     [FHIR_FIELD_KEY.FOCUSES]: [],
     [FHIR_FIELD_KEY.STUDY_DESIGNS]: [],
     [FHIR_FIELD_KEY.STUDY_NAME]: "",
