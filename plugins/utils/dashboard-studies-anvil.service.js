@@ -49,7 +49,8 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
     }
 
     /* Assemble general study fields. */
-    const study = await getFHIRStudy(studyAccession);
+    const study = await getFHIRStudy(studyId);
+    const fhirUrl = study?.fhirUrl;
     const studyDescription = study?.description;
     const studyDescriptionShort = study?.descriptionShort;
     const studyDesigns = study?.studyDesigns;
@@ -57,6 +58,7 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
     const studyUrl = getStudyUrl(studyAccession);
     studyByStudyId.set(studyId, {
       dbGapIdAccession: studyAccession,
+      fhirUrl: fhirUrl,
       studyDescription: studyDescription,
       studyDescriptionShort: studyDescriptionShort,
       studyDesigns: studyDesigns,
