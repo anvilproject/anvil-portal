@@ -312,10 +312,10 @@ function getStudyShortDescription(entries) {
     const rawDescription = resource.description;
     if (rawDescription) {
       /* Decode and truncate description at first 200 characters. */
-      const shortDescription = decode(rawDescription).slice(0, 200);
+      let shortDescription = decode(rawDescription).slice(0, 200);
       /* Remove any trailing periods. */
       if (shortDescription.endsWith(".")) {
-        shortDescription.slice(0, -1);
+        shortDescription = shortDescription.slice(0, -1);
       }
       /* Add ellipsis. */
       return shortDescription.concat("...");
