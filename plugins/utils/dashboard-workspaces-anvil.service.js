@@ -192,11 +192,12 @@ function buildWorkspacePropertyGapId(studyId, studyAccession, studyUrl) {
  * Returns the slug for the study detail page.
  *
  * @param studyId
+ * @param studyAccession
  * @returns {{studySlug: string}}
  */
-function buildWorkspacePropertyStudySlug(studyId) {
+function buildWorkspacePropertyStudySlug(studyId, studyAccession) {
   let slug = "";
-  if (studyId && studyId.startsWith("phs")) {
+  if (studyAccession && studyId && studyId.startsWith("phs")) {
     slug = `/data/studies/${studyId}`;
   }
   return { studySlug: slug };
@@ -263,7 +264,10 @@ function buildWorkspaces(
     );
 
     /* Build the property studySlug (for the study detail page). */
-    const propertyStudySlug = buildWorkspacePropertyStudySlug(studyId);
+    const propertyStudySlug = buildWorkspacePropertyStudySlug(
+      studyId,
+      dbGapIdAccession
+    );
 
     /* Grab the workspace file size. */
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
