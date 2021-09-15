@@ -23,12 +23,6 @@ To complement this onboarding and introductory section, the AnVIL team is in the
 
   <!--- Add FAIR, add interoperability with other data commons, increased accessibility to complex data center--->
 
-## Requesting AnVIL Training
-
-The AnVIL Project offers in-person training on a limited basis. Use the training request form to apply.
-
-<button-link href="https://docs.google.com/forms/d/1-PomtMVaabtw1HOc1kTDRx5uRw3_tSC1LgwsrxGJWjI/edit" target="_blank">Request AnVIL Training</button-link>
-
 
 ## New User Onboarding
 

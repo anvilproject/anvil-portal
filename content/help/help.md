@@ -12,14 +12,6 @@ To ask a question or provide feedback, please feel free to reach out to us on th
 email our [help desk](mailto:help@lists.anvilproject.org). 
 
 
-### Requesting AnVIL Training
-
-The AnVIL Project offers in-person training on a limited basis. Use the training request form to apply.
-
-<button-link href="https://docs.google.com/forms/d/1-PomtMVaabtw1HOc1kTDRx5uRw3_tSC1LgwsrxGJWjI/edit" target="_blank">Request AnVIL Training</button-link>
-
-
-
 ## Getting Help with AnVIL Components and Tools
 
 Refer to the following table for help links for AnVIL platform components and tools.
