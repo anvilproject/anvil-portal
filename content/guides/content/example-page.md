@@ -5,7 +5,7 @@ author: "Dave Rogers"
 
 # Example Page - the Kitchen Sink
  
-Below we list examples of markdown for many of the textual / formatting elemetns on the AnVIL Portal.
+Below we list examples of markdown for many of the textual / formatting elements on the AnVIL Portal.
 
 ## Hero Text
 Many pages start with top level title or "Hero Text" like the below.
@@ -35,7 +35,7 @@ Many pages start with top level title or "Hero Text" like the below.
 ```
 
 >####Tip
->I am a blockquote with only one paragrah
+>I am a blockquote with only one paragraph
 
 >I am a blockquote with no tip heading
 >But I have a second paragraph

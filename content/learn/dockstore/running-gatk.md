@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
-title: "Running GATK in TerraL"
-description: "Runing GATK Terra."
+title: "Running GATK in Terra"
+description: "Running GATK in Terra."
 ---
 
 

@@ -36,7 +36,7 @@ Typically the folder structure mirrors the structure or the site. This is not st
 
 ## Create the "Front Matter"
 
-Metadata describing the page and indicating its publication date, and author are held in the pages "Front Matter". Front matter is a yaml section that lists key values pairs of configuration for the page in the very beginning or "front" of the file.
+Metadata describing the page and indicating its publication date, and author are held in the pages "Front Matter". Front matter is a YAML section that lists key values pairs of configuration for the page in the very beginning or "front" of the file.
 
 
  ```

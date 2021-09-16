@@ -33,7 +33,7 @@ First navigate to the parent directory and then use the ```Create New File``` bu
 ---
 
 ### Create the "Front Matter"
-Metadata describing the page and indicating its publication date, and author are held in the pages "Front Matter". Front matter is a yaml section that lists key values pairs of configuration for the page in the very beginning or "front" of the file.
+Metadata describing the page and indicating its publication date, and author are held in the pages "Front Matter". Front matter is a YAML section that lists key values pairs of configuration for the page in the very beginning or "front" of the file.
 
 >####TIP
 >Note that you can not create an empty directory using the Github interface. However you can create a directory while adding a file by adding the new directory name before the file name then hitting the "/" character
@@ -54,7 +54,7 @@ To get your page added to the siteMap and deployed, please open a pull request f
 
 ####Getting Content Reviewed
 ##### Creating a Pull Request Against Main
-Once the file looks ok, submit a pull request against the `main` branch, describing your changes and then request reviewers.
+Once the file looks OK, submit a pull request against the `main` branch, describing your changes and then request reviewers.
 
 ##### PR Review Policy
 We will generally request 2 reviewers for any complex technical content, team consensus for any marketing/branding/value proposition issues and allow the site maintainers to make typo or grammar fixes without additional reviewers.

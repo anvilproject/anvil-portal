@@ -101,7 +101,7 @@ To be compatible with indexing once in AnVIL, **special characters (i.e. “%”
 
 <figure>
 <img src="./_images/subject-table.png" alt="Data Model"/>
-<figure-caption>The **subject table** (screenshot above) contans a collection of basic information and phentotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
+<figure-caption>The **subject table** (screenshot above) contains a collection of basic information and phenotypic data about the study subjects (e.g., demographics, age, sex, or race.)</figure-caption>
 </figure>
 
 
@@ -150,7 +150,7 @@ AnVIL includes a diverse set of studies and a wide range of collected phenotypic
   - [UMLS Metathesaurus](https://www.nlm.nih.gov/research/umls/index.html) - Links concepts from multiple vocabularies and ontologies (license required, free to individuals in the USA, includes access to SNOMED).
   - [UBERON](https://www.ebi.ac.uk/ols/ontologies/uberon) - A vocabulary focused on anatomical structure.
   - [HPO](https://hpo.jax.org/app/) - An ontology focused on phenotypic abnormalities.
-  - [OMIM](https://www.omim.org/) - An ontology for rare mendelian diseases.
+  - [OMIM](https://www.omim.org/) - An ontology for rare Mendelian diseases.
   - [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) - An ontology for orphan drugs and rare diseases.
   - [ICD](https://icd.codes/) - An ontology for US billing codes.
   - [MeSH](https://meshb.nlm.nih.gov/search) - An ontology for biomedical and health-related information.
@@ -209,5 +209,5 @@ Once you have your data model and all information, you will be ready to complete
 - [Introduction to Data Tables in Terra](https://youtu.be/IeLywroCNNA) (5 minutes)
 
 ### Hands-on tutorial
-For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra [Data Tables QuickStart](https://app.terra.bio/#workspaces/fc-product-demo/Terra-Data-Tables-Quickstart) tutorial (estimated time 30-40 minutes). 
+For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra [Data Tables Quickstart](https://app.terra.bio/#workspaces/fc-product-demo/Terra-Data-Tables-Quickstart) tutorial (estimated time 30-40 minutes). 
 

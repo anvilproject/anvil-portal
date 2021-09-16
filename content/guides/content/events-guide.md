@@ -26,7 +26,7 @@ Events use the conference name as a prefix for the URL giving URLs like:
 
 In the URL above, `bcc2020` is the conference name and `dockstore-fundamentals` is a shortened version of the event name.
 
-The URL for the event is determined by the event file name. For the URl above the corresponding markdown file is:
+The URL for the event is determined by the event file name. For the URL above the corresponding markdown file is:
 
 `bcc2020-dockstore-fundamentals.md`
 

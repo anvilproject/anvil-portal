@@ -133,7 +133,7 @@ Projects will also be hidden if the select cohort contains fewer than 50 subject
 
 <figure>
 <img src="../_images/getting-started/gen3-hidden-projects.png" alt="Hidden projects"/>
-<figure-caption>The grey box containing a downward-facing arrow and the number 50 indicates that the selected virtual cohort contains a subject count below 50. This symbol will be displayed only for studies that are not yet accessible by the user.</figure-caption>
+<figure-caption>The gray box containing a downward-facing arrow and the number 50 indicates that the selected virtual cohort contains a subject count below 50. This symbol will be displayed only for studies that are not yet accessible by the user.</figure-caption>
 </figure>
 
 Users can request access by clicking on the “Get Access” button, visiting the [dbGaP homepage](https://dbgap.ncbi.nlm.nih.gov/), or following instructions reported [here](/learn/accessing-data/requesting-data-access).
@@ -263,7 +263,7 @@ Users can click on any of the graph nodes in order to learn more about their res
 <figure-caption>An example of a node (“sequencing”) being selected in the interactive graph view. A pop-up window will display the number of required and optional properties belonging to the node. Click on “Open properties” to explore.</figure-caption>
 </figure>
 
-If additional nodes along the path are selected, other possible paths will be greyed out. The "Data Model Structure" list on the left side toolbar will also update accordingly.
+If additional nodes along the path are selected, other possible paths will be grayed out. The "Data Model Structure" list on the left side toolbar will also update accordingly.
 
 <figure>
 <img src="../_images/getting-started/gen3-example-second-node.png" alt="Example of a second node"/>

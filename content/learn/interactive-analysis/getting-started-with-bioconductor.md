@@ -70,7 +70,7 @@ The following Terra / AnVIL R / Bioconductor Popup Workshops were held in 2021 f
 
 - **Orchestrating Single-Cell Analysis** - [use-strides/Bioconductor-Workshop-OSCA-3-12](https://app.terra.bio/#workspaces/use-strides/Bioconductor-Workshop-OSCA-3-12) demonstrates using the OSCA book.
 
-- **RNA-seq using DESeq2** - [bioconductor-rpci-anvi/Bioconductor-Workflow-DESeq2](https://app.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) shows differential expression analysis of bulk RNA-seq using Bioconductor package DESeq2.
+- **RNA-seq using DESeq2** - [bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2](https://app.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) shows differential expression analysis of bulk RNA-seq using Bioconductor package DESeq2.
 
 ## R / Bioconductor resources
 

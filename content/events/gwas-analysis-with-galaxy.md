@@ -22,4 +22,4 @@ This interactive workshop will introduce the AnVIL ecosystem and its components,
 Attendees will visualize identified variants in interactive visualizations and learn how to share their Galaxy Workflows on AnVIL. Workshop participants will gain an understanding of how to use cloud computing with AnVIL to perform reproducible, transparent, and accessible genomic analysis.
 
 ### Intended Audience
-The target audience for this worksho p are scientists wanting to do GWAS analyses but with limited informatics expertise and support. The AnVIL ecosystem provides a pre-configured environment in which to conduct human genomics research and Galaxy is one of many tools available for bench-biologists to use for reproducible data analysis.
+The target audience for this workshop are scientists wanting to do GWAS analyses but with limited informatics expertise and support. The AnVIL ecosystem provides a pre-configured environment in which to conduct human genomics research and Galaxy is one of many tools available for bench-biologists to use for reproducible data analysis.

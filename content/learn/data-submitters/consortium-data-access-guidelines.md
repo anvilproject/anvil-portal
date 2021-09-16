@@ -40,7 +40,7 @@ The contact person is responsible for ensuring that the list of consortium membe
 * Ensuring that all consortium members are aware of all data use limitations and the terms of the consortium agreements; and,
 * Ensuring that the consortium has a policy and protocol for data security and management incidents, and working with consortium members, AnVIL staff, and NIH staff to implement those protocols as necessary.
 
-## General Do’s and Don’ts for Consortia: Managing Access to Consortium Data
+## General Do's and Don'ts for Consortia: Managing Access to Consortium Data
 
 * Do have clear documentation of data use limitations, including any additional approvals that may be needed, particularly if different subsets of the consortium data have different data use limitations;
 * DO ensure that individual investigators are aware of and obtain any necessary approvals beyond consortium membership for doing secondary research on the data (e.g. additional IRB approval, additional collaborator approval, etc.);

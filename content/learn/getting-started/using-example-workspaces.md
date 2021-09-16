@@ -16,7 +16,7 @@ The example workspaces listed below may be viewed with only a Terra account. To 
  
  1. [Link your Terra account with a Google billing account](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-projects-and-Google-Billing-Accounts).
 
- 1. [Clone the example workspace](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) into your billing account before runing the workspace's analysis pipeline or interactive analysis.
+ 1. [Clone the example workspace](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) into your billing account before running the workspace's analysis pipeline or interactive analysis.
 
 ## Featured Example Workspaces
 
