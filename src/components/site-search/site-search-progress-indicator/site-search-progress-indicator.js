@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./site-search-progress-indicator.module.css";
+import * as compStyles from "./site-search-progress-indicator.module.css";
 
 function SiteSearchProgressIndicator() {
   return (

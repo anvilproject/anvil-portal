@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import Button from "../../button/button";
 
 // Styles
-import compStyles from "./site-search-partner.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./site-search-partner.module.css";
 
 export interface Partner {
   active: boolean;

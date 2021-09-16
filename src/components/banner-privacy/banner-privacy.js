@@ -13,9 +13,10 @@ import React from "react";
 import ClickHandler from "../click-handler/click-handler";
 
 // Styles
-import compStyles from "./banner-privacy.module.css";
-import globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./banner-privacy.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
+// Template variables
 let bannerHtmlCollection;
 
 class BannerPrivacy extends React.Component {

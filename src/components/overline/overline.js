@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./overline.module.css";
+import * as compStyles from "./overline.module.css";
 
 class Overline extends React.Component {
   render() {

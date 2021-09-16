@@ -13,7 +13,7 @@ import DashboardTableBody from "../dashboard-table-body/dashboard-table-body";
 import DashboardTableHeader from "../dashboard-table-header/dashboard-table-header";
 
 // Styles
-import compStyles from "./dashboard-table.module.css";
+import * as compStyles from "./dashboard-table.module.css";
 
 class DashboardTable extends React.Component {
   render() {

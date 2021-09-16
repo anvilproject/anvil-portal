@@ -15,7 +15,7 @@ import SideBarOutlineItem from "../side-bar-outline-item/side-bar-outline-item";
 import * as OutlineService from "../../utils/outline.service";
 
 // Styles
-import compStyles from "./side-bar-outline.module.css";
+import * as compStyles from "./side-bar-outline.module.css";
 
 function SideBarOutline(props) {
   const { activeOutline, articleOffsetTop, bannerHeight, docPath } = props;

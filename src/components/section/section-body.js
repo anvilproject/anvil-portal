@@ -6,13 +6,12 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./section-body.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./section-body.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class SectionBody extends React.Component {
   render() {

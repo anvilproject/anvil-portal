@@ -6,12 +6,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./icon.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./icon.module.css";
 
 function Icon(props) {
   const { breadcrumb, children, color, fontSize, showHover, showIcon } = props;

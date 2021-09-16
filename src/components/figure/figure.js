@@ -28,7 +28,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./figure.module.css";
+import * as compStyles from "./figure.module.css";
 
 function Figure(props) {
   const { children } = props;

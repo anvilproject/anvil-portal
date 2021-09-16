@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./header-hero.module.css";
+import * as compStyles from "./header-hero.module.css";
 
 interface HeaderHeroProps {
   children: React.ReactElement[];

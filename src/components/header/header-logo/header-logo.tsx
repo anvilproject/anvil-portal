@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 
@@ -14,9 +15,7 @@ import logoNCPI from "../../../../images/cloud-ncpi.svg";
 import logoAnvil from "../../../../images/logo.png";
 
 // Styles
-import compStyles from "./header-logo.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./header-logo.module.css";
 
 interface HeaderLogoProps {
   ncpi: boolean;

@@ -42,20 +42,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        logo: "./images/favicon-anvil.png",
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          yandex: false,
-          windows: false,
-        },
+        background_color: "#f6f7f4",
+        display: "standalone",
+        icon: "./images/favicon-anvil.png",
+        name: "AnVIL",
+        short_name: "AnVIL",
+        start_url: "/",
+        theme_color: "#035c94",
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -70,7 +65,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [
+        excludes: [
           `/events/events-intro`,
           `/news/news-intro`,
           `/guides/content-guide/example-page`,

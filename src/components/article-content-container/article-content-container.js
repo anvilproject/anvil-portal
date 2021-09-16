@@ -7,12 +7,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "../article-content-container/article-content-container.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "../article-content-container/article-content-container.module.css";
 
 function ArticleContentContainer(props) {
   const { children, left } = props;

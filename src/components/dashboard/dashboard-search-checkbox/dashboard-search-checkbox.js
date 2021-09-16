@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useContext } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 
 // Styles
-import compStyles from "./dashboard-search-checkbox.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./dashboard-search-checkbox.module.css";
 
 function DashboardSearchCheckbox(props) {
   const { facet, term } = props,

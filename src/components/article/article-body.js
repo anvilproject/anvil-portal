@@ -13,7 +13,7 @@ import ContextSiteSearch from "../site-search/context-site-search/context-site-s
 import Markdown from "../markdown/markdown";
 
 // Styles
-import compStyles from "./article-body.module.css";
+import * as compStyles from "./article-body.module.css";
 
 function ArticleBody(props) {
   const { children, className, htmlAst } = props;

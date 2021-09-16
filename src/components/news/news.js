@@ -17,7 +17,7 @@ import { ScoopNewsStaticQuery } from "../../hooks/scoop-news-query";
 import Scoops from "../scoops/scoops";
 
 // Styles
-import compStyles from "./news.module.css";
+import * as compStyles from "./news.module.css";
 
 class News extends React.Component {
   render() {

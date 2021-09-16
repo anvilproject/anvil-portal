@@ -12,7 +12,7 @@ import React from "react";
 import DashboardTableHeaderCell from "../dashboard-table-header-cell/dashboard-table-header-cell";
 
 // Styles
-import compStyles from "./dashboard-table-header.module.css";
+import * as compStyles from "./dashboard-table-header.module.css";
 
 class DashboardTableHeader extends React.Component {
   render() {

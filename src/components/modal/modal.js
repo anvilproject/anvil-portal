@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useCallback, useContext, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
@@ -13,8 +14,7 @@ import ReactDOM from "react-dom";
 import ContextModal from "./context-modal/context-modal";
 
 // Styles
-import compStyles from "./modal.module.css";
-const classNames = require("classnames");
+import * as compStyles from "./modal.module.css";
 
 function Modal(props) {
   const { children, onClose } = props;

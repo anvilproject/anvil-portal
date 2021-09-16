@@ -8,6 +8,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
@@ -17,10 +18,8 @@ import SectionSplash from "../section-splash/section-splash";
 import * as HomeService from "../../utils/home.service";
 
 // Styles
-import compStyles from "./section-intro.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./section-intro.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class SectionIntro extends React.Component {
   render() {

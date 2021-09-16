@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./warning.module.css";
+import * as compStyles from "./warning.module.css";
 
 function Warning(props) {
   const { children } = props;

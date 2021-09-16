@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
@@ -14,9 +15,9 @@ import * as OutlineService from "../../utils/outline.service";
 import * as ScrollingService from "../../utils/scrolling.service";
 
 // Styles
-import compStyles from "./outline.module.css";
+import * as compStyles from "./outline.module.css";
 
-const classNames = require("classnames");
+// Template variables
 let htmlCollection, outlineEl;
 
 class Outline extends React.Component {

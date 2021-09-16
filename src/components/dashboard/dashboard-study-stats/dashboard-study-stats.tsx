@@ -12,7 +12,7 @@ import React from "react";
 import * as NumberFormatService from "../../../utils/number-format.service";
 
 // Styles
-import compStyles from "./dashboard-study-stats.module.css";
+import * as compStyles from "./dashboard-study-stats.module.css";
 
 export interface IStat {
   cohorts: number;

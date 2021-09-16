@@ -12,7 +12,7 @@ import React from "react";
 import DashboardTableRowCell from "../dashboard-table-row-cell/dashboard-table-row-cell";
 
 // Styles
-import compStyles from "./dashboard-table-row.module.css";
+import * as compStyles from "./dashboard-table-row.module.css";
 
 function DashboardTableRow(props) {
   const { dataset, order, row } = props;

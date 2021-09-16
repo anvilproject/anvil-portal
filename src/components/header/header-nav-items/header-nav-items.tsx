@@ -14,7 +14,7 @@ import HeaderNavItem from "../header-nav-item/header-nav-item";
 import { IMenuItem } from "../../menu-item/menu-item";
 
 // Styles
-import compStyles from "./header-nav-items.module.css";
+import * as compStyles from "./header-nav-items.module.css";
 
 interface HeaderNavItemsProps {
   activePath: string;

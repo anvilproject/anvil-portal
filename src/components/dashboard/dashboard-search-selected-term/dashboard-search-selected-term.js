@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./dashboard-search-selected-term.module.css";
+import * as compStyles from "./dashboard-search-selected-term.module.css";
 
 function DashboardSearchSelectedTerm(props) {
   const { facet, first, last, onHandleClearTerm, term } = props;

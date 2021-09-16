@@ -12,7 +12,7 @@ import React from "react";
 import Button from "../../button/button";
 
 // Styles
-import compStyles from "./dashboard-search-checkboxes-show-more.module.css";
+import * as compStyles from "./dashboard-search-checkboxes-show-more.module.css";
 
 function DashboardSearchCheckboxesShowMore(props) {
   const { moreCount, onShowMore } = props;

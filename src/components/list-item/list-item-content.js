@@ -12,7 +12,7 @@ import React from "react";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import compStyles from "./list-item-content.module.css";
+import * as compStyles from "./list-item-content.module.css";
 
 class ListItemContent extends React.Component {
   /**

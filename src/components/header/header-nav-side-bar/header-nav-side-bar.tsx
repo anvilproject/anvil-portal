@@ -14,7 +14,7 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 import HeaderNavSideBarOverlay from "../header-nav-side-bar-overlay/header-nav-side-bar-overlay";
 
 // Styles
-import compStyles from "./header-nav-side-bar.module.css";
+import * as compStyles from "./header-nav-side-bar.module.css";
 
 interface HeaderNavSideBarProps {
   children: React.ReactElement[];

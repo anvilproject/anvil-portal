@@ -13,7 +13,7 @@ import { CSSTransition } from "react-transition-group";
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 
 // Styles
-import compStyles from "./header-nav-side-bar-overlay.module.css";
+import * as compStyles from "./header-nav-side-bar-overlay.module.css";
 
 function HeaderNavSideBarOverlay(): JSX.Element {
   const { menuOpen, onSetMenuOpen } = useContext(ContextAnVILPortal);

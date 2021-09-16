@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useEffect, useRef, useState } from "react";
 
 // App dependencies
 import More from "../../more/more";
 
 // Styles
-import compStyles from "./dashboard-study-overview.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./dashboard-study-overview.module.css";
 
 interface DashboardStudyOverviewProps {
   ncpi: boolean;

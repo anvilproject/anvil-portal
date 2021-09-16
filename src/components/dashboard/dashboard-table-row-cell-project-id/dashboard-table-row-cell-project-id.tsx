@@ -10,7 +10,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./dashboard-table-row-cell-project-id.module.css";
+import * as compStyles from "./dashboard-table-row-cell-project-id.module.css";
 
 interface DashboardTableRowCellProjectIdProps {
   children: string;

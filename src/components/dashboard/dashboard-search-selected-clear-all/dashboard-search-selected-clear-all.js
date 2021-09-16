@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./dashboard-search-selected-clear-all.module.css";
+import * as compStyles from "./dashboard-search-selected-clear-all.module.css";
 
 function DashboardSearchSelectedClearAll(props) {
   const { onHandleClearAll } = props;

@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import HeaderSocial, { ISocial } from "../header-social/header-social";
 
 // Styles
-import compStyles from "./header-socials.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./header-socials.module.css";
 
 interface HeaderSocialsProps {
   ncpi: boolean;

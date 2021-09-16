@@ -6,11 +6,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./bubble-date.module.css";
-let classNames = require("classnames");
+import * as compStyles from "./bubble-date.module.css";
 
 class BubbleDate extends React.Component {
   render() {

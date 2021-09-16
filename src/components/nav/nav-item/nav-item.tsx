@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { navigate } from "gatsby";
 import React, { useCallback, useEffect, useState } from "react";
 
@@ -16,9 +17,7 @@ import * as OutlineService from "../../../utils/outline.service";
 import * as TabService from "../../../utils/tab.service";
 
 // Styles
-import compStyles from "./nav-item.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./nav-item.module.css";
 
 interface NavItemProps {
   docPath: string;

@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 
@@ -15,9 +16,7 @@ import HeaderNavItems from "../header-nav-items/header-nav-items";
 import { IMenuItem } from "../../menu-item/menu-item";
 
 // Styles
-import compStyles from "./header-nav-item.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./header-nav-item.module.css";
 
 interface HeaderNavItemProps {
   activePath: string;

@@ -13,7 +13,7 @@ import React from "react";
 import Arrow from "../arrow/arrow";
 
 // Styles
-import compStyles from "./article-navigation.module.css";
+import * as compStyles from "./article-navigation.module.css";
 
 function ArticleNavigation(props) {
   const { navigation } = props,

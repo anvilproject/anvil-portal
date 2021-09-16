@@ -18,7 +18,7 @@ import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import compStyles from "./workspace.module.css";
+import * as compStyles from "./workspace.module.css";
 
 class Workspace extends React.Component {
   redirect = (linkTo, linkText) => {

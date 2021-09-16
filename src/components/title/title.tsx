@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./title.module.css";
+import * as compStyles from "./title.module.css";
 
 interface TitleProps {
   title: string;

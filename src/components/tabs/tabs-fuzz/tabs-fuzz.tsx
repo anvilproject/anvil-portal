@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./tabs-fuzz.module.css";
+import * as compStyles from "./tabs-fuzz.module.css";
 
 function TabsFuzz(): JSX.Element {
   return <div className={compStyles.tabsFuzz} />;

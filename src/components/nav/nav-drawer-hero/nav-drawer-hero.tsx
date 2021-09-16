@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./nav-drawer-hero.module.css";
+import * as compStyles from "./nav-drawer-hero.module.css";
 
 interface NavDrawerHeroProps {
   subTitle: string;

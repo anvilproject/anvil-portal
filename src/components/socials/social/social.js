@@ -22,7 +22,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./social.module.css";
+import * as compStyles from "./social.module.css";
 
 function Social(props) {
   const { children, url } = props;

@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 
@@ -16,10 +17,8 @@ import Layout from "../components/layout";
 import bubbles from "../../images/404.png";
 
 // Styles
-import globalStyles from "../styles/global.module.css";
-import compStyles from "./404.module.css";
-
-let classNames = require("classnames");
+import * as globalStyles from "../styles/global.module.css";
+import * as compStyles from "./404.module.css";
 
 class PageNotFound extends React.Component {
   render() {
@@ -35,12 +34,12 @@ class PageNotFound extends React.Component {
             src={bubbles}
           />
           <p>
-            <Link className={globalStyles.link} to="/">
+            <Link className={globalStyles.asLink} to="/">
               Home
             </Link>
           </p>
           <p>
-            <Link className={globalStyles.link} to="/help">
+            <Link className={globalStyles.asLink} to="/help">
               Help
             </Link>
           </p>

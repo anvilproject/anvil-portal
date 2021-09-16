@@ -7,12 +7,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./arrow.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./arrow.module.css";
 
 interface ArrowProps {
   children: React.ReactElement;

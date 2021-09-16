@@ -13,7 +13,7 @@ import ContextSiteSearch from "../context-site-search/context-site-search";
 import SiteSearchPartner from "../site-search-partner/site-search-partner";
 
 // Styles
-import compStyles from "./site-search-partners.module.css";
+import * as compStyles from "./site-search-partners.module.css";
 
 function SiteSearchPartners(): JSX.Element | null {
   const { onSelectSiteSearchPartner, partners } = useContext(ContextSiteSearch);

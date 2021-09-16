@@ -8,16 +8,15 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import { ColorPaletteStaticQuery } from "../../hooks/color-palette-query";
 
 // Styles
-import compStyles from "./style-guide-color-palette.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./style-guide-color-palette.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function StyleGuideColorPalette() {
   const colors = ColorPaletteStaticQuery();

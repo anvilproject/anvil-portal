@@ -6,12 +6,12 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 import { isBrowser } from "react-device-detect";
 
 // App dependencies
-import Carousel from "../carousel/carousel";
 import Events from "../events/events";
 import News from "../news/news";
 import SectionBody from "../section/section-body";
@@ -20,17 +20,15 @@ import Stats from "../stats/stats";
 import TwitterTimeline from "../twitter-timeline/twitter-timeline";
 import Workspaces from "../workspaces/workspaces";
 
-// Styles
-import compStyles from "./home.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-// Logos
+// Images
 import logoDockstore from "../../../images/logo-dockstore.png";
 import logoGen3 from "../../../images/logo-gen3.png";
 import logoNCPI from "../../../images/logo-ncpi.png";
 import logoTerra from "../../../images/logo-terra.png";
 
-let classNames = require("classnames");
+// Styles
+import * as compStyles from "./home.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 class Home extends React.Component {
   render() {

@@ -14,7 +14,7 @@ import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import socialStyles from "../socials/social/social.module.css";
+import * as socialStyles from "../socials/social/social.module.css";
 
 function SiteExternalLinkTracker(props) {
   const { children, pageTitle, refSite } = props;

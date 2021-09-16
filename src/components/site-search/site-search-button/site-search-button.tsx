@@ -14,7 +14,7 @@ import ContextSiteSearch from "../context-site-search/context-site-search";
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./site-search-button.module.css";
+import * as compStyles from "./site-search-button.module.css";
 
 function SiteSearchButton(): JSX.Element {
   const { onSetSiteSearchBarOpen } = useContext(ContextSiteSearch);

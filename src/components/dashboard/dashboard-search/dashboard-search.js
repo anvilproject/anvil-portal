@@ -17,7 +17,7 @@ import DashboardSearchSelectedToolbar from "../dashboard-search-selected-toolbar
 import DashboardTableToolbar from "../dashboard-table-toolbar/dashboard-table-toolbar";
 
 // Styles
-import compStyles from "./dashboard-search.module.css";
+import * as compStyles from "./dashboard-search.module.css";
 
 function DashboardSearch() {
   return (

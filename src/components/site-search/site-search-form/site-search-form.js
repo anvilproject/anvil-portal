@@ -12,7 +12,7 @@ import React from "react";
 import SiteSearchInput from "../site-search-input/site-search-input";
 
 // Styles
-import compStyles from "./site-search-form.module.css";
+import * as compStyles from "./site-search-form.module.css";
 
 function SiteSearchForm(props) {
   const { onSubmitSiteSearch } = props;

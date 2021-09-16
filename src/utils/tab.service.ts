@@ -6,7 +6,7 @@
  */
 
 // Styles
-import compStyles from "../components/tabs/tab/tab.module.css";
+import * as compStyles from "../components/tabs/tab/tab.module.css";
 
 /**
  * Calculates the tabs scroll left position.

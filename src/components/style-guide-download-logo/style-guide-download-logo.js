@@ -17,7 +17,7 @@ import anvilProjectOrg from "../../../images/brand/anvilprojectorg.png";
 import download from "../../../images/icon/download-grey.png";
 
 // Styles
-import compStyles from "./style-guide-download-logo.module.css";
+import * as compStyles from "./style-guide-download-logo.module.css";
 
 function StyleGuideDownloadLogo() {
   return (

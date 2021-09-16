@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./site-search-input-clear.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./site-search-input-clear.module.css";
 
 function SiteSearchInputClear(props) {
   const { onInputClear, searchBarOpen, showClear } = props;

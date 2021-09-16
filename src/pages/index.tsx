@@ -15,10 +15,10 @@ import Layout from "../components/layout";
 class IndexPage extends React.Component {
   render() {
     const description =
-        "Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.",
-      title = "Migrate Your Genomic Research to the Cloud";
+      "Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.";
+    const title = "Migrate Your Genomic Research to the Cloud";
     return (
-      <Layout description={description} homePage={true} title={title}>
+      <Layout description={description} homePage title={title}>
         <Home />
       </Layout>
     );

@@ -12,7 +12,7 @@ import React from "react";
 import DashboardTable from "../dashboard-table/dashboard-table";
 
 // Styles
-import compStyles from "./dashboard-study-table.module.css";
+import * as compStyles from "./dashboard-study-table.module.css";
 
 export interface IStudyWorkspace {
   accessType: string;

@@ -14,7 +14,7 @@ import DashboardDownloadTSV from "../dashboard-download-tsv/dashboard-download-t
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 
 // Styles
-import compStyles from "./dashboard-table-toolbar.module.css";
+import * as compStyles from "./dashboard-table-toolbar.module.css";
 
 function DashboardTableToolbar() {
   return (

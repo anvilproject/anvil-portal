@@ -21,7 +21,7 @@ import Social from "../social/social";
 import youtube from "../../../../images/logo-youtube-red.png";
 
 // Styles
-import compStyles from "./social-youtube.module.css";
+import * as compStyles from "./social-youtube.module.css";
 
 function SocialYoutube(props) {
   const { url } = props;

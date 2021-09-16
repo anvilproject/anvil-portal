@@ -14,7 +14,7 @@ import Stat from "../stat/stat";
 import * as NumberFormatService from "../../utils/number-format.service";
 
 // Styles
-import compStyles from "./stats.module.css";
+import * as compStyles from "./stats.module.css";
 
 function Stats() {
   const stats = StatsStaticQuery();

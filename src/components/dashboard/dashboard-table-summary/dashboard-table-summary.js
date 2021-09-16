@@ -13,7 +13,7 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardTable from "../dashboard-table/dashboard-table";
 
 // Styles
-import compStyles from "./dashboard-table-summary.module.css";
+import * as compStyles from "./dashboard-table-summary.module.css";
 
 class DashboardTableSummary extends React.Component {
   render() {

@@ -18,7 +18,7 @@ import Tab, { ITab } from "./tab/tab";
 import * as TabService from "../../utils/tab.service";
 
 // Styles
-import compStyles from "./tabs.module.css";
+import * as compStyles from "./tabs.module.css";
 
 interface TabsProps {
   tabs: ITab[];

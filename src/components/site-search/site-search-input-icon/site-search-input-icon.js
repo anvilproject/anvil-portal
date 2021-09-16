@@ -13,7 +13,7 @@ import React from "react";
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./site-search-input-icon.module.css";
+import * as compStyles from "./site-search-input-icon.module.css";
 
 function SiteSearchInputIcon() {
   return (

@@ -20,7 +20,7 @@ import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import searchPlaceholder from "../../../../images/search-placeholder.png";
 
 // Styles
-import compStyles from "./site-search-result.module.css";
+import * as compStyles from "./site-search-result.module.css";
 
 function SiteSearchResult(props) {
   const { result, query } = props,

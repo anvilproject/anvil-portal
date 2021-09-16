@@ -4,7 +4,6 @@
  *
  * Style definitions specific to The AnVIL release roadmap component.
  */
-@import "../../styles/vars.module.css";
 
 /* Roadmap container */
 .roadmap {

@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
@@ -17,10 +18,8 @@ import Overline from "../overline/overline";
 import * as ScoopsService from "../../utils/scoops.service";
 
 // Styles
-import contentStyles from "../markdown/markdown.module.css";
-import compStyles from "./scoop.module.css";
-
-let classNames = require("classnames");
+import * as contentStyles from "../markdown/markdown.module.css";
+import * as compStyles from "./scoop.module.css";
 
 class Scoop extends React.Component {
   getScoops = () => {

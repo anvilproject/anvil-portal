@@ -19,7 +19,7 @@ import Social from "../social/social";
 import linkedin from "../../../../images/logo-linkedin.svg";
 
 // Styles
-import compStyles from "./social-linkedin.module.css";
+import * as compStyles from "./social-linkedin.module.css";
 
 function SocialLinkedIn(props) {
   const { url } = props;

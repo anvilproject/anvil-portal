@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -13,9 +14,7 @@ import ReactDOM from "react-dom";
 import * as TooltipService from "../../utils/tooltip.service";
 
 // Styles
-import compStyles from "./tooltip.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./tooltip.module.css";
 
 function Tooltip(props) {
   const { children, label, multiline } = props;

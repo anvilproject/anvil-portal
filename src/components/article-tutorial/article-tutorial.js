@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
@@ -15,10 +16,8 @@ import SideBar from "../side-bar/side-bar";
 import Spy from "../spy/spy";
 
 // Styles
-import articleStyles from "../article/article.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
+import * as articleStyles from "../article/article.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function ArticleTutorial(props) {
   const { bannerHeight, children, docPath } = props;

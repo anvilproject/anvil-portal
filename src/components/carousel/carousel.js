@@ -7,6 +7,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
@@ -19,11 +20,10 @@ import left from "../../../images/icon/left.png";
 import right from "../../../images/icon/right.png";
 
 // Styles
-import compStyles from "./carousel.module.css";
-import globalStyles from "../../styles/global.module.css";
+import * as compStyles from "./carousel.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
-let classNames = require("classnames");
-
+// Template variables
 let x0 = null;
 let y0 = null;
 

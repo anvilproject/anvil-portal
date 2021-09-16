@@ -7,15 +7,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useContext } from "react";
 
 // App dependencies
 import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
 
 // Styles
-import compStyles from "./site-wrapper.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./site-wrapper.module.css";
 
 const SiteWrapper = React.forwardRef((props, ref) => {
   const { children } = props;

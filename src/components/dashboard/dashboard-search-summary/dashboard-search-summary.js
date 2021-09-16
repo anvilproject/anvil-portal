@@ -14,7 +14,7 @@ import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-pan
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
 
 // Styles
-import compStyles from "./dashboard-search-summary.module.css";
+import * as compStyles from "./dashboard-search-summary.module.css";
 
 function DashboardSearchSummary() {
   const { summaries, tableHeadersSummary } = useContext(ContextDashboard);

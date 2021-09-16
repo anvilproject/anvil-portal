@@ -15,7 +15,7 @@ import { ITab } from "../tabs/tab/tab";
 import Title from "../title/title";
 
 // Styles
-import compStyles from "./headline.module.css";
+import * as compStyles from "./headline.module.css";
 
 interface HeadlineProps {
   tabs: ITab[];

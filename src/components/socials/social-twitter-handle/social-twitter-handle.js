@@ -24,7 +24,7 @@ import Social from "../social/social";
 import twitter from "../../../../images/logo-twitter.svg";
 
 // Styles
-import compStyles from "./social-twitter-handle.module.css";
+import * as compStyles from "./social-twitter-handle.module.css";
 
 function SocialTwitterHandle(props) {
   const { handle, showbird: showBird } = props;

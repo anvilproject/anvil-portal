@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./brand-icon.module.css";
+import * as compStyles from "./brand-icon.module.css";
 
 class BrandIcon extends React.Component {
   render() {

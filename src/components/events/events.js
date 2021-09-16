@@ -27,7 +27,7 @@ import Scoop from "../scoops/scoop";
 import * as ScoopsService from "../../utils/scoops.service";
 
 // Styles
-import compStyles from "./events.module.css";
+import * as compStyles from "./events.module.css";
 
 class Events extends React.Component {
   render() {

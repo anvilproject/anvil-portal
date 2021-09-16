@@ -13,7 +13,7 @@ import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 import * as AnchorService from "../../utils/anchor.service";
 
 // Styles
-import compStyles from "./event-hero.module.css";
+import * as compStyles from "./event-hero.module.css";
 
 function EventHero() {
   const { conference, eventType, location, sessionsDisplay, subTitle, title } =
