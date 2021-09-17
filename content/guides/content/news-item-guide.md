@@ -58,7 +58,7 @@ appears when sharing on social media.  Front matter fields for events are:
 | title:         | _NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data_ | 
 | description:   | A short description for the event lists and social media shares e.g.  _"An introduction to the AnVIL platform to enable CCDG and CMG researchers to analyze GSP data using AnVIL tools."_ |
 | featured:      | `true` if the event should appear on the home page events list. |
-| carousel:      | `true` if the event should appear on carousel on the homep page. |
+| carousel:      | `true` if the event should appear on carousel on the home page. |
 | logo:          | Logo image to use in the carousel    ../../../_images/anvil.png
 | date:          | Date used for ordering the event lists e.g. _"2020-10-20"_
 | description:   | Text used in the carousel, event lists and social media shares e.g. _"In support of the evolving nature of the NHGRI mission, we are pleased to announce that researchers are now able to download controlled access GTEx V8 to local compute infrastructure without incurring egress fees."_

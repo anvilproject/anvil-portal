@@ -36,7 +36,7 @@ The Data Model describes the structure of the study data. Each node in the AnVIL
 In the AnVIL data workspace, data and metadata from the Biospecimen, Clinical, and Data File nodes are in integrated spreadsheet-like tables. Every row in a table is a distinct “entity” and every column is a different property.
 
 **Example subject table**    
-A collection of basic information and phentotypic data about a subject (e.g., demographics, age, sex, or race)
+A collection of basic information and phenotypic data about a subject (e.g., demographics, age, sex, or race)
 
 
 **Example sample table**    
@@ -128,7 +128,7 @@ AnVIL includes a diverse set of studies and a wide range of collected phenotypic
   - [UMLS Metathesaurus](https://www.nlm.nih.gov/research/umls/index.html) - Links concepts from multiple vocabularies and ontologies (license required, free to individuals in the USA, includes access to SNOMED).
   - [UBERON](https://www.ebi.ac.uk/ols/ontologies/uberon) - A vocabulary focused on anatomical structure.
   - [HPO](https://hpo.jax.org/app/) - An ontology focused on phenotypic abnormalities.
-  - [OMIM](https://www.omim.org/) - An ontology for rare mendelian diseases.
+  - [OMIM](https://www.omim.org/) - An ontology for rare Mendelian diseases.
   - [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) - An ontology for orphan drugs and rare diseases.
   - [ICD](https://icd.codes/) - An ontology for US billing codes.
   - [MeSH](https://meshb.nlm.nih.gov/search) - An ontology for biomedical and health-related information.
@@ -169,5 +169,5 @@ Known Data Use Limitations (DUL) need to be clearly defined by the data deposito
 
 - [Introduction to Data Tables in Terra](https://youtu.be/IeLywroCNNA) (5 minutes)
 ### Hands-on tutorial
-For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra Data Tables QuickStart tutorial (estimated time 30-40 minutes). 
+For hands-on practice with a data model and data tables in Terra, please go through parts 1 and 2 of the Terra Data Tables Quickstart tutorial (estimated time 30-40 minutes). 
 

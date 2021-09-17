@@ -49,7 +49,7 @@ This week provides a case study of using AnVIL to teach R for a Biostatistics co
 #### GitHub Templates
 
 - <https://bios2.waldronlab.io>: course pkgdown website
-- GitHub Actions within <https://github.com/waldronbios2/cunybios2> (pkgdown, push to Dockerhub) and <https://github.com/waldronbios2/templatesession> (trigger main site action)
+- GitHub Actions within <https://github.com/waldronbios2/cunybios2> (pkgdown, push to Docker Hub) and <https://github.com/waldronbios2/templatesession> (trigger main site action)
 
 #### General AnVIL/Terra
 
@@ -69,7 +69,7 @@ This week provides a case study of using AnVIL to teach R for a Biostatistics co
 
 A “group” allows you to provide and revoke access as a group rather than as individuals, and to provide all the same accesses to someone new just by adding them to the appropriate group. You could have groups for your course, lab groups, etc.
 
-1. Ask students to sign into anvil.terra.bio using a Gmail or GSuite address, then provide you that email address. They need to sign in before I can add them to the group, but can be added at any later time.
+1. Ask students to sign into anvil.terra.bio using a Gmail or G Suite address, then provide you that email address. They need to sign in before I can add them to the group, but can be added at any later time.
 1. Under the top-left hamburger icon, clicked on your account name and then “Groups”
 1. Create a New Group + (allow anyone to request access). Use an easily searchable group name (e.g. Bioconductor_PopUps), since I am a member of many unrelated groups.
 1. Add a User for each of my students, making each student a “Member”. I added the course TA as an “owner” to allow them to manage the group as well.
@@ -227,7 +227,7 @@ In RStudio, use the git menus to commit and push. You will be asked for your use
 Using a reseller likely requires some work to set up an agreement between your institution and the reseller, but provides some advantages:
 
 1. No additional cost over direct billing from Google
-1. Pay by invoice rather than credit card (ie pay directly from the grant)
+1. Pay by invoice rather than credit card (i.e. pay directly from the grant)
 1. Integration with NIH STRIDES program
 1. An extra layer of protection against overspending
 1. Additional budgeting and cost visualization tools

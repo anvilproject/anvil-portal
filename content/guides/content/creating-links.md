@@ -42,7 +42,7 @@ This renders as: [An Internal Link](/guides/content/editing-an-existing-page)
 It is possible to link directly to any outline heading on an internal page as the page headings each have an anchor. 
 
 
-You can find out the link to a page heading by clicking on link icon that appears when you hover over a heading. After you click on the link symbol, the url to that heading will be in your browsers address bar. Copy the link and stip off the method and domain to make a relative url. 
+You can find out the link to a page heading by clicking on link icon that appears when you hover over a heading. After you click on the link symbol, the url to that heading will be in your browsers address bar. Copy the link and strip off the method and domain to make a relative url. 
 
 <figure>
 <img src="../_images/internal-link.png" alt="Link Icon"/>

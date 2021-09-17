@@ -15,7 +15,7 @@ AnVIL provides three types of data access:
 1. Open Access  - Open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces
 ) or [Gen3](https://gen3.theanvil.io).
 1. [Controlled Access](#accessing-controlled-access-data) - Controlled Access datasets are accessible to researchers for use matching the data's [dbGaP consent codes](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4721915/). Access is granted by the dbGaP data access process described below. 
-1. [Consortium Access](#accessing-consortium-access-data) - Consortium Access datasets are accessible to consortia members under the coonsortium data sharing agreement. 
+1. [Consortium Access](#accessing-consortium-access-data) - Consortium Access datasets are accessible to consortia members under the consortium data sharing agreement. 
 
 
 ## Accessing Controlled Access Data
@@ -89,7 +89,7 @@ The following consortia currently participate in AnVIL’s consortia data sharin
  * eMERGE
  
 If you are a member of a participating consortium and would like access to a consortium’s data please reach out to your consortium leadership to request access.
-## Requestor Pays
+## Requester Pays
 
 * All AnVIL buckets have Requester Pays enabled, meaning that you will need to provide a billing account in order to cover any costs associated with egress, storage, or compute.
 

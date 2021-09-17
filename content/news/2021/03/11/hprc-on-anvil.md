@@ -26,7 +26,7 @@ HPRC seeks to work with other international teams focused on building the human 
 
 Data for the first ~30 samples are openly available and includes:
 
-- PacBio Hifi Data
+- PacBio HiFi Data
 - 1000G Reads (Illumina) For Parents/Children
 - Hi-C Sequencing Data (coming soon!)
 - Bionano Data
