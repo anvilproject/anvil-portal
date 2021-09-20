@@ -26,9 +26,11 @@ Before beginning, you will want to make sure your data are compatible with the A
 - You should register your **before starting** the other approval steps (1.2 and 1.3).       
 - **Where** you register your data and **who** will advise you of next steps depends on what kind of data you have and how your study is funded.       
 
-<INSERT DIAGRAM OF DIFFERENT DATA TYPES AND WHERE TO REGISTER HERE>
- 
-   
+<figure>
+<img src="./_images/data-type-registration.png" alt="Where to register different data types."/>
+<figure-caption>Where to register the various data types.</figure-caption>
+</figure>
+
 ### Human study? Register with dbGap   
 
 The exact steps to register your study depend on how your study is funded. See [this link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/about.cgi) for more detail about dbGaP and how to register your study data.               
@@ -50,8 +52,6 @@ The exact steps to register your study depend on how your study is funded. See [
 - Submit signed forms back to GPA who will initiate study registration    
 
 ### Non-human data? Register with GEO
- 
-
 
 ## 1.2. Obtain NHGRI Approval
 
