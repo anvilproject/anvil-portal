@@ -33,15 +33,12 @@ class Workspace extends React.Component {
   render() {
     const { workspace } = this.props,
       { frontmatter, htmlAst } = workspace,
-      { logo, title, url } = frontmatter || {},
-      { childImageSharp } = logo || {},
-      { fluid } = childImageSharp || {},
-      { src } = fluid || {};
+      { logo, title, url } = frontmatter || {};
     return (
       <div className={compStyles.workspace}>
         <ListItem redirectTo={() => this.redirect(url, title)} label={title}>
           <ListItemIcon>
-            <BrandIcon src={src} alt={title} />
+            <BrandIcon brand={logo} alt={title} />
           </ListItemIcon>
           <ListItemContent>
             <h3>{title}</h3>

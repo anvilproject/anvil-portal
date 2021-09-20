@@ -4,7 +4,6 @@
  */
 
 const express = require("express");
-const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { buildPostSlug } = require("./src/utils/node/create-node.service");
 const {
@@ -39,7 +38,6 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
     { type } = internal;
 
   if (type === "MarkdownRemark") {
-    fmImagesToRelative(node);
     const { frontmatter } = node,
       { pageAlignment, privateEvent } = frontmatter || {};
 

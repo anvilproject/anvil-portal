@@ -20,9 +20,7 @@ export const CarouselStaticQuery = () => {
                 docType
                 logo {
                   childImageSharp {
-                    fluid {
-                      src
-                    }
+                    gatsbyImageData(placeholder: NONE)
                   }
                 }
                 title

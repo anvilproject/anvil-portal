@@ -13,9 +13,7 @@ export const WorkspacesStaticQuery = () => {
                 featured
                 logo {
                   childImageSharp {
-                    fluid {
-                      src
-                    }
+                    gatsbyImageData(placeholder: NONE)
                   }
                 }
                 title

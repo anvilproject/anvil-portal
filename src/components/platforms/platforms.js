@@ -54,11 +54,7 @@ class Platforms extends React.Component {
     const Platform = (props) => {
       const { platform } = props,
         { frontmatter, htmlAst } = platform,
-        { logo, title, url } = frontmatter || {},
-        { childImageSharp } = logo || {},
-        { fluid } = childImageSharp || {},
-        { src } = fluid || {};
-
+        { logo, title, url } = frontmatter || {};
       const linkTo = this.isValidUrl(url) ? url : "";
       const openTab = this.isValidUrl(url);
 
@@ -69,7 +65,7 @@ class Platforms extends React.Component {
             label={title}
           >
             <ListItemIcon>
-              <BrandIcon src={src} alt={title} />
+              <BrandIcon brand={logo} alt={title} />
             </ListItemIcon>
             <ListItemContent>
               <h3>{title}</h3>

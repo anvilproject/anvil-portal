@@ -5,7 +5,7 @@ description: "A video introduction to using RStudio on the AnVIL platform."
 ---
 # Starting RStudio
 
-`video:  https://youtu.be/cdkNbdhxUPc`
+`video: https://youtu.be/cdkNbdhxUPc`
 
 ## Objectives
 

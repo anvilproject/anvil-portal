@@ -1,6 +1,6 @@
 ---
 featured: true
-logo: ./_images/gatk.png
+logo: _images/gatk.png
 title: "GATK Best Practices for Somatic CNV Discovery"
 url: "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4"
 ---

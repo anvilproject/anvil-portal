@@ -15,9 +15,7 @@ export const ToolsStaticQuery = () => {
               frontmatter {
                 logo {
                   childImageSharp {
-                    fluid {
-                      src
-                    }
+                    gatsbyImageData(placeholder: NONE)
                   }
                 }
                 title

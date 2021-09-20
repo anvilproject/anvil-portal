@@ -8,22 +8,21 @@
 
 // Core dependencies
 import classNames from "classnames"; // Class name helper
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
 // App dependencies
 import ClickHandler from "../click-handler/click-handler";
 import { CarouselStaticQuery } from "../../hooks/carousel-query";
 
-// Images
-import arrows from "../../../images/icon/arrows.png";
-import left from "../../../images/icon/left.png";
-import right from "../../../images/icon/right.png";
-
 // Styles
 import * as compStyles from "./carousel.module.css";
 import * as globalStyles from "../../styles/global.module.css";
 
 // Template variables
+const arrows = "../../../images/icon/arrows.png";
+const left = "../../../images/icon/left.png";
+const right = "../../../images/icon/right.png";
 let x0 = null;
 let y0 = null;
 
@@ -191,11 +190,7 @@ class Carousel extends React.Component {
       const { show, slot } = props,
         { fields, frontmatter } = slot,
         { description, docType, logo, title, url } = frontmatter || {},
-        { slug } = fields,
-        { childImageSharp } = logo || {},
-        { fluid } = childImageSharp || {},
-        { src } = fluid || {};
-
+        { slug } = fields;
       const linkTo = this.getLink(docType, slug, url);
       const openTab = this.isValidUrl(linkTo);
 
@@ -207,7 +202,7 @@ class Carousel extends React.Component {
           label={title}
         >
           <div className={compStyles.hero}>
-            {logo ? <img src={src} alt="logo" /> : null}
+            {logo ? <GatsbyImage alt={"logo"} image={getImage(logo)} /> : null}
             <div>
               <div className={compStyles.type}>{docType}</div>
               <h4>{title}</h4>
@@ -221,7 +216,7 @@ class Carousel extends React.Component {
             label={title}
           >
             Learn More
-            <img src={arrows} alt="learn more" />
+            <StaticImage alt={"learn more"} placeholder={"NONE"} src={arrows} />
           </ClickHandler>
         </ClickHandler>
       );
@@ -242,7 +237,7 @@ class Carousel extends React.Component {
             tag={"span"}
             label="Previous"
           >
-            <img src={left} alt="prev" />
+            <StaticImage alt={"prev"} placeholder={"NONE"} src={left} />
           </ClickHandler>
           <div>
             <div className={compStyles.slider}>
@@ -270,7 +265,7 @@ class Carousel extends React.Component {
             tag={"span"}
             label="Next"
           >
-            <img src={right} alt="next" />
+            <StaticImage alt={"next"} placeholder={"NONE"} src={right} />
           </ClickHandler>
         </div>
       </section>

@@ -15,9 +15,7 @@ export const PlatformsStaticQuery = () => {
               frontmatter {
                 logo {
                   childImageSharp {
-                    fluid {
-                      src
-                    }
+                    gatsbyImageData(placeholder: NONE)
                   }
                 }
                 title

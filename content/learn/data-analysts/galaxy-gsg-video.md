@@ -5,7 +5,7 @@ description: "A video introduction to using Galaxy on the AnVIL platform."
 ---
 # Starting Galaxy
 
-`video:  https://youtu.be/ysLHv4e6X6Y`
+`video: https://youtu.be/ysLHv4e6X6Y`
 
 ## Objectives
 
