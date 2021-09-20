@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "An overview of the approval process for submitting data to AnVIL."
 ---
 
-# Step 1 - Register Data/Obtain Approval
+# Step 1 - Register Study/Obtain Approvals
 
 <hero>
 
@@ -45,7 +45,7 @@ The exact steps to register your study depend on how your study is funded. See [
 - You will receive two forms to complete: 1) an **institutional certification (IC) and 2) basic study information (BSI)** 
 - Submit the signed forms back to GPA who will initiate study registration     
 
-#### non-NIH-funded?
+#### Non-NIH-funded?
 - Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov)    
 - You will receive three forms to complete: 1) **institutional certification (IC), 2) basic study information (BSI) and [non-NIH form](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf)**. 
   - This extra form is provided to the NHGRI data access committee (DAC) who will make the determination to take on the new study registration and review of data access requests
