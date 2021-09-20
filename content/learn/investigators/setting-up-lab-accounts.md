@@ -121,7 +121,7 @@ Before you start, you will want to plan out your setup and:
 
 1. Determine the set of workspaces to create. This initially may be one per data analyst.
 
-1. If you will be cloning a data workspace with controlled access data for data analysts, make sure each data analyst is a member of the workspace’s Authorization Doman. For more information see [Accessing Data](/learn/accessing-data/requesting-data-access).
+1. If you will be cloning a data workspace with controlled access data for data analysts, make sure each data analyst is a member of the workspace’s Authorization Domain. For more information see [Accessing Data](/learn/accessing-data/requesting-data-access).
 
 1. Determine the expected costs,  budget, and budget alerts you would like for each Terra Billing Project. See [Controlling Cloud Costs - Sample Use Cases](https://support.terra.bio/hc/en-us/articles/360029772212-Controlling-Cloud-costs-sample-use-cases) for a framework for estimating cloud costs. This guide recommends setting alerts at 50% and 90% of the expected budget.
 
@@ -131,7 +131,7 @@ Before you start, you will want to plan out your setup and:
 
 _All Lab Members_
 
-All lab members that wish to use Terra will need a Google ID to create a Tera account.
+All lab members that wish to use Terra will need a Google ID to create a Terra account.
 
 A Google ID is an email address that may be:
 - a non-Google email that has been used to create a Google Account,
@@ -216,7 +216,7 @@ Once a Lab Manage is added as a “_Billing Account User_” on a Google Billing
 1. Select your lab from the **“Select an organization”** dropdown.
 1. On the right-hand side of the page, select **“ADD MEMBER”**
 1. On the following screen:
-1.  Add the lab member’s GoogleID (email address)  in the **“New members”** form field.
+1.  Add the lab member’s Google ID (email address)  in the **“New members”** form field.
 1. Under **“Select a Role”** select **“Billing”** and then **Billing Account User”**
 1. Select **“MANAGE ROLES”**
 

@@ -10,7 +10,7 @@ title: "NCPI: Training Resources"
 The purpose of this document is to aggregate information about training, video, and social media from the four NCPI resources.
 
 ## AnVIL
-An extensive collection of training resources covering major AnVIL components including [Terra](https://terra.bio/), [Gen3](https://gen3.org/), [Galaxy](https://galaxyproject.org), and [DockStore](https://dockstore.org/). Includes information about setting up and managing accounts, accessing data, running analysis workflows and performing interactive analyses:
+An extensive collection of training resources covering major AnVIL components including [Terra](https://terra.bio/), [Gen3](https://gen3.org/), [Galaxy](https://galaxyproject.org), and [Dockstore](https://dockstore.org/). Includes information about setting up and managing accounts, accessing data, running analysis workflows and performing interactive analyses:
 
 #### Training Resources
 - [Documentation](https://anvilproject.org/learn) 
@@ -25,7 +25,7 @@ An extensive collection of training resources covering major AnVIL components in
 - [GitHub](https://github.com/anvilproject)
 - [YouTube](https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw)
 
-## NHBLI BioData Catalyst
+## NHLBI BioData Catalyst
 
 Documentation on data access, exploration, and analysis, as well as information about the several platforms and services it leverages to offer its tools, applications, and workflows in secure workspaces.
 

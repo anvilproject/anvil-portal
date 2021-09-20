@@ -64,7 +64,7 @@ All R users can work with the book on their own computers but will need to take 
   ![Choose Workspaces](_images/analysis-workspaces-tab.png)
   </figure-styles>
 - There are a number of workspaces available to everyone under the 'NEW AND INTERESTING', 'FEATURED'. and 'PUBLIC' tabs; feel free to explore these on your own.
-- If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUP workspace under 'MY WORKSPACES'.
+- If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUp workspace under 'MY WORKSPACES'.
   ![Bioconductor Workshop](_images/analysis-bioconductor-workshop.png)
 - Enter the workspace by clicking on the [use-strides/Bioconductor-Workshop-OSCA-3-12](https://app.terra.bio/#workspaces/use-strides/Bioconductor-Workshop-OSCA-3-12) link. There are many components to the workspace; we'll cover many of these over the course of the PopUp workshops.
   ![Enter the Workspace](_images/analysis-enter-workspace.png)
@@ -163,11 +163,11 @@ Bioconductor is a "software/documentation/collaboration" ecosystem rooted in R/g
 
 ![Bioconductor](_images/analysis-about-bioconductor.png)
 
-Since the era of spotted cDNA microarrays, Bioconductor has assembled tools to help biologists and data scientists evaluate and analyze high-throughput assays.  Basic commitments of the Bioconductor project include open development (we review and distribute packages contributed by members of the community), current curation (all packages in the ecosystem are compiled on three platforms to be compatible with the current version of R), and convenient distribution of software and data (packages can be efficiently installed using the R function BiocManager.) All packages include instructive vignettes, mixing narrative and "live code" to help ensure realistic experiences for readers and users. One recent offshoot of this approach is the "computable monograph" assembled as a collection of Rmarkdown chapters.  This is the focus of today's popup.
+Since the era of spotted cDNA microarrays, Bioconductor has assembled tools to help biologists and data scientists evaluate and analyze high-throughput assays.  Basic commitments of the Bioconductor project include open development (we review and distribute packages contributed by members of the community), current curation (all packages in the ecosystem are compiled on three platforms to be compatible with the current version of R), and convenient distribution of software and data (packages can be efficiently installed using the R function BiocManager.) All packages include instructive vignettes, mixing narrative and "live code" to help ensure realistic experiences for readers and users. One recent offshoot of this approach is the "computable monograph" assembled as a collection of R Markdown chapters.  This is the focus of today's popup.
 
 ### Managing Single-Cell Data
 
-As conscientious computational biologists, we have to be concerned with experimental protocols, data provenance, quality assessment and filtering processes, accurate annotation of digital outputs of assays, and properly documented reproducible analysis workflows.  On the right is a figure from a paper by the main architect and author of the OSC book, Aaron Lun.  This [paper](https://genome.cshlp.org/content/early/2017/10/13/gr.222877.117) addresses the use of spiked-in RNA species for the normalization of single-cell RNA-seq experiments. A major conceptual product of the paper is the appraisal of sources of variation in transcript counts attributable to aspects of spike-in preparation and addition to wells.
+As conscientious computational biologists, we have to be concerned with experimental protocols, data provenance, quality assessment and filtering processes, accurate annotation of digital outputs of assays, and properly documented reproducible analysis workflows.  On the right is a figure from a paper by the main architect and author of the OSCA book, Aaron Lun.  This [paper](https://genome.cshlp.org/content/early/2017/10/13/gr.222877.117) addresses the use of spiked-in RNA species for the normalization of single-cell RNA-seq experiments. A major conceptual product of the paper is the appraisal of sources of variation in transcript counts attributable to aspects of spike-in preparation and addition to wells.
 
 ![Managing Single Cell Data](_images/analysis-managing-single-cell-data.png)
 

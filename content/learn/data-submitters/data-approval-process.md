@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "An overview of the approval process for submitting data to AnVIL."
 ---
 
-# Step 1 - Register Data/Obtain Approval
+# Step 1 - Register Study/Obtain Approvals
 
 <hero>
 
@@ -15,17 +15,22 @@ This includes protecting the confidential and proprietary genomic and phenotypic
 </hero>
 
 
-To deposit large-scale, individual-level data into AnVIL, data submitters must:
+To deposit large-scale, individual-level data into AnVIL, data submitters must follow the steps below.
 
-1. Register their study       
-2. Obtain approval from the National Human Genome Research Institute (NHGRI) or appropriate Institutes and Centers (IC)     
-3. Obtain approval from the AnVIL ingestion committee
+1. Register study.       
+2. Obtain approval from the National Human Genome Research Institute (NHGRI) or appropriate Institutes and Centers (IC).     
+3. Obtain approval from the AnVIL ingestion committee.
 
-## 1.1. Register your study      
-Before beginning, you will want to make sure your data are compatible with the AnVIL, and register your data with dbGaP or the appropriate [Genome Program Administrator](https://osp.od.nih.gov/genomic-program-administrators/#:~:text=Genomic%20Program%20Administrators%20(GPAs)%20are,for%20the%20NIH%20GDS%20Policy) (GPA). This will significantly streamline the data submission process. Note that you can register your study in parallel with the other approval steps (1.2 and 1.3). See below for the exact steps to register and who to contact (depends on the kind of data you ahve and how your study is funded).            
+## 1.1. Register study      
+Before beginning, you will want to make sure your data are compatible with the AnVIL, and register your data with dbGaP or the appropriate [Genome Program Administrator](https://osp.od.nih.gov/genomic-program-administrators/#:~:text=Genomic%20Program%20Administrators%20(GPAs)%20are,for%20the%20NIH%20GDS%20Policy) (GPA). This will significantly streamline the data submission process.     
+- You should register your **before starting** the other approval steps (1.2 and 1.3).       
+- **Where** you register your data and **who** will advise you of next steps depends on what kind of data you have and how your study is funded.       
 
-**Note that AnVIL strongly recommends you take care of the study registration in parallel with the steps outlined in the rest of the Data Submitters docs.**   
-   
+<figure>
+<img src="./_images/data-type-registration.png" alt="Where to register different data types."/>
+<figure-caption>Where to register the various data types.</figure-caption>
+</figure>
+
 ### Human study? Register with dbGap   
 
 The exact steps to register your study depend on how your study is funded. See [this link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/about.cgi) for more detail about dbGaP and how to register your study data.               
@@ -40,15 +45,13 @@ The exact steps to register your study depend on how your study is funded. See [
 - You will receive two forms to complete: 1) an **institutional certification (IC) and 2) basic study information (BSI)** 
 - Submit the signed forms back to GPA who will initiate study registration     
 
-#### non-NIH-funded?
+#### Non-NIH-funded?
 - Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov)    
 - You will receive three forms to complete: 1) **institutional certification (IC), 2) basic study information (BSI) and [non-NIH form](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf)**. 
   - This extra form is provided to the NHGRI data access committee (DAC) who will make the determination to take on the new study registration and review of data access requests
 - Submit signed forms back to GPA who will initiate study registration    
 
 ### Non-human data? Register with GEO
- 
-
 
 ## 1.2. Obtain NHGRI Approval
 

@@ -340,7 +340,7 @@
           navigationItems:
             - name: "Submission Process Overview"
               file: "/learn/data-submitters/data-submitters-overview"
-            - name: "1 - Obtain Approvals"
+            - name: "1 - Register Study/Obtain Approvals"
               file: "/learn/data-submitters/data-approval-process"
             - name: "2 - Set Up a Data Model"
               file: "/learn/data-submitters/set-up-a-data-model"

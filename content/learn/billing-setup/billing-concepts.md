@@ -12,9 +12,9 @@ Before setting up billing, it is important to have a working knowledge of cloud 
 
 **Google vs. Google Cloud Platform** - Google is a separate entity from the Google Cloud Platform (GCP). It is important to understand if the resources you are configuring are Google-level resources or GCP-level resources. Google-level resources of interest include Google IDs, Google Accounts, and Google Payment Profiles.
 
-**Google Cloud Platform Resources** -  Google Cloud Platform (GCP) level resources include GCP Billing Accounts, GCP BIlling Projects, GCP Budgets, and Alerts. GCP Resources also include the machines, storage buckets, and drives, and other resources you use to perform analysis.
+**Google Cloud Platform Resources** -  Google Cloud Platform (GCP) level resources include GCP Billing Accounts, GCP Billing Projects, GCP Budgets, and Alerts. GCP Resources also include the machines, storage buckets, and drives, and other resources you use to perform analysis.
 
-**Google Identity** - A Google ID is a Google-level resource required to create GCP and Terra accounts.  A Google ID is simply an email address. This email address must be either: a non-Google email address that you have associated with a Google Account or a Gmail, Google Workspace (formerly GSuite), or Google Identity email address.
+**Google Identity** - A Google ID is a Google-level resource required to create GCP and Terra accounts.  A Google ID is simply an email address. This email address must be either: a non-Google email address that you have associated with a Google Account or a Gmail, Google Workspace (formerly G Suite), or Google Identity email address.
 
 **GCP Cloud Console** - The [Google Cloud console](https://console.cloud.google.com/) allows you to manage Google Cloud resources such as Google Billing Accounts, Budgets, and Alerts. There is no specific GCP account required to access the cloud console; you can access the Google Cloud console as soon as you have a Google ID.
 
@@ -27,7 +27,7 @@ Before setting up billing, it is important to have a working knowledge of cloud 
 **Linking GCP and Terra** - To enable GCP spend in Terra, you must add Terra’s Google ID  _terra-billing@terra.bio_  as a “_Billing Account User_” to a GCP Billing Account.
 
 
-**Terra Billing Projects** - Terra Billing Projects are Terra-level resources used to link user activity in Terra to a Google Billing Account. Once a GCP Billing Account is linked to Terra, if you created the billing account or have been added to the project as a _Billing Account User_,  you will be able to create Terra Billing Projects and link them to the Google Billing Account. If you created the Terra Billing Project, you are its “_Owner_” and you will be able to add other Terra users as _Meembers_ or _Owners_.
+**Terra Billing Projects** - Terra Billing Projects are Terra-level resources used to link user activity in Terra to a Google Billing Account. Once a GCP Billing Account is linked to Terra, if you created the billing account or have been added to the project as a _Billing Account User_,  you will be able to create Terra Billing Projects and link them to the Google Billing Account. If you created the Terra Billing Project, you are its “_Owner_” and you will be able to add other Terra users as _Members_ or _Owners_.
 
 >During the creation of a Terra Billing Project, Terra creates a “twin” Google Billing Project in the Google Cloud Billing console with the same name as the Terra Billing Project. This “twin” Google Billing Project is then linked to the specified Google Billing Account. You use this twin GCP Billing Project to set up budgets and alerts in GCP.
 

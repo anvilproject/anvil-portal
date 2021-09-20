@@ -192,7 +192,7 @@ sce = LoomExperiment::import("~/loom/pbmc_human_v3.loom")
 #### Access AnVIL from Outside AnVIL
 
 - Requires gcloud SDK installed on your computer.
-- Use sdk to register your Gmail account and google billing project.
+- Use SDK to register your Gmail account and google billing project.
   <figure-styles shadowless=true>
   ![Use SDK to Register Your GMail](_images/package-use-sdk-to-register.png)
   </figure-styles>

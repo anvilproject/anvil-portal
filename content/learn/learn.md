@@ -23,12 +23,6 @@ To complement this onboarding and introductory section, the AnVIL team is in the
 
   <!--- Add FAIR, add interoperability with other data commons, increased accessibility to complex data center--->
 
-## Requesting AnVIL Training
-
-The AnVIL Project offers in-person training on a limited basis. Use the training request form to apply.
-
-<button-link href="https://docs.google.com/forms/d/1-PomtMVaabtw1HOc1kTDRx5uRw3_tSC1LgwsrxGJWjI/edit" target="_blank">Request AnVIL Training</button-link>
-
 
 ## New User Onboarding
 
@@ -59,7 +53,7 @@ To allow your dbGaP data request approvals to flow through to Terra and Gen3,  y
 
 AnVIL holds genomic data for hundreds of thousands of study participants. Much of this data is controlled access.
 
-To obtain access to controlled-access data sets, you must either be a member of a data-generating consortium with a data-sharing agreement among consortium members or have been granted access to a study through the dbGapP Data Access Request process.
+To obtain access to controlled-access data sets, you must either be a member of a data-generating consortium with a data-sharing agreement among consortium members or have been granted access to a study through the dbGaP Data Access Request process.
 
 
 Once you have been granted access, and assuming you have linked your eRA commons ID with Terra and Gen3, you will be able to see your new studies in Gen3 and new data-oriented workspaces in Terra.
@@ -172,11 +166,11 @@ In general, if you can share a workspace, you can give the new user the same per
 AnVIL and all of its components are free to use, however, as  Terra runs on the Google Cloud Platform (GCP), certain workspace activities, such as running an analysis,  storing analysis results, or downloading data incur Google Cloud Platform (GCP) fees.
 
 
->Typically, GGP cloud costs are incurred for workspace data storage, when an analysis is run in the workspace, and when data is downloaded from GCP.
+>Typically, GCP cloud costs are incurred for workspace data storage, when an analysis is run in the workspace, and when data is downloaded from GCP.
 
 Performing the following workspace activities will incur costs on GCP that will be passed through to the workspace’s Terra Billing Project’s Google Cloud Billing Account:
 
-1. Uploading data to the workspace bucket - the upload network transfer or ingress is free however there will be a CGP fee for storing the data in the bucket over time.
+1. Uploading data to the workspace bucket - the upload network transfer or ingress is free however there will be a GCP fee for storing the data in the bucket over time.
 
 1. Launching a Cloud Environment - The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace.”
 

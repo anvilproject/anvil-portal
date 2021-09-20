@@ -22,7 +22,7 @@ To control access to workspaces containing data, a top-level auth group is creat
 Members of the data-generating consortium are granted access directly in Terra by a designated official of the consortium. Guidelines for this official are outlined in the [Consortium Guidelines for AnVIL Data Access](/learn/data-submitters/resources/consortium-data-access-guidelines) resource.
 
 ###  External Researcher Access
-Members of the wider community may [request access through dbGAP](/learn/accessing-data/requesting-data-access#accessing-controlled-access-data). Upon receiving approval in dbGAP, the researcher will be able to access the requested data within AnVIL once they have [linked their Terra account and eRA Commons address](/learn/accessing-data/requesting-data-access#linking-your-terra-account-and-your-era-commons-address).
+Members of the wider community may [request access through dbGaP](/learn/accessing-data/requesting-data-access#accessing-controlled-access-data). Upon receiving approval in dbGaP, the researcher will be able to access the requested data within AnVIL once they have [linked their Terra account and eRA Commons address](/learn/accessing-data/requesting-data-access#linking-your-terra-account-and-your-era-commons-address).
 
 To synchronize dbGaP approvals with Terra, dbGaP periodically deposits a copy of their access list to a secure FTP site. This access list is then read by Terra and synchronized to the appropriate workspace auth groups. In this manner, workspace auth group membership for external researchers is maintained solely by dbGaP.
 
