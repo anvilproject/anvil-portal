@@ -16,7 +16,7 @@ To make the data useful, especially for cross-study analysis requires standardiz
 
 In order to submit data into AnVIL you will need to do the following:
 
-1. [Register with dbGaP/obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
+1. [Register with dbGaP/Obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
 1. [Set up your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
 1. [Prepare your data for submission](/learn/data-submitters/submission-guide/prepare-for-submission).
 1. [Ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
