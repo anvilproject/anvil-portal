@@ -36,9 +36,13 @@ It is important that studies into the human genomic and phenotypic associations 
 
 Example:  AnVIL workspace - AnVIL_CCDG_Broad_CVD_EOCAD_PartnersBiobank_HMB_WES - represents 1 study registration phs002018 and has one consent group, which is health/medical/biomedical or shortened to HMB
 
-Below is a screenshot of the data elements incorporated on the front (documentation) page of the workspace
+Below is a screenshot of the data elements incorporated on the front (documentation) page of the workspace:
 
-<INSERT DASHBOARD IMAGE HERE>
+<figure>
+<img src="./_images/terra-workspace.png" alt="A terra workspace."/>
+<figure-caption>An example of a terra workspace documentation page.</figure-caption>
+</figure>
+
   
 **For Non-NHGRI funded studies that must seek Institutional and/or AnVIL Data Ingestion Committee approval (see steps 1.2 & 1.3), you may want to register your data in dbGaP while obtaining approval to speed up the [administrative aspects]([Step 1](/learn/data-submitters/submission-guide/data-approval-process))**.   
  
