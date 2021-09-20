@@ -58,7 +58,7 @@ Once the page has taken shape, it can be copied into a markdown file and markdow
 ## Getting Content Reviewed
 
 ### Creating a Pull Request Against Main
-Once the file looks ok, submit a pull request against the main branch, describing your changes and then request reviewers.
+Once the file looks OK, submit a pull request against the main branch, describing your changes and then request reviewers.
 
 
 ### PR Review Policy
@@ -74,6 +74,6 @@ Content will be deployed by AnVIL team members with the "Content Deployer" role.
 The merge into the `main` branch will automatically trigger a deploy to the staging environment. This generally completes in a few minutes. There the display of the content can be validated, and if all looks well the `main` branch will be promoted to the `prod` prod branch to deploy the change.
 
 ### Deploying to Production 
-Committing code to the `prod` branch will trigger a deploy to production. Once the change is deployed to production again site maintainers will review to be sure the content looks ok in production. 
+Committing code to the `prod` branch will trigger a deploy to production. Once the change is deployed to production again site maintainers will review to be sure the content looks OK in production. 
 
 

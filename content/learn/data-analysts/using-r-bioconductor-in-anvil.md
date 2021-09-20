@@ -58,7 +58,7 @@ This week introduces the AnVIL cloud computing environment. We learn how to crea
   ![Choose Workspaces](_images/using-bioconductor-workspaces-tab.png)
   </figure-styles>
 - There are a number of workspaces available to everyone under the 'NEW AND INTERESTING, 'FEATURED'. and 'PUBLIC' tabs; feel free to explore these on your own.
-- If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUP workspace under 'MY WORKSPACES'.
+- If you registered for the workshop with an email address known to AnVIL / Terra, you'll see the Bioconductor-Workshops-PopUp workspace under 'MY WORKSPACES'.
   <figure-styles shadowless=true>
   ![Bioconductor Workshop](_images/using-bioconductor-workspace-workshop.png)
   </figure-styles>
@@ -225,8 +225,8 @@ You'll eventually need to establish your own billing projects, usually linked to
 
 Although the cloud is infamous for costs that get completely out of control, our use of AnVIL will cost only a couple of dollars per participant over the course of the workshops.
 - Can one add system dependencies to a runtime, e.g., libraries required for specific packages? [Using a startup script to launch a pre-configured Jupyter notebook](https://support.terra.bio/hc/en-us/articles/360058193872) discusses using a 'startup script' to customize the environment with, e.g., sudo commands.
-- Sharing data between Jupyter notebooks & RStudio -- what is the structure of the persistent disk? The persistent disk is mounted at /home/jupyter-user/notebooks when using a Jupyter notebook runtime, but /home/rstudio under the RStudio environment. So in our workshop when I saved a file at /home/jupyter-user/mtcars.csv I was NOT saving the file to a location on the persistent disk -- switching from a Jupyter to RStudio and back to Jupyter runtime meant that the mtcars.csv file was lost. It would have persisted if I'd saved it as /home/jupyter-user/notebbooks/mtcars.csv, and would have been visible in RStudio as /home/rstudio/mtcars.csv.
-- Is it possible to use a custom docker image? Yes. [DataBiosphere/terra-docker](https://github.com/databiosphere/terra-docker#terra-base-images) contains suitable R / Juptyer base images; [anvilproject/anvil-docker](https://github.com/anvilproject/anvil-docker) contains RStudio images. Select the image as part of a 'Custom' Cloud Environment.
+- Sharing data between Jupyter notebooks & RStudio -- what is the structure of the persistent disk? The persistent disk is mounted at /home/jupyter-user/notebooks when using a Jupyter notebook runtime, but /home/rstudio under the RStudio environment. So in our workshop when I saved a file at /home/jupyter-user/mtcars.csv I was NOT saving the file to a location on the persistent disk -- switching from a Jupyter to RStudio and back to Jupyter runtime meant that the mtcars.csv file was lost. It would have persisted if I'd saved it as /home/jupyter-user/notebooks/mtcars.csv, and would have been visible in RStudio as /home/rstudio/mtcars.csv.
+- Is it possible to use a custom docker image? Yes. [DataBiosphere/terra-docker](https://github.com/databiosphere/terra-docker#terra-base-images) contains suitable R / Jupyter base images; [anvilproject/anvil-docker](https://github.com/anvilproject/anvil-docker) contains RStudio images. Select the image as part of a 'Custom' Cloud Environment.
   <figure-styles shadowless=true>
   ![Custom Docker Image](_images/using-bioconductor-custom-docker-image.png)
   </figure-styles>

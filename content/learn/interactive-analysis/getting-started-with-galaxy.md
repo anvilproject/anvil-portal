@@ -119,9 +119,9 @@ The step-by-step tutorial below demonstrates how to compute quality metrics of u
 ![Step 34](../_images/getting-started/galaxy-step-34.png)
 1. Once complete, click the view data icon for the plotCoverage image (step 9) to show the coverage distribution.\
 ![Step 35](../_images/getting-started/galaxy-step-35.png)
-1. Next run freeBayes to call SNVs and indels in the sample. Make sure to select “History” as the source of the reference genome.\
+1. Next run FreeBayes to call SNVs and indels in the sample. Make sure to select “History” as the source of the reference genome.\
 ![Step 36](../_images/getting-started/galaxy-step-36.png)
-1. Once freeBayes is complete, you can click on the view data icon to display the VCF file containing the variants.\
+1. Once FreeBayes is complete, you can click on the view data icon to display the VCF file containing the variants.\
 ![Step 37](../_images/getting-started/galaxy-step-37.png)
 1. The last step is to summarize the variant calls using “bcftools stats”.\
 ![Step 38](../_images/getting-started/galaxy-step-38.png)

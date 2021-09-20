@@ -101,11 +101,11 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 #### salmon quantification
 
 - Inputs
-    - Transcriptome fasta file
-    - Per-sample paired-end fastq files
+    - Transcriptome FASTA file
+    - Per-sample paired-end FASTQ files
 - Outputs
     - Per-sample counts of reads aligned to known transcripts
-- 'Ultra fast' aligner -- should take about 20 minutes for the largest fastq file
+- 'Ultra fast' aligner -- should take about 20 minutes for the largest FASTQ file
 
 #### Launch
 
@@ -157,7 +157,7 @@ BiocManager::install(pkgs)  # latest AnVIL package
 
 - Available through Dockstore, from GitHub [salmon.wdl](https://github.com/Kayla-Morrell/AnVILBulkRNASeq/blob/master/inst/workflow/salmon.wdl)
 - `task`
-    - Logical collection of tasks on a homogenous input, e.g., 'align FASTQ files of one sample'
+    - Logical collection of tasks on a homogeneous input, e.g., 'align FASTQ files of one sample'
     - `runtime`: e.g., docker image; could also specify memory, CPU, disk size, etc
 - `workflow`
     - Collection of tasks into an overall execution sequence

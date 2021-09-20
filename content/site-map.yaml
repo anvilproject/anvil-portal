@@ -356,6 +356,8 @@
           navigationItems:
             - name: "Consortium Data Access Guidelines"
               file: "/learn/data-submitters/consortium-data-access-guidelines"
+            - name: "Data Withdrawal Procedures"
+              file: "/learn/data-submitters/anvil-data-withdrawal-procedures"
 #    - name: "Developers"
 #      pathPartial: "/developers"
 #      navigationItems:

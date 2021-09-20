@@ -25,13 +25,13 @@ More information on the role of the NIH DACs can be found [here](https://osp.od.
 ##What policies and guidelines are AnVIL data users expected to follow?
 When qualified investigators seek access to controlled-access data, they must describe how they intend to use the data through a [Data Access Request (DAR)](http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/GetPdf.cgi?document_name=GeneralAAInstructions.pdf). They must also agree to adhere to the NIH Genomic Data Sharing Policy’s ethical principles, terms of data access, and privacy safeguards through a [Data Use Certification (DUC) Agreement](http://osp.od.nih.gov/wp-content/uploads/Model_DUC.pdf). Before access is granted, each request is reviewed by an [NIH Data Access Committee (DAC)](http://osp.od.nih.gov/scientific-sharing/policy-oversight/) for consistency with the appropriate data uses, as outlined by the data submitters, and Policy expectations.
 
-Approved users must also agree to adhere to the [Genomic Data User Code of Conduct](https://osp.od.nih.gov/wp-content/uploads/Genomic_Data_User_Code_of_Conduct.pdf), which, among other terms, includes the agreement to make no attempt to identify or contact individual participants or groups from whom data were collected, ensure that only approved users can gain access to data files, and to provide appropriate acknowledgement in any dissemination of research findings.
+Approved users must also agree to adhere to the [Genomic Data User Code of Conduct](https://osp.od.nih.gov/wp-content/uploads/Genomic_Data_User_Code_of_Conduct.pdf), which, among other terms, includes the agreement to make no attempt to identify or contact individual participants or groups from whom data were collected, ensure that only approved users can gain access to data files, and to provide appropriate acknowledgment in any dissemination of research findings.
 
 ##How does AnVIL control access to the data it maintains?
 AnVIL employs robust access controls that can selectively grant access to one or more datasets depending on each users’ access approvals. More information on Access Controls in AnVIL can be found [here](https://docs.google.com/document/d/1VX_tV_VtqkDdBjLIFYELjQK12YcJljzGVlXSKgJYdI8/edit).
 
 - Consortium Members - Members of the data-generating consortium are granted “Consortia access” directly by a designated official of the consortium. Guidelines for this official are being drafted by the Data Access Working Group and will be made available when they are finalized.
-- dbGaP Data Access Request - Members of the wider community may request access through dbGAP. Upon receiving approval for access in dbGAP, the researcher will be able to access the data within the AnVIL.
+- dbGaP Data Access Request - Members of the wider community may request access through dbGaP. Upon receiving approval for access in dbGaP, the researcher will be able to access the data within the AnVIL.
 - AnVIL Developers - AnVIL developers are given access to data housed on the AnVIL in order to help facilitate testing, debugging, and support, but not for hypothesis-driven research of any type.
 
 ##Can users upload non-AnVIL data to an AnVIL Workspace?

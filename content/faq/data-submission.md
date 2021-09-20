@@ -21,6 +21,15 @@ Yes. NHGRI plans to transfer data from selected NHGRI-funded studies to the AnVI
 Please discuss this situation with your IRB, the NIH program director for your study and the AnVIL staff. In most cases, the submitting institution will determine whether data may be submitted to AnVIL.
 
 ##How should I prepare my informed consent documents to allow for data submission to AnVIL in the future?
-Rather than naming a particular data repository (i.e., dbGaP, AnVIL, etc.) as the data repository for your study, consider indicating that data will be deposited in an ‘NIH-designated data repository’ (see the [Informed Consent Resource, Special Considerations for Genome Research](https://www.genome.gov/about-genomics/policy-issues/Informed-Consent-for-Genomics-Research/Special-Considerations-for-Genome-Research#6) for more detailed sample language). This will provide the flexibility to submit to dbGAP, AnVIL, or any other new and relevant NIH-designated repository.
+Rather than naming a particular data repository (i.e., dbGaP, AnVIL, etc.) as the data repository for your study, consider indicating that data will be deposited in an ‘NIH-designated data repository’ (see the [Informed Consent Resource, Special Considerations for Genome Research](https://www.genome.gov/about-genomics/policy-issues/Informed-Consent-for-Genomics-Research/Special-Considerations-for-Genome-Research#6) for more detailed sample language). This will provide the flexibility to submit to dbGaP, AnVIL, or any other new and relevant NIH-designated repository.
+
+## What can I do if a research participant withdraws or changes their consent?
+
+AnVIL facilitates the removal of individual-level data from studies stored and managed by the resource, honoring the right of research participants to change their preferences with regard to future data sharing.
+
+AnVIL’s practices also reflect the practical limits of participant withdrawal and aim to balance participant autonomy with reproducibility and transparency.
+
+See [Withdrawing Data from AnVIL](/learn/data-submitters/resources/anvil-data-withdrawal-procedures) for a description of AnVIL's data withdrawal procedures.
+
 
 

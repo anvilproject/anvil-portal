@@ -43,7 +43,7 @@ The following consortia are planned for data ingestion. Additional consortia are
 
 * [Covid19hg](https://www.covid19hg.org) -  The COVID-19 host genetics initiative  
 * [CSER](https://cser-consortium.org ) - Clinical Sequencing Evidence-Generating Research
-* [GTExv9](https://gtexportal.org/home/) - Genotype-Tissue Expression Project
+* [GTEx v9](https://gtexportal.org/home/) - Genotype-Tissue Expression Project
 * [NIA](https://www.nia.nih.gov/) - National Institute of Aging
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 * [UDN](https://undiagnosed.hms.harvard.edu/) - Undiagnosed Disease Network
