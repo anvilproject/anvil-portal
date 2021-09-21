@@ -33,6 +33,8 @@ Viewers will learn how to use Docker for packaging software into containers, how
 
 We will cover basic Dockstore features such as running workflows using the Dockstore command-line interface and end with an overview of more advanced topics like best practices for workflows, publishing using DOIs, and sharing collections of workflows through organizations.
 
-The main Dockstore site is at https://dockstore.org/
-See further take-home materials at [https://docs.google.com/document/d/1q...](https://docs.google.com/document/d/1qdTPIubST156uO3IWOJChJ1FX40kXeIyhI6pZD5wLNA/edit)
-See presentation slides at [https://docs.google.com/presentation/...](https://docs.google.com/presentation/d/1iXDZcP2Eln4hAHWqblmfV_cwABrt7ti9daf32h5nSIQ/edit)
+The main Dockstore site is at https://dockstore.org/.
+
+See further take-home materials at [https://docs.google.com/document/d/1q...](https://docs.google.com/document/d/1qdTPIubST156uO3IWOJChJ1FX40kXeIyhI6pZD5wLNA/edit).
+
+See presentation slides at [https://docs.google.com/presentation/...](https://docs.google.com/presentation/d/1iXDZcP2Eln4hAHWqblmfV_cwABrt7ti9daf32h5nSIQ/edit).

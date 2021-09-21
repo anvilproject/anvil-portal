@@ -60,14 +60,14 @@ The lab setup described here defines the following roles and responsibilities:
 
 Under this setup, Data Analysts will be able to configure analysis and launch workspaces but can not create or clone workspaces on their own or download data from workspaces with requester pays buckets. This setup also prevents Data Analysts from sharing workspaces.
 
-For data Data Analysts obtain access to the workspaces they require:
+To create a workspace:
 
-1. Data Analysts request a Lab Manager to create or clone a new workspace.
+1. The Data Analyst requests a Lab Manager to create or clone a new workspace.
 1. The Lab Manager:
-1. Decides if a new Terra Billing Project needs to be created to track expenses associated with the new workspace.
-1. Sets up budgets and alerts for the new Terra Billing Project, if any, or adjusts the budget and alerts for the existing Terra Billing Project if required.
-1. Creates or clones the workspace using the appropriate Terra Billing Project.
-1. Adds and adds the Data Analyst as a “_Writer_” with “_can-execute_” but not “_can-share_” privileges on the new workspace.
+    1. Decides if a new Terra Billing Project needs to be created to track expenses associated with the new workspace.
+    1. Sets up budgets and alerts for the new Terra Billing Project, if any, or adjusts the budget and alerts for the existing Terra Billing Project if required.
+    1. Creates or clones the workspace using the appropriate Terra Billing Project.
+    1. Adds and adds the Data Analyst as a "_Writer_" with "_can-execute_" but not "_can-share_" privileges on the new workspace.
 
 ### Budgets, Alerting, and Reporting
 
