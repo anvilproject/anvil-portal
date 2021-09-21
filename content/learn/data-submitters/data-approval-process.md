@@ -25,7 +25,7 @@ To deposit large-scale, individual-level data into AnVIL, data submitters must f
 Before beginning, you will want to make sure your data are compatible with the AnVIL, and register your data with dbGaP or the appropriate [Genome Program Administrator](https://osp.od.nih.gov/genomic-program-administrators/#:~:text=Genomic%20Program%20Administrators%20(GPAs)%20are,for%20the%20NIH%20GDS%20Policy) (GPA).     
 
 - You should register your **before starting** the other approval steps (1.2 and 1.3).
-- **Where** you register your data and **who** will advise you of next steps depends on what kind of data you have and how your study is funded.
+- **Where** you register your data and **who** will advise you of next steps depend on what kind of data you have and how your study is funded.
 
 <figure>
 <img src="./_images/data-type-registration.png" alt="Where to register different data types."/>
@@ -38,22 +38,22 @@ The exact steps to register your study depend on how your study is funded. See [
 
 #### NHGRI-funded researcher?
 
-- Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov)
+- Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov).
 - The GPA will lead you through the study registration process.
 - For more information on NHGRI Genomic Data Sharing Policy see : [https://inside.genome.gov/20009049](https://inside.genome.gov/20009049). Note that this is an internal NIH document.
 
 
 #### NIH-funded researcher?
 
-- Contact your Institutes and Centers GPA (if you don't know your GPA, refer to [this list](https://osp.od.nih.gov/wp-content/uploads/IC_GPAs.pdf)) 
-- - The GPA will lead you through the study registration process
+- Contact your Institutes and Centers GPA (if you don't know your GPA, refer to [this list](https://osp.od.nih.gov/wp-content/uploads/IC_GPAs.pdf)). 
+- The GPA will lead you through the study registration process.
 - For more details, see the [NIH Genomic Data Sharing Policy for Extramural Investigators]( https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators). 
 
 
 #### Non-NIH-funded?
 
-- Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov)
-- The GPA will lead you through the study registration process
+- Contact **NHGRI GPA Jennifer Strasburger** at [strasbuj@mail.nih.gov](mailto:strasbuj@mail.nih.gov).
+- The GPA will lead you through the study registration process.
 - For more details, see the [NIH Genomic Data Sharing Policy for Extramural Investigators]( https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators). 
 
 
