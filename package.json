@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-spread": "7.12.1",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.9.4",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
