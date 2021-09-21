@@ -8,7 +8,7 @@
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "bowser": "^2.11.0",
     "classnames": "^2.3.1",
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^3.13.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
