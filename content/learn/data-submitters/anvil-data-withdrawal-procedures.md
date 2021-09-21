@@ -8,9 +8,9 @@ description: "An overview procedures related to withdrawing data from AnVIL."
 
 <hero>
 
-AnVIL facilitates the removal of individual-level data from studies stored and managed by the resource, honoring the right of research participants to change their preferences with regard to future data sharing. 
+AnVIL facilitates the removal of individual-level data from studies stored and managed by the resource, honoring the right of research participants to change their preferences with regard to future data sharing.
 
-AnVIL’s practices also reflect the practical limits of participant withdrawal and aim to balance participant autonomy with reproducibility and transparency. 
+AnVIL’s practices also reflect the practical limits of participant withdrawal and aim to balance participant autonomy with reproducibility and transparency.
 
 </hero>
 
@@ -29,7 +29,3 @@ AnVIL’s practices also reflect the practical limits of participant withdrawal 
     * Downloaders will be responsible for using the most current version of the dataset, and destroying all versions of the dataset when their project is ended or access revoked (in accordance with the NIH Data Use Certification).
     * AnVIL will inform cloud users working with data in a Workspace at least one week before the underlying data are modified.
 * AnVIL will maintain records of all withdrawal requests.
-
- 
-
-
