@@ -10,15 +10,13 @@ import React from "react";
 import Helmet from "react-helmet";
 
 // App dependencies
-import * as EnvironmentService from "../../utils/environment/environment.service";
 import { SeoProps } from "./seo-props";
 
 class SEO extends React.Component<SeoProps> {
   render() {
     const { description, ncpi, site, title } = this.props;
-    const siteURL = EnvironmentService.getCurrentEnvironmentURL();
     const imgFileName = ncpi ? "twitter-ncpi.png" : "twitter-anvil.png";
-    const imgUrl = `${siteURL}images/${imgFileName}`;
+    const imgUrl = `https://anvilproject.org/images/${imgFileName}`;
 
     return (
       <Helmet>

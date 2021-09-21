@@ -5,9 +5,6 @@
  * Service handling environment-related functionality.
  */
 
-// App dependencies
-import { EnvironmentUrl } from "./environment-url.model";
-
 // Template variables
 const GATSBY_ENV = process.env.GATSBY_ENV;
 
@@ -16,15 +13,6 @@ const GATSBY_ENV = process.env.GATSBY_ENV;
  */
 export function getCurrentEnvironment() {
   return GATSBY_ENV.toUpperCase();
-}
-
-/**
- * Returns the current environment's url.
- */
-export function getCurrentEnvironmentURL() {
-  const currentEnvironment = getCurrentEnvironment();
-
-  return EnvironmentUrl[currentEnvironment];
 }
 
 /**
