@@ -10,7 +10,7 @@
     "classnames": "^2.3.1",
     "gatsby": "^3.13.0",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-catch-links": "^3.13.0",
+    "gatsby-plugin-catch-links": "^3.14.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
