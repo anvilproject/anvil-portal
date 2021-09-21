@@ -57,11 +57,13 @@ The exact steps to register your study depend on how your study is funded. See [
 - For more details, see the [NIH Genomic Data Sharing Policy for Extramural Investigators]( https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/NHGRI-Extramural-Investigators). 
 
 
-### Non-human data? Register with GEO
+### Non-human data? 
+
+- Register with GEO
 
 ## 1.2. Obtain NHGRI Approval
 
-### NIH/NHGRI Data Sharing Policy compliance
+### NIH/NHGRI Data Sharing Policy Compliance
 
 Submitted data must be consistent with the requirements of the [NIH Genomic Data Sharing (GDS) Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing).
 
@@ -69,7 +71,7 @@ Submitted data must be consistent with the requirements of the [NIH Genomic Data
 
 If your grant explicitly states that grantees are expected to share data in the AnVIL, you have this covered by default. Submit a copy of your grant award and [NHGRI Extramural Genomic Data Sharing Plan and dbGaP Submission Information](https://www.genome.gov/sites/default/files/media/files/2021-01/ExtramuralNHGRI_DSP_post2021_revised012121.pdf) to your AnVIL contact.
 
-### Other funding sources
+### Other Funding Sources
 
 For other work, including Parent Announcements where data deposition in a certain repository wasn’t described, PIs should do **one of** the following:
 
