@@ -83,6 +83,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         consentCodes: [String]
         dataTypes: [String]
         dbGapIdAccession: String!
+        fhirUrl: String
         focuses: [String]
         gapId: GapId
         platform: String
@@ -95,6 +96,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type DashboardNCPIStudy implements Node {
         id: ID!
+        fhirUrl: String
         studyAccession: String
         studyDescription: String
         studyDescriptionShort: String
