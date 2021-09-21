@@ -26,7 +26,7 @@ Please [SIGN UP][3] to receive connection information for each workshop.
 
 ## Schedule
 
-All workshops are offered on Mondays at lunch time, 12:00 - 1:00 US Eastern, starting April 26.
+All workshops are offered on Mondays at lunchtime, 12:00 - 1:00 US Eastern, starting April 26.
 
 | Date | Topic |
 | --- | --- |

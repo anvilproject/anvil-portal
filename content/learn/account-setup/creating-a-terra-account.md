@@ -10,5 +10,4 @@ To register for a Terra account, you will need a Gmail account or another email 
 
 See [Set up a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account) for instructions on setting up your Terra account.
 
->Be sure to setup your Terra Account with the same email address that you will use for Gen3, and Dockstore and if required your Google Cloud Account.  
-
+>Be sure to set up your Terra Account with the same email address that you will use for Gen3, and Dockstore and if required your Google Cloud Account.

@@ -6,14 +6,11 @@ description: ""
 
 # Overview of Account Setup
 
-To use AnVIL, you will need a Google account for authenticating with Terra
-and Gen3 and to associate your Terra account with a Google Cloud Platform (GCP) account.
+To use AnVIL, you will need a Google account for authenticating with Terra and Gen3 and to associate your Terra account with a Google Cloud Platform (GCP) account.
 
-If you will be accessing controlled-access data, you will also need
-an eRA commons id or to be a member of a data sharing consortium. 
+If you will be accessing controlled-access data, you will also need an eRA commons id or to be a member of a data sharing consortium. 
 
-To enable dbGaP data use authorizations to flow through from dbGaP to Terra, you will need to link your Terra account with your eRA commons ID and your
-Gen3 account.
+To enable dbGaP data use authorizations to flow through from dbGaP to Terra, you will need to link your Terra account with your eRA commons ID and your Gen3 account.
 
 The guides below walk you through each step in the account setup process.
 
@@ -29,5 +26,4 @@ The guides below walk you through each step in the account setup process.
 
 1. [Link your Terra and eRA Commons ID](https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers) - To use controlled-access data on Terra, you will need to link your Terra user ID to your authorization account (such as a dbGaP account). Linking to external servers will allow Terra to automatically determine if you can access controlled datasets hosted in Terra (ex. TCGA, TOPMed, etc.) based on your approved dbGaP applications.
 
-
-Next, see [Requesting Data Access](/learn/accessing-data/requesting-data-access) for more information about obtaining access to controlled access data and configuring Terra and Gen3 to read your data access privileges from dbGaP or your consortia access control list.  
+Next, see [Requesting Data Access](/learn/accessing-data/requesting-data-access) for more information about obtaining access to controlled access data and configuring Terra and Gen3 to read your data access privileges from dbGaP or your consortia access control list.

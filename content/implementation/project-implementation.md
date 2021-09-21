@@ -3,13 +3,13 @@ title: "Project Implementation"
 author: "AnVIL"
 ---
 
-#Project Implementation
+# Project Implementation
 
 <hero>The AnVIL team brings together groups that have extensive experience building open-source platforms, tools, and workflows that are widely used in the genomics community.</hero>
 
 The project will include [Bioconductor](https://www.bioconductor.org/), [Galaxy](https://galaxyproject.org/), [Gen3](https://gen3.org/), [Terra](https://app.terra.bio/), and [Jupyter](https://jupyter.org/) to start and include extension points for adding more tools and services. The AnVIL project will leverage those tools to build a more accessible and integrated platform for the genomics researchers.
 
-##Compute and Storage Infrastructure
+## Compute and Storage Infrastructure
 
 <hero>AnVIL will create a suite of modular cloud services that support storing and analyzing genomic data at scale.</hero>
 
@@ -17,7 +17,7 @@ Initially based on the [Google Compute Platform](https://cloud.google.com/), the
 
 ![Infra Layer](./_images/infra-layer.png)
 
-##Data Analysis Platforms
+## Data Analysis Platforms
 
 Layered on top of the infrastructure, the data analysis platforms layer will be seeded with of some of the most popular data analysis environments available today. This expandable set of environments will allow you to browse, analyze, and visualize data through a web browser as well as the [API and command line interface](https://github.com/anvilproject/client-apis). The environments will also be linked allowing seamless data access.
 

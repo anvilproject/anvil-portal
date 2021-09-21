@@ -26,7 +26,6 @@ News items are implemented with markdown `.md` files that are under the `/conten
 The URL namespace above is accomplished by creating news item markdown files in subdirectories named for year, month and day
 of the publication date given us a directory structure like:
 
-
 ```
 ── news
 │   ├── 2019
@@ -50,38 +49,31 @@ of the publication date given us a directory structure like:
 
 ## Front Matter
 
-The front matter information controls how the event displays in lists, if it appears on the home page, and how the event
-appears when sharing on social media.  Front matter fields for events are:
+The front matter information controls how the event displays in lists, if it appears on the home page, and how the event appears when sharing on social media. Front matter fields for events are:
 
-| Field          | Example                        |
-|----------------|------------------------------------------|
-| title:         | _NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data_ | 
-| description:   | A short description for the event lists and social media shares e.g.  _"An introduction to the AnVIL platform to enable CCDG and CMG researchers to analyze GSP data using AnVIL tools."_ |
-| featured:      | `true` if the event should appear on the home page events list. |
-| carousel:      | `true` if the event should appear on carousel on the home page. |
-| logo:          | Logo image to use in the carousel    ../../../_images/anvil.png
-| date:          | Date used for ordering the event lists e.g. _"2020-10-20"_
-| description:   | Text used in the carousel, event lists and social media shares e.g. _"In support of the evolving nature of the NHGRI mission, we are pleased to announce that researchers are now able to download controlled access GTEx V8 to local compute infrastructure without incurring egress fees."_
-| docType:       | "News" for a news item.
-
+| Field | Example |
+| --- | --- |
+| title: | _NHGRI AnVIL Cloud Platform Now Supports Free Export of GTEx Data_ |
+| description: | A short description for the event lists and social media shares e.g. _"An introduction to the AnVIL platform to enable CCDG and CMG researchers to analyze GSP data using AnVIL tools."_ |
+| featured: | `true` if the event should appear on the home page events list. |
+| carousel: | `true` if the event should appear on carousel on the home page. |
+| logo: | Logo image to use in the carousel `../../../_images/anvil.png` |
+| date: | Date used for ordering the event lists e.g. _"2020-10-20"_ |
+| description: | Text used in the carousel, event lists and social media shares e.g. _"In support of the evolving nature of the NHGRI mission, we are pleased to announce that researchers are now able to download controlled access GTEx V8 to local compute infrastructure without incurring egress fees."_ |
+| docType: | "News" for a news item. |
 
 ## Body Text
 
 Some very general guidelines for writing news articles:
 
-* **Audience**: Media or Anvil Community? - News items can be be more formally written to address the media or targeted news to the AnVIL community.
+* **Audience**: Media or Anvil Community? - News items can be more formally written to address the media or targeted news to the AnVIL community.
 * **Third Person Voice** - "Today the AnVIL development team released..."
 * **Headline** - Brief and to the point.
-* **Lead paragraph**  - summarizing the announcement.
+* **Lead paragraph** - summarizing the announcement.
 * **Two or Three body paragraphs** - with links, or quotes providing additional information.
 * **Platform/Component Descriptions** - very brief overview paragraphs for the AnVIL project or any involved components or tools.
 * **Break up long paragraphs** - two or three sentences at most for the web.
 * **Contact information** - If appropriate.
 * **Image or Diagram** - If possible.
 
-
 Review existing news items in the [news section](/news) for inspiration.
-
-
-
-

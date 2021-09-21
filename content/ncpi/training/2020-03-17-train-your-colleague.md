@@ -2,18 +2,19 @@
 description: "The goal of this training session was to provide background information on the AnVIL, BioData Catalyst, Cancer Research Data Commons, and Gabriella Miller Kids First Platforms involved in the NIH Cloud Platforms Interoperability (NCPI) group to the trainers and developers of these platforms."
 title: "NCPI Train Your Colleague - Virtual Session - March 17, 18, 2020"
 ---
+
 # NCPI Training
 
 ## Train Your Colleague - Virtual Session
+
 **March 17, 18, 2020**
 
 The goal of this training session was to provide background information on the AnVIL, BioData Catalyst, Cancer Research Data Commons, and Gabriella Miller Kids First Platforms involved in the NIH Cloud Platforms Interoperability (NCPI) group to the trainers and developers of these platforms. 
 
-
 ### Day 1 - Component introduction
 
-|      |     |
-| ---- | --- |
+|   |   |
+| --- | --- |
 | Stack (IC) introductions | [Slides](https://docs.google.com/presentation/d/15sjBQG4X7AMKoFy0pJRYMnjmNHh8MVWUq9fOXpwPcnU/edit?usp=sharing), [Video](https://youtu.be/PspTGZIbw5I) |
 | Systems Interoperations WG update | [Slides](https://docs.google.com/presentation/d/1OofCfSmX_9WiaRYMOFlln8Ac41I6akav7fKgQt8ytSQ/edit?usp=sharing), [Video](https://youtu.be/-3bqz4B67QE) |
 | Gen3 introduction | [Slides](https://drive.google.com/open?id=11c7gKEfOZuu6TCWCDroHgNiVgjP7oIEh-NofRAzsCKw), [Video](https://youtu.be/tzqCYwQRgfU) |
@@ -25,8 +26,8 @@ The goal of this training session was to provide background information on the A
 
 ### Day 2 - Use cases
 
-|      |     |
-| ---- | --- |
+|   |   |
+| --- | --- |
 | AnVIL/BioData Catalyst gold standard use case | [Video](https://youtu.be/uyrgVvhplwM) |
 | Seven Bridges use case | [Video](https://youtu.be/elmG_02zn_4) |
 | Kids First Data Resource Center (KFDRC) use case & BioData Catalyst use case | [Video](https://youtu.be/w3m3EvK3pKw) |

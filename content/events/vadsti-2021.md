@@ -43,13 +43,15 @@ Skill sets in data science are critical for advancing the science of minority he
 The Howard University Research Centers in Minority Institutions, RCMI, Program with funding from NIH created the VADSTI to meet the growing data science demand and their application to problems of minority health and health disparities.
 
 ### More Information / Registration
+
 For more information and to register see [Virtual Applied Data Science Training Institute (VADSTI)](https://www.the1joshuagroup.com/VADSTI/#faq)
 
 ## Workshop Videos
 
 ### Tools for Applied Data Science Using Cloud-Based Platform, Module 7, Day 1
+
 `video: https://www.youtube.com/watch?v=CdqoGck2ht8`
 
-
 ### Tools for Applied Data Science Using Cloud-Based Platform - Module 7, Day 2
+
 `video: https://www.youtube.com/watch?v=6S0yOvgISVI`

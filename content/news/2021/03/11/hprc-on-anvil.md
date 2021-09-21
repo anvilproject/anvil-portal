@@ -10,6 +10,7 @@ title: "AnVIL Hosts Release 1 of the Human Pangenome Reference Consortium Data"
 ---
 
 # AnVIL Hosts Release 1 of the Human Pangenome Reference Consortium Data
+
 ##### Posted: March 11, 2021
 
 ![HPRC Home](./_images/hprc-home.png)
@@ -35,6 +36,7 @@ Data for the first ~30 samples are openly available and includes:
 - Hifiasm Assemblies (internal release only, not fully QC'd or corrected)
 
 ### Viewing HPRC Sequencing Data in AnVIL
+
 To view currently available sequencing data, navigate to the DATA tab of the [AnVIL_HPRC workspace](https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_HPRC) and view data stored in the "sample" data table. In-progress assemblies can also be found in the "sample_assembly" table. These assemblies were generated with [Hifiasm v0.14](https://github.com/chhylp123/hifiasm).
 
 This data release represents the consortium’s commitment to its mission under some of the most challenging research conditions due to the COVID pandemic. All work was completed within the safety guidelines and mandates of each entity involved in the project.

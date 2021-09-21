@@ -2,11 +2,12 @@
 title: "Dockstore Videos"
 description: "Selected videos from the Dockstore YouTube channel."
 ---
+
 # Dockstore Videos
 
 Selected videos from the [Dockstore YouTube Channel](https://www.youtube.com/channel/UCFWNYqxQvVLAuZq8rdOSE4g) are listed below. 
  
-##Dockstore: An Introduction
+## Dockstore: An Introduction
 
 `video: https://www.youtube.com/watch?v=1JWOVGzzgMc`
 
@@ -27,10 +28,10 @@ A presentation by Beth Sheets on Data Analysis on AnVIL - Use Cases, June 11, 20
 `video: https://www.youtube.com/watch?v=shMr_Bd01Ko`
 
 This video is a hands-on workshop to train a beginner on the fundamental technologies used to create portable and reproducible workflows.
- 
- Viewers will learn how to use Docker for packaging software into containers, how to write analytical workflows in a descriptor language (CWL, WDL, or Nextflow), and how to publish these workflows on Dockstore for sharing with others.
-  
- We will cover basic Dockstore features such as running workflows using the Dockstore command-line interface and end with an overview of more advanced topics like best practices for workflows, publishing using DOIs, and sharing collections of workflows through organizations.
+
+Viewers will learn how to use Docker for packaging software into containers, how to write analytical workflows in a descriptor language (CWL, WDL, or Nextflow), and how to publish these workflows on Dockstore for sharing with others.
+
+We will cover basic Dockstore features such as running workflows using the Dockstore command-line interface and end with an overview of more advanced topics like best practices for workflows, publishing using DOIs, and sharing collections of workflows through organizations.
 
 The main Dockstore site is at https://dockstore.org/
 See further take-home materials at [https://docs.google.com/document/d/1q...](https://docs.google.com/document/d/1qdTPIubST156uO3IWOJChJ1FX40kXeIyhI6pZD5wLNA/edit)

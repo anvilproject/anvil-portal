@@ -11,7 +11,8 @@ title: "Finding and Analyzing Data in the Cloud with Gen3, Dockstore, Terra, and
 
 <event-hero></event-hero>
 
-###Overview
+### Overview
+
 The era of big data for biomedical research is here. Massive data sets and cloud-based platforms will enable breakthrough discoveries while overcoming challenges of cost, accessibility, and security. A key strength of this new research landscape is the availability of interoperable, community-driven components that enable robust analyses for a variety of research needs.
 
 One challenge to fully realizing this vision for your research is not only learning how several new products and platforms work, but at the same time learning how they work together . In this full-day tutorial, we will guide you through a research journey that highlights the capabilities and components of the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) resource. You will integrate a suite of interoperable platforms to complete a sample project, gaining working knowledge of how the components work together to perform an end-to-end genetic analysis.
@@ -24,10 +25,12 @@ Specifically, you will learn how to:
 - Leverage Hail and Bioconductor in Jupyter Notebooks to do interactive analysis
 - Perform genome-wide association studies with Galaxy workflows
 
-###Audience
+### Audience
+
 While we will work in the context of AnVIL, you will be able to apply your new skills to myriad other genomic-related data sets and tools. Attendees must bring a WiFi-enabled laptop with the Chrome browser installed. Prior coding experience (R and/or Python) is required.
 
-###Schedule Overview
+### Schedule Overview
+
 1. Section I: Introduction
 1. Section II: Finding and analyzing data in the cloud with Gen3, Dockstore and Terra
     - Find and access data in the Gen3
@@ -41,9 +44,11 @@ While we will work in the context of AnVIL, you will be able to apply your new s
     - Galaxy workflows and complementary components
     
 ### More Info
+
 https://www.iscb.org/ismb2020-program/tutorials#tut2
 
 ### Registration
+
 https://www.iscb.org/ismb2020-registration
 
 ## Workshop Videos
@@ -55,22 +60,29 @@ Videos of this workshop can be found below. Videos for the entire ISMB 2020 even
 `video: https://www.youtube.com/watch?v=pDXU0E5peY0`
 
 ### TT02-II - Get set up in Terra - Allie Hajian - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=l7iN_kx7O_Q`
 
 ### TT02-III - Data and documentation in a Workspace - Tiffany Miller - Tutorials - ISMB 2
+
 `video: https://www.youtube.com/watch?v=ICMoaHGG0Xk`
 
 ### TT02-IV - Find and import workflows in Dockstore - Tiffany Miller - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=1K5TYtYR-9s`
 
 ### TT02-V - Set up and run your workflow - Tiffany Miller - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=dsjWZGYfCp8`
 
 ### TT02-VI - Workflows outputs and troubleshooting - Jason Cerrato - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=GjNK_9bQVYQ`
 
 ### TT02-VII - Interactive analysis plus Hail intro - Allie Hajian - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=uCiffYZMQJg`
 
 ### TT02-VIII - Bioconductor for RNA seq analysis - Liz Kiernan - Tutorials - ISMB 2020
+
 `video: https://www.youtube.com/watch?v=uu89DvjKJ8o`

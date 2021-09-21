@@ -58,10 +58,10 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 
 - We upload workflows through GitHub / Dockstore, but also the Broad Methods Repository ([YouTube](https://www.youtube.com/watch?v=VtKlYqWBW6A)); see also the [WDL Puzzles](https://app.terra.bio/#workspaces/help-gatk/WDL-puzzles) workspace.
 - Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default, I had
-```shell
-> avworkspace()
-[1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
-```
+    ```shell
+    > avworkspace()
+    [1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
+    ```
 - `gsutil_cp(): CommandException: Downloading this composite object requires integrity checking with CRC32c, but your crcmod installation isn’t using...` This is a bug that will be fixed in the underlying image for the runtime.
 
 ## Workshop Activities
@@ -74,9 +74,9 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
 - Clone the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace
     - Unique workspace name
     - Billing project: deeppilots-bioconductor-may10
-      <figure-styles shadowless=true>
-      ![Clone Bioconductor-Workflow-DESeq2](_images/running-workflow-clone-bioconductor-workflow.png)
-      </figure-styles>
+          <figure-styles shadowless=true>
+          ![Clone Bioconductor-Workflow-DESeq2](_images/running-workflow-clone-bioconductor-workflow.png)
+          </figure-styles>
 
 #### Workspace tour
 
@@ -143,13 +143,13 @@ This week we'll configure and run a workflow, based on the [Bioconductor-Workflo
   ![Launch Interative Shell to Update Packages](_images/running-workflow-runtime-ready.png)
 - An interactive shell is 'better' for updating packages because we can see progress / errors; these are hidden by the Jupyter notebook
 - Start R, update installed packages, and install current version of the AnVIL package
-```shell
-root@...> R
-options(Ncpus = 2)  # faster installation, even if runtime 'oversubscribed'
-BiocManager::install(ask = FALSE)  # update installed packages
-pkgs <-  c("Bioconductor/AnVIL", "GenomicFeatures", "tximport", "DESeq2")
-BiocManager::install(pkgs)  # latest AnVIL package
-```
+    ```shell
+    root@...> R
+    options(Ncpus = 2)  # faster installation, even if runtime 'oversubscribed'
+    BiocManager::install(ask = FALSE)  # update installed packages
+    pkgs <-  c("Bioconductor/AnVIL", "GenomicFeatures", "tximport", "DESeq2")
+    BiocManager::install(pkgs)  # latest AnVIL package
+    ```
 
 ### Workflow Components
 

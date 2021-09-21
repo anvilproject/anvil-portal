@@ -14,9 +14,9 @@ To include an image in your page:
 
 ## Uploading the Image to an "_images" Folder
 
-Using the github web interface, navigate to the parent folder of your page and add the image to an `_images` folder. 
+Using the GitHub web interface, navigate to the parent folder of your page and add the image to an `_images` folder. 
 
-In the github editor you can not create an empty folder so if the folder does not exist it will be created during the upload step.
+In the GitHub editor you can not create an empty folder so if the folder does not exist it will be created during the upload step.
 
 ## Referencing the Image in the Markdown
 
@@ -44,15 +44,9 @@ This renders like:
 <figure-caption>Figure 1. The the image included using the markdown above.</figure-caption>
 </figure>
 
->####TIP
+>#### TIP
 >You can check if the image link is correct by using the preview link in the markdown editor.
 
 ## Controlling Image Size
 
 Images wider than the page channel will be sized to fit. Images narrower than the page channel will render their natural size.
-
-
-
-
-
-

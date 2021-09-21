@@ -31,6 +31,7 @@ The 1000 Genomes Project, launched in January 2008, is an international research
 The Electronic and MEdical Records and Genomics project (eMERGE) is a national network organized and funded by the NHGRI that combines DNA biorepositories with electronic medical record (EMR) systems for large scale, high-throughput genetic research in support of implementing genomic medicine.
 
 ### [PAGE](https://www.genome.gov/Funded-Programs-Projects/Population-Architecture-Using-Genomics-and-Epidemiology)
+
 The Population Architecture Using Genomics and Epidemiology Consortium investigates ancestrally diverse populations to gain a better understanding of how genetic factors influence susceptibility to disease.
 
 ### [HPRC](https://humanpangenome.org/)
@@ -41,11 +42,9 @@ The Human Pangenome Reference Consortium aims to modernize the human reference t
 
 The following consortia are planned for data ingestion. Additional consortia are under consideration and will be listed as they are approved.
 
-* [Covid19hg](https://www.covid19hg.org) -  The COVID-19 host genetics initiative  
+* [Covid19hg](https://www.covid19hg.org) - The COVID-19 host genetics initiative
 * [CSER](https://cser-consortium.org ) - Clinical Sequencing Evidence-Generating Research
 * [GTEx v9](https://gtexportal.org/home/) - Genotype-Tissue Expression Project
 * [NIA](https://www.nia.nih.gov/) - National Institute of Aging
 * [NIMH](https://nda.nih.gov/) - National Institute of Mental Health
 * [UDN](https://undiagnosed.hms.harvard.edu/) - Undiagnosed Disease Network
-
-

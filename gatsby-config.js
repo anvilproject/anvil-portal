@@ -142,6 +142,23 @@ module.exports = {
             },
           },
           {
+            // Copies downloadable images and pdfs etc to a directory where they can be downloaded.
+            // Used specifically to easily download an image or file e.g. the AnVIL poster presented at #T2THPRC.
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              // Skip markdown files and images so they can be handled by gatsby-remark-images.
+              ignoreFileExtensions: [
+                "bmp",
+                "jpg",
+                "jpeg",
+                "md",
+                "mdx",
+                "png",
+                "tiff",
+              ],
+            },
+          },
+          {
             resolve: "gatsby-remark-embed-video",
             options: {
               width: 600,
@@ -158,7 +175,7 @@ module.exports = {
             },
           },
           `gatsby-remark-external-links`,
-          `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-responsive-iframe`, // Required for resizing embedded videos.
           {
             resolve: "gatsby-remark-images",
             options: {

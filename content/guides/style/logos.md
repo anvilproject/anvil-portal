@@ -4,6 +4,6 @@ author: "AnVIL"
 description: "AnVIL logos and icons available for download."
 ---
 
-#Logos
+# Logos
 
 <style-guide-download-logo></style-guide-download-logo>

@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
 breadcrumb: {name: "Data Analysts - Guides and Tutorials", link: "/learn/data-analysts"}
-description: "An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data.  The resource is a computable book written in R Markdown, published at https://bioconductor.org/books/release/OSCA/."
+description: "An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data. The resource is a computable book written in R Markdown, published at https://bioconductor.org/books/release/OSCA/."
 title: "Single-cell RNASeq with 'Orchestrating Single Cell Analysis' in R / Bioconductor"
 tutorial: true
 ---
@@ -12,7 +12,7 @@ tutorial: true
 
 #### Vince Carey
 
-An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data.  The resource is a "computable book" written in R Markdown, published at <https://bioconductor.org/books/release/OSCA/>.
+An introduction to a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data. The resource is a "computable book" written in R Markdown, published at <https://bioconductor.org/books/release/OSCA/>.
 
 </hero-tutorial>
 
@@ -24,14 +24,14 @@ An introduction to a resource, developed primarily by Aaron Lun of Genentech, In
 
 ## Learning Objectives
 
-This week introduces a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data.  The resource is a "computable book" written in R Markdown, published at <https://bioconductor.org/books/release/OSCA/>.
+This week introduces a resource, developed primarily by Aaron Lun of Genentech, Inc., that employs Bioconductor resources for many aspects of the analysis of single-cell RNA-seq data. The resource is a "computable book" written in R Markdown, published at <https://bioconductor.org/books/release/OSCA/>.
 
-All R users can work with the book on their own computers but will need to take steps to acquire all the relevant software and data.  In this workshop:
+All R users can work with the book on their own computers but will need to take steps to acquire all the relevant software and data. In this workshop:
+
 - We show how an AnVIL workspace and software repository has been defined to allow immediate exploration of all book components
 - We clone the workspace to support our own work
 - We use RStudio's Git interfaces to acquire our own copies of book content
 - We reproduce computations presented in the book and show how to substitute our own data for data analyzed in the book.
-
 
 ## Key Resources
 
@@ -98,7 +98,7 @@ All R users can work with the book on their own computers but will need to take 
 
 ### The "Runtime" that Supports RStudio
 
-An AnVIL RStudio session is easy to start after you've cloned the OSCA workspace.  You'll see
+An AnVIL RStudio session is easy to start after you've cloned the OSCA workspace. You'll see
 
 <figure-styles width="400">
 
@@ -122,7 +122,7 @@ and you click the CUSTOMIZE button to see
 
 </figure-styles>
 
-This is what we need to configure.  Use the "Application configuration" dropdown to pick "Custom Environment" at the very bottom, enter `vjcitn/vjcosca:0.0.1` as the container , and pick a 4 CPU cloud compute profile.
+This is what we need to configure. Use the "Application configuration" dropdown to pick "Custom Environment" at the very bottom, enter `vjcitn/vjcosca:0.0.1` as the container , and pick a 4 CPU cloud compute profile.
 
 When you see
 
@@ -132,7 +132,7 @@ When you see
 
 </figure-styles>
 
-you are ready to press CREATE at the bottom.  Your browser will refresh and a CRAN icon will show near the upper right corner.  Click on it.  Then your runtime will be produced by AnVIL with a message indicating to wait 3-5 minutes.  You will soon get a notification to "LAUNCH ENVIRONMENT"
+you are ready to press CREATE at the bottom. Your browser will refresh and a CRAN icon will show near the upper right corner. Click on it. Then your runtime will be produced by AnVIL with a message indicating to wait 3-5 minutes. You will soon get a notification to "LAUNCH ENVIRONMENT"
 
 That's when Rstudio will appear.
 
@@ -140,7 +140,7 @@ That's when Rstudio will appear.
 
 ### The git project and branch to be used for the OSCA book
 
-Our work with R and Bioconductor will all be governed by the contents of a GitHub repository.  The first thing we'll do with RStudio is to start a git-based project using the File/New project.../Version Control/Git, supplying `https://github.com/OSCA-source/OSCA` as the Repository URL and ~ as the folder.  (You need to "Browse" to home to get that "Create project as a subdirectory of:" value.)  Then press "Create Project".
+Our work with R and Bioconductor will all be governed by the contents of a GitHub repository. The first thing we'll do with RStudio is to start a git-based project using the File/New project.../Version Control/Git, supplying `https://github.com/OSCA-source/OSCA` as the Repository URL and ~ as the folder. (You need to "Browse" to home to get that "Create project as a subdirectory of:" value.) Then press "Create Project".
 
 <figure-styles width="500">
 
@@ -148,7 +148,7 @@ Our work with R and Bioconductor will all be governed by the contents of a GitHu
 
 </figure-styles>
 
-Once this is done, you have a refreshed RStudio session.  Use the terminal tab and issue the commands
+Once this is done, you have a refreshed RStudio session. Use the terminal tab and issue the commands
 
 ```shell
 git fetch --all
@@ -159,15 +159,15 @@ to get a branch compatible with the AnVIL RStudio.
 
 ### Some Comments About "Bioconductor"
 
-Bioconductor is a "software/documentation/collaboration" ecosystem rooted in R/github/git that addresses many tasks related to genome-scale computational biology.  This schematic may help to get a sense of the scope of issues involved:
+Bioconductor is a "software/documentation/collaboration" ecosystem rooted in R/github/git that addresses many tasks related to genome-scale computational biology. This schematic may help to get a sense of the scope of issues involved:
 
 ![Bioconductor](_images/analysis-about-bioconductor.png)
 
-Since the era of spotted cDNA microarrays, Bioconductor has assembled tools to help biologists and data scientists evaluate and analyze high-throughput assays.  Basic commitments of the Bioconductor project include open development (we review and distribute packages contributed by members of the community), current curation (all packages in the ecosystem are compiled on three platforms to be compatible with the current version of R), and convenient distribution of software and data (packages can be efficiently installed using the R function BiocManager.) All packages include instructive vignettes, mixing narrative and "live code" to help ensure realistic experiences for readers and users. One recent offshoot of this approach is the "computable monograph" assembled as a collection of R Markdown chapters.  This is the focus of today's popup.
+Since the era of spotted cDNA microarrays, Bioconductor has assembled tools to help biologists and data scientists evaluate and analyze high-throughput assays. Basic commitments of the Bioconductor project include open development (we review and distribute packages contributed by members of the community), current curation (all packages in the ecosystem are compiled on three platforms to be compatible with the current version of R), and convenient distribution of software and data (packages can be efficiently installed using the R function BiocManager.) All packages include instructive vignettes, mixing narrative and "live code" to help ensure realistic experiences for readers and users. One recent offshoot of this approach is the "computable monograph" assembled as a collection of R Markdown chapters. This is the focus of today's popup.
 
 ### Managing Single-Cell Data
 
-As conscientious computational biologists, we have to be concerned with experimental protocols, data provenance, quality assessment and filtering processes, accurate annotation of digital outputs of assays, and properly documented reproducible analysis workflows.  On the right is a figure from a paper by the main architect and author of the OSCA book, Aaron Lun.  This [paper](https://genome.cshlp.org/content/early/2017/10/13/gr.222877.117) addresses the use of spiked-in RNA species for the normalization of single-cell RNA-seq experiments. A major conceptual product of the paper is the appraisal of sources of variation in transcript counts attributable to aspects of spike-in preparation and addition to wells.
+As conscientious computational biologists, we have to be concerned with experimental protocols, data provenance, quality assessment and filtering processes, accurate annotation of digital outputs of assays, and properly documented reproducible analysis workflows. On the right is a figure from a paper by the main architect and author of the OSCA book, Aaron Lun. This [paper](https://genome.cshlp.org/content/early/2017/10/13/gr.222877.117) addresses the use of spiked-in RNA species for the normalization of single-cell RNA-seq experiments. A major conceptual product of the paper is the appraisal of sources of variation in transcript counts attributable to aspects of spike-in preparation and addition to wells.
 
 ![Managing Single Cell Data](_images/analysis-managing-single-cell-data.png)
 
@@ -192,17 +192,17 @@ altExpNames(2): ERCC SIRV
 
 This "SingleCellExperiment" instance involves 185 samples with measurements on 46604 features. The measurements themselves are matrices with names 'counts', 'logcounts' and 'corrected'. For completeness, sce.416b is obtained using scRNAseq::LunSpikeInData().
 
-Before we delve into the book, let's get clear on the SingleCellExperiment class that will be used to manage the data from such experiments.  It is derived from SummarizedExperiment, which manages multiple tables on multisample genome-scale experiments.  The basic idea is that a matrix with G rows and N columns will be typical for handling G features (often genes) measured on N samples.  And in any experiment, we may wish to manage several GxN matrices for different representations -- say the raw counts, and a normalized transformation.  These two matrices occupy the "assays" component of the SummarizedExperiment.
+Before we delve into the book, let's get clear on the SingleCellExperiment class that will be used to manage the data from such experiments. It is derived from SummarizedExperiment, which manages multiple tables on multisample genome-scale experiments. The basic idea is that a matrix with G rows and N columns will be typical for handling G features (often genes) measured on N samples. And in any experiment, we may wish to manage several GxN matrices for different representations -- say the raw counts, and a normalized transformation. These two matrices occupy the "assays" component of the SummarizedExperiment.
 
 ![SummarizedExperiment](_images/analysis-summarized-experiment.png)
 
-Furthermore, we have an N x R table of sample-level characteristics, stored in the "colData" component, and a G x F table of feature-level metadata, which may include genomic coordinates, functional annotation of genes, etc.  The SummarizedExperiment class localizes all this related information and R functions allow convenient interrogation and filtering.
+Furthermore, we have an N x R table of sample-level characteristics, stored in the "colData" component, and a G x F table of feature-level metadata, which may include genomic coordinates, functional annotation of genes, etc. The SummarizedExperiment class localizes all this related information and R functions allow convenient interrogation and filtering.
 
 ![Filtering SummarizedExperiment](_images/analysis-filtering-summarized-experiment.png)
 
 The SingleCellExperiment class is an extension of SummarizedExperiment. The rowData, assays, and colData are all present, but an additional component 'reducedDims' is available to deal with the omnipresent reexpression of assay data through projection to lower-dimensional spaces.
 
-We will want to keep in mind that these fairly complex information sets are managed in R "variables".  Our work will be to obtain the data in our session by calling certain R functions in certain packages and operating on the data by passing these variables to other functions.  Much of this work will be hidden because we are compiling R markdown documents comprising the OSCA book.  But we will be able to inspect the associated variables (datasets) after we do the high-level document compilation.
+We will want to keep in mind that these fairly complex information sets are managed in R "variables". Our work will be to obtain the data in our session by calling certain R functions in certain packages and operating on the data by passing these variables to other functions. Much of this work will be hidden because we are compiling R markdown documents comprising the OSCA book. But we will be able to inspect the associated variables (datasets) after we do the high-level document compilation.
 
 ### Preparing the Caches
 
@@ -215,7 +215,7 @@ library(AnnotationHub)
 ah = AnnotationHub() # again answer if asked
 ```
 
-Code to be run as we explore the book will make use of these "hubs" to retrieve data from the cloud and to save it locally so that you do not need to repeat the retrievals.  The durability of these caches in AnVIL depends upon how you manage the persistent disk with your "runtimes".  We will not address this question as you can always construct and populate caches with whatever runtime you happen to be using; the management tasks required only affect wait times, not content availability.
+Code to be run as we explore the book will make use of these "hubs" to retrieve data from the cloud and to save it locally so that you do not need to repeat the retrievals. The durability of these caches in AnVIL depends upon how you manage the persistent disk with your "runtimes". We will not address this question as you can always construct and populate caches with whatever runtime you happen to be using; the management tasks required only affect wait times, not content availability.
 
 ### Exploring an Experimental Dataset
 
@@ -240,8 +240,7 @@ epithelial.cell.of.umbilical.artery.1 dermis.lymphatic.vessel.endothelial.cell.1
 colData names(3): label.main label.fine label.ont
 ```
 
-Notice the colData entry label.ont.  We can use this mapping of cell types to the Cell Ontology to
-derive the following graphic:
+Notice the colData entry label.ont. We can use this mapping of cell types to the Cell Ontology to derive the following graphic:
 
 ![Mapping Cell Types to Cell Ontology](_images/analysis-mapping-cell-types.png)
 
@@ -282,7 +281,7 @@ You now have the tools to render any of the chapters of the OSCA book in AnVIL.
 
 ### Appendix 1: Sketching ontological relationships
 
-We need some additional software to produce the ontology plot.  Use
+We need some additional software to produce the ontology plot. Use
 
 ```shell
 AnVIL::install("ontoProc");
@@ -352,4 +351,3 @@ colLabels(sce.pbmc) <- factor(clust)
 ```
 
 TO DO: examine the vignettes/book -- contrast knit2html button with a manual approach that generates all objects in your session -- do clustering and another chapter
-
