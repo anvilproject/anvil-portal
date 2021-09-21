@@ -18,7 +18,7 @@ import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import compStyles from "./workspace.module.css";
+import * as compStyles from "./workspace.module.css";
 
 class Workspace extends React.Component {
   redirect = (linkTo, linkText) => {
@@ -33,15 +33,12 @@ class Workspace extends React.Component {
   render() {
     const { workspace } = this.props,
       { frontmatter, htmlAst } = workspace,
-      { logo, title, url } = frontmatter || {},
-      { childImageSharp } = logo || {},
-      { fluid } = childImageSharp || {},
-      { src } = fluid || {};
+      { logo, title, url } = frontmatter || {};
     return (
       <div className={compStyles.workspace}>
         <ListItem redirectTo={() => this.redirect(url, title)} label={title}>
           <ListItemIcon>
-            <BrandIcon src={src} alt={title} />
+            <BrandIcon brand={logo} alt={title} />
           </ListItemIcon>
           <ListItemContent>
             <h3>{title}</h3>

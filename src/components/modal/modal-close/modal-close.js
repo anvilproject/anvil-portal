@@ -13,7 +13,7 @@ import Button from "../../button/button";
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./modal-close.module.css";
+import * as compStyles from "./modal-close.module.css";
 
 function ModalClose(props) {
   const { onClose } = props;

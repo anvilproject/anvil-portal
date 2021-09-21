@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./stat.module.css";
+import * as compStyles from "./stat.module.css";
 
 class Stat extends React.Component {
   render() {

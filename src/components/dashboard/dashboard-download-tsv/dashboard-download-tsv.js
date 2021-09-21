@@ -16,7 +16,7 @@ import Tooltip from "../../tooltip/tooltip";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 // Styles
-import compStyles from "./dashboard-download-tsv.module.css";
+import * as compStyles from "./dashboard-download-tsv.module.css";
 
 function DashboardDownloadTSV() {
   const { onHandleDownloadTSV } = useContext(ContextDashboardDownload);

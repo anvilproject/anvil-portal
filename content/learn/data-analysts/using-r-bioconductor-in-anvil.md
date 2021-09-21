@@ -18,7 +18,6 @@ An introduction to the AnVIL cloud computing environment. We learn how to create
 
 `video: https://www.youtube.com/watch?v=8Ccj__2GqJ4`
 
->
 > **Notes**
 >
 > 1. The material below requires a billing account. We provide a billing account during the workshop, but if you're following along on your own see '[Next Steps](#next-steps)' for how to create a billing account.
@@ -230,4 +229,3 @@ Although the cloud is infamous for costs that get completely out of control, our
   <figure-styles shadowless=true>
   ![Custom Docker Image](_images/using-bioconductor-custom-docker-image.png)
   </figure-styles>
-

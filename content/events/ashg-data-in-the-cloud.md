@@ -19,6 +19,7 @@ The era of big data for biomedical research is here. Massive data sets and cloud
 In this workshop, we will guide you through a research journey with the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) resource to practice using several interoperable platforms being built for researchers with little or no computational experience.
 
 Through live demonstrations and interactive small-group exercises, you will learn how to:
+
 - Find and access data in the Gen3 platform
 - Locate analysis tools in the Dockstore repository
 - Bring these data and tools together into a computational workspace in Terra

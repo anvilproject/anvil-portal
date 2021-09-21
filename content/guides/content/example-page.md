@@ -8,6 +8,7 @@ author: "Dave Rogers"
 Below we list examples of markdown for many of the textual / formatting elements on the AnVIL Portal.
 
 ## Hero Text
+
 Many pages start with top level title or "Hero Text" like the below.
 
 ```
@@ -34,13 +35,12 @@ Many pages start with top level title or "Hero Text" like the below.
 ### Heading Three
 ```
 
->####Tip
+>#### TIP
 >I am a blockquote with only one paragraph
 
 >I am a blockquote with no tip heading
 >But I have a second paragraph
 
->####Tip
+>#### TIP
 >Here is a blockquote with two paragraphs.
 >This is the second one
-

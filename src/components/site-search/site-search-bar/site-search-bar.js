@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import SiteSearchForm from "../../site-search/site-search-form/site-search-form";
 
 // Styles
-import compStyles from "./site-search-bar.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./site-search-bar.module.css";
 
 function SiteSearchBar(props) {
   const { onSubmitSiteSearch, searchBarOpen } = props;

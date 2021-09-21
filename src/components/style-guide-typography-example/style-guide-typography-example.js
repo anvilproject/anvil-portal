@@ -14,7 +14,7 @@ import React from "react";
 import StyleGuideTypographyExampleHeading from "../style-guide-typography-example-heading/style-guide-typography-example-heading";
 
 // Styles
-import compStyles from "./style-guide-typography-example.module.css";
+import * as compStyles from "./style-guide-typography-example.module.css";
 
 // Template variables
 const examples = ["h1", "h2", "h3", "h4", "h5", "p"];

@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./header-branding.module.css";
+import * as compStyles from "./header-branding.module.css";
 
 interface HeaderBrandingProps {
   ncpi: boolean;

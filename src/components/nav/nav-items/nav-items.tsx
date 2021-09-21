@@ -13,7 +13,7 @@ import { INavItem } from "../../navigation/navigation";
 import NavItem from "../nav-item/nav-item";
 
 // Styles
-import compStyles from "./nav-items.module.css";
+import * as compStyles from "./nav-items.module.css";
 
 interface NavItemsProps {
   docPath: string;

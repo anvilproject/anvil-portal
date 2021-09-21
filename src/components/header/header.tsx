@@ -26,7 +26,7 @@ import SiteSearchButton from "../site-search/site-search-button/site-search-butt
 import * as HeaderService from "../../utils/header.service";
 
 // Styles
-import compStyles from "./header.module.css";
+import * as compStyles from "./header.module.css";
 
 interface HeaderProps {
   navigation: INavigation;

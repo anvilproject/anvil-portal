@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./more.module.css";
+import * as compStyles from "./more.module.css";
 
 interface MoreProps {
   setTruncateText: (truncateText: boolean) => void;

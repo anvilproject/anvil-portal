@@ -14,11 +14,15 @@ import SiteSearchInputClear from "../site-search-input-clear/site-search-input-c
 import SiteSearchInputIcon from "../site-search-input-icon/site-search-input-icon";
 
 // Styles
-import compStyles from "./site-search-input.module.css";
+import * as compStyles from "./site-search-input.module.css";
 
 function SiteSearchInput() {
-  const { inputValue, onSetInputValue, onSetSiteSearchBarOpen, searchBarOpen } =
-    useContext(ContextSiteSearch);
+  const {
+    inputValue,
+    onSetInputValue,
+    onSetSiteSearchBarOpen,
+    searchBarOpen,
+  } = useContext(ContextSiteSearch);
   const refInput = useRef(null);
   const showClear = !!inputValue;
 

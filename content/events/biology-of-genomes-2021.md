@@ -6,11 +6,10 @@ eventType: "Virtual Workshop"
 featured: true
 sessions: [{sessionStart: "11 May 2021"}]
 timezone: "America/New_York"
-title: "The Biology of Genomes  - 2021"
+title: "The Biology of Genomes - 2021"
 ---
 
 <event-hero></event-hero>
-
 
 The Cold Spring Harbor Laboratory is pleased to announce the 33rd Cold Spring Harbor meeting on The Biology of Genomes. The 2021 meeting will address DNA sequence variation and its role in molecular evolution, population genetics and complex diseases, comparative genomics, large-scale studies of gene and protein expression, and genomic approaches to ecological systems. Both technologies and applications will be emphasized.
 
@@ -19,7 +18,6 @@ There will be a special session on the ethical, legal and social implications (E
 ### Dates
 
 The meeting will be held virtually, beginning late morning EST on Tuesday, May 11, and ending late afternoon EST on Friday, May 14, 2021.
-
 
 ### Topics
 
@@ -33,6 +31,7 @@ The meeting will be held virtually, beginning late morning EST on Tuesday, May 1
 - Ethical Legal & Social Implications
 
 ### Keynote Speakers
+
 - Michael Elowitz, Caltech
 - Edith Heard, EMBL Heidelberg, Germany
 
@@ -53,6 +52,6 @@ The meeting will be held virtually, beginning late morning EST on Tuesday, May 1
 - Gosia Trynka, Wellcome Sanger Institute, UK
 - Joanna Wysocka, Stanford University
 
-
 ### Registration
+
 For more information and to register see [Biology of Genomes (Virtual) | CSHL](https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=21).

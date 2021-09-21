@@ -13,7 +13,7 @@ import Breadcrumb from "../breadcrumb/breadcrumb";
 import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 // Styles
-import compStyles from "./hero-tutorial.module.css";
+import * as compStyles from "./hero-tutorial.module.css";
 
 function HeroTutorial(props) {
   const { children } = props;

@@ -1,6 +1,6 @@
 ---
 featured: true
-logo: ./_images/gatk.png
+logo: _images/gatk.png
 title: "GATK Best Practices for Germline SNPs & Indels"
 url: "https://anvil.terra.bio/#workspaces/help-gatk/Germline-SNPs-Indels-GATK4-hg38"
 ---

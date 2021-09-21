@@ -20,27 +20,12 @@ import ListItemContent from "../list-item/list-item-content";
 import ListItemIcon from "../list-item/list-item-icon";
 import Markdown from "../markdown/markdown";
 import * as AnvilGTMService from "../../utils/anvil-gtm/anvil-gtm.service";
-import * as CollectionService from "../../utils/collection.service";
 import * as DOMService from "../../utils/dom.service";
 
 // Styles
-import compStyles from "./platforms.module.css";
-
-let anchorEls;
+import * as compStyles from "./platforms.module.css";
 
 class Platforms extends React.Component {
-  componentDidMount() {
-    anchorEls = CollectionService.findCardCollectionAnchorElements(
-      compStyles.secondary
-    );
-
-    this.setAnchorInteractions();
-  }
-
-  componentWillUnmount() {
-    this.removeAnchorInteractions();
-  }
-
   isValidUrl = (link) => {
     try {
       new URL(link);
@@ -63,46 +48,13 @@ class Platforms extends React.Component {
     }
   };
 
-  removeAnchorInteractions = () => {
-    anchorEls.forEach((anchor) => {
-      anchor.removeEventListener("click", this.onClickAnchor());
-    });
-  };
-
-  setAnchorInteractions = () => {
-    anchorEls.forEach((anchor) => {
-      anchor.addEventListener("click", this.onClickAnchor());
-    });
-  };
-
-  onClickAnchor = (e) => {
-    return (e) => {
-      const target = e.target;
-      if (!DOMService.isAnchor(target)) {
-        return;
-      }
-
-      const url = target.getAttribute("href");
-      if (DOMService.isHrefExternal(url) || DOMService.isMailTo(url)) {
-        const linkText = target.innerText;
-        AnvilGTMService.trackExternalLinkClicked(url, linkText);
-      }
-
-      e.stopPropagation();
-    };
-  };
-
   render() {
     const { platforms } = this.props;
 
     const Platform = (props) => {
       const { platform } = props,
         { frontmatter, htmlAst } = platform,
-        { logo, title, url } = frontmatter || {},
-        { childImageSharp } = logo || {},
-        { fluid } = childImageSharp || {},
-        { src } = fluid || {};
-
+        { logo, title, url } = frontmatter || {};
       const linkTo = this.isValidUrl(url) ? url : "";
       const openTab = this.isValidUrl(url);
 
@@ -113,11 +65,11 @@ class Platforms extends React.Component {
             label={title}
           >
             <ListItemIcon>
-              <BrandIcon src={src} alt={title} />
+              <BrandIcon brand={logo} alt={title} />
             </ListItemIcon>
             <ListItemContent>
               <h3>{title}</h3>
-              <Markdown className={compStyles.secondary}>{htmlAst}</Markdown>
+              <Markdown>{htmlAst}</Markdown>
             </ListItemContent>
           </ListItem>
         </div>

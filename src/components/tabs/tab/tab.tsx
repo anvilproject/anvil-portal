@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { navigate } from "gatsby";
 import React, { MouseEvent } from "react";
 
@@ -13,9 +14,7 @@ import React, { MouseEvent } from "react";
 import * as TabService from "../../../utils/tab.service";
 
 // Styles
-import compStyles from "./tab.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./tab.module.css";
 
 export interface ITab {
   active: boolean;

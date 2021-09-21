@@ -309,4 +309,3 @@ By clicking on one of the highlighted nodes, the search term will be highlighted
 </figure>
 
 Click "Clear Result" to wipe the free text search if needed. The search history is saved below the search bar in the "Last Search" list. Click on an item here to display the results again. Click "Clear History" if needed.
-

@@ -14,9 +14,9 @@ AnVIL uses the Terra analysis engine to launch it’s analysis solutions. These 
 AnVIL users will have access to the commonly used bioinformatic tools, including batch processing pipelines like the Workflow Description Language (WDL) using the Cromwell scaling engine all the way to downstream interactive analysis with Jupyter and R Studio (both!) with Bioconductor support.
  
 Future additions to the AnVIL analysis ecosystem will include the Galaxy workbench, the Genome Browser support by UCSC, and additional community sourced analysis solutions.
- 
- If you have suggestions to existing analysis solutions or would like to see your favorite analysis solution added to AnVIL, please reach out to the AnVIL support team. 
- 
+
+If you have suggestions to existing analysis solutions or would like to see your favorite analysis solution added to AnVIL, please reach out to the AnVIL support team. 
+
 ## Current Tools
 
 <Tools current></Tools>
@@ -27,4 +27,4 @@ Future additions to the AnVIL analysis ecosystem will include the Galaxy workben
 
 ## Request a Tool
 
-Contact the [AnVIL Team](mailto:anvil-project-managers@lists.anvilproject.org)  for additional requests and suggestions.
+Contact the [AnVIL Team](mailto:anvil-project-managers@lists.anvilproject.org) for additional requests and suggestions.

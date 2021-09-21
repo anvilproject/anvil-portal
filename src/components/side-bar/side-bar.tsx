@@ -12,7 +12,7 @@ import React from "react";
 import SideBarOutline from "../side-bar-outline/side-bar-outline";
 
 // Styles
-import compStyles from "./side-bar.module.css";
+import * as compStyles from "./side-bar.module.css";
 
 interface SideBarProps {
   activeOutline: boolean;

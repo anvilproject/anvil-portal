@@ -14,7 +14,7 @@ import ArticleTutorial from "../article-tutorial/article-tutorial";
 import ContextFrontmatter from "../context-frontmatter/context-frontmatter";
 
 // Styles
-import compStyles from "./main.module.css";
+import * as compStyles from "./main.module.css";
 
 function Main(props) {
   const {

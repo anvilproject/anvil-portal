@@ -12,7 +12,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Overline from "../overline/overline";
 
 // Styles
-import compStyles from "./style-guide-typo.module.css";
+import * as compStyles from "./style-guide-typo.module.css";
 
 function StyleGuideTypo(props) {
   const { children } = props;

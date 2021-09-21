@@ -6,7 +6,6 @@ description: "An overview of data sharing and access guidelines for NIH-funded r
 
 # Consortium Guidelines for AnVIL Data Access
 
-
 ## NHGRI Expectations for Consortia Access to data in the AnVIL
 
 The [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf) requires that NIH-funded researchers generating ‘large-scale’ genomic data release such data in a timely fashion (see the Data Release Timeline in the [Supplemental Information to the NIH GDS Policy](https://osp.od.nih.gov/wp-content/uploads/Supplemental_Info_GDS_Policy.pdf)).
@@ -14,7 +13,6 @@ The [NIH Genomic Data Sharing (GDS) Policy](https://osp.od.nih.gov/wp-content/up
 All [data produced with NHGRI support](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing/data-standards) should be shared with the community rapidly, completely, and in NIH-designated data repositories.
 
 This expectation goes beyond genomic data alone. NHGRI also expects as much phenotypic data (stripped of HIPAA identifiers) as possible to be shared, beyond the variables used for the first study publication. All supporting meta-data should be well documented (e.g., data element dictionaries, data collection protocols, study inclusion, and exclusion criteria).
-
 
 AnVIL will facilitate NHGRI consortia access to data in a cloud environment. Access to consortium data by consortium members is not governed by the NIH GDS Policy (i.e., Data Access Committee approval is not required). However, it is important to remember that consortia must still have appropriate IRB oversight, Memorandums of Understanding (MOUs), and Data Use Agreements (DUAs), as necessary.
 
@@ -48,4 +46,3 @@ The contact person is responsible for ensuring that the list of consortium membe
 * DO NOT use this process to provide streamlined access to any researchers that are not part of the consortium;
 * DO have a plan with clear timelines and milestones for sharing data with the community rapidly, completely, and in NIH-designated data repositories; and,
 * DO have a timeline for closing out the consortium and thus the consortium-managed, streamlined access for consortium members. Communicate this timeline with relevant NHGRI program staff and provide AnVIL with 6 months’ notice of when the consortium’s data access is expected to end. 
-

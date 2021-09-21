@@ -15,7 +15,7 @@ import React from "react";
 import ClickHandler from "../click-handler/click-handler";
 
 // Styles
-import compStyles from "./list-item.module.css";
+import * as compStyles from "./list-item.module.css";
 
 class ListItem extends React.Component {
   render() {

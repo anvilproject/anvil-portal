@@ -24,7 +24,7 @@ import Social from "../social/social";
 import twitter from "../../../../images/logo-twitter.svg";
 
 // Styles
-import compStyles from "./social-twitter-hashtag.module.css";
+import * as compStyles from "./social-twitter-hashtag.module.css";
 
 function SocialTwitterHashTag(props) {
   const { hashtag, showbird: showBird } = props;

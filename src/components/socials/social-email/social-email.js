@@ -10,15 +10,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import Social from "../social/social";
 
 // Styles
-import compStyles from "./social-email.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./social-email.module.css";
 
 function SocialEmail(props) {
   const { url } = props;

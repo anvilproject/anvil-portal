@@ -15,7 +15,7 @@ import Tooltip from "../../tooltip/tooltip";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 // Styles
-import compStyles from "./dashboard-copy-url.module.css";
+import * as compStyles from "./dashboard-copy-url.module.css";
 
 function DashboardCopyURL() {
   const { searchURL } = useContext(ContextDashboard);

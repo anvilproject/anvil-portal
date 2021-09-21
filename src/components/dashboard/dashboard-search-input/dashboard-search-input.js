@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, {
   useCallback,
   useContext,
@@ -19,9 +20,7 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 
 // Styles
-import compStyles from "./dashboard-search-input.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./dashboard-search-input.module.css";
 
 function DashboardSearchInput() {
   const { inputValue, onHandleClearFacet, onHandleUpdateFacet } =

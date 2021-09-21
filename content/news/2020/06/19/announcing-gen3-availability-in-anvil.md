@@ -5,6 +5,7 @@ description: "Gen3 was deployed into production within AnVIL in June 2020, and s
 featured: false
 author: "AnVIL"
 ---
+
 # Announcing Gen3 Availability in AnVIL
 
 Gen3 was deployed into production within AnVIL in June 2020, and since then many thousands of subjects have been indexed from the 1000 Genomes, GTEx, CCDG and CMG projects. The remaining cohorts in AnVIL from the CMG and CCDG projects are currently in processing

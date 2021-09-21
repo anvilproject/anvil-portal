@@ -21,12 +21,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./socials.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./socials.module.css";
 
 function Socials(props) {
   const { articleBottom, children } = props;

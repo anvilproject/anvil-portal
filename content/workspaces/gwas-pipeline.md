@@ -1,6 +1,6 @@
 ---
 featured: true
-logo: ./_images/hail.png
+logo: _images/hail.png
 title: "GWAS Pipeline Using Hail"
 url: "https://anvil.terra.bio/#workspaces/help-gatk/Hail-Notebook-Tutorials"
 ---

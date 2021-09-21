@@ -5,8 +5,6 @@
  * Style definitions specific to the AnVIL nav item component.
  */
 
-@import "../../../styles/vars.module.css";
-
 /* Nav item. */
 .navItem {
   font-size: 0.875rem; /* 14px. */

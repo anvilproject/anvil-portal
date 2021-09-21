@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./logo-font.module.css";
+import * as compStyles from "./logo-font.module.css";
 
 const LogoFont = React.forwardRef((props, ref) => {
   const { children } = props;

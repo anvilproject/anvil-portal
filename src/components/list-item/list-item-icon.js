@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./list-item-icon.module.css";
+import * as compStyles from "./list-item-icon.module.css";
 
 class ListItemIcon extends React.Component {
   render() {

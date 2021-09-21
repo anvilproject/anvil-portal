@@ -12,7 +12,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import * as ScrollingService from "../../../utils/scrolling.service";
 
 // Styles
-import compStyles from "./nav-side-bar.module.css";
+import * as compStyles from "./nav-side-bar.module.css";
 
 interface NavSideBarProps {
   articleOffsetTop: number;

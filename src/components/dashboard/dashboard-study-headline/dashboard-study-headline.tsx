@@ -13,7 +13,7 @@ import Breadcrumb from "../../breadcrumb/breadcrumb";
 import Overline from "../../overline/overline";
 
 // Styles
-import compStyles from "./dashboard-study-headline.module.css";
+import * as compStyles from "./dashboard-study-headline.module.css";
 
 interface DashboardStudyHeadlineProps {
   fhirUrl: string;

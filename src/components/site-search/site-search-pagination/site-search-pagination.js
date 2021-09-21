@@ -12,7 +12,7 @@ import React from "react";
 import SiteSearchPaginationButton from "../site-search-pagination-button/site-search-pagination-button";
 
 // Styles
-import compStyles from "./site-search-pagination.module.css";
+import * as compStyles from "./site-search-pagination.module.css";
 
 function SiteSearchPagination(props) {
   const { onSiteSearchPageRequest, nextPage, previousPage } = props;

@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
@@ -17,10 +18,8 @@ import Spy from "../spy/spy";
 import * as StylesService from "../../utils/styles.service";
 
 // Styles
-import compStyles from "./article.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./article.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function Article(props) {
   const {

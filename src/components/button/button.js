@@ -6,12 +6,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./button.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./button.module.css";
 
 function Button(props) {
   const { children, clickAction, dark, disabled, icon } = props;

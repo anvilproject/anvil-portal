@@ -6,13 +6,12 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 
 // Styles
-import compStyles from "./article-end.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./article-end.module.css";
 
 class ArticleEnd extends React.Component {
   render() {

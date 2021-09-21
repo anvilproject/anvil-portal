@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./header-nav-side-bar-hero.module.css";
+import * as compStyles from "./header-nav-side-bar-hero.module.css";
 
 interface HeaderNavSideBarHeroProps {
   children: React.ReactElement;

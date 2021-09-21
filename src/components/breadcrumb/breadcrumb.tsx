@@ -14,7 +14,7 @@ import Icon from "../icon/icon";
 import * as TabService from "../../utils/tab.service";
 
 // Styles
-import compStyles from "./breadcrumb.module.css";
+import * as compStyles from "./breadcrumb.module.css";
 
 interface IBreadcrumb {
   link: string;

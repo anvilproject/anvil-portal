@@ -5,9 +5,9 @@
  * The AnVIL configuration file.
  */
 
-let contentPath = `./content`;
-let yamlPath = `./content`;
-let roadMapPath = `./content/roadmap/`;
+let contentPath = "./content";
+let yamlPath = "./content";
+let roadMapPath = "./content/roadmap/";
 
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
@@ -15,13 +15,15 @@ let gtmEnvName = process.env.GATSBY_ENV_NAME;
 
 module.exports = {
   siteMetadata: {
-    title: `The AnVIL`,
-    description: `Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.`,
-    author: `The AnVIL team`,
-    siteUrl: `https://anvilproject.org`,
+    title: "The AnVIL",
+    description:
+      "Analyze large, open & controlled-access genomic datasets with familiar tools and reproducible workflows in a secure cloud-based execution environment.",
+    author: "The AnVIL team",
+    siteUrl: "https://anvilproject.org",
   },
   plugins: [
-    `gatsby-plugin-catch-links`,
+    "gatsby-plugin-image",
+    "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
@@ -42,74 +44,69 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        logo: "./images/favicon-anvil.png",
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          yandex: false,
-          windows: false,
-        },
+        background_color: "#f6f7f4",
+        display: "standalone",
+        icon: "./images/favicon-anvil.png",
+        name: "AnVIL",
+        short_name: "AnVIL",
+        start_url: "/",
+        theme_color: "#035c94",
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: "src/utils/typography",
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
-        exclude: [
-          `/events/events-intro`,
-          `/news/news-intro`,
-          `/guides/content-guide/example-page`,
-          `/typography-test-page/typography-test-page`,
+        excludes: [
+          "/events/events-intro",
+          "/news/news-intro",
+          "/guides/content-guide/example-page",
+          "/typography-test-page/typography-test-page",
         ],
       },
     },
-    // `gatsby-plugin-workspace-fields-report`,
-    `gatsby-source-dashboard-anvil`,
-    `gatsby-source-dashboard-ncpi`,
-    `gatsby-transformer-json`,
+    // "gatsby-plugin-workspace-fields-report",
+    "gatsby-source-dashboard-anvil",
+    "gatsby-source-dashboard-ncpi",
+    "gatsby-transformer-json",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `markdown-pages`,
+        name: "markdown-pages",
         path: contentPath,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `site-map`,
+        name: "site-map",
         path: yamlPath,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `road-map`,
+        name: "road-map",
         path: roadMapPath,
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          `gatsby-remark-component`,
+          "gatsby-remark-component",
           {
-            resolve: `gatsby-remark-component-parent2div`,
+            resolve: "gatsby-remark-component-parent2div",
             options: {
               components: [
                 "button",
@@ -145,14 +142,24 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`,
+            // Copies downloadable images and pdfs etc to a directory where they can be downloaded.
+            // Used specifically to easily download an image or file e.g. the AnVIL poster presented at #T2THPRC.
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-              // don't copy linked markdown files but do the normal skipping of images so they can be handled by gatsby-remark-images
-              ignoreFileExtensions: ["png", "jpg", "jpeg", "bmp", "tiff", "md"],
+              // Skip markdown files and images so they can be handled by gatsby-remark-images.
+              ignoreFileExtensions: [
+                "bmp",
+                "jpg",
+                "jpeg",
+                "md",
+                "mdx",
+                "png",
+                "tiff",
+              ],
             },
           },
           {
-            resolve: `gatsby-remark-embed-video`,
+            resolve: "gatsby-remark-embed-video",
             options: {
               width: 600,
               ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
@@ -168,27 +175,26 @@ module.exports = {
             },
           },
           `gatsby-remark-external-links`,
-          `gatsby-remark-responsive-iframe`,
-          `gatsby-remark-relative-images`,
+          `gatsby-remark-responsive-iframe`, // Required for resizing embedded videos.
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               linkImagesToOriginal: false,
               maxWidth: 1000,
             },
           },
-          `gatsby-remark-images-medium-zoom`,
+          "gatsby-remark-images-medium-zoom",
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: "gatsby-remark-prismjs",
             options: {
               classPrefix: "language-",
             },
           },
-          `gatsby-remark-autointernallink-headers`,
+          "gatsby-remark-autointernallink-headers",
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-yaml`,
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-yaml",
   ],
 };

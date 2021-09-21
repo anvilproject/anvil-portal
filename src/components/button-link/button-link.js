@@ -30,7 +30,7 @@ import { Link } from "gatsby";
 import React from "react";
 
 // Styles
-import compStyles from "./button-link.module.css";
+import * as compStyles from "./button-link.module.css";
 
 function ButtonLink(props) {
   const { children, href = "/", target = "_self" } = props;

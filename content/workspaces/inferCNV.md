@@ -1,6 +1,6 @@
 ---
 featured: true
-logo: ./_images/infercnv.png
+logo: _images/infercnv.png
 title: "inferCNV Tumor Single-Cell RNA-Seq Analysis Pipeline"
 url: "https://anvil.terra.bio/#workspaces/help-gatk/InferCNV_SCP_scRNA-seq"
 ---

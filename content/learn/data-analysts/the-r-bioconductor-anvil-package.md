@@ -242,11 +242,8 @@ wkspc
 
 - Uploading workflows -- through GitHub / Dockstore, but also the Broad Methods Repository ([YouTube](https://www.youtube.com/watch?v=VtKlYqWBW6A)); see also the [WDL Puzzles](https://app.terra.bio/#workspaces/help-gatk/WDL-puzzles) workspace.
 - Default name and namespace -- the runtime starts in a particular workspace, and the runtime knows the default namespace and name. So by default, I had
-```shell
-> avworkspace()
-[1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
-```
+    ```shell
+    > avworkspace()
+    [1] "deeppilots-bioconductor-may3/Bioconductor-Workshop-PopUp-mtmorgan"
+    ```
 - `gsutil_cp(): CommandException: Downloading this composite object requires integrity checking with CRC32c, but your crcmod installation isn’t using...` This is a bug that should be fixed in the underlying image for the runtime.
-
-
-

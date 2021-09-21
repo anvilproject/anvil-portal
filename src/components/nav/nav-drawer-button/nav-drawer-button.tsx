@@ -14,7 +14,7 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./nav-drawer-button.module.css";
+import * as compStyles from "./nav-drawer-button.module.css";
 
 function NavDrawerButton(): JSX.Element | null {
   const { navDrawerOpen, onSetNavDrawerOpen, showNavDrawerButton } =

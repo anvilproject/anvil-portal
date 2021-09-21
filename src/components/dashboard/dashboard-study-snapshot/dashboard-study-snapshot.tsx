@@ -17,7 +17,7 @@ import DashboardStudySummary, {
 } from "../dashboard-study-summmary/dashboard-study-summary";
 
 // Styles
-import compStyles from "./dashboard-study-snapshot.module.css";
+import * as compStyles from "./dashboard-study-snapshot.module.css";
 
 interface DashboardStudySnapshotProps {
   studyStat: IStat;

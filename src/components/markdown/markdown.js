@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useCallback, useEffect, useRef } from "react";
 import rehypeReact from "rehype-react";
 
@@ -41,9 +42,7 @@ import Warning from "../warning/warning";
 import Workspaces from "../workspaces/workspaces";
 
 // Styles
-import compStyles from "./markdown.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./markdown.module.css";
 
 function Markdown(props) {
   const { children, className } = props;

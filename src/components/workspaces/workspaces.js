@@ -18,7 +18,7 @@ import * as FeaturedService from "../../utils/featured.service";
 import Workspace from "../workspace/workspace";
 
 // Styles
-import compStyles from "./workspaces.module.css";
+import * as compStyles from "./workspaces.module.css";
 
 class Workspaces extends React.Component {
   render() {

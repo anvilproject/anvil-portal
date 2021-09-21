@@ -4,6 +4,6 @@ author: "AnVIL"
 description: "AnVIL typography specification."
 ---
 
-#Typography
+# Typography
 
 <style-guide-typography></style-guide-typography>

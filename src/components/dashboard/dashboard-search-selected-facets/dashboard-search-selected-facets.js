@@ -13,7 +13,7 @@ import DashboardSearchSelectedClearAll from "../dashboard-search-selected-clear-
 import DashboardSearchSelectedFacet from "../dashboard-search-selected-facet/dashboard-search-selected-facet";
 
 // Styles
-import compStyles from "./dashboard-search-selected-facets.module.css";
+import * as compStyles from "./dashboard-search-selected-facets.module.css";
 
 function DashboardSearchSelectedFacets(props) {
   const {

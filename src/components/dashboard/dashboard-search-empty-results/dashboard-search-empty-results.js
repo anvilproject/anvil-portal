@@ -13,7 +13,7 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 
 // Styles
-import compStyles from "./dashboard-search-empty-results.module.css";
+import * as compStyles from "./dashboard-search-empty-results.module.css";
 
 function DashboardSearchEmptyResults() {
   const { entities } = useContext(ContextDashboard);

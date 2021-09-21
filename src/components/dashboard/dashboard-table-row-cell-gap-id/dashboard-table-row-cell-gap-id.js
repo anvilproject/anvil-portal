@@ -15,7 +15,7 @@ import * as DashboardTableService from "../../../utils/dashboard/dashboard-table
 import * as RedirectService from "../../../utils/redirect.service";
 
 // Styles
-import compStyles from "./dashboard-table-row-cell-gap-id.module.css";
+import * as compStyles from "./dashboard-table-row-cell-gap-id.module.css";
 
 class DashboardTableRowCellGapId extends React.Component {
   render() {

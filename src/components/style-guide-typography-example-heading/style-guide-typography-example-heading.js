@@ -9,7 +9,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Styles
-import compStyles from "./style-guide-typography-example-heading.module.css";
+import * as compStyles from "./style-guide-typography-example-heading.module.css";
 
 // Template variables
 const headingLabels = {

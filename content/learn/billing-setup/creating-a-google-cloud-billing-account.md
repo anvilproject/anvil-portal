@@ -30,8 +30,8 @@ Before setting up your Google Cloud Billing Account:
 
 1. Login with, or switch to, the correct Google ID (email).
 1. Select your organization from the Select your lab from the “**Select an organization”** if the dropdown is available.
-1. If you are not already on the  **“MY BILLING ACCOUNTS”** tab, select it.
-1. Select  **“ADD BILLING ACCOUNT”**.
+1. If you are not already on the **“MY BILLING ACCOUNTS”** tab, select it.
+1. Select **“ADD BILLING ACCOUNT”**.
 
 <figure>
 <img src="./_images/add-billing-account.png" alt="Linking Terra to a Google Billing Account"/>
@@ -48,7 +48,7 @@ Before setting up your Google Cloud Billing Account:
 
 ### Viewing your new GCP Billing Account
 
-The first time a GCP Billing Account is created it is named  “My Billing Account” by default.
+The first time a GCP Billing Account is created it is named “My Billing Account” by default.
 
 **To view and modify this billing account:**
 
@@ -66,6 +66,4 @@ The first time a GCP Billing Account is created it is named  “My Billing Accou
 <figure-caption>Figure 3. Select the “MY BILLING ACCOUNTS” tab. </figure-caption>
 </figure>
 
-
 For more information on creating billing accounts, see [Create, modify, or close your Cloud Billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account).
-

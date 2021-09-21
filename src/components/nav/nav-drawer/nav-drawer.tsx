@@ -14,7 +14,7 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 import NavDrawerOverlay from "../nav-drawer-overlay/nav-drawer-overlay";
 
 // Styles
-import compStyles from "./nav-drawer.module.css";
+import * as compStyles from "./nav-drawer.module.css";
 
 interface NavDrawerProps {
   children: React.ReactElement[];

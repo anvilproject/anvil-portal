@@ -5,8 +5,6 @@
  * Style definitions specific to the AnVIL tab component.
  */
 
-@import "../../../styles/vars.module.css";
-
 /* Tab. */
 .tab {
   color: var(--accent-blue-dark);

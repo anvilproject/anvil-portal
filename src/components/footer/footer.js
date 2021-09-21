@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React, { useContext } from "react";
 
@@ -23,10 +24,8 @@ import usaGov from "../../../images/logo-usa-gov.png";
 import youtube from "../../../images/logo-youtube.png";
 
 // Styles
-import compStyles from "./footer.module.css";
-import globalStyles from "../../styles/global.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./footer.module.css";
+import * as globalStyles from "../../styles/global.module.css";
 
 function Footer() {
   const { siteSearch } = useContext(ContextSiteSearch),

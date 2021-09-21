@@ -1,6 +1,6 @@
 ---
 featured: true
-logo: ./_images/hca.png
+logo: _images/hca.png
 title: "Optimus Pipeline for Analysis of 3’ Single-Cell Transcriptomic Data"
 url: "https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline"
 ---

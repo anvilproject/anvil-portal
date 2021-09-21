@@ -6,17 +6,22 @@
  */
 
 // Core dependencies
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 
 // Styles
-import compStyles from "./brand-icon.module.css";
+import * as compStyles from "./brand-icon.module.css";
 
 class BrandIcon extends React.Component {
   render() {
-    const { src, alt } = this.props;
+    const { brand, alt } = this.props;
     return (
       <div className={compStyles.brandIcon}>
-        <img className={compStyles.brandIconImage} src={src} alt={alt} />
+        <GatsbyImage
+          alt={alt}
+          className={compStyles.brandIconImage}
+          image={getImage(brand)}
+        />
       </div>
     );
   }

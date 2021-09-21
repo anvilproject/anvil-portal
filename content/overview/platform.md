@@ -13,6 +13,7 @@ By providing access to data and tools in a secure environment that can scale to 
 Providing access to such a platform with tens of thousands of human genome sequences will allow the genomics community to ask new questions that were not logistically feasible before.
 
 ## Platform Components
+
 ![Inverting the Model of Data Sharing](./_images/anvil-overview.png)
 
 AnVIL leverages the Terra computing platform to manage access and billing of cloud projects, launch analysis environments, and manage data.
@@ -22,6 +23,3 @@ Terra is integrated with the Dockstore workflow repository, enabling AnVIL users
 Gen3 is leveraged by AnVIL as the data management system, enabling users to associate complex phenotypes, metadata, and clinical data with sequencing based data with sophisticated data models.
 
 <Platforms></Platforms>
-
-
-

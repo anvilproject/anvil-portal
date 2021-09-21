@@ -13,7 +13,7 @@ import { CSSTransition } from "react-transition-group";
 import ContextModal from "../context-modal/context-modal";
 
 // Styles
-import compStyles from "./modal-drawer.module.css";
+import * as compStyles from "./modal-drawer.module.css";
 
 function ModalDrawer(props) {
   const { children } = props;

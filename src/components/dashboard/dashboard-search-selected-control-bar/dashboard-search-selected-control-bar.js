@@ -13,7 +13,7 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchSelectedFacets from "../dashboard-search-selected-facets/dashboard-search-selected-facets";
 
 // Styles
-import compStyles from "./dashboard-search-selected-control-bar.module.css";
+import * as compStyles from "./dashboard-search-selected-control-bar.module.css";
 
 function DashboardSearchSelectedControlBar() {
   const {

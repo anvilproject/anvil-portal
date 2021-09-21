@@ -34,13 +34,13 @@ If you elect to download the protected data, it is your responsibility to mainta
 
 For help or support executing the instructions below please reach out to the Gen3 team at <support@datacommons.io>.
 
-
 ## Downloading GTEx v8 Phenotypic Data
+
 ### Step 1 - Login to Anvil Gen3
 
 **Login** to the [AnVIL Gen3 Commons](https://gen3.theanvil.io/login) with your **NIH credentials** and navigate to the Exploration page.
 
-![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-step-1-login-to-anvil-gen3.png)
+![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-login-to-anvil-gen3.png)
 
 ### Step 2 - Generate a PFB File in the Exploration page
 
@@ -49,12 +49,12 @@ For help or support executing the instructions below please reach out to the Gen
 1. Navigate to the **Exploration Page** (<https://gen3.theanvil.io/explorer>)
 1. Click on the “**Downloadable**” tab and select “**CF-GTEx**” under “Project Id”
 1. Please choose a single **Data Type** from the Data Type filter on the left
-![Step 2 - Select Single Data Type](../_images/reference/gtex-step-2-select-data-type.png)
+    ![Step 2 - Select Single Data Type](../_images/reference/gtex-select-data-type.png)
 1. Click on the “**Export All to PFB**” button. Please wait patiently for this step - can take 30 - 60s - and please do not navigate away while the export is in progress
-![Step 2 - Export in Progress](../_images/reference/gtex-step-2-export-in-progress.png)
-![Step 2 - Please Wait While Exporting](../_images/reference/gtex-step-2-export-wait-indicator.png)
-1. Download generated PFB file\
-![Step 2 - Download Generated PFB File](../_images/reference/gtex-step-2-download-pfb.png)
+    ![Step 2 - Export in Progress](../_images/reference/gtex-export-in-progress.png)
+    ![Step 2 - Please Wait While Exporting](../_images/reference/gtex-export-wait-indicator.png)
+1. Download generated PFB file
+    ![Step 2 - Download Generated PFB File](../_images/reference/gtex-download-pfb.png)
 
 #### Optional - Filter Facets and Cohort Generation
 
@@ -69,17 +69,18 @@ Additional search facets can be applied in the “Downloadable” tab in order t
 
 1. Open a **terminal window**
 1. Run **command line** shown below
-```shell
-$ pip install pypfb
-```
-> Note: Please make sure you are running at least version 0.5.0. To ensure this, you can run the **command line** shown below:
-```shell
-$ pip install pypfb==0.5.0
-```
+    ```shell
+    $ pip install pypfb
+    ```
+    > Note: Please make sure you are running at least version 0.5.0. To ensure this, you can run the **command line** shown below:
+    ```shell
+    $ pip install pypfb==0.5.0
+    ```
 
 ### Step 4 - Convert PFB to TSV
 
 Once PyPFB has been successfully installed, parse the previously downloaded PFB file (Step 2) into **tab-delimited files (.tsv)** by running the command shown below.
+
 ```shell
 $ pfb to -i <PATH_to_export_pfb.avro> tsv
 ```
@@ -99,37 +100,41 @@ Done, created 6 files under: ./tsvs/
 ## Downloading GTEx v8 Object Files
 
 ### Step 1 - Login to Anvil Gen3
+
 **Login** to the AnVIL Gen3 Commons with your **NIH credentials** and navigate to the Exploration page.
 
-![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-step-1-login-to-anvil-gen3.png)
+![Step 1 - Login to Anvil Gen3](../_images/reference/gtex-login-to-anvil-gen3.png)
 
 ### Step 2 - Generate a Manifest of Object Files in the Exploration Page
+
 To download the GTEx v8 object files, you need to create a **manifest JSON file** which contains a complete list of Globally Unique Identifiers (GUIDs) associated with the GTEx v8 object files.
 
 1. Navigate to the **Exploration Page** (<https://gen3.theanvil.io/explorer>)
 1. Click the “**Downloadable**” tab and select “**CF-GTEx**” under “Projects” and “Project Id”
 1. Click “**Download**” button and then click “**Download Manifest**”
-![Step 2 - Download Manifest](../_images/reference/gtex-step-2-download-manifest.png)
+    ![Step 2 - Download Manifest](../_images/reference/gtex-download-manifest.png)
 
 ### Step 3 - Download and Configure the Gen3-Client
+
 The **gen3-client** (<https://gen3.org/resources/user/gen3-client>) provides an easy-to-use, command-line interface for downloading files from a Gen3 data commons.
 
 1. **Download gen3-client** from [HERE](https://github.com/uc-cdis/cdis-data-client/releases) and pick the most recent binary executable based on your operating system. Unzip the executable in the working directory of your choice.
-1. **Download an API key** from the Gen3 data commons from [HERE](https://gen3.theanvil.io/identity)\
-![Step 3 - Download and Configure the Gen3-Client](../_images/reference/gtex-step-3-download-and-configure-gen3-client.png)
+1. **Download an API key** from the Gen3 data commons from [HERE](https://gen3.theanvil.io/identity)
+    ![Step 3 - Download and Configure the Gen3-Client](../_images/reference/gtex-download-and-configure-gen3-client.png)
 1. **Configure** a profile with downloaded API key by running the following command
-```shell
-$ gen3-client configure --profile=<profile_name>
---cred=<PATH_to_credentials.json>
---apiendpoint=https://gen3.theanvil.io
-```
-You’re expected to see messages of successful configuration as shown below.
-```shell
-sean@cdis:~$ ./gen3-client configure --profile=AnVIL --cred=AnVIL_credentials.json --apiendpoint=https://gen3.theanvil.io
-2020/11/02 07:55:46 Profile 'AnVIL' has been configured successfully.
-```
+    ```shell
+    $ gen3-client configure --profile=<profile_name>
+    --cred=<PATH_to_credentials.json>
+    --apiendpoint=https://gen3.theanvil.io
+    ```
+    You’re expected to see messages of successful configuration as shown below.
+    ```shell
+    sean@cdis:~$ ./gen3-client configure --profile=AnVIL --cred=AnVIL_credentials.json --apiendpoint=https://gen3.theanvil.io
+    2020/11/02 07:55:46 Profile 'AnVIL' has been configured successfully.
+    ```
 
 ### Step 4 - Download Object Files
+
 To download the object files, use the manifest.json (Step 2) with the gen3-client and run the command line as shown below.
 
 ```shell

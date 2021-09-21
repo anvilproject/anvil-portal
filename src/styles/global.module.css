@@ -18,8 +18,6 @@
  * 1545px - Content and outline are centered, rather than left-aligned
  */
 
-@import "./vars.module.css";
-
 html {
   font-size: 112.5%; /* 18px. */
 }

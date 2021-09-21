@@ -11,7 +11,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./hero.module.css";
+import * as compStyles from "./hero.module.css";
 
 const Hero = React.forwardRef((props, ref) => {
   const { children } = props;

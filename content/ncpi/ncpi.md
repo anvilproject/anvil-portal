@@ -4,13 +4,10 @@ title: "NIH Cloud Platform Interoperability Effort"
 ---
 
 # NIH Cloud Platform Interoperability Effort
+
 ### Helping to create a federated genomic data ecosystem
 
-
-
-<hero>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating cloud platforms and facilitate the realization of a trans-NIH, federated data ecosystem.
-</hero>
-
+<hero>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating cloud platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
 
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI, and the NIH Common Fund.
 
@@ -18,7 +15,7 @@ The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms 
 
 ## Platforms
 
-The NCPI's  participating platforms are:
+The NCPI's participating platforms are:
 
 [**AnVIL**](/) - The NHGRI Genomic Data Science The Genomic Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing, and computing across large genomic, and genomic-related data sets. [[more]](/ncpi/platforms#nhgri-anvil)
 
@@ -26,11 +23,10 @@ The NCPI's  participating platforms are:
 
 [**Cancer Research Data Commons**](https://datacommons.cancer.gov/) - The goal of the National Cancer Institute’s Cancer Research Data Commons (CRDC) is to empower researchers to accelerate data-driven scientific discovery by connecting diverse datasets with analytical tools in the cloud. The CRDC is built upon an expandable data science infrastructure that provides secure access to many different data across scientific domains via Data Commons Framework. [[more]](/ncpi/platforms#nci-cancer-research-data-commons-crdc)
 
-
-[**Kids First Data Resource Center**](https://kidsfirstdrc.org/)  -  The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.”  [[more]](/ncpi/platforms#nih-common-fund---kids-first-data-resource-center)
-
+[**Kids First Data Resource Center**](https://kidsfirstdrc.org/) - The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.” [[more]](/ncpi/platforms#nih-common-fund---kids-first-data-resource-center)
 
 ## Team
+
 This new interoperability effort is a collaboration between NIH representatives, platform team members, and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
 
 ## Initial Focus
@@ -53,7 +49,6 @@ For example, this will let a researcher search for Kids First and TOPMed data on
 
 Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-
 ### Single Sign-On Pilot with NIH RAS
 
 In collaboration with the [NIH CIT Researcher Auth Service (RAS) Initiative](https://datascience.nih.gov/data-infrastructure/researcher-auth-service), we will pilot a single sign-on authentication/authorization workflow.
@@ -66,7 +61,7 @@ To allow such a "bird's eye view" of the data we are building the [NCPI Dataset 
 
 ## Cross-Platform Research Efforts
 
- <hero> This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid the discovery of detailed interoperability requirements and validate the utility of the developed features. </hero>
+<hero>This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid the discovery of detailed interoperability requirements and validate the utility of the developed features.</hero>
 
 There are currently six cross-platform research efforts:
 
@@ -76,11 +71,9 @@ There are currently six cross-platform research efforts:
 
 For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
 
-
 ## Working Groups
 
 The NCPI has five working groups:
-
 
 [Community Governance Working Group](/ncpi/working-groups#community-governance-working-group) - Working to establish a set of [principles](/ncpi/interoperating-principles) for promoting interoperability across multiple platforms to remove operational barriers to trans-platform data sharing and analysis.
 
@@ -92,10 +85,6 @@ The NCPI has five working groups:
 
 [Systems Interoperation Working Group](ncpi/working-groups#nih-systems-interoperation-working-group) - Testing and implementing technical standards (e.g. GA4GH APIs) for data exchange and demonstrating their effectiveness in enabling key cross-platform research use cases.
 
-
 ## Progress Updates
 
 The NCPI holds workshops every six months for working group members to provide progress updates and discuss priorities for the next six-month period. See the [Progress Updates](/ncpi/progress-updates) section for workshop recordings and meeting notes.
-
-
-

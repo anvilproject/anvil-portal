@@ -19,7 +19,7 @@ import DashboardStudyTable, {
 } from "../dashboard-study-table/dashboard-study-table";
 
 // Styles
-import compStyles from "./dashboard-study.module.css";
+import * as compStyles from "./dashboard-study.module.css";
 
 export interface IStudy {
   fhirUrl: string;

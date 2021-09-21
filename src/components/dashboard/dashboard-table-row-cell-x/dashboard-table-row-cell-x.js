@@ -7,15 +7,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import * as DashboardTableService from "../../../utils/dashboard/dashboard-table.service";
 
 // Styles
-import compStyles from "./dashboard-table-row-cell-x.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./dashboard-table-row-cell-x.module.css";
 
 class DashboardTableRowCellX extends React.Component {
   render() {

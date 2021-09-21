@@ -14,7 +14,7 @@ import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal"
 import Icon from "../../icon/icon";
 
 // Styles
-import compStyles from "./header-menu-button.module.css";
+import * as compStyles from "./header-menu-button.module.css";
 
 function HeaderMenuButton(): JSX.Element {
   const { menuOpen, onSetMenuOpen } = useContext(ContextAnVILPortal);

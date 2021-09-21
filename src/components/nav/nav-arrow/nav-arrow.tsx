@@ -6,12 +6,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./nav-arrow.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./nav-arrow.module.css";
 
 interface NavArrowProps {
   rotate: boolean;

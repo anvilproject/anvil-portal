@@ -9,7 +9,7 @@
 import React from "react";
 
 // Styles
-import compStyles from "./header-nav-bar.module.css";
+import * as compStyles from "./header-nav-bar.module.css";
 
 interface HeaderNavBarProps {
   children: React.ReactElement;

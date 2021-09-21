@@ -1,10 +1,9 @@
 /*
- * Human Cell Atlas
- * https://www.humancellatlas.org/
+ * The AnVIL
+ * https://www.anvilproject.org
  *
- * HCA Data Portal anchor component.
+ * Style definitions specific to The AnVIL internal link component.
  */
-@import "../../styles/vars.module.css";
 
 /* Anchor wrapper */
 .anchor {

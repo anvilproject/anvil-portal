@@ -13,7 +13,7 @@ import { CSSTransition } from "react-transition-group";
 import ContextAnVILPortal from "../../context-anvil-portal/context-anvil-portal";
 
 // Styles
-import compStyles from "./nav-drawer-overlay.module.css";
+import * as compStyles from "./nav-drawer-overlay.module.css";
 
 function NavDrawerOverlay(): JSX.Element {
   const { navDrawerOpen, onSetNavDrawerOpen } = useContext(ContextAnVILPortal);

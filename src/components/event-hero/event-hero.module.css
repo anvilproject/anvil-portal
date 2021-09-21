@@ -4,7 +4,6 @@
  *
  * Style definitions specific to The AnVIL event hero component.
  */
-@import "../../styles/vars.module.css";
 
 /* Event hero <h6> 0 overline - mix of overline and <h3> styles */
 .eventHero h6 {

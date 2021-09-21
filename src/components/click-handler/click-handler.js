@@ -7,12 +7,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./click-handler.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./click-handler.module.css";
 
 class ClickHandler extends React.Component {
   handleKeyDown = (e, clickAction) => {

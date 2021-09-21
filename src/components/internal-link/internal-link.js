@@ -1,19 +1,18 @@
 /*
- * Human Cell Atlas
- * https://www.humancellatlas.org/
+ * The AnVIL
+ * https://www.anvilproject.org
  *
- * HCA Data Portal anchor component.
+ * The AnVIL - anchor component.
  * Used by non-markdown generated pages.
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { navigate } from "@reach/router";
 import React from "react";
 
 // Styles
-import compStyles from "./internal-link.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./internal-link.module.css";
 
 function InternalLink(props) {
   const { anchor, relative } = props;

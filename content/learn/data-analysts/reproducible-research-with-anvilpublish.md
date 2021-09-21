@@ -213,4 +213,3 @@ Transforming packages to notebooks and workspaces
 - What docker images can be used as base images for customization? The main images derive from [terra-jupyter-bioconductor](https://github.com/DataBiosphere/terra-docker/tree/master/terra-jupyter-bioconductor) (for Jupyter-based images) and [anvil-rstudio-bioconductor](https://github.com/anvilproject/anvil-docker/tree/master/anvil-rstudio-bioconductor) (for RStudio-based images). Any container can be used in a workflow.
 - Can you specify the runtime environment as part of the workspace? This does not seem to be possible at the moment. One could include a notebook or other code that checked the runtime to see that it meets particular conditions, but this would rely on the user running the code.
 - Enhance reproducibility by 'fixing' package versions, e.g., using packr? Instead, specify precise package versions in a customized Dockerfile.
-

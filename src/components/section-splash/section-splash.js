@@ -7,12 +7,11 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
-import compStyles from "./section-splash.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./section-splash.module.css";
 
 class SectionSplash extends React.Component {
   render() {

@@ -13,7 +13,7 @@ import DashboardSearchSelectedTerms from "../dashboard-search-selected-terms/das
 import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
 
 // Styles
-import compStyles from "./dashboard-search-selected-facet.module.css";
+import * as compStyles from "./dashboard-search-selected-facet.module.css";
 
 function DashboardSearchSelectedFacet(props) {
   const {

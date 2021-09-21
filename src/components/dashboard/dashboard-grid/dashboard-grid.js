@@ -6,14 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React, { useContext } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 
 // Styles
-import compStyles from "./dashboard-grid.module.css";
-const classNames = require("classnames");
+import * as compStyles from "./dashboard-grid.module.css";
 
 function DashboardGrid(props) {
   const { children } = props;

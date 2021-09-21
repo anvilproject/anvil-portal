@@ -22,6 +22,9 @@ import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-
 import ProviderSiteSearch from "./site-search/provider-site-search/provider-site-search";
 import SiteWrapper from "./site-wrapper/site-wrapper";
 
+// Styles
+import "../styles/vars.module.css";
+
 function Layout(props) {
   const {
     children,

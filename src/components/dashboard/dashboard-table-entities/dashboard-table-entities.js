@@ -13,7 +13,7 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardTable from "../dashboard-table/dashboard-table";
 
 // Styles
-import compStyles from "./dashboard-table-entities.module.css";
+import * as compStyles from "./dashboard-table-entities.module.css";
 
 function DashboardTableEntities(props) {
   /* Grab the entities. */

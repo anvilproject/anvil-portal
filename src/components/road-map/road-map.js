@@ -6,15 +6,14 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import { RoadMapStaticQuery } from "../../hooks/road-map-query";
 
 // Styles
-import compStyles from "./road-map.module.css";
-
-let classNames = require("classnames");
+import * as compStyles from "./road-map.module.css";
 
 class RoadMap extends React.Component {
   /**

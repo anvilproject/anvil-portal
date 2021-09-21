@@ -14,7 +14,7 @@ import React, { useContext } from "react";
 import ContextDashboard from "../context-dashboard/context-dashboard";
 
 // Styles
-import compStyles from "./dashboard-table-row-cell-study-name.module.css";
+import * as compStyles from "./dashboard-table-row-cell-study-name.module.css";
 
 interface DashboardTableRowCellStudyNameProps {
   children: string;

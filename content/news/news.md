@@ -3,6 +3,6 @@ title: "News"
 description: "AnVIL Project's latest news."
 ---
 
-#AnVIL Community Updates
+# AnVIL Community Updates
 
 <News></News>

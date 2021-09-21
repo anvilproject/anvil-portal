@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import { Link } from "gatsby";
 import React from "react";
 
@@ -13,9 +14,7 @@ import React from "react";
 import * as OutlineService from "../../utils/outline.service";
 
 // Styles
-import compStyles from "./side-bar-outline-item.module.css";
-
-const classNames = require("classnames");
+import * as compStyles from "./side-bar-outline-item.module.css";
 
 function SideBarOutlineItem(props) {
   const { activeOutline, outlineItem } = props;

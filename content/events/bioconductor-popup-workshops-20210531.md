@@ -21,6 +21,7 @@ Sessions will have short presentations, with abundant opportunity for questions 
 The main goal is to engage and enable the use of AnVIL / Terra by R users. All sessions will be recorded and available after the workshop. Each workshop will include a short one-page summary of key learning objectives.
 
 ## Tutorials and Videos
+
 For a tutorial based on the workshop with an accompanying tutorial see [Reproducible research with AnVILPublish](/learn/data-analysts/reproducible-research-with-anvilpublish).
 
 ## To Register
@@ -29,7 +30,7 @@ Please [SIGN UP][3] to receive connection information for each workshop.
 
 ## Schedule
 
-All workshops are offered on Mondays at lunch time, 12:00 - 1:00 US Eastern, starting April 26.
+All workshops are offered on Mondays at lunchtime, 12:00 - 1:00 US Eastern, starting April 26.
 
 | Date | Topic |
 | --- | --- |
