@@ -61,6 +61,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/ashg2021-workshop-analysis-of-human-pangenome-data-with-anvil"
+            - name: ""
               file: "/events/ashg2021-workshop-structural-variant-discovery-with-galaxy"
             - name: ""
               file: "/events/gi2021-poster-session"
