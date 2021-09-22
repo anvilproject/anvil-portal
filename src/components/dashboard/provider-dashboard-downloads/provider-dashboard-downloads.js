@@ -78,7 +78,16 @@ function ProviderDashboardDownloads(props) {
   const onHandleDownloadTSV = (resultSet, headers) => {
     /* Build the result set JSON, reformatted into a string. */
     /* Data is delimitered by "tab" i.e. "\t". */
-    const reformattedResultSet = reformatJSON(resultSet, headers, "\t");
+
+    /* Insert "createdAt" field after "projectId" for downloading AnVIL workspaces only. */
+    let headerKeys = [...headers];
+    if (dataset === "anvil") {
+      const indexProjectId = headers.indexOf("projectId");
+      const indexCreatedAt = indexProjectId + 1;
+      headerKeys.splice(indexCreatedAt, 0, "createdAt");
+    }
+
+    const reformattedResultSet = reformatJSON(resultSet, headerKeys, "\t");
 
     /* Execute download of the tsv file. */
     downloadResultSet(reformattedResultSet, "tsv");

@@ -10,6 +10,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               accessType
               consentShortName
               consortium
+              createdAt
               dataTypes
               dbGapId
               diseases
