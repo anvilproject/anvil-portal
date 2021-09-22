@@ -10,6 +10,7 @@ export const DashboardEntityPropertyNameDisplay = {
   consentCodes: "Consent Code",
   consentShortName: "Consent Code",
   consortium: "Consortium",
+  createdAt: "Created At",
   dataTypes: "Data Type",
   diseases: "Disease",
   focuses: "Focus / Disease",

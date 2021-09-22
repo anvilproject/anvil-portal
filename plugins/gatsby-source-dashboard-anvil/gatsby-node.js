@@ -178,6 +178,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         accessType: String
         consentShortName: String
         consortium: String
+        createdAt: String
         dataTypes: [String]
         dbGapId: String
         dbGapIdAccession: String

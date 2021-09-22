@@ -37,6 +37,7 @@ const CONSENT_CODE_TYPE = {
 const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
+  CREATED_AT: "created",
   DATA_TYPES: "library:datatype.items",
   DB_GAP_ID: "study_accession",
   DISEASES: "library:indication",
@@ -51,6 +52,7 @@ const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "consentShortName",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "consortium",
+  [SOURCE_HEADER_KEY.CREATED_AT]: "createdAt",
   [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
@@ -66,6 +68,7 @@ const SOURCE_FIELD_KEY = {
 const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "string",
+  [SOURCE_HEADER_KEY.CREATED_AT]: "string",
   [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
   [SOURCE_HEADER_KEY.DISEASES]: "array",
@@ -269,6 +272,10 @@ function buildWorkspaces(
       dbGapIdAccession
     );
 
+    /* Grab the workspace created timestamp. */
+    const keyCreatedAt = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CREATED_AT];
+    const createdAt = countWorkspace[keyCreatedAt];
+
     /* Grab the workspace file size. */
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
     const size = countWorkspace[keyFileSize];
@@ -278,6 +285,7 @@ function buildWorkspaces(
       /* Merge properties. */
       const workspace = {
         ...countWorkspace,
+        ...createdAt,
         ...row,
         ...propertyAccessType,
         ...propertyConsentShortName,
