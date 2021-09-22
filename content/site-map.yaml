@@ -61,6 +61,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/ismb2021-genome-informatics-poster-session"
+            - name: ""
               file: "/events/bioconductor-popup-workshops-20210614"
             - name: ""
               file: "/events/bioconductor-popup-workshops-20210607"
