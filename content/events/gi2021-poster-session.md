@@ -4,7 +4,7 @@ conference: "Genome Informatics 2021"
 description: "The 2021 Genome Informatics Meeting will cover topics including Microbial and Metagenomics; Sequencing Algorithms, Variant Discovery and Genome Assembly; Evolution, Complex Traits and Phylogenetics; Functional Genomics; Single Cell Genomics; and Epigenetics and Genome Structure."
 eventType: "Poster Session"
 featured: true
-location: "Location TBD"
+location: "Location Virtual"
 sessions: [{sessionEnd: "03 Nov 2021 2:00 PM", sessionStart: "03 Nov 2021 1:00 PM"}, {sessionEnd: "04 Nov 2021 2:00 PM", sessionStart: "04 Nov 2021 1:00 PM"}, {sessionEnd: "05 Nov 2021 2:00 PM", sessionStart: "05 Nov 2021 1:00 PM"}]
 timezone: "America/New_York"
 title: "Modeling the computing requirements and costs for genomics analysis in the cloud"
