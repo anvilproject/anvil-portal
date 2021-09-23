@@ -82,3 +82,14 @@ CAVATICA is a cloud based infrastructure originally developed for supporting ped
 CAVATICA is powered by the Seven Bridges Platform, which meets or exceeds all NIH requirements for dbGaP or similarly controlled-access data on both Amazon Web Services (AWS) and/or the Google Compute Platform (GCP). Please see the [Seven Bridges Compliance White Paper](https://www.sevenbridges.com/library/white-papers/compliance/) for a full description of CAVATICA's security and compliance features.
 
 For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA support user authentication and authorization to controlled-access datasets via integration with the Gen3-powered Bionimbus Trusted Partnership for access and distribution (KFDRC Framework Services).
+
+## National Center for Biotechnology Information (NCBI) at the National Library of Medicine (NLM)
+<https://www.ncbi.nlm.nih.gov/>
+
+NCBI hosts and manages the Database of Genotypes and Phenotypes ([dbGaP](https://www.ncbi.nlm.nih.gov/gap/)) and NIH’s Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra/)). dbGaP provides and manages access to protected data related to human studies that have investigated the interaction of genotype and phenotype. SRA is the largest archive for public and controlled-access next-generation sequencing data.
+
+In partnership with the NIH Science and Technology Research Infrastructure for Discovery, Experimentation, and Sustainability ([STRIDES](https://datascience.nih.gov/strides)) Initiative, NCBI has made the entire corpus of SRA and computational tools accessible on the [cloud](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/) (commercial and open access) in addition to NCBI’s local [servers](https://www.ncbi.nlm.nih.gov/sra/).
+
+The central goal is to create an equitable and interoperable ecosystem where NIH-funded data is FAIR (findable, accessible, interoperable, and reusable) and NCBI is also an engaged partner in the development of community-driven solutions to provide secure access to protected data in the federated data access landscape.
+
+NCBI is actively engaged in efforts to define technical solutions to modernize and streamline secure access to controlled-access data via GA4GH Data Repository Service ([DRS](https://ga4gh.github.io/data-repository-service-schemas/preview/release/drs-1.0.0/docs/)) and NIH Researcher Authorization Service ([RAS](https://datascience.nih.gov/researcher-auth-service-initiative)) initiative.

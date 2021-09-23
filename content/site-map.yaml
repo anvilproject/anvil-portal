@@ -385,23 +385,19 @@
           file: "/overview/project-sponsor"
 ## NCPI
 - menuItem: "NCPI"
-  pageTitle: "NCPI"
+  pageTitle: "Overview"
   pathPartial: "/ncpi"
   tabs:
     - name: ""
       pathPartial: ""
       navigationItems:
-        - name: "Overview"
+        - name: "NIH Cloud Platform Interoperability Effort"
           file: "/ncpi/ncpi"
           pathOverride: "/ncpi"
-        - name: "Participating Platforms"
-          file: "/ncpi/platforms"
         - name: "Guiding Principles"
           file: "/ncpi/interoperating-principles"
         - name: "Working Groups"
           file: "/ncpi/working-groups"
-        - name: "Progress Updates"
-          file: "/ncpi/progress-updates"
 ## NCPI Datasets
 - menuItem: "NCPI Datasets"
   pageTitle: "NCPI Dataset Catalog"
@@ -413,6 +409,39 @@
         - name: ""
           file: "/ncpi/data"
           pathOverride: "/ncpi/data"
+## NCPI Platforms
+- menuItem: "Platforms"
+  pageTitle: "Platforms"
+  pathPartial: "/ncpi/platforms"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Participating Platforms"
+          file: "/ncpi/platforms"
+          pathOverride: "/ncpi/platforms"
+### NCPI Policy
+- menuItem: "Technologies"
+  pageTitle: "Technologies"
+  pathPartial: "/ncpi/technologies"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Key Technologies"
+          file: "/ncpi/technologies"
+          pathOverride: "/ncpi/technologies"
+## NCPI Updates
+- menuItem: "NCPI Updates"
+  pageTitle: "Updates"
+  pathPartial: "/ncpi/progress-updates"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: "Progress Updates"
+          file: "/ncpi/progress-updates"
+          pathOverride: "/ncpi/progress-updates"
 ## NCPI Search
 - menuItem: "NCPI Search"
   pageTitle: "Search"
