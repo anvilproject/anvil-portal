@@ -23,6 +23,11 @@ export function getHeaderSocials(ncpi: boolean) {
         name: Social.YOUTUBE,
         url: SocialUrlNCPI.YOUTUBE,
       },
+      {
+        imageSrc: SocialImage.SLACK,
+        name: Social.SLACK,
+        url: SocialUrlNCPI.SLACK,
+      },
     ];
   }
 
