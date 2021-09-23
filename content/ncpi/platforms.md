@@ -86,6 +86,11 @@ For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA s
 ## National Center for Biotechnology Information (NCBI) at the National Library of Medicine (NLM)
 <https://www.ncbi.nlm.nih.gov/>
 
+<socials>
+<social-twitter-handle handle="NCBI" showbird="true"></social-twitter-handle>
+<social-youtube url="https://www.youtube.com/user/NLMNIH/playlists"></social-youtube>
+</socials>
+
 NCBI hosts and manages the Database of Genotypes and Phenotypes ([dbGaP](https://www.ncbi.nlm.nih.gov/gap/)) and NIH’s Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra/)). dbGaP provides and manages access to protected data related to human studies that have investigated the interaction of genotype and phenotype. SRA is the largest archive for public and controlled-access next-generation sequencing data.
 
 In partnership with the NIH Science and Technology Research Infrastructure for Discovery, Experimentation, and Sustainability ([STRIDES](https://datascience.nih.gov/strides)) Initiative, NCBI has made the entire corpus of SRA and computational tools accessible on the [cloud](https://www.ncbi.nlm.nih.gov/sra/docs/sra-cloud/) (commercial and open access) in addition to NCBI’s local [servers](https://www.ncbi.nlm.nih.gov/sra/).
