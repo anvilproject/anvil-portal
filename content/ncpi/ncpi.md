@@ -55,7 +55,7 @@ For example, this will let a researcher search for Kids First and TOPMed data on
 
 Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
 
-#### Demo of Search Result Handoff
+#### Demo of Search Result Hand-off
 `video: https://www.youtube.com/watch?v=YGZTxDdaWqk`
 
 A demonstration of accessing data from four participating platforms in a single computational workspace.
