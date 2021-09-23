@@ -9,9 +9,14 @@ title: "NIH Cloud Platform Interoperability Effort"
 
 <hero>The NIH Cloud Platform Interoperability Effort (NCPI) will establish and implement guidelines and technical standards to empower end-user analyses across participating cloud platforms and facilitate the realization of a trans-NIH, federated data ecosystem.</hero>
 
+![HERO](./_images/ncpi-cloud-ncbi-2.png)
+
 The NCPI was created as an outcome of the NIH Workshop on Cloud-Based Platforms Interoperability held at RENCI on October 3-4th, 2019 to facilitate interoperability among the genomic analysis platforms established by the NCI, NHGRI, NHLBI, and the NIH Common Fund.
 
-![HERO](./_images/ncpi-cloud-ncbi-2.png)
+### Team
+
+The NCPI is a collaboration between NIH representatives, platform team members, and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
+
 
 ## Platforms
 
@@ -25,9 +30,10 @@ The NCPI's participating platforms are:
 
 [**Kids First Data Resource Center**](https://kidsfirstdrc.org/) - The NIH Common Fund's Gabriella Miller Kids First Pediatric Research Program’s (“Kids First”) vision is to “alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and by supporting data sharing within the pediatric research community.” [[more]](/ncpi/platforms#nih-common-fund---kids-first-data-resource-center)
 
-## Team
 
-This new interoperability effort is a collaboration between NIH representatives, platform team members, and researchers running cross-platform research efforts to inform and validate the interoperability approaches.
+[**National Center for Biotechnology Information**](https://www.ncbi.nlm.nih.gov/) - The National Center for Biotechnology Information (NCBI) at the National Library of Medicine (NLM) hosts and manages the Database of Genotypes and Phenotypes ([dbGaP](https://www.ncbi.nlm.nih.gov/gap/)) and NIH’s Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra/)). dbGaP provides and manages access to protected data related to human studies that have investigated the interaction of genotype and phenotype. SRA is the largest archive for public and controlled-access next-generation sequencing data. [[more]](/ncpi/platforms#national-center-for-biotechnology-information-ncbi-at-the-national-library-of-medicine-nlm)
+
+
 
 ## Initial Focus
 
@@ -48,6 +54,11 @@ By improving the hand-off of search results from portals to workspace environmen
 For example, this will let a researcher search for Kids First and TOPMed data on their respective portals and then take the results to the Terra environment on either AnVIL or BioData Catalyst where they can perform a joint analysis on these data.
 
 Currently, this simple scenario has limited or no support across portals and analysis workspaces, making this type of joint analysis impossible for most users.
+
+#### Demo of Search Result Handoff
+`video: https://www.youtube.com/watch?v=YGZTxDdaWqk`
+
+A demonstration of accessing data from four participating platforms in a single computational workspace.
 
 ### Single Sign-On Pilot with NIH RAS
 
