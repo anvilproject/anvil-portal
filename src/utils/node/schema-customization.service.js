@@ -206,7 +206,7 @@ function reformatToDisplayableSessions(sessions, timezone) {
     /* Grab the various formatting styles for display of each session. */
     const formatByTimeWithPeriod = "h:mm A";
     const formatByTimeWithTZ = `${formatByTimeWithPeriod} zz`;
-    const formatByDate = "dddd MMMM D YYYY";
+    const formatByDate = "dddd, MMMM D, YYYY";
     const formatByTime24Hr = "HH:mm"; // Used to check if time is specified for event
 
     /* Start and end sessions. */
