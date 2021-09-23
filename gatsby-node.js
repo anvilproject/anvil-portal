@@ -325,6 +325,21 @@ exports.createSchemaCustomization = ({ actions }) => {
       };
     },
   });
+  /* Create field "hashtag" of type string. */
+  createFieldExtension({
+    name: "hashtag",
+    extend() {
+      return {
+        resolve(source) {
+          /* Returns empty string when hashtag is undefined. */
+          if (source.hashtag === undefined) {
+            return "";
+          }
+          return source.hashtag;
+        },
+      };
+    },
+  });
   /* Create field "menuItem" of type MenuItem array. */
   createFieldExtension({
     name: "menuItems",
@@ -339,7 +354,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       };
     },
   });
-  /* Create field "pageCreated" of type Boolean. */
+  /* Create field "pageCreated" of type boolean. */
   createFieldExtension({
     name: "pageCreated",
     extend() {
@@ -406,6 +421,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         description: String
         eventType: String
         featured: Boolean @featured
+        hashtag: String @hashtag
         location: String
         sessions: [Session]
         sessionsDisplay: [String] @sessionsDisplay

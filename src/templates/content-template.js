@@ -71,6 +71,7 @@ export const query = graphql`
         description
         eventType
         featured
+        hashtag
         location
         sessionsDisplay
         showOutline
