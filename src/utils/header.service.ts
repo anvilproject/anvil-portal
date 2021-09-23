@@ -24,6 +24,11 @@ export function getHeaderSocials(ncpi: boolean) {
         url: SocialUrlNCPI.YOUTUBE,
       },
       {
+        imageSrc: SocialImage.GITHUB,
+        name: Social.GITHUB,
+        url: SocialUrlNCPI.GITHUB,
+      },
+      {
         imageSrc: SocialImage.SLACK,
         name: Social.SLACK,
         url: SocialUrlNCPI.SLACK,
