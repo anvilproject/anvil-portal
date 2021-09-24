@@ -417,9 +417,18 @@
     - name: ""
       pathPartial: ""
       navigationItems:
-        - name: "Participating Platforms"
+        - name: "Overview"
           file: "/ncpi/platforms"
           pathOverride: "/ncpi/platforms"
+        - name: "NHGRI AnVIL"
+          file: "/ncpi/platforms/anvil"
+        - name: "NHLBI BioData Catalyst"
+          file: "/ncpi/platforms/bdc"
+        - name: "NCI - Cancer Research Data Commons"
+          file: "/ncpi/platforms/crdc"
+        - name: "NIH Common Fund - Kids First Data Resource Center"
+          file: "/ncpi/platforms/kf"
+
 ### NCPI Policy
 - menuItem: "Technologies"
   pageTitle: "Technologies"
