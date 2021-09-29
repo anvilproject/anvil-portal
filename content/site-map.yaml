@@ -420,13 +420,13 @@
         - name: "Overview"
           file: "/ncpi/platforms"
           pathOverride: "/ncpi/platforms"
-        - name: "NHGRI AnVIL"
+        - name: "AnVIL"
           file: "/ncpi/platforms/anvil"
-        - name: "NHLBI BioData Catalyst"
+        - name: "BDC"
           file: "/ncpi/platforms/bdc"
-        - name: "NCI - Cancer Research Data Commons"
+        - name: "CRDC"
           file: "/ncpi/platforms/crdc"
-        - name: "NIH Common Fund - Kids First Data Resource Center"
+        - name: "GMKF DRC"
           file: "/ncpi/platforms/kf"
 
 ### NCPI Policy
