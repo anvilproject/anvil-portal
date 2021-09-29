@@ -95,7 +95,7 @@
     "build-windows": "start-windows.bat && gatsby build --verbose",
     "start-windows": "start-windows.bat && gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,ts,tsx}",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
