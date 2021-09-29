@@ -24,5 +24,5 @@ Gen3 is the data management system of AnVIL. Gen3 enables exploring datasets wit
 
 ## What is Dockstore and how does it relate to AnVIL?
 
-Dockstore is the workflow repository of AnVIL. Dockstore hosts WDL workflows and supports additional workflow languages. Users can select workflows from Dockstore and make them accessible on their Terra account to user for their own analysis.
+Dockstore is the workflow repository of AnVIL. Dockstore hosts WDL workflows and supports additional workflow languages. Users can select workflows from Dockstore and make them accessible on their Terra account to use for their own analysis.
 
