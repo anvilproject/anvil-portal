@@ -37,7 +37,7 @@
     "js-cookie": "^3.0.1",
     "lunr": "^2.3.9",
     "node-fetch": "^2.6.2",
-    "prismjs": "^1.24.1",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-device-detect": "^1.17.0",
