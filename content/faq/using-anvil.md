@@ -10,9 +10,9 @@ description: "What analysis tools can I use for data analysis on AnVIL? What dat
 
 - [WDL](https://software.broadinstitute.org/wdl/) - Batch processing of GATK and other workflows
 - [Jupyter](https://jupyter.org/) - Interactive analysis with the python or R programming languages; the R environment includes a family of [Bioconductor](https://www.bioconductor.org/) 3.10 packages
-- [R Studio](https://rstudio.com/) (_coming soon_) - Interactive analysis with your favorite R coding platform
+- [R Studio](https://rstudio.com/) - Interactive analysis with your favorite R coding platform
+- [Galaxy](https://galaxyproject.org/) - Access thousands of tools via an intuitive graphical user interface for processing batch analysis with Galaxy Workflows and interactive downstream visualizations.
 - [AnVIL API library](https://github.com/anvilproject/client-apis) (_coming soon_) - Interact with AnVIL data, analysis solutions, and workflows via a command line interface.
-- [Galaxy](https://galaxyproject.org/) (_coming soon_) - Access thousands of tools via an intuitive graphical user interface for processing batch analysis with Galaxy Workflows and interactive downstream visualizations.
 - [Genome Browser supported by UCSC](http://genome.ucsc.edu/) (_coming soon_) - Interactive analysis of genomic visualizations.
 
 ## What data are available on AnVIL?
