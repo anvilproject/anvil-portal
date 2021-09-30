@@ -5,7 +5,7 @@ description: "This workshop will explore and demonstrate open access data from t
 eventType: "Interactive Workshop"
 featured: true
 hashtag: "#ASHG2021"
-location: "Location TBD"
+location: "Location Virtual"
 sessions: [{sessionEnd: "26 Jan 2022 1:30 PM", sessionStart: "26 Jan 2022 12:00 PM"}]
 timezone: "America/New_York"
 title: "Reproducible Analysis of Human Pangenome Data using the AnVIL"
