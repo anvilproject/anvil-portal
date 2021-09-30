@@ -25,7 +25,7 @@ The primary functionality of DRS is to map a logical ID to a means for physicall
 
 For more informatoin on the most recent version of this API (1.1) see the [Data Repository Service 1.1 Documentation](https://ga4gh.github.io/data-repository-service-schemas/preview/release/drs-1.1.0/docs/).
 
-## FHIR
+## Fast Healthcare Interoperability Resources (FHIR)
 
 Fast Healthcare Interoperability Resources (FHIR) is a standard describing data formats and elements (known as "resources") and an API for exchanging electronic health records (EHR). As patients move around the healthcare ecosystem, their electronic health records must be available, discoverable, and understandable across systems. Further, to support automated clinical decision support and other machine-based processing, the data must also be structured and standardized.
 
@@ -34,3 +34,14 @@ The FHIR standard was created by the Health Level Seven International (HL7) heal
 One of its goals is to facilitate interoperation between legacy health care systems, to make it easy to provide health care information to health care providers and individuals on a wide variety of devices from computers to tablets to cell phones, and to allow third-party application developers to provide medical applications which can be easily integrated into existing systems.
 
 For more information and a definition of the FHIR standard see [HL7 FHIR Release 4](https://www.hl7.org/fhir/overview.html).
+
+## Portable Format for Bioinformatics (PFB)
+The Portable Format for Bioinformatics (PFB) is an [Avro](https://avro.apache.org/docs/current/)-based file format that bundles schema, data, ontologies/controlled vocabularies, and pointers to data files in a single, serializable format that can be sent easily across systems and has the flexibility for different data models.
+
+PFBs are used to bring search results from hosted datasets into workspace environments that users can leverage for computational analysis.
+
+A Python library and command line interface to create, view and edit PFB files can be found here: https://github.com/uc-cdis/pypfb/#readme.
+
+For more information on the PFB format and schema see the [pyPFB](https://github.com/uc-cdis/pypfb/tree/master/doc) documentation. 
+
+
