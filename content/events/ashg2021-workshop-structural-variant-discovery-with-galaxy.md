@@ -5,7 +5,7 @@ description: "In this workshop, we will guide you through an end-to-end SV ident
 eventType: "Interactive Workshop"
 featured: true
 hashtag: "#ASHG2021"
-location: "Location TBD"
+location: "Location Virtual"
 sessions: [{sessionEnd: "19 Jan 2022 1:30 PM", sessionStart: "19 Jan 2022 12:00 PM"}]
 timezone: "America/New_York"
 title: "Structural variant discovery from long-read sequencing data on the cloud with Galaxy in Terra"
