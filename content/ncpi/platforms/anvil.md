@@ -71,7 +71,7 @@ All Datasets | 251 | 309,006 | 286,456 | 3,256
 
 ## Data Models
 
-- AnVIL has adopted the Terra Interoperability data model ([TIM](https://datamodel.terra.bio/)), an expandable data mode to support multiple, diverse data models.
+- AnVIL has adopted the Terra Interoperability data model ([TIM](https://datamodel.terra.bio/)), an expandable data model to support multiple, diverse data models.
 
 ## Security
 * FedRAMP Certified
