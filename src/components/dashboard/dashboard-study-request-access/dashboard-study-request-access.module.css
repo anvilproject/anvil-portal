@@ -1,0 +1,28 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard study request access component.
+ */
+
+/* Request access. */
+.requestAccess {
+  margin-top: 16px;
+}
+
+/* Button. */
+.requestButton {
+  align-items: center;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  height: 28px;
+  justify-content: center;
+  min-width: 64px;
+  padding: 0 16px;
+}

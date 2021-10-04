@@ -102,8 +102,9 @@ exports.createSchemaCustomization = ({ actions }) => {
         studyDescriptionShort: String
         studyId: String
         studyName: String
-        studySummary: StudySummary
+        studyRequestAccessUrl: String
         studySlug: String
+        studySummary: StudySummary
         studyUrl: String
     }`);
 };

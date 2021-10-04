@@ -42,8 +42,9 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
           studyDescriptionShort: workspaceClone.studyDescriptionShort,
           studyId: dbGapId,
           studyName: workspaceClone.studyName,
-          studyWorkspaces: [],
+          studyRequestAccessUrl: workspaceClone.studyRequestAccessUrl,
           studySlug: workspaceClone.studySlug,
+          studyWorkspaces: [],
           studyUrl: workspaceClone.studyUrl,
         };
 
@@ -59,6 +60,7 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
       delete workspaceClone.studyDescription;
       delete workspaceClone.studyDescriptionShort;
       delete workspaceClone.studyName;
+      delete workspaceClone.studyRequestAccessUrl;
       delete workspaceClone.studySlug;
       delete workspaceClone.studyUrl;
 
@@ -91,6 +93,7 @@ const buildNCPIStudiesDetail = function buildNCPIStudiesDetail(studies) {
       studyDescriptionShort: study.descriptionShort,
       studyId: study.gapId.gapIdDisplay,
       studyName: study.studyName,
+      studyRequestAccessUrl: study.studyRequestAccessUrl,
       studySummary: {
         consentShortNames: study.consentCodes,
         dataTypes: study.dataTypes,

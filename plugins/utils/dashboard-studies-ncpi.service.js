@@ -165,6 +165,7 @@ async function getStudiesByStudyId(rows) {
       Object.assign(study, {
         dbGapIdAccession: studyAccession,
         gapId: studyGapId,
+        studyRequestAccessUrl: getStudyRequestAccessUrl(dbGapId),
         studySlug: getDashboardStudySlug(dbGapId),
         studyUrl: studyUrl,
       });
@@ -262,6 +263,20 @@ function getStudyPlatforms(studyPlatforms = [], platform) {
   studyPlatforms.push(platform);
 
   return studyPlatforms;
+}
+
+/**
+ * Returns study request access url.
+ *
+ * @param studyId
+ * @returns {string}
+ */
+function getStudyRequestAccessUrl(studyId) {
+  /* Return the request access url with study id as the adddataset parameter. */
+  if (studyId) {
+    return `https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?adddataset=${studyId}`;
+  }
+  return "";
 }
 
 /**

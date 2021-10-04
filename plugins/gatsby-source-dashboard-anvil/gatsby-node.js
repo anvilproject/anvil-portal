@@ -135,10 +135,11 @@ exports.createSchemaCustomization = ({ actions }) => {
         studyDescriptionShort: String
         studyId: String
         studyName: String
+        studyRequestAccessUrl: String
+        studySlug: String
         studyStat: Stat
         studySummary: StudySummary
         studyWorkspaces: [StudyWorkspace]
-        studySlug: String
         studyUrl: String
     }
     type GapId implements Node {

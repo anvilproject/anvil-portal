@@ -207,6 +207,27 @@ function buildWorkspacePropertyStudySlug(studyId, studyAccession) {
 }
 
 /**
+ * Returns study request access url if access type is "controlled".
+ *
+ * @param propertyAccessType
+ * @param studyId
+ */
+function buildWorkspacePropertyStudyRequestAccessUrl(
+  propertyAccessType,
+  studyId
+) {
+  /* Grab the access type for the workspace. */
+  const accessType = propertyAccessType[SOURCE_FIELD_KEY.ACCESS_TYPE];
+
+  /* Return the request access url with study id as the adddataset parameter. */
+  let studyRequestAccessUrl = "";
+  if (accessType === WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS) {
+    studyRequestAccessUrl = `https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?adddataset=${studyId}`;
+  }
+  return { studyRequestAccessUrl: studyRequestAccessUrl };
+}
+
+/**
  * Returns the merged workspace data and any additional workspace properties of interest.
  *
  * @param attributeWorkspaces
@@ -266,6 +287,10 @@ function buildWorkspaces(
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.STUDY_DESIGNS]
     );
 
+    /* Build the property studyRequestAccessUrl (for the study detail page). */
+    const propertyStudyRequestAccessUrl =
+      buildWorkspacePropertyStudyRequestAccessUrl(propertyAccessType, studyId);
+
     /* Build the property studySlug (for the study detail page). */
     const propertyStudySlug = buildWorkspacePropertyStudySlug(
       studyId,
@@ -294,6 +319,7 @@ function buildWorkspaces(
         ...propertyDiseases,
         ...propertyGapId,
         ...propertyStudyDesigns,
+        ...propertyStudyRequestAccessUrl,
         ...propertyStudySlug,
         ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
       };

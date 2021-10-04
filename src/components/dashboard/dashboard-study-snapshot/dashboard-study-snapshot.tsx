@@ -9,6 +9,7 @@
 import React from "react";
 
 // App dependencies
+import DashboardStudyRequestAccessInfo from "../dashboard-study-request-access-info/dashboard-study-request-access-info";
 import DashboardStudyStats, {
   IStat,
 } from "../dashboard-study-stats/dashboard-study-stats";
@@ -33,6 +34,7 @@ function DashboardStudySnapshot(
     <div className={compStyles.studySnapshot}>
       {studyStat ? <DashboardStudyStats studyStat={studyStat} /> : null}
       <DashboardStudySummary studySummary={studySummary} />
+      <DashboardStudyRequestAccessInfo />
     </div>
   );
 }
