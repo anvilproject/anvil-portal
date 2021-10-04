@@ -140,12 +140,25 @@ async function cacheFHIR(dbGapId, fhirJSON, fhirStudy) {
 }
 
 /**
+ * Timeout to delay fetch.
+ *
+ * @param timer
+ * @returns {Promise<unknown>}
+ */
+async function delayFetch(timer) {
+  return new Promise((r) => setTimeout(r, timer));
+}
+
+/**
  * Fetches FHIR page specified by URL and returns corresponding raw JSON.
  *
  * @param dbGapId
  * @returns {Promise.<*>}
  */
 async function fetchFHIRJSON(dbGapId) {
+  /* FHIR limits rate of requests per user. Use setTimeout between each fetch to avoid a HTTP 429 response. */
+  await delayFetch(500);
+
   const url = getFHIRURL(dbGapId);
   const response = await fetch(url);
   const status = response.status;
