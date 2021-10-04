@@ -10,6 +10,7 @@ import React from "react";
 
 // App dependencies
 import Breadcrumb from "../../breadcrumb/breadcrumb";
+import DashboardStudyRequestAccess from "../dashboard-study-request-access/dashboard-study-request-access";
 import Overline from "../../overline/overline";
 
 // Styles
@@ -21,6 +22,7 @@ interface DashboardStudyHeadlineProps {
   studyAccession: string;
   studyConsortia: string | undefined;
   studyName: string;
+  studyRequestAccessUrl: string;
   studyUrl: string;
 }
 
@@ -33,6 +35,7 @@ function DashboardStudyHeadline(
     studyAccession,
     studyConsortia,
     studyName,
+    studyRequestAccessUrl,
     studyUrl,
   } = props;
   const breadcrumb = {
@@ -68,6 +71,9 @@ function DashboardStudyHeadline(
           </a>
         </span>
       </Overline>
+      <DashboardStudyRequestAccess
+        studyRequestAccessUrl={studyRequestAccessUrl}
+      />
     </div>
   );
 }

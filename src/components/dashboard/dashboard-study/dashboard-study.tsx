@@ -27,6 +27,7 @@ export interface IStudy {
   studyConsortia?: string;
   studyDescription: string;
   studyName: string;
+  studyRequestAccessUrl: string;
   studyStat: IStat;
   studySummary: IStudySummary;
   studyWorkspaces?: IStudyWorkspace[];
@@ -47,6 +48,7 @@ function DashboardStudy(props: DashboardStudyProps): JSX.Element {
     studyConsortia,
     studyDescription,
     studyName,
+    studyRequestAccessUrl,
     studyStat,
     studySummary,
     studyWorkspaces,
@@ -61,6 +63,7 @@ function DashboardStudy(props: DashboardStudyProps): JSX.Element {
         studyAccession={studyAccession}
         studyConsortia={studyConsortia}
         studyName={studyName}
+        studyRequestAccessUrl={studyRequestAccessUrl}
         studyUrl={studyUrl}
       />
       <DashboardStudyOverview ncpi={ncpi} studyDescription={studyDescription} />

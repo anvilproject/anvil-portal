@@ -62,6 +62,7 @@ export const query = graphql`
       studyDescription
       studyId
       studyName
+      studyRequestAccessUrl
       studySummary {
         consentShortNames
         dataTypes
@@ -79,6 +80,7 @@ export const query = graphql`
       studyDescription
       studyId
       studyName
+      studyRequestAccessUrl
       studyStat {
         cohorts
         samples
