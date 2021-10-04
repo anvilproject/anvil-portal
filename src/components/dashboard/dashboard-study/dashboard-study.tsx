@@ -68,6 +68,7 @@ function DashboardStudy(props: DashboardStudyProps): JSX.Element {
       />
       <DashboardStudyOverview ncpi={ncpi} studyDescription={studyDescription} />
       <DashboardStudySnapshot
+        studyRequestAccessUrl={studyRequestAccessUrl}
         studyStat={studyStat}
         studySummary={studySummary}
       />

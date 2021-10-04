@@ -21,6 +21,7 @@ import DashboardStudySummary, {
 import * as compStyles from "./dashboard-study-snapshot.module.css";
 
 interface DashboardStudySnapshotProps {
+  studyRequestAccessUrl: string;
   studyStat: IStat;
   studySummary: IStudySummary;
 }
@@ -28,13 +29,15 @@ interface DashboardStudySnapshotProps {
 function DashboardStudySnapshot(
   props: DashboardStudySnapshotProps
 ): JSX.Element {
-  const { studyStat, studySummary } = props;
+  const { studyRequestAccessUrl, studyStat, studySummary } = props;
 
   return (
     <div className={compStyles.studySnapshot}>
       {studyStat ? <DashboardStudyStats studyStat={studyStat} /> : null}
       <DashboardStudySummary studySummary={studySummary} />
-      <DashboardStudyRequestAccessInfo />
+      <DashboardStudyRequestAccessInfo
+        studyRequestAccessUrl={studyRequestAccessUrl}
+      />
     </div>
   );
 }

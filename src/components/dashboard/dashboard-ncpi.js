@@ -32,8 +32,8 @@ const searchFacets = [
 const summaryKey = "platforms";
 const tableHeadersEntities = [
   "platforms",
-  "gapId",
   "studyName",
+  "gapId",
   "focuses",
   "dataTypes",
   "studyDesigns",

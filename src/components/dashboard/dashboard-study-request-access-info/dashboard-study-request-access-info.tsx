@@ -11,8 +11,15 @@ import React from "react";
 // Styles
 import { link } from "./dashboard-study-request-access-info.module.css";
 
-function DashboardStudyRequestAccessInfo(): JSX.Element {
-  return (
+interface DashboardStudyRequestAccessInfoProps {
+  studyRequestAccessUrl: string;
+}
+
+function DashboardStudyRequestAccessInfo(
+  props: DashboardStudyRequestAccessInfoProps
+): JSX.Element | null {
+  const { studyRequestAccessUrl } = props;
+  return studyRequestAccessUrl ? (
     <>
       <h3>Applying For Access</h3>
       <a // eslint-disable-line react/jsx-no-target-blank
@@ -32,7 +39,7 @@ function DashboardStudyRequestAccessInfo(): JSX.Element {
         dbGaP Access Request Video Tutorial
       </a>
     </>
-  );
+  ) : null;
 }
 
 export default DashboardStudyRequestAccessInfo;
