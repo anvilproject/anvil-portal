@@ -4,6 +4,7 @@ title: "Gabriella Miller Kids First DRC Fact Sheet"
 ---
 
 # Kids First Data Resource Center
+
 [https://kidsfirstdrc.org](https://kidsfirstdrc.org)
 
 <socials>
@@ -18,36 +19,43 @@ title: "Gabriella Miller Kids First DRC Fact Sheet"
 Gabriella Miller Kids First Vision: Alleviate suffering from childhood cancer and structural birth defects by fostering collaborative research to uncover the etiology of these diseases and supporting data sharing within the pediatric research community.
 
 ## Funder
+
 NIH Common Fund’s Gabriella Miller Kids First Pediatric Research Program; administered by NHLBI (PO: Charlene Schramm) overseen by [NIH Kids First Working Group](https://commonfund.nih.gov/kidsfirst/members).
 
-## PIs 
+## PIs
+
 Adam Resnick, Brandi Davis-Dusenbery, Vincent Ferretti, Robert Grossman, Allison Heath, Deanne Taylor, Sam Volchenboum.
 
 ## Institutions
+
 Children’s Hospital of Philadelphia, CHU Sainte-Justine, University of Chicago, Seven Bridges Genomics.
 
 ## Data
 
 ### Portal
+
 <https://portal.kidsfirstdrc.org/>
 
 ### Kids First Released Datasets (22K + Participants):
+
 - 21 Kids First datasets released as of 9/14 (more in coming weeks)
     - **14 Structural Birth Defects datasets** spanning congenital diaphragmatic hernia, congenital heart defects, orofacial cleft, other craniofacial anomalies, disorders of sex development etc.
-  - 7 **Childhood Cancer datasets** spanning neuroblastoma, ewing sarcoma, leukemia, enchondromatoses etc.
-  - **1 cohort of children with both structural birth defects and cancer**
-
+    - **7 Childhood Cancer datasets** spanning neuroblastoma, ewing sarcoma, leukemia, enchondromatoses etc.
+    - **1 cohort of children with both structural birth defects and cancer**
 - 5 fully interoperable datasets (e.g., TARGET, CBTN)
 
 ### Totals
+
 - 44 datasets
 - 48,000 genomes
 - 20,000 cases approved for Sequencing as Part of Kids First ([Link](https://commonfund.nih.gov/kidsfirst/x01projects))
 
 ## Interoperability Use Cases
+
 We have a number of researchers that will be working across datasets in multiple platforms. In general, pediatrics and developmental biology spans organs, disease and data types - making effective and sustained interoperability a critical need.
 
 Examples of overlapping cohorts:
+
 - **INCLUDE**: KFDRC and INCLUDE Data Hub
 - **PCGC**: KFDRC and BDC
 - **CMG**: KFDRC and AnVIL
@@ -59,6 +67,7 @@ Examples of overlapping cohorts:
 Early on, we realized we needed “intra”-operability for releases and developed a release coordination protocol. Perhaps an area for interoprability as well.
 
 ## Clinical/Phenotipic Data Interop Pilot Opportunities
+
 Clinical and phenotypic data has been identified as a limiting factor across supported studies. The wide range provides challenges, but also opportunities for interoperability. Areas under investigation include:
 
 * FHIR as a core standard
@@ -67,20 +76,32 @@ Clinical and phenotypic data has been identified as a limiting factor across sup
 * Workflows for clinical/phenotypic data harmonization
 
 ## Tools
+
 ### Kids First DRC Workflows
+
 - **Goal** - functional equivalency to other large datasets/resources
-- **Germline** - Trio/family-based GATK germline best practices
-- **Somatic** - Strelka2, Mutect2, Lancet, VarDict, Manta, Control-FREEC
-- **RNA-Seq** - STAR 2-pass, RSEM, Kallisto, STAR-fusion, Arriba
+- **[Germline](https://github.com/kids-first/kf-jointgenotyping-workflow)** - Trio/family-based GATK germline best practices
+- **[Somatic](https://github.com/kids-first/kf-somatic-workflow)** - Strelka2, Mutect2, Lancet, VarDict, Manta, Control-FREEC
+- **[RNA-Seq](https://github.com/kids-first/kf-rnaseq-workflow)** - STAR 2-pass, RSEM, Kallisto, STAR-fusion, Arriba
+
 ### CAVATICA
+
+- Data analysis and sharing platform
 - Over 450 public apps
 - Interactive analysis with Jupyter Notebooks and RStudio
-- Over 500,000 workflows run on CAVATICA since launch in March 2016
+
+### Variant Search
+
+- Explore annotated Kids First variants across datasets in your browser
+
 ### Variant Workbench (Coming Soon!)
+
 - Query Kids First data within a Zeppelin Notebook environment
 - Identify rare variants using SQL and PySpark 
-## Integration with PedCBioPortal
-- Open access visualization and analysis of somatic mutations, expression, proteomics
+
+### Integration with PedCBioPortal
+
+- Open access visualization and analysis of somatic mutations and expression
 
 ## Authentication
 
@@ -90,13 +111,12 @@ Clinical and phenotypic data has been identified as a limiting factor across sup
 ## Authorization 
 
 - **NIH Datasets** - Telemetry reports from dbGaP either to Kids First Framework Services or NCI CRDC Framework Services
-
 - **Consortium Datasets** - Whitelist via Gen3 (also eRA Commons AuthN)
 
 ## Indexing
 
-The Kids First Data Service integrates with Gen3 indexd to index and associate relevant data for querying to the files. Cavatica also recently released GA4GH DRS endpoints for all files.
+The Kids First Data Service integrates with Gen3 indexed to index and associate relevant data for querying to the files. Cavatica also recently released GA4GH DRS endpoints for all files.
 
 ## Architecture
-![KF Architecture](./_images/kf-arch.png)
 
+![KF Architecture](_images/kf-arch.png)
