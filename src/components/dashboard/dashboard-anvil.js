@@ -33,8 +33,8 @@ const searchFacets = [
 const summaryKey = "consortium";
 const tableHeadersEntities = [
   "consortium",
-  "gapId",
   "studyName",
+  "gapId",
   "consentShortName",
   "projectId",
   "diseases",
