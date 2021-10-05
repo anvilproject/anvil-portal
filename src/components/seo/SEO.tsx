@@ -2,7 +2,7 @@
  * The AnVIL
  * https://www.anvilproject.org
  *
- * The AnVIL seo component.
+ * The AnVIL SEO component.
  */
 
 // Core dependencies
