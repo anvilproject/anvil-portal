@@ -81,3 +81,5 @@ Members of these teams are also involved with platform and software development 
 - Jennifer Strasburger
 - Ken Wiley
 - Valentina Di Francesco
+- Shurjo Sen
+- Chris Wellington
