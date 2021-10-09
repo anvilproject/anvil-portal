@@ -413,9 +413,24 @@ exports.createSchemaCustomization = ({ actions }) => {
         link: String
         name: String
     }
+    type Card {
+        actions: [CardAction]
+        citation: String
+        media: File @fileByRelativePath
+        subTitle: String
+        supportingText: String
+        thumbnail: File @fileByRelativePath
+        title: String
+    }
+    type CardAction {
+        label: String
+        url: String
+    }
     type Frontmatter {
+        benefits: [Card]
         breadcrumb: Breadcrumb
         conference: String
+        datasets: [Card]
         dateBubble: [String] @dateBubble
         dateStart: Date @dateStart
         description: String
@@ -423,13 +438,17 @@ exports.createSchemaCustomization = ({ actions }) => {
         featured: Boolean @featured
         hashtag: String @hashtag
         location: String
+        publications: [Card]
         sessions: [Session]
         sessionsDisplay: [String] @sessionsDisplay
         showOutline: Boolean @showOutline
+        slides: [Card]
         subTitle: String
+        technologies: [Card]
         timezone: String
         title: String
         tutorial: Boolean @tutorial
+        workspaces: [Card]
     }
     type MarkdownRemark implements Node {
         frontmatter: Frontmatter

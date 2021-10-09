@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section publication.
+ */
+
+/* Cards. */
+.sectionCards {
+  display: grid;
+  gap: 32px;
+  grid-template-rows: 1fr;
+}

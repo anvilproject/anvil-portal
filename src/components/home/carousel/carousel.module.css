@@ -1,0 +1,19 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL carousel component.
+ */
+
+/* Carousel */
+/* Wrapper around carousel body and left, right arrows */
+.carousel {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Carousel body - rotation container */
+.carouselBody {
+  flex: 1;
+}

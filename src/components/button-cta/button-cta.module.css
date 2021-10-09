@@ -1,0 +1,46 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL button cta component.
+ */
+
+/* Button. */
+.button {
+  composes: button from "../button/button.module.css";
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Theme - primary. */
+.button.primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Theme primary - hover. */
+.button.primary:hover {
+  background-color: rgba(3, 92, 148, 0.87);
+}
+
+/* Theme - secondary. */
+.button.secondary {
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  color: var(--primary);
+}
+
+/* Theme secondary - hover. */
+.button.secondary:hover {
+  background-color: var(--shade-light-green);
+}
+
+/* Size - large. */
+.button.large {
+  border-radius: 4px;
+  font-size: 1rem; /* 16px. */
+  font-weight: 600;
+  height: 48px;
+  line-height: 1.25rem; /* 20px. */
+  min-width: 190px;
+  padding: 0 16px;
+}

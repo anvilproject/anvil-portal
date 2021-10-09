@@ -1,0 +1,48 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section.
+ */
+
+/* Section - generic column set out and styles for each section. */
+.section {
+  display: grid;
+  grid-template-columns: minmax(24px, auto)minmax(0, 600px) minmax(0, 600px) minmax(24px, auto);
+}
+
+/* Section multiline. */
+.sectionMultiline {
+  composes: section;
+  position: relative; /* Positions multiline. */
+}
+
+/* Section with multiline. */
+.sectionMultiline::after {
+  background: linear-gradient(to right, #F9B9A5, #F9B9A5 25%, #E8E678 25%, #E8E678 50%, #CDEEF2 50%, #CDEEF2 75%, #97B9CE 75%, #97B9CE);
+  bottom: 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* Hero. */
+.sectionHero {
+  composes: section;
+  grid-template-rows: 1.5rem 1fr 1.5rem; /* Caters for padding 24px, content, padding 24px. */
+}
+
+/* Banner. */
+.sectionBanner {
+  composes: sectionMultiline;
+  background: linear-gradient(180deg, #F8FBF9 0%, rgba(248, 250, 251, 0) 100%);
+  grid-template-rows: 2.5rem auto 1fr 2.5rem;  /* Caters for padding 40px, heading, content, padding 40px. */ /* Heading grid collapses. */
+}
+
+/* Main (default styles). */
+.sectionMain {
+  composes: sectionMultiline;
+  grid-template-rows: 4rem auto 1fr 4rem; /* Caters for padding 60px, heading, content, padding 60px. */
+}

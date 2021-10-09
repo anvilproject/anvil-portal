@@ -1,9 +1,7 @@
 ---
 author: "AnVIL"
-carousel: true
 conference: "VADSTI"
 description: "The AnVIL team will present an overview of the AnVIL platform in Module 7 of VADSTI 2021."
-docType: "Event"
 eventType: "Virtual Training"
 featured: true
 logo: ./_images/anvil.png

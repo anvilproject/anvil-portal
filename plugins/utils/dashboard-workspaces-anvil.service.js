@@ -297,10 +297,6 @@ function buildWorkspaces(
       dbGapIdAccession
     );
 
-    /* Grab the workspace created timestamp. */
-    const keyCreatedAt = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CREATED_AT];
-    const createdAt = countWorkspace[keyCreatedAt];
-
     /* Grab the workspace file size. */
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
     const size = countWorkspace[keyFileSize];
@@ -310,7 +306,6 @@ function buildWorkspaces(
       /* Merge properties. */
       const workspace = {
         ...countWorkspace,
-        ...createdAt,
         ...row,
         ...propertyAccessType,
         ...propertyConsentShortName,
