@@ -9,7 +9,6 @@ description: "A basic guide on how to create events for the AnVIL portal"
 The AnVIL portal lists events:
 
 1. In the events section available from the top nav,
-1. Optionally in the carousel on the home page,
 1. Optionally in the featured events section on the home page,
 1. In site search results,
 1. and also in external search results and when an event item is shared on social media.

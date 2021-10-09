@@ -1,0 +1,13 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section benefit cloud.
+ */
+
+/* Cards. */
+.sectionCards {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}

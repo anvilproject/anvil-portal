@@ -1,0 +1,104 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL carousel slide component.
+ */
+
+/* Slide */
+.slot {
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Slot - hidden */
+.slot:not(.active) {
+  animation: hideSlot 0.5s ease 0s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+
+/* Slot - active */
+.slot.active {
+  animation: showSlot 0.5s ease 0s;
+  opacity: 1;
+  position: relative;
+  visibility: visible;
+}
+
+/* Animation - show slot */
+@keyframes showSlot {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation - hide slot */
+@keyframes hideSlot {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Header. */
+.cardHeader {
+  border-bottom: 1px solid var(--grey);
+  column-gap: 24px;
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 182px; /* Heading / Image Frame. */
+}
+
+/* Title */
+.cardTitle {
+  color: inherit;
+  display: -webkit-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem; /* 20px. */
+  font-weight: 600;
+  line-height: 1.75rem; /* 28px. */
+  margin: 32px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+/* Media frame. */
+.cardMediaFrame {
+  align-items: center;
+  background-color: var(--shade-light);
+  display: flex;
+  justify-content: center;
+}
+
+/* Sub title. */
+.cardSubTitle {
+  color: var(--black58);
+  display: -webkit-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem; /* 14px. */
+  line-height: 1.125rem; /* 18px. */
+  margin: 8px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}

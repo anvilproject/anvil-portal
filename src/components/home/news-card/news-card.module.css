@@ -1,0 +1,28 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL news card.
+ */
+
+/* Card. */
+.card {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  margin: 16px 0;
+}
+
+/* Title. */
+.cardTitle {
+  display: block;
+  font-size: 1.125rem; /* 18px. */
+  line-height: 1.5rem; /* 24px. */
+  margin: 0;
+}
+
+/* Date. */
+.cardDate {
+  font-size: 0.825rem; /* 14px. */
+  line-height: 1.25rem; /* 18px. */
+  margin: 0;
+}

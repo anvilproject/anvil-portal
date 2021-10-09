@@ -1,12 +1,9 @@
 ---
 author: "AnVIL"
-carousel: true
 date: "2021-03-10"
 description: "The Broad Institute's Seqr is being launched today in production within AnVIL to provide a platform for genomic data analysis for rare diseases.
 The availability of Seqr will enable researchers to analyze and annotate their data with seqr in the AnVIL platform as well as collaborate with other investigators as they choose."
-docType: "News"
 featured: true
-logo: ../../../_images/anvil.png
 title: "Announcing Seqr Availability in AnVIL"
 ---
 

@@ -1,0 +1,16 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL carousel slideshow component.
+ */
+
+/* Slideshow */
+.slider {
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+  height: 300px; /* TODO */
+  margin: 16px 24px;
+  position: relative; /* Positions hidden slots */
+  width: 500px;
+}

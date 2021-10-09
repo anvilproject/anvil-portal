@@ -1,0 +1,51 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL workspace card.
+ */
+
+/* Card. */
+.card {
+  border: 2px solid var(--shade-light-green);
+  border-radius: 10px;
+  box-sizing: border-box;
+  max-width: 340px;
+  padding: 16px;
+}
+
+/* Header. */
+.cardHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+}
+
+/* Thumbnail. */
+.cardThumbnail {
+  position: relative;
+  top: 4px;
+}
+
+/* Title. */
+.cardTitle {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem; /* 18x. */
+  font-weight: 600;
+  line-height: 1.5rem; /* 24px. */
+  margin: 0;
+  min-height: 3rem; /* 48px. */
+}
+
+/* Supporting text. */
+.cardContent {
+  color: var(--black58);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem; /* 16px. */
+  font-weight: 400;
+  line-height: 1.25rem; /* 20px. */
+  margin: 16px 0 0;
+}

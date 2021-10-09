@@ -1,11 +1,8 @@
 ---
 author: "AnVIL"
-carousel: true
 date: "2021-03-11"
 description: "The AnVIL is proud to host release 1 from the Human Pangenome Reference Consortium (HPRC). The HPRC is an international effort focused on developing an inclusive collection of human reference genomes that represent human haplotype diversity and the tool ecosystem needed to fully utilize this resource."
-docType: "News"
 featured: true
-logo: ./_images/hprc.png
 title: "AnVIL Hosts Release 1 of the Human Pangenome Reference Consortium Data"
 ---
 

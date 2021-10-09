@@ -1,0 +1,74 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section content.
+ */
+
+/* Heading. */
+.sectionHeading {
+  border-bottom: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.25rem; /* 36px. */
+  font-weight: 400;
+  grid-column: 2;
+  grid-row: 2;
+  line-height: 3.25rem; /* 52px. */
+  margin: 0 0 40px;
+}
+
+/* Content - default full width. */
+/* Content - default LHS. */
+/* Content - default RHS. */
+.sectionContent,
+.sectionContentLeft,
+.sectionContentRight {
+  grid-row: 3;
+}
+
+/* Content - default full width. */
+.sectionContent {
+  grid-column: 2 / 4;
+}
+
+/* Content - default LHS. */
+/* Frames section content within LHS tile. */
+.sectionContentLeft {
+  grid-column: 2;
+  margin-right: 20px; /* Matches gap between CTAs. */
+}
+
+/* Content - default RHS. */
+/* Frames section content within RHS tile. */
+.sectionContentRight {
+  grid-column: 3;
+  margin-left: 20px; /* Matches gap between CTAs. */
+}
+
+/* Media content - media RHS. */
+/* Frames media within RHS tile. */
+.sectionMediaRight {
+  align-items: center;
+  background-color: var(--shade-light-green);
+  display: flex;
+  grid-column: 3;
+  grid-row: 1 / -1;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+/* CTAs. */
+.sectionCTAs {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* CTAs - default LHS. */
+/* CTAs - default RHS. */
+.sectionContentLeft .sectionCTAs,
+.sectionContentRight .sectionCTAs {
+  justify-content: flex-start;
+}

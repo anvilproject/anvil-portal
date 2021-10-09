@@ -1,0 +1,49 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL section hero.
+ */
+
+/* Main. */
+.heroMain {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Sub Main (RHS). */
+.heroSubMain {
+  align-items: center;
+  display: flex;
+  grid-column: 3;
+  grid-row: 2;
+  justify-content: flex-end;
+}
+
+/* Title. */
+.heroTitle {
+  color: var(--accent-blue-dark);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem; /* 48px */
+  font-weight: 600;
+  line-height: 4rem; /* 60px */
+  margin: 0 0 1.5rem; /* 24px */
+  max-width: 432px;
+}
+
+/* Sub title. */
+.heroSubTitle {
+  color: var(--black58);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  margin: 0 0 1rem; /* 16px */
+  max-width: 390px;
+}
+
+/* CTAs. */
+.heroCTAs {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+}

@@ -18,29 +18,18 @@
  * 1545px - Content and outline are centered, rather than left-aligned
  */
 
+:root {
+  --gutter: 0 var(--gutter-x);
+  --gutter-x: 16px;
+}
+
 html {
   font-size: 112.5%; /* 18px. */
 }
 
-/* Grid */
-.grid {
-  margin: 0 auto;
-}
-
-/* Container, grid */
-.container,
-.grid {
+/* Container */
+.container {
   padding: 0 16px;
-}
-
-/* Grid - 750px */
-.grid.g750 {
-  max-width: 750px;
-}
-
-/* Grid - centered */
-.grid.centered {
-  text-align: center;
 }
 
 /* Flex */
@@ -62,13 +51,17 @@ html {
  * Large tablet portrait, large handset landscape, small window
  */
 @media screen and (min-width: 720px) {
+
+  :root {
+    --gutter-x: 24px;
+  }
+
   html {
     font-size: 100%; /* 16px. */
   }
 
-  /* Container, grid - update containers from 16px margin to 24px */
-  .container,
-  .grid {
+  /* Container - update containers from 16px margin to 24px */
+  .container {
     padding: 0 24px;
   }
 }
