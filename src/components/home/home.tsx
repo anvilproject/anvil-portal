@@ -15,6 +15,7 @@ import SectionHero from "./section-hero/section-hero";
 import SectionLatestUpdates from "./section-latest-updates/section-latest-updates";
 import SectionPublication from "./section-publication/section-publication";
 import SectionTechCloud from "./section-tech-cloud/section-tech-cloud";
+import SectionTwitter from "./section-twitter/section-twitter";
 import SectionWorkspaceCloud from "./section-workspace-cloud/section-workspace-cloud";
 
 const Home: FC = (): JSX.Element => {
@@ -27,6 +28,7 @@ const Home: FC = (): JSX.Element => {
       <SectionBenefitCloud />
       <SectionLatestUpdates />
       <SectionPublication />
+      <SectionTwitter />
     </>
   );
 };
