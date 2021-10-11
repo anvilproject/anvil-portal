@@ -9,6 +9,7 @@
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
 
 // Styles
@@ -23,12 +24,14 @@ interface Props {
 }
 
 const PublicationCard: FC<Props> = ({ publicationCard }): JSX.Element => {
-  const { citation, title } = publicationCard;
+  const { cardLink, citation, title } = publicationCard;
   return (
-    <a className={card} href="/">
-      <span>{title}</span>
-      <span className={cardCitation}> - {citation}</span>
-    </a>
+    <div className={card}>
+      <ButtonCta attributeHREF={cardLink || "/"}>
+        <span>{title}</span>
+        <span className={cardCitation}> - {citation}</span>
+      </ButtonCta>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ technologies:
         - label: "Launch"
           url: "https://anvil.terra.bio/#workspaces"
         - label: "Learn More"
-          url: ""
+          url: "/learn/introduction/intro-to-terra"
     text: "Secure, scalable cloud compute environment."
     thumbnail: _images/terra.png
   - title: "Gen3"
@@ -13,7 +13,7 @@ technologies:
     - label: "Launch"
       url: "https://gen3.theanvil.io/"
     - label: "Learn More"
-      url: ""
+      url: "/learn/introduction/getting-started-with-gen3"
     text: "Manage, harmonize and share large datasets."
     thumbnail: _images/gen3.png
   - title: "Dockstore"
@@ -21,47 +21,39 @@ technologies:
     - label: "Launch"
       url: "https://dockstore.org/"
     - label: "Learn More"
-      url: ""
+      url: "/learn/introduction/intro-to-dockstore"
     text: "Create and, share Docker-based workflows."
     thumbnail: _images/dockstore.png
   - title: "NCPI"
     actions:
-    - label: "Launch"
-      url: "https://anvil.terra.bio/#workspaces"
     - label: "Learn More"
-      url: "https://anvilproject.org/ncpi"
+      url: "/ncpi"
     text: "Interoperate  with other NIH data commons."
     thumbnail: _images/ncpi.png
   - title: "Bioconductor"
     actions:
-    - label: "Launch"
-      url: "https://www.bioconductor.org/"
     - label: "Learn More"
-      url: ""
+      url: "/learn/interactive-analysis/getting-started-with-bioconductor"
     text: "Analyze genomic data in the R statistical language."
     thumbnail: _images/bioconductor.png
   - title: "Galaxy"
     actions:
-    - label: "Launch"
-      url: "https://anvil.terra.bio/#workspaces"
     - label: "Learn More"
-      url: "https://galaxyproject.org/"
+      url: "/learn/interactive-analysis/getting-started-with-galaxy"
     text: "Batch analysis worklows and interactive visualizations."
     thumbnail: _images/galaxy.png
   - title: "Jupyter"
     actions:
-    - label: "Launch"
-      url: "https://jupyter.org/"
     - label: "Learn More"
-      url: ""
+      url: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks"
     text: "Interactive analysis with python or R."
     thumbnail: _images/jupyter.png
   - title: "Seqr"
     actions:
     - label: "Launch"
-      url: ""
+      url: "https://support.terra.bio/hc/en-us/articles/4402431367949-Launching-seqr-through-Terra"
     - label: "Learn More"
-      url: ""
+      url: "/news/2021/03/10/announcing-seqr-in-anvil/"
     text: "Identify disease causing variants."
     thumbnail: _images/seqr.png
 ---

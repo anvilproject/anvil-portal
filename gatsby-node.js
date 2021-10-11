@@ -415,12 +415,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Card {
         actions: [CardAction]
+        cardLink: String
         citation: String
-        media: File @fileByRelativePath
+        media: Media
         subTitle: String
         supportingText: String
         thumbnail: File @fileByRelativePath
         title: String
+        url: String
     }
     type CardAction {
         label: String
@@ -453,6 +455,10 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemark implements Node {
         frontmatter: Frontmatter
         pageCreated: Boolean @pageCreated
+    }
+    type Media implements Node {
+        landscape: File @fileByRelativePath
+        portrait: File @fileByRelativePath
     }
     type MenuItem implements Node {
         name: String

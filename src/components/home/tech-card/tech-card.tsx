@@ -10,8 +10,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
-import Target from "../../target/target.model";
 
 // Styles
 import {
@@ -40,16 +40,10 @@ const TechCard: FC<Props> = ({ techCard }): JSX.Element => {
         <h4 className={cardTitle}>{title}</h4>
         <p className={cardContent}>{text}</p>
         <div className={cardActions}>
-          {actions.map(({ label, url }) => (
-            <a
-              key={label}
-              className={cardAction}
-              href={url}
-              rel="noopener"
-              target={Target.BLANK}
-            >
-              {label}
-            </a>
+          {actions?.map(({ label, url }) => (
+            <ButtonCta attributeHREF={url || "/"} key={label}>
+              <span className={cardAction}>{label}</span>
+            </ButtonCta>
           ))}
         </div>
       </div>

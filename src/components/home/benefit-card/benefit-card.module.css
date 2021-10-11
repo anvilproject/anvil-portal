@@ -24,11 +24,20 @@
 .cardTitle {
   font-weight: 600;
   line-height: 1.5rem; /* 24px. */
-  min-height: 48px;
 }
 
 /* Text. */
 .cardContent {
   font-weight: 400;
   line-height: 1.25rem; /* 20px. */
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ */
+@media screen and (min-width: 600px) {
+  /* Title. */
+  .cardTitle {
+    min-height: 48px;
+  }
 }

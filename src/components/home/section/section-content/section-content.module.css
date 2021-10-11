@@ -11,10 +11,23 @@
   font-family: "Open Sans", sans-serif;
   font-size: 2.25rem; /* 36px. */
   font-weight: 400;
-  grid-column: 2;
+  grid-column: 2 / 4;
   grid-row: 2;
   line-height: 3.25rem; /* 52px. */
   margin: 0 0 40px;
+  padding: 0;
+}
+
+/* Content - default full width. */
+/* Content - default LHS. */
+.sectionContent,
+.sectionContentLeft {
+  grid-row: 3;
+}
+
+/* Content - default RHS. */
+.sectionContentRight {
+  grid-row: 4;
 }
 
 /* Content - default full width. */
@@ -23,26 +36,13 @@
 .sectionContent,
 .sectionContentLeft,
 .sectionContentRight {
-  grid-row: 3;
-}
-
-/* Content - default full width. */
-.sectionContent {
   grid-column: 2 / 4;
-}
-
-/* Content - default LHS. */
-/* Frames section content within LHS tile. */
-.sectionContentLeft {
-  grid-column: 2;
-  margin-right: 20px; /* Matches gap between CTAs. */
 }
 
 /* Content - default RHS. */
 /* Frames section content within RHS tile. */
 .sectionContentRight {
-  grid-column: 3;
-  margin-left: 20px; /* Matches gap between CTAs. */
+  margin-top: 32px; /* Matches grid spacing between news / events / publications. */
 }
 
 /* Media content - media RHS. */
@@ -51,18 +51,18 @@
   align-items: center;
   background-color: var(--shade-light-green);
   display: flex;
-  grid-column: 3;
-  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  grid-row: 4 / -1;
   justify-content: center;
+  margin-top: 40px;
   padding: 4rem 0;
 }
 
 /* CTAs. */
 .sectionCTAs {
-  align-items: center;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
   margin-top: 40px;
 }
 
@@ -71,4 +71,84 @@
 .sectionContentLeft .sectionCTAs,
 .sectionContentRight .sectionCTAs {
   justify-content: flex-start;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+  /* CTAs. */
+  .sectionCTAs {
+    grid-template-columns: 212px;
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 600px) {
+  /* CTAs. */
+  .sectionCTAs {
+    justify-content: center;
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* CTAs. */
+  .sectionCTAs {
+    display: flex;
+    gap: 24px;
+    grid-template-columns: unset;
+    justify-content: center;
+  }
+
+  /* CTA button. */
+  .sectionCTAs > * {
+    flex: 1;
+    max-width: 212px;
+    width: 100%;
+  }
+}
+
+/**
+ *  Small tablet landscape, small window
+ */
+@media screen and (min-width: 960px) {
+  /* Heading. */
+  .sectionHeading {
+    grid-column: 2;
+  }
+
+  /* Content - default LHS. */
+  /* Frames section content within LHS tile. */
+  .sectionContentLeft {
+    grid-column: 2;
+    margin-right: 20px; /* Matches gap between CTAs. */
+  }
+
+  /* Content - default RHS. */
+  /* Frames section content within RHS tile. */
+  .sectionContentRight {
+    grid-column: 3;
+    grid-row: 3;
+    margin-left: 20px; /* Matches gap between CTAs. */
+    margin-top: 0;
+  }
+
+  /* Media content - media RHS. */
+  /* Frames media within RHS tile. */
+  .sectionMediaRight {
+    grid-column: 3;
+    grid-row: 1 / -1;
+    margin-top: 0;
+  }
+
+  /* CTAs. */
+  .sectionCTAs {
+    gap: 40px;
+  }
 }

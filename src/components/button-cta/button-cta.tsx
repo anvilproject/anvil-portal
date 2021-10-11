@@ -21,8 +21,8 @@ import { button, large, primary, secondary } from "./button-cta.module.css";
 
 interface Props {
   attributeHREF: string;
-  buttonSize: ButtonSize;
-  buttonTheme: ButtonTheme;
+  buttonSize?: ButtonSize;
+  buttonTheme?: ButtonTheme;
   children: ReactNode;
 }
 
@@ -35,7 +35,8 @@ const ButtonCta: FC<Props> = ({
   const internalCta = /^\/(?!\/)/.test(
     attributeHREF
   ); /* See https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-link/#reminder-use-link-only-for-internal-links. */
-  const buttonClassNames = classNames(button, {
+  const buttonClassNames = classNames({
+    [button]: buttonTheme !== ButtonTheme.NONE,
     [large]: buttonSize === ButtonSize.LARGE,
     [primary]: buttonTheme === ButtonTheme.PRIMARY,
     [secondary]: buttonTheme === ButtonTheme.SECONDARY,
@@ -55,6 +56,11 @@ const ButtonCta: FC<Props> = ({
       {children}
     </a>
   );
+};
+
+ButtonCta.defaultProps = {
+  buttonSize: ButtonSize.NONE,
+  buttonTheme: ButtonTheme.NONE,
 };
 
 export default ButtonCta;

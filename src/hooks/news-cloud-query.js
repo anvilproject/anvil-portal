@@ -32,8 +32,8 @@ export const NewsCloudStaticQuery = () => {
     .map((n) => n.node)
     .map((item) => {
       return {
+        cardLink: item.fields.slug,
         date: item.frontmatter.date,
-        link: item.fields.slug,
         title: item.frontmatter.title,
       };
     });

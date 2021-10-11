@@ -7,17 +7,15 @@
 
 /* Main. */
 .heroMain {
-  grid-column: 2;
+  grid-column: 2  / 4;
   grid-row: 2;
 }
 
 /* Sub Main (RHS). */
 .heroSubMain {
-  align-items: center;
-  display: flex;
-  grid-column: 3;
-  grid-row: 2;
-  justify-content: flex-end;
+  grid-column: 2 / 4;
+  grid-row: 3;
+  margin-top: 44px;
 }
 
 /* Title. */
@@ -43,7 +41,37 @@
 
 /* CTAs. */
 .heroCTAs {
-  align-items: center;
-  display: flex;
-  gap: 40px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 190px;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+  /* CTAs. */
+  .heroCTAs {
+    gap: 32px;
+    grid-template-columns: repeat(2, 190px);
+  }
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Main. */
+  .heroMain {
+    grid-column: 2;
+  }
+
+  /* Sub Main (RHS). */
+  .heroSubMain {
+    grid-column: 3;
+    grid-row: 2;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
 }

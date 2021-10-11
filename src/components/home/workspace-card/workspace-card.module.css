@@ -9,8 +9,6 @@
 .card {
   border: 2px solid var(--shade-light-green);
   border-radius: 10px;
-  box-sizing: border-box;
-  max-width: 340px;
   padding: 16px;
 }
 

@@ -1,0 +1,21 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL carousel arrow component.
+ */
+
+/* Arrow - hide. */
+.carouselArrow {
+  display: none;
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Arrow - show. */
+  .carouselArrow {
+    display: block;
+  }
+}

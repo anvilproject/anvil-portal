@@ -6,11 +6,21 @@
  */
 
 /* Slideshow */
+/* Positions slides on top of each other. */
 .slider {
-  border: 2px solid var(--grey);
-  border-radius: 10px;
-  height: 300px; /* TODO */
-  margin: 16px 24px;
-  position: relative; /* Positions hidden slots */
-  width: 500px;
+  border-top: 1px solid var(--grey);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Slideshow */
+  .slider {
+    border: 2px solid var(--grey);
+    border-radius: 10px;
+  }
 }

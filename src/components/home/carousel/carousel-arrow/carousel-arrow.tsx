@@ -12,38 +12,43 @@ import React, { FC } from "react";
 
 // App dependencies
 import Button from "../../../button/button";
-import CarouselDirection from "../carousel-direction/carousel-direction";
+import CarouselAction from "../carousel-action/carousel-action";
+
+// Styles
+import { carouselArrow } from "./carousel-arrow.module.css";
 
 // Template variables
 const forwardArrow = "../../../../../images/icon/next.png";
 const backwardArrow = "../../../../../images/icon/previous.png";
 
 interface Props {
-  action: (swipeDirection: string) => void;
-  direction: CarouselDirection;
+  action: (carouselAction: string) => void;
+  direction: CarouselAction;
 }
 
 const CarouselArrow: FC<Props> = ({ action, direction }): JSX.Element => {
-  const forwards = direction === CarouselDirection.FORWARD;
+  const forwards = direction === CarouselAction.SWIPE_FORWARD;
 
   return (
-    <Button clickAction={action} icon>
-      {forwards ? (
-        <StaticImage
-          alt="prev"
-          placeholder="none"
-          src={forwardArrow}
-          width={16}
-        />
-      ) : (
-        <StaticImage
-          alt="prev"
-          placeholder="none"
-          src={backwardArrow}
-          width={16}
-        />
-      )}
-    </Button>
+    <div className={carouselArrow}>
+      <Button clickAction={action} icon>
+        {forwards ? (
+          <StaticImage
+            alt="prev"
+            placeholder="none"
+            src={forwardArrow}
+            width={16}
+          />
+        ) : (
+          <StaticImage
+            alt="prev"
+            placeholder="none"
+            src={backwardArrow}
+            width={16}
+          />
+        )}
+      </Button>
+    </div>
   );
 };
 

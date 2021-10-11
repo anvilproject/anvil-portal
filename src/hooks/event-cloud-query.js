@@ -36,8 +36,8 @@ export const EventCloudStaticQuery = () => {
   const allFutureEvents = filterScoopsByDate(allEvents, false);
   return allFutureEvents.map((item) => {
     return {
+      cardLink: item.fields.slug,
       dateBubble: item.frontmatter.dateBubble,
-      link: item.fields.slug,
       title: item.frontmatter.title,
     };
   });

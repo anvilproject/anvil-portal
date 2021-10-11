@@ -11,10 +11,11 @@ import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import { ICard } from "../../card/card";
+import CarouselAction from "./carousel-action/carousel-action";
 import CarouselArrow from "./carousel-arrow/carousel-arrow";
 import CarouselBullets from "./carousel-bullets/carousel-bullets";
-import CarouselDirection from "./carousel-direction/carousel-direction";
 import CarouselSlideshow from "./carousel-slideshow/carousel-slideshow";
+import { redirect } from "../../../utils/redirect.service";
 
 // Styles
 import { carousel, carouselBody } from "./carousel.module.css";
@@ -29,41 +30,55 @@ interface Props {
   slides: ICard[];
 }
 
-type CarouselDirectionState = CarouselDirection;
+type CarouselActionState = CarouselAction;
 
 const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const initCoords = useRef<IEventCoordinates>({ x: 0, y: 0 });
   const [activeSlide, setActiveSlide] = useState<number>(0);
-  const [swipeDirection, setSwipeDirection] = useState<CarouselDirectionState>(
-    CarouselDirection.NONE
+  const [activeSlideUrl, setActiveSlideUrl] = useState<string>("/");
+  const [slideAction, setSlideAction] = useState<CarouselActionState>(
+    CarouselAction.NONE
   );
   const lastSlideIndex = slides.length - 1;
 
   const calculateSwipeDirection = useCallback(
-    (coords: IEventCoordinates): CarouselDirection => {
+    (coords: IEventCoordinates): CarouselAction => {
       const { x: x0, y: y0 } = initCoords.current; // Start coordinates.
       const { x: x1, y: y1 } = coords; // End coordinates.
 
       /* Calculate the difference between mouse/touch start and end coordinates. */
       const dx = x1 - x0;
       const dy = y1 - y0;
+      const absX = Math.abs(dx);
+      const absY = Math.abs(dy);
 
-      /* Calculate swipe direction. */
-      const swiping = Math.abs(dx) > Math.abs(dy);
-      const s = Math.sign(dx);
-      /* Start with neutral direction. */
-      let direction = CarouselDirection.NONE;
-      if (swiping) {
-        /* Backwards. */
-        if (s > 0) {
-          direction = CarouselDirection.BACKWARD;
+      /* Calculate slide action. */
+      /* Start with neutral action. */
+      let action = CarouselAction.NONE;
+      if (absX < 8 && absY < 8) {
+        /* Selecting. */
+        /* Minimal directional change between the start and end interactions. */
+        action = CarouselAction.SELECT;
+      } else if (absY > absX) {
+        /* Scrolling. */
+        /* Vertical interaction is greater than horizontal interaction. */
+        action = CarouselAction.SCROLL;
+      } else {
+        /* Swiping. */
+        /* Determine direction of swipe. */
+        const sign = Math.sign(dx);
+        if (sign > 0) {
+          /* Backwards. */
+          /* Swipe has occurred left to right (x1 is greater than x0). */
+          action = CarouselAction.SWIPE_BACKWARD;
         }
-        /* Forwards. */
-        if (s < 0) {
-          direction = CarouselDirection.FORWARD;
+        if (sign < 0) {
+          /* Forwards. */
+          /* Swipe has occurred right to left (x1 is less than x0). */
+          action = CarouselAction.SWIPE_FORWARD;
         }
       }
-      return direction;
+      return action;
     },
     []
   );
@@ -93,20 +108,22 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const swipeToSlide = useCallback(
     (increment: number): void => {
       /* Increment slide index either way. */
-      let index = activeSlide + increment;
-      if (index < 0) {
-        /* The direction is BACKWARDS; */
+      let newIndex = activeSlide + increment;
+      if (newIndex < 0) {
+        /* The action is SWIPE_BACKWARDS; */
         /* If the new index is negative, rotate to the end of the slide deck. */
-        index = lastSlideIndex;
-      } else if (index > lastSlideIndex) {
-        /* The direction is FORWARDS. */
+        newIndex = lastSlideIndex;
+      } else if (newIndex > lastSlideIndex) {
+        /* The action is SWIPE_FORWARDS. */
         /* If the new index is greater than the number of possible slides, rotate to the start of the slide deck. */
-        index = 0;
+        newIndex = 0;
       }
+      const newUrl = slides[newIndex].cardLink || "/";
       /* Set new rotation index. */
-      setActiveSlide(index);
+      setActiveSlide(newIndex);
+      setActiveSlideUrl(newUrl);
     },
-    [activeSlide, lastSlideIndex]
+    [activeSlide, lastSlideIndex, slides]
   );
 
   const onMouseDown = useCallback(
@@ -118,10 +135,10 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
 
   const onMouseUp = useCallback(
     (mouseEvent: MouseEvent): void => {
-      /* Set new swipe direction. */
+      /* Set new slide action. */
       const coords = getMouseCoords(mouseEvent);
-      const direction = calculateSwipeDirection(coords);
-      setSwipeDirection(direction);
+      const action = calculateSwipeDirection(coords);
+      setSlideAction(action);
       /* Clear mouse down coordinates ready for next event. */
       initCoords.current = { x: 0, y: 0 };
     },
@@ -130,10 +147,10 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
 
   const onTouchEnd = useCallback(
     (touchEvent: TouchEvent): void => {
-      /* Set new swipe direction. */
+      /* Set new slide action. */
       const coords = getTouchCoords(touchEvent);
-      const direction = calculateSwipeDirection(coords);
-      setSwipeDirection(direction);
+      const action = calculateSwipeDirection(coords);
+      setSlideAction(action);
       /* Clear touch start coordinates ready for next event. */
       initCoords.current = { x: 0, y: 0 };
     },
@@ -143,9 +160,9 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const onTouchMove = useCallback(
     (touchEvent: TouchEvent): void => {
       const coords = getTouchCoords(touchEvent);
-      const direction = calculateSwipeDirection(coords);
-      /* Prevent scroll if swipe direction is either forwards or backwards. */
-      if (direction !== CarouselDirection.NONE && touchEvent.cancelable) {
+      const action = calculateSwipeDirection(coords);
+      /* Prevent scrolling when slide action is not SCROLL. */
+      if (action !== CarouselAction.SCROLL && touchEvent.cancelable) {
         touchEvent.preventDefault();
         touchEvent.stopPropagation();
       }
@@ -175,9 +192,11 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
     (sliderEl: HTMLDivElement): void => {
       sliderEl.addEventListener("mousedown", (e) => onMouseDown(e));
       sliderEl.addEventListener("mouseup", (e) => onMouseUp(e));
-      sliderEl.addEventListener("touchend", (e) => onTouchEnd(e));
+      sliderEl.addEventListener("touchend", (e) => onTouchEnd(e), {
+        passive: true,
+      });
       sliderEl.addEventListener("touchmove", (e) => onTouchMove(e), {
-        passive: false,
+        passive: true,
       });
       sliderEl.addEventListener("touchstart", (e) => onTouchStart(e), {
         passive: true,
@@ -202,20 +221,23 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   }, [removeTouchInteractions, setTouchInteractions]);
 
   useEffect(() => {
-    if (swipeDirection === CarouselDirection.FORWARD) {
+    if (slideAction === CarouselAction.SWIPE_FORWARD) {
       swipeToSlide(1);
-      setSwipeDirection(CarouselDirection.NONE);
-    } else if (swipeDirection === CarouselDirection.BACKWARD) {
+      setSlideAction(CarouselAction.NONE);
+    } else if (slideAction === CarouselAction.SWIPE_BACKWARD) {
       swipeToSlide(-1);
-      setSwipeDirection(CarouselDirection.NONE);
+      setSlideAction(CarouselAction.NONE);
+    } else if (slideAction === CarouselAction.SELECT) {
+      redirect(activeSlideUrl, "carousel");
+      setSlideAction(CarouselAction.NONE);
     }
-  }, [swipeDirection, swipeToSlide]);
+  }, [activeSlideUrl, slideAction, swipeToSlide]);
 
   return (
     <div className={carousel}>
       <CarouselArrow
-        action={() => setSwipeDirection(CarouselDirection.BACKWARD)}
-        direction={CarouselDirection.BACKWARD}
+        action={() => setSlideAction(CarouselAction.SWIPE_BACKWARD)}
+        direction={CarouselAction.SWIPE_BACKWARD}
       />
       <div className={carouselBody}>
         <CarouselSlideshow activeSlide={activeSlide} slides={slides} />
@@ -226,8 +248,8 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
         />
       </div>
       <CarouselArrow
-        action={() => setSwipeDirection(CarouselDirection.FORWARD)}
-        direction={CarouselDirection.FORWARD}
+        action={() => setSlideAction(CarouselAction.SWIPE_FORWARD)}
+        direction={CarouselAction.SWIPE_FORWARD}
       />
     </div>
   );
