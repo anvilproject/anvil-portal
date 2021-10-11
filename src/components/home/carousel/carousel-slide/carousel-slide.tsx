@@ -17,8 +17,9 @@ import { ICard } from "../../../card/card";
 // Styles
 import {
   active,
-  cardHeader,
   cardMediaFrame,
+  cardMediaLandscape,
+  cardMediaPortrait,
   cardSubTitle,
   cardTitle,
   slot,
@@ -31,18 +32,39 @@ interface Props {
 
 const CarouselSlide: FC<Props> = ({ showSlide, slide }): JSX.Element => {
   const { media, subTitle, title } = slide;
-  const img = media ? getImage(media) : undefined;
+  const { landscape, portrait } = media || {};
+  const landscapeImg = landscape ? getImage(landscape) : undefined;
+  const portraitImg = portrait ? getImage(portrait) : undefined;
   return (
     <div className={classNames({ [active]: showSlide }, slot)}>
-      <div className={cardHeader}>
-        <h3 className={cardTitle}>{title}</h3>
-        <span className={cardMediaFrame}>
-          {img ? (
-            <GatsbyImage alt="logo" draggable={false} image={img} />
-          ) : null}
-        </span>
-      </div>
-      <span className={cardSubTitle}>{subTitle}</span>
+      <h3 className={cardTitle}>
+        <span>{title}</span>
+      </h3>
+      <span className={cardMediaFrame}>
+        {landscapeImg ? (
+          <GatsbyImage
+            alt="logo"
+            className={cardMediaLandscape}
+            draggable={false}
+            image={landscapeImg}
+            objectFit="contain"
+            style={{ maxHeight: "80%", maxWidth: "80%" }}
+          />
+        ) : null}
+        {portraitImg ? (
+          <GatsbyImage
+            alt="logo"
+            className={cardMediaPortrait}
+            draggable={false}
+            image={portraitImg}
+            objectFit="contain"
+            style={{ maxHeight: "80%", maxWidth: "80%" }}
+          />
+        ) : null}
+      </span>
+      <span className={cardSubTitle}>
+        <span>{subTitle}</span>
+      </span>
     </div>
   );
 };

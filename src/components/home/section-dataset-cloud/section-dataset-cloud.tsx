@@ -37,7 +37,7 @@ const SectionDatasetCloud: FC = (): JSX.Element => {
         {/* CTAs */}
         <>
           <ButtonCta
-            attributeHREF="/"
+            attributeHREF="/overview/data-consortia"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >
@@ -51,7 +51,7 @@ const SectionDatasetCloud: FC = (): JSX.Element => {
             Explore Datasets
           </ButtonCta>
           <ButtonCta
-            attributeHREF="/"
+            attributeHREF="/learn/data-submitters/submission-guide/data-submitters-overview"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >

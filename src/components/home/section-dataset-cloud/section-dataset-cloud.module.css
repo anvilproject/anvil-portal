@@ -8,7 +8,37 @@
 /* Cards. */
 .sectionCards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 200px);
-  gap: 48px;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+  /* Cards. */
+  .sectionCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* Cards. */
+  .sectionCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Cards. */
+  .sectionCards {
+    gap: 48px;
+  }
 }

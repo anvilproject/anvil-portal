@@ -8,7 +8,7 @@
 /* Section - generic column set out and styles for each section. */
 .section {
   display: grid;
-  grid-template-columns: minmax(24px, auto)minmax(0, 600px) minmax(0, 600px) minmax(24px, auto);
+  grid-template-columns: minmax(24px, auto) minmax(0, 600px) minmax(0, 600px) minmax(24px, auto);
 }
 
 /* Section multiline. */
@@ -31,18 +31,18 @@
 /* Hero. */
 .sectionHero {
   composes: section;
-  grid-template-rows: 1.5rem 1fr 1.5rem; /* Caters for padding 24px, content, padding 24px. */
+  grid-template-rows: 1.5rem auto auto 1.5rem; /* Caters for padding 24px, content, carousel, padding 24px. */ /* Any auto row with unspecified content collapses. */
 }
 
 /* Banner. */
 .sectionBanner {
   composes: sectionMultiline;
   background: linear-gradient(180deg, #F8FBF9 0%, rgba(248, 250, 251, 0) 100%);
-  grid-template-rows: 2.5rem auto 1fr 2.5rem;  /* Caters for padding 40px, heading, content, padding 40px. */ /* Heading grid collapses. */
+  grid-template-rows: 2.5rem auto auto 2.5rem;  /* Caters for padding 40px, heading, content, padding 40px. */ /* Heading grid collapses if unspecified. */
 }
 
 /* Main (default styles). */
 .sectionMain {
   composes: sectionMultiline;
-  grid-template-rows: 4rem auto 1fr 4rem; /* Caters for padding 60px, heading, content, padding 60px. */
+  grid-template-rows: 4rem auto auto auto 4rem; /* Caters for padding 60px, heading, content [DEFAULT_FULL_WIDTH, DEFAULT_LEFT], content [DEFAULT_RIGHT, MEDIA_RIGHT], padding 60px. */ /* Any auto row with unspecified content collapses. */
 }

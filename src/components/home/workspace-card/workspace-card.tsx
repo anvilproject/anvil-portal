@@ -10,6 +10,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
 
 // Styles
@@ -26,17 +27,19 @@ interface Props {
 }
 
 const WorkspaceCard: FC<Props> = ({ workspaceCard }): JSX.Element => {
-  const { text, thumbnail, title } = workspaceCard;
+  const { cardLink, text, thumbnail, title } = workspaceCard;
   const img = thumbnail ? getImage(thumbnail) : undefined;
   return (
     <div className={card}>
-      <div className={cardHeader}>
-        <div className={cardThumbnail}>
-          {img ? <GatsbyImage alt="logo" image={img} /> : null}
+      <ButtonCta attributeHREF={cardLink || "/"}>
+        <div className={cardHeader}>
+          <div className={cardThumbnail}>
+            {img ? <GatsbyImage alt="logo" image={img} /> : null}
+          </div>
+          <h4 className={cardTitle}>{title}</h4>
         </div>
-        <h4 className={cardTitle}>{title}</h4>
-      </div>
-      <div className={cardContent}>{text}</div>
+        <div className={cardContent}>{text}</div>
+      </ButtonCta>
     </div>
   );
 };

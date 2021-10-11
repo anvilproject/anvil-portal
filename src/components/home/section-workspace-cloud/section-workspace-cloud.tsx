@@ -40,11 +40,11 @@ const SectionWorkspaceCloud: FC = (): JSX.Element => {
         {/* CTAs */}
         <>
           <ButtonCta
-            attributeHREF="/"
+            attributeHREF="/learn/analysis-workflows/using-example-workspaces"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >
-            Explore Example Workspaces
+            Explore Workspaces
           </ButtonCta>
         </>
       </SectionContent>

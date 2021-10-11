@@ -6,6 +6,7 @@
  */
 
 enum ButtonSize {
+  NONE = "NONE",
   LARGE = "LARGE",
 }
 

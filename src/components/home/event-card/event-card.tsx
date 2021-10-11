@@ -9,6 +9,7 @@
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
 
 // Styles
@@ -17,13 +18,13 @@ import {
   bubbleMonth,
   bubbleYear,
   card,
+  cardContainer,
   cardDate,
   cardTitle,
 } from "./event-card.module.css";
 
 export interface IEventCard extends ICard {
   dateBubble: [string, string, string];
-  link: string;
 }
 
 interface Props {
@@ -31,17 +32,21 @@ interface Props {
 }
 
 const EventCard: FC<Props> = ({ eventCard }): JSX.Element => {
-  const { dateBubble, link, title } = eventCard;
+  const { cardLink, dateBubble, title } = eventCard;
   const [month, dayOfMonth, year] = dateBubble;
   return (
-    <a className={card} href={link}>
-      <span className={cardDate}>
-        <span className={bubbleDayOfMonth}>{dayOfMonth}</span>
-        <span className={bubbleMonth}>{month}</span>
-        <span className={bubbleYear}>{year}</span>
-      </span>
-      <span className={cardTitle}>{title}</span>
-    </a>
+    <div className={card}>
+      <ButtonCta attributeHREF={cardLink || "/"}>
+        <div className={cardContainer}>
+          <span className={cardDate}>
+            <span className={bubbleDayOfMonth}>{dayOfMonth}</span>
+            <span className={bubbleMonth}>{month}</span>
+            <span className={bubbleYear}>{year}</span>
+          </span>
+          <span className={cardTitle}>{title}</span>
+        </div>
+      </ButtonCta>
+    </div>
   );
 };
 

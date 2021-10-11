@@ -13,6 +13,7 @@
  *
  * Media queries - custom AnVIL breakpoints
  * 808px - Optimized width of data tables (to match main content channel), below which data tables should be overflow scroll (760px content channel + 24px x 2 for gutters)
+ * 1200px - Optimized for home page channel.
  * 1040px - Tables change from scroll overflow (if necessary) to 100% width of content channel (currently 780)
  * 1388px - Outline is dropped below this point
  * 1545px - Content and outline are centered, rather than left-aligned

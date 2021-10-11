@@ -7,14 +7,18 @@
 
 /* Card. */
 .card {
-  display: block;
+  margin: 32px 0;
+}
+
+/* Card container. */
+.cardContainer {
+  display: grid;
   font-family: "Open Sans", sans-serif;
-  margin: 16px 0;
+  gap: 2px;
 }
 
 /* Title. */
 .cardTitle {
-  display: block;
   font-size: 1.125rem; /* 18px. */
   line-height: 1.5rem; /* 24px. */
   margin: 0;
@@ -25,4 +29,14 @@
   font-size: 0.825rem; /* 14px. */
   line-height: 1.25rem; /* 18px. */
   margin: 0;
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* Card. */
+  .card {
+    margin: 16px 0;
+  }
 }

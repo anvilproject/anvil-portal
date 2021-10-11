@@ -6,8 +6,9 @@
  */
 
 enum ButtonTheme {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
+  NONE = "NONE",
+  PRIMARY = "PRIMARY",
+  SECONDARY = "SECONDARY",
 }
 
 export default ButtonTheme;

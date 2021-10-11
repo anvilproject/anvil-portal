@@ -2,8 +2,9 @@
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export interface ICard {
-  actions: ICardAction[];
-  media?: IGatsbyImageData;
+  actions?: ICardAction[];
+  cardLink?: string;
+  media?: IMedia;
   subTitle?: string;
   text?: string;
   thumbnail?: IGatsbyImageData;
@@ -13,4 +14,9 @@ export interface ICard {
 interface ICardAction {
   label: string;
   url: string;
+}
+
+interface IMedia {
+  landscape?: IGatsbyImageData;
+  portrait?: IGatsbyImageData;
 }

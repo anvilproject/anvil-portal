@@ -11,9 +11,17 @@ export const SlideStaticQuery = () => {
           nodes {
             frontmatter {
               slides {
+                cardLink
                 media {
-                  childImageSharp {
-                    gatsbyImageData(width: 168)
+                  landscape {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                  portrait {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
                   }
                 }
                 subTitle

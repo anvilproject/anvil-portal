@@ -8,10 +8,10 @@
 /* Slide */
 .slot {
   cursor: grab;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0 24px;
+  display: grid;
+  grid-column: 1; /* Stacks all slides on the same grid - the active slide is specified with a higher z-index. */
+  grid-row: 1; /* Stacks all slides on the same grid - the active slide is specified with a higher z-index. */
+  grid-template-rows: 32px 7rem 12px 182px 8px 3.375rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -22,17 +22,16 @@
 .slot:not(.active) {
   animation: hideSlot 0.5s ease 0s;
   opacity: 0;
-  position: absolute;
-  top: 0;
   visibility: hidden;
+  z-index: 0;
 }
 
 /* Slot - active */
 .slot.active {
   animation: showSlot 0.5s ease 0s;
   opacity: 1;
-  position: relative;
   visibility: visible;
+  z-index: 1;
 }
 
 /* Animation - show slot */
@@ -55,29 +54,23 @@
   }
 }
 
-/* Header. */
-.cardHeader {
-  border-bottom: 1px solid var(--grey);
-  column-gap: 24px;
-  display: grid;
-  flex: 1;
-  grid-template-columns: 1fr 182px; /* Heading / Image Frame. */
-}
-
 /* Title */
 .cardTitle {
-  color: inherit;
-  display: -webkit-box;
   font-family: "Open Sans", sans-serif;
   font-size: 1.25rem; /* 20px. */
   font-weight: 600;
+  grid-row: 2;
   line-height: 1.75rem; /* 28px. */
-  margin: 32px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 6;
+  margin: 0;
+}
+
+/* Title - clamp */
+.cardTitle span {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Media frame. */
@@ -85,20 +78,139 @@
   align-items: center;
   background-color: var(--shade-light);
   display: flex;
+  grid-row: 4;
   justify-content: center;
+}
+
+/* Media - landscape. */
+.cardMediaLandscape {
+  display: block;
+}
+
+/* Media - portrait. */
+.cardMediaPortrait {
+  display: none;
 }
 
 /* Sub title. */
 .cardSubTitle {
   color: var(--black58);
-  display: -webkit-box;
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem; /* 14px. */
+  grid-row: 6;
   line-height: 1.125rem; /* 18px. */
-  margin: 8px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
+  position: relative; /* Positions divider. */
+}
+
+/* Divider. */
+.cardSubTitle::before {
+  background-color: var(--grey);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: -9px;
+  width: 100%;
+}
+
+/* Sub title - clamp. */
+.cardSubTitle span {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+  /* Slide */
+  .slot {
+    grid-template-rows: 32px 5.25rem 12px 182px 8px 3.375rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
+  }
+
+  /* Title - clamp */
+  .cardTitle span {
+    -webkit-line-clamp: 3;
+  }
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ */
+@media screen and (min-width: 600px) {
+  /* Slide */
+  .slot {
+    grid-template-rows: 32px 3.5rem 12px 182px 8px 2.25rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
+  }
+
+  /* Title - clamp */
+  .cardTitle span {
+    -webkit-line-clamp: 2;
+  }
+
+  /* Sub title - clamp. */
+  .cardSubTitle span {
+    -webkit-line-clamp: 2;
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* Slide */
+  .slot {
+    grid-column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 32px 200px 12px 8px 2.25rem; /* Rows are allocated in the following order: margin, title, margin, margin, sub title. */
+  }
+
+  /* Title */
+  .cardTitle {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Title - clamp */
+  .cardTitle span {
+    -webkit-line-clamp: 7;
+  }
+
+  /* Media frame. */
+  .cardMediaFrame {
+    grid-column: 2;
+    grid-row: 1 / 4;
+  }
+
+  /* Sub title. */
+  .cardSubTitle {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Slide */
+  .slot {
+    border-top: none;
+    grid-template-rows: 32px 12.25rem 32px 8px 2.25rem 8px; /* Rows are allocated in the following order: margin, title, margin, margin, sub title, margin. */
+    padding: 0 24px;
+  }
+
+  /* Media - landscape. */
+  .cardMediaLandscape {
+    display: none;
+  }
+
+  /* Media - portrait. */
+  .cardMediaPortrait {
+    display: block;
+  }
 }

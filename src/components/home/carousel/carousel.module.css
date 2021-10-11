@@ -10,10 +10,12 @@
 .carousel {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  gap: 24px; /* Between arrows and carousel body. */
 }
 
 /* Carousel body - rotation container */
 .carouselBody {
+  display: grid;
   flex: 1;
+  gap: 16px; /* Between slideshow and bullets. */
 }

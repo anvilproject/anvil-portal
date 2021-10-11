@@ -9,5 +9,35 @@
 .sectionCards {
   display: grid;
   gap: 48px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
+}
+
+/**
+ * Small tablet portrait, medium handset landscape, small window.
+ */
+@media screen and (min-width: 600px) {
+  /* Cards. */
+  .sectionCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* Cards. */
+  .sectionCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Cards. */
+  .sectionCards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

@@ -11,6 +11,7 @@ export const WorkspaceCloudStaticQuery = () => {
           nodes {
             frontmatter {
               workspaces {
+                cardLink
                 text
                 thumbnail {
                   childImageSharp {

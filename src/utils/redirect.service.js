@@ -5,6 +5,9 @@
  * Basic link redirect service.
  */
 
+// Core dependencies
+import { navigate } from "gatsby";
+
 // App dependencies
 import * as AnvilGTMService from "./anvil-gtm/anvil-gtm.service";
 import * as DOMService from "./dom.service";
@@ -17,7 +20,7 @@ import * as DOMService from "./dom.service";
  */
 export function redirect(linkTo, linkText) {
   if (linkTo && linkTo.startsWith("/")) {
-    window.open(linkTo, "_self");
+    navigate(linkTo);
   } else {
     window.open(linkTo);
   }

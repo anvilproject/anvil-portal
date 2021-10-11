@@ -9,13 +9,14 @@
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
-import Target from "../../target/target.model";
 
 // Styles
 import {
   card,
   cardAction,
+  cardActions,
   cardHeader,
   cardSubTitle,
   cardTitle,
@@ -33,17 +34,13 @@ const DatasetCard: FC<Props> = ({ datasetCard }): JSX.Element => {
         <h4 className={cardTitle}>{title}</h4>
         <div className={cardSubTitle}>{subTitle}</div>
       </div>
-      {actions.map(({ label, url }) => (
-        <a
-          key={label}
-          className={cardAction}
-          href={url}
-          rel="noopener"
-          target={Target.BLANK}
-        >
-          {label}
-        </a>
-      ))}
+      <div className={cardActions}>
+        {actions?.map(({ label, url }) => (
+          <ButtonCta attributeHREF={url || "/"} key={label}>
+            <span className={cardAction}>{label}</span>
+          </ButtonCta>
+        ))}
+      </div>
     </div>
   );
 };
