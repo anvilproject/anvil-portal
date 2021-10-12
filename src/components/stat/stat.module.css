@@ -5,155 +5,40 @@
  * Style definitions specific to The AnVIL stat component.
  */
 
-/* Stat */
+/* Stat. */
 .stat {
-  margin: 12px;
-}
-
-/* Stat - half */
-.stat span {
-  background-color: rgba(126, 186, 192, 0.12);
-  color: var(--shade-dark);
-  cursor: default;
+  align-self: flex-start;
+  color: var(--primary);
   display: flex;
-  height: calc(106px / 2);
-  justify-content: center;
-  text-transform: uppercase;
-  width: 106px;
+  flex-direction: column;
 }
 
-/* Stat - first */
-.stat:first-of-type span {
-  background-color: rgba(174, 235, 242, 0.54);
+/* Label. */
+/* Count. */
+.label,
+.count {
+  font-family: "Open Sans", sans-serif;
 }
 
-/* Stat - second */
-.stat:nth-of-type(2) span {
-  background-color: rgba(224, 221, 16, 0.54);
+/* Label. */
+.label {
+  font-size: 0.875rem; /* 14px. */
+  font-weight: 700;
+  line-height: 1.125rem; /* 18px. */
 }
 
-/* Stat - third */
-.stat:nth-of-type(3) span {
-  background-color: rgba(255, 137, 100, 0.54);
-}
-
-/* Stat - fourth */
-.stat:nth-of-type(4) span {
-  background-color: rgba(126, 186, 192, 0.54);
-}
-
-/* Stat - fifth */
-.stat:nth-of-type(5) span {
-  background-color: rgba(3, 92, 148, 0.38);
-}
-
-/* Stat - upper - count */
-.stat .count {
-  align-items: flex-end;
-  border-top-left-radius: 100% 200%;
-  border-top-right-radius: 100% 200%;
-  font-size: 1.25rem; /* 20px */
-  font-weight: 400;
-  letter-spacing: 0.18px;
-  line-height: 1.25rem; /* 20px */
-  padding-bottom: 8px;
-  position: relative; /* Positions stat delimiter */
-}
-
-/* Stat delimiter */
-.stat .count:after {
-  background: repeating-linear-gradient(
-    to right,
-    var(--shade-dark) 0px,
-    var(--shade-dark) 3px,
-    transparent 3px,
-    transparent 10px
-  );
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 1px;
-  left: 16px;
-  position: absolute;
-  right: 16px;
-}
-
-/* Stat - lower - label */
-.stat .label {
-  align-items: flex-start;
-  border-bottom-left-radius: 100% 200%;
-  border-bottom-right-radius: 100% 200%;
-  font-size: 0.875rem; /* 14px */
-  font-weight: 500;
-  line-height: 0.875rem; /* 14px */
-  padding-top: 8px;
+/* Count. */
+.count {
+  font-size: 1.5rem; /* 24px. */
+  line-height: 2.25rem; /* 36px. */
 }
 
 /**
- * Medium Handset +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ *  Small tablet landscape, small window
  */
-@media screen and (min-width: 360px) {
-  /* Stat */
+@media screen and (min-width: 960px) {
+  /* Stat. */
   .stat {
-    margin: 2px;
-  }
-}
-
-/**
- * Large Handset +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 400px) {
-  /* Stat */
-  .stat {
-    margin: 8px;
-  }
-}
-
-/**
- * XSmall +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 480px) {
-  /* Stat */
-  .stat {
-    margin: 12px;
-  }
-}
-
-/**
- * Small +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 600px) {
-  /* Stat */
-  .stat {
-    margin: 0;
-  }
-}
-
-/**
- * Large Tablet +
- * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
- */
-@media screen and (min-width: 720px) {
-  /* Stat - half */
-  .stat span {
-    height: calc(127px / 2);
-    width: 127px;
-  }
-
-  /* Stat - upper - count */
-  .stat .count {
-    font-size: 1.75rem; /* 28px */
-    letter-spacing: 0.25px;
-    line-height: 2.25rem; /* 36px */
-    padding-bottom: 4px;
-  }
-
-  /* Stat - lower - label */
-  .stat .label {
-    padding-top: 12px;
+    align-self: center;
   }
 }

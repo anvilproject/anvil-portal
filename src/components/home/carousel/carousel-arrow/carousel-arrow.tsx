@@ -52,4 +52,4 @@ const CarouselArrow: FC<Props> = ({ action, direction }): JSX.Element => {
   );
 };
 
-export default CarouselArrow;
+export default React.memo(CarouselArrow);

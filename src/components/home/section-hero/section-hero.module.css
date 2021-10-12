@@ -14,10 +14,9 @@
 
 /* Sub Main (RHS). */
 .heroSubMain {
-  display: flex;
   grid-column: 2 / 4;
   grid-row: 3;
-  justify-content: center;
+  justify-self: center;
   margin-top: 44px;
 }
 

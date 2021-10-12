@@ -49,4 +49,4 @@ const CarouselBullets: FC<Props> = ({
   );
 };
 
-export default CarouselBullets;
+export default React.memo(CarouselBullets);
