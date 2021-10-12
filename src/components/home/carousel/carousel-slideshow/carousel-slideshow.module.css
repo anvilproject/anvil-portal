@@ -15,12 +15,13 @@
 }
 
 /**
- * Optimized for home page channel.
+ * Small tablet portrait, medium handset landscape, small window.
  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
   /* Slideshow */
   .slider {
     border: 2px solid var(--grey);
     border-radius: 10px;
+    max-width: 564px;
   }
 }

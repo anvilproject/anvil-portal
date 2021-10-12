@@ -135,8 +135,6 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
       const coords = getMouseCoords(mouseEvent);
       const action = calculateSwipeDirection(coords);
       setSlideAction(action);
-      /* Clear mouse down coordinates ready for next event. */
-      initCoords.current = { x: 0, y: 0 };
     },
     [calculateSwipeDirection, getMouseCoords]
   );
@@ -147,8 +145,6 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
       const coords = getTouchCoords(touchEvent);
       const action = calculateSwipeDirection(coords);
       setSlideAction(action);
-      /* Clear touch start coordinates ready for next event. */
-      initCoords.current = { x: 0, y: 0 };
     },
     [calculateSwipeDirection, getTouchCoords]
   );
@@ -188,15 +184,11 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
     (sliderEl: HTMLDivElement): void => {
       sliderEl.addEventListener("mousedown", (e) => onMouseDown(e));
       sliderEl.addEventListener("mouseup", (e) => onMouseUp(e));
-      sliderEl.addEventListener("touchend", (e) => onTouchEnd(e), {
-        passive: true,
-      });
+      sliderEl.addEventListener("touchend", (e) => onTouchEnd(e));
       sliderEl.addEventListener("touchmove", (e) => onTouchMove(e), {
-        passive: true,
+        passive: false,
       });
-      sliderEl.addEventListener("touchstart", (e) => onTouchStart(e), {
-        passive: true,
-      });
+      sliderEl.addEventListener("touchstart", (e) => onTouchStart(e));
     },
     [onMouseDown, onMouseUp, onTouchEnd, onTouchMove, onTouchStart]
   );

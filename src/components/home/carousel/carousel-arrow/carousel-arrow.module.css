@@ -11,9 +11,9 @@
 }
 
 /**
- * Optimized for home page channel.
+ * Small tablet portrait, medium handset landscape, small window.
  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
   /* Arrow - show. */
   .carouselArrow {
     display: block;
