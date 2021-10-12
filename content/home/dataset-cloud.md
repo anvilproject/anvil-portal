@@ -2,10 +2,10 @@
 datasets:
   - title: "CMG"
     actions:
-    - label: "Learn More"
-      url: "/overview/data-consortia#cmg"
-    - label: "Datasets"
-      url: "/data?query=consortium%3DCMG"
+      - label: "Learn More"
+        url: "/overview/data-consortia#cmg"
+      - label: "Datasets"
+        url: "/data?query=consortium%3DCMG"
     subTitle: "Centers for Mendelian Genetics"
   - title: "CCDG"
     actions:

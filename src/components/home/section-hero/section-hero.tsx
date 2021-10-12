@@ -40,14 +40,14 @@ const SectionHero: FC = (): JSX.Element => {
         </div>
         <div className={heroCTAs}>
           <ButtonCta
-            attributeHREF="/overview"
+            attributeHREF="/learn"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.PRIMARY}
           >
             Get Started
           </ButtonCta>
           <ButtonCta
-            attributeHREF="/learn"
+            attributeHREF="/overview"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >

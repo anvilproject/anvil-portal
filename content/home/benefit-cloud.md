@@ -1,7 +1,5 @@
 ---
 benefits:
-    - title: "Delegate Access Control (Drop)"
-      text: "Securely work with controlled access data. Data access is managed by dbGaP telemetry files and consortia access controls."
     - title: "Reduce Data Transfer Fees"
       text: "There is no charge for data transferred from cloud storage to cloud compute within the same region."
     - title: "Reduce Data Storage Costs"

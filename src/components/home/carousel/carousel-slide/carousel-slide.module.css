@@ -11,7 +11,8 @@
   display: grid;
   grid-column: 1; /* Stacks all slides on the same grid - the active slide is specified with a higher z-index. */
   grid-row: 1; /* Stacks all slides on the same grid - the active slide is specified with a higher z-index. */
-  grid-template-rows: 32px 7rem 12px 182px 8px 3.375rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
+  /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5), media (6), margin (7), sub title (8). */
+  grid-template-rows: 32px 7rem 12px 1.125rem 12px 182px 8px 3.375rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -73,23 +74,42 @@
   overflow: hidden;
 }
 
+/* Card actions. */
+.cardActions {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+/* Action. */
+.cardAction {
+  color: var(--primary);
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem; /* 14px. */
+  font-weight: 600;
+  line-height: 1.125rem; /* 18px. */
+}
+
 /* Media frame. */
 .cardMediaFrame {
   align-items: center;
   background-color: var(--shade-light);
   display: flex;
-  grid-row: 4;
+  grid-row: 6;
   justify-content: center;
 }
 
 /* Media - landscape. */
 .cardMediaLandscape {
-  display: block;
+  display: block !important;
 }
 
 /* Media - portrait. */
 .cardMediaPortrait {
-  display: none;
+  display: none !important;
 }
 
 /* Sub title. */
@@ -97,7 +117,7 @@
   color: var(--black58);
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem; /* 14px. */
-  grid-row: 6;
+  grid-row: 8;
   line-height: 1.125rem; /* 18px. */
   position: relative; /* Positions divider. */
 }
@@ -129,7 +149,8 @@
 @media screen and (min-width: 480px) {
   /* Slide */
   .slot {
-    grid-template-rows: 32px 5.25rem 12px 182px 8px 3.375rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5), media (6), margin (7), sub title (8). */
+    grid-template-rows: 32px 5.25rem 12px 1.125rem 12px 182px 8px 3.375rem;
   }
 
   /* Title - clamp */
@@ -144,7 +165,8 @@
 @media screen and (min-width: 600px) {
   /* Slide */
   .slot {
-    grid-template-rows: 32px 3.5rem 12px 182px 8px 2.25rem; /* Rows are allocated in the following order: margin, title, margin, media, margin, sub title. */
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5), media (6), margin (7), sub title (8). */
+    grid-template-rows: 32px 3.5rem 12px 1.125rem 12px 182px 8px 2.25rem;
   }
 
   /* Title - clamp */
@@ -165,8 +187,9 @@
   /* Slide */
   .slot {
     grid-column-gap: 32px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 32px 200px 12px 8px 2.25rem; /* Rows are allocated in the following order: margin, title, margin, margin, sub title. */
+    grid-template-columns: 1fr 1fr; /* Columns are allocated equally: title (1), media (2). */
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7). */ /* Media (1 - 7). */
+    grid-template-rows: 32px 200px 12px 1.125rem 12px 8px 2.25rem;
   }
 
   /* Title */
@@ -183,13 +206,13 @@
   /* Media frame. */
   .cardMediaFrame {
     grid-column: 2;
-    grid-row: 1 / 4;
+    grid-row: 1 / 6;
   }
 
   /* Sub title. */
   .cardSubTitle {
     grid-column: 1 / -1;
-    grid-row: 5;
+    grid-row: 7;
   }
 }
 
@@ -200,17 +223,18 @@
   /* Slide */
   .slot {
     border-top: none;
-    grid-template-rows: 32px 12.25rem 32px 8px 2.25rem 8px; /* Rows are allocated in the following order: margin, title, margin, margin, sub title, margin. */
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7), margin (8). */
+    grid-template-rows: 32px 12.25rem 12px 1.125rem 12px 8px 2.25rem 8px;
     padding: 0 24px;
   }
 
   /* Media - landscape. */
   .cardMediaLandscape {
-    display: none;
+    display: none !important;
   }
 
   /* Media - portrait. */
   .cardMediaPortrait {
-    display: block;
+    display: block !important;
   }
 }

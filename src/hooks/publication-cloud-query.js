@@ -12,7 +12,13 @@ export const PublicationCloudStaticQuery = () => {
             frontmatter {
               publications {
                 cardLink
-                citation
+                citation {
+                  authors
+                  doi
+                  journal
+                  publisher
+                  year
+                }
                 title
               }
             }

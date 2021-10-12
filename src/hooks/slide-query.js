@@ -11,7 +11,10 @@ export const SlideStaticQuery = () => {
           nodes {
             frontmatter {
               slides {
-                cardLink
+                actions {
+                  label
+                  url
+                }
                 media {
                   landscape {
                     childImageSharp {

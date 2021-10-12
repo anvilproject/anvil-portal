@@ -16,3 +16,14 @@
 .cardCitation {
   font-size: 0.75rem; /* 12px. */
 }
+
+/* Action. */
+.cardAction {
+  border: none;
+  background-color: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0 6px;
+}

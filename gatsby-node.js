@@ -416,17 +416,23 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Card {
         actions: [CardAction]
         cardLink: String
-        citation: String
+        citation: Citation
         media: Media
         subTitle: String
         supportingText: String
         thumbnail: File @fileByRelativePath
         title: String
-        url: String
     }
     type CardAction {
         label: String
         url: String
+    }
+    type Citation {
+        authors: [String]
+        doi: String
+        journal: String
+        publisher: String
+        year: String
     }
     type Frontmatter {
         benefits: [Card]
