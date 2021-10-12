@@ -12,7 +12,5 @@ jobs:
       
       - run: |
           npm ci
-          npm install -g typescript
-          tsc --noEmit
-          npm install --global gatsby-cli
-          source ./start.sh && gatsby build --verbose
+          npx tsc --noEmit
+          source ./start.sh && npx gatsby build --verbose
