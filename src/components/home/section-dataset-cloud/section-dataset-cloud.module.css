@@ -6,7 +6,9 @@
  */
 
 /* Cards. */
-.sectionCards {
+/* Stats */
+.sectionCards,
+.datasetStats {
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr;
@@ -18,7 +20,9 @@
  */
 @media screen and (min-width: 480px) {
   /* Cards. */
-  .sectionCards {
+  /* Stats */
+  .sectionCards,
+  .datasetStats {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -28,8 +32,26 @@
  */
 @media screen and (min-width: 720px) {
   /* Cards. */
-  .sectionCards {
+  /* Stats */
+  .sectionCards,
+  .datasetStats {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/**
+ *  Small tablet landscape, small window
+ */
+@media screen and (min-width: 960px) {
+
+  /* Stats */
+  .datasetStats {
+    grid-template-columns: unset;
+    left: 50%;
+    max-width: 600px;
+    position: absolute;
+    top: 4rem;
+    width: calc(50vw - var(--gutter-x));
   }
 }
 

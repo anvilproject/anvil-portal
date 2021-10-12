@@ -17,23 +17,31 @@ import DatasetCard from "../dataset-card/dataset-card";
 import { DatasetCloudStaticQuery } from "../../../hooks/dataset-cloud-query";
 import Section from "../section/section";
 import SectionContent from "../section/section-content/section-content";
+import Stats from "../../stats/stats";
 
 // Styles
-import { sectionCards } from "./section-dataset-cloud.module.css";
+import { datasetStats, sectionCards } from "./section-dataset-cloud.module.css";
 
 const SectionDatasetCloud: FC = (): JSX.Element => {
   const datasetCards: ICard[] = DatasetCloudStaticQuery();
+
   return (
     <Section>
       <SectionContent>
         {/* Heading */}
         <>Access diverse, open and controlled access cloud-hosted datasets</>
         {/* Content */}
-        <div className={sectionCards}>
-          {datasetCards.map((datasetCard) => (
-            <DatasetCard key={datasetCard.title} datasetCard={datasetCard} />
-          ))}
-        </div>
+        <>
+          {/* Stats */}
+          <div className={datasetStats}>
+            <Stats />
+          </div>
+          <div className={sectionCards}>
+            {datasetCards.map((datasetCard) => (
+              <DatasetCard key={datasetCard.title} datasetCard={datasetCard} />
+            ))}
+          </div>
+        </>
         {/* CTAs */}
         <>
           <ButtonCta

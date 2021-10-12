@@ -14,7 +14,7 @@
 /* Section multiline. */
 .sectionMultiline {
   composes: section;
-  position: relative; /* Positions multiline. */
+  position: relative; /* Positions multiline. */ /* Positions dataset stats. */
 }
 
 /* Section with multiline. */

@@ -37,7 +37,8 @@ export function format(num, digitsConfig) {
   else if (!!digitsConfig) {
     digits = digitsConfig[symbol] || 0;
   }
-  return (num / si[i].value).toFixed(digits).replace(rx, "$1") + symbol;
+  // return (num / si[i].value).toFixed(digits).replace(rx, "$1") + symbol;
+  return Math.floor(num / si[i].value);
 }
 
 /**

@@ -35,4 +35,4 @@ const CarouselSlideshow: FC<Props> = ({ activeSlide, slides }): JSX.Element => {
   );
 };
 
-export default CarouselSlideshow;
+export default React.memo(CarouselSlideshow);
