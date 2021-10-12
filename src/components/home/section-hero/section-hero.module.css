@@ -9,12 +9,15 @@
 .heroMain {
   grid-column: 2  / 4;
   grid-row: 2;
+  text-align: center;
 }
 
 /* Sub Main (RHS). */
 .heroSubMain {
+  display: flex;
   grid-column: 2 / 4;
   grid-row: 3;
+  justify-content: center;
   margin-top: 44px;
 }
 
@@ -25,8 +28,8 @@
   font-size: 3rem; /* 48px */
   font-weight: 600;
   line-height: 4rem; /* 60px */
-  margin: 0 0 1.5rem; /* 24px */
-  max-width: 432px;
+  margin: 0 auto 1.5rem auto; /* 24px */
+  max-width: 600px;
 }
 
 /* Sub title. */
@@ -35,8 +38,7 @@
   font-family: "Open Sans", sans-serif;
   font-size: 1.25rem; /* 20px */
   line-height: 1.75rem; /* 28px */
-  margin: 0 0 1rem; /* 16px */
-  max-width: 390px;
+  margin: 0 0 1.75rem; /* 32px */
 }
 
 /* CTAs. */
@@ -44,6 +46,7 @@
   display: grid;
   gap: 16px;
   grid-template-columns: 190px;
+  justify-content: center;
 }
 
 /**
@@ -65,6 +68,13 @@
   /* Main. */
   .heroMain {
     grid-column: 2;
+    text-align: left;
+  }
+
+  /* Title. */
+  .heroTitle {
+    margin: 0 0 1.5rem; /* 24px */
+    max-width: 432px;
   }
 
   /* Sub Main (RHS). */
@@ -73,5 +83,16 @@
     grid-row: 2;
     justify-content: flex-end;
     margin-top: 0;
+  }
+
+  /* Sub title. */
+  .heroSubTitle {
+    margin: 0 0 1rem; /* 16px */
+    max-width: 390px;
+  }
+
+  /* CTAs. */
+  .heroCTAs {
+    justify-content: flex-start;
   }
 }

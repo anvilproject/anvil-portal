@@ -68,6 +68,7 @@
 /* Title - clamp */
 .cardTitle span {
   display: -webkit-box;
+  max-height: calc(4 * 1.75rem);
   -webkit-line-clamp: 4;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
@@ -136,6 +137,7 @@
 /* Sub title - clamp. */
 .cardSubTitle span {
   display: -webkit-box;
+  max-height: calc(3 * 1.125rem);
   -webkit-line-clamp: 3;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
@@ -155,6 +157,7 @@
 
   /* Title - clamp */
   .cardTitle span {
+    max-height: calc(3 * 1.75rem);
     -webkit-line-clamp: 3;
   }
 }
@@ -165,42 +168,23 @@
 @media screen and (min-width: 600px) {
   /* Slide */
   .slot {
-    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5), media (6), margin (7), sub title (8). */
-    grid-template-rows: 32px 3.5rem 12px 1.125rem 12px 182px 8px 2.25rem;
-  }
-
-  /* Title - clamp */
-  .cardTitle span {
-    -webkit-line-clamp: 2;
-  }
-
-  /* Sub title - clamp. */
-  .cardSubTitle span {
-    -webkit-line-clamp: 2;
-  }
-}
-
-/**
- * Large tablet portrait, large handset landscape, small window
- */
-@media screen and (min-width: 720px) {
-  /* Slide */
-  .slot {
+    border-top: none;
     grid-column-gap: 32px;
     grid-template-columns: 1fr 1fr; /* Columns are allocated equally: title (1), media (2). */
-    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7). */ /* Media (1 - 7). */
-    grid-template-rows: 32px 200px 12px 1.125rem 12px 8px 2.25rem;
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7), margin (8). */ /* Media (1 - 6). */
+    grid-template-rows: 32px 10.5rem 12px 1.125rem 12px 12px 2.25rem 16px;
+    padding: 0 24px;
   }
 
   /* Title */
   .cardTitle {
     grid-column: 1;
-    grid-row: 2;
   }
 
   /* Title - clamp */
   .cardTitle span {
-    -webkit-line-clamp: 7;
+    max-height: calc(6 * 1.75rem);
+    -webkit-line-clamp: 6;
   }
 
   /* Media frame. */
@@ -214,18 +198,16 @@
     grid-column: 1 / -1;
     grid-row: 7;
   }
-}
 
-/**
- * Optimized for home page channel.
- */
-@media screen and (min-width: 1200px) {
-  /* Slide */
-  .slot {
-    border-top: none;
-    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7), margin (8). */
-    grid-template-rows: 32px 12.25rem 12px 1.125rem 12px 8px 2.25rem 8px;
-    padding: 0 24px;
+  /* Divider. */
+  .cardSubTitle::before {
+    top: -13px;
+  }
+
+  /* Sub title - clamp. */
+  .cardSubTitle span {
+    max-height: calc(2 * 1.125rem);
+    -webkit-line-clamp: 2;
   }
 
   /* Media - landscape. */
@@ -236,5 +218,33 @@
   /* Media - portrait. */
   .cardMediaPortrait {
     display: block !important;
+  }
+}
+
+/**
+ * Large tablet portrait, large handset landscape, small window
+ */
+@media screen and (min-width: 720px) {
+  /* Slide */
+  .slot {
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7), margin (8). */ /* Media (1 - 6). */
+    grid-template-rows: 32px 12.15rem 12px 1.125rem 12px 12px 2.25rem 16px;
+  }
+
+  /* Title - clamp */
+  .cardTitle span {
+    max-height: calc(7 * 1.75rem);
+    -webkit-line-clamp: 7;
+  }
+}
+
+/**
+ * Optimized for home page channel.
+ */
+@media screen and (min-width: 1200px) {
+  /* Slide */
+  .slot {
+    /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5 & 6), sub title (7), margin (8). */
+    grid-template-rows: 32px 12.25rem 12px 1.125rem 12px 12px 2.25rem 16px;
   }
 }
