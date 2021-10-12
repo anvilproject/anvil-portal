@@ -15,7 +15,6 @@ import CarouselAction from "./carousel-action/carousel-action";
 import CarouselArrow from "./carousel-arrow/carousel-arrow";
 import CarouselBullets from "./carousel-bullets/carousel-bullets";
 import CarouselSlideshow from "./carousel-slideshow/carousel-slideshow";
-import { redirect } from "../../../utils/redirect.service";
 
 // Styles
 import { carousel, carouselBody } from "./carousel.module.css";
@@ -35,7 +34,6 @@ type CarouselActionState = CarouselAction;
 const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const initCoords = useRef<IEventCoordinates>({ x: 0, y: 0 });
   const [activeSlide, setActiveSlide] = useState<number>(0);
-  const [activeSlideUrl, setActiveSlideUrl] = useState<string>("/");
   const [slideAction, setSlideAction] = useState<CarouselActionState>(
     CarouselAction.NONE
   );
@@ -118,12 +116,10 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
         /* If the new index is greater than the number of possible slides, rotate to the start of the slide deck. */
         newIndex = 0;
       }
-      const newUrl = slides[newIndex].cardLink || "/";
       /* Set new rotation index. */
       setActiveSlide(newIndex);
-      setActiveSlideUrl(newUrl);
     },
-    [activeSlide, lastSlideIndex, slides]
+    [activeSlide, lastSlideIndex]
   );
 
   const onMouseDown = useCallback(
@@ -228,10 +224,9 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
       swipeToSlide(-1);
       setSlideAction(CarouselAction.NONE);
     } else if (slideAction === CarouselAction.SELECT) {
-      redirect(activeSlideUrl, "carousel");
       setSlideAction(CarouselAction.NONE);
     }
-  }, [activeSlideUrl, slideAction, swipeToSlide]);
+  }, [slideAction, swipeToSlide]);
 
   return (
     <div className={carousel}>

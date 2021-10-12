@@ -9,10 +9,13 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+// Styles
+import { timeline } from "./twitter-timeline.module.css";
+
 class TwitterTimeline extends React.Component {
   render() {
     return (
-      <>
+      <div className={timeline}>
         <a
           className="twitter-timeline"
           data-width="600"
@@ -28,7 +31,7 @@ class TwitterTimeline extends React.Component {
             charSet="utf-8"
           />
         </Helmet>
-      </>
+      </div>
     );
   }
 }

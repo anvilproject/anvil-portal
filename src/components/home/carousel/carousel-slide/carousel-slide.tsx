@@ -12,11 +12,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonCta from "../../../button-cta/button-cta";
 import { ICard } from "../../../card/card";
 
 // Styles
 import {
   active,
+  cardAction,
+  cardActions,
   cardMediaFrame,
   cardMediaLandscape,
   cardMediaPortrait,
@@ -31,7 +34,7 @@ interface Props {
 }
 
 const CarouselSlide: FC<Props> = ({ showSlide, slide }): JSX.Element => {
-  const { media, subTitle, title } = slide;
+  const { actions, media, subTitle, title } = slide;
   const { landscape, portrait } = media || {};
   const landscapeImg = landscape ? getImage(landscape) : undefined;
   const portraitImg = portrait ? getImage(portrait) : undefined;
@@ -40,6 +43,13 @@ const CarouselSlide: FC<Props> = ({ showSlide, slide }): JSX.Element => {
       <h3 className={cardTitle}>
         <span>{title}</span>
       </h3>
+      <span className={cardActions}>
+        {actions?.map(({ label, url }) => (
+          <ButtonCta attributeHREF={url || "/"} key={label}>
+            <span className={cardAction}>{label}</span>
+          </ButtonCta>
+        ))}
+      </span>
       <span className={cardMediaFrame}>
         {landscapeImg ? (
           <GatsbyImage
