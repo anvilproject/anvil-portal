@@ -22,7 +22,7 @@ slides:
     actions:
       - label: "Paper"
         url: "https://www.science.org/doi/10.1126/science.abe3261"
-      - label: "Workspace"
+      - label: "Learn More"
         url: "https://support.terra.bio/hc/en-us/articles/360041068771--COVID-19-workspaces-data-and-tools-in-Terra"
     media:
         landscape: _images/carousel-phylogenetic-analysis.png
@@ -32,7 +32,7 @@ slides:
     actions:
       - label: "Paper"
         url: "https://academic.oup.com/nar/article/49/W1/W624/6274534"
-      - label: "Workspace"
+      - label: "Learn More"
         url: "https://dockstore.org/"
     media:
         landscape: _images/carousel-dockstore-sharing-computational-protocols.png

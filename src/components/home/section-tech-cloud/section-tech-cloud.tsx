@@ -20,11 +20,14 @@ import TechCard from "../tech-card/tech-card";
 import { sectionCards } from "./section-tech-cloud.module.css";
 
 const SectionTechCloud: FC = (): JSX.Element => {
-  const techCards: ICard[] = TechCloudStaticQuery();
+  const frontmatter = TechCloudStaticQuery();
+  const techCards: ICard[] = frontmatter.technologies;
   return (
     <Section sectionType={SectionType.BANNER}>
       <SectionContent>
         {/* Heading */}
+        {null}
+        {/* Hero */}
         {null}
         {/* Content */}
         <div className={sectionCards}>

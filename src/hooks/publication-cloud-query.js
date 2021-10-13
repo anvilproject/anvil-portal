@@ -21,11 +21,12 @@ export const PublicationCloudStaticQuery = () => {
                 }
                 title
               }
+              sectionSubHeader
             }
           }
         }
       }
     `
   );
-  return allMarkdownRemark.nodes[0].frontmatter.publications;
+  return allMarkdownRemark.nodes[0].frontmatter;
 };

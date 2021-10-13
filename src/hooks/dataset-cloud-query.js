@@ -18,11 +18,12 @@ export const DatasetCloudStaticQuery = () => {
                 subTitle
                 title
               }
+              sectionSubHeader
             }
           }
         }
       }
     `
   );
-  return allMarkdownRemark.nodes[0].frontmatter.datasets;
+  return allMarkdownRemark.nodes[0].frontmatter;
 };

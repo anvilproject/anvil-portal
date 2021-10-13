@@ -10,6 +10,7 @@ export const WorkspaceCloudStaticQuery = () => {
         ) {
           nodes {
             frontmatter {
+              sectionSubHeader
               workspaces {
                 cardLink
                 text
@@ -26,5 +27,5 @@ export const WorkspaceCloudStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.nodes[0].frontmatter.workspaces;
+  return allMarkdownRemark.nodes[0].frontmatter;
 };

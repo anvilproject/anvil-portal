@@ -1,4 +1,5 @@
 ---
+sectionSubHeader: ""
 publications:
     - title: "A complete reference genome improves analysis of human genetic variation"
       cardLink: "https://www.biorxiv.org/content/10.1101/2021.07.12.452063v1"

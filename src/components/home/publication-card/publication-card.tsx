@@ -13,7 +13,12 @@ import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
 
 // Styles
-import { card, cardAction, cardCitation } from "./publication-card.module.css";
+import {
+  card,
+  cardAction,
+  publicationCitation,
+  publicationTitle,
+} from "./publication-card.module.css";
 
 interface ICitation {
   authors: string[];
@@ -47,42 +52,40 @@ const PublicationCard: FC<Props> = ({ publicationCard }): JSX.Element => {
     mouseEvent: MouseEvent<HTMLButtonElement>,
     showAllAuthors: boolean
   ): void => {
-    mouseEvent.preventDefault();
-    mouseEvent.stopPropagation();
     setFullCitation(showAllAuthors);
   };
 
   return (
     <div className={card}>
       <ButtonCta attributeHREF={cardLink || "/"}>
-        <span>{title}</span>
-        <span className={cardCitation}>
-          <span> - {authorsAsString}</span>
-          {fullCitation ? <span>.</span> : <span>, et al.</span>}
-          <span> ({year}).</span>
-          <span> {journal}.</span>
-          <span> doi: {doi}</span>
-          <span>.</span>
-          {showLess ? (
-            <button
-              className={cardAction}
-              onClick={(e) => onHandleShowCitation(e, false)}
-              type="button"
-            >
-              [Show less]
-            </button>
-          ) : null}
-          {showMore ? (
-            <button
-              className={cardAction}
-              onClick={(e) => onHandleShowCitation(e, true)}
-              type="button"
-            >
-              [Show more]
-            </button>
-          ) : null}
+        <span className={publicationTitle}>{title}</span>
+        <span className={publicationCitation}>
+          <span>
+            {" "}
+            - {authorsAsString}
+            {fullCitation ? "." : ","}
+            {fullCitation ? null : " et al."} ({year}). {journal}. {doi}.
+          </span>
         </span>
       </ButtonCta>
+      {showLess ? (
+        <button
+          className={cardAction}
+          onClick={(e) => onHandleShowCitation(e, false)}
+          type="button"
+        >
+          [Show less]
+        </button>
+      ) : null}
+      {showMore ? (
+        <button
+          className={cardAction}
+          onClick={(e) => onHandleShowCitation(e, true)}
+          type="button"
+        >
+          [Show more]
+        </button>
+      ) : null}
     </div>
   );
 };

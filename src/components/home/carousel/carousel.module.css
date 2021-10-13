@@ -10,7 +10,7 @@
 .carousel {
   align-items: center;
   display: flex;
-  gap: 24px; /* Between arrows and carousel body. */
+  gap: 8px; /* Between arrows and carousel body. */
 }
 
 /* Carousel body - rotation container */
@@ -18,4 +18,25 @@
   display: grid;
   flex: 1;
   gap: 16px; /* Between slideshow and bullets. */
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1024px) {
+  /* Carousel */
+  .carousel {
+    position: relative; /* Relative to self. */
+    top: 8px;
+  }
+}
+
+/**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1200px) {
+  /* Carousel */
+  .carousel {
+    gap: 24px; /* Between arrows and carousel body. */
+  }
 }

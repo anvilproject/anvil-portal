@@ -447,6 +447,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         hashtag: String @hashtag
         location: String
         publications: [Card]
+        sectionSubHeader: String
         sessions: [Session]
         sessionsDisplay: [String] @sessionsDisplay
         showOutline: Boolean @showOutline

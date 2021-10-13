@@ -19,10 +19,12 @@ import Section from "../section/section";
 import SectionContent from "../section/section-content/section-content";
 
 // Styles
-import { sectionCards } from "./section-benefit-cloud.module.css";
+import { sectionCards, sectionHero } from "./section-benefit-cloud.module.css";
 
 const SectionBenefitCloud: FC = (): JSX.Element => {
-  const cards: ICard[] = BenefitCloudStaticQuery();
+  const frontmatter = BenefitCloudStaticQuery();
+  const hero = frontmatter.sectionSubHeader;
+  const cards: ICard[] = frontmatter.benefits;
   return (
     <Section>
       <SectionContent>
@@ -31,6 +33,8 @@ const SectionBenefitCloud: FC = (): JSX.Element => {
           Collaborate in a secure, cost-effective, scalable cloud-based
           environment
         </>
+        {/* Hero */}
+        {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
         {/* Content */}
         <div className={sectionCards}>
           {cards.map((card) => (

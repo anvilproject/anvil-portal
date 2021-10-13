@@ -22,12 +22,12 @@
 /* Content - default LHS. */
 .sectionContent,
 .sectionContentLeft {
-  grid-row: 3;
+  grid-row: 4;
 }
 
 /* Content - default RHS. */
 .sectionContentRight {
-  grid-row: 4;
+  grid-row: 5;
 }
 
 /* Content - default full width. */
@@ -36,7 +36,7 @@
 .sectionContent,
 .sectionContentLeft,
 .sectionContentRight {
-  grid-column: 2 / 4;
+  grid-column: 2 / -2;
 }
 
 /* Content - default RHS. */
@@ -134,7 +134,7 @@
   /* Frames section content within RHS tile. */
   .sectionContentRight {
     grid-column: 3;
-    grid-row: 3;
+    grid-row: 4;
     margin-left: 20px; /* Matches gap between CTAs. */
     margin-top: 0;
   }
