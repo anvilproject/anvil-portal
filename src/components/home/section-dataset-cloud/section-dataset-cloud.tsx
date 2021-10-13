@@ -30,7 +30,7 @@ const SectionDatasetCloud: FC = (): JSX.Element => {
     <Section>
       <SectionContent>
         {/* Heading */}
-        <>Access diverse, open and controlled access cloud-hosted datasets</>
+        <>Access diverse, open and controlled access, cloud-hosted datasets</>
         {/* Hero - Stats */}
         <div className={datasetStats}>
           <Stats />

@@ -36,7 +36,7 @@ const SectionHero: FC = (): JSX.Element => {
           Migrate Your Genomic Research to the Cloud
         </div>
         <div className={heroSubTitle}>
-          Secure, cost-effective, genomic analysis at scale.
+          Secure, cost-effective genomic analysis at scale.
         </div>
         <div className={heroCTAs}>
           <ButtonCta

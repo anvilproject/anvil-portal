@@ -30,7 +30,7 @@ const SectionBenefitCloud: FC = (): JSX.Element => {
       <SectionContent>
         {/* Heading */}
         <>
-          Collaborate in a secure, cost-effective, scalable cloud-based
+          Collaborate in a secure, cost-effective, scalable, cloud-based
           environment
         </>
         {/* Hero */}

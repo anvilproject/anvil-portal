@@ -6,7 +6,7 @@ technologies:
         url: "https://anvil.terra.bio/#workspaces"
       - label: "Learn More"
         url: "/learn/introduction/intro-to-terra"
-    text: "Secure, scalable cloud compute environment."
+    text: "Collaborate in Terra, AnVIL's secure, scalable, cloud compute environment."
     thumbnail: _images/terra.png
   - title: "Gen3"
     actions:
@@ -14,7 +14,7 @@ technologies:
         url: "https://gen3.theanvil.io/"
       - label: "Learn More"
         url: "/learn/introduction/getting-started-with-gen3"
-    text: "Manage, harmonize and share large datasets."
+    text: "Manage, harmonize, and share large datasets."
     thumbnail: _images/gen3.png
   - title: "Dockstore"
     actions:
@@ -22,7 +22,7 @@ technologies:
         url: "https://dockstore.org/"
       - label: "Learn More"
         url: "/learn/introduction/intro-to-dockstore"
-    text: "Create and, share Docker-based workflows."
+    text: "Create and share Docker-based workflows."
     thumbnail: _images/dockstore.png
   - title: "NCPI"
     actions:
@@ -40,13 +40,13 @@ technologies:
     actions:
       - label: "Learn More"
         url: "/learn/interactive-analysis/getting-started-with-galaxy"
-    text: "Batch analysis worklows and interactive visualizations."
+    text: "Run batch analysis workflows and interactive visualizations."
     thumbnail: _images/galaxy.png
   - title: "Jupyter"
     actions:
       - label: "Learn More"
         url: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks"
-    text: "Interactive analysis with python or R."
+    text: "Run interactive analysis with python or R."
     thumbnail: _images/jupyter.png
   - title: "Seqr"
     actions:
@@ -54,6 +54,6 @@ technologies:
         url: "https://support.terra.bio/hc/en-us/articles/4402431367949-Launching-seqr-through-Terra"
       - label: "Learn More"
         url: "/news/2021/03/10/announcing-seqr-in-anvil/"
-    text: "Identify disease causing variants."
+    text: "Identify disease-causing variants."
     thumbnail: _images/seqr.png
 ---

@@ -32,7 +32,7 @@ const SectionWorkspaceCloud: FC = (): JSX.Element => {
     <Section>
       <SectionContent>
         {/* Heading */}
-        <>Create, share and reuse reproducible analysis workspaces</>
+        <>Create, share, and reuse reproducible analysis workspaces</>
         {/* Hero */}
         {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
         {/* Content */}
