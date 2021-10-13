@@ -18,10 +18,12 @@ import SectionContent from "../section/section-content/section-content";
 import SectionContentPosition from "../section/section-content-position/section-content-position";
 
 // Styles
-import { sectionCards } from "./section-publication.module.css";
+import { sectionCards, sectionHero } from "./section-publication.module.css";
 
 const SectionPublication: FC = (): JSX.Element => {
-  const publicationCards: IPublicationCard[] = PublicationCloudStaticQuery();
+  const frontmatter = PublicationCloudStaticQuery();
+  const hero = frontmatter.sectionSubHeader;
+  const publicationCards: IPublicationCard[] = frontmatter.publications;
   /* Divide the publications in half - and display on the LHS and RHS of the section. */
   const half = Math.ceil(publicationCards.length / 2);
 
@@ -31,6 +33,8 @@ const SectionPublication: FC = (): JSX.Element => {
       <SectionContent position={SectionContentPosition.DEFAULT_LEFT}>
         {/* Heading */}
         <>Recent Publications</>
+        {/* Hero */}
+        {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
         {/* Content */}
         <div className={sectionCards}>
           {publicationCards.slice(0, half).map((card) => (
@@ -44,9 +48,11 @@ const SectionPublication: FC = (): JSX.Element => {
       <SectionContent position={SectionContentPosition.DEFAULT_RIGHT}>
         {/* Heading */}
         {null}
+        {/* Hero */}
+        {null}
         {/* Content */}
         <div className={sectionCards}>
-          {publicationCards.slice(-half).map((card) => (
+          {publicationCards.slice(half).map((card) => (
             <PublicationCard key={card.title} publicationCard={card} />
           ))}
         </div>

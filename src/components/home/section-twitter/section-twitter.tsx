@@ -21,6 +21,8 @@ const SectionTwitter: FC = (): JSX.Element => {
       <SectionContent position={SectionContentPosition.DEFAULT_FULL_WIDTH}>
         {/* Heading */}
         <>Join the Conversation</>
+        {/* Hero */}
+        {null}
         {/* Content */}
         <TwitterTimeline />
         {/* CTAs */}

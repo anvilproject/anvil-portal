@@ -14,11 +14,12 @@ export const BenefitCloudStaticQuery = () => {
                 text
                 title
               }
+              sectionSubHeader
             }
           }
         }
       }
     `
   );
-  return allMarkdownRemark.nodes[0].frontmatter.benefits;
+  return allMarkdownRemark.nodes[0].frontmatter;
 };

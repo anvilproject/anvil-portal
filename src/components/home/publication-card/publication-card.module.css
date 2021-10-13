@@ -8,12 +8,27 @@
 /* Card. */
 .card {
   font-family: "Open Sans", sans-serif;
+}
+
+/* Title. */
+/* Citation. */
+/* Action. */
+.publicationTitle,
+.publicationCitation,
+.cardAction {
+  font-family: inherit;
+  line-height: 1.5rem; /* 24px. */
+}
+
+/* Title. */
+.publicationTitle {
   font-size: 1.125rem; /* 18px. */
-  line-height: 1.25rem; /* 20px. */
 }
 
 /* Citation. */
-.cardCitation {
+/* Action. */
+.publicationCitation,
+.cardAction {
   font-size: 0.75rem; /* 12px. */
 }
 
@@ -23,7 +38,7 @@
   background-color: transparent;
   color: var(--primary);
   cursor: pointer;
-  display: inline-block;
+  display: block;
   margin: 0;
-  padding: 0 6px;
+  padding: 0;
 }

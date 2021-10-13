@@ -61,6 +61,42 @@
 }
 
 /**
+ * Large tablet portrait, large tablet landscape, medium window.
+ */
+@media screen and (min-width: 1024px) {
+  /* Main. */
+  .heroMain {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  /* Title. */
+  .heroTitle {
+    margin: 0 0 1.5rem; /* 24px */
+    max-width: 432px;
+  }
+
+  /* Sub Main (RHS). */
+  .heroSubMain {
+    align-self: center;
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 0;
+  }
+
+  /* Sub title. */
+  .heroSubTitle {
+    margin: 0 0 1rem; /* 16px */
+    max-width: 390px;
+  }
+
+  /* CTAs. */
+  .heroCTAs {
+    justify-content: flex-start;
+  }
+}
+
+/**
  * Optimized for home page channel.
  */
 @media screen and (min-width: 1200px) {

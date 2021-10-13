@@ -30,7 +30,7 @@ const SectionContent: FC<Props> = ({
   children,
   position = SectionContentPosition.DEFAULT_FULL_WIDTH,
 }): JSX.Element => {
-  const [heading, content, callToActions] = children;
+  const [heading, hero, content, callToActions] = children;
   let sectionContentClassName = sectionContent;
   if (position === SectionContentPosition.DEFAULT_LEFT) {
     sectionContentClassName = sectionContentLeft;
@@ -45,6 +45,8 @@ const SectionContent: FC<Props> = ({
     <>
       {/* Heading */}
       {heading ? <h2 className={sectionHeading}>{heading}</h2> : null}
+      {/* Hero */}
+      {hero || null}
       {/* DEFAULT_FULL_WIDTH content: consumes all available content width. */}
       {/* DEFAULT_LEFT & DEFAULT_RIGHT & MEDIA_RIGHT: consume 50% available content width. */}
       <div className={sectionContentClassName}>

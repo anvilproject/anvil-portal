@@ -10,6 +10,8 @@
   display: grid;
   gap: 48px;
   grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: 75%;
 }
 
 /**
@@ -19,6 +21,7 @@
   /* Cards. */
   .sectionCards {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
   }
 }
 
@@ -29,6 +32,7 @@
   /* Cards. */
   .sectionCards {
     grid-template-columns: repeat(3, 1fr);
+    max-width: unset;
   }
 }
 

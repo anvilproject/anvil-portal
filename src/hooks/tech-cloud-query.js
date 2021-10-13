@@ -10,6 +10,7 @@ export const TechCloudStaticQuery = () => {
         ) {
           nodes {
             frontmatter {
+              sectionSubHeader
               technologies {
                 actions {
                   label
@@ -29,5 +30,5 @@ export const TechCloudStaticQuery = () => {
       }
     `
   );
-  return allMarkdownRemark.nodes[0].frontmatter.technologies;
+  return allMarkdownRemark.nodes[0].frontmatter;
 };

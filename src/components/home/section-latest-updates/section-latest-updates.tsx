@@ -32,6 +32,8 @@ const SectionLatestUpdates: FC = (): JSX.Element => {
       <SectionContent position={SectionContentPosition.DEFAULT_LEFT}>
         {/* Heading */}
         <>Latest updates, training events and workshops</>
+        {/* Hero */}
+        {null}
         {/* Content */}
         <>
           <h3 className={sectionCardHeading}>News</h3>
@@ -53,6 +55,8 @@ const SectionLatestUpdates: FC = (): JSX.Element => {
       {/* Section Content - RHS. */}
       <SectionContent position={SectionContentPosition.DEFAULT_RIGHT}>
         {/* Heading */}
+        {null}
+        {/* Hero */}
         {null}
         {/* Content */}
         <>

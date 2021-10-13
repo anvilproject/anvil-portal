@@ -19,15 +19,22 @@ import SectionContent from "../section/section-content/section-content";
 import WorkspaceCard from "../workspace-card/workspace-card";
 
 // Styles
-import { sectionCards } from "./section-workspace-cloud.module.css";
+import {
+  sectionCards,
+  sectionHero,
+} from "./section-workspace-cloud.module.css";
 
 const SectionWorkspaceCloud: FC = (): JSX.Element => {
-  const workspaceCards: ICard[] = WorkspaceCloudStaticQuery();
+  const frontmatter = WorkspaceCloudStaticQuery();
+  const hero = frontmatter.sectionSubHeader;
+  const workspaceCards: ICard[] = frontmatter.workspaces;
   return (
     <Section>
       <SectionContent>
         {/* Heading */}
         <>Create, share and reuse reproducible analysis workspaces</>
+        {/* Hero */}
+        {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
         {/* Content */}
         <div className={sectionCards}>
           {workspaceCards.map((workspaceCard) => (

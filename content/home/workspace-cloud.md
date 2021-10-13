@@ -1,4 +1,5 @@
 ---
+sectionSubHeader: "Workspaces aggregate data and analysis methods. Start quickly from an existing workspace and customize it to your needs."
 workspaces:
     - title: "GATK - Best practices for somatic CNV discovery"
       cardLink: "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4"

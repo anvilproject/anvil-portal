@@ -21,8 +21,12 @@
 
 /* Thumbnail. */
 .cardThumbnail {
+  background-color: var(--shade-light);
+  border-radius: 50%;
+  height: 40px; /* Placeholder. */
   position: relative;
   top: 4px;
+  width: 40px; /* Placeholder. */
 }
 
 /* Title. */
