@@ -53,7 +53,7 @@ datasets:
         url: "https://sites.google.com/ucsc.edu/t2tworkinggroup"
       - label: "Datasets"
         url: "/data?query=consortium%3DT2T"
-    subTitle: "Telomere to Telomere title"
+    subTitle: "Telomere-to-Telomere"
   - title: "Convergent Neuro"
     actions:
       - label: "Datasets"
