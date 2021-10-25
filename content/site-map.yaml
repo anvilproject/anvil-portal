@@ -432,6 +432,8 @@
           file: "/ncpi/platforms/crdc"
         - name: "NIH Common Fund - Kids First Data Resource Center"
           file: "/ncpi/platforms/kf"
+        - name: "NCBI - National Center for Biotechnology Information"
+          file: "/ncpi/platforms/ncbi"
 
 ### NCPI Policy
 - menuItem: "Technologies"
