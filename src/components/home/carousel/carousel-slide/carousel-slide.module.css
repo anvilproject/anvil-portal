@@ -61,9 +61,10 @@
   font-size: 1.25rem; /* 20px. */
   font-weight: 600;
   grid-row: 2;
-  height: calc(4 * 1.75rem);
   line-height: 1.75rem; /* 28px. */
   margin: 0;
+  opacity: 1; /* Required. To be used with visibility visible. Reduces card text "noise" during slideshow change over. */
+  visibility: visible; /* Required. See https://bugs.webkit.org/show_bug.cgi?id=207013. */
 }
 
 /* Title - clamp */
@@ -119,9 +120,10 @@
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem; /* 14px. */
   grid-row: 8;
-  height: calc(3 * 1.125rem);
   line-height: 1.125rem; /* 18px. */
   position: relative; /* Positions divider. */
+  opacity: 1; /* Required. To be used with visibility visible. Reduces card text "noise" during slideshow change over. */
+  visibility: visible; /* Required. See https://bugs.webkit.org/show_bug.cgi?id=207013. */
 }
 
 /* Divider. */
@@ -144,6 +146,13 @@
   overflow: hidden;
 }
 
+/* Title - inactive. */
+/* Sub title - inactive. */
+.slot:not(.active) .cardTitle,
+.slot:not(.active) .cardSubTitle {
+  opacity: 0; /* Required. Reduces card text "noise" during slideshow change over. */
+}
+
 /**
  * Large handset portrait, extra small window
  * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
@@ -153,11 +162,6 @@
   .slot {
     /* Rows are allocated in the following order: margin (1), title (2), margin (3), actions (4), margin (5), media (6), margin (7), sub title (8). */
     grid-template-rows: 32px 5.25rem 12px 1.125rem 12px 182px 8px 3.375rem;
-  }
-
-  /* Title */
-  .cardTitle {
-    height: calc(3 * 1.75rem);
   }
 
   /* Title - clamp */
@@ -183,7 +187,6 @@
   /* Title */
   .cardTitle {
     grid-column: 1;
-    height: calc(5 * 1.75rem);
   }
 
   /* Title - clamp */
@@ -201,7 +204,6 @@
   .cardSubTitle {
     grid-column: 1 / -1;
     grid-row: 7;
-    height: calc(2 * 1.125rem);
   }
 
   /* Divider. */
