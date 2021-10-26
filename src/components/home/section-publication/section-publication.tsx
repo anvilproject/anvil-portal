@@ -9,16 +9,24 @@
 import React, { FC } from "react";
 
 // App dependencies
+import ButtonSize from "../../button/button-size";
+import ButtonTheme from "../../button/button-theme";
+import ButtonCta from "../../button-cta/button-cta";
 import { PublicationCloudStaticQuery } from "../../../hooks/publication-cloud-query";
 import PublicationCard, {
   IPublicationCard,
 } from "../publication-card/publication-card";
 import Section from "../section/section";
+import SectionAddendum from "../section/section-addendum/section-addendum";
 import SectionContent from "../section/section-content/section-content";
 import SectionContentPosition from "../section/section-content-position/section-content-position";
 
 // Styles
-import { sectionCards, sectionHero } from "./section-publication.module.css";
+import {
+  sectionCards,
+  sectionCTA,
+  sectionHero,
+} from "./section-publication.module.css";
 
 const SectionPublication: FC = (): JSX.Element => {
   const frontmatter = PublicationCloudStaticQuery();
@@ -59,6 +67,18 @@ const SectionPublication: FC = (): JSX.Element => {
         {/* CTAs */}
         {null}
       </SectionContent>
+      {/* Section Addendum */}
+      <SectionAddendum>
+        <div className={sectionCTA}>
+          <ButtonCta
+            attributeHREF="/overview/cite-anvil"
+            buttonSize={ButtonSize.LARGE}
+            buttonTheme={ButtonTheme.SECONDARY}
+          >
+            Cite AnVIL
+          </ButtonCta>
+        </div>
+      </SectionAddendum>
     </Section>
   );
 };

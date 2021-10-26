@@ -21,3 +21,8 @@
   gap: 32px;
   grid-template-rows: 1fr;
 }
+
+/* CTA. */
+.sectionCTA {
+  composes: sectionCTAs from "../section/section-content/section-content.module.css";
+}
