@@ -11,7 +11,29 @@
   gap: 48px;
   grid-template-columns: 1fr;
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 100%;
+}
+
+/**
+ * Extra Small Handset +
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 375px) {
+  /* Cards. */
+  .sectionCards {
+    max-width: 85%;
+  }
+}
+
+/**
+ * Large handset portrait, extra small window
+ * https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+@media screen and (min-width: 480px) {
+  /* Cards. */
+  .sectionCards {
+    max-width: 75%;
+  }
 }
 
 /**
