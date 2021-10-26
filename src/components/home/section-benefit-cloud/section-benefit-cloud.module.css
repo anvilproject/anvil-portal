@@ -7,12 +7,7 @@
 
 /* Hero. */
 .sectionHero {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
-  grid-column: 2;
-  grid-row: 3;
-  line-height: 1.75rem;
-  margin: 0 0 32px;
+  composes: sectionHero from "../section/section-content/section-content.module.css";
 }
 
 /* Cards. */

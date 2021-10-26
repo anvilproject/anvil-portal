@@ -18,6 +18,20 @@
   padding: 0;
 }
 
+/* Hero. */
+.sectionHero {
+  grid-column: 2 / -2;
+  grid-row: 3;
+}
+
+/* Hero <h4>. */
+h4.sectionHero {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin: 0 0 32px;
+}
+
 /* Content - default full width. */
 /* Content - default LHS. */
 .sectionContent,
@@ -120,6 +134,11 @@
 @media screen and (min-width: 960px) {
   /* Heading. */
   .sectionHeading {
+    grid-column: 2;
+  }
+
+  /* Hero. */
+  .sectionHero {
     grid-column: 2;
   }
 
