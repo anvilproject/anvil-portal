@@ -44,5 +44,5 @@
 /* Main (default styles). */
 .sectionMain {
   composes: sectionMultiline;
-  grid-template-rows: 4rem repeat(4, auto) 4rem; /* Caters for padding 60px (1), heading (2), hero (3), content (4) [DEFAULT_FULL_WIDTH, DEFAULT_LEFT], content (5) [DEFAULT_RIGHT, MEDIA_RIGHT], padding 60px (6). */ /* Any auto row with unspecified content collapses. */
+  grid-template-rows: 4rem repeat(5, auto) 4rem; /* Caters for padding 60px (1), heading (2), hero (3), content (4) [DEFAULT_FULL_WIDTH, DEFAULT_LEFT], content (5) [DEFAULT_RIGHT, MEDIA_RIGHT], addendum (6), padding 60px (7). */ /* Any auto row with unspecified content collapses. */
 }
