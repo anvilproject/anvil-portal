@@ -12,6 +12,7 @@
   color: var(--white);
   padding: 24px 0;
   position: sticky;
+  z-index: 1000;
 }
 
 /* Container */
