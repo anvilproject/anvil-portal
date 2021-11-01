@@ -110,9 +110,10 @@ async function fetchStudyAccession(studyId) {
   const response = await fetch(url);
   const status = response.status;
   const redirected = response.redirected;
+  const responseUrl = response.url || "";
 
   /* Cache and return the study accession, taken from the redirected url. */
-  if (redirected && status === 200) {
+  if (redirected && status === 200 && responseUrl.startsWith(studyPath)) {
     const regex = /.*?study_id=/gi;
     const studyAccession = response.url.replace(regex, "");
     await cacheDBGAP(studyId, studyAccession);
