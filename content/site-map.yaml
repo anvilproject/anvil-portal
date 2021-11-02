@@ -485,6 +485,8 @@
           pathOverride: "/ncpi/training"
         - name: "Train Your Colleague"
           file: "/ncpi/training/2020-03-17-train-your-colleague"
+        - name: "Cloud Cost Estimation"
+          file: "/ncpi/training/cloud-cost-estimation"
 ## News
 - menuItem: "News"
   pageTitle: "News"
