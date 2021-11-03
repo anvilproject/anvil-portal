@@ -124,6 +124,7 @@ module.exports = {
                 "internal-link",
                 "news",
                 "platforms",
+                "publications",
                 "site-search",
                 "socials",
                 "social-link",

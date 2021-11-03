@@ -26,6 +26,7 @@ import HeroTutorial from "../hero-tutorial/hero-tutorial";
 import InternalLink from "../internal-link/internal-link";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
+import Publications from "../publications/publications";
 import SiteSearch from "../site-search/site-search";
 import Socials from "../socials/socials";
 import SocialLink from "../socials/social-link/social-link";
@@ -65,6 +66,7 @@ function Markdown(props) {
       "internal-link": InternalLink,
       news: News,
       platforms: Platforms,
+      publications: Publications,
       "site-search": SiteSearch,
       socials: Socials,
       "social-link": SocialLink,

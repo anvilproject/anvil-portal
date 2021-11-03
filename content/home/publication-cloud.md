@@ -3,6 +3,7 @@ sectionSubHeader: ""
 publications:
     - title: "A complete reference genome improves analysis of human genetic variation"
       cardLink: "https://www.biorxiv.org/content/10.1101/2021.07.12.452063v1"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Sergey Aganezov"
@@ -44,6 +45,7 @@ publications:
         year: "2021"
     - title: "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)"
       cardLink: "https://www.biorxiv.org/content/10.1101/2021.04.22.436044v1"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Michael C. Schatz"
@@ -81,6 +83,7 @@ publications:
         year: "2021"
     - title: "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events"
       cardLink: "https://www.science.org/doi/10.1126/science.abe3261"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Jacob E. Lemieux"
@@ -142,6 +145,7 @@ publications:
         year: "2021"
     - title: "The Dockstore: enhancing a community platform for sharing reproducible and accessible computational protocols"
       cardLink: "https://academic.oup.com/nar/article/49/W1/W624/6274534"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Denis Yuen"
@@ -168,6 +172,7 @@ publications:
         year: "2021"
     - title: "Orchestrating single-cell analysis with Bioconductor"
       cardLink: "https://www.nature.com/articles/s41592-019-0654-x"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Robert A. Amezquita"
@@ -193,6 +198,7 @@ publications:
         year: "2020"
     - title: "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2020 update"
       cardLink: "https://academic.oup.com/nar/article/48/W1/W395/5849904"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Vahid Jalili"
@@ -209,6 +215,7 @@ publications:
         year: "2020"
     - title: "Parliament2: Accurate structural variant calling at scale"
       cardLink: "https://academic.oup.com/gigascience/article/9/12/giaa145/6042728?login=true"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Samantha Zarate"
@@ -227,6 +234,7 @@ publications:
         year: "2020"
     - title: "Centers for Mendelian Genomics: A decade of facilitating gene discovery"
       cardLink: "https://www.medrxiv.org/content/10.1101/2021.08.24.21261656v1.full"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Samantha M. Baxter"
@@ -263,6 +271,7 @@ publications:
         year: "2021"
     - title: "The Need for a Human Pangenome Reference Sequence"
       cardLink: "https://www.annualreviews.org/doi/10.1146/annurev-genom-120120-081921"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Karen H. Miga"
@@ -273,6 +282,7 @@ publications:
         year: "2021"
     - title: "Error correction enables use of Oxford Nanopore technology for reference-free transcriptome analysis"
       cardLink: "https://www.nature.com/articles/s41467-020-20340-8"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Kristoffer Sahlin"
@@ -283,6 +293,7 @@ publications:
         year: "2021"
     - title: "Cloud bursting galaxy: federated identity and access management"
       cardLink: "https://academic.oup.com/bioinformatics/article/36/1/1/5514039"
+      category: "ON_ANVIL"
       citation:
         authors:
             - "Vahid Jalili"

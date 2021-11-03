@@ -57,12 +57,13 @@ const ButtonCta: FC<Props> = ({
 }): JSX.Element => {
   /* Determine the type of navigation to be used by the call to action. */
   const navigationType = getNavigationMethod(attributeHREF);
-  const buttonClassNames = classNames({
-    [button]: buttonTheme !== ButtonTheme.NONE,
-    [large]: buttonSize === ButtonSize.LARGE,
-    [primary]: buttonTheme === ButtonTheme.PRIMARY,
-    [secondary]: buttonTheme === ButtonTheme.SECONDARY,
-  });
+  const buttonClassNames =
+    classNames({
+      [button]: buttonTheme !== ButtonTheme.NONE,
+      [large]: buttonSize === ButtonSize.LARGE,
+      [primary]: buttonTheme === ButtonTheme.PRIMARY,
+      [secondary]: buttonTheme === ButtonTheme.SECONDARY,
+    }) || undefined;
 
   if (navigationType === ButtonCtaNavigationMethod.GATSBY_LINK) {
     return (

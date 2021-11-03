@@ -423,6 +423,9 @@ exports.createSchemaCustomization = ({ actions }) => {
         thumbnail: File @fileByRelativePath
         title: String
     }
+    extend type Card {
+        category: String
+    }
     type CardAction {
         label: String
         url: String

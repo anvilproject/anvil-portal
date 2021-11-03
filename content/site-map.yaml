@@ -389,6 +389,8 @@
           file: "/overview/security"
         - name: "Supported by NHGRI"
           file: "/overview/project-sponsor"
+        - name: "Publications"
+          file: "/overview/publications"
         - name: "Citing AnVIL"
           file: "/overview/cite-anvil"
 ## NCPI
