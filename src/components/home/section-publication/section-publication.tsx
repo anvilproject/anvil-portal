@@ -43,32 +43,18 @@ const SectionPublication: FC = (): JSX.Element => {
         {/* Heading */}
         <>Recent Publications</>
         {/* Hero */}
-        {hero ? (
-          <div className={sectionHero}>
-            <h4>{hero}</h4>
-            <div className={publicationCTA}>
-              <ButtonCta
-                attributeHREF="https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md"
-                buttonSize={ButtonSize.LARGE}
-                buttonTheme={ButtonTheme.PRIMARY}
-              >
-                Add Your Publication
-              </ButtonCta>
-            </div>
+        <div className={sectionHero}>
+          {hero ? <h4>{hero}</h4> : null}
+          <div className={publicationCTA}>
+            <ButtonCta
+              attributeHREF="https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md"
+              buttonSize={ButtonSize.LARGE}
+              buttonTheme={ButtonTheme.PRIMARY}
+            >
+              Add Your Publication
+            </ButtonCta>
           </div>
-        ) : (
-          <div className={sectionHero}>
-            <div className={publicationCTA}>
-              <ButtonCta
-                attributeHREF="https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md"
-                buttonSize={ButtonSize.LARGE}
-                buttonTheme={ButtonTheme.PRIMARY}
-              >
-                Add Your Publication
-              </ButtonCta>
-            </div>
-          </div>
-        )}
+        </div>
         {/* Content */}
         <div className={sectionCards}>
           {publicationCards.slice(0, half).map((card) => (
