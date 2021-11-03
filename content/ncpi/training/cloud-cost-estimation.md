@@ -1,11 +1,9 @@
 ---
-description: "Information about cloud cost estimates from the four NCPI resources."
+description: "NCPI Resources for Cloud Cost estimation."
 title: "Cloud Cost Estimation"
 ---
 
 # NCPI Resources for Cloud Cost estimation
-
-The purpose of this document is to aggregate information about cloud cost estimates from the four NCPI resources. Once this information is gathered, it will be posted on the NCPI Portal.
 
 ## AnVIL
 
