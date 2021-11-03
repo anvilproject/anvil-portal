@@ -21,19 +21,24 @@ import Stats from "../../stats/stats";
 
 // Styles
 import { datasetStats, sectionCards } from "./section-dataset-cloud.module.css";
+import { sectionHero } from "../section-workspace-cloud/section-workspace-cloud.module.css";
 
 const SectionDatasetCloud: FC = (): JSX.Element => {
   const frontmatter = DatasetCloudStaticQuery();
   const datasetCards: ICard[] = frontmatter.datasets;
+  const hero = frontmatter.sectionSubHeader;
 
   return (
     <Section>
       <SectionContent>
         {/* Heading */}
         <>Access diverse, open and controlled access, cloud-hosted datasets</>
-        {/* Hero - Stats */}
-        <div className={datasetStats}>
-          <Stats />
+        {/* Hero */}
+        <div className={sectionHero}>
+          <div className={datasetStats}>
+            <Stats />
+          </div>
+          {hero ? <h4>{hero}</h4> : null}
         </div>
         {/* Content */}
         <>

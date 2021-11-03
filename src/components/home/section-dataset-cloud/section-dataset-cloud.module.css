@@ -5,12 +5,6 @@
  * Style definitions specific to The AnVIL section dataset cloud.
  */
 
-/* Stats */
-.datasetStats {
-  grid-column: 2 / -2;
-  grid-row: 3;
-}
-
 /* Cards. */
 /* Stats */
 .sectionCards,
@@ -52,8 +46,6 @@
 
   /* Stats */
   .datasetStats {
-    grid-column: unset;
-    grid-row: unset;
     grid-template-columns: unset;
     left: 50%;
     max-width: 600px;

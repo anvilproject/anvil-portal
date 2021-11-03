@@ -15,6 +15,7 @@ import ButtonCta from "../../button-cta/button-cta";
 import EventCard, { IEventCard } from "../event-card/event-card";
 import { EventCloudStaticQuery } from "../../../hooks/event-cloud-query";
 import { NewsCloudStaticQuery } from "../../../hooks/news-cloud-query";
+import { UpdateCloudStaticQuery } from "../../../hooks/update-cloud-query";
 import NewsCard, { INewsCard } from "../news-card/news-card";
 import Section from "../section/section";
 import SectionContent from "../section/section-content/section-content";
@@ -22,10 +23,14 @@ import SectionContentPosition from "../section/section-content-position/section-
 
 // Styles
 import { sectionCardHeading } from "./section-lastest-updates.module.css";
+import { sectionHero } from "../section-workspace-cloud/section-workspace-cloud.module.css";
 
 const SectionLatestUpdates: FC = (): JSX.Element => {
   const eventCards: IEventCard[] = EventCloudStaticQuery();
   const newsCards: INewsCard[] = NewsCloudStaticQuery();
+  const frontmatter = UpdateCloudStaticQuery();
+  const hero = frontmatter.sectionSubHeader;
+
   return (
     <Section>
       {/* Section Content - LHS. */}
@@ -33,7 +38,11 @@ const SectionLatestUpdates: FC = (): JSX.Element => {
         {/* Heading */}
         <>Updates, training events, and workshops</>
         {/* Hero */}
-        {null}
+        {hero ? (
+          <div className={sectionHero}>
+            <h4>{hero}</h4>
+          </div>
+        ) : null}
         {/* Content */}
         <>
           <h3 className={sectionCardHeading}>News</h3>
