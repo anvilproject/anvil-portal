@@ -11,6 +11,7 @@ import React, { FC, MouseEvent, useState } from "react";
 // App dependencies
 import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
+import PublicationCategory from "../../publications/publication-category/publication-category";
 
 // Styles
 import {
@@ -29,6 +30,7 @@ interface ICitation {
 }
 
 export interface IPublicationCard extends ICard {
+  category: PublicationCategory;
   citation: ICitation;
 }
 

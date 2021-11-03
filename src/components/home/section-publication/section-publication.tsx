@@ -22,11 +22,8 @@ import SectionContent from "../section/section-content/section-content";
 import SectionContentPosition from "../section/section-content-position/section-content-position";
 
 // Styles
-import {
-  sectionCards,
-  sectionCTA,
-  sectionHero,
-} from "./section-publication.module.css";
+import { sectionCards, sectionHero } from "./section-publication.module.css";
+import { sectionCTAs } from "../section/section-content/section-content.module.css";
 
 const SectionPublication: FC = (): JSX.Element => {
   const frontmatter = PublicationCloudStaticQuery();
@@ -69,13 +66,20 @@ const SectionPublication: FC = (): JSX.Element => {
       </SectionContent>
       {/* Section Addendum */}
       <SectionAddendum>
-        <div className={sectionCTA}>
+        <div className={sectionCTAs}>
           <ButtonCta
             attributeHREF="/overview/cite-anvil"
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >
             Cite AnVIL
+          </ButtonCta>
+          <ButtonCta
+            attributeHREF="/overview/publications"
+            buttonSize={ButtonSize.LARGE}
+            buttonTheme={ButtonTheme.SECONDARY}
+          >
+            Publications
           </ButtonCta>
         </div>
       </SectionAddendum>

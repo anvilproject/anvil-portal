@@ -10,6 +10,17 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* Card - required to override markdown <a> styles. */
+.card a {
+  border-bottom: none;
+  color: var(--default-text);
+}
+
+/* Card - hover - required to override markdown <a> styles. */
+.card a:hover {
+  border-bottom: none;
+}
+
 /* Title. */
 /* Citation. */
 /* Action. */
