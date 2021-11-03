@@ -34,7 +34,11 @@ const SectionBenefitCloud: FC = (): JSX.Element => {
           environment
         </>
         {/* Hero */}
-        {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
+        {hero ? (
+          <div className={sectionHero}>
+            <h4>{hero}</h4>
+          </div>
+        ) : null}
         {/* Content */}
         <div className={sectionCards}>
           {cards.map((card) => (

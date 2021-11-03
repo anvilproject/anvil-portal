@@ -16,3 +16,10 @@
   gap: 32px;
   grid-template-rows: 1fr;
 }
+
+/* CTA - add a publication. */
+.publicationCTA {
+  composes: sectionCTAs from "../section/section-content/section-content.module.css";
+  justify-content: flex-start;
+  margin: 0 0 40px;
+}

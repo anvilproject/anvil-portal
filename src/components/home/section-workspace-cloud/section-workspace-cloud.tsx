@@ -34,7 +34,11 @@ const SectionWorkspaceCloud: FC = (): JSX.Element => {
         {/* Heading */}
         <>Create, share, and reuse reproducible analysis workspaces</>
         {/* Hero */}
-        {hero ? <h4 className={sectionHero}>{hero}</h4> : null}
+        {hero ? (
+          <div className={sectionHero}>
+            <h4>{hero}</h4>
+          </div>
+        ) : null}
         {/* Content */}
         <div className={sectionCards}>
           {workspaceCards.map((workspaceCard) => (
