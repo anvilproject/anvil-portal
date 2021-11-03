@@ -1,6 +1,10 @@
 ---
 name: AnVIL Community Events
 about: Submit an event for the anvilproject.org events page.
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 Thank you for submitting an event to anvilproject.org!
