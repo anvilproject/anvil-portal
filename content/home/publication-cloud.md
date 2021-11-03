@@ -271,4 +271,26 @@ publications:
         journal: "Annual Review of Genomics and Human Genetics"
         publisher: ""
         year: "2021"
+    - title: "Error correction enables use of Oxford Nanopore technology for reference-free transcriptome analysis"
+      cardLink: "https://www.nature.com/articles/s41467-020-20340-8"
+      citation:
+        authors:
+            - "Kristoffer Sahlin"
+            - "Paul Medvedev"
+        doi: "https://doi.org/10.1038/s41467-020-20340-8"
+        journal: "Nature Communications"
+        publisher: ""
+        year: "2021"
+    - title: "Cloud bursting galaxy: federated identity and access management"
+      cardLink: "https://academic.oup.com/bioinformatics/article/36/1/1/5514039"
+      citation:
+        authors:
+            - "Vahid Jalili"
+            - "Enis Afgan"
+            - "James Taylor"
+            - "Jeremy Goecks"
+        doi: "https://doi.org/10.1093/bioinformatics/btz472"
+        journal: "Bioinformatics"
+        publisher: ""
+        year: "2020"
 ---
