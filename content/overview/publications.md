@@ -5,7 +5,7 @@ title: "Publications"
 
 # Publications
 
-## About AnVIL
+## AnVIL Platform, Data, Tools and Components
 
 <Publications category="ABOUT_ANVIL"></Publications>
 
