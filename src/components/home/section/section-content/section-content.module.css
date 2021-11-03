@@ -25,7 +25,7 @@
 }
 
 /* Hero <h4>. */
-h4.sectionHero {
+.sectionHero h4 {
   font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
