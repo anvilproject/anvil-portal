@@ -172,7 +172,7 @@ publications:
         year: "2021"
     - title: "Orchestrating single-cell analysis with Bioconductor"
       cardLink: "https://www.nature.com/articles/s41592-019-0654-x"
-      category: "ON_ANVIL"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Robert A. Amezquita"
@@ -215,7 +215,7 @@ publications:
         year: "2020"
     - title: "Parliament2: Accurate structural variant calling at scale"
       cardLink: "https://academic.oup.com/gigascience/article/9/12/giaa145/6042728?login=true"
-      category: "ON_ANVIL"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Samantha Zarate"
@@ -234,7 +234,7 @@ publications:
         year: "2020"
     - title: "Centers for Mendelian Genomics: A decade of facilitating gene discovery"
       cardLink: "https://www.medrxiv.org/content/10.1101/2021.08.24.21261656v1.full"
-      category: "ON_ANVIL"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Samantha M. Baxter"
@@ -293,7 +293,7 @@ publications:
         year: "2021"
     - title: "Cloud bursting galaxy: federated identity and access management"
       cardLink: "https://academic.oup.com/bioinformatics/article/36/1/1/5514039"
-      category: "ON_ANVIL"
+      category: "ABOUT_ANVIL"
       citation:
         authors:
             - "Vahid Jalili"
