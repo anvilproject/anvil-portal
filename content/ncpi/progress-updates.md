@@ -7,6 +7,28 @@ title: "NCPI Progress Updates"
 
 <hero>The NCPI holds workshops every six months for working group members to provide progress updates and discuss priorities for the next six-month period.</hero>
 
+
+## 5th NCPI Workshop - October 5, 2021
+
+
+#### Overview
+
+* [Agenda](https://docs.google.com/document/d/1g-IYYNKn-6jvaT7tEPpdvBt20GT0sWLVNe2OrYoC_1A/edit#)
+* [Presentation Slides](https://docs.google.com/presentation/d/1gZ9yfR2rzxYil6QHQxjZ_NGe7WH3NQd4ETRnqLW_iRI/edit#slide=id.gebbbe53de3_0_9)
+
+#### Day 1
+
+* AM [Video](https://youtu.be/FUpb7VEzJ24) (1:57)
+* PM [Video](https://youtu.be/_1Y3Rw6uI8c) (1:27)
+
+
+#### Day 2
+
+* AM [Video](https://www.youtube.com/watch?v=2wBZ_2L9HBE) (2:13)
+* PM [Video](https://www.youtube.com/watch?v=svZPWdGT03g) (2:02)
+
+
+
 ## 4th NCPI Workshop - May 3rd, 2021
 
 #### Overview
