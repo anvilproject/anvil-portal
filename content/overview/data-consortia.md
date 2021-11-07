@@ -8,6 +8,8 @@ title: "Data Consortia"
 
 <hero>AnVIL hosts data from the following programs and also allows users to submit their own data to the platform.</hero>
 
+<data-ingestion-chart></data-ingestion-chart>
+
 ## Current Consortia
 
 ### [CCDG](https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-Disease-Genomics) 
