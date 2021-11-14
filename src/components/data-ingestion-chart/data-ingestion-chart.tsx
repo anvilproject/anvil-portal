@@ -1,3 +1,10 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * The AnVIL - data ingestion chart component.
+ */
+
 import React, { FC } from "react";
 
 import ReactEChartsCore from "echarts-for-react/lib/core";
@@ -17,6 +24,62 @@ echarts.use([
   LineChart,
   CanvasRenderer,
 ]);
+
+type TooltipSeriesInfo = {
+  axisValueLabel: string;
+  marker: string;
+  seriesName: string;
+  data: number;
+};
+
+function fixDecimalPlaces(n: number, places: number) {
+  const str = n.toString();
+  const dotIndex = str.indexOf(".");
+  if (dotIndex === -1) {
+    return str.concat(".", "0".repeat(places));
+  }
+  const presentPlaces = str.length - dotIndex - 1;
+  if (presentPlaces > places) {
+    return str.substring(0, dotIndex + 1 + places);
+  }
+  return str.concat("0".repeat(places - presentPlaces));
+}
+
+function formatTooltip(seriesInfoObjects: Array<TooltipSeriesInfo>) {
+  const container = document.createElement("div");
+  container.innerHTML = `
+    <div style="font-size:14px;color:#666;font-weight:400;line-height:1;"></div>
+  `;
+  const positionLabel = seriesInfoObjects[0].axisValueLabel;
+  container.children[0].textContent = positionLabel.includes("/")
+    ? positionLabel
+    : `1/${positionLabel.substring(2, 4)}`;
+  seriesInfoObjects.forEach((seriesPoint) => {
+    if (seriesPoint.data > 0) {
+      container.insertAdjacentHTML(
+        "beforeend",
+        `<div style="margin: 10px 0 0; line-height: 1;">
+          <div style="margin: 0px 0 0; line-height: 1;">
+            <span></span>
+            <span style="font-size: 14px; color: #666; font-weight: 400; margin-left: 2px;"></span>
+            <span style="float: right; margin-left: 20px; font-size: 14px; color: #666; font-weight: 900;"></span>
+            <div style="clear: both;"></div>
+          </div>
+          <div style="clear: both;"></div>
+        </div>`
+      );
+      const line =
+        container.children[container.childElementCount - 1].children[0];
+      line.children[0].outerHTML = seriesPoint.marker;
+      line.children[1].textContent = seriesPoint.seriesName;
+      line.children[2].textContent = `${fixDecimalPlaces(
+        seriesPoint.data,
+        2
+      )} TB`;
+    }
+  });
+  return container;
+}
 
 function getChartOptions() {
   const startYear = 2019;
@@ -108,11 +171,10 @@ function getChartOptions() {
   }
 
   return {
-    tooltip: {
-      trigger: "axis",
-      axisPointer: {
-        type: "cross",
-      },
+    grid: {
+      right: 20,
+      top: 70,
+      bottom: 55,
     },
     xAxis: {
       name: "Time",
@@ -135,15 +197,27 @@ function getChartOptions() {
       nameLocation: "center",
       nameGap: 53,
     },
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "cross",
+      },
+      formatter: formatTooltip,
+    },
     legend: {
       data: sortedData.map(([consortium]) => consortium),
+      width: "70%",
     },
     series: sortedData.map(([, seriesDef]) => seriesDef),
   };
 }
 
 const DataIngestionChart: FC = (): JSX.Element => (
-  <ReactEChartsCore echarts={echarts} option={getChartOptions()} />
+  <ReactEChartsCore
+    echarts={echarts}
+    option={getChartOptions()}
+    style={{ height: "400px" }}
+  />
 );
 
 export default DataIngestionChart;
