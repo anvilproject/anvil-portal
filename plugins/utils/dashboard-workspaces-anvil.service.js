@@ -29,7 +29,7 @@ const { buildGapId } = require(path.resolve(
 // Template variables
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
-const fileSourceTerra = "dashboard-source-terra.tsv";
+const fileSourceTerra = "dashboard-source-terra.csv";
 const CONSENT_CODE_TYPE = {
   NOT_APPLICABLE: "not applicable",
   OPEN_ACCESS: "open access",
@@ -105,10 +105,10 @@ const WORKSPACE_CONSORTIUM = {
  */
 const getWorkspaces = async function getWorkspaces() {
   /* Build workspace counts. */
-  const countWorkspaces = await parseSource(fileSourceTerra);
+  const countWorkspaces = await parseSource(fileSourceTerra, ",");
 
   /* Build the workspace attributes. */
-  const attributeWorkspaces = await parseSource(fileSourceAnVIL);
+  const attributeWorkspaces = await parseSource(fileSourceAnVIL, "\t");
 
   /* Create a map object key-value pair of study accession by study id. */
   const studyPropertiesById = await getStudyPropertiesById(attributeWorkspaces);
@@ -446,9 +446,10 @@ function isValueDenied(value) {
  * Will only return properties matching any source header key.
  *
  * @param fileName
+ * @param delimiter
  * @returns {Promise.<*[]>}
  */
-async function parseSource(fileName) {
+async function parseSource(fileName, delimiter) {
   /* Read the AnVIL source file. */
   const content = await readFile(fileName, "utf8");
 
@@ -456,7 +457,7 @@ async function parseSource(fileName) {
   const contentRows = splitContentToContentRows(content);
 
   /* Parse and return the ingested data. */
-  return parseRows(contentRows, "\t", SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+  return parseRows(contentRows, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
 }
 
 /**
