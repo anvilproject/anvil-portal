@@ -10,7 +10,9 @@ title: "Announcing the AnVIL Cloud Credits Continued Program (AC3)"
 
 ##### Posted: November 22, 2021
 
-NHGRI’s [Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) cloud genomics platform is pleased to announce the extension of the AC2 pilot program with the AnVIL Cloud Credits Continued Program (AC3). Through AC3, we invite genomic researchers to submit proposals that use the AnVIL platform for large-scale data analysis with cloud computing credits supported by NHGRI through the [NIH STRIDES program](https://datascience.nih.gov/strides). AnVIL provides access to several large-scale genomics data sets with associated phenotypic data and metadata; it incorporates popular genomic analysis tools and packages; and facilitates sharing of computational workflows and processed data among collaborators.
+NHGRI’s [Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) cloud genomics platform is pleased to announce the extension of the AC2 pilot program with the AnVIL Cloud Credits Continued Program (AC3).
+
+Through AC3, we invite genomic researchers to submit proposals that use the AnVIL platform for large-scale data analysis with cloud computing credits supported by NHGRI through the [NIH STRIDES program](https://datascience.nih.gov/strides). AnVIL provides access to several large-scale genomics data sets with associated phenotypic data and metadata; it incorporates popular genomic analysis tools and packages; and facilitates sharing of computational workflows and processed data among collaborators.
 
 ### Scope of Applications
 
@@ -23,7 +25,7 @@ Applicants to AC3 are asked to choose between one of two tracks, Research and Tr
 ### Summary of Program
 
 1. Pilot applications will be accepted between November 22, 2021 and December 17, 2021.
-1. Applications for less than $10,000 in Google Cloud credits will be reviewed by the AnVIL Cloud Credits Review Committee (AC2RC); applications exceeding this amount will be triaged and transferred to the NHGRI for additional review.
+1. Applications for less than $10,000 in Google Cloud credits will be reviewed by the AnVIL Cloud Credits Review Committee (AC3RC); applications exceeding this amount will be triaged and transferred to the NHGRI for additional review.
 1. Review considerations will include (but are not limited to):
     - Relevance to NHGRI’s mission;
     - Adequacy of the development plan for trainees;
@@ -32,13 +34,13 @@ Applicants to AC3 are asked to choose between one of two tracks, Research and Tr
 1. Credits will be available January 16, 2022 and must be used by August 31, 2022.
 1. Awardees must submit a preliminary report by March 15, 2022 and a final report by September 15, 2022.
 
-### AC2 Awardee Responsibilities
+### AC3 Awardee Responsibilities
 
 Awardee agrees to have the PI, project title, brief project description and credit award amount displayed publicly on the AnVIL web site.
 
-*Awardee agrees to be responsible for any cloud costs exceeding the AC2 award.*
+*Awardee agrees to be responsible for any cloud costs exceeding the AC3 award.*
 
-AC2 funding recipients agree to acknowledge AnVIL in all publications and external presentations that include analyses performed as part of their projects.
+AC3 funding recipients agree to acknowledge AnVIL in all publications and external presentations that include analyses performed as part of their projects.
 
 Through the AC3 program, NHGRI and AnVIL staff will seek feedback from the awardees about the AnVIL platform as it tries to expand its community of genomics scientists using cloud computing. Applicants are expected to engage with AnVIL staff and NHGRI program staff to share their experience and pain points using this platform.
 
