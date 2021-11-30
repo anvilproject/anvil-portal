@@ -2,7 +2,7 @@
 author: "AnVIL"
 date: "2021-04-12"
 description: "NHGRI’s Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL) cloud genomics platform is pleased to announce the availability of the AnVIL Cloud Credits Program (AC2)."
-featured: true
+featured: false
 title: "Announcing the AnVIL Cloud Credits Program (AC2)"
 ---
 
