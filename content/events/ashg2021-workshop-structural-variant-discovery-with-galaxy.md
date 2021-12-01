@@ -44,13 +44,9 @@ The ideal audience member will have a basic familiarity with genomics terminolog
 
 TBD
 
-### Registration
+### Registration and Costs
 
-<https://www.ashg.org/meetings/2021meeting/registration/>
-
-### Costs
-
-<https://www.ashg.org/meetings/2021meeting/registration/>
+https://learning.ashg.org/products/structural-variant-discovery-from-long-read-sequencing-data-on-the-cloud-with-galaxy-in-terra
 
 ### More Info
 
