@@ -43,13 +43,9 @@ Basic knowledge of Python or R is recommended but not required.
 
 TBD
 
-### Registration
+### Registration and Costs
 
-<https://www.ashg.org/meetings/2021meeting/registration/>
-
-### Costs
-
-<https://www.ashg.org/meetings/2021meeting/registration/>
+https://learning.ashg.org/products/reproducible-analysis-of-human-pangenome-data-using-the-anvil#tab-product_tab_overview
 
 ### More Info
 
