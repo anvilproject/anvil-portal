@@ -65,6 +65,8 @@
             - name: ""
               file: "/events/ashg2021-workshop-structural-variant-discovery-with-galaxy"
             - name: ""
+              file: "/events/anvil2021-december-office-hours"
+            - name: ""
               file: "/events/anvil2021-november-office-hours"
             - name: ""
               file: "/events/gi2021-poster-session"
