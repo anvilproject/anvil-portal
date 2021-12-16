@@ -61,6 +61,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/agbt2022-advances-in-genome-biology-and-technology"
+            - name: ""
               file: "/events/ashg2021-workshop-analysis-of-human-pangenome-data-with-anvil"
             - name: ""
               file: "/events/ashg2021-workshop-structural-variant-discovery-with-galaxy"
