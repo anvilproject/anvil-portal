@@ -63,6 +63,8 @@
             - name: ""
               file: "/events/ismb2022-biological-data-science"
             - name: ""
+              file: "/events/ashg2022-american-society-of-human-genetics"
+            - name: ""
               file: "/events/bog2022-biology-of-genomes"
             - name: ""
               file: "/events/agbt2022-advances-in-genome-biology-and-technology"
