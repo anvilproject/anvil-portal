@@ -57,7 +57,7 @@
     "@types/react-helmet": "^6.1.4",
     "@types/react-transition-group": "^4.4.4",
     "@types/webpack": "^5.28.0",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "bufferutil": "^4.0.5",
     "core-js": "^3.20.0",
