@@ -24,6 +24,10 @@ The Data Access working group defines the methods used to securely control and g
 
 The data processing working group defines the processes for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.
 
+#### Contact
+
+- [AnVIL-data-processing](https://lists.anvilproject.org/lists/anvil-data-processing.lists.anvilproject.org/) ([anvil-data-processing@lists.anvilproject.org](mailto:anvil-data-processing@lists.anvilproject.org)).
+
 #### Co-Chairs
 
 - Eric Banks (Broad)
@@ -33,6 +37,10 @@ The data processing working group defines the processes for data ingestion and q
 ## Phenotype Working Group
 
 The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.
+
+#### Contact
+
+- [AnVIL-Phenotypes](https://lists.anvilproject.org/lists/anvil-phenotypes.lists.anvilproject.org/) ([anvil-phenotypes@lists.anvilproject.org](mailto:anvil-phenotypes@lists.anvilproject.org)).
 
 #### Co-Chairs
 
@@ -54,6 +62,10 @@ The portal working group organizes and publishes AnVIL's website.
 
 The Outreach working group provides training and support solutions for the AnVIL project.
 
+#### Contact
+
+- [AnVIL-outreach](https://lists.anvilproject.org/lists/anvil-outreach.lists.anvilproject.org/) ([anvil-outreach@lists.anvilproject.org](mailto:anvil-outreach@lists.anvilproject.org)).
+
 #### Co-Chairs
 
 - Jeff Leek (JHU)
@@ -63,6 +75,10 @@ The Outreach working group provides training and support solutions for the AnVIL
 ## Technical Working Group
 
 AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.
+
+#### Contact
+
+- [AnVIL-technical](https://lists.anvilproject.org/lists/anvil-technical.lists.anvilproject.org/) ([anvil-technical@lists.anvilproject.org](<mailto:anvil-technical@lists.anvilproject.org>))
 
 #### Co-Chairs
 
