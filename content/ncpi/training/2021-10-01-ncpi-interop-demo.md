@@ -1,5 +1,5 @@
 ---
-description: "A tutorial showing how to use the NCPI system interoperability features to perform the initial phases of Melissa Wilson's "Sex as a Biological Variable" use case."
+description: "A tutorial showing how to use the NCPI system interoperability features to perform the initial phases of Melissa Wilson's 'Sex as a Biological Variable' use case."
 title: "NCPI October 2021 Interop Demo"
 ---
 
@@ -191,7 +191,7 @@ It's probably a good idea to use a specific version number of Python when writin
 
 This project dev environment is inspired by, and forked from, this blog post:
 
-**🐳 Simplified guide to using Docker for local development environment**
+** Simplified guide to using Docker for local development environment**
 
 _The blog link :_
 
