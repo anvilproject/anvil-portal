@@ -5,7 +5,7 @@ description: "Advances in Genome Biology and Technology (AGBT) delivers a premie
 eventType: "Conference"
 featured: true
 location: "Bonnet Creek, Orlando, FL"
-sessions: [{sessionStart: "28 Feb 2022"}]
+sessions: [{sessionStart: "06 Jun 2022"}]
 timezone: "America/New_York"
 title: "Advances in Genome Biology and Technology"
 ---
