@@ -13,7 +13,7 @@ slides:
   - title: "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)"
     actions:
       - label: "Paper"
-        url: "https://www.biorxiv.org/content/10.1101/2021.04.22.436044v1"
+        url: "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3"
     media:
         landscape: _images/carousel-inverting-the-model-of-genomics-data.png
         portrait: _images/carousel-inverting-the-model-of-genomics-data-p.png
