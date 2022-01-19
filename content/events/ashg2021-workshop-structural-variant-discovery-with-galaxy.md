@@ -54,7 +54,7 @@ Cloning a Terra workspace for downstream analysis in Galaxy.
 #### 12:55 pm - 01:25 pm | Structural variant discovery with Galaxy in AnVIL Powered by Terra
 Learn an end-to-end SV identification journey using Galaxy to visualize results and identify potentially pathogenic variants.
 [Step-by-step written instructions](https://docs.google.com/document/d/1aZmgPLXDubVgAT-DXo7AgOTBoghut_s_-IUKaAcDt7g/edit?usp=sharing)
-[Step-by-step screenshot instructions] (https://docs.google.com/presentation/d/1LZY7omb0355IIRIy9iaTBRm-yEfRlvSL9Ed_KYXNlX0/edit?usp=sharing)
+[Step-by-step screenshot instructions](https://docs.google.com/presentation/d/1LZY7omb0355IIRIy9iaTBRm-yEfRlvSL9Ed_KYXNlX0/edit?usp=sharing)
 
 #### 01:25 pm - 01:30 pm | Closing Remarks, Q&A
 Questions? Ask us any time on the [AnVIL Help Forum](https://help.anvilproject.org/)!
