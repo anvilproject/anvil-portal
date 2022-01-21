@@ -42,7 +42,7 @@ publications:
         doi: "https://doi.org/10.1101/2021.07.12.452063"
         journal: "bioRxiv"
         publisher: "Cold Spring Harbor Laboratory"
-        year: "2021"
+        year: "2022"
     - title: "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)"
       cardLink: "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3"
       category: "ABOUT_ANVIL"
