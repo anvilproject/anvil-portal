@@ -78,7 +78,7 @@ publications:
             - "Kristin Wuichet"
             - "AnVIL Team"
         doi: "https://doi.org/10.1101/2021.04.22.436044"
-        journal: "bioRxiv"
+        journal: "Cell Genomics"
         publisher: "Cold Spring Harbor Laboratory"
         year: "2021"
     - title: "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events"
