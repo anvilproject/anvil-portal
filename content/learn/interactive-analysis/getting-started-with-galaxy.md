@@ -2,13 +2,13 @@
 author: "AnVIL"
 breadcrumb: {name: "Running Interactive Analyses", link: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks"}
 description: "An overview and tutorial of how to use Galaxy on AnVIL."
-title: "Alpha Version of Galaxy Running in AnVIL / Terra"
+title: "Galaxy Running in AnVIL / Terra"
 tutorial: true
 ---
 
 <hero-tutorial>
 
-# Alpha Version of Galaxy Running in AnVIL / Terra
+# Galaxy Running in AnVIL / Terra
 
 We are pleased to announce that [Galaxy](https://galaxyproject.org) is now available within Terra, AnVIL's cloud compute environment.
 
