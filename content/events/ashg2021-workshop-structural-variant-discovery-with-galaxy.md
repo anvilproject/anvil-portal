@@ -43,8 +43,10 @@ The ideal audience member will have a basic familiarity with genomics terminolog
 ### Agenda
 
 #### 12:00 pm - 12:05 pm | Welcome and overview of workshop agenda and logistics 
-View the presentation[(slides)](https://drive.google.com/drive/folders/1oUxRfoQQSDGfTfEW--eqjRN6qoQgypVQ).
+View the presentation [(slides)](https://drive.google.com/drive/folders/1oUxRfoQQSDGfTfEW--eqjRN6qoQgypVQ).
+
 #### 12:05 pm - 12:15 pm | Overview of structural variants and methods for SV discovery
+
 #### 12:15 pm - 12:25 pm | AnVIL Powered by Terra Overview
 An overview of AnVIL Powered by Terra platform and its capabilities, focusing on the Cloud Environment and its architecture.
 
@@ -53,8 +55,10 @@ Cloning a Terra workspace for downstream analysis in Galaxy.
 
 #### 12:55 pm - 01:25 pm | Structural variant discovery with Galaxy in AnVIL Powered by Terra
 Learn an end-to-end SV identification journey using Galaxy to visualize results and identify potentially pathogenic variants.
-[Step-by-step written instructions](https://docs.google.com/document/d/1aZmgPLXDubVgAT-DXo7AgOTBoghut_s_-IUKaAcDt7g/edit?usp=sharing)
-[Step-by-step screenshot instructions](https://docs.google.com/presentation/d/1LZY7omb0355IIRIy9iaTBRm-yEfRlvSL9Ed_KYXNlX0/edit?usp=sharing)
+
+Step-by-step written instructions [(doc)](https://drive.google.com/drive/folders/1oUxRfoQQSDGfTfEW--eqjRN6qoQgypVQ)
+
+Step-by-step screenshot instructions [(slides)](https://drive.google.com/drive/folders/1oUxRfoQQSDGfTfEW--eqjRN6qoQgypVQ)
 
 #### 01:25 pm - 01:30 pm | Closing Remarks, Q&A
 Questions? Ask us any time on the [AnVIL Help Forum](https://help.anvilproject.org/)!
