@@ -11,9 +11,18 @@ description: "FAQs about data submission."
 AnVIL aims to host a variety of datasets useful to the genomics community. Submission requires the following steps:
 
 1. If you have questions about submitting your data to AnVIL please contact the AnVIL team (<help@lists.anvilproject.org>)
-1. To apply for data submission, complete our onboarding [form](https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform). The [AnVIL Ingestion Committee](/learn/data-submitters/submission-guide/data-approval-process) will assess whether the dataset is a good fit for AnVIL. Some aspects of the dataset evaluated by the Committee include: the amount of genomic data, phenotypic and clinical data, and relevant metadata; appropriate ethical oversight data collection, and; the nature of the informed consent for broad data sharing (i.e., restrictiveness of data use limitations)
-1. If the study is approved, contact the [NHGRI Genomic Program Administrator (GPA)](https://www.genome.gov/staff/Jennifer-Strasburger-MS#:~:text=Biography,Data%20Access%20Committee%20(DAC).) to register the approved study in dbGaP
-1. AnVIL staff will contact you promptly to initiate Data Ingestion. For more information about data transfer and QC, see [Ingest Data](/learn/data-submitters/submission-guide/ingesting-data) in the [Data Submission Guide](/learn/data-submitters/submission-guide/data-submitters-overview).
+2. To apply for data submission, complete our onboarding [form](https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform). The [AnVIL Ingestion Committee](/learn/data-submitters/submission-guide/data-approval-process) will assess whether the dataset is a good fit for AnVIL. Some aspects of the dataset evaluated by the Committee include: the amount of genomic data, phenotypic and clinical data, and relevant metadata; appropriate ethical oversight data collection, and; the nature of the informed consent for broad data sharing (i.e., restrictiveness of data use limitations)
+3. If the study is approved, contact the [NHGRI Genomic Program Administrator (GPA)](https://www.genome.gov/staff/Jennifer-Strasburger-MS#:~:text=Biography,Data%20Access%20Committee%20(DAC).) to register the approved study in dbGaP
+4. AnVIL staff will contact you promptly to initiate Data Ingestion. For more information about data transfer and QC, see [Ingest Data](/learn/data-submitters/submission-guide/ingesting-data) in the [Data Submission Guide](/learn/data-submitters/submission-guide/data-submitters-overview).
+
+## Who pays for storage costs in AnVIL?
+
+AnVIL will cover storage costs of data that has been or will be released publicly to the research community (including those registered in dbGaP or DUOS and released through controlled access). Otherwise, storage costs are incurred by the billing account associated with the workspace.
+
+For more on understanding and controlling cloud costs in AnVIL, see [Understanding Cloud Costs](https://anvilproject.org/learn/introduction/understanding-cloud-costs).
+
+For more on preparing a budget justification for cloud costs in AnVIL, see [Budget Templates](https://anvilproject.org/learn/investigators/budget-templates).
+
 
 ## Does NHGRI plan to move data from dbGaP to AnVIL?
 
