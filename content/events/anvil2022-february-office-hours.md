@@ -26,7 +26,7 @@ Please post your questions to the [AnVIL Discourse](https://help.anvilproject.or
 
 ### Registration
 
-How to register: Post your question to the [AnVIL Discourse](https://help.anvilproject.org/t/anvil-office-hours-24feb2022-11-am-et/69) and sign up via the linked [Google Form](https://forms.gle/SnRnwGxYtrKQYJmKA).
+Post your question to the [AnVIL Discourse](https://help.anvilproject.org/t/anvil-office-hours-24feb2022-11-am-et/69) and sign up via the linked [Google Form](https://forms.gle/SnRnwGxYtrKQYJmKA).
 
 ### Contact
 
