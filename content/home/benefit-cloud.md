@@ -1,5 +1,5 @@
 ---
-sectionSubHeader: "Work in the cloud and reduce computing and storage costs, reduce security and compliance overhead and, scale to meet your needs."
+sectionSubHeader: "Reduce compute and storage costs, reduce security and compliance overhead, scale to meet your needs."
 benefits:
     - title: "Reduce Data Transfer Fees"
       text: "There is no charge for data transferred from cloud storage to cloud compute within the same region."
