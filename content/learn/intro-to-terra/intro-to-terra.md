@@ -27,3 +27,6 @@ This section lists selected articles from the Terra documentation to help you ge
 ## Analysis Workflows
 
 - [How to set up a workflow analysis](https://support.terra.bio/hc/en-us/articles/360026521831-How-to-set-up-a-workflow-analysis-) - This article explains how to set up (configure) your workflow analysis in the Terra UI. Note that this article is intended primarily for analyses using data from the workspace data table.
+
+## Terra Courses on Leanpub
+For additional information, see [Terra's Leanpub site](https://leanpub.com/universities/terra/courses) for videos introducing Terra and explaining cloud billing and secure collaboration.
