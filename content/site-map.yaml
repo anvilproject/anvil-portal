@@ -266,6 +266,8 @@
               file: "/learn/getting-started/using-example-workspaces"
             - name: "Running GATK on Terra"
               file: "/learn/dockstore/running-gatk"
+            - name: "Running Galaxy Workflows from Dockstore"
+              file: "/learn/dockstore/running-galaxy-workflows-from-dockstore"
         - name: "Running Interactive Analyses"
           file: ""
           pathPartial: "/interactive-analysis"
