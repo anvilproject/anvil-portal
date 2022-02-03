@@ -70,17 +70,17 @@ To make the most effective use of the data managed by NCPI platforms, users must
 
 To allow such a "bird's eye view" of the data we are building the [NCPI Dataset Catalog](/ncpi/data). Initially, the catalog will use infrastructure built by the [AnVIL project](/data) to generate an overview of available datasets.
 
-## Cross-Platform Research Efforts
+## NCPI Demonstration Projects
 
-<hero>This interoperability effort is guided by several cross-platform research efforts. Feedback from the research efforts is used to aid the discovery of detailed interoperability requirements and validate the utility of the developed features.</hero>
+<hero>The NCPI interoperability effort is guided by several cross-platform demonstration projects which exercise specific scientific and technical use cases related to cloud-platform interoperability. Feedback from the projects is used to aid the discovery of detailed interoperability requirements and validate the utility of the developed features.</hero>
 
-There are currently six cross-platform research efforts:
+There are currently six cross-platform demonstration projects under development:
 
 * Three research efforts integrate data from BioData Catalyst and the Kids First DRC.
 * Two research efforts integrate data from CRDC and AnVIL.
 * One research effort integrates data across Anvil, Kids First DRC, and BioData Catalyst.
 
-For more information on the research efforts and their related use cases please see the [Research Use Cases](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.91ug8sbahj9o) section of the Systems Interoperation Working Group charter.
+For more information on the demonstratoin projects and their related use cases please see [NCPI Demonstration Projects](/ncpi/demonstration-projects).
 
 ## Working Groups
 

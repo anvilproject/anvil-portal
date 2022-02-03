@@ -78,9 +78,10 @@ export function getNavBarMenuItems(ncpiPost: boolean): IMenuItem[] {
   if (ncpiPost) {
     return [
       { name: "Overview", path: "/ncpi" },
-      { name: "Platforms", path: "/ncpi/platforms" },
-      { name: "Technologies", path: "/ncpi/technologies" },
+      // { name: "Use Cases", path: "/ncpi/data" },
       { name: "Datasets", path: "/ncpi/data" },
+      { name: "Demonstration Projects", path: "/ncpi/demonstration-projects" },
+      { name: "Technologies", path: "/ncpi/technologies" },
       { name: "Training", path: "/ncpi/training" },
       { name: "Updates", path: "/ncpi/progress-updates" },
     ];
@@ -102,9 +103,9 @@ export function getNavSideBarMenuItems(ncpiPost: boolean): IMenuItem[] {
   if (ncpiPost) {
     return [
       { name: "Overview", path: "/ncpi", subMenuItems: [] },
-      { name: "Platforms", path: "/ncpi/platforms" },
-      { name: "Technologies", path: "/ncpi/technologies" },
       { name: "Datasets", path: "/ncpi/data", subMenuItems: [] },
+      { name: "Technologies", path: "/ncpi/technologies" },
+      { name: "Demonstration Projects", path: "/ncpi/platforms" },
       { name: "Training", path: "/ncpi/training", subMenuItems: [] },
       { name: "Updates", path: "/ncpi/progress-updates" },
     ];
