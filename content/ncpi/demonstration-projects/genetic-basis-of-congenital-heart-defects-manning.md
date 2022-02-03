@@ -16,7 +16,7 @@ Analysis Question:  Investigate genetic factors related to congenital heart defe
 
 See more details in this slide pack.
 
-
+>TODO: check on status of preprint related to this for methods from Tim M.
 
 
 Details in slide pack
