@@ -478,15 +478,15 @@
       pathPartial: ""
       navigationItems:
         - name: "NCPI Interop Demonstration Projects"
-          file: "/ncpi/demonstration-projects/projects"
+          file: "/ncpi/demonstration-projects/demonstration-projects"
           pathOverride: "/ncpi/demonstration-projects"
-        - name: "#1b - Genetic Basis of Congenital Heart Defects (Goldmuntz)"
+        - name: " Genetic Basis of Congenital Heart Defects (Goldmuntz)"
           file: "/ncpi/demonstration-projects/genetic-basis-of-congenital-heart-defects-goldmuntz"
-        - name: "#5 - LINE-1 Retrotransposon Expression (McKerrow)"
+        - name: "LINE-1 Retrotransposon Expression (McKerrow)"
           file: "/ncpi/demonstration-projects/line-1-retrotransposon-expression-mckerrow"
-        - name: "#7 -  Genetic Bases of Congenital Heart Defects (Manning)"
-          file: "/ncpi/demonstration-projects/genetic-basis-of-congenital-heart-defects-manning"
-        - name: "#11 - Sex as Biological Variable (Wilson)"
+        - name: "Genetic Factors Related to Congenital Heart Defects (Manning)"
+          file: "/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning"
+        - name: "Sex as Biological Variable (Wilson)"
           file: "/ncpi/demonstration-projects/sex-as-a-biological-variable-wilson"
 
 

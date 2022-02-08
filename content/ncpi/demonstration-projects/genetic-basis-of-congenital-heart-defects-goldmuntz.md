@@ -1,14 +1,19 @@
 ---
-description: "Demonstration projects and more!"
-title: "Genet"
+description: "An NCPI demonstration project studying the genetic bases of congenital heart defects using a variant and gene set analysis approaches, machine learning methods, amongst other statistical and genetic analysis models"
+title: "Genetic Basis of Congenital Heart Defects (Goldmuntz)"
 ---
 
 # Genetic Basis of Congenital Heart Defects (Goldmuntz)
 ### NCPI Interoperability Demonstration Project
 
-**Researchers**: Elizabeth Goldmuntz and Deanne Taylor (CHOP), A.J. Agopian (UTH), Ryan Urbanowicz (UPenn)
+## Team
 
-**Tech Contact**: David Higgins
+**Researchers** -  Elizabeth Goldmuntz and Deanne Taylor (CHOP), A.J. Agopian (UTH), Ryan Urbanowicz (UPenn)
+
+**Interop Contact** -  David Higgins
+
+**Platforms** - NHLBI BioData Catalyst + Kids First DRC
+
 
 ## Analysis Question
 Congenital heart defects (CHDs) are important birth defects to study due to their high mortality, occurring in about 1% of all live births and 10% of stillbirths. Many individuals born with CHDs need early medical interventions to survive.
@@ -27,8 +32,10 @@ In this research, we intend to study the genetic bases of congenital heart defec
     1. E.g. severity of defect [Dr. Goldmuntz provided some mild cases.]
 7. Bring own custom methods for gene set analysis and machine learning for downstream analsis.
 
+## Updates
 
-[comment]: <> (Details in slide pack)
+
+### October 30, 2020
+`video: https://youtu.be/21m9daDRfes`
 
 
-[comment]: <> (https://docs.google.com/presentation/d/1He7naDpPQugrROq8Gh0VjxLiFyDnOuWUukLyToEoNzU/edit#slide=id.g7390b19632_261_548)
