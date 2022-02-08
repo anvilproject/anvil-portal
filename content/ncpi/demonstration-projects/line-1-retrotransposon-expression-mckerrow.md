@@ -6,9 +6,9 @@ title: "Sex as a Biological Variable"
 # LINE-1 Retrotransposon Expression
 ### NCPI Interoperability Demonstration Project
 
-**Interop Contact**: Jack DiGiovanna
+**Researcher**: Wilson McKerrow
 
-**Researche**r: Wilson McKerrow 
+**Interop Contact**: Jack DiGiovanna
 
 **Platforms** [PDC (CRDC), GDC (CRDC), and GTEx (AnVIL) data]
 ## Analysis Question
@@ -36,8 +36,13 @@ This interoperability project aims to find a path to connect the GTEx data on th
    **Interop Requirements**: Interop between GDC and PDC within CRDC; interop between AnVIL - CRDC 
 
 
-## Methods and Findings
+## Updates
 
+### April 16, 2020
+`video: https://youtu.be/T_24Hhzn9H8`
+
+
+### June, 2021
 `video: https://www.youtube.com/watch?v=iBMwWC1tH_Y`
 
 In tis webinar, Dr. McKerrow discusses linking RNA-seq data from GTEx to his L1EM tool on the CGC to survey LINE-1 expression outside the context of cancer. His findings showed a low level of LINE-1 expression in normal epithelial tissues, but little to no expression in blood, brain, fat, or muscle tissues. This reflects the fact that LINE-1 is frequently expressed in epithelial-derived tumors, but rarely seen in those derived from blood or brain.
