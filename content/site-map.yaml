@@ -480,7 +480,7 @@
         - name: "NCPI Interop Demonstration Projects"
           file: "/ncpi/demonstration-projects/demonstration-projects"
           pathOverride: "/ncpi/demonstration-projects"
-        - name: " Genetic Basis of Congenital Heart Defects (Goldmuntz)"
+        - name: "Genetic Basis of Congenital Heart Defects (Goldmuntz)"
           file: "/ncpi/demonstration-projects/genetic-basis-of-congenital-heart-defects-goldmuntz"
         - name: "LINE-1 Retrotransposon Expression (McKerrow)"
           file: "/ncpi/demonstration-projects/line-1-retrotransposon-expression-mckerrow"

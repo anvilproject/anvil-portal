@@ -15,13 +15,13 @@ The following demonstration projects are under development and will be updated w
 
 In this research, we intend to study the genetic bases of congenital heart defects using a variant and gene set analysis approaches, machine learning methods, amongst other statistical and genetic analysis models to help fill in the gaps that exist in the understanding of the etiology of CHDs. This will help the scientific community to better understand cardiogenesis and to better assess the risk of disease. Access to this whole-genome sequence data will facilitate our work.
 
-**[LINE-1 Retrotransposon Expression (McKerrow)](/ncpi/demonstration-projects/line-1-retrotransposon-expression)**
+**[LINE-1 Retrotransposon Expression (McKerrow)](/ncpi/demonstration-projects/line-1-retrotransposon-expression-mckerrow)**
 
 **Platforms** - AnVIL + CRDC
 
 This interoperability project aims to find a path to connect the GTEx data on the AnVIL platform to further processing and also combination with a prior analysis on the CRDC. This “normals” use case is a frequent request from our users, so find
 
-**[Genetic bases of congenital heart defects (Manning)](/ncpi/demonstration-projects/genetic-basis-of-congenital-heart-defects-manning)** 
+**[Genetic bases of congenital heart defects (Manning)](/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning)** 
 
 **Platforms** - NHGRI AnVIL + Kids First DRC + NHLBI BioData Catalyst
 
