@@ -31,6 +31,7 @@ const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const fileSourceTerra = "dashboard-source-terra.csv";
 const CONSENT_CODE_TYPE = {
+  CONSORTIUM_ACCESS_ONLY: "consortium-access only",
   NOT_APPLICABLE: "not applicable",
   OPEN_ACCESS: "open access",
 };
@@ -158,10 +159,11 @@ function buildWorkspacePropertyAccessType(
   if (consentShortName) {
     /* Let access type be "Consortium Access". */
     /* This is true for any workspace without a study. */
-    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction. */
+    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction (redefined by reformatWorkspacePropertyConsentShortName as "consortium-access only"). */
     if (
       !studyAccession ||
-      consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NOT_APPLICABLE
+      consentShortName.toLowerCase() ===
+        CONSENT_CODE_TYPE.CONSORTIUM_ACCESS_ONLY
     ) {
       accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
     }
@@ -248,7 +250,7 @@ function buildWorkspaces(
       { dbGapIdAccession, studyUrl } = propertyStudy || {};
 
     /* Reformat the property consentShortName. */
-    const propertyConsentShortName = reformatWorkspacePropertyValue(
+    const propertyConsentShortName = reformatWorkspacePropertyConsentShortName(
       row,
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
     );
@@ -458,6 +460,22 @@ async function parseSource(fileName, delimiter) {
 
   /* Parse and return the ingested data. */
   return parseRows(contentRows, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+}
+
+/**
+ * Returns the reformatted consentShortName workspace property.
+ *
+ * @param row
+ * @param key
+ */
+function reformatWorkspacePropertyConsentShortName(row, key) {
+  const propertyConsentShortName = reformatWorkspacePropertyValue(row, key);
+  const consentShortName = propertyConsentShortName[key];
+  /* Any consentShortName defined as "not applicable" is renamed to "Consortium-Access Only". */
+  if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NOT_APPLICABLE) {
+    return { [key]: "Consortium-Access Only" };
+  }
+  return propertyConsentShortName;
 }
 
 /**

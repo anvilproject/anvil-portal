@@ -35,10 +35,6 @@ function DashboardTableRowCell(props) {
       </Tooltip>
     );
   }
-  /* AnVIL "consentShortName" cell, "not applicable" values only. */
-  if (column === "consentShortName" && cellData === "not applicable") {
-    cellData = <Tooltip label={"Consortia Access Only"}>{cellData}</Tooltip>;
-  }
   return React.createElement(reactElementType, { ...props, id }, cellData);
 }
 
