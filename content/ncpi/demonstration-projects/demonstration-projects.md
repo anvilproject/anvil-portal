@@ -21,7 +21,7 @@ In this research, we intend to study the genetic bases of congenital heart defec
 
 This interoperability project aims to find a path to connect the GTEx data on the AnVIL platform to further processing and also combination with a prior analysis on the CRDC. This “normals” use case is a frequent request from our users, so find
 
-**[Genetic bases of congenital heart defects (Manning)](/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning)** 
+**[Genetic Bases of Congenital Heart Defects (Manning)](/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning)** 
 
 **Platforms** - NHGRI AnVIL + Kids First DRC + NHLBI BioData Catalyst
 
