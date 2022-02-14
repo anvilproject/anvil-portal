@@ -50,7 +50,7 @@ th.right {
 
 /* AnVIL cell - "consortium" */
 [id^="anvil"] th[id^="consortium"] {
-  width: 90px;
+  width: 100px;
 }
 
 /* AnVIL cell - "dataTypes" */
