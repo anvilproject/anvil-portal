@@ -93,7 +93,7 @@ workflows:
               only:
                 - main
                 - ux-dev
-                - 1735-ncpi-demonstration-projects
+                - 1654-dashboard
           context: anvil-portal-staging
   build-n-deploy-prod:
     jobs:
