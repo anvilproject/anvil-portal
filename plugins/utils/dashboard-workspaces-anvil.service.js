@@ -343,7 +343,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
  *
  * @param studyId
  * @param studyPropertiesById
- * @returns {{dbGapIdAccession: string, studyDesigns: *[], studyName: string, studyUrl: string}|*}
+ * @returns {{dbGapIdAccession: string, studyName: string, studyUrl: string}|*}
  */
 function getWorkspaceStudy(studyId, studyPropertiesById) {
   const study = studyPropertiesById.get(studyId);
@@ -354,7 +354,7 @@ function getWorkspaceStudy(studyId, studyPropertiesById) {
 
   return {
     dbGapIdAccession: "",
-    studyDesigns: [],
+    // studyDesigns: [],
     studyName: "",
     studyUrl: "",
   };
