@@ -32,7 +32,7 @@ const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const CONSENT_CODE_TYPE = {
   CONSORTIUM_ACCESS_ONLY: "consortium-access only",
   NOT_APPLICABLE: "not applicable",
-  OPEN_ACCESS: "open access",
+  NRES: "nres",
 };
 const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
@@ -40,7 +40,7 @@ const SOURCE_HEADER_KEY = {
   CREATED_AT: "created",
   DATA_TYPES: "library:datatype.items",
   DB_GAP_ID: "tagssheet:tag:tags:dbgap",
-  DISEASES: "tagssheet:library:indication",
+  DISEASES: "library:indication",
   PARTICIPANTS: "participantcount",
   PROJECT_ID: "name",
   SAMPLES: "samplecount",
@@ -85,7 +85,7 @@ const SOURCE_FIELD_TYPE = {
 const WORKSPACE_ACCESS_TYPE = {
   CONSORTIUM_ACCESS: "Consortium Access",
   CONTROLLED_ACCESS: "Controlled Access",
-  OPEN_ACCESS: "Open Access",
+  NO_RESTRICTIONS: "No Restrictions",
 };
 const WORKSPACE_CONSORTIUM = {
   CCDG: "CCDG",
@@ -127,9 +127,9 @@ const getWorkspaces = async function getWorkspaces() {
 
 /**
  * Returns the access type for the specified workspace.
- * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "open access" in library:dataUseRestriction.
+ * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "nres" in library:dataUseRestriction.
  * - "Consortium Access" for any workspace without a study or defined as "not applicable" in library:dataUseRestriction.
- * - "Open Access" for any workspace defined as "open access" in library:dataUseRestriction.
+ * - "No Restrictions" for any workspace defined as "nres" or "public" in library:dataUseRestriction.
  *
  * @param workspace
  * @param propertyConsentShortName
@@ -150,7 +150,7 @@ function buildWorkspacePropertyAccessType(
     ];
 
   /* Let access type be "Controlled Access". */
-  /* This is true for any workspace with a study, and defined as anything other than "not applicable" in library:dataUseRestriction, or is not "Open Access". */
+  /* This is true for any workspace with a study, and defined as anything other than "consortium-access only" in library:dataUseRestriction, or is not "NRES". */
   let accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
 
   if (consentShortName) {
@@ -164,9 +164,9 @@ function buildWorkspacePropertyAccessType(
     ) {
       accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
     }
-    /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
-    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.OPEN_ACCESS) {
-      accessType = WORKSPACE_ACCESS_TYPE.OPEN_ACCESS;
+    /* Let access type be "No Restrictions". This is true for any workspace that is defined as "nres" in library:dataUseRestriction. */
+    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NRES) {
+      accessType = WORKSPACE_ACCESS_TYPE.NO_RESTRICTIONS;
     }
   }
 
@@ -227,7 +227,7 @@ function buildWorkspacePropertyStudyRequestAccessUrl(
 }
 
 /**
- * Returns the workspace subjects count calculated from the larger of either subjects or participants count.
+ * Returns the workspace subjects count calculated from subjects count (or participants count if subjects count is undefined or zero).
  *
  * @param row
  * @param subjectsKey
@@ -235,10 +235,11 @@ function buildWorkspacePropertyStudyRequestAccessUrl(
  * @returns {{}}
  */
 function getWorkspacePropertySubjectsCount(row, subjectsKey, participantsKey) {
-  const participantsCount = row[participantsKey];
-  const subjectsCount = row[subjectsKey];
-  const subjects = Math.max(participantsCount, subjectsCount);
-  return { [subjectsKey]: subjects };
+  let count = row[subjectsKey];
+  if (!count) {
+    count = row[participantsKey] || 0;
+  }
+  return { [subjectsKey]: count };
 }
 
 /**
@@ -314,27 +315,24 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
     const size = row[keyFileSize];
 
-    /* Only include workspace if there is a file size. */
-    if (size && size > 0) {
-      /* Merge properties. */
-      const workspace = {
-        ...row,
-        ...propertyAccessType,
-        ...propertyConsentShortName,
-        ...propertyConsortium,
-        ...propertyDataTypes,
-        ...propertyDiseases,
-        ...propertyGapId,
-        ...propertySubjects,
-        ...propertyStudyDesigns,
-        ...propertyStudyRequestAccessUrl,
-        ...propertyStudySlug,
-        ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
-      };
+    /* Merge properties. */
+    const workspace = {
+      ...row,
+      ...propertyAccessType,
+      ...propertyConsentShortName,
+      ...propertyConsortium,
+      ...propertyDataTypes,
+      ...propertyDiseases,
+      ...propertyGapId,
+      ...propertySubjects,
+      ...propertyStudyDesigns,
+      ...propertyStudyRequestAccessUrl,
+      ...propertyStudySlug,
+      ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
+    };
 
-      /* Accumulate the workspace. */
-      acc.push(workspace);
-    }
+    /* Accumulate the workspace. */
+    acc.push(workspace);
 
     return acc;
   }, []);
