@@ -36,10 +36,10 @@ const CONSENT_CODE_TYPE = {
 };
 const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
-  CONSORTIUM: "sheet:consortium",
+  CONSORTIUM: "consortium",
   CREATED_AT: "created",
   DATA_TYPES: "library:datatype.items",
-  DB_GAP_ID: "tagssheet:tag:tags:dbgap",
+  DB_GAP_ID: "phsid",
   DISEASES: "library:indication",
   PARTICIPANTS: "participantcount",
   PROJECT_ID: "name",
