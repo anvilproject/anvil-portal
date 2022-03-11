@@ -38,7 +38,7 @@ const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
   CREATED_AT: "created",
-  DATA_TYPES: "library:datatype.items",
+  DATA_TYPES: "library:datatype",
   DB_GAP_ID: "phsid",
   DISEASES: "library:indication",
   PARTICIPANTS: "participantcount",
