@@ -53,7 +53,7 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
     const fhirUrl = study?.fhirUrl;
     const studyDescription = study?.description;
     const studyDescriptionShort = study?.descriptionShort;
-    const studyDesigns = study?.studyDesigns;
+    // const studyDesigns = study?.studyDesigns;
     const studyName = study?.studyName;
     const studyUrl = getStudyUrl(studyAccession);
     studyByStudyId.set(studyId, {
@@ -61,7 +61,7 @@ const getStudyPropertiesById = async function getStudyPropertiesById(
       fhirUrl: fhirUrl,
       studyDescription: studyDescription,
       studyDescriptionShort: studyDescriptionShort,
-      studyDesigns: studyDesigns,
+      // studyDesigns: studyDesigns,
       studyName: studyName,
       studyUrl: studyUrl,
     });

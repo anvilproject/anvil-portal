@@ -55,7 +55,11 @@ function DashboardStudyOverview(
         ref={refMore}
       >
         {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: studyDescription }} />
+        {studyDescription ? (
+          <div dangerouslySetInnerHTML={{ __html: studyDescription }} />
+        ) : (
+          <div>No Description</div>
+        )}
       </div>
       {showToggleButton ? (
         <More setTruncateText={setTruncateText} truncateText={truncateText} />

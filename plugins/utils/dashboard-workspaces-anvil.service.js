@@ -29,25 +29,25 @@ const { buildGapId } = require(path.resolve(
 // Template variables
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
-const fileSourceTerra = "dashboard-source-terra.csv";
 const CONSENT_CODE_TYPE = {
   CONSORTIUM_ACCESS_ONLY: "consortium-access only",
   NOT_APPLICABLE: "not applicable",
-  OPEN_ACCESS: "open access",
+  NRES: "nres",
 };
 const SOURCE_HEADER_KEY = {
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
   CREATED_AT: "created",
-  DATA_TYPES: "library:datatype.items",
-  DB_GAP_ID: "study_accession",
+  DATA_TYPES: "library:datatype",
+  DB_GAP_ID: "phsid",
   DISEASES: "library:indication",
+  PARTICIPANTS: "participantcount",
   PROJECT_ID: "name",
-  SAMPLES: "sample count",
-  SIZE: "file size",
+  SAMPLES: "samplecount",
+  SIZE: "bucketsize",
   STUDY_DESIGNS: "library:studydesign",
-  SUBJECTS: "library:numsubjects",
-  WORKSPACE: "workspace",
+  SUBJECTS: "subjectcount",
+  WORKSPACE: "name",
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
@@ -59,6 +59,7 @@ const SOURCE_FIELD_KEY = {
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
   GAP_ID: "gapId",
+  [SOURCE_HEADER_KEY.PARTICIPANTS]: "participants",
   [SOURCE_HEADER_KEY.PROJECT_ID]: "projectId",
   [SOURCE_HEADER_KEY.SAMPLES]: "samples",
   [SOURCE_HEADER_KEY.SIZE]: "size",
@@ -73,6 +74,7 @@ const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
   [SOURCE_HEADER_KEY.DISEASES]: "array",
+  [SOURCE_HEADER_KEY.PARTICIPANTS]: "number",
   [SOURCE_HEADER_KEY.PROJECT_ID]: "string",
   [SOURCE_HEADER_KEY.SAMPLES]: "number",
   [SOURCE_HEADER_KEY.SIZE]: "number",
@@ -83,12 +85,14 @@ const SOURCE_FIELD_TYPE = {
 const WORKSPACE_ACCESS_TYPE = {
   CONSORTIUM_ACCESS: "Consortium Access",
   CONTROLLED_ACCESS: "Controlled Access",
-  OPEN_ACCESS: "Open Access",
+  NO_RESTRICTIONS: "No Restrictions",
 };
 const WORKSPACE_CONSORTIUM = {
   CCDG: "CCDG",
-  CONVERGENT_NEURO: "Convergent Neuro",
+  CONVERGENT_NEUROSCIENCE: "Convergent Neuroscience",
   CMG: "CMG",
+  CMH: "CMH",
+  CSER: "CSER",
   EMERGE: "eMERGE",
   GTEX: "GTEx (v8)",
   HPRC: "HPRC",
@@ -105,9 +109,6 @@ const WORKSPACE_CONSORTIUM = {
  * @returns {Promise.<void>}
  */
 const getWorkspaces = async function getWorkspaces() {
-  /* Build workspace counts. */
-  const countWorkspaces = await parseSource(fileSourceTerra, ",");
-
   /* Build the workspace attributes. */
   const attributeWorkspaces = await parseSource(fileSourceAnVIL, "\t");
 
@@ -115,11 +116,7 @@ const getWorkspaces = async function getWorkspaces() {
   const studyPropertiesById = await getStudyPropertiesById(attributeWorkspaces);
 
   /* Merge the workspace data and build any additional rule based data, and associated study properties. */
-  const workspaces = buildWorkspaces(
-    attributeWorkspaces,
-    countWorkspaces,
-    studyPropertiesById
-  );
+  const workspaces = buildWorkspaces(attributeWorkspaces, studyPropertiesById);
 
   /* Return the sorted dashboard, sorted first by consortium, then by project name. */
   const keyConsortium = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSORTIUM];
@@ -130,9 +127,9 @@ const getWorkspaces = async function getWorkspaces() {
 
 /**
  * Returns the access type for the specified workspace.
- * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "open access" in library:dataUseRestriction.
+ * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "nres" in library:dataUseRestriction.
  * - "Consortium Access" for any workspace without a study or defined as "not applicable" in library:dataUseRestriction.
- * - "Open Access" for any workspace defined as "open access" in library:dataUseRestriction.
+ * - "No Restrictions" for any workspace defined as "nres" or "public" in library:dataUseRestriction.
  *
  * @param workspace
  * @param propertyConsentShortName
@@ -153,7 +150,7 @@ function buildWorkspacePropertyAccessType(
     ];
 
   /* Let access type be "Controlled Access". */
-  /* This is true for any workspace with a study, and defined as anything other than "not applicable" in library:dataUseRestriction, or is not "Open Access". */
+  /* This is true for any workspace with a study, and defined as anything other than "consortium-access only" in library:dataUseRestriction, or is not "NRES". */
   let accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
 
   if (consentShortName) {
@@ -167,9 +164,9 @@ function buildWorkspacePropertyAccessType(
     ) {
       accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
     }
-    /* Let access type be "Open Access". This is true for any workspace that is defined as "Open Access" in library:dataUseRestriction. */
-    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.OPEN_ACCESS) {
-      accessType = WORKSPACE_ACCESS_TYPE.OPEN_ACCESS;
+    /* Let access type be "No Restrictions". This is true for any workspace that is defined as "nres" in library:dataUseRestriction. */
+    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NRES) {
+      accessType = WORKSPACE_ACCESS_TYPE.NO_RESTRICTIONS;
     }
   }
 
@@ -230,17 +227,28 @@ function buildWorkspacePropertyStudyRequestAccessUrl(
 }
 
 /**
+ * Returns the workspace subjects count calculated from subjects count (or participants count if subjects count is undefined or zero).
+ *
+ * @param row
+ * @param subjectsKey
+ * @param participantsKey
+ * @returns {{}}
+ */
+function getWorkspacePropertySubjectsCount(row, subjectsKey, participantsKey) {
+  let count = row[subjectsKey];
+  if (!count) {
+    count = row[participantsKey] || 0;
+  }
+  return { [subjectsKey]: count };
+}
+
+/**
  * Returns the merged workspace data and any additional workspace properties of interest.
  *
  * @param attributeWorkspaces
- * @param countWorkspaces
  * @param studyPropertiesById
  */
-function buildWorkspaces(
-  attributeWorkspaces,
-  countWorkspaces,
-  studyPropertiesById
-) {
+function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
   return attributeWorkspaces.reduce((acc, row) => {
     /* Grab the study id. */
     const studyId = getWorkspaceStudyId(row);
@@ -280,9 +288,6 @@ function buildWorkspaces(
     /* Build the property gapId. */
     const propertyGapId = buildWorkspacePropertyGapId(studyId, "", studyUrl);
 
-    /* Build the property counts. */
-    const countWorkspace = findCountWorkspace(row, countWorkspaces);
-
     /* Reformat the property studyDesigns. */
     const propertyStudyDesigns = reformatWorkspacePropertyList(
       row,
@@ -299,81 +304,38 @@ function buildWorkspaces(
       dbGapIdAccession
     );
 
+    /* Grab the property subjects or participants count. */
+    const propertySubjects = getWorkspacePropertySubjectsCount(
+      row,
+      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SUBJECTS],
+      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PARTICIPANTS]
+    );
+
     /* Grab the workspace file size. */
     const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
-    const size = countWorkspace[keyFileSize];
+    const size = row[keyFileSize];
 
-    /* Only include workspace if there is a file size. */
-    if (size && size > 0) {
-      /* Merge properties. */
-      const workspace = {
-        ...countWorkspace,
-        ...row,
-        ...propertyAccessType,
-        ...propertyConsentShortName,
-        ...propertyConsortium,
-        ...propertyDataTypes,
-        ...propertyDiseases,
-        ...propertyGapId,
-        ...propertyStudyDesigns,
-        ...propertyStudyRequestAccessUrl,
-        ...propertyStudySlug,
-        ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
-      };
+    /* Merge properties. */
+    const workspace = {
+      ...row,
+      ...propertyAccessType,
+      ...propertyConsentShortName,
+      ...propertyConsortium,
+      ...propertyDataTypes,
+      ...propertyDiseases,
+      ...propertyGapId,
+      ...propertySubjects,
+      ...propertyStudyDesigns,
+      ...propertyStudyRequestAccessUrl,
+      ...propertyStudySlug,
+      ...propertyStudy /* FHIR study values, should they exist, overwrite any corresponding properties from AnVIL. */,
+    };
 
-      /* Accumulate the workspace. */
-      acc.push(workspace);
-    }
+    /* Accumulate the workspace. */
+    acc.push(workspace);
 
     return acc;
   }, []);
-}
-
-/**
- * Returns the counts for the specified workspace.
- *
- * @param row
- * @param countWorkspaces
- * @returns {*}
- */
-function findCountWorkspace(row, countWorkspaces) {
-  /* Grab the project id key. */
-  const keyProjectId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PROJECT_ID];
-
-  /* Grab the project id value. */
-  const projectId = row[keyProjectId];
-
-  /* Find the corresponding workspaces counts. */
-  const countWorkspace = countWorkspaces.find(
-    (countWorkspace) =>
-      countWorkspace[keyProjectId].toLowerCase() === projectId.toLowerCase()
-  );
-
-  /* Return the workspace counts if they exist. */
-  if (countWorkspace) {
-    return countWorkspace;
-  }
-
-  /* If there is no corresponding workspaces count, return the workspace count properties with a corresponding value of zero. */
-  const properties = getWorkspaceProperties(countWorkspaces);
-
-  return properties.reduce(
-    (acc, property) => Object.assign(acc, { [property]: 0 }),
-    {}
-  );
-}
-
-/**
- * Returns the properties of the specified workspace.
- *
- * @param workspaces
- * @returns {Array}
- */
-function getWorkspaceProperties(workspaces) {
-  const clonedWorkspaces = [...workspaces];
-  const workspace = clonedWorkspaces.pop();
-
-  return Object.keys(workspace);
 }
 
 /**
@@ -381,7 +343,7 @@ function getWorkspaceProperties(workspaces) {
  *
  * @param studyId
  * @param studyPropertiesById
- * @returns {{dbGapIdAccession: string, studyDesigns: *[], studyName: string, studyUrl: string}|*}
+ * @returns {{dbGapIdAccession: string, studyName: string, studyUrl: string}|*}
  */
 function getWorkspaceStudy(studyId, studyPropertiesById) {
   const study = studyPropertiesById.get(studyId);
@@ -392,7 +354,7 @@ function getWorkspaceStudy(studyId, studyPropertiesById) {
 
   return {
     dbGapIdAccession: "",
-    studyDesigns: [],
+    // studyDesigns: [],
     studyName: "",
     studyUrl: "",
   };
