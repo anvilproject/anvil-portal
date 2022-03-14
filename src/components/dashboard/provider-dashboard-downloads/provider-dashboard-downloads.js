@@ -81,11 +81,11 @@ function ProviderDashboardDownloads(props) {
 
     /* Insert "createdAt" field after "projectId" for downloading AnVIL workspaces only. */
     let headerKeys = [...headers];
-    if (dataset === "anvil") {
-      const indexProjectId = headers.indexOf("projectId");
-      const indexCreatedAt = indexProjectId + 1;
-      headerKeys.splice(indexCreatedAt, 0, "createdAt");
-    }
+    // if (dataset === "anvil") {
+    //   const indexProjectId = headers.indexOf("projectId");
+    //   const indexCreatedAt = indexProjectId + 1;
+    //   headerKeys.splice(indexCreatedAt, 0, "createdAt");
+    // }
 
     const reformattedResultSet = reformatJSON(resultSet, headerKeys, "\t");
 
