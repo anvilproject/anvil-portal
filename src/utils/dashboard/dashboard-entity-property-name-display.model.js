@@ -12,6 +12,7 @@ export const DashboardEntityPropertyNameDisplay = {
   consortium: "Consortium",
   createdAt: "Created At",
   dataTypes: "Data Type",
+  dbGapIdAccession: "Study Accession",
   diseases: "Disease",
   focuses: "Focus / Disease",
   gapId: "dbGap Id",

@@ -13,6 +13,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               createdAt
               dataTypes
               dbGapId
+              dbGapIdAccession
               diseases
               gapId {
                 studyUrl
