@@ -87,6 +87,11 @@ function ProviderDashboardDownloads(props) {
     //   headerKeys.splice(indexCreatedAt, 0, "createdAt");
     // }
 
+    /* Insert "dbGapIdAccession" field after "gapId". */
+    const indexGapId = headers.indexOf("gapId");
+    const indexStudyAccession = indexGapId + 1;
+    headerKeys.splice(indexStudyAccession, 0, "dbGapIdAccession");
+
     const reformattedResultSet = reformatJSON(resultSet, headerKeys, "\t");
 
     /* Execute download of the tsv file. */
