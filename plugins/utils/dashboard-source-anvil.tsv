@@ -147,7 +147,7 @@ anvil_ccdg_broad_ai_ibd_daly_sands_msccr_wes	 CCDG	 phs001642	TBD	inflammatory b
 AnVIL_CCDG_Broad_NP_Epilepsy_USAVANControls_HMB-GSO_GSA-MD	 CCDG	 TBD	TBD	epilepsy	Case-Control	Genotyping Array	0	fc-secure-43f3eda2-9eef-449f-9e80-a556f66c66c8	1958	1958	0	0	334810249353	False
 AnVIL_CMH_GAFK_GS-long-read	 CMH	 phs002206	DS-PEDD-IRB	pediatric disease	TBD	TBD	242	fc-secure-44f839c5-dee7-41aa-9cd1-0865b687e58f	242	0	0	242	13472461905400	False
 AnVIL_CCDG_Broad_NP_Epilepsy_JPNFKA_GRU_GSA-MD	 CCDG	 TBD	TBD	epilepsy	TBD	Genotyping Array	0	fc-secure-47992e6d-49c9-44cd-abdd-9e928d558333	368	368	0	0	63425464160	False
-AnVIL_T2T	 T2T	 None	NRES	None	Parent-Offspring Trios	Whole Genome	0	fc-47de7dae-e8e6-429c-b760-b4ba49136eee	0	0	0	0	572107355772554	True
+AnVIL_T2T	 T2T	 None	NRES	None	Parent-Offspring Trios	Whole Genome	0	fc-47de7dae-e8e6-429c-b760-b4ba49136eee	0	3202	0	0	572127427098963	True
 ANVIL_CMG_UWASH_DS-NBIA	 CMG	 phs000693	DS-NBIA	Mendelian disorders	Family/Twins/Trios	Exome	107	fc-secure-4859bab0-bf7e-4eb0-8ded-c6caeb89feba	107	0	52	0	856904512807	True
 AnVIL_CCDG_Broad_NP_Epilepsy_AUSRMB_DS-EAED-MDS_WES	 CCDG	 phs001489	DS-EAED-MDS	epilepsy	Case Set	Exome	0	fc-secure-4931149d-9e71-4865-9f41-3e4c998ffb38	383	383	0	0	580745084568	True
 AnVIL_CCDG_Broad_AI_IBD_Cho_WGS	 CCDG	 phs001642	DS-IBD	inflammatory bowel disease	Case-Control	Whole Genome	0	fc-secure-4984306f-6ceb-48a0-87d5-a6c4ef499867	344	345	0	0	5340179827043	True
