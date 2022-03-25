@@ -60,10 +60,9 @@ The Outreach and Training Working Group will provide exposure and training for N
 
 The objective of this working group is to guide outreach and training activities within the framework of NCPI effort. 
 
-#### Co-Chairs
+#### Chair
 
-- Ashok Krishnamurthy (RENCI) - BDC
-- Anton Nekrutenko (PSU, Galaxy) - AnVIL
+- Stephen Mosher (Johns Hopkins University) - AnVIL
 
 ## Search Working Group
 
