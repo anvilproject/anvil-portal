@@ -13,16 +13,19 @@ import {
   requestAccess,
   requestButton,
 } from "./dashboard-study-request-access.module.css";
+import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 interface Props {
+  studyAccession: string,
   studyRequestAccessUrl?: string;
 }
 
 function DashboardStudyRequestAccess(props: Props): JSX.Element | null {
-  const { studyRequestAccessUrl } = props;
+  const { studyAccession, studyRequestAccessUrl } = props;
   return studyRequestAccessUrl ? (
     <div className={requestAccess}>
       <a // eslint-disable-line react/jsx-no-target-blank
+        onClick={() => onRequestAccessClicked(studyAccession)}
         className={requestButton}
         href={studyRequestAccessUrl}
         rel="noopener"
@@ -32,6 +35,14 @@ function DashboardStudyRequestAccess(props: Props): JSX.Element | null {
       </a>
     </div>
   ) : null;
+}
+
+/**
+ * Track click on request access for the given accession.
+ * @param studyAccession - ID of study that access was requested  for.
+ */
+function onRequestAccessClicked(studyAccession: string) {
+  AnvilGTMService.trackStudyRequestAccess(studyAccession);
 }
 
 DashboardStudyRequestAccess.defaultProps = {

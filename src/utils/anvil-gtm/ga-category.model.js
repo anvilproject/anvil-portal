@@ -10,4 +10,5 @@ export const GACategory = {
   EXTERNAL_LINK: "External Link",
   SEARCH: "Search",
   SITE_SEARCH: "Site Search",
+  STUDY: "Study",
 };

@@ -119,6 +119,15 @@ export function trackSiteSearchResultClicked(title, url, query) {
 }
 
 /**
+ * Track request of access to dbGap study.
+ *
+ * @param {string} studyAccession
+ */
+export function trackStudyRequestAccess(studyAccession) { 
+  GTMService.trackEvent(GACategory.STUDY, GAAction.REQUEST_ACCESS_DBGAP, studyAccession, {});
+}
+
+/**
  * If there is an entity name configured for the specified URL, return it as is. If not and the URL links to a Terra
  * workspace, generate the entity name from the workspace name in the URL. If the URL links to dbGaP, generate the
  * entity name from the dbGaP ID. Otherwise, return unspecified.

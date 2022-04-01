@@ -72,6 +72,7 @@ function DashboardStudyHeadline(
         </span>
       </Overline>
       <DashboardStudyRequestAccess
+        studyAccession={studyAccession}
         studyRequestAccessUrl={studyRequestAccessUrl}
       />
     </div>
