@@ -2,7 +2,7 @@
 sectionSubHeader: ""
 publications:
     - title: "A complete reference genome improves analysis of human genetic variation"
-      cardLink: "https://www.biorxiv.org/content/10.1101/2021.07.12.452063v1"
+      cardLink: "https://www.science.org/doi/10.1126/science.abl3533"
       category: "ON_ANVIL"
       citation:
         authors:
@@ -39,10 +39,10 @@ publications:
             - "Megan Y. Dennis"
             - "Justin M. Zook"
             - "Michael C. Schatz"
-        doi: "https://doi.org/10.1101/2021.07.12.452063"
-        journal: "bioRxiv"
-        publisher: "Cold Spring Harbor Laboratory"
-        year: "2021"
+        doi: "https://doi.org/10.1126/science.abl3533"
+        journal: "Science"
+        publisher: ""
+        year: "2022"
     - title: "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)"
       cardLink: "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3"
       category: "ABOUT_ANVIL"
@@ -79,7 +79,7 @@ publications:
             - "AnVIL Team"
         doi: "https://doi.org/10.1101/2021.04.22.436044"
         journal: "Cell Genomics"
-        publisher: "Cold Spring Harbor Laboratory"
+        publisher: ""
         year: "2022"
     - title: "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events"
       cardLink: "https://www.science.org/doi/10.1126/science.abe3261"
