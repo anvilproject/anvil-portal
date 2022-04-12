@@ -3,7 +3,7 @@ slides:
   - title: "A complete reference genome improves analysis of human genetic variation"
     actions:
       - label: "Paper"
-        url: "https://www.biorxiv.org/content/10.1101/2021.07.12.452063v1"
+        url: "https://www.science.org/doi/10.1126/science.abl3533"
       - label: "Workspace"
         url: "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T"
     media:
