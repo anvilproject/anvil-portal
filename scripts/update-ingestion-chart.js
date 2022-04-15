@@ -7,13 +7,20 @@ const workspaceFilesPath = "./workspace-files";
 const workspacesInfoPath = "../plugins/utils/dashboard-source-anvil.tsv";
 const outPath = "../src/components/data-ingestion-chart/chart-data.ts";
 
-generateChartData().then(() => {
-	console.log("Done");
+generateChartData().then(success => {
+	if (success) console.log("Done");
 }).catch(e => {
 	throw e;
 });
 
 async function generateChartData() {
+	try {
+		await fsPromises.access(workspaceFilesPath);
+	} catch(e) {
+		console.log("Folder /scripts/" + workspaceFilesPath.replace(/^.\//, "") + " needs to be added");
+		return false;
+	}
+	
 	const workspaces = await getWorkspaces();
 	const workspaceFileNames = await getWorkspaceFileNames();
 	
@@ -22,12 +29,8 @@ async function generateChartData() {
 	let maxDateNum = -Infinity;
 	
 	for (let ws of workspaces) {
-		// let entries;
 		if (workspaceFileNames.includes(ws.name)) {
 			const entries = await getWorkspaceEntries(ws.name);
-		// } else {
-		// 	entries = [ws];
-		// }
 			const arr = (entriesByConsortium[ws.consortium] || (entriesByConsortium[ws.consortium] = []));
 			entries.forEach(e => {
 				arr.push(e);
@@ -56,7 +59,9 @@ async function generateChartData() {
 	
 	const scriptText = `export const startYear = ${JSON.stringify(startYear)}; export const monthDataByConsortium: Array<[string, Array<number>]> = ${JSON.stringify(monthDataByConsortium)};`;
 	
-	fsPromises.writeFile(outPath, scriptText);
+	await fsPromises.writeFile(outPath, scriptText);
+	
+	return true;
 	
 	
 	function dateToIndex(dateSrc) {

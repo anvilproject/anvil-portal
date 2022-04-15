@@ -99,7 +99,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,ts,tsx}",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "update-ingestion-chart": "cd scripts && node update-ingestion-chart.js"
   },
   "repository": {
     "type": "git",
