@@ -95,3 +95,6 @@ static/dashboard-report-anvil-studies.csv
 
 # Keys
 keys.sh
+
+# Scripts data
+scripts/workspace-files
