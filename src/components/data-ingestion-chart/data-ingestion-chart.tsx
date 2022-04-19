@@ -223,20 +223,21 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
 }
 
 function getParentSeriesIndex(initPart: BasicEchartsPart | undefined) {
+  /* eslint-disable no-underscore-dangle */
+
   let part = initPart;
 
-  // eslint-disable-next-line no-underscore-dangle
   while (part && part?.__ecComponentInfo?.mainType !== "series") {
     part = part.parent;
   }
 
-  // eslint-disable-next-line no-underscore-dangle
   if (part?.__ecComponentInfo?.mainType === "series") {
-    // eslint-disable-next-line no-underscore-dangle
     return part.__ecComponentInfo.index;
   }
 
   return null;
+
+  /* eslint-enable no-underscore-dangle */
 }
 
 const DataIngestionChart: FC = (): JSX.Element => {
