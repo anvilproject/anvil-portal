@@ -5,7 +5,7 @@
  * The AnVIL - data ingestion chart component.
  */
 
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from "react";
 
 import ReactEChartsCore from "echarts-for-react/lib/core";
 import * as echarts from "echarts/core";
@@ -34,6 +34,18 @@ type TooltipSeriesInfo = {
   data: number;
 };
 
+type BasicEchartsPart = {
+  // Simplified type for ECharts graph components
+  // Only the properties necessary to find the parent series's type and index
+  parent: BasicEchartsPart | undefined;
+  __ecComponentInfo:
+    | {
+        mainType: string;
+        index: number;
+      }
+    | undefined;
+};
+
 function fixDecimalPlaces(n: number, places: number) {
   const str = n.toString();
   const dotIndex = str.indexOf(".");
@@ -47,20 +59,27 @@ function fixDecimalPlaces(n: number, places: number) {
   return str.concat("0".repeat(places - presentPlaces));
 }
 
-function formatTooltip(seriesInfoObjects: Array<TooltipSeriesInfo>) {
-  const container = document.createElement("div");
+function formatTooltip(
+  hoverIndex: React.MutableRefObject<null | number>,
+  seriesInfoObjects: Array<TooltipSeriesInfo>
+) {
+  const elemsBySeriesIndex: { [key: number]: HTMLElement } = {};
+
+  const container: HTMLElement = document.createElement("div");
   container.innerHTML = `
     <div style="font-size:14px;color:#666;font-weight:400;line-height:1;"></div>
   `;
+
   const positionLabel = seriesInfoObjects[0].axisValueLabel;
   container.children[0].textContent = positionLabel.includes("/")
     ? positionLabel
     : `1/${positionLabel.substring(2, 4)}`;
-  seriesInfoObjects.forEach((seriesPoint) => {
+
+  seriesInfoObjects.forEach((seriesPoint, i) => {
     if (seriesPoint.data > 0) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<div style="margin: 10px 0 0; line-height: 1;">
+        `<div style="padding: 5px; margin: 0 -5px; border-radius: 3px; line-height: 1;">
           <div style="margin: 0px 0 0; line-height: 1;">
             <span></span>
             <span style="font-size: 14px; color: #666; font-weight: 400; margin-left: 2px;"></span>
@@ -70,8 +89,11 @@ function formatTooltip(seriesInfoObjects: Array<TooltipSeriesInfo>) {
           <div style="clear: both;"></div>
         </div>`
       );
-      const line =
-        container.children[container.childElementCount - 1].children[0];
+      const newChild = container.children[
+        container.childElementCount - 1
+      ] as HTMLElement;
+      elemsBySeriesIndex[i] = newChild;
+      const line = newChild.children[0];
       line.children[0].outerHTML = seriesPoint.marker;
       line.children[1].textContent = seriesPoint.seriesName;
       line.children[2].textContent = `${fixDecimalPlaces(
@@ -80,10 +102,31 @@ function formatTooltip(seriesInfoObjects: Array<TooltipSeriesInfo>) {
       )} TB`;
     }
   });
+
+  if (container.childElementCount > 1) {
+    (container.children[1] as HTMLElement).style.marginTop = "5px";
+    (
+      container.children[container.childElementCount - 1] as HTMLElement
+    ).style.marginBottom = "-5px";
+  }
+
+  let hoverElem: null | HTMLElement = null;
+  if (hoverIndex.current !== null) {
+    hoverElem = elemsBySeriesIndex[hoverIndex.current] || null;
+    if (hoverElem !== null) hoverElem.style.background = "#eee";
+  }
+  setTimeout(() => {
+    if (hoverElem !== null) hoverElem.style.background = "";
+    if (hoverIndex.current !== null) {
+      hoverElem = elemsBySeriesIndex[hoverIndex.current] || null;
+      if (hoverElem !== null) hoverElem.style.background = "#eee";
+    }
+  }, 50);
+
   return container;
 }
 
-function getChartOptions() {
+function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
   const seriesInfo: Array<[string, Object]> = [];
   const startIndices: Record<string, number> = {};
 
@@ -169,7 +212,7 @@ function getChartOptions() {
       axisPointer: {
         type: "cross",
       },
-      formatter: formatTooltip,
+      formatter: formatTooltip.bind(null, hoverIndex),
     },
     legend: {
       data: sortedData.map(([consortium]) => consortium),
@@ -179,12 +222,47 @@ function getChartOptions() {
   };
 }
 
-const DataIngestionChart: FC = (): JSX.Element => (
-  <ReactEChartsCore
-    echarts={echarts}
-    option={getChartOptions()}
-    style={{ height: "400px" }}
-  />
-);
+function getParentSeriesIndex(initPart: BasicEchartsPart | undefined) {
+  let part = initPart;
+
+  // eslint-disable-next-line no-underscore-dangle
+  while (part && part?.__ecComponentInfo?.mainType !== "series") {
+    part = part.parent;
+  }
+
+  // eslint-disable-next-line no-underscore-dangle
+  if (part?.__ecComponentInfo?.mainType === "series") {
+    // eslint-disable-next-line no-underscore-dangle
+    return part.__ecComponentInfo.index;
+  }
+
+  return null;
+}
+
+const DataIngestionChart: FC = (): JSX.Element => {
+  const chart = useRef<null | ReactEChartsCore>(null);
+  const hoverIndex = useRef<null | number>(null);
+  useEffect(() => {
+    function handleMouse(info: { target: BasicEchartsPart }) {
+      hoverIndex.current = getParentSeriesIndex(info.target);
+    }
+
+    if (chart.current !== null) {
+      const zr = chart.current.getEchartsInstance().getZr();
+      zr.on("mousemove", handleMouse);
+      return () => zr.off("mousemove", handleMouse);
+    }
+
+    return undefined;
+  });
+  return (
+    <ReactEChartsCore
+      ref={chart}
+      echarts={echarts}
+      option={getChartOptions(hoverIndex)}
+      style={{ height: "400px" }}
+    />
+  );
+};
 
 export default DataIngestionChart;
