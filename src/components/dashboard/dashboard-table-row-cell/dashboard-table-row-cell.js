@@ -35,7 +35,11 @@ function DashboardTableRowCell(props) {
       </Tooltip>
     );
   }
-  return React.createElement(reactElementType, { ...props, id }, cellData);
+  return React.createElement(
+    reactElementType,
+    { ...props, id, cellValue: cellData },
+    cellData
+  );
 }
 
 export default DashboardTableRowCell;

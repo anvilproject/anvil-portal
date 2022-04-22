@@ -9,14 +9,15 @@
 import React from "react";
 
 // App dependencies
+import { ConsentName } from "../dashboard-study-summmary/dashboard-study-summary";
 import DashboardTable from "../dashboard-table/dashboard-table";
 
 // Styles
 import * as compStyles from "./dashboard-study-table.module.css";
 
-export interface IStudyWorkspace {
+export interface StudyWorkspace {
   accessType: string;
-  consentShortName: string;
+  consentName: ConsentName;
   dataTypes: string[];
   diseases: string[];
   projectId: string;
@@ -27,14 +28,14 @@ export interface IStudyWorkspace {
 }
 
 interface DashboardStudyTableProps {
-  studyWorkspaces: IStudyWorkspace[];
+  studyWorkspaces: StudyWorkspace[];
 }
 
 function DashboardStudyTable(props: DashboardStudyTableProps): JSX.Element {
   const { studyWorkspaces } = props;
   const tableHeaders = [
     "projectId",
-    "consentShortName",
+    "consentName",
     "diseases",
     "accessType",
     "studyDesigns",

@@ -6,6 +6,7 @@
  */
 
 // App dependencies
+import DashboardTableRowCellConsentName from "../../components/dashboard/dashboard-table-row-cell-consent-name/dashboard-table-row-cell-consent-name";
 import DashboardTableRowCellEllipsis from "../../components/dashboard/dashboard-table-row-cell-ellipsis/dashboard-table-row-cell-ellipsis";
 import DashboardTableRowCellGapId from "../../components/dashboard/dashboard-table-row-cell-gap-id/dashboard-table-row-cell-gap-id";
 import DashboardTableRowCellProjectId from "../../components/dashboard/dashboard-table-row-cell-project-id/dashboard-table-row-cell-project-id";
@@ -89,6 +90,8 @@ export function getReactElementType(columnName, dataset) {
   switch (columnName) {
     case "accessType":
       return DashboardTableRowCellRedirect;
+    case "consentName":
+      return DashboardTableRowCellConsentName;
     case "diseases":
       return DashboardTableRowCellEllipsis;
     case "gapId":

@@ -8,7 +8,12 @@ export const DashboardWorkspaceStaticQuery = () => {
           edges {
             node {
               accessType
+              consentName {
+                long
+                short
+              }
               consentShortName
+              consentLongName
               consortium
               createdAt
               dataTypes

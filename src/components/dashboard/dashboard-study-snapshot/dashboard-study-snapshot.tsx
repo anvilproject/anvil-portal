@@ -14,7 +14,7 @@ import DashboardStudyStats, {
   IStat,
 } from "../dashboard-study-stats/dashboard-study-stats";
 import DashboardStudySummary, {
-  IStudySummary,
+  StudySummary,
 } from "../dashboard-study-summmary/dashboard-study-summary";
 
 // Styles
@@ -23,7 +23,7 @@ import * as compStyles from "./dashboard-study-snapshot.module.css";
 interface DashboardStudySnapshotProps {
   studyRequestAccessUrl: string;
   studyStat: IStat;
-  studySummary: IStudySummary;
+  studySummary: StudySummary;
 }
 
 function DashboardStudySnapshot(

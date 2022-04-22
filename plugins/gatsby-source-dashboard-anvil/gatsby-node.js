@@ -126,6 +126,10 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
   createTypes(`
+    type ConsentName {
+      long: String
+      short: String
+    }
     type DashboardStudy implements Node {
         id: ID!
         fhirUrl: String
@@ -155,6 +159,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type StudySummary implements Node {
         accessTypes: [String]
+        consentNames: [ConsentName]
         consentShortNames: [String]
         dataTypes: [String]
         diseases: [String]
@@ -165,7 +170,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type StudyWorkspace implements Node {
         accessType: String
-        consentShortName: String
+        consentName: ConsentName
         dataTypes: [String]
         diseases: [String]
         projectId: String
@@ -177,6 +182,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Workspace implements Node {
         id: ID!
         accessType: String
+        consentLongName: String
+        consentName: ConsentName
         consentShortName: String
         consortium: String
         createdAt: String
