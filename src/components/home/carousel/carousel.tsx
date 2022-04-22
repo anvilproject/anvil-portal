@@ -174,24 +174,24 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
 
   const removeTouchInteractions = useCallback(
     (sliderEl: HTMLDivElement): void => {
-      sliderEl.removeEventListener("mousedown", (e) => onMouseDown(e));
-      sliderEl.removeEventListener("mouseup", (e) => onMouseUp(e));
-      sliderEl.removeEventListener("touchend", (e) => onTouchEnd(e));
-      sliderEl.removeEventListener("touchmove", (e) => onTouchMove(e));
-      sliderEl.removeEventListener("touchstart", (e) => onTouchStart(e));
+      sliderEl.removeEventListener("mousedown", onMouseDown);
+      sliderEl.removeEventListener("mouseup", onMouseUp);
+      sliderEl.removeEventListener("touchend", onTouchEnd);
+      sliderEl.removeEventListener("touchmove", onTouchMove);
+      sliderEl.removeEventListener("touchstart", onTouchStart);
     },
     [onMouseDown, onMouseUp, onTouchEnd, onTouchMove, onTouchStart]
   );
 
   const setTouchInteractions = useCallback(
     (sliderEl: HTMLDivElement): void => {
-      sliderEl.addEventListener("mousedown", (e) => onMouseDown(e));
-      sliderEl.addEventListener("mouseup", (e) => onMouseUp(e));
-      sliderEl.addEventListener("touchend", (e) => onTouchEnd(e));
-      sliderEl.addEventListener("touchmove", (e) => onTouchMove(e), {
+      sliderEl.addEventListener("mousedown", onMouseDown);
+      sliderEl.addEventListener("mouseup", onMouseUp);
+      sliderEl.addEventListener("touchend", onTouchEnd);
+      sliderEl.addEventListener("touchmove", onTouchMove, {
         passive: false,
       });
-      sliderEl.addEventListener("touchstart", (e) => onTouchStart(e));
+      sliderEl.addEventListener("touchstart", onTouchStart);
     },
     [onMouseDown, onMouseUp, onTouchEnd, onTouchMove, onTouchStart]
   );
