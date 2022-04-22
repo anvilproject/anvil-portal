@@ -18,12 +18,14 @@ import { active, bullet, bullets } from "./carousel-bullets.module.css";
 
 interface Props {
   activeSlide: number;
+  setSlow: (slow: boolean) => void;
   setActiveSlide: (slideIndex: number) => void;
   slides: ICard[];
 }
 
 const CarouselBullets: FC<Props> = ({
   activeSlide,
+  setSlow,
   setActiveSlide,
   slides,
 }): JSX.Element => {
@@ -39,8 +41,14 @@ const CarouselBullets: FC<Props> = ({
             bullet
           )}
           key={title}
-          onClick={() => setActiveSlide(s)}
-          onKeyDown={() => setActiveSlide(s)}
+          onClick={() => {
+            setSlow(false);
+            setActiveSlide(s);
+          }}
+          onKeyDown={() => {
+            setSlow(false);
+            setActiveSlide(s);
+          }}
           role="button"
           tabIndex={0}
         />

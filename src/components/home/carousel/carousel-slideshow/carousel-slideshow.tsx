@@ -19,15 +19,21 @@ import { slider } from "./carousel-slideshow.module.css";
 interface Props {
   activeSlide: number;
   slides: ICard[];
+  slow: boolean;
 }
 
-const CarouselSlideshow: FC<Props> = ({ activeSlide, slides }): JSX.Element => {
+const CarouselSlideshow: FC<Props> = ({
+  activeSlide,
+  slides,
+  slow,
+}): JSX.Element => {
   return (
     <div className={slider}>
       {slides.map((slide, i) => (
         <CarouselSlide
           key={slide.title}
           showSlide={i === activeSlide}
+          slow={slow}
           slide={slide}
         />
       ))}
