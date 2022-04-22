@@ -186,7 +186,9 @@ th.right {
     width: 200px;
   }
 
+  /* AnVIL cell - "consentName" */
   /* AnVIL cell - "consentShortName" */
+  [id^="anvil"] th[id^="consentName"],
   [id^="anvil"] th[id^="consentShortName"] {
     width: 160px;
   }

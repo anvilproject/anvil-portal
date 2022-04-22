@@ -35,6 +35,7 @@ const CONSENT_CODE_TYPE = {
   NRES: "nres",
 };
 const SOURCE_HEADER_KEY = {
+  CONSENT_LONG_NAME: "consentlongname",
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
   CREATED_AT: "created",
@@ -51,6 +52,8 @@ const SOURCE_HEADER_KEY = {
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
+  [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "consentLongName",
+  CONSENT_NAME: "consentName",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "consentShortName",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "consortium",
   [SOURCE_HEADER_KEY.CREATED_AT]: "createdAt",
@@ -68,6 +71,7 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.WORKSPACE]: "projectId",
 };
 const SOURCE_FIELD_TYPE = {
+  [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "string",
   [SOURCE_HEADER_KEY.CREATED_AT]: "string",
@@ -173,6 +177,33 @@ function buildWorkspacePropertyAccessType(
 }
 
 /**
+ * Returns the consent name (short and long) for the specified workspace.
+ * @param workspace
+ * @param propertyConsentShortName
+ * @returns {{[p: string]: {short: *, long: *}}}
+ */
+function buildWorkspacePropertyConsentName(
+  workspace,
+  propertyConsentShortName
+) {
+  const keyConsentName = SOURCE_FIELD_KEY.CONSENT_NAME;
+
+  /* Grab the consent short code for the workspace. */
+  const consentShortName =
+    propertyConsentShortName[
+      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
+    ];
+
+  /* Grab the consent long code for the workspace. */
+  const consentLongName =
+    workspace[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_LONG_NAME]];
+
+  return {
+    [keyConsentName]: { long: consentLongName, short: consentShortName },
+  };
+}
+
+/**
  * Returns the gap id for the specified workspace.
  * The gap id comprises of db gap identifier or study accession identifier and any corresponding study url.
  *
@@ -262,6 +293,12 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
     );
 
+    /* Build the property consent name. */
+    const propertyConsentName = buildWorkspacePropertyConsentName(
+      row,
+      propertyConsentShortName
+    );
+
     /* Build the property accessType. */
     const propertyAccessType = buildWorkspacePropertyAccessType(
       row,
@@ -310,14 +347,11 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.PARTICIPANTS]
     );
 
-    /* Grab the workspace file size. */
-    const keyFileSize = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.SIZE];
-    const size = row[keyFileSize];
-
     /* Merge properties. */
     const workspace = {
       ...row,
       ...propertyAccessType,
+      ...propertyConsentName,
       ...propertyConsentShortName,
       ...propertyConsortium,
       ...propertyDataTypes,

@@ -71,7 +71,7 @@ const buildStudiesDetail = function buildStudiesDetail(workspaces) {
 
   /* Merge study stats and summary with study. */
   /* Stats and summary are calculated from the study workspaces. */
-  for (const [studyId, study] of studyByStudyId) {
+  for (const [, study] of studyByStudyId) {
     const stat = buildStats(study.studyWorkspaces);
     const summary = buildStudySummary(study.studyWorkspaces);
     Object.assign(study, { studyStat: stat, studySummary: summary });
@@ -118,7 +118,7 @@ function buildStudySummary(workspaces) {
   /* Grab the workspace property names used to build the study summary. */
   const keys = [
     "accessType",
-    "consentShortName",
+    "consentName",
     "dataTypes",
     "diseases",
     "studyDesigns",
@@ -127,7 +127,7 @@ function buildStudySummary(workspaces) {
   /* Build a relationship between workspace property names and summary names. */
   const SummaryKey = {
     accessType: "accessTypes",
-    consentShortName: "consentShortNames",
+    consentName: "consentNames",
   };
 
   const setOfValuesBySummaryKey = new Map();
@@ -142,13 +142,21 @@ function buildStudySummary(workspaces) {
       }
 
       /* Handle case where value is not an array - make a single value an array of single length. */
-      const workspaceValues = Array.isArray(workspace[key])
-        ? workspace[key]
-        : Array.of(workspace[key]);
+      const workspaceValues = getWorkspaceValues(workspace[key]);
 
       /* Add all values to the set of summary values. */
       workspaceValues.forEach((workspaceValue) => {
-        if (workspaceValue !== "--") {
+        if (key === "consentName") {
+          /* consentName is typed as an object and we will need to do a direct comparison to ensure it is added only once to the set. */
+          const distinctConsentName = isConsentNameDistinct(
+            setOfValues,
+            workspaceValue
+          );
+          if (distinctConsentName) {
+            /* Add new consent name to set. */
+            setOfValues.add(workspaceValue);
+          }
+        } else if (workspaceValue !== "--") {
           setOfValues.add(workspaceValue);
         }
       });
@@ -165,6 +173,37 @@ function buildStudySummary(workspaces) {
   }
 
   return summary;
+}
+
+/**
+ * Returns workspace value as an array of values.
+ * Handle case where value is not an array and makes a single value an array of single length.
+ * @param value
+ * @returns {*[]|*[]}
+ */
+function getWorkspaceValues(value) {
+  let workspaceValues;
+  if (value) {
+    if (Array.isArray(value)) {
+      workspaceValues = value;
+    } else {
+      workspaceValues = Array.of(value);
+    }
+  }
+  return workspaceValues || [];
+}
+
+/**
+ * Returns true if the workspace value is not in the set of values.
+ * @param setOfValues
+ * @param workspaceValue
+ * @returns {boolean}
+ */
+function isConsentNameDistinct(setOfValues, workspaceValue) {
+  const { long, short } = workspaceValue;
+  return ![...setOfValues].some(
+    (value) => value.long === long && value.short === short
+  );
 }
 
 module.exports.buildStudiesDetail = buildStudiesDetail;

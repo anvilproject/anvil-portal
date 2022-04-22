@@ -89,14 +89,20 @@ export const query = graphql`
       }
       studySummary {
         accessTypes
-        consentShortNames
+        consentNames {
+          long
+          short
+        }
         dataTypes
         diseases
         studyDesigns
       }
       studyWorkspaces {
         accessType
-        consentShortName
+        consentName {
+          long
+          short
+        }
         dataTypes
         diseases
         projectId

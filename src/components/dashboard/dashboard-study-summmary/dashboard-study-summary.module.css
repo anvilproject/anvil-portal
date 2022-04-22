@@ -23,6 +23,15 @@
   display: block;
 }
 
+/* Consent. */
+.consent {
+  display: block;
+}
+
+.consent + .consent {
+  margin-top: 4px;
+}
+
 /**
  * Small tablet portrait, medium handset landscape, small window
  */

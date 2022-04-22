@@ -13,9 +13,9 @@ import DashboardStudyHeadline from "../dashboard-study-headline/dashboard-study-
 import DashboardStudyOverview from "../dashboard-study-overview/dashboard-study-overview";
 import DashboardStudySnapshot from "../dashboard-study-snapshot/dashboard-study-snapshot";
 import { IStat } from "../dashboard-study-stats/dashboard-study-stats";
-import { IStudySummary } from "../dashboard-study-summmary/dashboard-study-summary";
+import { StudySummary } from "../dashboard-study-summmary/dashboard-study-summary";
 import DashboardStudyTable, {
-  IStudyWorkspace,
+  StudyWorkspace,
 } from "../dashboard-study-table/dashboard-study-table";
 
 // Styles
@@ -29,8 +29,8 @@ export interface IStudy {
   studyName: string;
   studyRequestAccessUrl: string;
   studyStat: IStat;
-  studySummary: IStudySummary;
-  studyWorkspaces?: IStudyWorkspace[];
+  studySummary: StudySummary;
+  studyWorkspaces?: StudyWorkspace[];
   studyUrl: string;
 }
 

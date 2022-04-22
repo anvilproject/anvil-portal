@@ -11,25 +11,32 @@ import React from "react";
 // Styles
 import * as compStyles from "./dashboard-study-summary.module.css";
 
-export interface IStudySummary {
-  accessTypes: string[] | undefined;
-  consentShortNames: string[];
+export interface ConsentName {
+  long: string;
+  short: string;
+}
+
+export interface StudySummary {
+  accessTypes?: string[];
+  consentNames?: ConsentName[];
+  consentShortNames?: string[];
   dataTypes: string[];
-  diseases: string[] | undefined;
-  focuses: string[] | undefined;
+  diseases?: string[];
+  focuses?: string[];
   studyDesigns: string[];
-  studyPlatforms: string[] | undefined;
-  subjectsTotal: number | undefined;
+  studyPlatforms?: string[];
+  subjectsTotal?: number;
 }
 
 interface DashboardStudySummaryProps {
-  studySummary: IStudySummary;
+  studySummary: StudySummary;
 }
 
 function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
   const { studySummary } = props;
   const {
     accessTypes,
+    consentNames,
     consentShortNames,
     dataTypes,
     diseases,
@@ -49,38 +56,52 @@ function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
   return (
     <>
       <h3>Summary</h3>
-      {studyPlatforms ? (
+      {studyPlatforms && (
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Platforms</span>
           <span className={compStyles.value}>
             {formatSummary(studyPlatforms)}
           </span>
         </div>
-      ) : null}
-      <div className={compStyles.summary}>
-        <span className={compStyles.label}>Consent Codes</span>
-        <span className={compStyles.value}>
-          {formatSummary(consentShortNames)}
-        </span>
-      </div>
-      {diseases ? (
+      )}
+      {consentShortNames && (
+        <div className={compStyles.summary}>
+          <span className={compStyles.label}>Consent Codes</span>
+          <span className={compStyles.value}>
+            {formatSummary(consentShortNames)}
+          </span>
+        </div>
+      )}
+      {consentNames && (
+        <div className={compStyles.summary}>
+          <span className={compStyles.label}>Consent Codes</span>
+          <span className={compStyles.value}>
+            {consentNames.map(({ long, short }) => (
+              <span className={compStyles.consent} key={`${short}-${long}`}>
+                {short} - {long}
+              </span>
+            ))}
+          </span>
+        </div>
+      )}
+      {diseases && (
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Diseases</span>
           <span className={compStyles.value}>{formatSummary(diseases)}</span>
         </div>
-      ) : null}
-      {focuses ? (
+      )}
+      {focuses && (
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Focus / Diseases</span>
           <span className={compStyles.value}>{formatSummary(focuses)}</span>
         </div>
-      ) : null}
-      {accessTypes ? (
+      )}
+      {accessTypes && (
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Access</span>
           <span className={compStyles.value}>{formatSummary(accessTypes)}</span>
         </div>
-      ) : null}
+      )}
       <div className={compStyles.summary}>
         <span className={compStyles.label}>Study Design</span>
         <span className={compStyles.value}>{formatSummary(studyDesigns)}</span>
@@ -89,14 +110,14 @@ function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
         <span className={compStyles.label}>Data Types</span>
         <span className={compStyles.value}>{formatSummary(dataTypes)}</span>
       </div>
-      {subjectsTotal ? (
+      {subjectsTotal && (
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Subjects</span>
           <span className={compStyles.value}>
             {subjectsTotal.toLocaleString()}
           </span>
         </div>
-      ) : null}
+      )}
     </>
   );
 }

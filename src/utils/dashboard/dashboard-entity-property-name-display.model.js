@@ -8,6 +8,7 @@
 export const DashboardEntityPropertyNameDisplay = {
   accessType: "Access",
   consentCodes: "Consent Code",
+  consentName: "Consent Code",
   consentShortName: "Consent Code",
   consortium: "Consortium",
   createdAt: "Created At",

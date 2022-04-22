@@ -34,7 +34,7 @@ const tableHeadersEntities = [
   "consortium",
   "studyName",
   "gapId",
-  "consentShortName",
+  "consentName",
   "projectId",
   "diseases",
   "accessType",
