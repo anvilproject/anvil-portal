@@ -37,6 +37,7 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const [slideAction, setSlideAction] = useState<CarouselActionState>(
     CarouselAction.NONE
   );
+  const [slow, setSlow] = useState<boolean>(false);
   const lastSlideIndex = slides.length - 1;
 
   const calculateSwipeDirection = useCallback(
@@ -104,7 +105,7 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   );
 
   const swipeToSlide = useCallback(
-    (increment: number): void => {
+    (increment: number, slowValue: boolean = false): void => {
       /* Increment slide index either way. */
       let newIndex = activeSlide + increment;
       if (newIndex < 0) {
@@ -116,6 +117,8 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
         /* If the new index is greater than the number of possible slides, rotate to the start of the slide deck. */
         newIndex = 0;
       }
+      /* Use appropriate transition speed. */
+      setSlow(slowValue);
       /* Set new rotation index. */
       setActiveSlide(newIndex);
     },
@@ -220,6 +223,13 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
     }
   }, [slideAction, swipeToSlide]);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      swipeToSlide(1, true);
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [activeSlide, swipeToSlide]);
+
   return (
     <div className={carousel}>
       <CarouselArrow
@@ -227,9 +237,14 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
         direction={CarouselAction.SWIPE_BACKWARD}
       />
       <div className={carouselBody}>
-        <CarouselSlideshow activeSlide={activeSlide} slides={slides} />
+        <CarouselSlideshow
+          activeSlide={activeSlide}
+          slides={slides}
+          slow={slow}
+        />
         <CarouselBullets
           activeSlide={activeSlide}
+          setSlow={setSlow}
           setActiveSlide={setActiveSlide}
           slides={slides}
         />
