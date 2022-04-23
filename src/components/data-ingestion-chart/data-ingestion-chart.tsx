@@ -37,13 +37,11 @@ type TooltipSeriesInfo = {
 type BasicEchartsPart = {
   // Simplified type for ECharts graph components
   // Only the properties necessary to find the parent series's type and index
-  parent: BasicEchartsPart | undefined;
-  __ecComponentInfo:
-    | {
-        mainType: string;
-        index: number;
-      }
-    | undefined;
+  parent?: BasicEchartsPart;
+  __ecComponentInfo?: {
+    mainType: string;
+    index: number;
+  };
 };
 
 function fixDecimalPlaces(n: number, places: number) {
@@ -222,7 +220,7 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
   };
 }
 
-function getParentSeriesIndex(initPart: BasicEchartsPart | undefined) {
+function getParentSeriesIndex(initPart?: BasicEchartsPart) {
   /* eslint-disable no-underscore-dangle */
 
   let part = initPart;
@@ -241,20 +239,16 @@ function getParentSeriesIndex(initPart: BasicEchartsPart | undefined) {
 }
 
 const DataIngestionChart: FC = (): JSX.Element => {
-  const chart = useRef<null | ReactEChartsCore>(null);
+  const chart = useRef<ReactEChartsCore>(null);
   const hoverIndex = useRef<null | number>(null);
   useEffect(() => {
     function handleMouse(info: { target: BasicEchartsPart }) {
       hoverIndex.current = getParentSeriesIndex(info.target);
     }
 
-    if (chart.current !== null) {
-      const zr = chart.current.getEchartsInstance().getZr();
-      zr.on("mousemove", handleMouse);
-      return () => zr.off("mousemove", handleMouse);
-    }
-
-    return undefined;
+    const zr = chart.current?.getEchartsInstance().getZr();
+    zr?.on("mousemove", handleMouse);
+    return () => zr?.off("mousemove", handleMouse);
   });
   return (
     <ReactEChartsCore
