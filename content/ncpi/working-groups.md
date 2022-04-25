@@ -65,6 +65,30 @@ The objective of this working group is to guide outreach and training activities
 - Ashok Krishnamurthy (RENCI) - BDC
 - Anton Nekrutenko (PSU, Galaxy) - AnVIL
 
+## Search Working Group
+
+This group will spearhead improvements to the utility of search across the NCPI cloud platforms with the focus on three themes: 
+
+- dataset discovery,
+- cohort discovery,
+- and knowledge discovery.
+
+#### Co-Chairs
+
+- Kathy Reinold (Broad) - AnVIL, CRDC
+- Dave Rogers (Clever Canary) - AnVIL
+
+#### Documents
+
+[NCPI Search WG Charter](https://docs.google.com/document/d/1dk4j9nuT4WgneqONcsr5_lYQrlnDmcV-mcXRiX8ApdY)
+
+[NCPI Search WG Meeting Agenda](https://docs.google.com/document/d/16Ke7tBgiwT-E8_Rj7tqEnR9l1UQ8YkMqCVPp4GKYJEg/edit#heading=h.gy63nbq8zdg8) 
+
+#### Deliverables
+1. Develop a landscape report summarizing existing search tools, data models, and APIs within NCPI platforms and will present the report at NCPI Workshops.
+2. Work to identify and facilitate NCPI search demonstration projects that search across at least two platforms.
+
+
 ## NIH Systems Interoperation Working Group
 
 The NIH Systems Interoperation Working Group group will spearhead technical improvements to the NCPI participating platforms that enable improved interoperability. We will demonstrate progress rooted in realistic researcher use cases every 6 months.
@@ -76,9 +100,9 @@ The NIH Systems Interoperation Working Group group will spearhead technical impr
 
 #### Documents
 
-[Charter](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.m0rkzy3k737h)
+[NCPI Interop WG Charter](https://docs.google.com/document/d/1rhxkfUHxOI1Es1SX5kOH1Gadlk-gcOlYEQ6RL9_u_p4/edit#heading=h.m0rkzy3k737h)
 
-[Meeting Agenda](https://docs.google.com/document/d/1x34Xo9XpdFDG1Cc3xa6YnsAcOSKJ3kkGiOIiIq39KN4/edit?pli=1#heading=h.dox03dguv2oj)
+[NCPI Interop WG Meeting Agenda](https://docs.google.com/document/d/1x34Xo9XpdFDG1Cc3xa6YnsAcOSKJ3kkGiOIiIq39KN4/edit?pli=1#heading=h.dox03dguv2oj)
 
 #### Background
 
