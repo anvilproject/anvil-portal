@@ -31,19 +31,19 @@ const CarouselSlide: FC<Props> = ({ showSlide, slow, slide }): JSX.Element => {
   const portraitImg = portrait ? getImage(portrait) : undefined;
   const classNamesTransition = slow
     ? {
-        enter: compStyles.cardShowSlow,
+        enter: compStyles.cardShow,
         enterActive: compStyles.cardShowSlowActive,
-        enterDone: compStyles.cardShowSlowDone,
+        enterDone: compStyles.cardShowDone,
         exit: compStyles.cardHideSlow,
         exitActive: compStyles.cardHideSlowActive,
-        exitDone: compStyles.cardHideSlowDone,
+        exitDone: compStyles.cardHidden,
       }
     : {
         enter: compStyles.cardShow,
-        enterActive: compStyles.cardShowActive,
+        enterActive: compStyles.cardShowFastActive,
         enterDone: compStyles.cardShowDone,
-        exit: compStyles.cardHide,
-        exitDone: compStyles.cardHideDone,
+        exit: compStyles.cardHidden,
+        exitDone: compStyles.cardHidden,
       };
   const timeoutTransition = {
     enter: slow ? 2100 : 600,
