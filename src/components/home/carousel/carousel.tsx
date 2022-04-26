@@ -226,7 +226,7 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       swipeToSlide(1, true);
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timeout);
   }, [activeSlide, swipeToSlide]);
 
