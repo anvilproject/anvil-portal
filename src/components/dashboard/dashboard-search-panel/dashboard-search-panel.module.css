@@ -37,17 +37,9 @@
 
 /* Panel label. */
 .panel [id="group"] {
-  display: flex;
   font-size: 14px;
   font-weight: 500;
-  justify-content: space-between;
   margin-bottom: 12px;
-}
-
-/* Panel count. */
-.panel [id="group"] > span:last-of-type {
-  flex: 1;
-  text-align: right;
 }
 
 /**

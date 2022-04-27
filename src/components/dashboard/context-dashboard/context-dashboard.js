@@ -10,7 +10,6 @@
 import React from "react";
 
 const ContextDashboard = React.createContext({
-  countLabel: "",
   entities: [],
   facetCount: 0,
   facets: [],

@@ -18,7 +18,6 @@ import * as DashboardSearchService from "../../utils/dashboard/dashboard-search.
 function Dashboard(props) {
   const {
     children,
-    countLabel,
     dashboardEntities,
     dashboardIndexFileName,
     dashboardURL,
@@ -50,7 +49,6 @@ function Dashboard(props) {
 
   return (
     <ProviderDashboard
-      countLabel={countLabel}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={dashboardURL}
       facetCount={facetCount}

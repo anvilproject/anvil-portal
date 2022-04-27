@@ -24,7 +24,7 @@ import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selecto
 import * as compStyles from "./modal-dashboard-facet-term-selector.module.css";
 
 function ModalDashboardFacetTermSelector() {
-  const { countLabel, facets } = useContext(ContextDashboard);
+  const { facets } = useContext(ContextDashboard);
   const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
     { facetName } = modalProps || {};
@@ -40,9 +40,6 @@ function ModalDashboardFacetTermSelector() {
           <DashboardSearchSummary />
           <DashboardSearchSelectedToolbar />
           <DashboardSearchPanel spanGrid>
-            <span id="group">
-              <span>{countLabel}</span>
-            </span>
             {terms &&
               terms.map((term, t) => (
                 <DashboardSearchCheckbox

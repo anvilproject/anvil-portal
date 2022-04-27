@@ -19,7 +19,6 @@ import DashboardTableSummary from "./dashboard-table-summary/dashboard-table-sum
 import { DashboardNCPIStaticQuery } from "../../hooks/dashboard-ncpi-query";
 
 // Template variables
-const countLabel = "Studies";
 const dashboardIndexFileName = "/dashboard-index-ncpi.json";
 const lunrIndexRefField = "dbGapIdAccession";
 const searchFacets = [
@@ -49,7 +48,6 @@ function DashboardNCPI() {
 
   return (
     <Dashboard
-      countLabel={countLabel}
       dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={href}

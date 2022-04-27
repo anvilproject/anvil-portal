@@ -19,7 +19,6 @@ import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-sum
 function ProviderDashboard(props) {
   const {
     children,
-    countLabel,
     dashboardIndexFileName,
     dashboardURL,
     facetCount,
@@ -854,7 +853,6 @@ function ProviderDashboard(props) {
   return (
     <ContextDashboard.Provider
       value={{
-        countLabel,
         entities,
         facetCount,
         facets,

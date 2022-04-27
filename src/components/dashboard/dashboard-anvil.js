@@ -19,7 +19,6 @@ import DashboardTableSummary from "./dashboard-table-summary/dashboard-table-sum
 import { DashboardWorkspaceStaticQuery } from "../../hooks/dashboard-workspace-query";
 
 // Template variables
-const countLabel = "Cohorts";
 const dashboardIndexFileName = "/dashboard-index-anvil.json";
 const lunrIndexRefField = "projectId";
 const searchFacets = [
@@ -60,7 +59,6 @@ function DashboardAnVIL() {
 
   return (
     <Dashboard
-      countLabel={countLabel}
       dashboardEntities={dashboardEntities}
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={href}
