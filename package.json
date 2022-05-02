@@ -73,7 +73,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "firebase-tools": "^10.2.1",
+    "firebase-tools": "^10.7.2",
     "html-entities": "^2.3.2",
     "moment-timezone": "^0.5.34",
     "prettier": "^2.5.1",
