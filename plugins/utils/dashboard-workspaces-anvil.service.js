@@ -27,14 +27,51 @@ const { buildGapId } = require(path.resolve(
 ));
 
 // Template variables
+const COLUMN_VALUE = {
+  TRUE: "TRUE",
+  FALSE: "FALSE",
+  UNSPECIFIED: "UNSPECIFIED",
+};
+const CONSENT_CODE = {
+  CAO: "CAO",
+  COL: "COL",
+  DS: "DS",
+  GRU: "GRU",
+  GSO: "GSO",
+  HMB: "HMB",
+  IRB: "IRB",
+  MDS: "MDS",
+  NOT_APPLICABLE: "NOT_APPLICABLE",
+  NPU: "NPU",
+  PUB: "PUB",
+  NRES: "NRES",
+  UNSPECIFIED: "UNSPECIFIED",
+};
+const CONSENT_CODE_DISPLAY_TERM = {
+  ...CONSENT_CODE,
+  CAO: "Consortia Access Only",
+  NOT_APPLICABLE: "Not Applicable",
+  UNSPECIFIED: "Unspecified",
+};
+const CONSENT_CODE_LIMITATIONS = [
+  CONSENT_CODE.CAO,
+  CONSENT_CODE.GRU,
+  CONSENT_CODE.HMB,
+  CONSENT_CODE.NRES,
+];
+const CONSENT_CODE_MODIFIERS = [
+  CONSENT_CODE.COL,
+  CONSENT_CODE.GSO,
+  CONSENT_CODE.IRB,
+  CONSENT_CODE.NPU,
+  CONSENT_CODE.MDS,
+  CONSENT_CODE.PUB,
+];
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
-const CONSENT_CODE_TYPE = {
-  CONSORTIUM_ACCESS_ONLY: "Consortia Access Only",
-  NOT_APPLICABLE: "not applicable",
-  NRES: "nres",
-};
 const SOURCE_HEADER_KEY = {
+  CAO: "cao",
+  COL: "col",
   CONSENT_LONG_NAME: "consentlongname",
   CONSENT_SHORT_NAME: "library:datauserestriction",
   CONSORTIUM: "consortium",
@@ -42,35 +79,58 @@ const SOURCE_HEADER_KEY = {
   DATA_TYPES: "library:datatype",
   DB_GAP_ID: "phsid",
   DISEASES: "library:indication",
+  DS: "ds",
+  GRU: "gru",
+  GSO: "gso",
+  HMB: "hmb",
+  IRB: "irb",
+  MDS: "mds",
+  NPU: "npu",
+  NRES: "nres",
   PARTICIPANTS: "participantcount",
+  PUB: "pub",
   PROJECT_ID: "name",
   SAMPLES: "samplecount",
   SIZE: "bucketsize",
   STUDY_DESIGNS: "library:studydesign",
   SUBJECTS: "subjectcount",
-  WORKSPACE: "name",
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
+  [SOURCE_HEADER_KEY.CAO]: "consentCodeCao",
+  [SOURCE_HEADER_KEY.COL]: "consentCodeCol",
   [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "consentLongName",
   CONSENT_NAME: "consentName",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "consentShortName",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "consortium",
   [SOURCE_HEADER_KEY.CREATED_AT]: "createdAt",
   [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
+  DATA_USE_LIMITATION_MODIFIERS: "dataUseLimitationModifiers",
+  DATA_USE_LIMITATIONS: "dataUseLimitations",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
+  DISEASE_SPECIFIC_DATA_USE_LIMITATIONS: "diseaseSpecificDataUseLimitations",
+  [SOURCE_HEADER_KEY.DS]: "consentCodeDs",
   GAP_ID: "gapId",
+  [SOURCE_HEADER_KEY.GRU]: "consentCodeGru",
+  [SOURCE_HEADER_KEY.GSO]: "consentCodeGso",
+  [SOURCE_HEADER_KEY.HMB]: "consentCodeHmb",
+  [SOURCE_HEADER_KEY.IRB]: "consentCodeIrb",
+  [SOURCE_HEADER_KEY.MDS]: "consentCodeMds",
+  [SOURCE_HEADER_KEY.NPU]: "consentCodeNpu",
+  [SOURCE_HEADER_KEY.NRES]: "consentCodeNres",
   [SOURCE_HEADER_KEY.PARTICIPANTS]: "participants",
+  [SOURCE_HEADER_KEY.PUB]: "consentCodePub",
   [SOURCE_HEADER_KEY.PROJECT_ID]: "projectId",
   [SOURCE_HEADER_KEY.SAMPLES]: "samples",
   [SOURCE_HEADER_KEY.SIZE]: "size",
   [SOURCE_HEADER_KEY.STUDY_DESIGNS]: "studyDesigns",
   [SOURCE_HEADER_KEY.SUBJECTS]: "subjects",
-  [SOURCE_HEADER_KEY.WORKSPACE]: "projectId",
 };
 const SOURCE_FIELD_TYPE = {
+  [SOURCE_HEADER_KEY.CAO]: "string",
+  [SOURCE_HEADER_KEY.COL]: "string",
   [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSORTIUM]: "string",
@@ -78,13 +138,21 @@ const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
   [SOURCE_HEADER_KEY.DISEASES]: "array",
+  [SOURCE_HEADER_KEY.DS]: "array",
+  [SOURCE_HEADER_KEY.GRU]: "string",
+  [SOURCE_HEADER_KEY.GSO]: "string",
+  [SOURCE_HEADER_KEY.HMB]: "string",
+  [SOURCE_HEADER_KEY.IRB]: "string",
+  [SOURCE_HEADER_KEY.MDS]: "string",
+  [SOURCE_HEADER_KEY.NPU]: "string",
+  [SOURCE_HEADER_KEY.NRES]: "string",
   [SOURCE_HEADER_KEY.PARTICIPANTS]: "number",
+  [SOURCE_HEADER_KEY.PUB]: "string",
   [SOURCE_HEADER_KEY.PROJECT_ID]: "string",
   [SOURCE_HEADER_KEY.SAMPLES]: "number",
   [SOURCE_HEADER_KEY.SIZE]: "number",
   [SOURCE_HEADER_KEY.STUDY_DESIGNS]: "array",
   [SOURCE_HEADER_KEY.SUBJECTS]: "number",
-  [SOURCE_HEADER_KEY.WORKSPACE]: "string",
 };
 const WORKSPACE_ACCESS_TYPE = {
   CONSORTIUM_ACCESS: "Consortium Access",
@@ -162,13 +230,13 @@ function buildWorkspacePropertyAccessType(
     /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction (redefined by reformatWorkspacePropertyConsentShortName as "Consortia Access Only"). */
     if (
       !studyAccession ||
-      consentShortName.toLowerCase() ===
-        CONSENT_CODE_TYPE.CONSORTIUM_ACCESS_ONLY
+      consentShortName.toUpperCase() ===
+        CONSENT_CODE_DISPLAY_TERM.CAO.toUpperCase()
     ) {
       accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
     }
     /* Let access type be "No Restrictions". This is true for any workspace that is defined as "nres" in library:dataUseRestriction. */
-    if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NRES) {
+    if (consentShortName.toUpperCase() === CONSENT_CODE.NRES) {
       accessType = WORKSPACE_ACCESS_TYPE.NO_RESTRICTIONS;
     }
   }
@@ -208,6 +276,48 @@ function buildWorkspacePropertyConsentName(
   return {
     [keyConsentName]: { long: consentLongName, short: consentShortName },
   };
+}
+
+/**
+ * Returns the data use limitation modifiers for the specified workspace.
+ * @param row
+ * @returns {{[p: string]: *[]}}
+ */
+function buildWorkspacePropertyDataUseLimitationModifiers(row) {
+  const keyDataUseLimitationModifiers =
+    SOURCE_FIELD_KEY.DATA_USE_LIMITATION_MODIFIERS;
+  const workspaceModifiers = getWorkspaceConsentCodes(
+    row,
+    CONSENT_CODE_MODIFIERS
+  );
+  return { [keyDataUseLimitationModifiers]: workspaceModifiers };
+}
+
+/**
+ * Returns the data use limitations for the specified workspace.
+ * @param row
+ * @returns {{[p: string]: *[]}}
+ */
+function buildWorkspacePropertyDataUseLimitations(row) {
+  const keyDataUseLimitations = SOURCE_FIELD_KEY.DATA_USE_LIMITATIONS;
+  const workspaceLimitations = getWorkspaceConsentCodes(
+    row,
+    CONSENT_CODE_LIMITATIONS
+  );
+  return { [keyDataUseLimitations]: workspaceLimitations };
+}
+
+/**
+ * Returns the disease specific data use limitations for the specified workspace.
+ * @param row
+ * @returns {{}}
+ */
+function buildWorkspacePropertyDiseaseSpecificDataUseLimitations(row) {
+  const keyDSDataUseLimitations =
+    SOURCE_FIELD_KEY.DISEASE_SPECIFIC_DATA_USE_LIMITATIONS;
+  const diseaseSpecificDataUseLimitations =
+    row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DS]];
+  return { [keyDSDataUseLimitations]: [...diseaseSpecificDataUseLimitations] };
 }
 
 /**
@@ -306,6 +416,14 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       propertyConsentShortName
     );
 
+    /* Build the property dataUseLimitationModifiers. */
+    const propertyDataUseLimitationModifiers =
+      buildWorkspacePropertyDataUseLimitationModifiers(row);
+
+    /* Build the property dataUseLimitations. */
+    const propertyDataUseLimitations =
+      buildWorkspacePropertyDataUseLimitations(row);
+
     /* Build the property accessType. */
     const propertyAccessType = buildWorkspacePropertyAccessType(
       row,
@@ -327,6 +445,10 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       row,
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DISEASES]
     );
+
+    /* Build the property diseaseSpecificDataUseLimitations. */
+    const propertyDiseaseSpecificDataUseLimitations =
+      buildWorkspacePropertyDiseaseSpecificDataUseLimitations(row);
 
     /* Build the property gapId. */
     const propertyGapId = buildWorkspacePropertyGapId(studyId, "", studyUrl);
@@ -360,9 +482,12 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       ...propertyAccessType,
       ...propertyConsentName,
       ...propertyConsentShortName,
+      ...propertyDataUseLimitationModifiers,
+      ...propertyDataUseLimitations,
       ...propertyConsortium,
       ...propertyDataTypes,
       ...propertyDiseases,
+      ...propertyDiseaseSpecificDataUseLimitations,
       ...propertyGapId,
       ...propertySubjects,
       ...propertyStudyDesigns,
@@ -376,6 +501,27 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
 
     return acc;
   }, []);
+}
+
+/**
+ * Returns the consent codes included in the specified list of modifier or limitation codes for the workspace.
+ * @param row
+ * @param consentCodes
+ * @returns {any[]}
+ */
+function getWorkspaceConsentCodes(row, consentCodes) {
+  let setOfConsentCodes = new Set();
+  for (const consentCode of consentCodes) {
+    const codeValue = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY[consentCode]]];
+    if (codeValue?.toUpperCase() === COLUMN_VALUE.TRUE) {
+      setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM[consentCode]);
+      continue;
+    }
+    if (codeValue?.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
+      setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED);
+    }
+  }
+  return [...setOfConsentCodes];
 }
 
 /**
@@ -474,8 +620,11 @@ function reformatWorkspacePropertyConsentShortName(row, key) {
   const propertyConsentShortName = reformatWorkspacePropertyValue(row, key);
   const consentShortName = propertyConsentShortName[key];
   /* Any consentShortName defined as "not applicable" is renamed to "Consortia Access Only". */
-  if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NOT_APPLICABLE) {
-    return { [key]: "Consortia Access Only" };
+  if (
+    consentShortName.toUpperCase() ===
+    CONSENT_CODE_DISPLAY_TERM.NOT_APPLICABLE.toUpperCase()
+  ) {
+    return { [key]: CONSENT_CODE_DISPLAY_TERM.CAO };
   }
   return propertyConsentShortName;
 }

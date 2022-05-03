@@ -26,8 +26,10 @@ const searchFacets = [
   "diseases",
   "dataTypes",
   "studyDesigns",
-  "consentShortName",
   "accessType",
+  "dataUseLimitations",
+  "diseaseSpecificDataUseLimitations",
+  "dataUseLimitationModifiers",
 ]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
 const tableHeadersEntities = [

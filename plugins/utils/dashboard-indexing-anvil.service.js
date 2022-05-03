@@ -32,10 +32,13 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
     this.field("consentShortName");
     this.field("consortium");
     this.field("dataTypes");
+    this.field("dataUseLimitations");
+    this.field("dataUseLimitationModifiers");
     this.field("dbGapId");
     this.field("dbGapIdAccession");
     this.field("dbGapIdNumber");
     this.field("diseases");
+    this.field("diseaseSpecificDataUseLimitations");
     this.field("projectId");
     this.field("studyDesigns");
     this.field("studyName");
@@ -62,10 +65,19 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         facetSubStr
       );
       const dataTypes = getIndexFieldTypeOfArray(workspace.dataTypes);
+      const dataUseLimitations = getIndexFieldTypeOfArray(
+        workspace.dataUseLimitations
+      );
+      const dataUseLimitationModifiers = getIndexFieldTypeOfArray(
+        workspace.dataUseLimitationModifiers
+      );
       const dbGapId = workspace.dbGapId;
       const dbGapIdAccession = workspace.dbGapIdAccession;
       const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
       const diseases = getIndexFieldTypeOfArray(workspace.diseases);
+      const diseaseSpecificDataUseLimitations = getIndexFieldTypeOfArray(
+        workspace.diseaseSpecificDataUseLimitations
+      );
       const projectId = workspace.projectId;
       const studyDesigns = getIndexFieldTypeOfArray(workspace.studyDesigns);
       const studyName = getIndexFieldTypeOfString(
@@ -82,10 +94,13 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         consentShortName: consentShortName,
         consortium: consortium,
         dataTypes: dataTypes,
+        dataUseLimitations: dataUseLimitations,
+        dataUseLimitationModifiers: dataUseLimitationModifiers,
         dbGapId: dbGapId,
         dbGapIdAccession: dbGapIdAccession,
         dbGapIdNumber: dbGapIdNumber,
         diseases: diseases,
+        diseaseSpecificDataUseLimitations: diseaseSpecificDataUseLimitations,
         projectId: projectId,
         studyDesigns: studyDesigns,
         studyName: studyName,
