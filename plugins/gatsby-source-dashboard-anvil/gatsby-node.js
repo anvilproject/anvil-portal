@@ -188,8 +188,11 @@ exports.createSchemaCustomization = ({ actions }) => {
         consortium: String
         createdAt: String
         dataTypes: [String]
+        dataUseLimitationModifiers: [String]
+        dataUseLimitations: [String]
         dbGapId: String
         dbGapIdAccession: String
+        diseaseSpecificDataUseLimitations: [String]
         diseases: [String]
         gapId: GapId
         projectId: String

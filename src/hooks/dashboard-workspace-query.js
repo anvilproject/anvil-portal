@@ -16,9 +16,12 @@ export const DashboardWorkspaceStaticQuery = () => {
               consortium
               createdAt
               dataTypes
+              dataUseLimitations
+              dataUseLimitationModifiers
               dbGapId
               dbGapIdAccession
               diseases
+              diseaseSpecificDataUseLimitations
               gapId {
                 studyUrl
                 gapIdDisplay
