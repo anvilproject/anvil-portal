@@ -560,6 +560,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees"
+              pathOverride: "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees"
+            - name: ""
               file: "/news/2021/11/22/announcing-anvil-cloud-credits-continued-program"
               pathOverride: "/news/2021/11/22/announcing-anvil-cloud-credits-continued-program"
             - name: ""
