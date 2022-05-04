@@ -88,19 +88,18 @@ const WORKSPACE_ACCESS_TYPE = {
   NO_RESTRICTIONS: "No Restrictions",
 };
 const WORKSPACE_CONSORTIUM = {
+  "1000G": "1000 Genomes",
   CCDG: "CCDG",
-  CONVERGENT_NEUROSCIENCE: "Convergent Neuroscience",
   CMG: "CMG",
   CMH: "CMH",
+  CONVERGENT_NEUROSCIENCE: "Convergent Neuroscience",
   CSER: "CSER",
   EMERGE: "eMERGE",
-  GTEX: "GTEx (v8)",
+  GTEX: "GTEx",
   HPRC: "HPRC",
-  NHGRI: "NHGRI",
   PAGE: "PAGE",
-  THOUSANDGENOMES: "1000 Genomes",
+  T2T: "T2T",
   WGSPD1: "WGSPD1",
-  "1000G": "1000 Genomes",
 };
 
 /**
