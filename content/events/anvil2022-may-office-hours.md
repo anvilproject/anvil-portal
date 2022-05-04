@@ -3,7 +3,7 @@ author: "AnVIL"
 conference: "AnVIL 2022"
 description: "Helping users find solutions to their AnVIL questions."
 eventType: "Office Hours"
-featured: false
+featured: true
 location: "Virtual"
 sessions: [{sessionStart: "19 May 2022 11:00 AM"}]
 timezone: "America/New_York"
@@ -22,11 +22,11 @@ Members of the AnVIL team will be available to help AnVIL users including PIs, a
 
 ### Prerequisites
 
-Please post your questions to the [AnVIL Discourse](https://help.anvilproject.org/) prior to Office Hours so we can bring the team representatives best suited to address your question.
+Please post your questions to the [AnVIL Discourse](https://help.anvilproject.org/t/anvil-office-hours-19may2022-11-am-et/121) prior to Office Hours so we can bring the team representatives best suited to address your question.
 
 ### Registration
 
-Post your question to the [AnVIL Discourse](https://help.anvilproject.org/) and sign up via Google Form (TBA).
+Post your question to the [AnVIL Discourse](https://help.anvilproject.org/t/anvil-office-hours-19may2022-11-am-et/121) and sign up via [Google Form](https://forms.gle/nU7Qejub9ecKtfxP8).
 
 ### Contact
 
