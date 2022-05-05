@@ -6,7 +6,10 @@
  */
 
 // Core dependencies
-import React from "react";
+import React, { Fragment } from "react";
+
+// App dependencies
+import Tooltip from "../../tooltip/tooltip";
 
 // Styles
 import * as compStyles from "./dashboard-study-summary.module.css";
@@ -76,10 +79,17 @@ function DashboardStudySummary(props: DashboardStudySummaryProps): JSX.Element {
         <div className={compStyles.summary}>
           <span className={compStyles.label}>Consent Codes</span>
           <span className={compStyles.value}>
-            {consentNames.map(({ long, short }) => (
-              <span className={compStyles.consent} key={`${short}-${long}`}>
-                {short} - {long}
-              </span>
+            {consentNames.map(({ long, short }, c) => (
+              <Fragment key={`${short}-${long}`}>
+                {c !== 0 && <span>, </span>}
+                {long ? (
+                  <Tooltip label={long}>
+                    <span className={compStyles.consent}>{short}</span>
+                  </Tooltip>
+                ) : (
+                  <span>{short}</span>
+                )}
+              </Fragment>
             ))}
           </span>
         </div>

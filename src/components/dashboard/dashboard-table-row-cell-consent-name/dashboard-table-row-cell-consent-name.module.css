@@ -1,0 +1,10 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard table row cell consent name component.
+ */
+
+.consent {
+  border-bottom: 1px dashed #aaaaaa;
+}
