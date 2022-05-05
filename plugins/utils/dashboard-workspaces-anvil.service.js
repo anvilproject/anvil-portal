@@ -30,7 +30,7 @@ const { buildGapId } = require(path.resolve(
 const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const CONSENT_CODE_TYPE = {
-  CONSORTIUM_ACCESS_ONLY: "consortium-access only",
+  CONSORTIUM_ACCESS_ONLY: "Consortia Access Only",
   NOT_APPLICABLE: "not applicable",
   NRES: "nres",
 };
@@ -153,13 +153,13 @@ function buildWorkspacePropertyAccessType(
     ];
 
   /* Let access type be "Controlled Access". */
-  /* This is true for any workspace with a study, and defined as anything other than "consortium-access only" in library:dataUseRestriction, or is not "NRES". */
+  /* This is true for any workspace with a study, and defined as anything other than "Consortia Access Only" in library:dataUseRestriction, or is not "NRES". */
   let accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
 
   if (consentShortName) {
     /* Let access type be "Consortium Access". */
     /* This is true for any workspace without a study. */
-    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction (redefined by reformatWorkspacePropertyConsentShortName as "consortium-access only"). */
+    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction (redefined by reformatWorkspacePropertyConsentShortName as "Consortia Access Only"). */
     if (
       !studyAccession ||
       consentShortName.toLowerCase() ===
@@ -195,8 +195,15 @@ function buildWorkspacePropertyConsentName(
     ];
 
   /* Grab the consent long code for the workspace. */
-  const consentLongName =
+  let consentLongName =
     workspace[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_LONG_NAME]];
+
+  if (
+    consentLongName.toUpperCase() === "UNSPECIFIED" ||
+    consentLongName.toUpperCase().startsWith("ERROR")
+  ) {
+    consentLongName = "";
+  }
 
   return {
     [keyConsentName]: { long: consentLongName, short: consentShortName },
@@ -466,9 +473,9 @@ async function parseSource(fileName, delimiter) {
 function reformatWorkspacePropertyConsentShortName(row, key) {
   const propertyConsentShortName = reformatWorkspacePropertyValue(row, key);
   const consentShortName = propertyConsentShortName[key];
-  /* Any consentShortName defined as "not applicable" is renamed to "Consortium-Access Only". */
+  /* Any consentShortName defined as "not applicable" is renamed to "Consortia Access Only". */
   if (consentShortName.toLowerCase() === CONSENT_CODE_TYPE.NOT_APPLICABLE) {
-    return { [key]: "Consortium-Access Only" };
+    return { [key]: "Consortia Access Only" };
   }
   return propertyConsentShortName;
 }
