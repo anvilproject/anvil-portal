@@ -13,7 +13,6 @@ export const DashboardWorkspaceStaticQuery = () => {
                 short
               }
               consentShortName
-              consentLongName
               consortium
               createdAt
               dataTypes

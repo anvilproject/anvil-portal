@@ -29,7 +29,6 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
   const dashboardIndex = lunr(function () {
     this.ref("projectId");
     this.field("accessType");
-    this.field("consentLongName");
     this.field("consentShortName");
     this.field("consortium");
     this.field("dataTypes");
@@ -54,7 +53,6 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         workspace.accessType,
         facetSubStr
       );
-      const consentLongName = workspace.consentLongName;
       const consentShortName = getIndexFieldTypeOfString(
         workspace.consentShortName,
         facetSubStr
@@ -81,7 +79,6 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
 
       this.add({
         accessType: accessType,
-        consentLongName: consentLongName,
         consentShortName: consentShortName,
         consortium: consortium,
         dataTypes: dataTypes,
