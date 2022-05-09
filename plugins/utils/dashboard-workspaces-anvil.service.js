@@ -50,7 +50,14 @@ const CONSENT_CODE = {
 const CONSENT_CODE_DISPLAY_TERM = {
   ...CONSENT_CODE,
   CAO: "Consortia Access Only",
+  COL: "Collaboration Required (COL)",
+  GSO: "Genetic Studies Only (GSO)",
+  IRB: "IRB Approval Required (IRB)",
+  MDS: "Methods Development Allowed (MDS)",
   NOT_APPLICABLE: "Not Applicable",
+  NPU: "Not-for Profit Use Only (NPU))",
+  NRES: "No Restrictions",
+  PUB: "Publication Required (PUB)",
   UNSPECIFIED: "Unspecified",
 };
 const CONSENT_CODE_LIMITATIONS = [

@@ -37,9 +37,9 @@
     grid-template-columns: repeat(5, 1fr); /* Grid is 5 columns. */
   }
 
-  /* Grid x6. */
-  .x6 {
-    grid-template-columns: repeat(6, 1fr); /* Grid is 6 columns. */
+  /* Grid x8. */
+  .x8 {
+    grid-template-columns: repeat(5, 1fr); /* Grid is 5 columns. */
   }
 }
 
@@ -55,10 +55,10 @@
     ); /* Search bar inline with facets row. */
   }
 
-  /* Grid x6. */
-  .x6 {
+  /* Grid x8. */
+  .x8 {
     grid-template-columns: repeat(
-      7,
+      5,
       1fr
     ); /* Search bar inline with facets row. */
   }

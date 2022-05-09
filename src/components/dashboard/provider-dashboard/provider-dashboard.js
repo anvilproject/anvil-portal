@@ -14,7 +14,15 @@ import ContextDashboard from "../context-dashboard/context-dashboard";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
+import DashboardSearchTermLogicalOperator from "../../../utils/dashboard/dashboard-search-term-logical-operator.model";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
+
+// Template dependencies
+const lunrSearchPrefix = {
+  AND: "+",
+  NAND: "-",
+  OR: "",
+};
 
 function ProviderDashboard(props) {
   const {
@@ -37,6 +45,10 @@ function ProviderDashboard(props) {
   const searchURLRef = useRef(null);
   const selectedTermsByFacetRef = useRef(new Map());
   const setOfResultsByFacetRef = useRef(new Map());
+  /**
+   * @deprecated rename
+   * @type {React.MutableRefObject<Map<any, any>>}
+   */
   const setOfSelectedTermsByFacetRef = useRef(new Map());
   const [dashboardIndex, setDashboardIndex] = useState({
     index: {},
@@ -105,7 +117,7 @@ function ProviderDashboard(props) {
    * @type {(function(): void)|*}
    */
   const updateQueryAndExecuteTracking = useCallback(() => {
-    /* Grab the current selectedTermsByFacet. */
+    /* @deprecated rename Grab the current selectedTermsByFacet. */
     const selectedTermsByFacet = getSelectedTermsByFacet();
 
     /* Update the ref selectedTermsByFacet. */
@@ -123,7 +135,7 @@ function ProviderDashboard(props) {
     /* Grab the last hit values. */
     const { facet, selected, term } = lastHitRef.current;
 
-    /** Execute tracking for facet "search". */
+    /** Execute tracking for facet "search" - TODO. */
     if (facet === "search") {
       AnvilGTMService.trackSearchInput(
         term,
@@ -132,7 +144,7 @@ function ProviderDashboard(props) {
         GAEntityType.WORKSPACE
       );
     } else {
-      /* Execute tracking for all other facets. */
+      /* Execute tracking for all other facets - TODO. */
       if (term) {
         AnvilGTMService.trackSearchFacetSelected(
           facet,
@@ -160,35 +172,49 @@ function ProviderDashboard(props) {
 
       /* Loop through each facet and the corresponding set of terms. */
       for (const [facet, setOfTerms] of setOfTermsByFacet) {
-        /* Exclude the "search" facet as it is not part of the checkbox group. */
+        /* Exclude the "search" facet as it is not part of the facet selector group. */
         if (facet === "search") {
           continue;
         }
 
         /* Grab the resultant entities for the facet. */
         const newEntities = entitiesByFacet.get(facet);
-        /* Grab the set of selected terms for the facet. */
-        const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
-        const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
+        /* Grab the selected terms for the facet. */
+        const logicalOperatorBySelectedTermsByFacet =
+          setOfSelectedTermsByFacetRef.current;
+        const logicalOperatorBySelectedTerms =
+          logicalOperatorBySelectedTermsByFacet.get(facet);
 
         /* Build the terms object. */
         const newTerms = [];
         /* For each term calculate the corresponding term count. */
         for (const term of setOfTerms) {
           /* Grab whether the term is selected. */
-          const selected = setOfSelectedTerms.has(term);
+          const selected = logicalOperatorBySelectedTerms.has(term);
+          /* Define the logical operator. */
+          let logicalOperator = DashboardSearchTermLogicalOperator.OR;
+          if (selected) {
+            logicalOperator = logicalOperatorBySelectedTerms.get(term);
+          }
           /* Grab the term count. */
-          const count = DashboardSearchService.getDashboardTermCount(
-            facet,
-            term,
-            newEntities
-          );
+          const [count, countless] =
+            DashboardSearchService.getDashboardTermCount(
+              facet,
+              term,
+              newEntities
+            );
 
           // Add the term to the terms object if
           // there is a count,
           // or it is selected
           if (count || selected) {
-            newTerms.push({ name: term, count: count, selected: selected });
+            newTerms.push({
+              count: count,
+              countless,
+              logicalOperator,
+              name: term,
+              selected: selected,
+            });
           }
         }
 
@@ -208,12 +234,13 @@ function ProviderDashboard(props) {
    * @returns {string}
    */
   const buildQueryString = useCallback(
-    (facet, setOfSelectedTerms) => {
+    (facet, logicalOperatorBySelectedTerms) => {
       /* Map through the selected terms and build one query string. */
       return (
-        [...setOfSelectedTerms]
+        [...logicalOperatorBySelectedTerms]
           /* Each facet will return its own query. */
-          .map((selectedTerm) => {
+          .map(([selectedTerm, logicalOperator]) => {
+            const termPresence = lunrSearchPrefix[logicalOperator];
             /* Build the facet "search" query. */
             /* The "search" query is joined by "AND". */
             if (facet === "search") {
@@ -227,16 +254,16 @@ function ProviderDashboard(props) {
                 .replace(regWS, " ")
                 .trim();
 
-              return `+${term}*`;
+              return `${termPresence}${term}*`;
             }
             /* Build non "search" facet query. */
-            /* These facets are joined by "OR". */
+            /* These facets are joined by a logical operator. */
             /* Some terms may have special characters like "_" or "-". */
             /* To get an exact match we convert the selected term to a searchable value. */
             const termSearchValue =
               termSearchValueByTermDisplay.get(selectedTerm);
             const term = termSearchValue || selectedTerm;
-            return `${facet}: ${term}`;
+            return `${termPresence}${facet}: ${term}`;
           })
           .join(" ")
       );
@@ -404,25 +431,32 @@ function ProviderDashboard(props) {
 
   /**
    * Returns map object key-value pair of facet and selected terms.
+   * TODO rename
    * Used by the dashboard control bar (facet de-selector and clear all tool).
    * @returns {Map<any, any>}
    */
   const getSelectedTermsByFacet = () => {
     /* Grab the ref setOfSelectedTermsByFacet. */
-    const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+    const logicalOperatorBySelectedTermsByFacet =
+      setOfSelectedTermsByFacetRef.current;
 
-    /* Build selectedTermsByFacet map object with key-value pair facet and selectedTerms. */
-    const selectedTermsByFacet = new Map();
+    /* Build selectedTermsByFacet map object with key-value pair selected facet and selectedTerms. */
+    const selectedTermsBySelectedFacet = new Map();
     /* Loop through each facet and corresponding set of selected terms. */
     /* Set the facet with a list of selected terms. */
-    for (const [facet, setOfSelectedTerms] of setOfSelectedTermsByFacet) {
+    for (const [
+      facet,
+      logicalOperatorBySelectedTerms,
+    ] of logicalOperatorBySelectedTermsByFacet) {
       /* Only add facets with selected terms. */
-      if (setOfSelectedTerms.size > 0) {
-        selectedTermsByFacet.set(facet, [...setOfSelectedTerms]);
+      if (logicalOperatorBySelectedTerms.size > 0) {
+        selectedTermsBySelectedFacet.set(facet, [
+          ...logicalOperatorBySelectedTerms,
+        ]);
       }
     }
 
-    return selectedTermsByFacet;
+    return selectedTermsBySelectedFacet;
   };
 
   /**
@@ -430,9 +464,10 @@ function ProviderDashboard(props) {
    * @type {function(): Map<any, any>}
    */
   const getSetOfResultsByFacet = useCallback(() => {
-    /* Grab the current set of selected terms by facet. */
+    /* Grab the current selected terms with corresponding logical operators by facet TODO. */
     /* One of the event handlers e.g. onHandleUpdateFacet will have updated this map object. */
-    const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+    const logicalOperatorBySelectedTermsByFacet =
+      setOfSelectedTermsByFacetRef.current;
     /* Grab the last facet hit. */
     /* We generally only want to update the most recently queried facet. */
     const lastFacetHit = lastHitRef.current.facet;
@@ -447,8 +482,8 @@ function ProviderDashboard(props) {
     // Facets with unselected terms return a full set of results i.e. setOfEntities.
     for (const [
       facet,
-      setOfSelectedTerms,
-    ] of setOfSelectedTermsByFacet.entries()) {
+      logicalOperatorBySelectedTerms,
+    ] of logicalOperatorBySelectedTermsByFacet.entries()) {
       /* Get the set of results for the facet. */
       // We will query the index when
       // the component has mounted,
@@ -458,13 +493,16 @@ function ProviderDashboard(props) {
         /* Early exit - continue. */
         /* There is no need to re-query the index if the facet has no selected terms. */
         /* The facet's set of results will be the entire set of entities. */
-        if (setOfSelectedTerms.size === 0) {
+        if (logicalOperatorBySelectedTerms.size === 0) {
           setOfResultsByFacet.set(facet, setOfEntities);
           continue;
         }
 
         /* Build the query string, query the index, and set the setOfResults to the facet. */
-        const queryString = buildQueryString(facet, setOfSelectedTerms);
+        const queryString = buildQueryString(
+          facet,
+          logicalOperatorBySelectedTerms
+        );
         const results = getIndexResults(queryString);
         setOfResultsByFacet.set(facet, new Set(results));
       }
@@ -528,11 +566,11 @@ function ProviderDashboard(props) {
   }, [setOfEntities, setOfTermsByFacet]);
 
   /**
-   * Init setOfSelectedTermsByFacet.
+   * Init logicalOperatorBySelectedTermsByFacet.
    * Update the set of selected terms should the component mount with query string in the url.
    * @type {(function(): void)|*}
    */
-  const initSetOfSelectedTermsByFacet = useCallback(() => {
+  const initLogicalOperatorBySelectedTermsByFacet = useCallback(() => {
     /* Get the search params. */
     const urlSearchParams = getURLSearchParams();
 
@@ -543,21 +581,28 @@ function ProviderDashboard(props) {
       /* Split the term list into an array of terms. */
       const terms = termList?.split(",");
 
-      /* Build a set of selected terms. */
-      const setOfSelectedTerms = new Set();
+      /* Build a map of selected terms and corresponding logical operator. */
+      const logicalOperatorBySelectedTerms = new Map();
 
       /* Add any selected terms to the set. */
       if (terms) {
-        terms.forEach((term) => setOfSelectedTerms.add(term));
+        terms
+          .map((term) => term.split("|"))
+          .forEach(([logicalOperator, term]) => {
+            logicalOperatorBySelectedTerms.set(term, logicalOperator);
+          });
       }
 
       /* Update the ref. */
-      setOfSelectedTermsByFacetRef.current.set(facet, setOfSelectedTerms);
+      setOfSelectedTermsByFacetRef.current.set(
+        facet,
+        logicalOperatorBySelectedTerms
+      );
     }
   }, [getURLSearchParams, setOfTermsByFacet]);
 
   /**
-   * Returns true if no action is required.
+   * Returns true if no action is required. TODO test
    * True when there is no change to the facet "search" term.
    * @returns {boolean}
    * @param facet
@@ -566,12 +611,15 @@ function ProviderDashboard(props) {
   const isNoActionRequired = (facet, term) => {
     /* If the facet is "search" check for no changes since last entry. */
     if (facet === "search") {
-      /* Get the current ref setOfSelectedTermsByFacet. */
-      const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
+      /* Get the current ref setOfSelectedTermsByFacet TODO. */
+      const logicalOperatorBySelectedTermsByFacet =
+        setOfSelectedTermsByFacetRef.current;
       /* Grab the selected terms for the "search" facet. */
-      const setOfSelectedTerms = setOfSelectedTermsByFacet.get(facet);
+      const selectedTerms = logicalOperatorBySelectedTermsByFacet
+        .get(facet)
+        .keys();
       /* Compare the new term with the current term. */
-      const currentTerm = [...setOfSelectedTerms].join(" ");
+      const currentTerm = [...selectedTerms].join(" ");
       return term === currentTerm;
     }
 
@@ -583,13 +631,18 @@ function ProviderDashboard(props) {
    */
   const onHandleClearAll = () => {
     /* Update the current ref lastHit. */
-    lastHitRef.current = { facet: "", selected: false, term: "" };
+    lastHitRef.current = {
+      facet: "",
+      logicalOperator: "",
+      selected: false,
+      term: "",
+    };
 
     /* Update the current ref setOfSelectedTermsByFacet. */
     const setOfSelectedTermsByFacet = setOfSelectedTermsByFacetRef.current;
     /* For each facet clear the set of selected terms. */
     for (const facet of setOfSelectedTermsByFacet.keys()) {
-      setOfSelectedTermsByFacetRef.current.set(facet, new Set());
+      setOfSelectedTermsByFacetRef.current.set(facet, new Map());
     }
 
     /* Update search <input/> uncontrolled value. */
@@ -605,11 +658,16 @@ function ProviderDashboard(props) {
    */
   const onHandleClearFacet = (facet) => {
     /* Update the current ref lastHit. */
-    lastHitRef.current = { facet: facet, selected: false, term: "" };
+    lastHitRef.current = {
+      facet: facet,
+      logicalOperator: "",
+      selected: false,
+      term: "",
+    };
 
     /* Update the current ref setOfSelectedTermsByFacet. */
     /* For the specified facet clear the set of selected terms. */
-    setOfSelectedTermsByFacetRef.current.set(facet, new Set());
+    setOfSelectedTermsByFacetRef.current.set(facet, new Map());
 
     /* Update search <input/> uncontrolled value. */
     updateInputValueRef(facet);
@@ -621,11 +679,17 @@ function ProviderDashboard(props) {
   /**
    * Clears the specified term.
    * @param facet
+   * @param logicalOperator
    * @param term
    */
-  const onHandleClearTerm = (facet, term) => {
+  const onHandleClearTerm = (facet, logicalOperator, term) => {
     /* Update the current ref lastHit. */
-    lastHitRef.current = { facet: facet, selected: false, term: term };
+    lastHitRef.current = {
+      facet: facet,
+      logicalOperator: logicalOperator,
+      selected: false,
+      term: term,
+    };
 
     /* Update the current ref setOfSelectedTermsByFacet. */
     /* Get the set of selected terms for the facet. */
@@ -648,7 +712,7 @@ function ProviderDashboard(props) {
    */
   const onHandleUpdateFacet = (event) => {
     /* Grab the facet, term and selected values. */
-    const { facet, selected, term } = event;
+    const { facet, logicalOperator, selected, term } = event;
 
     /* Strip out any unnecessary white space; typically used by "search" facet. */
     const newTerm = term.replace(regWhiteSpace, " ").trim();
@@ -661,18 +725,20 @@ function ProviderDashboard(props) {
 
     /* Update the current ref lastHit. */
     lastHitRef.current = {
-      facet: facet,
-      selected: selected,
+      facet,
+      logicalOperator,
+      selected,
       term: newTerm,
     };
 
-    /* Grab the current setOfSelectedTerms for the specified facet. */
-    const setOfSelectedTerms = setOfSelectedTermsByFacetRef.current.get(facet);
+    /* Grab the current logicalOperatorBySelectedTerms for the specified facet. */
+    const logicalOperatorBySelectedTerms =
+      setOfSelectedTermsByFacetRef.current.get(facet);
 
     /* Update all terms for the search facet. */
     if (facet === "search") {
       /* Clear any previously selected terms. */
-      setOfSelectedTerms.clear();
+      logicalOperatorBySelectedTerms.clear();
 
       /* Update search <input/> uncontrolled value. */
       inputValueRef.current = term;
@@ -680,22 +746,27 @@ function ProviderDashboard(props) {
       /* Only add non empty terms. */
       if (newTerm) {
         const newTerms = newTerm.split(" ");
-        /* Add the new selected terms to the set. */
-        newTerms.forEach((nTerm) => setOfSelectedTerms.add(nTerm));
+        /* Add the new selected terms with corresponding logical operator. */
+        newTerms.forEach((nTerm) =>
+          logicalOperatorBySelectedTerms.set(nTerm, logicalOperator)
+        );
       }
     } else {
       /* Update the term for the specified facet. */
       if (selected) {
-        /* Add the term if selected. */
-        setOfSelectedTerms.add(term);
+        /* Add the term if selected, with corresponding logical operator. */
+        logicalOperatorBySelectedTerms.set(term, logicalOperator);
       } else {
         /* Remove the term if de-selected. */
-        setOfSelectedTerms.delete(term);
+        logicalOperatorBySelectedTerms.delete(term);
       }
     }
 
     /* Update the current ref setOfSelectedTermsByFacet. */
-    setOfSelectedTermsByFacetRef.current.set(facet, setOfSelectedTerms);
+    setOfSelectedTermsByFacetRef.current.set(
+      facet,
+      logicalOperatorBySelectedTerms
+    );
 
     /* Update query, dashboard url and execute tracking. */
     updateQueryAndExecuteTracking();
@@ -810,10 +881,10 @@ function ProviderDashboard(props) {
       /* Initialize the state "searchURL". */
       initSearchURL();
 
-      /* Init the ref setOfSelectedTermsByFacetRef. */
-      initSetOfSelectedTermsByFacet();
+      /* Init the ref logicalOperatorBySelectedTermsByFacetRef. */
+      initLogicalOperatorBySelectedTermsByFacet();
 
-      /* Init ref inputValue. */
+      /* Init ref inputValue TODO. */
       initInputValue();
 
       /* Init the ref setOfResultsByFacetRef. */
@@ -828,7 +899,7 @@ function ProviderDashboard(props) {
     initInputValue,
     initSearchURL,
     initSetOfResultsByFacet,
-    initSetOfSelectedTermsByFacet,
+    initLogicalOperatorBySelectedTermsByFacet,
   ]);
 
   /**

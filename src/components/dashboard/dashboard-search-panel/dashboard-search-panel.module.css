@@ -20,7 +20,7 @@
 }
 
 /* Panel - placeholder panel - hide. */
-.panel.placeholder {
+.panel[id^="placeholder"] {
   display: none;
 }
 
@@ -56,9 +56,19 @@
     grid-column: 1 / -1; /* Spans row. */
   }
 
+  /* facet "dataUseLimitationModifiers" */
+  .panel[id^="dataUseLimitationModifiers"] {
+    grid-column: 4 span; /* Spans 4 cells. */
+  }
+
   /* Panel - placeholder panel - show. */
-  .panel.placeholder {
+  .panel[id^="placeholder"] {
     display: block;
+  }
+
+  /* Panel - AnVIL placeholder panel - hide. */
+  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
+    display: none;
   }
 }
 
@@ -71,9 +81,20 @@
     grid-column: 1 span; /* Spans 1 cell. */
   }
 
+  /* facet "dataUseLimitationModifiers" */
+  .panel[id^="dataUseLimitationModifiers"] {
+    grid-column: 2 span; /* Spans 2 cells. */
+  }
+
   /* Panel - placeholder panel - hide. */
-  .panel.placeholder {
+  .panel[id^="placeholder"] {
     display: none;
+  }
+
+  /* Panel - AnVIL placeholder panel - show. */
+  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
+    display: block;
+    grid-column: 1 span; /* Spans 1 cells. */
   }
 }
 
@@ -84,5 +105,10 @@
   /* Panel - first. */
   .panel:not(.spanGrid):first-of-type {
     grid-column: 1 span; /* Spans 1 cell. */
+  }
+
+  /* Panel - AnVIL placeholder panel - hide. */
+  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
+    display: none;
   }
 }
