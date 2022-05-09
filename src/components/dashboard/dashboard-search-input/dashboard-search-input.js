@@ -18,6 +18,7 @@ import React, {
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
+import DashboardSearchTermLogicalOperator from "../../../utils/dashboard/dashboard-search-term-logical-operator.model";
 
 // Styles
 import * as compStyles from "./dashboard-search-input.module.css";
@@ -48,7 +49,11 @@ function DashboardSearchInput() {
       setShowClear(searchText !== "");
 
       /* Update facet. */
-      onHandleUpdateFacet({ facet: "search", term: searchText });
+      onHandleUpdateFacet({
+        facet: "search",
+        logicalOperator: DashboardSearchTermLogicalOperator.AND,
+        term: searchText,
+      });
     }, timer);
     return () => clearTimeout(delaySearchRef.current);
   }, [onHandleUpdateFacet]);

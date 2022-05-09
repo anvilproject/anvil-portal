@@ -1,0 +1,60 @@
+/*
+ * The AnVIL
+ * https://www.anvilproject.org
+ *
+ * Style definitions specific to The AnVIL dashboard search facet toggle select component.
+ */
+
+/* Control. */
+.control {
+  display: grid;
+  font-size: 13px;
+  font-weight: 300;
+  gap: 12px;
+  grid-auto-flow: row;
+  grid-template-columns: minmax(30px, auto) minmax(30px, auto) 1fr;
+  line-height: 16px;
+}
+
+/* Control label "No" "Yes". */
+.controlLabel {
+  font-weight: 400;
+}
+
+/* Toggle button. */
+.toggle {
+  background-color: var(--primary6);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+/* First toggle button. */
+.toggle:first-of-type {
+  grid-column-start: 1;
+}
+
+/* Selected. */
+.toggleSelected {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Disabled - selected with zero count. */
+.toggleSelected.disabled {
+  background-color: var(--black12);
+  color: var(--black34);
+}
+
+/* Disabled - partner of disabled selected. */
+.toggle:not(.toggleSelected).disabled {
+  background-color: var(--black6);
+  color: var(--black6);
+  pointer-events: none;
+}
+
+/* Label - disabled. */
+.label.disabled {
+  color: var(--black34);
+}

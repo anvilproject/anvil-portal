@@ -11,13 +11,16 @@ import React, { useContext } from "react";
 // App dependencies
 import ContextModal from "../context-modal/context-modal";
 import ContextDashboard from "../../dashboard/context-dashboard/context-dashboard";
-import DashboardSearchCheckbox from "../../dashboard/dashboard-search-checkbox/dashboard-search-checkbox";
+import { SelectionControl } from "../../dashboard/dashboard-search-facet/dashboard-search-facet";
+import DashboardSearchFacetCheckboxSelect from "../../dashboard/dashboard-search-facet-checkbox-select/dashboard-search-facet-checkbox-select";
+import DashboardSearchFacetToggleSelect from "../../dashboard/dashboard-search-facet-toggle-select/dashboard-search-facet-toggle-select";
 import DashboardSearchPanel from "../../dashboard/dashboard-search-panel/dashboard-search-panel";
 import DashboardSearchSelectedToolbar from "../../dashboard/dashboard-search-selected-toolbar/dashboard-search-selected-toolbar";
 import DashboardSearchSummary from "../../dashboard/dashboard-search-summary/dashboard-search-summary";
 import Modal from "../modal";
 import ModalClose from "../modal-close/modal-close";
 import ModalDrawer from "../modal-drawer/modal-drawer";
+import FacetSelectionControl from "../../../utils/dashboard/facet-selection-control.model";
 import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
 
 // Styles
@@ -30,6 +33,10 @@ function ModalDashboardFacetTermSelector() {
     { facetName } = modalProps || {};
   const facet = facets.find((facet) => facet.name === facetName);
   const terms = facet?.terms;
+  const DashboardSearchFacetSelectPanel =
+    FacetSelectionControl[facetName] === SelectionControl.TOGGLE
+      ? DashboardSearchFacetToggleSelect
+      : DashboardSearchFacetCheckboxSelect;
 
   return (
     <Modal onClose={onCloseDrawer}>
@@ -40,14 +47,7 @@ function ModalDashboardFacetTermSelector() {
           <DashboardSearchSummary />
           <DashboardSearchSelectedToolbar />
           <DashboardSearchPanel spanGrid>
-            {terms &&
-              terms.map((term, t) => (
-                <DashboardSearchCheckbox
-                  key={t}
-                  facet={facetName}
-                  term={term}
-                />
-              ))}
+            <DashboardSearchFacetSelectPanel facet={facetName} terms={terms} />
           </DashboardSearchPanel>
         </div>
       </ModalDrawer>

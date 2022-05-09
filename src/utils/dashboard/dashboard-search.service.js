@@ -124,28 +124,34 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
 }
 
 /**
- * Returns the count for the specified term.
+ * Returns the count and uncounted for the specified term.
  *
  * @param facet
  * @param term
  * @param entities
  */
 export function getDashboardTermCount(facet, term, entities) {
-  return entities.reduce((acc, entity) => {
-    if (Array.isArray(entity[facet])) {
-      entity[facet].forEach((ef) => {
-        if (ef === term) {
-          acc++;
+  return entities.reduce(
+    (acc, entity) => {
+      if (Array.isArray(entity[facet])) {
+        entity[facet].forEach((ef) => {
+          if (ef === term) {
+            acc[0]++;
+          } else {
+            acc[1]++;
+          }
+        });
+      } else {
+        if (entity[facet] === term) {
+          acc[0]++;
+        } else {
+          acc[1]++;
         }
-      });
-    } else {
-      if (entity[facet] === term) {
-        acc++;
       }
-    }
-
-    return acc;
-  }, 0);
+      return acc;
+    },
+    [0, 0]
+  );
 }
 
 /**
@@ -176,15 +182,6 @@ export function getDashboardTermSearchValueByTerm(setOfTermsByFacet) {
   }
 
   return termSearchValueByTerm;
-}
-
-/**
- * Returns true, if the number of facets is odd and greater than four.
- * @param facetCount
- * @returns {boolean|number}
- */
-export function isDashboardCheckboxesUneven(facetCount) {
-  return facetCount > 4 && facetCount % 2 === 1;
 }
 
 /**
