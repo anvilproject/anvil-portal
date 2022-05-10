@@ -75,7 +75,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
       const dbGapIdAccession = workspace.dbGapIdAccession;
       const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
       const diseases = getIndexFieldTypeOfArray(workspace.diseases);
-      const diseaseSpecificDataUseLimitations = getIndexFieldTypeOfArray(
+      const diseaseSpecificDataUseLimitations = getIndexFieldTypeOfString(
         workspace.diseaseSpecificDataUseLimitations
       );
       const projectId = workspace.projectId;

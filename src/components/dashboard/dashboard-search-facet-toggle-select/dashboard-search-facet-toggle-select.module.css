@@ -23,6 +23,7 @@
 
 /* Toggle button. */
 .toggle {
+  align-self: flex-start;
   background-color: var(--primary6);
   border: none;
   border-radius: 2px;
@@ -52,6 +53,11 @@
   background-color: var(--black6);
   color: var(--black6);
   pointer-events: none;
+}
+
+/* Label. */
+.label {
+  align-self: flex-start;
 }
 
 /* Label - disabled. */

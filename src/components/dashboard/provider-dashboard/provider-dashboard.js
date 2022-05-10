@@ -11,11 +11,13 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
+import { SelectionControl } from "../dashboard-search-facet/dashboard-search-facet";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import DashboardSearchTermLogicalOperator from "../../../utils/dashboard/dashboard-search-term-logical-operator.model";
 import * as DashboardSummaryService from "../../../utils/dashboard/dashboard-summary.service";
+import FacetSelectionControl from "../../../utils/dashboard/facet-selection-control.model";
 
 // Template dependencies
 const lunrSearchPrefix = {
@@ -397,7 +399,10 @@ function ProviderDashboard(props) {
 
         /* Remove the facet from the setOfResultsByFacetClone */
         /* We are only interested in the intersection of results between the other facets/input. */
-        setOfResultsByFacetClone.delete(facet);
+        /* Only do this for facets that are not "TOGGLE" select. */
+        if (FacetSelectionControl[facet] !== SelectionControl.TOGGLE) {
+          setOfResultsByFacetClone.delete(facet);
+        }
 
         /* Get the intersection of results. */
         const setOfResults = findIntersectionSetOfResults(
