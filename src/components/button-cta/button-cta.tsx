@@ -8,7 +8,7 @@
 
 // Core dependencies
 import classNames from "classnames"; // Class name helper
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import React, { FC, ReactNode } from "react";
 
 // App dependencies
@@ -85,9 +85,13 @@ const ButtonCta: FC<Props> = ({
     );
   }
   return (
-    <a className={buttonClassNames} href={attributeHREF} target={Target.SELF}>
+    <span
+      className={buttonClassNames}
+      onClick={() => navigate(attributeHREF)}
+      role="presentation"
+    >
       {children}
-    </a>
+    </span>
   );
 };
 

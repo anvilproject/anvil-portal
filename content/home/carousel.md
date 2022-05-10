@@ -58,4 +58,12 @@ slides:
         landscape: _images/carousel-galaxy-for-biomedical-analyses.png
         portrait: _images/carousel-galaxy-for-biomedical-analyses-p.png
     subTitle: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data."
+  - title: "AnVIL Shorts: How can AnVIL help my research?"
+    actions:
+      - label: "Learn More"
+        url: "/learn/videos/anvil-videos#sharing-on-anvil"
+    media:
+      landscape: _images/carousel-anvil-shorts.png
+      portrait: _images/carousel-anvil-shorts-p.png
+    subTitle: "Our short video series shows how AnVIL improves collaborative science for different researcher roles."
 ---
