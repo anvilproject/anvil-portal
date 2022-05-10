@@ -60,7 +60,7 @@ function DashboardSearchFacetToggleSelect({ facet, terms }) {
                   selected &&
                   logicalOperator === DashboardSearchTermLogicalOperator.NAND,
               },
-              { [disabled]: count === 0 }
+              { [disabled]: countless === 0 }
             )}
             onClick={() =>
               onHandleClick(
