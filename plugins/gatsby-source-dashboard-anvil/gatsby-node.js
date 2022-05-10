@@ -192,7 +192,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         dataUseLimitations: [String]
         dbGapId: String
         dbGapIdAccession: String
-        diseaseSpecificDataUseLimitations: [String]
+        diseaseSpecificDataUseLimitations: String
         diseases: [String]
         gapId: GapId
         projectId: String

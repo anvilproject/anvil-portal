@@ -133,21 +133,20 @@ export function getDashboardSetOfTermsByFacet(entities, facets) {
 export function getDashboardTermCount(facet, term, entities) {
   return entities.reduce(
     (acc, entity) => {
+      /* Term is one of the facet values (facet is an array). */
       if (Array.isArray(entity[facet])) {
-        entity[facet].forEach((ef) => {
-          if (ef === term) {
-            acc[0]++;
-          } else {
-            acc[1]++;
-          }
-        });
-      } else {
-        if (entity[facet] === term) {
+        if (entity[facet].includes(term)) {
           acc[0]++;
-        } else {
-          acc[1]++;
+          return acc;
         }
       }
+      /* Term is equal to the facet value. */
+      if (entity[facet] === term) {
+        acc[0]++;
+        return acc;
+      }
+      /* Term does not exist for this facet. */
+      acc[1]++;
       return acc;
     },
     [0, 0]

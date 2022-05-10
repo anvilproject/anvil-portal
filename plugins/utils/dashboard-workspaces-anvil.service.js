@@ -51,17 +51,21 @@ const CONSENT_CODE_DISPLAY_TERM = {
   ...CONSENT_CODE,
   CAO: "Consortia Access Only",
   COL: "Collaboration Required (COL)",
+  DS: "Disease Specific (DS)",
+  GRU: "General Research Use (GRU)",
   GSO: "Genetic Studies Only (GSO)",
+  HMB: "Health/Medical/Biomedical (HMB)",
   IRB: "IRB Approval Required (IRB)",
   MDS: "Methods Development Allowed (MDS)",
   NOT_APPLICABLE: "Not Applicable",
   NPU: "Not-for Profit Use Only (NPU))",
-  NRES: "No Restrictions",
+  NRES: "No Restrictions (NRES)",
   PUB: "Publication Required (PUB)",
   UNSPECIFIED: "Unspecified",
 };
 const CONSENT_CODE_LIMITATIONS = [
   CONSENT_CODE.CAO,
+  CONSENT_CODE.DS,
   CONSENT_CODE.GRU,
   CONSENT_CODE.HMB,
   CONSENT_CODE.NRES,
@@ -86,6 +90,7 @@ const SOURCE_HEADER_KEY = {
   DATA_TYPES: "library:datatype",
   DB_GAP_ID: "phsid",
   DISEASES: "library:indication",
+  DISEASE_TEXT: "diseasetext",
   DS: "ds",
   GRU: "gru",
   GSO: "gso",
@@ -118,6 +123,7 @@ const SOURCE_FIELD_KEY = {
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
   DISEASE_SPECIFIC_DATA_USE_LIMITATIONS: "diseaseSpecificDataUseLimitations",
+  [SOURCE_HEADER_KEY.DISEASE_TEXT]: "diseaseText",
   [SOURCE_HEADER_KEY.DS]: "consentCodeDs",
   GAP_ID: "gapId",
   [SOURCE_HEADER_KEY.GRU]: "consentCodeGru",
@@ -145,7 +151,8 @@ const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.DATA_TYPES]: "array",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "string",
   [SOURCE_HEADER_KEY.DISEASES]: "array",
-  [SOURCE_HEADER_KEY.DS]: "array",
+  [SOURCE_HEADER_KEY.DISEASE_TEXT]: "string",
+  [SOURCE_HEADER_KEY.DS]: "string",
   [SOURCE_HEADER_KEY.GRU]: "string",
   [SOURCE_HEADER_KEY.GSO]: "string",
   [SOURCE_HEADER_KEY.HMB]: "string",
@@ -324,7 +331,7 @@ function buildWorkspacePropertyDiseaseSpecificDataUseLimitations(row) {
     SOURCE_FIELD_KEY.DISEASE_SPECIFIC_DATA_USE_LIMITATIONS;
   const diseaseSpecificDataUseLimitations =
     row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DS]];
-  return { [keyDSDataUseLimitations]: [...diseaseSpecificDataUseLimitations] };
+  return { [keyDSDataUseLimitations]: diseaseSpecificDataUseLimitations };
 }
 
 /**
@@ -520,12 +527,18 @@ function getWorkspaceConsentCodes(row, consentCodes) {
   let setOfConsentCodes = new Set();
   for (const consentCode of consentCodes) {
     const codeValue = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY[consentCode]]];
-    if (codeValue?.toUpperCase() === COLUMN_VALUE.TRUE) {
+    if (!codeValue) continue;
+    if (codeValue.toUpperCase() === COLUMN_VALUE.TRUE) {
       setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM[consentCode]);
       continue;
     }
-    if (codeValue?.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
+    if (codeValue.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
       setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED);
+      continue;
+    }
+    /* Special case - consent code DS. */
+    if (consentCode === CONSENT_CODE.DS && codeValue) {
+      setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.DS);
     }
   }
   return [...setOfConsentCodes];
