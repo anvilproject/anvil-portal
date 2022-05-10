@@ -122,7 +122,7 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
-  DISEASE_SPECIFIC_DATA_USE_LIMITATIONS: "diseaseSpecificDataUseLimitations",
+  DISEASE_SPECIFIC_DATA_USE_LIMITATION: "diseaseSpecificDataUseLimitation",
   [SOURCE_HEADER_KEY.DISEASE_TEXT]: "diseaseText",
   [SOURCE_HEADER_KEY.DS]: "consentCodeDs",
   GAP_ID: "gapId",
@@ -322,16 +322,30 @@ function buildWorkspacePropertyDataUseLimitations(row) {
 }
 
 /**
- * Returns the disease specific data use limitations for the specified workspace.
+ * Returns the disease specific data use limitation for the specified workspace.
  * @param row
+ * @param diseaseSpecificTextByDiseaseSpecificCodes
  * @returns {{}}
  */
-function buildWorkspacePropertyDiseaseSpecificDataUseLimitations(row) {
-  const keyDSDataUseLimitations =
-    SOURCE_FIELD_KEY.DISEASE_SPECIFIC_DATA_USE_LIMITATIONS;
-  const diseaseSpecificDataUseLimitations =
+function buildWorkspacePropertyDiseaseSpecificDataUseLimitation(
+  row,
+  diseaseSpecificTextByDiseaseSpecificCodes
+) {
+  const keyDSDataUseLimitation =
+    SOURCE_FIELD_KEY.DISEASE_SPECIFIC_DATA_USE_LIMITATION;
+  const diseaseSpecificDataUseLimitationCode =
     row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DS]];
-  return { [keyDSDataUseLimitations]: diseaseSpecificDataUseLimitations };
+  let diseaseSpecificDataUseLimitation = diseaseSpecificDataUseLimitationCode;
+  if (
+    diseaseSpecificTextByDiseaseSpecificCodes.has(
+      diseaseSpecificDataUseLimitationCode
+    )
+  ) {
+    diseaseSpecificDataUseLimitation = `${diseaseSpecificTextByDiseaseSpecificCodes.get(
+      diseaseSpecificDataUseLimitationCode
+    )} (${diseaseSpecificDataUseLimitationCode})`;
+  }
+  return { [keyDSDataUseLimitation]: diseaseSpecificDataUseLimitation };
 }
 
 /**
@@ -410,6 +424,9 @@ function getWorkspacePropertySubjectsCount(row, subjectsKey, participantsKey) {
  * @param studyPropertiesById
  */
 function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
+  const diseaseSpecificTextByDiseaseSpecificCodes =
+    getDiseaseSpecificTextByDiseaseSpecificCodes(attributeWorkspaces);
+
   return attributeWorkspaces.reduce((acc, row) => {
     /* Grab the study id. */
     const studyId = getWorkspaceStudyId(row);
@@ -460,9 +477,12 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DISEASES]
     );
 
-    /* Build the property diseaseSpecificDataUseLimitations. */
-    const propertyDiseaseSpecificDataUseLimitations =
-      buildWorkspacePropertyDiseaseSpecificDataUseLimitations(row);
+    /* Build the property diseaseSpecificDataUseLimitation. */
+    const propertyDiseaseSpecificDataUseLimitation =
+      buildWorkspacePropertyDiseaseSpecificDataUseLimitation(
+        row,
+        diseaseSpecificTextByDiseaseSpecificCodes
+      );
 
     /* Build the property gapId. */
     const propertyGapId = buildWorkspacePropertyGapId(studyId, "", studyUrl);
@@ -501,7 +521,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       ...propertyConsortium,
       ...propertyDataTypes,
       ...propertyDiseases,
-      ...propertyDiseaseSpecificDataUseLimitations,
+      ...propertyDiseaseSpecificDataUseLimitation,
       ...propertyGapId,
       ...propertySubjects,
       ...propertyStudyDesigns,
@@ -515,6 +535,27 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
 
     return acc;
   }, []);
+}
+
+/**
+ * Maps disease specific consent code with corresponding disease specific display text.
+ * @param workspaces
+ * @returns {Map<any, any>}
+ */
+function getDiseaseSpecificTextByDiseaseSpecificCodes(workspaces) {
+  let diseaseSpecificTextByDiseaseSpecificCodes = new Map();
+  for (const workspace of workspaces) {
+    const diseaseCode = workspace[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DS]];
+    /* Continue if the disease text has already been mapped. */
+    if (diseaseSpecificTextByDiseaseSpecificCodes.has(diseaseCode)) continue;
+    const diseaseText =
+      workspace[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DISEASE_TEXT]];
+    if (diseaseText) {
+      diseaseSpecificTextByDiseaseSpecificCodes.set(diseaseCode, diseaseText);
+    }
+  }
+
+  return diseaseSpecificTextByDiseaseSpecificCodes;
 }
 
 /**

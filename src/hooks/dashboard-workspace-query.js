@@ -21,7 +21,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               dbGapId
               dbGapIdAccession
               diseases
-              diseaseSpecificDataUseLimitations
+              diseaseSpecificDataUseLimitation
               gapId {
                 studyUrl
                 gapIdDisplay

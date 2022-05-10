@@ -38,7 +38,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
     this.field("dbGapIdAccession");
     this.field("dbGapIdNumber");
     this.field("diseases");
-    this.field("diseaseSpecificDataUseLimitations");
+    this.field("diseaseSpecificDataUseLimitation");
     this.field("projectId");
     this.field("studyDesigns");
     this.field("studyName");
@@ -75,8 +75,8 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
       const dbGapIdAccession = workspace.dbGapIdAccession;
       const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
       const diseases = getIndexFieldTypeOfArray(workspace.diseases);
-      const diseaseSpecificDataUseLimitations = getIndexFieldTypeOfString(
-        workspace.diseaseSpecificDataUseLimitations
+      const diseaseSpecificDataUseLimitation = getIndexFieldTypeOfString(
+        workspace.diseaseSpecificDataUseLimitation
       );
       const projectId = workspace.projectId;
       const studyDesigns = getIndexFieldTypeOfArray(workspace.studyDesigns);
@@ -100,7 +100,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         dbGapIdAccession: dbGapIdAccession,
         dbGapIdNumber: dbGapIdNumber,
         diseases: diseases,
-        diseaseSpecificDataUseLimitations: diseaseSpecificDataUseLimitations,
+        diseaseSpecificDataUseLimitation: diseaseSpecificDataUseLimitation,
         projectId: projectId,
         studyDesigns: studyDesigns,
         studyName: studyName,
