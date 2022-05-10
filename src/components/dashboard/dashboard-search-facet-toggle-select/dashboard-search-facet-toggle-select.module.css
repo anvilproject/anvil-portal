@@ -42,17 +42,18 @@
   color: var(--white);
 }
 
-/* Disabled - selected with zero count. */
-.toggleSelected.disabled {
-  background-color: var(--black12);
-  color: var(--black34);
+/* Disabled - zero count. */
+.toggle.disabled {
+  background-color: var(--black6);
+  color: var(--black12);
+  pointer-events: none;
 }
 
-/* Disabled - partner of disabled selected. */
-.toggle:not(.toggleSelected).disabled {
-  background-color: var(--black6);
-  color: var(--black6);
-  pointer-events: none;
+/* Selected disabled - zero count. */
+.toggleSelected.disabled {
+  background-color: var(--black58);
+  color: var(--white);
+  pointer-events: auto;
 }
 
 /* Label. */
