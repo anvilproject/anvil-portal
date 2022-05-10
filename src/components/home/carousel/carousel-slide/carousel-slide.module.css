@@ -96,6 +96,7 @@
 /* Action. */
 .cardAction {
   color: var(--primary);
+  cursor: pointer;
   display: inline-block;
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem; /* 14px. */
