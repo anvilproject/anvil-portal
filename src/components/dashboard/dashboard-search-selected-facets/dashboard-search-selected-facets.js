@@ -20,9 +20,9 @@ function DashboardSearchSelectedFacets(props) {
     onHandleClearAll,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermsByFacet,
+    selectedTermOperatorsByFacet,
   } = props;
-  const selectedFacets = selectedTermsByFacet.keys();
+  const selectedFacets = selectedTermOperatorsByFacet.keys();
 
   return (
     <span className={compStyles.selectedFacets}>
@@ -34,7 +34,7 @@ function DashboardSearchSelectedFacets(props) {
           first={f === 0}
           onHandleClearFacet={onHandleClearFacet}
           onHandleClearTerm={onHandleClearTerm}
-          selectedTermsByFacet={selectedTermsByFacet}
+          selectedTermOperatorsByFacet={selectedTermOperatorsByFacet}
         />
       ))}
       <DashboardSearchSelectedClearAll onHandleClearAll={onHandleClearAll} />

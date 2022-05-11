@@ -20,8 +20,8 @@ const Operator = {
 };
 
 function DashboardSearchSelectedTerm(props) {
-  const { facet, first, last, onHandleClearTerm, term } = props; // TODO rename term
-  const [termValue, logicalOperator] = term;
+  const { facet, first, last, onHandleClearTerm, termOperator } = props;
+  const [term, logicalOperator] = termOperator;
   const operator = Operator[logicalOperator];
   const firstOperator = first && operator === Operator.NAND ? Operator.NOT : "";
 
@@ -40,10 +40,10 @@ function DashboardSearchSelectedTerm(props) {
         )}
         <span
           className={compStyles.term}
-          onClick={() => onHandleClearTerm(facet, logicalOperator, termValue)}
+          onClick={() => onHandleClearTerm(facet, logicalOperator, term)}
           role={"presentation"}
         >
-          {termValue}
+          {term}
         </span>
         {last ? <span className={compStyles.bracket}>)</span> : null}
       </span>

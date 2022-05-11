@@ -17,12 +17,12 @@ import * as compStyles from "./dashboard-search-selected-control-bar.module.css"
 
 function DashboardSearchSelectedControlBar() {
   const {
-    selectedTermsByFacet,
     onHandleClearAll,
     onHandleClearFacet,
     onHandleClearTerm,
+    selectedTermOperatorsByFacet,
   } = useContext(ContextDashboard);
-  const showController = selectedTermsByFacet.size > 0;
+  const showController = selectedTermOperatorsByFacet.size > 0;
 
   return (
     <div className={compStyles.controlBar}>
@@ -31,7 +31,7 @@ function DashboardSearchSelectedControlBar() {
           onHandleClearAll={onHandleClearAll}
           onHandleClearFacet={onHandleClearFacet}
           onHandleClearTerm={onHandleClearTerm}
-          selectedTermsByFacet={selectedTermsByFacet}
+          selectedTermOperatorsByFacet={selectedTermOperatorsByFacet}
         />
       ) : (
         <span>No selected terms.</span>

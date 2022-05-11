@@ -21,10 +21,10 @@ function DashboardSearchSelectedFacet(props) {
     first,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermsByFacet,
+    selectedTermOperatorsByFacet,
   } = props;
   const facetDisplay = FacetSelectorNameDisplay[facet];
-  const terms = selectedTermsByFacet.get(facet);
+  const termOperators = selectedTermOperatorsByFacet.get(facet);
 
   return (
     <>
@@ -39,7 +39,7 @@ function DashboardSearchSelectedFacet(props) {
       <DashboardSearchSelectedTerms
         facet={facet}
         onHandleClearTerm={onHandleClearTerm}
-        terms={terms}
+        termOperators={termOperators}
       />
     </>
   );
