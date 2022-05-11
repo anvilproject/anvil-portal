@@ -82,32 +82,36 @@ function ProviderDashboard(props) {
    * Updates the ref SearchURL.
    * @type {(function(*=): void)|*}
    */
-  const updateDashboardURL = useCallback(
-    (currentQuery) => {
-      /* Create new url from the existing dashboard url. */
-      const url = new URL(dashboardURL);
+  const updateDashboardURL = useCallback((newQuery) => {
+    /* Create new url from the existing dashboard url. */
+    const url = new URL(searchURLRef.current);
+    const currentQuery = url.searchParams.get("query");
 
-      /* Add or remove search params from the url. */
-      /* If there is a current query set the search params to the url. */
-      if (currentQuery) {
-        /* Set the search params. */
-        url.searchParams.set("query", currentQuery);
-      } else {
-        /* Otherwise, delete the search params from the url. */
-        url.searchParams.delete("query");
-      }
+    /* No need to update dashboard url if both current and new query are undefined. */
+    if (!currentQuery && !newQuery) return;
+    /* No need to update dashboard url as new query is the same as current query. */
+    /* Prevents unnecessary pushes to window history. */
+    if (currentQuery === newQuery) return;
 
-      /* Grab the new url string. */
-      const { href } = url;
+    /* Add or remove search params from the url. */
+    /* If there is a current query set the search params to the url. */
+    if (newQuery) {
+      /* Set the search params. */
+      url.searchParams.set("query", newQuery);
+    } else {
+      /* Otherwise, delete the search params from the url. */
+      url.searchParams.delete("query");
+    }
 
-      /* Update ref searchURL. */
-      searchURLRef.current = href;
+    /* Grab the new url string. */
+    const { href } = url;
 
-      /* Add the new url to the session history stack. */
-      window.history.pushState(null, "", href);
-    },
-    [dashboardURL]
-  );
+    /* Update ref searchURL. */
+    searchURLRef.current = href;
+
+    /* Add the new url to the session history stack. */
+    window.history.pushState(null, "", href);
+  }, []);
 
   /**
    * Updates state query, search and dashboard url, and executes tracking.
@@ -848,6 +852,9 @@ function ProviderDashboard(props) {
   useEffect(() => {
     /* Grab the index. */
     fetchDashboardIndex();
+    return () => {
+      setDashboardIndex({ index: {}, indexMounted: false });
+    };
   }, [fetchDashboardIndex]);
 
   /**
