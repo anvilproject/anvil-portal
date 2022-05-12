@@ -17,6 +17,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               createdAt
               dataTypes
               dataUseLimitation
+              dataUseLimitations
               dataUseLimitationModifiers
               dbGapId
               dbGapIdAccession

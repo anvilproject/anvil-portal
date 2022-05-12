@@ -30,11 +30,12 @@ function ModalDashboardFacetTermSelector() {
   const { facets } = useContext(ContextDashboard);
   const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
-    { facetName } = modalProps || {};
+    { facetName, termGroup } = modalProps || {};
   const facet = facets.find((facet) => facet.name === facetName);
-  const terms = facet?.terms;
+  const group = facet?.termGroups.find((group) => group.label === termGroup);
+  const terms = group?.terms;
   const DashboardSearchFacetSelectPanel =
-    FacetSelectionControl[facetName] === SelectionControl.TOGGLE
+    FacetSelectionControl[termGroup] === SelectionControl.TOGGLE
       ? DashboardSearchFacetToggleSelect
       : DashboardSearchFacetCheckboxSelect;
 
@@ -42,7 +43,7 @@ function ModalDashboardFacetTermSelector() {
     <Modal onClose={onCloseDrawer}>
       <ModalDrawer>
         <ModalClose onClose={onCloseDrawer} />
-        <h1>{FacetSelectorNameDisplay[facetName]}</h1>
+        <h1>{FacetSelectorNameDisplay[termGroup]}</h1>
         <div className={compStyles.facetSnapshot}>
           <DashboardSearchSummary />
           <DashboardSearchSelectedToolbar />

@@ -118,6 +118,7 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
   DATA_USE_LIMITATION_MODIFIERS: "dataUseLimitationModifiers",
   DATA_USE_LIMITATION: "dataUseLimitation",
+  DATA_USE_LIMITATIONS: "dataUseLimitations",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
@@ -315,6 +316,32 @@ function buildWorkspacePropertyDataUseLimitation(row) {
 }
 
 /**
+ * Returns the data use limitations for the specified workspace.
+ * @param propertyDataUseLimitation
+ * @param propertyDiseaseSpecificDataUseLimitation
+ * @returns {{[p: string]: [*, *]}}
+ */
+function getWorkspacePropertyDataUseLimitations(
+  propertyDataUseLimitation,
+  propertyDiseaseSpecificDataUseLimitation
+) {
+  const keyDataUseLimitations = SOURCE_FIELD_KEY.DATA_USE_LIMITATIONS;
+  const dataUseLimitation =
+    propertyDataUseLimitation[SOURCE_FIELD_KEY.DATA_USE_LIMITATION];
+  const diseaseSpecifiedDataUseLimitation =
+    propertyDiseaseSpecificDataUseLimitation[
+      SOURCE_FIELD_KEY.DISEASE_SPECIFIC_DATA_USE_LIMITATION
+    ];
+
+  return {
+    [keyDataUseLimitations]: [
+      dataUseLimitation,
+      diseaseSpecifiedDataUseLimitation,
+    ],
+  };
+}
+
+/**
  * Returns the disease specific data use limitation for the specified workspace.
  * @param row
  * @param diseaseSpecificTextByDiseaseSpecificCodes
@@ -477,6 +504,12 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
         diseaseSpecificTextByDiseaseSpecificCodes
       );
 
+    /* Build the property diseaseSpecificDataUseLimitations. */
+    const propertyDataUseLimitations = getWorkspacePropertyDataUseLimitations(
+      propertyDataUseLimitation,
+      propertyDiseaseSpecificDataUseLimitation
+    );
+
     /* Build the property gapId. */
     const propertyGapId = buildWorkspacePropertyGapId(studyId, "", studyUrl);
 
@@ -511,6 +544,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       ...propertyConsentShortName,
       ...propertyDataUseLimitationModifiers,
       ...propertyDataUseLimitation,
+      ...propertyDataUseLimitations,
       ...propertyConsortium,
       ...propertyDataTypes,
       ...propertyDiseases,

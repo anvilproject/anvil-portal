@@ -53,6 +53,25 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
 }
 
 /**
+ * Returns the dashboard count of displayable panels.
+ * @param searchFacets
+ * @param termGroupsByFacet
+ * @returns {number}
+ */
+export function getDashboardPanelCount(searchFacets, termGroupsByFacet) {
+  const setOfPanels = new Set();
+  searchFacets.forEach((facet) => {
+    if (termGroupsByFacet.has(facet)) {
+      [...termGroupsByFacet.get(facet)].map((termsGroup) =>
+        setOfPanels.add(termsGroup)
+      );
+    } else setOfPanels.add(facet);
+  });
+
+  return setOfPanels.size;
+}
+
+/**
  * Returns the entire set of entities for the result key.
  *
  * @param entities
@@ -151,6 +170,34 @@ export function getDashboardTermCount(facet, term, entities) {
     },
     [0, 0]
   );
+}
+
+/**
+ * Returns the map object key-value pair facet and term group by term.
+ * @param termGroupsByFacet
+ * @param setOfTermsByFacet
+ * @returns {Map<any, any>}
+ */
+export function getDashboardTermGroupsByTermByFacet(
+  termGroupsByFacet,
+  setOfTermsByFacet
+) {
+  const termGroupsByTermByFacet = new Map();
+  if (termGroupsByFacet && termGroupsByFacet.size > 0) {
+    for (const [facet, termGroups] of termGroupsByFacet) {
+      const termGroupsByTerm = new Map();
+      for (const termGroup of termGroups) {
+        const setOfTerms = setOfTermsByFacet.get(termGroup);
+        [...setOfTerms].forEach((term) =>
+          termGroupsByTerm.set(term, termGroup)
+        );
+        /* Remove the term group from setOfTermsByFacet - the term group will not be its own facet. */
+        setOfTermsByFacet.delete(termGroup);
+      }
+      termGroupsByTermByFacet.set(facet, termGroupsByTerm);
+    }
+  }
+  return termGroupsByTermByFacet;
 }
 
 /**

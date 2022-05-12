@@ -20,13 +20,16 @@ function DashboardSearchFacets() {
 
   return (
     <>
-      {facets.map((facet, f) => (
-        <DashboardSearchFacet
-          key={f}
-          facet={facet}
-          setOfSummaryKeyTerms={setOfSummaryKeyTerms}
-        />
-      ))}
+      {facets.map((facet) =>
+        facet.termGroups.map((termGroup, t) => (
+          <DashboardSearchFacet
+            key={t}
+            facetName={facet.name}
+            termGroup={termGroup}
+            setOfSummaryKeyTerms={setOfSummaryKeyTerms}
+          />
+        ))
+      )}
       <DashboardSearchFacetPlaceholder loading={loading} />
       <ModalDashboardFacetTermSelector />
     </>

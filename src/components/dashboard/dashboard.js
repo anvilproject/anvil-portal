@@ -27,9 +27,9 @@ function Dashboard(props) {
     summaryKey,
     tableHeadersEntities,
     tableHeadersSummary,
+    termGroupsByFacet,
     totalsWarning,
   } = props;
-  const facetCount = searchFacets.length;
   const setOfEntities = DashboardSearchService.getDashboardSetOfEntities(
     dashboardEntities,
     resultKey
@@ -44,14 +44,23 @@ function Dashboard(props) {
       searchFacets
     );
   const setOfSummaryKeyTerms = setOfTermsByFacet.get(summaryKey);
+  const termGroupsByTermByFacet =
+    DashboardSearchService.getDashboardTermGroupsByTermByFacet(
+      termGroupsByFacet,
+      setOfTermsByFacet
+    ); // deletes from setOfTermsByFacet any facets identified as a term group
   const termSearchValueByTermDisplay =
     DashboardSearchService.getDashboardTermSearchValueByTerm(setOfTermsByFacet);
+  const panelCount = DashboardSearchService.getDashboardPanelCount(
+    searchFacets,
+    termGroupsByFacet
+  );
 
   return (
     <ProviderDashboard
       dashboardIndexFileName={dashboardIndexFileName}
       dashboardURL={dashboardURL}
-      facetCount={facetCount}
+      panelCount={panelCount}
       rowsByRowKey={rowsByRowKey}
       setOfEntities={setOfEntities}
       setOfSummaryKeyTerms={setOfSummaryKeyTerms}
@@ -59,6 +68,8 @@ function Dashboard(props) {
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
       tableHeadersSummary={tableHeadersSummary}
+      termGroupsByFacet={termGroupsByFacet}
+      termGroupsByTermByFacet={termGroupsByTermByFacet}
       termSearchValueByTermDisplay={termSearchValueByTermDisplay}
       totalsWarning={totalsWarning}
     >

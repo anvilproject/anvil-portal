@@ -27,8 +27,9 @@ const searchFacets = [
   "dataTypes",
   "studyDesigns",
   "accessType",
-  "dataUseLimitation",
-  "diseaseSpecificDataUseLimitation",
+  "dataUseLimitation", // Term Group for dataUseLimitations
+  "dataUseLimitations",
+  "diseaseSpecificDataUseLimitation", // Term Group for dataUseLimitations
   "dataUseLimitationModifiers",
 ]; // AnVIL facets (selected from workspace property values) for the dashboard checkboxes.
 const summaryKey = "consortium";
@@ -58,6 +59,11 @@ function DashboardAnVIL() {
   const dashboardEntities = DashboardWorkspaceStaticQuery();
   const currentLocation = useLocation();
   const { href } = currentLocation || {};
+  const termGroupsByFacet = new Map();
+  termGroupsByFacet.set("dataUseLimitations", [
+    "dataUseLimitation",
+    "diseaseSpecificDataUseLimitation",
+  ]);
 
   return (
     <Dashboard
@@ -70,6 +76,7 @@ function DashboardAnVIL() {
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
       tableHeadersSummary={tableHeadersSummary}
+      termGroupsByFacet={termGroupsByFacet}
     >
       <DashboardSearch />
       <DashboardTableSummary />
