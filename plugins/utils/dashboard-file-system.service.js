@@ -8,6 +8,7 @@
 // Core dependencies
 const fs = require("fs");
 const path = require("path");
+const { promisify } = require("util");
 
 const parseCsv = promisify(require("csv-parse").parse);
 
@@ -26,13 +27,16 @@ const parseContentRows = async function parseContentRows(
   FIELD,
   FIELD_TYPE
 ) {
-  if (!FIELD) return await parseCsv(content, { delimiter })
-  const keyTypes = Object.fromEntries(Object.entries(FIELD_TYPE).map(([header, type]) => [FIELD[header], type]));
-  return await parseCsv(content, {
+  if (!FIELD) return parseCsv(content, { delimiter })
+  const keyTypes = Object.fromEntries(
+    Object.entries(FIELD_TYPE).map(([header, type]) => [FIELD[header], type])
+  );
+  return parseCsv(content, {
     delimiter,
-    columns: row => row.map(header => FIELD[header]),
-    cast: (datum, info) => info.header ? datum : parseDatumValue(datum, keyTypes[info.column])
-  })
+    columns: (row) => row.map((header) => FIELD[header]),
+    cast: (datum, info) =>
+      info.header ? datum : parseDatumValue(datum, keyTypes[info.column]),
+  });
 };
 
 /**

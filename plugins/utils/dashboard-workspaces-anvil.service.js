@@ -661,7 +661,7 @@ async function parseSource(fileName, delimiter) {
   const content = await readFile(fileName, "utf8");
 
   /* Parse and return the ingested data. */
-  return await parseContentRows(content, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+  return parseContentRows(content, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
 }
 
 /**

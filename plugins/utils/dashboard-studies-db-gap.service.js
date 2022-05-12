@@ -56,7 +56,7 @@ const getStudyAccessionsById = async function getStudyAccessionsById() {
 
   let studyAccessionsById = new Map();
 
-  for (let [studyId, studyAccession] of rows) {
+  for (const [studyId, studyAccession] of rows) {
     studyAccessionsById.set(studyId, studyAccession);
   }
 
@@ -135,7 +135,7 @@ async function getCacheDBGAP() {
   const content = await readFile(fileDBGAPs, "utf8");
 
   /* Split the file content into rows. */
-  return await parseContentRows(content);
+  return parseContentRows(content);
 }
 
 module.exports.getStudyAccession = getStudyAccession;

@@ -57,7 +57,7 @@ async function parseSource(fileSource, FIELD_KEY, FIELD_TYPE) {
   const content = await readFile(fileSource, "utf8");
 
   /* Parse and return the ingested data. */
-  return await parseContentRows(content, ",", FIELD_KEY, FIELD_TYPE);
+  return parseContentRows(content, ",", FIELD_KEY, FIELD_TYPE);
 }
 
 module.exports.readNCPISource = readNCPISource;
