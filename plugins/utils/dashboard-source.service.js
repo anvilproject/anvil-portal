@@ -10,9 +10,8 @@ const path = require("path");
 
 // App dependencies
 const {
-  parseRows,
+  parseContentRows,
   readFile,
-  splitContentToContentRows,
   writeFile,
 } = require(path.resolve(__dirname, "./dashboard-file-system.service.js"));
 
@@ -57,11 +56,8 @@ async function parseSource(fileSource, FIELD_KEY, FIELD_TYPE) {
   /* Read dashboard source file. */
   const content = await readFile(fileSource, "utf8");
 
-  /* Split the file content into rows. */
-  const contentRows = splitContentToContentRows(content);
-
   /* Parse and return the ingested data. */
-  return parseRows(contentRows, ",", FIELD_KEY, FIELD_TYPE);
+  return await parseContentRows(content, ",", FIELD_KEY, FIELD_TYPE);
 }
 
 module.exports.readNCPISource = readNCPISource;

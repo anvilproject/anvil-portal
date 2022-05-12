@@ -9,30 +9,30 @@
 const fs = require("fs");
 const path = require("path");
 
+const parseCsv = promisify(require("csv-parse").parse);
+
 /**
- * Returns the file contents parsed into a model shaped by FIELD.
+ * Returns the file contents parsed into a model shaped by FIELD, or as row arrays if FIELD is omitted.
  *
- * @param contentRows
+ * @param content
  * @param delimiter
  * @param FIELD
  * @param FIELD_TYPE
- * @returns {Array}
+ * @returns {Promise<Array>}
  */
-const parseRows = function parseRows(
-  contentRows,
+const parseContentRows = async function parseContentRows(
+  content,
   delimiter = ",",
   FIELD,
   FIELD_TYPE
 ) {
-  /* Build the header row. */
-  const headers = buildFileHeaders(contentRows, delimiter);
-
-  /* Parse each content row. */
-  return contentRows
-    .slice(1)
-    .map((contentRow) =>
-      parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE)
-    );
+  if (!FIELD) return await parseCsv(content, { delimiter })
+  const keyTypes = Object.fromEntries(Object.entries(FIELD_TYPE).map(([header, type]) => [FIELD[header], type]));
+  return await parseCsv(content, {
+    delimiter,
+    columns: row => row.map(header => FIELD[header]),
+    cast: (datum, info) => info.header ? datum : parseDatumValue(datum, keyTypes[info.column])
+  })
 };
 
 /**
@@ -46,23 +46,6 @@ const readFile = async function readFile(file, options = null) {
     const filePath = path.resolve(__dirname, file);
     return fs.readFileSync(filePath, options);
   } catch (err) {}
-};
-
-/**
- * Returns file content rows; where each row of a file is represented by a string element of an array.
- *
- * @param content
- * @returns {Array}
- */
-const splitContentToContentRows = function splitContentToContentRows(content) {
-  if (!content) {
-    throw `Error splitContentToContentRows is null or empty; ${content}`;
-  }
-
-  /* Split the file content into rows. */
-  /* Each element of the array represents a row (as a string value) from the file. */
-  /* e.g. [first_line, second_line, third_line, and so on...]. */
-  return content.toString().trim().split(/\r?\n/);
 };
 
 /**
@@ -83,17 +66,6 @@ const writeFile = async function writeFile(file, content, options = null) {
   fs.writeFileSync(absPath, content, options);
   console.log(`Writing to file ${file}`);
 };
-
-/**
- * Returns the file headers.
- *
- * @param contentRows
- * @param delimiter
- * @returns {Array}
- */
-function buildFileHeaders(contentRows, delimiter) {
-  return contentRows.slice(0, 1).toString().toLowerCase().split(delimiter);
-}
 
 /**
  * Returns the datum formatted as a string array.
@@ -176,34 +148,6 @@ function parseDatumValue(datum, fieldType) {
   return datum;
 }
 
-/**
- * Returns the row data, parsed into a model as specified by the FIELD list.
- *
- * @param contentRow
- * @param delimiter
- * @param headers
- * @param FIELD
- * @param FIELD_TYPE
- * @returns {*}
- */
-function parseRow(contentRow, delimiter, headers, FIELD, FIELD_TYPE) {
-  /* Parse the row data. */
-  return contentRow.split(delimiter).reduce((acc, datum, i) => {
-    const header = headers[i];
-    const key = FIELD[header];
-    const fieldType = FIELD_TYPE[header];
-
-    /* Only include data we are interested in. */
-    if (key) {
-      const value = parseDatumValue(datum, fieldType);
-      acc = Object.assign(acc, { [key]: value });
-    }
-
-    return acc;
-  }, {});
-}
-
-module.exports.parseRows = parseRows;
+module.exports.parseContentRows = parseContentRows;
 module.exports.readFile = readFile;
-module.exports.splitContentToContentRows = splitContentToContentRows;
 module.exports.writeFile = writeFile;

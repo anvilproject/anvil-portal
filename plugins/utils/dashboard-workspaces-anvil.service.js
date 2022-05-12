@@ -9,7 +9,7 @@
 const path = require("path");
 
 // App dependencies
-const { parseRows, readFile, splitContentToContentRows } = require(path.resolve(
+const { parseContentRows, readFile } = require(path.resolve(
   __dirname,
   "./dashboard-file-system.service.js"
 ));
@@ -660,11 +660,8 @@ async function parseSource(fileName, delimiter) {
   /* Read the AnVIL source file. */
   const content = await readFile(fileName, "utf8");
 
-  /* Split the file content into rows. */
-  const contentRows = splitContentToContentRows(content);
-
   /* Parse and return the ingested data. */
-  return parseRows(contentRows, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+  return await parseContentRows(content, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
 }
 
 /**
