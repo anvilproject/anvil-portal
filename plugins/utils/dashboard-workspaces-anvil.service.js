@@ -65,7 +65,6 @@ const CONSENT_CODE_DISPLAY_TERM = {
 };
 const CONSENT_CODE_LIMITATIONS = [
   CONSENT_CODE.CAO,
-  CONSENT_CODE.DS,
   CONSENT_CODE.GRU,
   CONSENT_CODE.HMB,
   CONSENT_CODE.NRES,
@@ -118,7 +117,7 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.CREATED_AT]: "createdAt",
   [SOURCE_HEADER_KEY.DATA_TYPES]: "dataTypes",
   DATA_USE_LIMITATION_MODIFIERS: "dataUseLimitationModifiers",
-  DATA_USE_LIMITATIONS: "dataUseLimitations",
+  DATA_USE_LIMITATION: "dataUseLimitation",
   [SOURCE_HEADER_KEY.DB_GAP_ID]: "dbGapId",
   DB_GAP_ID_ACCESSION: "dbGapIdAccession",
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
@@ -300,25 +299,19 @@ function buildWorkspacePropertyConsentName(
 function buildWorkspacePropertyDataUseLimitationModifiers(row) {
   const keyDataUseLimitationModifiers =
     SOURCE_FIELD_KEY.DATA_USE_LIMITATION_MODIFIERS;
-  const workspaceModifiers = getWorkspaceConsentCodes(
-    row,
-    CONSENT_CODE_MODIFIERS
-  );
+  const workspaceModifiers = getWorkspaceDataUseLimitationModifiers(row);
   return { [keyDataUseLimitationModifiers]: workspaceModifiers };
 }
 
 /**
- * Returns the data use limitations for the specified workspace.
+ * Returns the data use limitation for the specified workspace.
  * @param row
  * @returns {{[p: string]: *[]}}
  */
-function buildWorkspacePropertyDataUseLimitations(row) {
-  const keyDataUseLimitations = SOURCE_FIELD_KEY.DATA_USE_LIMITATIONS;
-  const workspaceLimitations = getWorkspaceConsentCodes(
-    row,
-    CONSENT_CODE_LIMITATIONS
-  );
-  return { [keyDataUseLimitations]: workspaceLimitations };
+function buildWorkspacePropertyDataUseLimitation(row) {
+  const keyDataUseLimitation = SOURCE_FIELD_KEY.DATA_USE_LIMITATION;
+  const workspaceLimitation = getWorkspaceDataUseLimitation(row);
+  return { [keyDataUseLimitation]: workspaceLimitation };
 }
 
 /**
@@ -451,9 +444,9 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
     const propertyDataUseLimitationModifiers =
       buildWorkspacePropertyDataUseLimitationModifiers(row);
 
-    /* Build the property dataUseLimitations. */
-    const propertyDataUseLimitations =
-      buildWorkspacePropertyDataUseLimitations(row);
+    /* Build the property dataUseLimitation. */
+    const propertyDataUseLimitation =
+      buildWorkspacePropertyDataUseLimitation(row);
 
     /* Build the property accessType. */
     const propertyAccessType = buildWorkspacePropertyAccessType(
@@ -517,7 +510,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       ...propertyConsentName,
       ...propertyConsentShortName,
       ...propertyDataUseLimitationModifiers,
-      ...propertyDataUseLimitations,
+      ...propertyDataUseLimitation,
       ...propertyConsortium,
       ...propertyDataTypes,
       ...propertyDiseases,
@@ -559,14 +552,35 @@ function getDiseaseSpecificTextByDiseaseSpecificCodes(workspaces) {
 }
 
 /**
- * Returns the consent codes included in the specified list of modifier or limitation codes for the workspace.
+ * Returns the data use limitation for the workspace.
  * @param row
- * @param consentCodes
+ * @returns {string}
+ */
+function getWorkspaceDataUseLimitation(row) {
+  let dataUseLimitation = "--";
+  for (const consentCode of CONSENT_CODE_LIMITATIONS) {
+    const codeValue = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY[consentCode]]];
+    if (!codeValue) continue;
+    if (codeValue.toUpperCase() === COLUMN_VALUE.TRUE) {
+      dataUseLimitation = CONSENT_CODE_DISPLAY_TERM[consentCode];
+      break;
+    }
+    if (codeValue.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
+      dataUseLimitation = CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED;
+      break;
+    }
+  }
+  return dataUseLimitation;
+}
+
+/**
+ * Returns the consent codes included in the specified list of modifiers for the workspace.
+ * @param row
  * @returns {any[]}
  */
-function getWorkspaceConsentCodes(row, consentCodes) {
+function getWorkspaceDataUseLimitationModifiers(row) {
   let setOfConsentCodes = new Set();
-  for (const consentCode of consentCodes) {
+  for (const consentCode of CONSENT_CODE_MODIFIERS) {
     const codeValue = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY[consentCode]]];
     if (!codeValue) continue;
     if (codeValue.toUpperCase() === COLUMN_VALUE.TRUE) {
@@ -575,11 +589,6 @@ function getWorkspaceConsentCodes(row, consentCodes) {
     }
     if (codeValue.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
       setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED);
-      continue;
-    }
-    /* Special case - consent code DS. */
-    if (consentCode === CONSENT_CODE.DS && codeValue) {
-      setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.DS);
     }
   }
   return [...setOfConsentCodes];

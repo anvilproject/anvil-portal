@@ -56,8 +56,8 @@
     grid-column: 1 / -1; /* Spans row. */
   }
 
-  /* facet "dataUseLimitationModifiers" */
-  .panel[id^="dataUseLimitationModifiers"] {
+  /* facet "dataUseLimitationModifier" */
+  .panel[id^="dataUseLimitationModifier"] {
     grid-column: 4 span; /* Spans 4 cells. */
   }
 

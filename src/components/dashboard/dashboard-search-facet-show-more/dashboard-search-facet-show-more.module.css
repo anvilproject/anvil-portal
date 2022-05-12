@@ -14,3 +14,8 @@
   padding-top: 12px;
   text-align: left;
 }
+
+/* Toggle select more button. */
+.grid {
+  margin-left: 88px;
+}

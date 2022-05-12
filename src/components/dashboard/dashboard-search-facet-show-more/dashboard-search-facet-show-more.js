@@ -6,24 +6,33 @@
  */
 
 // Core dependencies
+import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // App dependencies
 import Button from "../../button/button";
 
 // Styles
-import { more as moreStyles } from "./dashboard-search-facet-show-more.module.css";
+import {
+  grid,
+  more as moreStyles,
+} from "./dashboard-search-facet-show-more.module.css";
 
 function DashboardSearchFacetShowMore(props) {
-  const { moreCount, onShowMore } = props;
-  const more = moreCount > 0;
+  const { moreCount, onShowMore, toggleSelect } = props;
   const buttonText = `+ ${moreCount} more`;
 
-  return more ? (
+  return (
     <Button clickAction={() => onShowMore()}>
-      <span className={moreStyles}>{buttonText}</span>
+      <span
+        className={classNames(moreStyles, {
+          [grid]: toggleSelect,
+        })}
+      >
+        {buttonText}
+      </span>
     </Button>
-  ) : null;
+  );
 }
 
 export default DashboardSearchFacetShowMore;

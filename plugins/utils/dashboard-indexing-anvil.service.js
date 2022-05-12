@@ -32,7 +32,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
     this.field("consentShortName");
     this.field("consortium");
     this.field("dataTypes");
-    this.field("dataUseLimitations");
+    this.field("dataUseLimitation");
     this.field("dataUseLimitationModifiers");
     this.field("dbGapId");
     this.field("dbGapIdAccession");
@@ -65,8 +65,8 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         facetSubStr
       );
       const dataTypes = getIndexFieldTypeOfArray(workspace.dataTypes);
-      const dataUseLimitations = getIndexFieldTypeOfArray(
-        workspace.dataUseLimitations
+      const dataUseLimitation = getIndexFieldTypeOfString(
+        workspace.dataUseLimitation
       );
       const dataUseLimitationModifiers = getIndexFieldTypeOfArray(
         workspace.dataUseLimitationModifiers
@@ -94,7 +94,7 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         consentShortName: consentShortName,
         consortium: consortium,
         dataTypes: dataTypes,
-        dataUseLimitations: dataUseLimitations,
+        dataUseLimitation: dataUseLimitation,
         dataUseLimitationModifiers: dataUseLimitationModifiers,
         dbGapId: dbGapId,
         dbGapIdAccession: dbGapIdAccession,

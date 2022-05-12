@@ -37,8 +37,10 @@ function DashboardSearchFacet(props) {
     snippetCount
   );
   const snippets = terms.slice(0, snippetCount);
+  const selectionControl =
+    FacetSelectionControl[name] || SelectionControl.CHECKBOX;
   const DashboardSearchFacetSelectPanel =
-    FacetSelectionControl[name] === SelectionControl.TOGGLE
+    selectionControl === SelectionControl.TOGGLE
       ? DashboardSearchFacetToggleSelect
       : DashboardSearchFacetCheckboxSelect;
 
@@ -52,10 +54,13 @@ function DashboardSearchFacet(props) {
         <span>{FacetSelectorNameDisplay[name]}</span>
       </span>
       <DashboardSearchFacetSelectPanel facet={name} terms={snippets} />
-      <DashboardSearchFacetShowMore
-        moreCount={moreCount}
-        onShowMore={onShowMore}
-      />
+      {moreCount > 0 && (
+        <DashboardSearchFacetShowMore
+          moreCount={moreCount}
+          onShowMore={onShowMore}
+          toggleSelect={selectionControl === SelectionControl.TOGGLE}
+        />
+      )}
     </DashboardSearchPanel>
   );
 }

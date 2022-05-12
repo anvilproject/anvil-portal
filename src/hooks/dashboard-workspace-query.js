@@ -16,7 +16,7 @@ export const DashboardWorkspaceStaticQuery = () => {
               consortium
               createdAt
               dataTypes
-              dataUseLimitations
+              dataUseLimitation
               dataUseLimitationModifiers
               dbGapId
               dbGapIdAccession
