@@ -17,13 +17,13 @@ import * as compStyles from "./dashboard-grid.module.css";
 
 function DashboardGrid(props) {
   const { children } = props;
-  const { facetCount, facets } = useContext(ContextDashboard);
+  const { facets, panelCount } = useContext(ContextDashboard);
   const loading = facets.length === 0;
-  const gridX = `x${facetCount}`;
+  const gridX = `x${panelCount}`;
   const classNamesGrid = classNames(
     compStyles.grid,
     { [compStyles.gridLoading]: loading },
-    { [compStyles[gridX]]: facetCount }
+    { [compStyles[gridX]]: panelCount }
   );
 
   return <div className={classNamesGrid}>{children}</div>;

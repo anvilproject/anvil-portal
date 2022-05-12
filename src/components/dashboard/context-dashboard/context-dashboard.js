@@ -11,9 +11,9 @@ import React from "react";
 
 const ContextDashboard = React.createContext({
   entities: [],
-  facetCount: 0,
   facets: [],
   inputValue: "",
+  panelCount: 0,
   searchURL: "",
   selectedTermOperatorsByFacet: new Map(),
   setOfSummaryKeyTerms: new Set(),

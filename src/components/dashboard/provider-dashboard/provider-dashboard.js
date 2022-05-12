@@ -30,7 +30,7 @@ function ProviderDashboard(props) {
     children,
     dashboardIndexFileName,
     dashboardURL,
-    facetCount,
+    panelCount,
     rowsByRowKey,
     setOfEntities,
     setOfSummaryKeyTerms,
@@ -38,6 +38,8 @@ function ProviderDashboard(props) {
     summaryKey,
     tableHeadersEntities,
     tableHeadersSummary,
+    termGroupsByFacet,
+    termGroupsByTermByFacet,
     termSearchValueByTermDisplay,
     totalsWarning,
   } = props;
@@ -205,6 +207,10 @@ function ProviderDashboard(props) {
               newEntities
             );
 
+          /* Grab the term group. */
+          const termGroup =
+            termGroupsByTermByFacet.get(facet)?.get(term) || facet;
+
           // Add the term to the terms object if
           // there is a count,
           // or it is selected
@@ -214,13 +220,29 @@ function ProviderDashboard(props) {
               countless,
               logicalOperator,
               name: term,
+              termGroup: termGroup,
               selected: selected,
             });
           }
         }
 
+        /* Grab the set of term groups for the facet. */
+        const setOfTermGroups = new Set(
+          termGroupsByFacet.get(facet) || [facet]
+        );
+
+        /* Split terms into term groups. */
+        const termGroups = [...setOfTermGroups].map((termGroup) => {
+          return {
+            label: termGroup,
+            terms: newTerms.filter(
+              (newTerm) => newTerm.termGroup === termGroup
+            ),
+          };
+        });
+
         /* Push the facet to the facets object. */
-        newFacets.push({ name: facet, terms: newTerms });
+        newFacets.push({ name: facet, termGroups: termGroups });
       }
 
       return newFacets;
@@ -292,9 +314,14 @@ function ProviderDashboard(props) {
       const setOfSummaryTerms = new Set(
         newFacets
           .find((facet) => facet.name === summaryKey)
-          .terms.filter((term) => facetUnselected || term.selected)
-          .filter((term) => term.count)
-          .map((term) => term.name)
+          .termGroups.reduce((accum, termGroup) => {
+            const terms = termGroup.terms
+              .filter((term) => facetUnselected || term.selected)
+              .filter((term) => term.count)
+              .map((term) => term.name);
+            accum.push(...terms);
+            return accum;
+          }, [])
       );
 
       /* Return the summaries. */
@@ -907,13 +934,13 @@ function ProviderDashboard(props) {
     <ContextDashboard.Provider
       value={{
         entities,
-        facetCount,
         facets,
         inputValue: inputValueRef.current,
         onHandleClearAll,
         onHandleClearFacet,
         onHandleClearTerm,
         onHandleUpdateFacet,
+        panelCount,
         results,
         selectedTermOperatorsByFacet: selectedTermOperatorsByFacetRef.current,
         searchURL: searchURLRef.current,

@@ -11,12 +11,12 @@ import React, { useContext } from "react";
 // App dependencies
 import DashboardSearchFacetCheckboxSelect from "../dashboard-search-facet-checkbox-select/dashboard-search-facet-checkbox-select";
 import DashboardSearchFacetShowMore from "../dashboard-search-facet-show-more/dashboard-search-facet-show-more";
+import DashboardSearchFacetToggleSelect from "../dashboard-search-facet-toggle-select/dashboard-search-facet-toggle-select";
 import DashboardSearchPanel from "../dashboard-search-panel/dashboard-search-panel";
 import ContextModal from "../../modal/context-modal/context-modal";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
 import FacetSelectionControl from "../../../utils/dashboard/facet-selection-control.model";
 import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selector-name-display.model";
-import DashboardSearchFacetToggleSelect from "../dashboard-search-facet-toggle-select/dashboard-search-facet-toggle-select";
 
 // Template variables
 export const SelectionControl = {
@@ -25,8 +25,8 @@ export const SelectionControl = {
 };
 
 function DashboardSearchFacet(props) {
-  const { facet, setOfSummaryKeyTerms } = props,
-    { name, terms } = facet || {};
+  const { facetName, setOfSummaryKeyTerms, termGroup } = props;
+  const { label, terms } = termGroup;
   const { onOpenModal } = useContext(ContextModal);
   const snippetCount =
     DashboardSearchService.getDashboardCheckboxMaxDisplayCount(
@@ -38,22 +38,22 @@ function DashboardSearchFacet(props) {
   );
   const snippets = terms.slice(0, snippetCount);
   const selectionControl =
-    FacetSelectionControl[name] || SelectionControl.CHECKBOX;
+    FacetSelectionControl[label] || SelectionControl.CHECKBOX;
   const DashboardSearchFacetSelectPanel =
     selectionControl === SelectionControl.TOGGLE
       ? DashboardSearchFacetToggleSelect
       : DashboardSearchFacetCheckboxSelect;
 
   const onShowMore = () => {
-    onOpenModal({ facetName: name });
+    onOpenModal({ facetName: facetName, termGroup: label });
   };
 
   return (
-    <DashboardSearchPanel id={name}>
+    <DashboardSearchPanel id={label}>
       <span id="group">
-        <span>{FacetSelectorNameDisplay[name]}</span>
+        <span>{FacetSelectorNameDisplay[label]}</span>
       </span>
-      <DashboardSearchFacetSelectPanel facet={name} terms={snippets} />
+      <DashboardSearchFacetSelectPanel facet={facetName} terms={snippets} />
       {moreCount > 0 && (
         <DashboardSearchFacetShowMore
           moreCount={moreCount}
