@@ -578,14 +578,12 @@ function ProviderDashboard(props) {
       const operatorBySelectedTerms = new Map();
 
       /* Add any selected terms to the set. */
-      if (params) {
-        params.forEach((param, i, array) => {
-          /* The even index is the term, the subsequent index is the corresponding operator. */
-          if (i % 2 === 0) {
-            operatorBySelectedTerms.set(param, array[i + 1]);
-          }
-        });
-      }
+      params?.forEach((param, i, array) => {
+        /* The even index is the term, the subsequent index is the corresponding operator. */
+        if (i % 2 === 0) {
+          operatorBySelectedTerms.set(param, array[i + 1]);
+        }
+      });
 
       /* Update the ref. */
       operatorBySelectedTermsByFacetRef.current.set(

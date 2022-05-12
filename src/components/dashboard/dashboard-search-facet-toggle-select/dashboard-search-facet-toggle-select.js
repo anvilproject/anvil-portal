@@ -15,7 +15,7 @@ import DashboardSearchTermLogicalOperator from "../../../utils/dashboard/dashboa
 
 // Styles
 import {
-  control,
+  controls,
   controlLabel,
   disabled,
   label,
@@ -42,7 +42,7 @@ function DashboardSearchFacetToggleSelect({ facet, terms }) {
   };
 
   return (
-    <span className={control}>
+    <span className={controls}>
       {terms.length > 0 && (
         <>
           <span className={controlLabel}>No</span>

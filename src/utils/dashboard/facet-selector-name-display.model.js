@@ -12,7 +12,7 @@ export const FacetSelectorNameDisplay = {
   consortium: "Consortium",
   dataTypes: "Data Type",
   dataUseLimitationModifiers: "Data Use Limitation Modifier",
-  dataUseLimitations: "Data Use Limitation",
+  dataUseLimitation: "Data Use Limitation",
   diseases: "Disease",
   diseaseSpecificDataUseLimitation: "Disease Specific Data Use Limitation",
   focuses: "Focus / Disease",
