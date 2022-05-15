@@ -58,7 +58,7 @@ This renders like:
 The markdown for external links is the same for internal links except we use the full url.
  
 ```
-[This is an external link to genome.gov] (https://www.genome.gov/)
+[This is an external link to genome.gov](https://www.genome.gov/)
 ```
 
 This displays as:
