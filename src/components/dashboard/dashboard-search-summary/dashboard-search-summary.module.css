@@ -5,6 +5,12 @@
  * Style definitions specific to The AnVIL dashboard search summary component.
  */
 
+/* Summary. */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Stat label, stat. */
 .stat,
 .label {

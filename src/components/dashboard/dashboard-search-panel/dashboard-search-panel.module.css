@@ -7,10 +7,14 @@
 
 /* Panel. */
 .panel {
+  align-content: flex-start;
   background-color: var(--primary3);
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
+  display: grid;
+  gap: 12px 2px;
+  grid-auto-columns: 1fr;
+  grid-column: 2 span; /* Spans 2 cells. */
+  grid-template-rows: auto auto;
+  padding: 12px 0;
 }
 
 /* Inverted. */
@@ -20,26 +24,22 @@
 }
 
 /* Panel - placeholder panel - hide. */
-.panel[id^="placeholder"] {
+.panel[id="placeholder"] {
   display: none;
-}
-
-/* Row. */
-.panel.row {
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 /* Panel - "spanGrid". */
 .panel.spanGrid {
   grid-column: 1 / -1; /* Spans row. */
+  grid-template-rows: auto;
+  padding: 12px;
 }
 
-/* Panel label. */
-.panel [id="group"] {
+/* Panel facet name. */
+.panel [id^="facetName"] {
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 12px;
+  padding: 0 12px;
 }
 
 /**
@@ -51,24 +51,33 @@
     grid-column: 2 span; /* Spans 2 cells. */
   }
 
-  /* Panel - first. */
-  .panel:not(.spanGrid):first-of-type {
+  /* facet "search". */
+  .panel[id="search"] {
     grid-column: 1 / -1; /* Spans row. */
   }
 
-  /* facet "dataUseLimitationModifier" */
-  .panel[id^="dataUseLimitationModifier"] {
+  /* facet "dataUseLimitations" */
+  /* facet "dataUseLimitationModifiers" */
+  .panel[id="dataUseLimitations"],
+  .panel[id="dataUseLimitationModifiers"] {
     grid-column: 4 span; /* Spans 4 cells. */
   }
 
   /* Panel - placeholder panel - show. */
-  .panel[id^="placeholder"] {
+  .panel[id="placeholder"] {
     display: block;
   }
+}
 
-  /* Panel - AnVIL placeholder panel - hide. */
-  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
-    display: none;
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* facet "dataUseLimitations" */
+  /* facet "dataUseLimitationModifiers" */
+  .panel[id="dataUseLimitations"],
+  .panel[id="dataUseLimitationModifiers"] {
+    grid-column: 3 span; /* Spans 3 cells. */
   }
 }
 
@@ -78,23 +87,19 @@
 @media screen and (min-width: 1280px) {
   /* Panel */
   .panel {
-    grid-column: 1 span; /* Spans 1 cell. */
+    grid-column: 2 span; /* Spans 2 cell. */
   }
 
+  /* facet "dataUseLimitations" */
   /* facet "dataUseLimitationModifiers" */
-  .panel[id^="dataUseLimitationModifiers"] {
-    grid-column: 2 span; /* Spans 2 cells. */
+  .panel[id="dataUseLimitations"],
+  .panel[id="dataUseLimitationModifiers"] {
+    grid-column: 5 span; /* Spans 5 cells. */
   }
 
   /* Panel - placeholder panel - hide. */
-  .panel[id^="placeholder"] {
+  .panel[id="placeholder"] {
     display: none;
-  }
-
-  /* Panel - AnVIL placeholder panel - show. */
-  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
-    display: block;
-    grid-column: 1 span; /* Spans 1 cells. */
   }
 }
 
@@ -102,13 +107,25 @@
  * Large tablet landscape, large window.
  */
 @media screen and (min-width: 1600px) {
-  /* Panel - first. */
-  .panel:not(.spanGrid):first-of-type {
+  /* Panel. */
+  /* facet "search". */
+  .panel,
+  .panel[id="search"] {
     grid-column: 1 span; /* Spans 1 cell. */
   }
 
-  /* Panel - AnVIL placeholder panel - hide. */
-  .panel[id^="dataUseLimitationModifiers"] + .panel[id^="placeholder"] {
-    display: none;
+  /* facet "dataUseLimitations" */
+  .panel[id="dataUseLimitations"] {
+    grid-column: 2 span; /* Spans 2 cells. */
+  }
+
+  /* facet "dataUseLimitationModifiers" */
+  .panel[id="dataUseLimitationModifiers"] {
+    grid-column: 1 span; /* Spans 1 cell. */
+  }
+
+  /* Placeholder. */
+  .panel[id="dataUseLimitationModifiers"] + [id="placeholder"] {
+    display: block;
   }
 }

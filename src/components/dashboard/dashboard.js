@@ -43,7 +43,6 @@ function Dashboard(props) {
       dashboardEntities,
       searchFacets
     );
-  const setOfSummaryKeyTerms = setOfTermsByFacet.get(summaryKey);
   const termGroupsByTermByFacet =
     DashboardSearchService.getDashboardTermGroupsByTermByFacet(
       termGroupsByFacet,
@@ -63,7 +62,6 @@ function Dashboard(props) {
       panelCount={panelCount}
       rowsByRowKey={rowsByRowKey}
       setOfEntities={setOfEntities}
-      setOfSummaryKeyTerms={setOfSummaryKeyTerms}
       setOfTermsByFacet={setOfTermsByFacet}
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
