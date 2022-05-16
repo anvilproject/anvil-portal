@@ -11,7 +11,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // App dependencies
 import ContextDashboard from "../context-dashboard/context-dashboard";
-import { SelectionControl } from "../dashboard-search-facet/dashboard-search-facet";
+import { SelectionControl } from "../dashboard-search-facet-term-group/dashboard-search-facet-term-group";
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 import { GAEntityType } from "../../../utils/anvil-gtm/ga-entity-type.model";
 import * as DashboardSearchService from "../../../utils/dashboard/dashboard-search.service";
@@ -33,7 +33,6 @@ function ProviderDashboard(props) {
     panelCount,
     rowsByRowKey,
     setOfEntities,
-    setOfSummaryKeyTerms,
     setOfTermsByFacet,
     summaryKey,
     tableHeadersEntities,
@@ -228,16 +227,16 @@ function ProviderDashboard(props) {
 
         /* Grab the set of term groups for the facet. */
         const setOfTermGroups = new Set(
-          termGroupsByFacet.get(facet) || [facet]
+          termGroupsByFacet?.get(facet) || [facet]
         );
 
         /* Split terms into term groups. */
         const termGroups = [...setOfTermGroups].map((termGroup) => {
           return {
             label: termGroup,
-            terms: newTerms.filter(
-              (newTerm) => newTerm.termGroup === termGroup
-            ),
+            terms: newTerms
+              .filter((newTerm) => newTerm.termGroup === termGroup)
+              .map(({ termGroup, ...newTerm }) => newTerm),
           };
         });
 
@@ -944,7 +943,6 @@ function ProviderDashboard(props) {
         results,
         selectedTermOperatorsByFacet: selectedTermOperatorsByFacetRef.current,
         searchURL: searchURLRef.current,
-        setOfSummaryKeyTerms,
         summaries,
         tableHeadersEntities,
         tableHeadersSummary,

@@ -10,12 +10,6 @@
   align-items: center;
   cursor: pointer;
   display: inline-flex;
-  margin-bottom: 12px;
-}
-
-/* Checkbox - last. */
-.checkbox:last-of-type {
-  margin-bottom: 0;
 }
 
 /* Checkbox - inactive and zero count. */
@@ -83,14 +77,6 @@
   flex: 1;
   padding-left: 16px;
   text-align: right;
-}
-
-/* Label, count. */
-.label,
-.count {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 16px; /* Required to equal checkbox height for alignment when label wraps. */
 }
 
 .check,

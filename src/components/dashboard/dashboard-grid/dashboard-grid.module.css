@@ -8,6 +8,7 @@
 /* Grid. */
 .grid {
   display: grid;
+  grid-auto-flow: dense;
   grid-gap: 2px;
   grid-template-columns: 1fr;
   width: 100%;
@@ -22,9 +23,24 @@
  * Small tablet portrait, medium handset landscape, small window.
  */
 @media screen and (min-width: 600px) {
-  /* Grid. */
-  .grid {
-    grid-template-columns: repeat(6, 1fr) /* Grid is 2 columns. */;
+  /* Grid x5. */
+  .x5 {
+    grid-template-columns: repeat(6, 1fr); /* Grid is 6 columns. */
+  }
+
+  /* Grid x8. */
+  .x8 {
+    grid-template-columns: repeat(4, 1fr) /* Grid is 4 columns. */;
+  }
+}
+
+/**
+ * Large handset portrait, small handset landscape, extra small window
+ */
+@media screen and (min-width: 840px) {
+  /* Grid x8. */
+  .x8 {
+    grid-template-columns: repeat(6, 1fr) /* Grid is 6 columns. */;
   }
 }
 
@@ -34,12 +50,12 @@
 @media screen and (min-width: 1280px) {
   /* Grid x5. */
   .x5 {
-    grid-template-columns: repeat(5, 1fr); /* Grid is 5 columns. */
+    grid-template-columns: repeat(10, 1fr); /* Grid is 10 columns. */
   }
 
   /* Grid x8. */
   .x8 {
-    grid-template-columns: repeat(5, 1fr); /* Grid is 5 columns. */
+    grid-template-columns: repeat(10, 1fr); /* Grid is 10 columns. */
   }
 }
 

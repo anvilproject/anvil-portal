@@ -13,11 +13,10 @@ import React from "react";
 import * as compStyles from "./dashboard-search-panel.module.css";
 
 function DashboardSearchPanel(props) {
-  const { children, id, inverted, row, spanGrid } = props;
+  const { children, id, inverted, spanGrid } = props;
   const classNamesPanel = classNames(
     { [compStyles.inverted]: inverted },
     compStyles.panel,
-    { [compStyles.row]: row },
     { [compStyles.spanGrid]: spanGrid }
   );
 

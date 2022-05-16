@@ -83,8 +83,8 @@ function DashboardSearchInput() {
   }, [inputValue]);
 
   return (
-    <DashboardSearchPanel>
-      <span id="group">Search</span>
+    <DashboardSearchPanel id={"search"}>
+      <span id="facetName-search">Search</span>
       <span className={compStyles.search}>
         <input
           className={compStyles.input}

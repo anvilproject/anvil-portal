@@ -8,16 +8,14 @@
 /* Controls. */
 .controls {
   display: grid;
-  font-size: 13px;
-  font-weight: 300;
   gap: 12px;
   grid-auto-flow: row;
   grid-template-columns: minmax(32px, auto) minmax(32px, auto) 1fr;
-  line-height: 16px;
 }
 
 /* Control label "No" "Yes". */
 .controlLabel {
+  color: var(--black58);
   font-weight: 400;
 }
 

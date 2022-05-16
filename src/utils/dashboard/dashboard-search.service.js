@@ -21,38 +21,6 @@ const DENY_LIST_TERMS = [
 ];
 
 /**
- * Returns the maximum number of checkboxes displayed for the dashboard search quick pick.
- * Additional checkboxes are displayed via the "+ x more" modal.
- *
- * @param setOfSummaryKeyTerms
- * @returns {number}
- */
-export function getDashboardCheckboxMaxDisplayCount(setOfSummaryKeyTerms) {
-  /* Grab the total number of terms for the summary facet. */
-  const sizeSummaryKeyTerms = setOfSummaryKeyTerms.size;
-
-  if (sizeSummaryKeyTerms > 4) {
-    return 4;
-  }
-
-  return sizeSummaryKeyTerms;
-}
-
-/**
- * Returns the facet selector more count for the specified facet.
- * Excludes the terms already on display in the search panel.
- * Excludes any terms selected with a zero count.
- *
- * @param terms
- * @param snippetCount
- * @returns {number}
- */
-export function getDashboardCheckboxMoreCount(terms, snippetCount) {
-  /* Count the remaining terms available for selection. */
-  return terms.slice(snippetCount).filter((term) => term.count).length;
-}
-
-/**
  * Returns the dashboard count of displayable panels.
  * @param searchFacets
  * @param termGroupsByFacet
@@ -61,7 +29,7 @@ export function getDashboardCheckboxMoreCount(terms, snippetCount) {
 export function getDashboardPanelCount(searchFacets, termGroupsByFacet) {
   const setOfPanels = new Set();
   searchFacets.forEach((facet) => {
-    if (termGroupsByFacet.has(facet)) {
+    if (termGroupsByFacet?.has(facet)) {
       [...termGroupsByFacet.get(facet)].map((termsGroup) =>
         setOfPanels.add(termsGroup)
       );
