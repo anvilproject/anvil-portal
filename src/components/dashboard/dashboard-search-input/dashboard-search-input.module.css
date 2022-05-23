@@ -9,7 +9,7 @@
 .search {
   max-width: 246px;
   position: relative; /* Required for icon. */
-  padding: 0 12px;
+  margin: 0 12px;
 }
 
 /* Clear icon. */

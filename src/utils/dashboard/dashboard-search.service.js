@@ -126,9 +126,8 @@ export function getDashboardTermCount(facetName, term, entities) {
           acc[0]++;
           return acc;
         }
-      }
-      /* Term is equal to the facet value. */
-      if (entity[facetName] === term) {
+      } else if (entity[facetName] === term) {
+        /* Term is equal to the facet value. */
         acc[0]++;
         return acc;
       }

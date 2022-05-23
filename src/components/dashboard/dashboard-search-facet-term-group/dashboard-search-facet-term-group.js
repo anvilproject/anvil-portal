@@ -77,7 +77,7 @@ function DashboardSearchFacetTermGroup({
           terms={displayableTerms}
         />
       ) : (
-        <span>{FacetGroupTermNoTermsDisplay[label]}</span>
+        <span>{FacetGroupTermNoTermsDisplay[label] || "None"}</span>
       )}
       {!popover && moreCount > 0 && (
         <DashboardSearchFacetShowMore
