@@ -7,7 +7,6 @@
 
 /* Plus more. */
 .more {
-  composes: label from "../dashboard-search-facet-checkbox-select/dashboard-search-facet-checkbox-select.module.css";
   color: var(--primary);
   flex: 1;
   margin-left: 25px; /* Checkbox 13px, label margin 12px. */
