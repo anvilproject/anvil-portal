@@ -27,7 +27,7 @@ function Dashboard(props) {
     summaryKey,
     tableHeadersEntities,
     tableHeadersSummary,
-    termGroupsByFacet,
+    termGroupsByFacetName,
     totalsWarning,
   } = props;
   const setOfEntities = DashboardSearchService.getDashboardSetOfEntities(
@@ -38,21 +38,23 @@ function Dashboard(props) {
     dashboardEntities,
     resultKey
   );
-  const setOfTermsByFacet =
-    DashboardSearchService.getDashboardSetOfTermsByFacet(
+  const setOfTermsByFacetName =
+    DashboardSearchService.getDashboardSetOfTermsByFacetName(
       dashboardEntities,
       searchFacets
     );
-  const termGroupsByTermByFacet =
-    DashboardSearchService.getDashboardTermGroupsByTermByFacet(
-      termGroupsByFacet,
-      setOfTermsByFacet
-    ); // deletes from setOfTermsByFacet any facets identified as a term group
+  const termGroupsByTermByFacetName =
+    DashboardSearchService.getDashboardTermGroupsByTermByFacetName(
+      termGroupsByFacetName,
+      setOfTermsByFacetName
+    ); // deletes from setOfTermsByFacetName any facets identified as a term group
   const termSearchValueByTermDisplay =
-    DashboardSearchService.getDashboardTermSearchValueByTerm(setOfTermsByFacet);
+    DashboardSearchService.getDashboardTermSearchValueByTerm(
+      setOfTermsByFacetName
+    );
   const panelCount = DashboardSearchService.getDashboardPanelCount(
     searchFacets,
-    termGroupsByFacet
+    termGroupsByFacetName
   );
 
   return (
@@ -62,12 +64,12 @@ function Dashboard(props) {
       panelCount={panelCount}
       rowsByRowKey={rowsByRowKey}
       setOfEntities={setOfEntities}
-      setOfTermsByFacet={setOfTermsByFacet}
+      setOfTermsByFacetName={setOfTermsByFacetName}
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
       tableHeadersSummary={tableHeadersSummary}
-      termGroupsByFacet={termGroupsByFacet}
-      termGroupsByTermByFacet={termGroupsByTermByFacet}
+      termGroupsByFacetName={termGroupsByFacetName}
+      termGroupsByTermByFacetName={termGroupsByTermByFacetName}
       termSearchValueByTermDisplay={termSearchValueByTermDisplay}
       totalsWarning={totalsWarning}
     >

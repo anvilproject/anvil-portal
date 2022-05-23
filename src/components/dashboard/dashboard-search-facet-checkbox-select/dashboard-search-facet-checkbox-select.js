@@ -17,12 +17,12 @@ import DashboardSearchTermLogicalOperator from "../../../utils/dashboard/dashboa
 import * as compStyles from "./dashboard-search-facet-checkbox-select.module.css";
 
 function DashboardSearchFacetCheckboxSelect(props) {
-  const { facet, terms } = props;
+  const { facetName, terms } = props;
   const { onHandleUpdateFacet } = useContext(ContextDashboard);
 
-  const onHandleClick = (facet, name, selected, logicalOperator) => {
+  const onHandleClick = (fName, name, selected, logicalOperator) => {
     onHandleUpdateFacet({
-      facet,
+      facetName: fName,
       logicalOperator,
       selected: !selected,
       term: name,
@@ -39,7 +39,7 @@ function DashboardSearchFacetCheckboxSelect(props) {
       key={name}
       onClick={() =>
         onHandleClick(
-          facet,
+          facetName,
           name,
           selected,
           DashboardSearchTermLogicalOperator.OR

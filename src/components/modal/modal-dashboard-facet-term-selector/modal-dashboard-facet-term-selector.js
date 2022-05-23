@@ -10,6 +10,7 @@ import React, { useContext } from "react";
 
 // App dependencies
 import ContextModal from "../context-modal/context-modal";
+import ContextDashboard from "../../dashboard/context-dashboard/context-dashboard";
 import DashboardSearchFacetTermGroup from "../../dashboard/dashboard-search-facet-term-group/dashboard-search-facet-term-group";
 import DashboardSearchPanel from "../../dashboard/dashboard-search-panel/dashboard-search-panel";
 import DashboardSearchSelectedToolbar from "../../dashboard/dashboard-search-selected-toolbar/dashboard-search-selected-toolbar";
@@ -23,9 +24,14 @@ import { FacetSelectorNameDisplay } from "../../../utils/dashboard/facet-selecto
 import * as compStyles from "./modal-dashboard-facet-term-selector.module.css";
 
 function ModalDashboardFacetTermSelector() {
+  const { facets } = useContext(ContextDashboard);
   const { modal, onCloseDrawer } = useContext(ContextModal);
   const { modalProps } = modal,
-    { facetName, termGroup } = modalProps || {};
+    { facetName, termGroupName } = modalProps || {};
+  const modalFacet = facets.find((facet) => facet.name === facetName);
+  const modalTermGroup = modalFacet?.termGroups.find(
+    (termGroup) => termGroup.label === termGroupName
+  );
 
   return (
     <Modal onClose={onCloseDrawer}>
@@ -39,7 +45,7 @@ function ModalDashboardFacetTermSelector() {
             <DashboardSearchFacetTermGroup
               facetName={facetName}
               popover
-              termGroup={termGroup}
+              termGroup={modalTermGroup}
             />
           </DashboardSearchPanel>
         </div>

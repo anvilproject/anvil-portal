@@ -132,7 +132,7 @@ export function switchDataTypeToTooltipLabel(dataType) {
  */
 function switchAccessTypeUrl(accessType) {
   switch (accessType) {
-    case "Consortium Access":
+    case "Consortium Access Only":
       return "/learn/accessing-data/requesting-data-access#accessing-consortium-access-data";
     case "Controlled Access":
       return "/learn/accessing-data/requesting-data-access#accessing-controlled-access-data";
