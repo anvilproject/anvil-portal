@@ -20,9 +20,9 @@ function DashboardSearchSelectedControlBar() {
     onHandleClearAll,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermOperatorsByFacet,
+    selectedTermOperatorsByFacetName,
   } = useContext(ContextDashboard);
-  const showController = selectedTermOperatorsByFacet.size > 0;
+  const showController = selectedTermOperatorsByFacetName.size > 0;
 
   return (
     <div className={compStyles.controlBar}>
@@ -31,7 +31,7 @@ function DashboardSearchSelectedControlBar() {
           onHandleClearAll={onHandleClearAll}
           onHandleClearFacet={onHandleClearFacet}
           onHandleClearTerm={onHandleClearTerm}
-          selectedTermOperatorsByFacet={selectedTermOperatorsByFacet}
+          selectedTermOperatorsByFacetName={selectedTermOperatorsByFacetName}
         />
       ) : (
         <span>No selected terms.</span>

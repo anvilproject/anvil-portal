@@ -50,7 +50,7 @@ function DashboardSearchInput() {
 
       /* Update facet. */
       onHandleUpdateFacet({
-        facet: "search",
+        facetName: "search",
         logicalOperator: DashboardSearchTermLogicalOperator.AND,
         term: searchText,
       });

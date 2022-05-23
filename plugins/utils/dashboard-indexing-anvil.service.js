@@ -32,14 +32,12 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
     this.field("consentShortName");
     this.field("consortium");
     this.field("dataTypes");
-    this.field("dataUseLimitation");
     this.field("dataUseLimitations");
     this.field("dataUseLimitationModifiers");
     this.field("dbGapId");
     this.field("dbGapIdAccession");
     this.field("dbGapIdNumber");
     this.field("diseases");
-    this.field("diseaseSpecificDataUseLimitation");
     this.field("projectId");
     this.field("studyDesigns");
     this.field("studyName");
@@ -66,9 +64,6 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         facetSubStr
       );
       const dataTypes = getIndexFieldTypeOfArray(workspace.dataTypes);
-      const dataUseLimitation = getIndexFieldTypeOfString(
-        workspace.dataUseLimitation
-      );
       const dataUseLimitations = getIndexFieldTypeOfArray(
         workspace.dataUseLimitations
       );
@@ -79,9 +74,6 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
       const dbGapIdAccession = workspace.dbGapIdAccession;
       const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
       const diseases = getIndexFieldTypeOfArray(workspace.diseases);
-      const diseaseSpecificDataUseLimitation = getIndexFieldTypeOfString(
-        workspace.diseaseSpecificDataUseLimitation
-      );
       const projectId = workspace.projectId;
       const studyDesigns = getIndexFieldTypeOfArray(workspace.studyDesigns);
       const studyName = getIndexFieldTypeOfString(
@@ -98,14 +90,12 @@ const generateAnVILDashboardIndex = function generateAnVILDashboardIndex(
         consentShortName: consentShortName,
         consortium: consortium,
         dataTypes: dataTypes,
-        dataUseLimitation: dataUseLimitation,
         dataUseLimitations: dataUseLimitations,
         dataUseLimitationModifiers: dataUseLimitationModifiers,
         dbGapId: dbGapId,
         dbGapIdAccession: dbGapIdAccession,
         dbGapIdNumber: dbGapIdNumber,
         diseases: diseases,
-        diseaseSpecificDataUseLimitation: diseaseSpecificDataUseLimitation,
         projectId: projectId,
         studyDesigns: studyDesigns,
         studyName: studyName,

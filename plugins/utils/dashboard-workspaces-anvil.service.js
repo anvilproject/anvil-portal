@@ -41,10 +41,11 @@ const CONSENT_CODE = {
   HMB: "HMB",
   IRB: "IRB",
   MDS: "MDS",
-  NOT_APPLICABLE: "NOT_APPLICABLE",
+  NA: "NA",
   NPU: "NPU",
   PUB: "PUB",
   NRES: "NRES",
+  TBD: "TBD",
   UNSPECIFIED: "UNSPECIFIED",
 };
 const CONSENT_CODE_DISPLAY_TERM = {
@@ -57,18 +58,12 @@ const CONSENT_CODE_DISPLAY_TERM = {
   HMB: "Health/Medical/Biomedical (HMB)",
   IRB: "IRB Approval Required (IRB)",
   MDS: "Methods Development Allowed (MDS)",
-  NOT_APPLICABLE: "Not Applicable",
   NPU: "Not-for Profit Use Only (NPU))",
-  NRES: "No Restrictions (NRES)",
+  NRES: "No Restrictions",
   PUB: "Publication Required (PUB)",
   UNSPECIFIED: "Unspecified",
 };
-const CONSENT_CODE_LIMITATIONS = [
-  CONSENT_CODE.CAO,
-  CONSENT_CODE.GRU,
-  CONSENT_CODE.HMB,
-  CONSENT_CODE.NRES,
-];
+const CONSENT_CODE_LIMITATIONS = [CONSENT_CODE.GRU, CONSENT_CODE.HMB];
 const CONSENT_CODE_MODIFIERS = [
   CONSENT_CODE.COL,
   CONSENT_CODE.GSO,
@@ -77,7 +72,6 @@ const CONSENT_CODE_MODIFIERS = [
   CONSENT_CODE.MDS,
   CONSENT_CODE.PUB,
 ];
-const DENY_LIST_TERMS = ["ATTRIBUTEVALUE", "N/A", "NA", "", null];
 const fileSourceAnVIL = "dashboard-source-anvil.tsv";
 const SOURCE_HEADER_KEY = {
   CAO: "cao",
@@ -108,8 +102,8 @@ const SOURCE_HEADER_KEY = {
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
-  [SOURCE_HEADER_KEY.CAO]: "consentCodeCao",
-  [SOURCE_HEADER_KEY.COL]: "consentCodeCol",
+  [SOURCE_HEADER_KEY.CAO]: "cao",
+  [SOURCE_HEADER_KEY.COL]: "col",
   [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "consentLongName",
   CONSENT_NAME: "consentName",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "consentShortName",
@@ -124,17 +118,17 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.DISEASES]: "diseases",
   DISEASE_SPECIFIC_DATA_USE_LIMITATION: "diseaseSpecificDataUseLimitation",
   [SOURCE_HEADER_KEY.DISEASE_TEXT]: "diseaseText",
-  [SOURCE_HEADER_KEY.DS]: "consentCodeDs",
+  [SOURCE_HEADER_KEY.DS]: "ds",
   GAP_ID: "gapId",
-  [SOURCE_HEADER_KEY.GRU]: "consentCodeGru",
-  [SOURCE_HEADER_KEY.GSO]: "consentCodeGso",
-  [SOURCE_HEADER_KEY.HMB]: "consentCodeHmb",
-  [SOURCE_HEADER_KEY.IRB]: "consentCodeIrb",
-  [SOURCE_HEADER_KEY.MDS]: "consentCodeMds",
-  [SOURCE_HEADER_KEY.NPU]: "consentCodeNpu",
-  [SOURCE_HEADER_KEY.NRES]: "consentCodeNres",
+  [SOURCE_HEADER_KEY.GRU]: "gru",
+  [SOURCE_HEADER_KEY.GSO]: "gso",
+  [SOURCE_HEADER_KEY.HMB]: "hmb",
+  [SOURCE_HEADER_KEY.IRB]: "irb",
+  [SOURCE_HEADER_KEY.MDS]: "mds",
+  [SOURCE_HEADER_KEY.NPU]: "npu",
+  [SOURCE_HEADER_KEY.NRES]: "nres",
   [SOURCE_HEADER_KEY.PARTICIPANTS]: "participants",
-  [SOURCE_HEADER_KEY.PUB]: "consentCodePub",
+  [SOURCE_HEADER_KEY.PUB]: "pub",
   [SOURCE_HEADER_KEY.PROJECT_ID]: "projectId",
   [SOURCE_HEADER_KEY.SAMPLES]: "samples",
   [SOURCE_HEADER_KEY.SIZE]: "size",
@@ -169,23 +163,12 @@ const SOURCE_FIELD_TYPE = {
   [SOURCE_HEADER_KEY.SUBJECTS]: "number",
 };
 const WORKSPACE_ACCESS_TYPE = {
-  CONSORTIUM_ACCESS: "Consortium Access",
+  CONSORTIUM_ACCESS_ONLY: "Consortium Access Only",
   CONTROLLED_ACCESS: "Controlled Access",
   NO_RESTRICTIONS: "No Restrictions",
 };
 const WORKSPACE_CONSORTIUM = {
   "1000G": "1000 Genomes",
-  CCDG: "CCDG",
-  CMG: "CMG",
-  CMH: "CMH",
-  CONVERGENT_NEUROSCIENCE: "Convergent Neuroscience",
-  CSER: "CSER",
-  EMERGE: "eMERGE",
-  GTEX: "GTEx",
-  HPRC: "HPRC",
-  PAGE: "PAGE",
-  T2T: "T2T",
-  WGSPD1: "WGSPD1",
 };
 
 /**
@@ -212,69 +195,61 @@ const getWorkspaces = async function getWorkspaces() {
 
 /**
  * Returns the access type for the specified workspace.
- * - "Controlled Access" for any workspace with a study and defined as anything other than "not applicable" or "nres" in library:dataUseRestriction.
- * - "Consortium Access" for any workspace without a study or defined as "not applicable" in library:dataUseRestriction.
- * - "No Restrictions" for any workspace defined as "nres" or "public" in library:dataUseRestriction.
- *
+ * - "No Restrictions" for any workspace consentShortName as "NRES".
+ * - "Consortium Access Only" for any workspace without a study or consentShortName as either "NA" or "Consortia Access Only".
+ * - "Controlled Access" for any workspace with a study, and with any consentShortName other than "Consortia Access Only", "NA" or "NRES".
  * @param workspace
- * @param propertyConsentShortName
+ * @param consentShortName
  * @param studyAccession
  * @returns {{}}
  */
 function buildWorkspacePropertyAccessType(
   workspace,
-  propertyConsentShortName,
+  consentShortName,
   studyAccession
 ) {
   const keyAccessType = SOURCE_FIELD_KEY.ACCESS_TYPE;
 
-  /* Grab the consent code for the workspace. */
-  const consentShortName =
-    propertyConsentShortName[
-      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
-    ];
-
-  /* Let access type be "Controlled Access". */
-  /* This is true for any workspace with a study, and defined as anything other than "Consortia Access Only" in library:dataUseRestriction, or is not "NRES". */
-  let accessType = WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS;
-
-  if (consentShortName) {
-    /* Let access type be "Consortium Access". */
-    /* This is true for any workspace without a study. */
-    /* It is also true for any workspace defined as "not applicable" in library:dataUseRestriction (redefined by reformatWorkspacePropertyConsentShortName as "Consortia Access Only"). */
-    if (
-      !studyAccession ||
-      consentShortName.toUpperCase() ===
-        CONSENT_CODE_DISPLAY_TERM.CAO.toUpperCase()
-    ) {
-      accessType = WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS;
-    }
-    /* Let access type be "No Restrictions". This is true for any workspace that is defined as "nres" in library:dataUseRestriction. */
-    if (consentShortName.toUpperCase() === CONSENT_CODE.NRES) {
-      accessType = WORKSPACE_ACCESS_TYPE.NO_RESTRICTIONS;
-    }
+  /* If the workspace consentShortName is "NRES", the access type is "No Restrictions". */
+  if (
+    consentShortName &&
+    consentShortName.toUpperCase() === CONSENT_CODE.NRES
+  ) {
+    return { [keyAccessType]: WORKSPACE_ACCESS_TYPE.NO_RESTRICTIONS };
   }
 
-  return { [keyAccessType]: accessType };
+  /* If the workspace is without a study, the access type is "Consortium Access Only". */
+  if (!studyAccession) {
+    return { [keyAccessType]: WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS_ONLY };
+  }
+
+  /* If the workspace consentShortName is "NA", the access type is "Consortium Access Only". */
+  if (consentShortName && consentShortName.toUpperCase() === CONSENT_CODE.NA) {
+    return { [keyAccessType]: WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS_ONLY };
+  }
+
+  /* If the workspace consentShortName is "Consortia Access Only", the access type is "Consortium Access Only". */
+  if (
+    consentShortName &&
+    consentShortName.toUpperCase() ===
+      CONSENT_CODE_DISPLAY_TERM.CAO.toUpperCase()
+  ) {
+    return { [keyAccessType]: WORKSPACE_ACCESS_TYPE.CONSORTIUM_ACCESS_ONLY };
+  }
+
+  /* Otherwise, the access type is "Controlled Access". */
+  /* This is true for any workspace with a study, and with any consentShortName other than "Consortia Access Only", "NA" or "NRES". */
+  return { [keyAccessType]: WORKSPACE_ACCESS_TYPE.CONTROLLED_ACCESS };
 }
 
 /**
  * Returns the consent name (short and long) for the specified workspace.
  * @param workspace
- * @param propertyConsentShortName
+ * @param consentShortName
  * @returns {{[p: string]: {short: *, long: *}}}
  */
-function buildWorkspacePropertyConsentName(
-  workspace,
-  propertyConsentShortName
-) {
+function buildWorkspacePropertyConsentName(workspace, consentShortName) {
   const keyConsentName = SOURCE_FIELD_KEY.CONSENT_NAME;
-
-  /* Grab the consent short code for the workspace. */
-  const consentShortName =
-    propertyConsentShortName[
-      SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
-    ];
 
   /* Grab the consent long code for the workspace. */
   let consentLongName =
@@ -356,6 +331,12 @@ function buildWorkspacePropertyDiseaseSpecificDataUseLimitation(
   const diseaseSpecificDataUseLimitationCode =
     row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DS]];
   let diseaseSpecificDataUseLimitation = diseaseSpecificDataUseLimitationCode;
+  if (
+    diseaseSpecificDataUseLimitationCode.toUpperCase() ===
+    CONSENT_CODE.UNSPECIFIED
+  ) {
+    return { [keyDSDataUseLimitation]: "" };
+  }
   if (
     diseaseSpecificTextByDiseaseSpecificCodes.has(
       diseaseSpecificDataUseLimitationCode
@@ -456,15 +437,21 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
       { dbGapIdAccession, studyUrl } = propertyStudy || {};
 
     /* Reformat the property consentShortName. */
-    const propertyConsentShortName = reformatWorkspacePropertyConsentShortName(
+    const propertyConsentShortName = reformatWorkspacePropertyValue(
       row,
       SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
     );
 
+    /* Grab the consent short code for the workspace. */
+    const consentShortName =
+      propertyConsentShortName[
+        SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]
+      ];
+
     /* Build the property consent name. */
     const propertyConsentName = buildWorkspacePropertyConsentName(
       row,
-      propertyConsentShortName
+      consentShortName
     );
 
     /* Build the property dataUseLimitationModifiers. */
@@ -478,7 +465,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
     /* Build the property accessType. */
     const propertyAccessType = buildWorkspacePropertyAccessType(
       row,
-      propertyConsentShortName,
+      consentShortName,
       dbGapIdAccession
     );
 
@@ -521,7 +508,10 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
 
     /* Build the property studyRequestAccessUrl (for the study detail page). */
     const propertyStudyRequestAccessUrl =
-      buildWorkspacePropertyStudyRequestAccessUrl(propertyAccessType, studyId);
+      buildWorkspacePropertyStudyRequestAccessUrl(
+        propertyDataUseLimitation,
+        studyId
+      );
 
     /* Build the property studySlug (for the study detail page). */
     const propertyStudySlug = buildWorkspacePropertyStudySlug(
@@ -591,16 +581,18 @@ function getDiseaseSpecificTextByDiseaseSpecificCodes(workspaces) {
  * @returns {string}
  */
 function getWorkspaceDataUseLimitation(row) {
-  let dataUseLimitation = "--";
+  const consentCode =
+    row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]];
+  if (consentCode.toUpperCase() === CONSENT_CODE.TBD) {
+    return consentCode;
+  }
+  /* Returns consent code that matches one of the consent code limitations. */
+  let dataUseLimitation = "";
   for (const consentCode of CONSENT_CODE_LIMITATIONS) {
     const codeValue = row[SOURCE_FIELD_KEY[SOURCE_HEADER_KEY[consentCode]]];
     if (!codeValue) continue;
     if (codeValue.toUpperCase() === COLUMN_VALUE.TRUE) {
       dataUseLimitation = CONSENT_CODE_DISPLAY_TERM[consentCode];
-      break;
-    }
-    if (codeValue.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
-      dataUseLimitation = CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED;
       break;
     }
   }
@@ -619,10 +611,6 @@ function getWorkspaceDataUseLimitationModifiers(row) {
     if (!codeValue) continue;
     if (codeValue.toUpperCase() === COLUMN_VALUE.TRUE) {
       setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM[consentCode]);
-      continue;
-    }
-    if (codeValue.toUpperCase() === COLUMN_VALUE.UNSPECIFIED) {
-      setOfConsentCodes.add(CONSENT_CODE_DISPLAY_TERM.UNSPECIFIED);
     }
   }
   return [...setOfConsentCodes];
@@ -659,40 +647,7 @@ function getWorkspaceStudy(studyId, studyPropertiesById) {
 function getWorkspaceStudyId(workspace) {
   const keyStudyId = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.DB_GAP_ID];
 
-  return workspace[keyStudyId] || "--";
-}
-
-/**
- * Returns true if the specified value is valid, does not already exist on the specified list and is not a deny list term.
- *
- * @param value
- * @param list
- * @returns {boolean}
- */
-function isListValueAllowed(value, list) {
-  if (value) {
-    const listValueDistinct = !list.includes(value);
-    const listValueAllowed = !isValueDenied(value);
-
-    return listValueDistinct && listValueAllowed;
-  }
-
-  return false;
-}
-
-/**
- * Returns true if the value is on the deny list of terms.
- *
- * @param value
- * @returns {boolean}
- */
-function isValueDenied(value) {
-  if (value) {
-    const testStr = value.toUpperCase();
-    return DENY_LIST_TERMS.includes(testStr);
-  }
-
-  return false;
+  return workspace[keyStudyId] || "";
 }
 
 /**
@@ -715,25 +670,6 @@ async function parseSource(fileName, delimiter) {
 }
 
 /**
- * Returns the reformatted consentShortName workspace property.
- *
- * @param row
- * @param key
- */
-function reformatWorkspacePropertyConsentShortName(row, key) {
-  const propertyConsentShortName = reformatWorkspacePropertyValue(row, key);
-  const consentShortName = propertyConsentShortName[key];
-  /* Any consentShortName defined as "not applicable" is renamed to "Consortia Access Only". */
-  if (
-    consentShortName.toUpperCase() ===
-    CONSENT_CODE_DISPLAY_TERM.NOT_APPLICABLE.toUpperCase()
-  ) {
-    return { [key]: CONSENT_CODE_DISPLAY_TERM.CAO };
-  }
-  return propertyConsentShortName;
-}
-
-/**
  * Returns the reformatted consortium workspace property.
  *
  * @param row
@@ -742,15 +678,8 @@ function reformatWorkspacePropertyConsentShortName(row, key) {
 function reformatWorkspacePropertyConsortium(row) {
   const keyConsortium = SOURCE_FIELD_KEY[SOURCE_HEADER_KEY.CONSORTIUM];
   const valueConsortium = row[keyConsortium];
-
-  if (valueConsortium) {
-    const key = valueConsortium.toUpperCase().replace(/\s/g, "_");
-    const consortium = WORKSPACE_CONSORTIUM[key] || valueConsortium;
-
-    return { [keyConsortium]: consortium };
-  }
-
-  return { [keyConsortium]: "" };
+  const consortium = WORKSPACE_CONSORTIUM[valueConsortium] || valueConsortium;
+  return { [keyConsortium]: consortium };
 }
 
 /**
@@ -762,26 +691,8 @@ function reformatWorkspacePropertyConsortium(row) {
  */
 function reformatWorkspacePropertyList(row, key) {
   const values = row[key];
-
-  /* Reformat the list. */
-  const list = values.reduce(
-    (acc, value) => {
-      /* Only accumulate valid values. */
-      if (isListValueAllowed(value, acc)) {
-        acc.push(value);
-      }
-
-      return acc;
-    },
-    ["--"]
-  );
-
-  /* List has at least one valid value; remove placeholder element "--". */
-  if (list.length > 1) {
-    list.shift();
-  }
-
-  return { [key]: list };
+  const setOfValues = new Set(values);
+  return { [key]: [...setOfValues] };
 }
 
 /**
@@ -792,13 +703,8 @@ function reformatWorkspacePropertyList(row, key) {
  * @returns {{}}
  */
 function reformatWorkspacePropertyValue(row, key) {
-  const value = row[key];
-
-  if (value && !isValueDenied(value)) {
-    return { [key]: value };
-  }
-
-  return { [key]: "--" };
+  const value = row[key] || "";
+  return { [key]: value };
 }
 
 module.exports.getWorkspaces = getWorkspaces;

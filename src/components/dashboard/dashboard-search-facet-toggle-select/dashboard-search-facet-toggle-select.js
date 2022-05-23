@@ -23,20 +23,20 @@ import {
   toggleSelected,
 } from "./dashboard-search-facet-toggle-select.module.css";
 
-function DashboardSearchFacetToggleSelect({ facet, terms }) {
+function DashboardSearchFacetToggleSelect({ facetName, terms }) {
   const { onHandleUpdateFacet } = useContext(ContextDashboard);
 
   const onHandleClick = (
-    facet,
+    fName,
     name,
     selected,
     currentLogicalOperator,
     selectedLogicalOperator
   ) => {
     onHandleUpdateFacet({
-      facet,
+      facetName: fName,
       logicalOperator: selectedLogicalOperator,
-      selected: !selected || currentLogicalOperator !== selectedLogicalOperator,
+      selected: !selected,
       term: name,
     });
   };
@@ -64,7 +64,7 @@ function DashboardSearchFacetToggleSelect({ facet, terms }) {
             )}
             onClick={() =>
               onHandleClick(
-                facet,
+                facetName,
                 name,
                 selected,
                 logicalOperator,
@@ -87,7 +87,7 @@ function DashboardSearchFacetToggleSelect({ facet, terms }) {
             )}
             onClick={() =>
               onHandleClick(
-                facet,
+                facetName,
                 name,
                 selected,
                 logicalOperator,

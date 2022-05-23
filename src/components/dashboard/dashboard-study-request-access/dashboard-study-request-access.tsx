@@ -16,7 +16,7 @@ import {
 import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 interface Props {
-  studyAccession: string,
+  studyAccession: string;
   studyRequestAccessUrl?: string;
 }
 

@@ -59,8 +59,8 @@ function DashboardAnVIL() {
   const dashboardEntities = DashboardWorkspaceStaticQuery();
   const currentLocation = useLocation();
   const { href } = currentLocation || {};
-  const termGroupsByFacet = new Map();
-  termGroupsByFacet.set("dataUseLimitations", [
+  const termGroupsByFacetName = new Map();
+  termGroupsByFacetName.set("dataUseLimitations", [
     "dataUseLimitation",
     "diseaseSpecificDataUseLimitation",
   ]);
@@ -76,7 +76,7 @@ function DashboardAnVIL() {
       summaryKey={summaryKey}
       tableHeadersEntities={tableHeadersEntities}
       tableHeadersSummary={tableHeadersSummary}
-      termGroupsByFacet={termGroupsByFacet}
+      termGroupsByFacetName={termGroupsByFacetName}
     >
       <DashboardSearch />
       <DashboardTableSummary />

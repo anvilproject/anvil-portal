@@ -20,21 +20,21 @@ function DashboardSearchSelectedFacets(props) {
     onHandleClearAll,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermOperatorsByFacet,
+    selectedTermOperatorsByFacetName,
   } = props;
-  const selectedFacets = selectedTermOperatorsByFacet.keys();
+  const selectedFacetNames = selectedTermOperatorsByFacetName.keys();
 
   return (
     <span className={compStyles.selectedFacets}>
       <span className={compStyles.label}>Query:</span>
-      {[...selectedFacets].map((facet, f) => (
+      {[...selectedFacetNames].map((facetName, f) => (
         <DashboardSearchSelectedFacet
           key={f}
-          facet={facet}
+          facetName={facetName}
           first={f === 0}
           onHandleClearFacet={onHandleClearFacet}
           onHandleClearTerm={onHandleClearTerm}
-          selectedTermOperatorsByFacet={selectedTermOperatorsByFacet}
+          selectedTermOperatorsByFacetName={selectedTermOperatorsByFacetName}
         />
       ))}
       <DashboardSearchSelectedClearAll onHandleClearAll={onHandleClearAll} />

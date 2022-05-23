@@ -17,27 +17,27 @@ import * as compStyles from "./dashboard-search-selected-facet.module.css";
 
 function DashboardSearchSelectedFacet(props) {
   const {
-    facet,
+    facetName,
     first,
     onHandleClearFacet,
     onHandleClearTerm,
-    selectedTermOperatorsByFacet,
+    selectedTermOperatorsByFacetName,
   } = props;
-  const facetDisplay = FacetSelectorNameDisplay[facet];
-  const termOperators = selectedTermOperatorsByFacet.get(facet);
+  const facetDisplay = FacetSelectorNameDisplay[facetName];
+  const termOperators = selectedTermOperatorsByFacetName.get(facetName);
 
   return (
     <>
       {first ? null : <span className={compStyles.operator}>AND</span>}
       <span
         className={compStyles.facetName}
-        onClick={() => onHandleClearFacet(facet)}
+        onClick={() => onHandleClearFacet(facetName)}
         role={"presentation"}
       >
         {facetDisplay}
       </span>
       <DashboardSearchSelectedTerms
-        facet={facet}
+        facetName={facetName}
         onHandleClearTerm={onHandleClearTerm}
         termOperators={termOperators}
       />

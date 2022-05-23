@@ -23,17 +23,17 @@ const DENY_LIST_TERMS = [
 /**
  * Returns the dashboard count of displayable panels.
  * @param searchFacets
- * @param termGroupsByFacet
+ * @param termGroupsByFacetName
  * @returns {number}
  */
-export function getDashboardPanelCount(searchFacets, termGroupsByFacet) {
+export function getDashboardPanelCount(searchFacets, termGroupsByFacetName) {
   const setOfPanels = new Set();
-  searchFacets.forEach((facet) => {
-    if (termGroupsByFacet?.has(facet)) {
-      [...termGroupsByFacet.get(facet)].map((termsGroup) =>
+  searchFacets.forEach((facetName) => {
+    if (termGroupsByFacetName?.has(facetName)) {
+      [...termGroupsByFacetName.get(facetName)].map((termsGroup) =>
         setOfPanels.add(termsGroup)
       );
-    } else setOfPanels.add(facet);
+    } else setOfPanels.add(facetName);
   });
 
   return setOfPanels.size;
@@ -70,65 +70,65 @@ export function getDashboardRowsByRowKey(entities, resultKey) {
 }
 
 /**
- * Returns a map object of set of terms by facet.
+ * Returns a map object of set of terms by facet name.
  *
  * @param entities
- * @param facets
+ * @param facetNames
  * @returns {Map<any, any>}
  */
-export function getDashboardSetOfTermsByFacet(entities, facets) {
-  /* Init setOfTermsByFacet and the setOfTerms for each facet. */
-  const setOfTermsByFacet = new Map();
-  facets.forEach((facet) => setOfTermsByFacet.set(facet, new Set()));
+export function getDashboardSetOfTermsByFacetName(entities, facetNames) {
+  /* Init setOfTermsByFacetName and the setOfTerms for each facet. */
+  const setOfTermsByFacetName = new Map();
+  facetNames.forEach((facetName) =>
+    setOfTermsByFacetName.set(facetName, new Set())
+  );
 
   /* Grab all possible terms for each facet, from the entities. */
-  for (const facet of facets) {
+  for (const facetName of facetNames) {
     const setOfTerms = new Set();
     for (const entity of entities) {
       /* Grab the value for the facet. */
-      const value = entity[facet];
+      const value = entity[facetName];
 
       /* Handle case where term is not an array - make a single term an array of single length. */
       const terms = Array.isArray(value) ? value : Array.of(value);
 
       /* Add to the set of terms. */
-      terms.forEach((term) => {
-        if (isTermAllowed(term)) {
-          setOfTerms.add(term);
-        }
-      });
+      terms
+        .filter((term) => term && term !== "--")
+        .map((term) => setOfTerms.add(term));
     }
 
     /* Sort terms and set with corresponding facet. */
     const terms = [...setOfTerms];
     const sortedTerms = sortTerms(terms);
-    setOfTermsByFacet.set(facet, new Set(sortedTerms));
+    setOfTermsByFacetName.set(facetName, new Set(sortedTerms));
   }
   /* Add the "search" facet. */
-  setOfTermsByFacet.set("search", new Set());
+  setOfTermsByFacetName.set("search", new Set());
 
-  return setOfTermsByFacet;
+  return setOfTermsByFacetName;
 }
 
 /**
  * Returns the count and uncounted for the specified term.
  *
- * @param facet
+ * @param facetName
  * @param term
  * @param entities
  */
-export function getDashboardTermCount(facet, term, entities) {
+export function getDashboardTermCount(facetName, term, entities) {
   return entities.reduce(
     (acc, entity) => {
       /* Term is one of the facet values (facet is an array). */
-      if (Array.isArray(entity[facet])) {
-        if (entity[facet].includes(term)) {
+      if (Array.isArray(entity[facetName])) {
+        if (entity[facetName].includes(term)) {
           acc[0]++;
           return acc;
         }
       }
       /* Term is equal to the facet value. */
-      if (entity[facet] === term) {
+      if (entity[facetName] === term) {
         acc[0]++;
         return acc;
       }
@@ -141,31 +141,31 @@ export function getDashboardTermCount(facet, term, entities) {
 }
 
 /**
- * Returns the map object key-value pair facet and term group by term.
- * @param termGroupsByFacet
- * @param setOfTermsByFacet
+ * Returns the map object key-value pair facet name and term group by term.
+ * @param termGroupsByFacetName
+ * @param setOfTermsByFacetName
  * @returns {Map<any, any>}
  */
-export function getDashboardTermGroupsByTermByFacet(
-  termGroupsByFacet,
-  setOfTermsByFacet
+export function getDashboardTermGroupsByTermByFacetName(
+  termGroupsByFacetName,
+  setOfTermsByFacetName
 ) {
-  const termGroupsByTermByFacet = new Map();
-  if (termGroupsByFacet && termGroupsByFacet.size > 0) {
-    for (const [facet, termGroups] of termGroupsByFacet) {
+  const termGroupsByTermByFacetName = new Map();
+  if (termGroupsByFacetName && termGroupsByFacetName.size > 0) {
+    for (const [facetName, termGroups] of termGroupsByFacetName) {
       const termGroupsByTerm = new Map();
       for (const termGroup of termGroups) {
-        const setOfTerms = setOfTermsByFacet.get(termGroup);
+        const setOfTerms = setOfTermsByFacetName.get(termGroup);
         [...setOfTerms].forEach((term) =>
           termGroupsByTerm.set(term, termGroup)
         );
-        /* Remove the term group from setOfTermsByFacet - the term group will not be its own facet. */
-        setOfTermsByFacet.delete(termGroup);
+        /* Remove the term group from setOfTermsByFacetName - the term group will not be its own facet. */
+        setOfTermsByFacetName.delete(termGroup);
       }
-      termGroupsByTermByFacet.set(facet, termGroupsByTerm);
+      termGroupsByTermByFacetName.set(facetName, termGroupsByTerm);
     }
   }
-  return termGroupsByTermByFacet;
+  return termGroupsByTermByFacetName;
 }
 
 /**
@@ -174,15 +174,15 @@ export function getDashboardTermGroupsByTermByFacet(
  * - term search value is the term value, with white space, hyphens or brackets or slash are changed to an underscore.
  * e.g. "GTEx (v8)" returns "GTEx__v8_".
  *
- * @param setOfTermsByFacet
+ * @param setOfTermsByFacetName
  * @returns {Map}
  */
-export function getDashboardTermSearchValueByTerm(setOfTermsByFacet) {
+export function getDashboardTermSearchValueByTerm(setOfTermsByFacetName) {
   /* Init termSearchValueByTerm. */
   const termSearchValueByTerm = new Map();
 
   /* For each facet, grab the setOfTerms. */
-  for (const setOfTerms of [...setOfTermsByFacet.values()]) {
+  for (const setOfTerms of [...setOfTermsByFacetName.values()]) {
     /* For each term, add the key-value pair of term and term search value. */
     for (const term of [...setOfTerms]) {
       /* Replace any white space, commas, hyphens or brackets with an underscore. */

@@ -20,7 +20,7 @@ const Operator = {
 };
 
 function DashboardSearchSelectedTerm(props) {
-  const { facet, first, last, onHandleClearTerm, termOperator } = props;
+  const { facetName, first, last, onHandleClearTerm, termOperator } = props;
   const [term, logicalOperator] = termOperator;
   const operator = Operator[logicalOperator];
   const firstOperator = first && operator === Operator.NAND ? Operator.NOT : "";
@@ -40,7 +40,7 @@ function DashboardSearchSelectedTerm(props) {
         )}
         <span
           className={compStyles.term}
-          onClick={() => onHandleClearTerm(facet, logicalOperator, term)}
+          onClick={() => onHandleClearTerm(facetName, logicalOperator, term)}
           role={"presentation"}
         >
           {term}
