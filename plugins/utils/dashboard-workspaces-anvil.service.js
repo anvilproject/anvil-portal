@@ -102,7 +102,6 @@ const SOURCE_HEADER_KEY = {
 };
 const SOURCE_FIELD_KEY = {
   ACCESS_TYPE: "accessType",
-  [SOURCE_HEADER_KEY.CAO]: "cao",
   [SOURCE_HEADER_KEY.COL]: "col",
   [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "consentLongName",
   CONSENT_NAME: "consentName",
@@ -136,7 +135,6 @@ const SOURCE_FIELD_KEY = {
   [SOURCE_HEADER_KEY.SUBJECTS]: "subjects",
 };
 const SOURCE_FIELD_TYPE = {
-  [SOURCE_HEADER_KEY.CAO]: "string",
   [SOURCE_HEADER_KEY.COL]: "string",
   [SOURCE_HEADER_KEY.CONSENT_LONG_NAME]: "string",
   [SOURCE_HEADER_KEY.CONSENT_SHORT_NAME]: "string",
