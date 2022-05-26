@@ -27,13 +27,14 @@ const parseContentRows = async function parseContentRows(
   FIELD,
   FIELD_TYPE
 ) {
-  if (!FIELD) return parseCsv(content, { delimiter })
+  if (!FIELD) return parseCsv(content, { delimiter, relax_quotes: true })
   const keyTypes = Object.fromEntries(
     Object.entries(FIELD_TYPE).map(([header, type]) => [FIELD[header], type])
   );
   return parseCsv(content, {
     delimiter,
-    columns: (row) => row.map((header) => FIELD[header]),
+    relax_quotes: true,
+    columns: (row) => row.map((header) => FIELD[header.toLowerCase()]),
     cast: (datum, info) =>
       info.header ? datum : parseDatumValue(datum, keyTypes[info.column]),
   });
