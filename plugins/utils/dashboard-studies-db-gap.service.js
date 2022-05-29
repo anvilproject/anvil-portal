@@ -10,7 +10,7 @@ const fetch = require("node-fetch");
 const path = require("path");
 
 // App dependencies
-const { readFile, splitContentToContentRows, writeFile } = require(path.resolve(
+const { readFile, parseContentRows, writeFile } = require(path.resolve(
   __dirname,
   "./dashboard-file-system.service.js"
 ));
@@ -56,8 +56,7 @@ const getStudyAccessionsById = async function getStudyAccessionsById() {
 
   let studyAccessionsById = new Map();
 
-  for (let row of rows) {
-    const [studyId, studyAccession] = row.split(",");
+  for (const [studyId, studyAccession] of rows) {
     studyAccessionsById.set(studyId, studyAccession);
   }
 
@@ -129,14 +128,14 @@ async function fetchStudyAccession(studyId) {
 /**
  * Returns the cached study accession for the specified study id.
  *
- * @returns {Promise<string | *>}
+ * @returns {Promise<Array>}
  */
 async function getCacheDBGAP() {
   /* Grab the dbGaPs from cache. */
   const content = await readFile(fileDBGAPs, "utf8");
 
   /* Split the file content into rows. */
-  return splitContentToContentRows(content);
+  return parseContentRows(content);
 }
 
 module.exports.getStudyAccession = getStudyAccession;
