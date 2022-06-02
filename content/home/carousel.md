@@ -18,6 +18,14 @@ slides:
         landscape: _images/carousel-inverting-the-model-of-genomics-data.png
         portrait: _images/carousel-inverting-the-model-of-genomics-data-p.png
     subTitle: "AnVIL inverts the traditional model of genomic analysis, eliminating data movement and providing scalable, shared computing resources."
+  - title: "AnVIL Shorts: How can AnVIL help my research?"
+    actions:
+      - label: "Learn More"
+        url: "/learn/videos/anvil-videos#sharing-on-anvil"
+    media:
+        landscape: _images/carousel-anvil-shorts.png
+        portrait: _images/carousel-anvil-shorts-p.png
+    subTitle: "Our short video series shows how AnVIL improves collaborative science for different researcher roles."
   - title: "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events"
     actions:
       - label: "Paper"
@@ -58,12 +66,4 @@ slides:
         landscape: _images/carousel-galaxy-for-biomedical-analyses.png
         portrait: _images/carousel-galaxy-for-biomedical-analyses-p.png
     subTitle: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data."
-  - title: "AnVIL Shorts: How can AnVIL help my research?"
-    actions:
-      - label: "Learn More"
-        url: "/learn/videos/anvil-videos#sharing-on-anvil"
-    media:
-      landscape: _images/carousel-anvil-shorts.png
-      portrait: _images/carousel-anvil-shorts-p.png
-    subTitle: "Our short video series shows how AnVIL improves collaborative science for different researcher roles."
 ---
