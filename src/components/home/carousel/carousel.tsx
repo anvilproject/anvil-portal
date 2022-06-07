@@ -33,7 +33,10 @@ type CarouselActionState = CarouselAction;
 
 const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const initCoords = useRef<IEventCoordinates>({ x: 0, y: 0 });
-  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const [activeSlide, setActiveSlide] = useState<number>(
+    () => Math.floor(Math.random() * slides.length)
+    // () => ((Math.floor(Date.now() / 60000) * 19321) % 137) % slides.length
+  );
   const [slideAction, setSlideAction] = useState<CarouselActionState>(
     CarouselAction.NONE
   );
@@ -226,7 +229,7 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       swipeToSlide(1, true);
-    }, 10000);
+    }, 8000);
     return () => clearTimeout(timeout);
   }, [activeSlide, swipeToSlide]);
 
