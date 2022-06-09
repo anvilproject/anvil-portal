@@ -33,7 +33,7 @@ type CarouselActionState = CarouselAction;
 
 const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   const initCoords = useRef<IEventCoordinates>({ x: 0, y: 0 });
-  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const [activeSlide, setActiveSlide] = useState<number>(-1);
   const [slideAction, setSlideAction] = useState<CarouselActionState>(
     CarouselAction.NONE
   );
@@ -196,6 +196,10 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
     [onMouseDown, onMouseUp, onTouchEnd, onTouchMove, onTouchStart]
   );
 
+  useEffect(() => {
+    setActiveSlide(Math.floor(Math.random() * slides.length));
+  }, []);
+
   /* useEffect - componentDidMount. */
   useEffect(() => {
     /* Set touch interactions. */
@@ -226,7 +230,7 @@ const Carousel: FC<Props> = ({ slides }): JSX.Element => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       swipeToSlide(1, true);
-    }, 10000);
+    }, 8000);
     return () => clearTimeout(timeout);
   }, [activeSlide, swipeToSlide]);
 
