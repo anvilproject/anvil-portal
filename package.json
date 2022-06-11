@@ -47,7 +47,7 @@
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.2",
     "react-typography": "^0.16.20",
-    "rehype-react": "^7.0.4",
+    "rehype-react": "^7.1.1",
     "typography": "^0.16.21"
   },
   "devDependencies": {
