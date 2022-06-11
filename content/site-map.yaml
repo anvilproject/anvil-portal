@@ -419,7 +419,7 @@
           file: "/overview/cite-anvil"
 ## NCPI
 - menuItem: "NCPI"
-  pageTitle: "Overview"
+  pageTitle: ""
   pathPartial: "/ncpi"
   tabs:
     - name: ""
@@ -457,8 +457,8 @@
           file: "/ncpi/data"
           pathOverride: "/ncpi/data"
 ## NCPI Platforms
-- menuItem: "Platforms"
-  pageTitle: "Platforms"
+- menuItem: "Cloud Platforms"
+  pageTitle: ""
   pathPartial: "/ncpi/platforms"
   tabs:
     - name: ""
@@ -479,7 +479,7 @@
           file: "/ncpi/platforms/ncbi"
 ### NCPI Demonstration Projects
 - menuItem: "Demonstration Projects"
-  pageTitle: "Demonstration Projects"
+  pageTitle: ""
   pathPartial: "/ncpi/demonstration-projects"
   tabs:
     - name: ""
@@ -500,7 +500,7 @@
 
 ### NCPI Technologies
 - menuItem: "Technologies"
-  pageTitle: "Technologies"
+  pageTitle: ""
   pathPartial: "/ncpi/technologies"
   tabs:
     - name: ""
@@ -511,7 +511,7 @@
           pathOverride: "/ncpi/technologies"
 ## NCPI Updates
 - menuItem: "NCPI Updates"
-  pageTitle: "Updates"
+  pageTitle: ""
   pathPartial: "/ncpi/progress-updates"
   tabs:
     - name: ""
@@ -533,7 +533,7 @@
           pathOverride: "/ncpi/search"
 ## NCPI Training
 - menuItem: "NCPI Training"
-  pageTitle: "Training Resources"
+  pageTitle: ""
   pathPartial: "/ncpi/training"
   tabs:
     - name: ""
