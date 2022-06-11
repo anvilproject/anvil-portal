@@ -3,7 +3,7 @@ description: "An overview of the NCPI participating platforms."
 title: "NCPI Participating Platforms"
 ---
 
-# Participating Platforms
+# Overview of Participating Platforms
 
 ## NHGRI AnVIL
 [https://anvilproject.org](https://anvilproject.org) 
@@ -13,9 +13,13 @@ title: "NCPI Participating Platforms"
 <social-youtube url="https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw"></social-youtube>
 </socials>
 
+
 The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space, or AnVIL, is NHGRI's genomic data resource that leverages a cloud-based infrastructure for democratizing genomic data access, sharing, and computing across large genomic, and genomic-related data sets.
 
-In addition to downloading copies of data to local computers and servers, users will have the option to work with data in a secure cloud environment, where they can also use common bioinformatics tools and packages and develop and share their own software tools. For more information, see the [AnVIL Platform Fact Sheet](/ncpi/platforms/anvil). 
+In addition to downloading copies of data to local computers and servers, users will have the option to work with data in a secure cloud environment, where they can also use common bioinformatics tools and packages and develop and share their own software tools. [Learn more about AnVIL](/ncpi/platforms/anvil).
+
+
+
 
 ## NHLBI BioData Catalyst
 
@@ -28,7 +32,7 @@ In addition to downloading copies of data to local computers and servers, users 
 
 NHLBI BioData Catalyst is a cloud-based platform providing tools, applications, and workflows in secure workspaces. By increasing access to NHLBI datasets and innovative data analysis capabilities, BioData Catalyst accelerates efficient biomedical research that drives discovery and scientific advancement, leading to novel diagnostic tools, therapeutics, and prevention strategies for heart, lung, blood, and sleep disorders.
 
-Though the primary goal of the BioData Catalyst project is to build a data science ecosystem, at its core, this is a people-centric endeavor. BioData Catalyst is also building a community of practice working collaboratively to solve technical and scientific challenges. For more information, see the [BDC Platform Fact Sheet](/ncpi/platforms/bdc).
+Though the primary goal of the BioData Catalyst project is to build a data science ecosystem, at its core, this is a people-centric endeavor. BioData Catalyst is also building a community of practice working collaboratively to solve technical and scientific challenges. [Learn more about BioData Catalyst](/ncpi/platforms/bdc).
 
 ## NCI Cancer Research Data Commons (CRDC)
 
@@ -52,7 +56,7 @@ NCI Cloud Resources eliminate the need for researchers to download and store ext
 
 The ability to combine diverse data types and perform cross-domain analysis of large cancer datasets can lead to new discoveries in cancer prevention, treatment, and diagnosis, further supporting the goals of precision medicine and the Cancer Moonshot℠.
 
-The CRDC will encompass and connect multiple cloud-based data repositories and serve as a central location to support public data sharing for NCI-funded programs. For more information, see the [CRDC Platform Fact Sheet](/ncpi/platforms/crdc).
+The CRDC will encompass and connect multiple cloud-based data repositories and serve as a central location to support public data sharing for NCI-funded programs. [Learn more about CRDC](/ncpi/platforms/crdc).
 
 ## NIH Common Fund - Kids First Data Resource Center
 
@@ -77,7 +81,7 @@ CAVATICA is a cloud-based infrastructure originally developed for supporting ped
 
 CAVATICA is powered by the Seven Bridges Platform, which meets or exceeds all NIH requirements for dbGaP or similarly controlled-access data on both Amazon Web Services (AWS) and/or the Google Compute Platform (GCP). Please see the [Seven Bridges Compliance White Paper](https://www.sevenbridges.com/library/white-papers/compliance/) for a full description of CAVATICA's security and compliance features.
 
-For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA support user authentication and authorization to controlled-access datasets via integration with the Gen3-powered Bionimbus Trusted Partnership for access and distribution (KFDRC Framework Services). For more information see the [Kids First Platform Fact Sheet](/ncpi/platforms/kf).
+For NIH Kids First data, both the Kids First Data Resource Portal and CAVATICA support user authentication and authorization to controlled-access datasets via integration with the Gen3-powered Bionimbus Trusted Partnership for access and distribution (KFDRC Framework Services). [Learn more about Kids First](/ncpi/platforms/kf).
 
 ## National Center for Biotechnology Information (NCBI) at the National Library of Medicine (NLM)
 <https://www.ncbi.nlm.nih.gov/>
@@ -93,4 +97,4 @@ In partnership with the NIH Science and Technology Research Infrastructure for D
 
 The central goal is to create an equitable and interoperable ecosystem where NIH-funded data is FAIR (findable, accessible, interoperable, and reusable) and NCBI is also an engaged partner in the development of community-driven solutions to provide secure access to protected data in the federated data access landscape.
 
-NCBI is actively engaged in efforts to define technical solutions to modernize and streamline secure access to controlled-access data via GA4GH Data Repository Service ([DRS](https://ga4gh.github.io/data-repository-service-schemas/preview/release/drs-1.0.0/docs/)) and NIH Researcher Authorization Service ([RAS](https://datascience.nih.gov/researcher-auth-service-initiative)) initiative. For more information see the [National Center for Biotechnology Information Fact Sheet](/ncpi/platforms/ncbi).
+NCBI is actively engaged in efforts to define technical solutions to modernize and streamline secure access to controlled-access data via GA4GH Data Repository Service ([DRS](https://ga4gh.github.io/data-repository-service-schemas/preview/release/drs-1.0.0/docs/)) and NIH Researcher Authorization Service ([RAS](https://datascience.nih.gov/researcher-auth-service-initiative)) initiative. [Learn more about NCBI](/ncpi/platforms/ncbi).

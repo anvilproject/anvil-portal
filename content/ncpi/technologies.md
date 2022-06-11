@@ -3,7 +3,7 @@ description: "NCPI members are exploring / developing the following technologies
 title: "Key Technologies Driving Cloud Platform Interoperability"
 ---
 
-# Key Technologies
+# Interoperation Technologies
 
 <hero>NCPI members are exploring / developing the following technologies in support of cloud platform interoperability.</hero>
 
