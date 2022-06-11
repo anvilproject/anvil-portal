@@ -441,10 +441,10 @@
 #              file: "/ncpi/platforms/kf"
 #            - name: "NCBI - National Center for Biotechnology Information"
 #              file: "/ncpi/platforms/ncbi"
-        - name: "Working Groups"
-          file: "/ncpi/working-groups"
         - name: "Guiding Principles"
           file: "/ncpi/interoperating-principles"
+        - name: "Working Groups"
+          file: "/ncpi/working-groups"
 ## NCPI Datasets
 - menuItem: "NCPI Datasets"
   pageTitle: "NCPI Dataset Catalog"
