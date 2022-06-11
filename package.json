@@ -76,7 +76,7 @@
     "firebase-tools": "^10.2.1",
     "html-entities": "^2.3.2",
     "moment-timezone": "^0.5.34",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.2",
     "remark": "^13.0.0",
     "remark-html": "^13.0.0",
     "sockjs-client": "^1.6.0",
