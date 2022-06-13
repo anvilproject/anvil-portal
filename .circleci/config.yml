@@ -52,6 +52,8 @@ jobs:
           # Must be relative path from root
           paths:
             - public
+      - resource_class: large
+
 
   deploy:
     docker:
