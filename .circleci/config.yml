@@ -8,6 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: cimg/node:16.15.1
+    resource_class: large
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -52,8 +53,6 @@ jobs:
           # Must be relative path from root
           paths:
             - public
-      - resource_class: large
-
 
   deploy:
     docker:
