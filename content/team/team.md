@@ -30,6 +30,9 @@ Members of these teams are also involved with platform and software development 
 
 - [Levi Waldron](https://waldronlab.io)
 
+## Fred Hutchinson Cancer Research Center
+- [Jeffrey Leek](https://jtleek.com/)
+
 ## Harvard University
 
 - [Vince Carey](http://vjcitn.github.io)
@@ -38,7 +41,6 @@ Members of these teams are also involved with platform and software development 
 
 - [Michael Schatz](http://schatz-lab.org)
 - Enis Afgan
-- Jeff Leek
 - Kasper Hansen
 - Casey Overby Taylor
 
