@@ -10,15 +10,13 @@ def adjust_table_index_key(val):
 
 
 def plot_users_over_time(**other_params):
-	df = ac.show_plot_over_time(
+	return ac.show_plot_over_time(
 		"Monthly Activity Overview",
-		["Users Per Month", "Total Pageviews Per Month"],
-		["ga:30dayUsers", "ga:pageviews"],
+		["Users", "Total Unique Pageviews"],
+		["ga:30dayUsers", "ga:uniquePageviews"],
 		df_filter=ac.make_month_filter(["ga:30dayUsers"]),
 		df_processor=lambda df: df[::-1],
 		change_dir=-1,
-		format_table=False,
 		**other_params
-	).rename(columns={"Users Per Month": "Users", "Total Pageviews Per Month": "Total Pageviews"})
-	return ac.format_change_over_time_table(df, **other_params)
+	)
 
