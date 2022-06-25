@@ -16,9 +16,9 @@ title: "NIH Cloud Platform Interoperability (NCPI) Spring 2022 Virtual Workshop"
 
 First organized in 2019, the NIH Cloud Platform Interoperability (NCPI) Effort’s goal is to establish and implement guidelines and technical standards to empower end-user analyses across the four participating platforms and facilitate the realization of a trans-NIH, federated data ecosystem. NCPI is a collaborative project between five NIH Institutes and Centers (NCI, NHGRI, NHLBI, NIH Common Fund, and NCBI) as well as external partners comprising six Working Groups: Coordination, Community Governance, FHIR, Outreach and Training, NIH Systems Interoperation, and Search.
 
-This workshop will be open to the public and held on 22-23 June, 2022 from 11:00 AM - 4:00 PM EDT. We hope this meeting will be engaging to presenters and participants alike, providing guidance and vision to drive interoperability of NIH Cloud Platforms.
+This workshop was open to the public and held on 22-23 June, 2022 from 11:00 AM - 4:00 PM EDT. We hope this meeting engaged presenters and participants alike, providing guidance and vision to drive interoperability of NIH Cloud Platforms.
 
-The meeting will comprise five main sessions of speakers, outlined below. Following the talks on each day, moderated breakout sessions will be opened to allow for community discussion and input.
+The meeting comprised five main sessions of speakers, outlined below. Following the talks on each day, moderated breakout sessions were opened to allow for community discussion and input.
 
 - FAIR Data, Computing, Cataloging Resources Across the NIH and Global Communities: The vision shared in this session will provide foundation and direction to chart the collaborative future of NCPI.
 - Panel Discussion with Commercial Cloud Vendors.
@@ -28,9 +28,18 @@ The meeting will comprise five main sessions of speakers, outlined below. Follow
 
 Please reach out with questions or comments by emailing Stephen Mosher at <smosher3@jhu.edu>.
 
-### Registration
+### Recordings
 
-<https://zoom.us/meeting/register/tJMucOuqqzMjEtczJbRjAnHMeuOuO80eOtXo>
+Recordings of Day 1 and Day 2 of the workshop can be found below.
+
+#### Day 1
+
+`video: https://youtu.be/gw92xQQOPQ4`
+
+#### Day 2
+
+`video: https://youtu.be/N8RLWqA5U40`
+
 
 ## Agenda
 
