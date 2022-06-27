@@ -8,6 +8,22 @@ title: "NCPI Progress Updates"
 <hero>The NCPI holds workshops every six months for working group members to provide progress updates and discuss priorities for the next six-month period.</hero>
 
 
+## 6th NCPI Workshop - June 22-23, 2022
+
+#### Overview
+
+* [Agenda](https://docs.google.com/document/d/1KgSrGKWZzUZyqsxS4i6KIy0vZfXalzbhfZVYKEZYQVQ/edit?usp=sharing)
+* [Day 1 Presentation Slides](https://docs.google.com/presentation/d/1Zi6Y5LATVX5FwVV5Rhd2D45nkMBgmglvebnBNAihIGQ/edit?usp=sharing)
+* [Day 2 Presentation Slides](https://docs.google.com/presentation/d/151NoWF3zoHQZP1TuOR7rl77E1j2O5SYih1v4-jjqOzQ/edit?usp=sharing)
+
+#### Day 1
+
+`video: https://www.youtube.com/watch?v=gw92xQQOPQ4`
+
+#### Day 2
+
+`video: https://www.youtube.com/watch?v=N8RLWqA5U40`
+
 ## 5th NCPI Workshop - October 5, 2021
 
 
