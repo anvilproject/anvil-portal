@@ -99,30 +99,40 @@ function ProviderDashboardDownloads(props) {
   };
 
   const parseDatum = (datum, key) => {
-    /* Handle case where datum exists, or is a number (for when 0 is a valid value). */
-    if (datum || typeof datum === "number") {
+    /* Handle case where datum is a number. */
+    if (typeof datum === "number") {
       /* Handle case where datum is a number in TB. */
       if (key === "sizeTB" || key === "size") {
         return NumberFormatService.formatSizeToTB(datum);
       }
-
-      /* Handle case where datum is object. */
-      /* e.g. key "diseases" is an array. */
-      /* e.g. key "gapId" is an object with keys studyUrl and value. */
-      if (typeof datum === "object") {
-        /* Handle case where datum is an array. */
-        if (Array.isArray(datum)) {
-          return datum.join("; ") || "--";
-        } else if (key === "gapId") {
-          /* Handle case where datum key is "gapId". */
-          return datum.gapIdDisplay || "--";
-        }
-      }
-
       return datum;
     }
 
-    return "--";
+    /* Handle case where datum is either undefined, an empty string, or empty array. */
+    if (!datum || (Array.isArray(datum) && datum.length === 0)) {
+      return "--";
+    }
+
+    /* Handle case where datum is object. */
+    /* e.g. key "diseases" is an array. */
+    /* e.g. key "consentName" is an object with keys long and short. */
+    /* e.g. key "gapId" is an object with keys studyUrl and value. */
+    if (typeof datum === "object") {
+      /* Handle case where datum is an array. */
+      if (Array.isArray(datum)) {
+        return datum.join("; ");
+      }
+      /* Handle case where datum key is "consentName". */
+      if (key === "consentName") {
+        return datum.short || "--";
+      }
+      if (key === "gapId") {
+        /* Handle case where datum key is "gapId". */
+        return datum.gapIdDisplay || "--";
+      }
+    }
+
+    return datum;
   };
 
   return (
