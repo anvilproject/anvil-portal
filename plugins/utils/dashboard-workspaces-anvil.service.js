@@ -506,10 +506,7 @@ function buildWorkspaces(attributeWorkspaces, studyPropertiesById) {
 
     /* Build the property studyRequestAccessUrl (for the study detail page). */
     const propertyStudyRequestAccessUrl =
-      buildWorkspacePropertyStudyRequestAccessUrl(
-        propertyDataUseLimitation,
-        studyId
-      );
+      buildWorkspacePropertyStudyRequestAccessUrl(propertyAccessType, studyId);
 
     /* Build the property studySlug (for the study detail page). */
     const propertyStudySlug = buildWorkspacePropertyStudySlug(
@@ -661,7 +658,12 @@ async function parseSource(fileName, delimiter) {
   const content = await readFile(fileName, "utf8");
 
   /* Parse and return the ingested data. */
-  return parseContentRows(content, delimiter, SOURCE_FIELD_KEY, SOURCE_FIELD_TYPE);
+  return parseContentRows(
+    content,
+    delimiter,
+    SOURCE_FIELD_KEY,
+    SOURCE_FIELD_TYPE
+  );
 }
 
 /**
