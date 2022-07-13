@@ -45,7 +45,7 @@ AnVIL provides access to key [NHGRI datasets](/data), such as the CCDG (Centers 
 
 AnVIL is a member of the [NIH Cloud Platform Interoperability Effort (NCPI)](/ncpi) and is collaborating with the [NCPI working groups](/ncpi/working-groups) to establish and implement technical standards enabling cross platform authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis tools, and derived data.
 
-[AnVIL is a registered knowledgebase and repository](https://fairsharing.org/4204) in the [FAIRsharing regsitry](https://fairsharing.org/) of data and metadata standards, inter-related to databases and data policies.
+[AnVIL is a registered knowledgebase and repository](https://fairsharing.org/4204) in the [FAIRsharing registry](https://fairsharing.org/) of data and metadata standards, inter-related to databases and data policies.
 
 ## Platform Vision
 
