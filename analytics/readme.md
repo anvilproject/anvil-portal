@@ -6,6 +6,8 @@
 
   `conda env create -f environment.yml`
 
+* Separately install the analytics package using the labeled command near the top of the notebook
+
 ## Running
 
 * Activate the environment:
