@@ -98,3 +98,8 @@ keys.sh
 
 # Scripts data
 scripts/workspace-files
+
+# Python
+__pycache__/
+analytics/_build
+analytics/src
