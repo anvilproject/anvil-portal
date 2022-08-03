@@ -29,6 +29,10 @@ Clone the `anvil-portal` repo:
 
 	git@github.com:anvilproject/anvil-portal.git
 
+You will also need to create a 'keys.sh' file to run anvil. From the source folder:
+
+	touch keys.sh
+
 
 ##### Install Gatsby Command Line Tool
 
