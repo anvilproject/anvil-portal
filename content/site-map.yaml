@@ -566,6 +566,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2022/08/10/scheduled-downtime-for-anvil-data-housing-workspaces"
+              pathOverride: "/news/2022/08/10/scheduled-downtime-for-anvil-data-housing-workspaces"
+            - name: ""
               file: "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees"
               pathOverride: "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees"
             - name: ""
