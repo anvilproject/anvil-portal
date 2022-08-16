@@ -67,6 +67,8 @@
             - name: ""
               file: "/events/gcc2022-galaxy-community-conference"
             - name: ""
+              file: "/events/anvil2022-august-office-hours"
+            - name: ""
               file: "/events/anvil2022-july-office-hours"
             - name: ""
               file: "/events/ncpi2022-spring-workshop-nih-cloud-platforms-interoperability"
