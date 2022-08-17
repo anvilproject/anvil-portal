@@ -1,6 +1,16 @@
 ---
 sectionSubHeader: ""
 publications:
+    - title: "Diversifying the genomic data science research community"
+      cardLink: "https://genome.cshlp.org/content/32/7/1231"
+      category: "ABOUT_ANVIL"
+      citation:
+        authors:
+          - "The Genomic Data Science Community Network"
+        doi: "https://doi.org/10.1101/gr.276496.121"
+        journal: "Genome Research"
+        publisher: ""
+        year: "2022"
     - title: "seqr: A web‐based analysis and collaboration tool for rare disease genomics"
       cardLink: "https://onlinelibrary.wiley.com/doi/epdf/10.1002/humu.24366"
       category: "ABOUT_ANVIL"
