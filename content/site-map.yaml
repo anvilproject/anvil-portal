@@ -186,8 +186,8 @@
           file: "/guides/content/events-guide"
         - name: "Creating News Items"
           file: "/guides/content/news-item-guide"
-        - name: "Adding New Papers"
-          file: "/guides/content/adding-papers"
+        - name: "Adding a New Publication"
+          file: "/guides/content/adding-publications"
     - name: "Style Guide"
       pathPartial: "/style"
       navigationItems:
