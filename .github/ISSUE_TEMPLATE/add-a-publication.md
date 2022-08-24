@@ -2,6 +2,13 @@
 name: Add a Publication
 about: Tell us about an AnVIL related publication for listing on anvilproject.org
 title: ''
+cardLink: ''
+category: ''
+authors: ''
+doi: ''
+journal: ''
+publisher: ''
+year: ''
 labels: ''
 assignees: NoopDog
 
