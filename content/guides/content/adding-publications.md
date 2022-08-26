@@ -1,16 +1,16 @@
 ---
-title: "Adding a new publication"
+title: "Adding a New Publication"
 author: "Jonah Paten"
 description: "Instructions on how to create a new publication to AnVIL"
 ---
 
-# Adding a new publication
+# Adding a New Publication
 If you wrote a publication based on analysis from AnVIL or that has some impact for AnVIL, you can add it to the [Publications](/overview/publications) page.
 
 ### Overview
 All publications are stored in a single markdown file, and appear in two sections on the same page. By editing this file, you can add new publications, without having to create any new pages.
 
-### Editing publications
+### Editing Publications
 Open the markdown file at `content/home/publication-cloud.md`. This file should contain information for
 all the publications that are shown on the page. Add a new publication by copying in the following block right below the 
 `publications` line, keeping the indent the same as the files below. Then, fill in the quotes as specified in the comments, and delete the comments to avoid repetition.
