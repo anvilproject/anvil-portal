@@ -186,6 +186,8 @@
           file: "/guides/content/events-guide"
         - name: "Creating News Items"
           file: "/guides/content/news-item-guide"
+        - name: "Adding a New Publication"
+          file: "/guides/content/adding-publications"
     - name: "Style Guide"
       pathPartial: "/style"
       navigationItems:
@@ -500,7 +502,6 @@
           file: "/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning"
         - name: "Sex as Biological Variable (Wilson)"
           file: "/ncpi/demonstration-projects/sex-as-a-biological-variable-wilson"
-
 
 ### NCPI Technologies
 - menuItem: "Technologies"
