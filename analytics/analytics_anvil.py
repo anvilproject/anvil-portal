@@ -1,12 +1,89 @@
+import analytics.api as ga
 import analytics.charts as ac
 from html import escape as escape_html
+from googleapiclient.discovery import build
+import pandas as pd
 
+
+yt_service_params = (ga.yt_service_params[0] + ['https://www.googleapis.com/auth/youtube'],) + ga.yt_service_params[1:]
+
+yt_traffic_sources = {"ANNOTATION", "CAMPAIGN_CARD", "END_SCREEN", "HASHTAGS", "LIVE_REDIRECT", "NOTIFICATION", "PLAYLIST", "PROMOTED", "RELATED_VIDEO", "SUBSCRIBER", "YT_CHANNEL", "YT_OTHER_PAGE", "YT_PLAYLIST_PAGE", "YT_SEARCH"}
+unknown_traffic_sources = {"NO_LINK_EMBEDDED", "NO_LINK_OTHER"}
+
+yt_data_service = None
+
+videos_info = {}
+
+def authenticate_yt(secret_name):
+	service_system = ac.authenticate_api(secret_name, yt_service_params)
+	global yt_data_service
+	yt_data_service = build('youtube', 'v3', credentials=service_system[3])
+	return service_system
+
+def get_df_videos_info(df):
+	missing_videos = [id for id in df.index if not id in videos_info]
+	results = yt_data_service.videos().list(part="snippet,contentDetails,statistics", id=",".join(missing_videos)).execute()
+	for item in results["items"]:
+		videos_info[item["id"]] = item
+	return df
 
 def adjust_table_index_key(val):
 	if isinstance(val, str):
 		if val[0] == "/":
 			return ('<a href="' + escape_html("https://anvilproject.org" + val) + '">' + escape_html(val) + '</a>', True)
 	return val
+
+def format_video_key(id):
+	return ('<a href="' + escape_html('https://www.youtube.com/watch?v=' + id) + '">' + escape_html(videos_info[id]["snippet"]["title"] if id in videos_info else id) + '</a>', True)
+
+
+def get_video_duration_text(id):
+	text = str(pd.Timedelta(videos_info[id]["contentDetails"]["duration"]))
+	if text[:7] == "0 days ":
+		text = text[7:]
+	return text
+
+def format_video_stats_table(df, column_defs):
+	df = df.copy(deep=True)
+	watch_percent_column = df["Average watch %"]
+	df.drop(columns=watch_percent_column.name, inplace=True)
+	df["Average watch time (minutes)"] /= 60
+	total_views_column = pd.Series([videos_info[id]["statistics"]["viewCount"] for id in df.index], index=df.index, name="Total views")
+	duration_column = pd.Series([get_video_duration_text(id) for id in df.index], index=df.index, name="Video duration")
+	df.insert(1, total_views_column.name, total_views_column)
+	df.insert(3, duration_column.name, duration_column)
+	plain_value_processor = lambda v, i, c: ('<div style="text-align: center">' + str(v) + '</div>', True)
+	column_defs = {
+		**column_defs,
+		total_views_column.name: [("minmax(4em, min-content)", plain_value_processor)],
+		"Average watch time (minutes)": [column_defs[None][0], ("3.8em", lambda v, i, c: ('<div style="color: darkgray">' + "{:.2f}".format(watch_percent_column[i]) + '%</div>', True)), column_defs[None][1]],
+		duration_column.name: [("minmax(5.8em, min-content)", plain_value_processor)]
+	}
+	return (df, column_defs)
+
+
+def collapse_yt_sources(df):
+	return pd.DataFrame({df.columns[0]: df.filter(yt_traffic_sources, axis="rows").agg("sum").rename({df.columns[0]: "Views from YouTube"})})
+
+def extract_anvil_source(df):
+	return df.loc["anvilproject.org":"anvilproject.org"].rename({"anvilproject.org": "Views from AnVIL website"})
+
+def collapse_unknown_sources(df):
+	return pd.DataFrame({df.columns[0]: df.filter(unknown_traffic_sources, axis="rows").agg("sum").rename({df.columns[0]: "Views from unknown sources"})})
+
+
+def show_difference_and_get_top_videos(save_amount, *ordered_params, **other_params):
+	top_videos_container = []
+	
+	def processor(df):
+		if len(top_videos_container) == 0:
+			top_videos_container.append(",".join(df.index[:save_amount]))
+			get_df_videos_info(df)
+		return df
+	
+	ac.show_difference_table(*ordered_params, df_processor=processor, **other_params)
+	
+	return "video==" + top_videos_container[0]
 
 
 def plot_users_over_time(**other_params):
