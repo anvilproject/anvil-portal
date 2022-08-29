@@ -357,6 +357,12 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
               "Segoe UI Emoji",
             ].join(","),
           },
+          html: {
+            fontSize: "112.5%", // 18px
+            [breakpointUpTablet]: {
+              fontSize: "100%", // 16px
+            },
+          },
           img: {
             display: "block",
             margin: 0,
