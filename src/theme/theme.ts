@@ -11,12 +11,11 @@ export const breakpointDesktop = 1440; // Desktop.
 
 /**
  * Custom colors
- * TODO remove when Text component is decommissioned.
  */
-export interface CustomColors {
-  ink: string;
-  smoke: string;
-}
+const customColors = {
+  text: "#24292e",
+  white: "#FFFFFF",
+};
 
 /**
  * Custom shadows
@@ -58,7 +57,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           main: "#B42318",
         },
         background: {
-          default: "#F6F6F7", // smokeLight
+          default: customColors.white,
         },
         info: {
           contrastText: "#00729C",
@@ -193,7 +192,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
   /**
    * Default theme overrides
    */
-  defaultTheme.palette.text.primary = defaultTheme.palette.ink.main;
+  defaultTheme.palette.text.primary = customColors.text;
   defaultTheme.shadows = [...defaultTheme.shadows].map(
     (shadow, s) => customShadows[s] || shadow
   ) as Shadows;
@@ -435,7 +434,16 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            fontFamily: defaultTheme.typography.fontFamily,
+            fontFamily: [
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Helvetica",
+              "Arial",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+            ].join(","),
           },
           img: {
             display: "block",

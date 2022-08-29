@@ -20,8 +20,8 @@ import * as EnvironmentService from "../../utils/environment/environment.service
 
 class PageHead extends React.Component {
   render() {
-    const { pageTitle, site } = this.props,
-      title = pageTitle ? `${pageTitle} | ${site}` : site;
+    const { pageTitle, site } = this.props;
+    const title = pageTitle ? `${pageTitle} | ${site}` : site;
     return (
       <Helmet>
         <title>{title}</title>
@@ -29,8 +29,12 @@ class PageHead extends React.Component {
           <meta name="robots" content="noindex" />
         )}
         <link
-          href="https://fonts.googleapis.com/css?family=Barlow:300,400,500|Open+Sans:300,400,600,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Open+Sans:wght@300;400;600;700&display=swap"
           rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
         <link
           rel="stylesheet"
