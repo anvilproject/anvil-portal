@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React, { useRef, useState } from "react";
 
 // App dependencies
@@ -21,6 +22,7 @@ import SEO from "./seo/SEO";
 import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-link-tracker";
 import ProviderSiteSearch from "./site-search/provider-site-search/provider-site-search";
 import SiteWrapper from "./site-wrapper/site-wrapper";
+import { getAppTheme } from "../theme/theme";
 
 // Styles
 import "../styles/vars.module.css";
@@ -44,35 +46,45 @@ function Layout(props) {
   const site = ncpi ? "NCPI" : "The AnVIL";
 
   return (
-    <ProviderAnVILPortal>
-      <ProviderSiteSearch ncpi={ncpi}>
-        <PageHead pageTitle={title} site={site} />
-        <SEO description={description} ncpi={ncpi} site={site} title={title} />
-        <ProviderModal>
-          <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
-            <SiteWrapper ref={refSite}>
-              <Header navigation={navigation} ncpi={ncpi} />
-              {homePage ? null : <Headline tabs={tabs} title={headlineTitle} />}
-              <Main
-                bannerHeight={bannerHeight}
-                docPath={docPath}
-                homePage={homePage}
-                navigation={navigation}
-                noSpy={noSpy}
-                showOutline={showOutline}
-                styles={styles}
-              >
-                {children}
-              </Main>
-              <BannerPrivacy setBannerHeight={setBannerHeight} />
-              <Footer />
-              <div id="modal-root" />
-              <div id="tooltip-root" />
-            </SiteWrapper>
-          </SiteExternalLinkTracker>
-        </ProviderModal>
-      </ProviderSiteSearch>
-    </ProviderAnVILPortal>
+    <ThemeProvider theme={getAppTheme()}>
+      <CssBaseline />
+      <ProviderAnVILPortal>
+        <ProviderSiteSearch ncpi={ncpi}>
+          <PageHead pageTitle={title} site={site} />
+          <SEO
+            description={description}
+            ncpi={ncpi}
+            site={site}
+            title={title}
+          />
+          <ProviderModal>
+            <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
+              <SiteWrapper ref={refSite}>
+                <Header navigation={navigation} ncpi={ncpi} />
+                {homePage ? null : (
+                  <Headline tabs={tabs} title={headlineTitle} />
+                )}
+                <Main
+                  bannerHeight={bannerHeight}
+                  docPath={docPath}
+                  homePage={homePage}
+                  navigation={navigation}
+                  noSpy={noSpy}
+                  showOutline={showOutline}
+                  styles={styles}
+                >
+                  {children}
+                </Main>
+                <BannerPrivacy setBannerHeight={setBannerHeight} />
+                <Footer />
+                <div id="modal-root" />
+                <div id="tooltip-root" />
+              </SiteWrapper>
+            </SiteExternalLinkTracker>
+          </ProviderModal>
+        </ProviderSiteSearch>
+      </ProviderAnVILPortal>
+    </ThemeProvider>
   );
 }
 
