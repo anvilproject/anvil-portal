@@ -1,80 +1,124 @@
-/*
- * The AnVIL
- * https://www.anvilproject.org
- *
- * The AnVIL header component.
- */
-
-// Core dependencies
-import React, { useContext } from "react";
-
-// App dependencies
-import HeaderBranding from "./header-branding/header-branding";
-import HeaderHero from "./header-hero/header-hero";
-import HeaderLogo from "./header-logo/header-logo";
-import HeaderMenuButton from "./header-menu-button/header-menu-button";
-import HeaderNavBar from "./header-nav-bar/header-nav-bar";
-import HeaderNavItems from "./header-nav-items/header-nav-items";
-import HeaderNavSideBar from "./header-nav-side-bar/header-nav-side-bar";
-import HeaderNavSideBarHero from "./header-nav-side-bar-hero/header-nav-side-bar-hero";
-import HeaderSocials from "./header-socials/header-socials";
-import { IMenuItem } from "../menu-item/menu-item";
-import { INavigation } from "../navigation/navigation";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { Box, Divider, IconButton, Toolbar, Typography } from "@mui/material";
+import React, { useContext, useEffect, useState } from "react";
+import { Header as HeaderProps } from "./common/entities";
+import Content from "./components/content/content";
+import HeaderLogo from "./components/logo/header-logo";
+import NavLinks from "./components/nav-links/nav-links";
+import Search from "./components/search/search";
+import Socials from "./components/socials/socials";
+import {
+  BREAKPOINT,
+  BREAKPOINT_FN_NAME,
+  useBreakpointHelper,
+} from "../../hooks/useBreakpointHelper";
 import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
-import SiteSearchBar from "../site-search/site-search-bar/site-search-bar";
-import SiteSearchButton from "../site-search/site-search-button/site-search-button";
-import * as HeaderService from "../../utils/header.service";
+import { Header as AppBar } from "./header.styles";
 
-// Styles
-import * as compStyles from "./header.module.css";
+// Template variables
+export const HEADER_HEIGHT = 56;
 
-interface HeaderProps {
-  navigation: INavigation;
-  ncpi: boolean;
+interface Props {
+  header: HeaderProps;
 }
 
-function Header(props: HeaderProps): JSX.Element {
-  const { navigation, ncpi } = props;
-  const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch);
-  const socials = HeaderService.getHeaderSocials(ncpi);
-  const navBarMenuItems: IMenuItem[] = HeaderService.getNavBarMenuItems(ncpi);
-  const navSideBarMenuItems: IMenuItem[] =
-    HeaderService.getNavSideBarMenuItems(ncpi);
-  const { menuPath, tabPath } = navigation || {};
+export default function Header({ header }: Props): JSX.Element {
+  const {
+    authenticationEnabled,
+    logo,
+    navLinks,
+    searchEnabled,
+    slogan,
+    socials,
+  } = header;
+  const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch); // TODO #2143
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const desktop = useBreakpointHelper(
+    BREAKPOINT_FN_NAME.UP,
+    BREAKPOINT.DESKTOP
+  );
+
+  // Set drawer open state to false on change of media breakpoint from mobile to desktop.
+  useEffect(() => {
+    if (desktop) {
+      setDrawerOpen(false);
+    }
+  }, [desktop]);
 
   return (
-    <div className={compStyles.header}>
-      <HeaderHero>
-        <HeaderLogo ncpi={ncpi} />
-        <HeaderBranding ncpi={ncpi} />
-        <SiteSearchBar
-          onSubmitSiteSearch={onSubmitSiteSearch}
-          searchBarOpen={searchBarOpen}
-        />
-        <HeaderSocials ncpi={ncpi} sideBar={false} socials={socials} />
-        <SiteSearchButton />
-        <HeaderMenuButton />
-      </HeaderHero>
-      <HeaderNavBar>
-        <HeaderNavItems
-          activePath={menuPath}
-          ncpi={ncpi}
-          menuItems={navBarMenuItems}
-        />
-      </HeaderNavBar>
-      <HeaderNavSideBar>
-        <HeaderNavSideBarHero>
-          <HeaderLogo ncpi={ncpi} />
-        </HeaderNavSideBarHero>
-        <HeaderNavItems
-          activePath={tabPath || menuPath}
-          menuItems={navSideBarMenuItems}
-          ncpi={ncpi}
-        />
-        <HeaderSocials ncpi={ncpi} sideBar socials={socials} />
-      </HeaderNavSideBar>
-    </div>
+    <AppBar elevation={0} position="sticky">
+      <Toolbar sx={{ gap: 4, height: HEADER_HEIGHT }} variant="dense">
+        {/* Logo */}
+        <HeaderLogo logo={logo} />
+        <Content
+          desktop={desktop}
+          drawerOpen={drawerOpen}
+          modalPosition={HEADER_HEIGHT}
+          onDrawerClose={(): void => setDrawerOpen(false)}
+        >
+          {/* Slogan divider */}
+          {slogan && desktop && (
+            <Divider orientation="vertical" sx={{ maxHeight: 32 }} />
+          )}
+          {/* Slogan */}
+          {slogan && (
+            <Typography
+              component="div"
+              sx={
+                desktop
+                  ? {
+                      fontFamily: "Inter",
+                      fontSize: 12,
+                      lineHeight: "18px",
+                      maxWidth: 180,
+                    }
+                  : { px: 6, py: 2 }
+              }
+              variant={desktop ? undefined : "text-body-400"}
+            >
+              {slogan}
+            </Typography>
+          )}
+          {/* Nav links */}
+          <NavLinks center links={navLinks} />
+          {/* Socials */}
+          <Socials
+            buttonSize={desktop ? "small" : "xlarge"}
+            socials={socials}
+            sx={{
+              gap: desktop ? 2 : 4,
+              px: desktop ? undefined : 4,
+              py: desktop ? undefined : 2,
+            }}
+          />
+        </Content>
+        {/* Actions */}
+        {(searchEnabled || authenticationEnabled || !desktop) && (
+          <Box
+            sx={{
+              alignItems: "center",
+              display: "flex",
+              flex: { desktop: "none", mobile: 1 },
+              gap: { desktop: 2, mobile: 3 },
+              justifyContent: "flex-end",
+            }}
+          >
+            {/* Search */}
+            {searchEnabled && <Search />}
+            {/* Menu */}
+            {!desktop && (
+              <IconButton
+                aria-label="drawer"
+                color="ink"
+                onClick={(): void => setDrawerOpen((open) => !open)}
+              >
+                {drawerOpen ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
+              </IconButton>
+            )}
+          </Box>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 }
-
-export default Header;

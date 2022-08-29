@@ -89,53 +89,62 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
       },
       spacing: 4,
       typography: {
-        fontFamily: "Inter",
         "text-body-400": {
+          fontFamily: "Inter",
           fontSize: 14,
           fontWeight: 400,
           lineHeight: "20px",
         },
         "text-body-400-2lines": {
+          fontFamily: "Inter",
           fontSize: 14,
           fontWeight: 400,
           lineHeight: "24px",
         },
         "text-body-500": {
+          fontFamily: "Inter",
           fontSize: 14,
           fontWeight: 500,
           lineHeight: "20px",
         },
         "text-body-500-2lines": {
+          fontFamily: "Inter",
           fontSize: 14,
           fontWeight: 500,
           lineHeight: "24px",
         },
         "text-body-large-400": {
+          fontFamily: "Inter",
           fontSize: 16,
           fontWeight: 400,
           lineHeight: "24px",
         },
         "text-body-large-400-2lines": {
+          fontFamily: "Inter",
           fontSize: 16,
           fontWeight: 400,
           lineHeight: "28px",
         },
         "text-body-large-500": {
+          fontFamily: "Inter",
           fontSize: 16,
           fontWeight: 500,
           lineHeight: "24px",
         },
         "text-body-small-400": {
+          fontFamily: "Inter",
           fontSize: 13,
           fontWeight: 400,
           lineHeight: "16px",
         },
         "text-body-small-500": {
+          fontFamily: "Inter",
           fontSize: 13,
           fontWeight: 500,
           lineHeight: "16px",
         },
         "text-heading": {
+          fontFamily: "Inter",
           fontSize: 20,
           fontWeight: 500,
           letterSpacing: "-0.2px",
@@ -147,6 +156,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
         "text-heading-large": {
+          fontFamily: "Inter",
           fontSize: 24,
           fontWeight: 500,
           letterSpacing: "-0.4px",
@@ -158,6 +168,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
         "text-heading-small": {
+          fontFamily: "Inter",
           fontSize: 18,
           fontWeight: 500,
           lineHeight: "26px",
@@ -168,6 +179,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
         "text-heading-xlarge": {
+          fontFamily: "Inter",
           fontSize: 30,
           fontWeight: 500,
           letterSpacing: "-0.8px",
@@ -179,6 +191,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
         "text-uppercase-500": {
+          fontFamily: "Inter",
           fontSize: 12,
           fontWeight: 500,
           lineHeight: "16px",
@@ -277,25 +290,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
       },
-      MuiBreadcrumbs: {
-        styleOverrides: {
-          li: {
-            ...textBodySmall400,
-            "& .MuiLink-root": {
-              color: "inherit",
-            },
-          },
-          ol: {
-            gap: 2,
-          },
-          root: {
-            color: inkLight,
-          },
-          separator: {
-            margin: 0,
-          },
-        },
-      },
       MuiButton: {
         defaultProps: {
           disableRipple: true,
@@ -310,6 +304,9 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
             gap: 4,
             padding: "10px 16px",
             textTransform: "capitalize",
+          },
+          startIcon: {
+            marginRight: 0,
           },
         },
         variants: [
@@ -346,91 +343,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
       },
-      MuiCheckbox: {
-        defaultProps: {
-          size: "xsmall",
-        },
-        styleOverrides: {
-          fontSizeXsmall: {
-            fontSize: "18px",
-          },
-          root: {
-            color: smokeDark,
-            padding: 0,
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "&.Mui-disabled": {
-              color: smokeDark,
-            },
-          },
-        },
-        variants: [
-          {
-            props: {
-              size: "xsmall",
-            },
-          },
-        ],
-      },
-      MuiChip: {
-        defaultProps: {
-          size: "small",
-        },
-        styleOverrides: {
-          colorDefault: {
-            backgroundColor: smoke,
-            color: ink,
-          },
-          colorInfo: {
-            backgroundColor: infoLight,
-          },
-          colorWarning: {
-            backgroundColor: warningLight,
-          },
-          deleteIcon: {
-            color: "inherit",
-            margin: "0 -2px 0 0",
-          },
-          filterTag: {
-            ...textBodySmall500,
-            cursor: "pointer", // "pointer" cursor required to restore "clickable" ui
-            gap: 2,
-            height: 24,
-            justifySelf: "flex-start",
-            padding: "0 8px",
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "& .MuiChip-label": {
-              padding: 0,
-            },
-          },
-          ntag: {
-            ...textBodySmall400,
-            backgroundColor: smoke,
-            borderColor: white,
-            borderStyle: "solid",
-            borderWidth: 2,
-            boxSizing: "content-box",
-            height: 24,
-          },
-          status: {
-            ...textBodySmall500,
-            borderColor: white,
-            borderStyle: "solid",
-            borderWidth: 2,
-            height: 24,
-          },
-        },
-        variants: [
-          {
-            props: { variant: "filterTag" },
-          },
-          {
-            props: { variant: "ntag" },
-          },
-          {
-            props: { variant: "status" },
-          },
-        ],
-      },
       MuiCssBaseline: {
         styleOverrides: {
           body: {
@@ -447,6 +359,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
           img: {
             display: "block",
+            margin: 0,
           },
         },
       },
@@ -461,21 +374,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
         styleOverrides: {
           paper: {
             overflowY: "visible", // required; allows backdrop button to render outside of drawer container
-          },
-        },
-      },
-      MuiFormControlLabel: {
-        styleOverrides: {
-          label: {
-            "&.Mui-disabled": {
-              color: "inherit",
-            },
-          },
-          labelPlacementEnd: {
-            gap: 8,
-          },
-          root: {
-            margin: 0,
           },
         },
       },
@@ -570,34 +468,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           underline: "hover",
         },
       },
-      MuiListItemButton: {
-        styleOverrides: {
-          root: {
-            ...textBody400,
-            minHeight: "unset",
-            padding: "10px 16px",
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "&:hover": {
-              backgroundColor: smokeLight,
-            },
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "&.Mui-selected": {
-              backgroundColor: "unset",
-              // eslint-disable-next-line sort-keys -- disabling key order for readability
-              "&:hover": {
-                backgroundColor: smokeLight,
-              },
-            },
-          },
-        },
-      },
-      MuiListItemText: {
-        styleOverrides: {
-          root: {
-            margin: 0,
-          },
-        },
-      },
       MuiMenuItem: {
         defaultProps: { disableRipple: true },
         styleOverrides: {
@@ -648,50 +518,13 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
       },
-      MuiPaper: {
-        styleOverrides: {
-          footer: {
-            backgroundColor: smokeLight,
-            boxShadow: `${strokeTopSmoke}, ${strokeBottomSmoke}`,
-          },
-          menu: {
-            borderColor: smokeDark,
-            borderRadius: 8,
-            borderStyle: "solid",
-            borderWidth: 1,
-            boxShadow: elevation02,
-          },
-          panel: {
-            borderColor: smoke,
-            borderStyle: "solid",
-            borderWidth: 1,
-            boxShadow: elevation01,
-          },
-          sidebar: {
-            backgroundColor: smokeLight,
-            padding: "24px 0",
-            width: 312,
-          },
-        },
-        variants: [
-          {
-            props: { variant: "footer" },
-          },
-          {
-            props: { variant: "menu" },
-          },
-          {
-            props: { variant: "panel" },
-          },
-          {
-            props: { variant: "sidebar" },
-          },
-        ],
-      },
       MuiSvgIcon: {
         styleOverrides: {
           fontSizeLarge: {
             fontSize: "32px",
+          },
+          fontSizeSmall: {
+            fontSize: "20px",
           },
           fontSizeXsmall: {
             fontSize: "18px",
@@ -721,97 +554,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         ],
       },
-      MuiTab: {
-        styleOverrides: {
-          labelIcon: {
-            gap: 8,
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "& > img": {
-              maxHeight: 20, // Tab image max height.
-            },
-          },
-          root: {
-            ...textBody500,
-            color: inkLight,
-            marginBottom: 3,
-            minHeight: "unset",
-            minWidth: "unset",
-            opacity: 1,
-            padding: 12,
-            textTransform: "capitalize",
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "& > .MuiTab-iconWrapper": {
-              marginRight: 0,
-            },
-            "&.Mui-selected": {
-              color: ink,
-            },
-          },
-        },
-      },
-      MuiTableCell: {
-        styleOverrides: {
-          body: {
-            ...textBody400,
-          },
-          head: {
-            ...textBodySmall500,
-          },
-          root: {
-            padding: "18px 20px",
-          },
-        },
-      },
-      MuiTableSortLabel: {
-        styleOverrides: {
-          icon: {
-            fontSize: 20,
-            margin: 0,
-            transition: "none",
-          },
-          root: {
-            "&.Mui-active": {
-              color: "inherit",
-              // eslint-disable-next-line sort-keys -- disabling key order for readability
-              "& .MuiTableSortLabel-icon": {
-                color: "inherit",
-              },
-            },
-            "&:hover": {
-              color: "inherit",
-              opacity: 0.6,
-            },
-          },
-        },
-      },
-      MuiTabs: {
-        defaultProps: {
-          textColor: "inherit",
-          variant: "scrollable",
-        },
-        styleOverrides: {
-          flexContainer: {
-            gap: 8,
-          },
-          indicator: {
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
-            height: 3,
-          },
-          root: {
-            boxShadow: strokeBottomSmoke,
-            minHeight: "unset",
-            position: "relative", // Positions scroll fuzz.
-          },
-          scroller: {
-            margin: "0 16px",
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            [breakpointUpTablet]: {
-              margin: 0,
-            },
-          },
-        },
-      },
       MuiToolbar: {
         styleOverrides: {
           root: {
@@ -824,23 +566,6 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
               paddingLeft: 16,
               paddingRight: 16,
             },
-          },
-        },
-      },
-      MuiTooltip: {
-        styleOverrides: {
-          arrow: {
-            color: ink,
-            // eslint-disable-next-line sort-keys -- disabling key order for readability
-            "&:before": {
-              borderRadius: 1,
-            },
-          },
-          tooltip: {
-            ...textBodySmall400,
-            backgroundColor: ink,
-            boxShadow: elevation02,
-            padding: "8px 12px",
           },
         },
       },

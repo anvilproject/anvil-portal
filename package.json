@@ -8,6 +8,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@fastly/performance-observer-polyfill": "^2.0.0",
+    "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
     "bowser": "^2.11.0",
     "classnames": "^2.3.1",

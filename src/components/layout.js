@@ -14,6 +14,7 @@ import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Headline from "./headline/headline";
+import { SITE, useConfig } from "../hooks/useConfig";
 import Main from "./main/main";
 import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
@@ -43,24 +44,25 @@ function Layout(props) {
   const { tabs, title: headlineTitle } = navigation || {};
   const refSite = useRef(null);
   const [bannerHeight, setBannerHeight] = useState(0);
-  const site = ncpi ? "NCPI" : "The AnVIL";
-
+  const site = ncpi ? SITE.NCPI : SITE.ANVIL;
+  const siteTitle = ncpi ? "NCPI" : "The AnVIL";
+  const currentConfig = useConfig(site);
   return (
     <ThemeProvider theme={getAppTheme()}>
       <CssBaseline />
       <ProviderAnVILPortal>
         <ProviderSiteSearch ncpi={ncpi}>
-          <PageHead pageTitle={title} site={site} />
+          <PageHead pageTitle={title} site={siteTitle} />
           <SEO
             description={description}
             ncpi={ncpi}
-            site={site}
+            site={siteTitle}
             title={title}
           />
           <ProviderModal>
             <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
               <SiteWrapper ref={refSite}>
-                <Header navigation={navigation} ncpi={ncpi} />
+                <Header header={currentConfig.layout.header} />
                 {homePage ? null : (
                   <Headline tabs={tabs} title={headlineTitle} />
                 )}
