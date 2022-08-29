@@ -86,6 +86,19 @@ def show_difference_and_get_top_videos(save_amount, *ordered_params, **other_par
 	return "video==" + top_videos_container[0]
 
 
+def plot_yt_over_time(**other_params):
+	df = ac.show_plot_over_time(
+		"Monthly Activity Overview",
+		["Views Per Month"],
+		["views"],
+		dimensions="day",
+		df_filter=lambda df: ac.make_month_filter([])(df)[:-1],
+		format_table=False,
+		**other_params
+	).rename(columns={"Views Per Month": "Views"})
+	return ac.format_change_over_time_table(df, pre_render_processor=lambda df, cd: (df[::-1], cd), **other_params)
+
+
 def plot_users_over_time(**other_params):
 	df = ac.show_plot_over_time(
 		"Monthly Activity Overview",
