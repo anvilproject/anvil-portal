@@ -6,7 +6,6 @@
  */
 
 // Core dependencies
-import Cookies from "js-cookie";
 import React from "react";
 
 // App dependencies
@@ -35,11 +34,11 @@ class BannerPrivacy extends React.Component {
 
     window.addEventListener("resize", this.calculatePrivacyBannerHeight);
 
-    if (Cookies.get("privacyAccepted") === undefined) {
+    if (localStorage.getItem("privacyAccepted") == null) {
       this.setState({ visible: true });
     }
 
-    if (Cookies.get("privacyAccepted") === true) {
+    if (localStorage.getItem("privacyAccepted") === "T") {
       this.setState({ visible: false });
     }
   }
@@ -51,7 +50,7 @@ class BannerPrivacy extends React.Component {
   componentDidUpdate(_, prevState) {
     if (
       prevState.bannerHeight === 0 &&
-      Cookies.get("privacyAccepted") === undefined
+      localStorage.getItem("privacyAccepted") == null
     ) {
       // Calculate the banner height on initial render
       this.calculatePrivacyBannerHeight();
@@ -78,7 +77,7 @@ class BannerPrivacy extends React.Component {
   };
 
   accept = () => {
-    Cookies.set("privacyAccepted", true, { expires: new Date(2300, 1, 1) });
+    localStorage.setItem("privacyAccepted", "T");
 
     this.setState({ bannerHeight: 0 });
     this.setState({ visible: false });
