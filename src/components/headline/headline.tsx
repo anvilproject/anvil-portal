@@ -25,7 +25,7 @@ interface HeadlineProps {
 function Headline(props: HeadlineProps): JSX.Element | null {
   const { tabs, title } = props;
 
-  return title || tabs.length > 0 ? (
+  return title || tabs?.length > 0 ? (
     <div className={compStyles.headline}>
       <Title title={title} />
       <Tabs tabs={tabs} />
