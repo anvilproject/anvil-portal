@@ -22,16 +22,16 @@ interface HeadlineProps {
   title: string;
 }
 
-function Headline(props: HeadlineProps): JSX.Element {
+function Headline(props: HeadlineProps): JSX.Element | null {
   const { tabs, title } = props;
 
-  return (
+  return title || tabs?.length > 0 ? (
     <div className={compStyles.headline}>
       <Title title={title} />
       <Tabs tabs={tabs} />
       <NavDrawerButton />
     </div>
-  );
+  ) : null;
 }
 
 export default Headline;

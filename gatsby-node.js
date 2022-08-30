@@ -123,16 +123,6 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      allSiteMapHeaderYaml {
-        edges {
-          node {
-            menuItems {
-              name
-              path
-            }
-          }
-        }
-      }
       allDashboardStudy {
         edges {
           node {

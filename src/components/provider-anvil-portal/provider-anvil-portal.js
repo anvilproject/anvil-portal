@@ -14,24 +14,17 @@ import ContextAnVILPortal from "../context-anvil-portal/context-anvil-portal";
 
 function ProviderAnVILPortal(props) {
   const { children } = props;
-  const [menuOpen, setMenuOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [showNavDrawerButton, setShowNavDrawerButton] = useState(false);
   const [siteScrollable, setSiteScrollable] = useState(true);
   const mediaQueryFrom840 = "(min-width: 840px)";
-  const mediaQueryFrom1024 = "(min-width: 1024px)";
 
   const onChangeBreakpoint = useCallback((mediaQuery, breakpointParser) => {
     /* Execute action with corresponding media query match. */
     if (mediaQuery.matches) {
       breakpointParser();
     }
-  }, []);
-
-  const onSetMenuOpen = useCallback((expanded) => {
-    setMenuOpen(expanded);
-    setSiteScrollable(!expanded);
   }, []);
 
   const onSetNavDrawerOpen = useCallback((expanded) => {
@@ -60,21 +53,12 @@ function ProviderAnVILPortal(props) {
     bpFrom840.addEventListener("change", () =>
       onChangeBreakpoint(bpFrom840, () => onSetNavDrawerOpen(false))
     );
-
-    const bpFrom1024 = window.matchMedia(mediaQueryFrom1024);
-    bpFrom1024.addEventListener("change", () =>
-      onChangeBreakpoint(bpFrom1024, () => onSetMenuOpen(false))
-    );
-
     return () => {
       bpFrom840.removeEventListener("change", () =>
         onChangeBreakpoint(bpFrom840, () => onSetNavDrawerOpen(false))
       );
-      bpFrom1024.removeEventListener("change", () =>
-        onChangeBreakpoint(bpFrom1024, () => onSetMenuOpen(false))
-      );
     };
-  }, [onChangeBreakpoint, onSetMenuOpen, onSetNavDrawerOpen]);
+  }, [onChangeBreakpoint, onSetNavDrawerOpen]);
 
   /* useEffect - componentDidUpdate - navDrawerOpen. */
   useEffect(() => {
@@ -87,10 +71,8 @@ function ProviderAnVILPortal(props) {
   return (
     <ContextAnVILPortal.Provider
       value={{
-        menuOpen,
         navDrawerOpen,
         showNavDrawerButton,
-        onSetMenuOpen,
         onSetNavDrawerOpen,
         onSetShowNavDrawerButton,
         onSetSiteScrollable,

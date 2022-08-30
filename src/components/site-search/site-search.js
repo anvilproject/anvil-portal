@@ -6,31 +6,47 @@
  */
 
 // Core dependencies
-import React, { useContext } from "react";
+import { useLocation } from "@reach/router";
+import React, { useContext, useEffect } from "react";
 
 // App dependencies
+import { partitionSearchParams } from "./common/utils";
 import ContextSiteSearch from "./context-site-search/context-site-search";
 import SiteSearchPagination from "./site-search-pagination/site-search-pagination";
 import SiteSearchPartners from "./site-search-partners/site-search-partners";
 import SiteSearchProgressIndicator from "./site-search-progress-indicator/site-search-progress-indicator";
 import SiteSearchResults from "./site-search-results/site-search-results";
 
-function SiteSearch() {
+export default function SiteSearch() {
   const {
-      onSiteSearchPageRequest,
-      nextPage,
-      previousPage,
-      siteSearch,
-      showPagination,
-      siteSearchResults,
-    } = useContext(ContextSiteSearch),
-    { searchError, searchLoading, searchTerms } = siteSearch || {};
+    onSiteSearchPageRequest,
+    nextPage,
+    partners,
+    previousPage,
+    searchPath,
+    siteSearch,
+    showPagination,
+    siteSearchResults,
+    onUpdateSiteSearch,
+  } = useContext(ContextSiteSearch);
+  const { search } = useLocation();
+  const { searchError, searchLoading, searchTerms } = siteSearch || {};
+  const [query, queryPartner] = partitionSearchParams(search);
+
+  useEffect(() => {
+    onUpdateSiteSearch(query, queryPartner);
+  }, [onUpdateSiteSearch, query, queryPartner]);
 
   if (searchLoading) {
     /* Return progress indicator. */
     return (
       <>
-        <SiteSearchPartners />
+        <SiteSearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerm={query}
+          selectedPartner={queryPartner}
+        />
         <SiteSearchProgressIndicator />
       </>
     );
@@ -40,7 +56,12 @@ function SiteSearch() {
       /* Return search results. */
       return (
         <>
-          <SiteSearchPartners />
+          <SiteSearchPartners
+            partners={partners}
+            searchPath={searchPath}
+            searchTerm={query}
+            selectedPartner={queryPartner}
+          />
           <SiteSearchResults query={searchTerms} results={siteSearchResults} />
           {showPagination ? (
             <SiteSearchPagination
@@ -55,7 +76,12 @@ function SiteSearch() {
     /* No search results for the search term. */
     return (
       <>
-        <SiteSearchPartners />
+        <SiteSearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerm={query}
+          selectedPartner={queryPartner}
+        />
         <p>No results.</p>
       </>
     );
@@ -64,12 +90,15 @@ function SiteSearch() {
     /* Search error - search term is not defined. */
     return (
       <>
-        <SiteSearchPartners />
+        <SiteSearchPartners
+          partners={partners}
+          searchPath={searchPath}
+          searchTerm={query}
+          selectedPartner={queryPartner}
+        />
         <p>Please enter a query in the search box.</p>
       </>
     );
   }
   return null;
 }
-
-export default SiteSearch;

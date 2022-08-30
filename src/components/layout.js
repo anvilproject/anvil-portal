@@ -6,6 +6,7 @@
  */
 
 // Core dependencies
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React, { useRef, useState } from "react";
 
 // App dependencies
@@ -13,6 +14,7 @@ import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Headline from "./headline/headline";
+import { SITE, useConfig } from "../hooks/useConfig";
 import Main from "./main/main";
 import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
@@ -21,6 +23,7 @@ import SEO from "./seo/SEO";
 import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-link-tracker";
 import ProviderSiteSearch from "./site-search/provider-site-search/provider-site-search";
 import SiteWrapper from "./site-wrapper/site-wrapper";
+import { getAppTheme } from "../theme/theme";
 
 // Styles
 import "../styles/vars.module.css";
@@ -41,38 +44,52 @@ function Layout(props) {
   const { tabs, title: headlineTitle } = navigation || {};
   const refSite = useRef(null);
   const [bannerHeight, setBannerHeight] = useState(0);
-  const site = ncpi ? "NCPI" : "The AnVIL";
-
+  const site = ncpi ? SITE.NCPI : SITE.ANVIL;
+  const siteTitle = ncpi ? "NCPI" : "The AnVIL";
+  const currentConfig = useConfig(site);
   return (
-    <ProviderAnVILPortal>
-      <ProviderSiteSearch ncpi={ncpi}>
-        <PageHead pageTitle={title} site={site} />
-        <SEO description={description} ncpi={ncpi} site={site} title={title} />
-        <ProviderModal>
-          <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
-            <SiteWrapper ref={refSite}>
-              <Header navigation={navigation} ncpi={ncpi} />
-              {homePage ? null : <Headline tabs={tabs} title={headlineTitle} />}
-              <Main
-                bannerHeight={bannerHeight}
-                docPath={docPath}
-                homePage={homePage}
-                navigation={navigation}
-                noSpy={noSpy}
-                showOutline={showOutline}
-                styles={styles}
-              >
-                {children}
-              </Main>
-              <BannerPrivacy setBannerHeight={setBannerHeight} />
-              <Footer />
-              <div id="modal-root" />
-              <div id="tooltip-root" />
-            </SiteWrapper>
-          </SiteExternalLinkTracker>
-        </ProviderModal>
-      </ProviderSiteSearch>
-    </ProviderAnVILPortal>
+    <ThemeProvider theme={getAppTheme(currentConfig.theme)}>
+      <CssBaseline />
+      <ProviderAnVILPortal>
+        <ProviderSiteSearch search={currentConfig.search}>
+          <PageHead pageTitle={title} site={siteTitle} />
+          <SEO
+            description={description}
+            ncpi={ncpi}
+            site={siteTitle}
+            title={title}
+          />
+          <ProviderModal>
+            <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
+              <SiteWrapper ref={refSite}>
+                <Header
+                  header={currentConfig.layout.header}
+                  searchPath={currentConfig.search.searchPath}
+                />
+                {homePage ? null : (
+                  <Headline tabs={tabs} title={headlineTitle} />
+                )}
+                <Main
+                  bannerHeight={bannerHeight}
+                  docPath={docPath}
+                  homePage={homePage}
+                  navigation={navigation}
+                  noSpy={noSpy}
+                  showOutline={showOutline}
+                  styles={styles}
+                >
+                  {children}
+                </Main>
+                <BannerPrivacy setBannerHeight={setBannerHeight} />
+                <Footer />
+                <div id="modal-root" />
+                <div id="tooltip-root" />
+              </SiteWrapper>
+            </SiteExternalLinkTracker>
+          </ProviderModal>
+        </ProviderSiteSearch>
+      </ProviderAnVILPortal>
+    </ThemeProvider>
   );
 }
 

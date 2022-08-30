@@ -6,25 +6,48 @@
  */
 
 // Core dependencies
-import React, { useContext } from "react";
+import React, { useState } from "react";
 
 // App dependencies
-import ContextSiteSearch from "../context-site-search/context-site-search";
+import { Partner } from "../common/entities";
 import SiteSearchPartner from "../site-search-partner/site-search-partner";
 
 // Styles
 import * as compStyles from "./site-search-partners.module.css";
 
-function SiteSearchPartners(): JSX.Element | null {
-  const { onSelectSiteSearchPartner, partners } = useContext(ContextSiteSearch);
-  const showParters = partners.length > 1;
-  return showParters ? (
+interface Props {
+  partners: Partner[];
+  searchPath: string;
+  searchTerm: string;
+  selectedPartner: string;
+}
+
+function SiteSearchPartners({
+  partners,
+  searchPath,
+  searchTerm,
+  selectedPartner: activePartner,
+}: Props): JSX.Element | null {
+  const [selectedPartner, setSelectedPartner] = useState<string>(activePartner);
+
+  /**
+   * Update state selected partner.
+   * @param partner - New selected partner.
+   */
+  const updateSelectedPartner = (partner: string) => {
+    setSelectedPartner(partner);
+  };
+
+  return partners.length > 1 ? (
     <ul className={compStyles.partners}>
       {partners.map((partner) => (
         <SiteSearchPartner
           key={partner.label}
-          onSelectSiteSearchPartner={onSelectSiteSearchPartner}
           partner={partner}
+          searchPath={searchPath}
+          searchTerm={searchTerm}
+          selectedPartner={selectedPartner}
+          updateSelectedPartnerFn={updateSelectedPartner}
         />
       ))}
     </ul>
