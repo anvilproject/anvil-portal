@@ -356,6 +356,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
               "Apple Color Emoji",
               "Segoe UI Emoji",
             ].join(","),
+            letterSpacing: "normal",
           },
           html: {
             fontSize: "112.5%", // 18px
@@ -366,6 +367,15 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           img: {
             display: "block",
             margin: 0,
+          },
+        },
+      },
+      MuiDialog: {
+        styleOverrides: {
+          paperWidthFalse: {
+            margin: 0,
+            maxWidth: "100%",
+            width: "100%",
           },
         },
       },
@@ -425,6 +435,15 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
           {
             props: {
+              edge: "end",
+              size: "small",
+            },
+            style: {
+              marginRight: -6,
+            },
+          },
+          {
+            props: {
               size: "xlarge",
             },
             style: {
@@ -457,6 +476,25 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
             },
           },
         ],
+      },
+      MuiInput: {
+        styleOverrides: {
+          input: {
+            color: inkLight,
+            // eslint-disable-next-line sort-keys -- disabling key order for readability
+            "&:focus": {
+              color: ink,
+            },
+          },
+          root: {
+            "&& ::placeholder": {
+              opacity: 1,
+            },
+            "&&.Mui-focused ::placeholder": {
+              opacity: 0,
+            },
+          },
+        },
       },
       MuiInputBase: {
         styleOverrides: {
@@ -523,6 +561,57 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
             },
           },
         },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          footer: {
+            backgroundColor: smokeLight,
+            boxShadow: `${strokeTopSmoke}, ${strokeBottomSmoke}`,
+          },
+          menu: {
+            borderColor: smokeDark,
+            borderRadius: 8,
+            borderStyle: "solid",
+            borderWidth: 1,
+            boxShadow: elevation02,
+          },
+          panel: {
+            borderColor: smoke,
+            borderStyle: "solid",
+            borderWidth: 1,
+            boxShadow: elevation01,
+          },
+          searchbar: {
+            alignSelf: "flex-start",
+            borderColor: smoke,
+            borderRadius: 0,
+            borderStyle: "solid",
+            borderWidth: "0 0 1px 0",
+            boxShadow: elevation01,
+          },
+          sidebar: {
+            backgroundColor: smokeLight,
+            padding: "24px 0",
+            width: 312,
+          },
+        },
+        variants: [
+          {
+            props: { variant: "footer" },
+          },
+          {
+            props: { variant: "menu" },
+          },
+          {
+            props: { variant: "panel" },
+          },
+          {
+            props: { variant: "searchbar" },
+          },
+          {
+            props: { variant: "sidebar" },
+          },
+        ],
       },
       MuiSvgIcon: {
         styleOverrides: {

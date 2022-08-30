@@ -48,10 +48,10 @@ function Layout(props) {
   const siteTitle = ncpi ? "NCPI" : "The AnVIL";
   const currentConfig = useConfig(site);
   return (
-    <ThemeProvider theme={getAppTheme()}>
+    <ThemeProvider theme={getAppTheme(currentConfig.theme)}>
       <CssBaseline />
       <ProviderAnVILPortal>
-        <ProviderSiteSearch ncpi={ncpi}>
+        <ProviderSiteSearch search={currentConfig.search}>
           <PageHead pageTitle={title} site={siteTitle} />
           <SEO
             description={description}
@@ -62,7 +62,10 @@ function Layout(props) {
           <ProviderModal>
             <SiteExternalLinkTracker pageTitle={title} refSite={refSite}>
               <SiteWrapper ref={refSite}>
-                <Header header={currentConfig.layout.header} />
+                <Header
+                  header={currentConfig.layout.header}
+                  searchPath={currentConfig.search.searchPath}
+                />
                 {homePage ? null : (
                   <Headline tabs={tabs} title={headlineTitle} />
                 )}

@@ -74,6 +74,19 @@ const config: SiteConfig = {
       ],
     },
   },
+  search: {
+    partners: [
+      { label: "All Results", value: "" },
+      { label: "AnVIL Site", value: "anvil-only" },
+      { label: "Terra", value: "terra-only" },
+      { label: "Gen3", value: "gen3-only" },
+      { label: "Dockstore", value: "dockstore-only" },
+      { label: "Bioconductor", value: "bioconductor-only" },
+      { label: "Galaxy", value: "galaxy-only" },
+    ],
+    searchEngineId: process.env.GATSBY_GCSE_CX,
+    searchPath: "/search",
+  },
   theme: {
     palette: {
       primary: {

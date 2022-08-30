@@ -130,6 +130,19 @@ declare module "@mui/material/IconButton" {
 }
 
 /**
+ * Paper prop options.
+ */
+declare module "@mui/material/Paper" {
+  interface PaperPropsVariantOverrides {
+    footer: true;
+    menu: true;
+    panel: true;
+    searchbar: true;
+    sidebar: true;
+  }
+}
+
+/**
  * SvgIcon prop options.
  */
 declare module "@mui/material/SvgIcon" {

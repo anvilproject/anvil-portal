@@ -11,32 +11,51 @@ import React from "react";
 
 // App dependencies
 import Button from "../../button/button";
+import { Partner } from "../common/entities";
+import { onSelectSiteSearchPartner } from "../common/utils";
 
 // Styles
 import * as compStyles from "./site-search-partner.module.css";
 
-export interface Partner {
-  active: boolean;
-  label: string;
-  value: string;
-}
+type UpdateSelectedPartnerFn = (selectedPartner: string) => void;
 
-interface SiteSearchPartnerProps {
-  onSelectSiteSearchPartner: (selectedPartner: string) => void;
+interface Props {
   partner: Partner;
+  searchPath: string;
+  searchTerm: string;
+  selectedPartner: string;
+  updateSelectedPartnerFn: UpdateSelectedPartnerFn;
 }
 
-function SiteSearchPartner(props: SiteSearchPartnerProps): JSX.Element {
-  const { onSelectSiteSearchPartner, partner } = props;
-  const { active, label, value } = partner;
+function SiteSearchPartner({
+  partner,
+  searchPath,
+  searchTerm,
+  selectedPartner,
+  updateSelectedPartnerFn,
+}: Props): JSX.Element {
+  const { label, value } = partner;
   const classNamesPartner = classNames(
-    { [compStyles.active]: active },
+    { [compStyles.active]: selectedPartner === value },
     compStyles.partner
   );
 
+  const updateSiteSearchPartner = (
+    searchStr: string,
+    searchPathname: string,
+    searchPartner: string
+  ) => {
+    updateSelectedPartnerFn(searchPartner);
+    onSelectSiteSearchPartner(searchStr, searchPathname, searchPartner);
+  };
+
   return (
     <li className={classNamesPartner}>
-      <Button clickAction={() => onSelectSiteSearchPartner(value)}>
+      <Button
+        clickAction={() =>
+          updateSiteSearchPartner(searchTerm, searchPath, value)
+        }
+      >
         {label}
       </Button>
     </li>

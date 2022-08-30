@@ -9,3 +9,8 @@ export const IconButtonSocials = styled(MIconButton)`
     background-color: ${({ theme }) => theme.palette.smoke.light};
   }
 ` as typeof MIconButton;
+
+// Ink icon button.
+export const IconButtonInk = styled(MIconButton)`
+  color: ${({ theme }) => theme.palette.ink.light};
+` as typeof MIconButton;

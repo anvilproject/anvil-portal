@@ -9,7 +9,7 @@
 import React from "react";
 
 // App dependencies
-import { Partner } from "../site-search-partner/site-search-partner";
+import { Partner } from "../common/entities";
 
 interface SiteSearch {
   searchError: boolean;
@@ -20,27 +20,23 @@ interface SiteSearch {
 }
 
 interface SiteSearchContextProps {
-  inputValue: string;
   nextPage: object;
   partners: Partner[];
   previousPage: object;
-  searchBarOpen: boolean;
+  searchPath: string;
   showPagination: boolean;
   siteSearch: SiteSearch;
   siteSearchResults: any[]; // TODO
-  onSelectSiteSearchPartner(selectedPartner: string): void;
-  onSetInputValue(inputString: string): void;
-  onSetSiteSearchBarOpen(expanded: boolean): void;
   onSiteSearchPageRequest(sign: number): void;
-  onSubmitSiteSearch(event: Event): void;
+
+  onUpdateSiteSearch(searchTerm: string, searchPartner: string): void;
 }
 
 const ContextSiteSearch = React.createContext<SiteSearchContextProps>({
-  inputValue: "",
   nextPage: {},
   partners: [],
   previousPage: {},
-  searchBarOpen: false,
+  searchPath: "",
   showPagination: false,
   siteSearch: {
     searchError: false,
@@ -50,11 +46,8 @@ const ContextSiteSearch = React.createContext<SiteSearchContextProps>({
     searchTerms: "",
   },
   siteSearchResults: [],
-  onSelectSiteSearchPartner: () => {},
-  onSetInputValue: () => {},
-  onSetSiteSearchBarOpen: () => {},
   onSiteSearchPageRequest: () => {},
-  onSubmitSiteSearch: () => {},
+  onUpdateSiteSearch: () => {},
 });
 
 export default ContextSiteSearch;

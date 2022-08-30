@@ -15,12 +15,9 @@ import { GCSEParameter } from "./gcse-parameter.model";
  * @param query
  * @param partner
  * @param start
- * @param ncpi
+ * @param searchEngineId
  */
-export function getGCSERequestURL(query, partner, start, ncpi) {
-  const searchEngineId = ncpi
-    ? process.env.GATSBY_NCPI_GCSE_CX
-    : process.env.GATSBY_GCSE_CX;
+export function getGCSERequestURL(query, partner, start, searchEngineId) {
   const searchQuery = partner ? `${query} more:${partner}` : query;
   const paramGCSEId = `${GCSEParameter.ID}=${searchEngineId}`;
   const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;

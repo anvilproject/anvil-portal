@@ -44,6 +44,18 @@ const config: SiteConfig = {
       ],
     },
   },
+  search: {
+    partners: [
+      { label: "All Results", value: "" },
+      { label: "NCPI Site", value: "ncpi-only" },
+      { label: "AnVIL", value: "AnVIL" },
+      { label: "BDC", value: "bdc" },
+      { label: "CRDC", value: "crdc" },
+      { label: "Kids First", value: "kf" },
+    ],
+    searchEngineId: process.env.GATSBY_NCPI_GCSE_CX,
+    searchPath: "/ncpi/search",
+  },
   theme: {
     palette: {
       primary: {

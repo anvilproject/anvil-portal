@@ -7,7 +7,13 @@ import {
   useBreakpointHelper,
 } from "../../../../hooks/useBreakpointHelper";
 
-export default function Search(): JSX.Element {
+type OpenSearchFn = () => void;
+
+interface Props {
+  openSearchFn: OpenSearchFn;
+}
+
+export default function Search({ openSearchFn }: Props): JSX.Element {
   const desktop = useBreakpointHelper(
     BREAKPOINT_FN_NAME.UP,
     BREAKPOINT.DESKTOP
@@ -15,11 +21,11 @@ export default function Search(): JSX.Element {
   return (
     <>
       {desktop ? (
-        <Button startIcon={<SearchIcon />} variant="nav">
+        <Button onClick={openSearchFn} startIcon={<SearchIcon />} variant="nav">
           Search
         </Button>
       ) : (
-        <IconButton color="ink">
+        <IconButton color="ink" onClick={openSearchFn}>
           <SearchIcon fontSize="medium" />
         </IconButton>
       )}

@@ -1,11 +1,12 @@
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Box, Divider, IconButton, Toolbar, Typography } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header as HeaderProps } from "./common/entities";
 import Content from "./components/content/content";
 import HeaderLogo from "./components/logo/header-logo";
 import NavLinks from "./components/nav-links/nav-links";
+import SearchBar from "./components/search/components/search-bar/search-bar";
 import Search from "./components/search/search";
 import Socials from "./components/socials/socials";
 import {
@@ -13,7 +14,6 @@ import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
 } from "../../hooks/useBreakpointHelper";
-import ContextSiteSearch from "../site-search/context-site-search/context-site-search";
 import { Header as AppBar } from "./header.styles";
 
 // Template variables
@@ -21,9 +21,10 @@ export const HEADER_HEIGHT = 56;
 
 interface Props {
   header: HeaderProps;
+  searchPath: string;
 }
 
-export default function Header({ header }: Props): JSX.Element {
+export default function Header({ header, searchPath }: Props): JSX.Element {
   const {
     authenticationEnabled,
     logo,
@@ -32,12 +33,33 @@ export default function Header({ header }: Props): JSX.Element {
     slogan,
     socials,
   } = header;
-  const { onSubmitSiteSearch, searchBarOpen } = useContext(ContextSiteSearch); // TODO #2143
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const desktop = useBreakpointHelper(
     BREAKPOINT_FN_NAME.UP,
     BREAKPOINT.DESKTOP
   );
+
+  /**
+   * Opens search bar.
+   */
+  const openSearch = (): void => {
+    setSearchOpen(true);
+  };
+
+  /**
+   * Closes menu.
+   */
+  const closeMenu = (): void => {
+    setDrawerOpen(false);
+  };
+
+  /**
+   * Closes search bar.
+   */
+  const closeSearch = (): void => {
+    setSearchOpen(false);
+  };
 
   // Set drawer open state to false on change of media breakpoint from mobile to desktop.
   useEffect(() => {
@@ -47,7 +69,7 @@ export default function Header({ header }: Props): JSX.Element {
   }, [desktop]);
 
   return (
-    <AppBar elevation={0} position="sticky">
+    <AppBar elevation={1} position="sticky">
       <Toolbar sx={{ gap: 4, height: HEADER_HEIGHT }} variant="dense">
         {/* Logo */}
         <HeaderLogo logo={logo} />
@@ -105,7 +127,14 @@ export default function Header({ header }: Props): JSX.Element {
             }}
           >
             {/* Search */}
-            {searchEnabled && <Search />}
+            {searchEnabled && <Search openSearchFn={openSearch} />}
+            <SearchBar
+              closeMenuFn={closeMenu}
+              closeSearchFn={closeSearch}
+              modalPosition={HEADER_HEIGHT}
+              searchOpen={searchOpen}
+              searchPath={searchPath}
+            />
             {/* Menu */}
             {!desktop && (
               <IconButton
