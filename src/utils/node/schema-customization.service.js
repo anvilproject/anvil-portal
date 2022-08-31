@@ -5,7 +5,6 @@
  * Basic service supporting gatsby-node schema customization.
  */
 
-const { buildMenuItems } = require("./create-pages.service");
 const moment = require("moment-timezone");
 
 /**
@@ -57,43 +56,6 @@ const buildDateStartField = function buildDateStartField(source) {
 };
 
 /**
- * Returns an array of menu item values, comprising of display name, and path and any corresponding sub menu items (tabs).
- *
- * @param source
- * @param nodes
- * @returns {Array}
- */
-const buildMenuItemsField = function buildMenuItemsField(source, nodes) {
-  /* Build the menus with corresponding tabs from the site map nodes. */
-  const menus = buildMenuItems(nodes);
-
-  /* Build the menu items.*/
-  const menuItems = [];
-
-  for (const menuKey of source.menuItems) {
-    /* Find the menu item for the specified menu key. */
-    const menu = menus.find((menuItem) => menuItem.key === menuKey);
-    /* Add menu item to menu items. */
-    if (menu) {
-      const { key, path, tabs } = menu;
-      /* Map tabs to sub menu items. */
-      const subMenuItems = tabs.map((tab) => {
-        return { name: tab.name, path: tab.path };
-      });
-      menuItems.push({
-        name: key,
-        path: path,
-        subMenuItems: subMenuItems,
-      });
-    } else {
-      console.log(`*** *** Error. Header ${menuKey} not found.`);
-    }
-  }
-
-  return menuItems;
-};
-
-/**
  * Returns true if a page was created for the specified markdown.
  * Typically used by carousel, news and events static queries to only include pages created during the build.
  *
@@ -102,7 +64,7 @@ const buildMenuItemsField = function buildMenuItemsField(source, nodes) {
  * @returns {boolean}
  */
 const buildPageCreatedField = function buildPageCreatedField(source, pages) {
-  if (pages) {
+  if (pages && pages.length) {
     const slug = source?.fields?.slug;
 
     return pages.some((page) => {
@@ -254,6 +216,5 @@ function reformatToDisplayableSessions(sessions, timezone) {
 
 module.exports.buildDateBubbleField = buildDateBubbleField;
 module.exports.buildDateStartField = buildDateStartField;
-module.exports.buildMenuItemsField = buildMenuItemsField;
 module.exports.buildPageCreatedField = buildPageCreatedField;
 module.exports.buildSessionsDisplayField = buildSessionsDisplayField;

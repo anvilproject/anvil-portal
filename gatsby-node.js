@@ -19,7 +19,6 @@ const {
 const {
   buildDateBubbleField,
   buildDateStartField,
-  buildMenuItemsField,
   buildPageCreatedField,
   buildSessionsDisplayField,
 } = require("./src/utils/node/schema-customization.service");
@@ -330,28 +329,16 @@ exports.createSchemaCustomization = ({ actions }) => {
       };
     },
   });
-  /* Create field "menuItem" of type MenuItem array. */
-  createFieldExtension({
-    name: "menuItems",
-    extend() {
-      return {
-        resolve(source, arg, context, info) {
-          const siteMapNodes = context.nodeModel.getAllNodes({
-            type: "SiteMapYaml",
-          });
-          return buildMenuItemsField(source, siteMapNodes);
-        },
-      };
-    },
-  });
   /* Create field "pageCreated" of type boolean. */
   createFieldExtension({
     name: "pageCreated",
     extend() {
       return {
-        resolve(source, arg, context, info) {
-          const items = context.nodeModel.getAllNodes({ type: "SitePage" });
-          return buildPageCreatedField(source, items);
+        async resolve(source, arg, context, info) {
+          const { entries } = await context.nodeModel.findAll({
+            type: "SitePage",
+          });
+          return buildPageCreatedField(source, [...entries]);
         },
       };
     },
@@ -482,9 +469,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         pageTitle: String
         pathPartial: String
         tabs: [Tab]
-    }
-    type SiteMapHeaderYaml implements Node {
-        menuItems: [MenuItem] @menuItems
     }
     type Tab implements Node {
         name: String
