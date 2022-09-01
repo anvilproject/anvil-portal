@@ -248,7 +248,7 @@ const DataIngestionChart: FC = (): JSX.Element => {
 
     const zr = chart.current?.getEchartsInstance().getZr();
     zr?.on("mousemove", handleMouse);
-    return () => zr?.off("mousemove", handleMouse);
+    return () => zr?.handler && zr.off("mousemove", handleMouse);
   });
   return (
     <ReactEChartsCore
