@@ -19,12 +19,11 @@ import Layout from "../components/layout";
 import ProviderFrontmatter from "../components/provider-frontmatter/provider-frontmatter";
 import * as TemplateService from "../utils/template.service";
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const post = data.markdownRemark,
     { fields, frontmatter, htmlAst } = post,
     { slug, styles } = fields,
     { description, showOutline, title } = frontmatter;
-  const { context } = data.sitePage;
   const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
   const ncpi = slug.startsWith("/ncpi");
   const h1 = TemplateService.getPageTitle(htmlAst);
@@ -35,7 +34,7 @@ export default ({ data }) => {
       <Layout
         description={description}
         docPath={slug}
-        navigation={context}
+        navigation={pageContext}
         ncpi={ncpi}
         showOutline={showOutline}
         styles={styles}
@@ -43,7 +42,7 @@ export default ({ data }) => {
       >
         <ArticleBody htmlAst={htmlAst}>
           <ArticleSocials />
-          <ArticleNavigation navigation={context} />
+          <ArticleNavigation navigation={pageContext} />
           <ArticleEnd docPath={slug} />
         </ArticleBody>
       </Layout>
@@ -81,38 +80,6 @@ export const query = graphql`
       }
       html
       htmlAst
-    }
-    sitePage(context: { slug: { eq: $slug } }) {
-      context {
-        menuPath
-        navItemNext {
-          name
-          path
-        }
-        navItemPrevious {
-          name
-          path
-        }
-        navItems {
-          file
-          name
-          navItems {
-            file
-            name
-            path
-          }
-          path
-          slugs
-        }
-        slug
-        tabPath
-        tabs {
-          active
-          name
-          path
-        }
-        title
-      }
     }
   }
 `;

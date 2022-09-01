@@ -14,9 +14,8 @@ import React from "react";
 import DashboardStudy from "../components/dashboard/dashboard-study/dashboard-study";
 import Layout from "../components/layout";
 
-export default ({ data, location }) => {
-  const { context } = data.sitePage;
-  const { description, slug } = context;
+export default ({ data, location, pageContext }) => {
+  const { description, slug } = pageContext;
   const study = data.dashboardStudy || data.dashboardNcpiStudy;
   const styles = { alignment: "left" };
   const ncpi = slug.startsWith("/ncpi");
@@ -30,7 +29,7 @@ export default ({ data, location }) => {
     <Layout
       description={description}
       docPath={slug}
-      navigation={context}
+      navigation={pageContext}
       ncpi={ncpi}
       styles={styles}
       title={study.studyName}
@@ -46,16 +45,6 @@ export default ({ data, location }) => {
 
 export const query = graphql`
   query ($id: String!) {
-    sitePage(context: { id: { eq: $id } }) {
-      context {
-        id
-        description
-        menuPath
-        slug
-        studyId
-        title
-      }
-    }
     dashboardNcpiStudy(id: { eq: $id }) {
       fhirUrl
       studyAccession
