@@ -14,6 +14,9 @@ yt_data_service = None
 
 videos_info = {}
 
+site_video_views = []
+yt_video_views = []
+
 def authenticate_yt(secret_name):
 	service_system = ac.authenticate_api(secret_name, yt_service_params)
 	global yt_data_service
@@ -48,22 +51,45 @@ def format_video_stats_table(df, column_defs):
 	watch_percent_column = df["Average watch %"]
 	df.drop(columns=watch_percent_column.name, inplace=True)
 	df["Average watch time (minutes)"] /= 60
-	total_views_column = pd.Series([videos_info[id]["statistics"]["viewCount"] for id in df.index], index=df.index, name="Total views")
+	total_views_column = pd.Series([videos_info[id]["statistics"]["viewCount"] for id in df.index], index=df.index, name="All-time views")
 	duration_column = pd.Series([get_video_duration_text(id) for id in df.index], index=df.index, name="Video duration")
 	df.insert(1, total_views_column.name, total_views_column)
 	df.insert(3, duration_column.name, duration_column)
 	plain_value_processor = lambda v, i, c: ('<div style="text-align: center">' + str(v) + '</div>', True)
 	column_defs = {
 		**column_defs,
-		total_views_column.name: [("minmax(4em, min-content)", plain_value_processor)],
+		total_views_column.name: [("minmax(4.3em, min-content)", plain_value_processor)],
 		"Average watch time (minutes)": [column_defs[None][0], ("3.8em", lambda v, i, c: ('<div style="color: darkgray">' + "{:.2f}".format(watch_percent_column[i]) + '%</div>', True)), column_defs[None][1]],
 		duration_column.name: [("minmax(5.8em, min-content)", plain_value_processor)]
 	}
 	return (df, column_defs)
 
 
+def show_value_difference_table(label, values, **other_params):
+	df = pd.DataFrame({label: [values[0]]}, index=[label])
+	df_prev = pd.DataFrame({label: [values[1]]}, index=[label])
+	display(ac.format_table_with_change(df, df_prev, show_symbols=False, hide_index=False, hide_columns=True, **other_params))
+
+def make_subtraction_processor(values):
+	values = values[:]
+	
+	def processor(df):
+		df = df.copy(deep=True)
+		df.iat[0, 0] = max(df.iat[0, 0] - values[0], 0)
+		del values[0]
+		return df
+	
+	return processor
+
+
+def save_site_video_views(df):
+	site_video_views.append(df["ga:hits"].agg("sum"))
+	return df
+
 def collapse_yt_sources(df):
-	return pd.DataFrame({df.columns[0]: df.filter(yt_traffic_sources, axis="rows").agg("sum").rename({df.columns[0]: "Views from YouTube"})})
+	df = pd.DataFrame({df.columns[0]: df.filter(yt_traffic_sources, axis="rows").agg("sum").rename({df.columns[0]: "Views from YouTube"})})
+	yt_video_views.append(df.iloc[0, 0])
+	return df
 
 def extract_anvil_source(df):
 	return df.loc["anvilproject.org":"anvilproject.org"].rename({"anvilproject.org": "Views from AnVIL website"})
