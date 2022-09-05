@@ -58,7 +58,7 @@ def format_video_stats_table(df, column_defs):
 	plain_value_processor = lambda v, i, c: ('<div style="text-align: center">' + str(v) + '</div>', True)
 	column_defs = {
 		**column_defs,
-		total_views_column.name: [("minmax(4.3em, min-content)", plain_value_processor)],
+		total_views_column.name: [("minmax(4.5em, min-content)", plain_value_processor)],
 		"Average watch time (minutes)": [column_defs[None][0], ("3.8em", lambda v, i, c: ('<div style="color: darkgray">' + "{:.2f}".format(watch_percent_column[i]) + '%</div>', True)), column_defs[None][1]],
 		duration_column.name: [("minmax(5.8em, min-content)", plain_value_processor)]
 	}
