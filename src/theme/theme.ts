@@ -302,6 +302,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           root: {
             ...textBody500,
             gap: 4,
+            letterSpacing: "normal",
             padding: "10px 16px",
             textTransform: "capitalize",
           },
@@ -503,6 +504,7 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
           root: {
             ...textBody400,
+            letterSpacing: "normal",
             height: 40,
           },
         },
@@ -617,6 +619,9 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
         styleOverrides: {
           fontSizeLarge: {
             fontSize: "32px",
+          },
+          fontSizeMedium: {
+            fontSize: "24px",
           },
           fontSizeSmall: {
             fontSize: "20px",
