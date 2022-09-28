@@ -65,6 +65,8 @@
             - name: ""
               file: "/events/ashg2022-american-society-of-human-genetics"
             - name: ""
+              file: "/events/anvil2022-october-office-hours"
+            - name: ""
               file: "/events/anvil2022-september-office-hours"
             - name: ""
               file: "/events/anvil2022-august-office-hours"
