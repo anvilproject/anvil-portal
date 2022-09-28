@@ -39,7 +39,7 @@
     "gatsby-source-filesystem": "^4.22.0",
     "gatsby-transformer-json": "^4.22.0",
     "gatsby-transformer-remark": "^5.22.0",
-    "gatsby-transformer-sharp": "^4.22.0",
+    "gatsby-transformer-sharp": "^4.24.0",
     "gatsby-transformer-yaml": "^4.22.0",
     "lunr": "^2.3.9",
     "node-fetch": "^2.6.7",
