@@ -78,7 +78,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "firebase-tools": "^11.8.0",
     "html-entities": "^2.3.3",
-    "moment-timezone": "^0.5.37",
+    "moment-timezone": "^0.5.38",
     "prettier": "^2.7.1",
     "remark": "^13.0.0",
     "remark-html": "^13.0.2",
