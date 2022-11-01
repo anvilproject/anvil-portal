@@ -9,7 +9,7 @@
     "@emotion/styled": "^11.10.4",
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.3",
+    "@mui/material": "^5.10.12",
     "bowser": "^2.11.0",
     "classnames": "^2.3.1",
     "csv-parse": "^5.3.0",
