@@ -102,9 +102,9 @@
 }
 
 /**
- * Small tablet portrait, medium handset landscape, small window
+ * Large tablet landscape, medium window.
  */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1280px) {
   /* Footer */
   .footer {
     padding: 32px 0;
@@ -141,9 +141,9 @@
 }
 
 /**
- *  Small tablet landscape, small window
+ *  Large tablet landscape, large window.
  */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1440px) {
   /* Footer container */
   .footer .container {
     align-items: center;
