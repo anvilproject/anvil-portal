@@ -13,6 +13,7 @@ import SectionBenefitCloud from "./section-benefit-cloud/section-benefit-cloud";
 import SectionDatasetCloud from "./section-dataset-cloud/section-dataset-cloud";
 import SectionHero from "./section-hero/section-hero";
 import SectionLatestUpdates from "./section-latest-updates/section-latest-updates";
+import SectionMailingList from "./section-mailing-list/section-mailing-list";
 import SectionPublication from "./section-publication/section-publication";
 import SectionTechCloud from "./section-tech-cloud/section-tech-cloud";
 import SectionTwitter from "./section-twitter/section-twitter";
@@ -27,6 +28,7 @@ const Home: FC = (): JSX.Element => {
       <SectionWorkspaceCloud />
       <SectionBenefitCloud />
       <SectionLatestUpdates />
+      <SectionMailingList />
       <SectionPublication />
       <SectionTwitter />
     </>
