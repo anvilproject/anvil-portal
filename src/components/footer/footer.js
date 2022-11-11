@@ -65,6 +65,12 @@ function Footer() {
           <Link className={compStyles.link} to="/privacy">
             Privacy
           </Link>
+          <a
+            className={compStyles.link}
+            href="https://lists.anvilproject.org/lists/anvil-mailing-list.lists.anvilproject.org/"
+          >
+            Join our Mailing List
+          </a>
           <a href="https://twitter.com/useAnVIL" rel="noopener" target="_blank">
             <img src={twitter} alt="twitter" />
           </a>
