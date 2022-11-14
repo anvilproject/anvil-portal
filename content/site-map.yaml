@@ -61,6 +61,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/anvil2022-november-office-hours"
+            - name: ""
               file: "/events/ismb2022-biological-data-science"
             - name: ""
               file: "/events/ashg2022-american-society-of-human-genetics"
