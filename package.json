@@ -49,7 +49,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.5",
-    "react-typography": "^0.16.20",
+    "react-typography": "^0.16.23",
     "rehype-react": "^7.0.4",
     "typography": "^0.16.21"
   },
