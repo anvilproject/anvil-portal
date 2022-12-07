@@ -16,7 +16,7 @@ AnVIL’s practices also reflect the practical limits of participant withdrawal 
 
 ## Expectations of Submitters to AnVIL
 
-* Submitters are responsible for informing AnVIL staff that a participant has requested withdrawal of their data from a study by contacting data-ingestion@lists.anvilproject.org as soon as possible.
+* Submitters are responsible for informing AnVIL staff that a participant has requested withdrawal of their data from a study by contacting data-ingestion@lists.anvilproject.org and cc: anvil-data@broadinstitute.org as soon as possible.
 * AnVIL cannot remove data at the request of a participant, as we do not have identifying information that links participants to their data. Participants who are interested in withdrawing should contact the institution in which they enrolled.
 
 ## AnVIL Withdrawal Procedures
