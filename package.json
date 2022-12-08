@@ -17,7 +17,7 @@
     "echarts-for-react": "^3.0.2",
     "gatsby": "^4.22.0",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-catch-links": "^4.22.0",
+    "gatsby-plugin-catch-links": "^4.25.0",
     "gatsby-plugin-google-tagmanager": "^4.22.0",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
