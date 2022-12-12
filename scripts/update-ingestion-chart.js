@@ -2,10 +2,12 @@ const path = require("path");
 const fsPromises = require("fs/promises");
 const { promisify } = require("util");
 const parseCsv = promisify(require("csv-parse").parse);
+const { startYear, monthDataByConsortium: oldMonthData} = require("./chart-data-2022-05.js");
 
 const workspaceFilesPath = "./workspace-files";
 const workspacesInfoPath = "../plugins/utils/dashboard-source-anvil.tsv";
 const outPath = "../src/components/data-ingestion-chart/chart-data.ts";
+const newDataMinTime = new Date(2022, 7).getTime();
 
 generateChartData().then(success => {
 	if (success) console.log("Done");
@@ -25,7 +27,6 @@ async function generateChartData() {
 	const workspaceFileNames = await getWorkspaceFileNames();
 	
 	const entriesByConsortium = {};
-	let minDateNum = Infinity;
 	let maxDateNum = -Infinity;
 	
 	for (let ws of workspaces) {
@@ -33,29 +34,34 @@ async function generateChartData() {
 			const entries = await getWorkspaceEntries(ws.name);
 			const arr = (entriesByConsortium[ws.consortium] || (entriesByConsortium[ws.consortium] = []));
 			entries.forEach(e => {
-				arr.push(e);
 				const dateNum = new Date(e.date).getTime();
-				if (dateNum < minDateNum) minDateNum = dateNum;
-				if (dateNum > maxDateNum) maxDateNum = dateNum;
+				if (dateNum >= newDataMinTime) {
+					arr.push(e);
+					if (dateNum > maxDateNum) maxDateNum = dateNum;
+				}
 			});
 		} else {
 			console.log("Missing: " + ws.name);
 		}
 	}
 	
-	const minDate = new Date(minDateNum);
-	const startYear = minDate.getFullYear();
-	const startMonth = minDate.getMonth();
 	const numMonths = dateToIndex(maxDateNum) + 1;
-	const monthDataByConsortium = Object.entries(entriesByConsortium).map(([consortium, entries]) => {
-		const addedSizes = Array(startMonth + 1 + numMonths).fill(0); // that +1 is to get the labels aligned
+	const monthDataObj = Object.fromEntries(oldMonthData.map(([consortium, addedSizes]) => {
+		return [
+			consortium,
+			addedSizes.concat(Array(numMonths + 1 - addedSizes.length).fill(0)) // that +1 is to get the labels aligned
+		];
+	}));
+	
+	Object.entries(entriesByConsortium).forEach(([consortium, entries]) => {
+		const addedSizes = monthDataObj[consortium] || (monthDataObj[consortium] = Array(numMonths + 1).fill(0)); // this is also for label alignment
 		
 		for (let e of entries) {
-			addedSizes[dateToIndex(e.date) + startMonth + 1] += parseFloat(e.size); // that one too
+			addedSizes[dateToIndex(e.date) + 1] += parseFloat(e.size); // and this
 		}
-		
-		return [consortium, addedSizes];
 	});
+	
+	const monthDataByConsortium = Object.entries(monthDataObj);
 	
 	const scriptText = `export const startYear = ${JSON.stringify(startYear)}; export const monthDataByConsortium: Array<[string, Array<number>]> = ${JSON.stringify(monthDataByConsortium)};`;
 	
@@ -66,7 +72,7 @@ async function generateChartData() {
 	
 	function dateToIndex(dateSrc) {
 		let date = new Date(dateSrc);
-		return (date.getFullYear() - startYear) * 12 - startMonth + date.getMonth();
+		return (date.getFullYear() - startYear) * 12 + date.getMonth();
 	}
 }
 
