@@ -12,7 +12,7 @@ AnVIL aims to host a variety of datasets useful to the genomics community. Submi
 
 1. If you have questions about submitting your data to AnVIL please contact the AnVIL team (<anvil-data@broadinstitute.org>).
 2. To apply for data submission, complete the [AnVIL Dataset Onboarding Application](https://docs.google.com/forms/d/e/1FAIpQLSdK_r1DTb_bBUiG9IvY5hwJ4Y-LHoaXk-E4L98MRcLR2TTtcQ/viewform) form.
-3. The [AnVIL program](/learn/data-submitters/submission-guide/data-approval-process) will assess whether the dataset is a good fit for AnVIL. Some aspects of the dataset evaluated include: the amount of genomic data, phenotypic and clinical data, and relevant metadata; appropriate ethical oversight data collection, and; the nature of the informed consent for broad data sharing (i.e., restrictiveness of data use limitations).
+3. The AnVIL program will assess whether the dataset is a good fit for AnVIL. Some aspects of the dataset evaluated include: the amount of genomic data, phenotypic and clinical data, and relevant metadata; appropriate ethical oversight data collection, and; the nature of the informed consent for broad data sharing (i.e., restrictiveness of data use limitations).
 4. If the study is approved, contact the [NHGRI Genomic Program Administrator (GPA)](https://www.genome.gov/staff/Jennifer-Strasburger-MS#:~:text=Biography,Data%20Access%20Committee%20(DAC).) to register the approved study in dbGaP.
 5. AnVIL staff will contact you promptly to initiate Data Ingestion. For more information about data transfer and QC, see [Ingest Data](/learn/data-submitters/submission-guide/ingesting-data) in the [Data Submission Guide](/learn/data-submitters/submission-guide/data-submitters-overview).
 
