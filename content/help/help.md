@@ -14,7 +14,7 @@ To ask a question or provide feedback, please feel free to reach out to us on th
 
 The AnVIL Project offers in-person training on a limited basis. Use the training request form to apply.
 
-<button-link href="https://forms.gle/cncB6rb1tPfH4LEbA" target="_blank">Request AnVIL Training</button-link>
+<button-link href="https://docs.google.com/forms/d/e/1FAIpQLSc8HDE31CC2jCQceigfbE8NJpp0So8ValzBb6xots-IHvwmZw/viewform" target="_blank">Request AnVIL Training</button-link>
 
 
 ### Getting Help with AnVIL Components and Tools
