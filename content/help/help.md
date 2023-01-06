@@ -6,9 +6,9 @@ description: "Contact us on the AnVIL Discourse or email our help desk."
 
 ## Getting Help With AnVIL
 
-### Discourse/Help Desk
+### AnVIL Support Forum
 
-To ask a question or provide feedback, please feel free to reach out to us on the [AnVIL Discourse](https://help.anvilproject.org/) or email our [help desk](mailto:help@lists.anvilproject.org). 
+To ask a question or provide feedback, please feel free to reach out to us on the [AnVIL Support Forum](https://help.anvilproject.org/). If your question is more sensitive, please email our [help desk](mailto:help@lists.anvilproject.org). 
 
 ### AnVIL Training
 
