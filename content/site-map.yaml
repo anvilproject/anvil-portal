@@ -154,6 +154,8 @@
               file: "/events/ashg-workshop-genomic-analysis-with-galaxy"
             - name: ""
               file: "/events/aises-workshop-genomic-analysis-with-galaxy-workbench"
+            - name: ""
+              file: "/events/anvil2023-january-office-hours"
 ## FAQ
 - menuItem: "FAQ"
   pageTitle: "FAQ"
