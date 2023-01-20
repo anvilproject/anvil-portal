@@ -1,6 +1,19 @@
 ---
 sectionSubHeader: ""
 publications:
+    - title: "Approaching complete genomes, transcriptomes and epi-omes with accurate long-read sequencing"
+      cardLink: "https://www.nature.com/articles/s41592-022-01716-8"
+      category: "ON_ANVIL"
+      citation:
+        authors:
+            - "Sam Kovaka"
+            - "Shujun Ou"
+            - "Katharine M. Jenike"
+            - "Michael C. Schatz"
+        doi: "https://doi.org/10.1038/s41592-022-01716-8"
+        journal: "Nature Methods"
+        publisher: ""
+        year: "2023"
     - title: "The complete sequence of a human Y chromosome"
       cardLink: "https://www.biorxiv.org/content/10.1101/2022.12.01.518724v1"
       category: "ON_ANVIL"
