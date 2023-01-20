@@ -6,7 +6,7 @@ eventType: "Conference"
 featured: true
 hashtag: "#IS23"
 location: "Seattle, WA, USA"
-sessions: [{sessionStart: "13 March 2023"}]
+sessions: [{sessionStart: "13 March 2023"}, {sessionStart: "14 March 2023"}, {sessionStart: "15 March 2023"}]
 timezone: "America/New_York"
 title: "American Medical Informatics Association Informatics Summit 2023"
 ---
@@ -28,4 +28,3 @@ Register to attend on the [conference webpage](https://amia.org/education-events
 - Agenda:  https://s4.goeshow.com/amia/summit/2023/schedule_at_a_glance.cfm
 - How to register: https://amia.org/education-events/amia-2023-informatics-summit/registration
 - Event home page:  https://amia.org/education-events/amia-2023-informatics-summit
-- Hashtag - #IS23

@@ -5,7 +5,7 @@ description: "The 2023 meeting will address DNA sequence variation and its role 
 eventType: "Conference"
 featured: true
 location: "Cold Spring harbor Laboratory, NY, USA"
-sessions: [{sessionStart: "9 May 2023"}]
+sessions: [{sessionStart: "9 May 2023"}, {sessionStart: "10 May 2023"}, {sessionStart: "11 May 2023"}, {sessionStart: "12 May 2023"}, {sessionStart: "13 May 2023"}]
 timezone: "America/New_York"
 title: "CSHL Biology of Genomes 2023"
 ---
@@ -34,4 +34,4 @@ Register at the Cold Spring Harbor [conference webpage](https://meetings.cshl.ed
 
 ## Event Details
 
-- How to register: Abstracts are due on February 17, 2023. Register and submit at the [conference webpage] (https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=23).
+- How to register: Abstracts are due on February 17, 2023. Register and submit at the [conference webpage](https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=23).
