@@ -156,6 +156,12 @@
               file: "/events/aises-workshop-genomic-analysis-with-galaxy-workbench"
             - name: ""
               file: "/events/anvil2023-january-office-hours"
+            - name: ""
+              file: "/events/cshl-biology-of-genomes-2023"
+            - name: ""
+              file: "/events/agbt-2023"
+            - name: ""
+              file: "/events/amia-informatics-summit-2023"
 ## FAQ
 - menuItem: "FAQ"
   pageTitle: "FAQ"
