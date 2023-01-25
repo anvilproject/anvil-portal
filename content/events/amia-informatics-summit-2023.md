@@ -23,7 +23,7 @@ Project Director Michael Schatz will present a talk describing the AnVIL Project
 
 Register to attend on the [conference webpage](https://amia.org/education-events/amia-2023-informatics-summit/registration).
 
-## Event Details
+### Event Details
 
 - Agenda:  https://s4.goeshow.com/amia/summit/2023/schedule_at_a_glance.cfm
 - How to register: https://amia.org/education-events/amia-2023-informatics-summit/registration
