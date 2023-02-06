@@ -1,6 +1,22 @@
 ---
 sectionSubHeader: ""
 publications:
+    - title: "Jasmine and Iris: population-scale structural variant comparison and analysis"
+      cardLink: "https://www.nature.com/articles/s41592-022-01753-3"
+      category: "ON_ANVIL"
+      citation:
+        authors:
+          - "Melanie Kirsche"
+          - "Gautam Prabhu"
+          - "Rachel Sherman"
+          - "Bohan Ni"
+          - "Alexis Battle"
+          - "Sergey Aganezov"
+          - "Michael C. Schatz"
+        doi: "https://doi.org/10.1038/s41592-022-01753-3"
+        journal: "Nature Methods"
+        publisher: "Nature Publishing Group"
+        year: "2023"
     - title: "Approaching complete genomes, transcriptomes and epi-omes with accurate long-read sequencing"
       cardLink: "https://www.nature.com/articles/s41592-022-01716-8"
       category: "ON_ANVIL"
