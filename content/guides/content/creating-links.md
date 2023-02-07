@@ -9,7 +9,7 @@ description: "Instructions on how to create links in AnVIL markdown."
 Markdown syntax for a hyperlink is square brackets followed by parentheses. The square brackets hold the text, the parentheses hold the link.
 
 ```
-[Link text Here](https://link-url-here.org)
+[Link text Here](https://example.org)
 ```
 
 ## Internal Links
