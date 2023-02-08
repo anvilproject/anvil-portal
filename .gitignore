@@ -97,9 +97,11 @@ static/dashboard-report-anvil-studies.csv
 keys.sh
 
 # Scripts data
-scripts/workspace-files
+/scripts/workspace-files
+/scripts/out
 
 # Python
 __pycache__/
 analytics/**/_build
 analytics/**/src
+/scripts/venv
