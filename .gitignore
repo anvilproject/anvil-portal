@@ -98,10 +98,9 @@ keys.sh
 
 # Scripts data
 /scripts/workspace-files
-/scripts/out
 
 # Python
 __pycache__/
 analytics/**/_build
 analytics/**/src
-/scripts/venv
+/scripts/**/venv
