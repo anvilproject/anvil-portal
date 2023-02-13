@@ -101,6 +101,6 @@ keys.sh
 
 # Python
 __pycache__/
-analytics/**/_build
-analytics/**/src
 /scripts/**/venv
+/analytics/**/_build
+/analytics/venv

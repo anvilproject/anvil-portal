@@ -135,10 +135,9 @@ def plot_users_over_time(page_filters, **other_params):
 		["Users Per Month", "Total Pageviews Per Month"],
 		["ga:30dayUsers"],
 		df_processor=process_df,
-		change_dir=-1,
 		df_filter=ac.make_month_filter(["ga:30dayUsers"]),
 		format_table=False,
 		**other_params
 	).rename(columns={"Users Per Month": "Users", "Total Pageviews Per Month": "Total Pageviews"})
-	return ac.format_change_over_time_table(df, **other_params)
+	return ac.format_change_over_time_table(df, change_dir=-1, **other_params)
 

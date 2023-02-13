@@ -29,4 +29,4 @@
   * Update the two time period variables
   * If necessary, adjust page breaks, `split_vertical` parameters, `rows_limit` parameters, and/or cell order to make the tables pack more neatly into the pages of the PDF
 
-* After exporting, rename the PDF to "NCPI Portal Analytics Report - <end date>.pdf"
+* After exporting, rename the PDF to "Anvil Portal Analytics Report - <end date>.pdf"
