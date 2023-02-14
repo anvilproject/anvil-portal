@@ -65,6 +65,8 @@
             - name: ""
               file: "/events/amia-informatics-summit-2023"
             - name: ""
+              file: "/events/anvil2023-february-office-hours"
+            - name: ""
               file: "/events/agbt-2023"
             - name: ""
               file: "/events/anvil2023-january-office-hours"
