@@ -22,7 +22,7 @@ Members of the AnVIL team will be available to help AnVIL users including PIs, a
 
 Please post your questions to the [AnVIL Support Forum](https://help.anvilproject.org/t/anvil-office-hours-23feb2023-11-am-et/147) prior to Office Hours so we can bring the team representatives best suited to address your question.
 
-###Registration
+### Registration
 
 Post your question to the [AnVIL Support Forum](https://help.anvilproject.org/t/anvil-office-hours-23feb2023-11-am-et/147) and sign up via [Google Form](https://forms.gle/8CkB1dtmAwUPNyn17).
 
