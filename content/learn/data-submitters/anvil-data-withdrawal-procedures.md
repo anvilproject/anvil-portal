@@ -27,5 +27,5 @@ AnVIL’s practices also reflect the practical limits of participant withdrawal 
     * If a participant’s data are included in aggregate or summary-level products (e.g., allele frequency count), the products will not be modified.
 * AnVIL will inform all approved users that a new version of the dataset is available when individual-level data has been removed. AnVIL will request that users utilize the new version.
     * Downloaders will be responsible for using the most current version of the dataset, and destroying all versions of the dataset when their project is ended or access revoked (in accordance with the NIH Data Use Certification).
-    * AnVIL will inform cloud users working with data in a Workspace at least one week before the underlying data are modified.
+    * AnVIL will inform cloud users working with data in a Workspace at least two weeks before the underlying data are modified.
 * AnVIL will maintain records of all withdrawal requests.
