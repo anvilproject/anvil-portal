@@ -160,24 +160,6 @@ Known Data Use Limitations (DUL) need to be clearly defined by the data deposito
 
 >Please contact your program officer and the NHGRI Genomic Program Administrator for assistance and/or questions about dbGaP registration and/or consent groups.
 
-## 2.4 - Complete the AnVIL Data Submission Form
-
-Once you have your data model and all information, you will be ready to complete the AnVIL Data Submission Form. The form gathers study information to create the deposit workspace. To complete the form, you will need all of the following information:
-
-- Contact Name
-- Sequencing Center
-- Data cohorts (# dbGaP registrations + # consent codes)
-- Data Model files (the Data Dictionary spreadsheet)
-- Cohort/Dataset name
-- Study Name
-- dbGaP registration ID (phsID)
-- Consent groups
-- Consent codes
-- Types of data (i.e., genomic, phenotypic, etc.)
-- Number of samples
-- Submitter information (emails of all people who need access to the deposit workspace)
-
-<button-link href="https://docs.google.com/forms/d/e/1FAIpQLSeXGjrMEJ3gCftvgcaSyd-yRGdRzHVZwcKw4xbT5FXNcyCXFA/viewform" target="_blank">Launch AnVIL Data Submission Form</button-link>
 
 ## Additional Resources
 
