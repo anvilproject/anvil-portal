@@ -7,7 +7,7 @@ featured: true
 location: "Virtual"
 sessions: [{sessionStart: "23 Feb 2023 11:00 AM"}]
 timezone: "America/New_York"
-title: "AnVIL Office Hours - February 2023"
+title: "AnVIL Office Hours - February 23, 2023"
 ---
 
 <event-hero></event-hero>
