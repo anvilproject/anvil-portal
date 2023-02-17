@@ -14,7 +14,11 @@ In addition to Docker-based analysis workflows, AnVIL supports popular interacti
 
 By operating in the cloud, AnVIL users can scale analyses from a single computer to thousands and securely share data, workflows, and reproducible results with collaborators and colleagues.
 
-To get started, see the [Getting Started on AnVIL Book](https://jhudatascience.org/AnVIL_Book_Getting_Started/index.html).
+<hero>
+
+To get started, see the [Getting Started on AnVIL](https://jhudatascience.org/AnVIL_Book_Getting_Started/index.html) book.
+
+</hero>
 
 ## About AnVIL’s Documentation
 
