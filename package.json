@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "AnVIL",
   "dependencies": {
-    "@emotion/react": "^11.10.4",
+    "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.4",
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "@mui/icons-material": "^5.10.3",
