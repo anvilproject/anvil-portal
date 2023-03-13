@@ -31,7 +31,7 @@ AnVIL Demos are free and open to all to attend, no background in computing or ge
 ### Prerequisites
 Register for any of the upcoming AnVIL Demos using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7) and post any questions you have to the [AnVIL Support Forum](https://help.anvilproject.org/).
 
-## Event Details
+### Event Details
 
 - How to register: Register using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7).
 - Contact Info: Please contact [Natalie Kucher](mailto:nkucher3@jhu.edu) with any questions.
