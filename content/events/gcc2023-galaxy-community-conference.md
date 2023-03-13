@@ -4,6 +4,7 @@ conference: "GCC2023"
 description: "The annual gathering of the Galaxy Community with opportunities to hear latest developments, get training, and meet everyone involved."
 eventType: "Conference"
 featured: true
+hashtag: "#gcc2023"
 location: "Brisbane, Australia"
 sessions: [{sessionStart: "10 July, 2023"}, {sessionStart: "11 July, 2023"}, {sessionStart: "12 July, 2023"}, {sessionStart: "13 July, 2023"}, {sessionStart: "14 July, 2023"}, {sessionStart: "15 July, 2023"}, {sessionStart: "16 July, 2023"}]
 timezone: "Australia/Brisbane"
@@ -44,4 +45,3 @@ Jul 16 | Last day of GCC2023
 - How to register: https://galaxyproject.org/events/gcc2023/register/
 - Conference website: https://galaxyproject.org/events/gcc2023/
 - Contact Info: Natalie Kucher (nkucher3@jhu.edu)
-- Hashtag - #gcc2023
