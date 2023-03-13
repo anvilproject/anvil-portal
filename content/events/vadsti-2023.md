@@ -29,7 +29,7 @@ No prerequisite for research knowledge topics. Basic undergraduate knowledge of 
 ### Event Details
 
 - Agenda:  Find information on the modules at the [VADSTI Spring 2023 Webpage](http://rcmi.howard.edu/vadsti23/).
-- How to register: Register at [Eventbrite](https://www.eventbrite.com/e/virtual-applied-data-science-training-institute-vadsti-training-series-tickets-529370851467)
+- How to register: Register at [Eventbrite](https://www.eventbrite.com/e/virtual-applied-data-science-training-institute-vadsti-training-series-tickets-529370851467).
 - Costs:  The event is free to attend, but registration is required.
 - Event home page:  http://rcmi.howard.edu/vadsti23/
 - Contact Info: Contact VADSTI (vadsti@howard.edu) with any questions. 
