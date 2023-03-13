@@ -28,7 +28,7 @@ Participants will have an opportunity to ask questions about the demonstration a
 ### Audience
 AnVIL Demos are free and open to all to attend, no background in computing or genomics necessary.
 
-### Prerequisites (if any)
+### Prerequisites
 Register for any of the upcoming AnVIL Demos using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7) and post any questions you have to the [AnVIL Support Forum](https://help.anvilproject.org/).
 
 ## Event Details
