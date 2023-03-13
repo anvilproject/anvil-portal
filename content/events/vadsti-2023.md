@@ -26,7 +26,7 @@ Register for the AnVIL module at [Eventbrite](https://www.eventbrite.com/e/virtu
 
 No prerequisite for research knowledge topics. Basic undergraduate knowledge of algebra and probability recommended for content knowledge topics.
 
-## Event Details
+### Event Details
 
 - Agenda:  Find information on the modules at the [VADSTI Spring 2023 Webpage](http://rcmi.howard.edu/vadsti23/).
 - How to register: Register at [Eventbrite](https://www.eventbrite.com/e/virtual-applied-data-science-training-institute-vadsti-training-series-tickets-529370851467)
