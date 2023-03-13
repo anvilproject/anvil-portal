@@ -8,7 +8,7 @@ hashtag: "#anvildemos"
 location: "Virtual"
 sessions: [{sessionStart: "23 March 2023 11:00 AM", sessionEnd: "23 March 2023 12:00 PM"}]
 timezone: "America/New_York"
-title: "AnVIL Demos: Introduction to AnVIL"
+title: "AnVIL Demos: Terra WARP Pipelines"
 ---
 
 <event-hero></event-hero>
