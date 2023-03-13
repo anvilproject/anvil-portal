@@ -38,7 +38,7 @@ Jul 10 | Conference starts!
 Jul 14 | CoFest starts
 Jul 16 | Last day of GCC2023
 
-## Event Details
+### Event Details
 
 - Agenda:  https://galaxyproject.org/events/gcc2023/schedule/
 - How to register: https://galaxyproject.org/events/gcc2023/register/
