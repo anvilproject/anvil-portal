@@ -4,6 +4,7 @@ conference: "AnVIL 2023"
 description: "Learn new ways to use AnVIL and ask questions!"
 eventType: "AnVIL Demos"
 featured: true
+hashtag: "#anvildemos"
 location: "Virtual"
 sessions: [{sessionStart: "18 May 2023 11:00 AM", sessionEnd: "18 May 2023 12:00 PM"}]
 timezone: "America/New_York"
@@ -34,7 +35,6 @@ Participants will have an opportunity to ask questions about the demonstration a
 ### Prerequisites
 Register for any of the upcoming AnVIL Demos using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7) and post any questions you have to the [AnVIL Support Forum](https://help.anvilproject.org/).
 
-## Event Details
+### Event Details
 - How to register: Register using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7).
 - Contact Info: Please contact [Natalie Kucher](mailto:nkucher3@jhu.edu) with any questions.
-- Hashtag - #anvildemos
