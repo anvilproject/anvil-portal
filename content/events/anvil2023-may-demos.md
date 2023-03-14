@@ -3,7 +3,7 @@ author: "AnVIL"
 conference: "AnVIL 2023"
 description: "Learn new ways to use AnVIL and ask questions!"
 eventType: "AnVIL Demos"
-featured: true
+featured: false
 hashtag: "#anvildemos"
 location: "Virtual"
 sessions: [{sessionStart: "18 May 2023 11:00 AM", sessionEnd: "18 May 2023 12:00 PM"}]
