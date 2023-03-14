@@ -5,7 +5,7 @@ description: "Tools for Applied Data Science Using Cloud-Based Platforms"
 eventType: "Workshop"
 featured: true
 location: "Virtual"
-sessions: [{sessionStart: "5 Apr 2023 11:00 AM", sessionEnd: "5 Apr 2023 2:00 PM"}]
+sessions: [{sessionStart: "5 Apr 2023 11:00 AM", sessionEnd: "5 Apr 2023 2:00 PM"}, {sessionStart: "6 Apr 2023"}]
 timezone: "America/New_York"
 title: "AnVIL at Virtual Applied Data Science Institute 2023"
 ---
@@ -31,5 +31,5 @@ No prerequisite for research knowledge topics. Basic undergraduate knowledge of 
 - Agenda:  Find information on the modules at the [VADSTI Spring 2023 Webpage](http://rcmi.howard.edu/vadsti23/).
 - How to register: Register at [Eventbrite](https://www.eventbrite.com/e/virtual-applied-data-science-training-institute-vadsti-training-series-tickets-529370851467).
 - Costs:  The event is free to attend, but registration is required.
-- Event home page:  http://rcmi.howard.edu/vadsti23/
+- Event home page:  <http://rcmi.howard.edu/vadsti23/>.
 - Contact Info: Contact VADSTI (vadsti@howard.edu) with any questions. 
