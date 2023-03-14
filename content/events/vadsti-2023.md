@@ -5,7 +5,7 @@ description: "Tools for Applied Data Science Using Cloud-Based Platforms"
 eventType: "Workshop"
 featured: true
 location: "Virtual"
-sessions: [{sessionStart: "5 Apr 2023 11:00 AM", sessionEnd: "5 Apr 2023 2:00 PM"}, {sessionStart: "6 Apr 2023"}]
+sessions: [{sessionStart: "5 Apr 2023 11:00 AM", sessionEnd: "5 Apr 2023 2:00 PM"}, {sessionStart: "6 Apr 2023 11:00 AM", sessionEnd: "6 Apr 2023 2:00 PM"}]
 timezone: "America/New_York"
 title: "AnVIL at Virtual Applied Data Science Institute 2023"
 ---
