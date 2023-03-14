@@ -61,7 +61,15 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/gcc2023-galaxy-community-conference"
+            - name: ""
+              file: "/events/anvil2023-may-demos"
+            - name: ""
               file: "/events/cshl-biology-of-genomes-2023"
+            - name: ""
+              file: "/events/vadsti-2023"
+            - name : ""
+              file: "/events/anvil2023-march-demos"
             - name: ""
               file: "/events/amia-informatics-summit-2023"
             - name: ""
