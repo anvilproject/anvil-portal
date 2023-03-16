@@ -12,6 +12,13 @@ import { EnvironmentUrl } from "./environment-url.model";
 const GATSBY_ENV = process.env.GATSBY_ENV;
 
 /**
+ * Returns the ANVIL-DEV environment url.
+ */
+export function getAnVILDevEnvironmentUrl() {
+  return EnvironmentUrl["ANVIL-DEV"];
+}
+
+/**
  * Returns the name of the current environment.
  */
 export function getCurrentEnvironment() {
@@ -25,6 +32,13 @@ export function getCurrentEnvironmentURL() {
   const currentEnvironment = getCurrentEnvironment();
 
   return EnvironmentUrl[currentEnvironment];
+}
+
+/**
+ * Returns true if the current environment is local.
+ */
+export function isLocal() {
+  return getCurrentEnvironment() === "LOCAL";
 }
 
 /**
