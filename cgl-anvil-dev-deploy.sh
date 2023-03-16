@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-n 16.15.1
-npm ci
-gatsby clean
-npm run build
+#n 16.15.1
+#npm ci
+#gatsby clean
+#
+#export GATSBY_ENV="ANVIL-DEV"
+#npm run build
 
 export BUCKET=s3://anvil.gi.ucsc.edu/
 export SRCDIR=public/
