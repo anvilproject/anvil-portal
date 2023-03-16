@@ -1,6 +1,6 @@
 ---
 author: "AnVIL"
-conference: "AnVIL Demos"
+conference: "AnVIL 2023"
 description: "Learn new ways to use AnVIL and ask questions!"
 eventType: "AnVIL Demos"
 featured: false
