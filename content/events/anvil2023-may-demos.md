@@ -8,7 +8,7 @@ hashtag: "#anvildemos"
 location: "Virtual"
 sessions: [{sessionStart: "18 May 2023 11:00 AM", sessionEnd: "18 May 2023 12:00 PM"}]
 timezone: "America/New_York"
-title: "AnVIL Demos: Terra WARP Pipelines"
+title: "AnVIL Demos: WARP Pipelines in AnVIL/Terra"
 ---
 
 <event-hero></event-hero>
@@ -22,12 +22,10 @@ After the demo, we’ll open up the floor to answer any questions about the demo
 
 ### What’s in this Demo?
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
-Partners at the Broad User Education Team will share:
-* WARP repo background and documentation
-* How we develop and push our pipelines from GitHub --> Dockstore --> AnVIL/Terra
-* How we use workspaces to showcase our pipelines to the public
-* Finding our pipeline workspaces using AnVIL/Terra tags
-* Example workspace and how the data in the workspace is public and downsampled so people can try it out low cost
+Partners from the Broad User Education and Pipeline Development teams will share:
+* An overview of the WDL Analysis Research Pipelines (WARP), a GitHub repository for cloud-based WDL workflows
+* How the WARP team develops, tests, and shares workflows in Dockstore and AnVIL/Terra
+* Where to find public WARP workspaces in AnVIL/Terra so you can try them at low cost
 #### 11:30 AM - 12:00 PM ET – Q&A
 Participants will have an opportunity to ask questions about the demonstration and we will have AnVIL and Terra Support on the line to answer questions about AnVIL beyond the demo.
 
