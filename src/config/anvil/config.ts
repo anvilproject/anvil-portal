@@ -26,7 +26,7 @@ const config: SiteConfig = {
         },
         {
           label: "Datasets",
-          url: `${getDatasetsEnvironmentUrl()}data`,
+          url: "/explore/datasets",
         },
         {
           label: "Consortia",
