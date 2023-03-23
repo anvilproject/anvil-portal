@@ -485,6 +485,8 @@
           file: "/ncpi/interoperating-principles"
         - name: "Working Groups"
           file: "/ncpi/working-groups"
+        - name: "Solicitation Announcements"
+          file: "/ncpi/solicitation-announcements"
 ## NCPI Datasets
 - menuItem: "NCPI Datasets"
   pageTitle: "NCPI Dataset Catalog"
