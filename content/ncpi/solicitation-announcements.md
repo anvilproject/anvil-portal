@@ -25,7 +25,7 @@ If you have any questions about this solicitation request, please email the NCPI
 
 ### Solicitation Announcement Questions and Answers
 
-**This page** contains answers to questions received about the current [Solicitation Announcement for Interoperability Projects](/ncpi/solicitation-announcements#ncpi-interoperability-project-solicitation-announcement-march-2023). It will be updated periodically as new questions are received and answered.
+This section contains answers to questions received about the current [Solicitation Announcement for Interoperability Projects](/ncpi/solicitation-announcements#ncpi-interoperability-project-solicitation-announcement-march-2023). It will be updated periodically as new questions are received and answered.
 
 **Date of last update: 03/20/2023.**
 
