@@ -1,9 +1,9 @@
 ---
 description: "Solicitation Announcement for Interoperability Projects."
-title: "NCPI Interoperability Project Solicitation Announcement"
+title: "NIH Cloud Platform Interoperability (NCPI) Effort Project Solicitation Announcements"
 ---
 
-# NCPI Interoperability Project Solicitation Announcement, March 2023
+# NIH Cloud Platform Interoperability (NCPI) Effort Project Solicitation Announcement, March 2023
 
 **March 2023: Solicitations are now open for NCPI interoperability projects.**
 
