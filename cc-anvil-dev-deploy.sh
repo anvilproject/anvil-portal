@@ -4,7 +4,7 @@ n 16.15.1
 npm ci
 gatsby clean
 
-export GATSBY_ENV="ANVIL-DEV"
+export GATSBY_ENV="ANVIL-PORTAL-CC-DEV"
 export GATSBY_GCSE_CX="anvil"
 export GATSBY_NCPI_GCSE_CX="ncpi"
 
