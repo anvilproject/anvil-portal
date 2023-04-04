@@ -1,5 +1,6 @@
 import { SiteConfig } from "../entities";
 import logoAnvil from "../../../images/logo-anvil.png";
+import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
 
 // Template constants
 const slogan = "NHGRI Analysis Visualization and Informatics Lab-space";
@@ -25,7 +26,7 @@ const config: SiteConfig = {
         },
         {
           label: "Datasets",
-          url: "/data",
+          url: `${getDatasetsEnvironmentUrl()}data`,
         },
         {
           label: "News",
