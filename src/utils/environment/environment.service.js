@@ -35,6 +35,18 @@ export function getCurrentEnvironmentURL() {
 }
 
 /**
+ * Returns the datasets current environment url.
+ * @returns the datasets environment url.
+ */
+export function getDatasetsEnvironmentUrl() {
+  let currentEnvironment = getCurrentEnvironment();
+  if (currentEnvironment === "LOCAL") {
+    currentEnvironment = "ANVIL-PORTAL-CC-DEV";
+  }
+  return EnvironmentUrl[currentEnvironment];
+}
+
+/**
  * Returns true if the current environment is local.
  */
 export function isLocal() {
