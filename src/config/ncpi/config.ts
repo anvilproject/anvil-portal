@@ -1,5 +1,6 @@
 import { SiteConfig } from "../entities";
 import logoNcpi from "../../../images/logo-ncpi.png";
+import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
 
 // Template constants
 const slogan = "NIH Cloud Platform Interoperability Effort";
@@ -18,7 +19,10 @@ const config: SiteConfig = {
         { label: "Overview", url: "/ncpi" },
         { label: "Platforms", url: "/ncpi/platforms" },
         { label: "Technologies", url: "/ncpi/technologies" },
-        { label: "Datasets", url: "/ncpi/data" },
+        {
+          label: "Datasets",
+          url: `${getDatasetsEnvironmentUrl()}ncpi/data`,
+        },
         {
           label: "Demonstration Projects",
           url: "/ncpi/demonstration-projects",
