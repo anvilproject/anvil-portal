@@ -8,4 +8,5 @@ export const EnvironmentUrl = {
   MASTER: "https://anvilproject.org/",
   STAGING: "https://staging.anvilproject.org/",
   "UX-DEV": "https://staging.anvilproject.org/",
+  PROD: "https://anvilproject.org/",
 };
