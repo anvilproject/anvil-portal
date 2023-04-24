@@ -7,6 +7,8 @@ gatsby clean
 export GATSBY_ENV="PROD"
 export GATSBY_GCSE_CX="anvil"
 export GATSBY_NCPI_GCSE_CX="ncpi"
+export GATSBY_GTM_ID="GTM-KMGCR8F"
+export GATSBY_GTM_AUTH="IgbX8s-NCGg81Z0eWB6KAQ"
 
 npm run build-ci
 
