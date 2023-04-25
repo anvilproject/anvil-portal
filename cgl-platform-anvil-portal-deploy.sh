@@ -8,6 +8,10 @@ export GATSBY_ENV="PROD"
 export GATSBY_GCSE_CX="anvil"
 export GATSBY_NCPI_GCSE_CX="ncpi"
 
+export GATSBY_GTM_ID="GTM-KMGCR8F"
+export GATSBY_GTM_AUTH="IgbX8s-NCGg81Z0eWB6KAQ"
+export GATSBY_ENV_NAME="env-1"
+
 npm run build-ci
 
 export BUCKET=s3://ptm-anvilproject.org/
