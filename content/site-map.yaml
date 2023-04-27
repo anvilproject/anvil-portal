@@ -61,6 +61,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/anvil2023-july-demos"
+            - name: ""
               file: "/events/gcc2023-galaxy-community-conference"
             - name: ""
               file: "/events/anvil2023-june-demos"
