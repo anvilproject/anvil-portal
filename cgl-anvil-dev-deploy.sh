@@ -3,7 +3,12 @@
 n 16.15.1
 npm ci
 gatsby clean
-npm run build
+
+export GATSBY_ENV="ANVIL-DEV"
+export GATSBY_GCSE_CX="anvil"
+export GATSBY_NCPI_GCSE_CX="ncpi"
+
+npm run build-ci
 
 export BUCKET=s3://anvil.gi.ucsc.edu/
 export SRCDIR=public/

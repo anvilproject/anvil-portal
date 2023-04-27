@@ -7,11 +7,21 @@
 
 // App dependencies
 import { GCSEParameter } from "./gcse-parameter.model";
+import * as EnvironmentService from "../environment/environment.service";
+
+/**
+ * Returns the GCSE href for the current environment.
+ * @returns GCSE href.
+ */
+function getGCSEEnvironmentUrl() {
+  if (EnvironmentService.isLocal()) {
+    return EnvironmentService.getAnVILDevEnvironmentUrl();
+  }
+  return EnvironmentService.getCurrentEnvironmentURL();
+}
 
 /**
  * Returns http request URL for Google Custom Search Engine.
- * See https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list.
- *
  * @param query
  * @param partner
  * @param start
@@ -20,13 +30,12 @@ import { GCSEParameter } from "./gcse-parameter.model";
 export function getGCSERequestURL(query, partner, start, searchEngineId) {
   const searchQuery = partner ? `${query} more:${partner}` : query;
   const paramGCSEId = `${GCSEParameter.ID}=${searchEngineId}`;
-  const paramGCSEKey = `${GCSEParameter.KEY}=${process.env.GATSBY_GCSE_KEY}`;
   const paramQuery = `${GCSEParameter.QUERY}=${searchQuery}`;
   const paramSafe = `${GCSEParameter.SAFE}=active`;
   const paramStart = `${GCSEParameter.START}=${start}`;
-  const parameters = `${paramGCSEKey}&${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
-
-  return `https://www.googleapis.com/customsearch/v1?${encodeURI(parameters)}`;
+  const parameters = `${paramGCSEId}&${paramQuery}&${paramSafe}&${paramStart}`;
+  const url = getGCSEEnvironmentUrl();
+  return `${url}customsearch/v1?${encodeURI(parameters)}`;
 }
 
 /**
