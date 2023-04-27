@@ -7,7 +7,7 @@ featured: true
 hashtag: "#ashg23"
 location: "Walter E. Washington Convention Center, 801 Mt Vernon Pl NW, Washington, DC 20001"
 sessions: [{sessionStart: “1 November 2023"}, {sessionStart: “2 November 2023"}, {sessionStart: “3 November 2023"}, {sessionStart: “4 November 2023"}, {sessionStart: “5 November 2023"}]
-timezone: "America/Los_Angeles"
+timezone: "America/New_York"
 title: "American Society of Human Genetics 2023"
 ---
 <event-hero></event-hero>
