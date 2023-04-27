@@ -1,7 +1,7 @@
 ---
 author: "AnVIL"
 conference: "Genome Informatics 2023"
-description: "TThe AnVIL team will attend the CSHL Genome Informatics meeting to share about the AnVIL platform with the genomics community. This meeting will draw together researchers focused on genomic data science research, for which AnVIL can be a useful platform to leverage and can offer solutions to some common challenges in the field."
+description: "The AnVIL team will attend the CSHL Genome Informatics meeting to share about the AnVIL platform with the genomics community. This meeting will draw together researchers focused on genomic data science research, for which AnVIL can be a useful platform to leverage and can offer solutions to some common challenges in the field."
 eventType: "Conference"
 featured: true
 hashtag: "#gi2023"
