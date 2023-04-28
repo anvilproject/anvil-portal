@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-n 16.15.1
+n 14.16.1
 npm ci
 gatsby clean
 
