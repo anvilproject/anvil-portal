@@ -38,13 +38,12 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
 
   if (type === "MarkdownRemark") {
     const { frontmatter } = node,
-      { pageAlignment, privateEvent } = frontmatter || {};
+      { privateEvent } = frontmatter || {};
 
     /* Extended node fields. */
     const filePath = createFilePath({ node, getNode, basePath: "" });
     const nodeValuePrivateEvent = privateEvent ? privateEvent : false;
     const nodeValueSlug = buildPostSlug(filePath);
-    const nodeValueStyles = { alignment: pageAlignment };
 
     createNodeField({
       node,
@@ -55,11 +54,6 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
       node,
       name: "slug",
       value: nodeValueSlug,
-    });
-    createNodeField({
-      node,
-      name: "styles",
-      value: nodeValueStyles,
     });
   }
 };
@@ -122,26 +116,6 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      allDashboardStudy {
-        edges {
-          node {
-            id
-            studyDescriptionShort
-            studyId
-            studySlug
-          }
-        }
-      }
-      allDashboardNcpiStudy {
-        edges {
-          node {
-            id
-            studyDescriptionShort
-            studyId
-            studySlug
-          }
-        }
-      }
     }
   `).then((result) => {
     /* If there is an error, return. */
@@ -150,12 +124,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const { data } = result,
-      {
-        allDashboardStudy,
-        allDashboardNcpiStudy,
-        allMarkdownRemark,
-        allSiteMapYaml,
-      } = data;
+      { allMarkdownRemark, allSiteMapYaml } = data;
 
     /* Build menuItems where each site map document associates the slug with a path. */
     /* This will be used to create the correct path for each post. */
@@ -209,46 +178,6 @@ exports.createPages = ({ actions, graphql }) => {
           },
         });
       }
-    });
-
-    /* For each dashboard study create a detailed page. */
-    allDashboardStudy.edges.forEach(({ node }) => {
-      const { id, studyDescriptionShort, studyId, studySlug } = node;
-      const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
-
-      /* Create page. */
-      createPage({
-        path: studySlug,
-        component: slugComponent,
-        context: {
-          description: studyDescriptionShort,
-          id: id,
-          menuPath: "/data",
-          slug: studySlug,
-          studyId: studyId,
-          title: `Study`,
-        },
-      });
-    });
-
-    /* For each dashboard NCPI study create a detailed page. */
-    allDashboardNcpiStudy.edges.forEach(({ node }) => {
-      const { id, studyDescriptionShort, studyId, studySlug } = node;
-      const slugComponent = getSlugComponent(ComponentPath.DATASET_STUDY);
-
-      /* Create page. */
-      createPage({
-        path: studySlug,
-        component: slugComponent,
-        context: {
-          description: studyDescriptionShort,
-          id: id,
-          menuPath: "/ncpi/data",
-          slug: studySlug,
-          studyId: studyId,
-          title: `Study`,
-        },
-      });
     });
   });
 };

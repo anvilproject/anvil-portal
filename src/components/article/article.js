@@ -15,27 +15,17 @@ import ArticleContentPositioner from "../article-content-positioner/article-cont
 import Nav from "../nav/nav";
 import Outline from "../outline/outline";
 import Spy from "../spy/spy";
-import * as StylesService from "../../utils/styles.service";
 
 // Styles
 import * as compStyles from "./article.module.css";
 import * as globalStyles from "../../styles/global.module.css";
 
 function Article(props) {
-  const {
-      bannerHeight,
-      children,
-      docPath,
-      navigation,
-      noSpy,
-      showOutline,
-      styles,
-    } = props,
-    { alignment } = styles || {};
+  const { bannerHeight, children, docPath, navigation, noSpy, showOutline } =
+    props;
   const refArticle = useRef(null);
   const [activeOutline, setActiveOutline] = useState("");
   const [articleOffsetTop, setArticleOffsetTop] = useState(0);
-  const left = StylesService.isPageAlignmentLeft(alignment);
   const useOutline = showOutline;
   const useSpy = showOutline && !noSpy;
 
@@ -60,16 +50,14 @@ function Article(props) {
   return (
     <section className={compStyles.section} ref={refArticle}>
       <div className={classNames(globalStyles.container, compStyles.container)}>
-        {left ? null : (
-          <Nav
-            articleOffsetTop={articleOffsetTop}
-            bannerHeight={bannerHeight}
-            docPath={docPath}
-            navigation={navigation}
-          />
-        )}
-        <ArticleContentPositioner left={left}>
-          <ArticleContentContainer left={left}>
+        <Nav
+          articleOffsetTop={articleOffsetTop}
+          bannerHeight={bannerHeight}
+          docPath={docPath}
+          navigation={navigation}
+        />
+        <ArticleContentPositioner>
+          <ArticleContentContainer>
             {useSpy ? (
               <Spy
                 articleOffsetTop={articleOffsetTop}

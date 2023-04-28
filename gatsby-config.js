@@ -7,7 +7,6 @@
 
 let contentPath = "./content";
 let yamlPath = "./content";
-let roadMapPath = "./content/roadmap/";
 
 let gtmId = process.env.GATSBY_GTM_ID;
 let gtmAuth = process.env.GATSBY_GTM_AUTH;
@@ -75,9 +74,6 @@ module.exports = {
         ],
       },
     },
-    // "gatsby-plugin-workspace-fields-report",
-    "gatsby-source-dashboard-anvil",
-    "gatsby-source-dashboard-ncpi",
     "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",
@@ -91,13 +87,6 @@ module.exports = {
       options: {
         name: "site-map",
         path: yamlPath,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "road-map",
-        path: roadMapPath,
       },
     },
     {

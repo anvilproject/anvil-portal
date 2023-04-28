@@ -15,13 +15,14 @@ import React, { FC, ReactNode } from "react";
 import ButtonSize from "../button/button-size";
 import ButtonTheme from "../button/button-theme";
 import ButtonCtaNavigationMethod from "./button-cta-navigation-method";
-import Target from "../target/target.model";
+import { Target } from "../target/target.model";
 
 // Styles
 import { button, large, primary, secondary } from "./button-cta.module.css";
 
 interface Props {
   attributeHREF: string;
+  attributeTarget?: Target;
   buttonSize?: ButtonSize;
   buttonTheme?: ButtonTheme;
   children: ReactNode;
@@ -51,6 +52,7 @@ function getNavigationMethod(attributeHREF: string): ButtonCtaNavigationMethod {
 
 const ButtonCta: FC<Props> = ({
   attributeHREF,
+  attributeTarget,
   buttonSize,
   buttonTheme,
   children,
@@ -78,7 +80,7 @@ const ButtonCta: FC<Props> = ({
         className={buttonClassNames}
         href={attributeHREF}
         rel="noopener"
-        target={Target.BLANK}
+        target={attributeTarget || Target.BLANK}
       >
         {children}
       </a>

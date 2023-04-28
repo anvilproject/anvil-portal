@@ -38,7 +38,6 @@ function Layout(props) {
     ncpi,
     noSpy,
     showOutline,
-    styles,
     title,
   } = props;
   const { tabs, title: headlineTitle } = navigation || {};
@@ -76,7 +75,6 @@ function Layout(props) {
                   navigation={navigation}
                   noSpy={noSpy}
                   showOutline={showOutline}
-                  styles={styles}
                 >
                   {children}
                 </Main>

@@ -5,9 +5,7 @@
  * Possible values of anchor target attribute.
  */
 
-const Target = {
-  BLANK: "_blank",
-  SELF: "_self",
-};
-
-export default Target;
+export enum Target {
+  BLANK = "_blank",
+  SELF = "_self",
+}
