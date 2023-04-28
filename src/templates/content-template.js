@@ -22,7 +22,7 @@ import * as TemplateService from "../utils/template.service";
 export default ({ data, pageContext }) => {
   const post = data.markdownRemark,
     { fields, frontmatter, htmlAst } = post,
-    { slug, styles } = fields,
+    { slug } = fields,
     { description, showOutline, title } = frontmatter;
   const faq = slug.includes("/faq/") && !slug.includes("/faq/help");
   const ncpi = slug.startsWith("/ncpi");
@@ -37,7 +37,6 @@ export default ({ data, pageContext }) => {
         navigation={pageContext}
         ncpi={ncpi}
         showOutline={showOutline}
-        styles={styles}
         title={pageTitle}
       >
         <ArticleBody htmlAst={htmlAst}>
@@ -54,9 +53,6 @@ export const query = graphql`
   query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
-        styles {
-          alignment
-        }
         slug
       }
       frontmatter {

@@ -7,19 +7,14 @@
  */
 
 // Core dependencies
-import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
 import * as compStyles from "../article-content-positioner/article-content-positioner.module.css";
 
 function ArticleContentPositioner(props) {
-  const { children, left } = props;
-  const classNamesContentPositioner = classNames(compStyles.contentPositioner, {
-    [compStyles.left]: left,
-  });
-
-  return <div className={classNamesContentPositioner}>{children}</div>;
+  const { children } = props;
+  return <div className={compStyles.contentPositioner}>{children}</div>;
 }
 
 export default ArticleContentPositioner;

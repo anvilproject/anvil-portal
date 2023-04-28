@@ -25,7 +25,6 @@ function Main(props) {
     navigation,
     noSpy,
     showOutline,
-    styles,
   } = props;
   const { tutorial } = useContext(ContextFrontmatter);
 
@@ -44,7 +43,6 @@ function Main(props) {
           navigation={navigation}
           noSpy={noSpy}
           showOutline={showOutline}
-          styles={styles}
         >
           {children}
         </Article>

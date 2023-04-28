@@ -14,11 +14,6 @@
  * Column row layout changes to row layout (left nav/content/outline), in addition to complimentary JS in scroll.service
  */
 @media screen and (min-width: 840px) {
-  /* Content container - left alignment */
-  .contentContainer.left {
-    max-width: unset;
-  }
-
   /* Content container */
   .contentContainer {
     margin: 0 auto 0 0;

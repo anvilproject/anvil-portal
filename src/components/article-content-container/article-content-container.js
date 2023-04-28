@@ -7,19 +7,14 @@
  */
 
 // Core dependencies
-import classNames from "classnames"; // Class name helper
 import React from "react";
 
 // Styles
 import * as compStyles from "../article-content-container/article-content-container.module.css";
 
 function ArticleContentContainer(props) {
-  const { children, left } = props;
-  const classNamesContentContainer = classNames(compStyles.contentContainer, {
-    [compStyles.left]: left,
-  });
-
-  return <div className={classNamesContentContainer}>{children}</div>;
+  const { children } = props;
+  return <div className={compStyles.contentContainer}>{children}</div>;
 }
 
 export default ArticleContentContainer;

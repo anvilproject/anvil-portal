@@ -36,17 +36,6 @@
 #    n.b. If "file" is an empty string, the navigation item is a "toggle" button where the partial will be omitted from any children navigationItems paths.
 # - "pathOverride" overrides and replaces any built paths from partials.
 
-## Datasets
-- menuItem: "Datasets"
-  pageTitle: "AnVIL Dataset Catalog"
-  pathPartial: "/data"
-  tabs:
-    - name: ""
-      pathPartial: ""
-      navigationItems:
-        - name: ""
-          file: "/data/data"
-          pathOverride: "/data"
 ## Events
 - menuItem: "Events"
   pageTitle: "Events"
@@ -292,12 +281,6 @@
               file: "/learn/billing-setup/billing-concepts"
             - name: "Creating a Google Cloud Billing Account"
               file: "/learn/billing-setup/creating-a-google-cloud-billing-account"
-        #            - name: "Managing Google Cloud Billing Accounts"
-        #              file: "/learn/billing-setup/managing-google-cloud-billing-accounts"
-        #            - name: "Managing Terra Billing Projects"
-        #              file: "/learn/billing-setup/managing-terra-billing-projects"
-        #            - name: "Setting Up Budgets and Alerts"
-        #              file: "/learn/billing-setup/seting-up-budgets-and-alerts"
         - name: "Accessing Data"
           file: ""
           pathPartial: "/accessing-data"
@@ -435,11 +418,6 @@
               file: "/learn/data-submitters/consortium-data-access-guidelines"
             - name: "Data Withdrawal Procedures"
               file: "/learn/data-submitters/anvil-data-withdrawal-procedures"
-#    - name: "Developers"
-#      pathPartial: "/developers"
-#      navigationItems:
-#        - name: "Developing"
-#          file: "/learn/developers/developers"
 ## Overview
 - menuItem: "Overview"
   pageTitle: "Overview"
@@ -472,36 +450,12 @@
         - name: "About Us"
           file: "/ncpi/ncpi"
           pathOverride: "/ncpi"
-        #        - name: "Platforms"
-        #          file: "/ncpi/platforms"
-        #          navigationItems:
-        #            - name: "NHGRI AnVIL"
-        #              file: "/ncpi/platforms/anvil"
-        #            - name: "NHLBI BioData Catalyst"
-        #              file: "/ncpi/platforms/bdc"
-        #            - name: "NCI - Cancer Research Data Commons"
-        #              file: "/ncpi/platforms/crdc"
-        #            - name: "NIH Common Fund - Kids First Data Resource Center"
-        #              file: "/ncpi/platforms/kf"
-        #            - name: "NCBI - National Center for Biotechnology Information"
-        #              file: "/ncpi/platforms/ncbi"
         - name: "Guiding Principles"
           file: "/ncpi/interoperating-principles"
         - name: "Working Groups"
           file: "/ncpi/working-groups"
         - name: "Solicitation Announcements"
           file: "/ncpi/solicitation-announcements"
-## NCPI Datasets
-- menuItem: "NCPI Datasets"
-  pageTitle: "NCPI Dataset Catalog"
-  pathPartial: "/ncpi/data"
-  tabs:
-    - name: ""
-      pathPartial: ""
-      navigationItems:
-        - name: ""
-          file: "/ncpi/data"
-          pathOverride: "/ncpi/data"
 ## NCPI Platforms
 - menuItem: "Cloud Platforms"
   pageTitle: ""
@@ -542,7 +496,6 @@
           file: "/ncpi/demonstration-projects/genetic-factors-related-to-congenital-heart-defects-manning"
         - name: "Sex as Biological Variable (Wilson)"
           file: "/ncpi/demonstration-projects/sex-as-a-biological-variable-wilson"
-
 ### NCPI Technologies
 - menuItem: "Technologies"
   pageTitle: ""
@@ -591,11 +544,6 @@
           file: "/ncpi/training/2020-03-17-train-your-colleague"
         - name: "Cloud Cost Estimation"
           file: "/ncpi/training/cloud-cost-estimation"
-#        - name: "Demos"
-#          navigationItems:
-#            - name: "NCPI October 2021 Interop Demo"
-#              file: "/ncpi/training/2021-10-01-ncpi-interop-demo"
-#              pathOverride: "/ncpi/demos/2021-10-01-ncpi-interop-demo"
 ## News
 - menuItem: "News"
   pageTitle: "News"

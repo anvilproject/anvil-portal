@@ -6,8 +6,8 @@ const Stats: FC = (): JSX.Element => {
   return (
     <div className={compStyles.stats}>
       <Stat stat={500}>Cohorts</Stat>
-      <Stat stat={600}>Petabytes</Stat>
-      <Stat stat={4} unit="thousand">
+      <Stat stat={4}>Petabytes</Stat>
+      <Stat stat={600} unit="thousand">
         Participants
       </Stat>
     </div>

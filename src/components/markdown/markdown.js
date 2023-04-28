@@ -13,8 +13,6 @@ import rehypeReact from "rehype-react";
 // App dependencies
 import Button from "../button/button";
 import ButtonLink from "../button-link/button-link";
-import DashboardAnVIL from "../dashboard/dashboard-anvil";
-import DashboardNCPI from "../dashboard/dashboard-ncpi";
 import DataIngestionChart from "../data-ingestion-chart/data-ingestion-chart";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
@@ -54,8 +52,6 @@ function Markdown(props) {
     components: {
       button: Button,
       "button-link": ButtonLink,
-      "dashboard-anvil": DashboardAnVIL,
-      "dashboard-ncpi": DashboardNCPI,
       "data-ingestion-chart": DataIngestionChart,
       "event-hero": EventHero,
       events: Events,
