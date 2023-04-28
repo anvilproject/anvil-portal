@@ -18,12 +18,6 @@
     min-width: 0; /* Required for <pre> tag to respect overflow conditions on article flexbox container. */
     padding: 0 0 0 40px; /* Padding left for space between left nav and content */
   }
-
-  /* Content positioner - left alignment */
-  .contentPositioner.left {
-    margin: 0;
-    padding: 0;
-  }
 }
 
 /**
@@ -33,17 +27,6 @@
   /* Content positioner */
   .contentPositioner {
     max-width: 1240px;
-  }
-
-  /* Content positioner - left alignment */
-  .contentPositioner.left {
-    margin: 0 auto 0 0;
-    max-width: unset;
-  }
-
-  /* Cap width of content on left aligned pages */
-  .contentPositioner.left p {
-    max-width: 816px;
   }
 }
 

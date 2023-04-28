@@ -9,7 +9,6 @@
 // Template variables
 const ComponentPath = {
   CONTENT: "src/templates/content-template.js",
-  DATASET_STUDY: "src/templates/dashboard-study-template.js",
 };
 const nodePath = require("path");
 

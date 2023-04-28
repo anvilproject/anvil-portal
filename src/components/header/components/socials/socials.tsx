@@ -3,7 +3,7 @@ import React, { ElementType } from "react";
 import CustomIcon from "../../../common/custom-icon/custom-icon";
 import { IconName } from "../../../common/custom-icon/common/icon-svg-path-shapes";
 import { IconButtonSocials } from "../../../common/icon-button/icon-button.styles";
-import Target from "../../../target/target.model";
+import { Target } from "../../../target/target.model";
 
 export interface Social {
   type: IconName;

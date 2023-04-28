@@ -18,6 +18,8 @@ import { DatasetCloudStaticQuery } from "../../../hooks/dataset-cloud-query";
 import Section from "../section/section";
 import SectionContent from "../section/section-content/section-content";
 import Stats from "../../stats/stats";
+import { Target } from "../../target/target.model";
+import { getDatasetsEnvironmentUrl } from "../../../utils/environment/environment.service";
 
 // Styles
 import { datasetStats, sectionCards } from "./section-dataset-cloud.module.css";
@@ -58,7 +60,8 @@ const SectionDatasetCloud: FC = (): JSX.Element => {
             Consortia Roadmap
           </ButtonCta>
           <ButtonCta
-            attributeHREF="/data"
+            attributeHREF={`${getDatasetsEnvironmentUrl()}data/consortia/`}
+            attributeTarget={Target.SELF}
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >
