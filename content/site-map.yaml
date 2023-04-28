@@ -50,6 +50,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/cshl-genome-informatics-2023"
+            - name: ""
               file: "/events/ashg2023-american-society-of-human-genetics"
             - name: ""
               file: "/events/anvil2023-july-demos"
