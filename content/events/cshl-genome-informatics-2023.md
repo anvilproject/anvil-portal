@@ -20,6 +20,7 @@ The AnVIL team will attend the CSHL Genome Informatics meeting to share about th
 #### Background
 
 The next Cold Spring Harbor Laboratory Conference on Genome Informatics will be held at Cold Spring Harbor, New York (this meeting has alternated with the Hinxton meeting started under the joint auspices of CSHL and the Wellcome Trust). The meeting will begin at 7:30 p.m. on Wednesday, December 6, and finish with lunch on Saturday, December 9, 2023.
+
 Tentative Meeting Topics:
 
 - PanGenome
