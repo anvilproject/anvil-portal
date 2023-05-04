@@ -24,7 +24,7 @@
 
 ## Updating the report
 
-* In `analytics.ipynb`:
+* In `catalog-analytics.ipynb`:
   * Replace the two mentions of each time period with the new time periods
   * Update the two time period variables
   * If necessary, adjust page breaks, `split_vertical` parameters, `rows_limit` parameters, and/or cell order to make the tables pack more neatly into the pages of the PDF

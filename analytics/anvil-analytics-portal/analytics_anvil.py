@@ -5,6 +5,8 @@ from googleapiclient.discovery import build
 import pandas as pd
 
 
+users_over_time_file_name = "users_over_time_history.json"
+
 yt_service_params = (ga.yt_service_params[0] + ['https://www.googleapis.com/auth/youtube'],) + ga.yt_service_params[1:]
 
 yt_traffic_sources = {"ANNOTATION", "CAMPAIGN_CARD", "END_SCREEN", "HASHTAGS", "LIVE_REDIRECT", "NOTIFICATION", "PLAYLIST", "PROMOTED", "RELATED_VIDEO", "SUBSCRIBER", "YT_CHANNEL", "YT_OTHER_PAGE", "YT_PLAYLIST_PAGE", "YT_SEARCH"}
@@ -16,6 +18,12 @@ videos_info = {}
 
 site_video_views = []
 yt_video_views = []
+
+def authenticate_ga_portal(secret_name):
+	return ac.authenticate_api(secret_name, ga.ga4_service_params, port=8082)
+
+def authenticate_ga_catalog(secret_name):
+	return ac.authenticate_api(secret_name, ga.ga4_service_params, port=8084)
 
 def authenticate_yt(secret_name):
 	service_system = ac.authenticate_api(secret_name, yt_service_params)
@@ -32,6 +40,8 @@ def get_df_videos_info(df):
 
 def adjust_table_index_key(val):
 	if isinstance(val, str):
+		if val == "":
+			return ('<span style="color: gray">Empty</span>', True)
 		if val[0] == "/":
 			return ('<a href="' + escape_html("https://anvilproject.org" + val) + '">' + escape_html(val) + '</a>', True)
 	return val
@@ -83,7 +93,7 @@ def make_subtraction_processor(values):
 
 
 def save_site_video_views(df):
-	site_video_views.append(df["ga:hits"].agg("sum"))
+	site_video_views.append(df["eventCount"].agg("sum"))
 	return df
 
 def collapse_yt_sources(df):
@@ -125,15 +135,30 @@ def plot_yt_over_time(**other_params):
 	return ac.format_change_over_time_table(df, pre_render_processor=lambda df, cd: (df[::-1], cd), **other_params)
 
 
-def plot_users_over_time(**other_params):
+def save_ga3_users_over_time_data(users_params, views_params, **other_params):
+	users_df = ac.get_data_df(["ga:28dayUsers"], ["ga:date"], df_processor=lambda df: df[::-1], **users_params, **other_params)
+	users_df.index = pd.to_datetime(users_df.index)
+	views_df = ac.get_data_df(["ga:pageviews"], ["ga:date"], df_processor=lambda df: df[::-1], **views_params, **other_params)
+	views_df.index = pd.to_datetime(views_df.index)
+
+	df = ac.make_month_filter(["ga:28dayUsers"])(users_df.join(views_df)).rename(columns={"ga:28dayUsers": "Users", "ga:pageviews": "Total Pageviews"})
+	df.to_json(users_over_time_file_name)
+
+
+def plot_users_over_time(export_json=False, load_json=True, **other_params):
+	old_data = pd.read_json(users_over_time_file_name) if load_json else None
 	df = ac.show_plot_over_time(
 		"Monthly Activity Overview",
-		["Users Per Month", "Total Pageviews Per Month"],
-		["ga:30dayUsers", "ga:pageviews"],
-		df_filter=ac.make_month_filter(["ga:30dayUsers"]),
+		["Users", "Total Pageviews"],
+		["active28DayUsers", "screenPageViews"],
+		dimensions="date",
 		df_processor=lambda df: df[::-1],
+		df_filter=ac.make_month_filter(["active28DayUsers"]),
+		pre_plot_df_processor=None if old_data is None else (lambda df: df.add(old_data, fill_value=0).astype("int")[::-1]),
 		format_table=False,
 		**other_params
-	).rename(columns={"Users Per Month": "Users", "Total Pageviews Per Month": "Total Pageviews"})
+	)
+	if export_json:
+		df.to_json(users_over_time_file_name)
 	return ac.format_change_over_time_table(df, change_dir=-1, **other_params)
 
