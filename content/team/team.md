@@ -79,9 +79,8 @@ Members of these teams are also involved with platform and software development 
 
 ## National Human Genome Research Institute
 
-- Barbara Thomas
-- Jennifer Strasburger
-- Ken Wiley
 - Valentina Di Francesco
-- Shurjo Sen
 - Chris Wellington
+- Shurjo Sen
+- Elena Ghanaim
+- Robb Rowley
