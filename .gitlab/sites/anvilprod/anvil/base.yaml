@@ -1,0 +1,2 @@
+variables:
+  GATSBY_ENV: ANVIL-PROD
