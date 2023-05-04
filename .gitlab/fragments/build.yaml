@@ -1,0 +1,5 @@
+script:
+  - npm ci
+  - gatsby clean
+  - npm run build-ci
+  - tar -cvj -f .gitlab/distribution.tar.bz2 public
