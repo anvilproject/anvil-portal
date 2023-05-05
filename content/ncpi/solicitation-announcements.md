@@ -33,7 +33,7 @@ This section contains answers to questions received about the
 current [Solicitation Announcement for Interoperability Projects](#nih-cloud-platform-interoperability-ncpi-effort-project-solicitation-announcement-march-2023).
 It will be updated periodically as new questions are received and answered.
 
-**Date of last update: 04/24/2023.**
+**Date of last update: 05/04/2023.**
 
 #### FAQ1
 
@@ -50,12 +50,12 @@ decisions to the ACC.
 proposed work. Cloud costs should not be included in your budget; however, the estimated need for and cost of cloud
 credits should be noted in your proposed work plan.
 
-#### FAQ3
+#### FAQ3 (modified 05/03/2023)
 
 *Question*: Which institutions/researchers are eligible to submit?\
 *Answer*: The requirement is for at least two NCPI partner systems to be actively involved and funded in each proposal.
-In addition, the lead PI should be from current NCPI system. Other institutions may be partners on the proposal. Each
-participating institution should submit a separate budget file as part of any jointly submitted proposal.
+In addition, the lead PI should be from a current NCPI system. Other institutions may be partners on the proposal. Each
+participating institution should contribute a separate budget file as part of any jointly submitted proposal.
 
 #### FAQ4
 
@@ -71,7 +71,7 @@ to provide updates and additional FAQs.
 systems. In addition, the lead PI should be from current NCPI system. Additional partners who are not currently part of
 NCPI would be welcome to participate in the proposal as well.
 
-#### FAQ6 (modified 04/24/2023)
+#### FAQ6 (modified 05/03/2023)
 
 *Question*: Is it a requirement that the lead PI be from a current NCPI partner system?\
 *Answer*: Yes. The lead PI should be from one of the five current NCPI systems. Also, the applicant should provide
@@ -149,4 +149,181 @@ requirements?\
 should be covered in one proposal. Regarding the budget (size of the proposal), it’s fine to write a bigger proposal to
 accomplish the goals of the research. NIH might ask to segment the proposed project into different aims or phases, so if
 it does need to be descoped, NIH and the NCPI ACC would potentially have a path to achieve this with the investigator.
+
+#### FAQ16 (new 05/03/2023)
+
+*Question*: Do we need to name an actual person or a persona (hypothetical person) of someone who would benefit?\
+*Answer*: Per Page 3 of the Solicitation Announcement:
+
+“The name of the researcher who proposed and would benefit from successful implementation of the use case. (This person
+should also be named as personnel on the proposal).”
+
+This needs to be a real person – and not a persona – and this person would need to be named in the personnel description
+on the proposal. This person would benefit from the successful implementation of the use case.
+
+While this guidance does imply that the use case is proposed by the researcher, the use case can technically be proposed
+by anyone within the team. However, a real researcher should be included as someone who would benefit from the
+successful implementation of the use case.
+
+#### FAQ17 (new 05/03/2023)
+
+*Question*: Does NCPI require the 5-page max NIH Biosketch format?\
+*Answer*: Biographical sketches do not need to comply with the 5 page maximum NIH Biosketch format. This may be the
+format that NIH is most familiar with, but it would be your proposal team’s decision on whether to adapt to this format
+or propose with your own.
+
+#### FAQ18 (new 05/03/2023)
+
+*Question*: Is there a minimum # of key personnel that we must include?\
+*Answer*: Per Page 4 of the Solicitation Announcement:
+
+“A brief description of the teaming arrangements and personnel involved in the project including developers and
+researchers and the role they will play. **At minimum, there should be two technical leads (one from each system)** and
+**one research lead for each project**. (Additional information about personnel should be provided as biographical
+sketches in the appendix.)”
+
+“Key personnel are expected to attend one in-person meeting for the NCPI per year. The budget request should include
+funds for travel, as appropriate.”
+
+At a minimum, there would be three key personnel – two technical leads (one from each system) and one researcher. Also,
+per the guidance on page 4, these team members are expected to attend one in-person meeting for the NCPI per year. The
+budget proposed should include funds for travel, as appropriate.
+
+#### FAQ19 (new 05/03/2023)
+
+*Question*: Where can I find the Excel budget template referred to on page 2 of the announcement?\
+*Answer*: The Excel budget request template can be found on
+the [Solicitation Announcement](/ncpi/solicitation-announcements) page of the NCPI public
+website. It can be
+directly <a href="./downloads/2023_NCPI_InteropProjects_CostProposalTemplate_v1.0.xlsx" target="_blank">downloaded</a>
+from this page.
+
+#### FAQ20 (new 05/03/2023)
+
+*Question*: Is the lead institution including collaborating partner’s indirect costs towards the overall direct cost
+total? Or are they only to take into consideration the direct costs of each site for the overall $500K direct cost
+budget limit per year and exclude the indirect costs?\
+*Answer*: The indirect costs of your collaborating partners would not be included in the overall direct cost total of
+your submission. Each collaborating institution/partner would independently submit a budget that would include their
+direct and indirect costs. Each collaborating partner would take into consideration only their direct costs for their
+site from the total direct cost budget limit per year and exclude the indirect, which is included in the Excel template
+as another item.
+
+#### FAQ21 (new 05/03/2023)
+
+*Question*: Upon award, is it anticipated that all funding will be provided to the lead institutions so that subawards
+will be issued by the lead institution to collaborating institutions?\
+*Answer*: If awarded, The NCPI ACC will provide separate sub-awards with each collaborating institution directly.
+
+#### FAQ22 (new 05/03/2023)
+
+*Question*: Is the **“Proposal Questions Due Date”** of May 1st, a component of the application that is submitted
+separately
+or is this for any final clarifying questions from sites regarding this announcement? Also, can we submit questions
+after the May 1st deadline.\
+*Answer*: The Proposal Questions Due Date is given as deadline to strongly encourage all interested applicants to submit
+their remaining questions by May 1st. Even though this is a stated deadline, the ACC will continue to answer questions
+after May 1st. However, the ACC does not guarantee that questions asked after the deadline will be answered before the
+Proposal Due Date (May 15th).
+
+#### FAQ23 (new 05/03/2023)
+
+*Question*: Should the lead institution that is submitting the proposal include the subaward institutions in their Excel
+budget?\
+*Answer*: No, each collaborating institution would independently produce a separate supporting budget that would include
+their direct and indirect costs. Also, each collaborating institution would take into consideration only their direct
+costs for their site from the total direct cost budget limit per year and exclude the indirect, which is included in the
+Excel template as another item.
+
+#### FAQ24 (new 05/03/2023)
+
+*Question*: Should the lead institution submit the content requirements (as stated in the solicitation) as 1 proposal
+package for all institutions including separate Excel budgets for each institution?\
+*Answer*: Yes, all collaborating institutions must work together to compose a single project proposal. Also, as stated
+in the budget section of the [announcement](/ncpi/solicitation-announcements) (page 4), each project should submit
+separate Excel documents for each participating institution. The file name of the Excel document should reflect the
+institution name for each separate budget proposed.
+
+#### FAQ25 (new 05/03/2023)
+
+*Question*: Should the Contact PI or the Authorized Organizational Representative (AOR) from the lead institution submit
+the proposal including all budgets from the collaborating institutions?\
+*Answer*: Either the Contact PI or the Authorized Organizational Representative (AOR) can submit the proposal and
+corresponding budgets via email to <ncpi-info@od.nih.gov>.
+
+#### FAQ26 (new 05/03/2023)
+
+*Question*: Do the Evaluation Criteria and Review Questions, on page 5 of the announcement, also need to be submitted by
+a business official or the contact PI at the proposal lead institution?\
+*Answer*: The Evaluation Criteria and Review Questions are not to be included/answered in the proposal; they are
+references for you and your team to keep in mind when preparing the proposal. Also, they reflect the elements NIH will
+consider when evaluating the proposal.
+
+#### FAQ27 (new 05/03/2023)
+
+*Question*: The announcement says that the proposal needs to include representatives of at least 2 different NCPI
+members, does this mean full active co-I's/Senior Personnel involved in development, or can this be us submitting a
+Scientific Use case that would access two different platforms with Letters of Support?\
+*Answer*: The proposal needs to include representatives of at least 2 different NCPI members.
+The [announcement](/ncpi/solicitation-announcements) says (page 4): “A brief description of the teaming arrangements and
+personnel involved in the project including developers and researchers and the role they will play. **At minimum, there
+should be two technical leads (one from each system) and one research lead for each project**. (Additional information
+about personnel should be provided as biographical sketches in the appendix.)”, meaning full active co-I's/Senior
+Personnel involved in development.
+
+#### FAQ28 (new 05/03/2023)
+
+*Question*: Is there any consideration of adjusting the submission due date beyond May 15?\
+*Answer*: Currently, the NIH is not planning to adjust the submission due date beyond May 15, 2023.
+
+#### FAQ29 (new 05/03/2023)
+
+*Question*: Should we follow general NIH guidelines for formatting? Are there any specifics on margins, font, URLs,
+general formatting that we should be aware of for this proposal submission?\
+*Answer*: You do not need to follow general NIH guidelines for formatting. This may be the format that NIH is most
+familiar with, but it would be your proposal team’s decision on whether to adapt to this format or propose with your
+own.
+
+There are no specifics on margins, font, URLs, general formatting for this proposal submission.
+
+#### FAQ30 (new 05/03/2023)
+
+*Question*: Who can provide answer questions regarding the purpose and scope of the opportunity?\
+*Answer*: Please direct your questions about the purpose and scope of the opportunity to NIH, as stated in the
+announcement, “Inquiries regarding the purpose and scope of this announcement should be directed to:
+<ncpi-info@od.nih.gov>”.
+
+#### FAQ31 (new 05/03/2023)
+
+*Question*: Can you confirm that there’s one research lead per proposal, as opposed to one research lead per system or
+one research lead per participating institution?\
+*Answer*: Yes, there should be one research lead per proposal/project. Also, **at a minimum**, there should be **two
+technical leads** (one from each system).
+
+#### FAQ32 (new 05/03/2023)
+
+*Question*: Must the person responsible for the use case (if different than the research and/or proposal lead) attend
+the NCPI meetings?\
+*Answer*: Investigators identified as key personnel are expected to attend one in-person meeting for the NCPI per year.
+It would be up to the project team to identify key personnel to attend the NCPI in-person annual meetings. The
+researcher who would benefit from the use case (if different from the research and/or proposal lead) does not
+necessarily have to be named as key personnel. But per the guidance on page 3 of the Solicitation Announcement, this
+person should be named as personnel on the proposal.
+
+#### FAQ33 (new 05/03/2023)
+
+*Question*: We are to budget travel for Key Personnel. Can you confirm where people will be traveling to and for how
+many nights their stay is anticipated?\
+*Answer*: The location and number of nights of the in-person meeting have not been decided yet. For planning purposes,
+travel costs may be estimated based on the previously hosted 2-day workshops listed on the NCPI Public
+Website ([https://anvilproject.org/ncpi/progress-updates](/ncpi/progress-updates)). We are anticipating the next NCPI
+Workshop to be in the mid to late Fall of 2023. The location is tentatively Washington, DC, but you should estimate
+costs for East Coast, USA.
+
+#### FAQ34 (new 05/03/2023)
+
+*Question*: Where should citations/references be included? Should that be considered within the 10-pages limit for the
+narrative?\
+*Answer*: So as not to impose on the 10-page limit for the proposal narrative, citations may be placed in an Appendix.
+They may also be included in the proposal narrative, as either a separate section, or footnote, page limit permitting.
 
