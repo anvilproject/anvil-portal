@@ -22,6 +22,9 @@ In the demos, presenters will highlight anything from a capability of the platfo
 After the demo, we’ll open up the floor to answer any questions about the demo and to answer any other questions you might have about AnVIL.
 
 ### What’s in this Demo?
+
+`video: https://youtu.be/0PRCFkLZOeo`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
 Researchers from the Human Pangenome Reference Consortium will describe their work on the Human Pangenome and show how to leverage it for your analysis on AnVIL.
