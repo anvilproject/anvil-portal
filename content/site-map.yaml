@@ -596,7 +596,7 @@
               pathOverride: "/news/2019/12/05/dockstore-training"
 ## Privacy
 - menuItem: "Privacy"
-  pageTitle: "Privacy"
+  pageTitle: ""
   pathPartial: "/privacy"
   tabs:
     - name: ""
@@ -633,7 +633,7 @@
           file: "/team/oversight-committee"
 ## Terms of Service
 - menuItem: "Terms of Service"
-  pageTitle: "Terms of Service"
+  pageTitle: ""
   pathPartial: "/tos"
   tabs:
     - name: ""
