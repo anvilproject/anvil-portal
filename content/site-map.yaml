@@ -631,6 +631,17 @@
           file: "/team/working-groups"
         - name: "Oversight Committee"
           file: "/team/oversight-committee"
+## Terms of Service
+- menuItem: "Terms of Service"
+  pageTitle: "Terms of Service"
+  pathPartial: "/tos"
+  tabs:
+    - name: ""
+      pathPartial: ""
+      navigationItems:
+        - name: ""
+          file: "/tos/anvil-explorer-tos"
+          pathOverride: "/anvil-explorer-tos"
 ## -----------
 ## Z Documents
 - menuItem: "Typography Test"
