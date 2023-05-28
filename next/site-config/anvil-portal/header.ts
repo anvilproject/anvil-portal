@@ -4,8 +4,10 @@ import { SOCIAL } from "@clevercanary/data-explorer-ui/lib/components/common/Soc
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 
 const BROWSER_URL = "https://anvil-portal.dev.clevercanary.com";
+const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 const header: HeaderProps = {
-  logo: { alt: "", link: "", src: logoAnvil, height: 40 },
+  authenticationEnabled: false,
+  logo: { alt: SLOGAN, link: BROWSER_URL, src: logoAnvil, height: 40 },
   navAlignment: ELEMENT_ALIGNMENT.CENTER,
   navLinks: [
     {
@@ -18,11 +20,11 @@ const header: HeaderProps = {
     },
     {
       label: "Datasets",
-      url: "/datasets",
+      url: "/",
     },
     {
       label: "Consortia",
-      url: "",
+      url: "/consortia",
     },
     {
       label: "News",
@@ -51,6 +53,9 @@ const header: HeaderProps = {
       url: "",
     },
   ],
+  searchEnabled: true,
+  searchURL: `${BROWSER_URL}/search`,
+  slogan: SLOGAN,
   socials: [
     {
       ...SOCIAL.DISCOURSE,
@@ -73,8 +78,6 @@ const header: HeaderProps = {
       url: "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
     },
   ],
-  searchEnabled: true,
-  slogan: "NHGRI Analysis Visualization and Informatics Lab-space",
 };
 
 export default header;
