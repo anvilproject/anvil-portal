@@ -2,8 +2,8 @@ import { HeaderProps } from "@clevercanary/data-explorer-ui/lib/components/Layou
 import logoAnvil from "../../images/logoAnvil.png";
 import { SOCIAL } from "@clevercanary/data-explorer-ui/lib/components/common/Socials/socials";
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
+import { BROWSER_URL } from "./constants";
 
-const BROWSER_URL = "https://anvil-portal.dev.clevercanary.com";
 const header: HeaderProps = {
   logo: { alt: "", link: "", src: logoAnvil, height: 40 },
   navAlignment: ELEMENT_ALIGNMENT.CENTER,
