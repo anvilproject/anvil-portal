@@ -43,6 +43,10 @@ const header: HeaderProps = {
           label: "FAQ",
           url: `${BROWSER_URL}/faq`,
         },
+        {
+          label: "Help",
+          url: `${BROWSER_URL}/help`,
+        },
       ],
       url: "",
     },
@@ -63,6 +67,10 @@ const header: HeaderProps = {
     {
       ...SOCIAL.GITHUB,
       url: "https://github.com/anvilproject",
+    },
+    {
+      ...SOCIAL.SLACK,
+      url: "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
     },
   ],
   searchEnabled: true,
