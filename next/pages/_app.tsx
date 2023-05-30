@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppLayout>
-        <Header {...layout.header} />
+          <Header {...layout.header} />
           <Main>
             <ContentLayout content={<Component {...pageProps} />} />
           </Main>
