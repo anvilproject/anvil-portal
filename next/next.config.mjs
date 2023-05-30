@@ -1,6 +1,7 @@
 import nextMDX from "@next/mdx";
 import withPlugins from "next-compose-plugins";
 import withOptimizedImages from "next-optimized-images";
+import withTM from "next-transpile-modules";
 import path from "path";
 
 const withMDX = nextMDX({
@@ -23,6 +24,9 @@ export default withPlugins(
         pageExtensions: ["md", "mdx", "ts", "tsx"],
       },
     ],
+    [
+      withTM(["echarts", "zrender"])
+    ]
   ],
   {
     reactStrictMode: true,
