@@ -1,5 +1,5 @@
 import { HeaderProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
-import logoAnvil from "../../images/logoAnvil.png";
+import logoAnvil from "images/logoAnvil.png";
 import { SOCIAL } from "@clevercanary/data-explorer-ui/lib/components/common/Socials/socials";
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 
