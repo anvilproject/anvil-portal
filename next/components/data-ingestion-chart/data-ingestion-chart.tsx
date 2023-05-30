@@ -18,6 +18,7 @@ import {
 import { CanvasRenderer } from "echarts/renderers";
 
 import { startYear, monthDataByConsortium } from "./chart-data";
+import { Box } from "@mui/material";
 
 echarts.use([
   GridComponent,
@@ -251,12 +252,14 @@ const DataIngestionChart: FC = (): JSX.Element => {
     return () => zr?.handler && zr.off("mousemove", handleMouse);
   });
   return (
-    <ReactEChartsCore
-      ref={chart}
-      echarts={echarts}
-      option={getChartOptions(hoverIndex)}
-      style={{ height: "400px" }}
-    />
+    <Box my={10}>
+      <ReactEChartsCore
+        ref={chart}
+        echarts={echarts}
+        option={getChartOptions(hoverIndex)}
+        style={{ height: "400px" }}
+      />
+    </Box>
   );
 };
 

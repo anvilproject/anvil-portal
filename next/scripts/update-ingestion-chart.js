@@ -3,7 +3,7 @@ const fsPromises = require("fs/promises");
 const { promisify } = require("util");
 const parseCsv = promisify(require("csv-parse").parse);
 
-const chartDataPath = "../pages/components/data-ingestion-chart/chart-data.js";
+const chartDataPath = "../components/data-ingestion-chart/chart-data.js";
 const { startYear, endDateNum: oldEndDateNum, monthDataByConsortium: oldMonthData } = require(chartDataPath);
 
 const workspaceFilesPath = "./workspace-files";
