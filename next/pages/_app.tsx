@@ -8,6 +8,7 @@ import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/compo
 import { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import config from "../site-config/anvil-portal/config";
+import { Footer } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { themeOptions, layout } = config;
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Main>
             <ContentLayout content={<Component {...pageProps} />} />
           </Main>
+          <Footer {...layout.footer} />
         </AppLayout>
       </ThemeProvider>
     </EmotionThemeProvider>
