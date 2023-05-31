@@ -1,10 +1,9 @@
 import { FooterProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
-import { SOCIAL } from "@clevercanary/data-explorer-ui/lib/components/common/Socials/socials";
-import logoHhs from "../../images/logoHhs.svg";
-import logoNhgri from "../../images/logoNhgri.svg";
-import logoNih from "../../images/logoNih.svg";
-import logoUsagov from "../../images/logoUsagov.png";
-import { BROWSER_URL } from "./constants";
+import logoHhs from "images/logoHhs.svg";
+import logoNhgri from "images/logoNhgri.svg";
+import logoNih from "images/logoNih.svg";
+import logoUsagov from "images/logoUsagov.png";
+import { BROWSER_URL, socials } from "./constants";
 
 const footer: FooterProps = {
   logos: [
@@ -43,28 +42,7 @@ const footer: FooterProps = {
       url: `${BROWSER_URL}/privacy`,
     },
   ],
-  socials: [
-    {
-      ...SOCIAL.DISCOURSE,
-      url: "https://help.anvilproject.org/",
-    },
-    {
-      ...SOCIAL.TWITTER,
-      url: "https://twitter.com/useAnVIL",
-    },
-    {
-      ...SOCIAL.YOUTUBE,
-      url: "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
-    },
-    {
-      ...SOCIAL.GITHUB,
-      url: "https://github.com/anvilproject",
-    },
-    {
-      ...SOCIAL.SLACK,
-      url: "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
-    },
-  ],
+  socials,
 };
 
 export default footer;
