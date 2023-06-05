@@ -1,12 +1,4 @@
-/*
- * The AnVIL
- * https://www.anvilproject.org
- *
- * The AnVIL - data ingestion chart component.
- */
-
 import React, { FC, useEffect, useRef } from "react";
-
 import ReactEChartsCore from "echarts-for-react/lib/core";
 import * as echarts from "echarts/core";
 import { LineChart } from "echarts/charts";
@@ -16,9 +8,10 @@ import {
   GridComponent,
 } from "echarts/components";
 import { CanvasRenderer } from "echarts/renderers";
-
+import { CardSection } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
+import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { startYear, monthDataByConsortium } from "./chart-data";
-import { Box } from "@mui/material";
+import { Card } from "./dataIngestionChart.styles";
 
 echarts.use([
   GridComponent,
@@ -188,7 +181,7 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
     xAxis: {
       name: "Time",
       nameLocation: "center",
-      nameGap: 35,
+      nameGap: 32,
       type: "category",
       boundaryGap: false,
       data: monthNames,
@@ -204,7 +197,7 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
     yAxis: {
       name: "Size (TB)",
       nameLocation: "center",
-      nameGap: 53,
+      nameGap: 48,
     },
     tooltip: {
       trigger: "axis",
@@ -252,14 +245,16 @@ const DataIngestionChart: FC = (): JSX.Element => {
     return () => zr?.handler && zr.off("mousemove", handleMouse);
   });
   return (
-    <Box my={10}>
-      <ReactEChartsCore
-        ref={chart}
-        echarts={echarts}
-        option={getChartOptions(hoverIndex)}
-        style={{ height: "400px" }}
-      />
-    </Box>
+    <Card component={RoundedPaper}>
+      <CardSection>
+        <ReactEChartsCore
+          ref={chart}
+          echarts={echarts}
+          option={getChartOptions(hoverIndex)}
+          style={{ height: "400px" }}
+        />
+      </CardSection>
+    </Card>
   );
 };
 
