@@ -3,7 +3,7 @@ import {
   Social,
 } from "@clevercanary/data-explorer-ui/lib/components/common/Socials/socials";
 
-export const BROWSER_URL = "https://anvil-portal.dev.clevercanary.com";
+export const BROWSER_URL = "https://anvilproject.dev.clevercanary.com";
 export const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 
 export const socials: Social[] = [
