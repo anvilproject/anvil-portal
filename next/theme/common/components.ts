@@ -1,10 +1,23 @@
-import { Components, Theme } from "@mui/material";
 import {
   TEXT_BODY_400_2_LINES,
   TEXT_HEADING,
   TEXT_HEADING_LARGE,
   TEXT_HEADING_SMALL,
 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { Components, Theme } from "@mui/material";
+
+/**
+ * MuiBreadcrumbs Component
+ * @param theme - Theme.
+ * @returns MuiBreadcrumbs component theme styles.
+ */
+export const MuiBreadcrumbs: Components["MuiBreadcrumbs"] = {
+  styleOverrides: {
+    root: {
+      marginBottom: 8,
+    },
+  },
+};
 
 /**
  * MuiCssBaseline Component
@@ -14,6 +27,11 @@ import {
 export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
   return {
     styleOverrides: {
+      img: {
+        margin: "16px 0",
+        maxWidth: "100%",
+        width: "auto",
+      },
       h1: {
         ...theme.typography[TEXT_HEADING_LARGE],
         margin: "0 0 8px",

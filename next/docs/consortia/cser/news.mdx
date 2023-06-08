@@ -1,0 +1,20 @@
+---
+layoutStyle: "DEFAULT"
+---
+
+import { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
+import { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/grid";
+import { BreadcrumbsCSER } from "../../../components/Breadcrumbs/components/BreadcrumbsCSER/breadcrumbsCSER";
+
+<BreadcrumbsCSER lastCrumb="News" />
+
+# News and Updates
+
+<Grid gridSx={{ gap: 4, mt: 4 }}>
+  <Card cardUrl={"/consortia/cser/news/cser-at-the-acmg-2022-meeting"} secondaryText="22 March 2022"
+        text="Far into the research process, CSER has much to share at the ACMG 2022 meeting over Mar 22-26 2022!"
+        title="CSER at the ACMG 2022 Meeting!" />
+  <Card secondaryText="18 October 2021"
+        text="Come check out a number of high-impact CSER work at the ASHG 2021 Annual Meeting!"
+        title="CSER Highlights @ ASHG 2021 Annual Meeting" />
+</Grid>
