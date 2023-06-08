@@ -1,0 +1,34 @@
+import logoCSER from "public/consortia/cser/images/logoCSER.png";
+import { NavigationConfig } from "../../docs/common/entities";
+
+// Site map for the MDX pages used to generate the navigation.
+export const navigation: NavigationConfig = {
+  consortia: {
+    nodes: [
+      {
+        key: "cser",
+        hero: {
+          byline: "Active August, 2020 to July, 2023",
+          logo: {
+            alt: "CSER",
+            height: 40,
+            src: logoCSER,
+          },
+          slogan: "Clinical Sequencing Evidence-Generating Research",
+        },
+        navigation: [
+          { label: "About", url: "/consortia/cser" },
+          { label: "News", url: "/consortia/cser/news" },
+          { label: "Projects", url: "/consortia/cser/projects" },
+          { label: "Publications", url: "/consortia/cser/publications" },
+          { label: "Resources", url: "/consortia/cser/resources" },
+          {
+            label: "Research Materials",
+            url: "/consortia/cser/research-materials",
+          },
+        ],
+        slugs: ["cser"],
+      },
+    ],
+  },
+};

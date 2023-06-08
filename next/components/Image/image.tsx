@@ -1,4 +1,3 @@
-import React from "react";
 import {
   StaticImage,
   StaticImageProps,
@@ -10,15 +9,12 @@ export interface ImageProps extends StaticImageProps {
 }
 
 export const Image = ({
-  alt,
   caption,
-  height,
-  src,
-  width,
+  ...props /* Spread props to allow for StaticImage specific props StaticImageProps e.g. "height". */
 }: ImageProps): JSX.Element => {
   return (
     <ImageWithCaption>
-      <StaticImage alt={alt} height={height} src={src} width={width} />
+      <StaticImage {...props} />
       {caption && <Caption>{caption}</Caption>}
     </ImageWithCaption>
   );
