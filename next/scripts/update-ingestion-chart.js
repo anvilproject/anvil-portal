@@ -12,7 +12,7 @@ const {
 } = require(chartDataPath);
 
 const workspaceFilesPath = "./workspace-files";
-const workspacesInfoPath = "../../plugins/utils/dashboard-source-anvil.tsv";
+const workspacesInfoPath = "./files/dashboard-source-anvil_2023-03-27.tsv";
 const newDataMinTime = oldEndDateNum + 1;
 
 generateChartData()
@@ -28,7 +28,7 @@ async function generateChartData() {
     await fsPromises.access(workspaceFilesPath);
   } catch (e) {
     console.log(
-      "Folder /scripts/" +
+      "Folder scripts/" +
         workspaceFilesPath.replace(/^.\//, "") +
         " needs to be added"
     );
