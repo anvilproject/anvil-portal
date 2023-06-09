@@ -2,17 +2,18 @@ import { Breadcrumbs } from "@clevercanary/data-explorer-ui/lib/components/commo
 import { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
 import { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/grid";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
 import { Image } from "../../components/common/Image/image";
 import { Subheader } from "../../components/common/Typography/components/Subheader/subheader";
 import { BreadcrumbsCSER } from "../../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsCSER/breadcrumbsCSER";
 import { BreadcrumbsNews } from "../../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsNews/breadcrumbsNews";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { Publications } from "../../components/Consortia/CSER/components/Publications/publications";
+import { ResearchMaterials } from "../../components/Consortia/CSER/components/ResearchMaterials/researchMaterials";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
 export const MDX_COMPONENTS = {
-  Publications,
   Breadcrumbs,
   BreadcrumbsCSER,
   BreadcrumbsNews,
@@ -20,6 +21,9 @@ export const MDX_COMPONENTS = {
   DataIngestionChart,
   Grid,
   Image,
+  Link,
+  Publications,
+  ResearchMaterials,
   Subheader,
 };
 
