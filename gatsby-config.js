@@ -102,7 +102,6 @@ module.exports = {
                 "button-link",
                 "dashboard-anvil",
                 "dashboard-ncpi",
-                "data-ingestion-chart",
                 "event-hero",
                 "events",
                 "external-link",
