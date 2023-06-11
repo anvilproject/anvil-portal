@@ -18,7 +18,13 @@ export interface MaterialsMinorSection {
 export interface MaterialsFile {
   label: string;
   name: string;
+  url: string;
 }
+
+const categoryFileUrlPrefixes = {
+  [MaterialsCategory.RESEARCH_MATERIALS]: "/consortia/cser/research-materials/",
+  [MaterialsCategory.RESOURCES]: "/consortia/cser/resources/",
+};
 
 const categoryRegExps = {
   [MaterialsCategory.RESEARCH_MATERIALS]: /\/research-material\/([^\/]+)$/,
@@ -48,6 +54,7 @@ export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
           files.push({
             label: fileLabel,
             name: match[1],
+            url: categoryFileUrlPrefixes[category] + match[1],
           });
         }
       }
