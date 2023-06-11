@@ -10,6 +10,7 @@ import { BreadcrumbsNews } from "../../components/Consortia/CSER/components/Brea
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { Publications } from "../../components/Consortia/CSER/components/Publications/publications";
 import { ResearchMaterials } from "../../components/Consortia/CSER/components/ResearchMaterials/researchMaterials";
+import { Resources } from "../../components/Consortia/CSER/components/Resources/resources";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -24,6 +25,7 @@ export const MDX_COMPONENTS = {
   Link,
   Publications,
   ResearchMaterials,
+  Resources,
   Subheader,
 };
 
