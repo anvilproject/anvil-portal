@@ -14,8 +14,10 @@ export { Subheader } from "../components/common/Typography/components/Subheader/
 export { BreadcrumbsCSER } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsCSER/breadcrumbsCSER";
 export { BreadcrumbsNews } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsNews/breadcrumbsNews";
 export { BreadcrumbsProjects } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsProjects/breadcrumbsProjects";
+export { News } from "../components/Consortia/CSER/components/News/news";
 export { Projects } from "../components/Consortia/CSER/components/Projects/projects";
 export { Publications } from "../components/Consortia/CSER/components/Publications/publications";
 export { ResearchMaterials } from "../components/Consortia/CSER/components/ResearchMaterials/researchMaterials";
 export { Resources } from "../components/Consortia/CSER/components/Resources/resources";
 export { Figure } from "./common/Figure/figure";
+export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";

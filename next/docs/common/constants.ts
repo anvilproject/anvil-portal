@@ -15,6 +15,8 @@ export const MDX_COMPONENTS = {
   Grid: C.Grid,
   Image: C.StaticImage,
   Link: C.Link,
+  News: C.News,
+  NBS: C.NBS, // non-breaking space typography component
   Projects: C.Projects,
   Publications: C.Publications,
   ResearchMaterials: C.ResearchMaterials,

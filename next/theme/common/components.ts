@@ -51,6 +51,9 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         margin: 0,
         paddingLeft: 24,
       },
+      "ul + p": {
+        marginTop: 16,
+      },
       li: {
         margin: "8px 0",
         // eslint-disable-next-line sort-keys -- disabling key order for readability
