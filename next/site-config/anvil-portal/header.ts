@@ -1,11 +1,11 @@
+import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 import { HeaderProps } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import logoAnvil from "images/logoAnvil.png";
-import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
 import { BROWSER_URL, SLOGAN, socials } from "./constants";
 
 const header: HeaderProps = {
   authenticationEnabled: false,
-  logo: { alt: SLOGAN, link: BROWSER_URL, src: logoAnvil, height: 40 },
+  logo: { alt: "The AnVIL", link: BROWSER_URL, src: logoAnvil, height: 40 },
   navAlignment: ELEMENT_ALIGNMENT.CENTER,
   navLinks: [
     {
