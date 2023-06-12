@@ -22,6 +22,7 @@ export const MDX_COMPONENTS = {
   ResearchMaterials: C.ResearchMaterials,
   Resources: C.Resources,
   Subheader: C.Subheader,
+  TextBodyLarge500: C.TextBodyLarge500,
 };
 
 export const MDX_SCOPE = {

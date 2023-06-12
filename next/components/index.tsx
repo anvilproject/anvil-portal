@@ -21,3 +21,4 @@ export { ResearchMaterials } from "../components/Consortia/CSER/components/Resea
 export { Resources } from "../components/Consortia/CSER/components/Resources/resources";
 export { Figure } from "./common/Figure/figure";
 export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";
+export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge500/textBodyLarge500";
