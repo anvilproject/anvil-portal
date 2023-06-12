@@ -30,7 +30,6 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
       img: {
         margin: "16px 0",
         maxWidth: "100%",
-        width: "auto",
       },
       h1: {
         ...theme.typography[TEXT_HEADING_LARGE],
