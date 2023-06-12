@@ -1,13 +1,10 @@
 import "@clevercanary/data-explorer-ui";
-import type { AppProps } from "next/app";
 import { createAppTheme } from "@clevercanary/data-explorer-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
-import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-import { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
-import { Footer } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
-import { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
-import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main.styles";
+import { ThemeProvider } from "@mui/material/styles";
+import type { AppProps } from "next/app";
+import { AppLayout, Footer, Header, Main } from "../components";
 import config from "../site-config/anvil-portal/config";
 import { mergeAppTheme } from "../theme/theme";
 

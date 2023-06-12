@@ -1,16 +1,12 @@
 import { LAYOUT_STYLE } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
-import { NavBarHero } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/components/NavBarHero/navBarHero";
-import {
-  Nav,
-  NavItem,
-} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
-import { ContentView } from "@clevercanary/data-explorer-ui/lib/views/ContentView/contentView";
+import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import pathTool from "path";
+import { ContentView, Nav, NavBarHero } from "../components";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
 import { Frontmatter, NodeHero } from "../docs/common/entities";
 import {
