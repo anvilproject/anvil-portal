@@ -29,6 +29,7 @@ export const Publications = (): JSX.Element => {
               )
               .map((publication) => {
                 const doiUrl = `https://doi.org/${publication.doi}`;
+                const pubMedUrl =  `https://pubmed.ncbi.nlm.nih.gov/${publication.pmid}/`
                 return (
                   <Card
                     key={publication.pmid}
@@ -36,6 +37,8 @@ export const Publications = (): JSX.Element => {
                       <span>
                         {`${publication.authors} (${publication.publicationYear}). ${publication.journalOrBook}. `}
                         <Link label={doiUrl} url={doiUrl} />
+                        {". PMID: "}
+                        <Link label={publication.pmid} url={pubMedUrl} />
                         {"."}
                       </span>
                     }
