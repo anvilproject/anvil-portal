@@ -185,16 +185,6 @@
             "Decliner Survey": "https://cser-consortium.org/system/files/research-material/parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"
         }
     },
-    "CSER Phase 2 Validation Templates": {
-        "null": {
-            "Patient Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_04.08.2016.pdf",
-            "Patient Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_form_spanish_04-08-2016.pdf",
-            "Physician Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_physician_consent_04.08.2016.pdf",
-            "Parent Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_parent_consent_04.08.2016.pdf",
-            "Parent Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_parental_consent_form_spanish_04-08-2016.pdf",
-            "Age of Majority Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_age_of_majority_consent_form_november_2014.pdf"
-        }
-    },
     "CSER Phase 1 Participant Consent Forms": {
         "Baylor College of Medicine": {
             "Patient Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_04.08.2016.pdf",
