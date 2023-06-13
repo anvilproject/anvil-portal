@@ -20,8 +20,8 @@ export const Publications = (): JSX.Element => {
       {Object.keys(publicationsByYear)
         .sort()
         .reverse()
-        .map((year) => (
-          <Accordion key={year} title={year}>
+        .map((year, i) => (
+          <Accordion key={year} expanded={i === 0} title={year}>
             {publicationsByYear[year]
               .sort(
                 (a, b) =>
