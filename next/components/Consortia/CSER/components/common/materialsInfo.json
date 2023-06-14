@@ -173,16 +173,16 @@
             "Provider Return of Results Follow-up #2": {"category": "RESOURCES", "fileName": "provider_rorfu2_v1.2_cser_provider_measures_harmonization.docx"}
         },
         "Spanish Adult Measures": {
-            "Baseline Measures": {"category": "RESEARCH_MATERIALS", "fileName": "adult_baseline_spanish_v1.5.1_-_cser_adult_patient_measures_harmonization_0.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESEARCH_MATERIALS", "fileName": "adult_rorfu1_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESEARCH_MATERIALS", "fileName": "adult_rorfu2_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
-            "Decliner Survey": {"category": "RESEARCH_MATERIALS", "fileName": "adult_decliner_spanish_-_cser_adult_patient_measures_harmonization.docx"}
+            "Baseline Measures": {"category": "RESOURCES", "fileName": "adult_baseline_spanish_v1.5.1_-_cser_adult_patient_measures_harmonization_0.docx"},
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu1_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu2_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
+            "Decliner Survey": {"category": "RESOURCES", "fileName": "adult_decliner_spanish_-_cser_adult_patient_measures_harmonization.docx"}
         },
         "Spanish parental Measures": {
-            "Baseline Measures": {"category": "RESEARCH_MATERIALS", "fileName": "parent_baseline_spanish_v1.5.1_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESEARCH_MATERIALS", "fileName": "parent_rorfu1_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESEARCH_MATERIALS", "fileName": "parent_rorfu2_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
-            "Decliner Survey": {"category": "RESEARCH_MATERIALS", "fileName": "parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"}
+            "Baseline Measures": {"category": "RESOURCES", "fileName": "parent_baseline_spanish_v1.5.1_-_cser_parental_patient_measures_harmonization.docx"},
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu1_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu2_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
+            "Decliner Survey": {"category": "RESOURCES", "fileName": "parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"}
         }
     },
     "CSER Phase 1 Participant Consent Forms": {
