@@ -1,0 +1,374 @@
+{
+    "CSER Phase 2 Consent Forms": {
+        "CHARM": {
+            "CHARM Consent Form - Webpages": "https://cser-consortium.org/system/files/research-material/charm_consent_form_-_webpages.pdf",
+            "CHARM Consent Form Spanish - Webpages": "https://cser-consortium.org/system/files/research-material/charm_consent_form_spanish_-_webpages.pdf"
+        },
+        "KidsCanSeq": {
+            "KidsCanSeq Age of Majority Consent Form - Germline and Tumor": "https://cser-consortium.org/system/files/research-material/kidscanseq_aom_consent_form_germline_and_tumor_11.9.2020.pdf",
+            "KidsCanSeq Age of Majority Consent Form - Germline ONLY": "https://cser-consortium.org/system/files/research-material/kidscanseq_aom_consent_form_germline_only_11.9.2020.pdf",
+            "KidsCanSeq Parent Consent Form": "https://cser-consortium.org/system/files/research-material/kidscanseq_parent_consent_form_11.9.2020.pdf",
+            "KidsCanSeq Patient Consent Form - Germline and Tumor": "https://cser-consortium.org/system/files/research-material/kidscanseq_patient_consent_form_germline_and_tumor_11.9.2020.pdf",
+            "KidsCanSeq Patient Consent Form - Germline ONLY": "https://cser-consortium.org/system/files/research-material/kidscanseq_patient_consent_form_germline_only_11.9.2020.pdf",
+            "KidsCanSeq Physician Consent": "https://cser-consortium.org/system/files/research-material/kidscanseq_physician_consent_11.9.2020.pdf",
+            "KidsCanSeq Spanish Age of Majority Germline and Tumor Consent Form": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_aom_germline_and_tumor_consent_11.9.2020.pdf",
+            "KidsCanSeq Spanish Age of Majority Germline ONLY Consent Form": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_aom_germline_only_consent_11.9.2020.pdf",
+            "KidsCanSeq Spanish Parent Consent Form": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_parent_consent_11.9.2020.pdf",
+            "KidsCanSeq Spanish Patient Consent Form - Germline and Tumor": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_patient_germline_and_tumor_consent_11.9.2020.pdf",
+            "KidsCanSeq Spanish Patient Consent Form - Germline ONLY": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_patient_germline_only_consent_11.9.2020.pdf"
+        },
+        "NCGENES 2": {
+            "Assent to Participate in a Research Study (Child Subjects ages 15-17)": "https://cser-consortium.org/system/files/research-material/ncgenes_2_15-17_assent_form_1_randomization_to_research_gs_2018_11_28.docx",
+            "Assent to Participate in a Research Study (Child Subjects ages 7-14)": "https://cser-consortium.org/system/files/research-material/ncgenes_2_7-14_assent_form_1_randomization_to_research_gs_2018_11_28.docx",
+            "Assent to Research Genomic Sequencing (Child Subjects ages 15-17)": "https://cser-consortium.org/system/files/research-material/ncgenes_2_15-17_assent_form_2_research_gc_2019_10_30.docx",
+            "Assent to Research Genomic Sequencing (Child Subjects ages 7-14)": "https://cser-consortium.org/system/files/research-material/ncgenes_2_7-14_assent_form_2_research_gs_2018_11_28.docx",
+            "Consent to Participate in a Research Study": "https://cser-consortium.org/system/files/research-material/ncgenes_2_consent_form_1_randomization_to_research_gs_2018_11_28.docx",
+            "Consent to Research Genomic Sequencing": "https://cser-consortium.org/system/files/research-material/ncgenes_2_consent_form_2_research_gs_2019_10_30.docx"
+        },
+        "NYCKidSeq": {
+            "NYCKidSeq Assent": "https://cser-consortium.org/system/files/research-material/nyckidseq_assent.pdf",
+            "NYCKidSeq Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_cognitively_intact_18-21_year_old_icf.pdf",
+            "NYCKidSeq Parent of 0-17 Year Old Child ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_parent_of_0-17_year_old_child_icf.pdf",
+            "NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf",
+            "NYCKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf",
+            "NYCKidSeq Parental Baseline Survey ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_parental_baseline_survey_icf.pdf",
+            "NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": "https://cser-consortium.org/system/files/research-material/nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf",
+            "SPANISH NYCKidSeq Assent": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_assent.pdf",
+            "SPANISH NYCKidSeq Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_cognitively_intact_18-21_year_old_icf.pdf",
+            "SPANISH NYCKidSeq Parent of 0-17 Year Old Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_parent_of_0-17_year_old_child_icf.pdf",
+            "SPANISH NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf",
+            "SPANISH NYCKidSeq Parent of Cognitively Intact 18-21 Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_parent_of_cognitively_intact_18-21_child_icf.pdf",
+            "SPANISH NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf",
+            "SPANISH Parental Baseline Survey ICF": "https://cser-consortium.org/system/files/research-material/spanish_parental_baseline_survey_icf.pdf",
+            "SPANISH TeleKidSeq Assent": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_assent.pdf",
+            "SPANISH TeleKidSeq Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_cognitively_intact_18-21_year_old_icf.pdf",
+            "SPANISH TeleKidSeq Parent of 0-17 Year Old Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_parent_of_0-17_year_old_child_icf.pdf",
+            "SPANISH TeleKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf",
+            "SPANISH TeleKidSeq Parent of Cognitively Intact 18-21 Child ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_parent_of_cognitively_intact_18-21_child_icf.pdf",
+            "SPANISH TeleKidSeq Parental Baseline Survey ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_parental_baseline_survey_icf.pdf",
+            "SPANISH TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf",
+            "TeleKidSeq Assent": "https://cser-consortium.org/system/files/research-material/telekidseq_assent.pdf",
+            "TeleKidSeq Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_cognitively_intact_18-21_year_old_icf.pdf",
+            "TeleKidSeq Parent of 0-17 Year Old Child ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_parent_of_0-17_year_old_child_icf.pdf",
+            "TeleKidSeq Parent of Cognitively Incapacitated 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_parent_of_cognitively_incapacitated_18-21_year_old_icf.pdf",
+            "TeleKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf",
+            "TeleKidSeq Parental Baseline Survey ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_parental_baseline_survey_icf.pdf",
+            "TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": "https://cser-consortium.org/system/files/research-material/telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf_0.pdf"
+        },
+        "P3EGS": {
+            "P3EGS Adult Consent Form": "https://cser-consortium.org/system/files/research-material/p3egs_adult_consent_form.pdf",
+            "P3EGS Guardian Consent": "https://cser-consortium.org/system/files/research-material/p3egs_guardian_consent.pdf",
+            "P3EGS Maternal Consent": "https://cser-consortium.org/system/files/research-material/p3egs_maternal_consent.pdf",
+            "P3EGS Parental Consent": "https://cser-consortium.org/system/files/research-material/p3egs_parental_consent.pdf"
+        },
+        "SouthSeq": {
+            "Consent Form - CHNOLA": "https://cser-consortium.org/system/files/research-material/consent.chnola.clean_.200831.pdf",
+            "Consent Form - CHNOLA (Spanish)": "https://cser-consortium.org/system/files/research-material/stamped_consentspanish.ummc_.clean_.201020.pdf",
+            "Consent Form - UAB": "https://cser-consortium.org/system/files/research-material/consent.uab_.clean_.200831.pdf",
+            "Consent Form - UAB (Spanish)": "https://cser-consortium.org/system/files/research-material/stamped_consentspanish.uab_.clean_.201020.pdf",
+            "Consent Form - UMMC": "https://cser-consortium.org/system/files/research-material/consent.ummc_.clean_.200831.pdf",
+            "Consent Form - UMMC (Spanish)": "https://cser-consortium.org/system/files/research-material/stamped_consentspanish.ummc_.clean_.201020.pdf",
+            "Consent Form - University of Lousiville": "https://cser-consortium.org/system/files/research-material/consent.uofl_.clean_.200831.pdf",
+            "Consent Form - University of Lousiville (Spanish)": "https://cser-consortium.org/system/files/research-material/stamped_consentspanish.uofl_.clean_.201020.pdf",
+            "Consent Form - Woman's Hospital, Baton Rouge, Louisiana": "https://cser-consortium.org/system/files/research-material/consent.womans.clean_.200831.pdf",
+            "Consent Form - Woman's Hospital, Baton Rouge, Louisiana (Spanish)": "https://cser-consortium.org/system/files/research-material/stamped_consentspanish.womans.clean_.201020.pdf"
+        }
+    },
+    "CSER Phase 2 Protocols and Research Materials": {
+        "CHARM": {
+            "CHARM Study Protocol": "https://cser-consortium.org/system/files/research-material/charm_protocol.pdf"
+        },
+        "KidsCanSeq": {
+            "Age of Majority Lost to Follow Up Certified Letter": "https://cser-consortium.org/system/files/research-material/aom_lost_to_follow_up_certified_letter_english_final.pdf",
+            "AOM Lost to Follow Up Certified Letter - Spanish": "https://cser-consortium.org/system/files/research-material/kidcanseq_aom_lost_to_follow_up_certified_letter_spanish_final.pdf",
+            "KidsCanSeq Lost to Follow-up Certified Letter (English)": "https://cser-consortium.org/system/files/research-material/kidscanseq_lost_to_follow_up_certified_letter_english.pdf",
+            "KidsCanSeq Lost to Follow-up Certified Letter (Spanish)": "https://cser-consortium.org/system/files/research-material/kidscanseq_lost_to_follow_up_certified_letter_spanish.pdf",
+            "KidsCanSeq Study Protocol": "https://cser-consortium.org/system/files/research-material/kidscanseq_protocol_october_2020_renewal_clean.pdf"
+        },
+        "NCGENES 2": {
+            "Alert Protocol for Distressed Caregiver": "https://cser-consortium.org/system/files/research-material/alert_protocol_for_distressed_caregiver_2020_08_11.docx",
+            "NCGENES 2 Study Protocol": "https://cser-consortium.org/system/files/research-material/ncgenes_2_study_protocol.pdf"
+        },
+        "NYCKidSeq": {
+            "NYCKidSeq Study Protocol": "https://cser-consortium.org/system/files/research-material/nyckidseq_study_protocol.pdf",
+            "TeleKidSeq Study Protocol": "https://cser-consortium.org/system/files/research-material/telekidseq_study_protocol_0.docx"
+        },
+        "SouthSeq": {
+            "SouthSeq Research  Protocol": "https://cser-consortium.org/system/files/research-material/southseq_protocol.pdf"
+        }
+    },
+    "CSER Phase 2 Surveys": {
+        "KidsCanSeq": {
+            "KidsCanSeq Oncologist End of Study Survey": "https://cser-consortium.org/system/files/research-material/kcs_oncologist_follow-up_survey.pdf",
+            "KidsCanSeq Oncologist Post-Disclosure Survey": "https://cser-consortium.org/system/files/research-material/kcs_oncologist_post_disclosure_survey.pdf"
+        },
+        "NYCKidSeq": {
+            "NYCKidSeq Baseline Survey": "https://cser-consortium.org/system/files/research-material/nyckidseq_baseline_survey.docx",
+            "NYCKidSeq Baseline Survey - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_baseline_survey.docx",
+            "NYCKidSeq Return of Results Follow-up Survey #1": "https://cser-consortium.org/system/files/research-material/nyckidseq_ror1_survey.docx",
+            "NYCKidSeq Return of Results Follow-up Survey #1 - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_ror1_survey.docx",
+            "NYCKidSeq Provider Return of Results Follow-up Survey #1": "https://cser-consortium.org/system/files/research-material/nyckidseq_provider_ror1_survey.docx",
+            "NYCKidSeq Return of Results Follow-up Survey #2": "https://cser-consortium.org/system/files/research-material/nyckidseq_ror2_survey.docx",
+            "NYCKidSeq Return of Results Follow-up Survey #2 - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_nyckidseq_ror2_survey.docx",
+            "TeleKidSeq Baseline Survey": "https://cser-consortium.org/system/files/research-material/telekidseq_baseline_survey.docx",
+            "TeleKidSeq Baseline Survey - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_baseline_survey.docx",
+            "TeleKidSeq Return of Results Follow-up Survey #1": "https://cser-consortium.org/system/files/research-material/telekidseq_ror1_survey.docx",
+            "TeleKidSeq Return of Results Follow-up Survey #1 - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_ror1_survey.docx",
+            "TeleKidSeq Return of Results Follow-up Survey #2": "https://cser-consortium.org/system/files/research-material/telekidseq_ror2_survey.docx",
+            "TeleKidSeq Return of Results Follow-up Survey #2 - Spanish": "https://cser-consortium.org/system/files/research-material/spanish_telekidseq_ror2_survey.docx"
+        }
+    },
+    "CSER Phase 2 Educational Materials": {
+        "CHARM": {
+            "Bilingual Glossary of Exome Sequencing Terms": "https://cser-consortium.org/system/files/research-material/bilingual_glossary_of_exome_sequencing_terms_-_6.21.19_final.pdf",
+            "Training guide for CHARM interpreters": "https://cser-consortium.org/system/files/research-material/exome_sequencing_course_for_interpreters_-_charm.pdf"
+        },
+        "KidsCanSeq": {
+            "Genetics Glossary": "https://cser-consortium.org/system/files/research-material/glossary_final_w_comments_1.10.19.pdf",
+            "Genetics Glossary (Spanish)": "https://cser-consortium.org/system/files/research-material/spanish_glossary_final_w_comments_2-5-2019_final.pdf",
+            "Germline and Tumor Results Explanation Card": "https://cser-consortium.org/system/files/research-material/kidscanseq_explanation_card_germline_and_tumor_results_12-11-2017.pdf",
+            "Germline and Tumor Results Explanation Card (Spanish)": "https://cser-consortium.org/system/files/research-material/kidscanseq_explanation_card_germline_and_tumor_results_spanish_12-11-2017.pdf",
+            "Germline Results Explanation Card": "https://cser-consortium.org/system/files/research-material/kidscanseq_explanation_card_germline_results_12-11-2017.pdf",
+            "Germline Results Explanation Card (Spanish)": "https://cser-consortium.org/system/files/research-material/kidscanseq_explanation_card_germline_results_spanish_12-11-2017.pdf",
+            "VUS Education Document": "https://cser-consortium.org/system/files/research-material/kidscanseq_vus_education_document_v3_final.pdf",
+            "VUS Education Document (Spanish)": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_vus_education_document_v3_final.pdf",
+            "QR Codes to Videos (English)": "https://cser-consortium.org/system/files/research-material/kidscanseq_video_qr_codes_english.docx",
+            "QR Codes to Videos (Spanish)": "https://cser-consortium.org/system/files/research-material/kidscanseq_spanish_qr_codes.docx"
+        },
+        "NCGENES 2": {
+            "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (English)": "https://cser-consortium.org/system/files/research-material/ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx",
+            "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (Spanish)": "https://cser-consortium.org/system/files/research-material/spanish_ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx",
+            "Resources for Distressed Participants (English)": "https://cser-consortium.org/system/files/research-material/ncggnes_resources_for_distressed_participants.docx",
+            "Resources for Distressed Participants (Spanish)": "https://cser-consortium.org/system/files/research-material/spanish_ncggnes_resources_for_distressed_participants.docx"
+        }
+    },
+    "CSER Phase 2 Results Templates": {
+        "CHARM": {
+            "CHARM Clinical Report - Exomes": "https://cser-consortium.org/system/files/research-material/charm_clinical_report_-_exomes.pdf",
+            "CHARM Clinical Report - Family Member": "https://cser-consortium.org/system/files/research-material/charm_clinical_report_-_family_members.pdf"
+        },
+        "KidsCanSeq": {
+            "No Significant Results Letter Template": "https://cser-consortium.org/system/files/research-material/nsf_results_letter_v8_master_template.pdf",
+            "No Significant Results Letter Template (Spanish)": "https://cser-consortium.org/system/files/research-material/spanish_nsf-results-letter-v8_master-template_final.pdf"
+        }
+    },
+    "CSER Phase 2 Harmonized Measures": {
+        "Adult Measures": {
+            "Baseline Measures": "https://cser-consortium.org/system/files/attachments/adult_baseline_v1.5_-_cser_adult_patient_measures_harmonization_1.docx",
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": "https://cser-consortium.org/system/files/attachments/adult_rorfu1_v1.4_-_cser_adult_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": "https://cser-consortium.org/system/files/attachments/adult_rorfu2_v1.4_-_cser_adult_patient_measures_harmonization_0.docx",
+            "Decliner Survey": "https://cser-consortium.org/system/files/attachments/adult_decliner_v1.2_-_cser_adult_patient_decliner_survey.docx"
+        },
+        "Parental Measures": {
+            "Baseline Measures": "https://cser-consortium.org/system/files/attachments/parent_baseline_v1.5_-_cser_parental_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": "https://cser-consortium.org/system/files/attachments/parent_rorfu1_v1.4_-_cser_parental_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": "https://cser-consortium.org/system/files/attachments/parent_rorfu2_v1.4.1_-_cser_parental_patient_measures_harmonization.docx",
+            "Decliner Survey": "https://cser-consortium.org/system/files/attachments/parent_decliner_v1.2_-_cser_parental_patient_decliner_survey.docx"
+        },
+        "Organizational Readiness to Change": {
+            "Health Systems Survey": "https://cser-consortium.org/system/files/attachments/health_systems_orca_v2.0.docx"
+        },
+        "Provider Measures": {
+            "Provider Return of Results Follow-up #1": "https://cser-consortium.org/system/files/attachments/provider_rorfu1_v1.2.2_cser_provider_measures_harmonization.docx",
+            "Provider Return of Results Follow-up #2": "https://cser-consortium.org/system/files/attachments/provider_rorfu2_v1.2_cser_provider_measures_harmonization.docx"
+        },
+        "Spanish Adult Measures": {
+            "Baseline Measures": "https://cser-consortium.org/system/files/research-material/adult_baseline_spanish_v1.5.1_-_cser_adult_patient_measures_harmonization_0.docx",
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": "https://cser-consortium.org/system/files/research-material/adult_rorfu1_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": "https://cser-consortium.org/system/files/research-material/adult_rorfu2_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx",
+            "Decliner Survey": "https://cser-consortium.org/system/files/research-material/adult_decliner_spanish_-_cser_adult_patient_measures_harmonization.docx"
+        },
+        "Spanish parental Measures": {
+            "Baseline Measures": "https://cser-consortium.org/system/files/research-material/parent_baseline_spanish_v1.5.1_-_cser_parental_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": "https://cser-consortium.org/system/files/research-material/parent_rorfu1_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx",
+            "Post Return of Results Follow-up #2 (5-7 months after RoR)": "https://cser-consortium.org/system/files/research-material/parent_rorfu2_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx",
+            "Decliner Survey": "https://cser-consortium.org/system/files/research-material/parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"
+        }
+    },
+    "CSER Phase 2 Validation Templates": {
+        "null": {
+            "Patient Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_04.08.2016.pdf",
+            "Patient Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_form_spanish_04-08-2016.pdf",
+            "Physician Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_physician_consent_04.08.2016.pdf",
+            "Parent Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_parent_consent_04.08.2016.pdf",
+            "Parent Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_parental_consent_form_spanish_04-08-2016.pdf",
+            "Age of Majority Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_age_of_majority_consent_form_november_2014.pdf"
+        }
+    },
+    "CSER Phase 1 Participant Consent Forms": {
+        "Baylor College of Medicine": {
+            "Patient Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_04.08.2016.pdf",
+            "Patient Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_patient_consent_form_spanish_04-08-2016.pdf",
+            "Physician Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_physician_consent_04.08.2016.pdf",
+            "Parent Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_parent_consent_04.08.2016.pdf",
+            "Parent Consent Form (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_parental_consent_form_spanish_04-08-2016.pdf",
+            "Age of Majority Consent Form": "https://cser-consortium.org/system/files/research-material/basic3_age_of_majority_consent_form_november_2014.pdf"
+        },
+        "Brigham & Women's Hospital": {
+            "Cardiologist Consent Form": "https://cser-consortium.org/system/files/research-material/bwh_cardiologist_consent_form_6.18.14.pdf",
+            "Primary Care Physician Consent Form": "https://cser-consortium.org/system/files/research-material/bwh_pcp_consent_form_6.18.14.pdf",
+            "Patient Consent Form (Cardiology)": "https://cser-consortium.org/system/files/research-material/bwh_consentform_medseq_patients_cardiology_6.18.14.pdf",
+            "Patient Consent Form (Primary Care Physician)": "https://cser-consortium.org/system/files/research-material/bwh_consentform_medseq_patients_primary_care_6.18.14.pdf"
+        },
+        "Children's Hospital of Philadelphia": {
+            "Consent Form": "https://cser-consortium.org/system/files/research-material/chop_pediseq_informed_consent_form_01-02-15.pdf"
+        },
+        "ClinSeq": {
+            "Consent Form": "https://cser-consortium.org/system/files/research-material/clinseqprimaryconsentformv2_2015.pdf"
+        },
+        "Dana-Farber Cancer Institute": {
+            "Patient Consent Form": "https://cser-consortium.org/system/files/research-material/dfci_patient_consent_03.13.15.pdf",
+            "Physician Consent Form": "https://cser-consortium.org/system/files/research-material/dfci_physician_consent_03.13.15.pdf"
+        },
+        "Kaiser Permanente": {
+            "Male Consent Form": "https://cser-consortium.org/system/files/research-material/kaiser_maleconsent_03.13.2015.pdf",
+            "Female Consent Form": "https://cser-consortium.org/system/files/research-material/kaiser_femaleconsent_03.13.2015.pdf"
+        },
+        "HudsonAlpha": {
+            "Consent Form": "https://cser-consortium.org/system/files/research-material/hudsonalpha_cser_consent.pdf"
+        },
+        "University of Michigan": {
+            "MIONCOSEQ Consent Form (June 2016)": "https://cser-consortium.org/system/files/research-material/mioncoseq_consent_form_june_2016.pdf",
+            "PEDSMIONCOSEQ Informed Consent Form": "https://cser-consortium.org/system/files/research-material/pedsmioncoseq_informed_consent.pdf"
+        },
+        "University of North Carolina": {
+            "Parental Consent for Child Relatives of an study participant to test for a specific variant": "https://cser-consortium.org/system/files/research-material/unc_ncgenes_relative_vucs_parental_consent_12_2014.pdf",
+            "Assent Form: (Ages 7-14) Relatives of an study participant to test for a specific variant": "https://cser-consortium.org/system/files/research-material/unc_ncgenes_relative_vucs_7-14_assent_12_2014.pdf",
+            "Assent Form: (Ages 15-17) Relatives of an study participant to test for a specific variant": "https://cser-consortium.org/system/files/research-material/unc_ncgenes_relative_vucs_assent_15-17_12_2014.pdf",
+            "Consent for Adult Relatives of an study participant to test for a specific variant": "https://cser-consortium.org/system/files/research-material/unc_ncgenes_relative_vucs-consent-adult_12_2014.pdf"
+        },
+        "University of Washington": {
+            "Consent Form": "https://cser-consortium.org/system/files/research-material/uw_crcp_consent_03.13.15.pdf",
+            "Endometrial Consent Form": "https://cser-consortium.org/system/files/research-material/uw_endometrial_consent_03.13.15.pdf.pdf",
+            "Consent for return of results in event of participant death": "https://cser-consortium.org/system/files/research-material/irb_approved_deceased_ror_release_agreement.pdf"
+        }
+    },
+    "CSER Phase 1 Participant Education Materials": {
+        "Baylor College of Medicine": {
+            "Study Brochure": "https://cser-consortium.org/system/files/research-material/basic3-brochure_july_6.pdf",
+            "Study Borchure (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_brochure_in_spanish_version_11-8-2012.pdf",
+            "Genetic Information Nondiscrimination Act (GINA) Document": "https://cser-consortium.org/system/files/research-material/basic3_gina_document.pdf",
+            "GINA Document (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_gina_document_spanish.pdf",
+            "Tumor Mutation Explanation Card": "https://cser-consortium.org/system/files/research-material/basic3_tumor_mutation_explanation_card_8-27-2012.pdf",
+            "Tumor Mutation Explanation Card (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_tumor_mutation_explanation_card_8-27-2012_spanish.pdf",
+            "Inherited Mutation Explanation Card": "https://cser-consortium.org/system/files/research-material/basic3_inherited_mutation_explanation_card_8-27-2012.pdf",
+            "Inherited Mutation Explanation Card (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_inherited_mutation_explanation_card_8-27-2012_spanish.pdf",
+            "X-Linked Explanation Card": "https://cser-consortium.org/system/files/research-material/basic3_approved_x-linked_explanation_card_6-20-2013.pdf",
+            "X-Linked Explanation Card (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_approved_x-linked_explanation_card_6-20-2013_spanish.pdf",
+            "Revised Carrier Status Explanation Card": "https://cser-consortium.org/system/files/research-material/basic3_revised_carrier_status_explanation_card_8-28-2012.pdf",
+            "Revised Carrier Status Explanation (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_revised_carrier_status_explanation_card_8-28-2012_spanish.pdf"
+        },
+        "ClinSeq": {
+            "Study Brochure": "https://cser-consortium.org/system/files/research-material/clinseqbrochure.pdf"
+        },
+        "Dana-Farber Cancer Institute": {
+            "Patient Information Brochure": "https://cser-consortium.org/system/files/research-material/dfci_patient_information_brochure_03.13.15.pdf"
+        },
+        "University of Michigan": {
+            "Patient FAQ": "https://cser-consortium.org/system/files/research-material/mioncoseq_faq.pdf",
+            "Patient Vignettes": "https://cser-consortium.org/system/files/research-material/mioncoseq_vignettes.pdf"
+        },
+        "University of North Carolina": {
+            "Study Brochure": "https://cser-consortium.org/system/files/research-material/unc_about_ncgenes.pdf",
+            "Incidental Information Brochure": "https://cser-consortium.org/system/files/research-material/unc_incidental_information_brochure_sept_1_mir.pdf",
+            "What can I learn from WES Brochure": "https://cser-consortium.org/system/files/research-material/unc_what_can_i_learn_from_wes.pdf"
+        },
+        "University of Washington": {
+            "Incidental Findings Choice Document": "https://cser-consortium.org/system/files/research-material/uw_if_choice_doc_03.13.15.docx"
+        }
+    },
+    "CSER Phase 1 Protocol and Research Resources": {
+        "Baylor College of Medicine": {
+            "Germline Requisition Document": "https://cser-consortium.org/system/files/research-material/basic3_germline_requisition.pdf",
+            "Study Questionnaires for Primary or Secondary parent completing for themselves": "https://cser-consortium.org/system/files/research-material/basic3_study_questionnaires_active_parent_completing_for_the_parent_july_6_0.pdf",
+            "Study Questionnaires for Primary or Secondary parent completing for themselves (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_study_questionnaires_active_parent_july_6_in_spanish.pdf",
+            "Family history questionnaire for primary parent": "https://cser-consortium.org/system/files/research-material/basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6.pdf",
+            "Family history questionnaire for primary parent (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6_in_spanish.pdf",
+            "Study questionnaire for primary parent completing for child": "https://cser-consortium.org/system/files/research-material/basic3_study_questionnaire_for_parent_completing_for_child_version_july_6.pdf",
+            "Study questionnaire for primary completing comleting for child (Spanish Version)": "https://cser-consortium.org/system/files/research-material/basic3_study_questionnaire_for_parent_completing_for_child_version_july_6_in_spanish.pdf"
+        },
+        "Brigham & Women's Hospital": {
+            "MedSeq Protocol Trials": "https://cser-consortium.org/system/files/research-material/bwh_vassy-green-medseq-protocol-trials-2014.pdf"
+        },
+        "Dana-Farber Cancer Institute": {
+            "Physician Protocol": "https://cser-consortium.org/system/files/research-material/dfci_md_protocol_09_02_15.pdf",
+            "Patient Protocol": "https://cser-consortium.org/system/files/research-material/dfci_patient_protocol_09_02_15.pdf"
+        },
+        "University of Michigan": {
+            "MIONCOSEQ Protocol": "https://cser-consortium.org/system/files/research-material/mioncoseq_protocol_amendment_june2015.pdf",
+            "PEDSMIONCOSEQ Protocol": "https://cser-consortium.org/system/files/research-material/pedsmioncoseq_clinical_protocol.pdf"
+        }
+    },
+    "CSER Phase 1 Results Report Template": {
+        "Baylor College of Medicine": {
+            "Germline Report Template": "https://cser-consortium.org/system/files/research-material/basic3_germline_report_template.pdf",
+            "Tumor Report Template": "https://cser-consortium.org/system/files/research-material/basic3_tumor_report_deid.pdf"
+        },
+        "Brigham & Women's Hospital": {
+            "Sample Genome Report": "https://cser-consortium.org/system/files/research-material/bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf"
+        },
+        "Children's Hospital of Philadelphia": {
+            "Sample Results Report Format (Positive Result)": "https://cser-consortium.org/system/files/research-material/pediseq_report_format_positive_10-28-15.pdf",
+            "Sample Results Report Format (Negative Result)": "https://cser-consortium.org/system/files/research-material/pediseq_report_format_negative_10-28-15.pdf"
+        },
+        "ClinSeq": {
+            "Primary Results ACMG Secondary Variant Findings Report Template": "https://cser-consortium.org/system/files/research-material/clinseq_secondary_variant_report.doc",
+            "Carrier Results Report Template": "https://cser-consortium.org/system/files/research-material/clinseq_carrier_report.docx"
+        },
+        "Dana-Farber Cancer Institute": {
+            "Sample Positive Report": "https://cser-consortium.org/system/files/research-material/dfci_positive_result_03.13.15.docx",
+            "Sample Negative Report": "https://cser-consortium.org/system/files/research-material/dfci_negative_result_03.13.15.docx"
+        },
+        "HudsonAlpha": {
+            "Summary Results Report Template": "https://cser-consortium.org/system/files/research-material/hudsonalpha_00051c_shoc2_summary.pdf",
+            "Detailed Results Report Template": "https://cser-consortium.org/system/files/research-material/hudsonalpha_00051c_shoc2_detailed.pdf"
+        },
+        "Kaiser Permanente": {
+            "Negative Carrier Status Report Template": "https://cser-consortium.org/system/files/research-material/negative_carrier_template_11-6-2015.docx",
+            "Positive Carrier Status Report Template": "https://cser-consortium.org/system/files/research-material/positive_carrier_template_11-6-2015.docx",
+            "Negative Whole Genome Sequencing Incidental Findings Template": "https://cser-consortium.org/system/files/research-material/negative_wgs_incidental_findings_11-6-2015.docx"
+        },
+        "University of Michigan": {
+            "MIONCOSEQ Patient Report Template": "https://cser-consortium.org/system/files/research-material/mioncoseq_example_patient_report-po_3043.pdf"
+        },
+        "University of North Carolina": {
+            "Sample WES Report": "https://cser-consortium.org/system/files/research-material/unc_ncg_wes_sample_report.pdf",
+            "Sample CLIA report": "https://cser-consortium.org/system/files/research-material/unc_ncg_clia_sample_report.pdf"
+        },
+        "University of Washington": {
+            "Report Template for Positive Incidental Finding result": "https://cser-consortium.org/system/files/research-material/uw_if_positive_result_03.15.15.doc.doc",
+            "Report Template for Negative Diagnosis Result": "https://cser-consortium.org/system/files/research-material/uw_crcp_negative_result_03.13.15.doc",
+            "Report Template for Positive Diagnosis Result": "https://cser-consortium.org/system/files/research-material/uw_crcp_positive_result_03.13.15.doc"
+        }
+    },
+    "CSER Phase 1 Description of Variant Analysis Pipeline": {
+        "Baylor College of Medicine": {
+            "Yang JAMA Journal Article": "https://cser-consortium.org/system/files/research-material/basic3_yang-jama-2014.pdf"
+        },
+        "Brigham & Women's Hospital": {
+            "McLaughlin et al Journal Article": "https://cser-consortium.org/system/files/research-material/bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf",
+            "Kong et al Journal Article": "https://cser-consortium.org/system/files/research-material/bwh_won_kong-et-al-gim-final_.pdf"
+        },
+        "University of North Carolina": {
+            "NCGenes Medical Workflow Engine Description": "https://cser-consortium.org/system/files/research-material/unc_gmw_tr_03.31.14.pdf",
+            "NCGenes Variant Database Description": "https://cser-consortium.org/system/files/research-material/unc_canvas_and_annobot_tr_03.31.14.pdf",
+            "NCGenes MapSeq Sequence Analysis Workflow Description": "https://cser-consortium.org/system/files/research-material/unc_mapseq_tr_03.31.14.pdf"
+        }
+    },
+    "CSER Phase 1 Framework for Primary and Secondary Results": {
+        "Baylor College of Medicine": {
+            "Incidental Findings": "https://cser-consortium.org/system/files/research-material/basic3_incidental_findings-baylor_2014.pdf"
+        },
+        "HudsonAlpha": {
+            "ACMG and OMIM Gene List used for Secondary Findings": "https://cser-consortium.org/system/files/research-material/hudsonealpha_secondarygenelist.doc"
+        },
+        "Kaiser Permanente": {
+            "List of Genes Conditions reported for Carrier Status": "https://cser-consortium.org/system/files/research-material/kaiser_carrierlist_03132015.xlsx",
+            "List of Genes Conditions reported for Incidental Findings": "https://cser-consortium.org/system/files/research-material/kaiser_iflist_03.13.2015.docx"
+        },
+        "University of Washington": {
+            "List of Genes Conditions reported for Incidental Findings": "https://cser-consortium.org/system/files/research-material/uw_if_list_03.13.15.docx",
+            "List of Genes Conditions reported for Carrier Status": "https://cser-consortium.org/system/files/research-material/uw_carrier_list_03.13.15.xlsx"
+        }
+    }
+}
