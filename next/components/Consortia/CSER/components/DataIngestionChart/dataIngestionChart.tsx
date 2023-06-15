@@ -1,16 +1,16 @@
-import React, { FC, useEffect, useRef } from "react";
-import ReactEChartsCore from "echarts-for-react/lib/core";
-import * as echarts from "echarts/core";
-import { LineChart } from "echarts/charts";
-import {
-  TooltipComponent,
-  LegendComponent,
-  GridComponent,
-} from "echarts/components";
-import { CanvasRenderer } from "echarts/renderers";
 import { CardSection } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { startYear, monthDataByConsortium } from "./chart-data";
+import ReactEChartsCore from "echarts-for-react/lib/core";
+import { LineChart } from "echarts/charts";
+import {
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+} from "echarts/components";
+import * as echarts from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import React, { FC, useEffect, useRef } from "react";
+import { monthDataByConsortium, startYear } from "./chart-data";
 import { Card } from "./dataIngestionChart.styles";
 
 echarts.use([

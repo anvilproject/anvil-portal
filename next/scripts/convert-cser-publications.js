@@ -3,8 +3,10 @@ const path = require("path");
 const { promisify } = require("util");
 const parseCsv = promisify(require("csv-parse").parse);
 
-const csvFilePath = "./files/CSER Publications PubMed CSV Save As - 20230523.csv";
-const jsonFilePath = "../components/Consortia/CSER/components/Publications/publications.json";
+const csvFilePath =
+  "./files/CSER Publications PubMed CSV Save As - 20230523.csv";
+const jsonFilePath =
+  "../components/Consortia/CSER/components/Publications/publications.json";
 
 const columnKeys = {
   PMID: "pmid",
@@ -25,7 +27,7 @@ convert();
 async function convert() {
   const entries = await parseCsv(await fsp.readFile(csvFilePath, "utf8"), {
     bom: true,
-    columns: names => names.map(name => columnKeys[name]),
+    columns: (names) => names.map((name) => columnKeys[name]),
     relax_quotes: true,
     rtrim: true,
   });

@@ -5,11 +5,11 @@ export enum MaterialsCategory {
   RESOURCES = "RESOURCES",
 }
 
-type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>
+type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
 
-type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>
+type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>;
 
-type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>
+type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>;
 
 interface MaterialsFileInfo {
   category: MaterialsCategory;
@@ -58,7 +58,9 @@ export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
           files.push({
             label: fileLabel,
             name: fileInfo.fileName,
-            url: categoryFileUrlPrefixes[category] + encodeURIComponent(fileInfo.fileName),
+            url:
+              categoryFileUrlPrefixes[category] +
+              encodeURIComponent(fileInfo.fileName),
           });
         }
       }

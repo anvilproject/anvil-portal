@@ -24,9 +24,7 @@ export default withPlugins(
         pageExtensions: ["md", "mdx", "ts", "tsx"],
       },
     ],
-    [
-      withTM(["echarts", "zrender"])
-    ]
+    [withTM(["echarts", "zrender"])],
   ],
   {
     reactStrictMode: true,
