@@ -1,5 +1,6 @@
 import { CardSection } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { EChartsCoreOption } from "echarts";
 import ReactEChartsCore from "echarts-for-react/lib/core";
 import { LineChart } from "echarts/charts";
 import {
@@ -23,22 +24,22 @@ echarts.use([
 
 type TooltipSeriesInfo = {
   axisValueLabel: string;
+  data: number;
   marker: string;
   seriesName: string;
-  data: number;
 };
 
 type BasicEchartsPart = {
   // Simplified type for ECharts graph components
   // Only the properties necessary to find the parent series's type and index
-  parent?: BasicEchartsPart;
   __ecComponentInfo?: {
-    mainType: string;
     index: number;
+    mainType: string;
   };
+  parent?: BasicEchartsPart;
 };
 
-function fixDecimalPlaces(n: number, places: number) {
+function fixDecimalPlaces(n: number, places: number): string {
   const str = n.toString();
   const dotIndex = str.indexOf(".");
   if (dotIndex === -1) {
@@ -51,10 +52,11 @@ function fixDecimalPlaces(n: number, places: number) {
   return str.concat("0".repeat(places - presentPlaces));
 }
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 function formatTooltip(
   hoverIndex: React.MutableRefObject<null | number>,
   seriesInfoObjects: Array<TooltipSeriesInfo>
-) {
+): HTMLElement {
   const elemsBySeriesIndex: { [key: number]: HTMLElement } = {};
 
   const container: HTMLElement = document.createElement("div");
@@ -118,8 +120,10 @@ function formatTooltip(
   return container;
 }
 
-function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
-  const seriesInfo: Array<[string, Object]> = [];
+function getChartOptions(
+  hoverIndex: React.MutableRefObject<null | number>
+): EChartsCoreOption {
+  const seriesInfo: Array<[string, object]> = [];
   const startIndices: Record<string, number> = {};
 
   for (let i = 0; i < monthDataByConsortium.length; i += 1) {
@@ -137,12 +141,12 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
     seriesInfo.push([
       consortium,
       {
-        name: consortium,
-        type: "line",
-        stack: "data",
         areaStyle: {},
-        emphasis: { focus: "series" },
         data,
+        emphasis: { focus: "series" },
+        name: consortium,
+        stack: "data",
+        type: "line",
       },
     ]);
   }
@@ -167,56 +171,54 @@ function getChartOptions(hoverIndex: React.MutableRefObject<null | number>) {
     else
       monthNames.push(
         monthNum === 1
-          ? { value: fullYear, textStyle: { fontWeight: "bold" } }
+          ? { textStyle: { fontWeight: "bold" }, value: fullYear }
           : `${monthNum}/${fullYear % 100}`
       );
   }
 
   return {
     grid: {
+      bottom: 55,
       right: 20,
       top: 70,
-      bottom: 55,
-    },
-    xAxis: {
-      name: "Time",
-      nameLocation: "center",
-      nameGap: 32,
-      type: "category",
-      boundaryGap: false,
-      data: monthNames,
-      splitLine: {
-        show: true,
-        interval: 11,
-        lineStyle: {
-          color: ["#bbb"],
-        },
-      },
-      min: minStartIndex,
-    },
-    yAxis: {
-      name: "Size (TB)",
-      nameLocation: "center",
-      nameGap: 48,
-    },
-    tooltip: {
-      trigger: "axis",
-      axisPointer: {
-        type: "cross",
-      },
-      formatter: formatTooltip.bind(null, hoverIndex),
     },
     legend: {
       data: sortedData.map(([consortium]) => consortium),
       width: "70%",
     },
     series: sortedData.map(([, seriesDef]) => seriesDef),
+    tooltip: {
+      axisPointer: {
+        type: "cross",
+      },
+      formatter: formatTooltip.bind(null, hoverIndex),
+      trigger: "axis",
+    },
+    xAxis: {
+      boundaryGap: false,
+      data: monthNames,
+      min: minStartIndex,
+      name: "Time",
+      nameGap: 32,
+      nameLocation: "center",
+      splitLine: {
+        interval: 11,
+        lineStyle: {
+          color: ["#bbb"],
+        },
+        show: true,
+      },
+      type: "category",
+    },
+    yAxis: {
+      name: "Size (TB)",
+      nameGap: 48,
+      nameLocation: "center",
+    },
   };
 }
 
-function getParentSeriesIndex(initPart?: BasicEchartsPart) {
-  /* eslint-disable no-underscore-dangle */
-
+function getParentSeriesIndex(initPart?: BasicEchartsPart): number | null {
   let part = initPart;
 
   while (part && part?.__ecComponentInfo?.mainType !== "series") {
@@ -228,15 +230,13 @@ function getParentSeriesIndex(initPart?: BasicEchartsPart) {
   }
 
   return null;
-
-  /* eslint-enable no-underscore-dangle */
 }
 
 const DataIngestionChart: FC = (): JSX.Element => {
   const chart = useRef<ReactEChartsCore>(null);
   const hoverIndex = useRef<null | number>(null);
   useEffect(() => {
-    function handleMouse(info: { target: BasicEchartsPart }) {
+    function handleMouse(info: { target: BasicEchartsPart }): void {
       hoverIndex.current = getParentSeriesIndex(info.target);
     }
 

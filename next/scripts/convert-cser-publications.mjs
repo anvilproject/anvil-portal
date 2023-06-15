@@ -1,7 +1,9 @@
-const fsp = require("fs/promises");
-const path = require("path");
-const { promisify } = require("util");
-const parseCsv = promisify(require("csv-parse").parse);
+import { parse as callbackParseCsv } from "csv-parse";
+import { promises as fsp } from "fs";
+import path from "path";
+import { promisify } from "util";
+
+const parseCsv = promisify(callbackParseCsv);
 
 const csvFilePath =
   "./files/CSER Publications PubMed CSV Save As - 20230523.csv";
@@ -9,17 +11,17 @@ const jsonFilePath =
   "../components/Consortia/CSER/components/Publications/publications.json";
 
 const columnKeys = {
-  PMID: "pmid",
-  Title: "title",
   Authors: "authors",
   Citation: "citation",
+  "Create Date": "createDate",
+  DOI: "doi",
   "First Author": "firstAuthor",
   "Journal/Book": "journalOrBook",
-  "Publication Year": "publicationYear",
-  "Create Date": "createDate",
-  PMCID: "pmcid",
   "NIHMS ID": "nihmsId",
-  DOI: "doi",
+  PMCID: "pmcid",
+  PMID: "pmid",
+  "Publication Year": "publicationYear",
+  Title: "title",
 };
 
 convert();

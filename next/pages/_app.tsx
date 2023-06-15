@@ -9,8 +9,8 @@ import { Head } from "../components/common/Head/head";
 import config from "../site-config/anvil-portal/config";
 import { mergeAppTheme } from "../theme/theme";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { themeOptions, layout } = config;
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const { layout, themeOptions } = config;
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
   return (

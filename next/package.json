@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "check-format": "prettier --check .",
-    "convert-cser-publications": "cd scripts && node convert-cser-publications.js"
+    "convert-cser-publications": "cd scripts && node convert-cser-publications.mjs"
   },
   "dependencies": {
     "@clevercanary/data-explorer-ui": "0.24.0",

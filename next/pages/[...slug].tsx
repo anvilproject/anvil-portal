@@ -58,13 +58,13 @@ export const getStaticProps: GetStaticProps = async (
   );
   const { content, data: frontmatter } = matter(markdownWithMeta);
   const mdxSource = await serialize(content, {
-    scope: {
-      ...MDX_SCOPE,
-    },
     mdxOptions: {
       development: false, // See https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1363415249 and https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1378362096.
       rehypePlugins: [],
       remarkPlugins: [],
+    },
+    scope: {
+      ...MDX_SCOPE,
     },
   });
   return {

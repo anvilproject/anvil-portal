@@ -1,13 +1,17 @@
-const path = require("path");
-const fsPromises = require("fs/promises");
-const { promisify } = require("util");
-const parseCsv = promisify(require("csv-parse").parse);
+import { parse as callbackParseCsv } from "csv-parse";
+import { promises as fsPromises } from "fs";
+import path from "path";
+import { promisify } from "util";
+
+const parseCsv = promisify(callbackParseCsv);
 
 const chartDataPath = "../components/data-ingestion-chart/chart-data.js";
+
 const {
-  startYear,
   endDateNum: oldEndDateNum,
   monthDataByConsortium: oldMonthData,
+  startYear,
+  // eslint-disable-next-line @typescript-eslint/no-var-requires -- Loading and writing are done with the same path (TODO?: use JSON instead)
 } = require(chartDataPath);
 
 const workspaceFilesPath = "./workspace-files";
@@ -22,6 +26,7 @@ generateChartData()
     throw e;
   });
 
+// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 async function generateChartData() {
   try {
     await fsPromises.access(workspaceFilesPath);
@@ -113,11 +118,11 @@ async function generateChartData() {
 
   const monthDataByConsortium = Object.entries(monthDataObj);
 
-  const scriptText = `module.exports = {startYear: ${JSON.stringify(
-    startYear
-  )}, endDateNum: ${JSON.stringify(
+  const scriptText = `module.exports = {endDateNum: ${JSON.stringify(
     maxDateNum
-  )}, monthDataByConsortium: ${JSON.stringify(monthDataByConsortium)}};`;
+  )}, monthDataByConsortium: ${JSON.stringify(
+    monthDataByConsortium
+  )}, startYear: ${JSON.stringify(startYear)}};`;
 
   await fsPromises.writeFile(chartDataPath, scriptText);
 

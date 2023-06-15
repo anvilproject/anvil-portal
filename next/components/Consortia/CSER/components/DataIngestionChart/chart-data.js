@@ -1,5 +1,4 @@
 module.exports = {
-  startYear: 2019,
   endDateNum: 1680005415000,
   monthDataByConsortium: [
     [
@@ -146,4 +145,5 @@ module.exports = {
       ],
     ],
   ],
+  startYear: 2019,
 };

@@ -17,8 +17,8 @@ export enum NavigationKey {
 }
 
 export interface NavigationNode {
-  key?: string;
   hero?: NodeHero;
+  key?: string;
   navigation?: NavItem[];
   slugs: string[]; // A list of slugs that are valid for the node.
 }
