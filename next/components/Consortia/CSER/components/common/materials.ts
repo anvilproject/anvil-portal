@@ -5,6 +5,17 @@ export enum MaterialsCategory {
   RESOURCES = "RESOURCES",
 }
 
+type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>
+
+type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>
+
+type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>
+
+interface MaterialsFileInfo {
+  category: MaterialsCategory;
+  fileName: string;
+}
+
 export interface MaterialsMajorSection {
   label: string;
   sections: MaterialsMinorSection[];
@@ -26,35 +37,28 @@ const categoryFileUrlPrefixes = {
   [MaterialsCategory.RESOURCES]: "/consortia/cser/resources/",
 };
 
-const categoryRegExps = {
-  [MaterialsCategory.RESEARCH_MATERIALS]: /\/research-material\/([^\/]+)$/,
-  [MaterialsCategory.RESOURCES]: /\/attachments\/([^\/]+)$/,
-};
-
 export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
-  const regExp = categoryRegExps[category];
   const { compare } = new Intl.Collator("en");
   const majorSections: MaterialsMajorSection[] = [];
 
-  function getSortedEntries(obj: object) {
+  function getSortedEntries<T>(obj: Record<string, T>): [string, T][] {
     return Object.entries(obj).sort((a, b) => compare(a[0], b[0]));
   }
 
   for (const [majorSectionLabel, majorSectionInfo] of getSortedEntries(
-    materialsInfo
+    materialsInfo as MaterialsInfo
   )) {
     const minorSections: MaterialsMinorSection[] = [];
     for (const [minorSectionLabel, minorSectionInfo] of getSortedEntries(
       majorSectionInfo
     )) {
       const files: MaterialsFile[] = [];
-      for (const [fileLabel, filePath] of getSortedEntries(minorSectionInfo)) {
-        const match = regExp.exec(filePath);
-        if (match) {
+      for (const [fileLabel, fileInfo] of getSortedEntries(minorSectionInfo)) {
+        if (fileInfo.category === category) {
           files.push({
             label: fileLabel,
-            name: match[1],
-            url: categoryFileUrlPrefixes[category] + match[1],
+            name: fileInfo.fileName,
+            url: categoryFileUrlPrefixes[category] + encodeURIComponent(fileInfo.fileName),
           });
         }
       }

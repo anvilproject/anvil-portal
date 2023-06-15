@@ -2,7 +2,7 @@ import fsp from "fs/promises";
 import path from "path";
 import got from "got";
 
-const urlsJsonPath = "../components/Consortia/CSER/components/common/materialsInfo.json";
+const urlsJsonPath = "./files/cser-materials-urls.json";
 const cserDirPath = "../public/consortia/cser";
 
 const categoryDirNames = {
