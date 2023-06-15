@@ -1,8 +1,8 @@
 import { Accordion } from "@clevercanary/data-explorer-ui/lib/components/common/Accordion/accordion";
 import { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
 import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
-import { Publications as PublicationsByYear } from "./publications.styles";
 import publications from "./publications.json";
+import { Publications as PublicationsByYear } from "./publications.styles";
 
 export const Publications = (): JSX.Element => {
   const publicationsByYear = publications.reduce((byYear, publication) => {
@@ -29,7 +29,7 @@ export const Publications = (): JSX.Element => {
               )
               .map((publication) => {
                 const doiUrl = `https://doi.org/${publication.doi}`;
-                const pubMedUrl =  `https://pubmed.ncbi.nlm.nih.gov/${publication.pmid}/`
+                const pubMedUrl = `https://pubmed.ncbi.nlm.nih.gov/${publication.pmid}/`;
                 return (
                   <Card
                     key={publication.pmid}

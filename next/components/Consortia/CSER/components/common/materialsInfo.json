@@ -1,364 +1,1012 @@
 {
-    "CSER Phase 2 Consent Forms": {
-        "CHARM": {
-            "CHARM Consent Form - Webpages": {"category": "RESEARCH_MATERIALS", "fileName": "charm_consent_form_-_webpages.pdf"},
-            "CHARM Consent Form Spanish - Webpages": {"category": "RESEARCH_MATERIALS", "fileName": "charm_consent_form_spanish_-_webpages.pdf"}
-        },
-        "KidsCanSeq": {
-            "KidsCanSeq Age of Majority Consent Form - Germline and Tumor": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_aom_consent_form_germline_and_tumor_11.9.2020.pdf"},
-            "KidsCanSeq Age of Majority Consent Form - Germline ONLY": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_aom_consent_form_germline_only_11.9.2020.pdf"},
-            "KidsCanSeq Parent Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_parent_consent_form_11.9.2020.pdf"},
-            "KidsCanSeq Patient Consent Form - Germline and Tumor": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_patient_consent_form_germline_and_tumor_11.9.2020.pdf"},
-            "KidsCanSeq Patient Consent Form - Germline ONLY": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_patient_consent_form_germline_only_11.9.2020.pdf"},
-            "KidsCanSeq Physician Consent": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_physician_consent_11.9.2020.pdf"},
-            "KidsCanSeq Spanish Age of Majority Germline and Tumor Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_aom_germline_and_tumor_consent_11.9.2020.pdf"},
-            "KidsCanSeq Spanish Age of Majority Germline ONLY Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_aom_germline_only_consent_11.9.2020.pdf"},
-            "KidsCanSeq Spanish Parent Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_parent_consent_11.9.2020.pdf"},
-            "KidsCanSeq Spanish Patient Consent Form - Germline and Tumor": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_patient_germline_and_tumor_consent_11.9.2020.pdf"},
-            "KidsCanSeq Spanish Patient Consent Form - Germline ONLY": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_patient_germline_only_consent_11.9.2020.pdf"}
-        },
-        "NCGENES 2": {
-            "Assent to Participate in a Research Study (Child Subjects ages 15-17)": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_15-17_assent_form_1_randomization_to_research_gs_2018_11_28.docx"},
-            "Assent to Participate in a Research Study (Child Subjects ages 7-14)": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_7-14_assent_form_1_randomization_to_research_gs_2018_11_28.docx"},
-            "Assent to Research Genomic Sequencing (Child Subjects ages 15-17)": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_15-17_assent_form_2_research_gc_2019_10_30.docx"},
-            "Assent to Research Genomic Sequencing (Child Subjects ages 7-14)": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_7-14_assent_form_2_research_gs_2018_11_28.docx"},
-            "Consent to Participate in a Research Study": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_consent_form_1_randomization_to_research_gs_2018_11_28.docx"},
-            "Consent to Research Genomic Sequencing": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_consent_form_2_research_gs_2019_10_30.docx"}
-        },
-        "NYCKidSeq": {
-            "NYCKidSeq Assent": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_assent.pdf"},
-            "NYCKidSeq Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_cognitively_intact_18-21_year_old_icf.pdf"},
-            "NYCKidSeq Parent of 0-17 Year Old Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_parent_of_0-17_year_old_child_icf.pdf"},
-            "NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"},
-            "NYCKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf"},
-            "NYCKidSeq Parental Baseline Survey ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_parental_baseline_survey_icf.pdf"},
-            "NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"},
-            "SPANISH NYCKidSeq Assent": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_assent.pdf"},
-            "SPANISH NYCKidSeq Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_cognitively_intact_18-21_year_old_icf.pdf"},
-            "SPANISH NYCKidSeq Parent of 0-17 Year Old Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_parent_of_0-17_year_old_child_icf.pdf"},
-            "SPANISH NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"},
-            "SPANISH NYCKidSeq Parent of Cognitively Intact 18-21 Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_parent_of_cognitively_intact_18-21_child_icf.pdf"},
-            "SPANISH NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"},
-            "SPANISH Parental Baseline Survey ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_parental_baseline_survey_icf.pdf"},
-            "SPANISH TeleKidSeq Assent": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_assent.pdf"},
-            "SPANISH TeleKidSeq Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_cognitively_intact_18-21_year_old_icf.pdf"},
-            "SPANISH TeleKidSeq Parent of 0-17 Year Old Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_parent_of_0-17_year_old_child_icf.pdf"},
-            "SPANISH TeleKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"},
-            "SPANISH TeleKidSeq Parent of Cognitively Intact 18-21 Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_parent_of_cognitively_intact_18-21_child_icf.pdf"},
-            "SPANISH TeleKidSeq Parental Baseline Survey ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_parental_baseline_survey_icf.pdf"},
-            "SPANISH TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"},
-            "TeleKidSeq Assent": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_assent.pdf"},
-            "TeleKidSeq Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_cognitively_intact_18-21_year_old_icf.pdf"},
-            "TeleKidSeq Parent of 0-17 Year Old Child ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_parent_of_0-17_year_old_child_icf.pdf"},
-            "TeleKidSeq Parent of Cognitively Incapacitated 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_parent_of_cognitively_incapacitated_18-21_year_old_icf.pdf"},
-            "TeleKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf"},
-            "TeleKidSeq Parental Baseline Survey ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_parental_baseline_survey_icf.pdf"},
-            "TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf_0.pdf"}
-        },
-        "P3EGS": {
-            "P3EGS Adult Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "p3egs_adult_consent_form.pdf"},
-            "P3EGS Guardian Consent": {"category": "RESEARCH_MATERIALS", "fileName": "p3egs_guardian_consent.pdf"},
-            "P3EGS Maternal Consent": {"category": "RESEARCH_MATERIALS", "fileName": "p3egs_maternal_consent.pdf"},
-            "P3EGS Parental Consent": {"category": "RESEARCH_MATERIALS", "fileName": "p3egs_parental_consent.pdf"}
-        },
-        "SouthSeq": {
-            "Consent Form - CHNOLA": {"category": "RESEARCH_MATERIALS", "fileName": "consent.chnola.clean_.200831.pdf"},
-            "Consent Form - CHNOLA (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "stamped_consentspanish.ummc_.clean_.201020.pdf"},
-            "Consent Form - UAB": {"category": "RESEARCH_MATERIALS", "fileName": "consent.uab_.clean_.200831.pdf"},
-            "Consent Form - UAB (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "stamped_consentspanish.uab_.clean_.201020.pdf"},
-            "Consent Form - UMMC": {"category": "RESEARCH_MATERIALS", "fileName": "consent.ummc_.clean_.200831.pdf"},
-            "Consent Form - UMMC (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "stamped_consentspanish.ummc_.clean_.201020.pdf"},
-            "Consent Form - University of Lousiville": {"category": "RESEARCH_MATERIALS", "fileName": "consent.uofl_.clean_.200831.pdf"},
-            "Consent Form - University of Lousiville (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "stamped_consentspanish.uofl_.clean_.201020.pdf"},
-            "Consent Form - Woman's Hospital, Baton Rouge, Louisiana": {"category": "RESEARCH_MATERIALS", "fileName": "consent.womans.clean_.200831.pdf"},
-            "Consent Form - Woman's Hospital, Baton Rouge, Louisiana (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "stamped_consentspanish.womans.clean_.201020.pdf"}
-        }
+  "CSER Phase 2 Consent Forms": {
+    "CHARM": {
+      "CHARM Consent Form - Webpages": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "charm_consent_form_-_webpages.pdf"
+      },
+      "CHARM Consent Form Spanish - Webpages": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "charm_consent_form_spanish_-_webpages.pdf"
+      }
     },
-    "CSER Phase 2 Protocols and Research Materials": {
-        "CHARM": {
-            "CHARM Study Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "charm_protocol.pdf"}
-        },
-        "KidsCanSeq": {
-            "Age of Majority Lost to Follow Up Certified Letter": {"category": "RESEARCH_MATERIALS", "fileName": "aom_lost_to_follow_up_certified_letter_english_final.pdf"},
-            "AOM Lost to Follow Up Certified Letter - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "kidcanseq_aom_lost_to_follow_up_certified_letter_spanish_final.pdf"},
-            "KidsCanSeq Lost to Follow-up Certified Letter (English)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_lost_to_follow_up_certified_letter_english.pdf"},
-            "KidsCanSeq Lost to Follow-up Certified Letter (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_lost_to_follow_up_certified_letter_spanish.pdf"},
-            "KidsCanSeq Study Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_protocol_october_2020_renewal_clean.pdf"}
-        },
-        "NCGENES 2": {
-            "Alert Protocol for Distressed Caregiver": {"category": "RESEARCH_MATERIALS", "fileName": "alert_protocol_for_distressed_caregiver_2020_08_11.docx"},
-            "NCGENES 2 Study Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_study_protocol.pdf"}
-        },
-        "NYCKidSeq": {
-            "NYCKidSeq Study Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_study_protocol.pdf"},
-            "TeleKidSeq Study Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_study_protocol_0.docx"}
-        },
-        "SouthSeq": {
-            "SouthSeq Research  Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "southseq_protocol.pdf"}
-        }
+    "KidsCanSeq": {
+      "KidsCanSeq Age of Majority Consent Form - Germline and Tumor": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_aom_consent_form_germline_and_tumor_11.9.2020.pdf"
+      },
+      "KidsCanSeq Age of Majority Consent Form - Germline ONLY": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_aom_consent_form_germline_only_11.9.2020.pdf"
+      },
+      "KidsCanSeq Parent Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_parent_consent_form_11.9.2020.pdf"
+      },
+      "KidsCanSeq Patient Consent Form - Germline and Tumor": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_patient_consent_form_germline_and_tumor_11.9.2020.pdf"
+      },
+      "KidsCanSeq Patient Consent Form - Germline ONLY": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_patient_consent_form_germline_only_11.9.2020.pdf"
+      },
+      "KidsCanSeq Physician Consent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_physician_consent_11.9.2020.pdf"
+      },
+      "KidsCanSeq Spanish Age of Majority Germline and Tumor Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_aom_germline_and_tumor_consent_11.9.2020.pdf"
+      },
+      "KidsCanSeq Spanish Age of Majority Germline ONLY Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_aom_germline_only_consent_11.9.2020.pdf"
+      },
+      "KidsCanSeq Spanish Parent Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_parent_consent_11.9.2020.pdf"
+      },
+      "KidsCanSeq Spanish Patient Consent Form - Germline and Tumor": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_patient_germline_and_tumor_consent_11.9.2020.pdf"
+      },
+      "KidsCanSeq Spanish Patient Consent Form - Germline ONLY": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_patient_germline_only_consent_11.9.2020.pdf"
+      }
     },
-    "CSER Phase 2 Surveys": {
-        "KidsCanSeq": {
-            "KidsCanSeq Oncologist End of Study Survey": {"category": "RESEARCH_MATERIALS", "fileName": "kcs_oncologist_follow-up_survey.pdf"},
-            "KidsCanSeq Oncologist Post-Disclosure Survey": {"category": "RESEARCH_MATERIALS", "fileName": "kcs_oncologist_post_disclosure_survey.pdf"}
-        },
-        "NYCKidSeq": {
-            "NYCKidSeq Baseline Survey": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_baseline_survey.docx"},
-            "NYCKidSeq Baseline Survey - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_baseline_survey.docx"},
-            "NYCKidSeq Return of Results Follow-up Survey #1": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_ror1_survey.docx"},
-            "NYCKidSeq Return of Results Follow-up Survey #1 - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_ror1_survey.docx"},
-            "NYCKidSeq Provider Return of Results Follow-up Survey #1": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_provider_ror1_survey.docx"},
-            "NYCKidSeq Return of Results Follow-up Survey #2": {"category": "RESEARCH_MATERIALS", "fileName": "nyckidseq_ror2_survey.docx"},
-            "NYCKidSeq Return of Results Follow-up Survey #2 - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nyckidseq_ror2_survey.docx"},
-            "TeleKidSeq Baseline Survey": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_baseline_survey.docx"},
-            "TeleKidSeq Baseline Survey - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_baseline_survey.docx"},
-            "TeleKidSeq Return of Results Follow-up Survey #1": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_ror1_survey.docx"},
-            "TeleKidSeq Return of Results Follow-up Survey #1 - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_ror1_survey.docx"},
-            "TeleKidSeq Return of Results Follow-up Survey #2": {"category": "RESEARCH_MATERIALS", "fileName": "telekidseq_ror2_survey.docx"},
-            "TeleKidSeq Return of Results Follow-up Survey #2 - Spanish": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_telekidseq_ror2_survey.docx"}
-        }
+    "NCGENES 2": {
+      "Assent to Participate in a Research Study (Child Subjects ages 15-17)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_15-17_assent_form_1_randomization_to_research_gs_2018_11_28.docx"
+      },
+      "Assent to Participate in a Research Study (Child Subjects ages 7-14)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_7-14_assent_form_1_randomization_to_research_gs_2018_11_28.docx"
+      },
+      "Assent to Research Genomic Sequencing (Child Subjects ages 15-17)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_15-17_assent_form_2_research_gc_2019_10_30.docx"
+      },
+      "Assent to Research Genomic Sequencing (Child Subjects ages 7-14)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_7-14_assent_form_2_research_gs_2018_11_28.docx"
+      },
+      "Consent to Participate in a Research Study": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_consent_form_1_randomization_to_research_gs_2018_11_28.docx"
+      },
+      "Consent to Research Genomic Sequencing": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_consent_form_2_research_gs_2019_10_30.docx"
+      }
     },
-    "CSER Phase 2 Educational Materials": {
-        "CHARM": {
-            "Bilingual Glossary of Exome Sequencing Terms": {"category": "RESEARCH_MATERIALS", "fileName": "bilingual_glossary_of_exome_sequencing_terms_-_6.21.19_final.pdf"},
-            "Training guide for CHARM interpreters": {"category": "RESEARCH_MATERIALS", "fileName": "exome_sequencing_course_for_interpreters_-_charm.pdf"}
-        },
-        "KidsCanSeq": {
-            "Genetics Glossary": {"category": "RESEARCH_MATERIALS", "fileName": "glossary_final_w_comments_1.10.19.pdf"},
-            "Genetics Glossary (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_glossary_final_w_comments_2-5-2019_final.pdf"},
-            "Germline and Tumor Results Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_explanation_card_germline_and_tumor_results_12-11-2017.pdf"},
-            "Germline and Tumor Results Explanation Card (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_explanation_card_germline_and_tumor_results_spanish_12-11-2017.pdf"},
-            "Germline Results Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_explanation_card_germline_results_12-11-2017.pdf"},
-            "Germline Results Explanation Card (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_explanation_card_germline_results_spanish_12-11-2017.pdf"},
-            "VUS Education Document": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_vus_education_document_v3_final.pdf"},
-            "VUS Education Document (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_vus_education_document_v3_final.pdf"},
-            "QR Codes to Videos (English)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_video_qr_codes_english.docx"},
-            "QR Codes to Videos (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "kidscanseq_spanish_qr_codes.docx"}
-        },
-        "NCGENES 2": {
-            "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (English)": {"category": "RESEARCH_MATERIALS", "fileName": "ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx"},
-            "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx"},
-            "Resources for Distressed Participants (English)": {"category": "RESEARCH_MATERIALS", "fileName": "ncggnes_resources_for_distressed_participants.docx"},
-            "Resources for Distressed Participants (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_ncggnes_resources_for_distressed_participants.docx"}
-        }
+    "NYCKidSeq": {
+      "NYCKidSeq Assent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_assent.pdf"
+      },
+      "NYCKidSeq Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "NYCKidSeq Parent of 0-17 Year Old Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_parent_of_0-17_year_old_child_icf.pdf"
+      },
+      "NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"
+      },
+      "NYCKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "NYCKidSeq Parental Baseline Survey ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_parental_baseline_survey_icf.pdf"
+      },
+      "NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"
+      },
+      "SPANISH NYCKidSeq Assent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_assent.pdf"
+      },
+      "SPANISH NYCKidSeq Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "SPANISH NYCKidSeq Parent of 0-17 Year Old Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_parent_of_0-17_year_old_child_icf.pdf"
+      },
+      "SPANISH NYCKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"
+      },
+      "SPANISH NYCKidSeq Parent of Cognitively Intact 18-21 Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_parent_of_cognitively_intact_18-21_child_icf.pdf"
+      },
+      "SPANISH NYCKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"
+      },
+      "SPANISH Parental Baseline Survey ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_parental_baseline_survey_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Assent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_assent.pdf"
+      },
+      "SPANISH TeleKidSeq Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Parent of 0-17 Year Old Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_parent_of_0-17_year_old_child_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Parent of Cognitively Incapacitated 18-21 Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_parent_of_cognitively_incapacitated_18-21_child_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Parent of Cognitively Intact 18-21 Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_parent_of_cognitively_intact_18-21_child_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Parental Baseline Survey ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_parental_baseline_survey_icf.pdf"
+      },
+      "SPANISH TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf.pdf"
+      },
+      "TeleKidSeq Assent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_assent.pdf"
+      },
+      "TeleKidSeq Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "TeleKidSeq Parent of 0-17 Year Old Child ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_parent_of_0-17_year_old_child_icf.pdf"
+      },
+      "TeleKidSeq Parent of Cognitively Incapacitated 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_parent_of_cognitively_incapacitated_18-21_year_old_icf.pdf"
+      },
+      "TeleKidSeq Parent of Cognitively Intact 18-21 Year Old ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_parent_of_cognitively_intact_18-21_year_old_icf.pdf"
+      },
+      "TeleKidSeq Parental Baseline Survey ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_parental_baseline_survey_icf.pdf"
+      },
+      "TeleKidSeq Reconsent of Cognitively Intact Minor Turned 18 Years ICF": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_reconsent_of_cognitively_intact_minor_turned_18_years_icf_0.pdf"
+      }
     },
-    "CSER Phase 2 Results Templates": {
-        "CHARM": {
-            "CHARM Clinical Report - Exomes": {"category": "RESEARCH_MATERIALS", "fileName": "charm_clinical_report_-_exomes.pdf"},
-            "CHARM Clinical Report - Family Member": {"category": "RESEARCH_MATERIALS", "fileName": "charm_clinical_report_-_family_members.pdf"}
-        },
-        "KidsCanSeq": {
-            "No Significant Results Letter Template": {"category": "RESEARCH_MATERIALS", "fileName": "nsf_results_letter_v8_master_template.pdf"},
-            "No Significant Results Letter Template (Spanish)": {"category": "RESEARCH_MATERIALS", "fileName": "spanish_nsf-results-letter-v8_master-template_final.pdf"}
-        }
+    "P3EGS": {
+      "P3EGS Adult Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "p3egs_adult_consent_form.pdf"
+      },
+      "P3EGS Guardian Consent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "p3egs_guardian_consent.pdf"
+      },
+      "P3EGS Maternal Consent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "p3egs_maternal_consent.pdf"
+      },
+      "P3EGS Parental Consent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "p3egs_parental_consent.pdf"
+      }
     },
-    "CSER Phase 2 Harmonized Measures": {
-        "Adult Measures": {
-            "Baseline Measures": {"category": "RESOURCES", "fileName": "adult_baseline_v1.5_-_cser_adult_patient_measures_harmonization_1.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu1_v1.4_-_cser_adult_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu2_v1.4_-_cser_adult_patient_measures_harmonization_0.docx"},
-            "Decliner Survey": {"category": "RESOURCES", "fileName": "adult_decliner_v1.2_-_cser_adult_patient_decliner_survey.docx"}
-        },
-        "Parental Measures": {
-            "Baseline Measures": {"category": "RESOURCES", "fileName": "parent_baseline_v1.5_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu1_v1.4_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu2_v1.4.1_-_cser_parental_patient_measures_harmonization.docx"},
-            "Decliner Survey": {"category": "RESOURCES", "fileName": "parent_decliner_v1.2_-_cser_parental_patient_decliner_survey.docx"}
-        },
-        "Organizational Readiness to Change": {
-            "Health Systems Survey": {"category": "RESOURCES", "fileName": "health_systems_orca_v2.0.docx"}
-        },
-        "Provider Measures": {
-            "Provider Return of Results Follow-up #1": {"category": "RESOURCES", "fileName": "provider_rorfu1_v1.2.2_cser_provider_measures_harmonization.docx"},
-            "Provider Return of Results Follow-up #2": {"category": "RESOURCES", "fileName": "provider_rorfu2_v1.2_cser_provider_measures_harmonization.docx"}
-        },
-        "Spanish Adult Measures": {
-            "Baseline Measures": {"category": "RESOURCES", "fileName": "adult_baseline_spanish_v1.5.1_-_cser_adult_patient_measures_harmonization_0.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu1_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "adult_rorfu2_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"},
-            "Decliner Survey": {"category": "RESOURCES", "fileName": "adult_decliner_spanish_-_cser_adult_patient_measures_harmonization.docx"}
-        },
-        "Spanish parental Measures": {
-            "Baseline Measures": {"category": "RESOURCES", "fileName": "parent_baseline_spanish_v1.5.1_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu1_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
-            "Post Return of Results Follow-up #2 (5-7 months after RoR)": {"category": "RESOURCES", "fileName": "parent_rorfu2_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"},
-            "Decliner Survey": {"category": "RESOURCES", "fileName": "parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"}
-        }
-    },
-    "CSER Phase 1 Participant Consent Forms": {
-        "Baylor College of Medicine": {
-            "Patient Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_patient_consent_04.08.2016.pdf"},
-            "Patient Consent Form (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_patient_consent_form_spanish_04-08-2016.pdf"},
-            "Physician Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_physician_consent_04.08.2016.pdf"},
-            "Parent Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_parent_consent_04.08.2016.pdf"},
-            "Parent Consent Form (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_parental_consent_form_spanish_04-08-2016.pdf"},
-            "Age of Majority Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_age_of_majority_consent_form_november_2014.pdf"}
-        },
-        "Brigham & Women's Hospital": {
-            "Cardiologist Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_cardiologist_consent_form_6.18.14.pdf"},
-            "Primary Care Physician Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_pcp_consent_form_6.18.14.pdf"},
-            "Patient Consent Form (Cardiology)": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_consentform_medseq_patients_cardiology_6.18.14.pdf"},
-            "Patient Consent Form (Primary Care Physician)": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_consentform_medseq_patients_primary_care_6.18.14.pdf"}
-        },
-        "Children's Hospital of Philadelphia": {
-            "Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "chop_pediseq_informed_consent_form_01-02-15.pdf"}
-        },
-        "ClinSeq": {
-            "Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "clinseqprimaryconsentformv2_2015.pdf"}
-        },
-        "Dana-Farber Cancer Institute": {
-            "Patient Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_patient_consent_03.13.15.pdf"},
-            "Physician Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_physician_consent_03.13.15.pdf"}
-        },
-        "Kaiser Permanente": {
-            "Male Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kaiser_maleconsent_03.13.2015.pdf"},
-            "Female Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "kaiser_femaleconsent_03.13.2015.pdf"}
-        },
-        "HudsonAlpha": {
-            "Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "hudsonalpha_cser_consent.pdf"}
-        },
-        "University of Michigan": {
-            "MIONCOSEQ Consent Form (June 2016)": {"category": "RESEARCH_MATERIALS", "fileName": "mioncoseq_consent_form_june_2016.pdf"},
-            "PEDSMIONCOSEQ Informed Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "pedsmioncoseq_informed_consent.pdf"}
-        },
-        "University of North Carolina": {
-            "Parental Consent for Child Relatives of an study participant to test for a specific variant": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncgenes_relative_vucs_parental_consent_12_2014.pdf"},
-            "Assent Form: (Ages 7-14) Relatives of an study participant to test for a specific variant": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncgenes_relative_vucs_7-14_assent_12_2014.pdf"},
-            "Assent Form: (Ages 15-17) Relatives of an study participant to test for a specific variant": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncgenes_relative_vucs_assent_15-17_12_2014.pdf"},
-            "Consent for Adult Relatives of an study participant to test for a specific variant": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncgenes_relative_vucs-consent-adult_12_2014.pdf"}
-        },
-        "University of Washington": {
-            "Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "uw_crcp_consent_03.13.15.pdf"},
-            "Endometrial Consent Form": {"category": "RESEARCH_MATERIALS", "fileName": "uw_endometrial_consent_03.13.15.pdf.pdf"},
-            "Consent for return of results in event of participant death": {"category": "RESEARCH_MATERIALS", "fileName": "irb_approved_deceased_ror_release_agreement.pdf"}
-        }
-    },
-    "CSER Phase 1 Participant Education Materials": {
-        "Baylor College of Medicine": {
-            "Study Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "basic3-brochure_july_6.pdf"},
-            "Study Borchure (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_brochure_in_spanish_version_11-8-2012.pdf"},
-            "Genetic Information Nondiscrimination Act (GINA) Document": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_gina_document.pdf"},
-            "GINA Document (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_gina_document_spanish.pdf"},
-            "Tumor Mutation Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_tumor_mutation_explanation_card_8-27-2012.pdf"},
-            "Tumor Mutation Explanation Card (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_tumor_mutation_explanation_card_8-27-2012_spanish.pdf"},
-            "Inherited Mutation Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_inherited_mutation_explanation_card_8-27-2012.pdf"},
-            "Inherited Mutation Explanation Card (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_inherited_mutation_explanation_card_8-27-2012_spanish.pdf"},
-            "X-Linked Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_approved_x-linked_explanation_card_6-20-2013.pdf"},
-            "X-Linked Explanation Card (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_approved_x-linked_explanation_card_6-20-2013_spanish.pdf"},
-            "Revised Carrier Status Explanation Card": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_revised_carrier_status_explanation_card_8-28-2012.pdf"},
-            "Revised Carrier Status Explanation (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_revised_carrier_status_explanation_card_8-28-2012_spanish.pdf"}
-        },
-        "ClinSeq": {
-            "Study Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "clinseqbrochure.pdf"}
-        },
-        "Dana-Farber Cancer Institute": {
-            "Patient Information Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_patient_information_brochure_03.13.15.pdf"}
-        },
-        "University of Michigan": {
-            "Patient FAQ": {"category": "RESEARCH_MATERIALS", "fileName": "mioncoseq_faq.pdf"},
-            "Patient Vignettes": {"category": "RESEARCH_MATERIALS", "fileName": "mioncoseq_vignettes.pdf"}
-        },
-        "University of North Carolina": {
-            "Study Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "unc_about_ncgenes.pdf"},
-            "Incidental Information Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "unc_incidental_information_brochure_sept_1_mir.pdf"},
-            "What can I learn from WES Brochure": {"category": "RESEARCH_MATERIALS", "fileName": "unc_what_can_i_learn_from_wes.pdf"}
-        },
-        "University of Washington": {
-            "Incidental Findings Choice Document": {"category": "RESEARCH_MATERIALS", "fileName": "uw_if_choice_doc_03.13.15.docx"}
-        }
-    },
-    "CSER Phase 1 Protocol and Research Resources": {
-        "Baylor College of Medicine": {
-            "Germline Requisition Document": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_germline_requisition.pdf"},
-            "Study Questionnaires for Primary or Secondary parent completing for themselves": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_study_questionnaires_active_parent_completing_for_the_parent_july_6_0.pdf"},
-            "Study Questionnaires for Primary or Secondary parent completing for themselves (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_study_questionnaires_active_parent_july_6_in_spanish.pdf"},
-            "Family history questionnaire for primary parent": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6.pdf"},
-            "Family history questionnaire for primary parent (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6_in_spanish.pdf"},
-            "Study questionnaire for primary parent completing for child": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_study_questionnaire_for_parent_completing_for_child_version_july_6.pdf"},
-            "Study questionnaire for primary completing comleting for child (Spanish Version)": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_study_questionnaire_for_parent_completing_for_child_version_july_6_in_spanish.pdf"}
-        },
-        "Brigham & Women's Hospital": {
-            "MedSeq Protocol Trials": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_vassy-green-medseq-protocol-trials-2014.pdf"}
-        },
-        "Dana-Farber Cancer Institute": {
-            "Physician Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_md_protocol_09_02_15.pdf"},
-            "Patient Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_patient_protocol_09_02_15.pdf"}
-        },
-        "University of Michigan": {
-            "MIONCOSEQ Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "mioncoseq_protocol_amendment_june2015.pdf"},
-            "PEDSMIONCOSEQ Protocol": {"category": "RESEARCH_MATERIALS", "fileName": "pedsmioncoseq_clinical_protocol.pdf"}
-        }
-    },
-    "CSER Phase 1 Results Report Template": {
-        "Baylor College of Medicine": {
-            "Germline Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_germline_report_template.pdf"},
-            "Tumor Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_tumor_report_deid.pdf"}
-        },
-        "Brigham & Women's Hospital": {
-            "Sample Genome Report": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf"}
-        },
-        "Children's Hospital of Philadelphia": {
-            "Sample Results Report Format (Positive Result)": {"category": "RESEARCH_MATERIALS", "fileName": "pediseq_report_format_positive_10-28-15.pdf"},
-            "Sample Results Report Format (Negative Result)": {"category": "RESEARCH_MATERIALS", "fileName": "pediseq_report_format_negative_10-28-15.pdf"}
-        },
-        "ClinSeq": {
-            "Primary Results ACMG Secondary Variant Findings Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "clinseq_secondary_variant_report.doc"},
-            "Carrier Results Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "clinseq_carrier_report.docx"}
-        },
-        "Dana-Farber Cancer Institute": {
-            "Sample Positive Report": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_positive_result_03.13.15.docx"},
-            "Sample Negative Report": {"category": "RESEARCH_MATERIALS", "fileName": "dfci_negative_result_03.13.15.docx"}
-        },
-        "HudsonAlpha": {
-            "Summary Results Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "hudsonalpha_00051c_shoc2_summary.pdf"},
-            "Detailed Results Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "hudsonalpha_00051c_shoc2_detailed.pdf"}
-        },
-        "Kaiser Permanente": {
-            "Negative Carrier Status Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "negative_carrier_template_11-6-2015.docx"},
-            "Positive Carrier Status Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "positive_carrier_template_11-6-2015.docx"},
-            "Negative Whole Genome Sequencing Incidental Findings Template": {"category": "RESEARCH_MATERIALS", "fileName": "negative_wgs_incidental_findings_11-6-2015.docx"}
-        },
-        "University of Michigan": {
-            "MIONCOSEQ Patient Report Template": {"category": "RESEARCH_MATERIALS", "fileName": "mioncoseq_example_patient_report-po_3043.pdf"}
-        },
-        "University of North Carolina": {
-            "Sample WES Report": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncg_wes_sample_report.pdf"},
-            "Sample CLIA report": {"category": "RESEARCH_MATERIALS", "fileName": "unc_ncg_clia_sample_report.pdf"}
-        },
-        "University of Washington": {
-            "Report Template for Positive Incidental Finding result": {"category": "RESEARCH_MATERIALS", "fileName": "uw_if_positive_result_03.15.15.doc.doc"},
-            "Report Template for Negative Diagnosis Result": {"category": "RESEARCH_MATERIALS", "fileName": "uw_crcp_negative_result_03.13.15.doc"},
-            "Report Template for Positive Diagnosis Result": {"category": "RESEARCH_MATERIALS", "fileName": "uw_crcp_positive_result_03.13.15.doc"}
-        }
-    },
-    "CSER Phase 1 Description of Variant Analysis Pipeline": {
-        "Baylor College of Medicine": {
-            "Yang JAMA Journal Article": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_yang-jama-2014.pdf"}
-        },
-        "Brigham & Women's Hospital": {
-            "McLaughlin et al Journal Article": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf"},
-            "Kong et al Journal Article": {"category": "RESEARCH_MATERIALS", "fileName": "bwh_won_kong-et-al-gim-final_.pdf"}
-        },
-        "University of North Carolina": {
-            "NCGenes Medical Workflow Engine Description": {"category": "RESEARCH_MATERIALS", "fileName": "unc_gmw_tr_03.31.14.pdf"},
-            "NCGenes Variant Database Description": {"category": "RESEARCH_MATERIALS", "fileName": "unc_canvas_and_annobot_tr_03.31.14.pdf"},
-            "NCGenes MapSeq Sequence Analysis Workflow Description": {"category": "RESEARCH_MATERIALS", "fileName": "unc_mapseq_tr_03.31.14.pdf"}
-        }
-    },
-    "CSER Phase 1 Framework for Primary and Secondary Results": {
-        "Baylor College of Medicine": {
-            "Incidental Findings": {"category": "RESEARCH_MATERIALS", "fileName": "basic3_incidental_findings-baylor_2014.pdf"}
-        },
-        "HudsonAlpha": {
-            "ACMG and OMIM Gene List used for Secondary Findings": {"category": "RESEARCH_MATERIALS", "fileName": "hudsonealpha_secondarygenelist.doc"}
-        },
-        "Kaiser Permanente": {
-            "List of Genes Conditions reported for Carrier Status": {"category": "RESEARCH_MATERIALS", "fileName": "kaiser_carrierlist_03132015.xlsx"},
-            "List of Genes Conditions reported for Incidental Findings": {"category": "RESEARCH_MATERIALS", "fileName": "kaiser_iflist_03.13.2015.docx"}
-        },
-        "University of Washington": {
-            "List of Genes Conditions reported for Incidental Findings": {"category": "RESEARCH_MATERIALS", "fileName": "uw_if_list_03.13.15.docx"},
-            "List of Genes Conditions reported for Carrier Status": {"category": "RESEARCH_MATERIALS", "fileName": "uw_carrier_list_03.13.15.xlsx"}
-        }
+    "SouthSeq": {
+      "Consent Form - CHNOLA": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "consent.chnola.clean_.200831.pdf"
+      },
+      "Consent Form - CHNOLA (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "stamped_consentspanish.ummc_.clean_.201020.pdf"
+      },
+      "Consent Form - UAB": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "consent.uab_.clean_.200831.pdf"
+      },
+      "Consent Form - UAB (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "stamped_consentspanish.uab_.clean_.201020.pdf"
+      },
+      "Consent Form - UMMC": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "consent.ummc_.clean_.200831.pdf"
+      },
+      "Consent Form - UMMC (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "stamped_consentspanish.ummc_.clean_.201020.pdf"
+      },
+      "Consent Form - University of Lousiville": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "consent.uofl_.clean_.200831.pdf"
+      },
+      "Consent Form - University of Lousiville (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "stamped_consentspanish.uofl_.clean_.201020.pdf"
+      },
+      "Consent Form - Woman's Hospital, Baton Rouge, Louisiana": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "consent.womans.clean_.200831.pdf"
+      },
+      "Consent Form - Woman's Hospital, Baton Rouge, Louisiana (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "stamped_consentspanish.womans.clean_.201020.pdf"
+      }
     }
+  },
+  "CSER Phase 2 Protocols and Research Materials": {
+    "CHARM": {
+      "CHARM Study Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "charm_protocol.pdf"
+      }
+    },
+    "KidsCanSeq": {
+      "Age of Majority Lost to Follow Up Certified Letter": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "aom_lost_to_follow_up_certified_letter_english_final.pdf"
+      },
+      "AOM Lost to Follow Up Certified Letter - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidcanseq_aom_lost_to_follow_up_certified_letter_spanish_final.pdf"
+      },
+      "KidsCanSeq Lost to Follow-up Certified Letter (English)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_lost_to_follow_up_certified_letter_english.pdf"
+      },
+      "KidsCanSeq Lost to Follow-up Certified Letter (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_lost_to_follow_up_certified_letter_spanish.pdf"
+      },
+      "KidsCanSeq Study Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_protocol_october_2020_renewal_clean.pdf"
+      }
+    },
+    "NCGENES 2": {
+      "Alert Protocol for Distressed Caregiver": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "alert_protocol_for_distressed_caregiver_2020_08_11.docx"
+      },
+      "NCGENES 2 Study Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_study_protocol.pdf"
+      }
+    },
+    "NYCKidSeq": {
+      "NYCKidSeq Study Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_study_protocol.pdf"
+      },
+      "TeleKidSeq Study Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_study_protocol_0.docx"
+      }
+    },
+    "SouthSeq": {
+      "SouthSeq Research  Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "southseq_protocol.pdf"
+      }
+    }
+  },
+  "CSER Phase 2 Surveys": {
+    "KidsCanSeq": {
+      "KidsCanSeq Oncologist End of Study Survey": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kcs_oncologist_follow-up_survey.pdf"
+      },
+      "KidsCanSeq Oncologist Post-Disclosure Survey": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kcs_oncologist_post_disclosure_survey.pdf"
+      }
+    },
+    "NYCKidSeq": {
+      "NYCKidSeq Baseline Survey": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_baseline_survey.docx"
+      },
+      "NYCKidSeq Baseline Survey - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_baseline_survey.docx"
+      },
+      "NYCKidSeq Return of Results Follow-up Survey #1": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_ror1_survey.docx"
+      },
+      "NYCKidSeq Return of Results Follow-up Survey #1 - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_ror1_survey.docx"
+      },
+      "NYCKidSeq Provider Return of Results Follow-up Survey #1": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_provider_ror1_survey.docx"
+      },
+      "NYCKidSeq Return of Results Follow-up Survey #2": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nyckidseq_ror2_survey.docx"
+      },
+      "NYCKidSeq Return of Results Follow-up Survey #2 - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nyckidseq_ror2_survey.docx"
+      },
+      "TeleKidSeq Baseline Survey": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_baseline_survey.docx"
+      },
+      "TeleKidSeq Baseline Survey - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_baseline_survey.docx"
+      },
+      "TeleKidSeq Return of Results Follow-up Survey #1": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_ror1_survey.docx"
+      },
+      "TeleKidSeq Return of Results Follow-up Survey #1 - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_ror1_survey.docx"
+      },
+      "TeleKidSeq Return of Results Follow-up Survey #2": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "telekidseq_ror2_survey.docx"
+      },
+      "TeleKidSeq Return of Results Follow-up Survey #2 - Spanish": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_telekidseq_ror2_survey.docx"
+      }
+    }
+  },
+  "CSER Phase 2 Educational Materials": {
+    "CHARM": {
+      "Bilingual Glossary of Exome Sequencing Terms": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bilingual_glossary_of_exome_sequencing_terms_-_6.21.19_final.pdf"
+      },
+      "Training guide for CHARM interpreters": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "exome_sequencing_course_for_interpreters_-_charm.pdf"
+      }
+    },
+    "KidsCanSeq": {
+      "Genetics Glossary": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "glossary_final_w_comments_1.10.19.pdf"
+      },
+      "Genetics Glossary (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_glossary_final_w_comments_2-5-2019_final.pdf"
+      },
+      "Germline and Tumor Results Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_explanation_card_germline_and_tumor_results_12-11-2017.pdf"
+      },
+      "Germline and Tumor Results Explanation Card (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_explanation_card_germline_and_tumor_results_spanish_12-11-2017.pdf"
+      },
+      "Germline Results Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_explanation_card_germline_results_12-11-2017.pdf"
+      },
+      "Germline Results Explanation Card (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_explanation_card_germline_results_spanish_12-11-2017.pdf"
+      },
+      "VUS Education Document": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_vus_education_document_v3_final.pdf"
+      },
+      "VUS Education Document (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_vus_education_document_v3_final.pdf"
+      },
+      "QR Codes to Videos (English)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_video_qr_codes_english.docx"
+      },
+      "QR Codes to Videos (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kidscanseq_spanish_qr_codes.docx"
+      }
+    },
+    "NCGENES 2": {
+      "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (English)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx"
+      },
+      "NCGENES 2 Study Brochure - Recruitment (2020-06-15) (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_ncgenes_2_study_brochure_recruitment_remote_2020_06_15.docx"
+      },
+      "Resources for Distressed Participants (English)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "ncggnes_resources_for_distressed_participants.docx"
+      },
+      "Resources for Distressed Participants (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_ncggnes_resources_for_distressed_participants.docx"
+      }
+    }
+  },
+  "CSER Phase 2 Results Templates": {
+    "CHARM": {
+      "CHARM Clinical Report - Exomes": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "charm_clinical_report_-_exomes.pdf"
+      },
+      "CHARM Clinical Report - Family Member": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "charm_clinical_report_-_family_members.pdf"
+      }
+    },
+    "KidsCanSeq": {
+      "No Significant Results Letter Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "nsf_results_letter_v8_master_template.pdf"
+      },
+      "No Significant Results Letter Template (Spanish)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "spanish_nsf-results-letter-v8_master-template_final.pdf"
+      }
+    }
+  },
+  "CSER Phase 2 Harmonized Measures": {
+    "Adult Measures": {
+      "Baseline Measures": {
+        "category": "RESOURCES",
+        "fileName": "adult_baseline_v1.5_-_cser_adult_patient_measures_harmonization_1.docx"
+      },
+      "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "adult_rorfu1_v1.4_-_cser_adult_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #2 (5-7 months after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "adult_rorfu2_v1.4_-_cser_adult_patient_measures_harmonization_0.docx"
+      },
+      "Decliner Survey": {
+        "category": "RESOURCES",
+        "fileName": "adult_decliner_v1.2_-_cser_adult_patient_decliner_survey.docx"
+      }
+    },
+    "Parental Measures": {
+      "Baseline Measures": {
+        "category": "RESOURCES",
+        "fileName": "parent_baseline_v1.5_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "parent_rorfu1_v1.4_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #2 (5-7 months after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "parent_rorfu2_v1.4.1_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Decliner Survey": {
+        "category": "RESOURCES",
+        "fileName": "parent_decliner_v1.2_-_cser_parental_patient_decliner_survey.docx"
+      }
+    },
+    "Organizational Readiness to Change": {
+      "Health Systems Survey": {
+        "category": "RESOURCES",
+        "fileName": "health_systems_orca_v2.0.docx"
+      }
+    },
+    "Provider Measures": {
+      "Provider Return of Results Follow-up #1": {
+        "category": "RESOURCES",
+        "fileName": "provider_rorfu1_v1.2.2_cser_provider_measures_harmonization.docx"
+      },
+      "Provider Return of Results Follow-up #2": {
+        "category": "RESOURCES",
+        "fileName": "provider_rorfu2_v1.2_cser_provider_measures_harmonization.docx"
+      }
+    },
+    "Spanish Adult Measures": {
+      "Baseline Measures": {
+        "category": "RESOURCES",
+        "fileName": "adult_baseline_spanish_v1.5.1_-_cser_adult_patient_measures_harmonization_0.docx"
+      },
+      "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "adult_rorfu1_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #2 (5-7 months after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "adult_rorfu2_spanish_v1.2_-_cser_adult_patient_measures_harmonization.docx"
+      },
+      "Decliner Survey": {
+        "category": "RESOURCES",
+        "fileName": "adult_decliner_spanish_-_cser_adult_patient_measures_harmonization.docx"
+      }
+    },
+    "Spanish parental Measures": {
+      "Baseline Measures": {
+        "category": "RESOURCES",
+        "fileName": "parent_baseline_spanish_v1.5.1_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #1 (0-4 weeks after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "parent_rorfu1_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Post Return of Results Follow-up #2 (5-7 months after RoR)": {
+        "category": "RESOURCES",
+        "fileName": "parent_rorfu2_spanish_v1.2_-_cser_parental_patient_measures_harmonization.docx"
+      },
+      "Decliner Survey": {
+        "category": "RESOURCES",
+        "fileName": "parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"
+      }
+    }
+  },
+  "CSER Phase 1 Participant Consent Forms": {
+    "Baylor College of Medicine": {
+      "Patient Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_patient_consent_04.08.2016.pdf"
+      },
+      "Patient Consent Form (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_patient_consent_form_spanish_04-08-2016.pdf"
+      },
+      "Physician Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_physician_consent_04.08.2016.pdf"
+      },
+      "Parent Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_parent_consent_04.08.2016.pdf"
+      },
+      "Parent Consent Form (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_parental_consent_form_spanish_04-08-2016.pdf"
+      },
+      "Age of Majority Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_age_of_majority_consent_form_november_2014.pdf"
+      }
+    },
+    "Brigham & Women's Hospital": {
+      "Cardiologist Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_cardiologist_consent_form_6.18.14.pdf"
+      },
+      "Primary Care Physician Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_pcp_consent_form_6.18.14.pdf"
+      },
+      "Patient Consent Form (Cardiology)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_consentform_medseq_patients_cardiology_6.18.14.pdf"
+      },
+      "Patient Consent Form (Primary Care Physician)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_consentform_medseq_patients_primary_care_6.18.14.pdf"
+      }
+    },
+    "Children's Hospital of Philadelphia": {
+      "Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "chop_pediseq_informed_consent_form_01-02-15.pdf"
+      }
+    },
+    "ClinSeq": {
+      "Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "clinseqprimaryconsentformv2_2015.pdf"
+      }
+    },
+    "Dana-Farber Cancer Institute": {
+      "Patient Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_patient_consent_03.13.15.pdf"
+      },
+      "Physician Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_physician_consent_03.13.15.pdf"
+      }
+    },
+    "Kaiser Permanente": {
+      "Male Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kaiser_maleconsent_03.13.2015.pdf"
+      },
+      "Female Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kaiser_femaleconsent_03.13.2015.pdf"
+      }
+    },
+    "HudsonAlpha": {
+      "Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "hudsonalpha_cser_consent.pdf"
+      }
+    },
+    "University of Michigan": {
+      "MIONCOSEQ Consent Form (June 2016)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "mioncoseq_consent_form_june_2016.pdf"
+      },
+      "PEDSMIONCOSEQ Informed Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "pedsmioncoseq_informed_consent.pdf"
+      }
+    },
+    "University of North Carolina": {
+      "Parental Consent for Child Relatives of an study participant to test for a specific variant": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncgenes_relative_vucs_parental_consent_12_2014.pdf"
+      },
+      "Assent Form: (Ages 7-14) Relatives of an study participant to test for a specific variant": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncgenes_relative_vucs_7-14_assent_12_2014.pdf"
+      },
+      "Assent Form: (Ages 15-17) Relatives of an study participant to test for a specific variant": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncgenes_relative_vucs_assent_15-17_12_2014.pdf"
+      },
+      "Consent for Adult Relatives of an study participant to test for a specific variant": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncgenes_relative_vucs-consent-adult_12_2014.pdf"
+      }
+    },
+    "University of Washington": {
+      "Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_crcp_consent_03.13.15.pdf"
+      },
+      "Endometrial Consent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_endometrial_consent_03.13.15.pdf.pdf"
+      },
+      "Consent for return of results in event of participant death": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "irb_approved_deceased_ror_release_agreement.pdf"
+      }
+    }
+  },
+  "CSER Phase 1 Participant Education Materials": {
+    "Baylor College of Medicine": {
+      "Study Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3-brochure_july_6.pdf"
+      },
+      "Study Borchure (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_brochure_in_spanish_version_11-8-2012.pdf"
+      },
+      "Genetic Information Nondiscrimination Act (GINA) Document": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_gina_document.pdf"
+      },
+      "GINA Document (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_gina_document_spanish.pdf"
+      },
+      "Tumor Mutation Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_tumor_mutation_explanation_card_8-27-2012.pdf"
+      },
+      "Tumor Mutation Explanation Card (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_tumor_mutation_explanation_card_8-27-2012_spanish.pdf"
+      },
+      "Inherited Mutation Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_inherited_mutation_explanation_card_8-27-2012.pdf"
+      },
+      "Inherited Mutation Explanation Card (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_inherited_mutation_explanation_card_8-27-2012_spanish.pdf"
+      },
+      "X-Linked Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_approved_x-linked_explanation_card_6-20-2013.pdf"
+      },
+      "X-Linked Explanation Card (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_approved_x-linked_explanation_card_6-20-2013_spanish.pdf"
+      },
+      "Revised Carrier Status Explanation Card": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_revised_carrier_status_explanation_card_8-28-2012.pdf"
+      },
+      "Revised Carrier Status Explanation (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_revised_carrier_status_explanation_card_8-28-2012_spanish.pdf"
+      }
+    },
+    "ClinSeq": {
+      "Study Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "clinseqbrochure.pdf"
+      }
+    },
+    "Dana-Farber Cancer Institute": {
+      "Patient Information Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_patient_information_brochure_03.13.15.pdf"
+      }
+    },
+    "University of Michigan": {
+      "Patient FAQ": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "mioncoseq_faq.pdf"
+      },
+      "Patient Vignettes": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "mioncoseq_vignettes.pdf"
+      }
+    },
+    "University of North Carolina": {
+      "Study Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_about_ncgenes.pdf"
+      },
+      "Incidental Information Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_incidental_information_brochure_sept_1_mir.pdf"
+      },
+      "What can I learn from WES Brochure": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_what_can_i_learn_from_wes.pdf"
+      }
+    },
+    "University of Washington": {
+      "Incidental Findings Choice Document": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_if_choice_doc_03.13.15.docx"
+      }
+    }
+  },
+  "CSER Phase 1 Protocol and Research Resources": {
+    "Baylor College of Medicine": {
+      "Germline Requisition Document": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_germline_requisition.pdf"
+      },
+      "Study Questionnaires for Primary or Secondary parent completing for themselves": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_study_questionnaires_active_parent_completing_for_the_parent_july_6_0.pdf"
+      },
+      "Study Questionnaires for Primary or Secondary parent completing for themselves (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_study_questionnaires_active_parent_july_6_in_spanish.pdf"
+      },
+      "Family history questionnaire for primary parent": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6.pdf"
+      },
+      "Family history questionnaire for primary parent (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_family_history_questionnaire_for_mother_as_active_parent_-july_6_in_spanish.pdf"
+      },
+      "Study questionnaire for primary parent completing for child": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_study_questionnaire_for_parent_completing_for_child_version_july_6.pdf"
+      },
+      "Study questionnaire for primary completing comleting for child (Spanish Version)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_study_questionnaire_for_parent_completing_for_child_version_july_6_in_spanish.pdf"
+      }
+    },
+    "Brigham & Women's Hospital": {
+      "MedSeq Protocol Trials": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_vassy-green-medseq-protocol-trials-2014.pdf"
+      }
+    },
+    "Dana-Farber Cancer Institute": {
+      "Physician Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_md_protocol_09_02_15.pdf"
+      },
+      "Patient Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_patient_protocol_09_02_15.pdf"
+      }
+    },
+    "University of Michigan": {
+      "MIONCOSEQ Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "mioncoseq_protocol_amendment_june2015.pdf"
+      },
+      "PEDSMIONCOSEQ Protocol": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "pedsmioncoseq_clinical_protocol.pdf"
+      }
+    }
+  },
+  "CSER Phase 1 Results Report Template": {
+    "Baylor College of Medicine": {
+      "Germline Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_germline_report_template.pdf"
+      },
+      "Tumor Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_tumor_report_deid.pdf"
+      }
+    },
+    "Brigham & Women's Hospital": {
+      "Sample Genome Report": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf"
+      }
+    },
+    "Children's Hospital of Philadelphia": {
+      "Sample Results Report Format (Positive Result)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "pediseq_report_format_positive_10-28-15.pdf"
+      },
+      "Sample Results Report Format (Negative Result)": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "pediseq_report_format_negative_10-28-15.pdf"
+      }
+    },
+    "ClinSeq": {
+      "Primary Results ACMG Secondary Variant Findings Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "clinseq_secondary_variant_report.doc"
+      },
+      "Carrier Results Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "clinseq_carrier_report.docx"
+      }
+    },
+    "Dana-Farber Cancer Institute": {
+      "Sample Positive Report": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_positive_result_03.13.15.docx"
+      },
+      "Sample Negative Report": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "dfci_negative_result_03.13.15.docx"
+      }
+    },
+    "HudsonAlpha": {
+      "Summary Results Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "hudsonalpha_00051c_shoc2_summary.pdf"
+      },
+      "Detailed Results Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "hudsonalpha_00051c_shoc2_detailed.pdf"
+      }
+    },
+    "Kaiser Permanente": {
+      "Negative Carrier Status Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "negative_carrier_template_11-6-2015.docx"
+      },
+      "Positive Carrier Status Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "positive_carrier_template_11-6-2015.docx"
+      },
+      "Negative Whole Genome Sequencing Incidental Findings Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "negative_wgs_incidental_findings_11-6-2015.docx"
+      }
+    },
+    "University of Michigan": {
+      "MIONCOSEQ Patient Report Template": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "mioncoseq_example_patient_report-po_3043.pdf"
+      }
+    },
+    "University of North Carolina": {
+      "Sample WES Report": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncg_wes_sample_report.pdf"
+      },
+      "Sample CLIA report": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_ncg_clia_sample_report.pdf"
+      }
+    },
+    "University of Washington": {
+      "Report Template for Positive Incidental Finding result": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_if_positive_result_03.15.15.doc.doc"
+      },
+      "Report Template for Negative Diagnosis Result": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_crcp_negative_result_03.13.15.doc"
+      },
+      "Report Template for Positive Diagnosis Result": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_crcp_positive_result_03.13.15.doc"
+      }
+    }
+  },
+  "CSER Phase 1 Description of Variant Analysis Pipeline": {
+    "Baylor College of Medicine": {
+      "Yang JAMA Journal Article": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_yang-jama-2014.pdf"
+      }
+    },
+    "Brigham & Women's Hospital": {
+      "McLaughlin et al Journal Article": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_mclaughlin-et-al-bmc-medical-genetics-final-with-files.pdf"
+      },
+      "Kong et al Journal Article": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "bwh_won_kong-et-al-gim-final_.pdf"
+      }
+    },
+    "University of North Carolina": {
+      "NCGenes Medical Workflow Engine Description": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_gmw_tr_03.31.14.pdf"
+      },
+      "NCGenes Variant Database Description": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_canvas_and_annobot_tr_03.31.14.pdf"
+      },
+      "NCGenes MapSeq Sequence Analysis Workflow Description": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "unc_mapseq_tr_03.31.14.pdf"
+      }
+    }
+  },
+  "CSER Phase 1 Framework for Primary and Secondary Results": {
+    "Baylor College of Medicine": {
+      "Incidental Findings": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "basic3_incidental_findings-baylor_2014.pdf"
+      }
+    },
+    "HudsonAlpha": {
+      "ACMG and OMIM Gene List used for Secondary Findings": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "hudsonealpha_secondarygenelist.doc"
+      }
+    },
+    "Kaiser Permanente": {
+      "List of Genes Conditions reported for Carrier Status": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kaiser_carrierlist_03132015.xlsx"
+      },
+      "List of Genes Conditions reported for Incidental Findings": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "kaiser_iflist_03.13.2015.docx"
+      }
+    },
+    "University of Washington": {
+      "List of Genes Conditions reported for Incidental Findings": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_if_list_03.13.15.docx"
+      },
+      "List of Genes Conditions reported for Carrier Status": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "uw_carrier_list_03.13.15.xlsx"
+      }
+    }
+  }
 }

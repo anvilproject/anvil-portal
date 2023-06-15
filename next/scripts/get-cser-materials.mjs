@@ -1,13 +1,13 @@
 import fsp from "fs/promises";
-import path from "path";
 import got from "got";
+import path from "path";
 
 const urlsJsonPath = "./files/cser-materials-urls.json";
 const cserDirPath = "../public/consortia/cser";
 
 const categoryDirNames = {
-    "research-material": "research-materials",
-    attachments: "resources",
+  "research-material": "research-materials",
+  attachments: "resources",
 };
 
 getMaterials();
@@ -18,7 +18,7 @@ async function getMaterials() {
     const dirPath = path.resolve(cserDirPath, dirName);
     try {
       await fsp.access(dirPath);
-    } catch(e) {
+    } catch (e) {
       await fsp.mkdir(dirPath);
     }
   }
@@ -33,7 +33,10 @@ async function getMaterials() {
     const dirName = categoryDirNames[urlMatch[1]];
     const fileName = urlMatch[2];
     console.log(`Getting ${fileName}`);
-    await fsp.writeFile(path.resolve(cserDirPath, dirName, fileName), got.stream(url));
+    await fsp.writeFile(
+      path.resolve(cserDirPath, dirName, fileName),
+      got.stream(url)
+    );
   }
   console.log("Done");
 }

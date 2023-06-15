@@ -5,11 +5,11 @@ export enum MaterialsCategory {
   RESOURCES = "RESOURCES",
 }
 
-type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>
+type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
 
-type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>
+type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>;
 
-type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>
+type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>;
 
 interface MaterialsFileInfo {
   category: MaterialsCategory;
@@ -37,7 +37,9 @@ const categoryFileUrlPrefixes = {
   [MaterialsCategory.RESOURCES]: "/consortia/cser/resources/",
 };
 
-export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
+export function getOrganizedCategoryMaterials(
+  category: MaterialsCategory
+): MaterialsMajorSection[] {
   const { compare } = new Intl.Collator("en");
   const majorSections: MaterialsMajorSection[] = [];
 
@@ -58,7 +60,9 @@ export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
           files.push({
             label: fileLabel,
             name: fileInfo.fileName,
-            url: categoryFileUrlPrefixes[category] + encodeURIComponent(fileInfo.fileName),
+            url:
+              categoryFileUrlPrefixes[category] +
+              encodeURIComponent(fileInfo.fileName),
           });
         }
       }
@@ -70,8 +74,8 @@ export function getOrganizedCategoryMaterials(category: MaterialsCategory) {
     }
     if (minorSections.length)
       majorSections.push({
-        sections: minorSections,
         label: majorSectionLabel,
+        sections: minorSections,
       });
   }
 

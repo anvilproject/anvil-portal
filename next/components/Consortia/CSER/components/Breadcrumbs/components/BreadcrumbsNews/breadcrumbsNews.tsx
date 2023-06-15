@@ -1,4 +1,3 @@
-import React from "react";
 import { Breadcrumbs } from "@clevercanary/data-explorer-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 
 export const BreadcrumbsNews = (): JSX.Element => {

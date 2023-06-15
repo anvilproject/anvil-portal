@@ -3,6 +3,7 @@ import * as C from "./common/components";
 
 /**
  * Returns AnVIL theme with customization.
+ * @param theme -- Base theme
  * @returns theme with custom theme overrides.
  */
 export function mergeAppTheme(theme: Theme): Theme {

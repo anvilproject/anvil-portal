@@ -6,7 +6,6 @@ export const navigation: NavigationConfig = {
   consortia: {
     nodes: [
       {
-        key: "cser",
         hero: {
           byline: "Active August, 2020 to July, 2023",
           logo: {
@@ -16,6 +15,7 @@ export const navigation: NavigationConfig = {
           },
           slogan: "Clinical Sequencing Evidence-Generating Research",
         },
+        key: "cser",
         navigation: [
           { label: "About", url: "/consortia/cser" },
           { label: "News", url: "/consortia/cser/news" },

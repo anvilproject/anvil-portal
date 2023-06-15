@@ -62,6 +62,7 @@ function getNavItems(
  * @param slug - Slug.
  * @returns the navigation config for the slug.
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 export function getNavigationConfig(
   slug?: string[]
 ): Omit<NavigationNode, "key" | "slugs"> | undefined {

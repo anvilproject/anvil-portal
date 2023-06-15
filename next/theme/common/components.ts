@@ -27,10 +27,6 @@ export const MuiBreadcrumbs: Components["MuiBreadcrumbs"] = {
 export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
   return {
     styleOverrides: {
-      img: {
-        margin: "16px 0",
-        maxWidth: "100%",
-      },
       h1: {
         ...theme.typography[TEXT_HEADING_LARGE],
         margin: "0 0 8px",
@@ -43,6 +39,17 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         ...theme.typography[TEXT_HEADING_SMALL],
         margin: "32px 0 16px",
       },
+      img: {
+        margin: "16px 0",
+        maxWidth: "100%",
+      },
+      li: {
+        margin: "8px 0",
+        // eslint-disable-next-line sort-keys -- disabling key order for readability
+        "&:last-child": {
+          marginBottom: 0,
+        },
+      },
       p: {
         ...theme.typography[TEXT_BODY_400_2_LINES],
         marginBottom: 16,
@@ -53,13 +60,6 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
       },
       "ul + p": {
         marginTop: 16,
-      },
-      li: {
-        margin: "8px 0",
-        // eslint-disable-next-line sort-keys -- disabling key order for readability
-        "&:last-child": {
-          marginBottom: 0,
-        },
       },
     },
   };

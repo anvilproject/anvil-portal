@@ -5,7 +5,7 @@ import { BROWSER_URL, SLOGAN, socials } from "./constants";
 
 const header: HeaderProps = {
   authenticationEnabled: false,
-  logo: { alt: "The AnVIL", link: BROWSER_URL, src: logoAnvil, height: 40 },
+  logo: { alt: "The AnVIL", height: 40, link: BROWSER_URL, src: logoAnvil },
   navAlignment: ELEMENT_ALIGNMENT.CENTER,
   navLinks: [
     {
