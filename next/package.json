@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "check-format": "prettier --check .",
+    "prepare": "cd .. && husky install next/.husky",
     "convert-cser-publications": "cd scripts && node convert-cser-publications.mjs"
   },
   "dependencies": {
@@ -57,6 +58,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
     "got": "^13.0.0",
+    "husky": "^8.0.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "prettier": "^2.8.3",
