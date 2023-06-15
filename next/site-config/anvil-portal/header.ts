@@ -18,7 +18,7 @@ const header: HeaderProps = {
     },
     {
       label: "Datasets",
-      url: "/",
+      url: `${BROWSER_URL}/data`,
     },
     {
       label: "Consortia",
