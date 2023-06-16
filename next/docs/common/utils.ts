@@ -2,7 +2,7 @@ import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/co
 import fs from "fs";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
-import { navigation as navigationConfig } from "../../site-config/anvil-portal/navigation";
+import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
 import { NavigationKey, NavigationNode, SlugByFilePath } from "./entities";
 
