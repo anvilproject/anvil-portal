@@ -10,4 +10,4 @@ const config: SiteConfig = {
   },
 };
 
-export default devConfig;
+export default config;
