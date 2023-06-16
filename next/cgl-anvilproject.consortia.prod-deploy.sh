@@ -13,7 +13,7 @@ mkdir -p build
 
 # Build AnVIL
 rm -rf ./out
-npm run build
+npm run build-prod:anvil-portal
 mv out/* build
 
 export BUCKET=s3://ptm-anvilproject.org.consortia/
