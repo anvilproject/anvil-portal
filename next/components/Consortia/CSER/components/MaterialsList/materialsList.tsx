@@ -14,17 +14,23 @@ interface MaterialsListProps {
   category: MaterialsCategory;
   children?: ReactNode;
   className?: string;
+  firstExpanded?: boolean;
 }
 
 export const MaterialsList = ({
   category,
   children,
   className,
+  firstExpanded = true,
 }: MaterialsListProps): JSX.Element => {
   return (
     <MList className={className}>
-      {getOrganizedCategoryMaterials(category).map((majorSection) => (
-        <Accordion key={majorSection.label} title={majorSection.label}>
+      {getOrganizedCategoryMaterials(category).map((majorSection, i) => (
+        <Accordion
+          key={majorSection.label}
+          expanded={firstExpanded && i === 0}
+          title={majorSection.label}
+        >
           {majorSection.sections.map((minorSection) => (
             <div key={minorSection.label}>
               <Typography component="div" variant={TEXT_BODY_LARGE_500}>
