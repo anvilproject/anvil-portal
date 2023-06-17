@@ -29,6 +29,10 @@ const config: SiteConfig = {
           url: `${getDatasetsEnvironmentUrl()}data`,
         },
         {
+          label: "Consortia",
+          url: `${getDatasetsEnvironmentUrl()}consortia`,
+        },
+        {
           label: "News",
           url: "/news",
         },

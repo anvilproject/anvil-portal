@@ -53,7 +53,7 @@ const SectionDatasetCloud: FC = (): JSX.Element => {
         {/* CTAs */}
         <>
           <ButtonCta
-            attributeHREF="/overview/data-consortia"
+            attributeHREF={`${getDatasetsEnvironmentUrl()}consortia`}
             buttonSize={ButtonSize.LARGE}
             buttonTheme={ButtonTheme.SECONDARY}
           >
