@@ -1,6 +1,7 @@
 import { navigate } from "gatsby";
 import { FormEvent } from "react";
-import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
+
+// import * as AnvilGTMService from "../../../utils/anvil-gtm/anvil-gtm.service";
 
 /**
  * Builds site search url with corresponding search string and search partner params.
@@ -63,7 +64,7 @@ export function onSubmitSiteSearch(
     const href = buildSiteSearchUrl(searchStr, searchPath);
     navigate(href);
     /* Track search */
-    AnvilGTMService.trackSiteSearch(searchStr);
+    // AnvilGTMService.trackSiteSearch(searchStr);
   }
 }
 
