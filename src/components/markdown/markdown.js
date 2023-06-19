@@ -11,32 +11,31 @@ import React, { useCallback, useEffect, useRef } from "react";
 import rehypeReact from "rehype-react";
 
 // App dependencies
-import Button from "../button/button";
+import ExternalLink from "../anchor-element/external-link/external-link";
 import ButtonLink from "../button-link/button-link";
-import DataIngestionChart from "../data-ingestion-chart/data-ingestion-chart";
+import Button from "../button/button";
 import EventHero from "../event-hero/event-hero";
 import Events from "../events/events";
-import ExternalLink from "../anchor-element/external-link/external-link";
 import Figure from "../figure/figure";
 import FigureCaption from "../figure/figure-caption/figure-caption";
 import FigureStyles from "../figure/figure-styles/figure-styles";
-import Hero from "../hero/hero";
 import HeroTutorial from "../hero-tutorial/hero-tutorial";
+import Hero from "../hero/hero";
 import InternalLink from "../internal-link/internal-link";
 import News from "../news/news";
 import Platforms from "../platforms/platforms";
 import Publications from "../publications/publications";
 import SiteSearch from "../site-search/site-search";
-import Socials from "../socials/socials";
 import SocialLink from "../socials/social-link/social-link";
-import SocialTwitter from "../socials/social-twitter/social-twitter";
 import SocialTwitterHandle from "../socials/social-twitter-handle/social-twitter-handle";
 import SocialTwitterHashTag from "../socials/social-twitter-hashtag/social-twitter-hashtag";
+import SocialTwitter from "../socials/social-twitter/social-twitter";
 import SocialYoutube from "../socials/social-youtube/social-youtube";
+import Socials from "../socials/socials";
 import StyleGuideColorPalette from "../style-guide-color-palette/style-guide-color-palette";
 import StyleGuideDownloadLogo from "../style-guide-download-logo/style-guide-download-logo";
-import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
 import StyleGuideTypographyExample from "../style-guide-typography-example/style-guide-typography-example";
+import StyleGuideTypography from "../style-guide-typography/style-guide-typography";
 import Tools from "../tools/tools";
 import Warning from "../warning/warning";
 import Workspaces from "../workspaces/workspaces";
@@ -52,7 +51,6 @@ function Markdown(props) {
     components: {
       button: Button,
       "button-link": ButtonLink,
-      "data-ingestion-chart": DataIngestionChart,
       "event-hero": EventHero,
       events: Events,
       "external-link": ExternalLink,

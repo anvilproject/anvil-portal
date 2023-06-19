@@ -5,18 +5,10 @@ import { promisify } from "util";
 
 const parseCsv = promisify(callbackParseCsv);
 
-const chartDataPath = "../components/data-ingestion-chart/chart-data.js";
-
-const {
-  endDateNum: oldEndDateNum,
-  monthDataByConsortium: oldMonthData,
-  startYear,
-  // eslint-disable-next-line @typescript-eslint/no-var-requires -- Loading and writing are done with the same path (TODO?: use JSON instead)
-} = require(chartDataPath);
-
+const chartDataPath =
+  "../components/Consortia/CSER/components/DataIngestionChart/chart-data.json";
 const workspaceFilesPath = "./workspace-files";
-const workspacesInfoPath = "../../plugins/utils/dashboard-source-anvil.tsv";
-const newDataMinTime = oldEndDateNum + 1;
+const workspacesInfoPath = "./files/dashboard-source-anvil_2023-03-27.tsv";
 
 generateChartData()
   .then((success) => {
@@ -28,6 +20,14 @@ generateChartData()
 
 // eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 async function generateChartData() {
+  const {
+    endDateNum: oldEndDateNum,
+    monthDataByConsortium: oldMonthData,
+    startYear,
+  } = JSON.parse(await fsPromises.readFile(chartDataPath, "utf8"));
+
+  const newDataMinTime = oldEndDateNum + 1;
+
   try {
     await fsPromises.access(workspaceFilesPath);
   } catch (e) {
@@ -97,7 +97,7 @@ async function generateChartData() {
       // value from new data is too small; try to avoid having the graph go downward
       const sumAfter = addedSizes
         .slice(newDataStartIndex + 1)
-        .reduce((a, b) => a + b);
+        .reduce((a, b) => a + b, 0);
       if (sumAfter >= diff) {
         // if the subsequent data eventually makes up the difference, distribute the negative change across the data
         addedSizes[newDataStartIndex] += diff;
@@ -118,13 +118,13 @@ async function generateChartData() {
 
   const monthDataByConsortium = Object.entries(monthDataObj);
 
-  const scriptText = `module.exports = {endDateNum: ${JSON.stringify(
-    maxDateNum
-  )}, monthDataByConsortium: ${JSON.stringify(
-    monthDataByConsortium
-  )}, startYear: ${JSON.stringify(startYear)}};`;
+  const jsonText = JSON.stringify({
+    endDateNum: maxDateNum,
+    monthDataByConsortium: monthDataByConsortium,
+    startYear: startYear,
+  });
 
-  await fsPromises.writeFile(chartDataPath, scriptText);
+  await fsPromises.writeFile(chartDataPath, jsonText);
 
   console.log("Added new data");
 
