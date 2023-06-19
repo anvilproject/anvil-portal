@@ -2,20 +2,18 @@ import { parse as callbackParseCsv } from "csv-parse";
 import { promises as fsPromises } from "fs";
 import path from "path";
 import { promisify } from "util";
+import chartDataPath from "../components/Consortia/CSER/components/DataIngestionChart/chart-data.js";
 
 const parseCsv = promisify(callbackParseCsv);
-
-const chartDataPath = "../components/data-ingestion-chart/chart-data.js";
 
 const {
   endDateNum: oldEndDateNum,
   monthDataByConsortium: oldMonthData,
   startYear,
-  // eslint-disable-next-line @typescript-eslint/no-var-requires -- Loading and writing are done with the same path (TODO?: use JSON instead)
-} = require(chartDataPath);
+} = chartDataPath;
 
 const workspaceFilesPath = "./workspace-files";
-const workspacesInfoPath = "../../plugins/utils/dashboard-source-anvil.tsv";
+const workspacesInfoPath = "./files/dashboard-source-anvil_2023-03-27.tsv";
 const newDataMinTime = oldEndDateNum + 1;
 
 generateChartData()

@@ -12,7 +12,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "prepare": "cd .. && husky install next/.husky",
     "convert-cser-publications": "cd scripts && node convert-cser-publications.mjs",
-    "update-ingestion-chart": "cd scripts && node update-ingestion-chart.js"
+    "update-ingestion-chart": "cd scripts && node update-ingestion-chart.mjs"
   },
   "dependencies": {
     "@clevercanary/data-explorer-ui": "0.24.0",
