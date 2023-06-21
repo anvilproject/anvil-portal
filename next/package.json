@@ -15,7 +15,7 @@
     "update-ingestion-chart": "cd scripts && node update-ingestion-chart.mjs"
   },
   "dependencies": {
-    "@clevercanary/data-explorer-ui": "0.24.0",
+    "@clevercanary/data-explorer-ui": "^0.26.0",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mdx-js/loader": "^2.3.0",
