@@ -1,5 +1,5 @@
 import {
-  TEXT_BODY_400_2_LINES,
+  TEXT_BODY_LARGE_400_2_LINES,
   TEXT_HEADING,
   TEXT_HEADING_LARGE,
   TEXT_HEADING_SMALL,
@@ -27,6 +27,9 @@ export const MuiBreadcrumbs: Components["MuiBreadcrumbs"] = {
 export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
   return {
     styleOverrides: {
+      body: {
+        ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
+      },
       h1: {
         ...theme.typography[TEXT_HEADING_LARGE],
         margin: "0 0 8px",
@@ -51,7 +54,7 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         },
       },
       p: {
-        ...theme.typography[TEXT_BODY_400_2_LINES],
+        ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
         marginBottom: 16,
       },
       ul: {
