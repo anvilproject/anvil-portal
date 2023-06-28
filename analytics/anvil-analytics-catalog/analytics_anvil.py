@@ -35,7 +35,7 @@ def get_df_videos_info(df):
 def adjust_table_index_key(val):
 	if isinstance(val, str):
 		if val == "":
-			return ('<span style="color: gray">Empty</span>', True)
+			return ('<i>Empty</i>', True)
 		if val[0] == "/":
 			return ('<a href="' + escape_html("https://anvilproject.org" + val) + '">' + escape_html(val) + '</a>', True)
 	return val

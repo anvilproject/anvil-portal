@@ -4,7 +4,6 @@ from html import escape as escape_html
 from googleapiclient.discovery import build
 import pandas as pd
 
-
 users_over_time_file_name = "users_over_time_history.json"
 
 yt_service_params = (ga.yt_service_params[0] + ['https://www.googleapis.com/auth/youtube'],) + ga.yt_service_params[1:]
@@ -18,12 +17,6 @@ videos_info = {}
 
 site_video_views = []
 yt_video_views = []
-
-def authenticate_ga_portal(secret_name):
-	return ac.authenticate_api(secret_name, ga.ga4_service_params, port=8082)
-
-def authenticate_ga_catalog(secret_name):
-	return ac.authenticate_api(secret_name, ga.ga4_service_params, port=8084)
 
 def authenticate_yt(secret_name):
 	service_system = ac.authenticate_api(secret_name, yt_service_params)
@@ -106,7 +99,7 @@ def make_subtraction_processor(values):
 
 
 def save_site_video_views(df):
-	site_video_views.append(df["eventCount"].agg("sum"))
+	site_video_views.append(df["ga:hits"].agg("sum"))
 	return df
 
 def collapse_yt_sources(df):
