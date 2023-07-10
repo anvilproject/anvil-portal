@@ -4,6 +4,7 @@ from html import escape as escape_html
 from googleapiclient.discovery import build
 import pandas as pd
 
+users_over_time_file_name = "users_over_time_history.json"
 
 yt_service_params = (ga.yt_service_params[0] + ['https://www.googleapis.com/auth/youtube'],) + ga.yt_service_params[1:]
 
@@ -32,6 +33,8 @@ def get_df_videos_info(df):
 
 def adjust_table_index_key(val):
 	if isinstance(val, str):
+		if val == "":
+			return ('<i>Empty</i>', True)
 		if val[0] == "/":
 			return ('<a href="' + escape_html("https://anvilproject.org" + val) + '">' + escape_html(val) + '</a>', True)
 	return val
@@ -67,8 +70,21 @@ def format_video_stats_table(df, column_defs):
 
 def show_value_difference_table(label, values, **other_params):
 	df = pd.DataFrame({label: [values[0]]}, index=[label])
-	df_prev = pd.DataFrame({label: [values[1]]}, index=[label])
-	display(ac.format_table_with_change(df, df_prev, show_symbols=False, hide_index=False, hide_columns=True, **other_params))
+	formatting_params = {
+		"hide_index": False,
+		"hide_columns": True
+	}
+	if len(values) == 2:
+		df_prev = pd.DataFrame({label: [values[1]]}, index=[label])
+		formatted = ac.format_table_with_change(df, df_prev, show_symbols=False, **formatting_params, **other_params)
+	else:
+		formatted = ac.format_table(
+			df,
+			column_defs=[("minmax(calc(var(--value-width) + var(--percentage-width)), min-content)", lambda v, i, c: str(v) if isinstance(v, int) else "{:.2f}".format(v))],
+			**formatting_params,
+			**other_params
+		)
+	display(formatted)
 
 def make_subtraction_processor(values):
 	values = values[:]
@@ -125,15 +141,28 @@ def plot_yt_over_time(**other_params):
 	return ac.format_change_over_time_table(df, pre_render_processor=lambda df, cd: (df[::-1], cd), **other_params)
 
 
-def plot_users_over_time(**other_params):
+def save_ga3_users_over_time_data(users_params, views_params, **other_params):
+	users_df = ac.get_data_df(["ga:30dayUsers"], ["ga:date"], df_processor=lambda df: df[::-1], **users_params, **other_params)
+	users_df.index = pd.to_datetime(users_df.index)
+	views_df = ac.get_data_df(["ga:pageviews"], ["ga:date"], df_processor=lambda df: df[::-1], **views_params, **other_params)
+	views_df.index = pd.to_datetime(views_df.index)
+
+	df = ac.make_month_filter(["ga:30dayUsers"])(users_df.join(views_df)).rename(columns={"ga:30dayUsers": "Users", "ga:pageviews": "Total Pageviews"})
+	df.to_json(users_over_time_file_name)
+
+
+def plot_users_over_time(load_json=True, use_api=True, **other_params):
+	old_data = pd.read_json(users_over_time_file_name) if load_json else None
 	df = ac.show_plot_over_time(
 		"Monthly Activity Overview",
-		["Users Per Month", "Total Pageviews Per Month"],
-		["ga:30dayUsers", "ga:pageviews"],
-		df_filter=ac.make_month_filter(["ga:30dayUsers"]),
-		df_processor=lambda df: df[::-1],
+		["Users", "Total Pageviews"],
+		["activeUsers", "screenPageViews"] if use_api else None,
+		dimensions="yearMonth",
+		sort_results=["yearMonth"],
+		df_processor=(lambda df: df.set_index(df.index + "01")[-2::-1]) if use_api else None,
+		pre_plot_df_processor=None if old_data is None else (lambda df: df.add(old_data, fill_value=0).astype("int")[::-1]) if use_api else (lambda df: old_data),
 		format_table=False,
 		**other_params
-	).rename(columns={"Users Per Month": "Users", "Total Pageviews Per Month": "Total Pageviews"})
+	)
 	return ac.format_change_over_time_table(df, change_dir=-1, **other_params)
 
