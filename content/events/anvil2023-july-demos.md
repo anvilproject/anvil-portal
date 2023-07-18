@@ -26,6 +26,10 @@ After the demo, we’ll open up the floor to answer questions about the demo and
 
 In this demo, the Bioconductor team will share an overview of how researchers can use Bioconductor in AnVIL to perform interactive genomic data science.
 
+- Get acquainted with the cloud environment selection process, RStudio's git interface, and precompiled binaries
+- Have a look at an app that helps with ontologically aware interrogation of the EBI/NHGRI GWAS catalog
+- explore human pangenome representation and variant calling with the AnVIL package and a copy of the HPRC workspace
+
 #### 11:30 AM - 12:00 PM ET – Q&A
 
 Participants will have an opportunity to ask questions about the demonstration and we will have AnVIL and Terra Support on the line to answer questions about AnVIL beyond the demo.
