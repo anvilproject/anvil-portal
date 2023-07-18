@@ -11,6 +11,7 @@ import React, { FC } from "react";
 // App dependencies
 import ButtonCta from "../../button-cta/button-cta";
 import { ICard } from "../../card/card";
+import { Target } from "../../target/target.model";
 
 // Styles
 import {
@@ -36,7 +37,11 @@ const DatasetCard: FC<Props> = ({ datasetCard }): JSX.Element => {
       </div>
       <div className={cardActions}>
         {actions?.map(({ label, url }) => (
-          <ButtonCta attributeHREF={url || "/"} key={label}>
+          <ButtonCta
+            attributeHREF={url || "/"}
+            attributeTarget={Target.SELF}
+            key={label}
+          >
             <span className={cardAction}>{label}</span>
           </ButtonCta>
         ))}
