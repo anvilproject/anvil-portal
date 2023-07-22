@@ -1,7 +1,7 @@
 ---
 sectionSubHeader: ""
 publications:
-    - title: "A draft human pangenome reference"
+    - title: "A Draft Human Pangenome Reference"
       cardLink: "https://www.nature.com/articles/s41586-023-05896-x"
       category: "ON_ANVIL"
       citation:
