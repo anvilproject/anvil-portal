@@ -1,0 +1,5 @@
+script:
+  - cd next
+  - npm ci
+  - npm run build-${anvil_portal_build_env}:anvil-portal
+  - tar -cvj -f ../.gitlab/distribution.tar.bz2 out

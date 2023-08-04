@@ -1,0 +1,2 @@
+variables:
+  anvil_portal_build_env: prod
