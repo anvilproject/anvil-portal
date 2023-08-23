@@ -1,0 +1,49 @@
+---
+author: "AnVIL"
+conference: "ASHG 2023"
+description: "Stephen Mosher, Elena Ghanaim, Ava Hoffman, Anton Kovalsky and Fred Tan will discuss the new data management and sharing (DMS) policy released by the National Institutes of Health. In this workshop, attendees will learn about key data-sharing practices and take a journey through the Terra and AnVIL ecosystem to explore the features that meet NIH’s desirable characteristics."
+eventType: "Workshop"
+featured: true
+location: "Virtual"
+sessions: [{sessionEnd: "14 September 2023 2:00 PM", sessionStart: "14 September 2023 12:00 PM"}]
+timezone: "America/New_York"
+title: "Satisfying NIH data management and sharing (DMS) requirements with AnVIL"
+---
+
+<event-hero></event-hero>
+
+### Description
+
+As biomedical data grow at an exciting pace, the ability to share them in a way that is Findable, Accessible, Interoperable, and Reusable (FAIR) has never been more important. Recognizing this need for better data practices, the National Institutes of Health (NIH) has released a new policy (NOT-OD-21-013) that requires researchers generating NIH-funded data to create a strategy and budget for data management and sharing. This plan must include the selection of a public data repository that implements desirable characteristics like unique identifiers, metadata, free and easy sharing, security, and quality assurance. Terra, an open-source bioinformatics ecosystem that includes a repository, a Data Oversight Use System (DUOS), and an analysis platform, is an ideal solution for researchers needing to comply with this new NIH policy and is already being implemented as an approved data-sharing repository by the NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL, NOT-HG-19-024).
+
+In this interactive workshop, participants will learn about key data-sharing practices and take a journey through the Terra ecosystem to explore the features that meet NIH’s desirable characteristics. Participants will view and engage in two vignettes that discern how Terra and AnVIL can satisfy the data needs of both a large consortium and an individual research lab. In the consortium vignette, the AnVIL team will use hands-on activities to show how they are harnessing Terra features for data sharing, management, and reproducible analysis in ways that already meet NIH’s standards. In the individual lab vignette, participants can upload and share their own mock data set and metadata. Regardless of their use case, participants will walk away with the skills and confidence to include Terra/AnVIL in their data management plan.
+
+By the end of the workshop, participants will learn how to:
+
+1. Find and use Terra/AnVIL features that comply with NIH policy requirements
+2. Upload data to Terra/AnVIL
+3. Make data findable and accessible to promote scientific reproducibility
+
+### Background
+- The National Institutes of Health (NIH) has released a [new policy](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html) that requires researchers generating NIH-funded data to create a strategy and budget for data management and sharing.
+- This plan must include the selection of a public data repository that implements desirable characteristics like unique identifiers, metadata, free and easy sharing, security, and quality assurance.\
+  Terra, an open-source bioinformatics ecosystem that includes a repository, a Data Oversight Use System (DUOS), and an analysis platform, is an ideal solution for researchers needing to comply with this new NIH policy and is already being implemented as an [approved data-sharing repository](https://grants.nih.gov/grants/guide/notice-files/NOT-HG-19-024.html) by the NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL).
+- In this workshop, attendees will learn to find and use Terra/AnVIL features that comply with NIH policy requirements, upload data to Terra/AnVIL and make data findable and accessible with DUOS.
+- Finally, workshop participants will be introduced to an online app designed to automate the creation of your NIH Data Management and Sharing Plan based on template text corresponding to individual researcher needs.
+
+
+### Event Details
+
+- How to register: https://learning.ashg.org/products/workshop-satisfying-nih-data-sharing-and-management-requirements-with-terra-and-anvil
+- Conference website: https://www.ashg.org/
+- Contact Info: [Stephen Mosher](mailto:stephen.mosher@jhu.edu)
+
+### Agenda:
+
+- 12:00 | Welcome to 'Satisfying NIH data management and sharing (DMS) requirements with AnVIL' | Stephen Mosher
+- 12:05 | Background on NIH Data Management and Sharing Policy | Elena Ghanaim
+- 12:20 | Intro to AnVIL and Terra - Platform Tour | Anton Kovalsky
+- 13:05 | Meeting DMS requirements with AnVIL, Terra and DUOS | Frederick Tan
+- 13:25 | Writing your DMS plan | Ava Hoffman
+- 13:45 | Survey and Wrap Up | Stephen Mosher
+- 14:00 | End
