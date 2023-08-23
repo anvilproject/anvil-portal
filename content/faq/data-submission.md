@@ -18,8 +18,7 @@ AnVIL aims to host a variety of datasets useful to the genomics community. Submi
 
 ## Who pays for storage costs in AnVIL?
 
-AnVIL will cover storage costs of data that has been or will be released publicly to the research community (including those registered in dbGaP or DUOS and released through controlled access). Otherwise, storage costs are incurred by the billing account associated with the workspace.
-
+AnVIL will cover storage costs of data from NHGRI funded studies that has been or will be released publicly to the research community (including those registered in dbGaP or DUOS and released through controlled access). Otherwise, storage costs are incurred by the billing account associated with the workspace.
 For more on understanding and controlling cloud costs in AnVIL, see [Understanding Cloud Costs](https://anvilproject.org/learn/introduction/understanding-cloud-costs).
 
 For more on preparing a budget justification for cloud costs in AnVIL, see [Budget Templates](https://anvilproject.org/learn/investigators/budget-templates).
