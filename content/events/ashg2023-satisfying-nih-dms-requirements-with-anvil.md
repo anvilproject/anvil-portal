@@ -26,7 +26,7 @@ By the end of the workshop, participants will learn how to:
 
 ### Background
 - The National Institutes of Health (NIH) has released a [new policy](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html) that requires researchers generating NIH-funded data to create a strategy and budget for data management and sharing.
-- This plan must include the selection of a public data repository that implements desirable characteristics like unique identifiers, metadata, free and easy sharing, security, and quality assurance.
+- This plan must include the selection of a public data repository that implements desirable characteristics like unique identifiers, metadata, free and easy sharing, security, and quality assurance.\
   Terra, an open-source bioinformatics ecosystem that includes a repository, a Data Oversight Use System (DUOS), and an analysis platform, is an ideal solution for researchers needing to comply with this new NIH policy and is already being implemented as an [approved data-sharing repository](https://grants.nih.gov/grants/guide/notice-files/NOT-HG-19-024.html) by the NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL).
 - In this workshop, attendees will learn to find and use Terra/AnVIL features that comply with NIH policy requirements, upload data to Terra/AnVIL and make data findable and accessible with DUOS.
 - Finally, workshop participants will be introduced to an online app designed to automate the creation of your NIH Data Management and Sharing Plan based on template text corresponding to individual researcher needs.
