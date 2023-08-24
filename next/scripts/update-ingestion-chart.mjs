@@ -8,7 +8,7 @@ const parseCsv = promisify(callbackParseCsv);
 const chartDataPath =
   "../components/Consortia/CSER/components/DataIngestionChart/chart-data.json";
 const workspaceFilesPath = "./workspace-files";
-const workspacesInfoPath = "./files/dashboard-source-anvil_2023-03-27.tsv";
+const workspacesInfoPath = "./files/dashboard-source-anvil.tsv";
 
 generateChartData()
   .then((success) => {
@@ -42,22 +42,22 @@ async function generateChartData() {
   const workspaces = await getWorkspaces();
   const workspaceFileNames = await getWorkspaceFileNames();
 
-  const entriesByConsortium = {};
+  const monthDataObj = {};
   let maxDateNum = -Infinity;
 
-  for (let ws of workspaces) {
+  for (let [i, ws] of workspaces.entries()) {
+    console.log(`(${i + 1}/${workspaces.length}) Processing ${ws.name}`);
     if (workspaceFileNames.includes(ws.name)) {
       const entries = await getWorkspaceEntries(ws.name);
-      const arr =
-        entriesByConsortium[ws.consortium] ||
-        (entriesByConsortium[ws.consortium] = []);
+      const addedSizes =
+        monthDataObj[ws.consortium] || (monthDataObj[ws.consortium] = []);
       entries.forEach((e) => {
         let dateNum = new Date(e.date).getTime();
         if (dateNum < newDataMinTime) {
           dateNum = newDataMinTime; // shift new data to after the old data, so it can cancel out without changing the chart history
-          e = Object.assign({}, e, { date: new Date(dateNum).toISOString() });
         }
-        arr.push(e);
+        const index = dateToIndex(dateNum);
+        addedSizes[index] = (addedSizes[index] || 0) + parseFloat(e.size);
         if (dateNum > maxDateNum) maxDateNum = dateNum;
       });
     } else {
@@ -66,29 +66,26 @@ async function generateChartData() {
   }
 
   const numMonths = dateToIndex(maxDateNum) + 1;
+
+  for (const addedSizes of Object.values(monthDataObj)) {
+    for (let i = 0; i < numMonths; i++) {
+      if (addedSizes[i] === undefined) addedSizes[i] = 0;
+    }
+  }
+
   const oldDataEndIndex = oldMonthData[0][1].length - 1;
   const newDataStartIndex = dateToIndex(newDataMinTime);
   const minNewStartVals = {};
 
-  const monthDataObj = Object.fromEntries(
-    oldMonthData.map(([consortium, addedSizes]) => {
-      const newAddedSizes = addedSizes.concat(
-        Array(numMonths - addedSizes.length).fill(0)
-      );
-      minNewStartVals[consortium] = newAddedSizes[newDataStartIndex];
-      newAddedSizes[newDataStartIndex] -= addedSizes.reduce((a, b) => a + b); // cancel out duplicate info from the new data
-      return [consortium, newAddedSizes];
-    })
-  );
-
-  Object.entries(entriesByConsortium).forEach(([consortium, entries]) => {
+  oldMonthData.forEach(([consortium, oldAddedSizes]) => {
     const addedSizes =
       monthDataObj[consortium] ||
-      (monthDataObj[consortium] = Array(numMonths).fill(0));
-
-    for (let e of entries) {
-      addedSizes[dateToIndex(e.date)] += parseFloat(e.size);
+      (monthDataObj[consortium] = new Array(numMonths).fill(0));
+    for (const [i, size] of oldAddedSizes.entries()) {
+      addedSizes[i] += size;
     }
+    minNewStartVals[consortium] = oldAddedSizes[newDataStartIndex] || 0;
+    addedSizes[newDataStartIndex] -= oldAddedSizes.reduce((a, b) => a + b); // cancel out duplicate info from the new data
   });
 
   for (const [consortium, addedSizes] of Object.entries(monthDataObj)) {
