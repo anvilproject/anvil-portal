@@ -14,6 +14,8 @@ import React, { FC, useEffect, useRef } from "react";
 import chartData from "./chart-data.json";
 import { Card } from "./dataIngestionChart.styles";
 
+const EXCLUDED_CONSORTIA = ["Unspecified"];
+
 const { monthDataByConsortium, startYear } = chartData;
 
 echarts.use([
@@ -130,6 +132,7 @@ function getChartOptions(
 
   for (let i = 0; i < monthDataByConsortium.length; i += 1) {
     const [consortium, addedSizes] = monthDataByConsortium[i];
+    if (EXCLUDED_CONSORTIA.includes(consortium)) continue;
     let size = 0;
     const data = addedSizes.map((val) => {
       size += val;
