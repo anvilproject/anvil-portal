@@ -1,3 +1,3 @@
 ---
-sectionSubHeader: "Keep up-to-date with the latest AnIVL Platform announcements."
+sectionSubHeader: "Keep up-to-date with the latest AnVIL Platform announcements."
 ---
