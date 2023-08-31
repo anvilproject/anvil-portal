@@ -22,6 +22,9 @@ In the demos, presenters will highlight anything from a capability of the platfo
 After the demo, we’ll open up the floor to answer any questions about the demo and to answer any other questions you might have about AnVIL.
 
 ### What’s in this Demo?
+
+`video: https://www.youtube.com/watch?v=1vz4kupdkms`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
 In this demo, Frederick Tan will highlight a key benefit of using a cloud-based platform for data storage and compute: you can access and analyze the data right in the cloud, without having to move it around or download it! He will demonstrate how to bring together data that are stored in different workspaces to analyze them together.
