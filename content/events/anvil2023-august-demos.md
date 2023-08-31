@@ -22,6 +22,9 @@ In the demos, presenters will highlight anything from a capability of the platfo
 After the demo, we’ll open up the floor to answer questions about the demo and to answer any other questions you might have about AnVIL.
 
 ### What’s in this Demo?
+
+`video: https://www.youtube.com/watch?v=_uT0IWL1wso`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
 In this demo, Natalie Kucher will describe how you can run Galaxy on AnVIL, where you can scale to as many resources as you need for your analysis and can leverage AnVIL’s FedRAMP secure environment for human genomics research.
