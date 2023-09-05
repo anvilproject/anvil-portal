@@ -561,6 +561,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2023/09/05/data-release-als-compute-project"
+              pathOverride: "/news/2023/09/05/data-release-als-compute-project"
+            - name: ""
               file: "/news/2023/05/09/data-management-anvil-hprc"
               pathOverride: "/news/2023/05/09/data-management-anvil-hprc"
             - name: ""
