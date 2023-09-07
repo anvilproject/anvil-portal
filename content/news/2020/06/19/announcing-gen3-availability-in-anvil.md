@@ -8,6 +8,8 @@ author: "AnVIL"
 
 # Announcing Gen3 Availability in AnVIL
 
+##### Posted: June 19, 2020
+
 Gen3 was deployed into production within AnVIL in June 2020, and since then many thousands of subjects have been indexed from the 1000 Genomes, GTEx, CCDG and CMG projects. The remaining cohorts in AnVIL from the CMG and CCDG projects are currently in processing
 
 Gen3 is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. As an open source platform for developing data commons, Gen3 accelerates and democratizes the process of scientific discovery, especially over large or complex datasets.

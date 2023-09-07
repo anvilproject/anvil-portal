@@ -8,6 +8,8 @@ title: "Reporting Temporary Data Unavailability for 1000 Genomes"
 
 # Reporting Temporary Data Unavailability for 1000 Genomes
 
+##### Posted: May 8, 2023
+
 We’re writing to inform you of a data management incident which led to a temporary unavailability of a limited number of
 files hosted in the 1000G-high-coverage-2019 workspace from March 8, 2023 to May 8, 2023. Below is the list of files
 that were impacted during this time period; these files have been restored as of May 8, 2023.

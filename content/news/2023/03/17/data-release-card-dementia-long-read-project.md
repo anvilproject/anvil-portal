@@ -8,6 +8,8 @@ title: "Data Release - CARD-Dementia Long Read Project"
 
 # Data Release - CARD-Dementia Long Read Project
 
+##### Posted: March 7, 2023
+
 Long-read DNA sequencing, which sequences genomes in larger segments than traditional short-read sequencing does, is
 providing more detailed views of genetic variants associated with disease. The NIH Center for Alzheimer's and Related
 Dementias (CARD) is
