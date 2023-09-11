@@ -8,6 +8,8 @@ title: "Announcing the AnVIL Cloud Credits Continued Program (AC3) Awardees"
 
 # Announcing the AnVIL Cloud Credits Continued Program (AC3) Awardees
 
+##### Posted: May 3, 2022
+
 NHGRI’s [Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) cloud genomics platform is pleased to announce the awardees of the AnVIL Cloud Credits Continued (AC3) Program.
 
 ## Awardees

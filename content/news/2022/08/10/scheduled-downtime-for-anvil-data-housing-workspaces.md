@@ -8,6 +8,8 @@ title: "Scheduled Downtime for AnVIL Data Housing Workspaces"
 
 # Scheduled Downtime for AnVIL Data Housing Workspaces
 
+##### Posted: August 10, 2022
+
 Dear AnVIL Users,
 
 We want to make you aware that from **Friday August 26, 2022 at 9am EDT** to **Saturday, August 27 at 9am EDT**, there will be scheduled downtime for approximately 24 hours. On this day in particular, **only workspaces housing AnVIL data will be impacted**. The Broad Institute’s Data Sciences Platform migration team will be using this time to implement the “[one workspace per project](https://terra.bio/moving-to-a-project-per-workspace-model-for-improved-resource-management/)” model migration effort. The benefits of this change include:

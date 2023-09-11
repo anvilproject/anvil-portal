@@ -8,7 +8,7 @@ author: "AnVIL"
 
 # Dockstore: An Introduction
 
-##### December 5, 2019
+##### Posted: December 5, 2019
 
 <hero>Dockstore is a platform for sharing portable, container-based tools and workflows written in CWL, WDL, and Nextflow.</hero>
 

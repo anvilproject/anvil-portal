@@ -7,6 +7,9 @@ title: "Data Release - Telomere-to-Telomere (T2T) project"
 ---
 
 # Data Release - Telomere-to-Telomere (T2T) project
+
+##### Posted: March 17, 2023
+
 The Telomere-to-Telomere (T2T) consortium is an open, community-based effort to de novo assemble the first complete reference human genome from the CHM13 hydatidiform mole. Using a combination of PacBio HiFi sequencing and Oxford Nanopore ultra long reads, the CHM13v1.1 reference genome was completed and released in 2022 as described in "The complete sequence of a human genome" ([Nurk et al, Science, 2022](https://www.science.org/doi/10.1126/science.abj6987)). This assembly is the most accurate assembly ever produced, with an estimated sequence accuracy exceeding QV70 and 0 unresolved bases. The genome includes almost 200 Mbp of novel sequence compared to GRCh38, corrects many structural errors in the GRCh38 reference genome, and unlocks the most complex regions of the genome to clinical and functional study for the first time.
 
 Recently, the T2T consortium finished the first complete assembly of a human Y chromosome, from the Genome in a Bottle (GIAB) HG002/NA24385 sample. This chrY assembly adds over 30 Mbp of novel sequence relative to the GRCh38 chrY, and its addition completes the CHM13v2.0 (hs1) reference genome. The full details of the assembly are described in "The complete sequence of a human Y chromosome" ([Rhie et al, bioRxiv, 2022](https://www.biorxiv.org/content/10.1101/2022.12.01.518724v1))
