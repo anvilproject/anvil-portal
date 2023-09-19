@@ -56,6 +56,8 @@
             - name: ""
               file: "/events/ashg2023-satisfying-nih-dms-requirements-with-anvil"
             - name: ""
+              file: "/events/anvil2023-september-demos"
+            - name: ""
               file: "/events/anvil2023-august-demos"
             - name: ""
               file: "/events/anvil2023-july-demos"
