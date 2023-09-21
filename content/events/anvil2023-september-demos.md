@@ -23,6 +23,8 @@ After the demo, we’ll open up the floor to answer questions about the demo and
 
 ### What’s in this Demo?
 
+`video: https://www.youtube.com/watch?v=loApm3jUkG0`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
 In this demo, we'll introduce fundamentals of epigenetic data analysis and show how you can use RStudio to look at Chip-seq experiment results on AnVIL. We'll also briefly touch on other resources for doing epigenetics research on AnVIL.
