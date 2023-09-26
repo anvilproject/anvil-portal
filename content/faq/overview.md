@@ -18,9 +18,9 @@ Terra is the analysis unit of AnVIL, where users can analyze, process, visualize
 
 Security is paramount to AnVIL. Any security concerns should be communicated to the AnVIL team ([help@lists.anvilproject.org](mailto:help@lists.anvilproject.org)).
 
-## What is Gen3 and how does it relate to AnVIL?
+## What is Terra Data Repo and how does it relate to AnVIL?
 
-Gen3 is the data management system of AnVIL. Gen3 enables exploring datasets with complex variables (phenotypes) associated with them and also allows creation of synthetic cohorts. In AnVIL, users will access Gen3 to explore data sets and create synthetic cohorts that can be sent to a Terra for further analysis.
+Terra Data Repo (TDR) is the data management system of AnVIL. It is a platform designed to make it easier for dataset owners to share and for researchers to access large datasets. It addresses the challenges researchers and data custodians face using and delivering extensive datasets in the cloud. Learn more about TDR in the [Terra documentation](https://support.terra.bio/hc/en-us/sections/4407099323675-Terra-Data-Repository).
 
 ## What is Dockstore and how does it relate to AnVIL?
 
