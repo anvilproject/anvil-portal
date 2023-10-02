@@ -5,7 +5,7 @@ description: "The world's largest Genomics and Biodata event"
 eventType: "Conference"
 featured: true
 location: "Boston, MA"
-sessions: [{sessionStart: "4 October 2023 11:40 AM", sessionEnd: "4 October 2023 12:10 PM"}]
+sessions: [{sessionStart: "4 October 2023 8:55 AM", sessionEnd: "4 October 2023 7:20 PM"}, {sessionStart: "5 October 2023 8:55 AM", sessionEnd: "5 October 2023 4:30 PM"}]
 timezone: "America/New_York"
 title: "Festival of Genomics and Biodata 2023"
 ---
@@ -37,4 +37,4 @@ Register for the conference at the conference webpage: https://festivalofgenomic
 - Agenda: Attend the [AnVIL talk](https://connect.frontlinegenomics.com/widget/event/festival-of-genomics-and-biodata-boston/planning/UGxhbm5pbmdfMTI2NTY2Nw==.) at the Biodata Stage on October 4, 2023 at 11:40 AM to 12:10 PM 
 - How to register: https://festivalofgenomics.com/boston/en/page/registration
 - Event home page: https://festivalofgenomics.com/boston/en/page/home
-- Contact Info: Contact [Stephen Mosher](mailto:stephen.mosher@jhu.edu) with any questions.
+  - Contact Info: Contact [Stephen Mosher](mailto:stephen.mosher@jhu.edu) with any questions.
