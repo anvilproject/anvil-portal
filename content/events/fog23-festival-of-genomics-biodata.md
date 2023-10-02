@@ -18,7 +18,7 @@ Connect with the AnVIL Team at the Festival of Genomics and Biodata in Boston, M
 
 Hear how the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Space (AnVIL) (https://anvilproject.org/), is a secure cloud-based platform for genomics and biomedical research. AnVIL currently provides harmonized access to more than 600,000 genomes from several key NHGRI projects along with thousands of analysis tools and workflows. This presentation will introduce the data and analysis capability of AnVIL and discuss the future of biomedical data analysis, sharing, and interoperability.
 
-![Mosher](https://github.com/anvilproject/anvil-portal/assets/80000074/9aaa2e4c-fb43-444c-bcfc-6a37a4c10a34)
+![FOG2023](./_images/fog23-festival-of-genomics-biodata.png)
 
 ### Background
 
@@ -32,9 +32,9 @@ Registering will give you access to 7 theaters packed full of incredible speaker
 
 Register for the conference at the conference webpage: https://festivalofgenomics.com/boston/en/page/registration.
 
-## Event Details
+### Event Details
 
 - Agenda: Attend the [AnVIL talk](https://connect.frontlinegenomics.com/widget/event/festival-of-genomics-and-biodata-boston/planning/UGxhbm5pbmdfMTI2NTY2Nw==.) at the Biodata Stage on October 4, 2023 at 11:40 AM to 12:10 PM 
 - How to register: https://festivalofgenomics.com/boston/en/page/registration
 - Event home page: https://festivalofgenomics.com/boston/en/page/home
-  - Contact Info: Contact [Stephen Mosher](mailto:stephen.mosher@jhu.edu) with any questions.
+- Contact Info: Contact [Stephen Mosher](mailto:stephen.mosher@jhu.edu) with any questions.
