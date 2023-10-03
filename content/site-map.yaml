@@ -60,6 +60,8 @@
             - name: ""
               file: "/events/anvil2023-october-demos"
             - name: ""
+              file: "/events/fog23-festival-of-genomics-biodata"
+            - name: ""
               file: "/events/anvil2023-september-demos"
             - name: ""
               file: "/events/ashg2023-satisfying-nih-dms-requirements-with-anvil"
