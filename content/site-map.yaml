@@ -50,6 +50,8 @@
           navigationItems:
             ## Order events chronologically for the previous/next page links.
             - name: ""
+              file: "/events/anvil2024-july-demos"
+            - name: ""
               file: "/events/anvil2024-june-demos"
             - name: ""
               file: "/events/anvil2024-may-demos"
