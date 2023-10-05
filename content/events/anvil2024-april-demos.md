@@ -20,7 +20,7 @@ In the demos, presenters will highlight anything from a capability of the platfo
 
 After the demo, we’ll open up the floor to answer questions about the demo and to answer any other questions you might have about AnVIL.
 
-## Prerequisites
+### Prerequisites
 Register for any of the upcoming AnVIL Demos using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7) and post any questions you have to the [AnVIL Support Forum](https://help.anvilproject.org/).
 
 ### Event Details
