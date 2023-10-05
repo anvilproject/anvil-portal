@@ -13,7 +13,7 @@ title: "AnVIL Demos"
 
 <event-hero></event-hero>
 
-## What are AnVIL Demos?
+### What are AnVIL Demos?
 AnVIL Demos are a series of virtual meetings that highlight what you can do on the [NHGRI](https://www.genome.gov/) Analysis, Visualization, and Informatics Lab-space (AnVIL), a cloud-based computing platform for genomic data science. AnVIL Demos will start out with a 30-minute demonstration on the platform followed by open time for Q&A and user support.
 
 In the demos, presenters will highlight anything from a capability of the platform to a scientific analysis powered by AnVIL. If you’re interested in showcasing how you use AnVIL at a future AnVIL Demos session, reach out to [Natalie Kucher](mailto:nkucher3@jhu.edu).
