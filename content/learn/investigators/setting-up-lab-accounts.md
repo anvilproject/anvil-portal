@@ -92,7 +92,7 @@ A few cautions to consider are:
 
 You may not need to set up your lab’s own GCP Billing Account. It may be preferable for you to work with an account set up by your institution, your department, or a colleague. Additionally, some institutions may have existing relationships with Google Cloud third-party resellers who can assist you with your setup.
 
-> Check with your institutional procurement office for a preferred method to set up your Google Cloud Billing Accounts, such as a third-party reseller or an existing account.
+> Check with your institutional procurement office for a preferred method to set up your Google Cloud Billing Accounts, such as a third-party reseller or an existing account. You can also work the [NIH STRIDES initiative](https://cloud.nih.gov/about-strides/) and their [billing partners](https://cloud.nih.gov/about-strides/partners/) for discounts and support.
 
 #### Plan out your configuration
 
