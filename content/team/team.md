@@ -14,48 +14,60 @@ Members of these teams are also involved with platform and software development 
 
 - [Jennifer Hall](https://www.heart.org/en/about-us/jennifer-hall)
 
+## Brigham and Women's Hostipal 
+
+- Matthew Lebo
+- Cheryl Clark
+
 ## Broad Institute
 
 - [Anthony Philippakis](https://www.broadinstitute.org/bios/anthony-philippakis-0)
-- Eric Banks
-- Brian O'Connor
+- [Clare Bernard](https://www.broadinstitute.org/bios/clare-bernard)
+- Rachel Liao
 - Jonathan Lawson
-- Anne O’Donnell Luria
 
 ## Carnegie Institution for Science
 
-- [Frederick Tan](https://emb.carnegiescience.edu/science/faculty/frederick-tan)
+- [Frederick Tan](https://bse.carnegiescience.edu/)
 
 ## City University of New York
 
-- [Levi Waldron](https://waldronlab.io)
+- [Levi Waldron](https://waldronlab.io/)
 
 ## Fred Hutchinson Cancer Research Center
 - [Jeffrey Leek](https://jtleek.com/)
+- [Ava Hoffman](https://www.avahoffman.com/)
 
 ## Harvard University
 
-- [Vince Carey](http://vjcitn.github.io)
+- [Vince Carey](https://vjcitn.github.io/)
 
 ## Johns Hopkins University
 
-- [Michael Schatz](http://schatz-lab.org)
+- [Michael Schatz](https://schatz-lab.org/)
 - Enis Afgan
-- Kasper Hansen
-- Casey Overby Taylor
+- [Kasper Hansen](https://publichealth.jhu.edu/faculty/2742/kasper-daniel-hansen)
+- [Casey Overby Taylor](https://www.hopkinsmedicine.org/profiles/details/casey-taylor)
 
 ## Oregon Health & Sciences University
 
-- [Jeremy Goecks](https://goeckslab.org)
-- Kyle Ellrott
+- [Kyle Ellrott](https://www.ohsu.edu/people/kyle-ellrott-phd)
+
+## Massachusetts General Hospital
+
+- Jeffrey Klann
+- Shawn Murphy
+- Heidi Rehm
+- Victor Castro
+- Samuel Aronson
+
+## Moffitt Cancer Center
+
+- [Jeremy Goecks](http://www.goeckslab.org/)
 
 ## Penn State University
 
-- [Anton Nekrutenko](https://nekrut.github.io/lab_site)
-
-## Roswell Park Comprehensive Cancer Center
-
-- [Martin Morgan](https://bioconductor.org/about/core-team)
+- [Anton Nekrutenko](https://nekrut.github.io/lab_site/)
 
 ## University of California, Santa Cruz
 
@@ -63,24 +75,24 @@ Members of these teams are also involved with platform and software development 
 
 ## University of Chicago
 
-- [Robert Grossman](http://rgrossman.com)
+- [Robert Grossman](https://rgrossman.com/)
 
-## Vanderbilt University
+## Vanderbilt University Medical Center
 
 - [Robert Carroll](https://www.vumc.org/dbmi/person/robert-carroll-phd)
+- Alexander Bick
+- Peter Embi
+- Josh Peterson
+- Jodell Jackson
 
 ## Washington University
 
-- [Ting Wang](https://www.genome.wustl.edu/people/ting-wang/)
-
-## Yale
-
-- [Ira Hall](https://www.genome.wustl.edu/research/labs/hall-lab)
+- [Ting Wang](https://genome.wustl.edu/people/ting-wang/)
 
 ## National Human Genome Research Institute
 
-- Valentina Di Francesco
-- Chris Wellington
-- Shurjo Sen
-- Elena Ghanaim
-- Robb Rowley
+- [Valentina Di Francesco](https://www.genome.gov/staff/Valentina-Di-Francesco-MS)
+- [Chris Wellington](https://www.genome.gov/staff/Chris-Wellington-BS)
+- [Shurjo Sen](https://www.genome.gov/staff/Shurjo-K-Sen-PhD)
+- [Elena Ghanaim](https://www.genome.gov/staff/Elena-Ghanaim-MA)
+- [Robb Rowley](https://www.genome.gov/staff/robb-rowley-md)
