@@ -23,6 +23,8 @@ After the demo, we’ll open up the floor to answer questions about the demo and
 
 ### What’s in this Demo?
 
+`video: https://youtu.be/BVmOtH04qhI`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
 In this demo, Jonathan Lawson at the Broad Institute will present about the Data Use Oversight System (DUOS) and how it facilitates data sharing and access, specifically:
