@@ -72,6 +72,8 @@
             - name: ""
               file: "/events/anvil2024-february-demos"
             - name: ""
+              file: "/events/anvil2024-advances-in-genome-biology-and-technology"
+            - name: ""
               file: "/events/anvil2024-january-demos"
             - name: ""
               file: "/events/anvil2023-december-demos"
