@@ -71,7 +71,7 @@ Members of these teams are also involved with platform and software development 
 
 ## University of California, Santa Cruz
 
-- [Benedict Paten](https://cgl.genomics.ucsc.edu/team)
+- [Benedict Paten](https://cglgenomics.ucsc.edu/team/)
 
 ## University of Chicago
 
