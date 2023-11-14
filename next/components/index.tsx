@@ -4,6 +4,7 @@ export { Grid } from "@clevercanary/data-explorer-ui/lib/components/common/Grid/
 export { StaticImage } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
 export { AppLayout } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 export { Footer } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Footer/footer";
+export { Logo } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/components/Content/components/Logo/logo";
 export { Header } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 export { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main.styles";
 export { NavBarHero } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/components/NavBarHero/navBarHero";
@@ -22,3 +23,5 @@ export { Resources } from "../components/Consortia/CSER/components/Resources/res
 export { Figure } from "./common/Figure/figure";
 export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";
 export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge500/textBodyLarge500";
+export { ANVILBranding } from "./Layout/components/Footer/components/Branding/components/ANVILBranding/anvilBranding";
+export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";

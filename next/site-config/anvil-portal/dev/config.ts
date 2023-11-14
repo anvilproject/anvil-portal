@@ -1,12 +1,11 @@
 import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/entities";
-import { SiteConfig } from "@clevercanary/data-explorer-ui/lib/config/entities";
-import logoAnvil from "images/logoAnvil.png";
-import logoHhs from "images/logoHhs.svg";
-import logoNhgri from "images/logoNhgri.svg";
-import logoNih from "images/logoNih.svg";
-import logoUsagov from "images/logoUsagov.png";
+import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
+import * as C from "../../../components/index";
+import { SiteConfig } from "../../common/entities";
 import { socials } from "./constants";
 
+const APP_TITLE = "AnVIL Portal";
+const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
 export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
 const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 
@@ -16,6 +15,7 @@ const config: SiteConfig = {
     gtmId: "GTM-KMGCR8F",
     gtmPreview: "env-65",
   },
+  appTitle: APP_TITLE,
   browserURL: "",
   dataSource: {
     url: "",
@@ -24,32 +24,7 @@ const config: SiteConfig = {
   explorerTitle: "",
   layout: {
     footer: {
-      logos: [
-        {
-          alt: "nhgri",
-          height: 24,
-          link: "https://www.genome.gov/",
-          src: logoNhgri,
-        },
-        {
-          alt: "nih",
-          height: 24,
-          link: "https://www.nih.gov/",
-          src: logoNih,
-        },
-        {
-          alt: "hhs",
-          height: 32,
-          link: "https://www.hhs.gov/",
-          src: logoHhs,
-        },
-        {
-          alt: "hhs",
-          height: 32,
-          link: "https://www.usa.gov/",
-          src: logoUsagov,
-        },
-      ],
+      Branding: C.ANVILBranding({ portalURL: undefined }),
       navLinks: [
         {
           label: "Help",
@@ -63,8 +38,13 @@ const config: SiteConfig = {
       socials,
     },
     header: {
+      Logo: C.Logo({
+        alt: APP_TITLE,
+        height: 40,
+        link: PORTAL_URL,
+        src: "/consortia/logos/logoAnvil.png",
+      }),
       authenticationEnabled: false,
-      logo: { alt: "The AnVIL", height: 40, link: PORTAL_URL, src: logoAnvil },
       navAlignment: ELEMENT_ALIGNMENT.CENTER,
       navLinks: [
         {
@@ -76,8 +56,32 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/learn`,
         },
         {
+          featureFlag: false,
           label: "Datasets",
           url: `${PORTAL_URL}/data`,
+        },
+        {
+          featureFlag: true,
+          label: "Datasets",
+          menuItems: [
+            {
+              description:
+                "An open-access view of studies, workspaces, and consortia.",
+              label: "Catalog",
+              url: `${PORTAL_URL}/data`,
+            },
+            {
+              description:
+                "Build, download, and export cross-study cohorts of open and managed access data.",
+              label: C.LabelIconMenuItem({
+                iconFontSize: "small",
+                label: "Explorer",
+              }),
+              target: ANCHOR_TARGET.BLANK,
+              url: `${EXPLORER_URL}/datasets`,
+            },
+          ],
+          url: "",
         },
         {
           label: "Consortia",
