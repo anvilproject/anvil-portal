@@ -1,6 +1,9 @@
-import { SiteConfig } from "../entities";
 import logoAnvil from "../../../images/logo-anvil.png";
+import { LabelIconMenuItem } from "../../components/header/components/nav-link-menu/components/label-icon-menu-item/label-icon-menu-item";
+import { Target } from "../../components/target/target.model";
 import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
+import { getExploreURL } from "../../utils/explore.service";
+import { SiteConfig } from "../entities";
 
 // Template constants
 const slogan = "NHGRI Analysis Visualization and Informatics Lab-space";
@@ -25,8 +28,32 @@ const config: SiteConfig = {
           url: "/learn",
         },
         {
+          featureFlag: false,
           label: "Datasets",
           url: `${getDatasetsEnvironmentUrl()}data`,
+        },
+        {
+          featureFlag: true,
+          label: "Datasets",
+          menuItems: [
+            {
+              description:
+                "An open-access view of studies, workspaces, and consortia.",
+              label: "Catalog",
+              url: `${getDatasetsEnvironmentUrl()}data`,
+            },
+            {
+              description:
+                "Build, download, and export cross-study cohorts of open and managed access data.",
+              label: LabelIconMenuItem({
+                iconFontSize: "small",
+                label: "Explorer",
+              }),
+              target: Target.BLANK,
+              url: getExploreURL(),
+            },
+          ],
+          url: "",
         },
         {
           label: "Consortia",

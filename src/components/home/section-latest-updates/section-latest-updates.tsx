@@ -46,8 +46,8 @@ const SectionLatestUpdates: FC = (): JSX.Element => {
         {/* Content */}
         <>
           <h3 className={sectionCardHeading}>News</h3>
-          {newsCards.map((card) => (
-            <NewsCard key={card.title} newsCard={card} />
+          {newsCards.map((card, i) => (
+            <NewsCard key={`${card.title}${i}`} newsCard={card} />
           ))}
         </>
         {/* CTAs */}
@@ -70,8 +70,8 @@ const SectionLatestUpdates: FC = (): JSX.Element => {
         {/* Content */}
         <>
           <h3 className={sectionCardHeading}>Events</h3>
-          {eventCards.map((card) => (
-            <EventCard key={card.title} eventCard={card} />
+          {eventCards.map((card, i) => (
+            <EventCard key={`${card.title}${i}`} eventCard={card} />
           ))}
         </>
         {/* CTAs */}

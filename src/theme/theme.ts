@@ -137,6 +137,12 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           fontWeight: 400,
           lineHeight: "16px",
         },
+        "text-body-small-400-2lines": {
+          fontFamily: "Inter",
+          fontSize: 13,
+          fontWeight: 400,
+          lineHeight: "20px",
+        },
         "text-body-small-500": {
           fontFamily: "Inter",
           fontSize: 13,
@@ -637,6 +643,14 @@ export const getAppTheme = (customTheme?: ThemeOptions): Theme => {
           },
         },
         variants: [
+          {
+            props: {
+              color: "inkLight",
+            },
+            style: {
+              color: inkLight,
+            },
+          },
           {
             props: {
               size: "xsmall",

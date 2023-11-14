@@ -48,7 +48,7 @@ const config: SiteConfig = {
                 label: "Explorer",
               }),
               target: ANCHOR_TARGET.BLANK,
-              url: `${EXPLORER_URL}/datasets`,
+              url: `${EXPLORER_URL}/explore/datasets`,
             },
           ],
           url: "",

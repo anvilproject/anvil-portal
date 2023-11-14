@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+import { Target } from "../../target/target.model";
 import { Social } from "../components/socials/socials";
 
 /**
@@ -27,6 +29,13 @@ export interface Logo {
  * Model of nav link item to be use as props for the Header and Footer component.
  */
 export interface NavLinkItem {
-  label: string;
+  featureFlag?: boolean;
+  label: ReactNode;
+  menuItems?: MenuItem[];
+  target?: Target;
   url: string;
+}
+
+export interface MenuItem extends NavLinkItem {
+  description?: string;
 }
