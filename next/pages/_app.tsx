@@ -6,10 +6,14 @@ import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
-import { AppLayout, Footer, Header, Main } from "../components";
+import { AppLayout, Footer, Main } from "../components";
 import { Head } from "../components/common/Head/head";
+import { Header } from "../components/Layout/components/Header/header";
 import { config } from "../config/config";
+import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
 import { mergeAppTheme } from "../theme/theme";
+
+setFeatureFlags();
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const { analytics, layout, themeOptions } = config();
