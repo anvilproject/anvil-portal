@@ -10,6 +10,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import React, { useRef, useState } from "react";
 
 // App dependencies
+import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
 import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
@@ -27,6 +28,8 @@ import { getAppTheme } from "../theme/theme";
 
 // Styles
 import "../styles/vars.module.css";
+
+setFeatureFlags();
 
 function Layout(props) {
   const {

@@ -1,8 +1,11 @@
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Box, Divider, IconButton, Toolbar, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { FEATURES } from "../../hooks/useFeatureFlag/common/entities";
+import { useFeatureFlag } from "../../hooks/useFeatureFlag/useFeatureFlag";
 import { Header as HeaderProps } from "./common/entities";
+import { configureHeader } from "./common/utils";
 import Content from "./components/content/content";
 import HeaderLogo from "./components/logo/header-logo";
 import NavLinks from "./components/nav-links/nav-links";
@@ -25,6 +28,11 @@ interface Props {
 }
 
 export default function Header({ header, searchPath }: Props): JSX.Element {
+  const isFeatureFlag = useFeatureFlag(FEATURES.HEADER);
+  const configuredHeaderProps = useMemo(
+    () => configureHeader(header, isFeatureFlag),
+    [header, isFeatureFlag]
+  ); // Configure header.
   const {
     authenticationEnabled,
     logo,
@@ -32,7 +40,7 @@ export default function Header({ header, searchPath }: Props): JSX.Element {
     searchEnabled,
     slogan,
     socials,
-  } = header;
+  } = configuredHeaderProps;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const desktop = useBreakpointHelper(
