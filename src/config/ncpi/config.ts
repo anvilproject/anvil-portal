@@ -1,6 +1,9 @@
-import { SiteConfig } from "../entities";
 import logoNcpi from "../../../images/logo-ncpi.png";
+import { GitHubIcon } from "../../components/common/custom-icon/components/git-hub-icon/git-hub-icon";
+import { SlackIcon } from "../../components/common/custom-icon/components/slack-icon/slack-icon";
+import { YouTubeIcon } from "../../components/common/custom-icon/components/you-tube-icon/you-tube-icon";
 import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
+import { SiteConfig } from "../entities";
 
 // Template constants
 const slogan = "NIH Cloud Platform Interoperability Effort";
@@ -34,15 +37,18 @@ const config: SiteConfig = {
       slogan,
       socials: [
         {
-          type: "youtube",
+          Icon: YouTubeIcon,
+          label: "YouTube",
           url: "https://www.youtube.com/channel/UCJvPdDZOxJvOwObfnZ8X3gA",
         },
         {
-          type: "github",
+          Icon: GitHubIcon,
+          label: "GitHub",
           url: "https://github.com/NIH-NCPI/",
         },
         {
-          type: "slack",
+          Icon: SlackIcon,
+          label: "Slack",
           url: "https://nihcloudplatforms.slack.com/",
         },
       ],

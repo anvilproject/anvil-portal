@@ -1,4 +1,5 @@
 import "@clevercanary/data-explorer-ui";
+import { LayoutStateProvider } from "@clevercanary/data-explorer-ui/lib/providers/layoutState";
 import { createAppTheme } from "@clevercanary/data-explorer-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
@@ -33,13 +34,15 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <ThemeProvider theme={appTheme}>
         <Head />
         <CssBaseline />
-        <AppLayout>
-          <Header {...layout.header} />
-          <Main>
-            <Component {...pageProps} />
-          </Main>
-          <Footer {...layout.footer} />
-        </AppLayout>
+        <LayoutStateProvider>
+          <AppLayout>
+            <Header {...layout.header} />
+            <Main>
+              <Component {...pageProps} />
+            </Main>
+            <Footer {...layout.footer} />
+          </AppLayout>
+        </LayoutStateProvider>
       </ThemeProvider>
     </EmotionThemeProvider>
   );
