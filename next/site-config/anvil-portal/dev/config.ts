@@ -2,7 +2,7 @@ import { ELEMENT_ALIGNMENT } from "@clevercanary/data-explorer-ui/lib/common/ent
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
 import { SiteConfig } from "../../common/entities";
-import { socials } from "./constants";
+import { socialMedia } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
 const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
@@ -35,7 +35,7 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/privacy`,
         },
       ],
-      socials,
+      socials: socialMedia.socials,
     },
     header: {
       Logo: C.Logo({
@@ -117,7 +117,7 @@ const config: SiteConfig = {
       searchEnabled: true,
       searchURL: `${PORTAL_URL}/search`,
       slogan: SLOGAN,
-      socials,
+      socialMedia: socialMedia,
     },
   },
   redirectRootToPath: "/",

@@ -1,5 +1,12 @@
 import logoAnvil from "../../../images/logo-anvil.png";
-import { LabelIconMenuItem } from "../../components/header/components/nav-link-menu/components/label-icon-menu-item/label-icon-menu-item";
+import { DiscourseIcon } from "../../components/common/custom-icon/components/discourse-icon/discourse-icon";
+import { GitHubIcon } from "../../components/common/custom-icon/components/git-hub-icon/git-hub-icon";
+import { SlackIcon } from "../../components/common/custom-icon/components/slack-icon/slack-icon";
+import { XIcon } from "../../components/common/custom-icon/components/x-icon/x-icon";
+import { YouTubeIcon } from "../../components/common/custom-icon/components/you-tube-icon/you-tube-icon";
+import {
+LabelIconMenuItem
+} from "../../components/header/components/nav-link-menu/components/label-icon-menu-item/label-icon-menu-item";
 import { Target } from "../../components/target/target.model";
 import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
 import { getExploreURL } from "../../utils/explore.service";
@@ -84,23 +91,28 @@ const config: SiteConfig = {
       slogan,
       socials: [
         {
-          type: "discourse",
+          Icon: DiscourseIcon,
+          label: "Discourse",
           url: "https://help.anvilproject.org/",
         },
         {
-          type: "twitter",
+          Icon: XIcon,
+          label: "X",
           url: "https://twitter.com/useAnVIL",
         },
         {
-          type: "youtube",
+          Icon: YouTubeIcon,
+          label: "YouTube",
           url: "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
         },
         {
-          type: "github",
+          Icon: GitHubIcon,
+          label: "GitHub",
           url: "https://github.com/anvilproject",
         },
         {
-          type: "slack",
+          Icon: SlackIcon,
+          label: "Slack",
           url: "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
         },
       ],
