@@ -36,7 +36,7 @@ Consortia submitting data to AnVIL to make data available to the broader scienti
 
 Consortium members are responsible for complying with consortium data access and sharing policies, and for ensuring data remain securely within the consortium. Consortium members must also:
 
-- Establish [Two Factor Authentication](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en) on their Google Account.
+- Establish [Two Factor Authentication](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en) on the account they use to access Terra ([Google](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en) or [Microsoft](https://support.microsoft.com/en-us/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4)).
 - **NOT** provide access to users without the appropriate permissions and supervision.
 - Abide by the terms of the consortium agreement and any data use limitations.
 - Ensure all personnel under the member’s supervision are aware of and adhere to all data use limitations and all terms of consortium agreements (MOUs, DUAs, etc.).
