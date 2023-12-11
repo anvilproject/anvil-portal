@@ -28,6 +28,8 @@ technologies:
     actions:
       - label: "Learn More"
         url: "https://www.ncpi-acc.org"
+      - label: "Datasets"
+        url: "https://ncpi-data.org/platforms"
     text: "Interoperate  with other NIH data commons."
     thumbnail: _images/ncpi.png
   - title: "Bioconductor"
