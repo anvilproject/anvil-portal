@@ -52,10 +52,6 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/overview`,
         },
         {
-          label: "Learn",
-          url: `${PORTAL_URL}/learn`,
-        },
-        {
           featureFlag: false,
           label: "Datasets",
           url: `${PORTAL_URL}/data`,
@@ -88,16 +84,21 @@ const config: SiteConfig = {
           url: "/consortia",
         },
         {
-          label: "News",
-          url: `${PORTAL_URL}/news`,
+          label: "Learn",
+          url: `${PORTAL_URL}/learn`,
         },
         {
-          label: "Events",
-          url: `${PORTAL_URL}/events`,
-        },
-        {
+          flatten: false,
           label: "More",
           menuItems: [
+            {
+              label: "News",
+              url: `${PORTAL_URL}/news`,
+            },
+            {
+              label: "Events",
+              url: `${PORTAL_URL}/events`,
+            },
             {
               label: "Team",
               url: `${PORTAL_URL}/team`,
@@ -117,7 +118,6 @@ const config: SiteConfig = {
       searchEnabled: true,
       searchURL: `${PORTAL_URL}/search`,
       slogan: SLOGAN,
-      socialMedia: socialMedia,
     },
   },
   redirectRootToPath: "/",
