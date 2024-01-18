@@ -19,7 +19,6 @@ export const Carousel = (): JSX.Element => {
   const [carouselAction, setCarouselAction] = useState<CarouselAction>(
     CAROUSEL_ACTION.NONE
   );
-  const [slow, setSlow] = useState<boolean>(false);
   const bullets = useMemo(() => getBullets(cards), [cards]);
   const lastCardIndex = cards.length - 1;
 
@@ -88,7 +87,7 @@ export const Carousel = (): JSX.Element => {
   );
 
   const swipeToCard = useCallback(
-    (increment: number, slowValue = false): void => {
+    (increment: number): void => {
       /* Increment card index either way. */
       let newIndex = activeCard + increment;
       if (newIndex < 0) {
@@ -100,8 +99,6 @@ export const Carousel = (): JSX.Element => {
         /* If the new index is greater than the number of possible cards, rotate to the start of the card deck. */
         newIndex = 0;
       }
-      /* Use appropriate transition speed. */
-      setSlow(slowValue);
       /* Set new rotation index. */
       setActiveCard(newIndex);
     },
@@ -210,7 +207,7 @@ export const Carousel = (): JSX.Element => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      swipeToCard(1, true);
+      swipeToCard(1);
     }, 8000);
     return () => clearTimeout(timeout);
   }, [activeCard, swipeToCard]);
@@ -226,7 +223,6 @@ export const Carousel = (): JSX.Element => {
         activeCard={activeCard}
         bullets={bullets}
         setActiveCard={setActiveCard}
-        setSlow={setSlow}
       />
     </CarouselView>
   );

@@ -4,14 +4,12 @@ interface BulletsProps {
   activeCard: number;
   bullets: number[];
   setActiveCard: (cardIndex: number) => void;
-  setSlow: (slow: boolean) => void;
 }
 
 export const Bullets = ({
   activeCard,
   bullets,
   setActiveCard,
-  setSlow,
 }: BulletsProps): JSX.Element => {
   return (
     <CarouselBullets>
@@ -20,11 +18,9 @@ export const Bullets = ({
           key={bullet}
           isActive={activeCard === bullet}
           onClick={(): void => {
-            setSlow(false);
             setActiveCard(bullet);
           }}
           onKeyDown={(): void => {
-            setSlow(false);
             setActiveCard(bullet);
           }}
         />
