@@ -20,8 +20,8 @@ import {
   MAX_CARD_WIDTH,
 } from "../../common/constants";
 import {
-  getCardOffsetY,
-  getCardScaleX,
+  getCardTransform,
+  getCardTransition,
   getCardZIndex,
 } from "../../common/utils";
 
@@ -48,8 +48,8 @@ export const CardPositioner = styled("div")<Props>`
   max-height: ${MAX_CARD_HEIGHT_SM}px;
   max-width: ${MAX_CARD_WIDTH}px;
   position: absolute;
-  top: ${({ cardPosition }) => getCardOffsetY(cardPosition)};
-  transform: ${({ cardPosition }) => getCardScaleX(cardPosition)};
+  transform: ${({ cardPosition }) => getCardTransform(cardPosition)};
+  transition: ${({ cardPosition }) => getCardTransition(cardPosition)};
   width: 100%;
   z-index: ${({ cardPosition }) => getCardZIndex(cardPosition)};
 
