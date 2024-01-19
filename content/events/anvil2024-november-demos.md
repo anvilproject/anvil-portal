@@ -6,7 +6,7 @@ eventType: "AnVIL Demos"
 featured: true
 hashtag: "#anvildemos"
 location: "Virtual"
-sessions: [{sessionStart: "14 November 2024 11:00 AM", sessionEnd: "14 November 2024 12:00 PM"}]
+sessions: [{sessionStart: "21 November 2024 11:00 AM", sessionEnd: "21 November 2024 12:00 PM"}]
 timezone: "America/New_York"
 title: "AnVIL Demos"
 ---
