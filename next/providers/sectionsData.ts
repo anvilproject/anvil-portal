@@ -2,10 +2,12 @@ import { createContext, useContext, useMemo } from "react";
 import { SectionCard } from "../components/Home/common/entities";
 
 const DEFAULT_SECTIONS_DATA: SectionsData = {
+  analysisPortalCards: [],
   carouselCards: [],
 };
 
 export interface SectionsData {
+  analysisPortalCards: SectionCard[];
   carouselCards: SectionCard[];
 }
 

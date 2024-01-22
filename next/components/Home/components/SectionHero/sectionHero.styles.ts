@@ -5,16 +5,18 @@ import {
 import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge4002Lines } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { SectionLayout as HeroLayout } from "../Section/section.styles";
 
 export const SectionHero = styled.section`
+  width: 100%;
+`;
+
+export const SectionLayout = styled(HeroLayout)`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 56px;
-  margin: 0 auto;
-  max-width: 1232px;
   padding: 56px 16px;
-  width: 100%;
 
   ${mediaTabletUp} {
     padding: 80px 16px;

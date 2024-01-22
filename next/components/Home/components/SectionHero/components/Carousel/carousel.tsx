@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
 import { SectionCard } from "../../../../common/entities";
-import { CarouselView } from "./carousel.styles";
+import { Bullets, CarouselView } from "./carousel.styles";
 import { CARDS } from "./common/constants";
 import { CarouselAction, CAROUSEL_ACTION } from "./common/entities";
-import { Bullets } from "./components/Bullets/bullets";
 import { Cards } from "./components/Cards/cards";
 
 interface EventCoordinates {
@@ -220,19 +219,19 @@ export const Carousel = (): JSX.Element => {
         setCarouselAction={setCarouselAction}
       />
       <Bullets
-        activeCard={activeCard}
+        activeBullet={activeCard}
         bullets={bullets}
-        setActiveCard={setActiveCard}
+        onBullet={setActiveCard}
       />
     </CarouselView>
   );
 };
 
 /**
- * Returns array of card positions.
- * @param carouselCards - Carousel cards.
- * @returns card positions.
+ * Returns array of bullets.
+ * @param cards - Cards.
+ * @returns bullets.
  */
-function getBullets(carouselCards: SectionCard[]): number[] {
-  return [...Array(carouselCards.length).keys()];
+function getBullets(cards: SectionCard[]): number[] {
+  return [...Array(cards.length).keys()];
 }

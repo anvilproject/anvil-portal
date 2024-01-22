@@ -7,6 +7,7 @@ import {
   Head,
   Headline,
   SectionHero as Hero,
+  SectionLayout,
   Subhead,
 } from "./sectionHero.styles";
 
@@ -16,19 +17,21 @@ const LEARN_MORE = "/overview";
 export const SectionHero = (): JSX.Element => {
   return (
     <Hero>
-      <Headline>
-        <Head>Migrate Your Genomic Research to the Cloud</Head>
-        <Subhead>Secure, cost-effective genomic analysis at scale.</Subhead>
-        <CTAs>
-          <ButtonPrimary href={`${PORTAL_URL}${GET_STARTED}`}>
-            Get Started
-          </ButtonPrimary>
-          <ButtonSecondary href={`${PORTAL_URL}${LEARN_MORE}`}>
-            Learn More
-          </ButtonSecondary>
-        </CTAs>
-      </Headline>
-      <Carousel />
+      <SectionLayout>
+        <Headline>
+          <Head>Migrate Your Genomic Research to the Cloud</Head>
+          <Subhead>Secure, cost-effective genomic analysis at scale.</Subhead>
+          <CTAs>
+            <ButtonPrimary href={`${PORTAL_URL}${GET_STARTED}`}>
+              Get Started
+            </ButtonPrimary>
+            <ButtonSecondary href={`${PORTAL_URL}${LEARN_MORE}`}>
+              Learn More
+            </ButtonSecondary>
+          </CTAs>
+        </Headline>
+        <Carousel />
+      </SectionLayout>
     </Hero>
   );
 };

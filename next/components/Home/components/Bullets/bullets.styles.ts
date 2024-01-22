@@ -14,7 +14,6 @@ export const Bullets = styled.div`
   display: flex;
   gap: 8px;
   justify-content: center;
-  margin-top: 12px;
 `;
 
 export const Bullet = styled(ButtonBase, {
