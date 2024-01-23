@@ -4,11 +4,13 @@ import { SectionCard } from "../components/Home/common/entities";
 const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
   carouselCards: [],
+  datasetCards: [],
 };
 
 export interface SectionsData {
   analysisPortalCards: SectionCard[];
   carouselCards: SectionCard[];
+  datasetCards: SectionCard[];
 }
 
 export const SectionsDataContext = createContext<SectionsData>(

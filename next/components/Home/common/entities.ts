@@ -7,3 +7,8 @@ export interface SectionCard {
   text: string;
   title: string;
 }
+
+export enum VISIBILITY_MODE {
+  COLLAPSED = "COLLAPSED",
+  EXPANDED = "EXPANDED",
+}
