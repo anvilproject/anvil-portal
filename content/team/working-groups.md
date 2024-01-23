@@ -10,46 +10,36 @@ description: "AnVIL's working groups take on the responsibility for specific por
 
 Working groups are dynamic and are formulated as needed in the course of the project.
 
+## Data Submission and Ingestion Working Group
+
+The Data Submission and Ingestion Working Group defines and monitors the technical and operational processes associated with the submission, ingestion, and validation of AnVIL data.
+
+- AnVIL Data Ingestion team members (Broad)
+- Matt Lewis (Broad) organizer
+
 ## Data Access Working Group
 
 The Data Access working group defines the methods used to securely control and grant access to restricted access datasets hosted within AnVIL, including managing automated credential handoff and developing streamlined processes for handling Data Access Requests.
 
 #### Co-Chairs
 
-- Carolyn Hutter (NHGRI)
-- Stacey Donnelly (Broad)
-- Elena Ghanaim (NHGRI) organizer
-
-## Data Processing Working Group
-
-The data processing working group defines the processes for data ingestion and quality control, including definition of submittal data formats, while providing oversight for pipelines that will be used to process data, including joint variant calling.
-
-#### Co-Chairs
-
-- Eric Banks (Broad)
-- Ira Hall (WashU)
-- Candace Patterson (Broad) organizer
-
-#### Contact
-
-- Mailing list: [AnVIL-data-processing](https://lists.anvilproject.org/lists/anvil-data-processing.lists.anvilproject.org/) ([anvil-data-processing@lists.anvilproject.org](mailto:anvil-data-processing@lists.anvilproject.org))
-
+- Elena Ghanaim (NHGRI)
+- Jonathan Lawson (Broad)
+- Kate Balaconis (Broad) organizer
 
 ## Phenotype Working Group
 
 The Phenotype Working Group ensures that the datasets hosted in AnVIL are incorporated in a manner that facilitates research driven by phenotypic questions.
 
-
 #### Co-Chairs
 
-- David Crosslin (EMERGE - UW)
 - Robert Carroll (VUMC)
-- Kristin Wuichet (VUMC) organizer
+- Jeff Klann (MGH)
+- Queenie Ho (VUMC) organizer
 
 #### Contact
 
 - Mailing list: [AnVIL-Phenotypes](https://lists.anvilproject.org/lists/anvil-phenotypes.lists.anvilproject.org/) ([anvil-phenotypes@lists.anvilproject.org](mailto:anvil-phenotypes@lists.anvilproject.org))
-
 
 ## Portal Working Group
 
@@ -59,17 +49,18 @@ The portal working group organizes and publishes AnVIL's website.
 
 - Benedict Paten (UCSC)
 - Mike Schatz (JHU)
-- Tim Harris (UCSC) organizer
+- Ben Vizzier (UCSC) organizer
 
 ## Outreach Working Group
 
-The Outreach working group provides training and support solutions for the AnVIL project.
+The Outreach working group creates scalable onboarding content, provides training, and offers support solutions for the AnVIL project.
 
 #### Co-Chairs
 
-- Jeff Leek (JHU)
+- Jeffrey T. Leek (Fred Hutch)
+- Ava Hoffman (Hutch)
 - Frederick Tan (Carnegie)
-- Stephen Mosher (JHU) organizer
+- Natalie Kucher (JHU) organizer
 
 #### Contact
 
@@ -77,22 +68,13 @@ The Outreach working group provides training and support solutions for the AnVIL
 
 ## Technical Working Group
 
-AnVIL's technical working provides direction and recommendations to the developers of the AnVIL project.
+AnVIL's technical working group provides direction and recommendations to the developers of the AnVIL project.
 
 #### Co-Chairs
 
 - Mike Schatz (JHU)
-- Brian O'Connor (Broad)
 - Stephen Mosher (JHU) organizer
 
 #### Contact
 
 - Mailing list: [AnVIL-technical](https://lists.anvilproject.org/lists/anvil-technical.lists.anvilproject.org/) ([anvil-technical@lists.anvilproject.org](<mailto:anvil-technical@lists.anvilproject.org>))
-
-## Clinical Genomics Working Group
-
-#### Co-Chairs
-
-- Chris Shay (AHA)
-- Mike Schatz (JHU)
-- Julie Sizelove (AHA) organizer
