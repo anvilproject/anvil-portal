@@ -10,18 +10,17 @@ interface Props {
 export const Datasets = styled("div")<Props>`
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   margin: 48px 0 32px;
 
   .MuiButton-textPrimary {
     align-self: flex-start;
     display: none;
+    grid-column: 1 / -1;
     justify-self: flex-start;
   }
 
   ${mediaTabletDown} {
-    grid-template-columns: 1fr;
-
     .MuiCard-root:nth-of-type(n + ${MIN_DATASET_CARDS}) {
       display: ${({ isExpanded }) => (isExpanded ? "flex" : "none")};
     }

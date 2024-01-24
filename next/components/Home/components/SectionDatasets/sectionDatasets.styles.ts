@@ -1,9 +1,7 @@
-import {
-  mediaDesktopSmallUp,
-  mediaTabletUp,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
 import { textHeadingLarge } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { mediaTabletLargeUp } from "../../../../styles/common/mixins/breakpoints";
 import { SectionLayout } from "../Section/section.styles";
 
 export const Section = styled.section`
@@ -23,11 +21,10 @@ export const Headline = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  ${mediaDesktopSmallUp} {
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 0;
-    justify-content: space-between;
+  ${mediaTabletLargeUp} {
+    display: grid;
+    gap: 0 16px;
+    grid-template-columns: repeat(12, 1fr);
   }
 `;
 
@@ -37,6 +34,11 @@ export const SectionTitle = styled.div`
   letter-spacing: -0.8px;
   line-height: 40px;
   max-width: 504px;
+
+  ${mediaTabletLargeUp} {
+    grid-column: 1 / 6;
+    max-width: unset;
+  }
 `;
 
 export const SectionActions = styled.div`

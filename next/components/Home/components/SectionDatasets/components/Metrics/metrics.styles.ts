@@ -6,14 +6,24 @@ import {
   textHeadingXLarge,
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { mediaTabletLargeUp } from "../../../../../../styles/common/mixins/breakpoints";
 
 export const Metrics = styled.div`
-  align-self: flex-start;
-  display: flex;
+  align-self: stretch;
+  display: grid;
   gap: 16px;
-  justify-content: flex-end;
-  max-width: 608px;
-  width: 100%;
+  grid-template-columns: repeat(3, minmax(auto, 192px));
+
+  ${mediaTabletUp} {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  ${mediaTabletLargeUp} {
+    align-self: flex-start;
+    grid-column: 7 / -1;
+    grid-template-columns: repeat(6, 1fr);
+  }
 `;
 
 export const Metric = styled.div`
@@ -48,6 +58,10 @@ export const Metric = styled.div`
   }
 
   ${mediaTabletUp} {
+    grid-column: auto / span 2;
+  }
+
+  ${mediaTabletLargeUp} {
     gap: 0 16px;
 
     .MuiDivider-root {
@@ -64,7 +78,7 @@ export const Count = styled.div`
   line-height: 34px;
   padding-top: 1px;
 
-  ${mediaTabletUp} {
+  ${mediaTabletLargeUp} {
     ${textHeadingXLarge};
     padding: 0;
   }
@@ -77,7 +91,7 @@ export const Label = styled.div`
   margin-top: -4px;
   padding-bottom: 1px;
 
-  ${mediaTabletUp} {
+  ${mediaTabletLargeUp} {
     ${textBody400};
     padding: 0;
   }
