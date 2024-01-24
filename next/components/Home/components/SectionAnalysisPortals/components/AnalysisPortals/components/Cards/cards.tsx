@@ -2,10 +2,10 @@ import { CardAction } from "@clevercanary/data-explorer-ui/lib/components/common
 import { CardActions } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardActions/cardActions.styles";
 import { CardMedia } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardMedia/cardMedia";
 import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
-import { RoundedCard } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/RoundedCard/roundedCard";
+import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { Fragment } from "react";
 import { SectionCard } from "../../../../../../common/entities";
-import { CardContent, CardSection, CardTitle } from "./cards.styles";
+import { Card, CardContent, CardSection, CardTitle } from "./cards.styles";
 
 export interface CardsProps {
   cards: SectionCard[];
@@ -15,7 +15,7 @@ export const Cards = ({ cards }: CardsProps): JSX.Element => {
   return (
     <Fragment>
       {cards.map(({ links, media, text, title }, i) => (
-        <RoundedCard key={i}>
+        <Card key={i} component={RoundedPaper}>
           <CardSection>
             {media && <CardMedia media={media} />}
             <CardContent>
@@ -33,7 +33,7 @@ export const Cards = ({ cards }: CardsProps): JSX.Element => {
               ))}
             </CardActions>
           </CardSection>
-        </RoundedCard>
+        </Card>
       ))}
     </Fragment>
   );

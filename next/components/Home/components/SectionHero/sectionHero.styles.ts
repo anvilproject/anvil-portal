@@ -13,9 +13,9 @@ export const SectionHero = styled.section`
 
 export const SectionLayout = styled(HeroLayout)`
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+  display: grid;
+  gap: 56px 16px;
+  grid-template-columns: repeat(12, 1fr);
   padding: 56px 16px;
 
   ${mediaTabletUp} {
@@ -24,18 +24,19 @@ export const SectionLayout = styled(HeroLayout)`
 
   ${mediaDesktopSmallUp} {
     align-items: flex-start;
-    flex-direction: row;
-    gap: 0;
-    justify-content: space-between;
   }
 `;
 
 export const Headline = styled.div`
+  grid-column: 1 / -1;
+  justify-self: center;
   max-width: 504px;
   text-align: center;
   width: 100%;
 
   ${mediaDesktopSmallUp} {
+    grid-column: 1 / 6;
+    max-width: unset;
     text-align: left;
   }
 `;
@@ -57,11 +58,6 @@ export const Subhead = styled.h2`
   ${textBodyLarge4002Lines};
   color: ${inkLight};
   margin: 8px 0 16px;
-  text-align: center;
-
-  ${mediaDesktopSmallUp} {
-    text-align: left;
-  }
 `;
 
 export const CTAs = styled.div`
