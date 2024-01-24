@@ -1,7 +1,10 @@
 import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { textHeadingLarge } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import {
+  textBodyLarge4002Lines,
+  textHeadingLarge,
+} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
-import { mediaTabletLargeUp } from "../../../../styles/common/mixins/breakpoints";
 import { SectionLayout } from "../Section/section.styles";
 
 export const Section = styled.section`
@@ -9,6 +12,9 @@ export const Section = styled.section`
 `;
 
 export const SectionContent = styled(SectionLayout)`
+  display: grid;
+  gap: 48px 16px;
+  grid-template-columns: repeat(12, 1fr);
   padding: 56px 16px;
 
   ${mediaTabletUp} {
@@ -17,14 +23,16 @@ export const SectionContent = styled(SectionLayout)`
 `;
 
 export const Headline = styled.div`
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  grid-column: 1 / -1;
+  max-width: 504px;
 
-  ${mediaTabletLargeUp} {
-    display: grid;
-    gap: 0 16px;
-    grid-template-columns: repeat(12, 1fr);
+  ${mediaTabletUp} {
+    grid-column: 1 / 6;
+    max-width: unset;
   }
 `;
 
@@ -34,21 +42,10 @@ export const SectionTitle = styled.h2`
   letter-spacing: -0.8px;
   line-height: 40px;
   margin: 0;
-  max-width: 504px;
-
-  ${mediaTabletLargeUp} {
-    grid-column: 1 / 6;
-    max-width: unset;
-  }
 `;
 
-export const SectionActions = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-
-  ${mediaTabletUp} {
-    flex-direction: row;
-  }
+export const Subtitle = styled.h3`
+  ${textBodyLarge4002Lines};
+  color: ${inkLight};
+  margin: 0;
 `;

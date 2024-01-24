@@ -17,11 +17,12 @@ export const SectionContent = styled(SectionLayout)`
   padding: 64px 16px;
 `;
 
-export const SectionTitle = styled.div`
+export const SectionTitle = styled.h2`
   ${textHeading};
   font-size: 24px;
   letter-spacing: -0.4px;
   line-height: 34px;
+  margin: 0;
   text-align: center;
   width: 100%;
 

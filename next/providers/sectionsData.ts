@@ -5,12 +5,14 @@ const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
   carouselCards: [],
   datasetCards: [],
+  workspaceCards: [],
 };
 
 export interface SectionsData {
   analysisPortalCards: SectionCard[];
   carouselCards: SectionCard[];
   datasetCards: SectionCard[];
+  workspaceCards: SectionCard[];
 }
 
 export const SectionsDataContext = createContext<SectionsData>(
