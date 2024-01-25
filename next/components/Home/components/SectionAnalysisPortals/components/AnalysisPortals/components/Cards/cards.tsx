@@ -1,10 +1,10 @@
 import { CardAction } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardAction/cardAction";
 import { CardActions } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardActions/cardActions.styles";
-import { CardMedia } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardMedia/cardMedia";
 import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { Fragment } from "react";
 import { SectionCard } from "../../../../../../common/entities";
+import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
 import { Card, CardContent, CardSection, CardTitle } from "./cards.styles";
 
 export interface CardsProps {

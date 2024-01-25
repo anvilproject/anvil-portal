@@ -1,4 +1,3 @@
-import { CardMedia } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardMedia/cardMedia";
 import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
@@ -6,6 +5,7 @@ import { CardActionArea as MCardActionArea } from "@mui/material";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
 import { ForwardArrowIcon } from "../../../../../common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { SectionCard } from "../../../../common/entities";
+import { CardMedia } from "../../../Card/components/CardMedia/cardMedia";
 import {
   Card,
   CardActions,
