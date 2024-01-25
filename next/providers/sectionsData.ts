@@ -4,6 +4,7 @@ import { SectionCard } from "../components/Home/common/entities";
 const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
   carouselCards: [],
+  cloudCards: [],
   datasetCards: [],
   workspaceCards: [],
 };
@@ -11,6 +12,7 @@ const DEFAULT_SECTIONS_DATA: SectionsData = {
 export interface SectionsData {
   analysisPortalCards: SectionCard[];
   carouselCards: SectionCard[];
+  cloudCards: Omit<SectionCard, "links">[];
   datasetCards: SectionCard[];
   workspaceCards: SectionCard[];
 }

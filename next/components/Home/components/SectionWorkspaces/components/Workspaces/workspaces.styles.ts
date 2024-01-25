@@ -1,7 +1,4 @@
-import {
-  mediaDesktopSmallUp,
-  mediaTabletUp,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
 import { textBody500 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
@@ -30,9 +27,6 @@ export const CardSection = styled.div`
   display: grid;
   gap: 16px;
   padding: 16px;
-
-  ${mediaDesktopSmallUp} {
-  }
 `;
 
 export const CardHeader = styled.div`
