@@ -43,13 +43,13 @@ export const IconButton = styled(MIconButton, {
     carouselAction === CAROUSEL_ACTION.SWIPE_BACKWARD &&
     css`
       left: 0;
-      transform: translate(-50%, -50%);
+      transform: translate(-24px, -50%);
     `}
 
   ${({ carouselAction }) =>
     carouselAction === CAROUSEL_ACTION.SWIPE_FORWARD &&
     css`
       right: 0;
-      transform: translate(50%, -50%) scaleX(-1);
+      transform: translate(24px, -50%) scaleX(-1);
     `}
 `;
