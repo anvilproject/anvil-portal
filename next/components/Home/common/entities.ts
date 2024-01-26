@@ -4,6 +4,7 @@ import { LinkProps } from "@clevercanary/data-explorer-ui/lib/components/Links/c
 export interface SectionCard {
   links: LinkProps[];
   media?: StaticImageProps;
+  secondaryText?: string;
   text: string;
   title: string;
 }

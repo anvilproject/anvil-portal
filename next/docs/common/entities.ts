@@ -29,4 +29,4 @@ export interface NodeHero {
   slogan: string;
 }
 
-export type SlugByFilePath = Map<string, string[]>;
+export type SlugByFilePaths = Map<string, string[]>;

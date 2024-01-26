@@ -6,6 +6,8 @@ const DEFAULT_SECTIONS_DATA: SectionsData = {
   carouselCards: [],
   cloudCards: [],
   datasetCards: [],
+  eventCards: [],
+  newsCards: [],
   workspaceCards: [],
 };
 
@@ -14,6 +16,8 @@ export interface SectionsData {
   carouselCards: SectionCard[];
   cloudCards: Omit<SectionCard, "links">[];
   datasetCards: SectionCard[];
+  eventCards: SectionCard[];
+  newsCards: SectionCard[];
   workspaceCards: SectionCard[];
 }
 
