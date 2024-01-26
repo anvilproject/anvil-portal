@@ -30,6 +30,10 @@ export const Cards = ({
   const lastCardIndex = cards.length - 1;
   return (
     <CarouselCards id={CARDS}>
+      <Arrow
+        carouselAction={CAROUSEL_ACTION.SWIPE_BACKWARD}
+        onClick={(): void => setCarouselAction(CAROUSEL_ACTION.SWIPE_BACKWARD)}
+      />
       {cards.map(({ links, text, title }, c) => {
         return (
           <CardPositioner
@@ -38,14 +42,6 @@ export const Cards = ({
             cardPosition={getCardPosition(c, activeCard, lastCardIndex)}
             key={c}
           >
-            {c === activeCard && (
-              <Arrow
-                carouselAction={CAROUSEL_ACTION.SWIPE_BACKWARD}
-                onClick={(): void =>
-                  setCarouselAction(CAROUSEL_ACTION.SWIPE_BACKWARD)
-                }
-              />
-            )}
             <Card component={RoundedPaper}>
               <CardSection>
                 <CardTitle>{title}</CardTitle>
@@ -57,17 +53,13 @@ export const Cards = ({
                 </CardActions>
               </CardSection>
             </Card>
-            {c === activeCard && (
-              <Arrow
-                carouselAction={CAROUSEL_ACTION.SWIPE_FORWARD}
-                onClick={(): void =>
-                  setCarouselAction(CAROUSEL_ACTION.SWIPE_FORWARD)
-                }
-              />
-            )}
           </CardPositioner>
         );
       })}
+      <Arrow
+        carouselAction={CAROUSEL_ACTION.SWIPE_FORWARD}
+        onClick={(): void => setCarouselAction(CAROUSEL_ACTION.SWIPE_FORWARD)}
+      />
     </CarouselCards>
   );
 };

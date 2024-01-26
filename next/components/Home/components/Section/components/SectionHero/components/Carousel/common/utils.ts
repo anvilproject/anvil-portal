@@ -1,4 +1,5 @@
 import {
+  ARROW_OFFSET_Y,
   CARD_OFFSET_Y,
   CARD_SCALE_X,
   MAX_CARD_WIDTH,
@@ -6,6 +7,18 @@ import {
   TRANSITION_DELAY,
   TRANSITION_DURATION,
 } from "./constants";
+import { CAROUSEL_ACTION } from "./entities";
+
+/**
+ * Returns the arrow's transform scaleX and translateY.
+ * @param carouselAction - Carousel action.
+ * @returns arrow's transform.
+ */
+export function getArrowTransform(carouselAction: string): string {
+  return carouselAction === CAROUSEL_ACTION.SWIPE_FORWARD
+    ? `translate(24px, calc(${ARROW_OFFSET_Y}px - 50%)) scaleX(-1)`
+    : `translate(-24px, calc(${ARROW_OFFSET_Y}px - 50%))`;
+}
 
 /**
  * Returns the carousel card's position in the deck.

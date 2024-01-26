@@ -9,7 +9,6 @@ import {
   textBodySmall4002Lines,
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import { elevation01 } from "@clevercanary/data-explorer-ui/lib/theme/common/shadows";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
@@ -40,6 +39,17 @@ export const Cards = styled.div`
   ${mediaTabletUp} {
     height: ${CAROUSEL_HEIGHT}px;
   }
+
+  .MuiIconButton-root {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover {
+    > .MuiIconButton-root {
+      opacity: 1;
+    }
+  }
 `;
 
 export const CardPositioner = styled("div")<Props>`
@@ -56,21 +66,6 @@ export const CardPositioner = styled("div")<Props>`
   ${mediaTabletUp} {
     max-height: ${MAX_CARD_HEIGHT}px;
   }
-
-  ${({ activeCard, cardIndex }) =>
-    cardIndex === activeCard &&
-    css`
-      .MuiIconButton-root {
-        opacity: 0;
-        transition: opacity 150ms ease-in-out;
-      }
-
-      &:hover {
-        > .MuiIconButton-root {
-          opacity: 1;
-        }
-      }
-    `}
 `;
 
 export const Card = styled(MCard)`
