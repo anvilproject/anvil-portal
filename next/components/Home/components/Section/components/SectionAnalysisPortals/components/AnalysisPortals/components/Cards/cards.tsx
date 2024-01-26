@@ -4,8 +4,13 @@ import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { Fragment } from "react";
 import { SectionCard } from "../../../../../../../../common/entities";
+import {
+  CardContent,
+  CardSection,
+  CardTitle,
+} from "../../../../../../../Card/card.styles";
 import { CardMedia } from "../../../../../../../Card/components/CardMedia/cardMedia";
-import { Card, CardContent, CardSection, CardTitle } from "./cards.styles";
+import { Card } from "./cards.styles";
 
 export interface CardsProps {
   cards: SectionCard[];

@@ -1,11 +1,6 @@
 import styled from "@emotion/styled";
+import { Grid as DefaultGrid } from "../../../../../Card/card.styles";
 
-export const Portals = styled.div`
-  align-items: center;
-  display: grid;
-  gap: 16px;
+export const Grid = styled(DefaultGrid)`
   grid-template-columns: repeat(12, 88px);
-  margin: 0 auto;
-  max-width: 1232px;
-  width: 100%;
 `;

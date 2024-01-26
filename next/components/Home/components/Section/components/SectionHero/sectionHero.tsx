@@ -1,12 +1,12 @@
 import { ButtonPrimary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonPrimary/buttonPrimary";
 import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
+import { Section } from "../../section.styles";
 import { Carousel } from "./components/Carousel/carousel";
 import {
   CTAs,
   Head,
   Headline,
-  SectionHero as Hero,
   SectionLayout,
   Subhead,
 } from "./sectionHero.styles";
@@ -16,7 +16,7 @@ const LEARN_MORE = "/overview";
 
 export const SectionHero = (): JSX.Element => {
   return (
-    <Hero>
+    <Section>
       <SectionLayout>
         <Headline>
           <Head>Migrate Your Genomic Research to the Cloud</Head>
@@ -32,6 +32,6 @@ export const SectionHero = (): JSX.Element => {
         </Headline>
         <Carousel />
       </SectionLayout>
-    </Hero>
+    </Section>
   );
 };

@@ -5,30 +5,28 @@ import { CardActionArea as MCardActionArea } from "@mui/material";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { ForwardArrowIcon } from "../../../../../../../common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { SectionCard } from "../../../../../../common/entities";
-import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
 import {
-  Card,
-  CardActions,
   CardContent,
-  CardHeader,
+  CardCTA,
   CardSection,
-  CardTitle,
-  Workspaces as WorkspaceCards,
-} from "./workspaces.styles";
+  GridCard as Card,
+} from "../../../../../Card/card.styles";
+import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
+import { CardHeader, CardTitle, Grid } from "./workspaces.styles";
 
 export const Workspaces = (): JSX.Element => {
   const { workspaceCards: cards } = useSectionsData();
   return (
-    <WorkspaceCards>
+    <Grid>
       {cards.map(({ links, media, text, title }, i) => (
         <Card key={i} component={RoundedPaper}>
           <MCardActionArea onClick={(): void => onCardAction(links)}>
             <CardSection>
               <CardHeader>
                 {media && <CardMedia media={media} />}
-                <CardActions>
+                <CardCTA>
                   <ForwardArrowIcon color="primary" fontSize="small" />
-                </CardActions>
+                </CardCTA>
               </CardHeader>
               <CardContent>
                 <CardTitle>{title}</CardTitle>
@@ -38,7 +36,7 @@ export const Workspaces = (): JSX.Element => {
           </MCardActionArea>
         </Card>
       ))}
-    </WorkspaceCards>
+    </Grid>
   );
 };
 

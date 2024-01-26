@@ -1,12 +1,11 @@
 import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
+import { Section, SectionLayout } from "../../section.styles";
 import { Datasets } from "./components/Datasets/datasets";
 import { Metrics } from "./components/Metrics/metrics";
 import {
   Headline,
-  Section,
   SectionActions,
-  SectionContent,
   SectionTitle,
 } from "./sectionDatasets.styles";
 
@@ -18,7 +17,7 @@ const EXPLORE_DATASETS = "/data/consortia";
 export const SectionDatasets = (): JSX.Element => {
   return (
     <Section>
-      <SectionContent>
+      <SectionLayout>
         <Headline>
           <SectionTitle>
             Access diverse, open and controlled access, cloud-hosted datasets
@@ -37,7 +36,7 @@ export const SectionDatasets = (): JSX.Element => {
             Contribute Data
           </ButtonSecondary>
         </SectionActions>
-      </SectionContent>
+      </SectionLayout>
     </Section>
   );
 };

@@ -1,28 +1,27 @@
+import { SectionSubtitle, SectionTitle } from "../../section.styles";
 import { CloudBenefits } from "./components/CloudBenefits/cloudBenefits";
 import {
   Headline,
   Section,
-  SectionContent,
-  SectionTitle,
-  Subtitle,
+  SectionLayout,
 } from "./sectionCloudEnvironment.styles";
 
 export const SectionCloudEnvironment = (): JSX.Element => {
   return (
     <Section>
-      <SectionContent>
+      <SectionLayout>
         <Headline>
           <SectionTitle>
             Collaborate in a secure, cost-effective, scalable, cloud-based
             environment
           </SectionTitle>
-          <Subtitle>
+          <SectionSubtitle>
             Reduce compute and storage costs, reduce security and compliance
             overhead, scale to meet your needs.
-          </Subtitle>
+          </SectionSubtitle>
         </Headline>
         <CloudBenefits />
-      </SectionContent>
+      </SectionLayout>
     </Section>
   );
 };

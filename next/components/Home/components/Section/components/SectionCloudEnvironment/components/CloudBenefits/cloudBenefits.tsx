@@ -1,29 +1,29 @@
+import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
+import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
 import {
   Card,
   CardContent,
-  CardSecondaryText,
+  CardSecondaryTitle,
   CardSection,
-  CardTitle,
-  CloudBenefits as BenefitCards,
-  Media,
+  Grid,
 } from "./cloudBenefits.styles";
 
 export const CloudBenefits = (): JSX.Element => {
   const { cloudCards: cards } = useSectionsData();
   return (
-    <BenefitCards>
+    <Grid>
       {cards.map(({ media, text, title }, i) => (
         <Card key={i} elevation={0}>
           <CardSection>
-            {media && <Media media={media} />}
+            {media && <CardMedia media={media} />}
             <CardContent>
               <CardTitle>{title}</CardTitle>
-              {text && <CardSecondaryText>{text}</CardSecondaryText>}
+              {text && <CardSecondaryTitle>{text}</CardSecondaryTitle>}
             </CardContent>
           </CardSection>
         </Card>
       ))}
-    </BenefitCards>
+    </Grid>
   );
 };

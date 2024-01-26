@@ -2,13 +2,16 @@ import {
   mediaDesktopSmallUp,
   mediaTabletUp,
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { textBodyLarge500 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
+import {
+  CardSection as DefaultSection,
+  GridCard,
+  GridCardContent as DefaultContent,
+} from "../../../../../../../Card/card.styles";
 
-export const Card = styled(MCard)`
-  display: flex;
-  grid-column: 1 / -1;
+export const Card = styled(GridCard)`
+  align-items: stretch; /* card action area consumes height of card */
   min-height: 74px;
 
   ${mediaTabletUp} {
@@ -16,31 +19,16 @@ export const Card = styled(MCard)`
   }
 ` as typeof MCard;
 
-export const CardSection = styled.div`
-  display: flex;
+export const CardSection = styled(DefaultSection)`
   gap: 0;
-  height: 100%;
-  padding: 16px;
+  grid-template-columns: 1fr auto;
+  height: 100%; /* parent (card action area) is block element */
 
   ${mediaDesktopSmallUp} {
     gap: 16px;
   }
 `;
 
-export const CardContent = styled.span`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-export const CardTitle = styled.span`
-  ${textBodyLarge500};
-}
-`;
-
-export const CardActions = styled.div`
-  align-self: center;
-  display: flex;
-  padding: 10px;
+export const CardContent = styled(DefaultContent)`
+  align-items: center;
 `;

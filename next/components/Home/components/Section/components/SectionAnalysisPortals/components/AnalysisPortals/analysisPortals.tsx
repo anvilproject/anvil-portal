@@ -9,7 +9,7 @@ import {
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { SectionCard } from "../../../../../../common/entities";
 import { Bullets } from "../../../../../Bullets/bullets";
-import { Portals } from "./analysisPortals.styles";
+import { Grid } from "./analysisPortals.styles";
 import { INTERSECTION_OBSERVER_OPTIONS, ROWS } from "./common/constants";
 import { Cards } from "./components/Cards/cards";
 
@@ -82,9 +82,9 @@ export const AnalysisPortals = (): JSX.Element => {
 
   return (
     <Fragment>
-      <Portals ref={portalsRef}>
+      <Grid ref={portalsRef}>
         <Cards cards={cards} />
-      </Portals>
+      </Grid>
       {!isIntersecting && (
         <Bullets
           activeBullet={activeBullet}

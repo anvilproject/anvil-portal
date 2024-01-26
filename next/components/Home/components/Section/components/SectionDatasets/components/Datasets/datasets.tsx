@@ -13,7 +13,7 @@ import {
   updateVisibilityMode,
 } from "../../../../../../common/utils";
 import { Cards } from "./components/Cards/cards";
-import { Datasets as DatasetCards } from "./datasets.styles";
+import { Grid } from "./datasets.styles";
 
 export const Datasets = (): JSX.Element => {
   const tabletUp = useBreakpointHelper(BREAKPOINT_FN_NAME.UP, TABLET);
@@ -32,11 +32,11 @@ export const Datasets = (): JSX.Element => {
   }, [tabletUp]);
 
   return (
-    <DatasetCards isExpanded={isExpanded}>
+    <Grid isExpanded={isExpanded}>
       <Cards cards={cards} />
       <ButtonTextPrimary onClick={onVisibilityMode}>
         {VISIBILITY_MODE_LABEL[mode]}
       </ButtonTextPrimary>
-    </DatasetCards>
+    </Grid>
   );
 };

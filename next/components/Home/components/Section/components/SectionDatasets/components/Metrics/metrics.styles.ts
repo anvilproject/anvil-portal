@@ -7,29 +7,22 @@ import {
 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { mediaTabletLargeUp } from "../../../../../../../../styles/common/mixins/breakpoints";
+import { sectionGrid } from "../../../../section.styles";
 
 export const Metrics = styled.div`
-  align-self: stretch;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, minmax(auto, 192px));
-
-  ${mediaTabletUp} {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
+  ${sectionGrid};
 
   ${mediaTabletLargeUp} {
-    align-self: flex-start;
     grid-column: 7 / -1;
     grid-template-columns: repeat(6, 1fr);
   }
 `;
 
 export const Metric = styled.div`
+  align-self: flex-start;
   display: grid;
   gap: 0 8px;
-  flex: 1;
+  grid-column: auto / span 4;
   justify-content: flex-start;
 
   .MuiDivider-root {

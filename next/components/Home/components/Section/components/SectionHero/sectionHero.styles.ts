@@ -5,37 +5,32 @@ import {
 import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge4002Lines } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
-import { SectionLayout as HeroLayout } from "../../section.styles";
+import {
+  SectionActions as DefaultActions,
+  sectionGrid,
+  SectionHeadline as DefaultHeadline,
+  SectionLayout as DefaultLayout,
+} from "../../section.styles";
 
-export const SectionHero = styled.section`
-  width: 100%;
-`;
-
-export const SectionLayout = styled(HeroLayout)`
-  align-items: center;
-  display: grid;
+export const SectionLayout = styled(DefaultLayout)`
+  ${sectionGrid};
   gap: 56px 16px;
-  grid-template-columns: repeat(12, 1fr);
-  padding: 56px 16px;
 
   ${mediaTabletUp} {
     padding: 80px 16px;
   }
-
-  ${mediaDesktopSmallUp} {
-    align-items: flex-start;
-  }
 `;
 
-export const Headline = styled.div`
+export const Headline = styled(DefaultHeadline)`
   grid-column: 1 / -1;
+  justify-items: center;
   justify-self: center;
   max-width: 504px;
   text-align: center;
-  width: 100%;
 
   ${mediaDesktopSmallUp} {
     grid-column: 1 / 6;
+    justify-items: flex-start;
     max-width: unset;
     text-align: left;
   }
@@ -57,15 +52,9 @@ export const Head = styled.h1`
 export const Subhead = styled.h2`
   ${textBodyLarge4002Lines};
   color: ${inkLight};
-  margin: 8px 0 16px;
+  margin: -8px 0 0;
 `;
 
-export const CTAs = styled.div`
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-
-  ${mediaDesktopSmallUp} {
-    justify-content: flex-start;
-  }
+export const CTAs = styled(DefaultActions)`
+  flex-direction: row;
 `;

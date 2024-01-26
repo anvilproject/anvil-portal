@@ -1,17 +1,13 @@
 import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
+import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
 import { Fragment } from "react";
 import { ForwardArrowIcon } from "../../../../../../../../../common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { SectionCard } from "../../../../../../../../common/entities";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardSection,
-  CardTitle,
-} from "./cards.styles";
+import { CardCTA } from "../../../../../../../Card/card.styles";
+import { Card, CardContent, CardSection } from "./cards.styles";
 
 interface CardsProps {
   cards: SectionCard[];
@@ -28,9 +24,9 @@ export const Cards = ({ cards }: CardsProps): JSX.Element => {
                 <CardTitle>{title}</CardTitle>
                 {text && <CardSecondaryText>{text}</CardSecondaryText>}
               </CardContent>
-              <CardActions>
+              <CardCTA>
                 <ForwardArrowIcon color="primary" fontSize="small" />
-              </CardActions>
+              </CardCTA>
             </CardSection>
           </MCardActionArea>
         </Card>
