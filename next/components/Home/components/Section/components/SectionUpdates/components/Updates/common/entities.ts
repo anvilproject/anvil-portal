@@ -1,4 +1,4 @@
-export interface NormalizedFrontmatter {
+export interface CardFrontmatter {
   date?: Date;
   description: string;
   featured?: boolean;
