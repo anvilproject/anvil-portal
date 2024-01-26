@@ -9,6 +9,8 @@ import {
   ToggleButtonGroup,
 } from "./sectionUpdates.styles";
 
+const MAX_UPDATE_CARDS = 3;
+
 export enum UPDATE_VIEW {
   EVENTS = "EVENTS",
   NEWS = "NEWS",
@@ -17,7 +19,10 @@ export enum UPDATE_VIEW {
 export const SectionUpdates = (): JSX.Element => {
   const { eventCards, newsCards } = useSectionsData();
   const [view, setView] = useState<UPDATE_VIEW>(UPDATE_VIEW.NEWS);
-  const cards = view === UPDATE_VIEW.NEWS ? newsCards : eventCards;
+  const cards =
+    view === UPDATE_VIEW.NEWS
+      ? newsCards.slice(0, MAX_UPDATE_CARDS)
+      : eventCards.slice(0, MAX_UPDATE_CARDS); // TODO confirm events should be first three by date.
 
   // Callback fired when toggle button value changes.
   const onChangeView = (view: UPDATE_VIEW): void => {
