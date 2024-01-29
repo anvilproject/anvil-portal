@@ -24,7 +24,7 @@ export interface SectionsData {
   eventCards: SectionCardWithLink[];
   newsCards: SectionCardWithLink[];
   publicationCards: PublicationCard[];
-  workspaceCards: SectionCard[];
+  workspaceCards: SectionCardWithLink[];
 }
 
 export const SectionsDataContext = createContext<SectionsData>(

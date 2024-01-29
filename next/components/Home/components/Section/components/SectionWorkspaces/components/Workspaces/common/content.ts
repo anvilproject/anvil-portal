@@ -1,17 +1,15 @@
-import { SectionCard } from "../../../../../../../common/entities";
+import { SectionCardWithLink } from "../../../../../../../common/entities";
 
 export const ACTION_LABEL = {
   UNSPECIFIED: "",
 };
 
-export const CARDS: SectionCard[] = [
+export const CARDS: SectionCardWithLink[] = [
   {
-    links: [
-      {
-        label: ACTION_LABEL.UNSPECIFIED,
-        url: "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4",
-      },
-    ],
+    link: {
+      label: ACTION_LABEL.UNSPECIFIED,
+      url: "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4",
+    },
     media: {
       alt: "GATK",
       height: 40,
@@ -21,12 +19,10 @@ export const CARDS: SectionCard[] = [
     title: "GATK - Best practices for somatic CNV discovery",
   },
   {
-    links: [
-      {
-        label: ACTION_LABEL.UNSPECIFIED,
-        url: "https://anvil.terra.bio/#workspaces/help-gatk/Germline-SNPs-Indels-GATK4-hg38",
-      },
-    ],
+    link: {
+      label: ACTION_LABEL.UNSPECIFIED,
+      url: "https://anvil.terra.bio/#workspaces/help-gatk/Germline-SNPs-Indels-GATK4-hg38",
+    },
     media: {
       alt: "GATK",
       height: 40,
@@ -36,12 +32,10 @@ export const CARDS: SectionCard[] = [
     title: "GATK - Best Practices for Germline SNPs & Indels",
   },
   {
-    links: [
-      {
-        label: ACTION_LABEL.UNSPECIFIED,
-        url: "https://anvil.terra.bio/#workspaces/help-gatk/Hail-Notebook-Tutorials",
-      },
-    ],
+    link: {
+      label: ACTION_LABEL.UNSPECIFIED,
+      url: "https://anvil.terra.bio/#workspaces/help-gatk/Hail-Notebook-Tutorials",
+    },
     media: {
       alt: "Hail GWAS",
       height: 40,
@@ -51,12 +45,10 @@ export const CARDS: SectionCard[] = [
     title: "Hail GWAS PIPELINE",
   },
   {
-    links: [
-      {
-        label: ACTION_LABEL.UNSPECIFIED,
-        url: "https://anvil.terra.bio/#workspaces/help-gatk/InferCNV_SCP_scRNA-seq",
-      },
-    ],
+    link: {
+      label: ACTION_LABEL.UNSPECIFIED,
+      url: "https://anvil.terra.bio/#workspaces/help-gatk/InferCNV_SCP_scRNA-seq",
+    },
     media: {
       alt: "infer CNV",
       height: 40,
@@ -66,12 +58,10 @@ export const CARDS: SectionCard[] = [
     title: "inferCNV Tumor Single-Cell RNA-Seq Analysis Pipeline",
   },
   {
-    links: [
-      {
-        label: ACTION_LABEL.UNSPECIFIED,
-        url: "https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline",
-      },
-    ],
+    link: {
+      label: ACTION_LABEL.UNSPECIFIED,
+      url: "https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline",
+    },
     media: {
       alt: "Optimus Pipeline",
       height: 40,

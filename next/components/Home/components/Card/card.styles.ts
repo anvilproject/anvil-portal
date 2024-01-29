@@ -11,6 +11,10 @@ export const GridCard = styled(MCard)`
   align-items: flex-start;
   display: grid;
   grid-column: 1 / -1;
+
+  .MuiCardActionArea-root {
+    text-decoration: none;
+  }
 ` as typeof MCard;
 
 export const CardSection = styled.div`
