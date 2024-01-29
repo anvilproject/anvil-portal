@@ -18,7 +18,7 @@ import { CardFrontmatter } from "./entities";
  * @param dirName - Directory name.
  * @returns content section cards.
  */
-export function buildContentSectionCards(dirName: string): SectionCard[] {
+export function buildUpdateSectionCards(dirName: string): SectionCard[] {
   const slugByFilePaths = mapSlugByFilePaths(getContentDirectory(dirName));
   const frontmatterByPaths = getFrontmatterByPaths(slugByFilePaths, dirName);
   return [...frontmatterByPaths]

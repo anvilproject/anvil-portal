@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo } from "react";
 import { SectionCard } from "../components/Home/common/entities";
+import { PublicationCard } from "../components/Home/components/Section/components/SectionPublications/components/Publications/common/entities";
 
 const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
@@ -8,6 +9,7 @@ const DEFAULT_SECTIONS_DATA: SectionsData = {
   datasetCards: [],
   eventCards: [],
   newsCards: [],
+  publicationCards: [],
   workspaceCards: [],
 };
 
@@ -18,6 +20,7 @@ export interface SectionsData {
   datasetCards: SectionCard[];
   eventCards: SectionCard[];
   newsCards: SectionCard[];
+  publicationCards: PublicationCard[];
   workspaceCards: SectionCard[];
 }
 

@@ -77,6 +77,16 @@ export function getContentDirectory(dirName: string): string {
 }
 
 /**
+ * Returns the file path to the given content file and directory.
+ * @param dirName - Directory name.
+ * @param fileName - File name.
+ * @returns file path to the content file.
+ */
+export function getFilePath(dirName: string, fileName: string): string {
+  return pathTool.join(dirName, fileName);
+}
+
+/**
  * Returns the earliest moment object.
  * @param setOfMoments - Set of moments.
  * @returns first moment object.
