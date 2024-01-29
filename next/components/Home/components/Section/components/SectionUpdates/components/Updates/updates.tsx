@@ -4,19 +4,22 @@ import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
-import { SectionCard } from "../../../../../../common/entities";
+import { SectionCardWithLink } from "../../../../../../common/entities";
 import { Card, CardContent, CardSection, Grid } from "./updates.styles";
 
 interface UpdatesProps {
-  cards: SectionCard[];
+  cards: SectionCardWithLink[];
 }
 
 export const Updates = ({ cards }: UpdatesProps): JSX.Element => {
   return (
     <Grid>
-      {cards.map(({ links, secondaryText, text, title }, i) => (
+      {cards.map(({ link, secondaryText, text, title }, i) => (
         <Card key={i} component={RoundedPaper}>
-          <MCardActionArea onClick={(): void => onCardAction(links)}>
+          <MCardActionArea
+            href={link.url}
+            target={link.target || ANCHOR_TARGET.SELF}
+          >
             <CardSection>
               <CardContent>
                 <CardTitle>{title}</CardTitle>
@@ -30,15 +33,3 @@ export const Updates = ({ cards }: UpdatesProps): JSX.Element => {
     </Grid>
   );
 };
-
-/**
- * Opens the given url in the same tab.
- * @param links - Card links.
- */
-function onCardAction(links: SectionCard["links"]): void {
-  // Take the first available link.
-  const { target = ANCHOR_TARGET.SELF, url } = links[0];
-  if (url) {
-    window.open(url, target);
-  }
-}

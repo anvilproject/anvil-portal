@@ -9,6 +9,10 @@ export interface SectionCard {
   title: string;
 }
 
+export interface SectionCardWithLink extends Omit<SectionCard, "links"> {
+  link: LinkProps;
+}
+
 export enum VISIBILITY_MODE {
   COLLAPSED = "COLLAPSED",
   EXPANDED = "EXPANDED",

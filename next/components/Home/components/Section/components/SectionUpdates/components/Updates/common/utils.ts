@@ -10,15 +10,17 @@ import {
 } from "../../../../../../../../../content/utils";
 import { mapSlugByFilePaths } from "../../../../../../../../../docs/common/utils";
 import { PORTAL_URL } from "../../../../../../../../../site-config/anvil-portal/dev/config";
-import { SectionCard } from "../../../../../../../common/entities";
+import { SectionCardWithLink } from "../../../../../../../common/entities";
 import { CardFrontmatter } from "./entities";
 
 /**
- * Returns the content section cards for the given directory.
+ * Returns the update section cards for the given directory.
  * @param dirName - Directory name.
- * @returns content section cards.
+ * @returns update section cards.
  */
-export function buildUpdateSectionCards(dirName: string): SectionCard[] {
+export function buildUpdateSectionCards(
+  dirName: string
+): SectionCardWithLink[] {
   const slugByFilePaths = mapSlugByFilePaths(getContentDirectory(dirName));
   const frontmatterByPaths = getFrontmatterByPaths(slugByFilePaths, dirName);
   return [...frontmatterByPaths]
@@ -77,9 +79,9 @@ function mapToCardFrontmatter(
  * @param frontmatter - Frontmatter.
  * @returns content section card.
  */
-function mapToSectionCard(frontmatter: CardFrontmatter): SectionCard {
+function mapToSectionCard(frontmatter: CardFrontmatter): SectionCardWithLink {
   return {
-    links: [{ label: null, url: `${PORTAL_URL}/${frontmatter.path}` }],
+    link: { label: null, url: `${PORTAL_URL}/${frontmatter.path}` },
     secondaryText: formatDate(frontmatter.date),
     text: frontmatter.description,
     title: frontmatter.title,

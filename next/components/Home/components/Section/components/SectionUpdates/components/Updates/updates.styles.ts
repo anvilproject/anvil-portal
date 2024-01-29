@@ -15,6 +15,10 @@ export const Grid = styled(DefaultGrid)`
 export const Card = styled(GridCard)`
   align-items: stretch; /* card action area consumes height of card */
 
+  .MuiCardActionArea-root {
+    text-decoration: none;
+  }
+
   ${mediaTabletUp} {
     grid-column: auto / span 4;
   }
