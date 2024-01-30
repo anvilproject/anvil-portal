@@ -1,11 +1,19 @@
+import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { ToggleButton } from "@clevercanary/data-explorer-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
 import { useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
-import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
+import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
+import { SectionCardWithLink } from "../../../../common/entities";
+import {
+  Section,
+  SectionLayout,
+  SectionSubtitle,
+  SectionTitle,
+} from "../../section.styles";
 import { Updates } from "./components/Updates/updates";
 import {
   Headline,
-  SectionLayout,
+  SectionActions,
   ToggleButtonGroup,
 } from "./sectionUpdates.styles";
 
@@ -22,7 +30,11 @@ export const SectionUpdates = (): JSX.Element => {
   const cards =
     view === UPDATE_VIEW.NEWS
       ? newsCards.slice(0, MAX_UPDATE_CARDS)
-      : eventCards.slice(0, MAX_UPDATE_CARDS); // TODO confirm events should be first three by date.
+      : eventCards
+          .filter(filterUpcomingEvent)
+          .reverse()
+          .slice(0, MAX_UPDATE_CARDS);
+  const updateName = view.toLowerCase();
 
   // Callback fired when toggle button value changes.
   const onChangeView = (view: UPDATE_VIEW): void => {
@@ -41,6 +53,11 @@ export const SectionUpdates = (): JSX.Element => {
           <ToggleButtonGroup toggleButtons={getToggleButtons(onChangeView)} />
         </Headline>
         <Updates cards={cards} />
+        <SectionActions>
+          <ButtonSecondary href={`${PORTAL_URL}/${updateName}`}>
+            Show All {updateName}
+          </ButtonSecondary>
+        </SectionActions>
       </SectionLayout>
     </Section>
   );
@@ -56,14 +73,25 @@ function getToggleButtons(
 ): ToggleButton[] {
   return [
     {
-      label: UPDATE_VIEW.NEWS,
+      label: "News",
       onToggle: () => onChangeView(UPDATE_VIEW.NEWS),
       value: UPDATE_VIEW.NEWS,
     },
     {
-      label: UPDATE_VIEW.EVENTS,
+      label: "Events",
       onToggle: () => onChangeView(UPDATE_VIEW.EVENTS),
       value: UPDATE_VIEW.EVENTS,
     },
   ];
+}
+
+/**
+ * Returns true if the card has a future date.
+ * @param card - Cards
+ * @returns true if the card has a future date.
+ */
+function filterUpcomingEvent(card: SectionCardWithLink): boolean {
+  return Boolean(
+    card.secondaryText && new Date(card.secondaryText) > new Date()
+  );
 }

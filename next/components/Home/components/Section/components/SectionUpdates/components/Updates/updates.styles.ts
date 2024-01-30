@@ -10,6 +10,7 @@ import {
 
 export const Grid = styled(DefaultGrid)`
   grid-column: 1 / -1;
+  margin: 48px 0 32px;
 `;
 
 export const Card = styled(GridCard)`

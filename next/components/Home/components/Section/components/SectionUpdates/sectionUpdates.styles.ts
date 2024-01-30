@@ -2,15 +2,9 @@ import { ToggleButtonGroup as DXToggleButtonGroup } from "@clevercanary/data-exp
 import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
-  sectionGrid,
+  SectionActions as DefaultActions,
   SectionHeadline as DefaultHeadline,
-  SectionLayout as DefaultLayout,
 } from "../../section.styles";
-
-export const SectionLayout = styled(DefaultLayout)`
-  ${sectionGrid};
-  gap: 48px 16px;
-`;
 
 export const Headline = styled(DefaultHeadline)`
   grid-column: 1 / -1;
@@ -28,4 +22,10 @@ export const ToggleButtonGroup = styled(DXToggleButtonGroup)`
     padding: 8px 16px;
     text-transform: none;
   }
+`;
+
+export const SectionActions = styled(DefaultActions)`
+  align-items: center;
+  grid-column: 1 / -1;
+  justify-content: center;
 `;
