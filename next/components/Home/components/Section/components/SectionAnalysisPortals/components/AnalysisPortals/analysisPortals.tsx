@@ -53,10 +53,10 @@ export const AnalysisPortals = (): JSX.Element => {
   );
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      onIntersection,
-      INTERSECTION_OBSERVER_OPTIONS
-    );
+    observerRef.current = new IntersectionObserver(onIntersection, {
+      root: portalsRef.current,
+      ...INTERSECTION_OBSERVER_OPTIONS,
+    });
     if (portalsRef.current?.lastElementChild) {
       observerRef.current.observe(portalsRef.current.lastElementChild);
     }
