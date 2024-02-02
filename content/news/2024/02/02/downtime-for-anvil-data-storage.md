@@ -1,0 +1,35 @@
+---
+author: "AnVIL"
+date: "2024-02-02"
+description: "We want to make you aware that from Thursday, February 15 thru Monday, February 19 there will be scheduled downtime for all AnVIL data storage workspaces which includes all released workspaces to researchers, consortium access workspaces, and submission workspaces"
+featured: true
+title: "Scheduled Downtime for AnVIL Data Storage Workspaces for Data Migration on February 15-19, 2024"
+---
+
+# Scheduled Downtime for AnVIL Data Storage Workspaces for Data Migration on February 15-19, 2024
+
+##### Posted: Febuary 02, 2024
+
+Dear AnVIL Users,
+
+We want to make you aware that from **Thursday, February 15 thru Monday, February 19** there will be scheduled downtime for all AnVIL data storage workspaces which includes all released workspaces to researchers, consortium access workspaces, and submission workspaces; please note that only **workspaces housing AnVIL data will be impacted during this downtime**. The Broad Institute’s Data Sciences Platform migration team will be using this time to migrate AnVIL data workspaces from multi-region to US-central1 region due to the changes in pricing structure for multi-region buckets. The benefits of AnVIL making this change to single-region storage are:
+
+- **Avoid data transfer fees**: GCP pricing changes means some operations that were previously free would now incur costs, which will be avoided with this downtime procedure.
+- **Use Autoclass feature**: This is also an opportunity to take advantage of Google’s Autoclass feature, which automatically moves files to colder storage, saving on storage costs. To date, the feature has not been available for existing buckets, but since this migration process recreates the bucket, the Autoclass feature is enabled at the time of migration.
+
+More information on this migration and how it impacts workspaces can be found in this [Terra article](https://support.terra.bio/hc/en-us/articles/19677261508507-Workspace-multi-region-bucket-migration). Additionally, you’ll find resources for migrating your own workspaces in this article.
+
+This scheduled downtime for AnVIL data housing workspaces may impact AnVIL users. During this time:
+
+- Users will not be able to reference or access all AnVIL data storage workspaces which includes all released workspaces to researchers, consortium access workspaces, and submission workspaces.
+- If users are in the process of referencing or accessing these workspaces, then their processes that are running will fail or not complete.
+
+All operations associated with accessing these workspaces can be resumed upon completion of the migration. If users know the source workspace, they can confirm if it has been migrated if the region is us-central1 and not US multi-region.
+
+We recommend that all active Terra workspaces migrate to us-central1. However, users need to do their own risk assessment and work with their cloud provider representatives to ensure there will be no charges. Please see [here](https://support.terra.bio/hc/en-us/articles/19677261508507-Workspace-multi-region-bucket-migration) for a support article with more information.
+
+We appreciate your patience and understanding. As always, if you have questions or issues, please write to [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org).
+
+Thank you,
+
+The AnVIL Team

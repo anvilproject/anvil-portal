@@ -597,6 +597,9 @@
           pathOverride: "/news"
           navigationItems:
             - name: ""
+              file: "/news/2024/02/02/downtime-for-anvil-data-storage"
+              pathOverride: "/news/2024/02/02/downtime-for-anvil-data-storage"
+            - name: ""
               file: "/news/2023/09/05/data-release-als-compute-project"
               pathOverride: "/news/2023/09/05/data-release-als-compute-project"
             - name: ""
