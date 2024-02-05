@@ -9,6 +9,6 @@ export interface CardFrontmatter {
   title: string;
 }
 
-export interface UpdateSection extends SectionCardWithLink {
+export interface UpdateCard extends SectionCardWithLink {
   date?: string;
 }

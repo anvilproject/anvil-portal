@@ -1,6 +1,6 @@
-import { SectionCardWithLink } from "../../../../../../../common/entities";
+import { SectionCardWithLink } from "../../../../../common/entities";
 
-export const ACTION_LABEL = {
+const ACTION_LABEL = {
   UNSPECIFIED: "",
 };
 

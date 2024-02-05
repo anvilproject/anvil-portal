@@ -3,8 +3,8 @@ import {
   SectionCard,
   SectionCardWithLink,
 } from "../components/Home/common/entities";
-import { PublicationCard } from "../components/Home/components/Section/components/SectionPublications/components/Publications/common/entities";
-import { UpdateSection } from "../components/Home/components/Section/components/SectionUpdates/common/entities";
+import { PublicationCard } from "../components/Home/components/Section/components/SectionPublications/common/entities";
+import { UpdateCard } from "../components/Home/components/Section/components/SectionUpdates/common/entities";
 
 const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
@@ -22,8 +22,8 @@ export interface SectionsData {
   carouselCards: SectionCard[];
   cloudCards: Omit<SectionCard, "links">[];
   datasetCards: SectionCardWithLink[];
-  eventCards: UpdateSection[];
-  newsCards: UpdateSection[];
+  eventCards: UpdateCard[];
+  newsCards: UpdateCard[];
   publicationCards: PublicationCard[];
   workspaceCards: SectionCardWithLink[];
 }

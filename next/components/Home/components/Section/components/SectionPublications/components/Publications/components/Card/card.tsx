@@ -8,7 +8,7 @@ import { useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../../../common/entities";
 import { updateVisibilityMode } from "../../../../../../../../common/utils";
-import { PublicationCard } from "../../common/entities";
+import { PublicationCard } from "../../../../common/entities";
 import { Card as GridCard, CardContent, CardSection } from "./card.styles";
 
 const MAX_AUTHORS = 5;

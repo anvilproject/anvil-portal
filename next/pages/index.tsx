@@ -1,13 +1,13 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Footer } from "../components/Home/components/Layout/components/Footer/footer.styles";
 import { Main } from "../components/Home/components/Layout/components/Main/main";
-import { CARDS as ANALYSIS_PORTAL_CARDS } from "../components/Home/components/Section/components/SectionAnalysisPortals/components/AnalysisPortals/common/content";
-import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/components/CloudBenefits/common/content";
-import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/components/Datasets/common/content";
-import { CARDS as CAROUSEL_CARDS } from "../components/Home/components/Section/components/SectionHero/components/Carousel/common/content";
-import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/components/Publications/common/utils";
+import { CARDS as ANALYSIS_PORTAL_CARDS } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/content";
+import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/common/content";
+import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/common/content";
+import { CARDS as CAROUSEL_CARDS } from "../components/Home/components/Section/components/SectionHero/common/content";
+import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/common/utils";
 import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/common/utils";
-import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/components/Workspaces/common/content";
+import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/common/content";
 import { SectionsData, SectionsDataProvider } from "../providers/sectionsData";
 import { HomeView } from "../views/HomeView/homeView";
 

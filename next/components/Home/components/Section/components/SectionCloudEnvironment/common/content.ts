@@ -1,4 +1,4 @@
-import { SectionCard } from "../../../../../../../common/entities";
+import { SectionCard } from "../../../../../common/entities";
 
 export const CARDS: Omit<SectionCard, "links">[] = [
   {

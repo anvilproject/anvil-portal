@@ -1,11 +1,10 @@
-import { PORTAL_URL } from "../../../../../../../../../site-config/anvil-portal/dev/config";
-import { SectionCardWithLink } from "../../../../../../../common/entities";
+import { PORTAL_URL } from "../../../../../../../site-config/anvil-portal/dev/config";
+import { SectionCardWithLink } from "../../../../../common/entities";
 
-const CONSORTIA_ROUTE = "data/consortia";
-
-export const ACTION_LABEL = {
+const ACTION_LABEL = {
   UNSPECIFIED: "",
 };
+const CONSORTIA_ROUTE = "data/consortia";
 
 export const CARDS: SectionCardWithLink[] = [
   {

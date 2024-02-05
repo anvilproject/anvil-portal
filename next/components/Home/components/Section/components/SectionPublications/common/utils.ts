@@ -2,7 +2,7 @@ import {
   getContentDirectory,
   getFilePath,
   getMatter,
-} from "../../../../../../../../../content/utils";
+} from "../../../../../../../content/utils";
 import { PublicationCard } from "./entities";
 
 const DIR_FOLDER_NAME = "home";

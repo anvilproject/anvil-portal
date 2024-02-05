@@ -1,8 +1,8 @@
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
-import { PORTAL_URL } from "../../../../../../../../../site-config/anvil-portal/dev/config";
-import { SectionCard } from "../../../../../../../common/entities";
+import { PORTAL_URL } from "../../../../../../../site-config/anvil-portal/dev/config";
+import { SectionCard } from "../../../../../common/entities";
 
-export const ACTION_LABEL = {
+const ACTION_LABEL = {
   DATASETS: "Datasets",
   LAUNCH: "Launch",
   LEARN_MORE: "Learn More",

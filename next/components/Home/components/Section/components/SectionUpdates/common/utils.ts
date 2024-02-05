@@ -7,14 +7,14 @@ import {
 } from "../../../../../../../content/utils";
 import { mapSlugByFilePaths } from "../../../../../../../docs/common/utils";
 import { PORTAL_URL } from "../../../../../../../site-config/anvil-portal/dev/config";
-import { CardFrontmatter, UpdateSection } from "./entities";
+import { CardFrontmatter, UpdateCard } from "./entities";
 
 /**
  * Returns the update section cards for the given directory.
  * @param dirName - Directory name.
  * @returns update section cards.
  */
-export function buildUpdateSectionCards(dirName: string): UpdateSection[] {
+export function buildUpdateSectionCards(dirName: string): UpdateCard[] {
   const slugByFilePaths = mapSlugByFilePaths(getContentDirectory(dirName));
   const frontmatterByPaths = getFrontmatterByPaths(slugByFilePaths, dirName);
   return [...frontmatterByPaths]
@@ -62,7 +62,7 @@ function mapToCardFrontmatter(
  * @param frontmatter - Frontmatter.
  * @returns content section card.
  */
-function mapToSectionCard(frontmatter: CardFrontmatter): UpdateSection {
+function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
   return {
     date: frontmatter.date?.toISOString(),
     link: { label: null, url: `${PORTAL_URL}/${frontmatter.path}` },

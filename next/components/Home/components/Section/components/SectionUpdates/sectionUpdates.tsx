@@ -9,7 +9,7 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
-import { UpdateSection } from "./common/entities";
+import { UpdateCard } from "./common/entities";
 import { Updates } from "./components/Updates/updates";
 import {
   Headline,
@@ -90,7 +90,7 @@ function getToggleButtons(
  * @param card - Cards
  * @returns true if the card has a future date.
  */
-function filterUpcomingEvent(card: UpdateSection): boolean {
+function filterUpcomingEvent(card: UpdateCard): boolean {
   if (!card.date) return false;
   return new Date(card.date) >= new Date();
 }
