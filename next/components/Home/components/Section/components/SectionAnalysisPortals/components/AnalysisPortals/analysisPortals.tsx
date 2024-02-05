@@ -27,30 +27,12 @@ export const AnalysisPortals = (): JSX.Element => {
     () => rotateCards(analysisPortalCards, activeBullet, isIntersecting),
     [activeBullet, analysisPortalCards, isIntersecting]
   );
-  const lastBulletIndex = bullets.length - 1;
 
   const onIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       setIsIntersecting(entry.isIntersecting);
     });
   }, []);
-
-  const rotateToBullet = useCallback(
-    (increment: number): void => {
-      /* Increment bullet index either way. */
-      let newIndex = activeBullet + increment;
-      if (newIndex < 0) {
-        /* If the new index is negative, rotate to the end of the bullets. */
-        newIndex = lastBulletIndex;
-      } else if (newIndex > lastBulletIndex) {
-        /* If the new index is greater than the number of possible bullets, rotate to the start of the bullets. */
-        newIndex = 0;
-      }
-      /* Set new rotation index. */
-      setActiveBullet(newIndex);
-    },
-    [activeBullet, lastBulletIndex]
-  );
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(onIntersection, {
@@ -64,16 +46,6 @@ export const AnalysisPortals = (): JSX.Element => {
       observerRef.current?.disconnect();
     };
   }, [onIntersection]);
-
-  // Rotate the cards on a timer when the cards do not intersect the viewport.
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (!isIntersecting) {
-        rotateToBullet(1);
-      }
-    }, 8000);
-    return () => clearTimeout(timeout);
-  }, [activeBullet, rotateToBullet, isIntersecting]);
 
   // Reset the active bullet when the cards intersect the viewport.
   useEffect(() => {

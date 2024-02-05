@@ -31,20 +31,24 @@ export const CARDS: SectionCard[] = [
   },
   {
     links: [
-      { label: ACTION_LABEL.LAUNCH, url: "https://gen3.theanvil.io/" },
+      {
+        label: ACTION_LABEL.DATASETS,
+        target: ANCHOR_TARGET.BLANK,
+        url: "https://explore.anvilproject.org/datasets",
+      },
       {
         label: ACTION_LABEL.LEARN_MORE,
-        target: ANCHOR_TARGET.SELF,
-        url: `${PORTAL_URL}/learn/introduction/getting-started-with-gen3`,
+        target: ANCHOR_TARGET.BLANK,
+        url: "https://explore.anvilproject.org/guides",
       },
     ],
     media: {
-      alt: "Gen3",
+      alt: "Anvil Data Explorer",
       height: 40,
-      src: "/consortia/portals/gen3.png",
+      src: "/consortia/portals/anvil-explorer.png",
     },
-    text: "Manage, harmonize, and share large datasets.",
-    title: "Gen3",
+    text: "Discover and export datasets for analysis.",
+    title: "Anvil Data Explorer",
   },
   {
     links: [
