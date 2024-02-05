@@ -12,11 +12,8 @@ import TagManager from "react-gtm-module";
 import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
 import { config } from "../config/config";
-import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
 import { ConfigProvider } from "../providers/config";
 import { mergeAppTheme } from "../theme/theme";
-
-setFeatureFlags();
 
 export type NextPageWithComponent = NextPage & {
   Footer?: typeof DXFooter;
