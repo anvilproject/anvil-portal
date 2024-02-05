@@ -6,19 +6,22 @@ import { SectionPublications } from "../../components/Home/components/Section/co
 import { SectionUpdates } from "../../components/Home/components/Section/components/SectionUpdates/sectionUpdates";
 import { SectionWorkspaces } from "../../components/Home/components/Section/components/SectionWorkspaces/sectionWorkspaces";
 import { SectionDivider } from "../../components/Home/components/Section/section.styles";
+import { useConfig } from "../../hooks/useConfig";
 
 export const HomeView = (): JSX.Element => {
+  const { config } = useConfig();
+  const portalURL = config.portalURL;
   return (
     <>
-      <SectionHero />
+      <SectionHero portalURL={portalURL} />
       <SectionAnalysisPortals />
-      <SectionDatasets />
+      <SectionDatasets portalURL={portalURL} />
       <SectionDivider flexItem />
-      <SectionWorkspaces />
+      <SectionWorkspaces portalURL={portalURL} />
       <SectionCloudEnvironment />
-      <SectionUpdates />
+      <SectionUpdates portalURL={portalURL} />
       <SectionDivider flexItem />
-      <SectionPublications />
+      <SectionPublications portalURL={portalURL} />
     </>
   );
 };

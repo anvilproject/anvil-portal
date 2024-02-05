@@ -13,6 +13,7 @@ import { Head } from "../components/common/Head/head";
 import { Header } from "../components/Layout/components/Header/header";
 import { config } from "../config/config";
 import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
+import { ConfigProvider } from "../providers/config";
 import { mergeAppTheme } from "../theme/theme";
 
 setFeatureFlags();
@@ -29,7 +30,8 @@ export type AppPropsWithComponent = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;
   const Main = Component.Main || DXMain;
-  const { analytics, layout, themeOptions } = config();
+  const appConfig = config();
+  const { analytics, layout, themeOptions } = appConfig;
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
@@ -44,17 +46,19 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   return (
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
-        <Head />
-        <CssBaseline />
-        <LayoutStateProvider>
-          <AppLayout>
-            <Header {...layout.header} />
-            <Main>
-              <Component {...pageProps} />
-            </Main>
-            <Footer {...layout.footer} />
-          </AppLayout>
-        </LayoutStateProvider>
+        <ConfigProvider config={appConfig}>
+          <Head />
+          <CssBaseline />
+          <LayoutStateProvider>
+            <AppLayout>
+              <Header {...layout.header} />
+              <Main>
+                <Component {...pageProps} />
+              </Main>
+              <Footer {...layout.footer} />
+            </AppLayout>
+          </LayoutStateProvider>
+        </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>
   );

@@ -6,7 +6,6 @@ import {
   isFeatured,
 } from "../../../../../../../content/utils";
 import { mapSlugByFilePaths } from "../../../../../../../docs/common/utils";
-import { PORTAL_URL } from "../../../../../../../site-config/anvil-portal/dev/config";
 import { CardFrontmatter, UpdateCard } from "./entities";
 
 /**
@@ -65,7 +64,7 @@ function mapToCardFrontmatter(
 function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
   return {
     date: frontmatter.date?.toISOString(),
-    link: { label: null, url: `${PORTAL_URL}/${frontmatter.path}` },
+    link: { label: null, url: frontmatter.path },
     secondaryText: frontmatter.secondaryText,
     text: frontmatter.description,
     title: frontmatter.title,

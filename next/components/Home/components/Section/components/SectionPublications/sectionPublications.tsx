@@ -1,7 +1,6 @@
 import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { Button } from "@mui/material";
-import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
 import { Section, SectionLayout, SectionTitle } from "../../section.styles";
 import { Publications } from "./components/Publications/publications";
 import { CTAs, Headline, SectionActions } from "./sectionPublications.styles";
@@ -11,14 +10,20 @@ const ADD_PUBLICATION =
   "https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md";
 const SHOW_ALL_PUBLICATIONS = "/overview/publications";
 
-export const SectionPublications = (): JSX.Element => {
+interface SectionPublicationsProps {
+  portalURL: string;
+}
+
+export const SectionPublications = ({
+  portalURL,
+}: SectionPublicationsProps): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
         <Headline>
           <SectionTitle>Recent Publications</SectionTitle>
           <CTAs>
-            <ButtonSecondary href={`${PORTAL_URL}${CITE_ANVIL}`}>
+            <ButtonSecondary href={`${portalURL}${CITE_ANVIL}`}>
               Cite AnVIL
             </ButtonSecondary>
             <Button
@@ -33,7 +38,7 @@ export const SectionPublications = (): JSX.Element => {
         </Headline>
         <Publications />
         <SectionActions>
-          <ButtonSecondary href={`${PORTAL_URL}${SHOW_ALL_PUBLICATIONS}`}>
+          <ButtonSecondary href={`${portalURL}${SHOW_ALL_PUBLICATIONS}`}>
             Show all publications
           </ButtonSecondary>
         </SectionActions>

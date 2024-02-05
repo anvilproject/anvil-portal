@@ -9,15 +9,16 @@ import { Card, CardContent, CardSection, Grid } from "./updates.styles";
 
 interface UpdatesProps {
   cards: UpdateCard[];
+  portalURL: string;
 }
 
-export const Updates = ({ cards }: UpdatesProps): JSX.Element => {
+export const Updates = ({ cards, portalURL }: UpdatesProps): JSX.Element => {
   return (
     <Grid>
       {cards.map(({ link, secondaryText, text, title }, i) => (
         <Card key={i} component={RoundedPaper}>
           <MCardActionArea
-            href={link.url}
+            href={`${portalURL}/${link.url}`}
             target={link.target || ANCHOR_TARGET.SELF}
           >
             <CardSection>

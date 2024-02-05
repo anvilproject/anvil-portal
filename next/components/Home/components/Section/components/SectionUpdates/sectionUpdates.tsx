@@ -2,7 +2,6 @@ import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/c
 import { ToggleButton } from "@clevercanary/data-explorer-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
 import { useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
-import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
 import {
   Section,
   SectionLayout,
@@ -24,7 +23,13 @@ export enum UPDATE_VIEW {
   NEWS = "NEWS",
 }
 
-export const SectionUpdates = (): JSX.Element => {
+interface SectionUpdatesProps {
+  portalURL: string;
+}
+
+export const SectionUpdates = ({
+  portalURL,
+}: SectionUpdatesProps): JSX.Element => {
   const { eventCards, newsCards } = useSectionsData();
   const [view, setView] = useState<UPDATE_VIEW>(UPDATE_VIEW.NEWS);
   const cards =
@@ -52,9 +57,9 @@ export const SectionUpdates = (): JSX.Element => {
           </SectionSubtitle>
           <ToggleButtonGroup toggleButtons={getToggleButtons(onChangeView)} />
         </Headline>
-        <Updates cards={cards} />
+        <Updates cards={cards} portalURL={portalURL} />
         <SectionActions>
-          <ButtonSecondary href={`${PORTAL_URL}/${updateName}`}>
+          <ButtonSecondary href={`${portalURL}/${updateName}`}>
             Show All {updateName}
           </ButtonSecondary>
         </SectionActions>

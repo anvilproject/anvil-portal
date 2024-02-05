@@ -1,21 +1,23 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { Footer } from "../components/Home/components/Layout/components/Footer/footer.styles";
 import { Main } from "../components/Home/components/Layout/components/Main/main";
-import { CARDS as ANALYSIS_PORTAL_CARDS } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/content";
+import { buildAnalysisPortalCards } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/utils";
 import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/common/content";
-import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/common/content";
-import { CARDS as CAROUSEL_CARDS } from "../components/Home/components/Section/components/SectionHero/common/content";
+import { buildDatasetCards } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
+import { buildCarouselCards } from "../components/Home/components/Section/components/SectionHero/common/utils";
 import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/common/utils";
 import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/common/utils";
 import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/common/content";
+import { config } from "../config/config";
 import { SectionsData, SectionsDataProvider } from "../providers/sectionsData";
 import { HomeView } from "../views/HomeView/homeView";
 
 export const getStaticProps: GetStaticProps<SectionsData> = async () => {
-  const analysisPortalCards = ANALYSIS_PORTAL_CARDS;
-  const carouselCards = CAROUSEL_CARDS;
+  const { browserURL, portalURL } = config();
+  const analysisPortalCards = buildAnalysisPortalCards(browserURL, portalURL);
+  const carouselCards = buildCarouselCards(portalURL);
   const cloudCards = CLOUD_CARDS;
-  const datasetCards = DATASET_CARDS;
+  const datasetCards = buildDatasetCards(portalURL);
   const eventCards = buildUpdateSectionCards("events");
   const newsCards = buildUpdateSectionCards("news");
   const publicationCards = buildPublicationSectionCards();

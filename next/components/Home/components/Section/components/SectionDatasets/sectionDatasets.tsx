@@ -1,5 +1,5 @@
 import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
+import NLink from "next/link";
 import { Section, SectionLayout } from "../../section.styles";
 import { Datasets } from "./components/Datasets/datasets";
 import { Metrics } from "./components/Metrics/metrics";
@@ -14,7 +14,13 @@ const CONTRIBUTE_DATA =
   "/learn/data-submitters/submission-guide/data-submitters-overview";
 const EXPLORE_DATASETS = "/data/consortia";
 
-export const SectionDatasets = (): JSX.Element => {
+interface SectionDatasetsProps {
+  portalURL: string;
+}
+
+export const SectionDatasets = ({
+  portalURL,
+}: SectionDatasetsProps): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
@@ -26,13 +32,13 @@ export const SectionDatasets = (): JSX.Element => {
         </Headline>
         <Datasets />
         <SectionActions>
-          <ButtonSecondary href={`${PORTAL_URL}${CONSORTIA_ROADMAP}`}>
-            Consortia Roadmap
-          </ButtonSecondary>
-          <ButtonSecondary href={`${PORTAL_URL}${EXPLORE_DATASETS}`}>
+          <NLink href={CONSORTIA_ROADMAP} passHref>
+            <ButtonSecondary href="passHref">Consortia Roadmap</ButtonSecondary>
+          </NLink>
+          <ButtonSecondary href={`${portalURL}${EXPLORE_DATASETS}`}>
             Explore Datasets
           </ButtonSecondary>
-          <ButtonSecondary href={`${PORTAL_URL}${CONTRIBUTE_DATA}`}>
+          <ButtonSecondary href={`${portalURL}${CONTRIBUTE_DATA}`}>
             Contribute Data
           </ButtonSecondary>
         </SectionActions>
