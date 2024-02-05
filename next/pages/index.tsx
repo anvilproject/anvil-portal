@@ -6,7 +6,7 @@ import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/comp
 import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/components/Datasets/common/content";
 import { CARDS as CAROUSEL_CARDS } from "../components/Home/components/Section/components/SectionHero/components/Carousel/common/content";
 import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/components/Publications/common/utils";
-import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/components/Updates/common/utils";
+import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/common/utils";
 import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/components/Workspaces/common/content";
 import { SectionsData, SectionsDataProvider } from "../providers/sectionsData";
 import { HomeView } from "../views/HomeView/homeView";

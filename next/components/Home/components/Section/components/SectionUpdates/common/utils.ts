@@ -1,12 +1,12 @@
-import { Frontmatter } from "../../../../../../../../../content/entities";
+import { Frontmatter } from "../../../../../../../content/entities";
 import {
   buildMomentField,
   getContentDirectory,
   getFrontmatterByPaths,
   isFeatured,
-} from "../../../../../../../../../content/utils";
-import { mapSlugByFilePaths } from "../../../../../../../../../docs/common/utils";
-import { PORTAL_URL } from "../../../../../../../../../site-config/anvil-portal/dev/config";
+} from "../../../../../../../content/utils";
+import { mapSlugByFilePaths } from "../../../../../../../docs/common/utils";
+import { PORTAL_URL } from "../../../../../../../site-config/anvil-portal/dev/config";
 import { CardFrontmatter, UpdateSection } from "./entities";
 
 /**

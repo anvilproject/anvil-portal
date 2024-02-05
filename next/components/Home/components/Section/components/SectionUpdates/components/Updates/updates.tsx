@@ -4,7 +4,7 @@ import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
-import { UpdateSection } from "./common/entities";
+import { UpdateSection } from "../../common/entities";
 import { Card, CardContent, CardSection, Grid } from "./updates.styles";
 
 interface UpdatesProps {

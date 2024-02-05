@@ -1,4 +1,4 @@
-import { SectionCardWithLink } from "../../../../../../../common/entities";
+import { SectionCardWithLink } from "../../../../../common/entities";
 
 export interface CardFrontmatter {
   date?: Date;

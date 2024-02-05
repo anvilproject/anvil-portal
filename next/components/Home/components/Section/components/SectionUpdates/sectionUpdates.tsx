@@ -9,7 +9,7 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
-import { UpdateSection } from "./components/Updates/common/entities";
+import { UpdateSection } from "./common/entities";
 import { Updates } from "./components/Updates/updates";
 import {
   Headline,

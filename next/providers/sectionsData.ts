@@ -4,7 +4,7 @@ import {
   SectionCardWithLink,
 } from "../components/Home/common/entities";
 import { PublicationCard } from "../components/Home/components/Section/components/SectionPublications/components/Publications/common/entities";
-import { UpdateSection } from "../components/Home/components/Section/components/SectionUpdates/components/Updates/common/entities";
+import { UpdateSection } from "../components/Home/components/Section/components/SectionUpdates/common/entities";
 
 const DEFAULT_SECTIONS_DATA: SectionsData = {
   analysisPortalCards: [],
