@@ -5,6 +5,7 @@ import { SectionHero } from "../../components/Home/components/Section/components
 import { SectionPublications } from "../../components/Home/components/Section/components/SectionPublications/sectionPublications";
 import { SectionUpdates } from "../../components/Home/components/Section/components/SectionUpdates/sectionUpdates";
 import { SectionWorkspaces } from "../../components/Home/components/Section/components/SectionWorkspaces/sectionWorkspaces";
+import { SectionX } from "../../components/Home/components/Section/components/SectionX/sectionX";
 import { SectionDivider } from "../../components/Home/components/Section/section.styles";
 import { useConfig } from "../../hooks/useConfig";
 
@@ -22,6 +23,8 @@ export const HomeView = (): JSX.Element => {
       <SectionUpdates portalURL={portalURL} />
       <SectionDivider flexItem />
       <SectionPublications portalURL={portalURL} />
+      <SectionDivider flexItem />
+      <SectionX />
     </>
   );
 };
