@@ -52,6 +52,10 @@ const config: SiteConfig = {
           url: `${PORTAL_URL}/overview`,
         },
         {
+          label: "Learn",
+          url: `${PORTAL_URL}/learn`,
+        },
+        {
           featureFlag: false,
           label: "Datasets",
           url: `${PORTAL_URL}/data`,
@@ -84,21 +88,16 @@ const config: SiteConfig = {
           url: "/consortia",
         },
         {
-          label: "Learn",
-          url: `${PORTAL_URL}/learn`,
+          label: "News",
+          url: `${PORTAL_URL}/news`,
         },
         {
-          flatten: false,
+          label: "Events",
+          url: `${PORTAL_URL}/events`,
+        },
+        {
           label: "More",
           menuItems: [
-            {
-              label: "News",
-              url: `${PORTAL_URL}/news`,
-            },
-            {
-              label: "Events",
-              url: `${PORTAL_URL}/events`,
-            },
             {
               label: "Team",
               url: `${PORTAL_URL}/team`,
