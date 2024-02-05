@@ -118,6 +118,7 @@ const config: SiteConfig = {
       searchEnabled: true,
       searchURL: `${PORTAL_URL}/search`,
       slogan: SLOGAN,
+      socialMedia: socialMedia,
     },
   },
   redirectRootToPath: "/",
