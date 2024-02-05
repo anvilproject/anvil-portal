@@ -20,7 +20,7 @@ const config: SiteConfig = {
       logo: {
         alt: slogan,
         height: 40,
-        link: "/",
+        link: getDatasetsEnvironmentUrl(),
         src: logoAnvil,
       },
       navLinks: [
@@ -33,12 +33,6 @@ const config: SiteConfig = {
           url: "/learn",
         },
         {
-          featureFlag: false,
-          label: "Datasets",
-          url: `${getDatasetsEnvironmentUrl()}data`,
-        },
-        {
-          featureFlag: true,
           label: "Datasets",
           menuItems: [
             {
