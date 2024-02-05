@@ -14,6 +14,7 @@ export interface NavigationEntry {
 
 export enum NavigationKey {
   CONSORTIA = "consortia",
+  OVERVIEW = "overview",
 }
 
 export interface NavigationNode {
