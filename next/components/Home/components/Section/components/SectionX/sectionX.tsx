@@ -10,7 +10,9 @@ export const SectionX = (): JSX.Element => {
         <Timeline>
           <a
             className="twitter-timeline"
-            href="https://twitter.com/useAnVIL"
+            data-width="600"
+            data-theme="light"
+            href="https://twitter.com/useAnVIL?ref_src=twsrc%5Etfw"
             rel="noopener"
             target={ANCHOR_TARGET.BLANK}
           >
