@@ -1,4 +1,5 @@
 import "@clevercanary/data-explorer-ui";
+import { Header as DXHeader } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
 import { LayoutStateProvider } from "@clevercanary/data-explorer-ui/lib/providers/layoutState";
 import { createAppTheme } from "@clevercanary/data-explorer-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
@@ -10,7 +11,6 @@ import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
-import { Header } from "../components/Layout/components/Header/header";
 import { config } from "../config/config";
 import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
 import { ConfigProvider } from "../providers/config";
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
           <CssBaseline />
           <LayoutStateProvider>
             <AppLayout>
-              <Header {...layout.header} />
+              <DXHeader {...layout.header} />
               <Main>
                 <Component {...pageProps} />
               </Main>
