@@ -1,0 +1,9 @@
+export type CarouselAction = CAROUSEL_ACTION;
+
+export enum CAROUSEL_ACTION {
+  NONE = "NONE",
+  SCROLL = "SCROLL",
+  SELECT = "SELECT",
+  SWIPE_BACKWARD = "SWIPE_BACKWARD",
+  SWIPE_FORWARD = "SWIPE_FORWARD",
+}

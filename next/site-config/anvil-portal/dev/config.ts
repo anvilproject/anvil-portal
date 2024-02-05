@@ -6,7 +6,7 @@ import { socialMedia } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
 const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
-export const PORTAL_URL = process.env.NEXT_PUBLIC_SITEMAP_DOMAIN || "";
+const PORTAL_URL = "https://anvilproject.dev.clevercanary.com";
 const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 
 const config: SiteConfig = {
@@ -16,7 +16,7 @@ const config: SiteConfig = {
     gtmPreview: "env-65",
   },
   appTitle: APP_TITLE,
-  browserURL: "",
+  browserURL: EXPLORER_URL,
   dataSource: {
     url: "",
   },
@@ -120,6 +120,7 @@ const config: SiteConfig = {
       socialMedia: socialMedia,
     },
   },
+  portalURL: PORTAL_URL,
   redirectRootToPath: "/",
   themeOptions: {
     palette: {

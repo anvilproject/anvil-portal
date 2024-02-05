@@ -1,9 +1,10 @@
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import * as C from "../../../components";
 import { SiteConfig } from "../../common/entities";
-import devConfig, { PORTAL_URL } from "../dev/config";
+import devConfig from "../dev/config";
 
 const EXPLORER_URL = "https://prod.anvil.gi.ucsc.edu";
+const PORTAL_URL = "https://anvilproject.org";
 
 const config: SiteConfig = {
   ...devConfig,
@@ -86,6 +87,7 @@ const config: SiteConfig = {
       ],
     },
   },
+  portalURL: PORTAL_URL,
 };
 
 export default config;

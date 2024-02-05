@@ -1,0 +1,13 @@
+export const CARD_OFFSET_Y = 8;
+export const CARDS = "cards"; // Card container element identifier.
+export const CARD_SCALE_X = 48;
+export const MAX_CARD_HEIGHT = 180;
+export const MAX_CARD_HEIGHT_SM = 224;
+export const MAX_DECK_SIZE = 3;
+export const MAX_CARD_WIDTH = 608;
+export const CAROUSEL_HEIGHT = MAX_CARD_HEIGHT + MAX_DECK_SIZE * CARD_OFFSET_Y;
+export const CAROUSEL_HEIGHT_SM =
+  MAX_CARD_HEIGHT_SM + MAX_DECK_SIZE * CARD_OFFSET_Y;
+export const TRANSITION_DELAY = 100;
+export const TRANSITION_DURATION = 100;
+export const ARROW_OFFSET_Y = (CARD_OFFSET_Y * MAX_DECK_SIZE) / 2;

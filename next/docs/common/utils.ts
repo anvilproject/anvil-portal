@@ -4,7 +4,7 @@ import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
-import { NavigationKey, NavigationNode, SlugByFilePath } from "./entities";
+import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
 
 /**
  * Returns the path to the "docs" directory.
@@ -96,21 +96,22 @@ export function getNavigationConfig(
  * @returns true if the file is an MDX file.
  */
 function isMdxFile(fileName: string): boolean {
-  return fileName.endsWith(".mdx");
+  return fileName.endsWith(".mdx") || fileName.endsWith(".md"); // TODO(cc) update to use .mdx only once md is removed.
 }
 
 /**
  * Maps each MDX file path to its slug.
+ * @param docsDirectory - Docs directory.
  * @param dirPath - Directory path.
- * @param slugByFilePath - Accumulator: Map of slug by mdx file path.
+ * @param slugByFilePaths - Accumulator: Map of slug by mdx file path.
  * @returns returns slug by mdx file path.
  */
-function mapSlugByFilePath(
-  dirPath: string,
-  slugByFilePath: SlugByFilePath = new Map()
-): SlugByFilePath {
+export function mapSlugByFilePaths(
+  docsDirectory: string,
+  dirPath = docsDirectory,
+  slugByFilePaths: SlugByFilePaths = new Map()
+): SlugByFilePaths {
   const dirents = fs.readdirSync(dirPath, { withFileTypes: true });
-  const docsDirectory = getDocsDirectory();
   return dirents.reduce((acc, dirent) => {
     /* Accumulate the slug for each MDX file. */
     if (dirent.isFile() && isMdxFile(dirent.name)) {
@@ -127,10 +128,14 @@ function mapSlugByFilePath(
     }
     /* Recurse into subdirectories. */
     if (dirent.isDirectory()) {
-      mapSlugByFilePath(path.resolve(dirPath, dirent.name), acc);
+      mapSlugByFilePaths(
+        docsDirectory,
+        path.resolve(dirPath, dirent.name),
+        acc
+      );
     }
     return acc;
-  }, slugByFilePath);
+  }, slugByFilePaths);
 }
 
 /**
@@ -139,8 +144,8 @@ function mapSlugByFilePath(
  */
 export function generatePaths(): GetStaticPathsResult["paths"] {
   const docsDirectory = getDocsDirectory();
-  const slugByFileName = mapSlugByFilePath(docsDirectory);
-  return [...slugByFileName].map(([, slug]) => {
+  const slugByFilePaths = mapSlugByFilePaths(docsDirectory);
+  return [...slugByFilePaths].map(([, slug]) => {
     return {
       params: { slug },
     };
