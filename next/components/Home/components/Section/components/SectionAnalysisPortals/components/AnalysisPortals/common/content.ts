@@ -47,7 +47,7 @@ export const CARDS: SectionCard[] = [
       height: 40,
       src: "/consortia/portals/anvil-explorer.png",
     },
-    text: "Discover and export datasets for analysis.",
+    text: "Build cross study cohorts for analysis in Terra.",
     title: "Anvil Data Explorer",
   },
   {

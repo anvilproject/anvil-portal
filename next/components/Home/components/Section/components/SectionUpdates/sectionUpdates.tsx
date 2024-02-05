@@ -3,13 +3,13 @@ import { ToggleButton } from "@clevercanary/data-explorer-ui/lib/components/comm
 import { useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
 import { PORTAL_URL } from "../../../../../../site-config/anvil-portal/dev/config";
-import { SectionCardWithLink } from "../../../../common/entities";
 import {
   Section,
   SectionLayout,
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
+import { UpdateSection } from "./components/Updates/common/entities";
 import { Updates } from "./components/Updates/updates";
 import {
   Headline,
@@ -90,8 +90,7 @@ function getToggleButtons(
  * @param card - Cards
  * @returns true if the card has a future date.
  */
-function filterUpcomingEvent(card: SectionCardWithLink): boolean {
-  return Boolean(
-    card.secondaryText && new Date(card.secondaryText) > new Date()
-  );
+function filterUpcomingEvent(card: UpdateSection): boolean {
+  if (!card.date) return false;
+  return new Date(card.date) >= new Date();
 }

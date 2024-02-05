@@ -4,11 +4,11 @@ import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
-import { SectionCardWithLink } from "../../../../../../common/entities";
+import { UpdateSection } from "./common/entities";
 import { Card, CardContent, CardSection, Grid } from "./updates.styles";
 
 interface UpdatesProps {
-  cards: SectionCardWithLink[];
+  cards: UpdateSection[];
 }
 
 export const Updates = ({ cards }: UpdatesProps): JSX.Element => {
@@ -24,7 +24,9 @@ export const Updates = ({ cards }: UpdatesProps): JSX.Element => {
               <CardContent>
                 <CardTitle>{title}</CardTitle>
                 <CardText>{text}</CardText>
-                <CardSecondaryText>{secondaryText}</CardSecondaryText>
+                {secondaryText && (
+                  <CardSecondaryText>{secondaryText}</CardSecondaryText>
+                )}
               </CardContent>
             </CardSection>
           </MCardActionArea>

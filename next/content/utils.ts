@@ -1,6 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { Moment, tz } from "moment-timezone";
+import moment, { Moment, tz } from "moment-timezone";
 import "moment-timezone/index";
 import { default as path, default as pathTool } from "path";
 import { SlugByFilePaths } from "../docs/common/entities";
@@ -14,33 +14,17 @@ import {
 const DOC_FOLDER_NAME = "content";
 
 /**
- * Returns the start date, taken from the earliest "session" date from "event" related frontmatter.
+ * Returns the moment, for the date field from the given frontmatter.
  * @param frontmatter - Frontmatter.
- * @returns event date.
+ * @returns moment.
  */
-export function buildEventDateField(
-  frontmatter: Frontmatter
-): Date | undefined {
+export function buildMomentField(frontmatter: Frontmatter): Moment | undefined {
   if (isFrontmatterEvent(frontmatter)) {
-    const { sessions, timezone } = frontmatter || {};
-    /* Grab a set of moments. */
-    const setOfMoments = getSetOfMoments(sessions, timezone);
-    /* Grab the first moment. */
-    const firstMoment = getFirstMoment(setOfMoments);
-    /* Return formatted first date. */
-    return firstMoment?.toDate();
+    return getSessionMoment(frontmatter);
   }
-}
-
-/**
- * Returns the date, taken from the "date" field from "news" related frontmatter.
- * @param frontmatter - Frontmatter.
- * @returns news date.
- */
-export function buildNewsDateField(frontmatter: Frontmatter): Date | undefined {
   if (isFrontmatterNews(frontmatter)) {
     const { date } = frontmatter || {};
-    return new Date(date);
+    return moment.utc(date);
   }
 }
 
@@ -52,19 +36,6 @@ export function buildNewsDateField(frontmatter: Frontmatter): Date | undefined {
  */
 function convertDateToMoment(date: string, timezone: string): Moment {
   return tz(date, ["D MMM YYYY h:mm A", "D MMM YYYY"], timezone);
-}
-
-/**
- * Returns a formatted date.
- * @param date - Date.
- * @returns formatted date.
- */
-export function formatDate(date?: Date): string | undefined {
-  return date?.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 }
 
 /**
@@ -132,6 +103,19 @@ export function getFrontmatterByPaths(
 export function getMatter(filePath: string): matter.GrayMatterFile<string> {
   const markdownWithMeta = fs.readFileSync(filePath, "utf-8");
   return matter(markdownWithMeta);
+}
+
+/**
+ * Returns the first session as a moment from the given "event" frontmatter.
+ * @param frontmatter - Event frontmatter.
+ * @returns moment.
+ */
+function getSessionMoment(frontmatter: FrontmatterEvent): Moment | undefined {
+  const { sessions, timezone } = frontmatter || {};
+  /* Grab a set of moments. */
+  const setOfMoments = getSetOfMoments(sessions, timezone);
+  /* Grab the first moment. */
+  return getFirstMoment(setOfMoments);
 }
 
 /**
