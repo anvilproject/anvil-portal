@@ -10,7 +10,7 @@ const PROD_ENV = ["ANVIL-PROD", "MASTER", "PROD"];
 export function getExploreURL() {
   const currentEnvironment = getCurrentEnvironment();
   if (PROD_ENV.includes(currentEnvironment)) {
-    return `${EnvironmentUrl["EXPLORE-PROD"]}explore/datasets`;
+    return `${EnvironmentUrl["EXPLORE-PROD"]}datasets`;
   }
   return `${EnvironmentUrl["EXPLORE-DEV"]}datasets`;
 }
