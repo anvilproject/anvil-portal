@@ -9,127 +9,125 @@ const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
 const PORTAL_URL = "https://anvilproject.dev.clevercanary.com";
 const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 
-const config: SiteConfig = {
-  analytics: {
-    gtmAuth: "dn4W-jqWUyNBj6ON0Ic_wA", // GTM environment-specific
-    gtmId: "GTM-KMGCR8F",
-    gtmPreview: "env-65",
-  },
-  appTitle: APP_TITLE,
-  browserURL: EXPLORER_URL,
-  dataSource: {
-    url: "",
-  },
-  entities: [],
-  explorerTitle: "",
-  layout: {
-    footer: {
-      Branding: C.ANVILBranding({ portalURL: undefined }),
-      navLinks: [
-        {
-          label: "Help",
-          url: `${PORTAL_URL}/help`,
-        },
-        {
-          label: "Privacy",
-          url: `${PORTAL_URL}/privacy`,
-        },
-      ],
-      socials: socialMedia.socials,
+export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
+  return {
+    analytics: {
+      gtmAuth: "dn4W-jqWUyNBj6ON0Ic_wA", // GTM environment-specific
+      gtmId: "GTM-KMGCR8F",
+      gtmPreview: "env-65",
     },
-    header: {
-      Logo: C.Logo({
-        alt: APP_TITLE,
-        height: 40,
-        link: PORTAL_URL,
-        src: "/consortia/logos/logoAnvil.png",
-      }),
-      authenticationEnabled: false,
-      navAlignment: ELEMENT_ALIGNMENT.CENTER,
-      navLinks: [
-        {
-          label: "Overview",
-          url: `${PORTAL_URL}/overview`,
-        },
-        {
-          label: "Learn",
-          url: `${PORTAL_URL}/learn`,
-        },
-        {
-          featureFlag: false,
-          label: "Datasets",
-          url: `${PORTAL_URL}/data`,
-        },
-        {
-          featureFlag: true,
-          label: "Datasets",
-          menuItems: [
-            {
-              description:
-                "An open-access view of studies, workspaces, and consortia.",
-              label: "Catalog",
-              url: `${PORTAL_URL}/data`,
-            },
-            {
-              description:
-                "Build, download, and export cross-study cohorts of open and managed access data.",
-              label: C.LabelIconMenuItem({
-                iconFontSize: "small",
-                label: "Explorer",
-              }),
-              target: ANCHOR_TARGET.BLANK,
-              url: `${EXPLORER_URL}/datasets`,
-            },
-          ],
-          url: "",
-        },
-        {
-          label: "Consortia",
-          url: "/consortia",
-        },
-        {
-          label: "News",
-          url: `${PORTAL_URL}/news`,
-        },
-        {
-          label: "Events",
-          url: `${PORTAL_URL}/events`,
-        },
-        {
-          label: "More",
-          menuItems: [
-            {
-              label: "Team",
-              url: `${PORTAL_URL}/team`,
-            },
-            {
-              label: "FAQ",
-              url: `${PORTAL_URL}/faq`,
-            },
-            {
-              label: "Help",
-              url: `${PORTAL_URL}/help`,
-            },
-          ],
-          url: "",
-        },
-      ],
-      searchEnabled: true,
-      searchURL: `${PORTAL_URL}/search`,
-      slogan: SLOGAN,
-      socialMedia: socialMedia,
+    appTitle: APP_TITLE,
+    browserURL: browserUrl,
+    dataSource: {
+      url: "",
     },
-  },
-  portalURL: PORTAL_URL,
-  redirectRootToPath: "/",
-  themeOptions: {
-    palette: {
-      primary: {
-        dark: "#003E76",
-        main: "#035C94",
+    entities: [],
+    explorerTitle: null,
+    layout: {
+      footer: {
+        Branding: C.ANVILBranding({ portalURL: undefined }),
+        navLinks: [
+          {
+            label: "Help",
+            url: `${portalUrl}/help`,
+          },
+          {
+            label: "Privacy",
+            url: `${portalUrl}/privacy`,
+          },
+        ],
+        socials: socialMedia.socials,
+      },
+      header: {
+        Logo: C.Logo({
+          alt: APP_TITLE,
+          height: 40,
+          link: portalUrl,
+          src: "/consortia/logos/logoAnvil.png",
+        }),
+        authenticationEnabled: false,
+        navAlignment: ELEMENT_ALIGNMENT.CENTER,
+        navLinks: [
+          {
+            label: "Overview",
+            url: `${portalUrl}/overview`,
+          },
+          {
+            label: "Learn",
+            url: `${portalUrl}/learn`,
+          },
+          {
+            label: "Datasets",
+            menuItems: [
+              {
+                description:
+                  "An open-access view of studies, workspaces, and consortia.",
+                label: "Catalog",
+                url: `${portalUrl}/data`,
+              },
+              {
+                description:
+                  "Build, download, and export cross-study cohorts of open and managed access data.",
+                label: C.LabelIconMenuItem({
+                  iconFontSize: "small",
+                  label: "Explorer",
+                }),
+                target: ANCHOR_TARGET.BLANK,
+                url: `${browserUrl}/datasets`,
+              },
+            ],
+            url: "",
+          },
+          {
+            label: "Consortia",
+            url: "/consortia",
+          },
+          {
+            label: "News",
+            url: `${portalUrl}/news`,
+          },
+          {
+            label: "Events",
+            url: `${portalUrl}/events`,
+          },
+          {
+            label: "More",
+            menuItems: [
+              {
+                label: "Team",
+                url: `${portalUrl}/team`,
+              },
+              {
+                label: "FAQ",
+                url: `${portalUrl}/faq`,
+              },
+              {
+                label: "Help",
+                url: `${portalUrl}/help`,
+              },
+            ],
+            url: "",
+          },
+        ],
+        searchEnabled: true,
+        searchURL: `${portalUrl}/search`,
+        slogan: SLOGAN,
+        socialMedia: socialMedia,
       },
     },
-  },
-};
+    portalURL: portalUrl,
+    redirectRootToPath: "/",
+    themeOptions: {
+      palette: {
+        primary: {
+          dark: "#003E76",
+          main: "#035C94",
+        },
+      },
+    },
+  };
+}
+
+const config: SiteConfig = makeConfig(EXPLORER_URL, PORTAL_URL);
 
 export default config;

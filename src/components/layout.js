@@ -10,12 +10,12 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import React, { useRef, useState } from "react";
 
 // App dependencies
-import { setFeatureFlags } from "../hooks/useFeatureFlag/common/utils";
+import { SITE, useConfig } from "../hooks/useConfig";
+import { getAppTheme } from "../theme/theme";
 import BannerPrivacy from "./banner-privacy/banner-privacy";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Headline from "./headline/headline";
-import { SITE, useConfig } from "../hooks/useConfig";
 import Main from "./main/main";
 import ProviderModal from "./modal/provider-modal/provider-modal";
 import PageHead from "./page-head/page-head";
@@ -24,12 +24,9 @@ import SEO from "./seo/SEO";
 import SiteExternalLinkTracker from "./site-external-link-tracker/site-external-link-tracker";
 import ProviderSiteSearch from "./site-search/provider-site-search/provider-site-search";
 import SiteWrapper from "./site-wrapper/site-wrapper";
-import { getAppTheme } from "../theme/theme";
 
 // Styles
 import "../styles/vars.module.css";
-
-setFeatureFlags();
 
 function Layout(props) {
   const {

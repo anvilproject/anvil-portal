@@ -4,9 +4,7 @@ import { GitHubIcon } from "../../components/common/custom-icon/components/git-h
 import { SlackIcon } from "../../components/common/custom-icon/components/slack-icon/slack-icon";
 import { XIcon } from "../../components/common/custom-icon/components/x-icon/x-icon";
 import { YouTubeIcon } from "../../components/common/custom-icon/components/you-tube-icon/you-tube-icon";
-import {
-LabelIconMenuItem
-} from "../../components/header/components/nav-link-menu/components/label-icon-menu-item/label-icon-menu-item";
+import { LabelIconMenuItem } from "../../components/header/components/nav-link-menu/components/label-icon-menu-item/label-icon-menu-item";
 import { Target } from "../../components/target/target.model";
 import { getDatasetsEnvironmentUrl } from "../../utils/environment/environment.service";
 import { getExploreURL } from "../../utils/explore.service";
@@ -22,7 +20,7 @@ const config: SiteConfig = {
       logo: {
         alt: slogan,
         height: 40,
-        link: "/",
+        link: getDatasetsEnvironmentUrl(),
         src: logoAnvil,
       },
       navLinks: [
@@ -35,12 +33,6 @@ const config: SiteConfig = {
           url: "/learn",
         },
         {
-          featureFlag: false,
-          label: "Datasets",
-          url: `${getDatasetsEnvironmentUrl()}data`,
-        },
-        {
-          featureFlag: true,
           label: "Datasets",
           menuItems: [
             {
