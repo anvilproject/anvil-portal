@@ -3,6 +3,7 @@ import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layou
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
 
 export interface Frontmatter {
+  hidden?: boolean;
   layoutStyle?: LayoutStyle;
 }
 
