@@ -52,12 +52,12 @@ export function buildAnalysisPortalCards(
         },
       ],
       media: {
-        alt: "Anvil Data Explorer",
+        alt: "AnVIL Data Explorer",
         height: 40,
         src: "/consortia/portals/anvil-explorer.png",
       },
       text: "Build cross study cohorts for analysis in Terra.",
-      title: "Anvil Data Explorer",
+      title: "AnVIL Data Explorer",
     },
     {
       links: [
