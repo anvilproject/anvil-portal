@@ -1,6 +1,7 @@
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import * as C from "../../components";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
+import { getContentScope } from "./scope";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -26,5 +27,6 @@ export const MDX_COMPONENTS = {
 };
 
 export const MDX_SCOPE = {
+  ...getContentScope(),
   ANCHOR_TARGET: ANCHOR_TARGET,
 };
