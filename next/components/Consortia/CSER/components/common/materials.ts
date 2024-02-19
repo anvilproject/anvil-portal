@@ -5,11 +5,14 @@ export enum MaterialsCategory {
   RESOURCES = "RESOURCES",
 }
 
-type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
+export type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
 
-type MaterialsMajorSectionInfo = Record<string, MaterialsMinorSectionInfo>;
+export type MaterialsMajorSectionInfo = Record<
+  string,
+  MaterialsMinorSectionInfo
+>;
 
-type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>;
+export type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>;
 
 interface MaterialsFileInfo {
   category: MaterialsCategory;

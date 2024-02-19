@@ -16,6 +16,7 @@ node_modules
 
 # script input
 scripts/files
+scripts/new-cser-materials
 
 # script output
 components/Consortia/CSER/components/DataIngestionChart/chart-data.json
