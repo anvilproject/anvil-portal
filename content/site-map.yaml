@@ -68,6 +68,8 @@
             - name: ""
               file: "/events/anvil2024-april-demos"
             - name: ""
+              file: "/events/anvil2024-april-rtcd-workshop"
+            - name: ""
               file: "/events/anvil2024-march-demos"
             - name: ""
               file: "/events/anvil2024-february-demos"
