@@ -449,6 +449,20 @@
         "category": "RESEARCH_MATERIALS",
         "fileName": "spanish_ncggnes_resources_for_distressed_participants.docx"
       }
+    },
+    "SouthSeq": {
+      "SouthSeq Genome Gateway Educational Materials": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "southseq_genome_gateway_educational_materials.pdf"
+      },
+      "SouthSeq Provider Training Slides": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "southseq_provider_training_slides.pdf"
+      },
+      "SouthSeq Provider Training Plan": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "southseq_provider_training_plan.pdf"
+      }
     }
   },
   "CSER Phase 2 Results Templates": {
@@ -561,6 +575,106 @@
         "category": "RESOURCES",
         "fileName": "parent_decliner_spanish_-_cser_parent_measures_harmonization.docx"
       }
+    },
+    "Documentation": {
+      "CSER2 Cross-Site Adaptation Dictionary": {
+        "category": "RESOURCES",
+        "fileName": "cser2_cross-site_adaptation_dictionary.xlsx"
+      },
+      "CSER Consortium Shared Dataset Documentation 071123": {
+        "category": "RESOURCES",
+        "fileName": "cser_consortium_shared_dataset_documentation_071123.docx"
+      },
+      "CSER2 Survey Administration Timepoints": {
+        "category": "RESOURCES",
+        "fileName": "cser2_survey_administration_timepoints.xlsx"
+      }
+    },
+    "Validation Templates": {
+      "Access to Care": {
+        "category": "RESOURCES",
+        "fileName": "access_to_care.docx"
+      },
+      "Information Seeking": {
+        "category": "RESOURCES",
+        "fileName": "information_seeking.docx"
+      },
+      "Insurance Status - Parental": {
+        "category": "RESOURCES",
+        "fileName": "insurance_status_-_parental.docx"
+      },
+      "Insurance Status - Adult": {
+        "category": "RESOURCES",
+        "fileName": "insurance_status_-_adult.docx"
+      },
+      "Income - Adult": {
+        "category": "RESOURCES",
+        "fileName": "income_-_adult.docx"
+      },
+      "Patient Initiated Actions Attributable to Genomic Testing": {
+        "category": "RESOURCES",
+        "fileName": "patient_initiated_actions_attributable_to_genomic_testing.docx"
+      },
+      "SF-12 Post Disclosure": {
+        "category": "RESOURCES",
+        "fileName": "sf-12_post_disclosure.docx"
+      },
+      "Language": {
+        "category": "RESOURCES",
+        "fileName": "language.docx"
+      },
+      "Income - Parental": {
+        "category": "RESOURCES",
+        "fileName": "income_-_parental.docx"
+      },
+      "PedsQL Measure": {
+        "category": "RESOURCES",
+        "fileName": "pedsql_measure.docx"
+      },
+      "Sex and Gender": {
+        "category": "RESOURCES",
+        "fileName": "sex_and_gender.docx"
+      },
+      "Health Literacy": {
+        "category": "RESOURCES",
+        "fileName": "health_literacy.docx"
+      },
+      "FACToR - Feelings about Genomic Testing Results": {
+        "category": "RESOURCES",
+        "fileName": "factor_-_feelings_about_genomic_testing_results.docx"
+      },
+      "Race and Ethnicity": {
+        "category": "RESOURCES",
+        "fileName": "race_and_ethnicity.docx"
+      },
+      "Subjective Numeracy Scale": {
+        "category": "RESOURCES",
+        "fileName": "subjective_numeracy_scale.docx"
+      },
+      "Participant Understanding": {
+        "category": "RESOURCES",
+        "fileName": "participant_understanding.docx"
+      },
+      "PRU - Patient Reported Utility": {
+        "category": "RESOURCES",
+        "fileName": "pru_-_patient_reported_utility.docx"
+      },
+      "Country of Origin": {
+        "category": "RESOURCES",
+        "fileName": "country_of_origin.docx"
+      },
+      "Quality of Life SF12": {
+        "category": "RESOURCES",
+        "fileName": "quality_of_life_sf12.docx"
+      },
+      "Follow Through on Medical Actions Attributable to Genomic Testing": {
+        "category": "RESOURCES",
+        "fileName": "follow_through_on_medical_actions_attributable_to_genomic_testing.docx"
+      },
+      "Quality of Life - Visual Analog Scale": {
+        "category": "RESOURCES",
+        "fileName": "quality_of_life_-_visual_analog_scale.docx"
+      }
     }
   },
   "CSER Phase 1 Participant Consent Forms": {
@@ -672,6 +786,10 @@
       "Consent for Adult Relatives of an study participant to test for a specific variant": {
         "category": "RESEARCH_MATERIALS",
         "fileName": "unc_ncgenes_relative_vucs-consent-adult_12_2014.pdf"
+      },
+      "Assent Form": {
+        "category": "RESEARCH_MATERIALS",
+        "fileName": "assent_form"
       }
     },
     "University of Washington": {
@@ -1006,6 +1124,34 @@
       "List of Genes Conditions reported for Carrier Status": {
         "category": "RESEARCH_MATERIALS",
         "fileName": "uw_carrier_list_03.13.15.xlsx"
+      }
+    }
+  },
+  "CSER Phase 2 Validation Templates": {
+    "null": {
+      "Physician Consent Form": {
+        "category": "RESOURCES",
+        "fileName": "physician_consent_form.pdf"
+      },
+      "Parent Consent Form (Spanish Version)": {
+        "category": "RESOURCES",
+        "fileName": "parent_consent_form_(spanish_version).pdf"
+      },
+      "Patient Consent Form (Spanish Version)": {
+        "category": "RESOURCES",
+        "fileName": "patient_consent_form_(spanish_version).pdf"
+      },
+      "Patient Consent Form": {
+        "category": "RESOURCES",
+        "fileName": "patient_consent_form.pdf"
+      },
+      "Parent Consent Form": {
+        "category": "RESOURCES",
+        "fileName": "parent_consent_form.pdf"
+      },
+      "Age of Majority Consent Form": {
+        "category": "RESOURCES",
+        "fileName": "age_of_majority_consent_form.pdf"
       }
     }
   }
