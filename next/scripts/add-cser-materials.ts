@@ -6,6 +6,16 @@ import {
   MaterialsMajorSectionInfo,
 } from "../components/Consortia/CSER/components/common/materials";
 
+/**
+ * Updates CSER materials with new materials from scripts/new-cser-materials
+ * new-cser-materials is expected to contain a resources.json or research-materials.json,
+ * listing file names under object peroperty paths of the form [arbitrary key] > [major section title] > [minor section title] > [file title]
+ * It's also expected to contain folders corrosponding to the major sections, containing folders for the minor sections, contining files;
+ * all of them named with their titles, with certain characters (apostrophe) replaced with underscore
+ * Files in an existing major section with a uniform category are given that category rather than the one associated with the JSON file
+ * Files at title paths that already exist are skipped
+ */
+
 type MaterialsAdditions = Record<string, MaterialsAdditionsInfo>;
 type MaterialsAdditionsInfo = Record<string, MaterialsAdditionsMajorSection>;
 type MaterialsAdditionsMajorSection = Record<string, Record<string, string>>;
