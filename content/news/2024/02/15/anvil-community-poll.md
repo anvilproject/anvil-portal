@@ -1,0 +1,39 @@
+---
+author: "AnVIL"
+date: "2024-02-15"
+description: "Your contribution is essential in shaping the future of the AnVIL platform, and we are excited to invite you to participate in our State of the AnVIL Community Poll!"
+featured: true
+title: "Shape the Future of AnVIL: Participate in Our Community Poll!"
+---
+
+# Shape the Future of AnVIL: Participate in Our Community Poll!
+
+##### Posted: Febuary 15, 2024
+
+Dear AnVIL Community,
+
+Your contribution is essential in shaping the future of the AnVIL platform, and we are excited to invite you to participate in our State of the [AnVIL Community Poll](https://docs.google.com/forms/d/e/1FAIpQLSfITA3IP-4sigkjQKXB83F4wbz2Qad1GdheYgbg8_G6-AM1bw/viewform)!
+
+Your insights and preferences are invaluable as we strive to enhance the AnVIL experience for all users. By taking a few minutes to complete this poll, you’ll be playing a crucial role in influencing the direction of our platform and ensuring it meets the diverse needs of our community.
+
+Take the poll here: [https://bit.ly/sota2024](https://bit.ly/sota2024)
+
+Why participate?
+
+1. **Voice Your Opinion**: This is your chance to share your experience with biomedical data science, how you use AnVIL, and let us know what matters most to you.
+2. **Community Collaboration**: Your feedback will contribute to a collaborative effort in making AnVIL a more powerful and user-friendly platform for everyone.
+3. **Future Development**: Help us prioritize future developments and enhancements based on the needs and preferences of our diverse user community.
+
+How to Participate:
+
+1. Click the following link: [https://bit.ly/sota2024](https://bit.ly/sota2024)
+2. Complete the brief poll. We estimate it will take 10-15 minutes in total.
+3. Submit your responses and become an integral part of shaping the AnVIL Platform’s future. Optionally enter a drawing for training with our team and more!
+
+We appreciate your time and commitment to making AnVIL the best it can be. Your feedback is crucial, and we look forward to hearing your thoughts.
+
+Thank you for being a valued member of the AnVIL community!
+
+Best regards,
+
+The AnVIL Team
