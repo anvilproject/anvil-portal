@@ -48,4 +48,17 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  team: {
+    nodes: [
+      {
+        key: "team",
+        navigation: [
+          { label: "Leadership Team", url: "/team" },
+          { label: "Working Groups", url: "/team/working-groups" },
+          { label: "Oversight Committee", url: "/team/oversight-committee" },
+        ],
+        slugs: ["team", "working-groups", "oversight-committee"],
+      },
+    ],
+  },
 };
