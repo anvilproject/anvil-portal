@@ -33,3 +33,4 @@ export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge50
 export { ANVILBranding } from "./Layout/components/Footer/components/Branding/components/ANVILBranding/anvilBranding";
 export { CallToAction } from "./Layout/components/Header/components/CallToAction/callToAction";
 export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";
+export { Publications as AnVILPublications } from "./Overview/components/Publications/publications";

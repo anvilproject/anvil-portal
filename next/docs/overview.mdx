@@ -6,8 +6,6 @@ title: "Overview"
 
 # What is AnVIL?
 
-{/* TODO - border box */}
-
 AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space.
 
 The traditional model of genomic data sharing – centralized data warehouses from which researchers download data to analyze locally – is increasingly unsustainable. Not only are transfer/download costs prohibitive, but this approach also leads to redundant siloed compute infrastructure and makes ensuring security and compliance of protected data highly problematic.
@@ -44,19 +42,17 @@ The platform is built on a set of established components that have been used in 
   src="/consortia/overview/images/anvil-overview.png"
 />
 
-{/* TODO - card looking sections */}
+### Terra
 
-### Gen3
-
-Gen3 is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. Gen3 is an open source platform for developing data commons.
+Terra is an analysis platform that allows users to access data, run analysis tools, and collaborate. Terra is powered by Google Cloud Platform, enabling the user to scale and manage billing of their own projects.
 
 ### Dockstore
 
 Dockstore is an open platform used by the GA4GH for sharing Docker-based tools described with the Common Workflow Language (CWL), the Workflow Description Language (WDL), or Nextflow (NFL).
 
-### Terra
+### Gen3
 
-Terra is an analysis platform that allows users to access data, run analysis tools, and collaborate. Terra is powered by Google Cloud Platform, enabling the user to scale and manage billing of their own projects.
+Gen3 is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. Gen3 is an open source platform for developing data commons.
 
 ## Analysis Tools
 
@@ -76,17 +72,17 @@ Interactive analysis with the python or R programming languages; the R environme
 
 Batch processing of GATK and other workflows.
 
-### AnVIL API Library
+### R Studio
 
-Interact with AnVIL data, analysis solutions, and workflows via a command line interface.
+Interactive analysis with your favorite R coding platform.
 
 ### Galaxy
 
 Access thousands of tools via an intuitive graphical user interface for processing batch analysis with Galaxy Workflows and interactive downstream visualizations.
 
-### R Studio
+### AnVIL API Library
 
-Interactive analysis with your favorite R coding platform.
+Interact with AnVIL data, analysis solutions, and workflows via a command line interface.
 
 ## Datasets
 
@@ -94,9 +90,13 @@ AnVIL provides access to key <Link label="NHGRI datasets" url={`${portalURL}/dat
 
 ## Platform Interoperability
 
-AnVIL is a member of the [NIH Cloud Platform Interoperability Effort (NCPI)](https://www.ncpi-acc.org/) and is collaborating with the [NCPI working groups](https://www.ncpi-acc.org/) to establish and implement technical standards enabling cross platform authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis tools, and derived data.
+AnVIL is a member of the <Link label="NIH Cloud Platform Interoperability Effort (NCPI)" url="https://www.ncpi-acc.org/" /> and is collaborating with the <Link label="NCPI working groups" url="https://www.ncpi-acc.org/" /> to establish and implement technical standards enabling cross platform authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis tools, and derived data.
 
-[AnVIL is a registered knowledgebase and repository](https://fairsharing.org/4204) in the [FAIRsharing registry](https://fairsharing.org/) of data and metadata standards, inter-related to databases and data policies.
+<Link
+  label="AnVIL is a registered knowledgebase and repository"
+  url="https://fairsharing.org/4204"
+/> in the <Link label="FAIRsharing registry" url="https://fairsharing.org/" /> of
+data and metadata standards, inter-related to databases and data policies.
 
 ## Platform Vision
 

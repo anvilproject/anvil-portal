@@ -6,6 +6,7 @@ import { getContentScope } from "./scope";
 export const DOC_SITE_FOLDER_NAME = "docs";
 
 export const MDX_COMPONENTS = {
+  AnVILPublications: C.AnVILPublications,
   Breadcrumbs: C.Breadcrumbs,
   BreadcrumbsCSER: C.BreadcrumbsCSER,
   BreadcrumbsNews: C.BreadcrumbsNews,

@@ -71,6 +71,7 @@ export const getStaticProps: GetStaticProps = async (
     },
     scope: {
       ...MDX_SCOPE,
+      frontmatter,
     },
   });
   return {
