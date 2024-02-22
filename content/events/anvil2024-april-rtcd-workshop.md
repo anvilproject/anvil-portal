@@ -9,7 +9,7 @@ location: "Seattle, WA, USA"
 sessions:
   [{ sessionStart: "7 April 2024 5:00 PM", sessionEnd: "7 April 2024 8:00 PM" }]
 timezone: "America/Los_Angeles"
-title: "AnVIL NHGRI Research, Training, and Career Development Annual Meeting 2024 Workshop"
+title: "AnVIL NHGRI Research Training and Career Development Annual Meeting 2024 Workshop"
 ---
 
 <event-hero></event-hero>
@@ -24,17 +24,13 @@ The AnVIL team will host an in-person AnVIL workshop on Sunday, April 7, 2024 5:
 
 Only open access data will be used, so participants will be able to access each dataset and analysis. Participants will be able to ask questions and interact with the presenters throughout the workshop. By the end of the workshop, participants will have a better understanding of how to use AnVIL for their genomic data analysis needs.
 
-### Background
-
-A longer form background/rationale for why this session is being provided.
-
 ### Audience
 
-This workshop is designed for attendees of the NHGRI Research Training and Career Development Annual Meeting in Seattle, WA on April 7-9, 2024. Learn more here: [https://rsvp.duke.edu/event/7a1ed40e-1fb1-4ba0-82cd-3111c6b8891f/websitePage:44bda761-270d-48be-b519-319929756d8e](https://rsvp.duke.edu/event/7a1ed40e-1fb1-4ba0-82cd-3111c6b8891f/websitePage:44bda761-270d-48be-b519-319929756d8e). The target audience is about 30 hands-on participants with basic analysis familiarity.
+This workshop is designed for attendees of the NHGRI Research Training and Career Development Annual Meeting in Seattle, WA on April 7-9, 2024. Learn more [here](https://rsvp.duke.edu/event/7a1ed40e-1fb1-4ba0-82cd-3111c6b8891f/websitePage:44bda761-270d-48be-b519-319929756d8e). The target audience is about 30 hands-on participants with basic analysis familiarity.
 
 ### Prerequisites
 
-If you are interested in this workshop, please register using this form ([https://bit.ly/rtcd2024-anvil](https://bit.ly/rtcd2024-anvil)) by February 15. In order to maximize opportunities for interaction with our instructors, we may prioritize participant selection based on the following:
+If you are interested in this workshop, please register using ([this form](https://bit.ly/rtcd2024-anvil)) by February 15. In order to maximize opportunities for interaction with our instructors, we may prioritize participant selection based on the following:
 
 1. Immediate or anticipated need for computing resources.
 
@@ -48,9 +44,8 @@ Box dinner to be provided to all attendees.
 
 In case you are interested, but not selected, a number of resources are available to help you learn about the platform. The introductory video below is a great place to start.
 
-Introductory videos: [Welcome to AnVIL!](https://www.youtube.com/watch?v=3YXlF1mbsWI) (2 min video; more at [youtube.com/@anvilproject1223](https://www.youtube.com/@anvilproject1223)).
-
-AnVIL Publication: Schatz, Philippakis, et al., 2022 Cell Genom ([pubmed.gov/35199087](https://pubmed.ncbi.nlm.nih.gov/35199087/)).
+- Introductory videos: [Welcome to AnVIL!](https://www.youtube.com/watch?v=3YXlF1mbsWI) (2 min video; more at [our YouTube playlist](https://www.youtube.com/@anvilproject1223)).
+- AnVIL Publication: Schatz, Philippakis, et al., 2022 Cell Genom ([pubmed.gov/35199087](https://pubmed.ncbi.nlm.nih.gov/35199087/)).
 
 ### Event Details
 
