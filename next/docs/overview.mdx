@@ -1,0 +1,109 @@
+---
+description: "AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space."
+hidden: true
+title: "Overview"
+---
+
+# What is AnVIL?
+
+{/* TODO - border box */}
+
+AnVIL is NHGRI's Genomic Data Science Analysis, Visualization, and Informatics Lab-Space.
+
+The traditional model of genomic data sharing – centralized data warehouses from which researchers download data to analyze locally – is increasingly unsustainable. Not only are transfer/download costs prohibitive, but this approach also leads to redundant siloed compute infrastructure and makes ensuring security and compliance of protected data highly problematic.
+
+<Figure
+  alt="Overview of AnVIL"
+  caption={
+    <>
+      From the NHGRI Genomic Data Science Analysis, Visualization and
+      Informatics Lab-space (AnVIL) poster presented at{" "}
+      <Link label="#T2THPRC" url="https://twitter.com/hashtag/T2THPRC" />. (
+      <a
+        href="/consortia/overview/files/2020.09.21.T2T.HRPC.AnVIL-Poster-wide.pdf"
+        download
+      >
+        Download the Poster
+      </a>
+      )
+    </>
+  }
+  src="/consortia/overview/images/overview.png"
+/>
+
+The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Space, or AnVIL, inverts the traditional model, providing a cloud environment for the analysis of large genomic and related datasets.
+
+By providing a unified environment for data management and compute, AnVIL eliminates the need for data movement, allows for active threat detection and monitoring, and provides elastic, shared computing resources that can be acquired by researchers as needed.
+
+## Platform Components
+
+The platform is built on a set of established components that have been used in a number of flagship scientific projects. The Terra platform provides a compute environment with secure data and analysis sharing capabilities. Dockstore provides standards based sharing of containerized tools and workflows. The Gen3 data commons framework provides data and metadata ingest, querying, and organization. Bioconductor and Galaxy provide environments for users at different skill levels to construct and execute analyses.
+
+<Figure
+  alt="Inverting the Model of Data Sharing"
+  src="/consortia/overview/images/anvil-overview.png"
+/>
+
+{/* TODO - card looking sections */}
+
+### Gen3
+
+Gen3 is a cloud-based software platform for managing, analyzing, harmonizing, and sharing large datasets. Gen3 is an open source platform for developing data commons.
+
+### Dockstore
+
+Dockstore is an open platform used by the GA4GH for sharing Docker-based tools described with the Common Workflow Language (CWL), the Workflow Description Language (WDL), or Nextflow (NFL).
+
+### Terra
+
+Terra is an analysis platform that allows users to access data, run analysis tools, and collaborate. Terra is powered by Google Cloud Platform, enabling the user to scale and manage billing of their own projects.
+
+## Analysis Tools
+
+AnVIL provides a collaborative environment for creating and sharing data and analysis workflows for both users with limited computational expertise and sophisticated data scientist users.
+
+AnVIL provides multiple entry points for data access and analysis, including execution of batch workflows written in WDL, notebook environments including Jupyter and RStudio, Bioconductor packages for building analysis on top of AnVIL APIs and services, and will offer Galaxy instances for interactive analysis. It will be possible to integrate additional analysis environments through standard APIs.
+
+### Bioconductor
+
+Tools for the analysis and comprehension of high-throughput genomic data using the R statistical programming language.
+
+### Jupyter
+
+Interactive analysis with the python or R programming languages; the R environment includes a family of Bioconductor packages.
+
+### WDL
+
+Batch processing of GATK and other workflows.
+
+### AnVIL API Library
+
+Interact with AnVIL data, analysis solutions, and workflows via a command line interface.
+
+### Galaxy
+
+Access thousands of tools via an intuitive graphical user interface for processing batch analysis with Galaxy Workflows and interactive downstream visualizations.
+
+### R Studio
+
+Interactive analysis with your favorite R coding platform.
+
+## Datasets
+
+AnVIL provides access to key <Link label="NHGRI datasets" url={`${portalURL}/data/consortia`}/>, such as the CCDG (Centers for Common Disease Genomics), CMG (Centers for Mendelian Genomics), eMERGE (Electronic Medical Records and Genomics), as well as other relevant datasets.
+
+## Platform Interoperability
+
+AnVIL is a member of the [NIH Cloud Platform Interoperability Effort (NCPI)](https://www.ncpi-acc.org/) and is collaborating with the [NCPI working groups](https://www.ncpi-acc.org/) to establish and implement technical standards enabling cross platform authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis tools, and derived data.
+
+[AnVIL is a registered knowledgebase and repository](https://fairsharing.org/4204) in the [FAIRsharing registry](https://fairsharing.org/) of data and metadata standards, inter-related to databases and data policies.
+
+## Platform Vision
+
+Long-term, the AnVIL will provide a unified platform for ingestion and organization for a multitude of current and future genomic and genome-related datasets.
+
+Importantly, AnVIL will ease the process of acquiring access to protected datasets for investigators and drastically reduce the burden of performing large-scale integrated analyses across many datasets to fully realize the potential of ongoing data production efforts.
+
+## Getting Started
+
+See our <Link label="Learn" url={`${portalURL}/learn`}/> section for information on getting started with the AnVIL platform.

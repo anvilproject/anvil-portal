@@ -57,6 +57,11 @@ export const getStaticProps: GetStaticProps = async (
     "utf-8"
   );
   const { content, data: frontmatter } = matter(markdownWithMeta);
+  if (frontmatter.hidden) {
+    return {
+      notFound: true,
+    };
+  }
   const mdxSource = await serialize(content, {
     mdxOptions: {
       development: false, // See https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1363415249 and https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1378362096.

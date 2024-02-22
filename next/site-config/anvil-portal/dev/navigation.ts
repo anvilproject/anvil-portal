@@ -31,4 +31,21 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  overview: {
+    nodes: [
+      {
+        key: "overview",
+        navigation: [
+          { label: "What is AnVIL?", url: "/overview" },
+          {
+            label: "Platform and Data Security",
+            url: "/overview/security",
+          },
+          { label: "Supported by NHGRI", url: "/overview/project-sponsor" },
+          { label: "Citing AnVIL", url: "/overview/cite-anvil" },
+        ],
+        slugs: ["overview", "security", "project-sponsor", "cite-anvil"],
+      },
+    ],
+  },
 };
