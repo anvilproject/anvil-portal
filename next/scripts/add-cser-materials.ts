@@ -12,6 +12,7 @@ import {
  * listing file names under object peroperty paths of the form [arbitrary key] > [major section title] > [minor section title] > [file title]
  * It's also expected to contain folders corrosponding to the major sections, containing folders for the minor sections, contining files;
  * all of them named with their titles, with certain characters (apostrophe) replaced with underscore
+ * A minor section in the JSON with a title equal to empty string is taken to mean that the files are directly under the major section's directory
  * Files in an existing major section with a uniform category are given that category rather than the one associated with the JSON file
  * Files at title paths that already exist are skipped
  */
@@ -106,6 +107,9 @@ async function addMajorSection(
   for (const [minorSectionTitle, minorSectionAdditions] of Object.entries(
     majorSectionAdditions
   )) {
+    const minorSectionPath = minorSectionTitle
+      ? path.resolve(newFilesPath, normalizeFileName(minorSectionTitle))
+      : newFilesPath;
     const minorSection =
       majorSection[minorSectionTitle] || (majorSection[minorSectionTitle] = {});
     for (const [fileTitle, fileName] of Object.entries(minorSectionAdditions)) {
@@ -120,8 +124,7 @@ async function addMajorSection(
       const fileExtension = /(?:\.[^.]+)?$/.exec(fileName)?.[0];
       await copyNewFile(
         path.resolve(
-          newFilesPath,
-          normalizeFileName(minorSectionTitle),
+          minorSectionPath,
           `${normalizeFileName(fileTitle)}${fileExtension}`
         ),
         path.resolve(filesPath, fileName)
