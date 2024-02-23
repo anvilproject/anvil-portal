@@ -1,4 +1,4 @@
-import { promises as fsp } from "fs";
+import { constants as fsConst, promises as fsp } from "fs";
 import path from "path";
 import {
   MaterialsCategory,
@@ -138,14 +138,7 @@ async function addMajorSection(
   ): Promise<void> {
     await confirmPathAncestor(newFilePath, newMaterialsPath);
     await confirmPathAncestor(targetPath, cserFilesPath);
-    let exists = true;
-    try {
-      await fsp.access(targetPath);
-    } catch (e) {
-      exists = false;
-    }
-    if (exists) console.log(`Overwriting existing ${targetPath}`);
-    await fsp.copyFile(newFilePath, targetPath);
+    await fsp.copyFile(newFilePath, targetPath, fsConst.COPYFILE_EXCL);
   }
 
   async function confirmPathAncestor(
