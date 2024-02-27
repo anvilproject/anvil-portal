@@ -9,16 +9,19 @@ import { black08 } from "@clevercanary/data-explorer-ui/lib/theme/common/palette
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { IconButton as MIconButton } from "@mui/material";
+import {
+  SwipeAction,
+  SWIPE_ACTION,
+} from "../../../../../../../../hooks/useSwipeInteraction/common/entities";
 import { MAX_DECK_SIZE } from "../../common/constants";
-import { CarouselAction, CAROUSEL_ACTION } from "../../common/entities";
 import { getArrowTransform } from "../../common/utils";
 
 interface Props {
-  carouselAction: CarouselAction;
+  swipeAction: SwipeAction;
 }
 
 export const IconButton = styled(MIconButton, {
-  shouldForwardProp: (props) => props !== "carouselAction",
+  shouldForwardProp: (props) => props !== "swipeAction",
 })<Props>`
   & {
     background-color: ${white};
@@ -27,7 +30,7 @@ export const IconButton = styled(MIconButton, {
     color: ${inkMain};
     position: absolute;
     top: 50%;
-    transform: ${({ carouselAction }) => getArrowTransform(carouselAction)};
+    transform: ${({ swipeAction }) => getArrowTransform(swipeAction)};
     z-index: ${MAX_DECK_SIZE + 1};
 
     &:hover {
@@ -43,14 +46,14 @@ export const IconButton = styled(MIconButton, {
     }
   }
 
-  ${({ carouselAction }) =>
-    carouselAction === CAROUSEL_ACTION.SWIPE_BACKWARD &&
+  ${({ swipeAction }) =>
+    swipeAction === SWIPE_ACTION.SWIPE_BACKWARD &&
     css`
       left: 0;
     `}
 
-  ${({ carouselAction }) =>
-    carouselAction === CAROUSEL_ACTION.SWIPE_FORWARD &&
+  ${({ swipeAction }) =>
+    swipeAction === SWIPE_ACTION.SWIPE_FORWARD &&
     css`
       right: 0;
     `}

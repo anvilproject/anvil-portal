@@ -1,19 +1,19 @@
 import { SouthIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/SouthIcon/southIcon";
-import { CarouselAction } from "../../common/entities";
+import { SwipeAction } from "../../../../../../../../hooks/useSwipeInteraction/common/entities";
 import { IconButton } from "./arrow.styles";
 
 interface ArrowProps {
-  carouselAction: CarouselAction;
   onClick: () => void;
+  swipeAction: SwipeAction;
 }
 
-export const Arrow = ({ carouselAction, onClick }: ArrowProps): JSX.Element => {
+export const Arrow = ({ onClick, swipeAction }: ArrowProps): JSX.Element => {
   return (
     <IconButton
-      carouselAction={carouselAction}
       color="secondary"
       onClick={onClick}
       size="large"
+      swipeAction={swipeAction}
     >
       <SouthIcon fontSize="small" />
     </IconButton>

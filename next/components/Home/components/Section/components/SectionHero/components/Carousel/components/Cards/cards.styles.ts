@@ -12,8 +12,6 @@ import { elevation01 } from "@clevercanary/data-explorer-ui/lib/theme/common/sha
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
-  CAROUSEL_HEIGHT,
-  CAROUSEL_HEIGHT_SM,
   MAX_CARD_HEIGHT,
   MAX_CARD_HEIGHT_SM,
   MAX_CARD_WIDTH,
@@ -25,32 +23,8 @@ import {
 } from "../../common/utils";
 
 interface Props {
-  activeCard: number;
-  cardIndex: number;
   cardPosition: number;
 }
-
-export const Cards = styled.div`
-  cursor: grab;
-  height: ${CAROUSEL_HEIGHT_SM}px;
-  position: relative; /* Positions CardPositioner. */
-  user-select: none;
-
-  ${mediaTabletUp} {
-    height: ${CAROUSEL_HEIGHT}px;
-  }
-
-  .MuiIconButton-root {
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
-  }
-
-  &:hover {
-    > .MuiIconButton-root {
-      opacity: 1;
-    }
-  }
-`;
 
 export const CardPositioner = styled("div")<Props>`
   display: grid;

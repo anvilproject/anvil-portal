@@ -1,46 +1,31 @@
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
-import { Dispatch, SetStateAction } from "react";
+import { Fragment } from "react";
 import { SectionCard } from "../../../../../../../../common/entities";
-import { CARDS } from "../../common/constants";
-import { CarouselAction, CAROUSEL_ACTION } from "../../common/entities";
 import { getCardPosition } from "../../common/utils";
-import { Arrow } from "../Arrow/arrow";
 import {
   Card,
   CardActions,
   CardPositioner,
-  Cards as CarouselCards,
   CardSection,
   CardText,
   CardTitle,
 } from "./cards.styles";
 
 export interface CardsProps {
-  activeCard: number;
+  activeIndex: number;
   cards: SectionCard[];
-  setCarouselAction: Dispatch<SetStateAction<CarouselAction>>;
 }
 
-export const Cards = ({
-  activeCard,
-  cards,
-  setCarouselAction,
-}: CardsProps): JSX.Element => {
-  const lastCardIndex = cards.length - 1;
+export const Cards = ({ activeIndex, cards }: CardsProps): JSX.Element => {
+  const lastIndex = cards.length - 1;
   return (
-    <CarouselCards id={CARDS}>
-      <Arrow
-        carouselAction={CAROUSEL_ACTION.SWIPE_BACKWARD}
-        onClick={(): void => setCarouselAction(CAROUSEL_ACTION.SWIPE_BACKWARD)}
-      />
+    <Fragment>
       {cards.map(({ links, text, title }, c) => {
         return (
           <CardPositioner
-            activeCard={activeCard}
-            cardIndex={c}
-            cardPosition={getCardPosition(c, activeCard, lastCardIndex)}
             key={c}
+            cardPosition={getCardPosition(c, activeIndex, lastIndex)}
           >
             <Card component={RoundedPaper}>
               <CardSection>
@@ -56,10 +41,6 @@ export const Cards = ({
           </CardPositioner>
         );
       })}
-      <Arrow
-        carouselAction={CAROUSEL_ACTION.SWIPE_FORWARD}
-        onClick={(): void => setCarouselAction(CAROUSEL_ACTION.SWIPE_FORWARD)}
-      />
-    </CarouselCards>
+    </Fragment>
   );
 };

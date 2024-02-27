@@ -1,7 +1,14 @@
-import { mediaDesktopSmallUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import {
+  mediaDesktopSmallUp,
+  mediaTabletUp,
+} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Bullets as SectionBullets } from "../../../../../Bullets/bullets";
-import { MAX_CARD_WIDTH } from "./common/constants";
+import {
+  CAROUSEL_HEIGHT,
+  CAROUSEL_HEIGHT_SM,
+  MAX_CARD_WIDTH,
+} from "./common/constants";
 
 export const CarouselView = styled.div`
   grid-column: 1 / -1;
@@ -11,6 +18,32 @@ export const CarouselView = styled.div`
 
   ${mediaDesktopSmallUp} {
     grid-column: 7 / -1;
+  }
+`;
+
+export const Carousel = styled.div`
+  cursor: grab;
+  height: ${CAROUSEL_HEIGHT_SM}px;
+  position: relative; /* Positions CardPositioner. */
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  ${mediaTabletUp} {
+    height: ${CAROUSEL_HEIGHT}px;
+  }
+
+  .MuiIconButton-root {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover {
+    > .MuiIconButton-root {
+      opacity: 1;
+    }
   }
 `;
 

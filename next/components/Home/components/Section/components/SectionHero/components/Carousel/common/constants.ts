@@ -1,5 +1,4 @@
 export const CARD_OFFSET_Y = 8;
-export const CARDS = "cards"; // Card container element identifier.
 export const CARD_SCALE_X = 48;
 export const MAX_CARD_HEIGHT = 180;
 export const MAX_CARD_HEIGHT_SM = 224;
