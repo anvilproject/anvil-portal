@@ -1,3 +1,4 @@
+import { SWIPE_ACTION } from "../../../../../../../hooks/useSwipeInteraction/common/entities";
 import {
   ARROW_OFFSET_Y,
   CARD_OFFSET_Y,
@@ -7,15 +8,14 @@ import {
   TRANSITION_DELAY,
   TRANSITION_DURATION,
 } from "./constants";
-import { CAROUSEL_ACTION } from "./entities";
 
 /**
  * Returns the arrow's transform scaleX and translateY.
- * @param carouselAction - Carousel action.
+ * @param swipeAction - Swipe action.
  * @returns arrow's transform.
  */
-export function getArrowTransform(carouselAction: string): string {
-  return carouselAction === CAROUSEL_ACTION.SWIPE_FORWARD
+export function getArrowTransform(swipeAction: SWIPE_ACTION): string {
+  return swipeAction === SWIPE_ACTION.SWIPE_FORWARD
     ? `translate(24px, calc(${ARROW_OFFSET_Y}px - 50%)) scaleX(-1)`
     : `translate(-24px, calc(${ARROW_OFFSET_Y}px - 50%))`;
 }
@@ -23,20 +23,20 @@ export function getArrowTransform(carouselAction: string): string {
 /**
  * Returns the carousel card's position in the deck.
  * @param index - Card index.
- * @param activeCard - Active card index.
- * @param lastIndex - Last card index.
+ * @param activeIndex - Active index.
+ * @param lastIndex - Last index.
  * @returns card position (position zero to deck size).
  */
 export function getCardPosition(
   index: number,
-  activeCard: number,
+  activeIndex: number,
   lastIndex: number
 ): number {
-  const order = index - activeCard;
+  const order = index - activeIndex;
   if (order >= 0) return order;
   // If the order is negative, stack the card to the end of the deck.
   // Grab the last (positive) position in the deck and add the card position (index + 1).
-  return lastIndex - activeCard + index + 1;
+  return lastIndex - activeIndex + index + 1;
 }
 
 /**

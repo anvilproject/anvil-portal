@@ -24,6 +24,7 @@ export interface UseSwipeInteraction {
   activeIndex: number;
   interactiveAction?: InteractiveAction;
   onSetActiveIndex: (newIndex: number) => void;
+  onSetSwipeAction: (newSwipeAction: SwipeAction) => void;
 }
 
 /**
@@ -61,6 +62,10 @@ export function useSwipeInteraction(
 
   const onSetActiveIndex = useCallback((newIndex: number) => {
     setActiveIndex(newIndex);
+  }, []);
+
+  const onSetSwipeAction = useCallback((newSwipeAction: SwipeAction) => {
+    setSwipeAction(newSwipeAction);
   }, []);
 
   const onSwipeToIndex = useCallback(
@@ -129,6 +134,7 @@ export function useSwipeInteraction(
     return {
       activeIndex,
       onSetActiveIndex,
+      onSetSwipeAction,
     };
   }
 
@@ -142,6 +148,7 @@ export function useSwipeInteraction(
       onTouchStart,
     },
     onSetActiveIndex,
+    onSetSwipeAction,
   };
 }
 
