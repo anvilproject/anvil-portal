@@ -22,6 +22,7 @@ export default withPlugins(
     images: {
       unoptimized: true,
     },
+    output: "export",
     webpack: (config) => {
       // Add the alias for the peer dependency
       config.resolve.alias["@emotion/react"] = path.resolve(
