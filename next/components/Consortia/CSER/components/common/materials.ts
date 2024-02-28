@@ -9,15 +9,22 @@ export type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
 
 export interface MaterialsMajorSectionInfo {
   sections: Record<string, MaterialsMinorSectionInfo>;
+  sortOrder?: number;
 }
 
 export interface MaterialsMinorSectionInfo {
   files: Record<string, MaterialsFileInfo>;
+  sortOrder?: number;
 }
 
 interface MaterialsFileInfo {
   category: MaterialsCategory;
   fileName: string;
+  sortOrder?: number;
+}
+
+interface MaterialsSortable {
+  sortOrder?: number;
 }
 
 export interface MaterialsMajorSection {
@@ -41,15 +48,12 @@ const categoryFileUrlPrefixes = {
   [MaterialsCategory.RESOURCES]: "/consortia/cser/resources/",
 };
 
+const { compare: compareAlphabetical } = new Intl.Collator("en");
+
 export function getOrganizedCategoryMaterials(
   category: MaterialsCategory
 ): MaterialsMajorSection[] {
-  const { compare } = new Intl.Collator("en");
   const majorSections: MaterialsMajorSection[] = [];
-
-  function getSortedEntries<T>(obj: Record<string, T>): [string, T][] {
-    return Object.entries(obj).sort((a, b) => compare(a[0], b[0]));
-  }
 
   for (const [majorSectionLabel, majorSectionInfo] of getSortedEntries(
     materialsInfo as MaterialsInfo
@@ -86,4 +90,13 @@ export function getOrganizedCategoryMaterials(
   }
 
   return majorSections;
+}
+
+function getSortedEntries<T extends MaterialsSortable>(
+  obj: Record<string, T>
+): [string, T][] {
+  return Object.entries(obj).sort((a, b) => {
+    const primaryOrder = (a[1].sortOrder || 0) - (b[1].sortOrder || 0);
+    return primaryOrder || compareAlphabetical(a[0], b[0]);
+  });
 }

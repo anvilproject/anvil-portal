@@ -651,7 +651,8 @@
             "category": "RESOURCES",
             "fileName": "cser2_survey_administration_timepoints.xlsx"
           }
-        }
+        },
+        "sortOrder": -1
       }
     }
   },
