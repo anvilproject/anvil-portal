@@ -1,6 +1,5 @@
 import nextMDX from "@next/mdx";
 import withPlugins from "next-compose-plugins";
-import withOptimizedImages from "next-optimized-images";
 import withTM from "next-transpile-modules";
 import path from "path";
 
@@ -10,14 +9,6 @@ const withMDX = nextMDX({
 
 export default withPlugins(
   [
-    [
-      withOptimizedImages,
-      {
-        optimizeImagesInDev: true,
-        handleImages: ["jpeg", "png", "svg"],
-        imagesFolder: "images",
-      },
-    ],
     [
       withMDX,
       {
@@ -29,9 +20,9 @@ export default withPlugins(
   {
     reactStrictMode: true,
     images: {
-      disableStaticImages: true,
+      unoptimized: true,
     },
-    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    webpack: (config) => {
       // Add the alias for the peer dependency
       config.resolve.alias["@emotion/react"] = path.resolve(
         process.cwd(),

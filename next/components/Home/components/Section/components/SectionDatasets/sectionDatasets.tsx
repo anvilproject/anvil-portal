@@ -32,7 +32,7 @@ export const SectionDatasets = ({
         </Headline>
         <Datasets />
         <SectionActions>
-          <NLink href={CONSORTIA_ROADMAP} passHref>
+          <NLink href={CONSORTIA_ROADMAP} legacyBehavior passHref>
             <ButtonSecondary href="passHref">Consortia Roadmap</ButtonSecondary>
           </NLink>
           <ButtonSecondary href={`${portalURL}${EXPLORE_DATASETS}`}>
