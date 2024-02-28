@@ -39,6 +39,7 @@ next-env.d.ts
 
 # scripts data
 /scripts/workspace-files
+/scripts/new-cser-materials
 
 # python
 __pycache__/
