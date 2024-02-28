@@ -1,4 +1,3 @@
-import consortiaCser from "images/consortiaCser.svg";
 import { NavigationConfig } from "../../../docs/common/entities";
 
 // Site map for the MDX pages used to generate the navigation.
@@ -11,7 +10,7 @@ export const navigation: NavigationConfig = {
           logo: {
             alt: "CSER",
             height: 40,
-            src: consortiaCser,
+            src: "/consortia/cser/images/consortiaCser.svg",
           },
           slogan: "Clinical Sequencing Evidence-Generating Research",
         },
