@@ -7,12 +7,13 @@ export enum MaterialsCategory {
 
 export type MaterialsInfo = Record<string, MaterialsMajorSectionInfo>;
 
-export type MaterialsMajorSectionInfo = Record<
-  string,
-  MaterialsMinorSectionInfo
->;
+export interface MaterialsMajorSectionInfo {
+  sections: Record<string, MaterialsMinorSectionInfo>;
+}
 
-export type MaterialsMinorSectionInfo = Record<string, MaterialsFileInfo>;
+export interface MaterialsMinorSectionInfo {
+  files: Record<string, MaterialsFileInfo>;
+}
 
 interface MaterialsFileInfo {
   category: MaterialsCategory;
@@ -55,10 +56,12 @@ export function getOrganizedCategoryMaterials(
   )) {
     const minorSections: MaterialsMinorSection[] = [];
     for (const [minorSectionLabel, minorSectionInfo] of getSortedEntries(
-      majorSectionInfo
+      majorSectionInfo.sections
     )) {
       const files: MaterialsFile[] = [];
-      for (const [fileLabel, fileInfo] of getSortedEntries(minorSectionInfo)) {
+      for (const [fileLabel, fileInfo] of getSortedEntries(
+        minorSectionInfo.files
+      )) {
         if (fileInfo.category === category) {
           files.push({
             label: fileLabel,

@@ -77,7 +77,7 @@ async function addCategoryAdditions(
     )) {
       const majorSection =
         materialsInfo[majorSectionTitle] ||
-        (materialsInfo[majorSectionTitle] = {});
+        (materialsInfo[majorSectionTitle] = { sections: {} });
       const inferredCategory = getMajorSectionCategory(majorSection);
       let category = additionsCategory;
       if (inferredCategory && inferredCategory !== additionsCategory) {
@@ -111,13 +111,14 @@ async function addMajorSection(
       ? path.resolve(newFilesPath, normalizeFileName(minorSectionTitle))
       : newFilesPath;
     const minorSection =
-      majorSection[minorSectionTitle] || (majorSection[minorSectionTitle] = {});
+      majorSection.sections[minorSectionTitle] ||
+      (majorSection.sections[minorSectionTitle] = { files: {} });
     for (const [fileTitle, fileName] of Object.entries(minorSectionAdditions)) {
-      if (minorSection[fileTitle]) {
+      if (minorSection.files[fileTitle]) {
         console.log(`Skipping existing file ${fileTitle}`);
         continue;
       }
-      minorSection[fileTitle] = {
+      minorSection.files[fileTitle] = {
         category,
         fileName,
       };
@@ -158,8 +159,8 @@ function getMajorSectionCategory(
   majorSection: MaterialsMajorSectionInfo
 ): MaterialsCategory | null {
   let category: MaterialsCategory | null = null;
-  for (const minorSection of Object.values(majorSection)) {
-    for (const file of Object.values(minorSection)) {
+  for (const minorSection of Object.values(majorSection.sections)) {
+    for (const file of Object.values(minorSection.files)) {
       if (category) {
         if (file.category !== category) return null;
       } else {
