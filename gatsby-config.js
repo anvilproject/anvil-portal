@@ -22,7 +22,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
