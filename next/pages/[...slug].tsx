@@ -20,6 +20,7 @@ interface DocPageProps {
   hero: NodeHero | null;
   mdxSource: MDXRemoteSerializeResult;
   navigation: NavItem[] | null;
+  pageTitle: string | null;
   slug?: string[];
 }
 
@@ -78,6 +79,7 @@ export const getStaticProps: GetStaticProps = async (
       hero: navigationConfig?.hero ?? null,
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
+      pageTitle: frontmatter.title ?? null,
       slug,
     },
   };

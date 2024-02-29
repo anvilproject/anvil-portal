@@ -28,8 +28,9 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
-  const { analytics, layout, themeOptions } = appConfig;
+  const { analytics, appTitle, layout, themeOptions } = appConfig;
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
+  const { pageTitle } = pageProps;
   const defaultTheme = createAppTheme(themeOptions);
   const appTheme = mergeAppTheme(defaultTheme);
 
@@ -44,7 +45,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
         <ConfigProvider config={appConfig}>
-          <Head />
+          <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
           <LayoutStateProvider>
             <AppLayout>
