@@ -9,7 +9,6 @@ export const Head = ({ appTitle, pageTitle }: HeadProps): JSX.Element => {
   const title = pageTitle ? `${pageTitle} - ${appTitle}` : appTitle;
   return (
     <NextHead key="page-head">
-      <title>The AnVIL</title>
       <link href="/consortia/favicons/favicon.ico" rel="icon" sizes="any" />
       <link
         href="/consortia/favicons/favicon-16x16.png"
