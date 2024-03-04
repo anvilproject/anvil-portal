@@ -12,6 +12,7 @@ export enum NavigationKey {
   CONSORTIA = "consortia",
   OVERVIEW = "overview",
   TEAM = "team",
+  FAQ = "faq",
 }
 
 export interface NavigationNode {

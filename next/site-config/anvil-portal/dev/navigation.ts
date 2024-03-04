@@ -35,6 +35,36 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  faq: {
+    nodes: [
+      {
+        key: "faq",
+        navigation: [
+          { label: "Overview", url: "/faq" },
+          {
+            label: "Data Security, Management, and Access Procedures",
+            url: "/faq/data-secruity",
+          },
+          { label: "Data Submission", url: "/faq/data-submission" },
+          {
+            label: "Resources for AnVIL Users",
+            url: "/faq/resources-for-anvil-users",
+          },
+          {
+            label: "Using AnVIL",
+            url: "/faq/using-anvil",
+          },
+        ],
+        slugs: [
+          "faq",
+          "data-secruity",
+          "data-submission",
+          "resources-for-anvil-users",
+          "using-anvil",
+        ],
+      },
+    ],
+  },
   overview: {
     nodes: [
       {
