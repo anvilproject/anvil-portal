@@ -23,3 +23,6 @@ components/Consortia/CSER/components/DataIngestionChart/chart-data.json
 
 # MDX
 docs/overview/publications.mdx
+
+# ignore all .mdx files
+docs/faq/using-anvil.mdx

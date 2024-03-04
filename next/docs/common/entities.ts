@@ -13,6 +13,7 @@ export enum NavigationKey {
   OVERVIEW = "overview",
   PRIVACY = "privacy",
   TEAM = "team",
+  FAQ = "faq",
 }
 
 export interface NavigationNode {
