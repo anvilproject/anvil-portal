@@ -1,7 +1,7 @@
 ---
 description: "Publications about or analyzed on AnVIL."
 hidden: true
-layoutStyle: "DEFAULT"
+layoutStyle: "DEFAULT_LIGHTEST"
 title: "Publications"
 publications:
   - title: "A Draft Human Pangenome Reference"
@@ -717,4 +717,12 @@ publications:
 
 # Publications
 
-<AnVILPublications publications={frontmatter.publications} />
+<ButtonAddPublication/>
+
+## Analyzed on AnVIL
+
+<AnVILPublications publicationCategory={PUBLICATION_CATEGORY.ON_ANVIL} publications={frontmatter.publications} />
+
+## AnVIL Platform, Data, Tools and Components
+
+<AnVILPublications publicationCategory={PUBLICATION_CATEGORY.ABOUT_ANVIL} publications={frontmatter.publications} />

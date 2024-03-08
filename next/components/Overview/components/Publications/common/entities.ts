@@ -1,4 +1,0 @@
-export enum PUBLICATION_VIEW {
-  ABOUT_ANVIL = "ABOUT_ANVIL",
-  ON_ANVIL = "ON_ANVIL",
-}

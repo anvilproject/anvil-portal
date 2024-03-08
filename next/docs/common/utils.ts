@@ -1,10 +1,20 @@
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
+import { OutlineItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
 import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
+
+/**
+ * Filters out headings with a depth equal to 1.
+ * @param outline - Outline item.
+ * @returns true if the heading depth is 2 or greater.
+ */
+export function filterHeadingOne(outline: OutlineItem): boolean {
+  return outline.depth > 1;
+}
 
 /**
  * Returns the path to the "docs" directory.

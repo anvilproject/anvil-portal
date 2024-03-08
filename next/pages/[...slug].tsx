@@ -1,5 +1,10 @@
 import { LAYOUT_STYLE } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
+import { ContentsTab } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
+import {
+  Outline,
+  OutlineItem,
+} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
@@ -7,19 +12,24 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import pathTool from "path";
 import { ContentView, Nav, NavBarHero } from "../components";
+import { Content } from "../components/Layout/components/Content/content";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
 import { Frontmatter, NodeHero } from "../docs/common/entities";
 import {
+  filterHeadingOne,
   generatePaths,
   getDocsDirectory,
   getNavigationConfig,
 } from "../docs/common/utils";
+import { rehypeSlug } from "../plugins/rehypeSlug";
+import { remarkHeadings } from "../plugins/remarkHeadings";
 
 interface DocPageProps {
   frontmatter: Frontmatter;
   hero: NodeHero | null;
   mdxSource: MDXRemoteSerializeResult;
   navigation: NavItem[] | null;
+  outline: OutlineItem[];
   pageTitle: string | null;
   slug?: string[];
 }
@@ -29,13 +39,23 @@ const Page = ({
   hero,
   mdxSource,
   navigation,
+  outline,
 }: DocPageProps): JSX.Element => {
   if (!mdxSource) return <></>;
   const { layoutStyle } = frontmatter || {};
   return (
     <ContentView
-      content={<MDXRemote {...mdxSource} components={MDX_COMPONENTS} />}
-      layoutStyle={layoutStyle ?? LAYOUT_STYLE.CONTRAST}
+      content={
+        <Content>
+          <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+        </Content>
+      }
+      layoutStyle={layoutStyle ?? LAYOUT_STYLE.CONTRAST_LIGHTEST}
+      outline={
+        outline.length > 0 ? (
+          <Outline outline={outline} Contents={ContentsTab} />
+        ) : undefined
+      }
       navigation={
         navigation ? (
           <Nav
@@ -63,11 +83,12 @@ export const getStaticProps: GetStaticProps = async (
       notFound: true,
     };
   }
+  const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
       development: false, // See https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1363415249 and https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1378362096.
-      rehypePlugins: [],
-      remarkPlugins: [],
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [[remarkHeadings, outline]],
     },
     scope: {
       ...MDX_SCOPE,
@@ -80,6 +101,7 @@ export const getStaticProps: GetStaticProps = async (
       hero: navigationConfig?.hero ?? null,
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
+      outline: outline.filter(filterHeadingOne),
       pageTitle: frontmatter.title ?? null,
       slug,
     },
