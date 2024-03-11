@@ -54,19 +54,8 @@ const Page = ({
         </Content>
       }
       layoutStyle={layoutStyle ?? undefined}
-      outline={
-        outline.length > 0 ? (
-          <Outline outline={outline} Contents={ContentsTab} />
-        ) : undefined
-      }
-      navigation={
-        navigation ? (
-          <Nav
-            Hero={hero ? <NavBarHero {...hero} /> : undefined}
-            navigation={navigation}
-          />
-        ) : undefined
-      }
+      outline={renderOutline(outline)}
+      navigation={renderNavigation(navigation, hero)}
     />
   );
 };
@@ -126,3 +115,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default Page;
 
 Page.Main = Main;
+
+/**
+ * Renders page navigation.
+ * @param navigation - Navigation items.
+ * @param hero - Navigation hero.
+ * @returns navigation.
+ */
+function renderNavigation(
+  navigation: NavItem[] | null,
+  hero: NodeHero | null
+): JSX.Element | undefined {
+  return navigation ? (
+    <Nav
+      Hero={hero ? <NavBarHero {...hero} /> : undefined}
+      navigation={navigation}
+    />
+  ) : undefined;
+}
+
+/**
+ * Renders page outline.
+ * @param outline - Outline items.
+ * @returns outline.
+ */
+function renderOutline(outline: OutlineItem[]): JSX.Element | undefined {
+  return outline.length > 0 ? (
+    <Outline outline={outline} Contents={ContentsTab} />
+  ) : undefined;
+}
