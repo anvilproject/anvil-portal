@@ -11,7 +11,7 @@ export type Frontmatter =
 export interface DefaultFrontmatter {
   description: string;
   hidden?: boolean;
-  panelColor?: FrontmatterPanelColor;
+  layoutStyle?: FrontmatterLayoutStyle;
   title: string;
 }
 
@@ -26,8 +26,8 @@ export interface FrontmatterNews extends DefaultFrontmatter {
   featured?: boolean;
 }
 
-export type FrontmatterPanelColor =
-  | "PANEL_COLOR_CONTRAST_LIGHT"
-  | "PANEL_COLOR_CONTRAST_LIGHTEST"
-  | "PANEL_COLOR_NO_CONTRAST_LIGHT"
-  | "PANEL_COLOR_NO_CONTRAST_LIGHTEST";
+export type FrontmatterLayoutStyle =
+  | "LAYOUT_STYLE_CONTRAST_LIGHT"
+  | "LAYOUT_STYLE_CONTRAST_LIGHTEST"
+  | "LAYOUT_STYLE_NO_CONTRAST_LIGHT"
+  | "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST";

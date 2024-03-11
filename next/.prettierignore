@@ -20,3 +20,6 @@ scripts/new-cser-materials
 
 # script output
 components/Consortia/CSER/components/DataIngestionChart/chart-data.json
+
+# MDX
+docs/overview/publications.mdx

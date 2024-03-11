@@ -1,10 +1,10 @@
 import {
-  PANEL_COLOR_CONTRAST_LIGHT,
-  PANEL_COLOR_CONTRAST_LIGHTEST,
-  PANEL_COLOR_NO_CONTRAST_LIGHT,
-  PANEL_COLOR_NO_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_CONTRAST_LIGHT,
+  LAYOUT_STYLE_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_NO_CONTRAST_LIGHT,
+  LAYOUT_STYLE_NO_CONTRAST_LIGHTEST,
 } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
-import { ContentLayoutPanelColor } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
+import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
@@ -91,7 +91,7 @@ export function getNavigationConfig(
   // Loop through the slug and find the node where slug matches the node's slug.
   for (let i = 0; i < slug.length; i++) {
     const key = slug[i];
-    for (const { hero, navigation, panelColor, slugs } of sectionMap.nodes) {
+    for (const { hero, layoutStyle, navigation, slugs } of sectionMap.nodes) {
       if (slugs.includes(key)) {
         if (slug.length !== 1 && i === 0) {
           // Although the first slug's key is a match, continue if the slug has more than one element.
@@ -101,7 +101,7 @@ export function getNavigationConfig(
         const activeURL = getActiveURL(pagePath, navigation);
         if (activeURL) {
           const navItems = getNavItems(activeURL, navigation);
-          return { hero, navigation: navItems, panelColor };
+          return { hero, layoutStyle, navigation: navItems };
         }
       }
     }
@@ -171,28 +171,28 @@ export function generatePaths(): GetStaticPathsResult["paths"] {
 }
 
 /**
- * Returns the content panel color, specified by the navigation config or the frontmatter.
- * @param navigationPanelColor - Panel color, specified by the navigation config.
- * @param frontmatterPanelColor - Panel color, specified by the frontmatter.
- * @returns content panel color.
+ * Returns the content layout style, specified by the navigation config or the frontmatter.
+ * @param navigationLayoutStyle - Layout style, specified by the navigation config.
+ * @param frontmatterLayoutStyle - Layout style, specified by the frontmatter.
+ * @returns layout style.
  */
-export function getContentPanelColor(
-  navigationPanelColor: ContentLayoutPanelColor | undefined,
-  frontmatterPanelColor: Frontmatter["panelColor"]
-): ContentLayoutPanelColor | null {
-  if (frontmatterPanelColor) {
-    switch (frontmatterPanelColor) {
-      case "PANEL_COLOR_CONTRAST_LIGHT":
-        return PANEL_COLOR_CONTRAST_LIGHT;
-      case "PANEL_COLOR_CONTRAST_LIGHTEST":
-        return PANEL_COLOR_CONTRAST_LIGHTEST;
-      case "PANEL_COLOR_NO_CONTRAST_LIGHT":
-        return PANEL_COLOR_NO_CONTRAST_LIGHT;
-      case "PANEL_COLOR_NO_CONTRAST_LIGHTEST":
-        return PANEL_COLOR_NO_CONTRAST_LIGHTEST;
+export function getContentLayoutStyle(
+  navigationLayoutStyle: LayoutStyle | undefined,
+  frontmatterLayoutStyle: Frontmatter["layoutStyle"]
+): LayoutStyle | null {
+  if (frontmatterLayoutStyle) {
+    switch (frontmatterLayoutStyle) {
+      case "LAYOUT_STYLE_CONTRAST_LIGHT":
+        return LAYOUT_STYLE_CONTRAST_LIGHT;
+      case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
+        return LAYOUT_STYLE_CONTRAST_LIGHTEST;
+      case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
+        return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
+      case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":
+        return LAYOUT_STYLE_NO_CONTRAST_LIGHTEST;
       default:
         return null;
     }
   }
-  return navigationPanelColor || null;
+  return navigationLayoutStyle || null;
 }

@@ -1,6 +1,6 @@
 import {
-  PANEL_COLOR_CONTRAST_LIGHT,
-  PANEL_COLOR_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_CONTRAST_LIGHT,
+  LAYOUT_STYLE_CONTRAST_LIGHTEST,
 } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { NavigationConfig } from "../../../docs/common/entities";
 
@@ -19,6 +19,7 @@ export const navigation: NavigationConfig = {
           slogan: "Clinical Sequencing Evidence-Generating Research",
         },
         key: "cser",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
         navigation: [
           { label: "About", url: "/consortia/cser" },
           { label: "News", url: "/consortia/cser/news" },
@@ -30,7 +31,6 @@ export const navigation: NavigationConfig = {
             url: "/consortia/cser/research-materials",
           },
         ],
-        panelColor: PANEL_COLOR_CONTRAST_LIGHT,
         slugs: ["cser"],
       },
     ],
@@ -39,6 +39,7 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "overview",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "What is AnVIL?", url: "/overview" },
           {
@@ -49,7 +50,6 @@ export const navigation: NavigationConfig = {
           { label: "Publications", url: "/overview/publications" },
           { label: "Citing AnVIL", url: "/overview/cite-anvil" },
         ],
-        panelColor: PANEL_COLOR_CONTRAST_LIGHTEST,
         slugs: [
           "overview",
           "security",
@@ -64,12 +64,12 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "team",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "Leadership Team", url: "/team" },
           { label: "Working Groups", url: "/team/working-groups" },
           { label: "Oversight Committee", url: "/team/oversight-committee" },
         ],
-        panelColor: PANEL_COLOR_CONTRAST_LIGHTEST,
         slugs: ["team", "working-groups", "oversight-committee"],
       },
     ],

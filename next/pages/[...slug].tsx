@@ -1,5 +1,5 @@
+import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
-import { ContentLayoutPanelColor } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import {
@@ -20,7 +20,7 @@ import { NodeHero } from "../docs/common/entities";
 import {
   filterOutline,
   generatePaths,
-  getContentPanelColor,
+  getContentLayoutStyle,
   getDocsDirectory,
   getNavigationConfig,
 } from "../docs/common/utils";
@@ -30,20 +30,20 @@ import { remarkHeadings } from "../plugins/remarkHeadings";
 interface DocPageProps {
   frontmatter: Frontmatter;
   hero: NodeHero | null;
+  layoutStyle: LayoutStyle;
   mdxSource: MDXRemoteSerializeResult;
   navigation: NavItem[] | null;
   outline: OutlineItem[];
   pageTitle: string | null;
-  panelColor: ContentLayoutPanelColor;
   slug?: string[];
 }
 
 const Page = ({
   hero,
+  layoutStyle,
   mdxSource,
   navigation,
   outline,
-  panelColor,
 }: DocPageProps): JSX.Element => {
   if (!mdxSource) return <></>;
   return (
@@ -53,6 +53,7 @@ const Page = ({
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
         </Content>
       }
+      layoutStyle={layoutStyle ?? undefined}
       outline={
         outline.length > 0 ? (
           <Outline outline={outline} Contents={ContentsTab} />
@@ -66,7 +67,6 @@ const Page = ({
           />
         ) : undefined
       }
-      panelColor={panelColor ?? undefined}
     />
   );
 };
@@ -102,14 +102,14 @@ export const getStaticProps: GetStaticProps = async (
     props: {
       frontmatter,
       hero: navigationConfig?.hero ?? null,
+      layoutStyle: getContentLayoutStyle(
+        navigationConfig?.layoutStyle,
+        frontmatter.layoutStyle
+      ),
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
       outline: outline.filter(filterOutline),
       pageTitle: frontmatter.title ?? null,
-      panelColor: getContentPanelColor(
-        navigationConfig?.panelColor,
-        frontmatter.panelColor
-      ),
       slug,
     },
   };
