@@ -1,3 +1,7 @@
+import {
+  PANEL_COLOR_CONTRAST_LIGHT,
+  PANEL_COLOR_CONTRAST_LIGHTEST,
+} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { NavigationConfig } from "../../../docs/common/entities";
 
 // Site map for the MDX pages used to generate the navigation.
@@ -26,6 +30,7 @@ export const navigation: NavigationConfig = {
             url: "/consortia/cser/research-materials",
           },
         ],
+        panelColor: PANEL_COLOR_CONTRAST_LIGHT,
         slugs: ["cser"],
       },
     ],
@@ -44,6 +49,7 @@ export const navigation: NavigationConfig = {
           { label: "Publications", url: "/overview/publications" },
           { label: "Citing AnVIL", url: "/overview/cite-anvil" },
         ],
+        panelColor: PANEL_COLOR_CONTRAST_LIGHTEST,
         slugs: [
           "overview",
           "security",
@@ -63,6 +69,7 @@ export const navigation: NavigationConfig = {
           { label: "Working Groups", url: "/team/working-groups" },
           { label: "Oversight Committee", url: "/team/oversight-committee" },
         ],
+        panelColor: PANEL_COLOR_CONTRAST_LIGHTEST,
         slugs: ["team", "working-groups", "oversight-committee"],
       },
     ],

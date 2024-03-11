@@ -1,4 +1,5 @@
-import { LAYOUT_STYLE } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
+import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
+import { ContentLayoutPanelColor } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import {
@@ -13,11 +14,13 @@ import { serialize } from "next-mdx-remote/serialize";
 import pathTool from "path";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { Content } from "../components/Layout/components/Content/content";
+import { Frontmatter } from "../content/entities";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
-import { Frontmatter, NodeHero } from "../docs/common/entities";
+import { NodeHero } from "../docs/common/entities";
 import {
-  filterHeadingOne,
+  filterOutline,
   generatePaths,
+  getContentPanelColor,
   getDocsDirectory,
   getNavigationConfig,
 } from "../docs/common/utils";
@@ -31,18 +34,18 @@ interface DocPageProps {
   navigation: NavItem[] | null;
   outline: OutlineItem[];
   pageTitle: string | null;
+  panelColor: ContentLayoutPanelColor;
   slug?: string[];
 }
 
 const Page = ({
-  frontmatter,
   hero,
   mdxSource,
   navigation,
   outline,
+  panelColor,
 }: DocPageProps): JSX.Element => {
   if (!mdxSource) return <></>;
-  const { layoutStyle } = frontmatter || {};
   return (
     <ContentView
       content={
@@ -50,7 +53,6 @@ const Page = ({
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
         </Content>
       }
-      layoutStyle={layoutStyle ?? LAYOUT_STYLE.CONTRAST_LIGHTEST}
       outline={
         outline.length > 0 ? (
           <Outline outline={outline} Contents={ContentsTab} />
@@ -64,6 +66,7 @@ const Page = ({
           />
         ) : undefined
       }
+      panelColor={panelColor ?? undefined}
     />
   );
 };
@@ -101,8 +104,12 @@ export const getStaticProps: GetStaticProps = async (
       hero: navigationConfig?.hero ?? null,
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
-      outline: outline.filter(filterHeadingOne),
+      outline: outline.filter(filterOutline),
       pageTitle: frontmatter.title ?? null,
+      panelColor: getContentPanelColor(
+        navigationConfig?.panelColor,
+        frontmatter.panelColor
+      ),
       slug,
     },
   };
@@ -117,3 +124,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default Page;
+
+Page.Main = Main;

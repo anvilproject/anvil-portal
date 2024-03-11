@@ -10,6 +10,8 @@ export type Frontmatter =
 
 export interface DefaultFrontmatter {
   description: string;
+  hidden?: boolean;
+  panelColor?: FrontmatterPanelColor;
   title: string;
 }
 
@@ -23,3 +25,9 @@ export interface FrontmatterNews extends DefaultFrontmatter {
   date: string;
   featured?: boolean;
 }
+
+export type FrontmatterPanelColor =
+  | "PANEL_COLOR_CONTRAST_LIGHT"
+  | "PANEL_COLOR_CONTRAST_LIGHTEST"
+  | "PANEL_COLOR_NO_CONTRAST_LIGHT"
+  | "PANEL_COLOR_NO_CONTRAST_LIGHTEST";
