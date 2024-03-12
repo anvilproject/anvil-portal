@@ -1,3 +1,7 @@
+import {
+  LAYOUT_STYLE_CONTRAST_LIGHT,
+  LAYOUT_STYLE_CONTRAST_LIGHTEST,
+} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { NavigationConfig } from "../../../docs/common/entities";
 
 // Site map for the MDX pages used to generate the navigation.
@@ -15,6 +19,7 @@ export const navigation: NavigationConfig = {
           slogan: "Clinical Sequencing Evidence-Generating Research",
         },
         key: "cser",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
         navigation: [
           { label: "About", url: "/consortia/cser" },
           { label: "News", url: "/consortia/cser/news" },
@@ -34,6 +39,7 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "overview",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "What is AnVIL?", url: "/overview" },
           {
@@ -41,9 +47,16 @@ export const navigation: NavigationConfig = {
             url: "/overview/security",
           },
           { label: "Supported by NHGRI", url: "/overview/project-sponsor" },
+          { label: "Publications", url: "/overview/publications" },
           { label: "Citing AnVIL", url: "/overview/cite-anvil" },
         ],
-        slugs: ["overview", "security", "project-sponsor", "cite-anvil"],
+        slugs: [
+          "overview",
+          "security",
+          "project-sponsor",
+          "publications",
+          "cite-anvil",
+        ],
       },
     ],
   },
@@ -51,6 +64,7 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "team",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "Leadership Team", url: "/team" },
           { label: "Working Groups", url: "/team/working-groups" },

@@ -1,5 +1,11 @@
-import { LAYOUT_STYLE } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
+import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
+import { ContentsTab } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
+import {
+  Outline,
+  OutlineItem,
+} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
@@ -7,43 +13,49 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import pathTool from "path";
 import { ContentView, Nav, NavBarHero } from "../components";
+import { Content } from "../components/Layout/components/Content/content";
+import { Frontmatter } from "../content/entities";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
-import { Frontmatter, NodeHero } from "../docs/common/entities";
+import { NodeHero } from "../docs/common/entities";
 import {
+  filterOutline,
   generatePaths,
+  getContentLayoutStyle,
   getDocsDirectory,
   getNavigationConfig,
 } from "../docs/common/utils";
+import { rehypeSlug } from "../plugins/rehypeSlug";
+import { remarkHeadings } from "../plugins/remarkHeadings";
 
 interface DocPageProps {
   frontmatter: Frontmatter;
   hero: NodeHero | null;
+  layoutStyle: LayoutStyle;
   mdxSource: MDXRemoteSerializeResult;
   navigation: NavItem[] | null;
+  outline: OutlineItem[];
   pageTitle: string | null;
   slug?: string[];
 }
 
 const Page = ({
-  frontmatter,
   hero,
+  layoutStyle,
   mdxSource,
   navigation,
+  outline,
 }: DocPageProps): JSX.Element => {
   if (!mdxSource) return <></>;
-  const { layoutStyle } = frontmatter || {};
   return (
     <ContentView
-      content={<MDXRemote {...mdxSource} components={MDX_COMPONENTS} />}
-      layoutStyle={layoutStyle ?? LAYOUT_STYLE.CONTRAST}
-      navigation={
-        navigation ? (
-          <Nav
-            Hero={hero ? <NavBarHero {...hero} /> : undefined}
-            navigation={navigation}
-          />
-        ) : undefined
+      content={
+        <Content>
+          <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+        </Content>
       }
+      layoutStyle={layoutStyle ?? undefined}
+      outline={renderOutline(outline)}
+      navigation={renderNavigation(navigation, hero)}
     />
   );
 };
@@ -63,22 +75,29 @@ export const getStaticProps: GetStaticProps = async (
       notFound: true,
     };
   }
+  const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
       development: false, // See https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1363415249 and https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1378362096.
-      rehypePlugins: [],
-      remarkPlugins: [],
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [[remarkHeadings, outline]],
     },
     scope: {
       ...MDX_SCOPE,
+      frontmatter,
     },
   });
   return {
     props: {
       frontmatter,
       hero: navigationConfig?.hero ?? null,
+      layoutStyle: getContentLayoutStyle(
+        navigationConfig?.layoutStyle,
+        frontmatter.layoutStyle
+      ),
       mdxSource,
       navigation: navigationConfig?.navigation ?? null,
+      outline: outline.filter(filterOutline),
       pageTitle: frontmatter.title ?? null,
       slug,
     },
@@ -94,3 +113,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default Page;
+
+Page.Main = Main;
+
+/**
+ * Renders page navigation.
+ * @param navigation - Navigation items.
+ * @param hero - Navigation hero.
+ * @returns navigation.
+ */
+function renderNavigation(
+  navigation: NavItem[] | null,
+  hero: NodeHero | null
+): JSX.Element | undefined {
+  return navigation ? (
+    <Nav
+      Hero={hero ? <NavBarHero {...hero} /> : undefined}
+      navigation={navigation}
+    />
+  ) : undefined;
+}
+
+/**
+ * Renders page outline.
+ * @param outline - Outline items.
+ * @returns outline.
+ */
+function renderOutline(outline: OutlineItem[]): JSX.Element | undefined {
+  return outline.length > 0 ? (
+    <Outline outline={outline} Contents={ContentsTab} />
+  ) : undefined;
+}

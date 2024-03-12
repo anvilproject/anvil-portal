@@ -1,10 +1,28 @@
+import {
+  LAYOUT_STYLE_CONTRAST_LIGHT,
+  LAYOUT_STYLE_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_NO_CONTRAST_LIGHT,
+  LAYOUT_STYLE_NO_CONTRAST_LIGHTEST,
+} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
+import { OutlineItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
+import { Frontmatter } from "../../content/entities";
 import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
 import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
+
+/**
+ * Filters out headings (H1, and H3-H6) from the outline.
+ * @param outline - Outline item.
+ * @returns true if the heading depth is 2 or 3.
+ */
+export function filterOutline(outline: OutlineItem): boolean {
+  return outline.depth > 1 && outline.depth < 4;
+}
 
 /**
  * Returns the path to the "docs" directory.
@@ -73,7 +91,7 @@ export function getNavigationConfig(
   // Loop through the slug and find the node where slug matches the node's slug.
   for (let i = 0; i < slug.length; i++) {
     const key = slug[i];
-    for (const { hero, navigation, slugs } of sectionMap.nodes) {
+    for (const { hero, layoutStyle, navigation, slugs } of sectionMap.nodes) {
       if (slugs.includes(key)) {
         if (slug.length !== 1 && i === 0) {
           // Although the first slug's key is a match, continue if the slug has more than one element.
@@ -83,7 +101,7 @@ export function getNavigationConfig(
         const activeURL = getActiveURL(pagePath, navigation);
         if (activeURL) {
           const navItems = getNavItems(activeURL, navigation);
-          return { hero, navigation: navItems };
+          return { hero, layoutStyle, navigation: navItems };
         }
       }
     }
@@ -150,4 +168,31 @@ export function generatePaths(): GetStaticPathsResult["paths"] {
       params: { slug },
     };
   });
+}
+
+/**
+ * Returns the content layout style, specified by the navigation config or the frontmatter.
+ * @param navigationLayoutStyle - Layout style, specified by the navigation config.
+ * @param frontmatterLayoutStyle - Layout style, specified by the frontmatter.
+ * @returns layout style.
+ */
+export function getContentLayoutStyle(
+  navigationLayoutStyle: LayoutStyle | undefined,
+  frontmatterLayoutStyle: Frontmatter["layoutStyle"]
+): LayoutStyle | null {
+  if (frontmatterLayoutStyle) {
+    switch (frontmatterLayoutStyle) {
+      case "LAYOUT_STYLE_CONTRAST_LIGHT":
+        return LAYOUT_STYLE_CONTRAST_LIGHT;
+      case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
+        return LAYOUT_STYLE_CONTRAST_LIGHTEST;
+      case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
+        return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
+      case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":
+        return LAYOUT_STYLE_NO_CONTRAST_LIGHTEST;
+      default:
+        return null;
+    }
+  }
+  return navigationLayoutStyle || null;
 }

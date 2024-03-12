@@ -1,11 +1,6 @@
 import { StaticImageProps } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
-import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/contentLayout";
+import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
-
-export interface Frontmatter {
-  hidden?: boolean;
-  layoutStyle?: LayoutStyle;
-}
 
 export type NavigationConfig = Record<NavigationKey, NavigationEntry>;
 
@@ -22,6 +17,7 @@ export enum NavigationKey {
 export interface NavigationNode {
   hero?: NodeHero;
   key?: string;
+  layoutStyle?: LayoutStyle;
   navigation?: NavItem[];
   slugs: string[]; // A list of slugs that are valid for the node.
 }

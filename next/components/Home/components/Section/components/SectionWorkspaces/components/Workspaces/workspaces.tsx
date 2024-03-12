@@ -1,9 +1,9 @@
 import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
+import { ForwardArrowIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
-import { ForwardArrowIcon } from "../../../../../../../common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import {
   CardContent,
   CardCTA,
