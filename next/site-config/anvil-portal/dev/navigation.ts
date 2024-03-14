@@ -43,7 +43,7 @@ export const navigation: NavigationConfig = {
           { label: "Overview", url: "/faq" },
           {
             label: "Data Security, Management, and Access Procedures",
-            url: "/faq/data-secruity",
+            url: "/faq/data-security",
           },
           { label: "Data Submission", url: "/faq/data-submission" },
           {
@@ -57,7 +57,7 @@ export const navigation: NavigationConfig = {
         ],
         slugs: [
           "faq",
-          "data-secruity",
+          "data-security",
           "data-submission",
           "resources-for-anvil-users",
           "using-anvil",
