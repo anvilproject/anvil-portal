@@ -9,6 +9,7 @@ export interface NavigationEntry {
 }
 
 export enum NavigationKey {
+  HELP = "help",
   CONSORTIA = "consortia",
   OVERVIEW = "overview",
   TEAM = "team",
