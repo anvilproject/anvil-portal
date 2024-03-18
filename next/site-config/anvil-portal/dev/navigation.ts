@@ -60,6 +60,15 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  privacy: {
+    nodes: [
+      {
+        key: "privacy",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        slugs: ["privacy"],
+      },
+    ],
+  },
   team: {
     nodes: [
       {
