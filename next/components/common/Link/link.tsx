@@ -23,9 +23,6 @@ export const Link = ({
  * @returns URL.
  */
 function getURL(url: string, portalURL: string): string {
-  const decodedUrl = decodeURIComponent(url);
-  if (/{portalURL}/.test(decodedUrl)) {
-    return decodedUrl.replace(/{portalURL}/g, portalURL);
-  }
-  return url;
+  const decodedUrl = decodeURI(url);
+  return decodedUrl.replace(/{portalURL}/g, portalURL);
 }
