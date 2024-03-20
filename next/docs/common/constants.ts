@@ -1,5 +1,6 @@
 import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
 import * as C from "../../components";
+import { Link } from "../../components/common/Link/link";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { getContentScope } from "./scope";
@@ -28,6 +29,7 @@ export const MDX_COMPONENTS = {
   Resources: C.Resources,
   Subheader: C.Subheader,
   TextBodyLarge500: C.TextBodyLarge500,
+  a: Link,
 };
 
 export const MDX_SCOPE = {
