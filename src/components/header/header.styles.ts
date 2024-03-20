@@ -7,6 +7,7 @@ export const Header = styled(AppBar)`
 
     .MuiToolbar-root {
       flex: 1;
+      min-height: 56px;
     }
   }
 `;
