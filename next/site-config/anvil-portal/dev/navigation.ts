@@ -6,6 +6,15 @@ import { NavigationConfig } from "../../../docs/common/entities";
 
 // Site map for the MDX pages used to generate the navigation.
 export const navigation: NavigationConfig = {
+  help: {
+    nodes: [
+      {
+        key: "help",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        slugs: ["help"],
+      },
+    ],
+  },
   consortia: {
     nodes: [
       {
