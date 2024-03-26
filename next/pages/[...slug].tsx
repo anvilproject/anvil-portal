@@ -78,7 +78,6 @@ export const getStaticProps: GetStaticProps = async (
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      development: false, // See https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1363415249 and https://github.com/hashicorp/next-mdx-remote/issues/307#issuecomment-1378362096.
       rehypePlugins: [rehypeSlug],
       remarkPlugins: [[remarkHeadings, outline]],
     },
