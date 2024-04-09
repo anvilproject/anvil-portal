@@ -36,7 +36,7 @@ def adjust_table_index_key(val):
 		if val == "":
 			return ('<i>Empty</i>', True)
 		if val[0] == "/":
-			return ('<a href="' + escape_html("https://anvilproject.org" + val) + '">' + escape_html(val) + '</a>', True)
+			return ('<a href="' + escape_html("https://ncpi-data.org" + val) + '">' + escape_html(val) + '</a>', True)
 	return val
 
 def format_video_key(id):
