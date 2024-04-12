@@ -13,6 +13,10 @@ title: "AnVIL Demos"
 
 <event-hero></event-hero>
 
+### What's in this Demo?
+
+In this demo, Natalie Kucher from Johns Hopkins University will describe how AnVIL can be used in the classroom as a platform for teaching and analysis, the advantages of using AnVIL with students, and the AnVIL Outreach team’s best practices available in the [AnVIL Instructor Guide](https://jhudatascience.org/AnVIL_Book_Instructor_Guide/). In the second half, we’ll open up the floor to answer questions about the demo or any general questions about AnVIL you might have!
+
 ### What are AnVIL Demos?
 AnVIL Demos are a series of virtual meetings that highlight what you can do on the [NHGRI](https://www.genome.gov/) Analysis, Visualization, and Informatics Lab-space (AnVIL), a cloud-based computing platform for genomic data science. AnVIL Demos will start out with a 30-minute demonstration on the platform followed by open time for Q&A and user support.
 
