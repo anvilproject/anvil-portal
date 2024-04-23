@@ -19,25 +19,25 @@ For new users to AnVIL, you can learn more about the platform and its offerings 
 | Access cloud resources within AnVIL’s **FedRAMP-certified security perimeter** | X | X |
 | <ul><li> **Additional Security Monitoring** on workspaces to enable working with controlled-access data</li><ul> | X | X |
 | <ul><li> **Data Access Controls** inherited by workspaces to ensure only authorized users can access controlled-access data</li><ul> | Q2 2024 Interim: Authorization Domains | X |
-| Access to **AnVIL’s data corpus** (BAMs, CRAMs, metadata) | `✝` | X |
-| Access to **Terra-owned shared central services** for workflow submission and execution and data tables (reduced user expenses) | X | |
-| **User-owned central services** for workflow submission and execution and data tables allow for shorter wait times for scheduled tasks, improved data table functionality and control of data residence (greater user expenses) | | X |
+| Access to **AnVIL’s data corpus** (BAMs, CRAMs, metadata) | `✝` | Q2 2024 |
+| Access to **Terra-owned shared central services** for workflow submission and execution and data tables (reduced user expenses) | X | See free tier |
+| **User-owned central services** for workflow submission and execution and data tables allow for shorter wait times for scheduled tasks, improved data table functionality and control of data residence (greater user expenses) | Long-term roadmap (2025+) | X |
 | Access to **batch computing and interactive analyses** | X | X |
-| <ul><li> Use of **custom VM images and VM image repositories** </li></ul> | X | |
+| <ul><li> Use of **custom VM images and VM image repositories for interactive analysis** </li></ul> | X | Long-term roadmap (2025+) |
 | <ul><li> Run large-scale workflows using **WDL**, including GATK, STAR/RSEM, CellRanger and thousands more </li></ul> | X | X |
 | <ul><li> Access to **Jupyter Notebooks**, a notebook-based interactive analysis environment that supports code in R and python </li></ul> | X | X |
 | <ul><li> Access to **Bioconductor**, an extensive suite of R packages for data analysis </li></ul> | X | Coming Soon |
 | <ul><li> Access to **Galaxy**, an interactive and robust point-and-click platform for data exploration and analysis with tools and workflows </li></ul> | X | Coming Soon |
 | <ul><li> Access to publicly shared workflows in **Dockstore** </li></ul> | X | X |
-| <ul><li> Access to the **AnVIL API Library** that enables interaction with AnVIL analyses and workflows through the command line interface </li></ul> | X | |
-| <ul><li> Interaction with data tables via an **API client library** </li></ul> | X | |
+| <ul><li> Access to the **AnVIL API Library** that enables interaction with AnVIL analyses and workflows through the command line interface </li></ul> | X | Long-term roadmap (2025+) |
+| <ul><li> Interaction with data tables via an **API client library** </li></ul> | X | X |
 | <ul><li> Access to **seqr**, a suite of tools for rare disease genomics </li></ul> | X | ‡ |
 | Data submission | | |
-| <ul><li> Approved datasets ingested and included in AnVIL’s data corpu </li></ul> | # | X |
-| Data submission | | |
-| <ul><li> Nextflow Support </li></ul> | | Q4 2025 |
-| <ul><li> Free Tier </li></ul> | | TBD |
-| <ul><li> Advanced data table functionality </li></ul> | | Q4 2024 |
+| <ul><li> Approved datasets ingested and included in AnVIL’s data corpus </li></ul> | # | X |
+| Roadmap | | |
+| <ul><li> Nextflow Support </li></ul> | Long-term roadmap (2025+) | Q4 2025 |
+| <ul><li> Free Tier </li></ul> | Long-term roadmap (2025+) | Long-term roadmap (2025+) |
+| <ul><li> Advanced data table functionality </li></ul> | Long-term roadmap (2025+) | Q4 2024 |
 
 X Full functionality is currently available.
 
@@ -47,6 +47,8 @@ X Full functionality is currently available.
 Information.
 
 \# New data submissions will occur on Azure only.
+
+## Offerings
 
 ### What is a FedRAMP-certified security perimeter?
 
@@ -60,7 +62,7 @@ Learn more about [AnVIL’s Data Security, Management, and Access Procedures](/f
 
 ### What is AnVIL’s data corpus?
 
-AnVIL is the primary NIH-designated repository for NHGRI-funded data, metadata, and associated documentation. NHGRI-funded investigators may submit to AnVIL to fulfill the expectations of the NIH Genomic Data Sharing Policy ([NOT-OD-14-124](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-14-124.html)) and the Final NIH Policy for Data Management and Sharing ([NOT-OD-21-013](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)). A number of high-value open-access datasets remain available on GCP, which are still being identified. NHGRI controlled-access data now resides in the Microsoft Azure platform. 
+AnVIL is the primary NIH-designated repository for NHGRI-funded data, metadata, and associated documentation. NHGRI-funded investigators may submit to AnVIL to fulfill the expectations of the NIH Genomic Data Sharing Policy ([NOT-OD-14-124](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-14-124.html)) and the Final NIH Policy for Data Management and Sharing ([NOT-OD-21-013](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)). A number of high-value open-access datasets remain available on GCP, which are still being identified. NHGRI controlled-access data will reside in the Microsoft Azure platform. 
 
 - Read about [AnVIL as an NIH-designated repository (NOT-HG-24-020)](https://grants.nih.gov/grants/guide/notice-files/NOT-HG-24-020.html).
 - Discover datasets stored in AnVIL with the [AnVIL Data Explorer](https://explore.anvilproject.org/datasets).
