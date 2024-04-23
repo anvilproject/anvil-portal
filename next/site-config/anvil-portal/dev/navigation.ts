@@ -65,6 +65,14 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  help: {
+    nodes: [
+      {
+        key: "help",
+        slugs: ["help"],
+      },
+    ],
+  },
   overview: {
     nodes: [
       {
