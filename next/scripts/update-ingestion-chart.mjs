@@ -103,24 +103,28 @@ async function generateChartData() {
   for (const [consortium, addedSizes] of Object.entries(monthDataObj)) {
     const diff = minNewStartVals[consortium] - addedSizes[newDataStartIndex];
     if (diff > 0) {
-      // Value from new data is too small; try to avoid having the graph go downward
+      // Value from new data is too small; try to avoid having the graph go downward much (if at all)
       const sumAfter = addedSizes
         .slice(newDataStartIndex + 1)
         .reduce((a, b) => a + b, 0);
-      if (sumAfter >= diff) {
-        // If the subsequent data eventually makes up the difference, distribute the negative change across the data
-        addedSizes[newDataStartIndex] += diff;
-        const scale = (sumAfter - diff) / sumAfter;
+      if (sumAfter > 0) {
+        // Move as much of the following data as possible back to make up for the missing data
+        const adjustAmount = Math.min(sumAfter, diff);
+        addedSizes[newDataStartIndex] += adjustAmount;
+        const scale = (sumAfter - adjustAmount) / sumAfter;
         for (let i = newDataStartIndex + 1; i < addedSizes.length; i++) {
           addedSizes[i] *= scale;
         }
-      } else if (
+      }
+      if (
         newDataStartIndex === oldDataEndIndex &&
         newDataStartIndex + 1 < addedSizes.length
       ) {
-        // If a negative can't be avoided, try to avoid having the final month of the previous version of the graph be lower than it was
-        addedSizes[newDataStartIndex] += diff;
-        addedSizes[newDataStartIndex + 1] -= diff;
+        // If there's still a negative difference, try to avoid having the final month of the previous version of the graph be lower than it was
+        const newDiff =
+          minNewStartVals[consortium] - addedSizes[newDataStartIndex];
+        addedSizes[newDataStartIndex] += newDiff;
+        addedSizes[newDataStartIndex + 1] -= newDiff;
       }
     }
   }
