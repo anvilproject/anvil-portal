@@ -20,6 +20,7 @@ generateChartData()
 
 // eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 async function generateChartData() {
+  // Load old data
   const {
     endDateNum: oldEndDateNum,
     monthDataByConsortium: oldMonthData,
@@ -27,6 +28,8 @@ async function generateChartData() {
   } = JSON.parse(await fsPromises.readFile(chartDataPath, "utf8"));
 
   const newDataMinTime = oldEndDateNum + 1;
+
+  // Load workspaces
 
   try {
     await fsPromises.access(workspaceFilesPath);
@@ -42,8 +45,12 @@ async function generateChartData() {
   const workspaces = await getWorkspaces();
   const workspaceFileNames = await getWorkspaceFileNames();
 
+  // Initialize updated data
+
   const monthDataObj = {};
   let maxDateNum = -Infinity;
+
+  // Count up updated data by month and consortium
 
   for (let [i, ws] of workspaces.entries()) {
     console.log(`(${i + 1}/${workspaces.length}) Processing ${ws.name}`);
@@ -54,7 +61,7 @@ async function generateChartData() {
       entries.forEach((e) => {
         let dateNum = new Date(e.date).getTime();
         if (dateNum < newDataMinTime) {
-          dateNum = newDataMinTime; // shift new data to after the old data, so it can cancel out without changing the chart history
+          dateNum = newDataMinTime; // Data from the period covered by the old data is moved to after it so that the old data will remain unchanged; this data will be canceled out later to avoid counting it twice
         }
         const index = dateToIndex(dateNum);
         addedSizes[index] = (addedSizes[index] || 0) + parseFloat(e.size);
@@ -67,11 +74,14 @@ async function generateChartData() {
 
   const numMonths = dateToIndex(maxDateNum) + 1;
 
+  // Fill in missing per-month counts
   for (const addedSizes of Object.values(monthDataObj)) {
     for (let i = 0; i < numMonths; i++) {
       if (addedSizes[i] === undefined) addedSizes[i] = 0;
     }
   }
+
+  // Fill in values from the old data in the updated data
 
   const oldDataEndIndex = oldMonthData[0][1].length - 1;
   const newDataStartIndex = dateToIndex(newDataMinTime);
@@ -85,33 +95,41 @@ async function generateChartData() {
       addedSizes[i] += size;
     }
     minNewStartVals[consortium] = oldAddedSizes[newDataStartIndex] || 0;
-    addedSizes[newDataStartIndex] -= oldAddedSizes.reduce((a, b) => a + b); // cancel out duplicate info from the new data
+    addedSizes[newDataStartIndex] -= oldAddedSizes.reduce((a, b) => a + b); // Cancel out duplicate info from the new data
   });
+
+  // Try to make the new data connect more cleanly
 
   for (const [consortium, addedSizes] of Object.entries(monthDataObj)) {
     const diff = minNewStartVals[consortium] - addedSizes[newDataStartIndex];
     if (diff > 0) {
-      // value from new data is too small; try to avoid having the graph go downward
+      // Value from new data is too small; try to avoid having the graph go downward much (if at all)
       const sumAfter = addedSizes
         .slice(newDataStartIndex + 1)
         .reduce((a, b) => a + b, 0);
-      if (sumAfter >= diff) {
-        // if the subsequent data eventually makes up the difference, distribute the negative change across the data
-        addedSizes[newDataStartIndex] += diff;
-        const scale = (sumAfter - diff) / sumAfter;
+      if (sumAfter > 0) {
+        // Move as much of the following data as possible back to make up for the missing data
+        const adjustAmount = Math.min(sumAfter, diff);
+        addedSizes[newDataStartIndex] += adjustAmount;
+        const scale = (sumAfter - adjustAmount) / sumAfter;
         for (let i = newDataStartIndex + 1; i < addedSizes.length; i++) {
           addedSizes[i] *= scale;
         }
-      } else if (
+      }
+      if (
         newDataStartIndex === oldDataEndIndex &&
         newDataStartIndex + 1 < addedSizes.length
       ) {
-        // if a negative can't be avoided, try to avoid having the final month of the previous version of the graph be lower than it was
-        addedSizes[newDataStartIndex] += diff;
-        addedSizes[newDataStartIndex + 1] -= diff;
+        // If there's still a negative difference, try to avoid having the final month of the previous version of the graph be lower than it was
+        const newDiff =
+          minNewStartVals[consortium] - addedSizes[newDataStartIndex];
+        addedSizes[newDataStartIndex] += newDiff;
+        addedSizes[newDataStartIndex + 1] -= newDiff;
       }
     }
   }
+
+  // Save the updated data
 
   const monthDataByConsortium = Object.entries(monthDataObj);
 
@@ -129,7 +147,7 @@ async function generateChartData() {
 
   function dateToIndex(dateSrc) {
     let date = new Date(dateSrc);
-    return (date.getFullYear() - startYear) * 12 + date.getMonth() + 1; // that +1 is to get the labels aligned
+    return (date.getFullYear() - startYear) * 12 + date.getMonth() + 1; // That +1 is to get the labels aligned
   }
 }
 
