@@ -11,6 +11,7 @@ export interface NavigationEntry {
 export enum NavigationKey {
   CONSORTIA = "consortia",
   FAQ = "faq",
+  LEARN = "learn",
   OVERVIEW = "overview",
   PRIVACY = "privacy",
   TEAM = "team",

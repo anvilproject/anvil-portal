@@ -65,6 +65,40 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  learn: {
+    nodes: [
+      {
+        key: "learn",
+        navigation: [
+          { label: "Introduction" },
+          { label: "Getting Started", url: "/learn" },
+          {
+            label: "Guides and Tutorials",
+            url: "/learn/introduction/guides-and-tutorials",
+          },
+          {
+            label: "Introduction to Terra",
+            url: "/learn/introduction/intro-to-terra",
+          },
+          {
+            label: "Introduction to Dockstore",
+            url: "/learn/introduction/intro-to-dockstore",
+          },
+          {
+            label: "Understanding Cloud Costs",
+            url: "/learn/introduction/understanding-cloud-costs",
+          },
+        ],
+        slugs: [
+          "learn",
+          "guides-and-tutorials",
+          "intro-to-terra",
+          "intro-to-dockstore",
+          "understanding-cloud-costs",
+        ],
+      },
+    ],
+  },
   overview: {
     nodes: [
       {
