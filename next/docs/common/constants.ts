@@ -15,6 +15,7 @@ export const MDX_COMPONENTS = {
   BreadcrumbsNews: C.BreadcrumbsNews,
   BreadcrumbsProjects: C.BreadcrumbsProjects,
   ButtonAddPublication: C.ButtonAddPublication,
+  CallToActionButton: C.CallToActionButton,
   Card: C.Card,
   DataIngestionChart,
   Figure: C.Figure,

@@ -1,5 +1,6 @@
 export { AnchorLink } from "@clevercanary/data-explorer-ui/lib/components/common/AnchorLink/anchorLink";
 export { Breadcrumbs } from "@clevercanary/data-explorer-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+export { CallToActionButton } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/CallToActionButton/callToActionButton";
 export { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
 export { DiscourseIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DiscourseIcon/discourseIcon";
 export { DownloadIcon } from "@clevercanary/data-explorer-ui/lib/components/common/CustomIcon/components/DownloadIcon/downloadIcon";
