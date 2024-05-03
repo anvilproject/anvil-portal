@@ -101,8 +101,17 @@ export const navigation: NavigationConfig = {
             label: "Creating a Terra Account",
             url: "/learn/account-setup/creating-a-terra-account",
           },
+          { label: "Billing Setup" },
+          {
+            label: "Overview of Billing Concepts",
+            url: "/learn/billing-setup/billing-concepts",
+          },
+          {
+            label: "Creating a Google Cloud Billing Account",
+            url: "/learn/billing-setup/creating-a-google-cloud-billing-account",
+          },
         ],
-        slugs: ["learn", "introduction", "account-setup"],
+        slugs: ["learn", "introduction", "account-setup", "billing-setup"],
       },
     ],
   },
