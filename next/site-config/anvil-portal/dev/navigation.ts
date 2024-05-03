@@ -88,8 +88,21 @@ export const navigation: NavigationConfig = {
             label: "Understanding Cloud Costs",
             url: "/learn/introduction/understanding-cloud-costs",
           },
+          { label: "Account Setup" },
+          {
+            label: "Overview of Account Setup",
+            url: "/learn/account-setup/overview-of-account-setup",
+          },
+          {
+            label: "Obtaining a Google ID",
+            url: "/learn/account-setup/obtaining-a-google-id",
+          },
+          {
+            label: "Creating a Terra Account",
+            url: "/learn/account-setup/creating-a-terra-account",
+          },
         ],
-        slugs: ["learn", "introduction"],
+        slugs: ["learn", "introduction", "account-setup"],
       },
     ],
   },
