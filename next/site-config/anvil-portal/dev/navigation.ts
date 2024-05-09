@@ -110,8 +110,31 @@ export const navigation: NavigationConfig = {
             label: "Creating a Google Cloud Billing Account",
             url: "/learn/billing-setup/creating-a-google-cloud-billing-account",
           },
+          { label: "Accessing Data" },
+          {
+            label: "Discovering Data",
+            url: "/learn/accessing-data/discovering-data",
+          },
+          {
+            label: "Requesting Data Access",
+            url: "/learn/accessing-data/requesting-data-access",
+          },
+          {
+            label: "Data Access Controls",
+            url: "/learn/accessing-data/data-access-controls",
+          },
+          {
+            label: "Bringing Your Own Data",
+            url: "/learn/accessing-data/bringing-your-own-data",
+          },
         ],
-        slugs: ["learn", "introduction", "account-setup", "billing-setup"],
+        slugs: [
+          "learn",
+          "introduction",
+          "account-setup",
+          "billing-setup",
+          "accessing-data",
+        ],
       },
     ],
   },
