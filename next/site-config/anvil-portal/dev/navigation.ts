@@ -127,6 +127,20 @@ export const navigation: NavigationConfig = {
             label: "Bringing Your Own Data",
             url: "/learn/accessing-data/bringing-your-own-data",
           },
+
+          { label: "Running Analysis Workflows" },
+          {
+            label: "Using Example Workspaces",
+            url: "/learn/analysis-workflows/using-example-workspaces",
+          },
+          {
+            label: "Running GATK in Terra",
+            url: "/learn/analysis-workflows/running-gatk",
+          },
+          {
+            label: "Running Galaxy Workflows from Dockstore",
+            url: "/learn/analysis-workflows/running-galaxy-workflows-from-dockstore",
+          },
         ],
         slugs: [
           "learn",
@@ -134,6 +148,7 @@ export const navigation: NavigationConfig = {
           "account-setup",
           "billing-setup",
           "accessing-data",
+          "analysis-workflows",
         ],
       },
     ],
