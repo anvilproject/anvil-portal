@@ -69,6 +69,7 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "learn",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "Introduction" },
           { label: "Getting Started", url: "/learn" },
@@ -141,6 +142,19 @@ export const navigation: NavigationConfig = {
             label: "Running Galaxy Workflows from Dockstore",
             url: "/learn/analysis-workflows/running-galaxy-workflows-from-dockstore",
           },
+          { label: "Running Interactive Analyses" },
+          {
+            label: "Running Jupyter Notebooks in AnVIL",
+            url: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks",
+          },
+          {
+            label: "Running R / Bioconductor in AnVILL",
+            url: "/learn/interactive-analysis/getting-started-with-bioconductor",
+          },
+          {
+            label: "Running Galaxy in AnVIL",
+            url: "/learn/interactive-analysis/getting-started-with-galaxy",
+          },
           { label: "MOOC" },
           {
             label: "What is AnVIL?",
@@ -174,6 +188,7 @@ export const navigation: NavigationConfig = {
           "billing-setup",
           "accessing-data",
           "analysis-workflows",
+          "interactive-analysis",
           "anvil-mooc",
         ],
       },
