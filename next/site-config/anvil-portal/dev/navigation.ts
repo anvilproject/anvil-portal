@@ -141,6 +141,31 @@ export const navigation: NavigationConfig = {
             label: "Running Galaxy Workflows from Dockstore",
             url: "/learn/analysis-workflows/running-galaxy-workflows-from-dockstore",
           },
+          { label: "MOOC" },
+          {
+            label: "What is AnVIL?",
+            url: "/learn/anvil-mooc/what-is-anvil",
+          },
+          {
+            label: "Cloud Computing",
+            url: "/learn/anvil-mooc/cloud-computing",
+          },
+          {
+            label: "Cloud Costs",
+            url: "/learn/anvil-mooc/cloud-costs",
+          },
+          {
+            label: "Use Case: GATK",
+            url: "/learn/anvil-mooc/use-case-gatk",
+          },
+          {
+            label: "Use Case: GWAS",
+            url: "/learn/anvil-mooc/use-case-gwas",
+          },
+          {
+            label: "Use Case: eQTL",
+            url: "/learn/anvil-mooc/use-case-eqtl",
+          },
         ],
         slugs: [
           "learn",
@@ -149,6 +174,7 @@ export const navigation: NavigationConfig = {
           "billing-setup",
           "accessing-data",
           "analysis-workflows",
+          "anvil-mooc",
         ],
       },
     ],
