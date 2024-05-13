@@ -69,6 +69,7 @@ export const navigation: NavigationConfig = {
     nodes: [
       {
         key: "learn",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           { label: "Introduction" },
           { label: "Getting Started", url: "/learn" },
