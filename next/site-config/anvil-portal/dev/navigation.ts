@@ -201,6 +201,10 @@ export const navigation: NavigationConfig = {
             label: "Seqr",
             url: "/learn/videos/seqr-videos",
           },
+          {
+            label: "Workshop Archive",
+            url: "/learn/training/workshop-archive",
+          },
         ],
         slugs: [
           "learn",
@@ -212,6 +216,7 @@ export const navigation: NavigationConfig = {
           "interactive-analysis",
           "anvil-mooc",
           "videos",
+          "training",
         ],
       },
     ],
