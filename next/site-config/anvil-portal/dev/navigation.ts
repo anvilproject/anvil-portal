@@ -180,6 +180,27 @@ export const navigation: NavigationConfig = {
             label: "Use Case: eQTL",
             url: "/learn/anvil-mooc/use-case-eqtl",
           },
+          { label: "Video Gallery" },
+          {
+            label: "Anvil",
+            url: "/learn/videos/anvil-videos",
+          },
+          {
+            label: "Terra",
+            url: "/learn/videos/terra-videos",
+          },
+          {
+            label: "Dockstore",
+            url: "/learn/videos/dockstore-videos",
+          },
+          {
+            label: "Galaxy",
+            url: "/learn/videos/galaxy-videos",
+          },
+          {
+            label: "Seqr",
+            url: "/learn/videos/seqr-videos",
+          },
         ],
         slugs: [
           "learn",
@@ -190,6 +211,7 @@ export const navigation: NavigationConfig = {
           "analysis-workflows",
           "interactive-analysis",
           "anvil-mooc",
+          "videos",
         ],
       },
     ],
