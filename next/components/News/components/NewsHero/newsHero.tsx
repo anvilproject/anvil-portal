@@ -1,14 +1,11 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { FrontmatterNews } from "../../../../content/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { Heading } from "../../../common/Typography/components/Heading/heading";
 import { Subheader } from "../../../common/Typography/components/Subheader/subheader";
 
-interface NewsHeroProps extends FrontmatterNews {
-  children: ReactNode; // Title e.g. "# News Title"
-}
-
-export const NewsHero = ({ ...props }: NewsHeroProps): JSX.Element => {
+export const NewsHero = ({ ...props }: FrontmatterNews): JSX.Element => {
   return (
     <Fragment>
       <Breadcrumbs
@@ -17,7 +14,7 @@ export const NewsHero = ({ ...props }: NewsHeroProps): JSX.Element => {
           { path: "", text: props.title },
         ]}
       />
-      {props.children}
+      <Heading headingValue={props.title} />
       <Subheader>{props.date}</Subheader>
     </Fragment>
   );

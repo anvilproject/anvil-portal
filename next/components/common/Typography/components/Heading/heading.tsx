@@ -3,8 +3,6 @@ import { TEXT_HEADING_LARGE } from "@databiosphere/findable-ui/lib/theme/common/
 import { Typography } from "@mui/material";
 import { slugifyHeading } from "../../../../../plugins/common/utils";
 
-// TODO ?
-
 export interface HeadingProps {
   headingValue: string;
 }
