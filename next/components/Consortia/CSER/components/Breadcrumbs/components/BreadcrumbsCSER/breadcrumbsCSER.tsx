@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@clevercanary/data-explorer-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 
 export interface BreadcrumbsCSERProps {
   lastCrumb: string;

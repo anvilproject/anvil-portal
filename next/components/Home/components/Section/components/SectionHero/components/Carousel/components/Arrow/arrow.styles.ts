@@ -1,11 +1,11 @@
-import { mediaTabletDown } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaTabletDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
   inkMain,
   smokeDark,
   smokeLightest,
   white,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
-import { black08 } from "@clevercanary/data-explorer-ui/lib/theme/common/palette";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { black08 } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { IconButton as MIconButton } from "@mui/material";

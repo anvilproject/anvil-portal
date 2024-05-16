@@ -1,7 +1,7 @@
-import { Accordion } from "@clevercanary/data-explorer-ui/lib/components/common/Accordion/accordion";
-import { ANCHOR_TARGET } from "@clevercanary/data-explorer-ui/lib/components/Links/common/entities";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_LARGE_500 } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Accordion/accordion";
+import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
 import {

@@ -1,4 +1,4 @@
-import { getDefaultConfig } from "@clevercanary/data-explorer-ui/lib/config/utils";
+import { getDefaultConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { createContext, ReactNode } from "react";
 import { SiteConfig } from "../site-config/common/entities";
 

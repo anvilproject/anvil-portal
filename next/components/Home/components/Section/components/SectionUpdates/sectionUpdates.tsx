@@ -1,5 +1,5 @@
-import { ButtonSecondary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { ToggleButton } from "@clevercanary/data-explorer-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
+import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { ToggleButton } from "@databiosphere/findable-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
 import { useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
 import {

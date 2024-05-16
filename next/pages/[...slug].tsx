@@ -1,11 +1,11 @@
-import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
-import { Main } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
-import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
-import { ContentsTab } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
+import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
+import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
+import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import {
   Outline,
   OutlineItem,
-} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
+} from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";

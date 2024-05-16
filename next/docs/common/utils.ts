@@ -3,10 +3,10 @@ import {
   LAYOUT_STYLE_CONTRAST_LIGHTEST,
   LAYOUT_STYLE_NO_CONTRAST_LIGHT,
   LAYOUT_STYLE_NO_CONTRAST_LIGHTEST,
-} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
-import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
-import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
-import { OutlineItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
+} from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";

@@ -1,14 +1,14 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
   inkLight,
   smokeMain,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBody500,
   textBodyLarge500,
   textBodySmall4002Lines,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
-import { elevation01 } from "@clevercanary/data-explorer-ui/lib/theme/common/shadows";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { elevation01 } from "@databiosphere/findable-ui/lib/theme/common/shadows";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {

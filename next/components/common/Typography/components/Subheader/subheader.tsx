@@ -1,4 +1,4 @@
-import { TEXT_BODY_SMALL_400_2_LINES } from "@clevercanary/data-explorer-ui/lib/theme/common/typography";
+import { TEXT_BODY_SMALL_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
 

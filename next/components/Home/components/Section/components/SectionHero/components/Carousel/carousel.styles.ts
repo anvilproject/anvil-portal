@@ -1,7 +1,7 @@
 import {
   mediaDesktopSmallUp,
   mediaTabletUp,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Bullets as SectionBullets } from "../../../../../Bullets/bullets";
 import {

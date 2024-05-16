@@ -1,4 +1,4 @@
-import { OutlineItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { Heading, PhrasingContent } from "mdast";
 import slugify from "slugify";
 import { Plugin } from "unified";

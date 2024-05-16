@@ -1,10 +1,10 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBody400,
   textBodySmall4002Lines,
   textHeadingXLarge,
-} from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { mediaTabletLargeUp } from "../../../../../../../../styles/common/mixins/breakpoints";
 import { sectionGrid } from "../../../../section.styles";

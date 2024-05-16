@@ -1,7 +1,7 @@
-import "@clevercanary/data-explorer-ui";
-import { Header as DXHeader } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Header/header";
-import { LayoutStateProvider } from "@clevercanary/data-explorer-ui/lib/providers/layoutState";
-import { createAppTheme } from "@clevercanary/data-explorer-ui/lib/theme/theme";
+import "@databiosphere/findable-ui";
+import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
+import { LayoutStateProvider } from "@databiosphere/findable-ui/lib/providers/layoutState";
+import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";

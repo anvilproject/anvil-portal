@@ -1,4 +1,4 @@
-import { Link as DXLink } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { useConfig } from "../../../hooks/useConfig";
 
 /**

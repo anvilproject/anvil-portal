@@ -1,5 +1,5 @@
-import { ToggleButtonGroup as DXToggleButtonGroup } from "@clevercanary/data-explorer-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { ToggleButtonGroup as DXToggleButtonGroup } from "@databiosphere/findable-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,

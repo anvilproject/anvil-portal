@@ -1,5 +1,5 @@
-import { Accordion } from "@clevercanary/data-explorer-ui/lib/components/common/Accordion/accordion";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Accordion/accordion";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { TextBodyLarge500 } from "../../../../common/Typography/components/TextBodyLarge500/textBodyLarge500";
 import { MaterialsCategory } from "../common/materials";
 import { Resources as ResourcesList } from "./resources.styles";

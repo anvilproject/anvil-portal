@@ -1,5 +1,5 @@
-import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Fragment } from "react";
 import { SectionCard } from "../../../../../../../../common/entities";
 import { getCardPosition } from "../../common/utils";
