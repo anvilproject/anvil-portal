@@ -24,7 +24,7 @@ export { Subheader } from "../components/common/Typography/components/Subheader/
 export { BreadcrumbsCSER } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsCSER/breadcrumbsCSER";
 export { BreadcrumbsNews } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsNews/breadcrumbsNews";
 export { BreadcrumbsProjects } from "../components/Consortia/CSER/components/Breadcrumbs/components/BreadcrumbsProjects/breadcrumbsProjects";
-export { News } from "../components/Consortia/CSER/components/News/news";
+export { News as NewsCSER } from "../components/Consortia/CSER/components/News/news";
 export { Projects } from "../components/Consortia/CSER/components/Projects/projects";
 export { Publications } from "../components/Consortia/CSER/components/Publications/publications";
 export { ResearchMaterials } from "../components/Consortia/CSER/components/ResearchMaterials/researchMaterials";
@@ -32,8 +32,11 @@ export { Resources } from "../components/Consortia/CSER/components/Resources/res
 export { Figure } from "./common/Figure/figure";
 export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";
 export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge500/textBodyLarge500";
+export { Video } from "./common/Video/video";
 export { ANVILBranding } from "./Layout/components/Footer/components/Branding/components/ANVILBranding/anvilBranding";
 export { CallToAction } from "./Layout/components/Header/components/CallToAction/callToAction";
 export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";
+export { NewsHero } from "./News/components/NewsHero/newsHero";
+export { News } from "./News/news";
 export { Button as ButtonAddPublication } from "./Overview/components/Publications/components/Button/button";
 export { Publications as AnVILPublications } from "./Overview/components/Publications/publications";

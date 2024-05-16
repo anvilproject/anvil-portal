@@ -1,3 +1,4 @@
+import { TypographyWordBreak } from "@databiosphere/findable-ui/lib/components/common/Typography/TypographyWordBreak/TypographyWordBreak";
 import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { useConfig } from "../../../hooks/useConfig";
 
@@ -13,7 +14,12 @@ export const Link = ({
   const {
     config: { portalURL },
   } = useConfig();
-  return <DXLink label={children} url={getURL(href, portalURL)} />;
+  return (
+    <DXLink
+      label={<TypographyWordBreak>{children}</TypographyWordBreak>}
+      url={getURL(href, portalURL)}
+    />
+  );
 };
 
 /**

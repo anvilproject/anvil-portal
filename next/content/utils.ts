@@ -106,6 +106,15 @@ export function getMatter(filePath: string): matter.GrayMatterFile<string> {
 }
 
 /**
+ * Returns the moment object from the given date.
+ * @param date - Date (string or Date).
+ * @returns moment.
+ */
+export function getMoment(date: Date | string): Moment {
+  return moment.utc(date);
+}
+
+/**
  * Returns the first session as a moment from the given "event" frontmatter.
  * @param frontmatter - Event frontmatter.
  * @returns moment.

@@ -8,6 +8,7 @@ import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/co
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
+import matter from "gray-matter";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { Frontmatter } from "../../content/entities";
@@ -55,6 +56,19 @@ function getActiveURL(pagePath: string, navigation?: NavItem[]): string {
 
   // Returns either an exact match, or if no exact match is found, the partial match.
   return activeURLs.find((url) => pagePath === url) || activeURLs.pop() || "";
+}
+
+/**
+ * Returns MDX file path for the given slug.
+ * @param slug - Slug.
+ * @param docsDirectory - Docs directory.
+ * @returns MDX file path.
+ */
+function getMDXFilePath(
+  slug: string[] = [],
+  docsDirectory = getDocsDirectory()
+): string {
+  return pathTool.join(docsDirectory, ...slug) + ".mdx";
 }
 
 /**
@@ -195,4 +209,19 @@ export function getContentLayoutStyle(
     }
   }
   return navigationLayoutStyle || null;
+}
+
+/**
+ * Returns MDX content and frontmatter from the given slug.
+ * @param slug - Slug.
+ * @returns MDX content and frontmatter.
+ */
+export function parseMDXFrontmatter(
+  slug: string[]
+): matter.GrayMatterFile<string> {
+  const markdownWithMeta = fs.readFileSync(
+    getMDXFilePath(slug, getDocsDirectory()),
+    "utf-8"
+  );
+  return matter(markdownWithMeta);
 }

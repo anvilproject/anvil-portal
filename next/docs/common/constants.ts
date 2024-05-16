@@ -3,6 +3,7 @@ import * as C from "../../components";
 import { Link } from "../../components/common/Link/link";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
+import { ROUTES } from "../../routes/constants";
 import { getContentScope } from "./scope";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
@@ -24,17 +25,21 @@ export const MDX_COMPONENTS = {
   Link: C.Link,
   NBS: C.NBS, // non-breaking space typography component
   News: C.News,
+  NewsCSER: C.NewsCSER,
+  NewsHero: C.NewsHero,
   Projects: C.Projects,
   Publications: C.Publications,
   ResearchMaterials: C.ResearchMaterials,
   Resources: C.Resources,
   Subheader: C.Subheader,
   TextBodyLarge500: C.TextBodyLarge500,
+  Video: C.Video,
   a: Link,
 };
 
 export const MDX_SCOPE = {
   ...getContentScope(),
-  ANCHOR_TARGET: ANCHOR_TARGET,
+  ANCHOR_TARGET,
   PUBLICATION_CATEGORY,
+  ROUTES,
 };
