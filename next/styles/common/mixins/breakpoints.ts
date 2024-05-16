@@ -1,4 +1,4 @@
-import { ThemeProps } from "@clevercanary/data-explorer-ui/lib/theme/theme";
+import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { BREAKPOINT_TABLET_LARGE } from "../../../components/Home/common/constants";
 
 export const mediaTabletLargeUp = ({ theme }: ThemeProps): string =>

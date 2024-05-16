@@ -1,4 +1,4 @@
-import { CardTitle } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardTitle/cardTitle";
+import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
 import {

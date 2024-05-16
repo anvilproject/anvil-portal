@@ -1,6 +1,6 @@
-import { StaticImageProps } from "@clevercanary/data-explorer-ui/lib/components/common/StaticImage/staticImage";
-import { LayoutStyle } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/entities";
-import { NavItem } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Nav/nav";
+import { StaticImageProps } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 
 export type NavigationConfig = Record<NavigationKey, NavigationEntry>;
 

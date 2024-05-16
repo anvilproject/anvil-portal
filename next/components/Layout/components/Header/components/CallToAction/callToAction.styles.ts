@@ -1,4 +1,4 @@
-import { mediaDesktopSmallDown } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
+import { mediaDesktopSmallDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Button as MButton } from "@mui/material";
 

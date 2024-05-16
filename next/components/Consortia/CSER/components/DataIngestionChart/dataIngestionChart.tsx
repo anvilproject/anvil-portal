@@ -1,5 +1,5 @@
-import { CardSection } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card.styles";
-import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { CardSection } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { EChartsCoreOption } from "echarts";
 import ReactEChartsCore from "echarts-for-react/lib/core";
 import { LineChart } from "echarts/charts";

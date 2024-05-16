@@ -1,5 +1,5 @@
-import { Main as DXMain } from "@clevercanary/data-explorer-ui/lib/components/Layout/components/Main/main.styles";
-import { white } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
+import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
+import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 
 interface Props {

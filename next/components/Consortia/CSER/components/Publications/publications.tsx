@@ -1,6 +1,6 @@
-import { Accordion } from "@clevercanary/data-explorer-ui/lib/components/common/Accordion/accordion";
-import { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
-import { Link } from "@clevercanary/data-explorer-ui/lib/components/Links/components/Link/link";
+import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Accordion/accordion";
+import { Card } from "@databiosphere/findable-ui/lib/components/common/Card/card";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import publications from "./publications.json";
 import { Publications as PublicationsByYear } from "./publications.styles";
 

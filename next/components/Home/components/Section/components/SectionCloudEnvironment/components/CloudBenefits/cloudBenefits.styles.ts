@@ -1,6 +1,6 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/colors";
-import { textBody400 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import {
   CardContent as DefaultContent,

@@ -1,9 +1,9 @@
-import { ButtonTextPrimary } from "@clevercanary/data-explorer-ui/lib/components/common/Button/components/ButtonTextPrimary/buttonTextPrimary";
+import { ButtonTextPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonTextPrimary/buttonTextPrimary";
 import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
-} from "@clevercanary/data-explorer-ui/lib/hooks/useBreakpointHelper";
-import { TABLET } from "@clevercanary/data-explorer-ui/lib/theme/common/breakpoints";
+} from "@databiosphere/findable-ui/lib/hooks/useBreakpointHelper";
+import { TABLET } from "@databiosphere/findable-ui/lib/theme/common/breakpoints";
 import { useEffect, useState } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../common/constants";

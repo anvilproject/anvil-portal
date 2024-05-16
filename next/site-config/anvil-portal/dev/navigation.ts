@@ -1,7 +1,7 @@
 import {
   LAYOUT_STYLE_CONTRAST_LIGHT,
   LAYOUT_STYLE_CONTRAST_LIGHTEST,
-} from "@clevercanary/data-explorer-ui/lib/components/Layout/components/ContentLayout/common/constants";
+} from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { NavigationConfig } from "../../../docs/common/entities";
 
 // Site map for the MDX pages used to generate the navigation.

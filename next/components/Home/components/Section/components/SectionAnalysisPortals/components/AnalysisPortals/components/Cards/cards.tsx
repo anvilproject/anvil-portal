@@ -1,7 +1,7 @@
-import { CardAction } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardAction/cardAction";
-import { CardActions } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardActions/cardActions.styles";
-import { CardSecondaryText } from "@clevercanary/data-explorer-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
-import { RoundedPaper } from "@clevercanary/data-explorer-ui/lib/components/common/Paper/paper.styles";
+import { CardAction } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardAction/cardAction";
+import { CardActions } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActions/cardActions.styles";
+import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { Fragment } from "react";
 import { SectionCard } from "../../../../../../../../common/entities";
 import {

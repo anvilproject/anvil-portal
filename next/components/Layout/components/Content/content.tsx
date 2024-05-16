@@ -1,4 +1,4 @@
-import { useLayoutState } from "@clevercanary/data-explorer-ui/lib/hooks/useLayoutState";
+import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { ReactNode } from "react";
 import { Content as MDXContent } from "./content.styles";
 

@@ -1,8 +1,8 @@
-import { Card } from "@clevercanary/data-explorer-ui/lib/components/common/Card/card";
+import { Card } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import {
   Tabs,
   TabValue,
-} from "@clevercanary/data-explorer-ui/lib/components/common/Tabs/tabs";
+} from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import { useState } from "react";
 import { PROJECT_TABS } from "./common/constants";
 import { PROJECT_VIEW } from "./common/entities";

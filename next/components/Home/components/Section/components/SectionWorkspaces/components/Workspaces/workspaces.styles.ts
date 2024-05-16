@@ -1,5 +1,5 @@
-import { mediaTabletUp } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/breakpoints";
-import { textBody500 } from "@clevercanary/data-explorer-ui/lib/styles/common/mixins/fonts";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { textBody500 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Grid as DefaultGrid } from "../../../../../Card/card.styles";
 
