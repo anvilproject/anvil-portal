@@ -1,8 +1,8 @@
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { Heading, PhrasingContent } from "mdast";
-import slugify from "slugify";
 import { Plugin } from "unified";
 import { visit } from "unist-util-visit";
+import { slugifyHeading } from "./common/utils";
 
 /**
  * Remark plugin to generate an outline from MDX content.
@@ -16,10 +16,7 @@ export function remarkHeadings(outline: OutlineItem[]): Plugin {
       const heading = node as Heading;
       const { children, depth } = heading;
       const value = getHeadingTextValue(children);
-      const hash = slugify(value, {
-        lower: true,
-        strict: true,
-      });
+      const hash = slugifyHeading(value);
       outline.push({
         depth,
         hash,

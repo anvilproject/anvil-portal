@@ -24,6 +24,7 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
 export interface FrontmatterNews extends DefaultFrontmatter {
   date: string;
   featured?: boolean;
+  url: string | null;
 }
 
 export type FrontmatterLayoutStyle =

@@ -1,3 +1,4 @@
+import { DATE_FORMAT } from "../../../../../../../content/constants";
 import { Frontmatter } from "../../../../../../../content/entities";
 import {
   buildMomentField,
@@ -16,20 +17,18 @@ import { CardFrontmatter, UpdateCard } from "./entities";
 export function buildUpdateSectionCards(dirName: string): UpdateCard[] {
   const slugByFilePaths = mapSlugByFilePaths(getContentDirectory(dirName));
   const frontmatterByPaths = getFrontmatterByPaths(slugByFilePaths, dirName);
-  return [...frontmatterByPaths]
-    .map(mapToCardFrontmatter)
-    .filter(filterFrontmatter)
-    .sort(sortFrontmatter)
-    .map(mapToSectionCard);
+  return processUpdateSectionCards([...frontmatterByPaths]);
 }
 
 /**
- * Returns true if the frontmatter is featured, and the date is defined.
+ * Returns true if the frontmatter is featured, not hidden, and the date is defined.
  * @param frontmatter - Frontmatter.
- * @returns true if the frontmatter is featured, and the date is defined.
+ * @returns true if the frontmatter is featured, not hidden, and the date is defined.
  */
 function filterFrontmatter(frontmatter: CardFrontmatter): boolean {
-  return Boolean(frontmatter.date && frontmatter.featured);
+  return Boolean(
+    frontmatter.date && frontmatter.featured && !frontmatter.hidden
+  );
 }
 
 /**
@@ -41,15 +40,16 @@ function mapToCardFrontmatter(
   pathFrontmatter: [string, Frontmatter]
 ): CardFrontmatter {
   const [path, frontmatter] = pathFrontmatter;
-  const { description, title } = frontmatter;
+  const { description, hidden = false, title } = frontmatter;
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate();
   const featured = isFeatured(frontmatter);
-  const secondaryText = moment?.format("MMMM D, YYYY"); // Formatted date field.
+  const secondaryText = moment?.format(DATE_FORMAT); // Formatted date field.
   return {
     date,
     description,
     featured,
+    hidden,
     path,
     secondaryText,
     title,
@@ -69,6 +69,23 @@ function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
     text: frontmatter.description,
     title: frontmatter.title,
   };
+}
+
+/**
+ * Returns the update section cards for the given frontmatter.
+ * @param frontmatterByPaths - Frontmatter by paths.
+ * @param filterFrontmatterFn - Filter frontmatter function.
+ * @returns section cards.
+ */
+export function processUpdateSectionCards(
+  frontmatterByPaths: [string, Frontmatter][],
+  filterFrontmatterFn = filterFrontmatter
+): UpdateCard[] {
+  return [...frontmatterByPaths]
+    .map(mapToCardFrontmatter)
+    .filter(filterFrontmatterFn)
+    .sort(sortFrontmatter)
+    .map(mapToSectionCard);
 }
 
 /**

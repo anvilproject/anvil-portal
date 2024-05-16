@@ -221,6 +221,15 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  news: {
+    nodes: [
+      {
+        key: "news",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        slugs: ["news"],
+      },
+    ],
+  },
   overview: {
     nodes: [
       {

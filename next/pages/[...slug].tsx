@@ -6,12 +6,9 @@ import {
   Outline,
   OutlineItem,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
-import fs from "fs";
-import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import pathTool from "path";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { Content } from "../components/Layout/components/Content/content";
 import { Frontmatter } from "../content/entities";
@@ -21,14 +18,13 @@ import {
   filterOutline,
   generatePaths,
   getContentLayoutStyle,
-  getDocsDirectory,
   getNavigationConfig,
+  parseMDXFrontmatter,
 } from "../docs/common/utils";
 import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
 
 interface DocPageProps {
-  frontmatter: Frontmatter;
   hero: NodeHero | null;
   layoutStyle: LayoutStyle;
   mdxSource: MDXRemoteSerializeResult;
@@ -65,11 +61,8 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const slug = props.params?.slug as string[];
   const navigationConfig = getNavigationConfig(slug);
-  const markdownWithMeta = fs.readFileSync(
-    pathTool.join(getDocsDirectory(), slug?.join("/") + ".mdx"),
-    "utf-8"
-  );
-  const { content, data: frontmatter } = matter(markdownWithMeta);
+  const { content, data } = parseMDXFrontmatter(slug);
+  const frontmatter = data as Frontmatter;
   if (frontmatter.hidden) {
     return {
       notFound: true,
@@ -88,7 +81,6 @@ export const getStaticProps: GetStaticProps = async (
   });
   return {
     props: {
-      frontmatter,
       hero: navigationConfig?.hero ?? null,
       layoutStyle: getContentLayoutStyle(
         navigationConfig?.layoutStyle,
