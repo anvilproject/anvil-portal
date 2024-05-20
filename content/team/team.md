@@ -14,7 +14,7 @@ Members of these teams are also involved with platform and software development 
 
 - [Jennifer Hall](https://www.heart.org/en/about-us/jennifer-hall)
 
-## Brigham and Women's Hostipal 
+## Brigham and Women's Hospital
 
 - Matthew Lebo
 - Cheryl Clark
