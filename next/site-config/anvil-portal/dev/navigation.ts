@@ -221,6 +221,7 @@ export const navigation: NavigationConfig = {
       },
       {
         key: "data-analysts",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
         navigation: [
           {
             label: "Guides and Tutorials",
