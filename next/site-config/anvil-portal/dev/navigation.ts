@@ -219,6 +219,16 @@ export const navigation: NavigationConfig = {
           "training",
         ],
       },
+      {
+        key: "data-analysts",
+        navigation: [
+          {
+            label: "Guides and Tutorials",
+            url: "/learn/data-analysts",
+          },
+        ],
+        slugs: ["learn", "data-analysts"],
+      },
     ],
   },
   news: {
