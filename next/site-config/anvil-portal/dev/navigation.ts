@@ -205,6 +205,17 @@ export const navigation: NavigationConfig = {
             label: "Workshop Archive",
             url: "/learn/training/workshop-archive",
           },
+          {
+            label: "Reference",
+          },
+          {
+            label: "GTEx v8 - Free Egress Instructions",
+            url: "/learn/reference/gtex-v8-free-egress-instructions",
+          },
+          {
+            label: "Cross Platform Data Access with GA4GH DRS in Terra",
+            url: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra",
+          },
         ],
         slugs: [
           "learn",
@@ -217,6 +228,7 @@ export const navigation: NavigationConfig = {
           "anvil-mooc",
           "videos",
           "training",
+          "reference",
         ],
       },
       {
