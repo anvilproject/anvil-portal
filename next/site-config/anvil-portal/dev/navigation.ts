@@ -242,6 +242,25 @@ export const navigation: NavigationConfig = {
         ],
         slugs: ["learn", "data-analysts"],
       },
+      {
+        key: "investigators",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          {
+            label: "Investigators Tutorial Overview",
+            url: "/learn/investigators/investigators-tutorial-overview",
+          },
+          {
+            label: "Setting up Your Lab in AnVIL",
+            url: "/learn/investigators/setting-up-lab-accounts",
+          },
+          {
+            label: "Preparing a Cloud Cost Budget Justification",
+            url: "/learn/investigators/budget-templates",
+          },
+        ],
+        slugs: ["learn", "investigators"],
+      },
     ],
   },
   news: {
