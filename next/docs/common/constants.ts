@@ -18,6 +18,7 @@ export const MDX_COMPONENTS = {
   ButtonAddPublication: C.ButtonAddPublication,
   CallToActionButton: C.CallToActionButton,
   Card: C.Card,
+  Consortia: C.Consortia,
   DataIngestionChart,
   Figure: C.Figure,
   Grid: C.Grid,
