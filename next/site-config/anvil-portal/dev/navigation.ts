@@ -261,6 +261,38 @@ export const navigation: NavigationConfig = {
         ],
         slugs: ["learn", "investigators"],
       },
+      {
+        key: "data-submitters",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        navigation: [
+          { label: "Data Submission Guide" },
+          {
+            label: "Submission Process Overview",
+            url: "/learn/data-submitters/submission-guide/data-submitters-overview",
+          },
+          {
+            label: "1 - Register Study/Obtain Approvals",
+            url: "/learn/data-submitters/submission-guide/data-approval-process",
+          },
+          {
+            label: "2 - Set Up a Data Model",
+            url: "/learn/data-submitters/submission-guide/set-up-a-data-model",
+          },
+          {
+            label: "3 - Prepare for Submission",
+            url: "/learn/data-submitters/submission-guide/prepare-for-submission",
+          },
+          {
+            label: "4 - Ingest Data",
+            url: "/learn/data-submitters/submission-guide/ingesting-data",
+          },
+          {
+            label: "5 - QC Data",
+            url: "/learn/data-submitters/submission-guide/qc-data",
+          },
+        ],
+        slugs: ["learn", "data-submitters"],
+      },
     ],
   },
   news: {
