@@ -32,7 +32,7 @@ Make sure your data conforms to these overall data requirements, or contact the 
 
 ### Reference Genome 
 
-All submitted genomic data should be based on Human reference genome assembly GRCh37 or GRCh38.
+To maximize interoperability, human data should generally be mapped to the GRCh37 or GRCh38 human reference assemblies, though de novo assemblies and other references can be accepted if scientifically justified.
 
 ### Register with appropriate NCBI resource (e.g. dbGaP, GEO)
 
