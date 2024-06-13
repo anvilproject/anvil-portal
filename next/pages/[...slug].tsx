@@ -9,6 +9,7 @@ import {
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { Content } from "../components/Layout/components/Content/content";
 import { Frontmatter } from "../content/entities";
@@ -72,7 +73,7 @@ export const getStaticProps: GetStaticProps = async (
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug],
-      remarkPlugins: [[remarkHeadings, outline]],
+      remarkPlugins: [[remarkHeadings, outline], remarkGfm],
     },
     scope: {
       ...MDX_SCOPE,

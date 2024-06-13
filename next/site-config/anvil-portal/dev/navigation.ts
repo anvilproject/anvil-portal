@@ -290,6 +290,15 @@ export const navigation: NavigationConfig = {
             label: "5 - QC Data",
             url: "/learn/data-submitters/submission-guide/qc-data",
           },
+          { label: "Data Submission Resources" },
+          {
+            label: "Consortium Data Access Guidelines",
+            url: "/learn/data-submitters/resources/consortium-data-access-guidelines",
+          },
+          {
+            label: "Data Withdrawal Procedures",
+            url: "/learn/data-submitters/resources/anvil-data-withdrawal-procedures",
+          },
         ],
         slugs: ["learn", "data-submitters"],
       },
