@@ -9,6 +9,7 @@ import {
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { GetStaticPathsResult } from "next/types";
 import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { Content } from "../components/Layout/components/Content/content";
@@ -24,6 +25,8 @@ import {
 } from "../docs/common/utils";
 import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
+
+const CONFLICTING_STATIC_PATHS = ["news"];
 
 interface DocPageProps {
   hero: NodeHero | null;
@@ -100,13 +103,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = generatePaths();
   return {
     fallback: false,
-    paths,
+    paths: filterPaths(paths),
   };
 };
 
 export default Page;
 
 Page.Main = Main;
+
+/**
+ * Filters conflicting paths with other page static paths.
+ * @param paths - Static paths.
+ * @returns static paths.
+ */
+function filterPaths(
+  paths: GetStaticPathsResult["paths"]
+): GetStaticPathsResult["paths"] {
+  return paths.filter((path) => {
+    if (typeof path === "string") return false;
+    const slug = path.params.slug;
+    if (!slug || typeof slug === "string") return false;
+    const dirPath = slug[0];
+    return !CONFLICTING_STATIC_PATHS.includes(dirPath);
+  });
+}
 
 /**
  * Renders page navigation.
