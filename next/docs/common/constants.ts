@@ -20,6 +20,8 @@ export const MDX_COMPONENTS = {
   Card: C.Card,
   Consortia: C.Consortia,
   DataIngestionChart,
+  Events: C.Events,
+  EventsHero: C.EventsHero,
   Figure: C.Figure,
   Grid: C.Grid,
   Image: C.StaticImage,
