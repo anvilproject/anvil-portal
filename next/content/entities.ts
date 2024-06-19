@@ -16,9 +16,13 @@ export interface DefaultFrontmatter {
 }
 
 export interface FrontmatterEvent extends DefaultFrontmatter {
+  date: string;
+  eventType?: string;
   featured?: boolean;
+  location?: string;
   sessions: EventSession[];
   timezone: string;
+  url: string | null;
 }
 
 export interface FrontmatterNews extends DefaultFrontmatter {

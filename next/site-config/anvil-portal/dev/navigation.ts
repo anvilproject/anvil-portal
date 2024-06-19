@@ -35,6 +35,15 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  events: {
+    nodes: [
+      {
+        key: "events",
+        layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
+        slugs: ["events"],
+      },
+    ],
+  },
   faq: {
     nodes: [
       {
