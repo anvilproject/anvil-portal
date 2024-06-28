@@ -8,7 +8,7 @@ hashtag: "#anvildemos"
 location: "Virtual"
 sessions: [{sessionStart: "20 June 2024 11:00 AM", sessionEnd: "20 June 2024 12:00 PM"}]
 timezone: "America/New_York"
-title: "AnVIL Demos"
+title: "AnVIL Demos: QC Analysis Pipeline from CCDG on AnVIL"
 ---
 
 <event-hero></event-hero>
@@ -19,6 +19,18 @@ AnVIL Demos are a series of virtual meetings that highlight what you can do on t
 In the demos, presenters will highlight anything from a capability of the platform to a scientific analysis powered by AnVIL. If you’re interested in showcasing how you use AnVIL at a future AnVIL Demos session, reach out to [Natalie Kucher](mailto:nkucher3@jhu.edu).
 
 After the demo, we’ll open up the floor to answer questions about the demo and to answer any other questions you might have about AnVIL.
+
+### What's in this Demo?
+
+`video: https://youtu.be/IB3c-6UpocI`
+
+#### 11:00 AM - 11:30 AM ET – Demo on AnVIL
+
+In this demo, Jason Walker from Washington University in Saint Louis presented on the NHGRI consortium Centers for Common Disease Genomics Quality Control (QC) Analysis Pipeline for WGS data available to run in AnVIL. You can find the documentation for the pipeline in the [QC Analysis Pipeline GitHub repository](https://github.com/genome/qc-analysis-pipeline).
+
+#### 11:30 AM - 12:00 PM ET – Q&A
+
+Participants will have an opportunity to ask questions about the demonstration and we will have AnVIL and Terra Support on the line to answer questions about AnVIL beyond the demo.
 
 ### Prerequisites
 Register for any of the upcoming AnVIL Demos using this [Google Form](https://forms.gle/7CcaLE9AM7FrYqpP7) and post any questions you have to the [AnVIL Support Forum](https://help.anvilproject.org/).
