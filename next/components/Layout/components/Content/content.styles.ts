@@ -1,3 +1,4 @@
+import { textHeadingSmall } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 
 interface Props {
@@ -25,5 +26,18 @@ export const Content = styled.div<Props>`
   h2,
   h3 {
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
+  }
+
+  .MuiAlert-root {
+    margin: 24px 0;
+    padding: 24px;
+
+    .MuiAlert-message {
+      gap: 16px;
+
+      .MuiAlertTitle-root {
+        ${textHeadingSmall};
+      }
+    }
   }
 `;
