@@ -48,7 +48,7 @@ function getActiveURL(pagePath: string, navigation?: NavItem[]): string {
     ?.map(({ url }) => url)
     .filter((url): url is string => !!url)
     .filter((url) => pagePath.startsWith(url))
-    .sort(); // Sort the URLs for ease of comparison with page path.;
+    .sort(); // Sort the URLs for ease of comparison with page path.
 
   // No active URLs are found.
   if (!activeURLs || activeURLs.length === 0) {
@@ -111,6 +111,10 @@ export function getNavigationConfig(
         if (slug.length !== 1 && i === 0) {
           // Although the first slug's key is a match, continue if the slug has more than one element.
           continue;
+        }
+        // Return the layout styles; navigation (and therefore hero) are undefined.
+        if (!navigation) {
+          return { layoutStyle };
         }
         const pagePath = `/${slug.join("/")}`;
         const activeURL = getActiveURL(pagePath, navigation);
