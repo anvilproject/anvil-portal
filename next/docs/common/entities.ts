@@ -12,6 +12,7 @@ export enum NavigationKey {
   CONSORTIA = "consortia",
   EVENTS = "events",
   FAQ = "faq",
+  GUIDES = "guides",
   LEARN = "learn",
   NEWS = "news",
   OVERVIEW = "overview",

@@ -74,6 +74,52 @@ export const navigation: NavigationConfig = {
       },
     ],
   },
+  guides: {
+    nodes: [
+      {
+        key: "guides",
+        navigation: [
+          {
+            label: "Creating Content",
+            url: "/guides",
+          },
+          {
+            label: "Editing an Existing Page",
+            url: "/guides/content/editing-an-existing-page",
+          },
+          {
+            label: "Creating a New Page",
+            url: "/guides/content/creating-a-new-page",
+          },
+          {
+            label: "Using Images",
+            url: "/guides/content/using-images",
+          },
+          {
+            label: "Adding YouTube Videos",
+            url: "/guides/content/adding-youtube-videos",
+          },
+          {
+            label: "Creating Links",
+            url: "/guides/content/creating-links",
+          },
+          {
+            label: "Creating Events",
+            url: "/guides/content/events-guide",
+          },
+          {
+            label: "Creating News Items",
+            url: "/guides/content/news-item-guide",
+          },
+          {
+            label: "Adding a New Publication",
+            url: "/guides/content/adding-publications",
+          },
+        ],
+        slugs: ["guides", "content"],
+      },
+    ],
+  },
   learn: {
     nodes: [
       {
