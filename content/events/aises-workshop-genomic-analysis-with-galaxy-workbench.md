@@ -5,7 +5,7 @@ description: "This hands-on workshop will introduce genomic data science through
 eventType: "Workshop"
 featured: false
 location: "Milwaukee, Wisconsin"
-sessions: [ { sessionStart: "11 Oct 2019" } ]
+sessions: [{ sessionStart: "11 Oct 2019" }]
 timezone: "America/Chicago"
 title: "Reproducible Genomic Data Analysis with the Galaxy Workbench"
 ---
