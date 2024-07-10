@@ -1,6 +1,7 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../components";
 import { Link } from "../../components/common/Link/link";
+import { Table } from "../../components/common/Table/table";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { ROUTES } from "../../routes/constants";
@@ -38,6 +39,7 @@ export const MDX_COMPONENTS = {
   TextBodyLarge500: C.TextBodyLarge500,
   Video: C.Video,
   a: Link,
+  table: Table,
 };
 
 export const MDX_SCOPE = {
