@@ -1,6 +1,7 @@
 import {
   LAYOUT_STYLE_CONTRAST_LIGHT,
   LAYOUT_STYLE_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_NO_CONTRAST_DEFAULT,
   LAYOUT_STYLE_NO_CONTRAST_LIGHT,
   LAYOUT_STYLE_NO_CONTRAST_LIGHTEST,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
@@ -12,7 +13,7 @@ import matter from "gray-matter";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { Frontmatter } from "../../content/entities";
-import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
+import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
 import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
 
@@ -200,6 +201,8 @@ export function getContentLayoutStyle(
         return LAYOUT_STYLE_CONTRAST_LIGHT;
       case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
         return LAYOUT_STYLE_CONTRAST_LIGHTEST;
+      case "LAYOUT_STYLE_NO_CONTRAST_DEFAULT":
+        return LAYOUT_STYLE_NO_CONTRAST_DEFAULT;
       case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
         return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
       case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":
