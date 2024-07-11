@@ -1,4 +1,4 @@
-import { LAYOUT_STYLE_NO_CONTRAST_LIGHT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { LAYOUT_STYLE_NO_CONTRAST_DEFAULT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -35,7 +35,7 @@ const NewsArticlePage = ({ mdxSource }: NewsArticlePageProps): JSX.Element => {
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
         </Content>
       }
-      layoutStyle={LAYOUT_STYLE_NO_CONTRAST_LIGHT}
+      layoutStyle={LAYOUT_STYLE_NO_CONTRAST_DEFAULT}
     />
   );
 };

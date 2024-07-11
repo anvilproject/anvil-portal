@@ -1,6 +1,7 @@
 import {
   LAYOUT_STYLE_CONTRAST_LIGHT,
   LAYOUT_STYLE_CONTRAST_LIGHTEST,
+  LAYOUT_STYLE_NO_CONTRAST_DEFAULT,
   LAYOUT_STYLE_NO_CONTRAST_LIGHT,
   LAYOUT_STYLE_NO_CONTRAST_LIGHTEST,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
@@ -12,7 +13,7 @@ import matter from "gray-matter";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { Frontmatter } from "../../content/entities";
-import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation";
+import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
 import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
 
@@ -47,7 +48,7 @@ function getActiveURL(pagePath: string, navigation?: NavItem[]): string {
     ?.map(({ url }) => url)
     .filter((url): url is string => !!url)
     .filter((url) => pagePath.startsWith(url))
-    .sort(); // Sort the URLs for ease of comparison with page path.;
+    .sort(); // Sort the URLs for ease of comparison with page path.
 
   // No active URLs are found.
   if (!activeURLs || activeURLs.length === 0) {
@@ -110,6 +111,10 @@ export function getNavigationConfig(
         if (slug.length !== 1 && i === 0) {
           // Although the first slug's key is a match, continue if the slug has more than one element.
           continue;
+        }
+        // Return the layout styles; navigation (and therefore hero) are undefined.
+        if (!navigation) {
+          return { layoutStyle };
         }
         const pagePath = `/${slug.join("/")}`;
         const activeURL = getActiveURL(pagePath, navigation);
@@ -200,6 +205,8 @@ export function getContentLayoutStyle(
         return LAYOUT_STYLE_CONTRAST_LIGHT;
       case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
         return LAYOUT_STYLE_CONTRAST_LIGHTEST;
+      case "LAYOUT_STYLE_NO_CONTRAST_DEFAULT":
+        return LAYOUT_STYLE_NO_CONTRAST_DEFAULT;
       case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
         return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
       case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":

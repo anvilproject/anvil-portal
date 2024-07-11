@@ -34,5 +34,6 @@ export interface FrontmatterNews extends DefaultFrontmatter {
 export type FrontmatterLayoutStyle =
   | "LAYOUT_STYLE_CONTRAST_LIGHT"
   | "LAYOUT_STYLE_CONTRAST_LIGHTEST"
+  | "LAYOUT_STYLE_NO_CONTRAST_DEFAULT"
   | "LAYOUT_STYLE_NO_CONTRAST_LIGHT"
   | "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST";
