@@ -2,7 +2,7 @@
 title: "Data Consortia"
 ---
 
-import { Card, Grid } from "../components";
+import { Card, Consortia } from "../components";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import DataIngestionChart from "../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 
@@ -14,7 +14,7 @@ AnVIL hosts data from the following programs and also allows users to submit the
 
 ## Current Consortia
 
-<Grid gridSx={{ gap: 4 }}>
+<Consortia gridSx={{ gap: 4 }}>
   <Card
     cardActions={[
       {
@@ -151,7 +151,56 @@ AnVIL hosts data from the following programs and also allows users to submit the
     text="The Human Pangenome Reference Consortium aims to modernize the human reference to include a collection of diverse and highly accurate, haplotype-phased genome assemblies. This initiative will generate new technical standards in genome sequencing, scalable and reproducible assembly methods, and pangenomic tool development to ensure comprehensive variant discovery."
     title="HPRC"
   />
-</Grid>
+  <Card
+    cardActions={[
+      {
+        label: "Learn More",
+        url: "https://sites.google.com/ucsc.edu/t2tworkinggroup/home",
+      },
+      {
+        label: "View in Catalog",
+        target: ANCHOR_TARGET.SELF,
+        url: "https://anvilproject.org/data/consortia/T2T/workspaces",
+      },
+    ]}
+    text={
+      <span>
+        <p>
+          The Telomere-to-Telomere (T2T) consortium is an open, community-based
+          effort to generate accurate and gap-free assemblies of the human
+          genome and the genomes of other species. The initial focus was on de
+          novo assembling the first complete reference human genome known as
+          CHM13.
+        </p>
+        <p>
+          Leveraging PacBio HiFi sequencing and Oxford Nanopore ultra-long
+          reads, the CHM13v1 reference genome boasts remarkable features. These
+          include an estimated sequence accuracy exceeding QV70, correction of
+          structural errors in the GRCh38 reference genome, and the addition of
+          over 100 Mbp of novel sequence compared to GRCh38.
+        </p>
+        <p>
+          CHM13v1 unlocks complex regions of the genome for clinical and
+          functional study. Additionally, the T2T-CHRY Workspace utilizes the
+          T2T-CHM13v2.0, which provides the first complete sequence for a human
+          Y chromosome from a separate donor (HG002).
+        </p>
+        <p>
+          T2T-CHM13v2.0 was also used as a reference genome for investigating
+          short-read variant calling, incorporating data from the 1000 Genomes
+          Project and the Simons Genome Diversity Project. Another effort from
+          the T2T consortium is the T2T-GreatApes Project which employs PacBio
+          HiFi and Oxford Nanopore ultra-long reads, advancing our understanding
+          of great ape genomics. It evaluates the impact of T2T-chrXY assemblies
+          on read alignments and variant calling across 129 individuals from 11
+          great ape subspecies, providing reference genomes for various ape
+          species.
+        </p>
+      </span>
+    }
+    title="T2T"
+  />
+</Consortia>
 
 ## Planned Consortia
 

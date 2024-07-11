@@ -1,0 +1,25 @@
+import { NavigationConfig } from "../../../../docs/common/entities";
+import { CONSORTIA } from "./consortia";
+import { EVENTS } from "./events";
+import { FAQ } from "./faq";
+import { GUIDES } from "./guides";
+import { HELP } from "./help";
+import { LEARN } from "./learn";
+import { NEWS } from "./news";
+import { OVERVIEW } from "./overview";
+import { PRIVACY } from "./privacy";
+import { TEAM } from "./team";
+
+// Site map for the MDX pages used to generate the navigation.
+export const navigation: NavigationConfig = {
+  consortia: CONSORTIA,
+  events: EVENTS,
+  faq: FAQ,
+  guides: GUIDES,
+  help: HELP,
+  learn: LEARN,
+  news: NEWS,
+  overview: OVERVIEW,
+  privacy: PRIVACY,
+  team: TEAM,
+};
