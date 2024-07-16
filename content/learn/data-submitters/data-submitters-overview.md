@@ -8,127 +8,59 @@ title: “AnVIL Data Submission Guide”
 
 <hero>
 
-Welcome to the data submission user guide!  This page outlines how the data submission process works and is intended as a guide for first time data submitters.
+Welcome to the Data Submitters docs on AnVIL. We’re excited to have you here and helping to push the frontiers of biomedicine. 
+
+Our goal is to help researchers by hosting robust and large datasets and making it easier for researchers to find and analyze the data they need. By contributing datasets, you are helping us achieve this goal.
+
+To make the data useful, especially for cross-study analysis requires standardized formatting and careful review. We are asking submitters to help us in this endeavor, by following the instructions in this guide.
 
 </hero>
 
-## Timeline
+## Overview
 
-Note that the timelines associated with each step in the diagram below are approximate.  The actual time for each step can vary.  Please see the [NHGRI’s expectation for submission and release timelines](https://www.genome.gov/about-nhgri/Policies-Guidance/Data-Sharing-Policies-and-Expectations#timeline) for more information.
+In order to submit data into AnVIL you will need to do the following:
 
-<figure-styles shadowless=true>
+1. [Register with dbGaP/Obtain required approvals](/learn/data-submitters/submission-guide/data-approval-process).
+1. [Set up your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
+1. [Prepare your data for submission](/learn/data-submitters/submission-guide/prepare-for-submission).
+1. [Ingest your data into AnVIL](/learn/data-submitters/submission-guide/ingesting-data).
+1. [QC ingested data](/learn/data-submitters/submission-guide/qc-data).
 
-![Timeline](../_images/data-submitters/timeline.png)
+## General Data Requirements 
 
-</figure-styles>
+Make sure your data conforms to these overall data requirements, or contact the AnVIL data team.
 
-### Additional submission process resources
+### Reference Genome 
 
-1. [Data Submitter Journey on Azure](https://drive.google.com/file/d/1SKie8-4k1wzzlcm52iyJFYLPmuOv6U8g/view) (Downloadable PDF of an overview PowerPoint)
+To maximize interoperability, human data should generally be mapped to the GRCh37 or GRCh38 human reference assemblies, though de novo assemblies and other references can be accepted if scientifically justified.
 
-2. [Data Submitter Journey on Azure](https://youtu.be/3T8aKy0zqH4?si=c6Ea05quEnGqwC8y) (YouTube video)
+### Register with appropriate NCBI resource (e.g. dbGaP, GEO)
 
-## 1. Register with dbGaP/Obtain required approvals
+Data in the AnVIL are stored in data workspaces. For controlled-access studies, consent codes from dbGaP are used to determine appropriate access to the data workspaces on AnVIL.
 
-Prior to data submission to AnVIL, your study should be registered with dbGaP and study consent codes should be defined.
+It is important that studies into the human genomic and phenotypic associations be registered with dbGaP so you can populate the data element `dbGaP_study_ID` (phsXXXXXX) in AnVIL. Additionally, NIH registration of studies provides AnVIL with information needed to set up the workspaces so that data can be appropriately organized by study (if there are multiple, e.g., within a consortia) and by consent group(s). Study registration often occurs at Just-in-Time (JIT) for NHGRI funded studies, and thus you may have already completed this step. 
 
-**AnVIL recommendations (registering study)**
-- Minimize the number of phsIDs and consent codes
-- Where possible, register studies with the least restrictive consent codes (e.g. GRU, HMB) for maximum data sharing
-- Reach out to AnVIL when your study is “Completed by GPA”.
-- Please do not “Release” the study on dbGaP, as this results in your study being available for data access requests before your data have been submitted to AnVIL
+Example: AnVIL workspace - AnVIL_CCDG_Broad_CVD_EOCAD_PartnersBiobank_HMB_WES - represents 1 study registration phs002018 and has one consent group, which is health/medical/biomedical or shortened to HMB
 
-For more detailed instructions see [Step 1: Register with dbGaP/Obtain approval](/learn/data-submitters/submission-guide/data-approval-process). 
+Below is a screenshot of the data elements incorporated on the front (documentation) page of the workspace:
 
-## 2. Set up your data model
+<figure>
+<img src="./_images/terra-workspace.png" alt="A terra workspace."/>
+<figure-caption>An example of a terra workspace documentation page.</figure-caption>
+</figure>
 
-Along with submitting genomics (or other data types), you will need to create and submit accompanying metadata files or tables (TSV format).  The metadata files will make your data more FAIR and searchable on the [AnVIL Data Explorer](https://explore.anvilproject.org/datasets).  
+**For Non-NHGRI funded studies that must seek Institutional and/or AnVIL Data Ingestion Committee approval (see steps 1.2 & 1.3), you may want to register your data in dbGaP while obtaining approval to speed up the [administrative aspects](/learn/data-submitters/submission-guide/data-approval-process#step-1---register-studyobtain-approvals)**.
 
-Create your metadata tables using the templates below. 
+Though there will be no requirement to submit source files or individual samples through the dbGaP portal, the dbGaP consent codes will be used to determine data access. Studies with multiple consent codes will be split into individual data workspaces based on cohort and consent pairings. External researchers can use dbGaP to apply for access, and a completed and approved DAR will permit dbGaP to link this access grant to Terra.
 
-#### V1 Data Model files 
+### Data sharing
 
-(Please note that these drafts are currently under development by the AnVIL data modeling team and are subject to change.) Find a downloadable link [here](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit#gid=1482408180) (recommended .xlsx format).
+All individual-level human genomic and phenotypic data must conform to the [NIH Genomic Data Sharing Policy](https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing). This includes the expectation that participants [are/were] explicitly consented for data sharing.
 
-#### Example tables 
+### Access Control
 
-Find a downloadable link [here](https://docs.google.com/spreadsheets/d/1XCTakFlc3N8zrDHav4AKuUaU68DwNFtrRoYP8fCrL4k/edit#gid=2080504935) (recommended .xlsx format).
-
-For more detailed instructions see [Step 2: Define your data model](/learn/data-submitters/submission-guide/set-up-a-data-model). 
-
-## 3. Prepare for Data Submission
-
-AnVIL accepts two types of data: 1) genomic object files and 2) phenotypes and metadata. Most studies are submitting both. In this step, you will organize all required data and metadata in a format compatible with AnVIL.
-
-Note that in addition to the data files, genomic object files require minimal metadata, some of which is generated by the AnVIL (i.e. full path to the files in AnVIL cloud storage).
-
-You will submit all metadata (including phenotypic data) in a spreadsheet-like file (TSV/TXT/CSV format). To prepare data for submission, you will:
-
-- make sure all object files conform to AnVIL’s naming requirements,
-- generate a TSV file for each table in the data model (from Step 2).
-
-For more detailed instructions see [Step 3: Prepare data tables for submission](/learn/data-submitters/submission-guide/prepare-for-submission). 
-
-## 4. Stage Data for Ingestion
-
-### 4.1. Notify AnVIL to start ingest process
-Once you’ve created your metadata tables and your dataset is ready for submission, send an email to the AnVIL Data Support Team at [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org).  This will create a new tracking ticket that will be used over the lifetime of data submission and release.
-
-<figure-styles shadowless=true>
-
-![Ingest Process](../_images/data-submitters/ingest-process.png)
-
-</figure-styles>
-
-When the AnVIL team confirms your dataset is ready for submission, they will generate a deposit workspace for you on AnVIL on Terra.  You’ll stage your data in the deposit workspace  following instructions below. using the data folder hierarchy described in [Setting up your AnVIL data deposit workspace](https://youtu.be/uUcanwjlIzA?si=yY5klWWREdCYyGml) on YouTube.  Once your dataset is staged in the deposit workspace, the AnVIL team will ingest the data files and tables into TDR.
-
-### 4.2. Set up deposit workspace
-
-To facilitate ingestion into TDR, the workspace cloud storage needs to have a particular directory structure. 
-
-- Follow the instructions in Terra web resources [Step 2: Set up your submission workspace](https://support.terra.bio/hc/en-us/articles/20227904029083-Terra-on-Azure-AnVIL-data-submitter-s-guide#h_01HEQSB0F99SN957E2S0AB13G0).  
-- See a demo video [here](https://youtu.be/uUcanwjlIzA?si=YxGG8L-oJtDN9P4s) (0:46 min).
-
-### 4.3. Upload data 
-
-- Follow the instructions in Terra web resources [Step 3: Upload data to the deposit workspace](https://support.terra.bio/hc/en-us/articles/20227904029083-Terra-on-Azure-AnVIL-data-submitter-s-guide#h_01HEQT6P4G8DTYE4Q4J33WJXDW).  
-- See a demo video [here](https://youtu.be/uUcanwjlIzA?si=YxGG8L-oJtDN9P4s) (2:10 min).
-
-### What to expect/next steps
-
-Once your dataset is uploaded to the deposit workspace, the AnVIL team will ingest the data files and tables into TDR. See 3:10 min in the demo video [here](https://youtu.be/uUcanwjlIzA?si=YxGG8L-oJtDN9P4s). 
-
-## 5. QC Data
-
-*More information is coming soon.*
+Access control within the AnVIL is governed by three major groups - developer access, consortium access, and external researcher access (via dbGaP). For more information, see [Data Access Controls](/learn/accessing-data/data-access-controls).
 
 ## Getting Help
 
-The content below outlines expectations of the data submitter and AnVIL support team throughout the data submission process.  Following these expectations should improve onboarding sustainability and consistent turnaround times.
-
-Consortia may have needs beyond this process and we recommend consortia reach out to [anvil-data@broadinstitute.org](sendto:anvil-data@broadinstitute.org) in parallel to their dbGaP registration.
-
-For questions regarding data submissions, please contact the AnVIL Data Support Team at [anvil-data@broadinstitute.org](sendto:anvil-data@broadinstitute.org)
-
-### Streamlined submission process (prerequisites)
-
-**Before contacting the AnVIL support team to deposit data, data submitters should complete the following.**
-- Receive approval for AnVIL as the appropriate data repository
-- Register study on dbGaP
-- Complete data model/findability subset metadata tables (TSVs)
-- Perform any quality analysis on genomics data
-- Gather all genomics data that is ready to transfer to an AnVIL deposit workspace 
-
-### General timelines
-
-**Week 1:** AnVIL support creates a deposit workspace.
-
-**Week 1-3:** Data submitter deposits all data.
-
-**Weeks 4-10:** AnVIL support proceeds with ingestion and release.
-
-### Expectations for meetings
-
-- One 30 minute kickoff meeting once the group has reviewed the onboarding packet
-- Potential for one 30 minute follow-up meeting before depositing data
-- Potential for one 30 minute meeting after depositing data
+Please contact the AnVIL Outreach team with support and training requests at <help@lists.anvilproject.org>.
