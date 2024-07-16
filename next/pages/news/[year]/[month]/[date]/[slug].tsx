@@ -5,6 +5,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
+import remarkGfm from "remark-gfm";
 import { ContentView } from "../../../../../components";
 import { Content } from "../../../../../components/Layout/components/Content/content";
 import { processFrontmatter } from "../../../../../components/News/common/utils";
@@ -14,6 +15,7 @@ import {
   generatePaths,
   parseMDXFrontmatter,
 } from "../../../../../docs/common/utils";
+import { rehypeSlug } from "../../../../../plugins/rehypeSlug";
 
 interface NewsArticlePageUrlParams extends ParsedUrlQuery {
   date: string;
@@ -53,6 +55,10 @@ export const getStaticProps: GetStaticProps = async (
     };
   }
   const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
+    },
     scope: {
       frontmatter: processFrontmatter(["", frontmatter]),
     },
