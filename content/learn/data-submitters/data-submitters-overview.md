@@ -38,13 +38,15 @@ Prior to data submission to AnVIL, your study should be registered with dbGaP an
 - Reach out to AnVIL when your study is “Completed by GPA”.
 - Please do not “Release” the study on dbGaP, as this results in your study being available for data access requests before your data have been submitted to AnVIL
 
-For more detailed instructions see [Step 1: Register with dbGaP/Obtain approval](/learn/data-submitters/submission-guide/data-approval-process). 
+For more detailed instructions, see [Step 1: Register with dbGaP/Obtain approval](/learn/data-submitters/submission-guide/data-approval-process). 
 
 ## 2. Set up your data model
 
 Along with submitting genomics (or other data types), you will need to create and submit accompanying metadata files or tables (TSV format).  The metadata files will make your data more FAIR and searchable on the [AnVIL Data Explorer](https://explore.anvilproject.org/datasets).  
 
 Create your metadata tables using the templates below. 
+
+For more detailed instructions, see [Step 2: Define your data model](/learn/data-submitters/submission-guide/set-up-a-data-model).
 
 #### V1 Data Model files 
 
@@ -53,8 +55,6 @@ Create your metadata tables using the templates below.
 #### Example tables 
 
 Find a downloadable link [here](https://docs.google.com/spreadsheets/d/1XCTakFlc3N8zrDHav4AKuUaU68DwNFtrRoYP8fCrL4k/edit#gid=2080504935) (recommended .xlsx format).
-
-For more detailed instructions see [Step 2: Define your data model](/learn/data-submitters/submission-guide/set-up-a-data-model). 
 
 ## 3. Prepare for Data Submission
 
@@ -67,7 +67,7 @@ You will submit all metadata (including phenotypic data) in a spreadsheet-like f
 - make sure all object files conform to AnVIL’s naming requirements,
 - generate a TSV file for each table in the data model (from Step 2).
 
-For more detailed instructions see [Step 3: Prepare data tables for submission](/learn/data-submitters/submission-guide/prepare-for-submission). 
+For more detailed instructions, see [Step 3: Prepare data tables for submission](/learn/data-submitters/submission-guide/prepare-for-submission). 
 
 ## 4. Stage Data for Ingestion
 
