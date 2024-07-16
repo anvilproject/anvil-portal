@@ -23,9 +23,11 @@ After the demo, we’ll open up the floor to answer questions about the demo and
 
 ### What’s in this Demo?
 
+`video: https://www.youtube.com/watch?v=yAwQKft1LS8`
+
 #### 11:00 AM - 11:30 AM ET – Demo on AnVIL
 
-In this demo, Ava Hoffman from the Fred Hutch Cancer Research Center will describe how to pull data from SRA into AnVIL and use a public workflow to subset data into smaller files for analysis testing and training.
+In this demo, Ava Hoffman from the Fred Hutch Cancer Research Center will describe how to pull data from SRA into AnVIL and use a public workflow to subset data into smaller files for analysis testing and training. The [AnVIL SRA Data Book](https://hutchdatascience.org/AnVIL_SRA_Data/) contains instructions follow to bring SRA data into AnVIL with a WDL workflow. The [AnVIL Data Subsetting Book](https://hutchdatascience.org/AnVIL_Data_Subsetting/) ctains instructions to subset or downsample data in AnVIL with a WDL workflow.
 
 #### 11:30 AM - 12:00 PM ET – Q&A
 
