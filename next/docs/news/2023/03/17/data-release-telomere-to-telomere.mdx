@@ -13,7 +13,7 @@ The Telomere-to-Telomere (T2T) consortium is an open, community-based effort to 
 
 Recently, the T2T consortium finished the first complete assembly of a human Y chromosome, from the Genome in a Bottle (GIAB) HG002/NA24385 sample. This chrY assembly adds over 30 Mbp of novel sequence relative to the GRCh38 chrY, and its addition completes the CHM13v2.0 (hs1) reference genome. The full details of the assembly are described in "The complete sequence of a human Y chromosome" ([Rhie et al, bioRxiv, 2022](https://www.biorxiv.org/content/10.1101/2022.12.01.518724v1))
 
-### Available Data
+## Available Data
 
 Here we use the T2T-CHM13v2.0 reference genome to investigate how it improves short-read variant calling for individual samples and across populations. The workspace of this data release can be found at [https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T_CHRY](https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T_CHRY). This workspace includes all 3,202 samples from the recently extended 1000 Genomes Project (1KGP) collection and 279 open-access samples from the Simons Genome Diversity Project (SGDP) collection that we analyze using the GATK HaplotypeCaller for SNVs and indels on the NHGRI AnVIL Cloud Platform (1,599 and 175 XY samples respectively). To facilitate comparison between references, we perform alignment and variant calling for the SGDP samples using both the T2T-CHM13v2.0 and GRCh38 references. Data for both references are included in the [workspace](https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T_CHRY) in separate tables. For the 1KGP samples, only alignments and variant calls on T2T-CHM13v2.0 are provided in this workspace.
 
@@ -23,6 +23,6 @@ We demonstrate that the T2T-Y reference improves read mapping and variant callin
 - Corrects putative collapsed duplications on GRCh38-Y, reducing spurious variant calls within these regions
 - Improves short-read alignment across populations for a number of statistics, including reads mapped and per-base mismatch rate
 
-### Available Workflows
+## Available Workflows
 
 The WDL-based workflows for aligning the samples and analyzing the variants are available at [https://github.com/schatzlab/t2t-chm13-chry](https://github.com/schatzlab/t2t-chm13-chry).
