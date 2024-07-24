@@ -8,14 +8,6 @@ technologies:
         url: "/learn/introduction/intro-to-terra"
     text: "Collaborate in Terra, AnVIL's secure, scalable, cloud compute environment."
     thumbnail: _images/terra.png
-  - title: "Gen3"
-    actions:
-      - label: "Launch"
-        url: "https://gen3.theanvil.io/"
-      - label: "Learn More"
-        url: "/learn/introduction/getting-started-with-gen3"
-    text: "Manage, harmonize, and share large datasets."
-    thumbnail: _images/gen3.png
   - title: "Dockstore"
     actions:
       - label: "Launch"
