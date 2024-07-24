@@ -12,7 +12,8 @@ an [NHGRI](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomic
 and controlled access genomic [datasets](https://anvilproject.org/data/consortia) with popular analysis tools in
 a [secure](/overview/security) cloud computing environment.
 
-AnVIL uses [Terra](https://anvil.terra.bio/#workspaces) as its analysis platform and [Dockstore](https://dockstore.org/) as a repository for Docker-based
+AnVIL uses [Terra](https://anvil.terra.bio/#workspaces) as its analysis platform, [Gen3](https://gen3.theanvil.io) for
+data search and artificial cohort creation, and [Dockstore](https://dockstore.org/) as a repository for Docker-based
 genomic analysis tools and workflows.
 
 In addition to Docker-based analysis workflows, AnVIL supports popular interactive analysis tools such as Jupyter
