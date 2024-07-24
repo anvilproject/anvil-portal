@@ -301,8 +301,6 @@
               file: "/learn/guides-and-tutorials/guides-and-tutorials"
             - name: "Introduction to Terra"
               file: "/learn/intro-to-terra/intro-to-terra"
-            - name: "Introduction to Gen3"
-              file: "/learn/accessing-data/getting-started-with-gen3"
             - name: "Introduction to Dockstore"
               file: "/learn/dockstore/intro-to-dockstore"
             - name: "Understanding Cloud Costs"
