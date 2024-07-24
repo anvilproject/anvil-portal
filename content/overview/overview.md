@@ -29,11 +29,9 @@ researchers as needed.
 
 The platform is built on a set of established components that have been used in a number of flagship scientific
 projects. The Terra platform provides a compute environment with secure data and analysis sharing capabilities.
-Dockstore provides standards based sharing of containerized tools and workflows. The Gen3 data commons framework
+Dockstore provides standards-based sharing of containerized tools and workflows. The Gen3 data commons framework
 provides data and metadata ingest, querying, and organization. Bioconductor and Galaxy provide environments for users at
 different skill levels to construct and execute analyses.
-
-![Inverting the Model of Data Sharing](./_images/anvil-overview.png)
 
 <Platforms></Platforms>
 
@@ -60,8 +58,8 @@ well as other relevant datasets.
 ## Platform Interoperability
 
 AnVIL is a member of the [NIH Cloud Platform Interoperability Effort (NCPI)](/ncpi) and is collaborating with
-the [NCPI working groups](/ncpi/working-groups) to establish and implement technical standards enabling cross platform
-authentication and authorization, cross platform data discovery, and the cross platform exchange of datasets, analysis
+the [NCPI working groups](/ncpi/working-groups) to establish and implement technical standards enabling cross-platform
+authentication and authorization, cross-platform data discovery, and the cross-platform exchange of datasets, analysis
 tools, and derived data.
 
 [AnVIL is a registered knowledgebase and repository](https://fairsharing.org/4204) in
