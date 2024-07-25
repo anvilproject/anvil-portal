@@ -19,9 +19,9 @@ The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Spac
 
 The conference will feature:
 
-- Scientific Talks: Engage with speakers including Anshul Kundaje, Michael Schatz, Tychele Turner and Melissa Wilson, demonstrating the latest advancements on the AnVIL platform.
-- Workshop: Participate in a training led by the AnVIL team, offering a mix of presentations and hands-on instruction.
-- CoFest: Collaborate and innovate during our Collaboration Fest, with participants sharing their discoveries at the close of the conference.
+- **Scientific Talks:** Engage with speakers including Anshul Kundaje, Michael Schatz, Tychele Turner and Melissa Wilson, demonstrating the latest advancements on the AnVIL platform.
+- **Workshop:** Participate in a training led by the AnVIL team, offering a mix of presentations and hands-on instruction.
+- **CoFest:** Collaborate and innovate during our Collaboration Fest, with participants sharing their discoveries at the close of the conference.
 
 Join us at the flagship AnVIL Community Conference for an enriching blend of instruction and collaboration, set amidst the backdrop of cutting-edge scientific discourse.
 
