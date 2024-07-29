@@ -30,9 +30,9 @@ More details coming soon. We look forward to seeing you there!
 ### Event Details
 
 - Agenda: The agenda will be posted soon.
-- How to register: Registration will open soon.
+- How to register: Registration will be handled by the Cold Spring Harbor Laboratory at https://meetings.cshl.edu/privateform.aspx?meet=ANVIL&year=24.
 - Costs:
-  - $770 for registration, 2 nights of housing (Monday and Tuesday night), and food
-  - $610 for registration, 1 night of housing (Tuesday night), and food
+  - $770 for registration, 2 nights of housing (11/11, 11/12), and food
+  - $610 for registration, 1 night of housing (11/12), and food
   - $450 for registration and food, no housing
 - Contact Info: Let us know of any questions at the [AnVIL Support Forum](https://help.anvilproject.org/).
