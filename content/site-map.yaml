@@ -66,6 +66,8 @@
             - name: ""
               file: "/events/anvil2024-june-demos"
             - name: ""
+              file: "/events/anvil2024-april-nhgri"
+            - name: ""
               file: "/events/anvil2024-may-demos"
             - name: ""
               file: "/events/anvil2024-april-demos"
