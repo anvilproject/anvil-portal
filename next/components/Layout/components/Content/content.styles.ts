@@ -28,6 +28,10 @@ export const Content = styled.div<Props>`
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
   }
 
+  ul + p {
+    margin-top: 16px;
+  }
+
   .MuiAlert-root {
     margin: 24px 0;
     padding: 24px;

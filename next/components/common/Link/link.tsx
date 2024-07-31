@@ -1,5 +1,6 @@
 import { TypographyWordBreak } from "@databiosphere/findable-ui/lib/components/common/Typography/TypographyWordBreak/TypographyWordBreak";
 import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { replacePathParameters } from "../../../common/utils";
 import { useConfig } from "../../../hooks/useConfig";
 
 /**
@@ -12,23 +13,12 @@ export const Link = ({
 }): JSX.Element => {
   const { children, href } = props;
   const {
-    config: { portalURL },
+    config: { browserURL, portalURL },
   } = useConfig();
   return (
     <DXLink
       label={<TypographyWordBreak>{children}</TypographyWordBreak>}
-      url={getURL(href, portalURL)}
+      url={replacePathParameters(href, { browserURL, portalURL })}
     />
   );
 };
-
-/**
- * If the URL contains "{portalURL}", replace it with the portalURL.
- * @param url - URL.
- * @param portalURL - Portal URL.
- * @returns URL.
- */
-function getURL(url: string, portalURL: string): string {
-  const decodedUrl = decodeURI(url);
-  return decodedUrl.replace(/{portalURL}/g, portalURL);
-}
