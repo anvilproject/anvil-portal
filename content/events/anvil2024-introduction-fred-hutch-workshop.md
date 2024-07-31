@@ -6,7 +6,7 @@ eventType: "Interactive Workshop"
 featured: true
 location: "Fred Hutchinson Cancer Research Center"
 sessions: [{sessionEnd: "9 April 2024 9:00 AM", sessionStart: "9 April 2024 11:30 AM"}]
-timezone: "America/New_York"
+timezone: "America/Los_Angeles"
 title: "Introduction to AnVIL at Fred Hutch 2024 Workshop"
 ---
 
