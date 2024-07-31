@@ -29,7 +29,9 @@ More details coming soon. We look forward to seeing you there!
 
 ### Event Details
 
-#### Day 1: Tuesday, November 12
+#### Agenda
+
+**Day 1: Tuesday, November 12**
 
 | Time | Session | 
 | ---- | ---- | 
@@ -44,7 +46,7 @@ More details coming soon. We look forward to seeing you there!
 | 4:45 pm	| CoFest! Recap | 
 | 5:00 pm |	Dinner | 
 
-#### Day 2: Wednesday, November 13
+**Day 2: Wednesday, November 13**
 
 | Time | Session | 
 | ---- | ---- | 
@@ -58,9 +60,15 @@ More details coming soon. We look forward to seeing you there!
 | 4:00 pm	| CoFest! recap (open to biodata attendees) | 
 | 5:00 pm	| Dinner | 
 
-- How to register: Registration will be handled by the Cold Spring Harbor Laboratory at https://meetings.cshl.edu/privateform.aspx?meet=ANVIL&year=24.
-- Costs:
-  - $770 for registration, 2 nights of housing (11/11, 11/12), and food
-  - $610 for registration, 1 night of housing (11/12), and food
-  - $450 for registration and food, no housing
-- Contact Info: Let us know of any questions at the [AnVIL Support Forum](https://help.anvilproject.org/).
+#### Registration
+
+Register for the AnVIL Community Conference at Cold Spring Harbor Laboratory: https://meetings.cshl.edu/privateform.aspx?meet=ANVIL&year=24.
+
+#### Costs
+
+  - $770 for food and 2 night housing (11/11, 11/12)
+  - $610 for food and 1 night housing (11/12)
+  - $450 for food, no housing
+  - 
+#### Questions
+Let us know of any questions at the [AnVIL Support Forum](https://help.anvilproject.org/).
