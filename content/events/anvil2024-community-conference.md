@@ -4,7 +4,7 @@ conference: "ACC 2024"
 description: "Gathering of the AnVIL Community"
 eventType: "Conference"
 featured: true
-hashtag: #AnVILCommunity2024
+hashtag: "#AnVILCommunity2024"
 location: "Cold Spring Harbor Laboratory, Cold Spring Harbor, NY, USA"
 sessions: [{sessionStart: "12 November 2024 9:00 AM", sessionEnd: "12 November 2024 5:00 PM"}, {sessionStart: "13 November 2024 9:00 AM", sessionEnd: "13 November 2024 5:00 PM"}]
 timezone: "America/New_York"
