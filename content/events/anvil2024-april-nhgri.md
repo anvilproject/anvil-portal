@@ -7,7 +7,7 @@ featured: true
 location: "NIH Campus, Bethesda, MD"
 sessions:
   [{ sessionStart: "17 June 2024 11:00 AM", sessionEnd: "17 June 2024 2:00 PM" }]
-timezone: "America/Los_Angeles"
+timezone: "America/New_York"
 title: "AnVIL NHGRI Intramural 2024 Workshop"
 ---
 
