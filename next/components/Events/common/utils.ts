@@ -115,8 +115,8 @@ function processFrontmatterDate(
 ): FrontmatterEvent["date"] {
   if (
     "date" in frontmatter &&
-    frontmatter.date instanceof Date &&
-    "timezone" in frontmatter
+    "timezone" in frontmatter &&
+    frontmatter.date instanceof Date
   ) {
     return convertDateToMoment(frontmatter.date, frontmatter.timezone).format(
       FORMAT_DATE
