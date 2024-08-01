@@ -1,19 +1,19 @@
-import { PathParameter } from "./entities";
+import { EmailParameter, PathParameter } from "./entities";
 
 /**
- * Replaces path parameters in the given URL string e.g. {portalURL} with the corresponding path.
+ * Replaces path or email address parameters in the given URL string e.g. {portalURL} with the corresponding value.
  * @param str - URL string, with parameters.
- * @param pathParameter - Path parameter.
- * @returns string with path parameters replaced.
+ * @param parameter - Parameter.
+ * @returns string with parameters replaced.
  */
-export function replacePathParameters(
+export function replaceParameters(
   str: string,
-  pathParameter: PathParameter
+  parameter: EmailParameter | PathParameter
 ): string {
   const decodedUrl = decodeURI(str);
-  const result = Object.entries(pathParameter).reduce(
-    (acc, [parameter, parameterValue]) => {
-      const regex = new RegExp(`\\{${parameter}}`, "g");
+  const result = Object.entries(parameter).reduce(
+    (acc, [parameterKey, parameterValue]) => {
+      const regex = new RegExp(`\\{${parameterKey}}`, "g");
       return acc.replace(regex, parameterValue);
     },
     decodedUrl
