@@ -1,6 +1,7 @@
 import { Frontmatter, FrontmatterEvent } from "../../../content/entities";
 import {
   buildMomentField,
+  convertDateToMoment,
   getFrontmatterByPaths,
   getMoment,
 } from "../../../content/utils";
@@ -8,7 +9,14 @@ import {
   getDocsDirectory,
   mapSlugByFilePaths,
 } from "../../../docs/common/utils";
-import { DATE_FORMAT, DIR_NAME } from "./constants";
+import {
+  DIR_NAME,
+  FORMAT_DATE,
+  FORMAT_SESSION_DATE,
+  FORMAT_SESSION_DATE_TIME,
+  FORMAT_SESSION_DATE_TIME_TIMEZONE,
+  FORMAT_SESSION_TIME_TIMEZONE,
+} from "./constants";
 
 interface ParsedFrontmatter extends Omit<FrontmatterEvent, "date"> {
   date: Date;
@@ -39,6 +47,34 @@ function filterFrontmatterEvents(
 }
 
 /**
+ * Returns the formatted sessions.
+ * @param sessions - Sessions.
+ * @param timezone - Timezone.
+ * @returns sessions, formatted for FE display.
+ */
+function formatSessions(
+  sessions: FrontmatterEvent["sessions"],
+  timezone: FrontmatterEvent["timezone"]
+): string[] {
+  return sessions.map(({ sessionEnd, sessionStart }) => {
+    const moment01 = convertDateToMoment(sessionStart, timezone);
+    if (!sessionEnd) {
+      // Start session has no time specified, returns e.g. "Friday, July 17, 2020".
+      if (/T00:00:00/.test(moment01.format())) {
+        return moment01.format(FORMAT_SESSION_DATE);
+      }
+      // Start session with time, returns e.g. "Friday, July 17, 2020 09:00 AM EST".
+      return moment01.format(FORMAT_SESSION_DATE_TIME_TIMEZONE);
+    }
+    // Both sessions with time, returns e.g. "Friday, July 17, 2020 09:00 AM to 11:45 AM EST". */
+    const moment02 = convertDateToMoment(sessionEnd, timezone);
+    return `${moment01.format(FORMAT_SESSION_DATE_TIME)} to ${moment02.format(
+      FORMAT_SESSION_TIME_TIMEZONE
+    )}`;
+  });
+}
+
+/**
  * Returns tuple path parsed frontmatter.
  * Frontmatter session (first session) value parsed as "Date" for "event" related frontmatter.
  * @param pathFrontmatter - Tuple containing path and associated frontmatter.
@@ -50,7 +86,8 @@ function parseFrontmatter(
   const [path, frontmatter] = pathFrontmatter;
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate() || new Date();
-  return [path, { ...frontmatter, date }];
+  const timestamp = date.getTime();
+  return [path, { ...frontmatter, date, timestamp }];
 }
 
 /**
@@ -78,7 +115,7 @@ function processFrontmatterDate(
   frontmatter: Frontmatter | ParsedFrontmatter
 ): FrontmatterEvent["date"] {
   if ("date" in frontmatter && frontmatter.date instanceof Date) {
-    return getMoment(frontmatter.date).format(DATE_FORMAT);
+    return getMoment(frontmatter.date).format(FORMAT_DATE);
   }
   return "";
 }
@@ -91,6 +128,23 @@ function processFrontmatterDate(
 function processFrontmatterURL(path?: string): string | null {
   if (!path) return null;
   return `/${path}`;
+}
+
+/**
+ * Returns parsed frontmatter for an event article.
+ * @param frontmatter - Frontmatter.
+ * @returns frontmatter for an event article.
+ */
+export function processEventFrontmatter(
+  frontmatter: FrontmatterEvent
+): FrontmatterEvent {
+  return {
+    ...processFrontmatter(["", frontmatter]),
+    formattedSessions: formatSessions(
+      frontmatter.sessions,
+      frontmatter.timezone
+    ),
+  };
 }
 
 /**
