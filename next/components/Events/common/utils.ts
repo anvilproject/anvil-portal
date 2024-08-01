@@ -3,7 +3,6 @@ import {
   buildMomentField,
   convertDateToMoment,
   getFrontmatterByPaths,
-  getMoment,
 } from "../../../content/utils";
 import {
   getDocsDirectory,
@@ -114,8 +113,14 @@ export function processFrontmatter(
 function processFrontmatterDate(
   frontmatter: Frontmatter | ParsedFrontmatter
 ): FrontmatterEvent["date"] {
-  if ("date" in frontmatter && frontmatter.date instanceof Date) {
-    return getMoment(frontmatter.date).format(FORMAT_DATE);
+  if (
+    "date" in frontmatter &&
+    frontmatter.date instanceof Date &&
+    "timezone" in frontmatter
+  ) {
+    return convertDateToMoment(frontmatter.date, frontmatter.timezone).format(
+      FORMAT_DATE
+    );
   }
   return "";
 }

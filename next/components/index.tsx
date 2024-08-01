@@ -35,6 +35,7 @@ export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreak
 export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge500/textBodyLarge500";
 export { Video } from "./common/Video/video";
 export { Consortia } from "./Consortia/consortia.styles";
+export { Card as EventCard } from "./Events/components/Card/card";
 export { EventsHero } from "./Events/components/EventsHero/eventsHero";
 export { Events } from "./Events/events";
 export { ANVILBranding } from "./Layout/components/Footer/components/Branding/components/ANVILBranding/anvilBranding";

@@ -34,7 +34,13 @@ export function buildMomentField(frontmatter: Frontmatter): Moment | undefined {
  * @param timezone - Timezone.
  * @returns moment object.
  */
-export function convertDateToMoment(date: string, timezone: string): Moment {
+export function convertDateToMoment(
+  date: string | Date,
+  timezone: string
+): Moment {
+  if (date instanceof Date) {
+    return tz(date, timezone);
+  }
   return tz(date, ["D MMM YYYY h:mm A", "D MMM YYYY"], timezone);
 }
 
