@@ -16,11 +16,15 @@ export interface DefaultFrontmatter {
 }
 
 export interface FrontmatterEvent extends DefaultFrontmatter {
+  conference: string;
   date: string;
   eventType?: string;
   featured?: boolean;
+  formattedSessions?: string[];
+  hashtag?: Hashtag;
   location?: string;
   sessions: EventSession[];
+  timestamp?: number;
   timezone: string;
   url: string | null;
 }
@@ -37,3 +41,5 @@ export type FrontmatterLayoutStyle =
   | "LAYOUT_STYLE_NO_CONTRAST_DEFAULT"
   | "LAYOUT_STYLE_NO_CONTRAST_LIGHT"
   | "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST";
+
+export type Hashtag = `#${string}`;

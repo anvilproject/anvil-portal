@@ -1,43 +1,27 @@
-import { CardContent } from "@databiosphere/findable-ui/lib/components/common/Card/card.styles";
-import { CardText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardText/cardText";
-import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
+import { Card as DXCard } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { Card as MCard, CardActionArea } from "@mui/material";
-import { useRouter } from "next/router";
+import { Tabs } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
 import React from "react";
 import { FrontmatterEvent } from "../../content/entities";
-import { CardSection, EventsView } from "./events.styles";
+import { EVENTS_VIEW_TABS } from "./common/constants";
+import { Card } from "./components/Card/card";
+import { EventsView } from "./events.styles";
+import { useEvents } from "./hooks/useEvents/useEvents";
 
 interface EventsProps {
   events: FrontmatterEvent[];
 }
 
 export const Events = ({ events }: EventsProps): JSX.Element => {
-  const { push } = useRouter();
-
-  /**
-   * Redirects to the event article.
-   * @param route - Route.
-   */
-  const onClick = (route: string | null): void => {
-    if (!route) return;
-    push(route);
-  };
-
+  const { events: filteredEvents, onView, view } = useEvents(events);
   return (
     <EventsView>
-      {events.map(({ description, title, url }, i) => (
-        <MCard key={i} component={FluidPaper}>
-          <CardActionArea onClick={(): void => onClick(url)}>
-            <CardSection>
-              <CardContent>
-                <CardTitle>{title}</CardTitle>
-                <CardText>{description}</CardText>
-              </CardContent>
-            </CardSection>
-          </CardActionArea>
-        </MCard>
-      ))}
+      <Tabs onTabChange={onView} tabs={EVENTS_VIEW_TABS} value={view} />
+      {filteredEvents.length > 0 ? (
+        filteredEvents.map((event, i) => <Card key={i} event={event} />)
+      ) : (
+        <DXCard Paper={FluidPaper} text="Currently, we have no events." />
+      )}
     </EventsView>
   );
 };

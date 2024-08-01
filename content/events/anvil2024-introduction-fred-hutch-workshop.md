@@ -22,7 +22,7 @@ The AnVIL team will host an in-person AnVIL workshop on Tuesday, April 9, 2024 9
 
 Only open access data will be used, so participants will be able to access each dataset and analysis. Participants will be able to ask questions and interact with the presenters throughout the workshop. By the end of the workshop, participants will have a better understanding of how to use AnVIL for their genomic and other data analysis needs.
 
-### Prerequisites (if any)
+### Prerequisites
 
 If you are interested in this workshop, please register using this form ([bit.ly/hutch-anvil-2024](https://docs.google.com/forms/d/e/1FAIpQLSem811mX2g0-wdoABAvf2U34afdXSYdyFtXl6zsgAUeYsnDpw/viewform)). You will be messaged approximately one week ahead of time to finalize your access to the cloud credits for the workshop.
 

@@ -1,4 +1,7 @@
+export type EmailParameter = {
+  [key: string]: string;
+};
+
 export interface PathParameter {
-  browserURL: string;
-  portalURL: string;
+  [key: string]: string;
 }

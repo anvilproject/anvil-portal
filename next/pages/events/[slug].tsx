@@ -5,13 +5,15 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
+import remarkGfm from "remark-gfm";
 import { ContentView } from "../../components";
-import { processFrontmatter } from "../../components/Events/common/utils";
+import { processEventFrontmatter } from "../../components/Events/common/utils";
 import { Content } from "../../components/Layout/components/Content/content";
 import { Frontmatter } from "../../content/entities";
 import { isFrontmatterEvent } from "../../content/utils";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
 import { generatePaths, parseMDXFrontmatter } from "../../docs/common/utils";
+import { rehypeSlug } from "../../plugins/rehypeSlug";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
   slug: string;
@@ -55,8 +57,12 @@ export const getStaticProps: GetStaticProps = async (
     };
   }
   const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkGfm],
+    },
     scope: {
-      frontmatter: processFrontmatter(["", frontmatter]),
+      frontmatter: processEventFrontmatter(frontmatter),
     },
   });
   return {

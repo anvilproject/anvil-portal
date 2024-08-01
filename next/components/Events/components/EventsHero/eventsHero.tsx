@@ -1,27 +1,23 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { FrontmatterEvent } from "../../../../content/entities";
-import { ROUTES } from "../../../../routes/constants";
 import { Heading } from "../../../common/Typography/components/Heading/heading";
+import { getEventTitle } from "../Card/common/utils";
+import { getEventBreadcrumbs, getEventTwitterURL } from "./common/utils";
 import { EventHero as Hero, SubHeader } from "./eventsHero.styles";
 
 export const EventsHero = ({ ...props }: FrontmatterEvent): JSX.Element => {
-  const { eventType, location, sessions, title } = props;
+  const { eventType, formattedSessions: sessions, hashtag, location } = props;
+  const twitterUrl = getEventTwitterURL(hashtag);
   return (
     <Hero>
-      <Breadcrumbs
-        breadcrumbs={[
-          { path: ROUTES.EVENTS, text: "Events" },
-          { path: "", text: title },
-        ]}
-      />
-      <Heading headingValue={title} />
+      <Breadcrumbs breadcrumbs={getEventBreadcrumbs(props)} />
+      <Heading headingValue={getEventTitle(props)} />
       <SubHeader>
         {eventType && <div>{eventType}</div>}
-        {sessions.length > 0 &&
-          sessions.map(({ sessionStart }, i) => (
-            <div key={i}>{sessionStart}</div>
-          ))}
+        {sessions && sessions.map((session, i) => <div key={i}>{session}</div>)}
         {location && <div>{location}</div>}
+        {twitterUrl && <Link label={hashtag} url={twitterUrl} />}
       </SubHeader>
     </Hero>
   );
