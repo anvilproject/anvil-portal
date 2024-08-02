@@ -34,7 +34,10 @@ export const Content = styled.div<Props>`
 
   .MuiAlert-root {
     margin: 24px 0;
-    padding: 24px;
+
+    &.MuiAlert-standardWarning {
+      margin: 16px 0;
+    }
 
     .MuiAlert-message {
       gap: 16px;
