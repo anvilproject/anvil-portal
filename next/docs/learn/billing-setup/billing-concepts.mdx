@@ -23,13 +23,23 @@ Before setting up billing, it is important to have a working knowledge of cloud 
 
 **GCP Billing Account** - GCP Billing Accounts are GCP level resources you configure to pay for cloud compute costs incurred in Terra. When you create a GCP Billing Account, you may attach an existing Google Payment Method or create and attach a new one. You use the GCP Billing Account’s Payment Method to pay for cloud costs passed through to the GCP Billing Account. Google Billing Accounts are also used to set cloud spending budgets and alerts.
 
-For additional information and detail on GCP billing concepts see Google’s [Guide to Cloud Billing Resource Organization & Access Management](https://cloud.google.com/billing/docs/onboarding-checklist)
+<Alert icon={false} severity="info">
+  For additional information and detail on GCP billing concepts see Google’s
+  [Guide to Cloud Billing Resource Organization & Access
+  Management](https://cloud.google.com/billing/docs/onboarding-checklist)
+</Alert>
 
-**Linking GCP and Terra** - To enable GCP spend in Terra, you must add Terra’s Google ID _[terra-billing@terra.bio](mailto:terra-billing@terra.bio)_ as a “_Billing Account User_” to a GCP Billing Account.
+**Linking GCP and Terra** - To enable GCP spend in Terra, you must add Terra’s Google ID <nobr>_terra-billing@terra.bio_</nobr> as a "_Billing Account User_" to a GCP Billing Account.
 
 **Terra Billing Projects** - Terra Billing Projects are Terra-level resources used to link user activity in Terra to a Google Billing Account. Once a GCP Billing Account is linked to Terra, if you created the billing account or have been added to the project as a _Billing Account User_, you will be able to create Terra Billing Projects and link them to the Google Billing Account. If you created the Terra Billing Project, you are its “_Owner_” and you will be able to add other Terra users as _Members_ or _Owners_.
 
-> During the creation of a Terra Billing Project, Terra creates a “twin” Google Billing Project in the Google Cloud Billing console with the same name as the Terra Billing Project. This “twin” Google Billing Project is then linked to the specified Google Billing Account. You use this twin GCP Billing Project to set up budgets and alerts in GCP.
+<Alert severity="warning">
+  During the creation of a Terra Billing Project, Terra creates a “twin” Google
+  Billing Project in the Google Cloud Billing console with the same name as the
+  Terra Billing Project. This “twin” Google Billing Project is then linked to
+  the specified Google Billing Account. You use this twin GCP Billing Project to
+  set up budgets and alerts in GCP.
+</Alert>
 
 **Creating Terra Workspaces** - To create or clone workspaces or download data from workspaces with requester pays buckets, a user must be a _Member_ of a Terra Billing Project. If you create or clone a workspace, you will be the new workspaces _Owner_ and with _can-execute_ and _can-share_ privileges.
 
@@ -37,7 +47,11 @@ For additional information and detail on GCP billing concepts see Google’s [Gu
 
 **GCP Billing Account Budget** - You can create multiple budgets for each Google Billing Account. Each budget can specify a project, budget amount, and alerts.
 
-For additional information and detail on setting budgets and alerts in GCP, see Google’s [Set Budgets and Budget Alerts](https://cloud.google.com/billing/docs/how-to/budgets) documentation.
+<Alert icon={false} severity="info">
+  For additional information and detail on setting budgets and alerts in GCP,
+  see Google’s [Set Budgets and Budget
+  Alerts](https://cloud.google.com/billing/docs/how-to/budgets) documentation.
+</Alert>
 
 ## Additional Billing Resources
 

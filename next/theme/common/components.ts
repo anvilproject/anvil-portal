@@ -53,6 +53,10 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
           marginBottom: 0,
         },
       },
+      ol: {
+        margin: 0,
+        paddingLeft: 24,
+      },
       p: {
         ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
         marginBottom: 16,

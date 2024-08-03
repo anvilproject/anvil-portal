@@ -28,6 +28,7 @@ export const Content = styled.div<Props>`
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
   }
 
+  ol + p,
   ul + p {
     margin-top: 16px;
   }
@@ -46,5 +47,11 @@ export const Content = styled.div<Props>`
         ${textHeadingSmall};
       }
     }
+  }
+
+  .MuiButton-containedPrimary {
+    display: flex;
+    margin: 16px 0;
+    width: fit-content;
   }
 `;
