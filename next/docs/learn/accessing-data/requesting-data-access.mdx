@@ -1,15 +1,17 @@
 ---
 author: "AnVIL"
 description: "AnVIL is a repository for open and controlled access datasets. Dataset access is controlled in adherence to NIH Policy and in line with the standards set forth in the individual consents involved in each cohort."
-hidden: true
+hidden: false
 title: "Requesting Data Access"
 ---
 
 # Requesting Data Access
 
-AnVIL is a repository for open and controlled access datasets. Dataset access
-is controlled in adherence to NIH Policy and in line with the standards set
-forth in the individual consents involved in each cohort.
+<Alert icon={false} severity="info">
+  AnVIL is a repository for open and controlled access datasets. Dataset access
+  is controlled in adherence to NIH Policy and in line with the standards set
+  forth in the individual consents involved in each cohort.
+</Alert>
 
 ## Data Access Types
 
@@ -46,7 +48,7 @@ that is housed within the AnVIL.
 ### Submitting A dbGaP Data Access Request
 
 1. **Identify the phsID of the cohort you wish to access.** A helpful list of datasets can be found on
-   our [datasets](https://anvilproject.org/data/consortia) page.
+   our [datasets]({portalURL}/data/consortia) page.
 1. **Request Access.** Navigate to the dbGaP page for that study and click “Request Access” near the top of the screen.
 1. **Navigate to your DAR.** Follow the prompts for dbGaP Data Download to submit a Data Access Request (DAR). Include
    as much information as you can, as this will help the Data Access Committee evaluate your application.
@@ -69,25 +71,27 @@ the user attempts to view or access that workspace.
 Once your access is granted, your data will appear as one or more workspaces on
 your [Terra workspaces](https://anvil.terra.bio/#workspaces) page.
 
-> **Can't See Your Workspace?** For your workspaces to appear in Terra, make sure you have a Terra account and your
-> Terra account is linked with your eRA Commons or NIH account as described above.
+<Alert severity="warning">
+  **Can't See Your Workspace?** For your workspaces to appear in Terra, make
+  sure you have a Terra account and your Terra account is linked with your eRA
+  Commons or NIH account as described above.
+</Alert>
 
 Once you can see your workspace(s):
 
 - Select the workspace you are interested in.
-
 - General information about the workspace can be found on the main workspace page.
-
 - Tables containing phenotypic data and subject/sample information are available on the workspace's Data Tab.
-
 - If you plan to work on the cloud, you can clone the workspace to your own billing account. Click the "three vertical
   dots" icon in the top right, click "Clone" and follow the prompts.
-
 - If you want to work with, or download the files in the command line, information about the bucket path is readily
   accessible on the Data Tab > Files listing (as well as a bucket path on the main page).
 
-> Note that when cloning a workspace, any authorization domains on the source workspace will follow any clones, but you
-> will still need to share the workspace for anyone to access it.
+<Alert severity="warning">
+  Note that when cloning a workspace, any authorization domains on the source
+  workspace will follow any clones, but you will still need to share the
+  workspace for anyone to access it.
+</Alert>
 
 ## Accessing Consortium Access Data
 
@@ -104,15 +108,18 @@ for their group.
 
 For example, someone added to the CCDG access list will be able to see all the CCDG workspaces.
 
-> Note that a few cohorts are excluded from the consortium-wide-access due to data sensitivity needs.
+<Alert severity="warning">
+  Note that a few cohorts are excluded from the consortium-wide-access due to
+  data sensitivity needs.
+</Alert>
 
 ### Participating Consortia
 
 The following consortia currently participate in AnVIL’s consortia data sharing program:
 
-- CCDG,
-- CMG,
-- GTEx,
+- CCDG
+- CMG
+- GTEx
 - eMERGE
 
 If you are a member of a participating consortium and would like access to a consortium’s data please reach out to your
@@ -122,11 +129,10 @@ consortium leadership to request access.
 
 - All AnVIL buckets have Requester Pays enabled, meaning that you will need to provide a billing account in order to
   cover any costs associated with egress, storage, or compute.
-
 - If working in gsutil, using the -u argument will be critical to provide this billing account.
 
 ## Troubleshooting
 
 If you are having trouble with your access to AnVIL data, please email our help desk
-at [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org) and someone will reach out to you as soon as we are
+at [help@lists.anvilproject.org]({anvilHelp}) and someone will reach out to you as soon as we are
 able.
