@@ -39,6 +39,7 @@ export const Content = styled.div<Props>`
   }
 
   ol + p,
+  pre + p,
   ul + p {
     margin-top: 16px;
   }
@@ -48,6 +49,10 @@ export const Content = styled.div<Props>`
 
     &.MuiAlert-standardWarning {
       margin: 16px 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
 
     .MuiAlert-message {
