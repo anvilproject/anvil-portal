@@ -16,10 +16,15 @@ A case study of using AnVIL to teach R for a Biostatistics course and provides e
   title="Week 5: Using AnVIL for teaching R / Bioconductor"
 />
 
-**Notes**
-
-1. Doing this on your own will require a billing account. We provide a billing account during the workshop, but if you're following along on your own see '[Set up billing](#set-up-billing)' for options to create a billing account.
-1. Access to the workspace we use requires registration; please [sign up](https://forms.gle/HCY2DM2QsuxAwdhv6) with your AnVIL email address.
+<Alert icon={false} severity="info" title="Notes">
+  1. Doing this on your own will require a billing account. We provide a billing
+  account during the workshop, but if you're following along on your own see
+  '[Set up
+  Billing](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor#set-up-billing)'
+  for options to create a billing account. 1. Access to the workspace we use
+  requires registration; please [sign up](https://forms.gle/HCY2DM2QsuxAwdhv6)
+  with your AnVIL email address.
+</Alert>
 
 ## Learning Objectives
 
@@ -53,7 +58,7 @@ This week provides a case study of using AnVIL to teach R for a Biostatistics co
 #### General AnVIL/Terra
 
 - [https://anvilproject.org](/) for an introduction to AnVIL. AnVIL provides secure access to open and controlled data resources, and the computational environment required to effectively analyze the data. AnVIL can be used for large-scale workflows processing very large data sets, and for interactive analysis of derived or more modest datasets.
-- [https://anvil.terra.bio](https://anvil.terra.bio) to use the AnVIL platform.
+- https://anvil.terra.bio to use the AnVIL platform.
 
 ## Workshop Activities
 
@@ -64,24 +69,24 @@ This week provides a case study of using AnVIL to teach R for a Biostatistics co
 
 ## Course setup on AnVIL/Terra
 
-### Create a new “Group”
+### Create a new "Group"
 
-A “group” allows you to provide and revoke access as a group rather than as individuals, and to provide all the same accesses to someone new just by adding them to the appropriate group. You could have groups for your course, lab groups, etc.
+A "group" allows you to provide and revoke access as a group rather than as individuals, and to provide all the same accesses to someone new just by adding them to the appropriate group. You could have groups for your course, lab groups, etc.
 
 1. Ask students to sign into anvil.terra.bio using a Gmail or G Suite address, then provide you that email address. They need to sign in before I can add them to the group, but can be added at any later time.
-1. Under the top-left hamburger icon, clicked on your account name and then “Groups”
+1. Under the top-left hamburger icon, clicked on your account name and then "Groups"
 1. Create a New Group + (allow anyone to request access). Use an easily searchable group name (e.g. Bioconductor_PopUps), since I am a member of many unrelated groups.
-1. Add a User for each of my students, making each student a “Member”. I added the course TA as an “owner” to allow them to manage the group as well.
+1. Add a User for each of my students, making each student a "Member". I added the course TA as an "owner" to allow them to manage the group as well.
 
 ### Create an anvil.terra.bio workspace
 
-At this point, you need an existing billing account to connect the new workspace to. Under the “hamburger” menu at the top left, click “+” next to WORKSPACES:
+At this point, you need an existing billing account to connect the new workspace to. Under the "hamburger" menu at the top left, click "+" next to WORKSPACES:
 
 ![Create a Workspace](/consortia/learn/data-analysts/using-anvil-create-workspace.png)
 
 ### Give compute permissions, option 1: on the shared workspace
 
-Using this option, everyone will share the same workspace but will each have their own “persistent disk” attached to their RStudio or notebook runtimes.
+Using this option, everyone will share the same workspace but will each have their own "persistent disk" attached to their RStudio or notebook runtimes.
 
 Notes:
 
@@ -91,10 +96,10 @@ Notes:
 Steps:
 
 1. Click on the vertical dots in a circle on the top right-hand side.
-1. Click “Share”
+1. Click "Share"
 1. Type in name of the group created above, with the help of autocomplete. e.g., Bioconductor_PopUps@firecloud.org.
-1. Choose “Writer” and check the box “Can compute”
-1. “Save”
+1. Choose "Writer" and check the box "Can compute"
+1. "Save"
 
 ### Give compute permissions, option 2: on the billing account
 
@@ -106,16 +111,16 @@ Notes:
 
 Steps:
 
-1. Under the top-left hamburger icon, clicked on your account name and then “Billing”
+1. Under the top-left hamburger icon, clicked on your account name and then "Billing"
 1. Choose a billing project
-1. Choose “Add a User”
+1. Choose "Add a User"
 1. Add the group created above, e.g. Bioconductor_PopUps@firecloud.org
 
 ## Course setup on GitHub
 
 This course setup is GitHub-centric and uses AnVIL/Terra only as an end-user computing environment. It pulls data from GitHub or other online resources and does not use the AnVIL/Terra workspace for anything other than providing compute.
 
-This setup is more complicated than you probably need: for most instructors, a single course GitHub repo would probably suffice, and you probably don’t need a course Docker image. In the simplest possible setup, create a single (private or public) course repo, and skip down to the section “[Post AnVIL/Terra instructions to students](https://anvilproject.org/learn/data-analysts/using-anvil-for-teaching-r-bioconductor#post-anvilterra-instructions-to-students).”
+This setup is more complicated than you probably need: for most instructors, a single course GitHub repo would probably suffice, and you probably don’t need a course Docker image. In the simplest possible setup, create a single (private or public) course repo, and skip down to the section "[Post AnVIL/Terra instructions to students](/learn/data-analysts/using-anvil-for-teaching-r-bioconductor#post-anvilterra-instructions-to-students)."
 
 ![GitHub Actions](/consortia/learn/data-analysts/using-anvil-github-actions.png)
 
@@ -156,7 +161,7 @@ Template session: [https://github.com/waldronbios2/templatesession](https://gith
 
 ## Post AnVIL/Terra Instructions to Students
 
-The Workspace is a good place to give step-by-step instructions to students for getting started. I’ve used versions of the following for my classes, and it will make a good boilerplate starting point. Skip the “git submodule” commands if you decide not to use git submodules. Here is the text I have currently placed on the Workspace for this workshop.
+The Workspace is a good place to give step-by-step instructions to students for getting started. I’ve used versions of the following for my classes, and it will make a good boilerplate starting point. Skip the "git submodule" commands if you decide not to use git submodules. Here is the text I have currently placed on the Workspace for this workshop.
 
 ## Getting Started on this Workspace as a _Student_
 
@@ -187,20 +192,20 @@ Please let me know about your experience using the Terra/AnVIL Cloud environment
 
 Authenticating to make commits to GitHub from AnVIL/Terra is a bit different than local GitHub use. You can use the ssh approach or the HTTPS approach. Although I always use the ssh approach locally, I haven’t decided yet which is better for use on AnVIL/Terra.
 
-In the ssh approach, you create a different ssh keypair in the persistent disk for each Workspace. In the HTTPS approach, you can use the same or different GitHub Access Tokens for each Workspace persistent disk. In the ssh approach, you will authenticate using your ssh keypair and a passphrase you should set when creating the keypair. In the HTTPS approach, you will authenticate with a text “access token” generated by GitHub.
+In the ssh approach, you create a different ssh keypair in the persistent disk for each Workspace. In the HTTPS approach, you can use the same or different GitHub Access Tokens for each Workspace persistent disk. In the ssh approach, you will authenticate using your ssh keypair and a passphrase you should set when creating the keypair. In the HTTPS approach, you will authenticate with a text "access token" generated by GitHub.
 
 ### ssh Approach
 
-Clone the GitHub repo using the SSH option under Code, which starts with “git@”. For example, git@github.com:waldronlab/AppStatBio.git. In your AnVIL/Terra RStudio session:
+Clone the GitHub repo using the SSH option under Code, which starts with "git@". For example, git@github.com:waldronlab/AppStatBio.git. In your AnVIL/Terra RStudio session:
 
-1. Use the “Terminal” in RStudio to type: `ssh-keygen`. It is probably a good idea to use a passphrase for your ssh key any time you are storing it remotely, otherwise anyone with access to the key pair generated will be able to act as you on GitHub. I understand that your notebook/RStudio runtime “persistent disk” is normally not shared, but it might be easy to copy/backup your keys to a shared workspace volume. It just seems much safer to use a passphrase for your ssh keys in this context.
+1. Use the "Terminal" in RStudio to type: `ssh-keygen`. It is probably a good idea to use a passphrase for your ssh key any time you are storing it remotely, otherwise anyone with access to the key pair generated will be able to act as you on GitHub. I understand that your notebook/RStudio runtime "persistent disk" is normally not shared, but it might be easy to copy/backup your keys to a shared workspace volume. It just seems much safer to use a passphrase for your ssh keys in this context.
 1. Type `cat ~/.ssh/id_rsa.pub` and copy the output to the clipboard.
-1. At [https://github.com/settings/keys](https://github.com/settings/keys), choose “New SSH key”, give it a useful title like “My first Terra Workspace” and paste the key here.
-1. Clone any GitHub repos using the “ssh” option, and you should then be able to push back to GitHub.
+1. At [https://github.com/settings/keys](https://github.com/settings/keys), choose "New SSH key", give it a useful title like "My first Terra Workspace" and paste the key here.
+1. Clone any GitHub repos using the "ssh" option, and you should then be able to push back to GitHub.
 
 ### HTTPS Approach
 
-Clone the GitHub repo using the HTTPS option under Code, which starts with “https”. For example, [https://github.com/waldronlab/AppStatBio.git](https://github.com/waldronlab/AppStatBio.git). In your Terra RStudio session, enter the “Terminal” to configure your user, for example:
+Clone the GitHub repo using the HTTPS option under Code, which starts with "https". For example, [https://github.com/waldronlab/AppStatBio.git](https://github.com/waldronlab/AppStatBio.git). In your Terra RStudio session, enter the "Terminal" to configure your user, for example:
 
 ```shell
 git config --global user.name lwaldron
@@ -209,7 +214,7 @@ git config --global user.name lwaldron
 If you’re using 2FA for github.com (as you should be), you now have to create a GitHub personal access token using instructions from [https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) instead of using your login password. The process is:
 
 1. [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
-1. Add a note like “Terra workspace 1”, select “repo”, then “Generate token”
+1. Add a note like "Terra workspace 1", select "repo", then "Generate token"
 1. Copy the long token provided, and use it in place of your password to authenticate by HTTPS.
 
 This token can be deleted at any time to remove access from anywhere it is being used.
@@ -236,7 +241,7 @@ Using a reseller likely requires some work to set up an agreement between your i
 
 My impression is that academic collaborations are a small but valued part of these reseller company’s business, that they have a lot of Cloud computing expertise, and are willing to provide personal customer support at a level not available directly from Google or AWS.
 
-I had to set up Onix as a “vendor” for CUNY, which included an IT security review and a legal review of their contract. There was actually back & forth on language in the contract before it was agreed and fully executed. This took several months, but the people at Onix were active in working directly with the university people to make it happen. Now, anyone else at CUNY can use Onix without having to do any of this.
+I had to set up Onix as a "vendor" for CUNY, which included an IT security review and a legal review of their contract. There was actually back & forth on language in the contract before it was agreed and fully executed. This took several months, but the people at Onix were active in working directly with the university people to make it happen. Now, anyone else at CUNY can use Onix without having to do any of this.
 
 Dana-Farber provides a good example of institutional streamlining of this process for other researchers at the same institution (they also use Onix, to provide STRIDES discounts (see below): [https://informatics-analytics.dfci.harvard.edu/nih-strides-initiative-gcp-account](https://informatics-analytics.dfci.harvard.edu/nih-strides-initiative-gcp-account)).
 
@@ -268,7 +273,7 @@ Pros and cons according to Levi (open for debate and correction)
   - Cons: less experience in our community. Honestly, I used Azure Jupyter Notebooks a few years ago but haven’t tried the new Databricks thing.
 - [Renku](https://renkulab.io/)
   - Pros: Free, non-commercial (ETH / EPFL Swiss Data Science Center). Simple to use any DockerHub image.
-  - Cons: No “persistent disk”, preserving a file between sessions requires committing to a GitLab project: good for reproducible analysis, but may have a learning curve for students. Available free resources are limited (currently 1GB for datasets), although you _could_ set up Renku on any Kubernetes cluster ([https://renku.readthedocs.io/en/latest/admin/index.html](https://renku.readthedocs.io/en/latest/admin/index.html)) and you can request additional resources for specific purposes.
+  - Cons: No "persistent disk", preserving a file between sessions requires committing to a GitLab project: good for reproducible analysis, but may have a learning curve for students. Available free resources are limited (currently 1GB for datasets), although you _could_ set up Renku on any Kubernetes cluster ([https://renku.readthedocs.io/en/latest/admin/index.html](https://renku.readthedocs.io/en/latest/admin/index.html)) and you can request additional resources for specific purposes.
 - [http://app.orchestra.cancerdatasci.org/](http://app.orchestra.cancerdatasci.org/)
   - Pros: Free (runs on Google but currently funded by NCI, managed by Sean Davis). Runs any service from any image on DockerHub on request from Sean Davis, with no additional setup.
   - Cons: No persistent disk, any installed packages or modified files are lost after 8h. Available free resources are limited.
@@ -276,5 +281,5 @@ Pros and cons according to Levi (open for debate and correction)
   - Pros: Might be free and have large resources.
   - Cons: You are responsible for security, maintenance, and downtime. Institutional servers are usually behind firewalls.
 - Students’ own Computers
-  - Pros: “Not my problem”
+  - Pros: "Not my problem"
   - Cons: Outdated software leads to package installation problems. Lost work. Very unequal resources.

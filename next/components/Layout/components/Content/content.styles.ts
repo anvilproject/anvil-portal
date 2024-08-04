@@ -61,6 +61,16 @@ export const Content = styled.div<Props>`
       .MuiAlertTitle-root {
         ${textHeadingSmall};
       }
+
+      ol > li {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
