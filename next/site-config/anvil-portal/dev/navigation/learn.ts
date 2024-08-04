@@ -24,8 +24,8 @@ const PATH_SEGMENTS = {
   INVESTIGATORS: "investigators",
   LEARN: "learn",
   REFERENCE: "reference",
-  TRAINING: "training",
   VIDEOS: "videos",
+  WORKSHOP_ARCHIVE: "workshop-archive",
 };
 
 export const LEARN: NavigationEntry = {
@@ -166,7 +166,10 @@ export const LEARN: NavigationEntry = {
         },
         {
           label: "Workshop Archive",
-          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.TRAINING}/workshop-archive`,
+        },
+        {
+          label: "Workshop Archive",
+          url: `${ROUTES.LEARN}/workshop-archive`,
         },
         {
           label: "Reference",
@@ -190,8 +193,8 @@ export const LEARN: NavigationEntry = {
         PATH_SEGMENTS.INTRODUCTION,
         PATH_SEGMENTS.LEARN,
         PATH_SEGMENTS.REFERENCE,
-        PATH_SEGMENTS.TRAINING,
         PATH_SEGMENTS.VIDEOS,
+        PATH_SEGMENTS.WORKSHOP_ARCHIVE,
       ],
     },
     {

@@ -28,6 +28,10 @@ export const Content = styled.div<Props>`
     scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
   }
 
+  h4 {
+    scroll-margin-top: ${({ headerHeight }) => headerHeight + 24}px;
+  }
+
   h1 + ol,
   h1 + p,
   h1 + ul {

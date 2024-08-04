@@ -1,5 +1,6 @@
 import {
   TEXT_BODY_LARGE_400_2_LINES,
+  TEXT_BODY_LARGE_500,
   TEXT_HEADING,
   TEXT_HEADING_LARGE,
   TEXT_HEADING_SMALL,
@@ -41,6 +42,10 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
       h3: {
         ...theme.typography[TEXT_HEADING_SMALL],
         margin: "32px 0 16px",
+      },
+      h4: {
+        ...theme.typography[TEXT_BODY_LARGE_500],
+        margin: "24px 0 16px",
       },
       img: {
         margin: "16px 0",
