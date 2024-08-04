@@ -22,4 +22,5 @@ scripts/new-cser-materials
 components/Consortia/CSER/components/DataIngestionChart/chart-data.json
 
 # MDX
+*.mdx
 docs/overview/publications.mdx

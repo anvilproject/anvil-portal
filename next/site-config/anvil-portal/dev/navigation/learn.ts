@@ -214,7 +214,7 @@ export const LEARN: NavigationEntry = {
       navigation: [
         {
           label: "Investigators Tutorial Overview",
-          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}/investigators-tutorial-overview`,
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}`,
         },
         {
           label: "Setting up Your Lab in AnVIL",

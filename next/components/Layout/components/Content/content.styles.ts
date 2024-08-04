@@ -1,4 +1,7 @@
-import { textHeadingSmall } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import {
+  textBodyLarge4002Lines,
+  textHeadingSmall,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 
 interface Props {
@@ -44,6 +47,10 @@ export const Content = styled.div<Props>`
     margin-top: 16px;
   }
 
+  ol ol {
+    list-style-type: lower-roman;
+  }
+
   .MuiAlert-root {
     margin: 24px 0;
 
@@ -56,13 +63,12 @@ export const Content = styled.div<Props>`
     }
 
     .MuiAlert-message {
-      gap: 16px;
+      ${textBodyLarge4002Lines};
 
-      .MuiAlertTitle-root {
-        ${textHeadingSmall};
-      }
+      ol > li,
+      ul > li {
+        margin: 8px 0;
 
-      ol > li {
         &:first-child {
           margin-top: 0;
         }
@@ -70,6 +76,14 @@ export const Content = styled.div<Props>`
         &:last-child {
           margin-bottom: 0;
         }
+      }
+    }
+
+    .MuiAlert-message:first-child {
+      gap: 16px;
+
+      .MuiAlertTitle-root {
+        ${textHeadingSmall};
       }
     }
   }
