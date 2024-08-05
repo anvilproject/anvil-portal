@@ -2,12 +2,73 @@ import {
   textBodyLarge4002Lines,
   textHeadingSmall,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { smokeMain } from "../../../../../../findable-ui/lib/styles/common/mixins/colors";
 
 interface Props {
   headerHeight: number;
 }
+
+const footnotes = (props: ThemeProps) => css`
+  section[data-footnotes] {
+    border-top: 1px solid ${smokeMain(props)};
+    margin-top: 24px;
+    padding-top: 16px;
+
+    h2[id="footnotes"] {
+      display: none;
+    }
+  }
+`;
+
+const muiAlert = (props: ThemeProps) => css`
+  .MuiAlert-root {
+    margin: 24px 0;
+
+    &.MuiAlert-standardWarning {
+      margin: 16px 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .MuiAlert-message {
+      ${textBodyLarge4002Lines(props)};
+
+      ol > li,
+      ul > li {
+        margin: 8px 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .MuiAlert-message:first-of-type {
+      gap: 16px;
+
+      .MuiAlertTitle-root {
+        ${textHeadingSmall(props)};
+      }
+    }
+  }
+`;
+
+const muiButtonContainedPrimary = css`
+  .MuiButton-containedPrimary {
+    display: flex;
+    margin: 16px 0;
+    width: fit-content;
+  }
+`;
 
 export const Content = styled.div<Props>`
   h1,
@@ -56,56 +117,7 @@ export const Content = styled.div<Props>`
     list-style-type: lower-roman;
   }
 
-  section[data-footnotes] {
-    border-top: 1px solid ${smokeMain};
-    margin-top: 24px;
-    padding-top: 16px;
-
-    h2[id="footnotes"] {
-      display: none;
-    }
-  }
-
-  .MuiAlert-root {
-    margin: 24px 0;
-
-    &.MuiAlert-standardWarning {
-      margin: 16px 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    .MuiAlert-message {
-      ${textBodyLarge4002Lines};
-
-      ol > li,
-      ul > li {
-        margin: 8px 0;
-
-        &:first-child {
-          margin-top: 0;
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    .MuiAlert-message:first-of-type {
-      gap: 16px;
-
-      .MuiAlertTitle-root {
-        ${textHeadingSmall};
-      }
-    }
-  }
-
-  .MuiButton-containedPrimary {
-    display: flex;
-    margin: 16px 0;
-    width: fit-content;
-  }
+  ${footnotes};
+  ${muiAlert};
+  ${muiButtonContainedPrimary};
 `;
