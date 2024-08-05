@@ -44,5 +44,6 @@ export { CallToAction } from "./Layout/components/Header/components/CallToAction
 export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";
 export { NewsHero } from "./News/components/NewsHero/newsHero";
 export { News } from "./News/news";
+export { Grid as AnalysisPortals } from "./Overview/components/AnalysisPortals/analysisPortals.styles";
 export { Button as ButtonAddPublication } from "./Overview/components/Publications/components/Button/button";
 export { Publications as AnVILPublications } from "./Overview/components/Publications/publications";
