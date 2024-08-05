@@ -16,19 +16,21 @@ How to configure and run a workflow, based on the Bioconductor-Workflow-DESeq2 w
   title="Week 3: Running a Workflow"
 />
 
-**Notes**
+<Alert icon={false} severity="info" title="Notes">
 
 1. Visit the [course schedule](/events/bioconductor-popup-workshops-20210510#other-sessions) for links to the recorded session, and to other workshops in the series.
-1. The material below requires a billing account. We provide a billing account during the workshop, but if you're following along on your own see '[Next Steps](#next-steps)' for how to create a billing account.
+1. The material below requires a billing account. We provide a billing account during the workshop, but if you're following along on your own see '[Next Steps](/learn/data-analysts/running-a-workflow#next-steps)' for how to create a billing account.
 1. Access to the workspaces we use may require registration; please [sign up](https://forms.gle/HCY2DM2QsuxAwdhv6) with your AnVIL email address.
+
+</Alert>
 
 ## Learning Objectives
 
-This week we'll configure and run a workflow, based on the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace (access required via course registration or email to mtmorgan.bioc at gmail.com). The workspace allows a complete bulk RNASeq differential expression analysis. The workflow starts with FASTQ files and transforms them using [salmon](https://combine-lab.github.io/salmon/) to the inputs required for Bioconductor [DESeq2](https://www.google.com/url?q=https://bioconductor.org/packages/DESeq2&sa=D&source=editors&ust=1623650069971000&usg=AOvVaw2PuO_j45x4KJTPxyGDHS18) analysis of differential expression. Notebooks describe how the workspace was set up (so that it can be tailored to individual analyses) and also how the outputs of a successful workflow can be marshaled as inputs to an interactive DESeq2 analysis.
+This week we'll configure and run a workflow, based on the [Bioconductor-Workflow-DESeq2](https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2) workspace (access required via course registration or email to mtmorgan.bioc@gmail.com). The workspace allows a complete bulk RNASeq differential expression analysis. The workflow starts with FASTQ files and transforms them using [salmon](https://combine-lab.github.io/salmon/) to the inputs required for Bioconductor [DESeq2](https://www.google.com/url?q=https://bioconductor.org/packages/DESeq2&sa=D&source=editors&ust=1623650069971000&usg=AOvVaw2PuO_j45x4KJTPxyGDHS18) analysis of differential expression. Notebooks describe how the workspace was set up (so that it can be tailored to individual analyses) and also how the outputs of a successful workflow can be marshaled as inputs to an interactive DESeq2 analysis.
 
 ## Key Resources
 
-- Visit [https://anvil.terra.bio](https://anvil.terra.bio) to use the AnVIL platform.
+- Visit https://anvil.terra.bio to use the AnVIL platform.
 - The [salmon](https://combine-lab.github.io/salmon/) website and excellent [DESeq2 vignette](https://bioconductor.org/packages/DESeq2) form the foundation for the workspace.
 - Completed workflows are run in the cloud, but components are often developed locally using [Cromwell](https://cromwell.readthedocs.io/en/stable/). Workflows are written in the [Workflow Description Language](https://support.terra.bio/hc/en-us/sections/360007274612-WDL-Documentation) (WDL).
 - Workflow tasks often make use of [docker](https://docs.docker.com/get-started/) to create containers with the software necessary for the task.

@@ -2,9 +2,14 @@ import nextMDX from "@next/mdx";
 import withPlugins from "next-compose-plugins";
 import withTM from "next-transpile-modules";
 import path from "path";
+import remarkGfm from "remark-gfm";
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
 });
 
 export default withPlugins(

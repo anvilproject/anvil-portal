@@ -1,5 +1,6 @@
 import {
   TEXT_BODY_LARGE_400_2_LINES,
+  TEXT_BODY_LARGE_500,
   TEXT_HEADING,
   TEXT_HEADING_LARGE,
   TEXT_HEADING_SMALL,
@@ -42,16 +43,27 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         ...theme.typography[TEXT_HEADING_SMALL],
         margin: "32px 0 16px",
       },
+      h4: {
+        ...theme.typography[TEXT_BODY_LARGE_500],
+        margin: "24px 0 16px",
+      },
       img: {
         margin: "16px 0",
         maxWidth: "100%",
       },
       li: {
         margin: "8px 0",
+        p: {
+          marginBottom: 8,
+        },
         // eslint-disable-next-line sort-keys -- disabling key order for readability
         "&:last-child": {
           marginBottom: 0,
         },
+      },
+      ol: {
+        margin: 0,
+        paddingLeft: 24,
       },
       p: {
         ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],

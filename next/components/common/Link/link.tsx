@@ -12,7 +12,7 @@ import { useConfig } from "../../../hooks/useConfig";
 export const Link = ({
   ...props /* Spread props to allow for anchor link specific props e.g. "href". */
 }): JSX.Element => {
-  const { children, href } = props;
+  const { children, href, ...linkProps } = props;
   const {
     config: { browserURL, portalURL },
   } = useConfig();
@@ -25,6 +25,7 @@ export const Link = ({
         browserURL,
         portalURL,
       })}
+      {...linkProps}
     />
   );
 };

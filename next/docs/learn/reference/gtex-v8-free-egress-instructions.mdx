@@ -13,11 +13,11 @@ The Genotype-Tissue Expression (GTEx) Program is a widely used data resource and
 
 To provide insight into how genes are expressed differently across the body and how they are regulated, GTEx includes whole-genome sequence and RNA-sequence from nearly 1000 deceased adult donors, with multiple tissue samples collected per donor (e.g. lung, brain, pancreas, skin, etc.). It also features an image library of the tissue samples, and a form to request tissue samples.
 
-The primary entry point for accessing GTEx data is through the GTEx portal ([https://gtexportal.org/](https://gtexportal.org/home/index.html)). The GTEx Portal provides open access to data including gene expression, QTLs, and histology images. However, due to the nature of our donor consent agreement, raw data and attributes which might be used to identify the donors, such as raw sequencing data or variant calls, are not publicly available on the GTEx Portal.
+The primary entry point for accessing GTEx data is through the GTEx portal (https://gtexportal.org). The GTEx Portal provides open access to data including gene expression, QTLs, and histology images. However, due to the nature of our donor consent agreement, raw data and attributes which might be used to identify the donors, such as raw sequencing data or variant calls, are not publicly available on the GTEx Portal.
 
 ### Requesting Access
 
-Accessing the raw data requires authorization from the NIH database of Genotypes and Phenotypes (dbGaP). dbGaP was developed to archive and distribute the data and results from studies that have investigated the interaction of genotype and phenotype in Humans. If you do not currently have access to the GTEx data on dbGaP, you can apply for access to the data by selecting “Request Access” at this [link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v8.p2).
+Accessing the raw data requires authorization from the NIH database of Genotypes and Phenotypes (dbGaP). dbGaP was developed to archive and distribute the data and results from studies that have investigated the interaction of genotype and phenotype in Humans. If you do not currently have access to the GTEx data on dbGaP, you can apply for access to the data by selecting "Request Access" at this [link](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v8.p2).
 
 Once you are approved for accessing the raw GTEx data, you can either analyze the protected data within the cloud using the Terra Platform within [this workspace](https://app.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_V8_hg38) or you can download the protected data to your home institutions for free using the instructions provided below.
 
@@ -25,11 +25,16 @@ Once you are approved for accessing the raw GTEx data, you can either analyze th
 
 For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility.
 
-Please note that you should not attempt to export the protected data from the Terra workspace, as this will incur egress fees as the data are exported from the cloud environment. Instead, please follow the directions below to download the data free of charge from the Gen3 platform.
+<Alert severity="warning">
+  Please note that you should not attempt to export the protected data from the
+  Terra workspace, as this will incur egress fees as the data are exported from
+  the cloud environment. Instead, please follow the directions below to download
+  the data free of charge from the Gen3 platform.
+</Alert>
 
 ### Security Requirements
 
-If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on “[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)” for more information.
+If you elect to download the protected data, it is your responsibility to maintain data security and privacy within your institutional servers. Please review the NIH Office of Science Policy guide on "[Requesting Access to Controlled-Access Data Maintained in NIH-Designated Data Repositories](https://osp.od.nih.gov/scientific-sharing/requesting-access-to-controlled-access-data-maintained-in-nih-designated-data-repositories-e-g-dbgap/)" for more information.
 
 ### Getting Help
 
@@ -48,10 +53,10 @@ For help or support executing the instructions below please reach out to the Gen
 **PFB** (**P**ortable **F**ile for **B**iomedical data) contains both the associated phenotypic information and the complete list of object files (as GUIDs, or Globally Unique Identifiers) that have been ingested into the Gen3 data dictionary. To **generate and download the PFB** file:
 
 1. Navigate to the **Exploration Page** ([https://gen3.theanvil.io/explorer](https://gen3.theanvil.io/explorer))
-1. Click on the “**Downloadable**” tab and select “**CF-GTEx**” under “Project Id”
+1. Click on the "**Downloadable**" tab and select "**CF-GTEx**" under "Project Id"
 1. Please choose a single **Data Type** from the Data Type filter on the left
    ![Step 2 - Select Single Data Type](/consortia/learn/reference/gtex-select-data-type.png)
-1. Click on the “**Export All to PFB**” button. Please wait patiently for this step - can take 30 - 60s - and please do not navigate away while the export is in progress
+1. Click on the "**Export All to PFB**" button. Please wait patiently for this step - can take 30 - 60s - and please do not navigate away while the export is in progress
    ![Step 2 - Export in Progress](/consortia/learn/reference/gtex-export-in-progress.png)
    ![Step 2 - Please Wait While Exporting](/consortia/learn/reference/gtex-export-wait-indicator.png)
 1. Download generated PFB file
@@ -59,7 +64,7 @@ For help or support executing the instructions below please reach out to the Gen
 
 #### Optional - Filter Facets and Cohort Generation
 
-Additional search facets can be applied in the “Downloadable” tab in order to generate a GTEx v8 cohort. The selection of a cohort will be reflected in the manifest.json and PFB files created.
+Additional search facets can be applied in the "Downloadable" tab in order to generate a GTEx v8 cohort. The selection of a cohort will be reflected in the manifest.json and PFB files created.
 
 1. Under the **Downloadable Tab**, you can view additional data search facets such as **Data Category**, **Data Type**, **Data Format**, **Analyte Type**, and **Sequencing Assay**.
 1. By selecting value(s) under any search facet, the Exploration page will update dynamically to display only data files that contain the selected values for that property.
@@ -70,11 +75,17 @@ Additional search facets can be applied in the “Downloadable” tab in order t
 
 1. Open a **terminal window**
 1. Run **command line** shown below
+
    ```shell
    $ pip install pypfb
    ```
-   > Note: Please make sure you are running at least version 0.5.0. To ensure this, you can run the **command line** shown below:
-   ```shellF
+
+   <Alert severity="warning">
+     Note: Please make sure you are running at least version 0.5.0. To ensure
+     this, you can run the **command line** shown below.
+   </Alert>
+
+   ```shell
    $ pip install pypfb==0.5.0
    ```
 
@@ -111,8 +122,8 @@ Done, created 6 files under: ./tsvs/
 To download the GTEx v8 object files, you need to create a **manifest JSON file** which contains a complete list of Globally Unique Identifiers (GUIDs) associated with the GTEx v8 object files.
 
 1. Navigate to the **Exploration Page** ([https://gen3.theanvil.io/explorer](https://gen3.theanvil.io/explorer))
-1. Click the “**Downloadable**” tab and select “**CF-GTEx**” under “Projects” and “Project Id”
-1. Click “**Download**” button and then click “**Download Manifest**”
+1. Click the "**Downloadable**" tab and select "**CF-GTEx**" under "Projects" and "Project Id"
+1. Click "**Download**" button and then click "**Download Manifest**"
    ![Step 2 - Download Manifest](/consortia/learn/reference/gtex-download-manifest.png)
 
 ### Step 3 - Download and Configure the Gen3-Client
@@ -123,12 +134,15 @@ The **gen3-client** ([https://gen3.org/resources/user/gen3-client](https://gen3.
 1. **Download an API key** from the Gen3 data commons from [HERE](https://gen3.theanvil.io/identity)
    ![Step 3 - Download and Configure the Gen3-Client](/consortia/learn/reference/gtex-download-and-configure-gen3-client.png)
 1. **Configure** a profile with downloaded API key by running the following command
+
    ```shell
    $ gen3-client configure --profile=<profile_name>
    --cred=<PATH_to_credentials.json>
    --apiendpoint=https://gen3.theanvil.io
    ```
+
    You’re expected to see messages of successful configuration as shown below.
+
    ```shell
    sean@cdis:~$ ./gen3-client configure --profile=AnVIL --cred=AnVIL_credentials.json --apiendpoint=https://gen3.theanvil.io
    2020/11/02 07:55:46 Profile 'AnVIL' has been configured successfully.
@@ -144,6 +158,15 @@ $ gen3-client download-multiple --profile=<profile_name>
 --download-path=<path-to-file-directory> --protocol=s3
 ```
 
-> Important: “**--protocol**” **tag** is important to this command as it will determine which bucket the files will be downloaded from. The “**s3**” value will download from the egress free Cleversafe bucket for the datasets in the “Downloadable” tab.
+<Alert severity="warning">
+  Important: "**--protocol**" **tag** is important to this command as it will
+  determine which bucket the files will be downloaded from. The "**s3**" value
+  will download from the egress free Cleversafe bucket for the datasets in the
+  "Downloadable" tab.
+</Alert>
 
-> **Note**: With larger manifests containing more than 100,000 files such as GTEx v8, the initial process of reading and parsing the manifest into the gen3-client can take anywhere from 30 - 240 mins.
+<Alert severity="warning">
+  **Note**: With larger manifests containing more than 100,000 files such as
+  GTEx v8, the initial process of reading and parsing the manifest into the
+  gen3-client can take anywhere from 30 - 240 mins.
+</Alert>
