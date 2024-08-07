@@ -1,8 +1,10 @@
 import { StaticImageProps } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 
+type Link = Omit<LinkProps, "url"> & { url: string };
+
 export interface SectionCard {
-  links: LinkProps[];
+  links: Link[];
   media?: StaticImageProps;
   secondaryText?: string;
   text: string;
@@ -10,7 +12,7 @@ export interface SectionCard {
 }
 
 export interface SectionCardWithLink extends Omit<SectionCard, "links"> {
-  link: LinkProps;
+  link: Link;
 }
 
 export enum VISIBILITY_MODE {

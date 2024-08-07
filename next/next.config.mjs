@@ -12,6 +12,12 @@ const withMDX = nextMDX({
   },
 });
 
+const ESM_PACKAGES = [
+  "axios",
+  "@databiosphere/findable-ui",
+  "@tanstack/react-table",
+];
+
 export default withPlugins(
   [
     [
@@ -28,6 +34,7 @@ export default withPlugins(
       unoptimized: true,
     },
     output: "export",
+    transpilePackages: [...ESM_PACKAGES],
     webpack: (config) => {
       // Add the alias for the peer dependency
       config.resolve.alias["@emotion/react"] = path.resolve(
@@ -45,14 +52,6 @@ export default withPlugins(
       config.resolve.alias["@mui/material"] = path.resolve(
         process.cwd(),
         "node_modules/@mui/material"
-      );
-      config.resolve.alias["@tanstack/react-table"] = path.resolve(
-        process.cwd(),
-        "node_modules/@tanstack/react-table"
-      );
-      config.resolve.alias["axios"] = path.resolve(
-        process.cwd(),
-        "node_modules/axios"
       );
       config.resolve.alias["isomorphic-dompurify"] = path.resolve(
         process.cwd(),
