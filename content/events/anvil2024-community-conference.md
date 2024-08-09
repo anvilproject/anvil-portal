@@ -19,7 +19,7 @@ The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Spac
 
 The conference will feature:
 
-- **Scientific Talks:** Engage with speakers including Anshul Kundaje, Michael Schatz, Tychele Turner and Melissa Wilson, demonstrating the latest advancements on the AnVIL platform.
+- **Scientific Talks:** Engage with speakers including Anshul Kundaje, Benedict Paten, Michael Schatz, and Tychele Turner, demonstrating the latest advancements on the AnVIL platform.
 - **Workshop:** Participate in a training led by the AnVIL team, offering a mix of presentations and hands-on instruction.
 - **CoFest:** Collaborate and innovate during our Collaboration Fest, with participants sharing their discoveries at the close of the conference.
 
@@ -50,7 +50,7 @@ More details coming soon. We look forward to seeing you there!
 
 | Time | Session | 
 | ---- | ---- | 
-| 9:00 am |	Invited speakers: Melissa Wilson 🗣️ | 
+| 9:00 am |	Invited speakers: Benedict Paten 🗣️ | 
 | 10:00 am	| Coffee break | 
 | 10:15 am | Breakout discussions: additional features, tools, community growth, etc | 
 | 11:00 am	| Townhall | 
