@@ -82,8 +82,8 @@ AnVIL is the primary NIH-designated repository for NHGRI-funded data, metadata, 
 NHGRI-funded investigators may submit to AnVIL to fulfill the expectations of the NIH Genomic Data Sharing
 Policy ([NOT-OD-14-124](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-14-124.html)) and the Final NIH Policy
 for Data Management and Sharing ([NOT-OD-21-013](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)).
-A number of high-value open-access datasets remain available on GCP, which are still being identified. NHGRI
-controlled-access data will reside in the Microsoft Azure platform.
+
+NHGRI controlled-access data in AnVIL will reside both in Google Cloud Platform and Microsoft Azure platform.
 
 - Read
   about [AnVIL as an NIH-designated repository (NOT-HG-24-020)](https://grants.nih.gov/grants/guide/notice-files/NOT-HG-24-020.html).
