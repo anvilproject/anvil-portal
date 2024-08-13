@@ -8,6 +8,9 @@ title: "Comparing the NHGRI AnVIL Platform Offerings on Google Cloud Platform (G
 
 # Comparing the NHGRI AnVIL Platform Offerings on Google Cloud Platform (GCP) and Microsoft Azure
 
+##### Posted: April 15, 2024
+##### Updated: August 15, 2024
+
 ## Introduction
 
 AnVIL, a leading cloud-native platform for biomedical data storage and analysis, offers features that use infrastructure
@@ -38,7 +41,7 @@ you have any questions, feel free to engage with us at [help.anvilproject.org](h
 | <ul><li> **Run workflows** using WDL, including WARP joint calling exome, scATAC, ReblockingGVCF, Optimus, SmartSeq, and more </li></ul>                                                                                                           |                   X                    |             X             |
 | <ul><li> Access to **Jupyter Notebooks**, a notebook-based interactive analysis environment that supports code in R and python </li></ul>                                                                                       |                   X                    |             X             |
 | <ul><li> Access to **Bioconductor**, an extensive suite of R packages for data analysis </li></ul>                                                                                                                              |                   X                    |        Q2 2025        |
-| <ul><li> Access to **Galaxy**, an interactive and robust point-and-click platform for data exploration and analysis with tools and workflows </li></ul>                                                                         |                   X                    | Long-term roadmap (2024+) |
+| <ul><li> Access to **Galaxy**, an interactive and robust point-and-click platform for data exploration and analysis with tools and workflows </li></ul>                                                                         |                   X                    | Long-term roadmap (2025+) |
 | <ul><li> Access to publicly shared workflows in **Dockstore** </li></ul>                                                                                                                                                        |                   X                    |             X             |
 | <ul><li> Access to the **AnVIL API Library** that enables interaction with AnVIL analyses and workflows through the command line interface </li></ul>                                                                           |                   X                    | Long-term roadmap (2025+) |
 | <ul><li> Interaction with data tables via an **API client library** </li></ul>                                                                                                                                                  |                   X                    |             X             |
