@@ -8,6 +8,9 @@ title: "Comparing the NHGRI AnVIL Platform Offerings on Google Cloud Platform (G
 
 # Comparing the NHGRI AnVIL Platform Offerings on Google Cloud Platform (GCP) and Microsoft Azure
 
+##### Posted: April 15, 2024
+##### Updated: August 15, 2024
+
 ## Introduction
 
 AnVIL, a leading cloud-native platform for biomedical data storage and analysis, offers features that use infrastructure
