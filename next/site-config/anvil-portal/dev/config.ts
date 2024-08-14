@@ -1,5 +1,6 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
+import { ROUTES } from "../../../routes/constants";
 import { SiteConfig } from "../../common/entities";
 import { socialMedia, SOCIALS } from "./socialMedia";
 
@@ -144,7 +145,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           undefined,
         ],
         searchEnabled: true,
-        searchURL: `${portalUrl}/search`,
+        searchURL: ROUTES.SEARCH,
         slogan: SLOGAN,
         socialMedia: socialMedia,
       },
