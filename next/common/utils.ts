@@ -18,7 +18,7 @@ export function replaceParameters(
     },
     decodedUrl
   );
-  if (/\[\w+]/.test(result)) {
+  if (/\{\w+}/.test(result)) {
     throw new Error(`URL still contains path parameters: ${result}`);
   }
   return result;
