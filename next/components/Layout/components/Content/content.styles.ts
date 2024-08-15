@@ -23,6 +23,18 @@ const footnotes = (props: ThemeProps) => css`
   }
 `;
 
+const image = (props: ThemeProps) => css`
+  li,
+  > p {
+    img {
+      border: 1px solid ${smokeMain(props)};
+      border-radius: 6px;
+      margin: 16px 0;
+      max-width: 100%;
+    }
+  }
+`;
+
 const muiAlert = (props: ThemeProps) => css`
   .MuiAlert-root {
     margin: 24px 0;
@@ -42,11 +54,11 @@ const muiAlert = (props: ThemeProps) => css`
       ul > li {
         margin: 8px 0;
 
-        &:first-child {
+        &:first-of-type {
           margin-top: 0;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-bottom: 0;
         }
       }
@@ -118,6 +130,7 @@ export const Content = styled.div<Props>`
   }
 
   ${footnotes};
+  ${image};
   ${muiAlert};
   ${muiButtonContainedPrimary};
 `;

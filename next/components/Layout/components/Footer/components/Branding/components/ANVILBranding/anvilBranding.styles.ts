@@ -20,19 +20,6 @@ export const Brands = styled.div`
   }
 `;
 
-export const PortalLogo = styled(Logo)`
-  padding: 5px 8px;
-
-  ${mediaTabletDown} {
-    flex-basis: 100%;
-    order: 1;
-
-    img {
-      height: 26px;
-    }
-  }
-`;
-
 export const NHGRILogo = styled(Logo)`
   padding: 8px;
 

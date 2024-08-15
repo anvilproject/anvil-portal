@@ -10,13 +10,9 @@ const ACTION_LABEL = {
 /**
  * Returns the analysis portal cards for the analysis portal section.
  * @param browserURL - Browser URL.
- * @param portalURL - Portal URL.
  * @returns analysis portal cards.
  */
-export function buildAnalysisPortalCards(
-  browserURL: string,
-  portalURL: string
-): SectionCard[] {
+export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
   return [
     {
       links: [
@@ -27,7 +23,7 @@ export function buildAnalysisPortalCards(
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/introduction/intro-to-terra`,
+          url: "/learn/introduction/intro-to-terra",
         },
       ],
       media: {
@@ -61,11 +57,11 @@ export function buildAnalysisPortalCards(
     },
     {
       links: [
-        { label: ACTION_LABEL.LAUNCH, url: "https://dockstore.org/" },
+        { label: ACTION_LABEL.LAUNCH, url: "https://dockstore.org" },
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/introduction/intro-to-dockstore`,
+          url: "/learn/introduction/intro-to-dockstore",
         },
       ],
       media: {
@@ -78,7 +74,7 @@ export function buildAnalysisPortalCards(
     },
     {
       links: [
-        { label: ACTION_LABEL.LEARN_MORE, url: "https://www.ncpi-acc.org/" },
+        { label: ACTION_LABEL.LEARN_MORE, url: "https://www.ncpi-acc.org" },
         {
           label: ACTION_LABEL.DATASETS,
           url: "https://ncpi-data.org/platforms",
@@ -97,7 +93,7 @@ export function buildAnalysisPortalCards(
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/interactive-analysis/getting-started-with-bioconductor`,
+          url: "/learn/interactive-analysis/getting-started-with-bioconductor",
         },
       ],
       media: {
@@ -113,7 +109,7 @@ export function buildAnalysisPortalCards(
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/interactive-analysis/getting-started-with-galaxy`,
+          url: "/learn/interactive-analysis/getting-started-with-galaxy",
         },
       ],
       media: {
@@ -129,7 +125,7 @@ export function buildAnalysisPortalCards(
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/interactive-analysis/getting-started-with-jupyter-notebooks`,
+          url: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks",
         },
       ],
       media: {
@@ -149,7 +145,7 @@ export function buildAnalysisPortalCards(
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/news/2021/03/10/announcing-seqr-in-anvil/`,
+          url: "/news/2021/03/10/announcing-seqr-in-anvil/",
         },
       ],
       media: {

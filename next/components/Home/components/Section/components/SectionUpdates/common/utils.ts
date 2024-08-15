@@ -64,7 +64,7 @@ function mapToCardFrontmatter(
 function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
   return {
     date: frontmatter.date?.toISOString(),
-    link: { label: null, url: frontmatter.path },
+    link: { label: null, url: frontmatter.path.replace(/^(?!\/)/, "/") },
     secondaryText: frontmatter.secondaryText,
     text: frontmatter.description,
     title: frontmatter.title,

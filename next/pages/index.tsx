@@ -14,8 +14,8 @@ import { HomeView } from "../views/HomeView/homeView";
 
 export const getStaticProps: GetStaticProps<SectionsData> = async () => {
   const { browserURL, portalURL } = config();
-  const analysisPortalCards = buildAnalysisPortalCards(browserURL, portalURL);
-  const carouselCards = buildCarouselCards(portalURL);
+  const analysisPortalCards = buildAnalysisPortalCards(browserURL);
+  const carouselCards = buildCarouselCards();
   const cloudCards = CLOUD_CARDS;
   const datasetCards = buildDatasetCards(portalURL);
   const eventCards = buildUpdateSectionCards("events");

@@ -11,7 +11,7 @@ import {
   FrontmatterNews,
 } from "./entities";
 
-const DOC_FOLDER_NAME = "content";
+const DOC_FOLDER_NAME = "next/docs";
 
 /**
  * Returns the moment, for the date field from the given frontmatter.
@@ -45,7 +45,7 @@ export function convertDateToMoment(
 }
 
 /**
- * Returns the path to the given content directory e.g. "...content/events" or "...content/news".
+ * Returns the path to the given content directory e.g. "...docs/events" or "...docs/news".
  * @param dirName - Directory name.
  * @returns path to the content directory.
  */

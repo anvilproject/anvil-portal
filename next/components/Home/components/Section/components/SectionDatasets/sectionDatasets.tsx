@@ -38,7 +38,7 @@ export const SectionDatasets = ({
           <ButtonSecondary href={`${portalURL}${EXPLORE_DATASETS}`}>
             Explore Datasets
           </ButtonSecondary>
-          <ButtonSecondary href={`${portalURL}${CONTRIBUTE_DATA}`}>
+          <ButtonSecondary href={CONTRIBUTE_DATA}>
             Contribute Data
           </ButtonSecondary>
         </SectionActions>

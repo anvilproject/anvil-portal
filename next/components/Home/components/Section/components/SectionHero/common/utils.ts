@@ -9,10 +9,9 @@ const ACTION_LABEL = {
 
 /**
  * Returns the carousel cards for the hero section.
- * @param portalURL - Portal URL.
  * @returns carousel cards.
  */
-export function buildCarouselCards(portalURL: string): SectionCard[] {
+export function buildCarouselCards(): SectionCard[] {
   return [
     {
       links: [
@@ -55,7 +54,7 @@ export function buildCarouselCards(portalURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/videos/anvil-videos#sharing-on-anvil`,
+          url: "/learn/videos/anvil-videos#sharing-on-anvil",
         },
       ],
       text: "Our short video series shows how AnVIL improves collaborative science for different researcher roles.",
@@ -84,7 +83,7 @@ export function buildCarouselCards(portalURL: string): SectionCard[] {
         },
         {
           label: ACTION_LABEL.LEARN_MORE,
-          url: "https://dockstore.org/",
+          url: "https://dockstore.org",
         },
       ],
       text: "Dockstore is an open source platform for publishing, sharing, and finding bioinformatics tools and workflows.",
@@ -114,7 +113,7 @@ export function buildCarouselCards(portalURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: `${portalURL}/learn/interactive-analysis/getting-started-with-galaxy`,
+          url: "/learn/interactive-analysis/getting-started-with-galaxy",
         },
       ],
       text: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data.",

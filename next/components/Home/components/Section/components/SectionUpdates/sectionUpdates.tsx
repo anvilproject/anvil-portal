@@ -23,13 +23,7 @@ export enum UPDATE_VIEW {
   NEWS = "NEWS",
 }
 
-interface SectionUpdatesProps {
-  portalURL: string;
-}
-
-export const SectionUpdates = ({
-  portalURL,
-}: SectionUpdatesProps): JSX.Element => {
+export const SectionUpdates = (): JSX.Element => {
   const { eventCards, newsCards } = useSectionsData();
   const [view, setView] = useState<UPDATE_VIEW>(UPDATE_VIEW.NEWS);
   const cards =
@@ -57,9 +51,9 @@ export const SectionUpdates = ({
           </SectionSubtitle>
           <ToggleButtonGroup toggleButtons={getToggleButtons(onChangeView)} />
         </Headline>
-        <Updates cards={cards} portalURL={portalURL} />
+        <Updates cards={cards} />
         <SectionActions>
-          <ButtonSecondary href={`${portalURL}/${updateName}`}>
+          <ButtonSecondary href={`/${updateName}`}>
             Show All {updateName}
           </ButtonSecondary>
         </SectionActions>

@@ -27,7 +27,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
     explorerTitle: null,
     layout: {
       footer: {
-        Branding: C.ANVILBranding({ portalURL: undefined }),
+        Branding: C.ANVILBranding(),
         navLinks: [
           {
             label: "Help",
@@ -45,7 +45,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
         logo: C.Logo({
           alt: APP_TITLE,
           height: 40,
-          link: portalUrl,
+          link: "/",
           src: "/consortia/logos/logoAnvil.png",
         }),
         navigation: [

@@ -13,11 +13,7 @@ import {
 const GET_STARTED = "/learn";
 const LEARN_MORE = "/overview";
 
-interface SectionHeroProps {
-  portalURL: string;
-}
-
-export const SectionHero = ({ portalURL }: SectionHeroProps): JSX.Element => {
+export const SectionHero = (): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
@@ -25,12 +21,8 @@ export const SectionHero = ({ portalURL }: SectionHeroProps): JSX.Element => {
           <Head>Migrate Your Genomic Research to the Cloud</Head>
           <Subhead>Secure, cost-effective genomic analysis at scale.</Subhead>
           <CTAs>
-            <ButtonPrimary href={`${portalURL}${GET_STARTED}`}>
-              Get Started
-            </ButtonPrimary>
-            <ButtonSecondary href={`${portalURL}${LEARN_MORE}`}>
-              Learn More
-            </ButtonSecondary>
+            <ButtonPrimary href={GET_STARTED}>Get Started</ButtonPrimary>
+            <ButtonSecondary href={LEARN_MORE}>Learn More</ButtonSecondary>
           </CTAs>
         </Headline>
         <Carousel />
