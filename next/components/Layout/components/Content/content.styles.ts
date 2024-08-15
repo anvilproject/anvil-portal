@@ -1,3 +1,4 @@
+import { smokeMain } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBodyLarge4002Lines,
   textHeadingSmall,
@@ -5,7 +6,6 @@ import {
 import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { smokeMain } from "../../../../../../findable-ui/lib/styles/common/mixins/colors";
 
 interface Props {
   headerHeight: number;
