@@ -1,4 +1,5 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import {
   NavigationEntry,
   NavigationNode,
@@ -32,10 +33,15 @@ export const LEARN: NavigationEntry = {
   nodes: [
     {
       key: NODE_KEYS.LEARN,
+      label: "Introduction",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         { label: "Introduction" },
-        { label: "Getting Started", url: ROUTES.LEARN },
+        {
+          label: "Getting Started",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: ROUTES.LEARN,
+        },
         {
           label: "Guides and Tutorials",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INTRODUCTION}/guides-and-tutorials`,
@@ -199,6 +205,7 @@ export const LEARN: NavigationEntry = {
     },
     {
       key: NODE_KEYS.DATA_ANALYSTS,
+      label: "Data Analysts",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
@@ -210,6 +217,7 @@ export const LEARN: NavigationEntry = {
     },
     {
       key: NODE_KEYS.INVESTIGATORS,
+      label: "Investigators",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
@@ -229,6 +237,7 @@ export const LEARN: NavigationEntry = {
     },
     {
       key: NODE_KEYS.DATA_SUBMITTERS,
+      label: "Data Submitters",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         { label: "Data Submission Guide" },

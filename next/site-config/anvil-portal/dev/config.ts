@@ -2,6 +2,8 @@ import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/c
 import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
 import { SiteConfig } from "../../common/entities";
+import { buildMenuItems } from "./common/utils";
+import { LEARN } from "./navigation/learn";
 import { socialMedia, SOCIALS } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
@@ -29,11 +31,11 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
         navLinks: [
           {
             label: "Help",
-            url: `${portalUrl}/help`,
+            url: ROUTES.HELP,
           },
           {
             label: "Privacy",
-            url: `${portalUrl}/privacy`,
+            url: ROUTES.PRIVACY,
           },
         ],
         socials: socialMedia.socials,
@@ -51,11 +53,12 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           [
             {
               label: "Overview",
-              url: `${portalUrl}/overview`,
+              url: ROUTES.OVERVIEW,
             },
             {
               label: "Learn",
-              url: `${portalUrl}/learn`,
+              menuItems: buildMenuItems(LEARN),
+              url: "",
             },
             {
               label: "Datasets",
@@ -81,30 +84,30 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
             },
             {
               label: "Consortia",
-              url: "/consortia",
+              url: ROUTES.CONSORTIA,
             },
             {
               label: "More",
               menuItems: [
                 {
                   label: "News",
-                  url: `${portalUrl}/news`,
+                  url: ROUTES.NEWS,
                 },
                 {
                   label: "Events",
-                  url: `${portalUrl}/events`,
+                  url: ROUTES.EVENTS,
                 },
                 {
                   label: "Team",
-                  url: `${portalUrl}/team`,
+                  url: ROUTES.TEAM,
                 },
                 {
                   label: "FAQ",
-                  url: `${portalUrl}/faq`,
+                  url: ROUTES.FAQ,
                 },
                 {
                   label: "Help",
-                  url: `${portalUrl}/help`,
+                  url: ROUTES.HELP,
                 },
                 {
                   label: "Follow Us",

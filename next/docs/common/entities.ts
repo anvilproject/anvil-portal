@@ -1,6 +1,9 @@
 import { StaticImageProps } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { NavLinkItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Navigation/navigation";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
+
+export type Navigation = NavItem & Pick<NavLinkItem, "selectedMatch">;
 
 export type NavigationConfig = Record<NavigationKey, NavigationEntry>;
 
@@ -21,11 +24,13 @@ export enum NavigationKey {
   TEAM = "team",
 }
 
-export interface NavigationNode {
+export interface NavigationNode
+  extends Pick<NavLinkItem, "flatten" | "selectedMatch" | "visible"> {
   hero?: NodeHero;
   key?: string;
+  label?: string;
   layoutStyle?: LayoutStyle;
-  navigation?: NavItem[];
+  navigation?: Navigation[];
   slugs: string[]; // A list of slugs that are valid for the node.
 }
 
