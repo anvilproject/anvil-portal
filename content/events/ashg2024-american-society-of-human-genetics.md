@@ -33,11 +33,11 @@ timezone: "America/New_York"
 title: "American Society of Human Genetics"
 ---
 
-<EventsHero {...frontmatter} />
+<event-hero></event-hero>
 
 Join us in [Denver](https://denverconvention.com/), Colorado, from November 5-9! Over the course of 5 days, the meeting will cover a broad spectrum of topics including new technologies, applications, and research to showcase the most compelling genetics and genomics science of the year. It is a perfect place to present or learn about cutting-edge research findings while uncovering new insights as we continue to advance the field. In the below video, hear ASHG Program Committee Chair, Beth Sullivan, PhD, highlight what she is excited about for 2024. We hope to see you there!
 
-## Event Details
+### Event Details
 
 - Conference website: [https://www.ashg.org/meetings/2024meeting/](https://www.ashg.org/meetings/2024meeting/)
 - Agenda: [https://www.ashg.org/meetings/2024meeting/schedule/](https://www.ashg.org/meetings/2024meeting/schedule/)
