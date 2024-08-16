@@ -212,6 +212,50 @@ export const LEARN: NavigationEntry = {
           label: "Guides and Tutorials",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}`,
         },
+        { label: "Bioconductor / RStudio" },
+        {
+          label: "Starting RStudio",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/rstudio-gsg-video`,
+        },
+        {
+          label: "Using R / Bioconductor in AnVIL",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/using-r-bioconductor-in-anvil`,
+        },
+        {
+          label: "The R / Bioconductor AnVIL Package",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/the-r-bioconductor-anvil-package`,
+        },
+        {
+          label: "Running a Workflow",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/running-a-workflow`,
+        },
+        {
+          label:
+            "Single-cell RNASeq with 'Orchestrating Single Cell Analysis'\u00A0in R / Bioconductor",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor`,
+        },
+        {
+          label: "Using AnVIL for teaching R / Bioconductor",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/using-anvil-for-teaching-r-bioconductor`,
+        },
+        {
+          label: "Reproducible Research with AnVILPublish",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/reproducible-research-with-anvilpublish`,
+        },
+        {
+          label: "Participant Stories",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/participant-stories`,
+        },
+        { label: "Galaxy" },
+        {
+          label: "Starting Galaxy",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/galaxy-gsg-video`,
+        },
+        { label: "Jupyter" },
+        {
+          label: "Starting Jupyter",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/jupyter-gsg-video`,
+        },
       ],
       slugs: [PATH_SEGMENTS.DATA_ANALYSTS, PATH_SEGMENTS.LEARN],
     },

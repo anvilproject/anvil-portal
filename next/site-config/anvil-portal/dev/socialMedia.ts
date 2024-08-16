@@ -25,7 +25,6 @@ export const SOCIALS = {
 };
 
 export const socialMedia: SocialMedia = {
-  label: "Follow Us",
   socials: [
     {
       ...SOCIALS.DISCOURSE,
