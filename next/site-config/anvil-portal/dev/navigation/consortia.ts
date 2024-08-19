@@ -1,4 +1,5 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import {
   NavigationEntry,
   NavigationNode,
@@ -15,6 +16,7 @@ const PATH_SEGMENTS = {
 export const CONSORTIA: NavigationEntry = {
   nodes: [
     {
+      flatten: { sm: true, xs: true },
       hero: {
         byline: "Active August, 2020 to July, 2023",
         logo: {
@@ -27,7 +29,11 @@ export const CONSORTIA: NavigationEntry = {
       key: NODE_KEYS.CSER,
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
       navigation: [
-        { label: "About", url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.CSER}` },
+        {
+          label: "About",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.CSER}`,
+        },
         {
           label: "News",
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.CSER}/news`,
@@ -50,6 +56,8 @@ export const CONSORTIA: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.CSER],
+      url: ROUTES.CONSORTIA,
+      visible: { lg: false, md: false },
     },
   ],
 };

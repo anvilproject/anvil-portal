@@ -1,4 +1,5 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import {
   NavigationEntry,
   NavigationNode,
@@ -19,10 +20,15 @@ const PATH_SEGMENTS = {
 export const FAQ: NavigationEntry = {
   nodes: [
     {
+      flatten: { sm: true, xs: true },
       key: NODE_KEYS.FAQ,
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
-        { label: "Overview", url: ROUTES.FAQ },
+        {
+          label: "Overview",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: ROUTES.FAQ,
+        },
         {
           label: "Data Security, Management, and Access Procedures",
           url: `${ROUTES.FAQ}/${PATH_SEGMENTS.DATA_SECURITY}`,
@@ -47,6 +53,8 @@ export const FAQ: NavigationEntry = {
         PATH_SEGMENTS.RESOURCES_FOR_ANVIL_USERS,
         PATH_SEGMENTS.USING_ANVIL,
       ],
+      url: ROUTES.FAQ,
+      visible: { lg: false, md: false },
     },
   ],
 };

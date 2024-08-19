@@ -32,6 +32,7 @@ export interface NavigationNode
   layoutStyle?: LayoutStyle;
   navigation?: Navigation[];
   slugs: string[]; // A list of slugs that are valid for the node.
+  url?: string;
 }
 
 export interface NodeHero {

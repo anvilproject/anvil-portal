@@ -1,9 +1,14 @@
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
 import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
+import { CONSORTIA } from "./navigation/consortia";
+import { FAQ } from "./navigation/faq";
 import { LEARN } from "./navigation/learn";
+import { OVERVIEW } from "./navigation/overview";
+import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
@@ -53,6 +58,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           [
             {
               label: "Overview",
+              menuItems: buildMenuItems(OVERVIEW),
               url: ROUTES.OVERVIEW,
             },
             {
@@ -84,9 +90,19 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
             },
             {
               label: "Consortia",
+              menuItems: [
+                {
+                  label: "Overview",
+                  selectedMatch: SELECTED_MATCH.EQUALS,
+                  url: ROUTES.CONSORTIA,
+                  visible: { lg: false, md: false },
+                },
+                ...buildMenuItems(CONSORTIA),
+              ],
               url: ROUTES.CONSORTIA,
             },
             {
+              flatten: { sm: true, xs: true },
               label: "More",
               menuItems: [
                 {
@@ -99,10 +115,12 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
                 },
                 {
                   label: "Team",
+                  menuItems: buildMenuItems(TEAM),
                   url: ROUTES.TEAM,
                 },
                 {
                   label: "FAQ",
+                  menuItems: buildMenuItems(FAQ),
                   url: ROUTES.FAQ,
                 },
                 {

@@ -129,6 +129,10 @@ export const Content = styled.div<Props>`
     list-style-type: lower-roman;
   }
 
+  p {
+    overflow-wrap: break-word;
+  }
+
   ${footnotes};
   ${image};
   ${muiAlert};

@@ -189,6 +189,7 @@ export const LEARN: NavigationEntry = {
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.REFERENCE}/cross-platform-data-access-with-drs-uris-in-terra`,
         },
       ],
+      selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [
         PATH_SEGMENTS.ACCESSING_DATA,
         PATH_SEGMENTS.ACCOUNT_SETUP,
@@ -202,6 +203,7 @@ export const LEARN: NavigationEntry = {
         PATH_SEGMENTS.VIDEOS,
         PATH_SEGMENTS.WORKSHOP_ARCHIVE,
       ],
+      url: ROUTES.LEARN,
     },
     {
       key: NODE_KEYS.DATA_ANALYSTS,
@@ -210,6 +212,7 @@ export const LEARN: NavigationEntry = {
       navigation: [
         {
           label: "Guides and Tutorials",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}`,
         },
         { label: "Bioconductor / RStudio" },
@@ -258,6 +261,7 @@ export const LEARN: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.DATA_ANALYSTS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}`,
     },
     {
       key: NODE_KEYS.INVESTIGATORS,
@@ -266,6 +270,7 @@ export const LEARN: NavigationEntry = {
       navigation: [
         {
           label: "Investigators Tutorial Overview",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}`,
         },
         {
@@ -278,6 +283,7 @@ export const LEARN: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.INVESTIGATORS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}`,
     },
     {
       key: NODE_KEYS.DATA_SUBMITTERS,
@@ -320,6 +326,7 @@ export const LEARN: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.DATA_SUBMITTERS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_SUBMITTERS}/submission-guide/data-submitters-overview`,
     },
   ],
 };
