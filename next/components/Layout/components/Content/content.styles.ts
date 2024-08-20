@@ -23,6 +23,16 @@ const footnotes = (props: ThemeProps) => css`
   }
 `;
 
+const iframe = css`
+  iframe {
+    aspect-ratio: 16/ 9;
+    border: none;
+    display: block;
+    margin: 32px 0;
+    width: 100%;
+  }
+`;
+
 const image = (props: ThemeProps) => css`
   li,
   > p {
@@ -134,6 +144,7 @@ export const Content = styled.div<Props>`
   }
 
   ${footnotes};
+  ${iframe};
   ${image};
   ${muiAlert};
   ${muiButtonContainedPrimary};
