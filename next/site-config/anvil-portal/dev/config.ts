@@ -102,7 +102,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
               url: ROUTES.CONSORTIA,
             },
             {
-              flatten: { sm: true, xs: true },
+              flatten: { xs: true },
               label: "More",
               menuItems: [
                 {

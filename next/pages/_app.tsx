@@ -3,8 +3,9 @@ import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/La
 import { LayoutStateProvider } from "@databiosphere/findable-ui/lib/providers/layoutState";
 import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
+import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
+import { createBreakpoints } from "@mui/system";
+import { deepmerge } from "@mui/utils";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
@@ -13,6 +14,7 @@ import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
 import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
+import { BREAKPOINTS } from "../site-config/anvil-portal/dev/common/constants";
 import { mergeAppTheme } from "../theme/theme";
 
 export type NextPageWithComponent = NextPage & {
@@ -49,7 +51,17 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
           <CssBaseline />
           <LayoutStateProvider>
             <AppLayout>
-              <DXHeader {...layout.header} />
+              <ThemeProvider
+                theme={(theme: Theme): Theme =>
+                  createTheme(
+                    deepmerge(theme, {
+                      breakpoints: createBreakpoints(BREAKPOINTS),
+                    })
+                  )
+                }
+              >
+                <DXHeader {...layout.header} />
+              </ThemeProvider>
               <Main>
                 <Component {...pageProps} />
               </Main>
