@@ -29,7 +29,7 @@ sessions:
       sessionStart: "9th November 2024 9:00 AM",
     },
   ]
-timezone: "America/New_York"
+timezone: "America/Chicago"
 title: "American Society of Human Genetics"
 ---
 
