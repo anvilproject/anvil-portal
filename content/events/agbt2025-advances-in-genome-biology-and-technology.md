@@ -14,7 +14,7 @@ sessions:
   ]
 
 timezone: "America/New_York"
-title: "Advances in Genome Biology and Technology 2023"
+title: "Advances in Genome Biology and Technology 2025"
 ---
 
 <event-hero></event-hero>
