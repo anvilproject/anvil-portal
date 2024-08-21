@@ -56,6 +56,8 @@
             - name: ""
               file: "/events/anvil2024-community-conference"
             - name: ""
+              file: "/events/ashg2024-american-society-of-human-genetics"
+            - name: ""
               file: "/events/anvil2024-october-demos"
             - name: ""
               file: "/events/anvil2024-september-demos"
