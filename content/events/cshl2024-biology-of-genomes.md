@@ -1,0 +1,40 @@
+---
+author: "AnVIL"
+conference: "CSHL BioData"
+eventType: "Conference"
+featured: true
+location: "Cold Spring Harbor Laboratory, Cold Spring Harbor, NY, USA"
+sessions:
+  [
+    { sessionStart: "13 Nov 2024 9:00 AM", sessionEnd: "13 Nov 2024 10:00PM" },
+    { sessionStart: "14 Nov 2024 9:00 AM", sessionEnd: "14 Nov 2024 10:00PM" },
+    { sessionStart: "15 Nov 2024 9:00 AM", sessionEnd: "15 Nov 2024 10:00PM" },
+    { sessionStart: "16 Nov 2024 9:00 AM", sessionEnd: "16 Nov 2024 10:00PM" },
+  ]
+timezone: "America/New_York"
+title: "CSHL Biological Data Science Meeting 2024"
+---
+
+<event-hero></event-hero>
+
+The scope of the Biological Data Science meeting will be the infrastructure, software, and algorithms needed to analyze large data sets in biological research. We welcome abstracts from researchers in both academia and industry who work on technical aspects of the discussion topics in all areas of biology, from genomics to imaging. We also welcome abstracts from translational and clinical researchers who regularly mine large data sets as part of their projects. The goal is to assemble a multidisciplinary audience that will discuss best practices, identify challenges, and highlight successes in the analysis of large biological data sets.
+
+### Discussion Themes:
+
+- Single Cell
+- Personalized Medicine and Biomarkers
+- Imaging
+- Machine Learning
+- Algorithmics
+- Tools, Infrastructure, and Visualization
+
+## Scholarships
+
+The James P. Taylor Foundation for Open Science will award six scholarships to outstanding graduate students in genomics and data sciences: 3 will cover conference registration and transportation, and 3 will cover conference registration only. Online application will open on July 28, 2024. The deadline for applications is August 12, 2024. For details and application instructions, visit here.
+
+## Event Details
+
+- Conference website: [https://meetings.cshl.edu/meetings.aspx?meet=DATA&year=24](https://meetings.cshl.edu/meetings.aspx?meet=DATA&year=24)
+- How to register: [https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=DATA&year=24](https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=DATA&year=24)
+- Costs: See conference website for costs details.
+- Contact Info: Contact Kelley McGrath mcgrath [at] cshl [dot] edu with any questions.
