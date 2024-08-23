@@ -6,7 +6,6 @@ export const BREAKPOINTS: Partial<Breakpoints> = {
     lg: 1440,
     md: 1280,
     sm: 1024,
-    xl: 1920,
     xs: 0,
-  },
+  } as Breakpoints["values"], // TODO(cc) add "xl" breakpoint.
 };

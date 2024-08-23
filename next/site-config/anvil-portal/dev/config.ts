@@ -64,6 +64,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
             {
               label: "Learn",
               menuItems: buildMenuItems(LEARN),
+              selectedMatch: SELECTED_MATCH.EQUALS,
               url: "",
             },
             {
