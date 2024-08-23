@@ -13,10 +13,7 @@ download data to analyze locally – is increasingly unsustainable. Not only are
 this approach also leads to redundant siloed compute infrastructure and makes ensuring security and compliance of
 protected data highly problematic.
 
-<figure>
-<img src="./_images/overview.png" alt="Overview of AnVIL"/>
-<figure-caption>From the NHGRI Genomic Data Science Analysis, Visualization and Informatics Lab-space (AnVIL) poster presented at <external-link link="https://twitter.com/hashtag/T2THPRC">#T2THPRC</external-link>. (<a href="./_files/2020.09.21.T2T.HRPC.AnVIL-Poster-wide.pdf" download>Download the Poster</a>)</figure-caption>
-</figure>
+![Overview of AnVIL](./_images/overview.png)
 
 The NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-Space, or AnVIL, inverts the traditional
 model, providing a cloud environment for the analysis of large genomic and related datasets.
