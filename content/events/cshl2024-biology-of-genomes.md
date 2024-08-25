@@ -1,8 +1,10 @@
 ---
 author: "AnVIL"
 conference: "CSHL BioData"
+description: "We are pleased to announce the sixth meeting on Biological Data Science."
 eventType: "Conference"
 featured: true
+hashtag: "#biodata24"
 location: "Cold Spring Harbor Laboratory, Cold Spring Harbor, NY, USA"
 sessions:
   [
@@ -30,11 +32,11 @@ The scope of the Biological Data Science meeting will be the infrastructure, sof
 
 ## Scholarships
 
-The James P. Taylor Foundation for Open Science will award six scholarships to outstanding graduate students in genomics and data sciences: 3 will cover conference registration and transportation, and 3 will cover conference registration only. Online application will open on July 28, 2024. The deadline for applications is August 12, 2024. For details and application instructions, visit here.
+The James P. Taylor Foundation for Open Science will award six scholarships to outstanding graduate students in genomics and data sciences: 3 will cover conference registration and transportation, and 3 will cover conference registration only. Online application will open on July 28, 2024. The deadline for applications is August 12, 2024. For details and application instructions, visit [here](https://jxtxfoundation.org/news/2024-07-26-bds).
 
 ## Event Details
 
 - Conference website: [https://meetings.cshl.edu/meetings.aspx?meet=DATA&year=24](https://meetings.cshl.edu/meetings.aspx?meet=DATA&year=24)
 - How to register: [https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=DATA&year=24](https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=DATA&year=24)
 - Costs: See conference website for costs details.
-- Contact Info: Contact Kelley McGrath mcgrath [at] cshl [dot] edu with any questions.
+- Contact Info: Contact [Kelley McGrath](mailto:mcgrath@cshl.edu) with any questions.
