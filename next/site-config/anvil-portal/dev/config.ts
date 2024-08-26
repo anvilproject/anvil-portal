@@ -90,29 +90,35 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
               url: "",
             },
             {
-              label: "Consortia",
-              menuItems: [
-                {
-                  label: "Overview",
-                  selectedMatch: SELECTED_MATCH.EQUALS,
-                  url: ROUTES.CONSORTIA,
-                  visible: { lg: false, md: false },
-                },
-                ...buildMenuItems(CONSORTIA),
-              ],
-              url: ROUTES.CONSORTIA,
+              label: "News",
+              url: ROUTES.NEWS,
+            },
+            {
+              label: "Events",
+              url: ROUTES.EVENTS,
             },
             {
               flatten: { xs: true },
               label: "More",
               menuItems: [
                 {
-                  label: "News",
-                  url: ROUTES.NEWS,
-                },
-                {
-                  label: "Events",
-                  url: ROUTES.EVENTS,
+                  label: "Consortia",
+                  menuItems: [
+                    {
+                      label: "Overview",
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: ROUTES.CONSORTIA,
+                      visible: { lg: false, md: false },
+                    },
+                    {
+                      label: "CSER",
+                      menuItems: buildMenuItems(CONSORTIA),
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: `${ROUTES.CONSORTIA}/cser`,
+                      visible: { lg: false, md: false },
+                    },
+                  ],
+                  url: ROUTES.CONSORTIA,
                 },
                 {
                   label: "Team",
