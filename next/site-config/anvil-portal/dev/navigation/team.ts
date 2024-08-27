@@ -5,6 +5,7 @@ import {
   NavigationNode,
 } from "../../../../docs/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   TEAM: "team",
@@ -18,7 +19,7 @@ const PATH_SEGMENTS = {
 export const TEAM: NavigationEntry = {
   nodes: [
     {
-      flatten: { sm: true, xs: true },
+      flatten: FLATTEN.MD_DOWN,
       key: NODE_KEYS.TEAM,
       label: "Team",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
@@ -43,7 +44,7 @@ export const TEAM: NavigationEntry = {
         PATH_SEGMENTS.WORKING_GROUPS,
       ],
       url: ROUTES.TEAM,
-      visible: { lg: false, md: false },
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };

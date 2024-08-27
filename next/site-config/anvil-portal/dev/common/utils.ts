@@ -1,5 +1,6 @@
 import { NavLinkItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/components/Content/components/Navigation/navigation";
 import { NavigationEntry } from "../../../../docs/common/entities";
+import { VISIBLE } from "../../../common/constants";
 
 /**
  * Retuns menu items for the navigation entry.
@@ -23,7 +24,7 @@ export function buildMenuItems(
         label,
         menuItems: menuItems?.map((m) => ({
           ...m,
-          visible: { lg: false, md: false, sm: true, xs: true },
+          visible: VISIBLE.MD_DOWN,
         })),
         selectedMatch,
         url,

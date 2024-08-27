@@ -5,6 +5,7 @@ import {
   NavigationNode,
 } from "../../../../docs/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   OVERVIEW: "overview",
@@ -20,7 +21,7 @@ const PATH_SEGMENTS = {
 export const OVERVIEW: NavigationEntry = {
   nodes: [
     {
-      flatten: { sm: true, xs: true },
+      flatten: FLATTEN.MD_DOWN,
       key: NODE_KEYS.OVERVIEW,
       label: "Overview",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
@@ -55,7 +56,7 @@ export const OVERVIEW: NavigationEntry = {
         PATH_SEGMENTS.SECURITY,
       ],
       url: ROUTES.OVERVIEW,
-      visible: { lg: false, md: false },
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };

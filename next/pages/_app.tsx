@@ -14,7 +14,7 @@ import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
 import { config } from "../config/config";
 import { ConfigProvider } from "../providers/config";
-import { BREAKPOINTS } from "../site-config/anvil-portal/dev/common/constants";
+import { BREAKPOINTS } from "../site-config/common/constants";
 import { mergeAppTheme } from "../theme/theme";
 
 export type NextPageWithComponent = NextPage & {

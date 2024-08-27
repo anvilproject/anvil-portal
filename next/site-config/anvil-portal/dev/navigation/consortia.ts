@@ -5,6 +5,7 @@ import {
   NavigationNode,
 } from "../../../../docs/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   CSER: "cser",
@@ -16,7 +17,7 @@ const PATH_SEGMENTS = {
 export const CONSORTIA: NavigationEntry = {
   nodes: [
     {
-      flatten: { sm: true, xs: true },
+      flatten: FLATTEN.MD_DOWN,
       hero: {
         byline: "Active August, 2020 to July, 2023",
         logo: {
@@ -57,7 +58,7 @@ export const CONSORTIA: NavigationEntry = {
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.CSER],
-      visible: { lg: false, md: false },
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };

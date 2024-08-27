@@ -2,6 +2,7 @@ import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
 import { ROUTES } from "../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { buildMenuItems } from "./common/utils";
 import { CONSORTIA } from "./navigation/consortia";
@@ -98,7 +99,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
               url: ROUTES.EVENTS,
             },
             {
-              flatten: { xs: true },
+              flatten: FLATTEN.XS_ONLY,
               label: "More",
               menuItems: [
                 {
@@ -108,14 +109,14 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
                       label: "Overview",
                       selectedMatch: SELECTED_MATCH.EQUALS,
                       url: ROUTES.CONSORTIA,
-                      visible: { lg: false, md: false },
+                      visible: VISIBLE.MD_DOWN,
                     },
                     {
                       label: "CSER",
                       menuItems: buildMenuItems(CONSORTIA),
                       selectedMatch: SELECTED_MATCH.EQUALS,
                       url: `${ROUTES.CONSORTIA}/cser`,
-                      visible: { lg: false, md: false },
+                      visible: VISIBLE.MD_DOWN,
                     },
                   ],
                   url: ROUTES.CONSORTIA,
@@ -164,7 +165,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
                     },
                   ],
                   url: "",
-                  visible: { lg: false, sm: false, xs: false },
+                  visible: VISIBLE.BETWEEN_SM_AND_LG,
                 },
               ],
               url: "",

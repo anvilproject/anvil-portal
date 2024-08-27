@@ -5,6 +5,7 @@ import {
   NavigationNode,
 } from "../../../../docs/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   FAQ: "faq",
@@ -20,7 +21,7 @@ const PATH_SEGMENTS = {
 export const FAQ: NavigationEntry = {
   nodes: [
     {
-      flatten: { sm: true, xs: true },
+      flatten: FLATTEN.MD_DOWN,
       key: NODE_KEYS.FAQ,
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
@@ -54,7 +55,7 @@ export const FAQ: NavigationEntry = {
         PATH_SEGMENTS.USING_ANVIL,
       ],
       url: ROUTES.FAQ,
-      visible: { lg: false, md: false },
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };
