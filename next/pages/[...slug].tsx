@@ -12,6 +12,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
 import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
+import { ContentEnd } from "../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../components/Layout/components/Content/content";
 import { Frontmatter } from "../content/entities";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
@@ -44,6 +45,7 @@ const Page = ({
   mdxSource,
   navigation,
   outline,
+  slug,
 }: DocPageProps): JSX.Element => {
   if (!mdxSource) return <></>;
   return (
@@ -51,6 +53,7 @@ const Page = ({
       content={
         <Content>
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+          <ContentEnd slug={slug} />
         </Content>
       }
       layoutStyle={layoutStyle ?? undefined}

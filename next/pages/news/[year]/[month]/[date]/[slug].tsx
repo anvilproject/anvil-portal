@@ -7,6 +7,7 @@ import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
 import remarkGfm from "remark-gfm";
 import { ContentView } from "../../../../../components";
+import { ContentEnd } from "../../../../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../../../../../components/Layout/components/Content/content";
 import { processFrontmatter } from "../../../../../components/News/common/utils";
 import { Frontmatter } from "../../../../../content/entities";
@@ -27,14 +28,19 @@ interface NewsArticlePageUrlParams extends ParsedUrlQuery {
 interface NewsArticlePageProps {
   mdxSource: MDXRemoteSerializeResult;
   pageTitle: string | null;
+  slug: string[];
 }
 
-const NewsArticlePage = ({ mdxSource }: NewsArticlePageProps): JSX.Element => {
+const NewsArticlePage = ({
+  mdxSource,
+  slug,
+}: NewsArticlePageProps): JSX.Element => {
   return (
     <ContentView
       content={
         <Content>
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+          <ContentEnd slug={slug} />
         </Content>
       }
       layoutStyle={LAYOUT_STYLE_NO_CONTRAST_DEFAULT}
@@ -45,9 +51,8 @@ const NewsArticlePage = ({ mdxSource }: NewsArticlePageProps): JSX.Element => {
 export const getStaticProps: GetStaticProps = async (
   props: GetStaticPropsContext
 ) => {
-  const { content, data } = parseMDXFrontmatter(
-    getNewsSlug(props.params as NewsArticlePageUrlParams)
-  );
+  const slug = getNewsSlug(props.params as NewsArticlePageUrlParams);
+  const { content, data } = parseMDXFrontmatter(slug);
   const frontmatter = data as Frontmatter;
   if (frontmatter.hidden) {
     return {
@@ -67,6 +72,7 @@ export const getStaticProps: GetStaticProps = async (
     props: {
       mdxSource,
       pageTitle: frontmatter.title ?? null,
+      slug,
     },
   };
 };
