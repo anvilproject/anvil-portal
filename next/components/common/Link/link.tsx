@@ -19,12 +19,14 @@ export const Link = ({
   return (
     <DXLink
       label={<TypographyWordBreak>{children}</TypographyWordBreak>}
-      url={replaceParameters(href, {
-        ...EMAIL_ADDRESSES,
-        ...PATH_PARAMETERS,
-        browserURL,
-        portalURL,
-      })}
+      url={encodeURI(
+        replaceParameters(decodeURI(href), {
+          ...EMAIL_ADDRESSES,
+          ...PATH_PARAMETERS,
+          browserURL,
+          portalURL,
+        })
+      )}
       {...linkProps}
     />
   );
