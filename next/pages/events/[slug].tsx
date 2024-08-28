@@ -8,6 +8,7 @@ import { ParsedUrlQuery } from "querystring";
 import remarkGfm from "remark-gfm";
 import { ContentView } from "../../components";
 import { processEventFrontmatter } from "../../components/Events/common/utils";
+import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../../components/Layout/components/Content/content";
 import { Frontmatter } from "../../content/entities";
 import { isFrontmatterEvent } from "../../content/utils";
@@ -22,16 +23,19 @@ interface EventArticlePageUrlParams extends ParsedUrlQuery {
 interface EventArticlePageProps {
   mdxSource: MDXRemoteSerializeResult;
   pageTitle: string | null;
+  slug: string[];
 }
 
 const EventArticlePage = ({
   mdxSource,
+  slug,
 }: EventArticlePageProps): JSX.Element => {
   return (
     <ContentView
       content={
         <Content>
           <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+          <ContentEnd slug={slug} />
         </Content>
       }
       layoutStyle={LAYOUT_STYLE_NO_CONTRAST_DEFAULT}
@@ -42,9 +46,8 @@ const EventArticlePage = ({
 export const getStaticProps: GetStaticProps = async (
   props: GetStaticPropsContext
 ) => {
-  const { content, data } = parseMDXFrontmatter(
-    getEventSlug(props.params as EventArticlePageUrlParams)
-  );
+  const slug = getEventSlug(props.params as EventArticlePageUrlParams);
+  const { content, data } = parseMDXFrontmatter(slug);
   const frontmatter = data as Frontmatter;
   if (frontmatter.hidden) {
     return {
@@ -69,6 +72,7 @@ export const getStaticProps: GetStaticProps = async (
     props: {
       mdxSource,
       pageTitle: frontmatter.title ?? null,
+      slug,
     },
   };
 };
