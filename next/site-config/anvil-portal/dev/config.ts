@@ -1,6 +1,15 @@
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components/index";
+import { ROUTES } from "../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
+import { buildMenuItems } from "./common/utils";
+import { CONSORTIA } from "./navigation/consortia";
+import { FAQ } from "./navigation/faq";
+import { LEARN } from "./navigation/learn";
+import { OVERVIEW } from "./navigation/overview";
+import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
@@ -24,15 +33,15 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
     explorerTitle: null,
     layout: {
       footer: {
-        Branding: C.ANVILBranding({ portalURL: undefined }),
+        Branding: C.ANVILBranding(),
         navLinks: [
           {
             label: "Help",
-            url: `${portalUrl}/help`,
+            url: ROUTES.HELP,
           },
           {
             label: "Privacy",
-            url: `${portalUrl}/privacy`,
+            url: ROUTES.PRIVACY,
           },
         ],
         socials: socialMedia.socials,
@@ -42,7 +51,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
         logo: C.Logo({
           alt: APP_TITLE,
           height: 40,
-          link: portalUrl,
+          link: "/",
           src: "/consortia/logos/logoAnvil.png",
         }),
         navigation: [
@@ -50,11 +59,14 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           [
             {
               label: "Overview",
-              url: `${portalUrl}/overview`,
+              menuItems: buildMenuItems(OVERVIEW),
+              url: ROUTES.OVERVIEW,
             },
             {
               label: "Learn",
-              url: `${portalUrl}/learn`,
+              menuItems: buildMenuItems(LEARN),
+              selectedMatch: SELECTED_MATCH.EQUALS,
+              url: "",
             },
             {
               label: "Datasets",
@@ -79,31 +91,49 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
               url: "",
             },
             {
-              label: "Consortia",
-              url: "/consortia",
+              label: "News",
+              url: ROUTES.NEWS,
             },
             {
+              label: "Events",
+              url: ROUTES.EVENTS,
+            },
+            {
+              flatten: FLATTEN.XS_ONLY,
               label: "More",
               menuItems: [
                 {
-                  label: "News",
-                  url: `${portalUrl}/news`,
-                },
-                {
-                  label: "Events",
-                  url: `${portalUrl}/events`,
+                  label: "Consortia",
+                  menuItems: [
+                    {
+                      label: "Overview",
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: ROUTES.CONSORTIA,
+                      visible: VISIBLE.MD_DOWN,
+                    },
+                    {
+                      label: "CSER",
+                      menuItems: buildMenuItems(CONSORTIA),
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: `${ROUTES.CONSORTIA}/cser`,
+                      visible: VISIBLE.MD_DOWN,
+                    },
+                  ],
+                  url: ROUTES.CONSORTIA,
                 },
                 {
                   label: "Team",
-                  url: `${portalUrl}/team`,
+                  menuItems: buildMenuItems(TEAM),
+                  url: ROUTES.TEAM,
                 },
                 {
                   label: "FAQ",
-                  url: `${portalUrl}/faq`,
+                  menuItems: buildMenuItems(FAQ),
+                  url: ROUTES.FAQ,
                 },
                 {
                   label: "Help",
-                  url: `${portalUrl}/help`,
+                  url: ROUTES.HELP,
                 },
                 {
                   label: "Follow Us",
@@ -135,7 +165,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
                     },
                   ],
                   url: "",
-                  visible: { lg: false, sm: false, xs: false },
+                  visible: VISIBLE.BETWEEN_SM_AND_LG,
                 },
               ],
               url: "",
@@ -144,7 +174,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           undefined,
         ],
         searchEnabled: true,
-        searchURL: `${portalUrl}/search`,
+        searchURL: ROUTES.SEARCH,
         slogan: SLOGAN,
         socialMedia: socialMedia,
       },

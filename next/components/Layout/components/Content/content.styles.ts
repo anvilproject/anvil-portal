@@ -23,6 +23,28 @@ const footnotes = (props: ThemeProps) => css`
   }
 `;
 
+const iframe = css`
+  iframe {
+    aspect-ratio: 16/ 9;
+    border: none;
+    display: block;
+    margin: 32px 0;
+    width: 100%;
+  }
+`;
+
+const image = (props: ThemeProps) => css`
+  li,
+  > p {
+    img {
+      border: 1px solid ${smokeMain(props)};
+      border-radius: 6px;
+      margin: 16px 0;
+      max-width: 100%;
+    }
+  }
+`;
+
 const muiAlert = (props: ThemeProps) => css`
   .MuiAlert-root {
     margin: 24px 0;
@@ -42,11 +64,11 @@ const muiAlert = (props: ThemeProps) => css`
       ul > li {
         margin: 8px 0;
 
-        &:first-child {
+        &:first-of-type {
           margin-top: 0;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-bottom: 0;
         }
       }
@@ -117,7 +139,13 @@ export const Content = styled.div<Props>`
     list-style-type: lower-roman;
   }
 
+  p {
+    overflow-wrap: break-word;
+  }
+
   ${footnotes};
+  ${iframe};
+  ${image};
   ${muiAlert};
   ${muiButtonContainedPrimary};
 `;

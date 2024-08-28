@@ -10,22 +10,14 @@ const ADD_PUBLICATION =
   "https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md";
 const SHOW_ALL_PUBLICATIONS = "/overview/publications";
 
-interface SectionPublicationsProps {
-  portalURL: string;
-}
-
-export const SectionPublications = ({
-  portalURL,
-}: SectionPublicationsProps): JSX.Element => {
+export const SectionPublications = (): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
         <Headline>
           <SectionTitle>Recent Publications</SectionTitle>
           <CTAs>
-            <ButtonSecondary href={`${portalURL}${CITE_ANVIL}`}>
-              Cite AnVIL
-            </ButtonSecondary>
+            <ButtonSecondary href={CITE_ANVIL}>Cite AnVIL</ButtonSecondary>
             <Button
               color="primary"
               href={ADD_PUBLICATION}
@@ -38,7 +30,7 @@ export const SectionPublications = ({
         </Headline>
         <Publications />
         <SectionActions>
-          <ButtonSecondary href={`${portalURL}${SHOW_ALL_PUBLICATIONS}`}>
+          <ButtonSecondary href={SHOW_ALL_PUBLICATIONS}>
             Show all publications
           </ButtonSecondary>
         </SectionActions>

@@ -1,4 +1,5 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import {
   NavigationEntry,
   NavigationNode,
@@ -32,10 +33,15 @@ export const LEARN: NavigationEntry = {
   nodes: [
     {
       key: NODE_KEYS.LEARN,
+      label: "Introduction",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         { label: "Introduction" },
-        { label: "Getting Started", url: ROUTES.LEARN },
+        {
+          label: "Getting Started",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: ROUTES.LEARN,
+        },
         {
           label: "Guides and Tutorials",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INTRODUCTION}/guides-and-tutorials`,
@@ -183,6 +189,7 @@ export const LEARN: NavigationEntry = {
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.REFERENCE}/cross-platform-data-access-with-drs-uris-in-terra`,
         },
       ],
+      selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [
         PATH_SEGMENTS.ACCESSING_DATA,
         PATH_SEGMENTS.ACCOUNT_SETUP,
@@ -196,24 +203,74 @@ export const LEARN: NavigationEntry = {
         PATH_SEGMENTS.VIDEOS,
         PATH_SEGMENTS.WORKSHOP_ARCHIVE,
       ],
+      url: ROUTES.LEARN,
     },
     {
       key: NODE_KEYS.DATA_ANALYSTS,
+      label: "Data Analysts",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
           label: "Guides and Tutorials",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}`,
+        },
+        { label: "Bioconductor / RStudio" },
+        {
+          label: "Starting RStudio",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/rstudio-gsg-video`,
+        },
+        {
+          label: "Using R / Bioconductor in AnVIL",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/using-r-bioconductor-in-anvil`,
+        },
+        {
+          label: "The R / Bioconductor AnVIL Package",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/the-r-bioconductor-anvil-package`,
+        },
+        {
+          label: "Running a Workflow",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/running-a-workflow`,
+        },
+        {
+          label:
+            "Single-cell RNASeq with 'Orchestrating Single Cell Analysis'\u00A0in R / Bioconductor",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor`,
+        },
+        {
+          label: "Using AnVIL for teaching R / Bioconductor",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/using-anvil-for-teaching-r-bioconductor`,
+        },
+        {
+          label: "Reproducible Research with AnVILPublish",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/reproducible-research-with-anvilpublish`,
+        },
+        {
+          label: "Participant Stories",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/participant-stories`,
+        },
+        { label: "Galaxy" },
+        {
+          label: "Starting Galaxy",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/galaxy-gsg-video`,
+        },
+        { label: "Jupyter" },
+        {
+          label: "Starting Jupyter",
+          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}/jupyter-gsg-video`,
         },
       ],
       slugs: [PATH_SEGMENTS.DATA_ANALYSTS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_ANALYSTS}`,
     },
     {
       key: NODE_KEYS.INVESTIGATORS,
+      label: "Investigators",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         {
           label: "Investigators Tutorial Overview",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}`,
         },
         {
@@ -226,9 +283,11 @@ export const LEARN: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.INVESTIGATORS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.INVESTIGATORS}`,
     },
     {
       key: NODE_KEYS.DATA_SUBMITTERS,
+      label: "Data Submitters",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
         { label: "Data Submission Guide" },
@@ -267,6 +326,7 @@ export const LEARN: NavigationEntry = {
         },
       ],
       slugs: [PATH_SEGMENTS.DATA_SUBMITTERS, PATH_SEGMENTS.LEARN],
+      url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_SUBMITTERS}/submission-guide/data-submitters-overview`,
     },
   ],
 };

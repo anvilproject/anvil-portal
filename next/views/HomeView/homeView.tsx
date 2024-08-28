@@ -13,15 +13,15 @@ export const HomeView = (): JSX.Element => {
   const portalURL = config.portalURL;
   return (
     <>
-      <SectionHero portalURL={portalURL} />
+      <SectionHero />
       <SectionAnalysisPortals />
       <SectionDatasets portalURL={portalURL} />
       <SectionDivider flexItem />
-      <SectionWorkspaces portalURL={portalURL} />
+      <SectionWorkspaces />
       <SectionCloudEnvironment />
-      <SectionUpdates portalURL={portalURL} />
+      <SectionUpdates />
       <SectionDivider flexItem />
-      <SectionPublications portalURL={portalURL} />
+      <SectionPublications />
       <SectionDivider flexItem />
     </>
   );

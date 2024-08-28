@@ -5,9 +5,8 @@ import {
 } from "../../../../../../../content/utils";
 import { PublicationCard } from "./entities";
 
-// TODO - change source of publications yaml from gatsby to next/docs/overview/publications.mdx
-const DIR_FOLDER_NAME = "home";
-const FILE_NAME = "publication-cloud.md";
+const DIR_FOLDER_NAME = "overview";
+const FILE_NAME = "publications.mdx";
 
 /**
  * Returns the publication section cards.

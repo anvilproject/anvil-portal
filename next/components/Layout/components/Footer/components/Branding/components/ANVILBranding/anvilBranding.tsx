@@ -4,28 +4,12 @@ import {
   HHSLogo,
   NHGRILogo,
   NIHLogo,
-  PortalLogo,
   USAGOVLogo,
 } from "./anvilBranding.styles";
 
-export interface ANVILBrandingProps {
-  portalURL?: string;
-}
-
-export const ANVILBranding = ({
-  portalURL,
-}: ANVILBrandingProps): JSX.Element => {
+export const ANVILBranding = (): JSX.Element => {
   return (
     <Brands>
-      {portalURL && (
-        <PortalLogo
-          alt="AnVIL"
-          height={30}
-          link={portalURL}
-          src="/consortia/logos/anvilPortal.png"
-          target={ANCHOR_TARGET.BLANK}
-        />
-      )}
       <NHGRILogo
         alt="NHGRI"
         height={24}

@@ -1,22 +1,14 @@
-import { InlineFrame } from "./video.styles";
+import { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 
-export interface VideoProps {
-  className?: string;
-  src: string;
-}
+// React Player works only in the browser environment; to prevent hydration errors, the "mounted" state is required.
 
-export const Video = ({
-  className,
-  src,
-  ...props /* Spread props to allow for iframe specific props e.g. "width". */
-}: VideoProps): JSX.Element => {
-  return (
-    <InlineFrame
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className={className}
-      src={src}
-      {...props}
-    />
-  );
+export const Video = ({ ...props }): JSX.Element | null => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted ? <ReactPlayer height="100%" width="100%" {...props} /> : null;
 };

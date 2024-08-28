@@ -5,13 +5,7 @@ import { Headline, SectionLayout } from "./sectionWorkspaces.styles";
 
 const EXPLORE_WORKSPACES = "/learn/analysis-workflows/using-example-workspaces";
 
-interface SectionWorkspacesProps {
-  portalURL: string;
-}
-
-export const SectionWorkspaces = ({
-  portalURL,
-}: SectionWorkspacesProps): JSX.Element => {
+export const SectionWorkspaces = (): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
@@ -23,7 +17,7 @@ export const SectionWorkspaces = ({
             Workspaces aggregate data and analysis methods. Start quickly from
             an existing workspace and customize it to your needs.
           </SectionSubtitle>
-          <ButtonSecondary href={`${portalURL}${EXPLORE_WORKSPACES}`}>
+          <ButtonSecondary href={EXPLORE_WORKSPACES}>
             Explore Workspaces
           </ButtonSecondary>
         </Headline>

@@ -1,9 +1,11 @@
 import { LAYOUT_STYLE_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
+import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import {
   NavigationEntry,
   NavigationNode,
 } from "../../../../docs/common/entities";
 import { ROUTES } from "../../../../routes/constants";
+import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   OVERVIEW: "overview",
@@ -19,10 +21,16 @@ const PATH_SEGMENTS = {
 export const OVERVIEW: NavigationEntry = {
   nodes: [
     {
+      flatten: FLATTEN.MD_DOWN,
       key: NODE_KEYS.OVERVIEW,
+      label: "Overview",
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHTEST,
       navigation: [
-        { label: "What is AnVIL?", url: ROUTES.OVERVIEW },
+        {
+          label: "What is AnVIL?",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: ROUTES.OVERVIEW,
+        },
         {
           label: "Platform and Data Security",
           url: `${ROUTES.OVERVIEW}/${PATH_SEGMENTS.SECURITY}`,
@@ -47,6 +55,8 @@ export const OVERVIEW: NavigationEntry = {
         PATH_SEGMENTS.PUBLICATIONS,
         PATH_SEGMENTS.SECURITY,
       ],
+      url: ROUTES.OVERVIEW,
+      visible: VISIBLE.MD_DOWN,
     },
   ],
 };

@@ -7,8 +7,8 @@ import remarkGfm from "remark-gfm";
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
     rehypePlugins: [],
+    remarkPlugins: [remarkGfm],
   },
 });
 
@@ -29,11 +29,11 @@ export default withPlugins(
     [withTM(["echarts", "zrender"])],
   ],
   {
-    reactStrictMode: true,
     images: {
       unoptimized: true,
     },
     output: "export",
+    reactStrictMode: true,
     transpilePackages: [...ESM_PACKAGES],
     webpack: (config) => {
       // Add the alias for the peer dependency
