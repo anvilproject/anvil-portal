@@ -308,7 +308,7 @@ export const LEARN: NavigationEntry = {
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_SUBMITTERS}/submission-guide/prepare-for-submission`,
         },
         {
-          label: "4 - Ingest Data",
+          label: "4 -  Stage Data in AnVIL",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.DATA_SUBMITTERS}/submission-guide/ingesting-data`,
         },
         {
