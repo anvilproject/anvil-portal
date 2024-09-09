@@ -15,7 +15,7 @@ Data Submitters are responsible for the definition, development, and maintenance
  
 ### AnVIL guidance for data submitter QC:         
 - A reproducible workflow definition, e.g., Workflow Definition Language (WDL), is suggested as well as other definition languages supported by the AnVIL platform. Additionally, an equivalent reproducible process can be defined and documented for the generation of the QC metrics to be evaluated.    
-- A data dictionary is recommended to share the expectations for metrics collected, values reported or displayed for evaluation, as well as any evaluation criteria to determine a status, e.g. pass/fail/noqc, for the submitted data.    
+- A data dictionary is recommended to share the expectations for metrics collected, values reported or displayed for evaluation, as well as any evaluation criteria to determine a status, e.g., pass/fail/noqc, for the submitted data.    
 - Data submitters should establish the specific metrics and thresholds for determining the pass/fail criteria on their dataset.   
 - The output of the entire QC process should be compatible with the AnVIL data repository components such as Terra Data Tables and/or Data Repository for incorporation of QC metrics and statuses in the AnVIL workspaces.
 
@@ -23,7 +23,7 @@ Data Submitters are responsible for the definition, development, and maintenance
 
 AnVIL Data Processing Working Group has created a genomic evaluation tool for whole genome and exome data. To collect quality control metrics for genome and exome sequencing data, run the tool - a workflow written in Workflow Description Language - in a sandbox workspace.
 
-The WDL includes multiple software packages (Picard, VerifyBamID2, Samtools flagstat, bamUtil stats, Rx estimation) organized in a single, efficient tool that is compatible with AnVIL. The WDL workflow is publicly available via GitHub ([https://github.com/genome/qc-analysis-pipeline/tree/master](https://github.com/genome/qc-analysis-pipeline/tree/master)) and Dockstore ([https://dockstore.org/organizations/anvil/collections/qcwgs](https://dockstore.org/organizations/anvil/collections/qcwgs)). The AnVIL will accept edits, commits, issues, and pull requests in GitHub. Support and guidance is provided by the AnVIL for data submitters on the use of or adaptation of the existing QC workflow resource.   
+The WDL includes multiple software packages (Picard, VerifyBamID2, Samtools flagstat, bamUtil stats, Rx estimation) organized in a single, efficient tool that is compatible with AnVIL. The WDL workflow is publicly available via GitHub ([https://github.com/genome/qc-analysis-pipeline/tree/master](https://github.com/genome/qc-analysis-pipeline/tree/master)) and Dockstore ([https://dockstore.org/organizations/anvil/collections/qcwgs](https://dockstore.org/organizations/anvil/collections/qcwgs)). The AnVIL will accept edits, commits, issues, and pull requests in GitHub. Support and guidance are provided by the AnVIL for data submitters on the use of or adaptation of the existing QC workflow resource.   
 
 #### QC pass/fail status          
 The QC pass/fail status is determined by thresholds for several metrics reported by the workflow.     
@@ -31,14 +31,14 @@ The QC pass/fail status is determined by thresholds for several metrics reported
 #### Default WGS thresholds    
 Default thresholds are included in the following table: [https://github.com/genome/qc-analysis-pipeline/blob/master/threshold_files/anvil_wgs_thresholds.tsv](https://github.com/genome/qc-analysis-pipeline/blob/master/threshold_files/anvil_wgs_thresholds.tsv).    
 
-#### Additional QC** metrics (can be output with threshold values)   
+#### Additional QC metrics (can be output with threshold values)   
 See [https://github.com/genome/qc-analysis-pipeline/blob/master/docs/thresholds.md](https://github.com/genome/qc-analysis-pipeline/blob/master/docs/thresholds.md).    
 
-#### Example (WGS) WDL inputs** 
+#### Example (WGS) WDL inputs 
 See [https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.json](https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.json)    
 
 #### Example (WES) WDL inputs       
-See [https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json](https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json) for an example for exome. Note that currently there is no publicly available NA12878 WES BAM or CRAM and no default thresholds defined for WES.  
+See [https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json](https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json) for an example for exome. Note that currently, there is no publicly available NA12878 WES BAM or CRAM and no default thresholds defined for WES.  
 
 ### 5.2.1 Run QC Processing
 Data Submitters are responsible for defining and running the workflow (WDL) on their genomic data to generate the QC metrics (see Data Submitter Guidance section 5.1 above). Once QC status criteria have been determined, a thresholds file can be added to the workspace to use as a workflow input. The criteria are used to assign QC status of pass or fail. If a sample fails multiple times, it is assigned No QC under QC status.  The evaluation of the thresholds will be output as an additional PASS/FAIL column `overall_evaluation` by the workflow.     
@@ -50,7 +50,7 @@ Data Submitters are responsible for defining and running the workflow (WDL) on t
 ### 5.2.2 Example QC Metrics
 #### QC processing results table
 
-Below is the current output, files and discrete values, generated by the workflow in a `qc_results_sample` data table: [https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md](https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md)
+Below are the current output, files, and discrete values generated by the workflow in a `qc_results_sample` data table: [https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md](https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md)
 
 
 | Metric Name                 | Metric Description                  | Pass threshold  | Purpose                    | Source Tool                              |
@@ -74,7 +74,7 @@ Below is the current output, files and discrete values, generated by the workflo
 
 ### 5.2.3 Post QC Processing to AnVIL Workspaces
 
-The output from the QC aggregator is a QC summary results TSV file. Data submitters will pass off the QC summary results file to AnVIL ingestion team. The AnVIL team will push the QC summary results to the workspaces, which will contain the QC status including those that fail QC or have no QC. The example below is the QC results table in 1000 Genomes workspace.
+The output from the QC aggregator is a QC summary results TSV file. Data submitters will pass off the QC summary results file to the AnVIL ingestion team. The AnVIL team will push the QC summary results to the workspaces, which will contain the QC status, including those that fail QC or have no QC. The example below is the QC results table in the 1000 Genomes workspace.
 
 #### Sample QC Results Table
 
