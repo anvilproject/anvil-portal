@@ -1,9 +1,9 @@
 ---
-description: "An overview of the AnVIL data ingestion process."
-title: "Step 4: Staging Data in AnVIL"
+description: "An overview of the AnVIL data staging process."
+title: "Step 4: Stage Your Data in AnVIL"
 ---
 
-# Step 4: Staging Data in AnVIL
+# Step 4: Stage Your Data in AnVIL
 
 <Alert icon={false} severity="info">
 Once you have prepared your omics object files and generated TSV files for each table in your data model, follow the directions below to deposit the data object files and all TSV files into AnVIL-owned data deposit workspaces.
@@ -16,8 +16,8 @@ For actions taken prior to final process refinement, all transfers should involv
 ## 4.1 - Stage Data in Your AnVIL Data Deposit Workspace
 
 1. **Log into AnVIL** - See [Log into Terra/AnVIL](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01HEQRQ67G9T9YFPN78Z6113RV) in [Terra Support](https://support.terra.bio/hc/en-us).
-2. **Set up workspace cloud storage** - To facilitate ingestion into TDR, the workspace cloud storage needs to have a particular directory structure. Follow the directions below to set up the proper (GCP or Azure) storage hierarchy. See [Step 2: Set up cloud storage](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01J71QC0J9YNGTNXMN4KR47JWV) for instructions.   
-3. **Upload TSV files** - Next you will upload your tabular data (TSVs) to the appropriate directory in the deposit workspace. This includes clinical and phenotypic data as well as metadata - all the tables from your data model. See [Step 3: Upload TSV files](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01HEQT6P4G8DTYE4Q4J33WJXDW) in Terra Support for step-by-step instructions. 
+2. **Set up workspace cloud storage** - To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure. Follow the directions below to set up the proper (GCP or Azure) storage hierarchy. See [Step 2: Set up cloud storage](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01J71QC0J9YNGTNXMN4KR47JWV) for instructions.   
+3. **Upload TSV files** - Next, you will upload your tabular data (TSVs) to the appropriate directory in the deposit workspace. This includes clinical and phenotypic data as well as metadata - all the tables from your data model. See [Step 3: Upload TSV files](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01HEQT6P4G8DTYE4Q4J33WJXDW) in Terra Support for step-by-step instructions. 
 4. **Upload object files** - Last, you'll upload unstructured data files (omics files, images, etc.) to the data_files folder or sub-folder. See [Step 4: Upload object data files](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01J06PGQC850DFC3MSE4B82HJH) for step-by-step instructions.  
 
 
@@ -25,7 +25,7 @@ For actions taken prior to final process refinement, all transfers should involv
 
 ### QC check of submission form to genomic object files
 
-[TBD] Information here on how this check is accomplished; believe at a high level that it’s checking the number of files match the number in the submission google form
+[TBD] Information here on how this check is accomplished; believe at a high level that it’s checking the number of files match the number in the submission Google form
 
 ### QC check of phenotype and metadata
 
@@ -38,6 +38,6 @@ To confirm the ingested data transferred as expected and maintain the file integ
 
 ### Data Indexing (genomic object files)
 
-Once in the workspace buckets, object files, such as sequencing data, are indexed with a global unique ID (GUID). This allows for access across AnVIL tools, without requiring copies to be created and transferred across environments.
+Once in the workspace buckets, object files, such as sequencing data, are indexed with a global unique ID (GUID). This allows access across AnVIL tools without requiring copies to be created and transferred across environments.
 
-These identifiers allow for tracking data across components of AnVIL and facilitate the ability to interoperate with other data commons due to their extensibility. Further, they enable tracking of live data being processed in workflow pipelines, and data backup to cold storage.
+These identifiers allow for tracking data across components of AnVIL and facilitate the ability to interoperate with other data commons due to their extensibility. Further, they enable tracking of live data processed in workflow pipelines and data backup to cold storage.
