@@ -11,30 +11,34 @@ Once you have prepared your omics object files and generated TSV files for each 
 
 You’ll work with a designated POC at the AnVIL team to shepherd the data (omic data and image files and TSV load files) into the AnVIL data storage repository. Your action in this step will be to stage the data in an AnVIL data deposit workspace (assigned by the AnVIL ingestion team). Note that because each engagement will most likely be different, we will be further developing and refining (as needed) processes as we engage with submitters.
 
-For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.
+For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.   
 
-## 4.1 - Stage Data in Your AnVIL Data Deposit Workspace
+### Process overview
+1. **Log into AnVIL**    
+You can use either a Google or Microsoft ID for SSO to access your assigned data deposit workspace on [anvil.terra.bio](https://anvil.terra.bio).   
+2. **Set up your workspace cloud storage**      
+To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure.   
+3. **Upload data**       
+Last, you'll upload unstructured data files (omics files, images, etc.) to the data_files folder or sub-folder.   
+4. **Validation** (done by AnVIL ingestion team)
 
-1. **Log into AnVIL** - See [Log into Terra/AnVIL](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01HEQRQ67G9T9YFPN78Z6113RV) in [Terra Support](https://support.terra.bio/hc/en-us).
-2. **Set up workspace cloud storage** - To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure. Follow the directions below to set up the proper (GCP or Azure) storage hierarchy. See [Step 2: Set up cloud storage](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01J71QC0J9YNGTNXMN4KR47JWV) for instructions.   
-3. **Upload TSV files** - Next, you will upload your tabular data (TSVs) to the appropriate directory in the deposit workspace. This includes clinical and phenotypic data as well as metadata - all the tables from your data model. See [Step 3: Upload TSV files](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01HEQT6P4G8DTYE4Q4J33WJXDW) in Terra Support for step-by-step instructions. 
-4. **Upload object files** - Last, you'll upload unstructured data files (omics files, images, etc.) to the data_files folder or sub-folder. See [Step 4: Upload object data files](https://support.terra.bio/hc/en-us/articles/25290333623835-How-to-stage-data-in-your-AnVIL-deposit-workspace#h_01J06PGQC850DFC3MSE4B82HJH) for step-by-step instructions.  
+## Step-by-Step Instructions
+For details, see [How to stage data in your AnVIL deposit workspace](https://support.terra.bio/hc/en-us/articles/28970864241435-How-to-stage-data-in-an-AnVIL-deposit-workspace).
 
+## Next steps (done by ingestion team)   
+After you stage the data in the deposit workspace, the AnVIL team will perform these pre-ingestion operations. 
 
-## 4.2 Validation Steps (Automated)
+### Validation (automated)
 
-### QC check of submission form to genomic object files
+- QC check of submission form to genomic object files 
+ - Checking the number of files match the number in the submission Google form
 
-[TBD] Information here on how this check is accomplished; believe at a high level that it’s checking the number of files match the number in the submission Google form
+- QC check of phenotype and metadata
+ - The phenotype file data fields match the defined data model
+ - Sample IDs are consistent with phenotype and linked to a subject and consent.
 
-### QC check of phenotype and metadata
-
-- The phenotype file data fields match the defined data model
-- Sample IDs are consistent with phenotype and linked to a subject and consent.
-
-### Ingestion Validation (automated)
-
-To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. These tests will be executed once data has been ported to AnVIL.
+- Ingestion Validation (automated)
+  - To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. These tests will be executed once data has been ported to AnVIL.
 
 ### Data Indexing (genomic object files)
 
