@@ -1,9 +1,9 @@
 ---
 description: "Instructions for free egress download of GTEx v8 from the AnVIL Gen3 Data Commons"
-title: "GTEx v8 - Free Egress Instructions"
+title: "GTEx v8 - Egress Instructions"
 ---
 
-# GTEx v8 - Free Egress Instructions
+# GTEx v8 - Egress Instructions
 
 ## Overview
 
@@ -21,7 +21,7 @@ Once you are approved for accessing the raw GTEx data, you can either analyze th
 
 ### Downloading vs. Analyzing in Terra
 
-For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility.
+For many analyses, it will be substantially easier and more efficient to perform your analysis within Terra as Terra provides the capabilities for large-scale batch processing and interactive analysis over thousands of samples. However, for some use cases, such as joint analysis & integration with your own protected clinical data, downloading the data provides additional flexibility.
 
 <Alert severity="warning">
   Please note that you should not attempt to export the protected data from the
@@ -54,7 +54,7 @@ For help or support executing the instructions below please reach out to the Gen
 1. Click on the "**Downloadable**" tab and select "**CF-GTEx**" under "Project Id"
 1. Please choose a single **Data Type** from the Data Type filter on the left
    ![Step 2 - Select Single Data Type](/consortia/learn/reference/gtex-select-data-type.png)
-1. Click on the "**Export All to PFB**" button. Please wait patiently for this step - can take 30 - 60s - and please do not navigate away while the export is in progress
+1. Click on the "**Export All to PFB**" button. Please wait patiently for this step - it can take 30 - 60s - and please do not navigate away while the export is in progress
    ![Step 2 - Export in Progress](/consortia/learn/reference/gtex-export-in-progress.png)
    ![Step 2 - Please Wait While Exporting](/consortia/learn/reference/gtex-export-wait-indicator.png)
 1. Download generated PFB file
@@ -159,12 +159,12 @@ $ gen3-client download-multiple --profile=<profile_name>
 <Alert severity="warning">
   Important: "**--protocol**" **tag** is important to this command as it will
   determine which bucket the files will be downloaded from. The "**s3**" value
-  will download from the egress free Cleversafe bucket for the datasets in the
+  will download from the egress-free Cleversafe bucket for the datasets in the
   "Downloadable" tab.
 </Alert>
 
 <Alert severity="warning">
-  **Note**: With larger manifests containing more than 100,000 files such as
+  **Note**: With larger manifests containing more than 100,000 files, such as
   GTEx v8, the initial process of reading and parsing the manifest into the
   gen3-client can take anywhere from 30 - 240 mins.
 </Alert>
