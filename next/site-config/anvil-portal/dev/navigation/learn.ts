@@ -181,7 +181,7 @@ export const LEARN: NavigationEntry = {
           label: "Reference",
         },
         {
-          label: "GTEx v8 - Free Egress Instructions",
+          label: "GTEx v8 - Egress Instructions",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.REFERENCE}/gtex-v8-free-egress-instructions`,
         },
         {
