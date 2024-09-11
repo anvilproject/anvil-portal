@@ -29,17 +29,17 @@ For details, see [How to stage data in your AnVIL deposit workspace](https://sup
 After you stage the data in the deposit workspace, the AnVIL team will perform these pre-ingestion operations. 
 
 ### Validation (automated)
+These tests will be executed once data has been ported to AnVIL.
 
-- QC check of submission form to genomic object files 
-  - Checking the number of files match the number in the submission Google form
+- **QC check of submission form to genomic object files**   
+Check that the number of files match the number in the submission Google form
 
-- QC check of phenotype and metadata
-  - The phenotype file data fields match the defined data model
-  - Sample IDs are consistent with phenotype and linked to a subject and consent.
+- **QC check of phenotype and metadata**  
+Make sure the phenotype file data fields match the defined data model and sample IDs are consistent with phenotype and linked to a subject and consent.
 
-- Ingestion Validation (automated)
-  - To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. 
-  - These tests will be executed once data has been ported to AnVIL.
+- **Ingestion Validation (automated)**   
+To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. 
+   
 
 ### Data Indexing (genomic object files)
 
