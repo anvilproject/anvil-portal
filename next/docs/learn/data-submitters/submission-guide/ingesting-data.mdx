@@ -6,10 +6,10 @@ title: "Step 4: Stage Your Data in AnVIL"
 # Step 4: Stage Your Data in AnVIL
 
 <Alert icon={false} severity="info">
-Once you have prepared your omics object files and generated TSV files for each table in your data model, follow the directions below to deposit the data object files and all TSV files into AnVIL-owned data deposit workspaces.
+Once you have prepared your omics object files and generated TSV files for each table in your data model, follow the directions below to **stage and deposit the data object files and all TSV files into an AnVIL-owned data deposit workspace**.
 </Alert>
 
-You’ll work with a designated POC at the AnVIL team to shepherd the data (omic data and image files and TSV load files) into the AnVIL data storage repository. Your action in this step will be to stage the data in an AnVIL data deposit workspace (assigned by the AnVIL ingestion team). Note that because each engagement will most likely be different, we will be further developing and refining (as needed) processes as we engage with submitters.
+You’ll work with a designated POC at the AnVIL team to shepherd the data (omic data and image files and TSV load files) into the deposit workspace (and upltimately the AnVIL data storage repository). Note that because each engagement will most likely be different, we will be further developing and refining (as needed) processes as we engage with submitters.
 
 For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.   
 
@@ -29,17 +29,17 @@ For details, see [How to stage data in your AnVIL deposit workspace](https://sup
 After you stage the data in the deposit workspace, the AnVIL team will perform these pre-ingestion operations. 
 
 ### Validation (automated)
+These tests will be executed once data has been ported to AnVIL.
 
-- QC check of submission form to genomic object files 
-  - Checking the number of files match the number in the submission Google form
+- **QC check of submission form to genomic object files**   
+Check that the number of files match the number in the submission Google form
 
-- QC check of phenotype and metadata
-  - The phenotype file data fields match the defined data model
-  - Sample IDs are consistent with phenotype and linked to a subject and consent.
+- **QC check of phenotype and metadata**  
+Make sure the phenotype file data fields match the defined data model and sample IDs are consistent with phenotype and linked to a subject and consent.
 
-- Ingestion Validation (automated)
-  - To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. 
-  - These tests will be executed once data has been ported to AnVIL.
+- **Ingestion Validation (automated)**   
+To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer. 
+   
 
 ### Data Indexing (genomic object files)
 
