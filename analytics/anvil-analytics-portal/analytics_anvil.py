@@ -56,23 +56,23 @@ def get_video_duration_text(id):
 		text = text[7:]
 	return text
 
-def format_video_stats_table(df, column_defs):
-	df = df.copy(deep=True)
-	watch_percent_column = df["Average watch %"]
-	df.drop(columns=watch_percent_column.name, inplace=True)
-	df["Average watch time (minutes)"] /= 60
-	total_views_column = pd.Series([videos_info[id]["statistics"]["viewCount"] for id in df.index], index=df.index, name="All-time views")
-	duration_column = pd.Series([get_video_duration_text(id) for id in df.index], index=df.index, name="Video duration")
-	df.insert(1, total_views_column.name, total_views_column)
-	df.insert(3, duration_column.name, duration_column)
-	plain_value_processor = lambda v, i, c: ('<div style="text-align: center">' + str(v) + '</div>', True)
-	column_defs = {
-		**column_defs,
-		total_views_column.name: [("minmax(4.5em, min-content)", plain_value_processor)],
-		"Average watch time (minutes)": [column_defs[None][0], ("3.8em", lambda v, i, c: ('<div style="color: darkgray">' + "{:.2f}".format(watch_percent_column[i]) + '%</div>', True)), column_defs[None][1]],
-		duration_column.name: [("minmax(5.8em, min-content)", plain_value_processor)]
-	}
-	return (df, column_defs)
+# def format_video_stats_table(df, column_defs):
+# 	df = df.copy(deep=True)
+# 	watch_percent_column = df["Average watch %"]
+# 	df.drop(columns=watch_percent_column.name, inplace=True)
+# 	df["Average watch time (minutes)"] /= 60
+# 	total_views_column = pd.Series([videos_info[id]["statistics"]["viewCount"] for id in df.index], index=df.index, name="All-time views")
+# 	duration_column = pd.Series([get_video_duration_text(id) for id in df.index], index=df.index, name="Video duration")
+# 	df.insert(1, total_views_column.name, total_views_column)
+# 	df.insert(3, duration_column.name, duration_column)
+# 	plain_value_processor = lambda v, i, c: ('<div style="text-align: center">' + str(v) + '</div>', True)
+# 	column_defs = {
+# 		**column_defs,
+# 		total_views_column.name: [("minmax(4.5em, min-content)", plain_value_processor)],
+# 		"Average watch time (minutes)": [column_defs[None][0], ("3.8em", lambda v, i, c: ('<div style="color: darkgray">' + "{:.2f}".format(watch_percent_column[i]) + '%</div>', True)), column_defs[None][1]],
+# 		duration_column.name: [("minmax(5.8em, min-content)", plain_value_processor)]
+# 	}
+# 	return (df, column_defs)
 
 
 def show_value_difference_table(label, values, **other_params):
