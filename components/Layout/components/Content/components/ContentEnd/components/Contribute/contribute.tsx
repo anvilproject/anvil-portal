@@ -8,7 +8,7 @@ import { CodePullRequestIcon } from "../../../../../../../common/CustomIcon/comp
 import { StyledBox } from "./contribute.styles";
 
 const GITHUB_URL =
-  "https://github.com/anvilproject/anvil-portal/blob/main/next/docs";
+  "https://github.com/anvilproject/anvil-portal/blob/main/docs";
 
 interface ContributeProps {
   slug?: string[];
