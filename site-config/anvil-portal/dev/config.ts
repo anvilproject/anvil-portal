@@ -1,6 +1,6 @@
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import * as C from "../../../components/index";
+import * as C from "../../../components";
 import { ROUTES } from "../../../routes/constants";
 import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";

@@ -11,7 +11,7 @@ import {
   FrontmatterNews,
 } from "./entities";
 
-const DOC_FOLDER_NAME = "next/docs";
+const DOC_FOLDER_NAME = "anvil-portal/docs";
 
 /**
  * Returns the moment, for the date field from the given frontmatter.
