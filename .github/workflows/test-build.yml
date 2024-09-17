@@ -1,5 +1,5 @@
 name: Test build
-on: [ pull_request ]
+on: [pull_request]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "20.10.0"
-      
+
       - run: |
           npm ci
           npx tsc --noEmit
