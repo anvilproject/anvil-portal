@@ -9,9 +9,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "20.10.0"
-      
+
       - run: |
-          cd next
           npm ci
           npx tsc --noEmit
           npm run build-dev:anvil-portal
