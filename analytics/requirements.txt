@@ -17,6 +17,7 @@ cycler==0.12.1
 debugpy==1.8.5
 decorator==5.1.1
 docutils==0.20.1
+et-xmlfile==1.1.0
 executing==2.1.0
 fastjsonschema==2.20.0
 fonttools==4.53.1
@@ -56,6 +57,7 @@ nbformat==5.10.4
 nest-asyncio==1.6.0
 numpy==2.1.1
 oauthlib==3.2.2
+openpyxl==3.1.5
 packaging==24.1
 pandas==2.2.2
 parso==0.8.4
