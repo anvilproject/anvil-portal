@@ -12,6 +12,7 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
 };
 const PATH_SEGMENTS = {
   CITE_ANVIL: "cite-anvil",
+  DMS_REQUIRMENTS: "dms-requirements",
   OVERVIEW: "overview",
   PROJECT_SPONSOR: "project-sponsor",
   PUBLICATIONS: "publications",
@@ -30,6 +31,10 @@ export const OVERVIEW: NavigationEntry = {
           label: "What is AnVIL?",
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: ROUTES.OVERVIEW,
+        },
+                {
+          label: "NIH Data Management and Sharing Policy Requirements",
+          url: `${ROUTES.OVERVIEW}/${PATH_SEGMENTS.DMS_REQUIRMENTS}`,
         },
         {
           label: "Platform and Data Security",
@@ -50,6 +55,7 @@ export const OVERVIEW: NavigationEntry = {
       ],
       slugs: [
         PATH_SEGMENTS.CITE_ANVIL,
+        PATH_SEGMENTS.DMS_REQUIRMENTS,
         PATH_SEGMENTS.OVERVIEW,
         PATH_SEGMENTS.PROJECT_SPONSOR,
         PATH_SEGMENTS.PUBLICATIONS,
