@@ -32,7 +32,7 @@ export const OVERVIEW: NavigationEntry = {
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: ROUTES.OVERVIEW,
         },
-                {
+        {
           label: "NIH Data Management and Sharing Policy Requirements",
           url: `${ROUTES.OVERVIEW}/${PATH_SEGMENTS.DMS_REQUIRMENTS}`,
         },
