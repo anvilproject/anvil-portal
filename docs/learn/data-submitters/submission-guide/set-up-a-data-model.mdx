@@ -18,7 +18,7 @@ The first goal requires a very flexible data model, and the second requires some
   </div>
 </Alert>
 
-As you get started, we recommend you review the AnVIL Data Model Data Dictionary [here](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1695394730#gid=1695394730) to learn more about the general structure (which we will describe in more detail below). You’ll coordinate with the AnVIL data ingest team to facilitate submission activities. 
+As you get started, we recommend you review the AnVIL Data Model Data Dictionary [here](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) to learn more about the general structure (which we will describe in more detail below). You’ll coordinate with the AnVIL data ingest team to facilitate submission activities. 
 
 If your dataset has been accepted by AnVIL and does not easily fit into an existing template, please reach out to the AnVIL Team at [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org).
 
@@ -39,7 +39,7 @@ It is useful to coordinate with AnVIL before you start to set up your data model
 
 A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another.
 
-We encourage you to read the [README](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1482408180#gid=1482408180) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1382632748#gid=1382632748) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.  
+We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.  
 
 These tabs include helpful information such as 
 
@@ -52,9 +52,9 @@ These tabs include helpful information such as
 
 ### Data Model Requirements
 
-The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1811136544#gid=1811136544) provides context for mapping data to the AnVIL core findability model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission. 
+The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) provides context for mapping data to the AnVIL core findability model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission. 
 
-Please read the descriptions for each table outlined in the [Data Dictionary](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1811136544#gid=1811136544) carefully, and reach out to your AnVIL team contact with questions not addressed in the data dictionary document. These data model requirements help ensure AnVIL datasets are not only useful to the researchers who created them but also enable others to analyze data collectively across studies in the AnVIL Terra platform.
+Please read the descriptions for each table outlined in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) carefully, and reach out to your AnVIL team contact with questions not addressed in the data dictionary document. These data model requirements help ensure AnVIL datasets are not only useful to the researchers who created them but also enable others to analyze data collectively across studies in the AnVIL Terra platform.
 
 Start by thinking of what data you have and how you have already organized it and how it may fit or need to be reorganized to fit the requirements. 
 
@@ -66,12 +66,12 @@ The **BioSample** table is the only required table, although **Donor** and **Fil
 
 The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the Data Dictionary.  Brief descriptions of these core tables, with notable requirements, are below. 
 
-* [**BioSample**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1695394730#gid=1695394730) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.  
+* [**BioSample**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.  
   * The `biosample_id` (first column) is required.   
   * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.  
-* [**Donor**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1811136544#gid=1811136544) **(strongly recommended):** Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.  
+* [**Donor**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) **(strongly recommended):** Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.  
   * The `donor_id` (first column) is required.   
-* [**File**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1157757819#gid=1157757819) **(strongly recommended):** Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.  
+* [**File**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=462062238#gid=462062238) **(strongly recommended):** Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.  
   * The `file_id` (first column) is required.   
   * It is strongly recommended that the table includes a `BioSample.biosample_id` column to link the biosample id between tables.  
   * AnVIl will add DRS URIs for object files as part of the ingest process.
@@ -81,18 +81,18 @@ The specifications for each table, including required fields, strongly recommend
 
 The AnVIL Data Model Data Dictionary includes other optional tables you can use to contain data about conditions, activity, and your project. Brief descriptions of these optional tables, with notable requirements, are below.
 
-* [**Condition Table:**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1768340842#gid=1768340842) Contains information about condition(s) and phenotypes associated with a donor.   
+* [**Condition Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=524240363#gid=524240363) Contains information about condition(s) and phenotypes associated with a donor. 
   * The `condition_id` (first column) is required.   
   * It is strongly recommended that the table includes a `donor_id` column to link the donor id between tables.  
-* [**Activity Table:**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=2117817307#gid=2117817307) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.   
+* [**Activity Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1184610893#gid=1184610893) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.   
   * The `activity_id` (first column) is required.   
   * Should include a `file_id` column that references the associated file.   
-* [**Project Table:**](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1027670832#gid=1027670832) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.  
+* [**Project Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=672801364) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.  
   * The `project_id` (first column) is required. 
 
 #### Non-standard Data Models
 
-If your dataset has been accepted by AnVIL and has needs not described here, please refer to the README on “[Expanding the data model](https://docs.google.com/spreadsheets/d/16gik9Y1mWqOo6DAlFu1ygFGb3XVgTzOz/edit?gid=1482408180#gid=1482408180&range=B16)”. Additional tables must be associated with one of the core tables: BioSample, Donor, or File. If you need further assistance, please reach out to the AnVIL Team at help@lists.anvilproject.org. You can work directly with the AnVIL Phenotype WG and Data Ingest WG to integrate into one of these existing data models.
+If your dataset has been accepted by AnVIL and has needs not described here, please refer to the README on “[Expanding the data model](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209&range=B16:C16)”. Additional tables must be associated with one of the core tables: BioSample, Donor, or File. If you need further assistance, please reach out to the AnVIL Team at help@lists.anvilproject.org. You can work directly with the AnVIL Phenotype WG and Data Ingest WG to integrate into one of these existing data models.
 
 ## 2.3 \- Generate Your Data Dictionary
 
@@ -103,21 +103,21 @@ All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) tha
 | Table | Concept(s) | Coding systems |
 | :---- | :---- | :---- |
 | Donor | Organism type label, Organism type coding system | [NCI Organismal Classification](http://purl.obolibrary.org/obo/NCBITaxon_1) |
-| Donor | Donor type | [Donor type values](https://docs.google.com/spreadsheets/d/1BL4PIZxp2NvqGdaWIZouedsA_pAr5SXA/edit?gid=157714525#gid=157714525&range=C1:C3) |
-| Donor | Phenotype sex code | [Phenotype sex coding system](https://docs.google.com/spreadsheets/d/1BL4PIZxp2NvqGdaWIZouedsA_pAr5SXA/edit?gid=157714525#rangeid=1477557223) |
+| Donor | Donor type | [Donor type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1794886963) |
+| Donor | Phenotype sex code | [Phenotype sex coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1477557223) |
 | Donor | Reported ethnicity label, Genetic ancestry label | [Suggested Ancestry Values](https://www.ebi.ac.uk/ols4/ontologies/efo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHANCESTRO_0004?lang=en) |
-| Donor | Reported ethnicity coding system, Genetic ancestry coding system | [Genetic ancestry coding system](https://docs.google.com/spreadsheets/d/1BL4PIZxp2NvqGdaWIZouedsA_pAr5SXA/edit?gid=157714525#rangeid=819609887) |
+| Donor | Reported ethnicity coding system, Genetic ancestry coding system | [Genetic ancestry coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=819609887) |
 | BioSample | Anatomical site label | [Anatomical Site Allowed Values](http://purl.obolibrary.org/obo/FMA_62955) |
-| BioSample | Anatomical site coding system | [Anatomical site coding system](https://docs.google.com/spreadsheets/d/1OE4XqK43h0yurZ1X0mhwi8iiJSpE4hzb/edit?gid=157714525#rangeid=271391259) |
+| BioSample | Anatomical site coding system | [Anatomical site coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=271391259) |
 | BioSample | A priori cell type label | [A priori cell type suggested values](http://purl.obolibrary.org/obo/CL_0000000) |
-| BioSample | A priori cell type coding system | [A priori cell type](https://docs.google.com/spreadsheets/d/1OE4XqK43h0yurZ1X0mhwi8iiJSpE4hzb/edit?gid=157714525#rangeid=1366269516) |
-| BioSample | BioSample type label | [BioSample type values](https://docs.google.com/spreadsheets/d/1OE4XqK43h0yurZ1X0mhwi8iiJSpE4hzb/edit?gid=157714525#gid=157714525&range=A:A) |
-| BioSample | BioSample type coding system | [BioCore Terms](https://docs.google.com/spreadsheets/d/1OE4XqK43h0yurZ1X0mhwi8iiJSpE4hzb/edit?gid=157714525#gid=157714525&range=A:A) |
+| BioSample | A priori cell type coding system | [A priori cell type](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1366269516) |
+| BioSample | BioSample type label | [BioSample type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=A:A) |
+| BioSample | BioSample type coding system | [BioCore Terms](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
 | BioSample | Primary condition label | [Suggested primary condition label values](http://purl.obolibrary.org/obo/OGMS_0000031) |
 | BioSample | Primary condition coding system |  |
 | BioSample | Primary condition affected status | Boolean true/false |
-| Activity | Activity type label | [Activity type values](https://docs.google.com/spreadsheets/d/1OE4XqK43h0yurZ1X0mhwi8iiJSpE4hzb/edit?gid=157714525#rangeid=1923950114) |
-| Activity | Activity type coding system | BioCore Values |
+| Activity | Activity type label | [Activity type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1923950114) |
+| Activity | Activity type coding system | [BioCore Values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
 
 ## Additional Resources
 
