@@ -12,7 +12,7 @@ This guide presents a recommended approach for labs new to cloud computing to se
 While there are many ways to configure a lab, the approach described here prioritizes fine-grained monitoring, reporting, and alerting over ease of setup and restricts who can create and share Terra workspaces with a lab manager or other trusted individual.
 
 <Alert icon={false} severity="info">
-  For additional information and approaches see [Best practices for managing
+  For additional information and approaches, see [Best practices for managing
   shared team
   costs](https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-costs).
 </Alert>
@@ -34,7 +34,7 @@ Knowledge of these concepts and how they interrelate will help you implement the
 Critical concepts for review are:
 
 1. **Terra Workspaces and Permissions** - For an overview of Terra workspaces, workspace permissions, and general billing information, see [ Getting Started with AnVIL](/learn).
-1. **Cloud Cost Basics** - For an overview of cloud costs see [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs).
+1. **Cloud Cost Basics** - For an overview of cloud costs, see [Understanding Cloud Costs](/learn/introduction/understanding-cloud-costs).
 1. **Billing Concepts** - For an overview of Google Cloud Platform and Terra billing concepts, see [Overview of Billing Concepts](/learn/billing-setup/billing-concepts).
 
 ## Lab Setup Design
@@ -66,7 +66,7 @@ To create a workspace:
 
 The most important advice in this guide is **monitor your spending** so you can shut down unexpectedly expensive activities before they have time to accumulate unplanned costs.
 
-The ability to monitor spending is accomplished by scoping GCP budgets and alerts to the level of a Terra Billing Project’s twin Google Billing Project and creating fine-grained Terra Billing Projects, i.e., one per Data Analysts or one per Data Analyst analysis.
+The ability to monitor spending is accomplished by scoping GCP budgets and alerts to the level of a Terra Billing Project’s twin Google Billing Project and creating fine-grained Terra Billing Projects, i.e., one per Data Analyst or one per Data Analyst analysis.
 
 As specified in the workflow above, whenever a new workspace is needed, the Lab Manager checks to see if a new Terra Billing Project is also required and, if so, creates it and sets or updates budgets and alerts.
 
@@ -102,21 +102,21 @@ Before you start, you will want to plan out your setup and:
 1. Determine the set of Google Billing Accounts to create. This guide recommends one Google Billing Account per funding source (grant) to cleanly separate costs.
 1. Determine the list of Terra Billing Projects to create - This guide recommends one per Data Analyst. If finer-grained reporting is desired, create on Terra Billing Project per each of a data analyst’s workspaces. Use a consistent naming convention that will help you identify the user and project the Terra Billing Project is for.
 1. Determine the set of workspaces to create. This initially may be one per data analyst.
-1. If you will be cloning a data workspace with controlled access data for data analysts, make sure each data analyst is a member of the workspace’s Authorization Domain. For more information see [Accessing Data](/learn/accessing-data/requesting-data-access).
+1. If you will be cloning a data workspace with controlled access data for data analysts, make sure each data analyst is a member of the workspace’s Authorization Domain. For more information, see [Accessing Data](/learn/accessing-data/requesting-data-access).
 1. Determine the expected costs, budget, and budget alerts you would like for each Terra Billing Project. See [Controlling Cloud Costs - Sample Use Cases](https://support.terra.bio/hc/en-us/articles/360029772212-Controlling-Cloud-costs-sample-use-cases) for a framework for estimating cloud costs. This guide recommends setting alerts at 50% and 90% of the expected budget.
 
 ### 1 - Create the Team’s Google Accounts
 
 _All Lab Members_
 
-All lab members that wish to use Terra will need a Google ID to create a Terra account.
+All lab members who wish to use Terra will need a Google ID to create a Terra account.
 
 A Google ID is an email address that may be:
 
 - a non-Google email that has been used to create a Google Account,
-- a Google email address set up in Gmail, Google Workspace, or Google Identity.
+- a Google email address in Gmail, Google Workspace, or Google Identity.
 
-This email must also be the Google ID that lab members will use to log in to Terra, Gen3, and associate with their ERA commons ID for accessing controlled-access data.
+This email must also be the Google ID lab members will use to log in to Terra, the AnVIL Data Explorer, and associate with their ERA Commons ID for accessing controlled-access data.
 
 If you already have a Google ID, you can skip this step. Lab members without Google IDs can see [Create Your Google Account](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp) to register for a Gmail account or create an account with their current non-Google email address.
 
@@ -152,8 +152,8 @@ _PI or Account Administrator_
     <CallToActionButton callToAction={{ label: "Sign in to GCP Manage Billing Accounts", url: "https://console.cloud.google.com/billing", }} />
 2. Select your lab from the "**Select an organization**" dropdown if available.
 3. Select the "**ADD BILLING ACCOUNT**" or "**CREATE ACCOUNT**" button.
-4. Enter the name for your new Google Billing Account.
-5. Select your country and optionally currency if applicable.
+4. Enter the name of your new Google Billing Account.
+5. Select your country and, optionally, currency if applicable.
 6. Select "**CONTINUE**" and follow the instructions to attach or create a Google Payments Profile to fund the new Google Billing Account.
 7. Select "**SUBMIT AND ENABLE BILLING"**.
 
@@ -182,7 +182,7 @@ To create and launch workspaces and consume Google Cloud resources, Terra needs 
 
 _PI or Account Administrator_
 
-Once a Lab Manage is added as a "_Billing Account User_" on a Google Billing account and the Google Billing Account is linked to Terra, the Lab Manager can create Terra Billing Projects using the linked Google Billing Account.
+Once a Lab Manager is added as a "_Billing Account User_" on a Google Billing account and the Google Billing Account is linked to Terra, the Lab Manager can create Terra Billing Projects using the linked Google Billing Account.
 
 **To add a Lab Manager as a _Billing Account User_ to a Google Billing Account:**
 
@@ -212,7 +212,7 @@ Name the Terra Billing Project so that you can identify the Data Analyst by the 
 
 **To create a Terra Billing Project:**
 
-1. Log into Terra manage billing page.
+1. Log into the Terra manage billing page.
    <CallToActionButton callToAction={{ label: "Sign in to Terra Manage Billing", url: "https://anvil.terra.bio/#billing" }} />
 2. If prompted, select "**Sign in with Google**".
 3. Select "**CREATE**" in the top left.
@@ -288,10 +288,10 @@ _Lab Manager_
 
 ![Setting Data Analyst workspace permissions](/consortia/learn/investigators/share-writer-can-compute-no-share.png)
 
-For additional information see [Cloning a Workspace](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) in the Terra documentation. For additional information see [How to Share a Workspace](https://support.terra.bio/hc/en-us/articles/360034540171-How-to-share-a-workspace) in the Terra documentation.
+For additional information, see [Cloning a Workspace](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) in the Terra documentation. For additional information see [How to Share a Workspace](https://support.terra.bio/hc/en-us/articles/360034540171-How-to-share-a-workspace) in the Terra documentation.
 
 ## Providing Feedback
 
 We would love to hear about your experiences attempting to implement this guide and discuss what worked or any omissions or points that need further clarification.
 
-For questions, comments, pain points, successes in following this guide, reach out to the AnVIL support from the AnVIL [Help](/help) page.
+For questions, comments, pain points, or successes in following this guide, reach out to the AnVIL support from the AnVIL [Help](/help) page.
