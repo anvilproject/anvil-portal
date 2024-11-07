@@ -10,7 +10,7 @@ import {
   DEFAULT_ACTIVE_INDEX,
   DEFAULT_SWIPE_COORDINATES,
 } from "./common/constants";
-import { SwipeAction, SwipeCoordinates, SWIPE_ACTION } from "./common/entities";
+import { SWIPE_ACTION, SwipeAction, SwipeCoordinates } from "./common/entities";
 
 export interface InteractiveAction {
   onMouseDown: (mouseEvent: MouseEvent) => void;
@@ -127,7 +127,7 @@ export function useSwipeInteraction(
     const timeout = setTimeout(() => {
       onSwipeToIndex(1);
     }, swipeDelay);
-    return () => clearTimeout(timeout);
+    return (): void => clearTimeout(timeout);
   }, [activeIndex, swipeDelay, onSwipeToIndex]);
 
   if (!swipeEnabled) {

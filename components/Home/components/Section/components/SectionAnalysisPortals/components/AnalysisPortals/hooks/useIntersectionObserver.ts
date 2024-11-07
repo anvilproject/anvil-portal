@@ -28,7 +28,7 @@ export function useIntersectionObserver(
     if (ref.current?.lastElementChild) {
       observerRef.current.observe(ref.current.lastElementChild);
     }
-    return () => {
+    return (): void => {
       observerRef.current?.disconnect();
     };
   }, [onIntersection, ref]);

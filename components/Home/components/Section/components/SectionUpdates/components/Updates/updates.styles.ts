@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
   CardContent as DefaultContent,
-  CardSection as DefaultSection,
   Grid as DefaultGrid,
+  CardSection as DefaultSection,
   GridCard,
 } from "../../../../../Card/card.styles";
 

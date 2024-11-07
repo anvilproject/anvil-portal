@@ -7,9 +7,9 @@ import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/lib/styles/co
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
+  sectionGrid,
 } from "../../section.styles";
 
 export const SectionLayout = styled(DefaultLayout)`

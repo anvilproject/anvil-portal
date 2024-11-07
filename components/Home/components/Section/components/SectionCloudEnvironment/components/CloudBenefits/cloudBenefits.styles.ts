@@ -4,8 +4,8 @@ import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins
 import styled from "@emotion/styled";
 import {
   CardContent as DefaultContent,
-  CardSection as DefaultSection,
   Grid as DefaultGrid,
+  CardSection as DefaultSection,
   GridCard,
 } from "../../../../../Card/card.styles";
 

@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { mediaTabletLargeUp } from "../../../../../../styles/common/mixins/breakpoints";
 import {
   SectionActions as DefaultActions,
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionTitle as DefaultTitle,
+  sectionGrid,
 } from "../../section.styles";
 
 export const Headline = styled(DefaultHeadline)`

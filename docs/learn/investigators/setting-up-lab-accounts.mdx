@@ -70,10 +70,11 @@ The ability to monitor spending is accomplished by scoping GCP budgets and alert
 
 As specified in the workflow above, whenever a new workspace is needed, the Lab Manager checks to see if a new Terra Billing Project is also required and, if so, creates it and sets or updates budgets and alerts.
 
-<Alert severity="warning" title="Note">
+<Alert severity="warning">
+  <AlertTitle>Note</AlertTitle>
 
-- The Google Cloud billing interface does not provide an automatic way to cancel computations when spending reaches a given threshold.
-- Google Cloud reports compute costs with a delay of approximately one day.
+  - The Google Cloud billing interface does not provide an automatic way to cancel computations when spending reaches a given threshold.
+  - Google Cloud reports compute costs with a delay of approximately one day.
 
 </Alert>
 

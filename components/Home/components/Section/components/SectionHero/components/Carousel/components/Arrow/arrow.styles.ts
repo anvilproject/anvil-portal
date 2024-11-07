@@ -10,8 +10,8 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { IconButton as MIconButton } from "@mui/material";
 import {
-  SwipeAction,
   SWIPE_ACTION,
+  SwipeAction,
 } from "../../../../../../../../hooks/useSwipeInteraction/common/entities";
 import { MAX_DECK_SIZE } from "../../common/constants";
 import { getArrowTransform } from "../../common/utils";

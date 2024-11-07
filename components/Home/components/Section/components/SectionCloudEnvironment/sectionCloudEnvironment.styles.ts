@@ -2,10 +2,10 @@ import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixi
 import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
-  Section as DefaultSection,
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
+  Section as DefaultSection,
+  sectionGrid,
 } from "../../section.styles";
 
 export const Section = styled(DefaultSection)`
