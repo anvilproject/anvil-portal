@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.2](https://github.com/anvilproject/anvil-portal/compare/v2.2.1...v2.2.2) (2024-11-07)
+
+
+### Bug Fixes
+
+* Update anvil2024-community-conference to update name of scientific lead for deep learning models CoFest ([#3337](https://github.com/anvilproject/anvil-portal/issues/3337)) ([bdb2e5f](https://github.com/anvilproject/anvil-portal/commit/bdb2e5fc854b822c9e157b424064e85fdaa386cf))
+
+
+### Chores
+
+* **main:** release 2.2.1 ([#3334](https://github.com/anvilproject/anvil-portal/issues/3334)) ([ee3c9a6](https://github.com/anvilproject/anvil-portal/commit/ee3c9a6fef62047e5e8c689585cefb431829a3db))
+
+
+### Continuous Integration
+
+* add additional changelog-sections for rp ([#3332](https://github.com/anvilproject/anvil-portal/issues/3332)) ([#3333](https://github.com/anvilproject/anvil-portal/issues/3333)) ([ed142f8](https://github.com/anvilproject/anvil-portal/commit/ed142f8293218352d7ee149de2463c893e199439))
+
 ## [2.2.1](https://github.com/anvilproject/anvil-portal/compare/v2.2.0...v2.2.1) (2024-11-07)
 
 
