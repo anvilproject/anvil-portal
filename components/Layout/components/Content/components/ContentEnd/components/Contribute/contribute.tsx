@@ -1,4 +1,7 @@
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import {
   TEXT_BODY_400,
   TEXT_BODY_LARGE_500,
@@ -29,6 +32,7 @@ export const Contribute = ({ slug }: ContributeProps): JSX.Element => {
         disabled={slug?.length === 0}
         href={getGitHubUrl(slug)}
         startIcon={<CodePullRequestIcon color="inkLight" />}
+        rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
         target={ANCHOR_TARGET.BLANK}
         variant="contained"
       >

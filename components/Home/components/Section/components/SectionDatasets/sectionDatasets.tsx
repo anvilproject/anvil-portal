@@ -1,4 +1,5 @@
 import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { REL_ATTRIBUTE } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import NLink from "next/link";
 import { Section, SectionLayout } from "../../section.styles";
 import { Datasets } from "./components/Datasets/datasets";
@@ -35,7 +36,10 @@ export const SectionDatasets = ({
           <NLink href={CONSORTIA_ROADMAP} legacyBehavior passHref>
             <ButtonSecondary href="passHref">Consortia Roadmap</ButtonSecondary>
           </NLink>
-          <ButtonSecondary href={`${portalURL}${EXPLORE_DATASETS}`}>
+          <ButtonSecondary
+            href={`${portalURL}${EXPLORE_DATASETS}`}
+            rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
+          >
             Explore Datasets
           </ButtonSecondary>
           <ButtonSecondary href={CONTRIBUTE_DATA}>
