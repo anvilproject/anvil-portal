@@ -1,5 +1,8 @@
 import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button } from "@mui/material";
 import { Section, SectionLayout, SectionTitle } from "../../section.styles";
 import { Publications } from "./components/Publications/publications";
@@ -21,6 +24,7 @@ export const SectionPublications = (): JSX.Element => {
             <Button
               color="primary"
               href={ADD_PUBLICATION}
+              rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
               target={ANCHOR_TARGET.BLANK}
               variant="contained"
             >

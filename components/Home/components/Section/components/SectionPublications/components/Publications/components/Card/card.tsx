@@ -2,7 +2,10 @@ import { ButtonTextPrimary } from "@databiosphere/findable-ui/lib/components/com
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
 import { useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
@@ -30,7 +33,11 @@ export const Card = ({ card }: Card): JSX.Element => {
 
   return (
     <GridCard component={RoundedPaper}>
-      <MCardActionArea href={cardLink} target={ANCHOR_TARGET.BLANK}>
+      <MCardActionArea
+        href={cardLink}
+        rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
+        target={ANCHOR_TARGET.BLANK}
+      >
         <CardSection>
           <CardContent>
             <CardTitle>{title}</CardTitle>

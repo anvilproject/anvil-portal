@@ -42,7 +42,6 @@ export { EventsHero } from "./Events/components/EventsHero/eventsHero";
 export { Events } from "./Events/events";
 export { Card as WorkspaceCard } from "./Home/components/Section/components/SectionWorkspaces/components/Workspaces/components/Card/card";
 export { ANVILBranding } from "./Layout/components/Footer/components/Branding/components/ANVILBranding/anvilBranding";
-export { CallToAction } from "./Layout/components/Header/components/CallToAction/callToAction";
 export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";
 export { NewsHero } from "./News/components/NewsHero/newsHero";
 export { News } from "./News/news";

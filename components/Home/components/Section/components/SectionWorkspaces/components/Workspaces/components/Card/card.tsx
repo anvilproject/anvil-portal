@@ -1,7 +1,10 @@
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { ForwardArrowIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
 import { SectionCardWithLink } from "../../../../../../../../common/entities";
 import {
@@ -23,6 +26,7 @@ export const Card = ({ card }: CardProps): JSX.Element => {
     <GridCard component={RoundedPaper}>
       <MCardActionArea
         href={link.url}
+        rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
         target={link.target || ANCHOR_TARGET.BLANK}
       >
         <CardSection>
