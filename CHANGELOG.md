@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/anvilproject/anvil-portal/compare/v2.2.2...v2.2.3) (2024-11-08)
+
+
+### Chores
+
+* updated findable-ui to v14.0.0 ([#3330](https://github.com/anvilproject/anvil-portal/issues/3330)) ([#3331](https://github.com/anvilproject/anvil-portal/issues/3331)) ([cde9bc0](https://github.com/anvilproject/anvil-portal/commit/cde9bc0f05cff7342d761f94135a0144898b83d7))
+
 ## [2.2.2](https://github.com/anvilproject/anvil-portal/compare/v2.2.1...v2.2.2) (2024-11-07)
 
 
