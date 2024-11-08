@@ -3,7 +3,7 @@ import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/com
 import { CardText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardText/cardText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { Card as MCard, CardActionArea } from "@mui/material";
+import { CardActionArea, Card as MCard } from "@mui/material";
 import { useRouter } from "next/router";
 import { FrontmatterNews } from "../../content/entities";
 import { CardSection, NewsView } from "./news.styles";

@@ -21,6 +21,7 @@ export { NavBarHero } from "@databiosphere/findable-ui/lib/components/Layout/com
 export { Nav } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
+export { AlertTitle } from "@mui/material";
 export { Figure } from "./common/Figure/figure";
 export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";
 export { Subheader } from "./common/Typography/components/Subheader/subheader";

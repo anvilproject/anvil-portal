@@ -247,7 +247,7 @@ const DataIngestionChart: FC = (): JSX.Element => {
 
     const zr = chart.current?.getEchartsInstance().getZr();
     zr?.on("mousemove", handleMouse);
-    return () => zr?.handler && zr.off("mousemove", handleMouse);
+    return (): void => zr?.handler && zr.off("mousemove", handleMouse);
   });
   return (
     <Card component={RoundedPaper}>

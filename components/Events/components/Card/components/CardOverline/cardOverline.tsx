@@ -1,7 +1,7 @@
 import { Dot } from "@databiosphere/findable-ui/lib/components/common/Dot/dot";
 import { TEXT_BODY_SMALL_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { CardOverline as Overline } from "./cardOverline.styles";
 
 interface CardOverlineProps {

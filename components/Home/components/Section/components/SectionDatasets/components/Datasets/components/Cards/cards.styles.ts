@@ -5,9 +5,9 @@ import {
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
+  GridCardContent as DefaultContent,
   CardSection as DefaultSection,
   GridCard,
-  GridCardContent as DefaultContent,
 } from "../../../../../../../Card/card.styles";
 
 export const Card = styled(GridCard)`

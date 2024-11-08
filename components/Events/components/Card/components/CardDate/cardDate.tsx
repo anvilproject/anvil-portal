@@ -3,7 +3,6 @@ import {
   TEXT_HEADING_LARGE,
 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
-import React from "react";
 import { CardDate as Date } from "./cardDate.styles";
 
 interface CardDateProps {

@@ -1,9 +1,9 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
+  sectionGrid,
 } from "../../section.styles";
 
 export const SectionLayout = styled(DefaultLayout)`

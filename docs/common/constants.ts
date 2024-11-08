@@ -12,6 +12,7 @@ export const DOC_SITE_FOLDER_NAME = "docs";
 
 export const MDX_COMPONENTS = {
   Alert: C.Alert,
+  AlertTitle: C.AlertTitle,
   AnVILPublications: C.AnVILPublications,
   AnalysisPortals: C.AnalysisPortals,
   AnchorLink: C.AnchorLink,

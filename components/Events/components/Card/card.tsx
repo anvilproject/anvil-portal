@@ -1,9 +1,9 @@
 import { CardText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardText/cardText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { Card as MCard, CardActionArea } from "@mui/material";
+import { CardActionArea, Card as MCard } from "@mui/material";
 import Router from "next/router";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { FrontmatterEvent } from "../../../../content/entities";
 import { CardContent, CardSection } from "./card.styles";
 import { getEventOverline, getEventTitle } from "./common/utils";

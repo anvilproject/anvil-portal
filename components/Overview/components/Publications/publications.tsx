@@ -1,6 +1,6 @@
 import {
-  PublicationCard,
   PUBLICATION_CATEGORY,
+  PublicationCard,
 } from "../../../Home/components/Section/components/SectionPublications/common/entities";
 import { Card } from "../../../Home/components/Section/components/SectionPublications/components/Publications/components/Card/card";
 import { PublicationView } from "./publications.styles";

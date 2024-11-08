@@ -1,9 +1,9 @@
 import { Divider } from "@mui/material";
 import {
   Count,
+  Metrics as DatasetMetrics,
   Label,
   Metric,
-  Metrics as DatasetMetrics,
 } from "./metrics.styles";
 
 export const Metrics = (): JSX.Element => {
