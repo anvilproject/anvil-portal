@@ -13,4 +13,8 @@ const config: SiteConfig = {
   },
 };
 
+if (config.layout.header.announcements) {
+  config.layout.header.announcements = undefined;
+}
+
 export default config;

@@ -4,6 +4,7 @@ import * as C from "../../../components";
 import { ROUTES } from "../../../routes/constants";
 import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
+import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
 import { CONSORTIA } from "./navigation/consortia";
 import { FAQ } from "./navigation/faq";
@@ -47,6 +48,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
         socials: socialMedia.socials,
       },
       header: {
+        announcements,
         authenticationEnabled: false,
         logo: C.Logo({
           alt: APP_TITLE,
