@@ -181,10 +181,6 @@ export const LEARN: NavigationEntry = {
           label: "Reference",
         },
         {
-          label: "GTEx v8 - Egress Instructions",
-          url: `${ROUTES.LEARN}/${PATH_SEGMENTS.REFERENCE}/gtex-v8-free-egress-instructions`,
-        },
-        {
           label: "Cross Platform Data Access with GA4GH DRS in Terra",
           url: `${ROUTES.LEARN}/${PATH_SEGMENTS.REFERENCE}/cross-platform-data-access-with-drs-uris-in-terra`,
         },
