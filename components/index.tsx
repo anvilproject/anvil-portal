@@ -1,5 +1,6 @@
 export { Alert } from "@databiosphere/findable-ui/lib/components/common/Alert/alert";
 export { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
+export { Banner } from "@databiosphere/findable-ui/lib/components/common/Banner/banner";
 export { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 export { CallToActionButton } from "@databiosphere/findable-ui/lib/components/common/Button/components/CallToActionButton/callToActionButton";
 export { Card } from "@databiosphere/findable-ui/lib/components/common/Card/card";
