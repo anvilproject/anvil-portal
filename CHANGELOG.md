@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.0](https://github.com/anvilproject/anvil-portal/compare/v2.2.3...v2.3.0) (2024-11-08)
+
+
+### Features
+
+* add banner to dev to indicate it is a dev site ([#3147](https://github.com/anvilproject/anvil-portal/issues/3147)) ([#3349](https://github.com/anvilproject/anvil-portal/issues/3349)) ([86b150a](https://github.com/anvilproject/anvil-portal/commit/86b150a7fe2297934c03c4e3adae70fbe815fbc1))
+* review youtube video implementation for insecure iframe ([#3339](https://github.com/anvilproject/anvil-portal/issues/3339)) ([#3355](https://github.com/anvilproject/anvil-portal/issues/3355)) ([185956c](https://github.com/anvilproject/anvil-portal/commit/185956c3cb07d247b84e99476a55374263e3bb2e))
+
+
+### Bug Fixes
+
+* publication and workspace cards on homepage are missing the rel="noopener noreferrer"attribute ([#3336](https://github.com/anvilproject/anvil-portal/issues/3336)) ([#3344](https://github.com/anvilproject/anvil-portal/issues/3344)) ([3cf02de](https://github.com/anvilproject/anvil-portal/commit/3cf02dee294e86618fc293594aeccff2402b3f0b))
+* removed GTEx egress instructions text ([#3343](https://github.com/anvilproject/anvil-portal/issues/3343)) ([#3356](https://github.com/anvilproject/anvil-portal/issues/3356)) ([31e2db7](https://github.com/anvilproject/anvil-portal/commit/31e2db70ca40d7ffae77461fb5c28702ceddc641))
+
 ## [2.2.3](https://github.com/anvilproject/anvil-portal/compare/v2.2.2...v2.2.3) (2024-11-08)
 
 
