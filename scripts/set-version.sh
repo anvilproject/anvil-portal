@@ -13,7 +13,7 @@ GIT_HASH=$(git rev-parse HEAD)
 BUILD_DATE=$(TZ="America/Los_Angeles" date +"%Y-%m-%d %H:%M:%S %Z")
 
 # Get the current code version from package.json
-VERSION=$(node -p "require('./package.json').version")
+VERSION=$(git tag --points-at HEAD)
 
 # Append these values as NEXT_PUBLIC variables
 echo "NEXT_PUBLIC_GIT_HASH='$GIT_HASH'" >> "$TARGET_ENV_FILE"
