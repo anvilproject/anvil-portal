@@ -9,10 +9,10 @@ fi
 # Get the current git hash
 GIT_HASH=$(git rev-parse HEAD)
 
-# Get the current date and time in GMT
+# Get the current date and time in PST
 BUILD_DATE=$(TZ="America/Los_Angeles" date +"%Y-%m-%d %H:%M:%S %Z")
 
-# Get the current code version from package.json
+# Get the current code version from git
 VERSION=$(git tag --points-at HEAD)
 
 # Append these values as NEXT_PUBLIC variables
