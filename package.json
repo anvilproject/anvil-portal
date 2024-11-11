@@ -4,9 +4,9 @@
   "version": "2.3.0",
   "private": true,
   "scripts": {
-    "dev": "./scripts/dev.sh anvil-portal && next dev",
-    "build-dev:anvil-portal": "scripts/common-build.sh anvil-portal dev && next build && npm run postbuild",
-    "build-prod:anvil-portal": "./scripts/common-build.sh anvil-portal prod && next build && npm run postbuild",
+    "dev": "./scripts/dev.sh anvil-portal && ./scripts/set-version.sh dev && next dev",
+    "build-dev:anvil-portal": "scripts/common-build.sh anvil-portal dev  && ./scripts/set-version.sh && next build && npm run postbuild",
+    "build-prod:anvil-portal": "./scripts/common-build.sh anvil-portal prod  && ./scripts/set-version.sh && next build && npm run postbuild",
     "start": "npx serve out",
     "lint": "next lint",
     "check-format": "prettier --check .",
