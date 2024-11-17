@@ -63,7 +63,7 @@
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
-    "got": "^13.0.0",
+    "got": "^14.4.4",
     "husky": "^8.0.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
