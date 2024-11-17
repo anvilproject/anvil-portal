@@ -24,7 +24,7 @@
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
-    "@next/mdx": "^14.1.0",
+    "@next/mdx": "^15.0.3",
     "copy-to-clipboard": "3.3.1",
     "echarts": "^5.3.3",
     "echarts-for-react": "^3.0.2",
