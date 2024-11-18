@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.4.0](https://github.com/anvilproject/anvil-portal/compare/v2.3.0...v2.4.0) (2024-11-17)
+
+
+### Features
+
+* add version info to environment ([#3360](https://github.com/anvilproject/anvil-portal/issues/3360)) ([#3361](https://github.com/anvilproject/anvil-portal/issues/3361)) ([3f337fd](https://github.com/anvilproject/anvil-portal/commit/3f337fdcc6f1b5d1ec3752321587258eefd92de5))
+
+
+### Bug Fixes
+
+* remove pat from release-please action ([#3365](https://github.com/anvilproject/anvil-portal/issues/3365)) ([#3367](https://github.com/anvilproject/anvil-portal/issues/3367)) ([b4f9826](https://github.com/anvilproject/anvil-portal/commit/b4f9826393b70be1e5f6ed04cc3f4a7c917403f7))
+
+
+### Chores
+
+* add commitlint and `content` commit type ([#3357](https://github.com/anvilproject/anvil-portal/issues/3357)) ([#3358](https://github.com/anvilproject/anvil-portal/issues/3358)) ([dc1b8a8](https://github.com/anvilproject/anvil-portal/commit/dc1b8a8f7581dcdc7115b48e9f10866c88259cb9))
+* reinstall dependencies for latest security fixes ([#3375](https://github.com/anvilproject/anvil-portal/issues/3375)) ([#3376](https://github.com/anvilproject/anvil-portal/issues/3376)) ([dca1c92](https://github.com/anvilproject/anvil-portal/commit/dca1c92c1fc9b77a5f9f01b9549d2fdf2cf7ac5a))
+
+
+### Content
+
+* add link to instructions for downloading GTEx data to AnVIL using DUOS ([#3370](https://github.com/anvilproject/anvil-portal/issues/3370)) ([ef2e2da](https://github.com/anvilproject/anvil-portal/commit/ef2e2dac939cf77715a760f014b8458dd05224cc))
+* added duos data library news page ([#3372](https://github.com/anvilproject/anvil-portal/issues/3372)) ([#3373](https://github.com/anvilproject/anvil-portal/issues/3373)) ([df57918](https://github.com/anvilproject/anvil-portal/commit/df5791890de99316579fba2cbe97d9a26be22117))
+* update sunsetting-gen3-in-anvil with link to data access via DUOS ([#3371](https://github.com/anvilproject/anvil-portal/issues/3371)) ([f61f0a0](https://github.com/anvilproject/anvil-portal/commit/f61f0a0cfc9286892e9a67fa0581c8be8d9f875b))
+
 ## [2.3.0](https://github.com/anvilproject/anvil-portal/compare/v2.2.3...v2.3.0) (2024-11-08)
 
 
