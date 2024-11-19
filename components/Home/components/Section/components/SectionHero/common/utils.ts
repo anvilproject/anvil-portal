@@ -16,16 +16,6 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
-          label: ACTION_LABEL.LEARN_MORE,
-          url: "https://anvilproject.org/events/anvil2024-community-conference",
-        },
-      ],
-      text: "We are thrilled to announce the inaugural AnVIL Community Conference, taking place on November 12-13, 2024, in Cold Spring Harbor, NY.",
-      title: "AnVIL Community Conference 2024",
-    },
-    {
-      links: [
-        {
           label: ACTION_LABEL.PAPER,
           url: "https://www.science.org/doi/10.1126/science.abl3533",
         },
