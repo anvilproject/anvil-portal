@@ -1,3 +1,4 @@
+import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { SectionAnalysisPortals } from "../../components/Home/components/Section/components/SectionAnalysisPortals/sectionAnalysisPortals";
 import { SectionCloudEnvironment } from "../../components/Home/components/Section/components/SectionCloudEnvironment/sectionCloudEnvironment";
 import { SectionDatasets } from "../../components/Home/components/Section/components/SectionDatasets/sectionDatasets";
@@ -6,11 +7,11 @@ import { SectionPublications } from "../../components/Home/components/Section/co
 import { SectionUpdates } from "../../components/Home/components/Section/components/SectionUpdates/sectionUpdates";
 import { SectionWorkspaces } from "../../components/Home/components/Section/components/SectionWorkspaces/sectionWorkspaces";
 import { SectionDivider } from "../../components/Home/components/Section/section.styles";
-import { useConfig } from "../../hooks/useConfig";
+import { SiteConfig } from "../../site-config/common/entities";
 
 export const HomeView = (): JSX.Element => {
   const { config } = useConfig();
-  const portalURL = config.portalURL;
+  const portalURL = (config as SiteConfig).portalURL;
   return (
     <>
       <SectionHero />
