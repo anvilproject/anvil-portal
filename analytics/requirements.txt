@@ -57,7 +57,6 @@ nbformat==5.10.4
 nest-asyncio==1.6.0
 numpy==2.1.1
 oauthlib==3.2.2
-openpyxl==3.1.5
 packaging==24.1
 pandas==2.2.2
 parso==0.8.4
@@ -123,4 +122,5 @@ urllib3==1.26.20
 wcwidth==0.2.13
 websockets==10.4
 wheel==0.44.0
+XlsxWriter==3.2.0
 zipp==3.20.2
