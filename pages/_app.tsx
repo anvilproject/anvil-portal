@@ -1,5 +1,6 @@
 import "@databiosphere/findable-ui";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
+import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
 import { LayoutStateProvider } from "@databiosphere/findable-ui/lib/providers/layoutState";
 import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
@@ -13,7 +14,6 @@ import TagManager from "react-gtm-module";
 import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
 import { config } from "../config/config";
-import { ConfigProvider } from "../providers/config";
 import { BREAKPOINTS } from "../site-config/common/constants";
 import { mergeAppTheme } from "../theme/theme";
 

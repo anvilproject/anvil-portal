@@ -15,10 +15,15 @@ import { socialMedia, SOCIALS } from "./socialMedia";
 
 const APP_TITLE = "AnVIL Portal";
 const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
+export const GIT_HUB_REPO_URL = "https://github.com/anvilproject/anvil-portal";
 const PORTAL_URL = "https://anvilproject.dev.clevercanary.com";
 const SLOGAN = "NHGRI Analysis Visualization and Informatics Lab-space";
 
-export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
+export function makeConfig(
+  browserUrl: string,
+  portalUrl: string,
+  gitHubUrl: string
+): SiteConfig {
   return {
     analytics: {
       gtmAuth: "dn4W-jqWUyNBj6ON0Ic_wA", // GTM environment-specific
@@ -32,6 +37,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
     },
     entities: [],
     explorerTitle: null,
+    gitHubUrl,
     layout: {
       footer: {
         Branding: C.ANVILBranding(),
@@ -46,6 +52,7 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
           },
         ],
         socials: socialMedia.socials,
+        versionInfo: true,
       },
       header: {
         announcements,
@@ -194,6 +201,10 @@ export function makeConfig(browserUrl: string, portalUrl: string): SiteConfig {
   };
 }
 
-const config: SiteConfig = makeConfig(EXPLORER_URL, PORTAL_URL);
+const config: SiteConfig = makeConfig(
+  EXPLORER_URL,
+  PORTAL_URL,
+  GIT_HUB_REPO_URL
+);
 
 export default config;
