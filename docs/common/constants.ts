@@ -23,6 +23,7 @@ export const MDX_COMPONENTS = {
   ButtonAddPublication: C.ButtonAddPublication,
   CallToActionButton: C.CallToActionButton,
   Card: C.Card,
+  Champions: C.Champions,
   Consortia: C.Consortia,
   DataIngestionChart,
   EventCard: C.EventCard,

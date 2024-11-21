@@ -1,4 +1,5 @@
 import { NavigationConfig } from "../../../../docs/common/entities";
+import { ANVIL_CHAMPIONS } from "./champions";
 import { CONSORTIA } from "./consortia";
 import { EVENTS } from "./events";
 import { FAQ } from "./faq";
@@ -12,6 +13,7 @@ import { TEAM } from "./team";
 
 // Site map for the MDX pages used to generate the navigation.
 export const navigation: NavigationConfig = {
+  ["anvil-champions"]: ANVIL_CHAMPIONS,
   consortia: CONSORTIA,
   events: EVENTS,
   faq: FAQ,

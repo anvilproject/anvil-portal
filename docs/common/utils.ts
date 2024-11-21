@@ -106,7 +106,13 @@ export function getNavigationConfig(
   // Loop through the slug and find the node where slug matches the node's slug.
   for (let i = 0; i < slug.length; i++) {
     const key = slug[i];
-    for (const { hero, layoutStyle, navigation, slugs } of sectionMap.nodes) {
+    for (const {
+      enableOutline = true,
+      hero,
+      layoutStyle,
+      navigation,
+      slugs,
+    } of sectionMap.nodes) {
       if (slugs.includes(key)) {
         if (slug.length !== 1 && i === 0) {
           // Although the first slug's key is a match, continue if the slug has more than one element.
@@ -114,13 +120,13 @@ export function getNavigationConfig(
         }
         // Return the layout styles; navigation (and therefore hero) are undefined.
         if (!navigation) {
-          return { layoutStyle };
+          return { enableOutline, layoutStyle };
         }
         const pagePath = `/${slug.join("/")}`;
         const activeURL = getActiveURL(pagePath, navigation);
         if (activeURL) {
           const navItems = getNavItems(activeURL, navigation);
-          return { hero, layoutStyle, navigation: navItems };
+          return { enableOutline, hero, layoutStyle, navigation: navItems };
         }
       }
     }
