@@ -12,6 +12,7 @@ export interface NavigationEntry {
 }
 
 export enum NavigationKey {
+  ANVIL_CHAMPIONS = "anvil-champions",
   CONSORTIA = "consortia",
   EVENTS = "events",
   FAQ = "faq",
@@ -26,6 +27,7 @@ export enum NavigationKey {
 
 export interface NavigationNode
   extends Pick<NavLinkItem, "flatten" | "selectedMatch" | "visible"> {
+  enableOutline?: boolean;
   hero?: NodeHero;
   key?: string;
   label?: string;

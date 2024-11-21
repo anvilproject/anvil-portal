@@ -28,7 +28,7 @@ const iframe = css`
     aspect-ratio: 16/ 9;
     border: none;
     display: block;
-    margin: 32px 0;
+    margin: 16px 0;
     width: 100%;
   }
 `;

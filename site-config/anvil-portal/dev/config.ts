@@ -136,6 +136,10 @@ export function makeConfig(
                   url: ROUTES.TEAM,
                 },
                 {
+                  label: "AnVIL Champions",
+                  url: ROUTES.ANVIL_CHAMPIONS,
+                },
+                {
                   label: "FAQ",
                   menuItems: buildMenuItems(FAQ),
                   url: ROUTES.FAQ,

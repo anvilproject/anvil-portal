@@ -1,4 +1,5 @@
 export const ROUTES = {
+  ANVIL_CHAMPIONS: "/anvil-champions",
   CONSORTIA: "/consortia",
   EVENTS: "/events",
   FAQ: "/faq",

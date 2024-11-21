@@ -68,6 +68,8 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const slug = props.params?.slug as string[];
   const navigationConfig = getNavigationConfig(slug);
+  const { enableOutline, hero, layoutStyle, navigation } =
+    navigationConfig || {};
   const { content, data } = parseMDXFrontmatter(slug);
   const frontmatter = data as Frontmatter;
   if (frontmatter.hidden) {
@@ -88,14 +90,11 @@ export const getStaticProps: GetStaticProps = async (
   });
   return {
     props: {
-      hero: navigationConfig?.hero ?? null,
-      layoutStyle: getContentLayoutStyle(
-        navigationConfig?.layoutStyle,
-        frontmatter.layoutStyle
-      ),
+      hero: hero ?? null,
+      layoutStyle: getContentLayoutStyle(layoutStyle, frontmatter.layoutStyle),
       mdxSource,
-      navigation: navigationConfig?.navigation ?? null,
-      outline: outline.filter(filterOutline),
+      navigation: navigation ?? null,
+      outline: enableOutline ? outline.filter(filterOutline) : [],
       pageTitle: frontmatter.title ?? null,
       slug,
     },
