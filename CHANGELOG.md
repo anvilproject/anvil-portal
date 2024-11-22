@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.5.0](https://github.com/anvilproject/anvil-portal/compare/v2.4.0...v2.5.0) (2024-11-22)
+
+
+### Features
+
+* add gregor news ([#3385](https://github.com/anvilproject/anvil-portal/issues/3385)) ([18ff54c](https://github.com/anvilproject/anvil-portal/commit/18ff54cf2c043d6ba22ab3fa7677f8a12edebd74))
+* add gtex news page ([#3384](https://github.com/anvilproject/anvil-portal/issues/3384)) ([#3388](https://github.com/anvilproject/anvil-portal/issues/3388)) ([184dd36](https://github.com/anvilproject/anvil-portal/commit/184dd36c526a95722ca1489be97f455b6ce75b49))
+* add version info to footer ([#3362](https://github.com/anvilproject/anvil-portal/issues/3362)) ([#3393](https://github.com/anvilproject/anvil-portal/issues/3393)) ([dda0e3d](https://github.com/anvilproject/anvil-portal/commit/dda0e3d09b0d78cbdc8d5eecf01d54ff93368fdf))
+* anvil champions page ([#3283](https://github.com/anvilproject/anvil-portal/issues/3283)) ([#3395](https://github.com/anvilproject/anvil-portal/issues/3395)) ([d1e6e51](https://github.com/anvilproject/anvil-portal/commit/d1e6e516545176f0e79327706a84726de7472cf7))
+* gregor release news article ([#3385](https://github.com/anvilproject/anvil-portal/issues/3385)) ([#3396](https://github.com/anvilproject/anvil-portal/issues/3396)) ([18ff54c](https://github.com/anvilproject/anvil-portal/commit/18ff54cf2c043d6ba22ab3fa7677f8a12edebd74))
+
+
+### Bug Fixes
+
+* append newline before other content in `set-version.sh` ([#3387](https://github.com/anvilproject/anvil-portal/issues/3387)) ([#3394](https://github.com/anvilproject/anvil-portal/issues/3394)) ([5882427](https://github.com/anvilproject/anvil-portal/commit/58824278051224ca6c709b57bccf81980d565e9d))
+* champions styles ([#3283](https://github.com/anvilproject/anvil-portal/issues/3283)) ([#3397](https://github.com/anvilproject/anvil-portal/issues/3397)) ([b6c1e4a](https://github.com/anvilproject/anvil-portal/commit/b6c1e4a70b92e198e403cf533ed5f2e47726c1b8))
+
+
+### Chores
+
+* upgrade findable-ui to 15.0.0 ([#3364](https://github.com/anvilproject/anvil-portal/issues/3364)) ([#3383](https://github.com/anvilproject/anvil-portal/issues/3383)) ([1efd825](https://github.com/anvilproject/anvil-portal/commit/1efd825bea3f3aa1cf8363ba55dc65dea18c1985))
+
+
+### Content
+
+* added PRIMED carousel card ([#3402](https://github.com/anvilproject/anvil-portal/issues/3402)) ([#3403](https://github.com/anvilproject/anvil-portal/issues/3403)) ([81034d3](https://github.com/anvilproject/anvil-portal/commit/81034d3cfdc884ad35d9d5cf83645cb44ac47110))
+* removed AnVIl Community Conference card ([#3377](https://github.com/anvilproject/anvil-portal/issues/3377)) ([#3378](https://github.com/anvilproject/anvil-portal/issues/3378)) ([efd96db](https://github.com/anvilproject/anvil-portal/commit/efd96dbc32b8b21ffc38a06cc5775150b45703ca))
+
 ## [2.4.0](https://github.com/anvilproject/anvil-portal/compare/v2.3.0...v2.4.0) (2024-11-17)
 
 
