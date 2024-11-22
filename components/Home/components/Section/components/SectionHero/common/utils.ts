@@ -17,6 +17,17 @@ export function buildCarouselCards(): SectionCard[] {
       links: [
         {
           label: ACTION_LABEL.PAPER,
+          url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
+        },
+      ],
+      text: "Using the AnVIL, the PRIMED Consortium is developing methods to improve the performance of PRSs in global populations and individuals of diverse genetic ancestry.",
+      title:
+        "The PRIMED Consortium: Reducing disparities in polygenic risk assessment",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.PAPER,
           url: "https://www.science.org/doi/10.1126/science.abl3533",
         },
         {
