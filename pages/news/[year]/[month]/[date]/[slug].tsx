@@ -97,23 +97,26 @@ NewsArticlePage.Main = Main;
 function getNewsArticleStaticPaths(
   paths: GetStaticPathsResult["paths"]
 ): GetStaticPathsResult["paths"] {
-  return paths.reduce((acc, path) => {
-    if (typeof path === "string") return acc;
-    const {
-      params: { slug },
-    } = path;
-    if (isSlugArray(slug) && isNewsArticle(slug)) {
-      acc.push({
-        params: {
-          date: slug[3],
-          month: slug[2],
-          slug: slug[4],
-          year: slug[1],
-        },
-      });
-    }
-    return acc;
-  }, [] as GetStaticPathsResult["paths"]);
+  return paths.reduce(
+    (acc, path) => {
+      if (typeof path === "string") return acc;
+      const {
+        params: { slug },
+      } = path;
+      if (isSlugArray(slug) && isNewsArticle(slug)) {
+        acc.push({
+          params: {
+            date: slug[3],
+            month: slug[2],
+            slug: slug[4],
+            year: slug[1],
+          },
+        });
+      }
+      return acc;
+    },
+    [] as GetStaticPathsResult["paths"]
+  );
 }
 
 /**

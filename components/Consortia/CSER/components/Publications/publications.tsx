@@ -5,13 +5,16 @@ import publications from "./publications.json";
 import { Publications as PublicationsByYear } from "./publications.styles";
 
 export const Publications = (): JSX.Element => {
-  const publicationsByYear = publications.reduce((byYear, publication) => {
-    (
-      byYear[publication.publicationYear] ||
-      (byYear[publication.publicationYear] = [])
-    ).push(publication);
-    return byYear;
-  }, {} as Record<string, typeof publications>);
+  const publicationsByYear = publications.reduce(
+    (byYear, publication) => {
+      (
+        byYear[publication.publicationYear] ||
+        (byYear[publication.publicationYear] = [])
+      ).push(publication);
+      return byYear;
+    },
+    {} as Record<string, typeof publications>
+  );
 
   const { compare } = new Intl.Collator("en");
 

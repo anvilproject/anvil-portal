@@ -97,20 +97,23 @@ EventArticlePage.Main = Main;
 function getEventArticleStaticPaths(
   paths: GetStaticPathsResult["paths"]
 ): GetStaticPathsResult["paths"] {
-  return paths.reduce((acc, path) => {
-    if (typeof path === "string") return acc;
-    const {
-      params: { slug },
-    } = path;
-    if (isSlugArray(slug) && isEventArticle(slug)) {
-      acc.push({
-        params: {
-          slug: slug[1],
-        },
-      });
-    }
-    return acc;
-  }, [] as GetStaticPathsResult["paths"]);
+  return paths.reduce(
+    (acc, path) => {
+      if (typeof path === "string") return acc;
+      const {
+        params: { slug },
+      } = path;
+      if (isSlugArray(slug) && isEventArticle(slug)) {
+        acc.push({
+          params: {
+            slug: slug[1],
+          },
+        });
+      }
+      return acc;
+    },
+    [] as GetStaticPathsResult["paths"]
+  );
 }
 
 /**
