@@ -86,10 +86,10 @@ export const Resources = (): JSX.Element => {
             A database of genes that, when somatically altered in cancer, are
             directly linked to a clinical action. Created by CanSeq:
           </p>
-          <p>http://www.broadinstitute.org/cancer/cga/target</p>
+          <p>https://www.broadinstitute.org/cancer/cga/target</p>
           {/* <Link */}
-          {/*   label="http://www.broadinstitute.org/cancer/cga/target" */}
-          {/*   url="http://www.broadinstitute.org/cancer/cga/target" */}
+          {/*   label="https://www.broadinstitute.org/cancer/cga/target" */}
+          {/*   url="https://www.broadinstitute.org/cancer/cga/target" */}
           {/* /> */}
         </div>
         <div>
@@ -101,10 +101,10 @@ export const Resources = (): JSX.Element => {
             A heuristic algorithm for clinical interpretation of cancer genome
             sequencing data. Created by CanSeq:
           </p>
-          <p>http://www.broadinstitute.org/cancer/cga/phial</p>
+          <p>https://www.broadinstitute.org/cancer/cga/phial</p>
           {/* <Link */}
-          {/*   label="http://www.broadinstitute.org/cancer/cga/phial" */}
-          {/*   url="http://www.broadinstitute.org/cancer/cga/phial" */}
+          {/*   label="https://www.broadinstitute.org/cancer/cga/phial" */}
+          {/*   url="https://www.broadinstitute.org/cancer/cga/phial" */}
           {/* /> */}
         </div>
         <div>
@@ -137,7 +137,7 @@ export const Resources = (): JSX.Element => {
             Proband is an app for taking family history pedigrees, designed
             exclusively for the iPad. Created by PediSeq.
           </p>
-          {/* <Link label="http://probandapp.com" url="http://probandapp.com" /> */}
+          {/* <Link label="https://probandapp.com" url="https://probandapp.com" /> */}
         </div>
         <div>
           <TextBodyLarge500>
@@ -148,7 +148,7 @@ export const Resources = (): JSX.Element => {
             to allow adults undergoing genomic testing to record their
             preferences about getting incidental or secondary results.
           </p>
-          <Link label="http://www.pigsr.org" url="http://www.pigsr.org" />
+          <Link label="https://www.pigsr.org" url="https://www.pigsr.org" />
         </div>
         <div>
           <TextBodyLarge500>
@@ -159,10 +159,10 @@ export const Resources = (): JSX.Element => {
             A NEJM interactive graphic on clinical genome and exome sequencing.
             Created by ClinSeq and MedSeq:
           </p>
-          <p>http://www.nejm.org</p>
+          <p>https://www.nejm.org</p>
           {/* <Link */}
-          {/*   label="http://www.nejm.org" */}
-          {/*   url="http://www.nejm.org/action/showMediaPlayer?doi=10.1056/NEJMra1312543&aid=NEJMra1312543_attach_1" */}
+          {/*   label="https://www.nejm.org" */}
+          {/*   url="https://www.nejm.org/action/showMediaPlayer?doi=10.1056/NEJMra1312543&aid=NEJMra1312543_attach_1" */}
           {/* /> */}
         </div>
       </Accordion>
@@ -207,8 +207,8 @@ export const Resources = (): JSX.Element => {
           <TextBodyLarge500>Medscape</TextBodyLarge500>
           <p>Medscape offers diverse topics in its online CME library:</p>
           <Link
-            label="http://www.medscape.org/resource/genomic-medicine/cme"
-            url="http://www.medscape.org/resource/genomic-medicine/cme"
+            label="https://www.medscape.org/resource/genomic-medicine/cme"
+            url="https://www.medscape.org/resource/genomic-medicine/cme"
           />
         </div>
       </Accordion>
@@ -220,8 +220,8 @@ export const Resources = (): JSX.Element => {
             among human variations and phenotypes with supporting evidence:
           </p>
           <Link
-            label="http://www.ncbi.nlm.nih.gov/clinvar"
-            url="http://www.ncbi.nlm.nih.gov/clinvar"
+            label="https://www.ncbi.nlm.nih.gov/clinvar"
+            url="https://www.ncbi.nlm.nih.gov/clinvar"
           />
         </div>
         <div>
@@ -231,8 +231,8 @@ export const Resources = (): JSX.Element => {
             Exome Sequencing Project (ESP):
           </p>
           <Link
-            label="http://evs.gs.washington.edu/EVS"
-            url="http://evs.gs.washington.edu/EVS"
+            label="https://evs.gs.washington.edu/EVS"
+            url="https://evs.gs.washington.edu/EVS"
           />
         </div>
         <div>
@@ -245,8 +245,8 @@ export const Resources = (): JSX.Element => {
             investigated the interaction of genotype and phenotype:
           </p>
           <Link
-            label="http://www.ncbi.nlm.nih.gov/gap"
-            url="http://www.ncbi.nlm.nih.gov/gap"
+            label="https://www.ncbi.nlm.nih.gov/gap"
+            url="https://www.ncbi.nlm.nih.gov/gap"
           />
         </div>
         <div>
@@ -255,7 +255,7 @@ export const Resources = (): JSX.Element => {
             The UCSC Genome Browser, containing the reference sequence and
             working draft assemblies for a large collection of genomes:
           </p>
-          <Link label="http://genome.ucsc.edu" url="http://genome.ucsc.edu" />
+          <Link label="https://genome.ucsc.edu" url="https://genome.ucsc.edu" />
         </div>
         <div>
           <TextBodyLarge500>
@@ -266,8 +266,8 @@ export const Resources = (): JSX.Element => {
             authoritative compendium of human genes and genetic phenotypes:
           </p>
           <Link
-            label="http://www.ncbi.nlm.nih.gov/omim"
-            url="http://www.ncbi.nlm.nih.gov/omim"
+            label="https://www.ncbi.nlm.nih.gov/omim"
+            url="https://www.ncbi.nlm.nih.gov/omim"
           />
         </div>
         <div>
@@ -277,8 +277,8 @@ export const Resources = (): JSX.Element => {
             descriptions with a clinical focus:
           </p>
           <Link
-            label="http://www.genereviews.org"
-            url="http://www.genereviews.org"
+            label="https://www.genereviews.org"
+            url="https://www.genereviews.org"
           />
         </div>
         <div>
@@ -287,7 +287,7 @@ export const Resources = (): JSX.Element => {
             Genetics Home Reference, consumer-friendly information about the
             effects of genetic variations on human health:
           </p>
-          <Link label="http://ghr.nlm.nih.gov" url="http://ghr.nlm.nih.gov" />
+          <Link label="https://ghr.nlm.nih.gov" url="https://ghr.nlm.nih.gov" />
         </div>
         <div>
           <TextBodyLarge500>Center for Mendelian Genomics</TextBodyLarge500>
@@ -296,7 +296,7 @@ export const Resources = (): JSX.Element => {
             and computational approaches to discover the genes and variants that
             underlie Mendelian conditions:
           </p>
-          <Link label="http://mendelian.org/" url="http://mendelian.org" />
+          <Link label="https://mendelian.org/" url="https://mendelian.org" />
         </div>
         <div>
           <TextBodyLarge500>The CSER1 ELSI Literature Archive</TextBodyLarge500>
