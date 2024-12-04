@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.5.1](https://github.com/anvilproject/anvil-portal/compare/v2.5.0...v2.5.1) (2024-12-04)
+
+
+### Bug Fixes
+
+* minor capitalization fix in AnVIL Champions page ([#3406](https://github.com/anvilproject/anvil-portal/issues/3406)) ([a8aa285](https://github.com/anvilproject/anvil-portal/commit/a8aa28558516015cee0ba9b7f01c8f06a4ab8e8f))
+
+
+### Chores
+
+* added analytics script to get a simple csv of outlinks ([#3202](https://github.com/anvilproject/anvil-portal/issues/3202)) ([#3374](https://github.com/anvilproject/anvil-portal/issues/3374)) ([#3217](https://github.com/anvilproject/anvil-portal/issues/3217)) ([1e45641](https://github.com/anvilproject/anvil-portal/commit/1e45641582db3a6bb08ca1998d744c7e2c0db3af))
+* update dev dependencies ([#3427](https://github.com/anvilproject/anvil-portal/issues/3427)) ([#3428](https://github.com/anvilproject/anvil-portal/issues/3428)) ([b421d54](https://github.com/anvilproject/anvil-portal/commit/b421d542357d7e5febeee74984bd0c8515245842))
+
 ## [2.5.0](https://github.com/anvilproject/anvil-portal/compare/v2.4.0...v2.5.0) (2024-11-22)
 
 
