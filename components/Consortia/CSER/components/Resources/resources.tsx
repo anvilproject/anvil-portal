@@ -294,9 +294,9 @@ export const Resources = (): JSX.Element => {
           <p>
             Center for Mendelian Genomics, will apply next-generation sequencing
             and computational approaches to discover the genes and variants that
-            underlie Mendelian conditions:
+            underlie Mendelian conditions.
           </p>
-          <Link label="https://mendelian.org/" url="https://mendelian.org" />
+          {/* <Link label="https://mendelian.org/" url="https://mendelian.org" /> */}
         </div>
         <div>
           <TextBodyLarge500>The CSER1 ELSI Literature Archive</TextBodyLarge500>
