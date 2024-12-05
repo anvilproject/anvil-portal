@@ -27,7 +27,7 @@ import {
 import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
 
-const CONFLICTING_STATIC_PATHS = ["events", "news"];
+const CONFLICTING_STATIC_PATHS = ["events", "learn", "news"];
 
 interface DocPageProps {
   hero: NodeHero | null;
