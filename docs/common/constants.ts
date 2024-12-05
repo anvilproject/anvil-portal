@@ -41,6 +41,7 @@ export const MDX_COMPONENTS = {
   Publications: C.Publications,
   ResearchMaterials: C.ResearchMaterials,
   Resources: C.Resources,
+  SectionOverview: C.SectionOverview,
   Subheader: C.Subheader,
   TextBodyLarge500: C.TextBodyLarge500,
   Video: C.Video,

@@ -55,6 +55,7 @@ export function makeConfig(
         versionInfo: true,
       },
       header: {
+        actions: C.Actions(),
         announcements,
         authenticationEnabled: false,
         logo: C.Logo({
