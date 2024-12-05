@@ -27,7 +27,6 @@ export enum NavigationKey {
 
 export interface NavigationNode
   extends Pick<NavLinkItem, "flatten" | "selectedMatch" | "visible"> {
-  enableOutline?: boolean;
   hero?: NodeHero;
   key?: string;
   label?: string;

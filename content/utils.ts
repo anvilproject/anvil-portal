@@ -4,6 +4,8 @@ import moment, { Moment, tz } from "moment-timezone";
 import "moment-timezone/index";
 import { default as path, default as pathTool } from "path";
 import { SlugByFilePaths } from "../docs/common/entities";
+import { resolveDocPath } from "../docs/common/generateStaticPaths";
+import { mapSlugByFilePaths } from "../docs/common/utils";
 import {
   EventSession,
   Frontmatter,
@@ -42,6 +44,18 @@ export function convertDateToMoment(
     return tz(date, timezone);
   }
   return tz(date, ["D MMM YYYY h:mm A", "D MMM YYYY"], timezone);
+}
+
+/**
+ * Returns a tuple array of paths and frontmatter for the given section.
+ * @param section - Section.
+ * @returns tuple array of paths and frontmatter.
+ */
+export function generateSectionPathWithFrontmatter(
+  section: string
+): [string, Frontmatter][] {
+  const slugByFilePaths = mapSlugByFilePaths(resolveDocPath(section));
+  return [...getFrontmatterByPaths(slugByFilePaths)];
 }
 
 /**
