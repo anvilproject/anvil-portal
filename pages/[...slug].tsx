@@ -14,15 +14,15 @@ import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { ContentEnd } from "../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../components/Layout/components/Content/content";
-import { Frontmatter } from "../content/entities";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
 import { NodeHero } from "../docs/common/entities";
 import {
+  extractMDXFrontmatter,
   filterOutline,
   generatePaths,
-  getContentLayoutStyle,
   getNavigationConfig,
-  parseMDXFrontmatter,
+  getStaticPropLayoutStyle,
+  parseFrontmatter,
 } from "../docs/common/utils";
 import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
@@ -68,15 +68,14 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const slug = props.params?.slug as string[];
   const navigationConfig = getNavigationConfig(slug);
-  const { enableOutline, hero, layoutStyle, navigation } =
-    navigationConfig || {};
-  const { content, data } = parseMDXFrontmatter(slug);
-  const frontmatter = data as Frontmatter;
-  if (frontmatter.hidden) {
-    return {
-      notFound: true,
-    };
-  }
+  const {
+    hero = null,
+    layoutStyle = null,
+    navigation = null,
+  } = navigationConfig || {};
+  const { content, data } = extractMDXFrontmatter(slug);
+  const frontmatter = parseFrontmatter(data);
+  if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -90,11 +89,11 @@ export const getStaticProps: GetStaticProps = async (
   });
   return {
     props: {
-      hero: hero ?? null,
-      layoutStyle: getContentLayoutStyle(layoutStyle, frontmatter.layoutStyle),
+      hero,
+      layoutStyle: getStaticPropLayoutStyle(layoutStyle, frontmatter),
       mdxSource,
-      navigation: navigation ?? null,
-      outline: enableOutline ? outline.filter(filterOutline) : [],
+      navigation,
+      outline: frontmatter.enableOutline ? outline.filter(filterOutline) : [],
       pageTitle: frontmatter.title ?? null,
       slug,
     },

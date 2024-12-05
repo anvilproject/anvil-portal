@@ -62,6 +62,8 @@ export function processFrontmatter(
   return {
     ...frontmatter,
     date: processFrontmatterDate(frontmatter),
+    enableNavigation: false,
+    enableOutline: false,
     url: processFrontmatterURL(path),
   };
 }

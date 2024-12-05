@@ -14,7 +14,6 @@ const PATH_SEGMENTS = {
 export const ANVIL_CHAMPIONS: NavigationEntry = {
   nodes: [
     {
-      enableOutline: false,
       key: NODE_KEYS.ANVIL_CHAMPIONS,
       layoutStyle: LAYOUT_STYLE_NO_CONTRAST_DEFAULT,
       slugs: [PATH_SEGMENTS.ANVIL_CHAMPIONS],
