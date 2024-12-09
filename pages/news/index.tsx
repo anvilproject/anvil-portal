@@ -6,9 +6,11 @@ import { serialize } from "next-mdx-remote/serialize";
 import { ContentView } from "../../components";
 import { Content } from "../../components/Layout/components/Content/content";
 import { processNewsFrontmatter } from "../../components/News/common/utils";
-import { Frontmatter } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
-import { parseMDXFrontmatter } from "../../docs/common/utils";
+import {
+  extractMDXFrontmatter,
+  parseFrontmatter,
+} from "../../docs/common/utils";
 
 const SLUG = ["news"];
 
@@ -31,13 +33,9 @@ const NewsPage = ({ mdxSource }: NewsPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { content, data } = parseMDXFrontmatter(SLUG);
-  const frontmatter = data as Frontmatter;
-  if (frontmatter.hidden) {
-    return {
-      notFound: true,
-    };
-  }
+  const { content, data } = extractMDXFrontmatter(SLUG);
+  const frontmatter = parseFrontmatter(data);
+  if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const mdxSource = await serialize(content, {
     scope: {
       news: processNewsFrontmatter(),

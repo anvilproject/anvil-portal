@@ -10,10 +10,13 @@ import { ContentView } from "../../components";
 import { processEventFrontmatter } from "../../components/Events/common/utils";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../../components/Layout/components/Content/content";
-import { Frontmatter } from "../../content/entities";
 import { isFrontmatterEvent } from "../../content/utils";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
-import { generatePaths, parseMDXFrontmatter } from "../../docs/common/utils";
+import {
+  extractMDXFrontmatter,
+  generatePaths,
+  parseFrontmatter,
+} from "../../docs/common/utils";
 import { rehypeSlug } from "../../plugins/rehypeSlug";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
@@ -47,18 +50,10 @@ export const getStaticProps: GetStaticProps = async (
   props: GetStaticPropsContext
 ) => {
   const slug = getEventSlug(props.params as EventArticlePageUrlParams);
-  const { content, data } = parseMDXFrontmatter(slug);
-  const frontmatter = data as Frontmatter;
-  if (frontmatter.hidden) {
-    return {
-      notFound: true,
-    };
-  }
-  if (!isFrontmatterEvent(frontmatter)) {
-    return {
-      notFound: true,
-    };
-  }
+  const { content, data } = extractMDXFrontmatter(slug);
+  const frontmatter = parseFrontmatter(data);
+  if (!frontmatter || frontmatter.hidden) return { notFound: true };
+  if (!isFrontmatterEvent(frontmatter)) return { notFound: true };
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug],
