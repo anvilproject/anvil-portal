@@ -5,27 +5,33 @@ import { StaticProps } from "../../../../../../content/entities";
 import { SectionDivider } from "../../../../../Home/components/Section/section.styles";
 import {
   Headline,
+  PageSubTitle,
   PageTitle,
   SectionLayout,
   StyledSection,
 } from "./sectionHero.styles";
+import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
+import { Props } from "./types";
 
 export const SectionHero = ({
-  frontmatter: { breadcrumbs, title },
-}: StaticProps): JSX.Element => {
+  className,
+  frontmatter: { breadcrumbs, subTitle, title },
+  StyledHeadline = Headline,
+}: BaseComponentProps & Props & StaticProps): JSX.Element => {
   const {
     layoutState: { headerHeight },
   } = useLayoutState();
   return (
-    <StyledSection headerHeight={headerHeight}>
+    <StyledSection className={className} headerHeight={headerHeight}>
       <SectionLayout
         hasNavigation={false}
         panelColor={PANEL_BACKGROUND_COLOR.SMOKE_LIGHTEST}
       >
-        <Headline>
+        <StyledHeadline>
           {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
           <PageTitle>{title}</PageTitle>
-        </Headline>
+          {subTitle && <PageSubTitle>{subTitle}</PageSubTitle>}
+        </StyledHeadline>
         <SectionDivider />
       </SectionLayout>
     </StyledSection>
