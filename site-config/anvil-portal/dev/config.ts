@@ -55,6 +55,7 @@ export function makeConfig(
         versionInfo: true,
       },
       header: {
+        actions: C.Actions(),
         announcements,
         authenticationEnabled: false,
         logo: C.Logo({
@@ -73,9 +74,7 @@ export function makeConfig(
             },
             {
               label: "Learn",
-              menuItems: buildMenuItems(LEARN),
-              selectedMatch: SELECTED_MATCH.EQUALS,
-              url: "",
+              url: ROUTES.LEARN,
             },
             {
               label: "Datasets",

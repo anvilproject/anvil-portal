@@ -10,12 +10,49 @@ import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/compon
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import fs from "fs";
 import matter from "gray-matter";
+import { GetStaticPropsContext } from "next";
 import { GetStaticPathsResult } from "next/types";
 import pathTool, * as path from "path";
 import { Frontmatter } from "../../content/entities";
 import { navigation as navigationConfig } from "../../site-config/anvil-portal/dev/navigation/navigation";
 import { DOC_SITE_FOLDER_NAME } from "./constants";
-import { NavigationKey, NavigationNode, SlugByFilePaths } from "./entities";
+import {
+  Navigation,
+  NavigationKey,
+  NavigationNode,
+  SlugByFilePaths,
+} from "./entities";
+
+/**
+ * Returns the page slug for the given static props context and section.
+ * @param props - Static props context.
+ * @param section - Document section e.g. "learn".
+ * @returns page slug.
+ */
+export function buildPageSlug(
+  props: GetStaticPropsContext,
+  section?: string
+): string[] | undefined {
+  const slug = props.params?.slug;
+  if (!slug || typeof slug === "string") return;
+  if (section) return [section, ...slug];
+  return slug;
+}
+
+/**
+ * Returns MDX content and frontmatter from the given slug.
+ * @param slug - Slug.
+ * @returns MDX content and frontmatter.
+ */
+export function extractMDXFrontmatter(
+  slug: string[]
+): matter.GrayMatterFile<string> {
+  const markdownWithMeta = fs.readFileSync(
+    getMDXFilePath(slug, getDocsDirectory()),
+    "utf-8"
+  );
+  return matter(markdownWithMeta);
+}
 
 /**
  * Filters out headings (H1, and H3-H6) from the outline.
@@ -27,11 +64,17 @@ export function filterOutline(outline: OutlineItem): boolean {
 }
 
 /**
- * Returns the path to the "docs" directory.
- * @returns path to the "docs" directory.
+ * Returns the static paths for each mdx content in the "docs" directory.
+ * @returns the static paths for the mdx content.
  */
-export function getDocsDirectory(): string {
-  return pathTool.join(process.cwd(), DOC_SITE_FOLDER_NAME);
+export function generatePaths(): GetStaticPathsResult["paths"] {
+  const docsDirectory = getDocsDirectory();
+  const slugByFilePaths = mapSlugByFilePaths(docsDirectory);
+  return [...slugByFilePaths].map(([, slug]) => {
+    return {
+      params: { slug },
+    };
+  });
 }
 
 /**
@@ -60,6 +103,14 @@ function getActiveURL(pagePath: string, navigation?: NavItem[]): string {
 }
 
 /**
+ * Returns the path to the "docs" directory.
+ * @returns path to the "docs" directory.
+ */
+export function getDocsDirectory(): string {
+  return pathTool.join(process.cwd(), DOC_SITE_FOLDER_NAME);
+}
+
+/**
  * Returns MDX file path for the given slug.
  * @param slug - Slug.
  * @param docsDirectory - Docs directory.
@@ -70,6 +121,43 @@ function getMDXFilePath(
   docsDirectory = getDocsDirectory()
 ): string {
   return pathTool.join(docsDirectory, ...slug) + ".mdx";
+}
+
+/**
+ * Returns the navigation config for the given slug.
+ * @param slug - Slug.
+ * @returns the navigation config for the slug.
+ */
+// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
+export function getNavigationConfig(
+  slug?: string[]
+): Omit<NavigationNode, "key" | "slugs"> | undefined {
+  if (!slug) {
+    return;
+  }
+  const sectionMap = navigationConfig[slug[0] as NavigationKey];
+  // Loop through the slug and find the node where slug matches the node's slug.
+  for (let i = 0; i < slug.length; i++) {
+    const key = slug[i];
+    for (const { hero, layoutStyle, navigation, slugs } of sectionMap.nodes) {
+      if (slugs.includes(key)) {
+        if (slug.length !== 1 && i === 0) {
+          // Although the first slug's key is a match, continue if the slug has more than one element.
+          continue;
+        }
+        // Return the layout styles; navigation (and therefore hero) are undefined.
+        if (!navigation) {
+          return { layoutStyle };
+        }
+        const pagePath = `/${slug.join("/")}`;
+        const activeURL = getActiveURL(pagePath, navigation);
+        if (activeURL) {
+          const navItems = getNavItems(activeURL, navigation);
+          return { hero, layoutStyle, navigation: navItems };
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -91,46 +179,73 @@ function getNavItems(
 }
 
 /**
- * Returns the navigation config for the given slug.
- * @param slug - Slug.
- * @returns the navigation config for the slug.
+ * Returns the static prop "layoutStyle", if specified from the frontmatter; otherwise defaults to configured layoutStyle.
+ * @param layoutStyle - Layout style.
+ * @param frontmatter - Frontmatter.
+ * @returns layout style.
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
-export function getNavigationConfig(
-  slug?: string[]
-): Omit<NavigationNode, "key" | "slugs"> | undefined {
-  if (!slug) {
-    return;
+export function getStaticPropLayoutStyle(
+  layoutStyle: LayoutStyle | null,
+  frontmatter: Frontmatter | undefined
+): LayoutStyle | null {
+  switch (frontmatter?.layoutStyle) {
+    case "LAYOUT_STYLE_CONTRAST_LIGHT":
+      return LAYOUT_STYLE_CONTRAST_LIGHT;
+    case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
+      return LAYOUT_STYLE_CONTRAST_LIGHTEST;
+    case "LAYOUT_STYLE_NO_CONTRAST_DEFAULT":
+      return LAYOUT_STYLE_NO_CONTRAST_DEFAULT;
+    case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
+      return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
+    case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":
+      return LAYOUT_STYLE_NO_CONTRAST_LIGHTEST;
+    default:
+      return layoutStyle;
   }
-  const sectionMap = navigationConfig[slug[0] as NavigationKey];
-  // Loop through the slug and find the node where slug matches the node's slug.
-  for (let i = 0; i < slug.length; i++) {
-    const key = slug[i];
-    for (const {
-      enableOutline = true,
-      hero,
-      layoutStyle,
-      navigation,
-      slugs,
-    } of sectionMap.nodes) {
-      if (slugs.includes(key)) {
-        if (slug.length !== 1 && i === 0) {
-          // Although the first slug's key is a match, continue if the slug has more than one element.
-          continue;
-        }
-        // Return the layout styles; navigation (and therefore hero) are undefined.
-        if (!navigation) {
-          return { enableOutline, layoutStyle };
-        }
-        const pagePath = `/${slug.join("/")}`;
-        const activeURL = getActiveURL(pagePath, navigation);
-        if (activeURL) {
-          const navItems = getNavItems(activeURL, navigation);
-          return { enableOutline, hero, layoutStyle, navigation: navItems };
-        }
-      }
-    }
+}
+
+/**
+ * Returns the static prop "navigation" from navigation configuration.
+ * If the frontmatter enableNavigation is false, the returned value is null.
+ * @param navigation - Navigation configuration.
+ * @param frontmatter - Frontmatter.
+ * @returns navigation.
+ */
+export function getStaticPropNavigation(
+  navigation: Navigation[] | null,
+  frontmatter: Frontmatter
+): Navigation[] | null {
+  if (frontmatter.enableNavigation) return navigation;
+  return null;
+}
+
+/**
+ * Returns the static prop "outline" from plugin-generated outline items, or the frontmatter outline, where the
+ * frontmatter outline takes precedence over plugin-generated outline.
+ * If the frontmatter enableOutline is false, the outline is returned as an empty array.
+ * @param outline - Plugin-generated outline items.
+ * @param frontmatter - Frontmatter.
+ * @returns outline.
+ */
+export function getStaticPropOutline(
+  outline: OutlineItem[],
+  frontmatter: Frontmatter
+): OutlineItem[] {
+  if (frontmatter.enableOutline) {
+    if ("outline" in frontmatter) return frontmatter.outline ?? [];
+    if (outline.length > 0) return outline.filter(filterOutline);
   }
+  return [];
+}
+
+/**
+ * Frontmatter type guard.
+ * @param data - Grey matter file data.
+ * @returns true if the data is frontmatter.
+ */
+function isFrontmatter(data: unknown): data is Frontmatter {
+  if (!data) return false;
+  return typeof data === "object" && "title" in data;
 }
 
 /**
@@ -182,59 +297,28 @@ export function mapSlugByFilePaths(
 }
 
 /**
- * Returns the static paths for each mdx content in the "docs" directory.
- * @returns the static paths for the mdx content.
+ * Returns the frontmatter from the given grey matter file data.
+ * @param data - Grey matter file data.
+ * @returns frontmatter.
  */
-export function generatePaths(): GetStaticPathsResult["paths"] {
-  const docsDirectory = getDocsDirectory();
-  const slugByFilePaths = mapSlugByFilePaths(docsDirectory);
-  return [...slugByFilePaths].map(([, slug]) => {
+export function parseFrontmatter(
+  data: matter.GrayMatterFile<string>["data"]
+): Frontmatter | undefined {
+  if (isFrontmatter(data)) {
+    const {
+      enableContentEnd = true,
+      enableNavigation = true, // Remove default when "learn" UI is updated.
+      enableOutline = true,
+      enableOverview = false,
+      enableSupportForum = false,
+    } = data;
     return {
-      params: { slug },
+      enableContentEnd,
+      enableNavigation,
+      enableOutline,
+      enableOverview,
+      enableSupportForum,
+      ...data,
     };
-  });
-}
-
-/**
- * Returns the content layout style, specified by the navigation config or the frontmatter.
- * @param navigationLayoutStyle - Layout style, specified by the navigation config.
- * @param frontmatterLayoutStyle - Layout style, specified by the frontmatter.
- * @returns layout style.
- */
-export function getContentLayoutStyle(
-  navigationLayoutStyle: LayoutStyle | undefined,
-  frontmatterLayoutStyle: Frontmatter["layoutStyle"]
-): LayoutStyle | null {
-  if (frontmatterLayoutStyle) {
-    switch (frontmatterLayoutStyle) {
-      case "LAYOUT_STYLE_CONTRAST_LIGHT":
-        return LAYOUT_STYLE_CONTRAST_LIGHT;
-      case "LAYOUT_STYLE_CONTRAST_LIGHTEST":
-        return LAYOUT_STYLE_CONTRAST_LIGHTEST;
-      case "LAYOUT_STYLE_NO_CONTRAST_DEFAULT":
-        return LAYOUT_STYLE_NO_CONTRAST_DEFAULT;
-      case "LAYOUT_STYLE_NO_CONTRAST_LIGHT":
-        return LAYOUT_STYLE_NO_CONTRAST_LIGHT;
-      case "LAYOUT_STYLE_NO_CONTRAST_LIGHTEST":
-        return LAYOUT_STYLE_NO_CONTRAST_LIGHTEST;
-      default:
-        return null;
-    }
   }
-  return navigationLayoutStyle || null;
-}
-
-/**
- * Returns MDX content and frontmatter from the given slug.
- * @param slug - Slug.
- * @returns MDX content and frontmatter.
- */
-export function parseMDXFrontmatter(
-  slug: string[]
-): matter.GrayMatterFile<string> {
-  const markdownWithMeta = fs.readFileSync(
-    getMDXFilePath(slug, getDocsDirectory()),
-    "utf-8"
-  );
-  return matter(markdownWithMeta);
 }
