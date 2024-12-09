@@ -13,7 +13,7 @@ import { SectionHero } from "../../components/Layout/components/Section/componen
 import { StaticProps } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
 
-export const LearnView = (props: StaticProps): JSX.Element => {
+export const ContentOverviewView = (props: StaticProps): JSX.Element => {
   const { mdxSource, outline, ...contentProps } = props;
   return (
     <Fragment>
