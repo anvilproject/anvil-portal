@@ -4,9 +4,7 @@ import { Link } from "../../components/common/Link/link";
 import { Table } from "../../components/common/Table/table";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
-import { CARDS as WORKSPACE_CARDS } from "../../components/Home/components/Section/components/SectionWorkspaces/common/content";
 import { ROUTES } from "../../routes/constants";
-import { getContentScope } from "./scope";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -45,15 +43,13 @@ export const MDX_COMPONENTS = {
   Subheader: C.Subheader,
   TextBodyLarge500: C.TextBodyLarge500,
   Video: C.Video,
-  WorkspaceCard: C.WorkspaceCard,
+  Workspaces: C.Workspaces,
   a: Link,
   table: Table,
 };
 
 export const MDX_SCOPE = {
-  ...getContentScope(),
   ANCHOR_TARGET,
   PUBLICATION_CATEGORY,
   ROUTES,
-  workspaces: WORKSPACE_CARDS,
 };
