@@ -74,9 +74,7 @@ export function makeConfig(
             },
             {
               label: "Learn",
-              menuItems: buildMenuItems(LEARN),
-              selectedMatch: SELECTED_MATCH.EQUALS,
-              url: "",
+              url: ROUTES.LEARN,
             },
             {
               label: "Datasets",
