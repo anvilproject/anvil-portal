@@ -7,8 +7,14 @@ import {
   mediaDesktopSmallUp,
   mediaTabletDown,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import { textHeadingXLarge } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import {
+  inkLight,
+  smokeLightest,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  textBody4002Lines,
+  textHeadingXLarge,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
@@ -56,6 +62,7 @@ export const Headline = styled(Content)`
   ${mediaTabletDown} {
     padding-bottom: 40px;
     padding-top: 40px;
+    width: calc(100% - 32px);
   }
 
   .MuiBreadcrumbs-root {
@@ -65,5 +72,11 @@ export const Headline = styled(Content)`
 
 export const PageTitle = styled.h1`
   ${textHeadingXLarge};
-  margin: 0;
+  margin: 0 auto;
+`;
+
+export const PageSubTitle = styled.div`
+  ${textBody4002Lines};
+  color: ${inkLight};
+  margin: 0 auto;
 `;

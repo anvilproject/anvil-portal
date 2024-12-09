@@ -27,6 +27,7 @@ export interface DefaultFrontmatter {
   enableSupportForum?: boolean;
   hidden?: boolean;
   layoutStyle?: FrontmatterLayoutStyle;
+  subTitle?: string;
   title: string;
 }
 
