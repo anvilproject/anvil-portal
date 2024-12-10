@@ -66,7 +66,7 @@ export const Headline = styled(Content)`
   }
 
   .MuiBreadcrumbs-root {
-    margin: 0;
+    margin: 0 0 4px;
   }
 `;
 

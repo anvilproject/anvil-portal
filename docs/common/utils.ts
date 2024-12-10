@@ -254,7 +254,7 @@ function isFrontmatter(data: unknown): data is Frontmatter {
  * @returns true if the file is an MDX file.
  */
 function isMdxFile(fileName: string): boolean {
-  return fileName.endsWith(".mdx") || fileName.endsWith(".md"); // TODO(cc) update to use .mdx only once md is removed.
+  return fileName.endsWith(".mdx");
 }
 
 /**
@@ -309,14 +309,12 @@ export function parseFrontmatter(
       enableContentEnd = true,
       enableNavigation = true, // Remove default when "learn" UI is updated.
       enableOutline = true,
-      enableOverview = false,
       enableSupportForum = false,
     } = data;
     return {
       enableContentEnd,
       enableNavigation,
       enableOutline,
-      enableOverview,
       enableSupportForum,
       ...data,
     };

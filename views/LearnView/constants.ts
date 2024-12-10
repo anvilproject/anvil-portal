@@ -12,42 +12,46 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     StartIcon: AnVILIcon,
     cardUrl: "/learn/getting-started",
     secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "AnVIL Overview",
+      "Set up your AnVIL account and access the AnVIL data ecosystem",
+    title: "Getting Started",
+  },
+  {
+    StartIcon: AnVILIcon,
+    cardUrl: "/learn/accessing-data",
+    secondaryText: "Discover and access AnVIL datasets",
+    title: "Accessing Data",
   },
   {
     StartIcon: RocketLaunchIcon,
-    cardUrl: "/learn",
+    cardUrl: "/learn/interactive-analysis",
     secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "Account Setup",
+      "Run interactive analyses with Bioconductor, RStudio, Jupyter and Galaxy",
+    title: "Interactive Analysis",
   },
   {
     StartIcon: FlaskGearIcon,
-    cardUrl: "/learn",
-    secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "Setting up Lab",
-  },
-  {
-    StartIcon: PenFieldIcon,
-    cardUrl: "/learn",
-    secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "Data Submission",
-  },
-  {
-    StartIcon: LightBulbOnIcon,
-    cardUrl: "/learn",
-    secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "Tutorials & Videos",
+    cardUrl: "/learn/analysis-workflows",
+    secondaryText: "Run and scale analysis workflows with Dockstore and Terra",
+    title: "Analysis Workflows",
   },
   {
     StartIcon: CloudBinaryIcon,
-    cardUrl: "/learn",
+    cardUrl: "/learn/cloud-costs",
     secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
-    title: "Controlling cloud costs",
+      "Learn how to control cloud costs and optimize your cloud usage",
+    title: "Controlling Cloud Costs",
+  },
+  {
+    StartIcon: PenFieldIcon,
+    cardUrl: "/learn/submitting-data",
+    secondaryText: "View data submission guides and resources",
+    title: "Submitting Data",
+  },
+  {
+    StartIcon: LightBulbOnIcon,
+    cardUrl: "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
+    secondaryText:
+      "AnVIL tutorials and videos are available on the AnVIL YouTube channel",
+    title: "Tutorials & Videos",
   },
 ];
