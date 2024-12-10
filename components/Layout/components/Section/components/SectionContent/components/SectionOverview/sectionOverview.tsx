@@ -6,7 +6,7 @@ import { Heading } from "../../../../../../../common/Typography/components/Headi
 import { GroupOverview, StyledList } from "./sectionOverview.styles";
 import { Props } from "./types";
 
-const MAX_ROWS = 4;
+const MAX_ROWS = 3;
 
 export const SectionOverview = ({ overview }: Props): JSX.Element | null => {
   if (!overview) return null;
@@ -22,7 +22,7 @@ export const SectionOverview = ({ overview }: Props): JSX.Element | null => {
                 headingValue={label}
                 variant={TEXT_HEADING}
               />
-              <StyledList nth={Math.max(MAX_ROWS, links.length / 2)}>
+              <StyledList nth={Math.max(MAX_ROWS, links.length / 2) + 1}>
                 {links.map((linkProps, i) => (
                   <li key={i}>
                     <Link {...linkProps} />

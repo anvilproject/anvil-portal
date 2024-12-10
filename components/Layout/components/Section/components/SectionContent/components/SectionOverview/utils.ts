@@ -1,6 +1,8 @@
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
-import { isURLString } from "@databiosphere/findable-ui/lib/components/Links/common/utils";
-import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import {
+  isClientSideNavigation,
+  isURLString,
+} from "@databiosphere/findable-ui/lib/components/Links/common/utils";
 import {
   Frontmatter,
   FrontmatterOverview,
@@ -8,6 +10,7 @@ import {
 import { isFrontmatterOverview } from "../../../../../../../../content/typeGuards";
 import { slugifyHeading } from "../../../../../../../../plugins/common/utils";
 import { OverviewLink } from "./types";
+import { LinkProps } from "../../../../../../../../common/types";
 
 const OVERVIEW_OUTLINE_DEPTH = 2;
 
@@ -28,21 +31,38 @@ function getOverviewLink(
   // Grab the configured URL from the link.
   const url = getOverviewLinkUrl(link);
   if (!url) return;
+  // Grab the configured label from the link.
+  const label = getOverviewLinkLabel(link);
+  // Handle external links.
+  if (!isClientSideNavigation(url)) {
+    if (typeof link === "string") return;
+    return { label, url };
+  }
+  // Otherwise, handle internal links.
   // Find the corresponding frontmatter for the link.
-  const pathFrontmatter = getPathFrontmatter(
-    section,
-    getOverviewLinkUrl(link),
-    frontmatters
-  );
+  const pathFrontmatter = getPathFrontmatter(section, url, frontmatters);
   if (!pathFrontmatter) return;
   // Extract the title from the frontmatter.
   const [, { title }] = pathFrontmatter;
   if (!title) return;
   // Return the link props.
   return {
-    label: title,
+    label: label || title,
     url,
   };
+}
+
+/**
+ * Gets the label, if configured, from an overview link.
+ * OverviewLink can be a string or LinkProps.
+ * @param link - Overview link.
+ * @returns overview link label.
+ */
+function getOverviewLinkLabel(
+  link: OverviewLink
+): LinkProps["label"] | undefined {
+  if (typeof link === "string") return;
+  return link.label;
 }
 
 /**
@@ -95,7 +115,7 @@ export function mapFrontmatterOutline(
 }
 
 /**
- * Maps the frontmatter overview to an overview comprising of LinkProps.
+ * Maps the frontmatter overview to an overview with links mapped to LinkProps.
  * @param section - Section.
  * @param frontmatter - Frontmatter.
  * @param frontmatters - Paths with frontmatter.

@@ -1,4 +1,4 @@
-import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { LinkProps } from "../../../../../../../../common/types";
 
 export interface Overview {
   label: string;
@@ -8,5 +8,7 @@ export interface Overview {
 export type OverviewLink = string | LinkProps;
 
 export interface Props {
-  overview: (Omit<Overview, "links"> & { links: LinkProps[] })[];
+  overview: (Omit<Overview, "links"> & {
+    links: Exclude<OverviewLink, string>[];
+  })[];
 }

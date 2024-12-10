@@ -5,13 +5,12 @@ import { StaticProps } from "../../content/entities";
 import { generateSectionPathWithFrontmatter } from "../../content/utils";
 import { generateStaticPaths } from "../../docs/common/generateStaticPaths";
 import { generateStaticProps } from "../../docs/common/generateStaticProps";
-import { ContentView } from "../../views/ContentView/contentView";
 import { ContentOverviewView } from "../../views/ContentOverviewView/contentOverviewView";
+import { processFrontmatter } from "../../components/Learn/utils";
 
 const SECTION = "learn";
 
 const Page = (props: StaticProps): JSX.Element => {
-  if (!props.frontmatter.enableOverview) return <ContentView {...props} />;
   return <ContentOverviewView {...props} />;
 };
 
@@ -23,7 +22,9 @@ export const getStaticProps: GetStaticProps = async (
     props,
     SECTION,
     (frontmatter) =>
-      processOverviewFrontmatter(SECTION, frontmatter, frontmatters),
+      processFrontmatter(
+        processOverviewFrontmatter(SECTION, frontmatter, frontmatters)
+      ),
     undefined
   );
   if (!staticProps) return { notFound: true };

@@ -23,7 +23,6 @@ export interface DefaultFrontmatter {
   enableContentEnd?: boolean;
   enableNavigation?: boolean;
   enableOutline?: boolean;
-  enableOverview?: boolean; // TODO: Remove when the updated "learn" UI is complete.
   enableSupportForum?: boolean;
   hidden?: boolean;
   layoutStyle?: FrontmatterLayoutStyle;

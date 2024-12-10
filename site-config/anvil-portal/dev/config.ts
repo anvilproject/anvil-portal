@@ -8,7 +8,6 @@ import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
 import { CONSORTIA } from "./navigation/consortia";
 import { FAQ } from "./navigation/faq";
-import { LEARN } from "./navigation/learn";
 import { OVERVIEW } from "./navigation/overview";
 import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";

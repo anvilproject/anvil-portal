@@ -2,7 +2,13 @@ import styled from "@emotion/styled";
 import { Card } from "@mui/material";
 
 export const StyledCard = styled(Card)`
+  &.MuiPaper-root {
+    align-items: stretch;
+    display: flex;
+  }
+
   .MuiButtonBase-root {
+    align-content: flex-start;
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr;
