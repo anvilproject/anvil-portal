@@ -54,8 +54,8 @@ export function buildCarouselCards(): SectionCard[] {
       links: [
         {
           label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.BLANK,
-          url: "https://www.youtube.com/@anvilprojectorg/shorts",
+          target: ANCHOR_TARGET.SELF,
+          url: "/learn/watch-videos-and-tutorials/anvil-videos",
         },
       ],
       text: "Our short video series shows how AnVIL improves collaborative science for different researcher roles.",
