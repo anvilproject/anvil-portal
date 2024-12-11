@@ -10,48 +10,48 @@ import { AnVILIcon } from "../../components/common/CustomIcon/components/AnVILIc
 export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
     StartIcon: AnVILIcon,
-    cardUrl: "/learn/getting-started",
+    cardUrl: "/learn/get-started",
     secondaryText:
       "Set up your AnVIL account and access the AnVIL data ecosystem",
-    title: "Getting Started",
+    title: "Get Started",
   },
   {
     StartIcon: AnVILIcon,
-    cardUrl: "/learn/accessing-data",
+    cardUrl: "/learn/find-data",
     secondaryText: "Discover and access AnVIL datasets",
-    title: "Accessing Data",
+    title: "Find Data",
   },
   {
     StartIcon: RocketLaunchIcon,
-    cardUrl: "/learn/interactive-analysis",
+    cardUrl: "/learn/run-interactive-analyses",
     secondaryText:
       "Run interactive analyses with Bioconductor, RStudio, Jupyter and Galaxy",
-    title: "Interactive Analysis",
+    title: "Run Interactive Analyses",
   },
   {
     StartIcon: FlaskGearIcon,
-    cardUrl: "/learn/analysis-workflows",
+    cardUrl: "/learn/run-analyses-workflows",
     secondaryText: "Run and scale analysis workflows with Dockstore and Terra",
-    title: "Analysis Workflows",
+    title: "Run Analyses Workflows",
   },
   {
     StartIcon: CloudBinaryIcon,
-    cardUrl: "/learn/cloud-costs",
+    cardUrl: "/learn/control-cloud-costs",
     secondaryText:
       "Learn how to control cloud costs and optimize your cloud usage",
-    title: "Controlling Cloud Costs",
+    title: "Control Cloud Costs",
   },
   {
     StartIcon: PenFieldIcon,
-    cardUrl: "/learn/submitting-data",
+    cardUrl: "/learn/submit-data",
     secondaryText: "View data submission guides and resources",
-    title: "Submitting Data",
+    title: "Submit Data",
   },
   {
     StartIcon: LightBulbOnIcon,
-    cardUrl: "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
+    cardUrl: "/learn/watch-videos-and-tutorials",
     secondaryText:
       "AnVIL tutorials and videos are available on the AnVIL YouTube channel",
-    title: "Tutorials & Videos",
+    title: "Watch Tutorials & Videos",
   },
 ];

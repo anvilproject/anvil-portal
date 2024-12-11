@@ -3,7 +3,8 @@ import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
 import { Workspaces } from "./components/Workspaces/workspaces";
 import { Headline, SectionLayout } from "./sectionWorkspaces.styles";
 
-const EXPLORE_WORKSPACES = "/learn/analysis-workflows/using-example-workspaces";
+const EXPLORE_WORKSPACES =
+  "/learn/run-analyses-workflows/using-example-workspaces";
 
 export const SectionWorkspaces = (): JSX.Element => {
   return (

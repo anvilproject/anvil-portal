@@ -11,7 +11,7 @@ import {
 } from "./sectionDatasets.styles";
 
 const CONSORTIA_ROADMAP = "/consortia";
-const CONTRIBUTE_DATA = "/learn/submitting-data";
+const CONTRIBUTE_DATA = "/learn/submit-data";
 const EXPLORE_DATASETS = "/data/consortia";
 
 interface SectionDatasetsProps {

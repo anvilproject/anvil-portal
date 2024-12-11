@@ -23,7 +23,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/introduction/intro-to-terra",
+          url: "/learn/run-analyses-workflows/intro-to-terra",
         },
       ],
       media: {
@@ -61,7 +61,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/analysis-workflows/intro-to-dockstore",
+          url: "/learn/run-analyses-workflows/intro-to-dockstore",
         },
       ],
       media: {
@@ -93,7 +93,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/interactive-analysis/getting-started-with-bioconductor",
+          url: "/learn/run-interactive-analyses/getting-started-with-bioconductor",
         },
       ],
       media: {
@@ -109,7 +109,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/interactive-analysis/getting-started-with-galaxy",
+          url: "/learn/run-interactive-analyses/getting-started-with-galaxy",
         },
       ],
       media: {
@@ -125,7 +125,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/interactive-analysis/getting-started-with-jupyter-notebooks",
+          url: "/learn/run-interactive-analyses/getting-started-with-jupyter-notebooks",
         },
       ],
       media: {
