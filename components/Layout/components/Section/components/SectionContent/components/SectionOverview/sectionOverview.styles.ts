@@ -1,10 +1,6 @@
 import { primaryMain } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
-import { Grid2Props } from "@mui/material";
-
-type Props = Grid2Props & {
-  nth: number;
-};
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const GroupOverview = styled.div`
   .MuiDivider-root,
@@ -21,25 +17,28 @@ export const GroupOverview = styled.div`
   }
 `;
 
-export const StyledList = styled("ul")<Props>`
-  display: grid;
-  gap: 0 64px;
-  grid-auto-flow: dense;
-  grid-column: 1 / -1;
-  grid-template-columns: 1fr 1fr;
-  list-style-position: inside;
+export const GroupLinks = styled.div`
   margin-top: 8px;
+
+  ${mediaTabletUp} {
+    display: grid;
+    gap: 0 64px;
+    grid-auto-columns: 1fr;
+
+    ul + ul {
+      grid-column: 2;
+    }
+  }
+`;
+
+export const UnorderedList = styled("ul")`
+  list-style-position: inside;
   padding-left: 0;
 
   li {
-    grid-column: 1;
     margin: 4px 0;
     padding-left: 24px; // required for list-style-position: inside; allows for market to be positioned inside the list item.
     text-indent: -15px; // required for list-style-position: inside; centering marker; half of the 24px width and half marker width @ 6px.
-
-    &:nth-of-type(n + ${(props) => props.nth}) {
-      grid-column: 2;
-    }
 
     > * {
       margin-left: -6px; // required for list-style-position: inside; assists with vertical alignment of list item; difference between indent and padding adjustments and half of the marker width.

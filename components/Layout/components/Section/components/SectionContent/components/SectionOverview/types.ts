@@ -7,7 +7,7 @@ export interface Overview {
 
 export type OverviewLink = string | LinkProps;
 
-export interface Props {
+export interface SectionOverviewProps {
   overview: (Omit<Overview, "links"> & {
     links: Exclude<OverviewLink, string>[];
   })[];
