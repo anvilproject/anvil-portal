@@ -61,7 +61,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/introduction/intro-to-dockstore",
+          url: "/learn/analysis-workflows/intro-to-dockstore",
         },
       ],
       media: {
