@@ -12,6 +12,7 @@ import { slugifyHeading } from "../../../../../../../../plugins/common/utils";
 import { OverviewLink } from "./types";
 import { LinkProps } from "../../../../../../../../common/types";
 
+const MAX_ROWS = 3;
 const OVERVIEW_OUTLINE_DEPTH = 2;
 
 /**
@@ -170,4 +171,16 @@ export function processOverviewFrontmatter(
   const overview = mapFrontmatterOverview(section, frontmatter, frontmatters);
   const outline = mapFrontmatterOutline(overview);
   return { ...frontmatter, outline, overview };
+}
+
+/**
+ * Splits group overview links into two arrays suitable for a two-column layout.
+ * @param links - Section overview links.
+ * @returns section overview links, evenly split into two arrays.
+ */
+export function splitLinks(
+  links: Exclude<OverviewLink, string>[]
+): Exclude<OverviewLink, string>[][] {
+  const sliceIndex = Math.max(MAX_ROWS, Math.ceil(links.length / 2));
+  return [links.slice(0, sliceIndex), links.slice(sliceIndex)];
 }

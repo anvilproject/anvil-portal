@@ -3,32 +3,44 @@ import { TEXT_HEADING } from "@databiosphere/findable-ui/lib/theme/common/typogr
 import { Divider } from "@mui/material";
 import { Fragment } from "react";
 import { Heading } from "../../../../../../../common/Typography/components/Heading/heading";
-import { GroupOverview, StyledList } from "./sectionOverview.styles";
-import { Props } from "./types";
+import {
+  GroupOverview,
+  GroupLinks,
+  UnorderedList,
+} from "./sectionOverview.styles";
+import { SectionOverviewProps } from "./types";
+import { splitLinks } from "./utils";
 
-const MAX_ROWS = 3;
-
-export const SectionOverview = ({ overview }: Props): JSX.Element | null => {
+export const SectionOverview = ({
+  overview,
+}: SectionOverviewProps): JSX.Element | null => {
   if (!overview) return null;
   return (
     <Fragment>
-      {overview.map(({ label, links }, i) => {
+      {overview.map(({ label, links }, groupIndex) => {
         return (
           links.length > 0 && (
-            <GroupOverview key={i}>
-              {i > 0 && <Divider />}
+            <GroupOverview key={groupIndex}>
+              {groupIndex > 0 && <Divider />}
               <Heading
                 component="h2"
                 headingValue={label}
                 variant={TEXT_HEADING}
               />
-              <StyledList nth={Math.max(MAX_ROWS, links.length / 2) + 1}>
-                {links.map((linkProps, i) => (
-                  <li key={i}>
-                    <Link {...linkProps} />
-                  </li>
-                ))}
-              </StyledList>
+              <GroupLinks>
+                {splitLinks(links).map(
+                  (links, linksIndex) =>
+                    links.length > 0 && (
+                      <UnorderedList key={linksIndex}>
+                        {links.map((linkProps, listIndex) => (
+                          <li key={listIndex}>
+                            <Link {...linkProps} />
+                          </li>
+                        ))}
+                      </UnorderedList>
+                    )
+                )}
+              </GroupLinks>
             </GroupOverview>
           )
         );
