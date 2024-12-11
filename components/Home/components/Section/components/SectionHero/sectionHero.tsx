@@ -10,8 +10,8 @@ import {
   Subhead,
 } from "./sectionHero.styles";
 
-const GET_STARTED = "/learn";
-const LEARN_MORE = "/overview";
+const GET_STARTED = "/learn/get-started";
+const LEARN_MORE = "/learn";
 
 export const SectionHero = (): JSX.Element => {
   return (
