@@ -1,9 +1,10 @@
 ---
+breadcrumbs:
+  - path: "/learn/submit-data"
+    text: "Submitting Data"
 description: "This doc describes what the AnVIL data model encompasses."
-title: "Set Up a Data Model"
+title: "Step 2 - Set Up a Data Model"
 ---
-
-# Step 2 - Set Up a Data Model
 
 <Alert icon={false} severity="info">
   <div>
@@ -11,84 +12,82 @@ title: "Set Up a Data Model"
 After your dataset has been approved by the AnVIL Data Ingestion Committee, you will need to set up and submit your data model, specifying what data you have and how data are connected.
 
 The AnVIL Data Model is intended to:
-   - Standardize the data submitted to the AnVIL in order to accept a broad range of high-quality data across consortia  
+   - Standardize the data submitted to the AnVIL in order to accept a broad range of high-quality data across consortia
    - Maximize data findability and usefulness, and facilitate cross-study analysis
 
 The first goal requires a very flexible data model, and the second requires some constraints on the data model. The guidelines below are intended to help meet those two goals.
   </div>
 </Alert>
 
-As you get started, we recommend you review the AnVIL Data Model Data Dictionary [here](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) to learn more about the general structure (which we will describe in more detail below). You’ll coordinate with the AnVIL data ingest team to facilitate submission activities. 
+As you get started, we recommend you review the AnVIL Data Model Data Dictionary [here](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) to learn more about the general structure (which we will describe in more detail below). You’ll coordinate with the AnVIL data ingest team to facilitate submission activities.
 
 If your dataset has been accepted by AnVIL and does not easily fit into an existing template, please reach out to the AnVIL Team at [help@lists.anvilproject.org](mailto:help@lists.anvilproject.org).
 
-You’ll end this step with a better understanding of what your data dictionary will include for your data model. Step 3 will instruct you on preparing your data according to your data model for submission to AnVIL. 
+You’ll end this step with a better understanding of what your data dictionary will include for your data model. Step 3 will instruct you on preparing your data according to your data model for submission to AnVIL.
 
 ## 2.1 \- First Steps
 
 ### Coordinate with the AnVIL Data Ingest Team
 
-To **collaborate with AnVIL** on uploading data, you’ll **notify AnVIL of completed dbGaP registration** in one of two ways. 
+To **collaborate with AnVIL** on uploading data, you’ll **notify AnVIL of completed dbGaP registration** in one of two ways.
 
-* Through an already open AnVIL Zendesk ticket   
+* Through an already open AnVIL Zendesk ticket
 * By contacting AnVIL support at [anvil-data@broadinstitute.org](mailto:anvil-data@brodinstitute.org)
 
-It is useful to coordinate with AnVIL before you start to set up your data model, in case you run into questions or problems.  
+It is useful to coordinate with AnVIL before you start to set up your data model, in case you run into questions or problems.
 
 ## 2.2 \- Create Your AnVIL Data Model
 
 A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another.
 
-We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.  
+We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.
 
-These tabs include helpful information such as 
+These tabs include helpful information such as
 
-* The overall purpose of the data dictionary   
-* Information on the AnVIL Data Model (findability subset)  
-* Details on how to expand the data model to fit your needs  
-* Expectations on how to submit your schema 
-
- 
+* The overall purpose of the data dictionary
+* Information on the AnVIL Data Model (findability subset)
+* Details on how to expand the data model to fit your needs
+* Expectations on how to submit your schema
 
 ### Data Model Requirements
 
-The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) provides context for mapping data to the AnVIL core findability model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission. 
+The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) provides context for mapping data to the AnVIL core findability model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission.
 
 Please read the descriptions for each table outlined in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) carefully, and reach out to your AnVIL team contact with questions not addressed in the data dictionary document. These data model requirements help ensure AnVIL datasets are not only useful to the researchers who created them but also enable others to analyze data collectively across studies in the AnVIL Terra platform.
 
-Start by thinking of what data you have and how you have already organized it and how it may fit or need to be reorganized to fit the requirements. 
+Start by thinking of what data you have and how you have already organized it and how it may fit or need to be reorganized to fit the requirements.
 
-### Core Tables for All Studies 
+### Core Tables for All Studies
 
-At a high level, there are three core tables (“entities”) in the AnVIL Data Model: **BioSample**, **Donor**, and **File**. 
+At a high level, there are three core tables (“entities”) in the AnVIL Data Model: **BioSample**, **Donor**, and **File**.
 
-The **BioSample** table is the only required table, although **Donor** and **File** tables are strongly encouraged to improve the usability and findability of the data.  
+The **BioSample** table is the only required table, although **Donor** and **File** tables are strongly encouraged to improve the usability and findability of the data.
 
-The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the Data Dictionary.  Brief descriptions of these core tables, with notable requirements, are below. 
+The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the Data Dictionary.  Brief descriptions of these core tables, with notable requirements, are below.
 
-* [**BioSample**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.  
-  * The `biosample_id` (first column) is required.   
-  * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.  
-* [**Donor**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) **(strongly recommended):** Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.  
-  * The `donor_id` (first column) is required.   
-* [**File**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=462062238#gid=462062238) **(strongly recommended):** Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.  
-  * The `file_id` (first column) is required.   
-  * It is strongly recommended that the table includes a `BioSample.biosample_id` column to link the biosample id between tables.  
+* [**BioSample**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.
+  * The `biosample_id` (first column) is required.
+  * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.
+* [**Donor**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) **(strongly recommended):** Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.
+  * The `donor_id` (first column) is required.
+* [**File**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=462062238#gid=462062238) **(strongly recommended):** Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.
+  * The `file_id` (first column) is required.
+  * It is strongly recommended that the table includes a `BioSample.biosample_id` column to link the biosample id between tables.
   * AnVIl will add DRS URIs for object files as part of the ingest process.
 
 
-### Optional Tables 
+### Optional Tables
 
 The AnVIL Data Model Data Dictionary includes other optional tables you can use to contain data about conditions, activity, and your project. Brief descriptions of these optional tables, with notable requirements, are below.
 
-* [**Condition Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=524240363#gid=524240363) Contains information about condition(s) and phenotypes associated with a donor. 
-  * The `condition_id` (first column) is required.   
-  * It is strongly recommended that the table includes a `donor_id` column to link the donor id between tables.  
-* [**Activity Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1184610893#gid=1184610893) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.   
-  * The `activity_id` (first column) is required.   
-  * Should include a `file_id` column that references the associated file.   
-* [**Project Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=672801364) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.  
-  * The `project_id` (first column) is required. 
+* [**Condition Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=524240363#gid=524240363) Contains information about condition(s) and phenotypes associated with a donor.
+  * The `condition_id` (first column) is required.
+  * It is strongly recommended that the table includes a `donor_id` column to link the donor id between tables.
+* [**Activity Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1184610893#gid=1184610893) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.
+  * The `activity_id` (first column) is required.
+  * Should include a `file_id` column that references the associated file.
+* [**Project Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=672801364) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.
+  * The `project_id` (first column) is required.
 
 #### Non-standard Data Models
 
@@ -96,7 +95,7 @@ If your dataset has been accepted by AnVIL and has needs not described here, ple
 
 ## 2.3 \- Generate Your Data Dictionary
 
-All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. It includes (in separate tabs for each table) field names, field descriptions, field types, examples, enumeration values (where applicable), and multi-value delimiter symbols used (where applicable) for each table in the data model.  
+All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. It includes (in separate tabs for each table) field names, field descriptions, field types, examples, enumeration values (where applicable), and multi-value delimiter symbols used (where applicable) for each table in the data model.
 
 **For a template Data Dictionary with all required and suggested tables**, click [here](https://github.com/anvilproject/Data-Model/blob/main/AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx). To download the AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx file, click on the three-dot icon at the top right and then click Download. 
 
@@ -125,5 +124,5 @@ All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) tha
 
 ### Contact information
 
-AnVIL Data Ingest Team [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org)  
+AnVIL Data Ingest Team [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org)
 AnVIL Help Team help@lists.anvilproject.org

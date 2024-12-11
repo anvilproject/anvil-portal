@@ -55,7 +55,7 @@ export function buildCarouselCards(): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/videos/anvil-videos#sharing-on-anvil",
+          url: "/learn/watch-videos-and-tutorials/anvil-videos",
         },
       ],
       text: "Our short video series shows how AnVIL improves collaborative science for different researcher roles.",
@@ -114,7 +114,7 @@ export function buildCarouselCards(): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/learn/interactive-analysis/getting-started-with-galaxy",
+          url: "/learn/run-interactive-analyses/getting-started-with-galaxy",
         },
       ],
       text: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data.",
