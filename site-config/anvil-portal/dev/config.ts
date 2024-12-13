@@ -176,6 +176,11 @@ export function makeConfig(
                       icon: C.SlackIcon({}),
                       target: ANCHOR_TARGET.BLANK,
                     },
+                    {
+                      ...SOCIALS.LINKEDIN,
+                      icon: C.LinkedInIcon({}),
+                      target: ANCHOR_TARGET.BLANK,
+                    },
                   ],
                   url: "",
                   visible: VISIBLE.BETWEEN_SM_AND_LG,
