@@ -5,18 +5,19 @@ import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/
 import { FlaskGearIcon } from "../../components/common/CustomIcon/components/FlaskGearIcon/flaskGearIcon";
 import { LightBulbOnIcon } from "../../components/common/CustomIcon/components/LightBulbOnIcon/lightBulbOnIcon";
 import { CloudBinaryIcon } from "../../components/common/CustomIcon/components/CloudBinaryIcon/cloudBinaryIcon";
-import { AnVILIcon } from "../../components/common/CustomIcon/components/AnVILIcon/AnVILIcon";
+import { DatabaseIcon } from "../../components/common/CustomIcon/components/DatabaseIcon/databaseIcon";
+import { StartIcon } from "../../components/common/CustomIcon/components/StartIcon/startIcon";
 
 export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
-    StartIcon: AnVILIcon,
+    StartIcon: StartIcon,
     cardUrl: "/learn/get-started",
     secondaryText:
       "Set up your AnVIL account and access the AnVIL data ecosystem",
     title: "Get Started",
   },
   {
-    StartIcon: AnVILIcon,
+    StartIcon: DatabaseIcon,
     cardUrl: "/learn/find-data",
     secondaryText: "Discover and access AnVIL datasets",
     title: "Find Data",
