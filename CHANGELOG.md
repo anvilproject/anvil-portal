@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.6.0](https://github.com/anvilproject/anvil-portal/compare/v2.5.0...v2.6.0) (2024-12-17)
+
+
+### Features
+
+* apply strides pr text in the next site content ([#3429](https://github.com/anvilproject/anvil-portal/issues/3429)) ([#3444](https://github.com/anvilproject/anvil-portal/issues/3444)) ([040bec1](https://github.com/anvilproject/anvil-portal/commit/040bec169a8a0a14be2b05dbbb8f8d88f8d15325))
+* implement learn landing page ([#3328](https://github.com/anvilproject/anvil-portal/issues/3328)) ([#3445](https://github.com/anvilproject/anvil-portal/issues/3445)) ([fed9480](https://github.com/anvilproject/anvil-portal/commit/fed948028294871b76f392063e4fb0cd2c17b575))
+
+
+### Bug Fixes
+
+* minor capitalization fix in AnVIL Champions page ([#3406](https://github.com/anvilproject/anvil-portal/issues/3406)) ([a8aa285](https://github.com/anvilproject/anvil-portal/commit/a8aa28558516015cee0ba9b7f01c8f06a4ab8e8f))
+
+
+### Chores
+
+* added analytics script to get a simple csv of outlinks ([#3202](https://github.com/anvilproject/anvil-portal/issues/3202)) ([#3374](https://github.com/anvilproject/anvil-portal/issues/3374)) ([#3217](https://github.com/anvilproject/anvil-portal/issues/3217)) ([1e45641](https://github.com/anvilproject/anvil-portal/commit/1e45641582db3a6bb08ca1998d744c7e2c0db3af))
+* update dev dependencies ([#3427](https://github.com/anvilproject/anvil-portal/issues/3427)) ([#3428](https://github.com/anvilproject/anvil-portal/issues/3428)) ([b421d54](https://github.com/anvilproject/anvil-portal/commit/b421d542357d7e5febeee74984bd0c8515245842))
+
+
+### Content
+
+* add GTEx export and download instructions ([#3459](https://github.com/anvilproject/anvil-portal/issues/3459)) ([902a333](https://github.com/anvilproject/anvil-portal/commit/902a333665f2ed08c2e0aa08dbba684f7410460c))
+* added linkedin to socials ([#3460](https://github.com/anvilproject/anvil-portal/issues/3460)) ([#3461](https://github.com/anvilproject/anvil-portal/issues/3461)) ([de3b1df](https://github.com/anvilproject/anvil-portal/commit/de3b1df21176348b1c22c581974989e652e40605))
+
 ## [2.5.0](https://github.com/anvilproject/anvil-portal/compare/v2.4.0...v2.5.0) (2024-11-22)
 
 
