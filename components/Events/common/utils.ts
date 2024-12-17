@@ -3,6 +3,7 @@ import {
   buildMomentField,
   convertDateToMoment,
   getFrontmatterByPaths,
+  isFrontmatterEvent,
 } from "../../../content/utils";
 import {
   getDocsDirectory,
@@ -141,10 +142,14 @@ function processFrontmatterURL(path?: string): string | null {
  * @returns frontmatter for an event article.
  */
 export function processEventFrontmatter(
-  frontmatter: FrontmatterEvent
-): FrontmatterEvent {
+  frontmatter: Frontmatter | undefined
+): FrontmatterEvent | undefined {
+  if (!frontmatter) return;
+  if (!isFrontmatterEvent(frontmatter)) return;
   return {
     ...processFrontmatter(["", frontmatter]),
+    enableNavigation: false,
+    enableOutline: false,
     formattedSessions: formatSessions(
       frontmatter.sessions,
       frontmatter.timezone

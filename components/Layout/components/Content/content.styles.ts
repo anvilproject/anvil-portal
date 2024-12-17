@@ -90,6 +90,10 @@ const muiButtonContainedPrimary = css`
   }
 `;
 
+// See https://github.com/emotion-js/emotion/issues/1105.
+// See https://github.com/emotion-js/emotion/releases/tag/%40emotion%2Fcache%4011.10.2.
+const ignoreSsrWarning =
+  "/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */";
 export const Content = styled.div<Props>`
   h1,
   h2,
@@ -146,4 +150,8 @@ export const Content = styled.div<Props>`
   ${image};
   ${muiAlert};
   ${muiButtonContainedPrimary};
+
+  > *:first-child:not(style) ${ignoreSsrWarning} {
+    margin-top: 0;
+  }
 `;

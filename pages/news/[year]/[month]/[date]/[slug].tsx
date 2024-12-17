@@ -10,11 +10,11 @@ import { ContentView } from "../../../../../components";
 import { ContentEnd } from "../../../../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../../../../../components/Layout/components/Content/content";
 import { processFrontmatter } from "../../../../../components/News/common/utils";
-import { Frontmatter } from "../../../../../content/entities";
 import { MDX_COMPONENTS } from "../../../../../docs/common/constants";
 import {
+  extractMDXFrontmatter,
   generatePaths,
-  parseMDXFrontmatter,
+  parseFrontmatter,
 } from "../../../../../docs/common/utils";
 import { rehypeSlug } from "../../../../../plugins/rehypeSlug";
 
@@ -52,13 +52,9 @@ export const getStaticProps: GetStaticProps = async (
   props: GetStaticPropsContext
 ) => {
   const slug = getNewsSlug(props.params as NewsArticlePageUrlParams);
-  const { content, data } = parseMDXFrontmatter(slug);
-  const frontmatter = data as Frontmatter;
-  if (frontmatter.hidden) {
-    return {
-      notFound: true,
-    };
-  }
+  const { content, data } = extractMDXFrontmatter(slug);
+  const frontmatter = parseFrontmatter(data);
+  if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug],

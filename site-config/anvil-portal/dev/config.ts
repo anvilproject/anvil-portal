@@ -8,7 +8,6 @@ import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
 import { CONSORTIA } from "./navigation/consortia";
 import { FAQ } from "./navigation/faq";
-import { LEARN } from "./navigation/learn";
 import { OVERVIEW } from "./navigation/overview";
 import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";
@@ -55,6 +54,7 @@ export function makeConfig(
         versionInfo: true,
       },
       header: {
+        actions: C.Actions(),
         announcements,
         authenticationEnabled: false,
         logo: C.Logo({
@@ -73,9 +73,7 @@ export function makeConfig(
             },
             {
               label: "Learn",
-              menuItems: buildMenuItems(LEARN),
-              selectedMatch: SELECTED_MATCH.EQUALS,
-              url: "",
+              url: ROUTES.LEARN,
             },
             {
               label: "Datasets",
