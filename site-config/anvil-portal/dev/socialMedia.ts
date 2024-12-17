@@ -10,6 +10,10 @@ export const SOCIALS = {
     label: "GitHub",
     url: "https://github.com/anvilproject",
   },
+  LINKEDIN: {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/company/anvilproject/",
+  },
   SLACK: {
     label: "Slack",
     url: "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
@@ -45,6 +49,10 @@ export const socialMedia: SocialMedia = {
     {
       ...SOCIALS.SLACK,
       Icon: C.SlackIcon,
+    },
+    {
+      ...SOCIALS.LINKEDIN,
+      Icon: C.LinkedInIcon,
     },
   ],
 };
