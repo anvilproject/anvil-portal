@@ -25,7 +25,8 @@ export const ANVIL_CHAMPIONS: CardProps[] = [
       src: "/consortia/team/christopherDoss.png",
       width: 80,
     },
-    secondaryText: "North Carolina Agricultural and Technical State University, GRADS-4C",
+    secondaryText:
+      "North Carolina Agricultural and Technical State University, GRADS-4C",
     title: "Christopher Doss",
   },
   {
@@ -43,7 +44,8 @@ export const ANVIL_CHAMPIONS: CardProps[] = [
       src: "/consortia/team/nuwanGoonasekera.png",
       width: 80,
     },
-    secondaryText: "Melbourne Bioinformatics and University of Melbourne, Galaxy",
+    secondaryText:
+      "Melbourne Bioinformatics and University of Melbourne, Galaxy",
     title: "Nuwan Goonasekera",
   },
 ];
