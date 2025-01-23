@@ -10,13 +10,15 @@ export const Champions = (): JSX.Element => {
   return (
     <Grid2 {...GRID2_PROPS}>
       {ANVIL_CHAMPIONS.map(({ media, secondaryText, title }, i) => (
-        <StyledCard key={i} component={RoundedPaper}>
-          {media && <StaticImage {...media} />}
-          <div>
-            <CardTitle>{title}</CardTitle>
-            <Typography {...TYPOGRAPHY_PROPS}>{secondaryText}</Typography>
-          </div>
-        </StyledCard>
+        <Grid2 size={{ sm: 6, xs: 12 }} key={i}>
+          <StyledCard component={RoundedPaper}>
+            {media && <StaticImage {...media} />}
+            <div>
+              <CardTitle>{title}</CardTitle>
+              <Typography {...TYPOGRAPHY_PROPS}>{secondaryText}</Typography>
+            </div>
+          </StyledCard>
+        </Grid2>
       ))}
     </Grid2>
   );
