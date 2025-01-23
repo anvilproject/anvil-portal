@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.7.0](https://github.com/anvilproject/anvil-portal/compare/v2.6.0...v2.7.0) (2025-01-23)
+
+
+### Features
+
+* anvil champions update [#3515](https://github.com/anvilproject/anvil-portal/issues/3515) ([#3521](https://github.com/anvilproject/anvil-portal/issues/3521)) ([b9f7141](https://github.com/anvilproject/anvil-portal/commit/b9f7141782ae71547460aad80d0bbb302867b2ba))
+* jan 2025 demo event [#3503](https://github.com/anvilproject/anvil-portal/issues/3503) ([#3522](https://github.com/anvilproject/anvil-portal/issues/3522)) ([568072d](https://github.com/anvilproject/anvil-portal/commit/568072d5231f1c3ba2ab8a6823cef3b24706883d))
+
+
+### Content
+
+* acc 2024 conf report [#3516](https://github.com/anvilproject/anvil-portal/issues/3516) ([#3537](https://github.com/anvilproject/anvil-portal/issues/3537)) ([fe1e18d](https://github.com/anvilproject/anvil-portal/commit/fe1e18dede754d56f356affcf8c37908bb76597b))
+* add March 2025 demo event [#3505](https://github.com/anvilproject/anvil-portal/issues/3505) ([#3525](https://github.com/anvilproject/anvil-portal/issues/3525)) ([5358f07](https://github.com/anvilproject/anvil-portal/commit/5358f07b4c548d65f10ac87f4eec561ecf970b7d))
+* apr 2025 demo event [#3506](https://github.com/anvilproject/anvil-portal/issues/3506) ([#3526](https://github.com/anvilproject/anvil-portal/issues/3526)) ([57dcad8](https://github.com/anvilproject/anvil-portal/commit/57dcad8a0786d35997caea5b3639157831f3d93f))
+* aug 2025 demo event [#3510](https://github.com/anvilproject/anvil-portal/issues/3510) ([#3530](https://github.com/anvilproject/anvil-portal/issues/3530)) ([d1f0ae3](https://github.com/anvilproject/anvil-portal/commit/d1f0ae32ea06bec85370454a6ee8cd2a71fa85b7))
+* dec 2025 demo event [#3514](https://github.com/anvilproject/anvil-portal/issues/3514) ([#3534](https://github.com/anvilproject/anvil-portal/issues/3534)) ([cf03ac7](https://github.com/anvilproject/anvil-portal/commit/cf03ac7a7940c7258b14232af2a2bf48772d25a4))
+* feb 2025 demo event [#3504](https://github.com/anvilproject/anvil-portal/issues/3504) ([#3524](https://github.com/anvilproject/anvil-portal/issues/3524)) ([3e8fd44](https://github.com/anvilproject/anvil-portal/commit/3e8fd4421f2c8456640050eea4e69fc61d8548f8))
+* jul 2025 demo event [#3509](https://github.com/anvilproject/anvil-portal/issues/3509) ([#3529](https://github.com/anvilproject/anvil-portal/issues/3529)) ([ecfca92](https://github.com/anvilproject/anvil-portal/commit/ecfca92c68623655fae0e6e2d584048d3ff48eda))
+* june 2025 demo event [#3508](https://github.com/anvilproject/anvil-portal/issues/3508) ([#3528](https://github.com/anvilproject/anvil-portal/issues/3528)) ([acf1127](https://github.com/anvilproject/anvil-portal/commit/acf112793c8baa5450c1706ee91b445c017b165a))
+* mar 2025 demo event [#3505](https://github.com/anvilproject/anvil-portal/issues/3505) ([5358f07](https://github.com/anvilproject/anvil-portal/commit/5358f07b4c548d65f10ac87f4eec561ecf970b7d))
+* may 2025 demo event [#3507](https://github.com/anvilproject/anvil-portal/issues/3507) ([#3527](https://github.com/anvilproject/anvil-portal/issues/3527)) ([b267812](https://github.com/anvilproject/anvil-portal/commit/b2678128a494e6dcff29cb358beeddc165019c4b))
+* nov 2025 demo event [#3513](https://github.com/anvilproject/anvil-portal/issues/3513) ([#3533](https://github.com/anvilproject/anvil-portal/issues/3533)) ([339a7d3](https://github.com/anvilproject/anvil-portal/commit/339a7d3884eaa05e6861f6a1867ac6ef0ded542b))
+* oct 2025 demo event [#3512](https://github.com/anvilproject/anvil-portal/issues/3512) ([#3532](https://github.com/anvilproject/anvil-portal/issues/3532)) ([ae539e6](https://github.com/anvilproject/anvil-portal/commit/ae539e6e0db873dbb7f4ddf33de0390ca41ca42a))
+* sep 2025 demo event [#3511](https://github.com/anvilproject/anvil-portal/issues/3511) ([#3531](https://github.com/anvilproject/anvil-portal/issues/3531)) ([7459c6d](https://github.com/anvilproject/anvil-portal/commit/7459c6dc8e30f2dd6a8f1f634841b4bef265f16f))
+
 ## [2.6.0](https://github.com/anvilproject/anvil-portal/compare/v2.5.0...v2.6.0) (2024-12-17)
 
 
