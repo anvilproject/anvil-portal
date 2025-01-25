@@ -26,11 +26,16 @@ If your dataset has been accepted by AnVIL and does not easily fit into an exist
 You’ll end this step with a better understanding of what your data dictionary will include for your data model. Step 3 will instruct you on preparing your data according to your data model for submission to AnVIL.
 
 ## 2.1 \- First Steps
+### Definitions
+**Data Model:** An implementable definition of a data representation. A data model should describe the entities, attributes, and relationships, and how these are represented, including format and content. Successful models facilitate clear communication of the data and cover the majority of the data in a well-specified domain. 
 
+**Data Dictionary:** An unambiguous description of a specific table of data. A data dictionary should define what the fields are, what values they can have, and any constraints. Data dictionaries must allow for data to be validated for conformance. Data dictionaries:
+* Must include descriptions for each column for humans to understand the data
+* Must include data types and coded terms for computers to understand the data
+### Why a Data Model?
+There are often inconsistencies when data is shared, including what ontologies used, formatting, and data types. Established data models provide clear and well-specified standards, formatting, terminologies, and ontologies. This allows for easy exchange and use. The purpose of using a data model when submitting to AnVIL is to maximize the usability of the data. Through using a data model, AnVIL aims to have research data that are Findable, Accessible, Interoperable, and Reusable (FAIR). 
 ### Coordinate with the AnVIL Data Ingest Team
-
 To **collaborate with AnVIL** on uploading data, you’ll **notify AnVIL of completed dbGaP registration** in one of two ways.
-
 * Through an already open AnVIL Zendesk ticket
 * By contacting AnVIL support at [anvil-data@broadinstitute.org](mailto:anvil-data@brodinstitute.org)
 
@@ -38,7 +43,7 @@ It is useful to coordinate with AnVIL before you start to set up your data model
 
 ## 2.2 \- Create Your AnVIL Data Model
 
-A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another.
+A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another. Data models should describe data with rich metadata that can be registered or indexed. 
 
 We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.
 
@@ -63,7 +68,9 @@ At a high level, there are three core tables (“entities”) in the AnVIL Data 
 
 The **BioSample** table is the only required table, although **Donor** and **File** tables are strongly encouraged to improve the usability and findability of the data.
 
-The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the Data Dictionary.  Brief descriptions of these core tables, with notable requirements, are below.
+The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209).  Brief descriptions of these core tables, with notable requirements, are below.
+
+Note that data models for submitted datasets are not restricted to what is included in the AnVIL Data Model.
 
 * [**BioSample**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.
   * The `biosample_id` (first column) is required.
@@ -95,7 +102,15 @@ If your dataset has been accepted by AnVIL and has needs not described here, ple
 
 ## 2.3 \- Generate Your Data Dictionary
 
-All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. It includes (in separate tabs for each table) field names, field descriptions, field types, examples, enumeration values (where applicable), and multi-value delimiter symbols used (where applicable) for each table in the data model.
+All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. It includes (in separate tabs for each table) 
+* Field names
+* Field descriptions
+* Field types
+* Examples
+* Enumeration values (where applicable)
+* Multi-value delimiter symbols used (where applicable) for each table in the data model
+
+⚠️To maximize usability, data models should anchor to the listed coding systems. 
 
 **For a template Data Dictionary with all required and suggested tables**, click [here](https://github.com/anvilproject/Data-Model/blob/main/AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx). To download the AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx file, click on the three-dot icon at the top right and then click Download. 
 
@@ -121,8 +136,12 @@ All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) tha
 | Activity | Activity type coding system | [BioCore Values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
 
 ## Additional Resources
+[AnVIL Demos: Sharing Data in the AnVIL](https://youtu.be/nIqQsse1aYM?feature=shared)
+
+[Sharing Data in the AnVIL](https://docs.google.com/presentation/d/1dgRMcYnrX4Vsl7zS5oqmf9ipXT5pY6u6VUvX0CK0ssU/edit#slide=id.p)
 
 ### Contact information
 
 AnVIL Data Ingest Team [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org)
+
 AnVIL Help Team help@lists.anvilproject.org
