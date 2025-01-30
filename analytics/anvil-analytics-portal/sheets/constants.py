@@ -1,7 +1,7 @@
 # CHANGE THESE VALUES TO GENERATE NEW REPORTS
 # The start and end dates of the current month (yyyy-mm-dd)
 START_DATE_CURRENT = "2024-12-01"
-END_DATE_CURRENT = "2024-12-30"
+END_DATE_CURRENT = "2024-12-31"
 # The start and end dates of the prior months
 START_DATE_PRIOR = "2024-11-01"
 END_DATE_PRIOR = "2024-11-30"
