@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.8.0](https://github.com/anvilproject/anvil-portal/compare/v2.7.0...v2.8.0) (2025-02-03)
+
+
+### Features
+
+* 3465 outbound links report ([#3535](https://github.com/anvilproject/anvil-portal/issues/3535)) ([d7794d5](https://github.com/anvilproject/anvil-portal/commit/d7794d505e71be7e84467756f6a2cbc54a6df77b))
+* add event ASHG 2025 ([#3543](https://github.com/anvilproject/anvil-portal/issues/3543)) ([#3544](https://github.com/anvilproject/anvil-portal/issues/3544)) ([033b330](https://github.com/anvilproject/anvil-portal/commit/033b3301b886b0d589676c96ccfd559fa516241d))
+* add event CSHL BoG 2025 ([#3542](https://github.com/anvilproject/anvil-portal/issues/3542)) ([#3545](https://github.com/anvilproject/anvil-portal/issues/3545)) ([6708e28](https://github.com/anvilproject/anvil-portal/commit/6708e28067e6619259a1205047a180872fab102d))
+* add event GBCC2025 ([#3541](https://github.com/anvilproject/anvil-portal/issues/3541)) ([#3546](https://github.com/anvilproject/anvil-portal/issues/3546)) ([d63bb43](https://github.com/anvilproject/anvil-portal/commit/d63bb43820c9963da72f7644e8b56ef493305b08))
+
+
+### Content
+
+* add video to anvil2025-january-demos.mdx ([#3540](https://github.com/anvilproject/anvil-portal/issues/3540)) ([b5b9a89](https://github.com/anvilproject/anvil-portal/commit/b5b9a89530237719f03601538a288ab5104e6e4b))
+* incremental updates to  set-up-a-data-model.mdx ([#3538](https://github.com/anvilproject/anvil-portal/issues/3538)) ([d704eb4](https://github.com/anvilproject/anvil-portal/commit/d704eb422c9e0e759b62a82148746a4f89bb5e4f))
+
 ## [2.7.0](https://github.com/anvilproject/anvil-portal/compare/v2.6.0...v2.7.0) (2025-01-23)
 
 
