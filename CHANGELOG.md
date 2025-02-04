@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.1](https://github.com/anvilproject/anvil-portal/compare/v2.8.0...v2.8.1) (2025-02-04)
+
+
+### Content
+
+* update homepage card order to place anvil components on the top row ([#3547](https://github.com/anvilproject/anvil-portal/issues/3547)) ([#3548](https://github.com/anvilproject/anvil-portal/issues/3548)) ([f66ea0a](https://github.com/anvilproject/anvil-portal/commit/f66ea0a90b727c8234be0ea9a6dec3ce4750afc3))
+
 ## [2.8.0](https://github.com/anvilproject/anvil-portal/compare/v2.7.0...v2.8.0) (2025-02-03)
 
 
