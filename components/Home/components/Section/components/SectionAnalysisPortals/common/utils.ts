@@ -37,60 +37,6 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
     {
       links: [
         {
-          label: ACTION_LABEL.DATASETS,
-          target: ANCHOR_TARGET.BLANK,
-          url: `${browserURL}/datasets`,
-        },
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.BLANK,
-          url: `${browserURL}/guides`,
-        },
-      ],
-      media: {
-        alt: "AnVIL Data Explorer",
-        height: 40,
-        src: "/consortia/portals/anvil-explorer.png",
-      },
-      text: "Build cross study cohorts for analysis in Terra.",
-      title: "AnVIL Data Explorer",
-    },
-    {
-      links: [
-        { label: ACTION_LABEL.LAUNCH, url: "https://dockstore.org" },
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/learn/run-analyses-workflows/intro-to-dockstore",
-        },
-      ],
-      media: {
-        alt: "Dockstore",
-        height: 40,
-        src: "/consortia/portals/dockstore.png",
-      },
-      text: "Create and share Docker-based workflows.",
-      title: "Dockstore",
-    },
-    {
-      links: [
-        { label: ACTION_LABEL.LEARN_MORE, url: "https://www.ncpi-acc.org" },
-        {
-          label: ACTION_LABEL.DATASETS,
-          url: "https://ncpi-data.org/platforms",
-        },
-      ],
-      media: {
-        alt: "NCPI",
-        height: 40,
-        src: "/consortia/portals/ncpi.png",
-      },
-      text: "Interoperate with other NIH data commons.",
-      title: "NCPI",
-    },
-    {
-      links: [
-        {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
           url: "/learn/run-interactive-analyses/getting-started-with-bioconductor",
@@ -119,6 +65,44 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
       },
       text: "Run batch analysis workflows and interactive visualizations.",
       title: "Galaxy",
+    },
+    {
+      links: [
+        { label: ACTION_LABEL.LAUNCH, url: "https://dockstore.org" },
+        {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
+          url: "/learn/run-analyses-workflows/intro-to-dockstore",
+        },
+      ],
+      media: {
+        alt: "Dockstore",
+        height: 40,
+        src: "/consortia/portals/dockstore.png",
+      },
+      text: "Create and share Docker-based workflows.",
+      title: "Dockstore",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.DATASETS,
+          target: ANCHOR_TARGET.BLANK,
+          url: `${browserURL}/datasets`,
+        },
+        {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.BLANK,
+          url: `${browserURL}/guides`,
+        },
+      ],
+      media: {
+        alt: "AnVIL Data Explorer",
+        height: 40,
+        src: "/consortia/portals/anvil-explorer.png",
+      },
+      text: "Build cross study cohorts for analysis in Terra.",
+      title: "AnVIL Data Explorer",
     },
     {
       links: [
@@ -155,6 +139,22 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
       },
       text: "Identify disease-causing variants.",
       title: "Seqr",
+    },
+    {
+      links: [
+        { label: ACTION_LABEL.LEARN_MORE, url: "https://www.ncpi-acc.org" },
+        {
+          label: ACTION_LABEL.DATASETS,
+          url: "https://ncpi-data.org/platforms",
+        },
+      ],
+      media: {
+        alt: "NCPI",
+        height: 40,
+        src: "/consortia/portals/ncpi.png",
+      },
+      text: "Interoperate with other NIH data commons.",
+      title: "NCPI",
     },
   ];
 }
