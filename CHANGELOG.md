@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.9.0](https://github.com/anvilproject/anvil-portal/compare/v2.8.1...v2.9.0) (2025-02-19)
+
+
+### Features
+
+* added monthly pageviews and users to analytics sheets ([#3536](https://github.com/anvilproject/anvil-portal/issues/3536)) ([#3552](https://github.com/anvilproject/anvil-portal/issues/3552)) ([56fc8d1](https://github.com/anvilproject/anvil-portal/commit/56fc8d11fb4cfb224fa85ab91207e6e016d16ca7))
+
+
+### Content
+
+* add "Use your favorite platforms and tools" text to homepage ([#3554](https://github.com/anvilproject/anvil-portal/issues/3554)) ([#3558](https://github.com/anvilproject/anvil-portal/issues/3558)) ([e50cecf](https://github.com/anvilproject/anvil-portal/commit/e50cecf0af476ad213ed91cc73dc2c99eb7ae96a))
+* add links to bringing-your-own-data.mdx ([#3557](https://github.com/anvilproject/anvil-portal/issues/3557)) ([84ca833](https://github.com/anvilproject/anvil-portal/commit/84ca833fabe03cc9f2b94ab141adc042d8c94fc5))
+
 ## [2.8.1](https://github.com/anvilproject/anvil-portal/compare/v2.8.0...v2.8.1) (2025-02-04)
 
 
