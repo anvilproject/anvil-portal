@@ -1,10 +1,11 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
   SectionLayout as DefaultLayout,
   Section as DefaultSection,
+  SectionTitle as DefaultSectionTitle,
 } from "../../section.styles";
+import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const Section = styled(DefaultSection)`
   background-color: ${smokeLightest};
@@ -18,15 +19,8 @@ export const SectionLayout = styled(DefaultLayout)`
   padding: 64px 16px;
 `;
 
-export const SectionTitle = styled.h2`
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.4px;
-  line-height: 34px;
-  margin: 0;
-  text-align: center;
-
+export const SectionTitle = styled(DefaultSectionTitle)`
   ${mediaTabletUp} {
-    display: none;
+    text-align: center;
   }
 `;

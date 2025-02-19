@@ -9,7 +9,7 @@ export const SectionAnalysisPortals = (): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
-        <SectionTitle>Analysis Portals</SectionTitle>
+        <SectionTitle>Use your favorite platforms and tools</SectionTitle>
         <AnalysisPortals />
       </SectionLayout>
     </Section>
