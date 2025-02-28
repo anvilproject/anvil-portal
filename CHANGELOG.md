@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.1](https://github.com/anvilproject/anvil-portal/compare/v2.9.0...v2.9.1) (2025-02-28)
+
+
+### Content
+
+* update requesting-data-access.mdx to add GREGoR consortium ([#3559](https://github.com/anvilproject/anvil-portal/issues/3559)) ([9b78aff](https://github.com/anvilproject/anvil-portal/commit/9b78aff518d561a0e9a256870611abc4b02655f2))
+
 ## [2.9.0](https://github.com/anvilproject/anvil-portal/compare/v2.8.1...v2.9.0) (2025-02-19)
 
 
