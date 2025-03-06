@@ -6,6 +6,7 @@ import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/comp
 import { buildDatasetCards } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
 import { buildCarouselCards } from "../components/Home/components/Section/components/SectionHero/common/utils";
 import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/common/utils";
+import { buildToolsAndWorkflowsCards } from "../components/Home/components/Section/components/SectionExplore/common/utils";
 import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/common/utils";
 import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/common/content";
 import { config } from "../config/config";
@@ -18,6 +19,7 @@ export const getStaticProps: GetStaticProps<SectionsData> = async () => {
   const carouselCards = buildCarouselCards();
   const cloudCards = CLOUD_CARDS;
   const datasetCards = buildDatasetCards(portalURL);
+  const toolsAndWorkflowsCards = buildToolsAndWorkflowsCards(browserURL);
   const eventCards = buildUpdateSectionCards("events");
   const newsCards = buildUpdateSectionCards("news");
   const publicationCards = buildPublicationSectionCards();
@@ -31,6 +33,7 @@ export const getStaticProps: GetStaticProps<SectionsData> = async () => {
       eventCards,
       newsCards,
       publicationCards,
+      toolsAndWorkflowsCards,
       workspaceCards,
     },
   };
@@ -44,6 +47,7 @@ export const Home = ({
   eventCards,
   newsCards,
   publicationCards,
+  toolsAndWorkflowsCards,
   workspaceCards,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
@@ -56,6 +60,7 @@ export const Home = ({
         eventCards,
         newsCards,
         publicationCards,
+        toolsAndWorkflowsCards,
         workspaceCards,
       }}
     >

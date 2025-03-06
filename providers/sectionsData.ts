@@ -14,6 +14,7 @@ const DEFAULT_SECTIONS_DATA: SectionsData = {
   eventCards: [],
   newsCards: [],
   publicationCards: [],
+  toolsAndWorkflowsCards: [],
   workspaceCards: [],
 };
 
@@ -25,6 +26,7 @@ export interface SectionsData {
   eventCards: UpdateCard[];
   newsCards: UpdateCard[];
   publicationCards: PublicationCard[];
+  toolsAndWorkflowsCards: SectionCardWithLink[];
   workspaceCards: SectionCardWithLink[];
 }
 
