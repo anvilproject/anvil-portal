@@ -76,23 +76,22 @@ export function makeConfig(
               url: ROUTES.LEARN,
             },
             {
+              label: "Explorer",
+              target: ANCHOR_TARGET.BLANK,
+              url: `${browserUrl}/datasets`,
+            },
+            {
               label: "Datasets",
               menuItems: [
                 {
                   description:
-                    "An open-access view of studies, workspaces, and consortia.",
-                  label: "Catalog",
-                  url: `${portalUrl}/data`,
-                },
-                {
-                  description:
-                    "Build, download, and export cross-study cohorts of open and managed access data.",
+                    "Newly released studies not available in the AnVIL Data Explorer are accessible in DUOS.",
                   label: C.LabelIconMenuItem({
                     iconFontSize: "small",
-                    label: "Explorer",
+                    label: "Early Access Studies",
                   }),
                   target: ANCHOR_TARGET.BLANK,
-                  url: `${browserUrl}/datasets`,
+                  url: "https://duos.broadinstitute.org",
                 },
               ],
               url: "",
