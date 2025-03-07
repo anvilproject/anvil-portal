@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.10.0](https://github.com/anvilproject/anvil-portal/compare/v2.9.0...v2.10.0) (2025-03-07)
+
+
+### Features
+
+* add "explore" section to homepage ([#3561](https://github.com/anvilproject/anvil-portal/issues/3561)) ([#3566](https://github.com/anvilproject/anvil-portal/issues/3566)) ([9e5b5ae](https://github.com/anvilproject/anvil-portal/commit/9e5b5ae795a9f8cb488cf5ca5d37021ad3688db1))
+* replace catalog with early access studies link in header ([#3564](https://github.com/anvilproject/anvil-portal/issues/3564)) ([#3565](https://github.com/anvilproject/anvil-portal/issues/3565)) ([3ed678c](https://github.com/anvilproject/anvil-portal/commit/3ed678cd96c93bff1dfd633b0e3a017f67aa4147))
+* update hero ctas ([#3562](https://github.com/anvilproject/anvil-portal/issues/3562)) ([#3567](https://github.com/anvilproject/anvil-portal/issues/3567)) ([23a78a7](https://github.com/anvilproject/anvil-portal/commit/23a78a7cdaab585699bfbef7f96e0f4382285544))
+
+
+### Content
+
+* update requesting-data-access.mdx to add GREGoR consortium ([#3559](https://github.com/anvilproject/anvil-portal/issues/3559)) ([9b78aff](https://github.com/anvilproject/anvil-portal/commit/9b78aff518d561a0e9a256870611abc4b02655f2))
+
 ## [2.9.0](https://github.com/anvilproject/anvil-portal/compare/v2.8.1...v2.9.0) (2025-02-19)
 
 
