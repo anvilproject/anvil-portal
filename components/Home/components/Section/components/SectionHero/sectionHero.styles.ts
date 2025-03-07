@@ -7,9 +7,9 @@ import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/lib/styles/co
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,
+  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
-  sectionGrid,
 } from "../../section.styles";
 
 export const SectionLayout = styled(DefaultLayout)`
@@ -57,4 +57,9 @@ export const Subhead = styled.h2`
 
 export const CTAs = styled(DefaultActions)`
   flex-direction: row;
+
+  .MuiTypography-text-body-small-400 {
+    margin: 4px 0;
+    text-align: left;
+  }
 `;
