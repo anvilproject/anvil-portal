@@ -80,12 +80,6 @@ export function makeConfig(
               menuItems: [
                 {
                   description:
-                    "An open-access view of studies, workspaces, and consortia.",
-                  label: "Catalog",
-                  url: `${portalUrl}/data`,
-                },
-                {
-                  description:
                     "Build, download, and export cross-study cohorts of open and managed access data.",
                   label: C.LabelIconMenuItem({
                     iconFontSize: "small",
@@ -93,6 +87,16 @@ export function makeConfig(
                   }),
                   target: ANCHOR_TARGET.BLANK,
                   url: `${browserUrl}/datasets`,
+                },
+                {
+                  description:
+                    "Newly released studies not available in the AnVIL Data Explorer are accessible in DUOS.",
+                  label: C.LabelIconMenuItem({
+                    iconFontSize: "small",
+                    label: "Early Access Studies",
+                  }),
+                  target: ANCHOR_TARGET.BLANK,
+                  url: "https://duos.broadinstitute.org",
                 },
               ],
               url: "",

@@ -1,6 +1,4 @@
-import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
-import { REL_ATTRIBUTE } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import NLink from "next/link";
+import Link from "next/link";
 import { Section, SectionLayout } from "../../section.styles";
 import { Datasets } from "./components/Datasets/datasets";
 import { Metrics } from "./components/Metrics/metrics";
@@ -9,18 +7,16 @@ import {
   SectionActions,
   SectionTitle,
 } from "./sectionDatasets.styles";
+import { Button } from "@mui/material";
+import {
+  COLOR,
+  VARIANT,
+} from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 
 const CONSORTIA_ROADMAP = "/consortia";
 const CONTRIBUTE_DATA = "/learn/submit-data";
-const EXPLORE_DATASETS = "/data/consortia";
 
-interface SectionDatasetsProps {
-  portalURL: string;
-}
-
-export const SectionDatasets = ({
-  portalURL,
-}: SectionDatasetsProps): JSX.Element => {
+export const SectionDatasets = (): JSX.Element => {
   return (
     <Section>
       <SectionLayout>
@@ -32,18 +28,22 @@ export const SectionDatasets = ({
         </Headline>
         <Datasets />
         <SectionActions>
-          <NLink href={CONSORTIA_ROADMAP} legacyBehavior passHref>
-            <ButtonSecondary href="passHref">Consortia Roadmap</ButtonSecondary>
-          </NLink>
-          <ButtonSecondary
-            href={`${portalURL}${EXPLORE_DATASETS}`}
-            rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
+          <Button
+            color={COLOR.SECONDARY}
+            component={Link}
+            href={CONSORTIA_ROADMAP}
+            variant={VARIANT.CONTAINED}
           >
-            Explore Datasets
-          </ButtonSecondary>
-          <ButtonSecondary href={CONTRIBUTE_DATA}>
+            Consortia Roadmap
+          </Button>
+          <Button
+            color={COLOR.SECONDARY}
+            component={Link}
+            href={CONTRIBUTE_DATA}
+            variant={VARIANT.CONTAINED}
+          >
             Contribute Data
-          </ButtonSecondary>
+          </Button>
         </SectionActions>
       </SectionLayout>
     </Section>
