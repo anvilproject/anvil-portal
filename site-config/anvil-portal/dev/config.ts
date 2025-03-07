@@ -76,13 +76,18 @@ export function makeConfig(
               url: ROUTES.LEARN,
             },
             {
-              label: "Explorer",
-              target: ANCHOR_TARGET.BLANK,
-              url: `${browserUrl}/datasets`,
-            },
-            {
               label: "Datasets",
               menuItems: [
+                {
+                  description:
+                    "Build, download, and export cross-study cohorts of open and managed access data.",
+                  label: C.LabelIconMenuItem({
+                    iconFontSize: "small",
+                    label: "Explorer",
+                  }),
+                  target: ANCHOR_TARGET.BLANK,
+                  url: `${browserUrl}/datasets`,
+                },
                 {
                   description:
                     "Newly released studies not available in the AnVIL Data Explorer are accessible in DUOS.",
