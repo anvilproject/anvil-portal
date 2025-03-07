@@ -3,7 +3,7 @@ import { Footer } from "../components/Home/components/Layout/components/Footer/f
 import { Main } from "../components/Home/components/Layout/components/Main/main";
 import { buildAnalysisPortalCards } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/utils";
 import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/common/content";
-import { buildDatasetCards } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
+import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
 import { buildCarouselCards } from "../components/Home/components/Section/components/SectionHero/common/utils";
 import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/common/utils";
 import { buildToolsAndWorkflowsCards } from "../components/Home/components/Section/components/SectionExplore/common/utils";
@@ -14,11 +14,11 @@ import { SectionsData, SectionsDataProvider } from "../providers/sectionsData";
 import { HomeView } from "../views/HomeView/homeView";
 
 export const getStaticProps: GetStaticProps<SectionsData> = async () => {
-  const { browserURL, portalURL } = config();
+  const { browserURL } = config();
   const analysisPortalCards = buildAnalysisPortalCards(browserURL);
   const carouselCards = buildCarouselCards();
   const cloudCards = CLOUD_CARDS;
-  const datasetCards = buildDatasetCards(portalURL);
+  const datasetCards = DATASET_CARDS;
   const toolsAndWorkflowsCards = buildToolsAndWorkflowsCards(browserURL);
   const eventCards = buildUpdateSectionCards("events");
   const newsCards = buildUpdateSectionCards("news");

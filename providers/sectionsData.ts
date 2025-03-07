@@ -22,7 +22,7 @@ export interface SectionsData {
   analysisPortalCards: SectionCard[];
   carouselCards: SectionCard[];
   cloudCards: Omit<SectionCard, "links">[];
-  datasetCards: SectionCardWithLink[];
+  datasetCards: Omit<SectionCard, "links">[];
   eventCards: UpdateCard[];
   newsCards: UpdateCard[];
   publicationCards: PublicationCard[];
