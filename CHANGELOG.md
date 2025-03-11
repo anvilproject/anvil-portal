@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.10.1](https://github.com/anvilproject/anvil-portal/compare/v2.10.0...v2.10.1) (2025-03-11)
+
+
+### Content
+
+* add als compute consortium to the anvil consortium page ([#3568](https://github.com/anvilproject/anvil-portal/issues/3568)) ([#3570](https://github.com/anvilproject/anvil-portal/issues/3570)) ([1d7c3ad](https://github.com/anvilproject/anvil-portal/commit/1d7c3ad755473c1635c294ac75f1a81fdbc37b47))
+* add international fetal genomics consortium to the anvil consortium page ([#3569](https://github.com/anvilproject/anvil-portal/issues/3569)) ([#3571](https://github.com/anvilproject/anvil-portal/issues/3571)) ([c0551fa](https://github.com/anvilproject/anvil-portal/commit/c0551fa57ab2d32bf7e4980a7a37e98d27fde09c))
+
 ## [2.10.0](https://github.com/anvilproject/anvil-portal/compare/v2.9.0...v2.10.0) (2025-03-07)
 
 
