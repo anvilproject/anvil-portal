@@ -77,6 +77,10 @@ export default withPlugins(
         process.cwd(),
         "node_modules/uuid"
       );
+      config.resolve.alias["yup"] = path.resolve(
+        process.cwd(),
+        "node_modules/yup"
+      );
       return config;
     },
   }
