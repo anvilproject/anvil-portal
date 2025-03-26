@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.10.2](https://github.com/anvilproject/anvil-portal/compare/v2.10.1...v2.10.2) (2025-03-26)
+
+
+### Chores
+
+* add pageviews to analytics report ([#3574](https://github.com/anvilproject/anvil-portal/issues/3574)) ([#3578](https://github.com/anvilproject/anvil-portal/issues/3578)) ([8844ae0](https://github.com/anvilproject/anvil-portal/commit/8844ae0e8041ae55b761d662305868c3c30b8aa1))
+* update findable-ui to latest v22.0.0 ([#3575](https://github.com/anvilproject/anvil-portal/issues/3575)) ([#3577](https://github.com/anvilproject/anvil-portal/issues/3577)) ([9b789c9](https://github.com/anvilproject/anvil-portal/commit/9b789c9b31681d7d3545d3ff3037f6110ae8d1b7))
+
+
+### Content
+
+* fix spelling in bringing-your-own-data ([#3580](https://github.com/anvilproject/anvil-portal/issues/3580)) ([7a3426c](https://github.com/anvilproject/anvil-portal/commit/7a3426c0bf2202825af66f556cc9fe64a863a22b))
+
 ## [2.10.1](https://github.com/anvilproject/anvil-portal/compare/v2.10.0...v2.10.1) (2025-03-11)
 
 
