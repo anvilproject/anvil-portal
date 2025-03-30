@@ -4,8 +4,12 @@ import {
   ComponentsConfig,
 } from "@databiosphere/findable-ui/lib/config/entities";
 import * as MDX from "../../../../components/Layout/components/Header/content";
+import { Banner } from "../../../../components/Home/components/Banner/banner";
 
 export const announcements: ComponentsConfig = [
+  {
+    component: Banner,
+  } as ComponentConfig<typeof Banner>,
   {
     component: MDX.DevelopmentModeBanner,
     props: {
