@@ -7,8 +7,10 @@ export const Banner = (): JSX.Element | null => {
   if (asPath !== "/") return null;
   return (
     <DXBanner {...ALERT_PROPS}>
-      This repository is under review for potential modification in compliance
-      with Administration directives.
+      <i>
+        This repository is under review for potential modification in compliance
+        with Administration directives.
+      </i>
     </DXBanner>
   );
 };
