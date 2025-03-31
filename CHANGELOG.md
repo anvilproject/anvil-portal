@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.1](https://github.com/anvilproject/anvil-portal/compare/v2.11.0...v2.11.1) (2025-03-31)
+
+
+### Bug Fixes
+
+* fix prod announcement to show repository review banner ([#3585](https://github.com/anvilproject/anvil-portal/issues/3585)) ([#3586](https://github.com/anvilproject/anvil-portal/issues/3586)) ([6b311af](https://github.com/anvilproject/anvil-portal/commit/6b311afa0f8c18f10b9a8cf254c2979225c9f264))
+
 ## [2.11.0](https://github.com/anvilproject/anvil-portal/compare/v2.10.2...v2.11.0) (2025-03-31)
 
 
