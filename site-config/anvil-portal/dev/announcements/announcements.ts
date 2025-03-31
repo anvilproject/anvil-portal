@@ -6,14 +6,20 @@ import {
 import * as MDX from "../../../../components/Layout/components/Header/content";
 import { Banner } from "../../../../components/Home/components/Banner/banner";
 
+export const DEVELOPMENT_MODE_BANNER: ComponentConfig<
+  typeof MDX.DevelopmentModeBanner
+> = {
+  component: MDX.DevelopmentModeBanner,
+  props: {
+    ...ALERT_PROPS,
+  },
+};
+
+export const REPOSITORY_REVIEW_BANNER: ComponentConfig<typeof Banner> = {
+  component: Banner,
+};
+
 export const announcements: ComponentsConfig = [
-  {
-    component: Banner,
-  } as ComponentConfig<typeof Banner>,
-  {
-    component: MDX.DevelopmentModeBanner,
-    props: {
-      ...ALERT_PROPS,
-    },
-  } as ComponentConfig<typeof MDX.DevelopmentModeBanner>,
+  REPOSITORY_REVIEW_BANNER,
+  DEVELOPMENT_MODE_BANNER,
 ];
