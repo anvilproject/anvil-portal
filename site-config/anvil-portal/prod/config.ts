@@ -1,5 +1,6 @@
 import { SiteConfig } from "../../common/entities";
 import { GIT_HUB_REPO_URL, makeConfig } from "../dev/config";
+import { REPOSITORY_REVIEW_BANNER } from "../dev/announcements/announcements";
 
 const EXPLORER_URL = "https://explore.anvilproject.org";
 const PORTAL_URL = "https://anvilproject.org";
@@ -13,8 +14,6 @@ const config: SiteConfig = {
   },
 };
 
-if (config.layout.header.announcements) {
-  config.layout.header.announcements = undefined;
-}
+config.layout.header.announcements = [REPOSITORY_REVIEW_BANNER];
 
 export default config;
