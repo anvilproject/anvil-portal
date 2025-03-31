@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.0](https://github.com/anvilproject/anvil-portal/compare/v2.10.2...v2.11.0) (2025-03-31)
+
+
+### Features
+
+* create non-dismissable banner for anvil home page ([#3582](https://github.com/anvilproject/anvil-portal/issues/3582)) ([#3583](https://github.com/anvilproject/anvil-portal/issues/3583)) ([1cd5416](https://github.com/anvilproject/anvil-portal/commit/1cd5416de58370bcf2c68312c2b21256431ebbbd))
+
 ## [2.10.2](https://github.com/anvilproject/anvil-portal/compare/v2.10.1...v2.10.2) (2025-03-26)
 
 
