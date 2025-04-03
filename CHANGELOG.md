@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.2](https://github.com/anvilproject/anvil-portal/compare/v2.11.1...v2.11.2) (2025-04-03)
+
+
+### Content
+
+* genomic variant analysis [#3589](https://github.com/anvilproject/anvil-portal/issues/3589) ([#3590](https://github.com/anvilproject/anvil-portal/issues/3590)) ([5c7c89f](https://github.com/anvilproject/anvil-portal/commit/5c7c89f853ce1d3d5a7ef530965325717c06c6cb))
+
 ## [2.11.1](https://github.com/anvilproject/anvil-portal/compare/v2.11.0...v2.11.1) (2025-03-31)
 
 
