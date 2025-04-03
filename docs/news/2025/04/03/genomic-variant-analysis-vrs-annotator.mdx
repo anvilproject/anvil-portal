@@ -1,0 +1,42 @@
+---
+date: "2025-04-03"
+description: "The VRS Annotator is a powerful new workflow available on the AnVIL platform that enhances the interoperability of genomic variant data."
+featured: false
+title: "Streamlining Genomic Variant Analysis on AnVIL with the VRS Annotator"
+---
+
+<NewsHero {...frontmatter} />
+
+The **VRS Annotator** is a powerful new workflow available on the AnVIL platform that enhances the interoperability of genomic variant data by leveraging **GA4GH Variation Representation Specification ([VRS](https://www.ga4gh.org/product/variation-representation/)) identifiers**. Developed by the Ellrott Lab at Oregon Health & Science University and the Wagner Lab at Nationwide Children’s Hospital, this tool makes it easier to standardize, annotate, and integrate genomic data with external knowledge bases such as the **GA4GH [MetaKB](https://search.cancervariants.org/)**.
+
+### What Does the VRS Annotator Do?
+
+The **VRS Annotator** processes **Variant Call Format (VCF)** files by adding **VRS Allele IDs**, which are unique, standardized identifiers for genomic variants. By doing so, it enables seamless data exchange across different genomic databases like MetaKB and various tools like the [VRS AnVIL Toolkit](https://github.com/gks-anvil/vrs_anvil_toolkit/).
+
+This workflow is particularly useful for researchers working with large-scale genomic datasets who need to **harmonize variant data** across different platforms. The VRS Annotator is also a key first step for genomics researchers to query variants across AnVIL!
+
+### Key Features
+
+* **Automated VCF Annotation** – The workflow wraps the functionality of the [vrs-python](https://github.com/ga4gh/vrs-python) `vcf_annotator` to efficiently annotate VCF files with GA4GH VRS Allele IDs.
+* **Integration with MetaKB** – Enables retrieval of clinical and functional evidence associated with annotated variants, making it easier to link variants to research and clinical interpretations.
+* **Flexible Configuration** – Supports options for computing both reference and alternate alleles, retrieving detailed variant attributes, and working with multiple genome assemblies (e.g., GRCh37 and GRCh38).
+* **Seamless Execution on AnVIL** – Users can run the workflow directly in an AnVIL workspace, simplifying integration into existing genomics pipelines.
+
+### How to Get Started
+
+Getting started is as easy as cloning a workspace! The **VRS Annotator** is available to use as a WDL workflow in the [VRS AnVIL workspace](https://anvil.terra.bio/#workspaces/terra-test-bwalsh/vrs_anvil). Within the workspace, researchers upload their VCF files, configure the workflow parameters, and generate annotated outputs that are compatible with GA4GH standards. Researchers can use these outputs in ready-to-demo example notebooks and data.
+
+By incorporating the VRS Annotator into genomic research workflows, AnVIL users can improve data interoperability, streamline variant annotation, and enhance downstream analyses with reliable, standardized variant identifiers.
+
+To learn more about the tooling enabled by VRS…
+
+* [Youtube Video](https://www.youtube.com/watch?v=9t6rYA4Sx8E): Watch as Alex Wagner and Quinn Wai Wong introduce and demo the VRS Annotator on the AnVIL Platform
+* [VRS Annotator](https://dockstore.org/workflows/github.com/gks-anvil/vrs-annotator/VRSAnnotator:main?tab=info): Dockstore repository for the workflow
+* [VRS AnVIL Toolkit](https://github.com/gks-anvil/vrs_anvil_toolkit): Tools to integrate VRS with the AnVIL platform
+* [GKS AnVIL](https://github.com/gks-anvil): Our Github Organization and the latest work on integrating VRS with AnVIL 
+
+### Getting Involved
+
+* If you would like to contribute, please communicate via GitHub Issues on the [VRS AnVIL Toolkit repository](https://github.com/gks-anvil/vrs_anvil_toolkit)
+* If you have questions, please visit [help.anvilproject.org](http://help.anvilproject.org) 
+* Learn more about workflows [here](https://support.terra.bio/hc/en-us/articles/360036379771-Overview-Running-workflows-in-Terra)
