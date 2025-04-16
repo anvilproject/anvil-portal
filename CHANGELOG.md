@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.11.3](https://github.com/anvilproject/anvil-portal/compare/v2.11.2...v2.11.3) (2025-04-16)
+
+
+### Content
+
+* add demos playlist to anvil2025-april-demos.mdx ([#3594](https://github.com/anvilproject/anvil-portal/issues/3594)) ([7e19dda](https://github.com/anvilproject/anvil-portal/commit/7e19dda80990e8306cc0295a21747d59ab2c0e41))
+* add demos playlist to anvil2025-august-demos.mdx ([#3597](https://github.com/anvilproject/anvil-portal/issues/3597)) ([391aba2](https://github.com/anvilproject/anvil-portal/commit/391aba2def8ad5f3878ec08c9cc91c9e456cb155))
+* add demos playlist to anvil2025-december-demos.mdx ([#3601](https://github.com/anvilproject/anvil-portal/issues/3601)) ([ca00e1e](https://github.com/anvilproject/anvil-portal/commit/ca00e1ec08d2f7c66a560fb3fde3369fe6dc1895))
+* add demos playlist to anvil2025-july-demos.mdx ([#3596](https://github.com/anvilproject/anvil-portal/issues/3596)) ([1ea3457](https://github.com/anvilproject/anvil-portal/commit/1ea3457f6e8bcf2f13aff2deb6ea71b4c9989b10))
+* add demos playlist to anvil2025-may-demos.mdx ([#3593](https://github.com/anvilproject/anvil-portal/issues/3593)) ([bdc6d1b](https://github.com/anvilproject/anvil-portal/commit/bdc6d1b13bc67c343f1fd8dd354c1856bec4bda5))
+* add demos playlist to anvil2025-november-demos.mdx ([#3600](https://github.com/anvilproject/anvil-portal/issues/3600)) ([14c9c9b](https://github.com/anvilproject/anvil-portal/commit/14c9c9bdefe663d3316e47caf87e24d463a0dc5a))
+* add demos playlist to anvil2025-october-demos.mdx ([#3599](https://github.com/anvilproject/anvil-portal/issues/3599)) ([473bf67](https://github.com/anvilproject/anvil-portal/commit/473bf6714ba3cbb5e9dfab301f1320e95762534d))
+* add demos playlist to anvil2025-september-demos.mdx ([#3598](https://github.com/anvilproject/anvil-portal/issues/3598)) ([4788d27](https://github.com/anvilproject/anvil-portal/commit/4788d2727e432304b1fd74d0cf9fee8f4bbf806a))
+* add recording to anvil2025-march-demos.mdx ([#3592](https://github.com/anvilproject/anvil-portal/issues/3592)) ([1e039f3](https://github.com/anvilproject/anvil-portal/commit/1e039f3d3270579df85ebca5f717f4e114838eb3))
+
 ## [2.11.2](https://github.com/anvilproject/anvil-portal/compare/v2.11.1...v2.11.2) (2025-04-03)
 
 
