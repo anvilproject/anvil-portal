@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.4](https://github.com/anvilproject/anvil-portal/compare/v2.11.3...v2.11.4) (2025-04-17)
+
+
+### Bug Fixes
+
+* update duos link to point directly to the anvil data library ([#3603](https://github.com/anvilproject/anvil-portal/issues/3603)) ([#3604](https://github.com/anvilproject/anvil-portal/issues/3604)) ([c454aa2](https://github.com/anvilproject/anvil-portal/commit/c454aa28eabc713e8188e2f49b8ef04d0ff2d2cd))
+
 ## [2.11.3](https://github.com/anvilproject/anvil-portal/compare/v2.11.2...v2.11.3) (2025-04-16)
 
 

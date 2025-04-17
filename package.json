@@ -1,7 +1,7 @@
 {
   "name": "the-anvil",
   "description": "Inverting the model of genomic data sharing",
-  "version": "2.11.3",
+  "version": "2.11.4",
   "private": true,
   "scripts": {
     "dev": "./scripts/dev.sh anvil-portal && ./scripts/set-version.sh dev && next dev",
