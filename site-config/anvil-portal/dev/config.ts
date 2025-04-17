@@ -96,7 +96,7 @@ export function makeConfig(
                     label: "Early Access Studies",
                   }),
                   target: ANCHOR_TARGET.BLANK,
-                  url: "https://duos.broadinstitute.org",
+                  url: "https://duos.org/datalibrary/AnVIL",
                 },
               ],
               url: "",
