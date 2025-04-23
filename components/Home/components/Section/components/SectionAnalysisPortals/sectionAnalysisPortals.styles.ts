@@ -1,14 +1,14 @@
-import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
-  SectionLayout as DefaultLayout,
   Section as DefaultSection,
+  SectionLayout as DefaultLayout,
   SectionTitle as DefaultSectionTitle,
 } from "../../section.styles";
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Section = styled(DefaultSection)`
-  background-color: ${smokeLightest};
+  background-color: ${PALETTE.SMOKE_LIGHTEST};
   overflow: hidden;
 `;
 

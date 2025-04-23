@@ -1,5 +1,4 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBody400,
   textBodySmall4002Lines,
@@ -8,6 +7,7 @@ import {
 import styled from "@emotion/styled";
 import { mediaTabletLargeUp } from "../../../../../../../../styles/common/mixins/breakpoints";
 import { sectionGrid } from "../../../../section.styles";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Metrics = styled.div`
   ${sectionGrid};
@@ -79,7 +79,7 @@ export const Count = styled.div`
 
 export const Label = styled.div`
   ${textBodySmall4002Lines};
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
   grid-column: 2;
   margin-top: -4px;
   padding-bottom: 1px;

@@ -1,10 +1,4 @@
 import { mediaTabletDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  inkMain,
-  smokeDark,
-  smokeLightest,
-  white,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { IconButton as MIconButton } from "@mui/material";
@@ -15,6 +9,7 @@ import {
 import { MAX_DECK_SIZE } from "../../common/constants";
 import { getArrowTransform } from "../../common/utils";
 import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   swipeAction: SwipeAction;
@@ -24,23 +19,23 @@ export const IconButton = styled(MIconButton, {
   shouldForwardProp: (props) => props !== "swipeAction",
 })<Props>`
   & {
-    background-color: ${white};
+    background-color: ${PALETTE.COMMON_WHITE};
     border-radius: 50%;
     box-shadow:
-      inset 0 0 0 1px ${smokeDark},
+      inset 0 0 0 1px ${PALETTE.SMOKE_DARK},
       0 1px 0 0 ${COLOR_MIXES.COMMON_BLACK_08};
-    color: ${inkMain};
+    color: ${PALETTE.INK_MAIN};
     position: absolute;
     top: 50%;
     transform: ${({ swipeAction }) => getArrowTransform(swipeAction)};
     z-index: ${MAX_DECK_SIZE + 1};
 
     &:hover {
-      background-color: ${smokeLightest};
+      background-color: ${PALETTE.SMOKE_LIGHTEST};
     }
 
     &:active {
-      box-shadow: inset 0 0 0 1px ${smokeDark};
+      box-shadow: inset 0 0 0 1px ${PALETTE.SMOKE_DARK};
     }
 
     ${mediaTabletDown} {

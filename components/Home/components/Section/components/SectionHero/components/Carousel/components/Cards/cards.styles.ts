@@ -1,9 +1,5 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
-  inkLight,
-  smokeMain,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import {
   textBody500,
   textBodyLarge500,
   textBodySmall4002Lines,
@@ -21,6 +17,7 @@ import {
   getCardZIndex,
 } from "../../common/utils";
 import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   cardPosition: number;
@@ -46,7 +43,7 @@ export const Card = styled(MCard)`
   border: none;
   box-shadow:
     ${SHADOWS["01"]},
-    inset 0 0 0 1px ${smokeMain};
+    inset 0 0 0 1px ${PALETTE.SMOKE_MAIN};
   display: flex;
   height: 100%;
   width: 100%;
@@ -75,7 +72,7 @@ export const CardTitle = styled.span`
 export const CardText = styled.span`
   ${textBodySmall4002Lines};
   -webkit-box-orient: vertical;
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
   display: -webkit-box;
   -webkit-line-clamp: 3;
   margin: 8px 0 16px;

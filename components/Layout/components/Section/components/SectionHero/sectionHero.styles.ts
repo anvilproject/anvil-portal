@@ -8,15 +8,12 @@ import {
   mediaTabletDown,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
-  inkLight,
-  smokeLightest,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import {
   textBody4002Lines,
   textHeadingXLarge,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   headerHeight: number;
@@ -25,7 +22,7 @@ interface Props {
 export const StyledSection = styled("section", {
   shouldForwardProp: (props) => props !== "headerHeight",
 })<Props>`
-  background-color: ${smokeLightest};
+  background-color: ${PALETTE.SMOKE_LIGHTEST};
   padding-top: ${({ headerHeight }) => headerHeight}px;
   width: 100%;
 `;
@@ -77,6 +74,6 @@ export const PageTitle = styled.h1`
 
 export const PageSubTitle = styled.div`
   ${textBody4002Lines};
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
   margin: 0 auto;
 `;

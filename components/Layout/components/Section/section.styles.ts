@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const StyledSection = styled.section`
-  background-color: ${white};
+  background-color: ${PALETTE.COMMON_WHITE};
   flex: 1;
   width: 100%;
 `;

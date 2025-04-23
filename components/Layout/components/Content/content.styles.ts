@@ -1,4 +1,3 @@
-import { smokeMain } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBodyLarge4002Lines,
   textHeadingSmall,
@@ -6,14 +5,15 @@ import {
 import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 interface Props {
   headerHeight: number;
 }
 
-const footnotes = (props: ThemeProps) => css`
+const footnotes = css`
   section[data-footnotes] {
-    border-top: 1px solid ${smokeMain(props)};
+    border-top: 1px solid ${PALETTE.SMOKE_MAIN};
     margin-top: 24px;
     padding-top: 16px;
 
@@ -33,11 +33,11 @@ const iframe = css`
   }
 `;
 
-const image = (props: ThemeProps) => css`
+const image = css`
   li,
   > p {
     img {
-      border: 1px solid ${smokeMain(props)};
+      border: 1px solid ${PALETTE.SMOKE_MAIN};
       border-radius: 6px;
       margin: 16px 0;
       max-width: 100%;
