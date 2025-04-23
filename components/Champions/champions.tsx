@@ -1,16 +1,16 @@
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
-import { Grid2, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { StyledCard } from "./champions.styles";
-import { GRID2_PROPS, TYPOGRAPHY_PROPS } from "./constants";
+import { GRID_PROPS, TYPOGRAPHY_PROPS } from "./constants";
 import { ANVIL_CHAMPIONS } from "./content";
 
 export const Champions = (): JSX.Element => {
   return (
-    <Grid2 {...GRID2_PROPS}>
+    <Grid {...GRID_PROPS}>
       {ANVIL_CHAMPIONS.map(({ media, secondaryText, title }, i) => (
-        <Grid2 size={{ sm: 6, xs: 12 }} key={i}>
+        <Grid size={{ sm: 6, xs: 12 }} key={i}>
           <StyledCard component={RoundedPaper}>
             {media && <StaticImage {...media} />}
             <div>
@@ -18,8 +18,8 @@ export const Champions = (): JSX.Element => {
               <Typography {...TYPOGRAPHY_PROPS}>{secondaryText}</Typography>
             </div>
           </StyledCard>
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   );
 };

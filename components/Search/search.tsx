@@ -9,6 +9,7 @@ import { Results } from "./components/Results/results";
 import { useSearch } from "./hooks/useSearch";
 import { useSearchCategory } from "./hooks/useSearchCategory";
 import { SearchView } from "./search.styles";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 
 export const Search = (): JSX.Element => {
   const { isLoading, isSuccess, isValid, onSearch, pagination, results } =
@@ -29,7 +30,7 @@ export const Search = (): JSX.Element => {
           )}
         </Fragment>
       ) : (
-        <NoResults title="Please enter a search term." />
+        <NoResults Paper={RoundedPaper} title="Please enter a search term." />
       )}
     </SearchView>
   );

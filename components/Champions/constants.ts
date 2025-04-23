@@ -1,7 +1,7 @@
 import { TEXT_BODY_SMALL_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
-import { Grid2Props, TypographyProps } from "@mui/material";
+import { GridProps, TypographyProps } from "@mui/material";
 
-export const GRID2_PROPS: Partial<Grid2Props> = {
+export const GRID_PROPS: Partial<GridProps> = {
   container: true,
   direction: { sm: "row", xs: "column" },
   gap: 4,

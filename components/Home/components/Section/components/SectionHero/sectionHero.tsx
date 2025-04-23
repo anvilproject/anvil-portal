@@ -9,16 +9,12 @@ import {
 } from "./sectionHero.styles";
 import { Button, Link as MLink, Typography } from "@mui/material";
 import Link from "next/link";
-import {
-  COLOR as BUTTON_COLOR,
-  VARIANT,
-} from "@databiosphere/findable-ui/lib/styles/common/mui/button";
-import { COLOR } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { TEXT_BODY_SMALL_400 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 
 const LAUNCH_TERRA = "https://anvil.terra.bio/#workspaces";
 const LEARN_MORE = "/learn";
@@ -32,30 +28,30 @@ export const SectionHero = (): JSX.Element => {
           <Subhead>Secure, cost-effective genomic analysis at scale.</Subhead>
           <CTAs>
             <Button
-              color={BUTTON_COLOR.PRIMARY}
+              color={BUTTON_PROPS.COLOR.PRIMARY}
               component={Link}
               href={LEARN_MORE}
               rel={REL_ATTRIBUTE.NO_OPENER}
-              variant={VARIANT.CONTAINED}
+              variant={BUTTON_PROPS.VARIANT.CONTAINED}
             >
               Learn More
             </Button>
             <Button
-              color={BUTTON_COLOR.SECONDARY}
+              color={BUTTON_PROPS.COLOR.SECONDARY}
               component={MLink}
               href={LAUNCH_TERRA}
               rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
               sx={{ display: { sm: "block", xs: "none" } }}
               target={ANCHOR_TARGET.BLANK}
-              variant={VARIANT.CONTAINED}
+              variant={BUTTON_PROPS.VARIANT.CONTAINED}
             >
               Launch Terra
             </Button>
             <Typography
-              color={COLOR.INK_LIGHT}
+              color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
               component="div"
               sx={{ display: { sm: "block", xs: "none" } }}
-              variant={TEXT_BODY_SMALL_400}
+              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_SMALL_400}
             >
               <div>AnVIL&apos;s cloud</div>
               <div>compute environment</div>

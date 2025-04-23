@@ -1,7 +1,7 @@
 import { Breadcrumb } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Overview } from "../components/Layout/components/Section/components/SectionContent/components/SectionOverview/types";
 import { NodeHero } from "../docs/common/entities";

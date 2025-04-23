@@ -15,6 +15,7 @@ const withMDX = nextMDX({
 const ESM_PACKAGES = [
   "axios",
   "@databiosphere/findable-ui",
+  "@observablehq/plot",
   "@tanstack/react-table",
 ];
 

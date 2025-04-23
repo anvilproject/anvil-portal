@@ -8,7 +8,6 @@ import {
   textBodyLarge500,
   textBodySmall4002Lines,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
-import { elevation01 } from "@databiosphere/findable-ui/lib/theme/common/shadows";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
@@ -21,6 +20,7 @@ import {
   getCardTransition,
   getCardZIndex,
 } from "../../common/utils";
+import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
 
 interface Props {
   cardPosition: number;
@@ -45,7 +45,7 @@ export const CardPositioner = styled("div")<Props>`
 export const Card = styled(MCard)`
   border: none;
   box-shadow:
-    ${elevation01},
+    ${SHADOWS["01"]},
     inset 0 0 0 1px ${smokeMain};
   display: flex;
   height: 100%;

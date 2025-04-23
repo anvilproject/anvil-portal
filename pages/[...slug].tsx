@@ -2,10 +2,8 @@ import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/co
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
-import {
-  Outline,
-  OutlineItem,
-} from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";

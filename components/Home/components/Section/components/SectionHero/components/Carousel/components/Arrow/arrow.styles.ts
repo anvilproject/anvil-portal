@@ -5,7 +5,6 @@ import {
   smokeLightest,
   white,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import { black08 } from "@databiosphere/findable-ui/lib/theme/common/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { IconButton as MIconButton } from "@mui/material";
@@ -15,6 +14,7 @@ import {
 } from "../../../../../../../../hooks/useSwipeInteraction/common/entities";
 import { MAX_DECK_SIZE } from "../../common/constants";
 import { getArrowTransform } from "../../common/utils";
+import { COLOR_MIXES } from "@databiosphere/findable-ui/lib/styles/common/constants/colorMixes";
 
 interface Props {
   swipeAction: SwipeAction;
@@ -28,7 +28,7 @@ export const IconButton = styled(MIconButton, {
     border-radius: 50%;
     box-shadow:
       inset 0 0 0 1px ${smokeDark},
-      0 1px 0 0 ${black08};
+      0 1px 0 0 ${COLOR_MIXES.COMMON_BLACK_08};
     color: ${inkMain};
     position: absolute;
     top: 50%;
