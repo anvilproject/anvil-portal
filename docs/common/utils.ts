@@ -7,7 +7,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPropsContext } from "next";

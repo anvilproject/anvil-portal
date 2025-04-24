@@ -1,9 +1,7 @@
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
-import {
-  Outline,
-  OutlineItem,
-} from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { MDXRemote } from "next-mdx-remote";
 import { Nav, NavBarHero } from "../../components";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";

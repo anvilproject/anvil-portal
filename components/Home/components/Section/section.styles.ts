@@ -1,5 +1,4 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import {
   textBodyLarge4002Lines,
   textHeadingLarge,
@@ -7,6 +6,7 @@ import {
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Divider as MDivider } from "@mui/material";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const sectionGrid = css`
   display: grid;
@@ -45,7 +45,7 @@ export const SectionTitle = styled.h2`
 
 export const SectionSubtitle = styled.h3`
   ${textBodyLarge4002Lines};
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
   margin: 0;
 `;
 

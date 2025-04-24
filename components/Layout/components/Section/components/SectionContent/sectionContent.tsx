@@ -3,7 +3,6 @@ import {
   ContentLayout,
   Outline,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/contentLayout.styles";
-import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { ContentViewProps } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 import { StaticProps } from "../../../../../../content/entities";
 import {
@@ -13,6 +12,7 @@ import {
   StyledPositioner,
   StyledSection,
 } from "./sectionContent.styles";
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 export const SectionContent = ({
   content,
@@ -20,9 +20,7 @@ export const SectionContent = ({
   slug,
 }: Omit<StaticProps, "mdxSource" | "outline"> &
   Pick<ContentViewProps, "content" | "outline">): JSX.Element => {
-  const {
-    layoutState: { headerHeight },
-  } = useLayoutState();
+  const { dimensions } = useLayoutDimensions();
   return (
     <StyledSection>
       <ContentLayout
@@ -41,7 +39,7 @@ export const SectionContent = ({
             headerHeight={0}
             panelColor={PANEL_BACKGROUND_COLOR.DEFAULT}
           >
-            <StyledPositioner headerHeight={headerHeight}>
+            <StyledPositioner headerHeight={dimensions.header.height}>
               <Outline>{outline}</Outline>
             </StyledPositioner>
           </StyledOutlineGrid>

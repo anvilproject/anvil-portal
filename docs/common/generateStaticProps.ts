@@ -1,5 +1,5 @@
 import { LAYOUT_STYLE_NO_CONTRAST_DEFAULT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { GetStaticPropsContext } from "next";
 import { SerializeOptions } from "next-mdx-remote/dist/types";
 import { serialize } from "next-mdx-remote/serialize";

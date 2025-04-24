@@ -2,7 +2,6 @@ import {
   mediaDesktopSmallUp,
   mediaTabletUp,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import {
@@ -11,6 +10,7 @@ import {
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
 } from "../../section.styles";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};
@@ -51,7 +51,7 @@ export const Head = styled.h1`
 
 export const Subhead = styled.h2`
   ${textBodyLarge4002Lines};
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
   margin: -8px 0 0;
 `;
 

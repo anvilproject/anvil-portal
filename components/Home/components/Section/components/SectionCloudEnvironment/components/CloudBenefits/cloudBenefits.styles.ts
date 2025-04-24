@@ -1,13 +1,13 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import {
   CardContent as DefaultContent,
-  Grid as DefaultGrid,
   CardSection as DefaultSection,
+  Grid as DefaultGrid,
   GridCard,
 } from "../../../../../Card/card.styles";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Grid = styled(DefaultGrid)`
   grid-column: 1 / -1;
@@ -42,5 +42,5 @@ export const CardContent = styled(DefaultContent)`
 
 export const CardSecondaryTitle = styled.span`
   ${textBody400};
-  color: ${inkLight};
+  color: ${PALETTE.INK_LIGHT};
 `;

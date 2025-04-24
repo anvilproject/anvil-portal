@@ -1,6 +1,6 @@
-import { useLayoutState } from "@databiosphere/findable-ui/lib/hooks/useLayoutState";
 import { ReactNode } from "react";
 import { MainWithOffset } from "./main.styles";
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 export interface MainProps {
   children: ReactNode | ReactNode[];
@@ -8,10 +8,9 @@ export interface MainProps {
 }
 
 export const Main = ({ children, className }: MainProps): JSX.Element => {
-  const { layoutState } = useLayoutState();
-  const { headerHeight } = layoutState;
+  const { dimensions } = useLayoutDimensions();
   return (
-    <MainWithOffset className={className} offset={headerHeight}>
+    <MainWithOffset className={className} offset={dimensions.header.height}>
       {children}
     </MainWithOffset>
   );

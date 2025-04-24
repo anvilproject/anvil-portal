@@ -1,6 +1,6 @@
-import { primaryMain } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const GroupOverview = styled.div`
   .MuiDivider-root,
@@ -45,7 +45,7 @@ export const UnorderedList = styled("ul")`
     }
 
     &::marker {
-      color: ${primaryMain};
+      color: ${PALETTE.PRIMARY_MAIN};
     }
   }
 `;

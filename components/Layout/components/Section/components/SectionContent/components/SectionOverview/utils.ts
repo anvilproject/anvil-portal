@@ -1,4 +1,4 @@
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import {
   isClientSideNavigation,
   isURLString,

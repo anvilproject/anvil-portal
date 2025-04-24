@@ -8,10 +8,7 @@ import {
   SectionTitle,
 } from "./sectionDatasets.styles";
 import { Button } from "@mui/material";
-import {
-  COLOR,
-  VARIANT,
-} from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 
 const CONSORTIA_ROADMAP = "/consortia";
 const CONTRIBUTE_DATA = "/learn/submit-data";
@@ -29,18 +26,18 @@ export const SectionDatasets = (): JSX.Element => {
         <Datasets />
         <SectionActions>
           <Button
-            color={COLOR.SECONDARY}
+            color={BUTTON_PROPS.COLOR.SECONDARY}
             component={Link}
             href={CONSORTIA_ROADMAP}
-            variant={VARIANT.CONTAINED}
+            variant={BUTTON_PROPS.VARIANT.CONTAINED}
           >
             Consortia Roadmap
           </Button>
           <Button
-            color={COLOR.SECONDARY}
+            color={BUTTON_PROPS.COLOR.SECONDARY}
             component={Link}
             href={CONTRIBUTE_DATA}
-            variant={VARIANT.CONTAINED}
+            variant={BUTTON_PROPS.VARIANT.CONTAINED}
           >
             Contribute Data
           </Button>

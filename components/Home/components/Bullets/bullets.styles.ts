@@ -1,7 +1,4 @@
-import {
-  primaryMain,
-  smokeMain,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ButtonBase } from "@mui/material";
@@ -19,16 +16,16 @@ export const Bullets = styled.div`
 export const Bullet = styled(ButtonBase, {
   shouldForwardProp: (props) => props !== "isActive",
 })<Props>`
-  background-color: ${smokeMain};
+  background-color: ${PALETTE.SMOKE_MAIN};
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
   height: 6px;
   width: 6px;
 
-  ${(props) =>
-    props.isActive &&
+  ${({ isActive }) =>
+    isActive &&
     css`
-      background-color: ${primaryMain(props)};
+      background-color: ${PALETTE.PRIMARY_MAIN};
     `}
 `;

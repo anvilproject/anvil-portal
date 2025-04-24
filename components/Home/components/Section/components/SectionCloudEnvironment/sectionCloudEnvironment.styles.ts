@@ -1,15 +1,15 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
-  SectionHeadline as DefaultHeadline,
-  SectionLayout as DefaultLayout,
   Section as DefaultSection,
   sectionGrid,
+  SectionHeadline as DefaultHeadline,
+  SectionLayout as DefaultLayout,
 } from "../../section.styles";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Section = styled(DefaultSection)`
-  background-color: ${smokeLightest};
+  background-color: ${PALETTE.SMOKE_LIGHTEST};
 `;
 
 export const SectionLayout = styled(DefaultLayout)`
