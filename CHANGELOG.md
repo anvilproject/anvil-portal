@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.11.6](https://github.com/anvilproject/anvil-portal/compare/v2.11.5...v2.11.6) (2025-04-30)
+
+
+### Content
+
+* added ACC 2025 [#3610](https://github.com/anvilproject/anvil-portal/issues/3610) ([#3611](https://github.com/anvilproject/anvil-portal/issues/3611)) ([8852413](https://github.com/anvilproject/anvil-portal/commit/88524137814d58f337dd98effd287c9924c185b9))
+* fix typo in set-up-a-data-model.mdx ([#3609](https://github.com/anvilproject/anvil-portal/issues/3609)) ([deec680](https://github.com/anvilproject/anvil-portal/commit/deec68048bbc1a3b56a5d837cd323f16bb236b6d))
+
 ## [2.11.5](https://github.com/anvilproject/anvil-portal/compare/v2.11.4...v2.11.5) (2025-04-24)
 
 
