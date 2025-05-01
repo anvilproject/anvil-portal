@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.7](https://github.com/anvilproject/anvil-portal/compare/v2.11.6...v2.11.7) (2025-05-01)
+
+
+### Content
+
+* update session time start anvil2025-community-conference.mdx ([#3613](https://github.com/anvilproject/anvil-portal/issues/3613)) ([9c55d18](https://github.com/anvilproject/anvil-portal/commit/9c55d18479e9a7f425111fbf037db6bf9b6ed2a5))
+
 ## [2.11.6](https://github.com/anvilproject/anvil-portal/compare/v2.11.5...v2.11.6) (2025-04-30)
 
 
