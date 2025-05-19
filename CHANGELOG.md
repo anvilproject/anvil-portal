@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.8](https://github.com/anvilproject/anvil-portal/compare/v2.11.7...v2.11.8) (2025-05-19)
+
+
+### Content
+
+* updated ACC 2025 dates [#3610](https://github.com/anvilproject/anvil-portal/issues/3610) ([#3616](https://github.com/anvilproject/anvil-portal/issues/3616)) ([00f942a](https://github.com/anvilproject/anvil-portal/commit/00f942a19a477573a0d8426c561ed2a8b34b50e1))
+
 ## [2.11.7](https://github.com/anvilproject/anvil-portal/compare/v2.11.6...v2.11.7) (2025-05-01)
 
 
