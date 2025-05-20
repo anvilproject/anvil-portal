@@ -1,0 +1,34 @@
+---
+breadcrumbs:
+  - path: "/learn/find-data"
+    text: "Finding Data"
+description: "The Genetic Analysis Center at the University of Washington has developed fetch-dbgap-files, an open-source tool designed to automate and streamline the retrieval of dbGaP-authorized files, making it easier to bring external data into AnVIL for analysis."
+title: "Importing Data from dbGaP and SRA"
+---
+
+Researchers working with controlled-access genomic data from the Database of Genotypes and Phenotypes (dbGaP) on the AnVIL platform often need to retrieve summary statistics and supplementary files hosted by dbGaP for their analyses. Additionally, they may want to integrate other genomic datasets available through the Sequence Read Archive (SRA). To simplify this process, the [Genetic Analysis Center](https://www.biostat.washington.edu/research/centers/GAC) at the University of Washington has developed fetch-dbgap-files, an open-source tool designed to automate and streamline the retrieval of dbGaP-authorized files, making it easier to bring external data into AnVIL for analysis.
+
+# Key Features of fetch-dbgap-files
+
+fetch-dbgap-files is a Python-based tool that facilitates seamless retrieval of files from dbGaP by leveraging the dbGaP File Selector. The tool is designed to handle the download process robustly, retrying failed downloads to ensure completeness. It supports both local execution via a Python script and cloud-based execution via a WDL workflow, which is available on Dockstore.
+
+## Local Execution
+
+Users can run **fetch-dbgap-files** on their local machines by providing:
+* A dbGaP project key
+* A cart file generated from the dbGaP File Selector
+* An output directory
+
+The tool integrates with SRA Toolkit (v3.2.1) and can optionally untar downloaded files, ensuring a smooth data retrieval process.
+
+## Cloud-Based Execution with WDL
+
+For researchers using cloud-based platforms like AnVIL, fetch-dbgap-files is available as a WDL workflow on Dockstore. This workflow provides automated file retrieval, extraction, and management while allowing users to configure disk space allocation.
+
+# Why Use fetch-dbgap-files?
+
+* **Automation**: Reduces manual steps and retries failed downloads automatically.
+* **Flexibility**: Supports both local execution and cloud-based workflows.
+* **Security Best Practices**: Encourages safe handling of dbGaP credentials and project keys to protect sensitive data to prevent unauthorized data access. Only individuals listed on your dbGaP data access request (DAR) should have access to the project key, as sharing it more broadly could unintentionally grant access to other datasets approved under the same DAR. Always store keys securely and follow [NIH Genomic Data Sharing Policy](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-14-124.html) guidance to ensure responsible data handling.
+
+Researchers interested in using **fetch-dbgap-files** can access the source code on [GitHub](https://github.com/UW-GAC/fetch-dbgap-files/) and the WDL workflow on [Dockstore](https://dockstore.org/workflows/github.com/UW-GAC/fetch-dbgap-files/fetch_dbgap_files_wdl:main?tab=metrics).
