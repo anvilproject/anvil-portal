@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.9](https://github.com/anvilproject/anvil-portal/compare/v2.11.8...v2.11.9) (2025-05-21)
+
+
+### Content
+
+* added fetch-dbgap-files [#3617](https://github.com/anvilproject/anvil-portal/issues/3617) ([#3619](https://github.com/anvilproject/anvil-portal/issues/3619)) ([20d9652](https://github.com/anvilproject/anvil-portal/commit/20d9652833c85a8810c09d77b6e397851305f651))
+
 ## [2.11.8](https://github.com/anvilproject/anvil-portal/compare/v2.11.7...v2.11.8) (2025-05-19)
 
 
