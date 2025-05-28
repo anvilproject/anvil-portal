@@ -3,47 +3,35 @@ breadcrumbs:
   - path: "/learn/submit-data"
     text: "Submitting Data"
 description: "An overview of the AnVIL data staging process."
-title: "Step 4: Stage Your Data in AnVIL"
+title: "Step 4: Stage Your Data in an AnVIL submission workspace"
 ---
 
 <Alert icon={false} severity="info">
-Once you have prepared your omics object files and generated TSV files for each table in your data model, follow the directions below to **stage and deposit the data object files and all TSV files into an AnVIL-owned data deposit workspace**.
+Once you have prepared your omics object files and generated TSV files for each table in your data model,  you will **stage and deposit the data object files and all TSV files into an AnVIL-owned data deposit workspace**. As a last step before ingestion, you’ll run a QC workflow to validate that the data is complete and properly formatted.    
 </Alert>
 
 You’ll work with a designated POC at the AnVIL team to shepherd the data (omic data and image files and TSV load files) into the deposit workspace (and upltimately the AnVIL data storage repository). Note that because each engagement will most likely be different, we will be further developing and refining (as needed) processes as we engage with submitters.
 
-For actions taken prior to final process refinement, all transfers should involve the Data Processing WG and AnVIL team to ensure data integrity during the transfer process.
-
 ### Process overview
-1. **Log into AnVIL**
-You can use either a Google or Microsoft ID for SSO to access your assigned data deposit workspace on [anvil.terra.bio](https://anvil.terra.bio).
-2. **Set up your workspace cloud storage**
-To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure.
-3. **Upload data**
-Last, you'll upload unstructured data files (omics files, images, etc.) to the data_files folder or sub-folder.
-4. **Validation** (done by AnVIL ingestion team)
+### 1. Log into AnVIL
+You will use a Google ID for SSO to access your assigned data deposit workspace on [anvil.terra.bio](https://anvil.terra.bio). Note that an institutional email is required for login to access controlled-data.     
+
+### 2. Set up your workspace cloud storage 
+To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure.      
+
+### 3. Upload data object files to the deposit workspace storage (optional)           
+You’ll import all files to the Uploads folder in the submission workspace using gcloud storage command line tool (recommended) or tool of your choice. Note that if your object files are already stored in Google Cloud Storage, you can skip this step.       
+
+### 4. Verify md5 hash for all data object files         
+You can do this by running the **CreateWorkspaceFileManifest** workflow (included in the deposit workspace) or examining the GCS metadata directly.      
+
+### 5. Upload all tables (TSV load files)** from the data model         
+You’ll create tables in the submission workspace by importing the TSV files using the Data Uploader (recommended) or the Terra UX.       
+
+### 6. **Validate data**     
+Once the data object files and tabular data are staged in the submission workspace, you’ll run a QC workflow to validate the data. 
+
 
 ## Step-by-Step Instructions
 For details, see [How to stage data in your AnVIL deposit workspace](https://support.terra.bio/hc/en-us/articles/28970864241435-How-to-stage-data-in-an-AnVIL-deposit-workspace).
 
-## Next steps (done by ingestion team)
-After you stage the data in the deposit workspace, the AnVIL team will perform these pre-ingestion operations.
-
-### Validation (automated)
-These tests will be executed once data has been ported to AnVIL.
-
-- **QC check of submission form to genomic object files**
-Check that the number of files match the number in the submission Google form
-
-- **QC check of phenotype and metadata**
-Make sure the phenotype file data fields match the defined data model and sample IDs are consistent with phenotype and linked to a subject and consent.
-
-- **Ingestion Validation (automated)**
-To confirm the ingested data transferred as expected and maintain the file integrity, Google automatically checks the md5 sum of the end file against the original after each file transfer.
-
-
-### Data Indexing (genomic object files)
-
-Once in the workspace buckets, object files, such as sequencing data, are indexed with a global unique ID (GUID). This allows access across AnVIL tools without requiring copies to be created and transferred across environments.
-
-These identifiers allow for tracking data across components of AnVIL and facilitate the ability to interoperate with other data commons due to their extensibility. Further, they enable tracking of live data processed in workflow pipelines and data backup to cold storage.
