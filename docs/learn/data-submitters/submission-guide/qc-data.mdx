@@ -1,99 +1,27 @@
 ---
 breadcrumbs:
-  - path: "/learn/submit-data"
-    text: "Submitting Data"
-description: "An overview of the AnVIL data QC process."
-title: "Step 5 - QC Data"
+  - path: "/learn/ingest-data"
+    text: "Ingesting Data"
+description: "An overview of the AnVIL self-serve data ingestion process."
+title: "Step 5 - Ingest Data"
 ---
 
 <Alert icon={false} severity="info">
-    After submission, Data Submitters should evaluate genomic data (ex. BAMs or CRAMS) for basic sequence yield and quality control (QC) metrics. Scroll down for an example of Whole-genome Sequence (WGS) and Whole-exome Sequence (WES) QC metrics that ensures depth and breadth of coverage requirements (provided by AnVIL as a resource for data submitters).
+    After staging data object files and data model tables in the submission workspace, Data Submitters will use workflows included in the submission workspace to ingest the data into the AnVIL (Terra) Data Repository (TDR).       
+
+Note that the data object files will remain in the submission workspace or external GCS and referenced in TDR. 
 </Alert>
 
-## Data Submitter QC Guidance
+## Data Ingestion Process Overview
 
-Data Submitters are responsible for the definition, development, and maintenance of a quality control process to ensure both the integrity and quality of the data submitted. Although QC resources are provided, it is the responsibility of data submitters to ultimately decide what is most appropriate for the data submitted to the AnVIL.
+### 5.1. Grant TDR permission to read data (optional)       
+You must do this step if your data is stored outside the submission workspace.  If you uploaded your object data files to the submission workspace in Step 4, you can skip to 5.2.                 
 
-### QC Process Overview
-Data Submitters are responsible for defining and running the workflow (WDL) on their genomic data to generate the QC metrics (see Data Submitter Guidance section above). Once QC status criteria have been determined, a thresholds file can be added to the workspace to use as a workflow input. The criteria are used to assign QC status of pass or fail. If a sample fails multiple times, it is assigned `No QC` under `QC status`.  The evaluation of the thresholds will be output as an additional PASS/FAIL column, `overall_evaluation`, by the workflow.
+### 5.2. Push data to TDR      
+You will run a workflow (included) in the submission workspace to perform this step.    
 
-#### Video - Walkthrough of WGS QC Processing
+### 5.3. (optional) - Clean up Staging Workspace     
+Once you've reviewed the data in TDR, use the **CleanUpStagingWorkspace workflow** to clean up the staging workspace.
 
-<Video src="https://www.youtube.com/embed/WLpnoXySuIw" />
-
-### AnVIL QC Recommendations
-- Use a **reproducible workflow** definition, e.g., Workflow Definition Language (WDL) or other definition language(s) supported by the AnVIL platform. Additionally, data submitters could define and document an equivalent reproducible process to generate the QC metrics to be evaluated.
-
-- Use a **data dictionary to share the expectations** for metrics collected, values reported or displayed for evaluation, as well as any evaluation criteria to determine a status, e.g., pass/fail/noqc, for the submitted data.
-
-- **Establish the specific metrics and thresholds for determining the pass/fail criteria** on the dataset.
-
-- The **output of the entire QC process should be compatible** with the AnVIL data repository components such as Terra workspace data tables and/or Data Repository to enable importing QC metrics and statuses in the AnVIL workspaces.
-
-## Example QC Resource
-
-AnVIL Data Processing Working Group has created a genomic evaluation tool for whole genome and exome data. **To collect quality control metrics for genome and exome sequencing data, rdata submitters will run the tool - a workflow written in Workflow Description Language - in a sandbox workspace**.
-
-### QC WDL details
-- The WDL includes **multiple software packages** (Picard, VerifyBamID2, Samtools flagstat, bamUtil stats, Rx estimation) organized in a single, efficient tool that is compatible with AnVIL.
-
-- The WDL workflow is publicly available via **GitHub** ([https://github.com/genome/qc-analysis-pipeline/tree/master](https://github.com/genome/qc-analysis-pipeline/tree/master)) and **Dockstore** ([https://dockstore.org/organizations/anvil/collections/qcwgs](https://dockstore.org/organizations/anvil/collections/qcwgs)).
-
-- The AnVIL will accept **edits, commits, issues, and pull requests** in **GitHub**.
-
-- Support and guidance are provided by the AnVIL for data submitters on the use of or adaptation of the existing QC workflow resource.
-
-### QC inputs and outputs
-
-- **QC pass/fail status**
-The QC pass/fail status is determined by thresholds for several metrics reported by the workflow.
-
-- **Default WGS thresholds**
-Default thresholds are included in the following table: [https://github.com/genome/qc-analysis-pipeline/blob/master/threshold_files/anvil_wgs_thresholds.tsv](https://github.com/genome/qc-analysis-pipeline/blob/master/threshold_files/anvil_wgs_thresholds.tsv).
-
-- **Additional QC metrics (can be output with threshold values)**
-See [https://github.com/genome/qc-analysis-pipeline/blob/master/docs/thresholds.md](https://github.com/genome/qc-analysis-pipeline/blob/master/docs/thresholds.md).
-
-- **Example (WGS) WDL inputs**
-See [https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.json](https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.json)
-
-- **Example (WES) WDL inputs**
-See [https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json](https://github.com/genome/qc-analysis-pipeline/blob/master/SingleSampleQc.exome.json) for an example for exome. Note that currently, there is no publicly available NA12878 WES BAM or CRAM and no default thresholds defined for WES.
-
-
-### Example QC Metrics
-#### QC processing results table
-
-Below are the current output, files, and discrete values generated by the workflow in a `qc_results_sample` data table: [https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md](https://github.com/genome/qc-analysis-pipeline/blob/master/docs/outputs.md)
-
-
-| Metric Name                 | Metric Description                  | Pass threshold  | Purpose                    | Source Tool                              |
-|:----------------------------|:------------------------------------|:----------------|:---------------------------|:-----------------------------------------|
-| `qc_results_sample_id`      | Sample ID                           | NA              | Identify sample            | NA                                       |
-| `cram`                      | Cram google path                    | NA              | Locate file                | NA                                       |
-| `FREEMIX`                   | FREEMIX                             | < 0.01          | Sample contamination       | VerifyBamID2                             |
-| `MEAN_COVERAGE`             | Haploid Coverage                    | ≥ 30            | Coverage depth             | Picard CollectWgs Metrics                |
-| `MEDIAN_ABSOLUTE_DEVIATION` | Library insert size mad             | NA              | Batch characteristics      | Picard CollectInsertSize Metrics         |
-| `MEDIAN_INSERT_SIZE`        | Library insert size median          | NA              | Batch characteristics      | Picard CollectInsertSize Metrics         |
-| `PCT_10X`                   | % coverage at 10X                   | > 0.95          | Coverage breadth           | Picard CollectWgs Metrics                |
-| `PCT_20X`                   | % coverage at 20X                   | > 0.90          | Coverage breadth           | Picard CollectWgs Metrics                |
-| `PCT_30X`                   | % coverage at 30X                   | NA              | Additional metadata        | Picard CollectWgs Metrics                |
-| `PCT_CHIMERAS (PAIR)`       | % Chimeras                          | < 0.05          | Variant detection          | Picard CollectAlignmentSummary Metrics   |
-| `Percent_duplication`       | % duplication                       |                 |                            |                                          |
-| `Q20_BASES`                 | Total bases with Q20 or higher      | ≥ 86x109        | Sequence quality           | Picard CollectQualityYield Metrics       |
-| `qc_status`                 | Reported status at the sample level | Pass/Fail/No QC | Overall quality assessment |                                          |
-| `read1_pf_mismatch_rate`    | Read1 base mismatch rate            | < 0.05          | Sequence quality           | Picard Collect Alignment Summary Metrics |
-| `read2_pf_mismatch_rate`    | Read2 base mismatch rate            | < 0.05          | Sequence quality           | Picard Collect Alignment Summary Metrics |
-
-
-### Post QC Processing to AnVIL Workspaces
-
-The output from the QC aggregator is a QC summary results TSV file. Data submitters will pass off the QC summary results file to the AnVIL ingestion team. The AnVIL team will push the QC summary results to the workspaces, which will contain the QC status, including those that fail QC or have no QC. The example below is the QC results table in the 1000 Genomes workspace.
-
-#### Sample QC Results Table
-
-<Figure
-  alt="QC Results."
-  caption="QC results in a 1000 Genomes workspace"
-  src="/consortia/learn/data-submitters/qc-results.png"
-/>
+## Step-by-Step Instructions     
+For detailed instructions, see [Step 5 - Ingest data into TDR](https://support.terra.bio/hc/en-us/articles/36671511533467-Step-5-Ingest-data-to-TDR) in Terra Support.      
