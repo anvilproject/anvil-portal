@@ -1,27 +1,33 @@
 ---
 breadcrumbs:
-  - path: "/learn/ingest-data"
-    text: "Ingesting Data"
+  - path: "/learn/submit-data"
+    text: "Submitting Data"
 description: "An overview of the AnVIL self-serve data ingestion process."
 title: "Step 5 - Ingest Data"
 ---
 
 <Alert icon={false} severity="info">
-    After staging data object files and data model tables in the submission workspace, Data Submitters will use workflows included in the submission workspace to ingest the data into the AnVIL (Terra) Data Repository (TDR).       
+<div>
+After staging data object files and data model tables in the submission workspace, Data Submitters will use workflows included in the submission workspace to ingest the data into the AnVIL (Terra) Data Repository (TDR).
 
-Note that the data object files will remain in the submission workspace or external GCS and referenced in TDR. 
+Note that the data object files will remain in the submission workspace or external GCS and referenced in TDR.
+</div>
 </Alert>
 
 ## Data Ingestion Process Overview
 
-### 5.1. Grant TDR permission to read data (optional)       
-You must do this step if your data is stored outside the submission workspace.  If you uploaded your object data files to the submission workspace in Step 4, you can skip to 5.2.                 
+### 5.1. Grant TDR permission to read data (optional)
 
-### 5.2. Push data to TDR      
-You will run a workflow (included) in the submission workspace to perform this step.    
+You must do this step if your data is stored outside the submission workspace.  If you uploaded your object data files to the submission workspace in Step 4, you can skip to 5.2.
 
-### 5.3. (optional) - Clean up Staging Workspace     
+### 5.2. Push data to TDR
+
+You will run a workflow (included) in the submission workspace to perform this step.
+
+### 5.3. (optional) - Clean up Staging Workspace
+
 Once you've reviewed the data in TDR, use the **CleanUpStagingWorkspace workflow** to clean up the staging workspace.
 
-## Step-by-Step Instructions     
-For detailed instructions, see [Step 5 - Ingest data into TDR](https://support.terra.bio/hc/en-us/articles/36671511533467-Step-5-Ingest-data-to-TDR) in Terra Support.      
+## Step-by-Step Instructions
+
+For detailed instructions, see [Step 5 - Ingest data into TDR](https://support.terra.bio/hc/en-us/articles/36671511533467-Step-5-Ingest-data-to-TDR) in Terra Support.
