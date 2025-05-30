@@ -7,29 +7,29 @@ title: "Step 4: Stage Your Data in an AnVIL submission workspace"
 ---
 
 <Alert icon={false} severity="info">
-Once you have prepared your omics object files and generated TSV files for each table in your data model,  you will **stage and deposit the data object files and all TSV files into an AnVIL-owned data deposit workspace**. As a last step before ingestion, you’ll run a QC workflow to validate that the data is complete and properly formatted.    
+Once you have prepared your omics object files and generated TSV files for each table in your data model, you will **stage and deposit the data object files and all TSV files into an AnVIL-owned data deposit workspace**. As a last step before ingestion, you’ll run a QC workflow to validate that the data is complete and properly formatted.
 </Alert>
 
 You’ll work with a designated POC at the AnVIL team to shepherd the data (omic data and image files and TSV load files) into the deposit workspace (and upltimately the AnVIL data storage repository). Note that because each engagement will most likely be different, we will be further developing and refining (as needed) processes as we engage with submitters.
 
 ### Process overview
 ### 1. Log into AnVIL
-You will use a Google ID for SSO to access your assigned data deposit workspace on [anvil.terra.bio](https://anvil.terra.bio). Note that an institutional email is required for login to access controlled-data.     
+You will use a Google ID for SSO to access your assigned data deposit workspace on [anvil.terra.bio](https://anvil.terra.bio). Note that an institutional email is required for login to access controlled-data.
 
 ### 2. Set up your workspace cloud storage 
-To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure.      
+To facilitate ingestion into TDR, the workspace cloud storage must have a particular directory structure.
 
-### 3. Upload data object files to the deposit workspace storage (optional)           
-You’ll import all files to the Uploads folder in the submission workspace using gcloud storage command line tool (recommended) or tool of your choice. Note that if your object files are already stored in Google Cloud Storage, you can skip this step.       
+### 3. Upload data object files to the deposit workspace storage (optional)
+You’ll import all files to the Uploads folder in the submission workspace using gcloud storage command line tool (recommended) or tool of your choice. Note that if your object files are already stored in Google Cloud Storage, you can skip this step.
 
-### 4. Verify md5 hash for all data object files         
-You can do this by running the **CreateWorkspaceFileManifest** workflow (included in the deposit workspace) or examining the GCS metadata directly.      
+### 4. Verify md5 hash for all data object files
+You can do this by running the **CreateWorkspaceFileManifest** workflow (included in the deposit workspace) or examining the GCS metadata directly.
 
-### 5. Upload all tables (TSV load files)** from the data model         
-You’ll create tables in the submission workspace by importing the TSV files using the Data Uploader (recommended) or the Terra UX.       
+### 5. Upload all tables (TSV load files) from the data model
+You’ll create tables in the submission workspace by importing the TSV files using the Data Uploader (recommended) or the Terra UX.
 
-### 6. **Validate data**     
-Once the data object files and tabular data are staged in the submission workspace, you’ll run a QC workflow to validate the data. 
+### 6. **Validate data**
+Once the data object files and tabular data are staged in the submission workspace, you’ll run a QC workflow to validate the data.
 
 
 ## Step-by-Step Instructions
