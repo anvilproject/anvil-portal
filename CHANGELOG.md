@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.11.10](https://github.com/anvilproject/anvil-portal/compare/v2.11.9...v2.11.10) (2025-06-02)
+
+
+### Content
+
+* add cloud use statement ([#3621](https://github.com/anvilproject/anvil-portal/issues/3621)) ([7f2a4e7](https://github.com/anvilproject/anvil-portal/commit/7f2a4e7fe83c29e17ae31e0d1a75863bc61ce4bc))
+* update ingesting-data.mdx ([#3623](https://github.com/anvilproject/anvil-portal/issues/3623)) ([2447bf9](https://github.com/anvilproject/anvil-portal/commit/2447bf90569be264ad1f4c8407cfed632f7810d4))
+* update prepare-for-submission.mdx to clarify data supported by anvil ([#3622](https://github.com/anvilproject/anvil-portal/issues/3622)) ([35cd322](https://github.com/anvilproject/anvil-portal/commit/35cd322cbbc59b3b748f5543892eb6ee07d3d7ef))
+* update qc-data.mdx with new data ingestion process ([#3624](https://github.com/anvilproject/anvil-portal/issues/3624)) ([5d84895](https://github.com/anvilproject/anvil-portal/commit/5d848955e089c17d83b30f52e73ae62baf491c83))
+
 ## [2.11.9](https://github.com/anvilproject/anvil-portal/compare/v2.11.8...v2.11.9) (2025-05-21)
 
 
