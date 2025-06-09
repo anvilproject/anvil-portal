@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.11.11](https://github.com/anvilproject/anvil-portal/compare/v2.11.10...v2.11.11) (2025-06-06)
+
+
+### Content
+
+* add locationed & schedule to anvil2025-community-conference.mdx ([#3628](https://github.com/anvilproject/anvil-portal/issues/3628)) ([9770f86](https://github.com/anvilproject/anvil-portal/commit/9770f86582602710a34919f2a2cf180fd03af1b1))
+* update requesting-data-access.mdx ([#3626](https://github.com/anvilproject/anvil-portal/issues/3626)) ([f340d30](https://github.com/anvilproject/anvil-portal/commit/f340d30c1142afb1cfb358cbaae4199ecc4c80db))
+
 ## [2.11.10](https://github.com/anvilproject/anvil-portal/compare/v2.11.9...v2.11.10) (2025-06-02)
 
 
