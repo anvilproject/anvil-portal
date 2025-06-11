@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.12](https://github.com/anvilproject/anvil-portal/compare/v2.11.11...v2.11.12) (2025-06-11)
+
+
+### Content
+
+* fix friday start time anvil2025-community-conference.mdx ([#3630](https://github.com/anvilproject/anvil-portal/issues/3630)) ([c510283](https://github.com/anvilproject/anvil-portal/commit/c5102835c5d886af0790dcff367a6d62baa213d9))
+
 ## [2.11.11](https://github.com/anvilproject/anvil-portal/compare/v2.11.10...v2.11.11) (2025-06-06)
 
 
