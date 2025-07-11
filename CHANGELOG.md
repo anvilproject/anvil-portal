@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.13](https://github.com/anvilproject/anvil-portal/compare/v2.11.12...v2.11.13) (2025-07-11)
+
+
+### Content
+
+* Add registration links to anvil2025-community-conference.mdx ([#3634](https://github.com/anvilproject/anvil-portal/issues/3634)) ([cc45cdd](https://github.com/anvilproject/anvil-portal/commit/cc45cddc4d6677a6b0d77c4069d896e75bcadece))
+
 ## [2.11.12](https://github.com/anvilproject/anvil-portal/compare/v2.11.11...v2.11.12) (2025-06-11)
 
 
