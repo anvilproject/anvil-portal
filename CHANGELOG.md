@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.14](https://github.com/anvilproject/anvil-portal/compare/v2.11.13...v2.11.14) (2025-07-15)
+
+
+### Content
+
+* Fixes to anvil2025-community-conference.mdx ([#3637](https://github.com/anvilproject/anvil-portal/issues/3637)) ([866cea0](https://github.com/anvilproject/anvil-portal/commit/866cea0c8b3f06ef3001102506d253ed77781f25))
+
 ## [2.11.13](https://github.com/anvilproject/anvil-portal/compare/v2.11.12...v2.11.13) (2025-07-11)
 
 
