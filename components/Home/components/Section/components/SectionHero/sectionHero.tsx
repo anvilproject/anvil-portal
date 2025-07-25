@@ -41,7 +41,7 @@ export const SectionHero = (): JSX.Element => {
               component={MLink}
               href={LAUNCH_TERRA}
               rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
-              sx={{ display: { sm: "block", xs: "none" } }}
+              sx={{ display: { sm: "flex", xs: "none" } }}
               target={ANCHOR_TARGET.BLANK}
               variant={BUTTON_PROPS.VARIANT.CONTAINED}
             >
