@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.15](https://github.com/anvilproject/anvil-portal/compare/v2.11.14...v2.11.15) (2025-07-25)
+
+
+### Chores
+
+* update findable to v40.0.0 ([#3640](https://github.com/anvilproject/anvil-portal/issues/3640)) ([#3642](https://github.com/anvilproject/anvil-portal/issues/3642)) ([5fb5bbc](https://github.com/anvilproject/anvil-portal/commit/5fb5bbcfdfaebd2f8affa62dd3486ceb07c7990d))
+
 ## [2.11.14](https://github.com/anvilproject/anvil-portal/compare/v2.11.13...v2.11.14) (2025-07-15)
 
 
