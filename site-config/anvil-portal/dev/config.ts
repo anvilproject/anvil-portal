@@ -35,7 +35,6 @@ export function makeConfig(
       url: "",
     },
     entities: [],
-    explorerTitle: null,
     gitHubUrl,
     layout: {
       footer: {

@@ -17,6 +17,7 @@ const ESM_PACKAGES = [
   "@databiosphere/findable-ui",
   "@observablehq/plot",
   "@tanstack/react-table",
+  "@tanstack/react-virtual",
 ];
 
 export default withPlugins(
