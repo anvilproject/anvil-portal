@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.12.0](https://github.com/anvilproject/anvil-portal/compare/v2.11.14...v2.12.0) (2025-07-28)
+
+
+### Features
+
+* gregor blog post to news ([#3639](https://github.com/anvilproject/anvil-portal/issues/3639)) ([#3641](https://github.com/anvilproject/anvil-portal/issues/3641)) ([13f19cb](https://github.com/anvilproject/anvil-portal/commit/13f19cb641a432fec336ca54ac0057316e462578))
+
+
+### Chores
+
+* update findable to v40.0.0 ([#3640](https://github.com/anvilproject/anvil-portal/issues/3640)) ([#3642](https://github.com/anvilproject/anvil-portal/issues/3642)) ([5fb5bbc](https://github.com/anvilproject/anvil-portal/commit/5fb5bbcfdfaebd2f8affa62dd3486ceb07c7990d))
+
+
+### Content
+
+* Update virtual registration & hotel links to bitly anvil2025-community-conference ([#3636](https://github.com/anvilproject/anvil-portal/issues/3636)) ([49d237c](https://github.com/anvilproject/anvil-portal/commit/49d237cdd15f7148c8362f74341fdc21aaad06b4))
+
 ## [2.11.14](https://github.com/anvilproject/anvil-portal/compare/v2.11.13...v2.11.14) (2025-07-15)
 
 
