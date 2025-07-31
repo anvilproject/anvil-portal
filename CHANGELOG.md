@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.1](https://github.com/anvilproject/anvil-portal/compare/v2.12.0...v2.12.1) (2025-07-31)
+
+
+### Content
+
+* add speakers, agenda to anvil2025-community-conference.mdx ([#3644](https://github.com/anvilproject/anvil-portal/issues/3644)) ([352fd65](https://github.com/anvilproject/anvil-portal/commit/352fd6560cf02ead602565b0b3f715353a5906b3))
+
 ## [2.12.0](https://github.com/anvilproject/anvil-portal/compare/v2.11.14...v2.12.0) (2025-07-28)
 
 
