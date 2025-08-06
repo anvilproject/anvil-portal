@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.0](https://github.com/anvilproject/anvil-portal/compare/v2.12.1...v2.13.0) (2025-08-06)
+
+
+### Features
+
+* add acc event to first item on carousel ([#3647](https://github.com/anvilproject/anvil-portal/issues/3647)) ([#3648](https://github.com/anvilproject/anvil-portal/issues/3648)) ([cd54ae0](https://github.com/anvilproject/anvil-portal/commit/cd54ae05715869a250511d695576ad2a2aa7a531))
+
 ## [2.12.1](https://github.com/anvilproject/anvil-portal/compare/v2.12.0...v2.12.1) (2025-07-31)
 
 
