@@ -16,6 +16,17 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
+          url: "/events/anvil2025-community-conference",
+        },
+      ],
+      text: "We are thrilled to announce the AnVIL Community Conference on September 3-5, 2025 in Nashville, TN.",
+      title: "ACC 2025 - AnVIL Community Conference 2025",
+    },
+    {
+      links: [
+        {
           label: ACTION_LABEL.PAPER,
           url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
         },
