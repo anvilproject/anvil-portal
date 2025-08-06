@@ -22,7 +22,7 @@ export function buildCarouselCards(): SectionCard[] {
         },
       ],
       text: "We are thrilled to announce the AnVIL Community Conference on September 3-5, 2025 in Nashville, TN.",
-      title: "ACC 2025 - AnVIL Community Conference 2025",
+      title: "ACC 2025 - AnVIL Community Conference",
     },
     {
       links: [
