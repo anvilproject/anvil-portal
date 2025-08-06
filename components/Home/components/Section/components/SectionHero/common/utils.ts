@@ -16,6 +16,17 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
+          url: "/events/anvil2025-community-conference",
+        },
+      ],
+      text: "In Nashville on September 3–5, 2025, this conference brings the genomic cloud computing community together to explore advances in the field and connect with the AnVIL Team.",
+      title: "ACC 2025 - AnVIL Community Conference",
+    },
+    {
+      links: [
+        {
           label: ACTION_LABEL.PAPER,
           url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
         },
