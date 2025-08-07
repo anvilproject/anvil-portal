@@ -1,6 +1,6 @@
 export const CARD_OFFSET_Y = 8;
 export const CARD_SCALE_X = 48;
-export const MAX_CARD_HEIGHT = 180;
+export const MAX_CARD_HEIGHT = 184;
 export const MAX_CARD_HEIGHT_SM = 224;
 export const MAX_DECK_SIZE = 3;
 export const MAX_CARD_WIDTH = 608;

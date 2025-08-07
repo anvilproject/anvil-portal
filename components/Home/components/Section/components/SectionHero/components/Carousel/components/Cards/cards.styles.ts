@@ -1,4 +1,7 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import {
+  mediaTabletUp,
+  mediaTabletDown,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import {
   textBody500,
   textBodyLarge500,
@@ -18,6 +21,7 @@ import {
 } from "../../common/utils";
 import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { CardMedia } from "../../../../../../../Card/components/CardMedia/cardMedia";
 
 interface Props {
   cardPosition: number;
@@ -44,16 +48,25 @@ export const Card = styled(MCard)`
   box-shadow:
     ${SHADOWS["01"]},
     inset 0 0 0 1px ${PALETTE.SMOKE_MAIN};
+  box-sizing: border-box;
   display: flex;
+  gap: 0 8px;
   height: 100%;
+  padding: 8px;
   width: 100%;
 ` as typeof MCard;
 
+export const StyledCardMedia = styled(CardMedia)`
+  ${mediaTabletDown} {
+    display: none;
+  }
+`;
+
 export const CardSection = styled.div`
-  display: flex;
+  align-self: center;
   flex: 1;
-  flex-direction: column;
-  padding: 24px;
+  min-height: 160px;
+  padding: 16px;
 `;
 
 export const CardTitle = styled.span`
@@ -74,12 +87,12 @@ export const CardText = styled.span`
   -webkit-box-orient: vertical;
   color: ${PALETTE.INK_LIGHT};
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   margin: 8px 0 16px;
   overflow: hidden;
 
   ${mediaTabletUp} {
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 `;
 

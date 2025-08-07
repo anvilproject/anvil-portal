@@ -21,6 +21,11 @@ export function buildCarouselCards(): SectionCard[] {
           url: "/events/anvil2025-community-conference",
         },
       ],
+      media: {
+        alt: "ACC 2025",
+        height: 168,
+        src: "/consortia/carousel/acc.png",
+      },
       text: "In Nashville on September 3–5, 2025, this conference brings the genomic cloud computing community together to explore advances in the field and connect with the AnVIL Team.",
       title: "ACC 2025 - AnVIL Community Conference",
     },
