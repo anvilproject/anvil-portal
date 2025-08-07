@@ -10,6 +10,7 @@ import {
   CardSection,
   CardText,
   CardTitle,
+  StyledCardMedia,
 } from "./cards.styles";
 
 export interface CardsProps {
@@ -21,13 +22,14 @@ export const Cards = ({ activeIndex, cards }: CardsProps): JSX.Element => {
   const lastIndex = cards.length - 1;
   return (
     <Fragment>
-      {cards.map(({ links, text, title }, c) => {
+      {cards.map(({ links, media, text, title }, c) => {
         return (
           <CardPositioner
             key={c}
             cardPosition={getCardPosition(c, activeIndex, lastIndex)}
           >
             <Card component={RoundedPaper}>
+              {media && <StyledCardMedia media={media} />}
               <CardSection>
                 <CardTitle>{title}</CardTitle>
                 <CardText>{text}</CardText>
