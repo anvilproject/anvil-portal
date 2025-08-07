@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.0](https://github.com/anvilproject/anvil-portal/compare/v2.13.0...v2.14.0) (2025-08-07)
+
+
+### Features
+
+* add acc image to carousel ([#3650](https://github.com/anvilproject/anvil-portal/issues/3650)) ([#3651](https://github.com/anvilproject/anvil-portal/issues/3651)) ([fb23619](https://github.com/anvilproject/anvil-portal/commit/fb23619d4e4b8ecde7fc8a932020eceac68799e8))
+
 ## [2.13.0](https://github.com/anvilproject/anvil-portal/compare/v2.12.1...v2.13.0) (2025-08-06)
 
 
