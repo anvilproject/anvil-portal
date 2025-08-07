@@ -13,6 +13,7 @@ import {
   MAX_CARD_HEIGHT,
   MAX_CARD_HEIGHT_SM,
   MAX_CARD_WIDTH,
+  MIN_CONTENT_CARD_HEIGHT,
 } from "../../common/constants";
 import {
   getCardTransform,
@@ -65,7 +66,7 @@ export const StyledCardMedia = styled(CardMedia)`
 export const CardSection = styled.div`
   align-self: center;
   flex: 1;
-  min-height: 160px;
+  min-height: ${MIN_CONTENT_CARD_HEIGHT}px;
   padding: 16px;
 `;
 
