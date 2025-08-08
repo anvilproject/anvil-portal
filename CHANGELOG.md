@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.15.0](https://github.com/anvilproject/anvil-portal/compare/v2.14.0...v2.15.0) (2025-08-08)
+
+
+### Features
+
+* temporarily pause auto-rotate homepage carousel ([#3653](https://github.com/anvilproject/anvil-portal/issues/3653)) ([#3654](https://github.com/anvilproject/anvil-portal/issues/3654)) ([f81d27e](https://github.com/anvilproject/anvil-portal/commit/f81d27e8d61308b2f20f801a9e12cd54414b2169))
+
+
+### Content
+
+* update marriott room block deadline anvil2025-community-conference.mdx ([#3646](https://github.com/anvilproject/anvil-portal/issues/3646)) ([cf40549](https://github.com/anvilproject/anvil-portal/commit/cf40549596b4675f7bac21c3735490961d4a5891))
+
 ## [2.14.0](https://github.com/anvilproject/anvil-portal/compare/v2.13.0...v2.14.0) (2025-08-07)
 
 
