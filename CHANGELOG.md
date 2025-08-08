@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.15.1](https://github.com/anvilproject/anvil-portal/compare/v2.15.0...v2.15.1) (2025-08-08)
+
+
+### Content
+
+* updates to anvil2025-community-conference.mdx ([#3656](https://github.com/anvilproject/anvil-portal/issues/3656)) ([46b898e](https://github.com/anvilproject/anvil-portal/commit/46b898e83eeacb0950267b3e6ccfecee6f2d5b2a))
+
 ## [2.15.0](https://github.com/anvilproject/anvil-portal/compare/v2.14.0...v2.15.0) (2025-08-08)
 
 
