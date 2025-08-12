@@ -4,7 +4,7 @@ import {
   SectionLayout as DefaultLayout,
   SectionTitle as DefaultSectionTitle,
 } from "../../section.styles";
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Section = styled(DefaultSection)`
@@ -20,7 +20,7 @@ export const SectionLayout = styled(DefaultLayout)`
 `;
 
 export const SectionTitle = styled(DefaultSectionTitle)`
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     text-align: center;
   }
 `;

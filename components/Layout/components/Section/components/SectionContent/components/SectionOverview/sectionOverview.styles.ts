@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const GroupOverview = styled.div`
   .MuiDivider-root,
-  .MuiTypography-text-heading {
+  .MuiTypography-heading {
     grid-column: 1 / -1;
   }
 
@@ -12,7 +12,7 @@ export const GroupOverview = styled.div`
     margin: 32px 0;
   }
 
-  .MuiTypography-text-heading {
+  .MuiTypography-heading {
     line-height: 34px;
   }
 `;
@@ -20,7 +20,7 @@ export const GroupOverview = styled.div`
 export const GroupLinks = styled.div`
   margin-top: 8px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     display: grid;
     gap: 0 64px;
     grid-auto-columns: 1fr;

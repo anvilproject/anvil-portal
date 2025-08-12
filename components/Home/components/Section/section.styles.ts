@@ -1,12 +1,10 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBodyLarge4002Lines,
-  textHeadingLarge,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Divider as MDivider } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { typographyToCSS } from "./components/SectionDatasets/components/Metrics/utils";
 
 export const sectionGrid = css`
   display: grid;
@@ -24,7 +22,7 @@ export const SectionLayout = styled.div`
   max-width: 1232px;
   padding: 56px 16px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     padding: 64px 16px;
   }
 `;
@@ -36,7 +34,7 @@ export const SectionHeadline = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  ${textHeadingLarge};
+  ${typographyToCSS("heading-large")};
   font-size: 30px;
   letter-spacing: -0.8px;
   line-height: 40px;
@@ -44,8 +42,8 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SectionSubtitle = styled.h3`
-  ${textBodyLarge4002Lines};
   color: ${PALETTE.INK_LIGHT};
+  font: ${FONT.BODY_LARGE_400_2_LINES};
   margin: 0;
 `;
 
@@ -54,7 +52,7 @@ export const SectionActions = styled.div`
   flex-direction: column;
   gap: 16px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     flex-direction: row;
   }
 `;

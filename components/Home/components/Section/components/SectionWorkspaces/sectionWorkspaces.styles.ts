@@ -1,4 +1,4 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
   SectionHeadline as DefaultHeadline,
@@ -16,7 +16,7 @@ export const Headline = styled(DefaultHeadline)`
   justify-items: flex-start;
   max-width: 504px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: 1 / 6;
     max-width: unset;
   }

@@ -1,5 +1,5 @@
-import { textBody500 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 export const CardHeader = styled.div`
   display: flex;
@@ -7,6 +7,6 @@ export const CardHeader = styled.div`
 `;
 
 export const CardTitle = styled.span`
-  ${textBody500};
+  font: ${FONT.BODY_500};
 }
 `;

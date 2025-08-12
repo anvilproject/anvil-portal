@@ -1,7 +1,6 @@
 import "@databiosphere/findable-ui";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
-import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -33,8 +32,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const { analytics, appTitle, layout, themeOptions } = appConfig;
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
   const { pageTitle } = pageProps;
-  const defaultTheme = createAppTheme(themeOptions);
-  const appTheme = mergeAppTheme(defaultTheme);
+  const appTheme = mergeAppTheme(themeOptions);
 
   // Initialize Google Tag Manager.
   useEffect(() => {

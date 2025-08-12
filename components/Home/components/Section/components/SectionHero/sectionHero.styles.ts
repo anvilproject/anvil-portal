@@ -1,8 +1,7 @@
 import {
-  mediaDesktopSmallUp,
-  mediaTabletUp,
+  bpUpMd,
+  bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,
@@ -11,12 +10,13 @@ import {
   SectionLayout as DefaultLayout,
 } from "../../section.styles";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};
   gap: 56px 16px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     padding: 80px 16px;
   }
 `;
@@ -28,7 +28,7 @@ export const Headline = styled(DefaultHeadline)`
   max-width: 504px;
   text-align: center;
 
-  ${mediaDesktopSmallUp} {
+  ${bpUpMd} {
     grid-column: 1 / 6;
     justify-items: flex-start;
     max-width: unset;
@@ -43,22 +43,22 @@ export const Head = styled.h1`
   line-height: 48px;
   margin: 0;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     font-size: 48px;
     line-height: 56px;
   }
 `;
 
 export const Subhead = styled.h2`
-  ${textBodyLarge4002Lines};
   color: ${PALETTE.INK_LIGHT};
+  font: ${FONT.BODY_LARGE_400_2_LINES};
   margin: -8px 0 0;
 `;
 
 export const CTAs = styled(DefaultActions)`
   flex-direction: row;
 
-  .MuiTypography-text-body-small-400 {
+  .MuiTypography-body-small-400 {
     margin: 4px 0;
     text-align: left;
   }

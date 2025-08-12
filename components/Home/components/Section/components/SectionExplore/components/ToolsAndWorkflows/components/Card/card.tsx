@@ -18,9 +18,9 @@ import {
 } from "../../../../../../../Card/card.styles";
 import { isClientSideNavigation } from "@databiosphere/findable-ui/lib/components/Links/common/utils";
 import Link from "next/link";
-import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { StyledCardSection } from "./card.styles";
-import { FONT_SIZE } from "@databiosphere/findable-ui/lib/styles/common/mui/icon";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 
 export interface CardProps {
   card: SectionCardWithLink;
@@ -42,11 +42,16 @@ export const Card = ({ card }: CardProps): JSX.Element => {
       >
         <StyledCardSection>
           <CardContent>
-            <MTypography variant={TEXT_BODY_LARGE_500}>{title}</MTypography>
+            <MTypography variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}>
+              {title}
+            </MTypography>
             <CardSecondaryText>{text}</CardSecondaryText>
           </CardContent>
           <CardCTA>
-            <ForwardArrowIcon color="primary" fontSize={FONT_SIZE.SMALL} />
+            <ForwardArrowIcon
+              color={SVG_ICON_PROPS.COLOR.PRIMARY}
+              fontSize={SVG_ICON_PROPS.FONT_SIZE.SMALL}
+            />
           </CardCTA>
         </StyledCardSection>
       </MCardActionArea>

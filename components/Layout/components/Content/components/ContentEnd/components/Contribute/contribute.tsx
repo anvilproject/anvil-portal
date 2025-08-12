@@ -2,13 +2,12 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import {
-  TEXT_BODY_400,
-  TEXT_BODY_LARGE_500,
-} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Button as MButton, Typography } from "@mui/material";
 import { CodePullRequestIcon } from "../../../../../../../common/CustomIcon/components/CodePullRequestIcon/codePullRequestIcon";
 import { StyledBox } from "./contribute.styles";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 
 const GITHUB_URL =
   "https://github.com/anvilproject/anvil-portal/blob/main/docs";
@@ -20,21 +19,29 @@ interface ContributeProps {
 export const Contribute = ({ slug }: ContributeProps): JSX.Element => {
   return (
     <StyledBox>
-      <Typography component="div" variant={TEXT_BODY_LARGE_500}>
+      <Typography
+        component="div"
+        variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}
+      >
         Help us make these docs great!
       </Typography>
-      <Typography color="ink.light" component="div" variant={TEXT_BODY_400}>
+      <Typography
+        color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
+        component="div"
+        variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}
+      >
         All AnVIL docs are open source. See something that’s wrong or unclear?
         Submit a pull request.
       </Typography>
       <MButton
-        color="secondary"
+        {...BUTTON_PROPS.SECONDARY_CONTAINED}
         disabled={slug?.length === 0}
         href={getGitHubUrl(slug)}
-        startIcon={<CodePullRequestIcon color="inkLight" />}
+        startIcon={
+          <CodePullRequestIcon color={SVG_ICON_PROPS.COLOR.INK_LIGHT} />
+        }
         rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
         target={ANCHOR_TARGET.BLANK}
-        variant="contained"
       >
         Make a contribution
       </MButton>

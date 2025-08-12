@@ -1,4 +1,4 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,
@@ -6,7 +6,7 @@ import {
 } from "../../section.styles";
 
 export const Headline = styled(DefaultHeadline)`
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-template-columns: 1fr auto;
   }
 `;
@@ -19,7 +19,7 @@ export const CTAs = styled(DefaultActions)`
     order: 1;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     .MuiButton-containedSecondary {
       order: 0;
     }

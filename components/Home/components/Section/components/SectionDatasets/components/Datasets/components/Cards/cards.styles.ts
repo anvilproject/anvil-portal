@@ -1,6 +1,6 @@
 import {
-  mediaDesktopSmallUp,
-  mediaTabletUp,
+  bpUpMd,
+  bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
@@ -14,7 +14,7 @@ export const Card = styled(GridCard)`
   align-items: stretch; /* card action area consumes height of card */
   min-height: 74px;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: auto / span 6;
   }
 ` as typeof MCard;
@@ -24,7 +24,7 @@ export const CardSection = styled(DefaultSection)`
   gap: 0;
   grid-template-columns: 1fr;
 
-  ${mediaDesktopSmallUp} {
+  ${bpUpMd} {
     gap: 16px;
   }
 `;

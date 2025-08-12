@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Headline } from "../../components/Layout/components/Section/components/SectionHero/sectionHero.styles";
-import { mediaTabletDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const StyledHeadline = styled(Headline)`
   display: grid;
@@ -9,7 +9,7 @@ export const StyledHeadline = styled(Headline)`
   padding: 80px 0;
   text-align: center;
 
-  ${mediaTabletDown} {
+  ${bpDownSm} {
     padding: 80px 16px;
   }
 `;
@@ -19,7 +19,7 @@ export const Grid = styled.div`
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
 
-  ${mediaTabletDown} {
+  ${bpDownSm} {
     grid-template-columns: 1fr;
   }
 `;

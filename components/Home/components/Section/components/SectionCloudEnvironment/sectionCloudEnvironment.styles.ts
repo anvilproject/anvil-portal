@@ -1,4 +1,4 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
   Section as DefaultSection,
@@ -22,7 +22,7 @@ export const Headline = styled(DefaultHeadline)`
   grid-column: 1 / -1;
   text-align: center;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: 4 / span 6;
   }
 `;

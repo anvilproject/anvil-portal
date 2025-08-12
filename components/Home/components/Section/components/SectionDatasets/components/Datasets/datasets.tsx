@@ -3,7 +3,6 @@ import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
 } from "@databiosphere/findable-ui/lib/hooks/useBreakpointHelper";
-import { TABLET } from "@databiosphere/findable-ui/lib/theme/common/breakpoints";
 import { useEffect, useState } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../common/constants";
@@ -16,7 +15,7 @@ import { Cards } from "./components/Cards/cards";
 import { Grid } from "./datasets.styles";
 
 export const Datasets = (): JSX.Element => {
-  const tabletUp = useBreakpointHelper(BREAKPOINT_FN_NAME.UP, TABLET);
+  const bpUpSm = useBreakpointHelper(BREAKPOINT_FN_NAME.UP, "sm");
   const { datasetCards: cards } = useSectionsData();
   const [mode, setMode] = useState<VISIBILITY_MODE>(VISIBILITY_MODE.COLLAPSED);
   const isExpanded = mode === VISIBILITY_MODE.EXPANDED;
@@ -28,8 +27,8 @@ export const Datasets = (): JSX.Element => {
 
   // Resets visibility mode on breakpoint change.
   useEffect(() => {
-    setMode(resetVisibilityMode(tabletUp));
-  }, [tabletUp]);
+    setMode(resetVisibilityMode(bpUpSm));
+  }, [bpUpSm]);
 
   return (
     <Grid isExpanded={isExpanded}>

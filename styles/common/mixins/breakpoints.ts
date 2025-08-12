@@ -1,5 +1,4 @@
-import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/theme";
-import { BREAKPOINT_TABLET_LARGE } from "../../../components/Home/common/constants";
+import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
 
-export const mediaTabletLargeUp = ({ theme }: ThemeProps): string =>
-  theme.breakpoints.up(BREAKPOINT_TABLET_LARGE);
+export const bpUp1024 = ({ theme }: ThemeProps): string =>
+  theme.breakpoints.up(1024);

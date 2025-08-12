@@ -1,4 +1,4 @@
-import { mediaTabletDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Grid as DefaultGrid } from "../../../../../Card/card.styles";
 
@@ -17,7 +17,7 @@ export const Grid = styled(DefaultGrid)<Props>`
     justify-self: flex-start;
   }
 
-  ${mediaTabletDown} {
+  ${bpDownSm} {
     .MuiCard-root:nth-of-type(n + ${MIN_DATASET_CARDS}) {
       display: ${({ isExpanded }) => (isExpanded ? "flex" : "none")};
     }

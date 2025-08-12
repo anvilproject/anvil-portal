@@ -1,18 +1,15 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBody400,
-  textBodySmall4002Lines,
-  textHeadingXLarge,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
-import { mediaTabletLargeUp } from "../../../../../../../../styles/common/mixins/breakpoints";
+import { bpUp1024 } from "../../../../../../../../styles/common/mixins/breakpoints";
 import { sectionGrid } from "../../../../section.styles";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { typographyToCSS } from "./utils";
 
 export const Metrics = styled.div`
   ${sectionGrid};
 
-  ${mediaTabletLargeUp} {
+  ${bpUp1024} {
     grid-column: 7 / -1;
     grid-template-columns: repeat(6, 1fr);
   }
@@ -50,11 +47,11 @@ export const Metric = styled.div`
     }
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: auto / span 2;
   }
 
-  ${mediaTabletLargeUp} {
+  ${bpUp1024} {
     gap: 0 16px;
 
     .MuiDivider-root {
@@ -71,21 +68,21 @@ export const Count = styled.div`
   line-height: 34px;
   padding-top: 1px;
 
-  ${mediaTabletLargeUp} {
-    ${textHeadingXLarge};
+  ${bpUp1024} {
+    ${typographyToCSS("heading-xlarge")};
     padding: 0;
   }
 `;
 
 export const Label = styled.div`
-  ${textBodySmall4002Lines};
   color: ${PALETTE.INK_LIGHT};
+  font: ${FONT.BODY_SMALL_400_2_LINES};
   grid-column: 2;
   margin-top: -4px;
   padding-bottom: 1px;
 
-  ${mediaTabletLargeUp} {
-    ${textBody400};
+  ${bpUp1024} {
+    font: ${FONT.BODY_400};
     padding: 0;
   }
 `;

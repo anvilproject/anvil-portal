@@ -1,4 +1,4 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
@@ -13,11 +13,11 @@ export const CardDate = styled.div`
   justify-items: center;
   padding: 8px;
 
-  .MuiTypography-text-body-small-500 {
+  .MuiTypography-body-small-500 {
     margin-top: -4px;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     height: 80px;
     padding: 12px;
   }
