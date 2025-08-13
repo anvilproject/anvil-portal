@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Divider as MDivider } from "@mui/material";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
-import { typographyToCSS } from "./components/SectionDatasets/components/Metrics/utils";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 export const sectionGrid = css`
   display: grid;
