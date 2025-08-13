@@ -1,5 +1,5 @@
 import { ToggleButtonGroup as DXToggleButtonGroup } from "@databiosphere/findable-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
   SectionActions as DefaultActions,
@@ -11,7 +11,7 @@ export const Headline = styled(DefaultHeadline)`
   justify-items: center; /* required for toggle button */
   text-align: center;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: 4 / span 6;
   }
 `;

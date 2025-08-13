@@ -3,17 +3,15 @@ import {
   ContentLayout,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/contentLayout.styles";
 import {
-  media1366Up,
-  mediaDesktopSmallUp,
-  mediaTabletDown,
+  bpUp1366,
+  bpUpMd,
+  bpDownSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBody4002Lines,
-  textHeadingXLarge,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 interface Props {
   headerHeight: number;
@@ -30,7 +28,7 @@ export const StyledSection = styled("section", {
 export const SectionLayout = styled(ContentLayout)`
   grid-template-areas: "hero";
 
-  ${mediaDesktopSmallUp} {
+  ${bpUpMd} {
     ${({ hasNavigation }) =>
       hasNavigation
         ? css`
@@ -41,7 +39,7 @@ export const SectionLayout = styled(ContentLayout)`
           `};
   }
 
-  ${media1366Up} {
+  ${bpUp1366} {
     grid-template-areas: ". hero .";
   }
 
@@ -56,7 +54,7 @@ export const Headline = styled(Content)`
   padding-top: 40px;
   width: 100%;
 
-  ${mediaTabletDown} {
+  ${bpDownSm} {
     padding-bottom: 40px;
     padding-top: 40px;
     width: calc(100% - 32px);
@@ -68,12 +66,12 @@ export const Headline = styled(Content)`
 `;
 
 export const PageTitle = styled.h1`
-  ${textHeadingXLarge};
+  ${typographyToCSS("heading-xlarge")};
   margin: 0 auto;
 `;
 
 export const PageSubTitle = styled.div`
-  ${textBody4002Lines};
   color: ${PALETTE.INK_LIGHT};
+  font: ${FONT.BODY_400_2_LINES};
   margin: 0 auto;
 `;

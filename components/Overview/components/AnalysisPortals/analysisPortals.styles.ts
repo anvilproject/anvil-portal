@@ -1,6 +1,6 @@
 import { Grid as DXGrid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-import { textBody500 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 export const Grid = styled(DXGrid)`
   .MuiPaper-root {
@@ -14,7 +14,7 @@ export const Grid = styled(DXGrid)`
           grid-column: 2;
 
           h4 {
-            ${textBody500};
+            font: ${FONT.BODY_500};
           }
         }
 

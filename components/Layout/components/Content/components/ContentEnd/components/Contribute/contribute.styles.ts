@@ -5,7 +5,7 @@ export const StyledBox = styled(Box)`
   margin-top: 24px;
   max-width: 364px;
 
-  .MuiTypography-text-body-large-500 {
+  .MuiTypography-body-large-500 {
     margin-bottom: 8px;
   }
 

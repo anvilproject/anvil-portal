@@ -1,11 +1,6 @@
-import {
-  TEXT_BODY_LARGE_400_2_LINES,
-  TEXT_BODY_LARGE_500,
-  TEXT_HEADING,
-  TEXT_HEADING_LARGE,
-  TEXT_HEADING_SMALL,
-} from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Components, Theme } from "@mui/material";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 /**
  * MuiBreadcrumbs Component
@@ -29,22 +24,22 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
   return {
     styleOverrides: {
       body: {
-        ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
+        font: FONT.BODY_LARGE_400_2_LINES,
       },
       h1: {
-        ...theme.typography[TEXT_HEADING_LARGE],
+        ...theme.typography[TYPOGRAPHY_PROPS.VARIANT.HEADING_LARGE],
         margin: "0 0 8px",
       },
       h2: {
-        ...theme.typography[TEXT_HEADING],
+        ...theme.typography[TYPOGRAPHY_PROPS.VARIANT.HEADING],
         margin: "32px 0 16px",
       },
       h3: {
-        ...theme.typography[TEXT_HEADING_SMALL],
+        ...theme.typography[TYPOGRAPHY_PROPS.VARIANT.HEADING_SMALL],
         margin: "32px 0 16px",
       },
       h4: {
-        ...theme.typography[TEXT_BODY_LARGE_500],
+        font: FONT.BODY_LARGE_500,
         margin: "24px 0 16px",
       },
       img: {
@@ -66,7 +61,7 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
         paddingLeft: 24,
       },
       p: {
-        ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
+        font: FONT.BODY_LARGE_400_2_LINES,
         marginBottom: 16,
       },
       ul: {

@@ -1,5 +1,4 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { TEXT_HEADING } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Divider } from "@mui/material";
 import { Fragment } from "react";
 import { Heading } from "../../../../../../../common/Typography/components/Heading/heading";
@@ -10,6 +9,7 @@ import {
 } from "./sectionOverview.styles";
 import { SectionOverviewProps } from "./types";
 import { splitLinks } from "./utils";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const SectionOverview = ({
   overview,
@@ -25,7 +25,7 @@ export const SectionOverview = ({
               <Heading
                 component="h2"
                 headingValue={label}
-                variant={TEXT_HEADING}
+                variant={TYPOGRAPHY_PROPS.VARIANT.HEADING}
               />
               <GroupLinks>
                 {splitLinks(links).map(

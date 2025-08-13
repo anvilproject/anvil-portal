@@ -1,4 +1,4 @@
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
@@ -20,7 +20,7 @@ export const Card = styled(GridCard)`
     text-decoration: none;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-column: auto / span 4;
   }
 ` as typeof MCard;

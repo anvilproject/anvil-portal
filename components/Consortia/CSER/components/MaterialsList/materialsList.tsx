@@ -1,9 +1,9 @@
 import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Accordion/accordion";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { TEXT_BODY_LARGE_500 } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import {
   getOrganizedCategoryMaterials,
   MaterialsCategory,
@@ -33,7 +33,10 @@ export const MaterialsList = ({
         >
           {majorSection.sections.map((minorSection) => (
             <div key={minorSection.label}>
-              <Typography component="div" variant={TEXT_BODY_LARGE_500}>
+              <Typography
+                component="div"
+                variant={TYPOGRAPHY_PROPS.VARIANT.BODY_LARGE_500}
+              >
                 {minorSection.label}
               </Typography>
               <ul>

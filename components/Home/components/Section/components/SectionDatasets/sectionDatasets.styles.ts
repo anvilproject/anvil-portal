@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
-import { mediaTabletLargeUp } from "../../../../../../styles/common/mixins/breakpoints";
+import { bpUp1024 } from "../../../../../../styles/common/mixins/breakpoints";
 import {
   sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionTitle as DefaultTitle,
 } from "../../section.styles";
-import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const Headline = styled(DefaultHeadline)`
   gap: 24px;
 
-  ${mediaTabletLargeUp} {
+  ${bpUp1024} {
     ${sectionGrid};
   }
 `;
@@ -18,7 +18,7 @@ export const Headline = styled(DefaultHeadline)`
 export const SectionTitle = styled(DefaultTitle)`
   max-width: 504px;
 
-  ${mediaTabletLargeUp} {
+  ${bpUp1024} {
     grid-column: 1 / 6;
     max-width: unset;
   }
@@ -29,7 +29,7 @@ export const SectionActions = styled.div`
   gap: 16px;
   grid-template-columns: 1fr;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     grid-template-columns: repeat(12, 1fr);
 
     .MuiButton-root {

@@ -1,12 +1,7 @@
 import {
-  mediaTabletUp,
-  mediaTabletDown,
+  bpUpSm,
+  bpDownSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  textBody500,
-  textBodyLarge500,
-  textBodySmall4002Lines,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import {
@@ -23,6 +18,7 @@ import {
 import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { CardMedia } from "../../../../../../../Card/components/CardMedia/cardMedia";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   cardPosition: number;
@@ -39,7 +35,7 @@ export const CardPositioner = styled("div")<Props>`
   width: 100%;
   z-index: ${({ cardPosition }) => getCardZIndex(cardPosition)};
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     max-height: ${MAX_CARD_HEIGHT}px;
   }
 `;
@@ -58,7 +54,7 @@ export const Card = styled(MCard)`
 ` as typeof MCard;
 
 export const StyledCardMedia = styled(CardMedia)`
-  ${mediaTabletDown} {
+  ${bpDownSm} {
     display: none;
   }
 `;
@@ -71,28 +67,28 @@ export const CardSection = styled.div`
 `;
 
 export const CardTitle = styled.span`
-  ${textBodyLarge500};
   -webkit-box-orient: vertical;
   display: -webkit-box;
+  font: ${FONT.BODY_LARGE_500};
   -webkit-line-clamp: 3;
   overflow: hidden;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     -webkit-line-clamp: 2;
   }
 }
 `;
 
 export const CardText = styled.span`
-  ${textBodySmall4002Lines};
   -webkit-box-orient: vertical;
   color: ${PALETTE.INK_LIGHT};
   display: -webkit-box;
+  font: ${FONT.BODY_SMALL_400_2_LINES};
   -webkit-line-clamp: 4;
   margin: 8px 0 16px;
   overflow: hidden;
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     -webkit-line-clamp: 3;
   }
 `;
@@ -104,6 +100,6 @@ export const CardActions = styled.div`
   gap: 16px;
 
   .MuiLink-root {
-    ${textBody500};
+    font: ${FONT.BODY_500};
   }
 `;

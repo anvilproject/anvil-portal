@@ -1,6 +1,6 @@
 import {
-  mediaDesktopSmallUp,
-  mediaTabletUp,
+  bpUpMd,
+  bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Bullets as SectionBullets } from "../../../../../Bullets/bullets";
@@ -16,7 +16,7 @@ export const CarouselView = styled.div`
   max-width: ${MAX_CARD_WIDTH}px;
   width: 100%;
 
-  ${mediaDesktopSmallUp} {
+  ${bpUpMd} {
     grid-column: 7 / -1;
   }
 `;
@@ -31,7 +31,7 @@ export const Carousel = styled.div`
     cursor: grabbing;
   }
 
-  ${mediaTabletUp} {
+  ${bpUpSm} {
     height: ${CAROUSEL_HEIGHT}px;
   }
 

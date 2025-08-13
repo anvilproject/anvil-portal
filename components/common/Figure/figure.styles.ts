@@ -1,4 +1,4 @@
-import { textBody400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import styled from "@emotion/styled";
 
 export const Figure = styled.figure`
@@ -9,7 +9,7 @@ export const Figure = styled.figure`
   }
 
   figcaption {
-    ${textBody400};
+    font: ${FONT.BODY_400};
     margin-top: 8px;
     text-align: center;
   }

@@ -1,5 +1,5 @@
-import { TEXT_BODY_SMALL_400_2_LINES } from "@databiosphere/findable-ui/lib/theme/common/typography";
 import { GridProps, TypographyProps } from "@mui/material";
+import { TYPOGRAPHY_PROPS as MUI_TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const GRID_PROPS: Partial<GridProps> = {
   container: true,
@@ -9,7 +9,7 @@ export const GRID_PROPS: Partial<GridProps> = {
 };
 
 export const TYPOGRAPHY_PROPS: Partial<TypographyProps> = {
-  color: "ink.light",
+  color: MUI_TYPOGRAPHY_PROPS.COLOR.INK_LIGHT,
   component: "div",
-  variant: TEXT_BODY_SMALL_400_2_LINES,
+  variant: MUI_TYPOGRAPHY_PROPS.VARIANT.BODY_SMALL_400_2_LINES,
 };

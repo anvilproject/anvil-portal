@@ -17,7 +17,7 @@
     "add-cser-materials": "esrun scripts/add-cser-materials.ts"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "^40.0.0",
+    "@databiosphere/findable-ui": "^42.1.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mdx-js/loader": "^3.0.1",

@@ -32,6 +32,7 @@ export const SectionHero = (): JSX.Element => {
               component={Link}
               href={LEARN_MORE}
               rel={REL_ATTRIBUTE.NO_OPENER}
+              size={BUTTON_PROPS.SIZE.LARGE}
               variant={BUTTON_PROPS.VARIANT.CONTAINED}
             >
               Learn More
@@ -41,6 +42,7 @@ export const SectionHero = (): JSX.Element => {
               component={MLink}
               href={LAUNCH_TERRA}
               rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
+              size={BUTTON_PROPS.SIZE.LARGE}
               sx={{ display: { sm: "flex", xs: "none" } }}
               target={ANCHOR_TARGET.BLANK}
               variant={BUTTON_PROPS.VARIANT.CONTAINED}
@@ -51,7 +53,7 @@ export const SectionHero = (): JSX.Element => {
               color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
               component="div"
               sx={{ display: { sm: "block", xs: "none" } }}
-              variant={TYPOGRAPHY_PROPS.VARIANT.TEXT_BODY_SMALL_400}
+              variant={TYPOGRAPHY_PROPS.VARIANT.BODY_SMALL_400}
             >
               <div>AnVIL&apos;s cloud</div>
               <div>compute environment</div>
