@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.15.2](https://github.com/anvilproject/anvil-portal/compare/v2.15.1...v2.15.2) (2025-08-22)
+
+
+### Chores
+
+* update findable-ui to latest v42.0.1 ([#3658](https://github.com/anvilproject/anvil-portal/issues/3658)) ([#3659](https://github.com/anvilproject/anvil-portal/issues/3659)) ([622b20a](https://github.com/anvilproject/anvil-portal/commit/622b20a1777ecc8700c9082b78af776948cfe202))
+
 ## [2.15.1](https://github.com/anvilproject/anvil-portal/compare/v2.15.0...v2.15.1) (2025-08-08)
 
 
