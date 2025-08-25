@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.15.3](https://github.com/anvilproject/anvil-portal/compare/v2.15.2...v2.15.3) (2025-08-25)
+
+
+### Content
+
+* added all of us + anvil event [#3664](https://github.com/anvilproject/anvil-portal/issues/3664) ([#3668](https://github.com/anvilproject/anvil-portal/issues/3668)) ([cd53ec1](https://github.com/anvilproject/anvil-portal/commit/cd53ec186cbe3e03dc720204e542e3c839d16072))
+* update agenda and add locations anvil2025-community-conference.mdx ([#3665](https://github.com/anvilproject/anvil-portal/issues/3665)) ([ca3b952](https://github.com/anvilproject/anvil-portal/commit/ca3b952f6e85603aaa49e73de01eb8675064e04c))
+
 ## [2.15.2](https://github.com/anvilproject/anvil-portal/compare/v2.15.1...v2.15.2) (2025-08-22)
 
 
