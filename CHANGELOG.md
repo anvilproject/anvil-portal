@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.15.3](https://github.com/anvilproject/anvil-portal/compare/v2.15.2...v2.15.3) (2025-08-26)
+
+
+### Content
+
+* added all of us + anvil event [#3664](https://github.com/anvilproject/anvil-portal/issues/3664) ([#3668](https://github.com/anvilproject/anvil-portal/issues/3668)) ([cd53ec1](https://github.com/anvilproject/anvil-portal/commit/cd53ec186cbe3e03dc720204e542e3c839d16072))
+* added all of us + anvil imputation service news [#3667](https://github.com/anvilproject/anvil-portal/issues/3667) ([#3669](https://github.com/anvilproject/anvil-portal/issues/3669)) ([8812477](https://github.com/anvilproject/anvil-portal/commit/881247797c8787ff6a0851544d232d39657787e0))
+* added card data release to news [#3672](https://github.com/anvilproject/anvil-portal/issues/3672) ([#3676](https://github.com/anvilproject/anvil-portal/issues/3676)) ([94839b7](https://github.com/anvilproject/anvil-portal/commit/94839b7fa9eca2e47588589b1f8c9dc3879f8214))
+* added epi25 data release 4 news [#3671](https://github.com/anvilproject/anvil-portal/issues/3671) ([#3675](https://github.com/anvilproject/anvil-portal/issues/3675)) ([07df8be](https://github.com/anvilproject/anvil-portal/commit/07df8bef7e76c00574ba47edb88c5749c4dbbb5d))
+* added ga4k data release to news [#3670](https://github.com/anvilproject/anvil-portal/issues/3670) ([#3673](https://github.com/anvilproject/anvil-portal/issues/3673)) ([2211fa5](https://github.com/anvilproject/anvil-portal/commit/2211fa5bf119ce30835e8e03bedfc14df6dfc447))
+* update agenda and add locations anvil2025-community-conference.mdx ([#3665](https://github.com/anvilproject/anvil-portal/issues/3665)) ([ca3b952](https://github.com/anvilproject/anvil-portal/commit/ca3b952f6e85603aaa49e73de01eb8675064e04c))
+
 ## [2.15.2](https://github.com/anvilproject/anvil-portal/compare/v2.15.1...v2.15.2) (2025-08-22)
 
 
