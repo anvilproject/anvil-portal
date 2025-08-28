@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.16.0](https://github.com/anvilproject/anvil-portal/compare/v2.15.3...v2.16.0) (2025-08-28)
+
+
+### Features
+
+* add anvil quarterly data release to news ([#3677](https://github.com/anvilproject/anvil-portal/issues/3677)) ([#3678](https://github.com/anvilproject/anvil-portal/issues/3678)) ([cea2761](https://github.com/anvilproject/anvil-portal/commit/cea2761bf2f86e9a251a0741f0012f35aa2651a9))
+
+
+### Bug Fixes
+
+* updated quarterly release content [#3677](https://github.com/anvilproject/anvil-portal/issues/3677) ([#3681](https://github.com/anvilproject/anvil-portal/issues/3681)) ([51ad464](https://github.com/anvilproject/anvil-portal/commit/51ad464df21249de2952d544abbaf31d063b25db))
+
 ## [2.15.3](https://github.com/anvilproject/anvil-portal/compare/v2.15.2...v2.15.3) (2025-08-26)
 
 
