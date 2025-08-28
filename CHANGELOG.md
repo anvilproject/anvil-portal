@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.1](https://github.com/anvilproject/anvil-portal/compare/v2.16.0...v2.16.1) (2025-08-28)
+
+
+### Content
+
+* update consortia.mdx - 1000 Genomes Project name ([#3679](https://github.com/anvilproject/anvil-portal/issues/3679)) ([032fe1f](https://github.com/anvilproject/anvil-portal/commit/032fe1f479b0ff21ed5cab8292448172a9732bcd))
+
 ## [2.16.0](https://github.com/anvilproject/anvil-portal/compare/v2.15.3...v2.16.0) (2025-08-28)
 
 
