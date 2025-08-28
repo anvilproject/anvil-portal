@@ -17,6 +17,7 @@ import {
   parseFrontmatter,
 } from "../../../../../docs/common/utils";
 import { rehypeSlug } from "../../../../../plugins/rehypeSlug";
+import { NewsTable250828 } from "../../../../../components/common/Table/components/NewsTable250828/NewsTable250828";
 
 interface NewsArticlePageUrlParams extends ParsedUrlQuery {
   date: string;
@@ -39,7 +40,13 @@ const NewsArticlePage = ({
     <ContentView
       content={
         <Content>
-          <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+          <MDXRemote
+            {...mdxSource}
+            components={{
+              ...MDX_COMPONENTS,
+              NewsTable250828,
+            }}
+          />
           <ContentEnd slug={slug} />
         </Content>
       }
