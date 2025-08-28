@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 export const StyledContainer = styled(Container)`
   .MuiTable-root {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr;
 
     tbody,
     thead,
