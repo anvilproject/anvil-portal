@@ -31,7 +31,7 @@ export function useInteractiveCarousel(): UseInteractiveCarousel {
   const swipeInteraction = useSwipeInteraction(
     interactiveIndexes.length,
     true,
-    0
+    8000
   );
   return {
     interactiveCards: carouselCards,
