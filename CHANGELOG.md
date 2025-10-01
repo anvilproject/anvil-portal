@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.16.1](https://github.com/anvilproject/anvil-portal/compare/v2.16.0...v2.16.1) (2025-10-01)
+
+
+### Content
+
+* added 11/25 pre-release announcement [#3687](https://github.com/anvilproject/anvil-portal/issues/3687) ([#3688](https://github.com/anvilproject/anvil-portal/issues/3688)) ([bd7c1a7](https://github.com/anvilproject/anvil-portal/commit/bd7c1a7e54f77f387b38288cad420101c3a09ab9))
+* remove acc announcement form carousel and homepage featured ([#3683](https://github.com/anvilproject/anvil-portal/issues/3683)) ([#3684](https://github.com/anvilproject/anvil-portal/issues/3684)) ([6079033](https://github.com/anvilproject/anvil-portal/commit/60790334eed03e48145532ccbf849987457eaa5e))
+* update consortia.mdx - 1000 Genomes Project name ([#3679](https://github.com/anvilproject/anvil-portal/issues/3679)) ([032fe1f](https://github.com/anvilproject/anvil-portal/commit/032fe1f479b0ff21ed5cab8292448172a9732bcd))
+
 ## [2.16.0](https://github.com/anvilproject/anvil-portal/compare/v2.15.3...v2.16.0) (2025-08-28)
 
 
