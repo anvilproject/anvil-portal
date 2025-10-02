@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.2](https://github.com/anvilproject/anvil-portal/compare/v2.16.1...v2.16.2) (2025-10-02)
+
+
+### Content
+
+* added imputation service to carousel [#3689](https://github.com/anvilproject/anvil-portal/issues/3689) ([#3705](https://github.com/anvilproject/anvil-portal/issues/3705)) ([e032674](https://github.com/anvilproject/anvil-portal/commit/e032674bcc2deb7630ef7fbb6473ec9e16100862))
+
 ## [2.16.1](https://github.com/anvilproject/anvil-portal/compare/v2.16.0...v2.16.1) (2025-10-01)
 
 
