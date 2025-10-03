@@ -16,6 +16,17 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
+          url: "/news/2025/08/25/all-of-us-anvil-imputation-service",
+        },
+      ],
+      text: "The Broad Institute's Data Sciences Platform has launched the All of Us + AnVIL Imputation Service.",
+      title: "Introducing the All of Us + AnVIL Imputation Service",
+    },
+    {
+      links: [
+        {
           label: ACTION_LABEL.PAPER,
           url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
         },
@@ -120,17 +131,6 @@ export function buildCarouselCards(): SectionCard[] {
       text: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data.",
       title:
         "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2020 update",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/news/2025/08/25/all-of-us-anvil-imputation-service",
-        },
-      ],
-      text: "The Broad Institute's Data Sciences Platform has launched the All of Us + AnVIL Imputation Service.",
-      title: "Introducing the All of Us + AnVIL Imputation Service",
     },
   ];
 }
