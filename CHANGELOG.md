@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.3](https://github.com/anvilproject/anvil-portal/compare/v2.16.2...v2.16.3) (2025-10-03)
+
+
+### Bug Fixes
+
+* updated imputation service pri [#3689](https://github.com/anvilproject/anvil-portal/issues/3689) ([#3707](https://github.com/anvilproject/anvil-portal/issues/3707)) ([aba2a34](https://github.com/anvilproject/anvil-portal/commit/aba2a3432ffc6c5ef44260459ac1fde216221a34))
+
 ## [2.16.2](https://github.com/anvilproject/anvil-portal/compare/v2.16.1...v2.16.2) (2025-10-02)
 
 
