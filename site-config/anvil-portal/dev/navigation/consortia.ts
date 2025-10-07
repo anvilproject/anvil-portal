@@ -76,6 +76,10 @@ export const CONSORTIA: NavigationEntry = {
           label: "Resources for Families",
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/resources-for-families`,
         },
+        {
+          label: "Grant Awardees",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/grant-awardees`,
+        },
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.GREGOR],
