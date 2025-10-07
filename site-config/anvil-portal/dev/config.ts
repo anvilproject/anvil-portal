@@ -6,11 +6,15 @@ import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
-import { CONSORTIA } from "./navigation/consortia";
+import {
+  CONSORTIA,
+  NODE_KEYS as CONSORTIA_NODE_KEYS,
+} from "./navigation/consortia";
 import { FAQ } from "./navigation/faq";
 import { OVERVIEW } from "./navigation/overview";
 import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";
+import { filterConsortiaNavigationEntry } from "components/Consortia/utils";
 
 const APP_TITLE = "AnVIL Portal";
 const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";
@@ -123,9 +127,26 @@ export function makeConfig(
                     },
                     {
                       label: "CSER",
-                      menuItems: buildMenuItems(CONSORTIA),
+                      menuItems: buildMenuItems(
+                        filterConsortiaNavigationEntry(
+                          CONSORTIA,
+                          CONSORTIA_NODE_KEYS.CSER
+                        )
+                      ),
                       selectedMatch: SELECTED_MATCH.EQUALS,
                       url: `${ROUTES.CONSORTIA}/cser`,
+                      visible: VISIBLE.MD_DOWN,
+                    },
+                    {
+                      label: "GREGoR",
+                      menuItems: buildMenuItems(
+                        filterConsortiaNavigationEntry(
+                          CONSORTIA,
+                          CONSORTIA_NODE_KEYS.GREGOR
+                        )
+                      ),
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: `${ROUTES.CONSORTIA}/gregor`,
                       visible: VISIBLE.MD_DOWN,
                     },
                   ],

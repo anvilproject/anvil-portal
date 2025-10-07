@@ -24,6 +24,7 @@ import {
 } from "../docs/common/utils";
 import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
+import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 
 const CONFLICTING_STATIC_PATHS = ["events", "learn", "news"];
 
@@ -45,12 +46,17 @@ const Page = ({
   outline,
   slug,
 }: DocPageProps): JSX.Element => {
+  const isGREGoREnabled = useFeatureFlag("gregor");
   if (!mdxSource) return <></>;
   return (
     <ContentView
       content={
         <Content>
-          <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+          <MDXRemote
+            {...mdxSource}
+            components={MDX_COMPONENTS}
+            scope={{ ...mdxSource.scope, isGREGoREnabled }}
+          />
           <ContentEnd slug={slug} />
         </Content>
       }

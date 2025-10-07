@@ -5,6 +5,7 @@ import { Table } from "../../components/common/Table/table";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { ROUTES } from "../../routes/constants";
+import { Stack } from "@mui/material";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -40,6 +41,7 @@ export const MDX_COMPONENTS = {
   ResearchMaterials: C.ResearchMaterials,
   Resources: C.Resources,
   SectionOverview: C.SectionOverview,
+  Stack,
   Subheader: C.Subheader,
   TextBodyLarge500: C.TextBodyLarge500,
   Video: C.Video,
