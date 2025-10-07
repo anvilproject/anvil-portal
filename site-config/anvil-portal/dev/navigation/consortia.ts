@@ -84,6 +84,10 @@ export const CONSORTIA: NavigationEntry = {
           label: "Research",
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/research`,
         },
+        {
+          label: "Publications",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/publications`,
+        },
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.GREGOR],
