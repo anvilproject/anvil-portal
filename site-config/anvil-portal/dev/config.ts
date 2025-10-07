@@ -123,9 +123,16 @@ export function makeConfig(
                     },
                     {
                       label: "CSER",
-                      menuItems: buildMenuItems(CONSORTIA),
+                      menuItems: [buildMenuItems(CONSORTIA)[0]],
                       selectedMatch: SELECTED_MATCH.EQUALS,
                       url: `${ROUTES.CONSORTIA}/cser`,
+                      visible: VISIBLE.MD_DOWN,
+                    },
+                    {
+                      label: "GREGoR",
+                      menuItems: [buildMenuItems(CONSORTIA)[1]],
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: `${ROUTES.CONSORTIA}/gregor`,
                       visible: VISIBLE.MD_DOWN,
                     },
                   ],

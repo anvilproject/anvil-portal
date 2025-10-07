@@ -9,9 +9,11 @@ import { FLATTEN, VISIBLE } from "../../../common/constants";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   CSER: "cser",
+  GREGOR: "gregor",
 };
 const PATH_SEGMENTS = {
   CSER: "cser",
+  GREGOR: "gregor",
 };
 
 export const CONSORTIA: NavigationEntry = {
@@ -58,6 +60,25 @@ export const CONSORTIA: NavigationEntry = {
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.CSER],
+      visible: VISIBLE.MD_DOWN,
+    },
+    {
+      flatten: FLATTEN.MD_DOWN,
+      key: NODE_KEYS.GREGOR,
+      layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
+      navigation: [
+        {
+          label: "About",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}`,
+        },
+        {
+          label: "Resources for Families",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/resources-for-families`,
+        },
+      ],
+      selectedMatch: SELECTED_MATCH.EQUALS,
+      slugs: [PATH_SEGMENTS.GREGOR],
       visible: VISIBLE.MD_DOWN,
     },
   ],
