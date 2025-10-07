@@ -7,7 +7,7 @@ import {
 import { ROUTES } from "../../../../routes/constants";
 import { FLATTEN, VISIBLE } from "../../../common/constants";
 
-const NODE_KEYS: Record<string, NavigationNode["key"]> = {
+export const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   CSER: "cser",
   GREGOR: "gregor",
 };
