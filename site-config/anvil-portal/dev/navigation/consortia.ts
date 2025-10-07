@@ -92,6 +92,10 @@ export const CONSORTIA: NavigationEntry = {
           label: "Committees & Working Groups",
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/committees-and-working-groups`,
         },
+        {
+          label: "Events",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/events`,
+        },
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.GREGOR],
