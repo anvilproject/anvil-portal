@@ -64,6 +64,15 @@ export const CONSORTIA: NavigationEntry = {
     },
     {
       flatten: FLATTEN.MD_DOWN,
+      hero: {
+        byline: "Active MM, YYYY to MM, YYYY",
+        logo: {
+          alt: "GREGoR",
+          height: 40,
+          src: "/consortia/gregor/images/gregor.png",
+        },
+        slogan: "Genomics Research to Elucidate the Genetics of Rare Diseases",
+      },
       key: NODE_KEYS.GREGOR,
       layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
       navigation: [
