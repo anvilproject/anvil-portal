@@ -83,6 +83,7 @@ export const CONSORTIA: NavigationEntry = {
         },
         {
           label: "Resources for Families",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/resources-for-families`,
         },
         {
@@ -107,6 +108,7 @@ export const CONSORTIA: NavigationEntry = {
         },
         {
           label: "Resources",
+          selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.GREGOR}/resources`,
         },
       ],
