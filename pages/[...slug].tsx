@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
+import Error from "next/error";
 import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { ContentEnd } from "../components/Layout/components/Content/components/ContentEnd/contentEnd";
@@ -47,7 +48,14 @@ const Page = ({
   slug,
 }: DocPageProps): JSX.Element => {
   const isGREGoREnabled = useFeatureFlag("gregor");
+
+  if (!isGREGoREnabled && isGREGoRConsortiumPage(slug)) {
+    // If the page is for the GREGoR consortium and the feature is disabled, return a 404.
+    return <Error statusCode={404} />;
+  }
+
   if (!mdxSource) return <></>;
+
   return (
     <ContentView
       content={
@@ -115,6 +123,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default Page;
 
 Page.Main = Main;
+
+/**
+ * Checks if the slug is for the GREGoR consortium page(s).
+ * @param slug - Slug.
+ * @returns True if the slug is for the GREGoR consortium page(s), false otherwise.
+ */
+function isGREGoRConsortiumPage(slug?: string[]): boolean {
+  if (!slug) return false;
+  return slug.length >= 2 && slug[0] === "consortia" && slug[1] === "gregor";
+}
 
 /**
  * Filters conflicting paths with other page static paths.
