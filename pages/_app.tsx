@@ -28,7 +28,7 @@ export type AppPropsWithComponent = AppProps & {
   Component: NextPageWithComponent;
 };
 
-setFeatureFlags(["gregor"]);
+setFeatureFlags(["gregor", "primed"]);
 
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;
