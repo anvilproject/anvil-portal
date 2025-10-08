@@ -137,6 +137,22 @@ export const CONSORTIA: NavigationEntry = {
           selectedMatch: SELECTED_MATCH.EQUALS,
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}`,
         },
+        {
+          label: "Site and Centers",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}/sites-and-centers`,
+        },
+        {
+          label: "Research",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}/research`,
+        },
+        {
+          label: "Publications",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}/publications`,
+        },
+        {
+          label: "Get Involved",
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}/get-involved`,
+        },
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.PRIMED],
