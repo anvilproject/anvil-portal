@@ -18,7 +18,7 @@ import {
   parseFrontmatter,
 } from "../../docs/common/utils";
 import { rehypeSlug } from "../../plugins/rehypeSlug";
-import { AnVIL2026Demos } from "../../components/Events/AnVILDemos";
+import { AnVIL2026Demos } from "../../components/Events/content";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
   slug: string;
