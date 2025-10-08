@@ -131,7 +131,7 @@ Page.Main = Main;
  */
 function isGREGoRConsortiumPage(slug?: string[]): boolean {
   if (!slug) return false;
-  return slug.length === 2 && slug[0] === "consortia" && slug[1] === "gregor";
+  return slug.length >= 2 && slug[0] === "consortia" && slug[1] === "gregor";
 }
 
 /**
