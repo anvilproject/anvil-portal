@@ -17,7 +17,7 @@ import { mergeAppTheme } from "../theme/theme";
 import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/common/utils";
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
-import { getNavigation } from "../components/Consortia/GREGoR/utils";
+import { getNavigation } from "../components/Consortia/featureFlag/utils";
 
 export type NextPageWithComponent = NextPage & {
   Footer?: typeof DXFooter;
@@ -39,7 +39,12 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const { pageTitle } = pageProps;
   const appTheme = mergeAppTheme(themeOptions);
   const isGREGoREnabled = useFeatureFlag("gregor");
-  const navigation = getNavigation(isGREGoREnabled, layout.header.navigation);
+  const isPRIMEDEnabled = useFeatureFlag("primed");
+  const navigation = getNavigation(
+    isGREGoREnabled,
+    isPRIMEDEnabled,
+    layout.header.navigation
+  );
 
   // Initialize Google Tag Manager.
   useEffect(() => {

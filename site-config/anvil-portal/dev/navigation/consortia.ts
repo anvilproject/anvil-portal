@@ -138,7 +138,7 @@ export const CONSORTIA: NavigationEntry = {
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}`,
         },
         {
-          label: "Site and Centers",
+          label: "Sites and Centers",
           url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}/sites-and-centers`,
         },
         {
