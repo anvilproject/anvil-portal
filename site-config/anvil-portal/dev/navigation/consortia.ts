@@ -10,10 +10,12 @@ import { FLATTEN, VISIBLE } from "../../../common/constants";
 export const NODE_KEYS: Record<string, NavigationNode["key"]> = {
   CSER: "cser",
   GREGOR: "gregor",
+  PRIMED: "primed",
 };
 const PATH_SEGMENTS = {
   CSER: "cser",
   GREGOR: "gregor",
+  PRIMED: "primed",
 };
 
 export const CONSORTIA: NavigationEntry = {
@@ -114,6 +116,30 @@ export const CONSORTIA: NavigationEntry = {
       ],
       selectedMatch: SELECTED_MATCH.EQUALS,
       slugs: [PATH_SEGMENTS.GREGOR],
+      visible: VISIBLE.MD_DOWN,
+    },
+    {
+      flatten: FLATTEN.MD_DOWN,
+      hero: {
+        byline: "Active MM, YYYY to MM, YYYY",
+        logo: {
+          alt: "PRIMED",
+          height: 40,
+          src: "/consortia/primed/images/primed.png",
+        },
+        slogan: "Polygenic Risk Methods Development",
+      },
+      key: NODE_KEYS.PRIMED,
+      layoutStyle: LAYOUT_STYLE_CONTRAST_LIGHT,
+      navigation: [
+        {
+          label: "About",
+          selectedMatch: SELECTED_MATCH.EQUALS,
+          url: `${ROUTES.CONSORTIA}/${PATH_SEGMENTS.PRIMED}`,
+        },
+      ],
+      selectedMatch: SELECTED_MATCH.EQUALS,
+      slugs: [PATH_SEGMENTS.PRIMED],
       visible: VISIBLE.MD_DOWN,
     },
   ],
