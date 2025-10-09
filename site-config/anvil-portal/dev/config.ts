@@ -149,6 +149,18 @@ export function makeConfig(
                       url: `${ROUTES.CONSORTIA}/gregor`,
                       visible: VISIBLE.MD_DOWN,
                     },
+                    {
+                      label: "PRIMED",
+                      menuItems: buildMenuItems(
+                        filterConsortiaNavigationEntry(
+                          CONSORTIA,
+                          CONSORTIA_NODE_KEYS.PRIMED
+                        )
+                      ),
+                      selectedMatch: SELECTED_MATCH.EQUALS,
+                      url: `${ROUTES.CONSORTIA}/primed`,
+                      visible: VISIBLE.MD_DOWN,
+                    },
                   ],
                   url: ROUTES.CONSORTIA,
                 },
