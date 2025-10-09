@@ -48,9 +48,15 @@ const Page = ({
   slug,
 }: DocPageProps): JSX.Element => {
   const isGREGoREnabled = useFeatureFlag("gregor");
+  const isPRIMEDEnabled = useFeatureFlag("primed");
 
-  if (!isGREGoREnabled && isGREGoRConsortiumPage(slug)) {
+  if (!isGREGoREnabled && isConsortiumPage("gregor", slug)) {
     // If the page is for the GREGoR consortium and the feature is disabled, return a 404.
+    return <Error statusCode={404} />;
+  }
+
+  if (!isPRIMEDEnabled && isConsortiumPage("primed", slug)) {
+    // If the page is for the PRIMED consortium and the feature is disabled, return a 404.
     return <Error statusCode={404} />;
   }
 
@@ -63,7 +69,7 @@ const Page = ({
           <MDXRemote
             {...mdxSource}
             components={MDX_COMPONENTS}
-            scope={{ ...mdxSource.scope, isGREGoREnabled }}
+            scope={{ ...mdxSource.scope, isGREGoREnabled, isPRIMEDEnabled }}
           />
           <ContentEnd slug={slug} />
         </Content>
@@ -125,13 +131,14 @@ export default Page;
 Page.Main = Main;
 
 /**
- * Checks if the slug is for the GREGoR consortium page(s).
+ * Checks if the slug is for the consortium page(s).
+ * @param path - Path.
  * @param slug - Slug.
- * @returns True if the slug is for the GREGoR consortium page(s), false otherwise.
+ * @returns True if the slug is for the consortium page(s), false otherwise.
  */
-function isGREGoRConsortiumPage(slug?: string[]): boolean {
+function isConsortiumPage(path: string, slug?: string[]): boolean {
   if (!slug) return false;
-  return slug.length >= 2 && slug[0] === "consortia" && slug[1] === "gregor";
+  return slug.length >= 2 && slug[0] === "consortia" && slug[1] === path;
 }
 
 /**
