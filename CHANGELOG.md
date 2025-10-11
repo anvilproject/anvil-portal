@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.17.0](https://github.com/anvilproject/anvil-portal/compare/v2.16.3...v2.17.0) (2025-10-10)
+
+
+### Features
+
+* add anvil demos april 2026 ([#3693](https://github.com/anvilproject/anvil-portal/issues/3693)) ([#3723](https://github.com/anvilproject/anvil-portal/issues/3723)) ([697531f](https://github.com/anvilproject/anvil-portal/commit/697531fa439ca59d1c111a7fc1f4a730a5afa36a))
+* add anvil demos august 2026 ([#3697](https://github.com/anvilproject/anvil-portal/issues/3697)) ([#3727](https://github.com/anvilproject/anvil-portal/issues/3727)) ([b95f380](https://github.com/anvilproject/anvil-portal/commit/b95f38074176e96f30950423d2289ecad3132173))
+* add anvil demos december 2026 ([#3701](https://github.com/anvilproject/anvil-portal/issues/3701)) ([#3731](https://github.com/anvilproject/anvil-portal/issues/3731)) ([e028868](https://github.com/anvilproject/anvil-portal/commit/e02886878de59b1f4599183b6d0eed0ec0cb66e9))
+* add anvil demos february 2026 ([#3691](https://github.com/anvilproject/anvil-portal/issues/3691)) ([#3721](https://github.com/anvilproject/anvil-portal/issues/3721)) ([b58765b](https://github.com/anvilproject/anvil-portal/commit/b58765b68551343d5ccd4da0bda95c4c7e503d95))
+* add anvil demos january 2026 ([#3690](https://github.com/anvilproject/anvil-portal/issues/3690)) ([#3720](https://github.com/anvilproject/anvil-portal/issues/3720)) ([9addc8e](https://github.com/anvilproject/anvil-portal/commit/9addc8e7804abf3f95187785f8b8da032789b0e8))
+* add anvil demos july 2026 ([#3696](https://github.com/anvilproject/anvil-portal/issues/3696)) ([#3726](https://github.com/anvilproject/anvil-portal/issues/3726)) ([a7ecd66](https://github.com/anvilproject/anvil-portal/commit/a7ecd667259ffc208c11f49501e2f84acfc201e8))
+* add anvil demos june 2026 ([#3695](https://github.com/anvilproject/anvil-portal/issues/3695)) ([#3725](https://github.com/anvilproject/anvil-portal/issues/3725)) ([d309843](https://github.com/anvilproject/anvil-portal/commit/d309843f80a5fd36194c9ee90132f26e4348dd3a))
+* add anvil demos march 2026 ([#3692](https://github.com/anvilproject/anvil-portal/issues/3692)) ([#3722](https://github.com/anvilproject/anvil-portal/issues/3722)) ([458f329](https://github.com/anvilproject/anvil-portal/commit/458f329e7af03074d0004d7ccac379999b59fe7e))
+* add anvil demos may 2026 ([#3694](https://github.com/anvilproject/anvil-portal/issues/3694)) ([#3724](https://github.com/anvilproject/anvil-portal/issues/3724)) ([b1eb535](https://github.com/anvilproject/anvil-portal/commit/b1eb535b8e2dde37b0a49686ed29541b326f2ca3))
+* add anvil demos november 2026 ([#3700](https://github.com/anvilproject/anvil-portal/issues/3700)) ([#3730](https://github.com/anvilproject/anvil-portal/issues/3730)) ([ee22eee](https://github.com/anvilproject/anvil-portal/commit/ee22eee3572a5c976e0f6734bf77324a9bc8bc1b))
+* add anvil demos october 2026 ([#3699](https://github.com/anvilproject/anvil-portal/issues/3699)) ([#3729](https://github.com/anvilproject/anvil-portal/issues/3729)) ([406f075](https://github.com/anvilproject/anvil-portal/commit/406f07568778b2140a30ed5f9477589d4ac5128c))
+* add anvil demos september 2026 ([#3698](https://github.com/anvilproject/anvil-portal/issues/3698)) ([#3728](https://github.com/anvilproject/anvil-portal/issues/3728)) ([8824d02](https://github.com/anvilproject/anvil-portal/commit/8824d020ffb19c750b9da109a902ca616298bd32))
+* add cshl biology of genomes 2026 ([#3703](https://github.com/anvilproject/anvil-portal/issues/3703)) ([#3733](https://github.com/anvilproject/anvil-portal/issues/3733)) ([35791c8](https://github.com/anvilproject/anvil-portal/commit/35791c8384723690fe05730ffd351ae2f9df4b80))
+* add cshl genome informatics 2025 ([#3702](https://github.com/anvilproject/anvil-portal/issues/3702)) ([#3732](https://github.com/anvilproject/anvil-portal/issues/3732)) ([707044e](https://github.com/anvilproject/anvil-portal/commit/707044e3456eaf219efe5a62d3efa094d781aaa2))
+* block gregor pages if the feature flag is not set ([#3716](https://github.com/anvilproject/anvil-portal/issues/3716)) ([#3718](https://github.com/anvilproject/anvil-portal/issues/3718)) ([056a7da](https://github.com/anvilproject/anvil-portal/commit/056a7dae69f834c9afe1bbe82118f74b149edc87))
+* set up stub site for gregor ([#3704](https://github.com/anvilproject/anvil-portal/issues/3704)) ([#3714](https://github.com/anvilproject/anvil-portal/issues/3714)) ([596a88f](https://github.com/anvilproject/anvil-portal/commit/596a88f1bbcec1171cd551d5644391eadbff6707))
+* set up stub site for primed ([#3712](https://github.com/anvilproject/anvil-portal/issues/3712)) ([#3719](https://github.com/anvilproject/anvil-portal/issues/3719)) ([1d29979](https://github.com/anvilproject/anvil-portal/commit/1d29979ede37feeb67b92d1024b324a38a2d8a23))
+
 ## [2.16.3](https://github.com/anvilproject/anvil-portal/compare/v2.16.2...v2.16.3) (2025-10-03)
 
 
