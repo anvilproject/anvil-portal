@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.18.0](https://github.com/anvilproject/anvil-portal/compare/v2.17.0...v2.18.0) (2025-10-15)
+
+
+### Features
+
+* add ashg 2025 to carousel ([#3736](https://github.com/anvilproject/anvil-portal/issues/3736)) ([#3737](https://github.com/anvilproject/anvil-portal/issues/3737)) ([2ae4162](https://github.com/anvilproject/anvil-portal/commit/2ae41627558fdb842caaa936d556e6dbbb03705a))
+* add handouts to ashg 2025 event ([#3735](https://github.com/anvilproject/anvil-portal/issues/3735)) ([#3738](https://github.com/anvilproject/anvil-portal/issues/3738)) ([921a7dd](https://github.com/anvilproject/anvil-portal/commit/921a7dd98cbf4c62c1e536355bda589330123fa3))
+
 ## [2.17.0](https://github.com/anvilproject/anvil-portal/compare/v2.16.3...v2.17.0) (2025-10-10)
 
 
