@@ -18,6 +18,17 @@ export function buildCarouselCards(): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
+          url: "/events/ashg2025-american-society-of-human-genetics",
+        },
+      ],
+      text: "The ASHG 2025 Annual Meeting will be held in Boston from October 14-18. The meeting will feature a wide range of scientific sessions, including plenary lectures, symposia, workshops, and poster presentations.",
+      title: "American Society of Human Genetics Annual Meeting 2025",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
           url: "/news/2025/08/25/all-of-us-anvil-imputation-service",
         },
       ],
