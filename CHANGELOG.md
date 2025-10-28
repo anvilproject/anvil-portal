@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.19.0](https://github.com/anvilproject/anvil-portal/compare/v2.18.0...v2.19.0) (2025-10-28)
+
+
+### Features
+
+* add anvil community conference 2025 report ([#3741](https://github.com/anvilproject/anvil-portal/issues/3741)) ([#3742](https://github.com/anvilproject/anvil-portal/issues/3742)) ([cc76e1f](https://github.com/anvilproject/anvil-portal/commit/cc76e1fce064136803833dba57d0af464d1d3bd4))
+
 ## [2.18.0](https://github.com/anvilproject/anvil-portal/compare/v2.17.0...v2.18.0) (2025-10-15)
 
 
