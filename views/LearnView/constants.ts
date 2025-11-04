@@ -3,7 +3,7 @@ import { PenFieldIcon } from "../../components/common/CustomIcon/components/PenF
 import { ComponentProps } from "react";
 import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/RocketLaunchIcon/rocketLaunchIcon";
 import { FlaskGearIcon } from "../../components/common/CustomIcon/components/FlaskGearIcon/flaskGearIcon";
-import { LightBulbOnIcon } from "../../components/common/CustomIcon/components/LightBulbOnIcon/lightBulbOnIcon";
+import { WatchIcon } from "../../components/common/CustomIcon/components/WatchIcon/watchIcon";
 import { CloudBinaryIcon } from "../../components/common/CustomIcon/components/CloudBinaryIcon/cloudBinaryIcon";
 import { DatabaseIcon } from "../../components/common/CustomIcon/components/DatabaseIcon/databaseIcon";
 import { StartIcon } from "../../components/common/CustomIcon/components/StartIcon/startIcon";
@@ -23,11 +23,18 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     title: "What is AnVIL?",
   },
   {
-    StartIcon: StartIcon,
+    StartIcon: RocketLaunchIcon,
     cardUrl: "/learn/get-started",
     secondaryText:
       "Set up your AnVIL account and access the AnVIL data ecosystem",
     title: "Get Started",
+  },
+  {
+    StartIcon: WatchIcon,
+    cardUrl: "/learn/watch-videos-and-tutorials",
+    secondaryText:
+      "AnVIL tutorials and videos are available on the AnVIL YouTube channel",
+    title: "Watch Tutorials & Videos",
   },
   {
     StartIcon: DatabaseIcon,
@@ -36,7 +43,7 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     title: "Find Data",
   },
   {
-    StartIcon: RocketLaunchIcon,
+    StartIcon: StartIcon,
     cardUrl: "/learn/run-interactive-analyses",
     secondaryText:
       "Run interactive analyses with Bioconductor, RStudio, Jupyter and Galaxy",
@@ -60,12 +67,5 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     cardUrl: "/learn/submit-data",
     secondaryText: "View data submission guides and resources",
     title: "Submit Data",
-  },
-  {
-    StartIcon: LightBulbOnIcon,
-    cardUrl: "/learn/watch-videos-and-tutorials",
-    secondaryText:
-      "AnVIL tutorials and videos are available on the AnVIL YouTube channel",
-    title: "Watch Tutorials & Videos",
   },
 ];
