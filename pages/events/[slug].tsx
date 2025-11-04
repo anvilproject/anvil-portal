@@ -18,7 +18,6 @@ import {
   parseFrontmatter,
 } from "../../docs/common/utils";
 import { rehypeSlug } from "../../plugins/rehypeSlug";
-import { AnVIL2026Demos } from "../../components/Events/content";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
   slug: string;
@@ -38,10 +37,7 @@ const EventArticlePage = ({
     <ContentView
       content={
         <Content>
-          <MDXRemote
-            {...mdxSource}
-            components={{ ...MDX_COMPONENTS, AnVIL2026Demos }}
-          />
+          <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
           <ContentEnd slug={slug} />
         </Content>
       }
