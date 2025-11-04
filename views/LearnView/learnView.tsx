@@ -1,6 +1,5 @@
 import { StaticProps } from "../../content/entities";
 import { Fragment } from "react";
-import { SupportForum } from "../../components/Layout/components/Content/components/SupportForum/supportForum";
 import { Grid, StyledHeadline } from "./learnView.styles";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import {
@@ -21,7 +20,6 @@ export const LearnView = (props: StaticProps): JSX.Element => {
               <CTACard key={index} {...card} />
             ))}
           </Grid>
-          <SupportForum />
         </SectionLayout>
       </StyledSection>
     </Fragment>

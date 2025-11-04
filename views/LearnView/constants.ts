@@ -7,8 +7,21 @@ import { LightBulbOnIcon } from "../../components/common/CustomIcon/components/L
 import { CloudBinaryIcon } from "../../components/common/CustomIcon/components/CloudBinaryIcon/cloudBinaryIcon";
 import { DatabaseIcon } from "../../components/common/CustomIcon/components/DatabaseIcon/databaseIcon";
 import { StartIcon } from "../../components/common/CustomIcon/components/StartIcon/startIcon";
+import { ROUTES } from "../../routes/constants";
 
 export const CARDS: ComponentProps<typeof CTACard>[] = [
+  {
+    cardUrl: ROUTES.OVERVIEW,
+    image: {
+      alt: "AnVIL",
+      height: 48,
+      src: "/consortia/learn/anvil.webp",
+      width: 48,
+    },
+    secondaryText:
+      "The following is a guided walk-through of the AnVIL documentation",
+    title: "What is AnVIL?",
+  },
   {
     StartIcon: StartIcon,
     cardUrl: "/learn/get-started",

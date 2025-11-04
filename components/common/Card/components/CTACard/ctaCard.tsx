@@ -7,11 +7,13 @@ import { CardContent, StyledCard } from "./ctaCard.styles";
 import { Typography } from "@mui/material";
 import { Props } from "./types";
 import { CARD_PROPS, SVG_ICON_PROPS, TYPOGRAPHY_PROPS } from "./constants";
+import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 
 export const CTACard = ({
   cardUrl,
   className,
   EndIcon = ForwardArrowIcon,
+  image,
   secondaryText,
   StartIcon,
   title,
@@ -22,6 +24,7 @@ export const CTACard = ({
     <StyledCard {...CARD_PROPS} className={className}>
       <CardActionArea cardUrl={cardUrl}>
         {StartIcon && <StartIcon sx={{ fontSize: 48 }} />}
+        {image && <StaticImage {...image} />}
         <EndIcon {...SVG_ICON_PROPS} />
         <CardContent>
           <CardTitle>{title}</CardTitle>
