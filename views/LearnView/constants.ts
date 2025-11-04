@@ -2,11 +2,11 @@ import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard
 import { UploadFileIcon } from "../../components/common/CustomIcon/components/UploadFileIcon/uploadFileIcon";
 import { ComponentProps } from "react";
 import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/RocketLaunchIcon/rocketLaunchIcon";
-import { FlaskGearIcon } from "../../components/common/CustomIcon/components/FlaskGearIcon/flaskGearIcon";
+import { AccountsTreeIcon } from "../../components/common/CustomIcon/components/AccountsTreeIcon/accountsTreeIcon";
 import { AnimatedImagesIcon } from "../../components/common/CustomIcon/components/AnimatedImagesIcon/animatedImagesIcon";
-import { CloudBinaryIcon } from "../../components/common/CustomIcon/components/CloudBinaryIcon/cloudBinaryIcon";
+import { FilterDramaIcon } from "../../components/common/CustomIcon/components/FilterDramaIcon/filterDramaIcon";
 import { DatabaseSearchIcon } from "../../components/common/CustomIcon/components/DatabaseSearchIcon/databaseSearchIcon";
-import { StartIcon } from "../../components/common/CustomIcon/components/StartIcon/startIcon";
+import { AdsClickIcon } from "../../components/common/CustomIcon/components/AdsClickIcon/adsClickIcon";
 import { ROUTES } from "../../routes/constants";
 import { SmbShareIcon } from "../../components/common/CustomIcon/components/SmbShareIcon/smbShareIcon";
 
@@ -57,20 +57,20 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     title: "Access Data Services",
   },
   {
-    StartIcon: StartIcon,
+    StartIcon: AdsClickIcon,
     cardUrl: "/learn/run-interactive-analyses",
     secondaryText:
       "Run interactive analyses with Bioconductor, RStudio, Jupyter and Galaxy",
     title: "Run Interactive Analyses",
   },
   {
-    StartIcon: FlaskGearIcon,
+    StartIcon: AccountsTreeIcon,
     cardUrl: "/learn/run-analyses-workflows",
     secondaryText: "Run and scale analysis workflows with Dockstore and Terra",
     title: "Run Analyses Workflows",
   },
   {
-    StartIcon: CloudBinaryIcon,
+    StartIcon: FilterDramaIcon,
     cardUrl: "/learn/control-cloud-costs",
     secondaryText:
       "Learn how to control cloud costs and optimize your cloud usage",
