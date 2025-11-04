@@ -15,4 +15,3 @@ export const RocketLaunchIcon = ({
     </SvgIcon>
   );
 };
-//035C94
