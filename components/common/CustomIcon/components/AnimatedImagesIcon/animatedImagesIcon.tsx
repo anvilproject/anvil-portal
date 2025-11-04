@@ -1,7 +1,7 @@
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
-export const WatchIcon = ({
+export const AnimatedImagesIcon = ({
   fontSize = "large",
   viewBox = "0 0 48 48",
   ...props

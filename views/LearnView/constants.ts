@@ -1,13 +1,14 @@
 import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard";
-import { PenFieldIcon } from "../../components/common/CustomIcon/components/PenFieldIcon/penFieldIcon";
+import { UploadFileIcon } from "../../components/common/CustomIcon/components/UploadFileIcon/uploadFileIcon";
 import { ComponentProps } from "react";
 import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/RocketLaunchIcon/rocketLaunchIcon";
 import { FlaskGearIcon } from "../../components/common/CustomIcon/components/FlaskGearIcon/flaskGearIcon";
-import { WatchIcon } from "../../components/common/CustomIcon/components/WatchIcon/watchIcon";
+import { AnimatedImagesIcon } from "../../components/common/CustomIcon/components/AnimatedImagesIcon/animatedImagesIcon";
 import { CloudBinaryIcon } from "../../components/common/CustomIcon/components/CloudBinaryIcon/cloudBinaryIcon";
-import { DatabaseIcon } from "../../components/common/CustomIcon/components/DatabaseIcon/databaseIcon";
+import { DatabaseSearchIcon } from "../../components/common/CustomIcon/components/DatabaseSearchIcon/databaseSearchIcon";
 import { StartIcon } from "../../components/common/CustomIcon/components/StartIcon/startIcon";
 import { ROUTES } from "../../routes/constants";
+import { SmbShareIcon } from "../../components/common/CustomIcon/components/SmbShareIcon/smbShareIcon";
 
 export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
@@ -30,17 +31,30 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     title: "Get Started",
   },
   {
-    StartIcon: WatchIcon,
+    StartIcon: AnimatedImagesIcon,
     cardUrl: "/learn/watch-videos-and-tutorials",
     secondaryText:
       "AnVIL tutorials and videos are available on the AnVIL YouTube channel",
     title: "Watch Tutorials & Videos",
   },
   {
-    StartIcon: DatabaseIcon,
+    StartIcon: DatabaseSearchIcon,
     cardUrl: "/learn/find-data",
     secondaryText: "Discover and access AnVIL datasets",
     title: "Find Data",
+  },
+  {
+    StartIcon: UploadFileIcon,
+    cardUrl: "/learn/submit-data",
+    secondaryText: "View data submission guides and resources",
+    title: "Submit Data",
+  },
+  {
+    StartIcon: SmbShareIcon,
+    cardUrl: "/learn/access-data-services",
+    secondaryText:
+      "The following is a guided walk-through of the AnVIL documentation",
+    title: "Access Data Services",
   },
   {
     StartIcon: StartIcon,
@@ -61,11 +75,5 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     secondaryText:
       "Learn how to control cloud costs and optimize your cloud usage",
     title: "Control Cloud Costs",
-  },
-  {
-    StartIcon: PenFieldIcon,
-    cardUrl: "/learn/submit-data",
-    secondaryText: "View data submission guides and resources",
-    title: "Submit Data",
   },
 ];
