@@ -9,6 +9,9 @@ import { DatabaseSearchIcon } from "../../components/common/CustomIcon/component
 import { AdsClickIcon } from "../../components/common/CustomIcon/components/AdsClickIcon/adsClickIcon";
 import { ROUTES } from "../../routes/constants";
 import { SmbShareIcon } from "../../components/common/CustomIcon/components/SmbShareIcon/smbShareIcon";
+import { SupportIcon } from "../../components/common/CustomIcon/components/SupportIcon/supportIcon";
+import { LiveHelpIcon } from "../../components/common/CustomIcon/components/LiveHelpIcon/liveHelpIcon";
+import { TerminalIcon } from "../../components/common/CustomIcon/components/TerminalIcon/terminalIcon";
 
 export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
@@ -52,8 +55,7 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
     StartIcon: SmbShareIcon,
     cardUrl: "/learn/access-data-services",
-    secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
+    secondaryText: "Learn to access and analyze data with AnVIL services",
     title: "Access Data Services",
   },
   {
@@ -75,5 +77,24 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     secondaryText:
       "Learn how to control cloud costs and optimize your cloud usage",
     title: "Control Cloud Costs",
+  },
+  {
+    StartIcon: SupportIcon,
+    cardUrl: "https://help.anvilproject.org",
+    secondaryText: "Check out the AnVIL Community for support",
+    title: "Get Help",
+  },
+  {
+    StartIcon: LiveHelpIcon,
+    cardUrl: ROUTES.FAQ,
+    secondaryText:
+      "What is AnVIL? What is an AnVIL Workspace? What is Terra and how does it relate to AnVIL? Check out our FAQs",
+    title: "FAQs",
+  },
+  {
+    StartIcon: TerminalIcon,
+    cardUrl: "https://help.anvilproject.org/c/demos/5",
+    secondaryText: "Short demos followed by live Q&A",
+    title: "AnVIL Demos",
   },
 ];
