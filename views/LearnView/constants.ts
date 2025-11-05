@@ -22,8 +22,7 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
       src: "/consortia/learn/anvil.webp",
       width: 48,
     },
-    secondaryText:
-      "The following is a guided walk-through of the AnVIL documentation",
+    secondaryText: "Learn about the AnVIL platform",
     title: "What is AnVIL?",
   },
   {
@@ -81,20 +80,19 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
     StartIcon: SupportIcon,
     cardUrl: "https://help.anvilproject.org",
-    secondaryText: "Check out the AnVIL Community for support",
+    secondaryText: "Check out the AnVIL Support Forum",
     title: "Get Help",
   },
   {
     StartIcon: LiveHelpIcon,
     cardUrl: ROUTES.FAQ,
-    secondaryText:
-      "What is AnVIL? What is an AnVIL Workspace? What is Terra and how does it relate to AnVIL? Check out our FAQs",
+    secondaryText: "Get answers to common questions",
     title: "FAQs",
   },
   {
     StartIcon: TerminalIcon,
     cardUrl: "https://help.anvilproject.org/c/demos/5",
-    secondaryText: "Short demos followed by live Q&A",
+    secondaryText: "Attend or review researcher demos",
     title: "AnVIL Demos",
   },
 ];
