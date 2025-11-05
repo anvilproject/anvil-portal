@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.20.0](https://github.com/anvilproject/anvil-portal/compare/v2.19.0...v2.20.0) (2025-11-05)
+
+
+### Features
+
+* update sections on learn page ([#3744](https://github.com/anvilproject/anvil-portal/issues/3744)) ([#3755](https://github.com/anvilproject/anvil-portal/issues/3755)) ([ef70cf0](https://github.com/anvilproject/anvil-portal/commit/ef70cf0b632c16080c0184913fd338557157dbc2))
+
+
+### Content
+
+* add cmg data release on the anvil platform news ([#3747](https://github.com/anvilproject/anvil-portal/issues/3747)) ([#3759](https://github.com/anvilproject/anvil-portal/issues/3759)) ([cf60bf3](https://github.com/anvilproject/anvil-portal/commit/cf60bf395a8a87b0cd5ae1efa9bf417197c48325))
+* add complex chromosomal changes involving chromosome 9 data release news ([#3748](https://github.com/anvilproject/anvil-portal/issues/3748)) ([#3760](https://github.com/anvilproject/anvil-portal/issues/3760)) ([434fa22](https://github.com/anvilproject/anvil-portal/commit/434fa22cc60bcbe9f8f5a1128ab3913c25f17fa3))
+* add gregor consortium v 4 data release on anvil news ([#3745](https://github.com/anvilproject/anvil-portal/issues/3745)) ([#3757](https://github.com/anvilproject/anvil-portal/issues/3757)) ([c049c4a](https://github.com/anvilproject/anvil-portal/commit/c049c4ad602cbc26aecc3dcf9d591da04bc4f0e1))
+* add release of ourhealth study on anvil news ([#3746](https://github.com/anvilproject/anvil-portal/issues/3746)) ([#3758](https://github.com/anvilproject/anvil-portal/issues/3758)) ([e958b84](https://github.com/anvilproject/anvil-portal/commit/e958b846dab34d9f8172fe919b66d47d46ad4aa1))
+* remove demo code block ([#3753](https://github.com/anvilproject/anvil-portal/issues/3753)) ([#3756](https://github.com/anvilproject/anvil-portal/issues/3756)) ([2916150](https://github.com/anvilproject/anvil-portal/commit/2916150c4b42f58d755c33b34be58d68e8791d88))
+* update learn section card descriptions ([#3761](https://github.com/anvilproject/anvil-portal/issues/3761)) ([#3763](https://github.com/anvilproject/anvil-portal/issues/3763)) ([f01f6b2](https://github.com/anvilproject/anvil-portal/commit/f01f6b2e3e9ab89aa3ce2b53e68404efdf564ae6))
+* updated dec demo ([#3750](https://github.com/anvilproject/anvil-portal/issues/3750)) ([9491a39](https://github.com/anvilproject/anvil-portal/commit/9491a39019f871e0d4c3da12535a461049f41b51))
+* updated feb demo ([#3752](https://github.com/anvilproject/anvil-portal/issues/3752)) ([7b93e34](https://github.com/anvilproject/anvil-portal/commit/7b93e34be5a9cd148d1c381eed0890e9b79b1094))
+* updated jan demo ([#3751](https://github.com/anvilproject/anvil-portal/issues/3751)) ([e6c2a0d](https://github.com/anvilproject/anvil-portal/commit/e6c2a0ddca5c7cc782615a9c89d30fa118cd590b))
+
 ## [2.19.0](https://github.com/anvilproject/anvil-portal/compare/v2.18.0...v2.19.0) (2025-10-28)
 
 
