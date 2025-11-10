@@ -10,7 +10,7 @@ import { METRICS } from "./constants";
 export const Metrics = (): JSX.Element => {
   return (
     <DatasetMetrics>
-      {METRICS.map(([count, label]) => (
+      {METRICS.map(([label, count]) => (
         <Metric key={label}>
           <Divider flexItem orientation="vertical" />
           <Count>{count}</Count>
