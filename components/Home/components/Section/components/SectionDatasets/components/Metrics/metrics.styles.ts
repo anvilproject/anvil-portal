@@ -19,7 +19,7 @@ export const Metric = styled.div`
   align-self: flex-start;
   display: grid;
   gap: 0 8px;
-  grid-column: auto / span 4;
+  grid-column: auto / span 6;
   justify-content: flex-start;
 
   .MuiDivider-root {
@@ -47,8 +47,14 @@ export const Metric = styled.div`
     }
   }
 
+  &:nth-of-type(4) {
+    .MuiDivider-root {
+      border-color: #cdeef2;
+    }
+  }
+
   ${bpUpSm} {
-    grid-column: auto / span 2;
+    grid-column: auto / span 3;
   }
 
   ${bpUp1024} {
