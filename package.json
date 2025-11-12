@@ -13,6 +13,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "prepare": "husky install ./.husky",
     "convert-cser-publications": "cd scripts && node convert-cser-publications.mjs",
+    "convert-gregor-publications": "esrun scripts/convert-gregor-publications.cts",
     "update-ingestion-chart": "cd scripts && node update-ingestion-chart.mjs",
     "add-cser-materials": "esrun scripts/add-cser-materials.ts"
   },
