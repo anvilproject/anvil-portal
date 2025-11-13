@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.21.0](https://github.com/anvilproject/anvil-portal/compare/v2.20.0...v2.21.0) (2025-11-13)
+
+
+### Features
+
+* swap demo overlines and titles ([#3770](https://github.com/anvilproject/anvil-portal/issues/3770)) ([#3775](https://github.com/anvilproject/anvil-portal/issues/3775)) ([3aca291](https://github.com/anvilproject/anvil-portal/commit/3aca291ba5ae9e768035261241f307c4484aea6c))
+* update counts on homepage ([#3709](https://github.com/anvilproject/anvil-portal/issues/3709)) ([#3766](https://github.com/anvilproject/anvil-portal/issues/3766)) ([7135068](https://github.com/anvilproject/anvil-portal/commit/7135068da9020589c85aa5092f1c5acc26d07fb2))
+
+
+### Bug Fixes
+
+* update anvil demos after feb 2026 to match previous demo content ([#3769](https://github.com/anvilproject/anvil-portal/issues/3769)) ([#3774](https://github.com/anvilproject/anvil-portal/issues/3774)) ([a3e8a78](https://github.com/anvilproject/anvil-portal/commit/a3e8a78c9373e8c52cd0fd039558e9bc3de84ce0))
+
+
+### Content
+
+* added anvil cadr news [#3777](https://github.com/anvilproject/anvil-portal/issues/3777) ([#3778](https://github.com/anvilproject/anvil-portal/issues/3778)) ([327e2af](https://github.com/anvilproject/anvil-portal/commit/327e2af815979334775255322b6f7cfbf06e8306))
+* updated security page ([#3767](https://github.com/anvilproject/anvil-portal/issues/3767)) ([fa42082](https://github.com/anvilproject/anvil-portal/commit/fa42082cdd398954849be79afc6e51cd72688dae))
+
 ## [2.20.0](https://github.com/anvilproject/anvil-portal/compare/v2.19.0...v2.20.0) (2025-11-05)
 
 
