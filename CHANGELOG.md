@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.21.1](https://github.com/anvilproject/anvil-portal/compare/v2.21.0...v2.21.1) (2025-11-14)
+
+
+### Content
+
+* updated donor count [#3797](https://github.com/anvilproject/anvil-portal/issues/3797) ([#3798](https://github.com/anvilproject/anvil-portal/issues/3798)) ([04b2bad](https://github.com/anvilproject/anvil-portal/commit/04b2bada2936f5cbbda0fbe5d62a8d28e16ed7e5))
+* updated title of april demo [#3787](https://github.com/anvilproject/anvil-portal/issues/3787) ([#3787](https://github.com/anvilproject/anvil-portal/issues/3787)) ([85b8fc8](https://github.com/anvilproject/anvil-portal/commit/85b8fc894383e906478693006f84aa69601ddd92))
+* updated title of august demo [#3792](https://github.com/anvilproject/anvil-portal/issues/3792) ([#3792](https://github.com/anvilproject/anvil-portal/issues/3792)) ([ff80823](https://github.com/anvilproject/anvil-portal/commit/ff8082351a22cee0784dff5e7679b40fa395acf4))
+* updated title of december demo [#3796](https://github.com/anvilproject/anvil-portal/issues/3796) ([#3796](https://github.com/anvilproject/anvil-portal/issues/3796)) ([e7077c2](https://github.com/anvilproject/anvil-portal/commit/e7077c2ce716aaadad76a1ff2945bee1b6476dfa))
+* updated title of february demo [#3785](https://github.com/anvilproject/anvil-portal/issues/3785) ([#3785](https://github.com/anvilproject/anvil-portal/issues/3785)) ([f49be3f](https://github.com/anvilproject/anvil-portal/commit/f49be3fd07f187e3b5011a2bb385fa93fc60408f))
+* updated title of january demo [#3784](https://github.com/anvilproject/anvil-portal/issues/3784) ([#3784](https://github.com/anvilproject/anvil-portal/issues/3784)) ([8c5b546](https://github.com/anvilproject/anvil-portal/commit/8c5b546b4b79bdd2131b7f46317122a102d6c801))
+* updated title of july demo [#3791](https://github.com/anvilproject/anvil-portal/issues/3791) ([#3791](https://github.com/anvilproject/anvil-portal/issues/3791)) ([0da482f](https://github.com/anvilproject/anvil-portal/commit/0da482ffdcd7650b612af5c807d8e861d39490b7))
+* updated title of june demo [#3789](https://github.com/anvilproject/anvil-portal/issues/3789) ([#3789](https://github.com/anvilproject/anvil-portal/issues/3789)) ([34575e9](https://github.com/anvilproject/anvil-portal/commit/34575e9aa3440122339c72f5ea0320493e08faa3))
+* updated title of march demo [#3786](https://github.com/anvilproject/anvil-portal/issues/3786) ([#3786](https://github.com/anvilproject/anvil-portal/issues/3786)) ([4f04793](https://github.com/anvilproject/anvil-portal/commit/4f047937b9a8e27801359a3514619a86859d17f5))
+* updated title of may demo [#3788](https://github.com/anvilproject/anvil-portal/issues/3788) ([#3788](https://github.com/anvilproject/anvil-portal/issues/3788)) ([08ff11d](https://github.com/anvilproject/anvil-portal/commit/08ff11db0997d0b93b88d91a2d85f904eec10822))
+* updated title of november demo [#3795](https://github.com/anvilproject/anvil-portal/issues/3795) ([#3795](https://github.com/anvilproject/anvil-portal/issues/3795)) ([c928e18](https://github.com/anvilproject/anvil-portal/commit/c928e1811991beaa93dd4619932c398dd4f725e1))
+* updated title of october demo [#3794](https://github.com/anvilproject/anvil-portal/issues/3794) ([#3794](https://github.com/anvilproject/anvil-portal/issues/3794)) ([a7eae0d](https://github.com/anvilproject/anvil-portal/commit/a7eae0de2927f463cc05272571f14d31fb18a625))
+* updated title of september demo [#3793](https://github.com/anvilproject/anvil-portal/issues/3793) ([#3793](https://github.com/anvilproject/anvil-portal/issues/3793)) ([4d00242](https://github.com/anvilproject/anvil-portal/commit/4d00242a7e47343b23abb7fcd97c35c489e8abbd))
+
 ## [2.21.0](https://github.com/anvilproject/anvil-portal/compare/v2.20.0...v2.21.0) (2025-11-13)
 
 
