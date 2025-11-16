@@ -1,5 +1,6 @@
 import { promises as fsp } from "fs";
 import { parse as callbackParseCsv } from "csv-parse";
+import { stripHtml } from "string-strip-html";
 import { ConsortiumPublication } from "../components/Consortia/types";
 
 let got: (typeof import("got"))["got"];
@@ -105,15 +106,19 @@ async function getPublication(
   }
 
   return {
-    authors: unknownValueToString(authors),
+    authors: unknownValueToHtmlStrippedString(authors),
     doi,
-    journalOrBook: unknownValueToString(journal),
+    journalOrBook: unknownValueToHtmlStrippedString(journal),
     pmid,
     publicationYear: unknownValueToString(
       message.published?.["date-parts"][0]?.[0]
     ),
-    title: unknownValueToString(message.title),
+    title: unknownValueToHtmlStrippedString(message.title),
   };
+}
+
+function unknownValueToHtmlStrippedString(value: unknown): string {
+  return stripHtml(unknownValueToString(value)).result;
 }
 
 function unknownValueToString(value: unknown): string {
