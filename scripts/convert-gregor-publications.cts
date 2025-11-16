@@ -1,5 +1,6 @@
 import { promises as fsp } from "fs";
 import { parse as callbackParseCsv } from "csv-parse";
+import { ConsortiumPublication } from "../components/Consortia/types";
 
 let got: (typeof import("got"))["got"];
 
@@ -26,15 +27,6 @@ interface InputCsvRow {
   PMID: string;
 }
 
-interface Publication {
-  authors: string;
-  doi: string;
-  journalOrBook: string;
-  pmid: string;
-  publicationYear: string;
-  title: string;
-}
-
 const INPUT_CSV_PATH = "scripts/files/gregor_publications_pmid_doi.csv";
 const OUTPUT_JSON_PATH =
   "components/Consortia/GREGOR/components/Publications/publications.json";
@@ -52,7 +44,7 @@ async function convertGregorPublications(): Promise<void> {
     });
   });
 
-  const publications: Publication[] = [];
+  const publications: ConsortiumPublication[] = [];
   const skippedEntries: InputCsvRow[] = [];
 
   for (const [i, entry] of entries.entries()) {
@@ -78,7 +70,10 @@ async function convertGregorPublications(): Promise<void> {
   console.log("\nDone");
 }
 
-async function getPublication(doi: string, pmid: string): Promise<Publication> {
+async function getPublication(
+  doi: string,
+  pmid: string
+): Promise<ConsortiumPublication> {
   if (!doi) throw new Error(`Missing DOI (PMID: ${pmid})`);
 
   const res = await got(
