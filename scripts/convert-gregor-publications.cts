@@ -29,7 +29,7 @@ interface InputCsvRow {
 
 const INPUT_CSV_PATH = "scripts/files/gregor_publications_pmid_doi.csv";
 const OUTPUT_JSON_PATH =
-  "components/Consortia/GREGOR/components/Publications/publications.json";
+  "components/Consortia/GREGoR/components/Publications/publications.json";
 
 convertGregorPublications();
 
