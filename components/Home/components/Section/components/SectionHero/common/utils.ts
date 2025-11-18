@@ -16,6 +16,21 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
+          label: ACTION_LABEL.PAPER,
+          url: "https://www.nature.com/articles/s41586-025-09613-8",
+        },
+      ],
+      media: {
+        alt: "GREGoR Consortium",
+        height: 168,
+        src: "/consortia/carousel/gregor.webp",
+      },
+      text: "The GREGoR Consortium's latest publication in Nature (Vol 647) presents a large-scale collaborative framework, datasets and discoveries from over 7,500 individuals from over 3,000 families, are rapidly made available to researchers worldwide through the Analysis, Visualization and Informatics Lab-space (AnVIL) to catalyse global efforts to develop approaches for genetic diagnoses in rare diseases",
+      title: "GREGoR: accelerating genomics for rare diseases",
+    },
+    {
+      links: [
+        {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
           url: "/events/ashg2025-american-society-of-human-genetics",
