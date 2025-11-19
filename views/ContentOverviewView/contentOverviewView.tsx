@@ -10,13 +10,18 @@ import { SectionContent } from "../../components/Layout/components/Section/compo
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import { StaticProps } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
+import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
 
-export const ContentOverviewView = (props: StaticProps): JSX.Element => {
+export const ContentOverviewView = ({
+  className,
+  ...props
+}: BaseComponentProps & StaticProps): JSX.Element => {
   const { mdxSource, outline, ...contentProps } = props;
   return (
     <Fragment>
       <SectionHero {...props} />
       <SectionContent
+        className={className}
         content={
           <Content>
             <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />

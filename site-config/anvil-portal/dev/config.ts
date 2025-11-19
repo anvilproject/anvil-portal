@@ -101,6 +101,11 @@ export function makeConfig(
                   target: ANCHOR_TARGET.BLANK,
                   url: "https://duos.org/datalibrary/AnVIL",
                 },
+                {
+                  description: "Summary of data releases and upcoming changes.",
+                  label: "Data Releases",
+                  url: `${ROUTES.DATA_RELEASES}/2025/08/release-notes`,
+                },
               ],
               url: "",
             },
