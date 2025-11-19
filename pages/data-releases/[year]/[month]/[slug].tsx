@@ -13,7 +13,7 @@ import {
 import { rehypeSlug } from "../../../../plugins/rehypeSlug";
 import { resolveRelativeDirs } from "docs/common/resolveRelativeDirs";
 import { StaticProps } from "../../../../content/entities";
-import { StyledContentOverviewView } from "../../../../views/ReleaseNotesView/releaseNotesView.styles";
+import { ContentOverviewView } from "../../../../views/ContentOverviewView/contentOverviewView";
 
 const DOCS_DIR = "docs";
 const DATA_RELEASES_DIR = "data-releases";
@@ -60,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Page = (props: PageProps): JSX.Element => {
-  return <StyledContentOverviewView {...props} />;
+  return <ContentOverviewView {...props} />;
 };
 
 export default Page;

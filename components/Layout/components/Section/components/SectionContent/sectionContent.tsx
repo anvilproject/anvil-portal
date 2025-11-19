@@ -13,19 +13,16 @@ import {
   StyledSection,
 } from "./sectionContent.styles";
 import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
-import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
 
 export const SectionContent = ({
-  className,
   content,
   outline,
   slug,
-}: BaseComponentProps &
-  Omit<StaticProps, "mdxSource" | "outline"> &
+}: Omit<StaticProps, "mdxSource" | "outline"> &
   Pick<ContentViewProps, "content" | "outline">): JSX.Element => {
   const { dimensions } = useLayoutDimensions();
   return (
-    <StyledSection className={className}>
+    <StyledSection>
       <ContentLayout
         hasNavigation={false}
         panelColor={PANEL_BACKGROUND_COLOR.DEFAULT}

@@ -12,6 +12,7 @@ export { SlackIcon } from "@databiosphere/findable-ui/lib/components/common/Cust
 export { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 export { YouTubeIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/YouTubeIcon/youTubeIcon";
 export { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
+export { GridTable } from "@databiosphere/findable-ui/lib/components/Table/common/gridTable.styles";
 export { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 export { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 export { Footer } from "@databiosphere/findable-ui/lib/components/Layout/components/Footer/footer";
