@@ -39,6 +39,7 @@ export { Projects } from "./Consortia/CSER/components/Projects/projects";
 export { Publications } from "./Consortia/CSER/components/Publications/publications";
 export { ResearchMaterials } from "./Consortia/CSER/components/ResearchMaterials/researchMaterials";
 export { Resources } from "./Consortia/CSER/components/Resources/resources";
+export { Publications as PublicationsGREGoR } from "./Consortia/GREGoR/components/Publications/publications";
 export { Card as EventCard } from "./Events/components/Card/card";
 export { EventsHero } from "./Events/components/EventsHero/eventsHero";
 export { Events } from "./Events/events";
