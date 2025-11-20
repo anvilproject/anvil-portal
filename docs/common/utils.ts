@@ -65,10 +65,12 @@ export function filterOutline(outline: OutlineItem): boolean {
 
 /**
  * Returns the static paths for each mdx content in the "docs" directory.
+ * @param docsDirectory - Docs directory.
  * @returns the static paths for the mdx content.
  */
-export function generatePaths(): GetStaticPathsResult["paths"] {
-  const docsDirectory = getDocsDirectory();
+export function generatePaths(
+  docsDirectory = getDocsDirectory()
+): GetStaticPathsResult["paths"] {
   const slugByFilePaths = mapSlugByFilePaths(docsDirectory);
   return [...slugByFilePaths].map(([, slug]) => {
     return {

@@ -27,7 +27,7 @@ import { rehypeSlug } from "../plugins/rehypeSlug";
 import { remarkHeadings } from "../plugins/remarkHeadings";
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 
-const CONFLICTING_STATIC_PATHS = ["events", "learn", "news"];
+const CONFLICTING_STATIC_PATHS = ["events", "learn", "news", "data-releases"];
 
 interface DocPageProps {
   hero: NodeHero | null;

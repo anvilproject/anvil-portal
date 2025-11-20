@@ -1,17 +1,21 @@
 ---
+breadcrumbs:
+  - path: "/"
+    text: "Home"
+  - path: ""
+    text: "Releases"
+  - path: ""
+    text: "August 2025 Release"
+description: "August 2025 Data Release"
 date: "2025-08-28"
-description: "New genomic datasets and platform improvements now available on AnVIL."
-featured: true
-title: "AnVIL Quarterly Release Communications: August 2025 Release"
+title: "August 2025 Release"
 ---
-
-<NewsHero {...frontmatter} />
 
 The AnVIL team is excited to announce the release of the following studies below on the AnVIL platform. If you are interested in these datasets, please submit data access requests through dbGaP. The datasets are now findable on the [AnVIL Data Explorer]({browserURL}/datasets) for cohort building and on the [AnVIL Data Library](https://duos.org/datalibrary/anvil) for dataset level search.
 
 For additional resources for how to find datasets on AnVIL, please refer to the [AnVIL Data Explorer Guide]({browserURL}/guides) or [DUOS Data Library user guide](https://support.terra.bio/hc/en-us/articles/31034718333851-How-to-access-and-export-controlled-data-to-Terra-via-DUOS).
 
-<NewsTable250828>
+<GridTable extendIntoGutter gridTemplateColumns="repeat(2, minmax(200px, 1fr)) minmax(200px, 2fr) repeat(3, minmax(100px, 1fr))">
 
 | Study Name | phsID / DULs | Release Notes | Submitter blog post | Where to apply for access | Link to dataset on AnVIL |
 |:------------|:-------------|:---------------|:----------------------|:----------------------------|:---------------------------|
@@ -26,13 +30,11 @@ For additional resources for how to find datasets on AnVIL, please refer to the 
 | PAGE: Multi-Ethnic Cohort Study | phs000220.v2.p2<br/>GRU | Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000220.v2.p2) for more information. | N/A | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000220.v2.p2) | [Explorer]({browserURL}/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs000220%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/78) |
 | PAGE: Global Reference Panel | phs001033.v1.p1<br/>GRU | Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001033.v1.p1) for more information. | N/A | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001033.v1.p1) | [Explorer]({browserURL}/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001033%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/76) |
 
-</NewsTable250828>
+</GridTable>
 
 In addition to the data released above, the following are developmental enhancements made to the AnVIL data:
+
 - Inconsistencies in snapshot naming conventions that were causing issues with indexing for the AnVIL Data Explorer have been resolved. 
 - MD5s for file metadata are now consistently encoded to Base64 to be consistent with what is provided in the GCS metadata.
 - Values that were causing issues importing data from DUOS or the AnVIL Data Explorer into Workspaces have been corrected.
 - The presence of double-pipes that was causing issues with indexing certain datasets for the AnVIL Data Explorer has been resolved.
-
-
-
