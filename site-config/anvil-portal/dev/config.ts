@@ -104,7 +104,7 @@ export function makeConfig(
                 {
                   description: "Summary of data releases and upcoming changes.",
                   label: "Data Releases",
-                  url: `${ROUTES.DATA_RELEASES}/2025/08/release-notes`,
+                  url: ROUTES.DATA_RELEASES,
                 },
               ],
               url: "",

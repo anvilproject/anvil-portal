@@ -18,7 +18,10 @@ export const SectionContent = ({
   content,
   outline,
   slug,
-}: Omit<StaticProps, "mdxSource" | "outline"> &
+}: Omit<
+  StaticProps,
+  "frontmatter" | "layoutStyle" | "mdxSource" | "outline" | "pageTitle"
+> &
   Pick<ContentViewProps, "content" | "outline">): JSX.Element => {
   const { dimensions } = useLayoutDimensions();
   return (
