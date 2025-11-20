@@ -33,9 +33,9 @@ export const ReleasesView = (props: PageProps): JSX.Element => {
                 >
                   {year}
                 </Typography>
-                {releases.map((release, index) => (
+                {releases.map((release) => (
                   <StyledCard
-                    key={index}
+                    key={release.id}
                     id={release.id}
                     elevation={1}
                     sx={{ scrollMarginTop }}
