@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.22.0](https://github.com/anvilproject/anvil-portal/compare/v2.21.1...v2.22.0) (2025-11-20)
+
+
+### Features
+
+* add gregor publication to carousel ([#3800](https://github.com/anvilproject/anvil-portal/issues/3800)) ([#3802](https://github.com/anvilproject/anvil-portal/issues/3802)) ([01aaae8](https://github.com/anvilproject/anvil-portal/commit/01aaae814cb7c71295259fe456ece9ce3efab467))
+* add script to generate gregor publications json ([#3764](https://github.com/anvilproject/anvil-portal/issues/3764)) ([#3801](https://github.com/anvilproject/anvil-portal/issues/3801)) ([1dd61fc](https://github.com/anvilproject/anvil-portal/commit/1dd61fc2c43a76b011cd078e341ad353d2f28b9a))
+* create release notes detail page ([#3776](https://github.com/anvilproject/anvil-portal/issues/3776)) ([#3805](https://github.com/anvilproject/anvil-portal/issues/3805)) ([8b7d908](https://github.com/anvilproject/anvil-portal/commit/8b7d90845e47c1cdd7471c9d767e8dcc16b32ebc))
+* create release notes landing page ([#3780](https://github.com/anvilproject/anvil-portal/issues/3780)) ([#3806](https://github.com/anvilproject/anvil-portal/issues/3806)) ([1f19d67](https://github.com/anvilproject/anvil-portal/commit/1f19d67125b026d3d1039361661d3e432c81150d))
+
 ## [2.21.1](https://github.com/anvilproject/anvil-portal/compare/v2.21.0...v2.21.1) (2025-11-14)
 
 
