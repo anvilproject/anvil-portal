@@ -125,7 +125,7 @@ function getReleaseDates(dateByPaths: Map<Date, string>): Date[] {
  * @returns release date.
  */
 function mapReleaseDate([year, month]: string[]): Date {
-  return new Date(Date.UTC(Number(year), Number(month) - 1));
+  return new Date(Number(year), Number(month) - 1);
 }
 
 /**
