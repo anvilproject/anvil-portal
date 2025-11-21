@@ -52,7 +52,7 @@ export const Headline = styled(Content)`
   grid-area: hero;
   padding-bottom: 40px;
   padding-top: 40px;
-  width: 100%;
+  width: calc(100% - 80px);
 
   ${bpDownSm} {
     padding-bottom: 40px;
@@ -73,5 +73,5 @@ export const PageTitle = styled.h1`
 export const PageSubTitle = styled.div`
   color: ${PALETTE.INK_LIGHT};
   font: ${FONT.BODY_400_2_LINES};
-  margin: 0 auto;
+  margin: 4px auto 0;
 `;

@@ -17,7 +17,9 @@ export const SectionHero = ({
   className,
   frontmatter: { breadcrumbs, subTitle, title },
   StyledHeadline = Headline,
-}: BaseComponentProps & Props & StaticProps): JSX.Element => {
+}: BaseComponentProps &
+  Props &
+  Pick<StaticProps, "frontmatter">): JSX.Element => {
   const { dimensions } = useLayoutDimensions();
   return (
     <StyledSection

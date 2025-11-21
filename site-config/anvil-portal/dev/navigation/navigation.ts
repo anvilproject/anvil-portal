@@ -1,6 +1,7 @@
 import { NavigationConfig } from "../../../../docs/common/entities";
 import { ANVIL_CHAMPIONS } from "./champions";
 import { CONSORTIA } from "./consortia";
+import { DATA_RELEASES } from "./data-releases";
 import { EVENTS } from "./events";
 import { FAQ } from "./faq";
 import { GUIDES } from "./guides";
@@ -15,6 +16,7 @@ import { TEAM } from "./team";
 export const navigation: NavigationConfig = {
   ["anvil-champions"]: ANVIL_CHAMPIONS,
   consortia: CONSORTIA,
+  ["data-releases"]: DATA_RELEASES,
   events: EVENTS,
   faq: FAQ,
   guides: GUIDES,

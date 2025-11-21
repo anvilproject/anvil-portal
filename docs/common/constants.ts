@@ -6,6 +6,7 @@ import DataIngestionChart from "../../components/Consortia/CSER/components/DataI
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { ROUTES } from "../../routes/constants";
 import { Stack } from "@mui/material";
+import { GridTable } from "../../components/common/Table/components/GridTable/gridTable";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -30,6 +31,7 @@ export const MDX_COMPONENTS = {
   EventsHero: C.EventsHero,
   Figure: C.Figure,
   Grid: C.Grid,
+  GridTable,
   Image: C.StaticImage,
   Link: C.Link,
   NBS: C.NBS, // non-breaking space typography component
