@@ -1,18 +1,23 @@
 name: Deploy to S3 and CloudFront
 
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ["release-please"]
+    types:
+      - completed
 permissions:
   id-token: write
   contents: read
 jobs:
   build-and-deploy:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
