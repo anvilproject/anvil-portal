@@ -199,7 +199,7 @@ The project uses two transpilation mechanisms:
 - axios
 - @databiosphere/findable-ui
 - @observablehq/plot
-- @tanstack/react-table
+- @tanstack/react-table (peer dependency from @databiosphere/findable-ui)
 - @tanstack/react-virtual
 
 **Via `next-transpile-modules` plugin:**
