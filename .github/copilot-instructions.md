@@ -192,13 +192,20 @@ Commits must follow the conventional commits format enforced by commitlint:
 
 ### Transpiled Packages
 
-The following packages are transpiled via `next-transpile-modules`:
+The project uses two transpilation mechanisms:
+
+**Via `transpilePackages` (Next.js native):**
 
 - axios
 - @databiosphere/findable-ui
 - @observablehq/plot
 - @tanstack/react-table
 - @tanstack/react-virtual
+
+**Via `next-transpile-modules` plugin:**
+
+- echarts
+- zrender
 
 ## When Making Changes
 
