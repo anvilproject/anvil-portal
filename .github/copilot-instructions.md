@@ -27,7 +27,7 @@ This repository contains the front-facing AnVIL (Analysis, Visualization, and In
 - `views/` - View components
 - `routes/` - Routing utilities
 - `providers/` - React context providers
-- `analytics/` - Analytics integration
+- `analytics/` - Python scripts for generating analytics reports (separate from main repository)
 - `content/` - Shared content utilities and constants
 - `common/` - Common utilities and shared code
 - `public/` - Static assets
@@ -45,8 +45,8 @@ Components follow a consistent structure:
 ### Setup
 
 1. **Install dependencies**: `npm ci` (use clean install for reproducible builds)
-2. **Environment setup**: Development environment is configured via `./scripts/dev.sh anvil-portal` which copies the appropriate `.env` file from `site-config/anvil-portal/dev/.env`
-3. **Start dev server**: `npm run dev` (runs on http://localhost:3000)
+2. **Start dev server**: `npm run dev` (runs on http://localhost:3000)
+   - This automatically sets up the development environment by copying the appropriate `.env` file from `site-config/anvil-portal/dev/.env`
 
 ### Build Commands
 
@@ -168,7 +168,7 @@ Commits must follow the conventional commits format enforced by commitlint:
 
 ### Navigation
 
-- Navigation is configured per-environment in `site-config/anvil-portal/dev/navigation/`
+- Navigation is configured in `site-config/anvil-portal/dev/navigation/` and shared across all environments
 - Each major section (learn, news, faq, team, overview, champions, events, help, data-releases, guides, privacy, consortia) has its own navigation configuration file
 
 ### Styling
