@@ -7,6 +7,11 @@ on:
       - completed
     branches:
       - main
+
+concurrency:
+  group: dev-deploy
+  cancel-in-progress: false
+
 permissions:
   id-token: write
   contents: read
