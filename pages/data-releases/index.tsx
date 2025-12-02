@@ -9,6 +9,7 @@ import { mapSlugByFilePaths } from "../../docs/common/utils";
 import { format, formatDistanceToNowStrict, compareDesc } from "date-fns";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import slugify from "slugify";
+import { getMatter } from "../../content/utils";
 
 const DOCS_DIR = "docs";
 const DATA_RELEASES_DIR = "data-releases";
@@ -66,10 +67,14 @@ function buildReleases(
   dateByPaths: Map<Date, string>
 ): Release[] {
   return dates.map((date) => {
+    // TODO update getMatter and resolveRelativeDirs with latest @databiosphere/findable-ui version (see also buildMDXFilePath).
+    const { data } = getMatter(
+      resolveRelativeDirs([DOCS_DIR, `${dateByPaths.get(date) ?? ""}.mdx`])
+    );
     return {
       id: getReleaseId(date),
       month: format(date, "MMMM"),
-      timeSinceRelease: formatDistanceToNowStrict(date),
+      timeSinceRelease: formatDistanceToNowStrict(data.date),
       url: dateByPaths.get(date) ?? "",
       year: format(date, "yyyy"),
     };
