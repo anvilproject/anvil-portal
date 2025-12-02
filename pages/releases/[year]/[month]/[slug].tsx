@@ -16,7 +16,7 @@ import { StaticProps } from "../../../../content/entities";
 import { ContentOverviewView } from "../../../../views/ContentOverviewView/contentOverviewView";
 
 const DOCS_DIR = "docs";
-const DATA_RELEASES_DIR = "data-releases";
+const RELEASES_DIR = "releases";
 
 interface PageUrlParams extends ParsedUrlQuery {
   month: string;
@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async (
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = mapParams(
-    generatePaths(resolveRelativeDirs([DOCS_DIR, DATA_RELEASES_DIR]))
+    generatePaths(resolveRelativeDirs([DOCS_DIR, RELEASES_DIR]))
   );
   return { fallback: false, paths };
 };
@@ -74,7 +74,7 @@ Page.Main = StyledMain;
  */
 function getSlug(params: PageUrlParams): string[] {
   const { month, slug, year } = params;
-  return ["data-releases", year, month, slug];
+  return ["releases", year, month, slug];
 }
 
 /**

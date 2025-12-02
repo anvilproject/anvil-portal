@@ -12,7 +12,7 @@ import slugify from "slugify";
 import { getMatter } from "../../content/utils";
 
 const DOCS_DIR = "docs";
-const DATA_RELEASES_DIR = "data-releases";
+const RELEASES_DIR = "releases";
 
 export interface PageProps
   extends Omit<StaticProps, "layoutStyle" | "mdxSource"> {
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
       outline,
       pageTitle: "Releases",
       releases,
-      slug: [DATA_RELEASES_DIR],
+      slug: [RELEASES_DIR],
     },
   };
 };
@@ -87,7 +87,7 @@ function buildReleases(
  * @returns date path.
  */
 function getDatePath(slug: string[]): string {
-  return `/${DATA_RELEASES_DIR}/${slug.join("/")}`;
+  return `/${RELEASES_DIR}/${slug.join("/")}`;
 }
 
 /**
@@ -108,7 +108,7 @@ function getDatePathMap(slugs: string[][]): Map<Date, string> {
 function getDataReleaseSlugs(): string[][] {
   return [
     ...mapSlugByFilePaths(
-      resolveRelativeDirs([DOCS_DIR, DATA_RELEASES_DIR])
+      resolveRelativeDirs([DOCS_DIR, RELEASES_DIR])
     ).values(),
   ];
 }

@@ -169,7 +169,7 @@ Commits must follow the conventional commits format enforced by commitlint:
 ### Navigation
 
 - Navigation is configured in `site-config/anvil-portal/dev/navigation/` and shared across all environments
-- Each major section (learn, news, faq, team, overview, champions, events, help, data-releases, guides, privacy, consortia) has its own navigation configuration file
+- Each major section (learn, news, faq, team, overview, champions, events, help, releases, guides, privacy, consortia) has its own navigation configuration file
 
 ### Styling
 
