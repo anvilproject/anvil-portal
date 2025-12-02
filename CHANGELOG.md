@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.22.3](https://github.com/anvilproject/anvil-portal/compare/v2.22.2...v2.22.3) (2025-12-02)
+
+
+### Bug Fixes
+
+* moved releases to /releases [#3825](https://github.com/anvilproject/anvil-portal/issues/3825) ([#3826](https://github.com/anvilproject/anvil-portal/issues/3826)) ([dd6d96e](https://github.com/anvilproject/anvil-portal/commit/dd6d96e4179cad19cae0d7420fd998d1c50b6b79))
+
 ## [2.22.2](https://github.com/anvilproject/anvil-portal/compare/v2.22.1...v2.22.2) (2025-12-02)
 
 
