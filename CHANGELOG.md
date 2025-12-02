@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.22.2](https://github.com/anvilproject/anvil-portal/compare/v2.22.1...v2.22.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* add fetch-tags to GitHub Actions checkout step ([fd3d3ce](https://github.com/anvilproject/anvil-portal/commit/fd3d3ce5917ca8d719c933012ff0ccd695b30189))
+* fetch tags in GitHub Actions checkout for build footer versioning ([#3816](https://github.com/anvilproject/anvil-portal/issues/3816)) ([fd3d3ce](https://github.com/anvilproject/anvil-portal/commit/fd3d3ce5917ca8d719c933012ff0ccd695b30189))
+
 ## [2.22.1](https://github.com/anvilproject/anvil-portal/compare/v2.22.0...v2.22.1) (2025-12-02)
 
 
