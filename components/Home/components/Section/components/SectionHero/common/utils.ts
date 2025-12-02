@@ -16,6 +16,16 @@ export function buildCarouselCards(): SectionCard[] {
     {
       links: [
         {
+          label: ACTION_LABEL.LEARN_MORE,
+          url: "/data-releases/2025/11/release-notes",
+        },
+      ],
+      text: "Explore newly released and updated studies on the AnVIL platform - find datasets in the Data Explorer and Data Library.",
+      title: "AnVIL November 2025 Release",
+    },
+    {
+      links: [
+        {
           label: ACTION_LABEL.PAPER,
           url: "https://www.nature.com/articles/s41586-025-09613-8",
         },
