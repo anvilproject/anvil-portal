@@ -17,7 +17,7 @@ export function buildCarouselCards(): SectionCard[] {
       links: [
         {
           label: ACTION_LABEL.LEARN_MORE,
-          url: "/data-releases/2025/11/release-notes",
+          url: "/releases/2025/11/release-notes",
         },
       ],
       text: "Explore newly released and updated studies on the AnVIL platform - find datasets in the Data Explorer and Data Library.",

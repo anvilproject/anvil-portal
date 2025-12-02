@@ -104,7 +104,7 @@ export function makeConfig(
                 {
                   description: "Summary of data releases and upcoming changes.",
                   label: "Data Releases",
-                  url: ROUTES.DATA_RELEASES,
+                  url: ROUTES.RELEASES,
                 },
               ],
               url: "",

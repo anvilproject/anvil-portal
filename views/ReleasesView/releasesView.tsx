@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { StyledCard } from "./releasesView.styles";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
-import { PageProps } from "../../pages/data-releases/index";
+import { PageProps } from "../../pages/releases/index";
 import { Stack, Typography } from "@mui/material";
 import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
