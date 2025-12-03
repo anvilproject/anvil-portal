@@ -4,7 +4,7 @@ import { StyledMain } from "../../components/Layout/components/Main/main.styles"
 import { ReleasesView } from "../../views/ReleasesView/releasesView";
 import { FRONTMATTER } from "../../views/ReleasesView/frontmatter";
 import { Release } from "../../views/ReleasesView/types";
-import { resolveRelativeDirs } from "../../docs/common/resolveRelativeDirs";
+import { resolveRelativeDirs } from "@databiosphere/findable-ui/lib/utils/mdx/files/resolveRelativeDirs";
 import { mapSlugByFilePaths } from "../../docs/common/utils";
 import { format, formatDistanceToNowStrict, compareDesc } from "date-fns";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";

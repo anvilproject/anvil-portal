@@ -11,7 +11,7 @@ import {
   parseFrontmatter,
 } from "../../../../docs/common/utils";
 import { rehypeSlug } from "../../../../plugins/rehypeSlug";
-import { resolveRelativeDirs } from "../../../../docs/common/resolveRelativeDirs";
+import { resolveRelativeDirs } from "@databiosphere/findable-ui/lib/utils/mdx/files/resolveRelativeDirs";
 import { StaticProps } from "../../../../content/entities";
 import { ContentOverviewView } from "../../../../views/ContentOverviewView/contentOverviewView";
 
