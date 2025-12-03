@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.23.0](https://github.com/anvilproject/anvil-portal/compare/v2.22.3...v2.23.0) (2025-12-03)
+
+
+### Features
+
+* updated nov release counts [#3790](https://github.com/anvilproject/anvil-portal/issues/3790) ([#3836](https://github.com/anvilproject/anvil-portal/issues/3836)) ([02f439f](https://github.com/anvilproject/anvil-portal/commit/02f439f20cfe595052f38cb6b1671d1956c9e32a))
+
+
+### Chores
+
+* update findable-ui to latest version v46.1.3 ([#3828](https://github.com/anvilproject/anvil-portal/issues/3828)) ([#3829](https://github.com/anvilproject/anvil-portal/issues/3829)) ([5568c8c](https://github.com/anvilproject/anvil-portal/commit/5568c8c04ae2f7aa6dc3a3c5c32ac7ad378bb109))
+
+
+### Code Refactoring
+
+* refactor release notes page to use findable-ui page generation helper functions ([#3830](https://github.com/anvilproject/anvil-portal/issues/3830)) ([#3832](https://github.com/anvilproject/anvil-portal/issues/3832)) ([0380612](https://github.com/anvilproject/anvil-portal/commit/03806125313f459b25c2bb957f93ffc54584d20a))
+
 ## [2.22.3](https://github.com/anvilproject/anvil-portal/compare/v2.22.2...v2.22.3) (2025-12-02)
 
 
