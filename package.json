@@ -18,14 +18,14 @@
     "add-cser-materials": "esrun scripts/add-cser-materials.ts"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "^42.1.0",
+    "@databiosphere/findable-ui": "^46.1.3",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
-    "@next/mdx": "^14.2.30",
+    "@next/mdx": "^14.2.33",
     "@observablehq/plot": "^0.6.17",
     "@tanstack/react-virtual": "^3.13.12",
     "copy-to-clipboard": "3.3.1",
@@ -35,7 +35,7 @@
     "gray-matter": "^4.0.3",
     "isomorphic-dompurify": "^2.22.0",
     "moment-timezone": "^0.5.45",
-    "next": "^14.2.30",
+    "next": "^14.2.33",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^4.4.1",
     "next-transpile-modules": "^10.0.1",
@@ -58,7 +58,7 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@digitak/esrun": "^3.2.26",
     "@mui/types": "^7.4.0",
-    "@next/eslint-plugin-next": "^14.2.30",
+    "@next/eslint-plugin-next": "^14.2.33",
     "@types/jest": "^29.5.14",
     "@types/mdx": "^2.0.11",
     "@types/node": "^20.10.0",
@@ -69,7 +69,7 @@
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "csv-parse": "^5.6.0",
     "eslint": "^8.33.0",
-    "eslint-config-next": "^14.2.30",
+    "eslint-config-next": "^14.2.33",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jsdoc": "^50.6.0",
@@ -88,6 +88,9 @@
     "string-strip-html": "^13.5.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "glob": "^11.0.4"
   },
   "engines": {
     "node": "20.10.0"
