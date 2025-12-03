@@ -1,19 +1,13 @@
 import { StyledMain } from "../../../../components/Layout/components/Main/main.styles";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
-import remarkGfm from "remark-gfm";
 import { processFrontmatter } from "../../../../components/Releases/common/utils";
-import {
-  extractMDXFrontmatter,
-  generatePaths,
-  parseFrontmatter,
-} from "../../../../docs/common/utils";
-import { rehypeSlug } from "../../../../plugins/rehypeSlug";
-import { resolveRelativeDirs } from "../../../../docs/common/resolveRelativeDirs";
+import { buildStaticPaths } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticPaths";
 import { StaticProps } from "../../../../content/entities";
 import { ContentOverviewView } from "../../../../views/ContentOverviewView/contentOverviewView";
+import { buildStaticProps } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticProps";
+import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
 
 const DOCS_DIR = "docs";
 const RELEASES_DIR = "releases";
@@ -29,34 +23,28 @@ type PageProps = StaticProps;
 export const getStaticProps: GetStaticProps = async (
   props: GetStaticPropsContext
 ) => {
+  // Build the slug.
   const slug = getSlug(props.params as PageUrlParams);
-  const { content, data } = extractMDXFrontmatter(slug);
-  const rawFrontmatter = parseFrontmatter(data);
 
-  if (!rawFrontmatter || rawFrontmatter.hidden) return { notFound: true };
+  // Build the static props for the page.
+  const staticProps = await buildStaticProps(
+    buildMDXFilePath([DOCS_DIR], slug),
+    slug,
+    processFrontmatter,
+    { mdxOptions: { development: process.env.NODE_ENV !== "production" } }
+  );
 
-  const frontmatter = processFrontmatter(rawFrontmatter);
+  // If the static props are not found, return not found.
+  if (!staticProps) return { notFound: true };
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: { rehypePlugins: [rehypeSlug], remarkPlugins: [remarkGfm] },
-    scope: { frontmatter },
-  });
-
-  return {
-    props: {
-      frontmatter,
-      mdxSource,
-      pageTitle: frontmatter.title,
-      slug,
-    },
-  };
+  return staticProps;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = mapParams(
-    generatePaths(resolveRelativeDirs([DOCS_DIR, RELEASES_DIR]))
-  );
-  return { fallback: false, paths };
+  return {
+    fallback: false,
+    paths: mapParams(buildStaticPaths([DOCS_DIR, RELEASES_DIR])),
+  };
 };
 
 const Page = (props: PageProps): JSX.Element => {
