@@ -1,6 +1,5 @@
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { MDXRemote } from "next-mdx-remote";
 import { Fragment } from "react";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
@@ -12,7 +11,7 @@ import { StaticProps } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
 
 export const ContentOverviewView = (props: StaticProps): JSX.Element => {
-  const { mdxSource, outline, ...contentProps } = props;
+  const { mdxSource, slug } = props;
   return (
     <Fragment>
       <SectionHero {...props} />
@@ -24,8 +23,8 @@ export const ContentOverviewView = (props: StaticProps): JSX.Element => {
             {renderContentEnd(props)}
           </Content>
         }
-        outline={renderOutline(outline)}
-        {...contentProps}
+        outline={renderOutline(props)}
+        slug={slug}
       />
     </Fragment>
   );
@@ -42,18 +41,20 @@ function renderContentEnd(props: StaticProps): JSX.Element | null {
 }
 
 /**
- * Renders page outline.
- * @param outline - Outline items.
- * @returns outline.
+ * Renders page outline component
+ * @param props - Static Props.
+ * @returns outline component
  */
-function renderOutline(
-  outline?: OutlineItem[] | null
-): JSX.Element | undefined {
-  if (!outline) return;
-  if (outline.length === 0) return;
-  return <Outline outline={outline} Contents={ContentsTab} />;
+function renderOutline(props: StaticProps): JSX.Element | null {
+  if (!props.frontmatter.enableOutline) return null;
+  return <Outline outline={props.outline} Contents={ContentsTab} />;
 }
 
+/**
+ * Renders support forum component.
+ * @param props - Static Props.
+ * @returns support forum component.
+ */
 function renderSupportForum(props: StaticProps): JSX.Element | null {
   if (!props.frontmatter.enableSupportForum) return null;
   return <SupportForum />;
