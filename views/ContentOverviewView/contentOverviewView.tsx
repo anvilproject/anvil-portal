@@ -41,9 +41,9 @@ function renderContentEnd(props: StaticProps): JSX.Element | null {
 }
 
 /**
- * Renders page outline component
+ * Renders page outline component.
  * @param props - Static Props.
- * @returns outline component
+ * @returns outline component.
  */
 function renderOutline(props: StaticProps): JSX.Element | null {
   if (!props.frontmatter.enableOutline) return null;
