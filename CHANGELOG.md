@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.23.1](https://github.com/anvilproject/anvil-portal/compare/v2.23.0...v2.23.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* fix release notes layout ([#3837](https://github.com/anvilproject/anvil-portal/issues/3837)) ([#3839](https://github.com/anvilproject/anvil-portal/issues/3839)) ([3866dcf](https://github.com/anvilproject/anvil-portal/commit/3866dcfb1d435e9cb79c51da7b0123ef228add16))
+
 ## [2.23.0](https://github.com/anvilproject/anvil-portal/compare/v2.22.3...v2.23.0) (2025-12-03)
 
 
