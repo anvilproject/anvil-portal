@@ -14,7 +14,6 @@ export interface NavigationEntry {
 export enum NavigationKey {
   ANVIL_CHAMPIONS = "anvil-champions",
   CONSORTIA = "consortia",
-  DATA_RELEASES = "data-releases",
   EVENTS = "events",
   FAQ = "faq",
   GUIDES = "guides",
@@ -23,6 +22,7 @@ export enum NavigationKey {
   NEWS = "news",
   OVERVIEW = "overview",
   PRIVACY = "privacy",
+  RELEASES = "releases",
   TEAM = "team",
 }
 

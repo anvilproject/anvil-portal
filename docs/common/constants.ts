@@ -40,6 +40,7 @@ export const MDX_COMPONENTS = {
   NewsHero: C.NewsHero,
   Projects: C.Projects,
   Publications: C.Publications,
+  PublicationsGREGoR: C.PublicationsGREGoR,
   ResearchMaterials: C.ResearchMaterials,
   Resources: C.Resources,
   SectionOverview: C.SectionOverview,

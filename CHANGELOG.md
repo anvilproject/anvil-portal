@@ -1,5 +1,76 @@
 # Changelog
 
+## [2.23.1](https://github.com/anvilproject/anvil-portal/compare/v2.23.0...v2.23.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* fix release notes layout ([#3837](https://github.com/anvilproject/anvil-portal/issues/3837)) ([#3839](https://github.com/anvilproject/anvil-portal/issues/3839)) ([3866dcf](https://github.com/anvilproject/anvil-portal/commit/3866dcfb1d435e9cb79c51da7b0123ef228add16))
+
+## [2.23.0](https://github.com/anvilproject/anvil-portal/compare/v2.22.3...v2.23.0) (2025-12-03)
+
+
+### Features
+
+* updated nov release counts [#3790](https://github.com/anvilproject/anvil-portal/issues/3790) ([#3836](https://github.com/anvilproject/anvil-portal/issues/3836)) ([02f439f](https://github.com/anvilproject/anvil-portal/commit/02f439f20cfe595052f38cb6b1671d1956c9e32a))
+
+
+### Chores
+
+* update findable-ui to latest version v46.1.3 ([#3828](https://github.com/anvilproject/anvil-portal/issues/3828)) ([#3829](https://github.com/anvilproject/anvil-portal/issues/3829)) ([5568c8c](https://github.com/anvilproject/anvil-portal/commit/5568c8c04ae2f7aa6dc3a3c5c32ac7ad378bb109))
+
+
+### Code Refactoring
+
+* refactor release notes page to use findable-ui page generation helper functions ([#3830](https://github.com/anvilproject/anvil-portal/issues/3830)) ([#3832](https://github.com/anvilproject/anvil-portal/issues/3832)) ([0380612](https://github.com/anvilproject/anvil-portal/commit/03806125313f459b25c2bb957f93ffc54584d20a))
+
+## [2.22.3](https://github.com/anvilproject/anvil-portal/compare/v2.22.2...v2.22.3) (2025-12-02)
+
+
+### Bug Fixes
+
+* moved releases to /releases [#3825](https://github.com/anvilproject/anvil-portal/issues/3825) ([#3826](https://github.com/anvilproject/anvil-portal/issues/3826)) ([dd6d96e](https://github.com/anvilproject/anvil-portal/commit/dd6d96e4179cad19cae0d7420fd998d1c50b6b79))
+
+## [2.22.2](https://github.com/anvilproject/anvil-portal/compare/v2.22.1...v2.22.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* add fetch-tags to GitHub Actions checkout step ([fd3d3ce](https://github.com/anvilproject/anvil-portal/commit/fd3d3ce5917ca8d719c933012ff0ccd695b30189))
+* fetch tags in GitHub Actions checkout for build footer versioning ([#3816](https://github.com/anvilproject/anvil-portal/issues/3816)) ([fd3d3ce](https://github.com/anvilproject/anvil-portal/commit/fd3d3ce5917ca8d719c933012ff0ccd695b30189))
+
+## [2.22.1](https://github.com/anvilproject/anvil-portal/compare/v2.22.0...v2.22.1) (2025-12-02)
+
+
+### Content
+
+* added nov 2025 release [#3740](https://github.com/anvilproject/anvil-portal/issues/3740) ([#3817](https://github.com/anvilproject/anvil-portal/issues/3817)) ([182e052](https://github.com/anvilproject/anvil-portal/commit/182e05217d588b3a25cfdcc610f7bb7b00806a02))
+
+## [2.22.0](https://github.com/anvilproject/anvil-portal/compare/v2.21.1...v2.22.0) (2025-12-01)
+
+
+### Features
+
+* add gregor publication to carousel ([#3800](https://github.com/anvilproject/anvil-portal/issues/3800)) ([#3802](https://github.com/anvilproject/anvil-portal/issues/3802)) ([01aaae8](https://github.com/anvilproject/anvil-portal/commit/01aaae814cb7c71295259fe456ece9ce3efab467))
+* add script to generate gregor publications json ([#3764](https://github.com/anvilproject/anvil-portal/issues/3764)) ([#3801](https://github.com/anvilproject/anvil-portal/issues/3801)) ([1dd61fc](https://github.com/anvilproject/anvil-portal/commit/1dd61fc2c43a76b011cd078e341ad353d2f28b9a))
+* create release notes detail page ([#3776](https://github.com/anvilproject/anvil-portal/issues/3776)) ([#3805](https://github.com/anvilproject/anvil-portal/issues/3805)) ([8b7d908](https://github.com/anvilproject/anvil-portal/commit/8b7d90845e47c1cdd7471c9d767e8dcc16b32ebc))
+* create release notes landing page ([#3780](https://github.com/anvilproject/anvil-portal/issues/3780)) ([#3806](https://github.com/anvilproject/anvil-portal/issues/3806)) ([1f19d67](https://github.com/anvilproject/anvil-portal/commit/1f19d67125b026d3d1039361661d3e432c81150d))
+
+
+### Bug Fixes
+
+* fix dev deploy workflow to run after release-please completion ([#3807](https://github.com/anvilproject/anvil-portal/issues/3807)) ([#3808](https://github.com/anvilproject/anvil-portal/issues/3808)) ([5057905](https://github.com/anvilproject/anvil-portal/commit/505790502dd946ffbef527e23e5d395506b1d727))
+
+
+### Content
+
+* removed cmg data release [#3813](https://github.com/anvilproject/anvil-portal/issues/3813) ([#3814](https://github.com/anvilproject/anvil-portal/issues/3814)) ([0af7bdd](https://github.com/anvilproject/anvil-portal/commit/0af7bdd33a89a81363ba9bc5ebc163c435eada86))
+
+
+### Documentation
+
+* add CONTRIBUTING.md with guidelines for issues, PRs, and commits ([#3810](https://github.com/anvilproject/anvil-portal/issues/3810)) ([bdf4171](https://github.com/anvilproject/anvil-portal/commit/bdf41719dc721fa3be5e36af6a2f791d7795d023))
+
 ## [2.21.1](https://github.com/anvilproject/anvil-portal/compare/v2.21.0...v2.21.1) (2025-11-14)
 
 

@@ -4,17 +4,17 @@ import {
 } from "../../../../docs/common/entities";
 
 const NODE_KEYS: Record<string, NavigationNode["key"]> = {
-  DATA_RELEASES: "data-releases",
+  RELEASES: "releases",
 };
 const PATH_SEGMENTS = {
-  DATA_RELEASES: "data-releases",
+  RELEASES: "releases",
 };
 
-export const DATA_RELEASES: NavigationEntry = {
+export const RELEASES: NavigationEntry = {
   nodes: [
     {
-      key: NODE_KEYS.DATA_RELEASES,
-      slugs: [PATH_SEGMENTS.DATA_RELEASES],
+      key: NODE_KEYS.RELEASES,
+      slugs: [PATH_SEGMENTS.RELEASES],
     },
   ],
 };

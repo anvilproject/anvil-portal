@@ -1,12 +1,16 @@
 import { formatFrontmatterDate } from "../../../docs/common/frontmatter";
 import { Frontmatter } from "../../../content/entities";
+import { FrontmatterProps } from "@databiosphere/findable-ui/lib/utils/mdx/frontmatter/types";
 
 /**
  * Returns the processed frontmatter.
  * @param frontmatter - Frontmatter.
  * @returns processed frontmatter.
  */
-export function processFrontmatter(frontmatter: Frontmatter): Frontmatter {
+export function processFrontmatter(
+  frontmatter: FrontmatterProps<Frontmatter> | undefined
+): FrontmatterProps<Frontmatter> | undefined {
+  if (!frontmatter) return;
   const date = formatFrontmatterDate(frontmatter);
   return {
     ...frontmatter,

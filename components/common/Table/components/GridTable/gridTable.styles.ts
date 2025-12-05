@@ -43,6 +43,10 @@ export const StyledContainer = styled(Container, {
       align-items: center;
       display: flex;
     }
+
+    td {
+      overflow-wrap: break-word;
+    }
   }
 
   ${bpDownMd} {
