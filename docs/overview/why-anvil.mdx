@@ -9,38 +9,33 @@ The NHGRI AnVIL (Genomic Data Science Analysis, Visualization, and Informatics L
 
 This guide acts as a resource answering the question "why use AnVIL?". It will discuss the research, classroom, and general benefits of using AnVIL and point to related resources throughout.
 
-<figure>
-<img src="consortia/overview/why_anvil_guide_outline.png" alt="Why use AnVIL? There are research, classroom, and general benefits presented as sections within this guide."/>
-</figure>
+![Why use AnVIL? There are research, classroom, and general benefits presented as sections within this guide](/consortia/overview/images/why_anvil_guide_outline.png)
 
 ## Benefits of using AnVIL for research
 
-<figure>
-<img src="consortia/overview/why_anvil_research_benefits_outline.png" alt="The research benefits for using the AnVIL include ease of platform access, variety of analysis solutions, data options, data and analysis in the same place, scalability, renting needed resources, role-based permissions, shareable workspaces, and being a repository compliant with DMS policy"/>
-</figure>
+![The research benefits for using the AnVIL include ease of platform access, variety of analysis solutions, data options, data and analysis in the same place, scalability, renting needed resources, role-based permissions, shareable workspaces, and being a repository compliant with DMS policy](/consortia/overview/images/why_anvil_research_benefits_outline.png)
 
 ### Ease of platform access
 
 The primary means of accessing the AnVIL platform ([anvil.terra.bio](https://anvil.terra.bio/)) is through a web browser - users do not need to download data or install software.
 
 <Alert icon={false} severity="info">
-
+<div>
 **Accessing AnVIL beyond the web browser**:
 
 The platform ([anvil.terra.bio](https://anvil.terra.bio/)) provides a variety of graphical user interfaces (GUIs) to interact with data, analysis solutions, and workflows. Bioconductor packages ([AnVIL](https://www.bioconductor.org/packages/release/bioc/vignettes/AnVIL/inst/doc/Introduction.html), [AnVILGCP](https://www.bioconductor.org/packages/release/bioc/html/AnVILGCP.html), [AnVILWorkflow](https://www.bioconductor.org/packages/release/bioc/html/AnVILWorkflow.html)) offer additional methods for users to programmatically interact with and access AnVIL resources from within AnVIL, or stand-alone computing environments such as a user's laptop.
 
+</div>
 </Alert>
 
 ### Variety of analysis solutions
 
-<figure>
-<img src="consortia/overview/why_anvil_compute_options.png" alt="Compute options available on the AnVIL include Jupyter notebooks, workflow description languages, RStudio, and Galaxy"/>
-</figure>
+![Compute options available on the AnVIL include Jupyter notebooks, workflow description languages, RStudio, and Galaxy](/consortia/overview/images/why_anvil_compute_options.png)
 
 AnVIL supports an assortment of frameworks and tools. Researchers can use their favorite tool to work with data interactively or through non-interactive batch processing. Due to this variety and interoperability with other platforms, researchers can stay within a single environment for their analysis without having to shift between platforms.
 
 <Alert icon={false} severity="info">
-
+<div>
 **Interactive sessions**:
 
 Interactive sessions are available with Jupyter, RStudio/Bioconductor, and Galaxy.
@@ -49,28 +44,28 @@ Use of Galaxy on AnVIL enables even more customizability with the ability to [in
 
 For more information on the AnVIL project portal: [Interactive analyses](/learn/run-interactive-analyses)
 
+</div>
 </Alert>
 
 <Alert icon={false} severity="info">
-
+<div>
 **Non-interactive batch processing**:
 
 Workflows can be [user-supplied/written](https://jhudatascience.org/AnVIL_Book_WDL/write-wdl.html#export-to-anvil-powered-by-terra-and-run) or [imported with Dockstore](https://jhudatascience.org/AnVIL_Book_WDL/import-and-configure-workflows.html) and used to steer non-interactive pipelines and batch processing of data.
 
 For more information on the AnVIL project portal: [Analysis Workflows](/learn/run-analyses-workflows)
 
+</div>
 </Alert>
 
 ### Data: yours or cloud-hosted open & controlled access
 
-<figure>
-<img src="consortia/overview/why_anvil_data_options.png" alt="Data options available through AnVIL include several consortia datasets including GTEx."/>
-</figure>
+![Data options available through AnVIL include several consortia datasets including GTEx](/consortia/overview/images/why_anvil_data_options.png)
 
 AnVIL securely stores diverse, open and controlled access, cloud-hosted datasets with a browsable summary catalog so researchers can identify relevant datasets they may need to request access to.
 
 <Alert icon={false} severity="info">
-
+<div>
 **Consortia Data on the AnVIL**:
 
 Data on the AnVIL includes data from consortia such as
@@ -91,38 +86,37 @@ Data on the AnVIL includes data from consortia such as
 
 [Additional consortia or upcoming planned data ingestion can be found on the AnVIL project portal](/consortia). By inverting the typical method of genomic analysis, AnVIL brings a computing environment to the data rather than moving the data from storage to the computing environment or storing copies of the data across institutional high performance computing clusters.
 
+</div>
 </Alert>
 
 <Alert icon={false} severity="info">
-
+<div>
 **Amount of data on AnVIL**:
 
 As discussed in the [flagship AnVIL paper](https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3), the AnVIL hosts data from >280,000 human genomes from >240 different cohorts spanning multiple consortia and major NHGRI projects. The AnVIL offers a browsable catalog of summary information about all of the datasets so that even if a user isn't authorized to access the data itself, they can better determine if the data will be helpful for their research if they need to apply for authorization for access. AnVIL is working to facilitate data harmonization across studies, ensuring consistency and interoperability, which is critical for large-scale analyses. These efforts will increase the value of the AnVIL data and maximize its utility to the researcher community.
 
-<figure>
-<img src="consortia/overview/why_anvil_amount_of_data.png" alt="AnVIL hosts over seven petabytes of data across 113 dbGaP accessions and across several large consortia"/>
-</figure>
+![AnVIL hosts over seven petabytes of data across 113 dbGaP accessions and across several large consortia](/consortia/overview/images/why_anvil_amount_of_data.png)
 
+</div>
 </Alert>
 
 
 For more information on the AnVIL project portal: [Finding and accessing data](/learn/find-data)
 
 <Alert icon={false} severity="info">
-
+<div>
 **AnVIL is a FedRAMP Moderate compliant platform**:
 
 As a [FedRAMP Moderate compliant platform](https://www.fedramp.gov/rev5/baselines/), AnVIL maintains FedRAMP authorization of compliance to ensure as a cloud service provider, minimum security requirements are met for data processing, storage, and transmission of Protected Health Information (PHI) and Personally Identifiable Information (PII) where loss of confidentiality, integrity, and availability would result in serious adverse effect or non-life threatening harm. All steps necessary to maintain compliance, such as robust logging of access to data, periodic audits by third-party analysts, and monitoring for abnormal use patterns are managed and guaranteed by AnVIL.
 
 For more information on the AnVIL project portal: [Platform security](/overview/security) and [NIH's Data Management and Sharing policy requirements](/overview/dms-requirements)
 
+</div>
 </Alert>
 
 ### Data & analysis in same place
 
-<figure>
-<img src="consortia/overview/why_anvil_portal_home.png" alt="The AnVIL portal is an entry point for all parts of the AnVIL with documentation and announcements. The home page of the portal is shown."/>
-</figure>
+![The AnVIL portal is an entry point for all parts of the AnVIL with documentation and announcements. The home page of the portal is shown](/consortia/overview/images/why_anvil_portal_home.png)
 
 AnVIL is a unified computing environment for data storage, management, and analysis. The [AnVIL portal](https://anvilproject.org) serves as an entry point to access all parts of the AnVIL system as well as training materials and announcements.
 
@@ -136,9 +130,7 @@ Since AnVIL handles the support and maintenance of the platform (including the h
 
 ### Role-based permissions
 
-<figure>
-<img src="consortia/overview/why_anvil_workspace_roles.png" alt="A workspace is the fundamental unit of activity in AnVIL with role-based access. An example workspace is shown with the access level or role highlighted."/>
-</figure>
+![A workspace is the fundamental unit of activity in AnVIL with role-based access. An example workspace is shown with the access level or role highlighted](/consortia/overview/images/why_anvil_workspace_roles.png)
 
 [Group management](https://support.terra.bio/hc/en-us/articles/360022704371-Navigating-in-Terra) can be utilized to control who can access specific data, analysis workspaces, and your billing resources. [Workspaces provide a collaborative environment](https://support.terra.bio/hc/en-us/articles/360024743371-Working-with-workspaces) with role-based permissions. These [permission include reading, writing, or owning with additional permissions for running compute and sharing](https://support.terra.bio/hc/en-us/articles/360025851892-Sharing-data-and-tools-with-workspace-access-controls). Especially within the contexts of working with sensitive data or large amounts of data, AnVIL's role-based group management permission structure is instrumental.
 
@@ -146,14 +138,12 @@ For more information on the AnVIL project portal: [Terra Workspaces](/learn/run-
 
 ### Shareable workspaces
 
-<figure>
-<img src="consortia/overview/why_anvil_workspace_share.png" alt="A workspace can be a shareable record of analyses. An example worksapce is shown with options to share the workspace through its permalink highlighted"/>
-</figure>
+![A workspace can be a shareable record of analyses. An example worksapce is shown with options to share the workspace through its permalink highlighted](/consortia/overview/images/why_anvil_workspace_share.png)
 
 [Workspaces](https://support.terra.bio/hc/en-us/articles/360024743371-Working-with-workspaces) can contain data, metadata, and analysis tools, as well as documentation and history of workflow runs, additionally displaying important information such as when the workspace was created and last modified. AnVIL workspaces on the web can serve as shareable, reproducible records of analyses. Research conducted on the AnVIL platform has contributed to over 115 scientific publications citing the AnVIL paper, demonstrating its role in advancing genomic and biomedical research.
 
 <Alert icon={false} severity="info">
-
+<div>
 **Examples of AnVIL workspaces shared in publications**:
 
 AnVIL workspaces have previously been shared in publications to demonstrate reproducible science.
@@ -162,6 +152,7 @@ AnVIL workspaces have previously been shared in publications to demonstrate repr
   * https://www.science.org/doi/10.1126/science.abe3261
   * https://anvil.terra.bio/#workspaces/help-gatk/Reproducibility_Case_Study_Tetralogy_of_Fallot
 
+</div>
 </Alert>
 
 ### Repository compliant with DMS Policy
@@ -171,21 +162,23 @@ The AnVIL serves as a [cloud data repository compliant with the Data Management 
 By submitting their data to AnVIL, not only can researchers meet the requirements of DMS Policy, they can also [contribute to the expanding network of NIH funded data housed in the AnVIL](https://terra.bio/anvil-platform-helps-meet-the-new-nih-data-management-and-sharing-policy-requirements/), furthering scientific discovery.
 
 <Alert icon={false} severity="info">
-
+<div>
 **What is DMS Policy?**
 
 The National Institutes of Health (NIH) Data Management and Sharing (DMS) policy requires that all NIH-supported research which generates [scientific data](https://hutchdatascience.org/NIH_Data_Sharing/how-will-this-policy-affect-me.html#scientific-data) (barring ethical, legal, or technical factors [limiting data sharing](https://hutchdatascience.org/NIH_Data_Sharing/how-will-this-policy-affect-me.html#when-to-not-share)) must create a plan and budget for data management and sharing.
 
 While some funding announcements for some research may specify which repository should be used to comply with DMS policy, mostly the NIH does not specify [where data should be stored.](https://hutchdatascience.org/NIH_Data_Sharing/data-management-and-storage.html#data-repositories). The NIH does provide an [interactive table listing NIH supported data repositories](https://sharing.nih.gov/data-management-and-sharing-policy/sharing-scientific-data/repositories-for-sharing-scientific-data) than can be used and [suggests that researchers use a repository most appropriate for the data generated from their research](https://sharing.nih.gov/data-management-and-sharing-policy/sharing-scientific-data/selecting-a-data-repository).
 
+</div>
 </Alert>
 
 <Alert icon={false} severity="info">
-
+<div>
 **How is data access managed and requests granted?**
 
 AnVIL utilizes the Data Use and Oversight System [(DUOS)](https://duos.org/) to efficiently expedite data access and management while maintaining security. Researchers can [explore datasets hosted in the AnVIL cloud and request access using DUOS](/news/2024/11/15/duos-announcement). [Data use limitations can be set if necessary with Data Access Committees reviewing access requests](https://duos.org/anvil_dms_policy).
 
+</div>
 </Alert>
 
 
@@ -194,30 +187,25 @@ For more information on the AnVIL project portal: [NIH's Data Management and Sha
 
 ## Benefits of using AnVIL in the classroom
 
-<figure>
-<img src="consortia/overview/why_anvil_classroom_benefits_outline.png" alt="The classroom benefits of using the AnVIL are outlined including that it provides an unified computing system, authentic experience with cloud computing, a varity of tools, relevant datasets, and has prepared exercises."/>
-</figure>
+![The classroom benefits of using the AnVIL are outlined including that it provides an unified computing system, authentic experience with cloud computing, a varity of tools, relevant datasets, and has prepared exercises](/consortia/overview/images/why_anvil_classroom_benefits_outline.png)
 
 AnVIL provides all the **advantages of a cloud computing environment**, such as version control and offering a **unified computing system** without providing physical computers with certain specifications. Additionally, AnVIL provides students with **authentic experience** working in the cloud -- which is becoming common in today's research environment. Students can also gain experience with a **variety of tools** (e.g., Galaxy, RStudio, Jupyter notebooks, WDL workflows) all in one place while working with **relevant datasets** and **prepared exercises**.
 
 
 <Alert icon={false} severity="info">
-
+<div>
 **Instructor Guide Available**:
 
 See more in our [instructor guide](https://jhudatascience.org/AnVIL_Book_Instructor_Guide/introduction.html#why-should-i-use-anvil) on why AnVIL is a good choice for your classroom.
 
+</div>
 </Alert>
 
-<figure>
-<img src="consortia/overview/why_anvil_example_books_minicures.png" alt="Four example books and mini Cures are shown. These include a demo on single cell with bioconductor, a book on SARS with Galaxy on AnVIL, the BioDIGS R Data Package, and the RNA-Seq mini cure."/>
-</figure>
+![Four example books and mini Cures are shown. These include a demo on single cell with bioconductor, a book on SARS with Galaxy on AnVIL, the BioDIGS R Data Package, and the RNA-Seq mini cure](/consortia/overview/images/why_anvil_example_books_minicures.png)
 
 ## Overall benefits of AnVIL
 
-<figure>
-<img src="consorita/overview/why_anvil_general_benefits_outline.png" alt="The general benetifs of using the AnVIL are shown. These include the ability to control costs, work with protected data safely, maintenance is handled, training and support is available, and there is a collaborative community."/>
-</figure>
+![The general benetifs of using the AnVIL are shown. These include the ability to control costs, work with protected data safely, maintenance is handled, training and support is available, and there is a collaborative community](/consortia/overview/images/why_anvil_general_benefits_outline.png)
 
 ### Ability to control costs
 
@@ -245,27 +233,25 @@ To equip researchers and students to work on the AnVIL, the AnVIL team
 * hosts [demos](https://hutchdatascience.org/AnVIL_Demos/) (ex: https://anvilproject.org/events/anvil2023-december-demos)
 * hosts workshops (ex: https://anvilproject.org/events/anvil2024-nhgri-intramural-workshop)
 
-<figure>
-<img src="consortia/overview/why_anvil_support_examples.png" alt="Many AnVIL support options or books can be found in the AnVIL Collection. One such option is the AnVIL Getting Started book. Other options include the support forum and AnVIL Demos which are held monthly live, but also recorded and posted to YouTube."/>
-</figure>
+![Many AnVIL support options or books can be found in the AnVIL Collection. One such option is the AnVIL Getting Started book. Other options include the support forum and AnVIL Demos which are held monthly live, but also recorded and posted to YouTube](/consortia/overview/images/why_anvil_support_examples.png)
 
 For more information on the AnVIL project portal: [Getting Started Instructions](/learn/get-started) and [Videos & Tutorials](/learn/watch-videos-and-tutorials)
 
 ### Collaborative community
 
-<figure>
-<img src="consortia/overview/why_anvil_community_examples.png" alt="Community examples and resources such as the getting started book, the portal, and AnVIL on Terra"/>
-</figure>
+![Community examples and resources such as the getting started book, the portal, and AnVIL on Terra](/consortia/overview/images/why_anvil_community_examples.png)
 
 AnVIL has begun hosting community conferences to collaboratively innovate during CoFests! and to discuss research performed with the platform. The community can work directly with the AnVIL team to understand current development, feature requests, and a roadmap or future directions for the platform.
 
 <Alert icon={false} severity="info">
+<div>
 
 **Past and Upcoming AnVIL Community Conferences**:
 
   * 2024: https://anvilproject.org/events/anvil2024-community-conference
   * 2025: https://anvilproject.org/events/anvil2025-community-conference
 
+</div>
 </Alert>
 
 
@@ -282,6 +268,4 @@ For more information on the AnVIL project portal: [Events](/events) and [News](/
 
 All of this together describes how the AnVIL provides secure, cost-effective genomic analysis at scale, and is a useful cloud-based platform for training and research.
 
-<figure>
-<img src="consortia/overview/why_anvil_conclusion_image.png" alt="Advantages of cloud-based training and research with the AnVIL are summarized. Cloud advantages include identical learner or analyst environments, pre-installed bioinformatic tools, as well as community support and training material. AnVIL advantages include bridge training to research on human genomic datasets, secure platform for controlled-access data, ability to install software with conda or Docker, scalability with greater resources or quicker runtimes, and collaboration tools."/>
-</figure>
+![Advantages of cloud-based training and research with the AnVIL are summarized. Cloud advantages include identical learner or analyst environments, pre-installed bioinformatic tools, as well as community support and training material. AnVIL advantages include bridge training to research on human genomic datasets, secure platform for controlled-access data, ability to install software with conda or Docker, scalability with greater resources or quicker runtimes, and collaboration tools](/consortia/overview/images/why_anvil_conclusion_image.png)
