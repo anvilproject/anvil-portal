@@ -93,10 +93,10 @@ export function makeConfig(
                 },
                 {
                   description:
-                    "Newly released studies not available in the AnVIL Data Explorer are accessible in DUOS.",
+                    "Study-level export and newly released studies not available in the Explorer.",
                   label: C.LabelIconMenuItem({
                     iconFontSize: "small",
-                    label: "Early Access Studies",
+                    label: "Data Library",
                   }),
                   target: ANCHOR_TARGET.BLANK,
                   url: "https://duos.org/datalibrary/AnVIL",
