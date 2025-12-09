@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.24.0](https://github.com/anvilproject/anvil-portal/compare/v2.23.1...v2.24.0) (2025-12-08)
+
+
+### Features
+
+* update datasets menu item ([#3835](https://github.com/anvilproject/anvil-portal/issues/3835)) ([#3841](https://github.com/anvilproject/anvil-portal/issues/3841)) ([2461ae7](https://github.com/anvilproject/anvil-portal/commit/2461ae7fe6bdccf2d82c98ab6d8157b25f489d2e))
+
+
+### Content
+
+* updated nov release dbgap links [#3843](https://github.com/anvilproject/anvil-portal/issues/3843) ([#3844](https://github.com/anvilproject/anvil-portal/issues/3844)) ([bf2bc65](https://github.com/anvilproject/anvil-portal/commit/bf2bc65483222cf328908d48f97b33608ddf5d7b))
+
 ## [2.23.1](https://github.com/anvilproject/anvil-portal/compare/v2.23.0...v2.23.1) (2025-12-04)
 
 
