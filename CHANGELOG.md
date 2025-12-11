@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.24.1](https://github.com/anvilproject/anvil-portal/compare/v2.24.0...v2.24.1) (2025-12-11)
+
+
+### Content
+
+* add acc2026 event ([#3838](https://github.com/anvilproject/anvil-portal/issues/3838)) ([#3845](https://github.com/anvilproject/anvil-portal/issues/3845)) ([7557fc9](https://github.com/anvilproject/anvil-portal/commit/7557fc990f4dfd08721ceb6c4f737daf14667ab4))
+
 ## [2.24.0](https://github.com/anvilproject/anvil-portal/compare/v2.23.1...v2.24.0) (2025-12-08)
 
 
