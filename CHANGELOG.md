@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.24.2](https://github.com/anvilproject/anvil-portal/compare/v2.24.1...v2.24.2) (2025-12-12)
+
+
+### Content
+
+* create new "why anvil" page under overview ([#3834](https://github.com/anvilproject/anvil-portal/issues/3834)) ([#3762](https://github.com/anvilproject/anvil-portal/issues/3762)) ([b52741e](https://github.com/anvilproject/anvil-portal/commit/b52741e0eea581a0f2ad10a47b01715610bee208))
+
 ## [2.24.1](https://github.com/anvilproject/anvil-portal/compare/v2.24.0...v2.24.1) (2025-12-11)
 
 
