@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.25.0](https://github.com/anvilproject/anvil-portal/compare/v2.24.2...v2.25.0) (2025-12-17)
+
+
+### Features
+
+* updated Explorer ref [#3851](https://github.com/anvilproject/anvil-portal/issues/3851) ([#3852](https://github.com/anvilproject/anvil-portal/issues/3852)) ([92fde81](https://github.com/anvilproject/anvil-portal/commit/92fde8180818d6aec5d742e6661cd1c31a08769f))
+
 ## [2.24.2](https://github.com/anvilproject/anvil-portal/compare/v2.24.1...v2.24.2) (2025-12-12)
 
 
