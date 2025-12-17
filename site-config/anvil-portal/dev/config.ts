@@ -86,7 +86,7 @@ export function makeConfig(
                     "Build, download, and export cross-study cohorts of open and managed access data.",
                   label: C.LabelIconMenuItem({
                     iconFontSize: "small",
-                    label: "Explorer",
+                    label: "Data Explorer",
                   }),
                   target: ANCHOR_TARGET.BLANK,
                   url: `${browserUrl}/datasets`,
