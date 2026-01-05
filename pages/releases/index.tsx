@@ -16,8 +16,10 @@ import { ROUTES } from "../../routes/constants";
 const DOCS_DIR = "docs";
 const RELEASES_DIR = "releases";
 
-export interface PageProps
-  extends Omit<StaticProps, "layoutStyle" | "mdxSource"> {
+export interface PageProps extends Omit<
+  StaticProps,
+  "layoutStyle" | "mdxSource"
+> {
   releases: Release[];
 }
 
