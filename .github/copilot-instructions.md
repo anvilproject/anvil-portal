@@ -10,7 +10,7 @@ This repository contains the front-facing AnVIL (Analysis, Visualization, and In
 - **Language**: TypeScript (strict mode enabled)
 - **Styling**: Emotion (CSS-in-JS) with Material-UI (MUI) v7
 - **Content**: MDX for documentation and content pages
-- **Build Tools**: Node.js 20.10.0, npm
+- **Build Tools**: Node.js 22.12.0, npm
 - **Code Quality**: ESLint, Prettier, Husky for pre-commit hooks
 
 ## Project Structure
@@ -224,7 +224,7 @@ For detailed information about creating and modifying site content, refer to the
 
 ## Important Notes
 
-- Node.js version 20.10.0 is required (specified in `engines` in package.json)
+- Node.js version 22.12.0 is required (specified in `engines` in package.json)
 - The project uses Next.js static export (generates static HTML)
 - MDX is used extensively for content pages
 - Material-UI v7 is a major dependency - follow MUI patterns
