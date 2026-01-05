@@ -26,8 +26,10 @@ export enum NavigationKey {
   TEAM = "team",
 }
 
-export interface NavigationNode
-  extends Pick<NavLinkItem, "flatten" | "selectedMatch" | "visible"> {
+export interface NavigationNode extends Pick<
+  NavLinkItem,
+  "flatten" | "selectedMatch" | "visible"
+> {
   hero?: NodeHero;
   key?: string;
   label?: string;
