@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.25.1](https://github.com/anvilproject/anvil-portal/compare/v2.25.0...v2.25.1) (2026-01-06)
+
+
+### Content
+
+* added feb pre-release [#3859](https://github.com/anvilproject/anvil-portal/issues/3859) ([#3860](https://github.com/anvilproject/anvil-portal/issues/3860)) ([6a6c66a](https://github.com/anvilproject/anvil-portal/commit/6a6c66a214668c0ddc71a57646ac475c1ff1e07a))
+
 ## [2.25.0](https://github.com/anvilproject/anvil-portal/compare/v2.24.2...v2.25.0) (2025-12-17)
 
 
