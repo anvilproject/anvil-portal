@@ -41,81 +41,74 @@ To **collaborate with AnVIL** on uploading data, you’ll **notify AnVIL of comp
 
 It is useful to coordinate with AnVIL before you start to set up your data model, in case you run into questions or problems.
 
-## 2.2 \- Create Your AnVIL Data Model
+## 2.2 \- Choose Your Data Model
 
-A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another. Data models should describe data with rich metadata that can be registered or indexed. 
+A data model explicitly determines the structure of data. It organizes data elements and standardizes how the data elements relate to one another. Data models should describe data with rich metadata that can be registered or indexed.
 
-We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Data Model data dictionary as you begin creating your AnVIL Data Model.
+Data Submitters can submit their data in one of these submitted models, or leverage your own, as long as the minimal required data elements are included:  
+
+* [AnVIL Findability Subset Data Model](https://anvilproject.org/learn/data-submitters/submission-guide/set-up-a-data-model#23-generate-your-data-dictionary)   
+* [GREGoR Data Model](https://gregorconsortium.org/data-model)  
+* [OMOP Common Data Model](#222---omop-common-data-model)
+
+Please find more information about the AnVIL Data Model and OMOP below\!
+
+### 2.2.1 \- The AnVIL Findability Subset Data Model
+
+We encourage you to read the [README](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) and [AnVIL Table Overview](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=139218770#gid=139218770) tabs in the AnVIL Findability Subset Data Model data dictionary as you begin creating your Data Model.
 
 These tabs include helpful information such as
 
-* The overall purpose of the data dictionary
-* Information on the AnVIL Data Model (findability subset)
-* Details on how to expand the data model to fit your needs
+* The overall purpose of the data dictionary  
+* Information on the AnVIL Data Model (findability subset)  
+* Details on how to expand the data model to fit your needs  
 * Expectations on how to submit your schema
 
-### Data Model Requirements
+#### Data Model Requirements
 
-The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) provides context for mapping data to the AnVIL core findability model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission.
+The linked [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) provides context for mapping data to the AnVIL Findability Subset Data Model. It includes information on the tables to be included, which concepts should be included in each table, and suggested coding systems for each. The Data Dictionary is a learning resource to assist users with creating their own AnVIL Data Model for submission.
 
 Please read the descriptions for each table outlined in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=112123611582571421629&rtpof=true&sd=true) carefully, and reach out to your AnVIL team contact with questions not addressed in the data dictionary document. These data model requirements help ensure AnVIL datasets are not only useful to the researchers who created them but also enable others to analyze data collectively across studies in the AnVIL Terra platform.
 
-Start by thinking of what data you have and how you have already organized it and how it may fit or need to be reorganized to fit the requirements.
+If you decide to submit data using the AnVIL Findability Subset Data Model, we recommend starting by thinking of what data you have and how it is already organized,  and how it may fit or need to be reorganized to fit the requirements.
 
-### Core Tables for All Studies
+#### Core Tables for All Studies
 
-At a high level, there are three core tables (“entities”) in the AnVIL Data Model: **BioSample**, **Donor**, and **File**.
+At a high level, there are three core tables (“entities”) in the AnVIL Findability Subset Data Model: BioSample, Donor, and File.
 
-The **BioSample** table is the only required table, although **Donor** and **File** tables are strongly encouraged to improve the usability and findability of the data.
+The BioSample table is the only required table, although Donor and File tables are strongly encouraged to improve the usability and findability of the data.
 
-The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209).  Brief descriptions of these core tables, with notable requirements, are below.
+The specifications for each table, including required fields, strongly recommended fields, field names, and field descriptions, are included in the [Data Dictionary](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209). Brief descriptions of these core tables, with notable requirements, are below.
 
-Note that data models for submitted datasets are not restricted to what is included in the AnVIL Data Model.
+Note that data models for submitted datasets are not restricted to what is included in the AnVIL Findability Subset Data Model as long as the minimal required data elements are included.
 
-* [**BioSample**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) **(required):** Contains information about the sample(s) included in the study.  Example data types include Anatomical Site from which the biosample was taken and the cell type.
-  * The `biosample_id` (first column) is required.
-  * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.
-* [**Donor**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) **(strongly recommended):** Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.
-  * The `donor_id` (first column) is required.
-* [**File**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=462062238#gid=462062238) **(strongly recommended):** Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.
-  * The `file_id` (first column) is required.
-  * It is strongly recommended that the table includes a `BioSample.biosample_id` column to link the biosample id between tables.
+* [BioSample](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) (required): Contains information about the sample(s) included in the study. Example data types include Anatomical Site from which the biosample was taken and the cell type.  
+  * The `biosample_id` (first column) is required.  
+  * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.  
+* [Donor](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) (strongly recommended): Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.  
+  * The `donor_id` (first column) is required.  
+* [File](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=462062238#gid=462062238) (strongly recommended): Contains information for files associated with the study. Example data includes DRS ID, filename, and file type.  
+  * The `file_id` (first column) is required.  
+  * The `file_size` and `file_md5sum` columns are required to support file validation.  
+  * It is strongly recommended that the table includes a `biosample_id` column to link the biosample id between tables.  
   * AnVIL will add DRS URIs for object files as part of the ingest process.
 
+#### Optional Tables
 
-### Optional Tables
+The Data Dictionary includes other optional tables you can use to contain data about conditions, activity, and your project. Brief descriptions of these optional tables, with notable requirements if they are used, are below.
 
-The AnVIL Data Model Data Dictionary includes other optional tables you can use to contain data about conditions, activity, and your project. Brief descriptions of these optional tables, with notable requirements, are below.
-
-* [**Condition Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=524240363#gid=524240363) Contains information about condition(s) and phenotypes associated with a donor.
-  * The `condition_id` (first column) is required.
-  * It is strongly recommended that the table includes a `donor_id` column to link the donor id between tables.
-* [**Activity Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1184610893#gid=1184610893) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.
-  * The `activity_id` (first column) is required.
-  * Should include a `file_id` column that references the associated file.
-* [**Project Table:**](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=672801364) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.
+* [Condition Table:](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=524240363#gid=524240363) Contains information about condition(s) and phenotype(s) associated with a donor.  
+  * The `condition_id` (first column) is required.  
+  * It is strongly recommended that the table includes a `donor_id` column to link the donor id between tables.  
+* [Activity Table:](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1184610893#gid=1184610893) Contains details on different types of activities used to generate or process data. Example data includes sequencing method, reference assembly, and assay type.  
+  * The `activity_id` (first column) is required.  
+  * Should include a `file_id` column that references the associated file.  
+* [Project Table:](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=672801364) Contains information about the project the study is a part of. Example data includes funding, and principal investigator. It is strongly recommended that the table includes a title field.  
   * The `project_id` (first column) is required.
 
-#### Non-standard Data Models
+#### Non-standard Data Tables
 
-If your dataset has been accepted by AnVIL and has needs not described here, please refer to the README on “[Expanding the data model](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209&range=B16:C16)”. Additional tables must be associated with one of the core tables: BioSample, Donor, or File. If you need further assistance, please reach out to the AnVIL Team at help@lists.anvilproject.org. You can work directly with the AnVIL Phenotype WG and Data Ingest WG to integrate into one of these existing data models.
-
-## 2.3 \- Generate Your Data Dictionary
-
-All AnVIL studies must submit a **Data Dictionary table** (spreadsheet file) that defines your complete data model. It includes (in separate tabs for each table) 
-* Field names
-* Field descriptions
-* Field types
-* Examples
-* Enumeration values (where applicable)
-* Multi-value delimiter symbols used (where applicable) for each table in the data model
-
-<Alert severity="warning">
-  <div>
-To maximize usability, data models should anchor to the listed coding systems. 
-  </div>
-</Alert>
-**For a template Data Dictionary with all required and suggested tables**, click [here](https://github.com/anvilproject/Data-Model/blob/main/AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx). To download the AnVILDataSubmissionFindabilitySubsetSchema.template.xlsx file, click on the three-dot icon at the top right and then click Download. 
+If your dataset has been accepted by AnVIL and has needs not described here, please refer to the README on “[Expanding the data model](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209&range=B16:C16)” for the AnVIL Data Model. Additional tables must be associated with one of the core tables: BioSample, Donor, or File. If you need further assistance, please reach out to the AnVIL Team at help@lists.anvilproject.org. You can work directly with the AnVIL Phenotype WG and Data Ingest WG to integrate into one of these existing data models.
 
 ### Suggested Proprietary Coding Systems
 
@@ -138,11 +131,39 @@ To maximize usability, data models should anchor to the listed coding systems.
 | Activity | Activity type label | [Activity type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1923950114) |
 | Activity | Activity type coding system | [BioCore Values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
 
-## Additional Resources
-- [AnVIL Demos: Sharing Data in the AnVIL](https://youtu.be/nIqQsse1aYM?feature=shared)
-- [Sharing Data in the AnVIL](https://docs.google.com/presentation/d/1dgRMcYnrX4Vsl7zS5oqmf9ipXT5pY6u6VUvX0CK0ssU/edit#slide=id.p)
+### 2.2.2 \- OMOP Common Data Model
 
-### Contact information
+To support [FAIR](https://www.nature.com/articles/sdata201618) data management on the AnVIL, Data Submitters who have longitudinal clinical data are recommended to submit their data in the OMOP CDM, instead of the AnVIL Data Model.  Submitters may read more about the OMOP CDM and the wider OHDSI initiative here: [https://ohdsi.github.io/CommonDataModel/background.html](https://ohdsi.github.io/CommonDataModel/background.html) 
 
-- AnVIL Data Ingest Team [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org)
-- AnVIL Help Team help@lists.anvilproject.org
+Submitters are encouraged to review [publicly available OMOP specs](https://ohdsi.github.io/CommonDataModel/cdm53.html) and choose a CDM version that best fits their data needs:
+
+* OMOP 5.3:  [https://ohdsi.github.io/CommonDataModel/cdm53.html](https://ohdsi.github.io/CommonDataModel/cdm53.html)  
+* OMOP 5.4: [https://ohdsi.github.io/CommonDataModel/cdm54.html](https://ohdsi.github.io/CommonDataModel/cdm54.html) 
+
+For differences between OMOP 5.3 and 5.4, submitters may refer to this link: [https://ohdsi.github.io/CommonDataModel/cdm54Changes.html](https://ohdsi.github.io/CommonDataModel/cdm54Changes.html) 
+
+#### Submitting in OMOP
+
+Please submit your OMOP tables in your elected CDM version following these requirements:
+
+* Copy and complete the [\[Template\] OMOP Submission Form](https://docs.google.com/spreadsheets/d/1fy-TUBY_oVmGtxu8KpdyQFiLbvvEvOGYTql6MEqny9c/edit?gid=213729284#gid=213729284) for your data  
+* Submit your OMOP tables as tsv files  
+  * Provide these minimum required OMOP Domain tables: Person, Death, Visit\_Occurrence, Visit\_Detail, Condition\_Occurrence, Drug\_Exposure, Procedure\_Occurrence, Device\_Exposure, Measurement, Observation, Specimen  
+    * If there is no data available for a specific, required domain table, do not include the table in your submission and indicate it is “Not Available” in the manifest   
+    * Name your OMOP table files according to the domain names   
+      * Example: person.tsv; observation.tsv  
+  * Due to licensing constraints, the OMOP vocabulary cannot be redistributed and must be excluded from your submission  
+    * However, you may have local codes that you are using to represent your data\!    
+    * Please provide your local codes in the vocabulary, concept, concept\_relationship, and concept\_ancestor tables, following OMOP specifications for your CDM version indicated and exclude the OMOP vocabulary from your submission
+
+We will validate your OMOP dataset using your version number at submission.  As a part of your submission process, we will return a data quality report to you. This report will include information about adherence to OMOP standard specs and contain basic data characterization. We will also make the final report available to research users.
+
+## 2.3 \- Generate Your Data Dictionary
+
+Data Dictionaries are vital for AnVIL operational and AnVIL scientific consumers to understand and utilize the data being submitted. To support consistent ingest, storage, and downstream usage, AnVIL requires that all data submissions include a Data Dictionary.  
+
+**For a template Data Dictionary**, click [here](https://docs.google.com/spreadsheets/d/18iFT3O3afrpWYtee64V4G7cqyQawISIDS72dlEcMkL4/edit?gid=213729284#gid=213729284). 
+
+#### Data Dictionary Validation
+
+Data Dictionaries provided to AnVIL will be validated for both completeness and clarity of information and alignment with the data included in the data submission. The ideal data dictionary is one that has an entry for every relevant field in the data dictionary template, the descriptive elements of those fields are precise and clear enough that even those wholly unaffiliated with the study can understand their purpose, and the provided information reflects the actual state of the data included with the submission. 
