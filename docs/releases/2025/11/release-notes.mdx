@@ -27,15 +27,4 @@ For additional resources, please refer to [finding and using AnVIL data](https:/
 
 ## Developmental Enhancements and Bug Fixes
 
-<GridTable extendIntoGutter gridTemplateColumns="repeat(1, minmax(400px, 2fr)) minmax(200px, 2fr) repeat(3, minmax(100px, 1fr))">
-
-| Enhancement/Fix | Datasets Affected |
-|:------------|:-------------|
-| Datasets with data submitter provided file inventory tables that did not include a column for file size resulted in there being files present in the Data Explorer with a null file size. This caused issues with indexing and degraded the user experience in the Data Explorer. These datasets have been updated with the proper file sizes in place. | AnVIL_ENCORE_293T ; AnVIL_ENCORE_RS293 (phs003018.v1.p1 NRES) |
-| A small number of datasets included files with a file size of 0 bytes. These are primarily things like empty stderr files from workflows and other low value files of the like. These files were removed from indexing and the Data Explorer, but kept in the original tables for the datasets. | AnVIL_HPRC (NRES)<br/>AnVIL_T2T (NRES)<br/>AnVIL_CCDG_Broad_CVD_EOCAD_PartnersBiobank_HMB_WES (phs002018 HMB-MDS)<br/>AnVIL_CCDG_Broad_NP_Epilepsy_USAMON_GRU_WES (phs001489.v4.p2 GRU)<br/>AnVIL_GREGoR_R01_GRU (phs003047.v1.p1 GRU)<br/>AnVIL_GTEx_public_data (phs000424 NRES)<br/>AnVIL_MAS_ISO_seq (phs003200.v1.p1 DS-MSC-MDS)<br/>AnVIL_NIMH_Broad_ConvergentNeuro_McCarroll_Eggan_CIRM_GRU_VillageData (phs002032 GRU)<br/> |
-| True duplicate records were identified in the file_inventory table (an AnVIL-generated table to support indexing) for the GTEx v10 snapshot. These duplicate records have been removed. | AnVIL_GTEx_v10_hg38 (phs000424 GRU) |
-| Durable DRS URIs were not properly being leveraged in recently updated snapshots. New snapshots have been issued leveraging durable DRS URIs. **Note that this was released as a post-release patch to anvil11 (Q3 2025 release).** | AnVIL_ENCORE_293T; AnVIL_ENCORE_RS293 (phs003018.v1.p1 NRES)<br/>AnVIL_MAGE (NRES) |
-
-
-</GridTable>
-
+<Enhancements {...releaseData} />

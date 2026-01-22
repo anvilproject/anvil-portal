@@ -1,10 +1,12 @@
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/RoundedPaper/roundedPaper";
-import { CardContent, CardHeader, Stack } from "@mui/material";
+import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
+import { CardHeader, Stack } from "@mui/material";
 import { ReleaseData } from "../../data/types";
 import { StyledCard } from "../Card/card.styles";
+import { Datasets } from "../Card/components/Datasets/datasets";
 import { Subheader } from "../Card/components/Subheader/subheader";
 import { Title } from "../Card/components/Title/title";
-import { StyledMarkdownRenderer } from "./dataModifications.styles";
+import { StyledCardContent } from "./dataModifications.styles";
 
 export const DataModifications = ({
   dataModifications,
@@ -19,9 +21,10 @@ export const DataModifications = ({
             subheader={<Subheader {...release} />}
             title={<Title {...release} />}
           />
-          <CardContent>
-            <StyledMarkdownRenderer value={releaseNotes} />
-          </CardContent>
+          <StyledCardContent>
+            <MarkdownRenderer value={releaseNotes} />
+            <Datasets datasetsAffected={release.datasetsAffected} />
+          </StyledCardContent>
         </StyledCard>
       ))}
     </Stack>

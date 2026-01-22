@@ -15,11 +15,11 @@ export type DataAddition = BaseReleaseData & {
 };
 
 export type DataModification = BaseReleaseData & {
+  datasetsAffected: string[];
   releaseNotes: string;
 };
 
-export interface Enhancement
-  extends Partial<Pick<BaseReleaseData, "duls" | "phsId">> {
+export interface Enhancement {
   datasetsAffected: string[];
   description: string;
 }
