@@ -16,13 +16,9 @@ export function getReleaseData(slug: string[]): ReleaseData {
 
   Object.entries(RELEASE_DATA_TO_FILE_MAP).forEach(([key, fileName]) => {
     const path = resolveRelativeDirs([...slugBasePath, `${fileName}.json`]);
-
-    try {
-      const json = JSON.parse(fs.readFileSync(path, "utf-8"));
-      data[key as keyof ReleaseData] = json;
-    } catch (e) {
-      console.error("Error reading release data:", e);
-    }
+    if (!fs.existsSync(path)) return;
+    const json = JSON.parse(fs.readFileSync(path, "utf-8"));
+    data[key as keyof ReleaseData] = json;
   });
 
   return data;
