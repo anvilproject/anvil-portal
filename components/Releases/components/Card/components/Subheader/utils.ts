@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { DataAddition } from "../../../../data/types";
+import { BaseReleaseData } from "../../../../data/types";
 
 /**
  * Renders the study identifier for a release.
@@ -9,7 +9,7 @@ import { DataAddition } from "../../../../data/types";
  * @returns The formatted study identifier.
  */
 export function renderStudyIdentifier(
-  release: Pick<DataAddition, "childPhsId" | "phsId">
+  release: Pick<BaseReleaseData, "childPhsId" | "phsId">
 ): ReactNode {
   if (!release.childPhsId) return release.phsId;
 

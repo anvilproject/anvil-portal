@@ -2,12 +2,12 @@ import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/P
 import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
 import { CardContent, CardHeader, Divider, Stack } from "@mui/material";
 import { ReleaseData } from "../../data/types";
+import { StyledCard } from "../Card/card.styles";
+import { Subheader } from "../Card/components/Subheader/subheader";
+import { Title } from "../Card/components/Title/title";
 import { CardActions } from "./components/CardActions/cardActions";
-import { Subheader } from "./components/Subheader/subheader";
-import { Title } from "./components/Title/title";
-import { StyledCard } from "./newDataReleases.styles";
 
-export const NewDataReleases = ({
+export const DataAdditions = ({
   dataAdditions,
 }: ReleaseData): JSX.Element | null => {
   if (!dataAdditions || dataAdditions.length === 0) return null;

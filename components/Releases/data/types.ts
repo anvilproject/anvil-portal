@@ -1,32 +1,27 @@
-export interface DataAddition {
+export interface BaseReleaseData {
   childPhsId?: string;
+  duls: string[];
+  phsId: string;
+  studyName: string;
+  studyUrl: string | null;
+}
+
+export type DataAddition = BaseReleaseData & {
   dataLibraryUrl: string;
   dbGapUrl: string;
-  duls: string[];
   explorerUrl: string;
-  phsId: string;
   releaseNotes: string;
-  studyName: string;
-  studyUrl: string | null;
   submitterBlogPost: string | null;
-}
+};
 
-export interface DataModification {
-  dataLibraryUrl?: string;
-  deletedWorkspaces?: string[];
-  duls: string[];
-  explorerUrl?: string;
-  phsId: string;
+export type DataModification = BaseReleaseData & {
   releaseNotes: string;
-  studyName: string;
-  studyUrl: string | null;
-}
+};
 
-export interface Enhancement {
+export interface Enhancement
+  extends Partial<Pick<BaseReleaseData, "duls" | "phsId">> {
   datasetsAffected: string[];
   description: string;
-  duls?: string[];
-  phsId?: string;
 }
 
 export interface ReleaseData {

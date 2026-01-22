@@ -3,11 +3,13 @@ import styled from "@emotion/styled";
 import { Card } from "@mui/material";
 
 export const StyledCard = styled(Card)`
-  .MuiCardHeader-root,
-  .MuiCardContent-root {
-    margin: 16px 0;
-    padding-bottom: 0;
-    padding-top: 0;
+  & {
+    .MuiCardHeader-root,
+    .MuiCardContent-root {
+      margin: 16px 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 
   .MuiCardHeader-root {
