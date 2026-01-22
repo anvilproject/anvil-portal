@@ -15,7 +15,7 @@ export const DataModifications = ({
   return (
     <Stack spacing={4} useFlexGap>
       {dataModifications.map(
-        ({ datasetsAffected, releaseNotes, ...release }) => (
+        ({ datasetsAffected, description, ...release }) => (
           <StyledCard key={release.studyName} component={RoundedPaper}>
             <CardHeader
               disableTypography
@@ -23,7 +23,7 @@ export const DataModifications = ({
               title={<Title {...release} />}
             />
             <StyledCardContent>
-              <MarkdownRenderer value={releaseNotes} />
+              <MarkdownRenderer value={description} />
               <Datasets datasetsAffected={datasetsAffected} />
             </StyledCardContent>
           </StyledCard>

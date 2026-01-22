@@ -1,5 +1,6 @@
 export interface BaseReleaseData {
   childPhsId?: string;
+  description: string;
   duls: string[];
   phsId: string;
   studyName: string;
@@ -10,14 +11,12 @@ export type DataAddition = BaseReleaseData & {
   dataLibraryUrl: string | null;
   dbGapUrl: string;
   explorerUrl: string | null;
-  releaseNotes: string;
   submitterBlogPost: string | null;
   workspaceUrl?: string;
 };
 
 export type DataModification = BaseReleaseData & {
   datasetsAffected: string[];
-  releaseNotes: string;
 };
 
 export interface Enhancement {

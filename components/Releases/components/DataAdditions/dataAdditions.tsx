@@ -13,7 +13,7 @@ export const DataAdditions = ({
   if (!dataAdditions || dataAdditions.length === 0) return null;
   return (
     <Stack spacing={4} useFlexGap>
-      {dataAdditions.map(({ releaseNotes, ...release }) => (
+      {dataAdditions.map(({ description, ...release }) => (
         <StyledCard key={release.studyName} component={RoundedPaper}>
           <CardHeader
             disableTypography
@@ -21,7 +21,7 @@ export const DataAdditions = ({
             title={<Title {...release} />}
           />
           <CardContent>
-            <MarkdownRenderer value={releaseNotes} />
+            <MarkdownRenderer value={description} />
           </CardContent>
           <Divider />
           <CardActions {...release} />

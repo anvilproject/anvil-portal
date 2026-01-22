@@ -2,10 +2,10 @@
   {
     "dataLibraryUrl": null,
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v10.p2",
+    "description": "Sample and subject annotation files were added.",
     "duls": ["GRU"],
     "explorerUrl": null,
     "phsId": "phs000424.v10.p2",
-    "releaseNotes": "Sample and subject annotation files were added.",
     "studyName": "Common Fund (CF) Genotype-Tissue Expression Project (GTEx)",
     "studyUrl": "https://www.gtexportal.org/home/aboutAdultGtex",
     "submitterBlogPost": "/news/2024/11/20/gtexv10",
@@ -14,10 +14,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/107",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v3.p2",
+    "description": "The new data release consists of 8,840 participants and more than 3,000 families. Included in the release are short-read whole exomes and genomes, long-read whole genomes, and RNA-seq files.",
     "duls": ["GRU", "HMB"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003047%22%5D%7D%5D",
     "phsId": "phs003047.v3.p2",
-    "releaseNotes": "The new data release consists of 8,840 participants and more than 3,000 families. Included in the release are short-read whole exomes and genomes, long-read whole genomes, and RNA-seq files.",
     "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
     "studyUrl": "https://gregorconsortium.org/",
     "submitterBlogPost": "/news/2025/07/25/gregor-consortium-data-release"
@@ -25,10 +25,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/191",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003472.v1.p1",
+    "description": "This first release contains data from seven participants and includes assay data such as single-cell ATAC-seq, single-cell RNA sequencing, and SHARE-seq data.",
     "duls": ["HMB-MDS"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D",
     "phsId": "phs003472.v1.p1",
-    "releaseNotes": "This first release contains data from seven participants and includes assay data such as single-cell ATAC-seq, single-cell RNA sequencing, and SHARE-seq data.",
     "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
     "studyUrl": "https://igvf.org/",
     "submitterBlogPost": null
@@ -36,10 +36,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/106",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002206.v5.p1",
+    "description": "The new data release includes over 2,000 long-read genome sequences and 12,000 short-read genome and exome analyses, nearly 400 snapshots of patient transcriptomes and epigenomes in individual cells using single-cell RNA (scRNA) and sc open chromatin (scATAC), over 3,000 bulk whole genome bisulphite genome sequences for methylome interpretation, and over 200 functional assessments in available patient tissues using full length cDNA sequences by IsoSeq (PacBio) methodology. This release also consolidates data from release 4 and 5 into a single dataset for exporting.",
     "duls": ["DS-PEDD-IRB"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002206%22%5D%7D%5D",
     "phsId": "phs002206.v5.p1",
-    "releaseNotes": "The new data release includes over 2,000 long-read genome sequences and 12,000 short-read genome and exome analyses, nearly 400 snapshots of patient transcriptomes and epigenomes in individual cells using single-cell RNA (scRNA) and sc open chromatin (scATAC), over 3,000 bulk whole genome bisulphite genome sequences for methylome interpretation, and over 200 functional assessments in available patient tissues using full length cDNA sequences by IsoSeq (PacBio) methodology. This release also consolidates data from release 4 and 5 into a single dataset for exporting.",
     "studyName": "Genomic Answers for Kids",
     "studyUrl": "https://www.childrensmercy.org/childrens-mercy-research-institute/studies-and-trials/genomic-answers-for-kids/",
     "submitterBlogPost": "/news/2025/08/25/ga4k-version-5-data-release"
@@ -47,10 +47,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/111",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001489.v4.p2",
+    "description": "This new data release includes whole genome genotype data on over 30,000 Epi25 participants, generated using Illumina's Infinium GSA-MD v1 platform. Additionally, detailed clinical phenotypes related to epilepsy diagnosis are now available for both the GSA data as well as the whole exome sequencing (WES) data previously released in v3.\n\nFor a full list of the 32 consent codes see [dbGaP study page](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001489.v4.p2).",
     "duls": ["Multiple"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001489%22%5D%7D%5D",
     "phsId": "phs001489.v4.p2",
-    "releaseNotes": "This new data release includes whole genome genotype data on over 30,000 Epi25 participants, generated using Illumina's Infinium GSA-MD v1 platform. Additionally, detailed clinical phenotypes related to epilepsy diagnosis are now available for both the GSA data as well as the whole exome sequencing (WES) data previously released in v3.\n\nFor a full list of the 32 consent codes see [dbGaP study page](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001489.v4.p2).",
     "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: Epilepsy: Epi25 Consortium",
     "studyUrl": "http://epi-25.org/",
     "submitterBlogPost": "/news/2025/08/25/epi25-version-4-data-release"
@@ -59,10 +59,10 @@
     "childPhsId": "phs003181.v2.p1",
     "dataLibraryUrl": "https://duos.org/studies/73",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001300.v5.p1",
+    "description": "This new release includes 206 samples with haplotype-resolved assemblies, structural and small variant calls, as well as methylation calls for neurologically 'normal' prefrontal cortex ( and cortex ) brain tissue samples.",
     "duls": ["GRU"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001300%22%5D%7D%5D",
     "phsId": "phs001300.v5.p1",
-    "releaseNotes": "This new release includes 206 samples with haplotype-resolved assemblies, structural and small variant calls, as well as methylation calls for neurologically 'normal' prefrontal cortex ( and cortex ) brain tissue samples.",
     "studyName": "CARD Consortium: North American Brain Expression Consortium",
     "studyUrl": "https://card.nih.gov/research-programs/long-read-sequencing",
     "submitterBlogPost": "/news/2025/08/25/card-data-release-2"
@@ -70,10 +70,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/190",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000979.v4.p2",
+    "description": "This new release includes 155 samples with haplotype-resolved assemblies, structural and small variant calls, as well as methylation calls for neurologically 'normal' prefrontal cortex ( and cortex ) brain tissue samples.",
     "duls": ["GRU"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs000979%22%5D%7D%5D",
     "phsId": "phs000979.v4.p2",
-    "releaseNotes": "This new release includes 155 samples with haplotype-resolved assemblies, structural and small variant calls, as well as methylation calls for neurologically 'normal' prefrontal cortex ( and cortex ) brain tissue samples.",
     "studyName": "CARD Consortium: Gene Expression in Postmortem DLPFC and Hippocampus from Schizophrenia and Mood Disorders",
     "studyUrl": "https://card.nih.gov/research-programs/long-read-sequencing",
     "submitterBlogPost": "/news/2025/08/25/card-data-release-2"
@@ -81,10 +81,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/77",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000925.v1.p1",
+    "description": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000925.v1.p1) for more information.",
     "duls": ["GRU"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs000925%22%5D%7D%5D",
     "phsId": "phs000925.v1.p1",
-    "releaseNotes": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000925.v1.p1) for more information.",
     "studyName": "PAGE: The Charles Bronfman Institute for Personalized Medicine (IPM) BioMe Biobank",
     "studyUrl": null,
     "submitterBlogPost": null
@@ -92,10 +92,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/78",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000220.v2.p2",
+    "description": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000220.v2.p2) for more information.",
     "duls": ["GRU"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs000220%22%5D%7D%5D",
     "phsId": "phs000220.v2.p2",
-    "releaseNotes": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000220.v2.p2) for more information.",
     "studyName": "PAGE: Multi-Ethnic Cohort Study",
     "studyUrl": null,
     "submitterBlogPost": null
@@ -103,10 +103,10 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/76",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001033.v1.p1",
+    "description": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001033.v1.p1) for more information.",
     "duls": ["GRU"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001033%22%5D%7D%5D",
     "phsId": "phs001033.v1.p1",
-    "releaseNotes": "Please see [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001033.v1.p1) for more information.",
     "studyName": "PAGE: Global Reference Panel",
     "studyUrl": null,
     "submitterBlogPost": null

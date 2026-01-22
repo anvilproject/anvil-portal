@@ -1,22 +1,22 @@
 [
   {
+    "description": "*Errata:* Two issues have been identified in this release. Reach out to anvil-data@broadinstitute.org for more information. AnVIL will be deleting the erroneous files by the **second week of December**.",
     "duls": ["GRU", "HMB"],
     "phsId": "phs003047.v4.p3",
-    "releaseNotes": "*Errata:* Two issues have been identified in this release. Reach out to anvil-data@broadinstitute.org for more information. AnVIL will be deleting the erroneous files by the **second week of December**.",
     "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
     "studyUrl": "https://gregorconsortium.org/"
   },
   {
+    "description": "*Errata:* Two files in the current dataset were found to have errors and were replaced in this data release. Reach out to anvil-data@broadinstitute.org for more information.",
     "duls": ["HMB-MDS"],
     "phsId": "phs003472.v1.p1",
-    "releaseNotes": "*Errata:* Two files in the current dataset were found to have errors and were replaced in this data release. Reach out to anvil-data@broadinstitute.org for more information.",
     "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
     "studyUrl": "https://igvf.org/"
   },
   {
+    "description": "Additional data was delivered to `AnVIL_CCDG_Broad_NP_Epilepsy_AUSAUS_EP_BA_CN_ID_MDS_GSA-MD` that was not included in the original release.",
     "duls": ["DS-EPSBACID-MDS-RD"],
     "phsId": "phs001489.v4.p2",
-    "releaseNotes": "Additional data was delivered to `AnVIL_CCDG_Broad_NP_Epilepsy_AUSAUS_EP_BA_CN_ID_MDS_GSA-MD` that was not included in the original release.",
     "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: Epilepsy: Epi25 Consortium",
     "studyUrl": "http://epi-25.org"
   },
@@ -35,9 +35,9 @@
       "AnVIL_CMH_GAFK_scRNA",
       "AnVIL_CMH_GAFK_SCATAC"
     ],
+    "description": "The below workspaces and snapshots from version 4 were deleted since this data is now consolidated and duplicated in version 5 of the dataset (links to version 5: [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002206%22%5D%7D%5D)/[Data Library](https://duos.org/studies/106)).",
     "duls": ["DS-PEDD-IRB"],
     "phsId": "phs002206.v4.p1",
-    "releaseNotes": "The below workspaces and snapshots from version 4 were deleted since this data is now consolidated and duplicated in version 5 of the dataset (links to version 5: [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002206%22%5D%7D%5D)/[Data Library](https://duos.org/studies/106)).",
     "studyName": "Genomic Answers for Kids",
     "studyUrl": "https://www.childrensmercy.org/childrens-mercy-research-institute/studies-and-trials/genomic-answers-for-kids/"
   }
