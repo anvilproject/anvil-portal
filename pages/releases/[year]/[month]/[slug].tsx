@@ -1,13 +1,15 @@
-import { StyledMain } from "../../../../components/Layout/components/Main/main.styles";
+import { buildStaticPaths } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticPaths";
+import { buildStaticProps } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticProps";
+import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
+import { StyledMain } from "../../../../components/Layout/components/Main/main.styles";
 import { processFrontmatter } from "../../../../components/Releases/common/utils";
-import { buildStaticPaths } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticPaths";
+import { getReleaseData } from "../../../../components/Releases/data/utils";
+import { MDX_COMPONENTS } from "../../../../components/Releases/mdx/constants";
 import { StaticProps } from "../../../../content/entities";
 import { ContentOverviewView } from "../../../../views/ContentOverviewView/contentOverviewView";
-import { buildStaticProps } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticProps";
-import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
 
 const DOCS_DIR = "docs";
 const RELEASES_DIR = "releases";
@@ -25,13 +27,22 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   // Build the slug.
   const slug = getSlug(props.params as PageUrlParams);
+  const mdxFilePath = buildMDXFilePath([DOCS_DIR], slug);
+
+  if (!mdxFilePath) return { notFound: true };
+
+  // Get the release data.
+  const releaseData = getReleaseData([DOCS_DIR, ...slug]);
 
   // Build the static props for the page.
   const staticProps = await buildStaticProps(
-    buildMDXFilePath([DOCS_DIR], slug),
+    mdxFilePath,
     slug,
     processFrontmatter,
-    { mdxOptions: { development: process.env.NODE_ENV !== "production" } }
+    {
+      mdxOptions: { development: process.env.NODE_ENV !== "production" },
+      scope: { releaseData },
+    }
   );
 
   // If the static props are not found, return not found.
@@ -48,7 +59,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const Page = (props: PageProps): JSX.Element => {
-  return <ContentOverviewView {...props} />;
+  return <ContentOverviewView {...props} components={MDX_COMPONENTS} />;
 };
 
 export default Page;

@@ -6,8 +6,8 @@ breadcrumbs:
     text: "Releases"
   - path: ""
     text: "November 2025 Release"
-description: "November 2025 Data Release"
 date: "2025-11-30"
+description: "November 2025 Data Release"
 title: "November 2025 Release"
 ---
 
@@ -19,18 +19,7 @@ For additional resources, please refer to [finding and using AnVIL data](https:/
 
 ## New Data Releases
 
-<GridTable extendIntoGutter gridTemplateColumns="repeat(2, minmax(200px, 1fr)) minmax(200px, 2fr) repeat(3, minmax(100px, 1fr))">
-
-| Study Name | phsID / DULs | Release Notes | Submitter blog post | Where to apply for access | Link to dataset on AnVIL |
-|:------------|:-------------|:---------------|:----------------------|:----------------------------|:---------------------------|
-| [NHGRI GREGoR Consortium](https://gregorconsortium.org/): Genomics Research to Elucidate the Genetics of Rare Disease | phs003047.v4.p3<br/>GRU, HMB | This fourth data release contains data from 10,683 participants in 4,366 families including family, pedigree and phenotype information as well as genomic data, such as short-read DNA and RNA sequencing data, are available for the majority of GREGoR participants. In this release, a subset of short-read whole genome sequencing data is uniformly processed by the GREGoR Data Coordinating Center, which is used to generate a Consortium joint callset for small variants (SNVs and Indels). | [Link](/news/2025/11/04/gregor-consortium-data-release) | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v4.p3) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003047%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/107) |
-| [Impact of Genomic Variation on Function (IGVF) Consortium](https://igvf.org/) | phs003472.v1.p1<br/>HMB, GRU-PUB, Mouse | This IGVF consortium data release encompasses both human and mouse single-cell genome and transcriptome studies. The human component comprises 95 single-cell multiome or single-cell RNA sequencing studies featuring 89 biological samples derived from 50 human donors across 4 distinct tissue/organ types. The release includes Illumina single-cell ATAC-seq and RNA-seq data, along with downstream analyses characterizing chromatin states, transcriptome, transcription factor activity, and mitochondrial DNA across diverse biological contexts. The mouse component consists of 309 datasets generated using Illumina and Nanopore single-cell RNA sequencing technologies, representing 16 different tissue and organ types collected from 183 mice spanning 16 distinct strains. The release also provides comprehensive cell type annotations across strains and tissues/organs based on the single-cell RNA sequencing data. | N/A | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003472.v1.p1) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/191) |
-| [OurHealth - Cardiovascular Disease in South Asians](https://ourhealthstudy.org/) | phs003821.v1.p1<br/>GRU | The first release includes self-reported basic demographics, anthropometric traits, cardiometabolic outcomes, and Blended Genome-Exome (BGE) sequencing data on 621 study participants. | [Link](https://anvilproject.org/news/2025/11/04/our-health-study-release) | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003821.v1.p1) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003821%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/203) |
-| Assessment of Complex Chromosomal Changes in De-Identified Cell Lines | phs004000.v1.p1<br/>GRU | The dataset includes 16 individuals from LCL or fibroblast sources. All samples have Illumina WGS sequence data and 8 samples have PacBio WGS sequencing completed. | [Link](https://anvilproject.org/news/2025/11/04/complex-chromosomal-changes-involving-chromosome-9-data-release) | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004000.v1.p1) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004000%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/200) |
-| Center for Common Disease Genomics [CCDG] - Cardiovascular: Genetic and Phenotypic Determinants of Blood Pressure and Other Cardiovascular Risk Factors | phs002236.v1.p1<br/>DS-DCCA-NPU-MDS | This release contains 2,150 WES samples and 2,081 array samples. | N/A | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002236.v1.p1) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002236%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/127) |
-| METSIM (METabolic Syndrome In Men) Study | phs000743.v4.p1 (parent)<br/>phs001579.v1.p1 (child)<br/>HMB-IRB | Please refer to the dbGaP study page for more information. | N/A | [dbGaP](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001579.v1.p1) | [Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001579%22%5D%7D%5D)<br/>[Data Library](https://duos.org/studies/202) |
-
-</GridTable>
+<NewDataReleases {...releaseData} />
 
 ## Data Modifications to Existing Releases
 

@@ -1,0 +1,37 @@
+[
+  {
+    "datasetsAffected": ["AnVIL_ENCORE_293T", "AnVIL_ENCORE_RS293"],
+    "description": "Datasets with data submitter provided file inventory tables that did not include a column for file size resulted in there being files present in the Data Explorer with a null file size. This caused issues with indexing and degraded the user experience in the Data Explorer. These datasets have been updated with the proper file sizes in place.",
+    "duls": ["NRES"],
+    "phsId": "phs003018.v1.p1"
+  },
+  {
+    "datasetsAffected": [
+      "AnVIL_HPRC (NRES)",
+      "AnVIL_T2T (NRES)",
+      "AnVIL_CCDG_Broad_CVD_EOCAD_PartnersBiobank_HMB_WES (phs002018 HMB-MDS)",
+      "AnVIL_CCDG_Broad_NP_Epilepsy_USAMON_GRU_WES (phs001489.v4.p2 GRU)",
+      "AnVIL_GREGoR_R01_GRU (phs003047.v1.p1 GRU)",
+      "AnVIL_GTEx_public_data (phs000424 NRES)",
+      "AnVIL_MAS_ISO_seq (phs003200.v1.p1 DS-MSC-MDS)",
+      "AnVIL_NIMH_Broad_ConvergentNeuro_McCarroll_Eggan_CIRM_GRU_VillageData (phs002032 GRU)"
+    ],
+    "description": "A small number of datasets included files with a file size of 0 bytes. These are primarily things like empty stderr files from workflows and other low value files of the like. These files were removed from indexing and the Data Explorer, but kept in the original tables for the datasets."
+  },
+  {
+    "datasetsAffected": ["AnVIL_GTEx_v10_hg38"],
+    "description": "True duplicate records were identified in the file_inventory table (an AnVIL-generated table to support indexing) for the GTEx v10 snapshot. These duplicate records have been removed.",
+    "duls": ["GRU"],
+    "phsId": "phs000424"
+  },
+  {
+    "datasetsAffected": [
+      "AnVIL_ENCORE_293T",
+      "AnVIL_ENCORE_RS293",
+      "AnVIL_MAGE"
+    ],
+    "description": "Durable DRS URIs were not properly being leveraged in recently updated snapshots. New snapshots have been issued leveraging durable DRS URIs. Note that this was released as a post-release patch to anvil11 (Q3 2025 release).",
+    "duls": ["NRES"],
+    "phsId": "phs003018.v1.p1"
+  }
+]

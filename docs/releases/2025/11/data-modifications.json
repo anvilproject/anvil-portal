@@ -1,0 +1,46 @@
+[
+  {
+    "duls": ["GRU", "HMB"],
+    "phsId": "phs003047.v4.p3",
+    "releaseNotes": "*Errata:* Two issues have been identified in this release. Reach out to anvil-data@broadinstitute.org for more information. AnVIL will be deleting the erroneous files by the second week of December.",
+    "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
+    "studyUrl": "https://gregorconsortium.org/"
+  },
+  {
+    "duls": ["HMB-MDS"],
+    "phsId": "phs003472.v1.p1",
+    "releaseNotes": "*Errata:* Two files in the current dataset were found to have errors and were replaced in this data release. Reach out to anvil-data@broadinstitute.org for more information.",
+    "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
+    "studyUrl": "https://igvf.org/"
+  },
+  {
+    "duls": ["DS-EPSBACID-MDS-RD"],
+    "phsId": "phs001489.v4.p2",
+    "releaseNotes": "Additional data was delivered to AnVIL_CCDG_Broad_NP_Epilepsy_AUSAUS_EP_BA_CN_ID_MDS_GSA-MD that was not included in the original release.",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: Epilepsy: Epi25 Consortium",
+    "studyUrl": "http://epi-25.org"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/106",
+    "deletedWorkspaces": [
+      "AnVIL_CMH_GAFK_IsoSeq",
+      "AnVIL_CMH_GAFK_GS_long_read",
+      "AnVIL_CMH_GAFK_PacBio_methyl_tagged",
+      "AnVIL_CMH_GAFK_WGS",
+      "AnVIL_CMH_GAFK_ES",
+      "AnVIL_CMH_GAFK_IlluminaGSA",
+      "AnVIL_CMH_GAFK_GS-linked-read",
+      "AnVIL_CMH_GAFK_MGI",
+      "AnVIL_CMH_GAFK_10X-Genomics",
+      "AnVIL_CMH_GAFK_WGBS",
+      "AnVIL_CMH_GAFK_scRNA",
+      "AnVIL_CMH_GAFK_SCATAC"
+    ],
+    "duls": ["DS-PEDD-IRB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002206%22%5D%7D%5D",
+    "phsId": "phs002206.v4.p1",
+    "releaseNotes": "The below workspaces and snapshots from version 4 were deleted since this data is now consolidated and duplicated in version 5 of the dataset.",
+    "studyName": "Genomic Answers for Kids",
+    "studyUrl": "https://www.childrensmercy.org/childrens-mercy-research-institute/studies-and-trials/genomic-answers-for-kids/"
+  }
+]
