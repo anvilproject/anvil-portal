@@ -22,7 +22,6 @@ export function getReleaseData(slug: string[]): ReleaseData {
       data[key as keyof ReleaseData] = json;
     } catch (e) {
       console.error("Error reading release data:", e);
-      data[key as keyof ReleaseData] = undefined;
     }
   });
 

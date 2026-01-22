@@ -1,6 +1,6 @@
-import { formatFrontmatterDate } from "../../../docs/common/frontmatter";
-import { Frontmatter } from "../../../content/entities";
 import { FrontmatterProps } from "@databiosphere/findable-ui/lib/utils/mdx/frontmatter/types";
+import { Frontmatter } from "../../../content/entities";
+import { formatFrontmatterDate } from "../../../docs/common/frontmatter";
 
 /**
  * Returns the processed frontmatter.
@@ -17,7 +17,7 @@ export function processFrontmatter(
     date,
     enableContentEnd: false,
     enableNavigation: false,
-    enableOutline: false,
+    enableOutline: true,
     enableSupportForum: false,
     subTitle: date,
   };
