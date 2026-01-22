@@ -6,4 +6,5 @@ export type ReleaseUrlKey =
   | "dataLibraryUrl"
   | "dbGapUrl"
   | "explorerUrl"
-  | "submitterBlogPost";
+  | "submitterBlogPost"
+  | "workspaceUrl";

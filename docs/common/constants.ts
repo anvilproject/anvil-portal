@@ -1,12 +1,11 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { Stack } from "@mui/material";
 import * as C from "../../components";
 import { Link } from "../../components/common/Link/link";
 import { Table } from "../../components/common/Table/table";
 import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { ROUTES } from "../../routes/constants";
-import { Stack } from "@mui/material";
-import { GridTable } from "../../components/common/Table/components/GridTable/gridTable";
 
 export const DOC_SITE_FOLDER_NAME = "docs";
 
@@ -31,7 +30,6 @@ export const MDX_COMPONENTS = {
   EventsHero: C.EventsHero,
   Figure: C.Figure,
   Grid: C.Grid,
-  GridTable,
   Image: C.StaticImage,
   Link: C.Link,
   NBS: C.NBS, // non-breaking space typography component

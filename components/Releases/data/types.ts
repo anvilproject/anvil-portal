@@ -7,11 +7,12 @@ export interface BaseReleaseData {
 }
 
 export type DataAddition = BaseReleaseData & {
-  dataLibraryUrl: string;
+  dataLibraryUrl: string | null;
   dbGapUrl: string;
-  explorerUrl: string;
+  explorerUrl: string | null;
   releaseNotes: string;
   submitterBlogPost: string | null;
+  workspaceUrl?: string;
 };
 
 export type DataModification = BaseReleaseData & {

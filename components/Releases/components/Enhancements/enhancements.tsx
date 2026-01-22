@@ -13,11 +13,11 @@ export const Enhancements = ({
   if (!enhancements || enhancements.length === 0) return null;
   return (
     <Stack spacing={4} useFlexGap>
-      {enhancements.map((release, i) => (
+      {enhancements.map(({ datasetsAffected, description }, i) => (
         <StyledCard key={i} component={RoundedPaper}>
           <StyledCardContent>
-            <MarkdownRenderer value={release.description} />
-            {release.datasetsAffected && (
+            <MarkdownRenderer value={description} />
+            {datasetsAffected.length > 0 && (
               <Stack spacing={2} useFlexGap>
                 <Typography
                   color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
@@ -26,7 +26,7 @@ export const Enhancements = ({
                 >
                   Datasets Affected
                 </Typography>
-                <Datasets datasetsAffected={release.datasetsAffected} />
+                <Datasets datasetsAffected={datasetsAffected} />
               </Stack>
             )}
           </StyledCardContent>

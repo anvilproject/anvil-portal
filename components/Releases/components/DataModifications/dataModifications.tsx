@@ -14,19 +14,21 @@ export const DataModifications = ({
   if (!dataModifications || dataModifications.length === 0) return null;
   return (
     <Stack spacing={4} useFlexGap>
-      {dataModifications.map(({ releaseNotes, ...release }) => (
-        <StyledCard key={release.studyName} component={RoundedPaper}>
-          <CardHeader
-            disableTypography
-            subheader={<Subheader {...release} />}
-            title={<Title {...release} />}
-          />
-          <StyledCardContent>
-            <MarkdownRenderer value={releaseNotes} />
-            <Datasets datasetsAffected={release.datasetsAffected} />
-          </StyledCardContent>
-        </StyledCard>
-      ))}
+      {dataModifications.map(
+        ({ datasetsAffected, releaseNotes, ...release }) => (
+          <StyledCard key={release.studyName} component={RoundedPaper}>
+            <CardHeader
+              disableTypography
+              subheader={<Subheader {...release} />}
+              title={<Title {...release} />}
+            />
+            <StyledCardContent>
+              <MarkdownRenderer value={releaseNotes} />
+              <Datasets datasetsAffected={datasetsAffected} />
+            </StyledCardContent>
+          </StyledCard>
+        )
+      )}
     </Stack>
   );
 };
