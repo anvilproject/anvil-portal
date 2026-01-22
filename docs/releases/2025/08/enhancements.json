@@ -1,18 +1,14 @@
 [
   {
-    "datasetsAffected": [],
     "description": "Inconsistencies in snapshot naming conventions that were causing issues with indexing for the AnVIL Data Explorer have been resolved."
   },
   {
-    "datasetsAffected": [],
     "description": "MD5s for file metadata are now consistently encoded to Base64 to be consistent with what is provided in the GCS metadata."
   },
   {
-    "datasetsAffected": [],
     "description": "Values that were causing issues importing data from DUOS or the AnVIL Data Explorer into Workspaces have been corrected."
   },
   {
-    "datasetsAffected": [],
     "description": "The presence of double-pipes that was causing issues with indexing certain datasets for the AnVIL Data Explorer has been resolved."
   }
 ]

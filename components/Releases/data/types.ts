@@ -20,7 +20,7 @@ export type DataModification = BaseReleaseData & {
 };
 
 export interface Enhancement {
-  datasetsAffected: string[];
+  datasetsAffected?: string[];
   description: string;
 }
 

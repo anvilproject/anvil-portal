@@ -17,7 +17,7 @@ export const Enhancements = ({
         <StyledCard key={i} component={RoundedPaper}>
           <StyledCardContent>
             <MarkdownRenderer value={description} />
-            {datasetsAffected.length > 0 && (
+            {datasetsAffected && datasetsAffected.length > 0 && (
               <Stack spacing={2} useFlexGap>
                 <Typography
                   color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
