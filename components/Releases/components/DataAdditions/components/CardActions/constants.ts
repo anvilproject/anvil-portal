@@ -11,7 +11,7 @@ export const URL_DISPLAY_ORDER: ReleaseUrlKey[] = [
 export const URL_KEY_TO_LABEL_MAP: Record<ReleaseUrlKey, string> = {
   dataLibraryUrl: "Data Library",
   dbGapUrl: "Get Access",
-  explorerUrl: "Explorer",
+  explorerUrl: "Data Explorer",
   submitterBlogPost: "Read Blog Post",
-  workspaceUrl: "Workspace",
+  workspaceUrl: "Terra Workspace",
 };
