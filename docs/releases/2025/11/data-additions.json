@@ -1,0 +1,69 @@
+[
+  {
+    "dataLibraryUrl": "https://duos.org/studies/107",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v4.p3",
+    "description": "This fourth data release contains data from 10,683 participants in 4,366 families including family, pedigree and phenotype information as well as genomic data, such as short-read DNA and RNA sequencing data, are available for the majority of GREGoR participants. In this release, a subset of short-read whole genome sequencing data is uniformly processed by the GREGoR Data Coordinating Center, which is used to generate a Consortium joint callset for small variants (SNVs and Indels).",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003047%22%5D%7D%5D",
+    "phsId": "phs003047.v4.p3",
+    "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
+    "studyUrl": "https://gregorconsortium.org/",
+    "submitterBlogPost": "/news/2025/11/04/gregor-consortium-data-release"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/191",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003472.v1.p1",
+    "description": "This IGVF consortium data release encompasses both human and mouse single-cell genome and transcriptome studies. The human component comprises 95 single-cell multiome or single-cell RNA sequencing studies featuring 89 biological samples derived from 50 human donors across 4 distinct tissue/organ types. The release includes Illumina single-cell ATAC-seq and RNA-seq data, along with downstream analyses characterizing chromatin states, transcriptome, transcription factor activity, and mitochondrial DNA across diverse biological contexts. The mouse component consists of 309 datasets generated using Illumina and Nanopore single-cell RNA sequencing technologies, representing 16 different tissue and organ types collected from 183 mice spanning 16 distinct strains. The release also provides comprehensive cell type annotations across strains and tissues/organs based on the single-cell RNA sequencing data.",
+    "duls": ["HMB", "GRU-PUB", "Mouse"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D",
+    "phsId": "phs003472.v1.p1",
+    "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
+    "studyUrl": "https://igvf.org/",
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/203",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003821.v1.p1",
+    "description": "The first release includes self-reported basic demographics, anthropometric traits, cardiometabolic outcomes, and Blended Genome-Exome (BGE) sequencing data on 621 study participants.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003821%22%5D%7D%5D",
+    "phsId": "phs003821.v1.p1",
+    "studyName": "OurHealth - Cardiovascular Disease in South Asians",
+    "studyUrl": "https://ourhealthstudy.org/",
+    "submitterBlogPost": "/news/2025/11/04/our-health-study-release"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/200",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004000.v1.p1",
+    "description": "The dataset includes 16 individuals from LCL or fibroblast sources. All samples have Illumina WGS sequence data and 8 samples have PacBio WGS sequencing completed.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004000%22%5D%7D%5D",
+    "phsId": "phs004000.v1.p1",
+    "studyName": "Assessment of Complex Chromosomal Changes in De-Identified Cell Lines",
+    "studyUrl": null,
+    "submitterBlogPost": "/news/2025/11/04/complex-chromosomal-changes-involving-chromosome-9-data-release"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/127",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002236.v1.p1",
+    "description": "This release contains 2,150 WES samples and 2,081 array samples.",
+    "duls": ["DS-DCCA-NPU-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002236%22%5D%7D%5D",
+    "phsId": "phs002236.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Cardiovascular: Genetic and Phenotypic Determinants of Blood Pressure and Other Cardiovascular Risk Factors",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "childPhsId": "phs001579.v1.p1",
+    "dataLibraryUrl": "https://duos.org/studies/202",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001579.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["HMB-IRB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001579%22%5D%7D%5D",
+    "phsId": "phs000743.v4.p1",
+    "studyName": "METSIM (METabolic Syndrome In Men) Study",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  }
+]

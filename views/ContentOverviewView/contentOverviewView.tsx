@@ -7,18 +7,18 @@ import { SupportForum } from "../../components/Layout/components/Content/compone
 import { Content } from "../../components/Layout/components/Content/content";
 import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
-import { StaticProps } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
+import { Props } from "./types";
 
-export const ContentOverviewView = (props: StaticProps): JSX.Element => {
-  const { mdxSource, slug } = props;
+export const ContentOverviewView = (props: Props): JSX.Element => {
+  const { components = MDX_COMPONENTS, mdxSource, slug } = props;
   return (
     <Fragment>
       <SectionHero {...props} />
       <SectionContent
         content={
           <Content>
-            <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
+            <MDXRemote {...mdxSource} components={components} />
             {renderSupportForum(props)}
             {renderContentEnd(props)}
           </Content>
@@ -35,7 +35,7 @@ export const ContentOverviewView = (props: StaticProps): JSX.Element => {
  * @param props - Static Props.
  * @returns content end component.
  */
-function renderContentEnd(props: StaticProps): JSX.Element | null {
+function renderContentEnd(props: Props): JSX.Element | null {
   if (!props.frontmatter.enableContentEnd) return null;
   return <ContentEnd slug={props.slug} />;
 }
@@ -45,7 +45,7 @@ function renderContentEnd(props: StaticProps): JSX.Element | null {
  * @param props - Static Props.
  * @returns outline component.
  */
-function renderOutline(props: StaticProps): JSX.Element | null {
+function renderOutline(props: Props): JSX.Element | null {
   if (!props.frontmatter.enableOutline) return null;
   return <Outline outline={props.outline} Contents={ContentsTab} />;
 }
@@ -55,7 +55,7 @@ function renderOutline(props: StaticProps): JSX.Element | null {
  * @param props - Static Props.
  * @returns support forum component.
  */
-function renderSupportForum(props: StaticProps): JSX.Element | null {
+function renderSupportForum(props: Props): JSX.Element | null {
   if (!props.frontmatter.enableSupportForum) return null;
   return <SupportForum />;
 }
