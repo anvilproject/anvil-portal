@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.26.0](https://github.com/anvilproject/anvil-portal/compare/v2.25.2...v2.26.0) (2026-01-26)
+
+
+### Features
+
+* update release notes to card format ([#3865](https://github.com/anvilproject/anvil-portal/issues/3865)) ([#3871](https://github.com/anvilproject/anvil-portal/issues/3871)) ([e1356d0](https://github.com/anvilproject/anvil-portal/commit/e1356d0eda616ff768d4a1bdd3764462ef0f7641))
+
+
+### Chores
+
+* update findable UI version to latest ([#3854](https://github.com/anvilproject/anvil-portal/issues/3854)) ([#3855](https://github.com/anvilproject/anvil-portal/issues/3855)) ([0ccb16c](https://github.com/anvilproject/anvil-portal/commit/0ccb16c65f7c0e93215befbd69acaa7c4c7ac76e))
+* update findable-ui to latest ([#3872](https://github.com/anvilproject/anvil-portal/issues/3872)) ([#3873](https://github.com/anvilproject/anvil-portal/issues/3873)) ([a430910](https://github.com/anvilproject/anvil-portal/commit/a430910728c078c87466477ae772486b5c65e629))
+
+
+### Content
+
+* update prepare-for-submission ([#3867](https://github.com/anvilproject/anvil-portal/issues/3867)) ([82b6941](https://github.com/anvilproject/anvil-portal/commit/82b694152a6083e3ec8c2d40a974e4faec67bac1))
+* update set-up-a-data-model.mdx ([#3868](https://github.com/anvilproject/anvil-portal/issues/3868)) ([0dca7be](https://github.com/anvilproject/anvil-portal/commit/0dca7be1f892f7945d27015f6eb6ce3b9a32baa8))
+* update set-up-a-data-model.mdx ([#3870](https://github.com/anvilproject/anvil-portal/issues/3870)) ([2d2b824](https://github.com/anvilproject/anvil-portal/commit/2d2b8244c7b7eca6b2ad6ca9809861e7106d33d7))
+
 ## [2.25.2](https://github.com/anvilproject/anvil-portal/compare/v2.25.1...v2.25.2) (2026-01-07)
 
 
