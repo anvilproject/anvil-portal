@@ -21,6 +21,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Main AnVIL paper DOI
 const ANVIL_MAIN_DOI = "10.1016/j.xgen.2021.100085";
 
+// Key AnVIL component papers (ABOUT_ANVIL category)
+const ANVIL_COMPONENT_DOIS = {
+  "Galaxy 2020": "10.1093/nar/gkaa434",
+  "Dockstore": "10.1093/nar/gkab346",
+  "Bioconductor": "10.1038/s41592-019-0654-x",
+  "Terra/FireCloud": "10.1038/s41588-019-0372-4", // Original Terra paper
+  "seqr": "10.1002/humu.24366",
+};
+
 // API endpoints
 const SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1";
 const CROSSREF_API = "https://api.crossref.org/works";
