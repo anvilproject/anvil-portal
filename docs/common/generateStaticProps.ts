@@ -6,8 +6,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPropsResult } from "next/types";
 import remarkGfm from "remark-gfm";
 import { Frontmatter, StaticProps } from "../../content/entities";
-import { rehypeSlug } from "../../plugins/rehypeSlug";
-import { remarkHeadings } from "../../plugins/remarkHeadings";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
+import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 import {
   buildPageSlug,
   extractMDXFrontmatter,
@@ -37,8 +37,9 @@ export async function generateStaticProps(
   const mdxSource = await serialize(content, {
     ...serializeOptions,
     mdxOptions: {
+      development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],
-      remarkPlugins: [[remarkHeadings, outline], remarkGfm],
+      remarkPlugins: [[remarkHeadings, { outline }], remarkGfm],
     },
     scope: { ...serializeOptions.scope, frontmatter },
   });

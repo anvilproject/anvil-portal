@@ -18,7 +18,7 @@ import {
   generatePaths,
   parseFrontmatter,
 } from "../../docs/common/utils";
-import { rehypeSlug } from "../../plugins/rehypeSlug";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
   slug: string;
@@ -57,6 +57,7 @@ export const getStaticProps: GetStaticProps = async (
   if (!isFrontmatterEvent(frontmatter)) return { notFound: true };
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],
       remarkPlugins: [remarkGfm],
     },

@@ -38,6 +38,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const frontmatter = parseFrontmatter(data);
   if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const mdxSource = await serialize(content, {
+    mdxOptions: {
+      development: process.env.NODE_ENV === "development",
+    },
     scope: {
       events: processEventsFrontmatter(),
     },

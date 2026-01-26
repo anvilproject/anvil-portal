@@ -8,7 +8,7 @@ import {
   FrontmatterOverview,
 } from "../../../../../../../../content/entities";
 import { isFrontmatterOverview } from "../../../../../../../../content/typeGuards";
-import { slugifyHeading } from "../../../../../../../../plugins/common/utils";
+import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
 import { OverviewLink } from "./types";
 import { LinkProps } from "../../../../../../../../common/types";
 
