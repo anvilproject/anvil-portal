@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { SectionAnalysisPortals } from "../../components/Home/components/Section/components/SectionAnalysisPortals/sectionAnalysisPortals";
 import { SectionCloudEnvironment } from "../../components/Home/components/Section/components/SectionCloudEnvironment/sectionCloudEnvironment";
 import { SectionDatasets } from "../../components/Home/components/Section/components/SectionDatasets/sectionDatasets";

@@ -1,5 +1,5 @@
 import { StaticProps } from "../../content/entities";
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { Grid, StyledHeadline } from "./learnView.styles";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import {

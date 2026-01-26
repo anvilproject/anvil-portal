@@ -2,6 +2,7 @@ import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 import { Grid, Typography } from "@mui/material";
+import { JSX } from "react";
 import { StyledCard } from "./champions.styles";
 import { GRID_PROPS, TYPOGRAPHY_PROPS } from "./constants";
 import { ANVIL_CHAMPIONS } from "./content";

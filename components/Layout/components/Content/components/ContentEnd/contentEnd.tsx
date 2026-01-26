@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { Contribute } from "./components/Contribute/contribute";
 import { StyledDivider } from "./components/Divider/divider.styles";
 

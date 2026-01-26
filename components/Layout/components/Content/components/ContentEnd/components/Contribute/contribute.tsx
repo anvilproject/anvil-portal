@@ -3,6 +3,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button as MButton, Typography } from "@mui/material";
+import { JSX } from "react";
 import { CodePullRequestIcon } from "../../../../../../../common/CustomIcon/components/CodePullRequestIcon/codePullRequestIcon";
 import { StyledBox } from "./contribute.styles";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";

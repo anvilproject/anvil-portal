@@ -1,4 +1,5 @@
 import NextHead from "next/head";
+import { JSX } from "react";
 
 export interface HeadProps {
   appTitle: string;

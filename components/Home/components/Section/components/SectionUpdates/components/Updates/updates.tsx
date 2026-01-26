@@ -4,6 +4,7 @@ import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
+import { JSX } from "react";
 import { UpdateCard } from "../../common/entities";
 import { Card, CardContent, CardSection, Grid } from "./updates.styles";
 

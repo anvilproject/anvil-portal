@@ -5,6 +5,7 @@ import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card
 import { ForwardArrowIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
 import { CardContent, StyledCard } from "./ctaCard.styles";
 import { Typography } from "@mui/material";
+import { JSX } from "react";
 import { Props } from "./types";
 import { CARD_PROPS, SVG_ICON_PROPS, TYPOGRAPHY_PROPS } from "./constants";
 import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";

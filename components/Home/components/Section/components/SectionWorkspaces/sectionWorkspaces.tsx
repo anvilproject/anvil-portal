@@ -1,4 +1,5 @@
 import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { JSX } from "react";
 import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
 import { Workspaces } from "./components/Workspaces/workspaces";
 import { Headline, SectionLayout } from "./sectionWorkspaces.styles";

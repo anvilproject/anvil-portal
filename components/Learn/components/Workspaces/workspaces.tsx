@@ -1,6 +1,7 @@
 import { CARDS as WORKSPACES } from "../../../Home/components/Section/components/SectionWorkspaces/common/content";
 import { Card } from "../../../Home/components/Section/components/SectionWorkspaces/components/Workspaces/components/Card/card";
 import { Grid } from "@mui/material";
+import { JSX } from "react";
 import { GRID_PROPS } from "./contants";
 
 export const Workspaces = (): JSX.Element => {

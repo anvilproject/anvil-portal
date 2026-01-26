@@ -1,4 +1,5 @@
 import { Chip } from "@mui/material";
+import { JSX } from "react";
 import { StyledStack } from "./datasets.styles";
 import { Props } from "./types";
 

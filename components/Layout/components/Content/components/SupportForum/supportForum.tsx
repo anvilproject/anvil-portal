@@ -3,6 +3,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button, Typography } from "@mui/material";
+import { JSX } from "react";
 import { PATH_PARAMETERS } from "../../../../../../common/constants";
 import { StyledPaper } from "./supportForum.styles";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";

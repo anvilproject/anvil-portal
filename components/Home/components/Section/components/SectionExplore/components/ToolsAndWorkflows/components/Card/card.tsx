@@ -10,6 +10,7 @@ import {
   Link as MLink,
   Typography as MTypography,
 } from "@mui/material";
+import { JSX } from "react";
 import { SectionCardWithLink } from "../../../../../../../../common/entities";
 import {
   CardCTA,

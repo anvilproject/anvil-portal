@@ -1,4 +1,5 @@
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
+import { JSX } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { CardMedia } from "../../../../../Card/components/CardMedia/cardMedia";
 import {

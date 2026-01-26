@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import { JSX } from "react";
 import { StaticProps } from "../../content/entities";
 import { StyledMain } from "../../components/Layout/components/Main/main.styles";
 import { ReleasesView } from "../../views/ReleasesView/releasesView";

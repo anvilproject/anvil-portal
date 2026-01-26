@@ -1,4 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { JSX } from "react";
 import { Footer } from "../components/Home/components/Layout/components/Footer/footer.styles";
 import { Main } from "../components/Home/components/Layout/components/Main/main";
 import { buildAnalysisPortalCards } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/utils";

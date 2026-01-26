@@ -1,7 +1,7 @@
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { MDXRemote } from "next-mdx-remote";
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { SupportForum } from "../../components/Layout/components/Content/components/SupportForum/supportForum";
 import { Content } from "../../components/Layout/components/Content/content";

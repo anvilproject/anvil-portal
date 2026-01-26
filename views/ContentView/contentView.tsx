@@ -3,6 +3,7 @@ import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/co
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { MDXRemote } from "next-mdx-remote";
+import { JSX } from "react";
 import { Nav, NavBarHero } from "../../components";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { Content } from "../../components/Layout/components/Content/content";

@@ -2,7 +2,7 @@ import { CardAction } from "@databiosphere/findable-ui/lib/components/common/Car
 import { CardActions } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActions/cardActions.styles";
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { SectionCard } from "../../../../../../../../common/entities";
 import {
   CardContent,

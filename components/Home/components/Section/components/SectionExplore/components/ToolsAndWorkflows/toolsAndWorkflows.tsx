@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { Card } from "./components/Card/card";
 import { Grid } from "./toolsAndWorkflows.styles";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";

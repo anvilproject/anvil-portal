@@ -10,7 +10,7 @@ import {
 } from "echarts/components";
 import * as echarts from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, JSX, useEffect, useRef } from "react";
 import chartData from "./chart-data.json";
 import { Card } from "./dataIngestionChart.styles";
 

@@ -3,7 +3,7 @@ import {
   Tabs,
   TabValue,
 } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { PROJECT_TABS } from "./common/constants";
 import { PROJECT_VIEW } from "./common/entities";
 import { ProjectView } from "./projects.styles";

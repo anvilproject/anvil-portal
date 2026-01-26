@@ -1,4 +1,5 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { JSX } from "react";
 import {
   Brands,
   HHSLogo,

@@ -2,6 +2,7 @@ import { TypographyWordBreak } from "@databiosphere/findable-ui/lib/components/c
 import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { replaceParameters } from "@databiosphere/findable-ui/lib/utils/replaceParameters";
+import { JSX } from "react";
 import { EMAIL_ADDRESSES, PATH_PARAMETERS } from "../../../common/constants";
 import { SiteConfig } from "../../../site-config/common/entities";
 

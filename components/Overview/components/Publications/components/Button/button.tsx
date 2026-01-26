@@ -2,6 +2,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { JSX } from "react";
 import { Button as PrimaryButton } from "./button.styles";
 
 export const Button = (): JSX.Element => {

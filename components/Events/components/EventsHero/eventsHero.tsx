@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { JSX } from "react";
 import { FrontmatterEvent } from "../../../../content/entities";
 import { Heading } from "../../../common/Typography/components/Heading/heading";
 import { getEventTitle } from "../Card/common/utils";

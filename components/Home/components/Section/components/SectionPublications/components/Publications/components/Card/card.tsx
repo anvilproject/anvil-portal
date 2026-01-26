@@ -7,7 +7,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../../../common/entities";
 import { updateVisibilityMode } from "../../../../../../../../common/utils";

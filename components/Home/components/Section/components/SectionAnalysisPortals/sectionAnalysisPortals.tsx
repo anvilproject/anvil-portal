@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { AnalysisPortals } from "./components/AnalysisPortals/analysisPortals";
 import {
   Section,

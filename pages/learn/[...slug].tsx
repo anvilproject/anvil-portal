@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { JSX } from "react";
 import { StyledMain } from "../../components/Layout/components/Main/main.styles";
 import { processOverviewFrontmatter } from "../../components/Layout/components/Section/components/SectionContent/components/SectionOverview/utils";
 import { StaticProps } from "../../content/entities";
