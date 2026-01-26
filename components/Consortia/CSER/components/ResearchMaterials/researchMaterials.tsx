@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { MaterialsCategory } from "../common/materials";
 import { MaterialsList } from "../MaterialsList/materialsList";
 

@@ -5,6 +5,7 @@ import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/co
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { JSX } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
@@ -23,8 +24,8 @@ import {
   getStaticPropLayoutStyle,
   parseFrontmatter,
 } from "../docs/common/utils";
-import { rehypeSlug } from "../plugins/rehypeSlug";
-import { remarkHeadings } from "../plugins/remarkHeadings";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
+import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 
 const CONFLICTING_STATIC_PATHS = ["events", "learn", "news", "releases"];
@@ -97,8 +98,9 @@ export const getStaticProps: GetStaticProps = async (
   const outline: OutlineItem[] = [];
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],
-      remarkPlugins: [[remarkHeadings, outline], remarkGfm],
+      remarkPlugins: [[remarkHeadings, { outline }], remarkGfm],
     },
     scope: {
       ...MDX_SCOPE,

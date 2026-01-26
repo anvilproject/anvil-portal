@@ -1,6 +1,7 @@
 import { LAYOUT_STYLE_NO_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { GetStaticProps } from "next";
+import { JSX } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { ContentView } from "../../components";
@@ -37,6 +38,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const frontmatter = parseFrontmatter(data);
   if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const mdxSource = await serialize(content, {
+    mdxOptions: {
+      development: process.env.NODE_ENV === "development",
+    },
     scope: {
       news: processNewsFrontmatter(),
     },

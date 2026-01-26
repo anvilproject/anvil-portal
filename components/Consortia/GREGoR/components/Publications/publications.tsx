@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import publications from "./publications.json";
 import { Publications as ConsortiumPublications } from "../../../components/Publications/publications";
 

@@ -2,6 +2,7 @@ import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/P
 import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Stack, Typography } from "@mui/material";
+import { JSX } from "react";
 import { ReleaseData } from "../../data/types";
 import { StyledCard } from "../Card/card.styles";
 import { Datasets } from "../Card/components/Datasets/datasets";

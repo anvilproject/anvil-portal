@@ -1,5 +1,6 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { CardActions as MCardActions } from "@mui/material";
+import { JSX } from "react";
 import { URL_DISPLAY_ORDER, URL_KEY_TO_LABEL_MAP } from "./constants";
 import { Props } from "./types";
 

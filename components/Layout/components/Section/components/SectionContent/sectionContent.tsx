@@ -3,6 +3,7 @@ import {
   ContentLayout,
   Outline,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/contentLayout.styles";
+import { JSX } from "react";
 import { ContentViewProps } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 import { StaticProps } from "../../../../../../content/entities";
 import {

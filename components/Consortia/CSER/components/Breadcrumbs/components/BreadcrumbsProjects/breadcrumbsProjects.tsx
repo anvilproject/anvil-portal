@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import { JSX } from "react";
 
 export const BreadcrumbsProjects = (): JSX.Element => {
   return (

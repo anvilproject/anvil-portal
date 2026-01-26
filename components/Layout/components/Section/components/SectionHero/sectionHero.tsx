@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 import { PANEL_BACKGROUND_COLOR } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { JSX } from "react";
 import { StaticProps } from "../../../../../../content/entities";
 import { SectionDivider } from "../../../../../Home/components/Section/section.styles";
 import {

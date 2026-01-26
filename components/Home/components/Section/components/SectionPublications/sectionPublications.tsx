@@ -4,6 +4,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button } from "@mui/material";
+import { JSX } from "react";
 import { Section, SectionLayout, SectionTitle } from "../../section.styles";
 import { Publications } from "./components/Publications/publications";
 import { CTAs, Headline, SectionActions } from "./sectionPublications.styles";

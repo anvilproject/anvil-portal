@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import Link from "next/link";
+import { JSX } from "react";
 import { BUTTON_PROPS } from "./constants";
 
 export const Actions = (): JSX.Element => {

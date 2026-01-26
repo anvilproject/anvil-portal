@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 
 export interface NonBreakingSpaceProps {
   children: ReactNode;

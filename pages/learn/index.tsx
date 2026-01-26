@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import { JSX } from "react";
 import { StaticProps } from "../../content/entities";
 import { generateStaticProps } from "../../docs/common/generateStaticProps";
 import { LearnView } from "../../views/LearnView/learnView";

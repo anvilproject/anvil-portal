@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { Fragment, JSX, useRef } from "react";
 import { Bullets } from "../../../../../Bullets/bullets";
 import { Grid } from "./analysisPortals.styles";
 import { Cards } from "./components/Cards/cards";

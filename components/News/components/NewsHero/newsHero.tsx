@@ -1,5 +1,5 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { FrontmatterNews } from "../../../../content/entities";
 import { ROUTES } from "../../../../routes/constants";
 import { Heading } from "../../../common/Typography/components/Heading/heading";

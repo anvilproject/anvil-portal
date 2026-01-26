@@ -3,7 +3,7 @@ import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { CardActionArea, Card as MCard } from "@mui/material";
 import Router from "next/router";
-import { useCallback } from "react";
+import { JSX, useCallback } from "react";
 import { FrontmatterEvent } from "../../../../content/entities";
 import { CardContent, CardSection } from "./card.styles";
 import { getEventOverline, getEventTitle } from "./common/utils";

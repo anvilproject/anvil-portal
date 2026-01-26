@@ -6,6 +6,7 @@ import {
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { CardActionArea as MCardActionArea } from "@mui/material";
+import { JSX } from "react";
 import { SectionCardWithLink } from "../../../../../../../../common/entities";
 import {
   CardContent,

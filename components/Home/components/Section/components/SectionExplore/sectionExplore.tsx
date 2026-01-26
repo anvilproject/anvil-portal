@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
 import { Headline, SectionLayout } from "./sectionExplore.styles";
 import { ToolsAndWorkflows } from "./components/ToolsAndWorkflows/toolsAndWorkflows";

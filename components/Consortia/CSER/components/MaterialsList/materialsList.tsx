@@ -2,7 +2,7 @@ import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Acco
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Typography } from "@mui/material";
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import {
   getOrganizedCategoryMaterials,

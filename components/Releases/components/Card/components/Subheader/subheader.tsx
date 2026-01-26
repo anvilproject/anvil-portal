@@ -1,4 +1,5 @@
 import { Dot } from "@databiosphere/findable-ui/lib/components/common/Dot/dot";
+import { JSX } from "react";
 import { BaseReleaseData } from "../../../../data/types";
 import { STACK_PROPS } from "./constants";
 import { StyledStack } from "./subheader.styles";

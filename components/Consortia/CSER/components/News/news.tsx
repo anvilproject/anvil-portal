@@ -1,4 +1,5 @@
 import { Card } from "@databiosphere/findable-ui/lib/components/common/Card/card";
+import { JSX } from "react";
 import { News as NewsView } from "./news.styles";
 
 export const News = (): JSX.Element => {

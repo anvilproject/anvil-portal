@@ -1,6 +1,6 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { Divider } from "@mui/material";
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { Heading } from "../../../../../../../common/Typography/components/Heading/heading";
 import {
   GroupOverview,

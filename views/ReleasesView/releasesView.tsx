@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, JSX } from "react";
 import { StyledCard } from "./releasesView.styles";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";

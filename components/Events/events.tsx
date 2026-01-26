@@ -1,6 +1,7 @@
 import { Card as DXCard } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { Tabs } from "@databiosphere/findable-ui/lib/components/common/Tabs/tabs";
+import { JSX } from "react";
 import { FrontmatterEvent } from "../../content/entities";
 import { EVENTS_VIEW_TABS } from "./common/constants";
 import { Card } from "./components/Card/card";

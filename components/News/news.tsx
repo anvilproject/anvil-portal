@@ -5,6 +5,7 @@ import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { CardActionArea, Card as MCard } from "@mui/material";
 import { useRouter } from "next/router";
+import { JSX } from "react";
 import { FrontmatterNews } from "../../content/entities";
 import { CardSection, NewsView } from "./news.styles";
 

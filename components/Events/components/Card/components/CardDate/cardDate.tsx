@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { JSX } from "react";
 import { CardDate as Date } from "./cardDate.styles";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 

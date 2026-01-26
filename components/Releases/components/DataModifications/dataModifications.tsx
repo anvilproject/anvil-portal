@@ -1,6 +1,7 @@
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/RoundedPaper/roundedPaper";
 import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
 import { CardHeader, Stack } from "@mui/material";
+import { JSX } from "react";
 import { ReleaseData } from "../../data/types";
 import { StyledCard } from "../Card/card.styles";
 import { Datasets } from "../Card/components/Datasets/datasets";

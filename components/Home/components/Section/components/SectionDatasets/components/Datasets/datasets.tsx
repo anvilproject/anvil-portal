@@ -3,7 +3,7 @@ import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
 } from "@databiosphere/findable-ui/lib/hooks/useBreakpointHelper";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../common/entities";

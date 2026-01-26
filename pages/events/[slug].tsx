@@ -1,6 +1,7 @@
 import { LAYOUT_STYLE_NO_CONTRAST_DEFAULT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { JSX } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
@@ -17,7 +18,7 @@ import {
   generatePaths,
   parseFrontmatter,
 } from "../../docs/common/utils";
-import { rehypeSlug } from "../../plugins/rehypeSlug";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
 
 interface EventArticlePageUrlParams extends ParsedUrlQuery {
   slug: string;
@@ -56,6 +57,7 @@ export const getStaticProps: GetStaticProps = async (
   if (!isFrontmatterEvent(frontmatter)) return { notFound: true };
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      development: process.env.NODE_ENV === "development",
       rehypePlugins: [rehypeSlug],
       remarkPlugins: [remarkGfm],
     },

@@ -1,5 +1,6 @@
 import { CustomSVGIconProps } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/common/entities";
 import { SvgIcon } from "@mui/material";
+import { JSX } from "react";
 
 /**
  * Custom code pull request icon.
