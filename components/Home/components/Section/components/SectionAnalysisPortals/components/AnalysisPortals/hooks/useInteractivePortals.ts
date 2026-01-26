@@ -23,7 +23,7 @@ export interface UseInteractivePortals {
  * @returns portal cards ordered by the active index, interactive indexes, and interactive actions.
  */
 export function useInteractivePortals(
-  ref: RefObject<HTMLElement>
+  ref: RefObject<HTMLElement | null>
 ): UseInteractivePortals {
   // Intersection observer for portal cards intersecting the viewport.
   const { isIntersecting } = useIntersectionObserver(ref);

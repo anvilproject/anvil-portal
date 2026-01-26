@@ -9,9 +9,9 @@ export interface UseIntersectionObserver {
 }
 
 export function useIntersectionObserver(
-  ref: RefObject<HTMLElement>
+  ref: RefObject<HTMLElement | null>
 ): UseIntersectionObserver {
-  const observerRef = useRef<IntersectionObserver>();
+  const observerRef = useRef<IntersectionObserver>(null);
   const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
 
   const onIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
