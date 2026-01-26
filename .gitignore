@@ -48,3 +48,4 @@ __pycache__/
 
 # IDEs and editors
 .idea
+.claude/rules*
