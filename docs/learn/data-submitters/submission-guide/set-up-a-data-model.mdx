@@ -49,7 +49,7 @@ Data Submitters can submit their data in one of these submitted models, or lever
 
 * [AnVIL Findability Subset Data Model](/learn/data-submitters/submission-guide/set-up-a-data-model#23-generate-your-data-dictionary)   
 * [GREGoR Data Model](https://gregorconsortium.org/data-model)  
-* [OMOP Common Data Model](#222---omop-common-data-model)  
+* [OMOP Common Data Model](#222---omop-common-data-model)
 
 Please find more information about the AnVIL Data Model and OMOP below\!
 
@@ -110,24 +110,8 @@ The Data Dictionary includes other optional tables you can use to contain data a
 
 If your dataset has been accepted by AnVIL and has needs not described here, please refer to the README on “[Expanding the data model](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=211809209#gid=211809209&range=B16:C16)” for the AnVIL Data Model. Additional tables must be associated with one of the core tables: BioSample, Donor, or File. If you need further assistance, please reach out to the AnVIL Team at help@lists.anvilproject.org. You can work directly with the AnVIL Phenotype WG and Data Ingest WG to integrate into one of these existing data models.
 
-#### Suggested Proprietary Coding Systems
+### Suggested Proprietary Coding Systems
 
-| Table | Concept(s) | Coding systems |
-| :---- | :---- | :---- |
-| Donor | Organism type label, Organism type coding system | [NCI Organismal Classification](http://purl.obolibrary.org/obo/NCBITaxon_1) |
-| Donor | Donor type | [Donor type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1794886963) |
-| Donor | Phenotype sex code | [Phenotype sex coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1477557223) |
-| Donor | Reported ethnicity label, Genetic ancestry label | [Suggested Ancestry Values](https://www.ebi.ac.uk/ols4/ontologies/efo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHANCESTRO_0004?lang=en) |
-| Donor | Reported ethnicity coding system, Genetic ancestry coding system | [Genetic ancestry coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=819609887) |
-| BioSample | Anatomical site label | [Anatomical Site Allowed Values](http://purl.obolibrary.org/obo/FMA_62955) |
-| BioSample | Anatomical site coding system | [Anatomical site coding system](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=271391259) |
-| BioSample | A priori cell type label | [A priori cell type suggested values](http://purl.obolibrary.org/obo/CL_0000000) |
-| BioSample | A priori cell type coding system | [A priori cell type](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1366269516) |
-| BioSample | BioSample type label | [BioSample type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=A:A) |
-| BioSample | BioSample type coding system | [BioCore Terms](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
-| BioSample | Primary condition label | [Suggested primary condition label values](http://purl.obolibrary.org/obo/OGMS_0000031) |
-| BioSample | Primary condition coding system |  |
-| BioSample | Primary condition affected status | Boolean true/false |
 | Activity | Activity type label | [Activity type values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#rangeid=1923950114) |
 | Activity | Activity type coding system | [BioCore Values](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1074808431#gid=1074808431&range=W1) |
 
@@ -167,5 +151,3 @@ Data Dictionaries are vital for AnVIL operational and AnVIL scientific consumers
 #### Data Dictionary Validation
 
 Data Dictionaries provided to AnVIL will be validated for both completeness and clarity of information and alignment with the data included in the data submission. The ideal data dictionary is one that has an entry for every relevant field in the data dictionary template, the descriptive elements of those fields are precise and clear enough that even those wholly unaffiliated with the study can understand their purpose, and the provided information reflects the actual state of the data included with the submission. 
-
-
