@@ -47,9 +47,22 @@ A data model explicitly determines the structure of data. It organizes data elem
 
 Data Submitters can submit their data in one of these submitted models, or leverage your own, as long as the minimal required data elements are included:  
 
-* [AnVIL Findability Subset Data Model](/learn/data-submitters/submission-guide/set-up-a-data-model#23-generate-your-data-dictionary)   
-* [GREGoR Data Model](https://gregorconsortium.org/data-model)  
-* [OMOP Common Data Model](#222---omop-common-data-model)  
+<table>
+<tbody>
+<tr>
+<td><a href="https://gregorconsortium.org/data-model">GREGoR Data Model</a></td>
+<td>For use by groups that can provide <ins>powerful structured data</ins>, have <ins>robust omics data</ins>, or have performed <ins>family or rare disease studies</ins>.</td>
+</tr>
+<tr>
+<td><a href="https://anvilproject.org/learn/data-submitters/submission-guide/set-up-a-data-model#222-omop-common-data-model">OMOP Common Data Model</a></td>
+<td>For use by groups providing <ins>longitudinal Electronic Health Record data</ins>.</td>
+</tr>
+<tr>
+<td><a href="https://anvilproject.org/learn/data-submitters/submission-guide/set-up-a-data-model#221-the-anvil-findability-subset-data-model">AnVIL Findability Subset Data Model</a></td>
+<td>For use by submitters <ins>without a data model</ins> who are providing the minimum required data for submission.</td>
+</tr>
+</tbody>
+</table>
 
 Please find more information about the AnVIL Data Model and OMOP below\!
 
@@ -82,8 +95,8 @@ The specifications for each table, including required fields, strongly recommend
 
 Note that data models for submitted datasets are not restricted to what is included in the AnVIL Findability Subset Data Model as long as the minimal required data elements are included.
 
-* [BioSample](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) (required): Contains information about the sample(s) included in the study. Example data types include Anatomical Site from which the biosample was taken and the cell type.  
-  * The `biosample_id` (first column) is required.  
+ [BioSample](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=323182902) (required): Contains information about the sample(s) included in the study. Example data types include Anatomical Site from which the biosample was taken and the cell type.  
+   The `biosample_id` (first column) is required.  
   * If a File table will not be submitted, the BioSample table must contain a column indicating which samples correspond to which files.  
 * [Donor](https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=1923143452#gid=1923143452) (strongly recommended): Contains demographic and phenotypic information about the donor. Example data types include phenotypic sex, reported ethnicity, and genetic ancestry.  
   * The `donor_id` (first column) is required.  
@@ -148,7 +161,7 @@ Please submit your OMOP tables in your elected CDM version following these requi
 
 * Copy and complete the [\[Template\] OMOP Submission Form](https://docs.google.com/spreadsheets/d/1fy-TUBY_oVmGtxu8KpdyQFiLbvvEvOGYTql6MEqny9c/edit?gid=213729284#gid=213729284) for your data  
 * Submit your OMOP tables as tsv files  
-  * Provide these minimum required OMOP Domain tables: Person, Death, Visit\_Occurrence, Visit\_Detail, Condition\_Occurrence, Drug\_Exposure, Procedure\_Occurrence, Device\_Exposure, Measurement, Observation, Specimen  
+  * Provide these minimum required OMOP Domain tables: [Person](https://ohdsi.github.io/CommonDataModel/cdm53.html#person) (<ins>Please do not include PII in your submission</ins>), [Death](https://ohdsi.github.io/CommonDataModel/cdm53.html#death), [Visit\_Occurrence](https://ohdsi.github.io/CommonDataModel/cdm53.html#visit_occurrence), [Visit\_Detail](https://ohdsi.github.io/CommonDataModel/cdm53.html#visit_detail), [Condition\_Occurrence](https://ohdsi.github.io/CommonDataModel/cdm53.html#condition_occurrence), [Drug\_Exposure](https://ohdsi.github.io/CommonDataModel/cdm53.html#drug_exposure), [Procedure\_Occurrence](https://ohdsi.github.io/CommonDataModel/cdm53.html#procedure_occurrence), [Device\_Exposure](https://ohdsi.github.io/CommonDataModel/cdm53.html#device_exposure), [Measurement](https://ohdsi.github.io/CommonDataModel/cdm53.html#measurement), [Observation](https://ohdsi.github.io/CommonDataModel/cdm53.html#observation), [Specimen](https://ohdsi.github.io/CommonDataModel/cdm53.html#specimen) 
     * If there is no data available for a specific, required domain table, do not include the table in your submission and indicate it is “Not Available” in the manifest   
     * Name your OMOP table files according to the domain names   
       * Example: person.tsv; observation.tsv  
