@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.26.1](https://github.com/anvilproject/anvil-portal/compare/v2.26.0...v2.26.1) (2026-02-06)
+
+
+### Content
+
+* fixed guide link in README [#3878](https://github.com/anvilproject/anvil-portal/issues/3878) ([#3878](https://github.com/anvilproject/anvil-portal/issues/3878)) ([5328a47](https://github.com/anvilproject/anvil-portal/commit/5328a47805939553257f6f262ed645a63dd19360))
+* updated dates on anvil2026-community-conference [#3876](https://github.com/anvilproject/anvil-portal/issues/3876) ([6bcd7b5](https://github.com/anvilproject/anvil-portal/commit/6bcd7b5e5a0c0df63b04e77ffc13af29357e9abc))
+
 ## [2.26.0](https://github.com/anvilproject/anvil-portal/compare/v2.25.2...v2.26.0) (2026-01-26)
 
 
