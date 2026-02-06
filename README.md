@@ -6,7 +6,7 @@ AnVIL is an Analysis, Visualization, and Informatics Lab-space for democratizing
 
 ## Content Contributor Guide
 
-Information about creating/modifying the site content can be found here: [https://anvilproject.org/content-guide](https://anvilproject.org/content-guide)
+Information about creating/modifying the site content can be found here: [https://anvilproject.org/guides](https://anvilproject.org/guides)
 
 ## Setting Up a Developer Workspace
 
