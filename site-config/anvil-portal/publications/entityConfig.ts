@@ -1,4 +1,3 @@
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 import { BasicCellProps } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
 import { NTagCellProps } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
@@ -13,6 +12,7 @@ import {
   Publication,
   PublicationInput,
 } from "../../../apis/publications/entities";
+import { CitationInfoBox } from "../../../components/Citations/components/CitationInfoBox/citationInfoBox";
 import {
   getPublicationId,
   getPublicationTitle,
@@ -136,4 +136,14 @@ export const publicationsEntityConfig: EntityConfig<
   },
   route: "citations",
   staticLoadFile: "files/publications/publications.json",
+  ui: {
+    slots: {
+      entityListSlot: [
+        {
+          component: CitationInfoBox,
+        },
+      ],
+    },
+    title: "Citations",
+  },
 };

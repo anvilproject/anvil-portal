@@ -1,5 +1,6 @@
 import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
-import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
+import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
+import { MainProps } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { EntityConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
@@ -46,7 +47,7 @@ function useExploreReady(): boolean {
 }
 
 /**
- * Entity list page for explore views (publications, workflows, etc.).
+ * Entity list page for explore views (citations, workflows, etc.).
  * @param props - Static props including entity data.
  * @returns ExploreView with entity data.
  */
@@ -87,6 +88,17 @@ export const getStaticProps: GetStaticProps<
   return { props };
 };
 
-(ExplorePage as NextPageWithComponent).Main = DXMain;
+/**
+ * Main layout wrapper without header offset margin.
+ * @param props - Main layout props.
+ * @param props.children - Page content.
+ * @param props.className - CSS class name.
+ * @returns Main element.
+ */
+const ExploreMain = ({ children, className }: MainProps): JSX.Element => (
+  <DXMain className={className}>{children}</DXMain>
+);
+
+(ExplorePage as NextPageWithComponent).Main = ExploreMain;
 
 export default ExplorePage;
