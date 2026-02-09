@@ -51,8 +51,8 @@ const categoryGroupConfig: CategoryGroupConfig = {
           label: PUBLICATION_CATEGORY_LABEL.AUTHORS,
         },
         {
-          key: PUBLICATION_CATEGORY_KEY.RECENCY_BUCKET,
-          label: PUBLICATION_CATEGORY_LABEL.RECENCY_BUCKET,
+          key: PUBLICATION_CATEGORY_KEY.YEAR,
+          label: PUBLICATION_CATEGORY_LABEL.YEAR,
         },
       ],
     },

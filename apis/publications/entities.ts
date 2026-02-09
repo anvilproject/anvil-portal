@@ -7,7 +7,6 @@ export interface Publication {
   doi: string;
   journal: string;
   publisher: string;
-  recencyBucket: string;
   title: string;
   year: number;
 }

@@ -1,29 +1,13 @@
 import { Publication, PublicationInput } from "./entities";
 
 /**
- * Computes a recency bucket label from a publication year.
- * @param year - Publication year.
- * @returns Recency bucket label.
- */
-function getRecencyBucket(year: number | null): string {
-  if (!year) return "Unknown";
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - year;
-  if (age <= 0) return "Last year";
-  if (age === 1) return "1–2 years ago";
-  if (age === 2) return "2–3 years ago";
-  return "Older";
-}
-
-/**
- * Maps raw publication input to a Publication entity with computed fields.
+ * Maps raw publication input to a Publication entity.
  * @param input - Raw publication data from the static JSON file.
- * @returns Publication entity with recencyBucket computed.
+ * @returns Publication entity with year defaulted to 0 if null.
  */
 export function publicationInputMapper(input: PublicationInput): Publication {
   return {
     ...input,
-    recencyBucket: getRecencyBucket(input.year),
     year: input.year ?? 0,
   };
 }
