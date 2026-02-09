@@ -119,8 +119,8 @@ export function makeConfig(
               url: ROUTES.EVENTS,
             },
             {
-              label: "Publications",
-              url: ROUTES.PUBLICATIONS,
+              label: "Citations",
+              url: ROUTES.CITATIONS,
             },
             {
               flatten: FLATTEN.XS_ONLY,

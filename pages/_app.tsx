@@ -31,7 +31,7 @@ export type AppPropsWithComponent = AppProps & {
 
 setFeatureFlags(["gregor", "primed"]);
 
-const DEFAULT_ENTITY_LIST_TYPE = "publications";
+const DEFAULT_ENTITY_LIST_TYPE = "citations";
 
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;

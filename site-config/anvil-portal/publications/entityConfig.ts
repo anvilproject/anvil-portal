@@ -53,7 +53,7 @@ const categoryGroupConfig: CategoryGroupConfig = {
       ],
     },
   ],
-  key: "publications",
+  key: "citations",
 };
 
 /**
@@ -74,7 +74,7 @@ export const publicationsEntityConfig: EntityConfig<
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
   getId: getPublicationId,
   getTitle: getPublicationTitle,
-  label: "Publications",
+  label: "Citations",
   list: {
     columns: [
       {
@@ -134,6 +134,6 @@ export const publicationsEntityConfig: EntityConfig<
   listView: {
     disablePagination: true,
   },
-  route: "publications",
+  route: "citations",
   staticLoadFile: "files/publications/publications.json",
 };
