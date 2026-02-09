@@ -6,6 +6,7 @@ export interface Publication {
   citationCount: number;
   doi: string;
   journal: string;
+  pmid: string | null;
   publisher: string;
   title: string;
   year: number;
@@ -19,6 +20,7 @@ export interface PublicationInput {
   citationCount: number;
   doi: string;
   journal: string;
+  pmid: string | null;
   publisher: string;
   title: string;
   year: number | null;

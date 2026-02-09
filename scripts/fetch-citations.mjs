@@ -51,6 +51,7 @@ function cleanTitle(text) {
 // Preprint DOI prefixes
 const PREPRINT_DOI_PREFIXES = [
   "10.1101/", // bioRxiv, medRxiv
+  "10.21203/", // Research Square
   "10.48550/", // arXiv
   "10.20944/", // Preprints.org
   "10.2139/", // SSRN
@@ -293,6 +294,7 @@ async function buildPublications(limit = 1000) {
       citationCount,
       doi: `https://doi.org/${cleanDoi}`,
       journal: crossref.citation.journal,
+      pmid: paper.pmid || null,
       publisher: crossref.citation.publisher,
       title: cleanTitle(crossref.title),
       year: crossref.citation.year ? Number(crossref.citation.year) : null,

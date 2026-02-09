@@ -23,6 +23,7 @@ import {
   buildAuthors,
   buildCitationCount,
   buildJournal,
+  buildPmid,
   buildPublicationTitle,
   buildYear,
 } from "../../../viewModelBuilders/publications/viewModelBuilders";
@@ -46,6 +47,11 @@ const categoryGroupConfig: CategoryGroupConfig = {
         {
           key: PUBLICATION_CATEGORY_KEY.JOURNAL,
           label: PUBLICATION_CATEGORY_LABEL.JOURNAL,
+        },
+        {
+          enableChartView: false,
+          key: PUBLICATION_CATEGORY_KEY.PMID,
+          label: PUBLICATION_CATEGORY_LABEL.PMID,
         },
         {
           key: PUBLICATION_CATEGORY_KEY.AUTHORS,
@@ -98,7 +104,7 @@ export const publicationsEntityConfig: EntityConfig<
         },
         header: PUBLICATION_CATEGORY_LABEL.AUTHORS,
         id: PUBLICATION_CATEGORY_KEY.AUTHORS,
-        width: { max: "1.5fr", min: "180px" },
+        width: { max: "0.75fr", min: "140px" },
       },
       {
         componentConfig: {
@@ -118,6 +124,15 @@ export const publicationsEntityConfig: EntityConfig<
         header: PUBLICATION_CATEGORY_LABEL.YEAR,
         id: PUBLICATION_CATEGORY_KEY.YEAR,
         width: { max: "0.5fr", min: "80px" },
+      },
+      {
+        componentConfig: {
+          component: C.Link as React.FC<LinkProps>,
+          viewBuilder: buildPmid,
+        },
+        header: PUBLICATION_CATEGORY_LABEL.PMID,
+        id: PUBLICATION_CATEGORY_KEY.PMID,
+        width: { max: "0.5fr", min: "100px" },
       },
       {
         componentConfig: {

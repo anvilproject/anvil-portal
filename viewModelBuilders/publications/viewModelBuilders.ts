@@ -61,3 +61,19 @@ export function buildCitationCount(publication: Publication): BasicCellProps {
     value: publication.citationCount.toLocaleString(),
   };
 }
+
+/**
+ * Builds Link props for the PubMed ID column.
+ * @param publication - Publication entity.
+ * @returns Link component props.
+ */
+export function buildPmid(publication: Publication): LinkProps {
+  if (!publication.pmid) {
+    return { label: "", url: "" };
+  }
+  return {
+    label: publication.pmid,
+    target: ANCHOR_TARGET.BLANK,
+    url: `https://pubmed.ncbi.nlm.nih.gov/${publication.pmid}`,
+  };
+}
