@@ -1,13 +1,13 @@
-# PRD: Publications Page — "Analyzed on AnVIL"
+# PRD: Citations Page
 
 **Issue**: https://github.com/anvilproject/anvil-portal/issues/3879
-**Route**: `/explore/publications`
+**Route**: `/explore/citations`
 
 ## Overview
 
-Add a top-level **Publications** page to the AnVIL Portal that lists research papers analyzed on the AnVIL platform. The page uses findable-ui's client-side faceted filtering (the same framework used by the AnVIL Dataset Catalog in data-browser) to let users search and filter publications by title, author, journal, and recency.
+Add a top-level **Citations** page to the AnVIL Portal that lists research papers citing the main AnVIL paper. The page uses findable-ui's client-side faceted filtering (the same framework used by the AnVIL Dataset Catalog in data-browser) to let users search and filter citations by title, author, journal, year, and PubMed ID. A Table/Graph toggle lets users switch between the tabular list and histogram charts per facet.
 
-The existing `/overview/publications` page retains the "About AnVIL" publications (platform papers). The new page focuses exclusively on "Analyzed on AnVIL" research.
+The existing `/overview/publications` page is renamed to **"Selected Publications"** and retains only the "About AnVIL" platform papers. An info alert on that page links users to the new Citations page.
 
 ## Data Source
 
@@ -18,21 +18,22 @@ The page lists **papers that cite the main AnVIL paper**:
 - **Citing papers** discovered via the **Semantic Scholar API** (citations endpoint for DOI `10.1016/j.xgen.2021.100085`)
 - Metadata enriched from the **Crossref API** (title, authors, journal, year, publisher)
 - **Citation counts** per paper fetched from the **Semantic Scholar API** (`citationCount` field)
+- **PubMed IDs** from Semantic Scholar's `externalIds.PubMed` field
 - Output committed as a **static JSON file** (`files/publications/publications.json`)
 
 ### Data Pipeline
 
 ```
 Semantic Scholar: GET /paper/DOI:10.1016/j.xgen.2021.100085/citations
-  → list of citing paper DOIs
+  → list of citing paper DOIs + PubMed IDs
   → Crossref API (full metadata per DOI)
   → Semantic Scholar API (citation count per DOI)
-  → Preprint deduplication (see below)
   → Title cleanup (strip HTML tags, normalize whitespace)
+  → Preprint deduplication (see below)
   → publications.json (committed)
 ```
 
-The script is run manually (or via CI) to refresh the citing papers list and citation counts.
+The script is run manually via `npm run fetch-citations` to refresh the citing papers list and citation counts.
 
 ### Preprint Deduplication
 
@@ -41,6 +42,7 @@ Semantic Scholar sometimes returns both the preprint and published version of th
 **Detection:** A paper is flagged as a preprint if its DOI matches a known preprint prefix:
 
 - `10.1101/` (bioRxiv, medRxiv)
+- `10.21203/` (Research Square)
 - `10.48550/` (arXiv)
 - `10.20944/` (Preprints.org)
 - `10.2139/` (SSRN)
@@ -57,145 +59,111 @@ Note: Crossref relation coverage is partial (~28% of preprints have `is-preprint
 
 ```typescript
 interface Publication {
-  title: string; // Paper title
   authors: string[]; // List of author names
-  journal: string; // Journal / container title
-  doi: string; // Full DOI URL (https://doi.org/...)
-  year: number; // Publication year (numeric, for recency bucketing)
-  publisher: string; // Publisher name
   citationCount: number; // Citation count from Semantic Scholar
+  doi: string; // Full DOI URL (https://doi.org/...)
+  journal: string; // Journal / container title
+  pmid: string | null; // PubMed ID from Semantic Scholar (null if unavailable)
+  publisher: string; // Publisher name
+  title: string; // Paper title (HTML stripped, whitespace normalized)
+  year: number; // Publication year (0 if unknown, displayed as empty)
 }
 ```
 
-### Recency Buckets
-
-Computed client-side from `year` relative to the current year. **Exclusive** buckets:
-
-| Bucket        | Rule                      |
-| ------------- | ------------------------- |
-| Last year     | `currentYear - year <= 1` |
-| 1–2 years ago | `currentYear - year == 2` |
-| 2–3 years ago | `currentYear - year == 3` |
-| Older         | `currentYear - year > 3`  |
-
 ## Page Location & Routing
 
-- **Route**: `/explore/publications` (dynamic segment: `pages/explore/[entityListType]/index.tsx`)
-- **Nav**: "Publications" in top-level header navigation, links to `/explore/publications`
+- **Route**: `/explore/citations` (dynamic segment: `pages/explore/[entityListType]/index.tsx`)
+- **Nav**: "Citations" in top-level header navigation, links to `/explore/citations`
 - The `/explore/[entityListType]` route is generic — adding a new entity type only requires registering its `EntityConfig` in the site config's `entities` array; `getStaticPaths` derives paths automatically
 
 ## UI Layout
 
-Standard findable-ui catalog list page: faceted filters on the left, results table on the right.
+Standard findable-ui catalog list page: faceted filters on the left, results table on the right. Table/Graph toggle above the results.
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Header / Nav                                   │
-├──────────────┬──────────────────────────────────┤
-│              │                                  │
-│  Faceted     │  Results Table                   │
-│  Filters     │                                  │
-│  (Left Nav)  │  ┌───────┬────────┬───────┬────┬─────────┐
-│              │  │ Title │Authors │Journal│Year│Citations│
-│  ☐ Title     │  │       │        │       │    │         │
-│    (search)  │  │ ...   │ ...    │ ...   │... │ ...     │
-│              │  │       │        │       │    │         │
-│  ☐ Author    │  └───────┴────────┴───────┴────┴─────────┘
-│    (select)  │                                  │
-│              │  Total: N publications            │
-│  ☐ Journal   │                                  │
-│    (select)  │                                  │
-│              │                                  │
-│  ☐ Recency   │                                  │
-│    (select)  │                                  │
-│              │                                  │
-├──────────────┴──────────────────────────────────┤
-│  Footer                                         │
-└─────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│  Header / Nav                                           │
+├──────────────┬──────────────────────────────────────────┤
+│              │  ℹ️ Using AnVIL? See Citing AnVIL...      │
+│  Faceted     │                                          │
+│  Filters     │  [Table] [Graph]   Results 1-105 of 105  │
+│  (Left Nav)  │                                          │
+│              │  ┌──────┬───────┬───────┬────┬─────┬────┐│
+│  ☐ Title     │  │Title │Author │Journal│Year│PMID │Cite││
+│  ☐ Journal   │  │      │       │       │    │     │    ││
+│  ☐ PubMed ID │  │ ...  │ ...   │ ...   │... │ ... │... ││
+│  ☐ Author    │  │      │       │       │    │     │    ││
+│  ☐ Year      │  └──────┴───────┴───────┴────┴─────┴────┘│
+│              │                                          │
+├──────────────┴──────────────────────────────────────────┤
+│  Footer                                                 │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ## Faceted Filters (Left Sidebar)
 
-| Facet   | Type              | Key             | Behavior                                                                            |
-| ------- | ----------------- | --------------- | ----------------------------------------------------------------------------------- |
-| Title   | Search/text input | `title`         | Free-text search, filters as you type                                               |
-| Author  | Multi-select      | `authors`       | Checkbox list with search-within-filter; array field, matches if any author matches |
-| Journal | Multi-select      | `journal`       | Checkbox list of distinct journal names                                             |
-| Recency | Multi-select      | `recencyBucket` | Exclusive buckets: "Last year", "1–2 years ago", "2–3 years ago", "Older"           |
+| Facet     | Type              | Key       | Chart | Behavior                                                                            |
+| --------- | ----------------- | --------- | ----- | ----------------------------------------------------------------------------------- |
+| Title     | Search/text input | `title`   | No    | Free-text search, filters as you type (chart disabled — every value is unique)      |
+| Journal   | Multi-select      | `journal` | Yes   | Checkbox list of distinct journal names                                             |
+| PubMed ID | Search/text input | `pmid`    | No    | Search by PMID (chart disabled — every value is unique)                             |
+| Author    | Multi-select      | `authors` | Yes   | Checkbox list with search-within-filter; array field, matches if any author matches |
+| Year      | Multi-select      | `year`    | Yes   | Checkbox list of years, sorted alphabetically                                       |
 
 ## Results Table Columns
 
-| Column    | Component   | Width                    | Notes                                |
-| --------- | ----------- | ------------------------ | ------------------------------------ |
-| Title     | `Link`      | `max: 2fr, min: 240px`   | Links to DOI URL (external, new tab) |
-| Authors   | `NTagCell`  | `max: 1.5fr, min: 180px` | First few authors + "+N more"        |
-| Journal   | `BasicCell` | `max: 1fr, min: 140px`   | Plain text                           |
-| Year      | `BasicCell` | `max: 0.5fr, min: 80px`  | Plain text                           |
-| Citations | `BasicCell` | `max: 0.5fr, min: 80px`  | Numeric count from Semantic Scholar  |
+| Column    | Component   | Width                     | Notes                                                |
+| --------- | ----------- | ------------------------- | ---------------------------------------------------- |
+| Title     | `Link`      | `max: 2fr, min: 240px`    | Links to DOI URL (external, new tab)                 |
+| Author    | `NTagCell`  | `max: 0.75fr, min: 140px` | First few authors + "+N more"                        |
+| Journal   | `BasicCell` | `max: 1fr, min: 120px`    | Plain text                                           |
+| Year      | `BasicCell` | `max: 0.5fr, min: 80px`   | Sortable. Displays empty for unknown years           |
+| PubMed ID | `Link`      | `max: 0.5fr, min: 100px`  | Links to pubmed.ncbi.nlm.nih.gov (new tab)           |
+| Citations | `BasicCell` | `max: 0.5fr, min: 100px`  | Sortable. Default sort descending (most cited first) |
 
-Default sort: **Citations** descending (most cited first). Sortable by **Year** descending as secondary option.
+## Graph View
 
-## Files to Create / Modify
+The Table/Graph toggle (`enableEntitiesView: true` in site config) lets users switch to a histogram view. Each facet with `enableChartView: true` gets a bar chart showing term counts. Title and PubMed ID are excluded (`enableChartView: false`) since every value is unique.
+
+## Files Created / Modified
 
 ### New Files
 
-| File                                                    | Purpose                                                   |
-| ------------------------------------------------------- | --------------------------------------------------------- |
-| `files/publications/publications.json`                  | Static publication data (generated)                       |
-| `pages/explore/[entityListType]/index.tsx`              | Generic entity list page (dynamic route)                  |
-| `apis/publications/entities.ts`                         | `Publication` TypeScript interface                        |
-| `apis/publications/utils.ts`                            | Input mapper, getId, getTitle, recency bucket computation |
-| `viewModelBuilders/publications/viewModelBuilders.ts`   | View builders for each column                             |
-| `site-config/anvil-portal/publications/category.ts`     | Category keys and labels                                  |
-| `site-config/anvil-portal/publications/entityConfig.ts` | `EntityConfig<Publication>`                               |
+| File                                                    | Purpose                                                  |
+| ------------------------------------------------------- | -------------------------------------------------------- |
+| `files/publications/publications.json`                  | Static citation data (105 entries, generated)            |
+| `pages/explore/[entityListType]/index.tsx`              | Generic entity list page (dynamic route)                 |
+| `apis/publications/entities.ts`                         | `Publication` / `PublicationInput` TypeScript interfaces |
+| `apis/publications/utils.ts`                            | Input mapper, getId, getTitle                            |
+| `viewModelBuilders/publications/viewModelBuilders.ts`   | View builders for each column                            |
+| `site-config/anvil-portal/publications/category.ts`     | Category keys and labels                                 |
+| `site-config/anvil-portal/publications/entityConfig.ts` | `EntityConfig<Publication>`                              |
+| `components/Citations/components/CitationInfoBox/`      | Info alert linking to "Citing AnVIL"                     |
+| `utils/readFile.ts`                                     | Static file reader for getStaticProps                    |
+| `scripts/fetch-citations.mjs`                           | Citation fetcher (S2 + Crossref APIs)                    |
 
 ### Modified Files
 
-| File                                     | Change                                                                                                |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `site-config/anvil-portal/dev/config.ts` | Add entity config, nav item (prod inherits via `makeConfig()`)                                        |
-| `routes/constants.ts`                    | Add `PUBLICATIONS = "/explore/publications"`                                                          |
-| `scripts/fetch-citations.mjs`            | Add S2 citation count pass; output portal-compatible JSON (index-keyed, numeric year, no `_metadata`) |
-
-### Script Updates
-
-Add a Semantic Scholar pass after Crossref fetch:
-
-```
-GET https://api.semanticscholar.org/graph/v1/paper/DOI:{doi}?fields=citationCount
-```
-
-Output format (index-keyed for findable-ui static load):
-
-```json
-{
-  "0": {
-    "title": "A draft human pangenome reference",
-    "authors": ["Wen-Wei Liao", "Mobin Asri", "..."],
-    "journal": "Nature",
-    "doi": "https://doi.org/10.1038/s41586-023-05896-x",
-    "year": 2023,
-    "publisher": "Springer Science and Business Media LLC",
-    "citationCount": 887
-  }
-}
-```
-
-## Decisions
-
-- **Recency buckets**: Exclusive (not cumulative)
-- **Author facet**: Rely on findable-ui's built-in search-within-filter for long lists
-- **Total count**: Display in results area (likely handled by findable-ui list infrastructure)
+| File                                                  | Change                                                                     |
+| ----------------------------------------------------- | -------------------------------------------------------------------------- |
+| `pages/_app.tsx`                                      | Add ExploreStateProvider, ConfigProvider                                   |
+| `site-config/anvil-portal/dev/config.ts`              | Add entity config, enableEntitiesView, nav item                            |
+| `site-config/anvil-portal/dev/navigation/overview.ts` | Rename "Publications" to "Selected Publications"                           |
+| `routes/constants.ts`                                 | Add `CITATIONS = "/explore/citations"`                                     |
+| `components/index.tsx`                                | Export Alert component                                                     |
+| `docs/overview/publications.mdx`                      | Rename to "Selected Publications", remove ON_ANVIL entries, add info alert |
+| `.gitignore`                                          | Ignore `scripts/output/` and `scripts/files/`                              |
+| `package.json`                                        | Add `fetch-citations` npm script                                           |
 
 ## Implementation Notes
 
 ### Architecture: findable-ui Entity Integration
 
-The publications page uses findable-ui's `CS_FETCH_CS_FILTERING` explore mode — static JSON loaded at build time, client-side filtering via TanStack Table. This matches the pattern used by ncpi-dataset-catalog and brc-analytics.
+The citations page uses findable-ui's `CS_FETCH_CS_FILTERING` explore mode — static JSON loaded at build time, client-side filtering via TanStack Table. This matches the pattern used by ncpi-dataset-catalog and brc-analytics.
 
 **Key components wired up in `_app.tsx`:**
 
-- `ConfigProvider` — receives `entityListType` (defaults to `"publications"` via `DEFAULT_ENTITY_LIST_TYPE`)
+- `ConfigProvider` — receives `entityListType` (defaults to `"citations"` via `DEFAULT_ENTITY_LIST_TYPE`)
 - `ExploreStateProvider` — wraps page content, manages filter/sort/pagination reducer state
 - The publications `EntityConfig` is registered in `site-config/anvil-portal/dev/config.ts` via `entities: [publicationsEntityConfig]`
 
@@ -216,49 +184,16 @@ On the client, `ExploreView` receives the data through props. `useEntityList` re
 2. `ExploreStateProvider` (parent) dispatches `ResetExploreResponse` → resets `loading: true`, `listItems: []`
 3. `useEntityList`'s effect dependencies haven't changed → it never re-fires → page stuck at loading spinner
 
-This only affects full page refresh. Client-side navigation works because `ExploreStateProvider` is already mounted and `ResetExploreResponse` doesn't re-fire (its deps `[exploreDispatch, token]` are stable).
+**Solution:** A `useExploreReady` hook delays `ExploreView` mounting by one render cycle. See source for details.
 
-**Solution:** A `useExploreReady` hook in `pages/explore/[entityListType]/index.tsx` delays `ExploreView` mounting by one render cycle:
+### Layout Fix: Base `Main` Without Header Offset
 
-```tsx
-function useExploreReady(): boolean {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    setReady(true);
-  }, []);
-  return ready;
-}
-
-const ExplorePage = (props) => {
-  const isReady = useExploreReady();
-  if (!isReady) return <></>;
-  return <ExploreView {...props} />;
-};
-```
-
-**Why it works — render-by-render:**
-
-- **Render 1:** `ready=false` → page returns empty fragment. `ExploreView` never mounts.
-  - Effects fire bottom-up: `setReady(true)` (child), then `ResetExploreResponse` (parent). The reset fires harmlessly into an empty tree.
-- **Render 2:** `ready=true` → `ExploreView` mounts fresh. `useEntityList` dispatches `ProcessExploreResponse`.
-  - `ExploreStateProvider`'s `ResetExploreResponse` does **not** re-fire because its deps (`exploreDispatch`, `token`) are unchanged since render 1.
-  - Data persists. `loading=false`. Publications render.
-
-The one-frame delay (~16ms) is imperceptible to users. The loading gate lives in the generic explore page, so it applies to all entity list types automatically.
-
-### Dynamic Route: `/explore/[entityListType]`
-
-The page uses a dynamic `[entityListType]` segment under the `/explore` prefix. This serves two purposes:
-
-1. **Avoids `?entityListType=` query param** — findable-ui's state sync manager compares explore state against `router.query`. With a dynamic segment, Next.js includes `entityListType` in the router query automatically, so no redirect occurs.
-2. **Generic entity page** — adding a new entity type (e.g., workflows) only requires adding its `EntityConfig` to the site config's `entities` array. `getStaticPaths` derives paths from the config automatically. No new page file needed.
-
-The `/explore` prefix was chosen over `/data` (existing redirects to data explorer) and `/browse`/`/catalog` (less aligned with findable-ui terminology).
+The explore page imports `Main` from `@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles` (the base styled component without `margin-top: headerHeight`) instead of the default `MainWithOffset`. This is because `StyledGridEntityView` already adds `padding-top: headerHeight`, so using `MainWithOffset` would create a double offset. This follows the brc-analytics pattern.
 
 ## Out of Scope (v1)
 
 - Institution/affiliation facet (data not reliably available from Crossref)
-- Publication category facet (page is scoped to "analyzed on AnVIL")
 - Detail/back pages for individual publications (link to DOI)
 - Automated CI pipeline for DOI fetching
 - Export/download functionality
+- Descending sort for year filter dropdown (library only supports ALPHA and COUNT sort modes)
