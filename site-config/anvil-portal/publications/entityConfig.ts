@@ -127,7 +127,9 @@ export const publicationsEntityConfig: EntityConfig<
     ] as ColumnConfig<Publication>[],
     tableOptions: {
       initialState: {
-        sorting: [{ desc: SORT_DIRECTION.DESCENDING as boolean, id: "year" }],
+        sorting: [
+          { desc: SORT_DIRECTION.DESCENDING as boolean, id: "citationCount" },
+        ],
       },
     },
   },
