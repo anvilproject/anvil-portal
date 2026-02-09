@@ -39,6 +39,7 @@ const categoryGroupConfig: CategoryGroupConfig = {
     {
       categoryConfigs: [
         {
+          enableChartView: false,
           key: PUBLICATION_CATEGORY_KEY.TITLE,
           label: PUBLICATION_CATEGORY_LABEL.TITLE,
         },

@@ -39,6 +39,7 @@ export function makeConfig(
     dataSource: {
       url: "",
     },
+    enableEntitiesView: true,
     entities: [publicationsEntityConfig],
     gitHubUrl,
     layout: {
