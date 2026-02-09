@@ -39,6 +39,55 @@ const CROSSREF_API = "https://api.crossref.org/works";
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
+ * Strip HTML tags and normalize whitespace in a string.
+ */
+function cleanTitle(text) {
+  return text
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Preprint DOI prefixes
+const PREPRINT_DOI_PREFIXES = [
+  "10.1101/", // bioRxiv, medRxiv
+  "10.48550/", // arXiv
+  "10.20944/", // Preprints.org
+  "10.2139/", // SSRN
+];
+
+/**
+ * Check if a DOI belongs to a preprint server.
+ */
+function isPreprint(doi) {
+  const cleanDoi = doi
+    .replace("https://doi.org/", "")
+    .replace("http://doi.org/", "");
+  return PREPRINT_DOI_PREFIXES.some((prefix) => cleanDoi.startsWith(prefix));
+}
+
+/**
+ * Check Crossref for a published version of a preprint (via relation metadata).
+ */
+async function getPublishedDoi(preprintDoi) {
+  const cleanDoi = preprintDoi
+    .replace("https://doi.org/", "")
+    .replace("http://doi.org/", "");
+  try {
+    const data = await fetchWithRetry(
+      `${CROSSREF_API}/${encodeURIComponent(cleanDoi)}`
+    );
+    const relation = data.message?.relation?.["is-preprint-of"];
+    if (relation && relation.length > 0 && relation[0]["id-type"] === "doi") {
+      return relation[0].id;
+    }
+  } catch (error) {
+    // Ignore - relation lookup is best-effort
+  }
+  return null;
+}
+
+/**
  * Fetch with retry and rate limiting
  */
 async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
@@ -222,18 +271,16 @@ async function buildPublications(limit = 1000) {
   const citingPapers = await findCitingPapers(ANVIL_MAIN_DOI, limit);
   console.log(`\nFound ${citingPapers.length} citing papers with DOIs`);
 
-  const publications = {};
-  let index = 0;
+  // Step 2: Fetch metadata and citation counts for all papers
+  const allEntries = [];
 
   for (let i = 0; i < citingPapers.length; i++) {
     const paper = citingPapers[i];
     console.log(`\n[${i + 1}/${citingPapers.length}] Processing: ${paper.doi}`);
 
-    // Step 2: Fetch Crossref metadata
     const crossref = await fetchCrossrefMetadata(paper.doi);
     if (!crossref) continue;
 
-    // Step 3: Fetch citation count from Semantic Scholar
     await sleep(300); // Rate limit between S2 calls
     const citationCount = await fetchCitationCount(paper.doi);
 
@@ -241,29 +288,87 @@ async function buildPublications(limit = 1000) {
       .replace("https://doi.org/", "")
       .replace("http://doi.org/", "");
 
-    publications[String(index)] = {
+    allEntries.push({
       authors: crossref.citation.authors,
       citationCount,
       doi: `https://doi.org/${cleanDoi}`,
       journal: crossref.citation.journal,
       publisher: crossref.citation.publisher,
-      title: crossref.title,
+      title: cleanTitle(crossref.title),
       year: crossref.citation.year ? Number(crossref.citation.year) : null,
-    };
-    index++;
+    });
 
-    // Rate limiting between requests
     if (i < citingPapers.length - 1) {
       await sleep(500);
     }
   }
 
-  // Write output
+  console.log(
+    `\nFetched ${allEntries.length} entries. Deduplicating preprints...`
+  );
+
+  // Step 3: Deduplicate preprints
+  // Build a set of DOIs and a title-to-entry map for non-preprints
+  const nonPreprintDois = new Set();
+  const nonPreprintTitles = new Set();
+
+  for (const entry of allEntries) {
+    if (!isPreprint(entry.doi)) {
+      nonPreprintDois.add(
+        entry.doi.replace("https://doi.org/", "").toLowerCase()
+      );
+      nonPreprintTitles.add(entry.title.toLowerCase());
+    }
+  }
+
+  const kept = [];
+  let dropped = 0;
+
+  for (const entry of allEntries) {
+    if (!isPreprint(entry.doi)) {
+      kept.push(entry);
+      continue;
+    }
+
+    // Check 1: Crossref relation — does this preprint have a published version in the dataset?
+    await sleep(300);
+    const publishedDoi = await getPublishedDoi(entry.doi);
+    if (publishedDoi && nonPreprintDois.has(publishedDoi.toLowerCase())) {
+      console.log(
+        `  Dropping preprint ${entry.doi} (published version ${publishedDoi} in dataset)`
+      );
+      dropped++;
+      continue;
+    }
+
+    // Check 2: Title match — does a non-preprint with the same title exist?
+    if (nonPreprintTitles.has(entry.title.toLowerCase())) {
+      console.log(
+        `  Dropping preprint ${entry.doi} (title match with non-preprint)`
+      );
+      dropped++;
+      continue;
+    }
+
+    // No duplicate found — keep the preprint
+    kept.push(entry);
+  }
+
+  console.log(
+    `\nDedup complete: ${dropped} preprints dropped, ${kept.length} publications kept`
+  );
+
+  // Step 4: Write output
+  const publications = {};
+  for (let i = 0; i < kept.length; i++) {
+    publications[String(i)] = kept[i];
+  }
+
   const outputDir = path.join(__dirname, "../files/publications");
   await fsp.mkdir(outputDir, { recursive: true });
   const outputPath = path.join(outputDir, "publications.json");
   await fsp.writeFile(outputPath, JSON.stringify(publications, null, 2));
-  console.log(`\nSaved ${index} publications to: ${outputPath}`);
+  console.log(`Saved ${kept.length} publications to: ${outputPath}`);
 }
 
 /**

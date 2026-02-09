@@ -512,7 +512,7 @@
     "doi": "https://doi.org/10.1101/2025.04.29.25326690",
     "journal": "openRxiv",
     "publisher": "openRxiv",
-    "title": "<i>Celeste</i>\n                  : A cloud-based genomics infrastructure with variant-calling pipeline suited for population-scale sequencing projects",
+    "title": "Celeste : A cloud-based genomics infrastructure with variant-calling pipeline suited for population-scale sequencing projects",
     "year": 2025
   },
   "15": {
@@ -2063,7 +2063,7 @@
     "doi": "https://doi.org/10.1242/dmm.050754",
     "journal": "Disease Models &amp; Mechanisms",
     "publisher": "The Company of Biologists",
-    "title": "Modelling human genetic disorders in <i>Xenopus tropicalis</i>",
+    "title": "Modelling human genetic disorders in Xenopus tropicalis",
     "year": 2024
   },
   "42": {
@@ -2429,7 +2429,7 @@
     "doi": "https://doi.org/10.1146/annurev-biodatasci-122120-104825",
     "journal": "Annual Review of Biomedical Data Science",
     "publisher": "Annual Reviews",
-    "title": "The <i>All of Us</i> Data and Research Center: Creating a Secure, Scalable, and Sustainable Ecosystem for Biomedical Research",
+    "title": "The All of Us Data and Research Center: Creating a Secure, Scalable, and Sustainable Ecosystem for Biomedical Research",
     "year": 2023
   },
   "60": {
@@ -2538,7 +2538,7 @@
     "doi": "https://doi.org/10.1101/2023.07.12.548702",
     "journal": "openRxiv",
     "publisher": "openRxiv",
-    "title": "Validation of human telomere length trans-ancestry meta-analysis association signals identifies\n                  <i>POP5</i>\n                  and\n                  <i>KBTBD6</i>\n                  as novel human telomere length regulation genes",
+    "title": "Validation of human telomere length trans-ancestry meta-analysis association signals identifies POP5 and KBTBD6 as novel human telomere length regulation genes",
     "year": 2023
   },
   "61": {
@@ -3039,47 +3039,6 @@
   },
   "78": {
     "authors": [
-      "Mikhail Kolmogorov",
-      "Kimberley J. Billingsley",
-      "Mira Mastoras",
-      "Melissa Meredith",
-      "Jean Monlong",
-      "Ryan Lorig-Roach",
-      "Mobin Asri",
-      "Pilar Alvarez Jerez",
-      "Laksh Malik",
-      "Ramita Dewan",
-      "Xylena Reed",
-      "Rylee M. Genner",
-      "Kensuke Daida",
-      "Sairam Behera",
-      "Kishwar Shafin",
-      "Trevor Pesout",
-      "Jeshuwin Prabakaran",
-      "Paolo Carnevali",
-      "North American Brain Expression Consortium (NABEC)",
-      "Jianzhi Yang",
-      "Arang Rhie",
-      "Sonja W. Scholz",
-      "Bryan J. Traynor",
-      "Karen H. Miga",
-      "Miten Jain",
-      "Winston Timp",
-      "Adam M. Phillippy",
-      "Mark Chaisson",
-      "Fritz J. Sedlazeck",
-      "Cornelis Blauwendraat",
-      "Benedict Paten"
-    ],
-    "citationCount": 1,
-    "doi": "https://doi.org/10.1101/2023.01.12.523790",
-    "journal": "openRxiv",
-    "publisher": "openRxiv",
-    "title": "Scalable Nanopore sequencing of human genomes provides a comprehensive view of haplotype-resolved variation and methylation",
-    "year": 2023
-  },
-  "79": {
-    "authors": [
       "Stephanie A Felker",
       "James MJ Lawlor",
       "Susan M Hiatt",
@@ -3106,22 +3065,7 @@
     "title": "Poison exon annotations improve the yield of clinically relevant variants in genomic diagnostic testing",
     "year": 2023
   },
-  "80": {
-    "authors": [
-      "Christiam Camacho",
-      "Grzegorz M. Boratyn",
-      "Victor Joukov",
-      "Roberto Vera Alvarez",
-      "Thomas L. Madden"
-    ],
-    "citationCount": 15,
-    "doi": "https://doi.org/10.1101/2023.01.04.522777",
-    "journal": "openRxiv",
-    "publisher": "openRxiv",
-    "title": "ElasticBLAST: Accelerating Sequence Search via Cloud Computing",
-    "year": 2023
-  },
-  "81": {
+  "79": {
     "authors": [
       "Alexander Bernier",
       "Maili Raven-Adams",
@@ -3135,7 +3079,7 @@
     "title": "Recording the ethical provenance of data and automating data stewardship",
     "year": 2023
   },
-  "82": {
+  "80": {
     "authors": [
       "Jodell E. Linder",
       "Aimee Allworth",
@@ -3562,7 +3506,7 @@
     "title": "Returning integrated genomic risk and clinical recommendations: The eMERGE study",
     "year": 2023
   },
-  "83": {
+  "81": {
     "authors": [
       "Helena Rasche",
       "Cameron Hyde",
@@ -3586,7 +3530,7 @@
     "title": "Training Infrastructure as a Service",
     "year": 2022
   },
-  "84": {
+  "82": {
     "authors": [
       "Robert H Dolin",
       "Bret S E Heale",
@@ -3616,7 +3560,7 @@
     "title": "Introducing HL7 FHIR Genomics Operations: a developer-friendly approach to genomics-EHR integration",
     "year": 2022
   },
-  "85": {
+  "83": {
     "authors": ["Bonnie Berger", "Yun William Yu"],
     "citationCount": 39,
     "doi": "https://doi.org/10.1038/s41576-022-00551-z",
@@ -3625,7 +3569,7 @@
     "title": "Navigating bottlenecks and trade-offs in genomic data analysis",
     "year": 2022
   },
-  "86": {
+  "84": {
     "authors": [
       "Chih Chuan Shih",
       "Jieqi Chen",
@@ -3673,7 +3617,7 @@
     "title": "RAPTOR: A Five-Safes approach to a secure, cloud native and serverless genomics data repository",
     "year": 2022
   },
-  "87": {
+  "85": {
     "authors": ["Vasiliki Rahimzadeh", "Ge Peng", "Mildred Cho"],
     "citationCount": 0,
     "doi": "https://doi.org/10.3389/fgene.2022.876869",
@@ -3682,7 +3626,7 @@
     "title": "A mixed-methods protocol to develop and validate a stewardship maturity matrix for human genomic data in the cloud",
     "year": 2022
   },
-  "88": {
+  "86": {
     "authors": [
       "Nathan C. Sheffield",
       "Vivien R. Bonazzi",
@@ -3700,7 +3644,7 @@
     "title": "From biomedical cloud platforms to microservices: next steps in FAIR data and analysis",
     "year": 2022
   },
-  "89": {
+  "87": {
     "authors": [
       "Hufeng Zhou",
       "Theodore Arapoglou",
@@ -3735,7 +3679,7 @@
     "title": "FAVOR: functional annotation of variants online resource and annotator for variation across the human genome",
     "year": 2022
   },
-  "90": {
+  "88": {
     "authors": ["Robert L. Grossman"],
     "citationCount": 23,
     "doi": "https://doi.org/10.1038/s41597-023-02029-x",
@@ -3744,7 +3688,7 @@
     "title": "Ten lessons for data sharing with a data commons",
     "year": 2023
   },
-  "91": {
+  "89": {
     "authors": [
       "Wen-Wei Liao",
       "Mobin Asri",
@@ -3873,7 +3817,7 @@
     "title": "A draft human pangenome reference",
     "year": 2023
   },
-  "92": {
+  "90": {
     "authors": [
       "Vasiliki Rahimzadeh",
       "Jonathan Lawson",
@@ -3887,7 +3831,7 @@
     "title": "Leveraging Algorithms to Improve Decision-Making Workflows for Genomic Data Access and Management",
     "year": 2022
   },
-  "93": {
+  "91": {
     "authors": [
       "Chathura J. Gunasekara",
       "Harry MacKay",
@@ -3910,7 +3854,7 @@
     "title": "Systemic interindividual epigenetic variation in humans is associated with transposable elements and under strong genetic control",
     "year": 2023
   },
-  "94": {
+  "92": {
     "authors": [
       "Kathleen D. Muenzen",
       "Laura M. Amendola",
@@ -3940,7 +3884,7 @@
     "title": "Lessons learned and recommendations for data coordination in collaborative research: The CSER consortium experience",
     "year": 2022
   },
-  "95": {
+  "93": {
     "authors": [
       "Genevieve L. Wojcik",
       "Jessica Murphy",
@@ -3959,7 +3903,7 @@
     "title": "Opportunities and challenges for the use of common controls in sequencing studies",
     "year": 2022
   },
-  "96": {
+  "94": {
     "authors": [
       "Kym M. Boycott",
       "Danielle R. Azzariti",
@@ -3973,7 +3917,7 @@
     "title": "Seven years since the launch of the Matchmaker Exchange: The evolution of genomic matchmaking",
     "year": 2022
   },
-  "97": {
+  "95": {
     "authors": [
       "Eleanor G. Seaby",
       "Damian Smedley",
@@ -3992,7 +3936,7 @@
     "title": "A gene-to-patient approach uplifts novel disease gene discovery and identifies 18 putative novel disease genes",
     "year": 2022
   },
-  "98": {
+  "96": {
     "authors": [
       "The Galaxy Community",
       "Enis Afgan",
@@ -4109,7 +4053,7 @@
     "title": "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2022 update",
     "year": 2022
   },
-  "99": {
+  "97": {
     "authors": [
       "Ting Wang",
       "Lucinda Antonacci-Fulton",
@@ -4158,7 +4102,7 @@
     "title": "The Human Pangenome Project: a global resource to map genomic diversity",
     "year": 2022
   },
-  "100": {
+  "98": {
     "authors": [
       "Robert L. Grossman",
       "Rebecca R. Boyles",
@@ -4177,7 +4121,7 @@
     "title": "A Framework for the Interoperability of Cloud Platforms: Towards FAIR Data in SAFE Environments",
     "year": 2024
   },
-  "101": {
+  "99": {
     "authors": ["The Genomic Data Science Community Network"],
     "citationCount": 8,
     "doi": "https://doi.org/10.1101/gr.276496.121",
@@ -4186,7 +4130,7 @@
     "title": "Diversifying the genomic data science research community",
     "year": 2022
   },
-  "102": {
+  "100": {
     "authors": [
       "Amanda L Charbonneau",
       "Arthur Brady",
@@ -4233,7 +4177,7 @@
     "title": "Making Common Fund data more findable: Catalyzing a Data Ecosystem",
     "year": 2021
   },
-  "103": {
+  "101": {
     "authors": [
       "Faisal M. Fadlelmola",
       "Lyndon Zass",
@@ -4251,7 +4195,7 @@
     "title": "Data Management Plans in the genomics research revolution of Africa: Challenges and recommendations",
     "year": 2021
   },
-  "104": {
+  "102": {
     "authors": [
       "Sanna Gudmundsson",
       "Moriel Singer‐Berk",
@@ -4271,7 +4215,7 @@
     "title": "Variant interpretation using population databases: Lessons from gnomAD",
     "year": 2021
   },
-  "105": {
+  "103": {
     "authors": [
       "Sergey Aganezov",
       "Stephanie M. Yan",
@@ -4314,7 +4258,7 @@
     "title": "A complete reference genome improves analysis of human genetic variation",
     "year": 2022
   },
-  "106": {
+  "104": {
     "authors": [
       "Christopher Wilks",
       "Shijie C. Zheng",
@@ -4339,7 +4283,7 @@
     "title": "recount3: summaries and queries for large-scale RNA-seq expression and splicing",
     "year": 2021
   },
-  "107": {
+  "105": {
     "authors": [
       "Chelsea Lowther",
       "Elise Valkanas",

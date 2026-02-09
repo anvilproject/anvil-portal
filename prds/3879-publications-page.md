@@ -27,10 +27,31 @@ Semantic Scholar: GET /paper/DOI:10.1016/j.xgen.2021.100085/citations
   → list of citing paper DOIs
   → Crossref API (full metadata per DOI)
   → Semantic Scholar API (citation count per DOI)
+  → Preprint deduplication (see below)
+  → Title cleanup (strip HTML tags, normalize whitespace)
   → publications.json (committed)
 ```
 
 The script is run manually (or via CI) to refresh the citing papers list and citation counts.
+
+### Preprint Deduplication
+
+Semantic Scholar sometimes returns both the preprint and published version of the same study. The build script deduplicates these to avoid listing a paper twice.
+
+**Detection:** A paper is flagged as a preprint if its DOI matches a known preprint prefix:
+
+- `10.1101/` (bioRxiv, medRxiv)
+- `10.48550/` (arXiv)
+- `10.20944/` (Preprints.org)
+- `10.2139/` (SSRN)
+
+**Dedup rules** (applied to each preprint in order):
+
+1. **Crossref relation check:** Look up the preprint's Crossref `relation.is-preprint-of` field. If it links to a published DOI that's already in the dataset, drop the preprint.
+2. **Title match:** If a non-preprint entry with the same title (case-insensitive) exists in the dataset, drop the preprint.
+3. **Keep:** If neither check matches, the preprint is a unique study — keep it.
+
+Note: Crossref relation coverage is partial (~28% of preprints have `is-preprint-of` metadata), which is why the title fallback is needed.
 
 ## Data Model
 
@@ -112,7 +133,7 @@ Standard findable-ui catalog list page: faceted filters on the left, results tab
 | Year      | `BasicCell` | `max: 0.5fr, min: 80px`  | Plain text                           |
 | Citations | `BasicCell` | `max: 0.5fr, min: 80px`  | Numeric count from Semantic Scholar  |
 
-Default sort: **Year** descending (newest first). Sortable by **Citations** descending as secondary option.
+Default sort: **Citations** descending (most cited first). Sortable by **Year** descending as secondary option.
 
 ## Files to Create / Modify
 
