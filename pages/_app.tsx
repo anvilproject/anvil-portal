@@ -1,6 +1,7 @@
 import "@databiosphere/findable-ui";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
+import { ExploreStateProvider } from "@databiosphere/findable-ui/lib/providers/exploreState";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -30,13 +31,15 @@ export type AppPropsWithComponent = AppProps & {
 
 setFeatureFlags(["gregor", "primed"]);
 
+const DEFAULT_ENTITY_LIST_TYPE = "publications";
+
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
   const { analytics, appTitle, layout, themeOptions } = appConfig;
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
-  const { pageTitle } = pageProps;
+  const { entityListType = DEFAULT_ENTITY_LIST_TYPE, pageTitle } = pageProps;
   const appTheme = mergeAppTheme(themeOptions);
   const isGREGoREnabled = useFeatureFlag("gregor");
   const isPRIMEDEnabled = useFeatureFlag("primed");
@@ -56,7 +59,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   return (
     <EmotionThemeProvider theme={appTheme}>
       <ThemeProvider theme={appTheme}>
-        <ConfigProvider config={appConfig}>
+        <ConfigProvider config={appConfig} entityListType={entityListType}>
           <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
           <LayoutDimensionsProvider>
@@ -74,9 +77,11 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
               >
                 <DXHeader {...layout.header} navigation={navigation} />
               </ThemeProvider>
-              <Main>
-                <Component {...pageProps} />
-              </Main>
+              <ExploreStateProvider entityListType={entityListType}>
+                <Main>
+                  <Component {...pageProps} />
+                </Main>
+              </ExploreStateProvider>
               <Footer {...layout.footer} />
             </AppLayout>
           </LayoutDimensionsProvider>

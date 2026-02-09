@@ -113,9 +113,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2666-979X"
-      ],
+      "issn": ["2666-979X"],
       "subject": [],
       "referencesCount": 75,
       "citedByCount": 85
@@ -254,10 +252,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0028-0836",
-        "1476-4687"
-      ],
+      "issn": ["0028-0836", "1476-4687"],
       "subject": [],
       "referencesCount": 135,
       "citedByCount": 887

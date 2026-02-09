@@ -2401,11 +2401,12 @@ publications:
       journal: "Annual Review of Biomedical Data Science"
       publisher: "Annual Reviews"
       year: "2023"
-  - title: "Validation of human telomere length trans-ancestry meta-analysis association signals identifies
-                  <i>POP5</i>
-                  and
-                  <i>KBTBD6</i>
-                  as novel human telomere length regulation genes"
+  - title:
+      "Validation of human telomere length trans-ancestry meta-analysis association signals identifies
+      <i>POP5</i>
+      and
+      <i>KBTBD6</i>
+      as novel human telomere length regulation genes"
     cardLink: "https://doi.org/10.1101/2023.07.12.548702"
     category: "ON_ANVIL"
     citation:

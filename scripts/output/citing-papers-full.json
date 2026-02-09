@@ -174,10 +174,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1061-4036",
-        "1546-1718"
-      ],
+      "issn": ["1061-4036", "1546-1718"],
       "subject": [],
       "referencesCount": 15,
       "citedByCount": 0
@@ -202,9 +199,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2164"
-      ],
+      "issn": ["1471-2164"],
       "subject": [],
       "referencesCount": 29,
       "citedByCount": 1
@@ -232,9 +227,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2164"
-      ],
+      "issn": ["1471-2164"],
       "subject": [],
       "referencesCount": 80,
       "citedByCount": 1
@@ -258,9 +251,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1473-0502"
-      ],
+      "issn": ["1473-0502"],
       "subject": [],
       "referencesCount": 94,
       "citedByCount": 0
@@ -376,9 +367,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2056-7944"
-      ],
+      "issn": ["2056-7944"],
       "subject": [],
       "referencesCount": 36,
       "citedByCount": 2
@@ -404,9 +393,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1000-8217"
-      ],
+      "issn": ["1000-8217"],
       "subject": [],
       "referencesCount": 42,
       "citedByCount": 0
@@ -464,9 +451,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0002-9297"
-      ],
+      "issn": ["0002-9297"],
       "subject": [],
       "referencesCount": 52,
       "citedByCount": 0
@@ -511,9 +496,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0002-9297"
-      ],
+      "issn": ["0002-9297"],
       "subject": [],
       "referencesCount": 39,
       "citedByCount": 0
@@ -524,10 +507,7 @@
     "cardLink": "https://doi.org/10.1016/j.jmb.2025.169313",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Jack Ustanik",
-        "Tychele N. Turner"
-      ],
+      "authors": ["Jack Ustanik", "Tychele N. Turner"],
       "doi": "https://doi.org/10.1016/j.jmb.2025.169313",
       "journal": "Journal of Molecular Biology",
       "publisher": "Elsevier BV",
@@ -535,9 +515,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0022-2836"
-      ],
+      "issn": ["0022-2836"],
       "subject": [],
       "referencesCount": 30,
       "citedByCount": 1
@@ -548,10 +526,7 @@
     "cardLink": "https://doi.org/10.1109/cscs66924.2025.00057",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Ana-Mihaela Vasilevschi",
-        "Daniela Faur"
-      ],
+      "authors": ["Ana-Mihaela Vasilevschi", "Daniela Faur"],
       "doi": "https://doi.org/10.1109/CSCS66924.2025.00057",
       "journal": "2025 25th International Conference on Control Systems and Computer Science (CSCS)",
       "publisher": "IEEE",
@@ -593,9 +568,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2673-7426"
-      ],
+      "issn": ["2673-7426"],
       "subject": [],
       "referencesCount": 57,
       "citedByCount": 0
@@ -628,9 +601,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2574-8300"
-      ],
+      "issn": ["2574-8300"],
       "subject": [],
       "referencesCount": 116,
       "citedByCount": 8
@@ -713,10 +684,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2302-9285",
-        "2089-3191"
-      ],
+      "issn": ["2302-9285", "2089-3191"],
       "subject": [],
       "referencesCount": 0,
       "citedByCount": 1
@@ -757,9 +725,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2666-6677"
-      ],
+      "issn": ["2666-6677"],
       "subject": [],
       "referencesCount": 143,
       "citedByCount": 2
@@ -915,10 +881,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1061-4036",
-        "1546-1718"
-      ],
+      "issn": ["1061-4036", "1546-1718"],
       "subject": [],
       "referencesCount": 76,
       "citedByCount": 23
@@ -929,9 +892,7 @@
     "cardLink": "https://doi.org/10.1007/s40142-024-00211-0",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Nchangwi Syntia Munung"
-      ],
+      "authors": ["Nchangwi Syntia Munung"],
       "doi": "https://doi.org/10.1007/s40142-024-00211-0",
       "journal": "Current Genetic Medicine Reports",
       "publisher": "Springer Science and Business Media LLC",
@@ -939,9 +900,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2167-4876"
-      ],
+      "issn": ["2167-4876"],
       "subject": [],
       "referencesCount": 52,
       "citedByCount": 7
@@ -964,9 +923,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1479-7364"
-      ],
+      "issn": ["1479-7364"],
       "subject": [],
       "referencesCount": 53,
       "citedByCount": 3
@@ -977,9 +934,7 @@
     "cardLink": "https://doi.org/10.1093/clinchem/hvae147",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Heidi L Rehm"
-      ],
+      "authors": ["Heidi L Rehm"],
       "doi": "https://doi.org/10.1093/clinchem/hvae147",
       "journal": "Clinical Chemistry",
       "publisher": "Oxford University Press (OUP)",
@@ -987,10 +942,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0009-9147",
-        "1530-8561"
-      ],
+      "issn": ["0009-9147", "1530-8561"],
       "subject": [],
       "referencesCount": 42,
       "citedByCount": 3
@@ -1001,11 +953,7 @@
     "cardLink": "https://doi.org/10.1146/annurev-pharmtox-061724-080718",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Philip E. Empey",
-        "Jason H. Karnes",
-        "Julie A. Johnson"
-      ],
+      "authors": ["Philip E. Empey", "Jason H. Karnes", "Julie A. Johnson"],
       "doi": "https://doi.org/10.1146/annurev-pharmtox-061724-080718",
       "journal": "Annual Review of Pharmacology and Toxicology",
       "publisher": "Annual Reviews",
@@ -1013,10 +961,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0362-1642",
-        "1545-4304"
-      ],
+      "issn": ["0362-1642", "1545-4304"],
       "subject": [],
       "referencesCount": 130,
       "citedByCount": 2
@@ -1142,9 +1087,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0092-8674"
-      ],
+      "issn": ["0092-8674"],
       "subject": [],
       "referencesCount": 112,
       "citedByCount": 29
@@ -1168,9 +1111,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2772-4166"
-      ],
+      "issn": ["2772-4166"],
       "subject": [],
       "referencesCount": 95,
       "citedByCount": 4
@@ -1361,9 +1302,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0002-9297"
-      ],
+      "issn": ["0002-9297"],
       "subject": [],
       "referencesCount": 73,
       "citedByCount": 27
@@ -1391,9 +1330,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2046-1402"
-      ],
+      "issn": ["2046-1402"],
       "subject": [],
       "referencesCount": 16,
       "citedByCount": 0
@@ -1430,10 +1367,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-0056",
-        "1471-0064"
-      ],
+      "issn": ["1471-0056", "1471-0064"],
       "subject": [],
       "referencesCount": 80,
       "citedByCount": 32
@@ -1469,9 +1403,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1750-1172"
-      ],
+      "issn": ["1750-1172"],
       "subject": [],
       "referencesCount": 119,
       "citedByCount": 8
@@ -2165,10 +2097,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0028-0836",
-        "1476-4687"
-      ],
+      "issn": ["0028-0836", "1476-4687"],
       "subject": [],
       "referencesCount": 167,
       "citedByCount": 64
@@ -2192,9 +2121,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2105"
-      ],
+      "issn": ["1471-2105"],
       "subject": [],
       "referencesCount": 29,
       "citedByCount": 0
@@ -2205,9 +2132,7 @@
     "cardLink": "https://doi.org/10.1038/s41588-024-01843-2",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Iftikhar J. Kullo"
-      ],
+      "authors": ["Iftikhar J. Kullo"],
       "doi": "https://doi.org/10.1038/s41588-024-01843-2",
       "journal": "Nature Genetics",
       "publisher": "Springer Science and Business Media LLC",
@@ -2215,10 +2140,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1061-4036",
-        "1546-1718"
-      ],
+      "issn": ["1061-4036", "1546-1718"],
       "subject": [],
       "referencesCount": 68,
       "citedByCount": 11
@@ -2242,10 +2164,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1367-4803",
-        "1367-4811"
-      ],
+      "issn": ["1367-4803", "1367-4811"],
       "subject": [],
       "referencesCount": 11,
       "citedByCount": 0
@@ -2269,9 +2188,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1532-0464"
-      ],
+      "issn": ["1532-0464"],
       "subject": [],
       "referencesCount": 51,
       "citedByCount": 8
@@ -2296,10 +2213,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1467-5463",
-        "1477-4054"
-      ],
+      "issn": ["1467-5463", "1477-4054"],
       "subject": [],
       "referencesCount": 57,
       "citedByCount": 2
@@ -2450,10 +2364,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0305-1048",
-        "1362-4962"
-      ],
+      "issn": ["0305-1048", "1362-4962"],
       "subject": [],
       "referencesCount": 26,
       "citedByCount": 554
@@ -2490,9 +2401,7 @@
     "cardLink": "https://doi.org/10.1109/jcice61382.2024.00057",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Yanjun Zhou"
-      ],
+      "authors": ["Yanjun Zhou"],
       "doi": "https://doi.org/10.1109/JCICE61382.2024.00057",
       "journal": "2024 3rd International Joint Conference on Information and Communication Engineering (JCICE)",
       "publisher": "IEEE",
@@ -2510,10 +2419,7 @@
     "cardLink": "https://doi.org/10.1089/apb.2023.0035",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Laura Adam",
-        "George H. McArthur"
-      ],
+      "authors": ["Laura Adam", "George H. McArthur"],
       "doi": "https://doi.org/10.1089/apb.2023.0035",
       "journal": "Applied Biosafety",
       "publisher": "SAGE Publications",
@@ -2521,10 +2427,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1535-6760",
-        "2470-1246"
-      ],
+      "issn": ["1535-6760", "2470-1246"],
       "subject": [],
       "referencesCount": 26,
       "citedByCount": 2
@@ -2550,10 +2453,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1754-8403",
-        "1754-8411"
-      ],
+      "issn": ["1754-8403", "1754-8411"],
       "subject": [],
       "referencesCount": 139,
       "citedByCount": 8
@@ -2584,10 +2484,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1527-8204",
-        "1545-293X"
-      ],
+      "issn": ["1527-8204", "1545-293X"],
       "subject": [],
       "referencesCount": 151,
       "citedByCount": 22
@@ -2598,10 +2495,7 @@
     "cardLink": "https://doi.org/10.1007/s40031-024-01058-3",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Yesodhai Balagurunathan",
-        "Raja Rajeswari Sethuraman"
-      ],
+      "authors": ["Yesodhai Balagurunathan", "Raja Rajeswari Sethuraman"],
       "doi": "https://doi.org/10.1007/s40031-024-01058-3",
       "journal": "Journal of The Institution of Engineers (India): Series B",
       "publisher": "Springer Science and Business Media LLC",
@@ -2609,10 +2503,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2250-2106",
-        "2250-2114"
-      ],
+      "issn": ["2250-2106", "2250-2114"],
       "subject": [],
       "referencesCount": 24,
       "citedByCount": 8
@@ -2647,10 +2538,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0008-5472",
-        "1538-7445"
-      ],
+      "issn": ["0008-5472", "1538-7445"],
       "subject": [],
       "referencesCount": 23,
       "citedByCount": 12
@@ -2700,9 +2588,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1878-9129"
-      ],
+      "issn": ["1878-9129"],
       "subject": [],
       "referencesCount": 803,
       "citedByCount": 65
@@ -2738,10 +2624,7 @@
     "cardLink": "https://doi.org/10.3233/sw-243583",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Harshvardhan J. Pandit",
-        "Beatriz Esteves"
-      ],
+      "authors": ["Harshvardhan J. Pandit", "Beatriz Esteves"],
       "doi": "https://doi.org/10.3233/sw-243583",
       "journal": "Semantic Web",
       "publisher": "SAGE Publications",
@@ -2749,10 +2632,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2210-4968",
-        "1570-0844"
-      ],
+      "issn": ["2210-4968", "1570-0844"],
       "subject": [],
       "referencesCount": 28,
       "citedByCount": 4
@@ -2777,9 +2657,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2041-1723"
-      ],
+      "issn": ["2041-1723"],
       "subject": [],
       "referencesCount": 69,
       "citedByCount": 25
@@ -2808,10 +2686,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0197-3851",
-        "1097-0223"
-      ],
+      "issn": ["0197-3851", "1097-0223"],
       "subject": [],
       "referencesCount": 93,
       "citedByCount": 6
@@ -2836,9 +2711,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2105"
-      ],
+      "issn": ["1471-2105"],
       "subject": [],
       "referencesCount": 32,
       "citedByCount": 1
@@ -2866,9 +2739,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2046-1402"
-      ],
+      "issn": ["2046-1402"],
       "subject": [],
       "referencesCount": 25,
       "citedByCount": 2
@@ -2879,11 +2750,7 @@
     "cardLink": "https://doi.org/10.1165/rcmb.2023-0439ed",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Sheng Yang",
-        "Kristina Gaietto",
-        "Wei Chen"
-      ],
+      "authors": ["Sheng Yang", "Kristina Gaietto", "Wei Chen"],
       "doi": "https://doi.org/10.1165/rcmb.2023-0439ED",
       "journal": "American Journal of Respiratory Cell and Molecular Biology",
       "publisher": "Oxford University Press (OUP)",
@@ -2891,10 +2758,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1044-1549",
-        "1535-4989"
-      ],
+      "issn": ["1044-1549", "1535-4989"],
       "subject": [],
       "referencesCount": 13,
       "citedByCount": 1
@@ -2905,9 +2769,7 @@
     "cardLink": "https://doi.org/10.5294/pebi.2023.27.2.1",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Gilberto A. Gamboa-Bernal"
-      ],
+      "authors": ["Gilberto A. Gamboa-Bernal"],
       "doi": "https://doi.org/10.5294/pebi.2023.27.2.1",
       "journal": "Persona y Bioética",
       "publisher": "Universidad de la Sabana",
@@ -2915,10 +2777,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0123-3122",
-        "2027-5382"
-      ],
+      "issn": ["0123-3122", "2027-5382"],
       "subject": [],
       "referencesCount": 39,
       "citedByCount": 0
@@ -2943,9 +2802,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2164"
-      ],
+      "issn": ["1471-2164"],
       "subject": [],
       "referencesCount": 110,
       "citedByCount": 26
@@ -2956,11 +2813,7 @@
     "cardLink": "https://doi.org/10.1128/mra.00355-23",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Natalie Viljoen",
-        "Felicity Burt",
-        "Jacqueline Weyer"
-      ],
+      "authors": ["Natalie Viljoen", "Felicity Burt", "Jacqueline Weyer"],
       "doi": "https://doi.org/10.1128/MRA.00355-23",
       "journal": "Microbiology Resource Announcements",
       "publisher": "American Society for Microbiology",
@@ -2968,9 +2821,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2576-098X"
-      ],
+      "issn": ["2576-098X"],
       "subject": [],
       "referencesCount": 16,
       "citedByCount": 0
@@ -3020,10 +2871,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1548-7091",
-        "1548-7105"
-      ],
+      "issn": ["1548-7091", "1548-7105"],
       "subject": [],
       "referencesCount": 54,
       "citedByCount": 100
@@ -3060,9 +2908,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2041-1723"
-      ],
+      "issn": ["2041-1723"],
       "subject": [],
       "referencesCount": 30,
       "citedByCount": 19
@@ -3097,9 +2943,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1664-2295"
-      ],
+      "issn": ["1664-2295"],
       "subject": [],
       "referencesCount": 64,
       "citedByCount": 12
@@ -3154,10 +2998,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2574-3414",
-        "2574-3414"
-      ],
+      "issn": ["2574-3414", "2574-3414"],
       "subject": [],
       "referencesCount": 76,
       "citedByCount": 45
@@ -3382,10 +3223,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0028-0836",
-        "1476-4687"
-      ],
+      "issn": ["0028-0836", "1476-4687"],
       "subject": [],
       "referencesCount": 160,
       "citedByCount": 358
@@ -3396,11 +3234,7 @@
     "cardLink": "https://doi.org/10.1101/2023.06.26.23291922",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Brian Walsh",
-        "Jordan A. Lee",
-        "Kyle Ellrott"
-      ],
+      "authors": ["Brian Walsh", "Jordan A. Lee", "Kyle Ellrott"],
       "doi": "https://doi.org/10.1101/2023.06.26.23291922",
       "journal": "Cold Spring Harbor Laboratory",
       "publisher": "Cold Spring Harbor Laboratory",
@@ -3418,11 +3252,7 @@
     "cardLink": "https://doi.org/10.2196/49822",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Jinyoung Baek",
-        "Jonathan Lawson",
-        "Vasiliki Rahimzadeh"
-      ],
+      "authors": ["Jinyoung Baek", "Jonathan Lawson", "Vasiliki Rahimzadeh"],
       "doi": "https://doi.org/10.2196/49822",
       "journal": "JMIR Formative Research",
       "publisher": "JMIR Publications Inc.",
@@ -3430,9 +3260,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2561-326X"
-      ],
+      "issn": ["2561-326X"],
       "subject": [],
       "referencesCount": 26,
       "citedByCount": 2
@@ -3456,10 +3284,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1527-8204",
-        "1545-293X"
-      ],
+      "issn": ["1527-8204", "1545-293X"],
       "subject": [],
       "referencesCount": 97,
       "citedByCount": 26
@@ -3482,9 +3307,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1664-8021"
-      ],
+      "issn": ["1664-8021"],
       "subject": [],
       "referencesCount": 33,
       "citedByCount": 4
@@ -3562,10 +3385,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1067-5027",
-        "1527-974X"
-      ],
+      "issn": ["1067-5027", "1527-974X"],
       "subject": [],
       "referencesCount": 40,
       "citedByCount": 13
@@ -3607,9 +3427,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2296-889X"
-      ],
+      "issn": ["2296-889X"],
       "subject": [],
       "referencesCount": 209,
       "citedByCount": 14
@@ -3671,9 +3489,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1574-9541"
-      ],
+      "issn": ["1574-9541"],
       "subject": [],
       "referencesCount": 46,
       "citedByCount": 11
@@ -3775,9 +3591,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2666-2477"
-      ],
+      "issn": ["2666-2477"],
       "subject": [],
       "referencesCount": 43,
       "citedByCount": 4
@@ -3788,11 +3602,7 @@
     "cardLink": "https://doi.org/10.3389/fgene.2023.1106631",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Mahmoud Ahmed",
-        "Hyun Joon Kim",
-        "Deok Ryong Kim"
-      ],
+      "authors": ["Mahmoud Ahmed", "Hyun Joon Kim", "Deok Ryong Kim"],
       "doi": "https://doi.org/10.3389/fgene.2023.1106631",
       "journal": "Frontiers in Genetics",
       "publisher": "Frontiers Media SA",
@@ -3800,9 +3610,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1664-8021"
-      ],
+      "issn": ["1664-8021"],
       "subject": [],
       "referencesCount": 45,
       "citedByCount": 1
@@ -3827,9 +3635,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-2105"
-      ],
+      "issn": ["1471-2105"],
       "subject": [],
       "referencesCount": 42,
       "citedByCount": 103
@@ -3887,9 +3693,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2589-0042"
-      ],
+      "issn": ["2589-0042"],
       "subject": [],
       "referencesCount": 18,
       "citedByCount": 7
@@ -3973,10 +3777,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1548-7091",
-        "1548-7105"
-      ],
+      "issn": ["1548-7091", "1548-7105"],
       "subject": [],
       "referencesCount": 63,
       "citedByCount": 98
@@ -4111,10 +3912,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2053-9517",
-        "2053-9517"
-      ],
+      "issn": ["2053-9517", "2053-9517"],
       "subject": [],
       "referencesCount": 31,
       "citedByCount": 8
@@ -4551,9 +4349,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1098-3600"
-      ],
+      "issn": ["1098-3600"],
       "subject": [],
       "referencesCount": 40,
       "citedByCount": 94
@@ -4587,9 +4383,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2047-217X"
-      ],
+      "issn": ["2047-217X"],
       "subject": [],
       "referencesCount": 31,
       "citedByCount": 2
@@ -4629,10 +4423,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1067-5027",
-        "1527-974X"
-      ],
+      "issn": ["1067-5027", "1527-974X"],
       "subject": [],
       "referencesCount": 52,
       "citedByCount": 28
@@ -4643,10 +4434,7 @@
     "cardLink": "https://doi.org/10.1038/s41576-022-00551-z",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Bonnie Berger",
-        "Yun William Yu"
-      ],
+      "authors": ["Bonnie Berger", "Yun William Yu"],
       "doi": "https://doi.org/10.1038/s41576-022-00551-z",
       "journal": "Nature Reviews Genetics",
       "publisher": "Springer Science and Business Media LLC",
@@ -4654,10 +4442,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-0056",
-        "1471-0064"
-      ],
+      "issn": ["1471-0056", "1471-0064"],
       "subject": [],
       "referencesCount": 159,
       "citedByCount": 37
@@ -4725,11 +4510,7 @@
     "cardLink": "https://doi.org/10.3389/fgene.2022.876869",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Vasiliki Rahimzadeh",
-        "Ge Peng",
-        "Mildred Cho"
-      ],
+      "authors": ["Vasiliki Rahimzadeh", "Ge Peng", "Mildred Cho"],
       "doi": "https://doi.org/10.3389/fgene.2022.876869",
       "journal": "Frontiers in Genetics",
       "publisher": "Frontiers Media SA",
@@ -4737,9 +4518,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1664-8021"
-      ],
+      "issn": ["1664-8021"],
       "subject": [],
       "referencesCount": 47,
       "citedByCount": 0
@@ -4767,9 +4546,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2052-4463"
-      ],
+      "issn": ["2052-4463"],
       "subject": [],
       "referencesCount": 39,
       "citedByCount": 22
@@ -4814,10 +4591,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0305-1048",
-        "1362-4962"
-      ],
+      "issn": ["0305-1048", "1362-4962"],
       "subject": [],
       "referencesCount": 57,
       "citedByCount": 123
@@ -4828,9 +4602,7 @@
     "cardLink": "https://doi.org/10.1038/s41597-023-02029-x",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "Robert L. Grossman"
-      ],
+      "authors": ["Robert L. Grossman"],
       "doi": "https://doi.org/10.1038/s41597-023-02029-x",
       "journal": "Scientific Data",
       "publisher": "Springer Science and Business Media LLC",
@@ -4838,9 +4610,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2052-4463"
-      ],
+      "issn": ["2052-4463"],
       "subject": [],
       "referencesCount": 24,
       "citedByCount": 19
@@ -4979,10 +4749,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0028-0836",
-        "1476-4687"
-      ],
+      "issn": ["0028-0836", "1476-4687"],
       "subject": [],
       "referencesCount": 135,
       "citedByCount": 887
@@ -5006,10 +4773,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1947-5535",
-        "1947-5543"
-      ],
+      "issn": ["1947-5535", "1947-5543"],
       "subject": [],
       "referencesCount": 31,
       "citedByCount": 12
@@ -5042,9 +4806,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1474-760X"
-      ],
+      "issn": ["1474-760X"],
       "subject": [],
       "referencesCount": 85,
       "citedByCount": 32
@@ -5084,9 +4846,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2666-2477"
-      ],
+      "issn": ["2666-2477"],
       "subject": [],
       "referencesCount": 51,
       "citedByCount": 6
@@ -5115,10 +4875,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1471-0056",
-        "1471-0064"
-      ],
+      "issn": ["1471-0056", "1471-0064"],
       "subject": [],
       "referencesCount": 162,
       "citedByCount": 27
@@ -5142,10 +4899,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1059-7794",
-        "1098-1004"
-      ],
+      "issn": ["1059-7794", "1098-1004"],
       "subject": [],
       "referencesCount": 53,
       "citedByCount": 10
@@ -5174,9 +4928,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1098-3600"
-      ],
+      "issn": ["1098-3600"],
       "subject": [],
       "referencesCount": 37,
       "citedByCount": 22
@@ -5303,10 +5055,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0305-1048",
-        "1362-4962"
-      ],
+      "issn": ["0305-1048", "1362-4962"],
       "subject": [],
       "referencesCount": 21,
       "citedByCount": 908
@@ -5365,10 +5114,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0028-0836",
-        "1476-4687"
-      ],
+      "issn": ["0028-0836", "1476-4687"],
       "subject": [],
       "referencesCount": 105,
       "citedByCount": 417
@@ -5397,9 +5143,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "2052-4463"
-      ],
+      "issn": ["2052-4463"],
       "subject": [],
       "referencesCount": 13,
       "citedByCount": 8
@@ -5410,9 +5154,7 @@
     "cardLink": "https://doi.org/10.1101/gr.276496.121",
     "category": "ON_ANVIL",
     "citation": {
-      "authors": [
-        "The Genomic Data Science Community Network"
-      ],
+      "authors": ["The Genomic Data Science Community Network"],
       "doi": "https://doi.org/10.1101/gr.276496.121",
       "journal": "Genome Research",
       "publisher": "Cold Spring Harbor Laboratory",
@@ -5420,10 +5162,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1088-9051",
-        "1549-5469"
-      ],
+      "issn": ["1088-9051", "1549-5469"],
       "subject": [],
       "referencesCount": 79,
       "citedByCount": 8
@@ -5507,9 +5246,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1532-0464"
-      ],
+      "issn": ["1532-0464"],
       "subject": [],
       "referencesCount": 39,
       "citedByCount": 12
@@ -5539,10 +5276,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1059-7794",
-        "1098-1004"
-      ],
+      "issn": ["1059-7794", "1098-1004"],
       "subject": [],
       "referencesCount": 48,
       "citedByCount": 532
@@ -5595,10 +5329,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "0036-8075",
-        "1095-9203"
-      ],
+      "issn": ["0036-8075", "1095-9203"],
       "subject": [],
       "referencesCount": 114,
       "citedByCount": 329
@@ -5633,9 +5364,7 @@
     },
     "_metadata": {
       "type": "journal-article",
-      "issn": [
-        "1474-760X"
-      ],
+      "issn": ["1474-760X"],
       "subject": [],
       "referencesCount": 64,
       "citedByCount": 214

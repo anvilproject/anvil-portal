@@ -2,6 +2,7 @@ import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import * as C from "../../../components";
 import { ROUTES } from "../../../routes/constants";
+import { publicationsEntityConfig } from "../publications/entityConfig";
 import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
 import { announcements } from "./announcements/announcements";
@@ -38,7 +39,7 @@ export function makeConfig(
     dataSource: {
       url: "",
     },
-    entities: [],
+    entities: [publicationsEntityConfig],
     gitHubUrl,
     layout: {
       footer: {
@@ -116,6 +117,10 @@ export function makeConfig(
             {
               label: "Events",
               url: ROUTES.EVENTS,
+            },
+            {
+              label: "Publications",
+              url: ROUTES.PUBLICATIONS,
             },
             {
               flatten: FLATTEN.XS_ONLY,

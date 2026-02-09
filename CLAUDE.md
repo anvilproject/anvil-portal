@@ -34,6 +34,7 @@ npm run add-cser-materials
 ### Routing and Content
 
 The site uses Next.js static export with MDX content:
+
 - **`pages/[...slug].tsx`** - Dynamic catch-all route that serves MDX content from `docs/`
 - **`pages/`** - Contains specialized pages (events, learn, news, releases, search, index)
 - **`docs/`** - MDX content files organized by section (learn, news, events, faq, consortia, etc.)
@@ -51,6 +52,7 @@ The site uses Next.js static export with MDX content:
 ### Component Structure
 
 Components in `components/` are organized by feature:
+
 - Each feature directory (Events, Home, Consortia, News, etc.) contains:
   - `components/` - Nested child components
   - `hooks/` - Feature-specific hooks
@@ -66,6 +68,7 @@ Components in `components/` are organized by feature:
 ### Feature Flags
 
 Feature flags for consortium pages (GREGoR, PRIMED) are managed via:
+
 - `setFeatureFlags()` in `pages/_app.tsx`
 - `useFeatureFlag()` hook from `@databiosphere/findable-ui`
 - `components/Consortia/featureFlag/utils.ts` - Navigation filtering
@@ -83,6 +86,7 @@ Feature flags for consortium pages (GREGoR, PRIMED) are managed via:
 ### Commit Messages
 
 Uses conventional commits (enforced by commitlint):
+
 - Types: `build`, `chore`, `ci`, `content`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test`
 - Format: `type: description` or `type(scope): description`
 

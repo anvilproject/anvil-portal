@@ -7,9 +7,10 @@
  * 3. Outputs JSON matching the publications.mdx format
  *
  * Usage:
- *   node scripts/fetch-citations.mjs --find-citing     # Find papers citing AnVIL
- *   node scripts/fetch-citations.mjs --from-dois       # Fetch metadata for DOIs in input file
- *   node scripts/fetch-citations.mjs --from-current    # Refresh metadata for current publications
+ *   node scripts/fetch-citations.mjs --find-citing         # Find papers citing AnVIL
+ *   node scripts/fetch-citations.mjs --from-dois           # Fetch metadata for DOIs in input file
+ *   node scripts/fetch-citations.mjs --from-current        # Refresh metadata for current publications
+ *   node scripts/fetch-citations.mjs --build-publications  # Build publications.json for the portal
  */
 
 import { promises as fsp } from "fs";
@@ -24,10 +25,10 @@ const ANVIL_MAIN_DOI = "10.1016/j.xgen.2021.100085";
 // Key AnVIL component papers (ABOUT_ANVIL category)
 const ANVIL_COMPONENT_DOIS = {
   "Galaxy 2020": "10.1093/nar/gkaa434",
-  "Dockstore": "10.1093/nar/gkab346",
-  "Bioconductor": "10.1038/s41592-019-0654-x",
+  Dockstore: "10.1093/nar/gkab346",
+  Bioconductor: "10.1038/s41592-019-0654-x",
   "Terra/FireCloud": "10.1038/s41588-019-0372-4", // Original Terra paper
-  "seqr": "10.1002/humu.24366",
+  seqr: "10.1002/humu.24366",
 };
 
 // API endpoints
@@ -46,7 +47,8 @@ async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
       const response = await fetch(url, {
         ...options,
         headers: {
-          "User-Agent": "AnVIL-Portal-Citation-Fetcher/1.0 (mailto:your-email@example.com)",
+          "User-Agent":
+            "AnVIL-Portal-Citation-Fetcher/1.0 (mailto:help@anvilproject.org)",
           ...options.headers,
         },
       });
@@ -114,12 +116,16 @@ async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
  */
 async function fetchCrossrefMetadata(doi) {
   // Clean DOI - remove URL prefix if present
-  const cleanDoi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "");
+  const cleanDoi = doi
+    .replace("https://doi.org/", "")
+    .replace("http://doi.org/", "");
 
   console.log(`Fetching Crossref metadata for: ${cleanDoi}`);
 
   try {
-    const data = await fetchWithRetry(`${CROSSREF_API}/${encodeURIComponent(cleanDoi)}`);
+    const data = await fetchWithRetry(
+      `${CROSSREF_API}/${encodeURIComponent(cleanDoi)}`
+    );
     const work = data.message;
 
     // Extract authors
@@ -189,6 +195,78 @@ async function fetchMultipleDois(dois) {
 }
 
 /**
+ * Fetch citation count for a DOI from Semantic Scholar
+ */
+async function fetchCitationCount(doi) {
+  const cleanDoi = doi
+    .replace("https://doi.org/", "")
+    .replace("http://doi.org/", "");
+  try {
+    const data = await fetchWithRetry(
+      `${SEMANTIC_SCHOLAR_API}/paper/DOI:${cleanDoi}?fields=citationCount`
+    );
+    return data.citationCount ?? 0;
+  } catch (error) {
+    console.error(
+      `Error fetching citation count for ${cleanDoi}: ${error.message}`
+    );
+    return 0;
+  }
+}
+
+/**
+ * Build publications.json for the portal entity list
+ */
+async function buildPublications(limit = 1000) {
+  // Step 1: Find citing papers via Semantic Scholar
+  const citingPapers = await findCitingPapers(ANVIL_MAIN_DOI, limit);
+  console.log(`\nFound ${citingPapers.length} citing papers with DOIs`);
+
+  const publications = {};
+  let index = 0;
+
+  for (let i = 0; i < citingPapers.length; i++) {
+    const paper = citingPapers[i];
+    console.log(`\n[${i + 1}/${citingPapers.length}] Processing: ${paper.doi}`);
+
+    // Step 2: Fetch Crossref metadata
+    const crossref = await fetchCrossrefMetadata(paper.doi);
+    if (!crossref) continue;
+
+    // Step 3: Fetch citation count from Semantic Scholar
+    await sleep(300); // Rate limit between S2 calls
+    const citationCount = await fetchCitationCount(paper.doi);
+
+    const cleanDoi = paper.doi
+      .replace("https://doi.org/", "")
+      .replace("http://doi.org/", "");
+
+    publications[String(index)] = {
+      authors: crossref.citation.authors,
+      citationCount,
+      doi: `https://doi.org/${cleanDoi}`,
+      journal: crossref.citation.journal,
+      publisher: crossref.citation.publisher,
+      title: crossref.title,
+      year: crossref.citation.year ? Number(crossref.citation.year) : null,
+    };
+    index++;
+
+    // Rate limiting between requests
+    if (i < citingPapers.length - 1) {
+      await sleep(500);
+    }
+  }
+
+  // Write output
+  const outputDir = path.join(__dirname, "../files/publications");
+  await fsp.mkdir(outputDir, { recursive: true });
+  const outputPath = path.join(outputDir, "publications.json");
+  await fsp.writeFile(outputPath, JSON.stringify(publications, null, 2));
+  console.log(`\nSaved ${index} publications to: ${outputPath}`);
+}
+
+/**
  * Extract DOIs from current publications.mdx
  */
 async function extractCurrentDois() {
@@ -196,7 +274,8 @@ async function extractCurrentDois() {
   const content = await fsp.readFile(pubPath, "utf8");
 
   // Extract DOIs using regex
-  const doiRegex = /doi:\s*["']?(https:\/\/doi\.org\/[^"'\s]+|10\.[^"'\s]+)["']?/gi;
+  const doiRegex =
+    /doi:\s*["']?(https:\/\/doi\.org\/[^"'\s]+|10\.[^"'\s]+)["']?/gi;
   const matches = content.matchAll(doiRegex);
 
   const dois = [];
@@ -227,7 +306,9 @@ function toYamlFormat(publications) {
     }
     lines.push(`      doi: "${pub.citation.doi}"`);
     lines.push(`      journal: "${pub.citation.journal.replace(/"/g, '\\"')}"`);
-    lines.push(`      publisher: "${pub.citation.publisher.replace(/"/g, '\\"')}"`);
+    lines.push(
+      `      publisher: "${pub.citation.publisher.replace(/"/g, '\\"')}"`
+    );
     lines.push(`      year: "${pub.citation.year}"`);
   }
 
@@ -265,8 +346,14 @@ async function main() {
       const dois = papers.map((p) => p.doi);
       const fullMetadata = await fetchMultipleDois(dois);
 
-      const fullOutputPath = path.join(__dirname, "output/citing-papers-full.json");
-      await fsp.writeFile(fullOutputPath, JSON.stringify(fullMetadata, null, 2));
+      const fullOutputPath = path.join(
+        __dirname,
+        "output/citing-papers-full.json"
+      );
+      await fsp.writeFile(
+        fullOutputPath,
+        JSON.stringify(fullMetadata, null, 2)
+      );
       console.log(`\nSaved full metadata to: ${fullOutputPath}`);
 
       // Also save as YAML
@@ -289,12 +376,18 @@ async function main() {
 
       const metadata = await fetchMultipleDois(dois);
 
-      const outputPath = path.join(__dirname, "output/publications-from-dois.json");
+      const outputPath = path.join(
+        __dirname,
+        "output/publications-from-dois.json"
+      );
       await fsp.mkdir(path.dirname(outputPath), { recursive: true });
       await fsp.writeFile(outputPath, JSON.stringify(metadata, null, 2));
       console.log(`\nSaved to: ${outputPath}`);
 
-      const yamlPath = path.join(__dirname, "output/publications-from-dois.yaml");
+      const yamlPath = path.join(
+        __dirname,
+        "output/publications-from-dois.yaml"
+      );
       await fsp.writeFile(yamlPath, toYamlFormat(metadata));
       console.log(`Saved YAML format to: ${yamlPath}`);
     } catch (error) {
@@ -302,6 +395,10 @@ async function main() {
       console.log("\nCreate a file with one DOI per line, e.g.:");
       console.log("  scripts/files/dois.txt");
     }
+  } else if (command === "--build-publications") {
+    // Build publications.json for the portal entity list
+    const limit = parseInt(args[1]) || 1000;
+    await buildPublications(limit);
   } else if (command === "--from-current") {
     // Refresh metadata for current publications
     const dois = await extractCurrentDois();
@@ -309,12 +406,18 @@ async function main() {
 
     const metadata = await fetchMultipleDois(dois);
 
-    const outputPath = path.join(__dirname, "output/current-publications-refreshed.json");
+    const outputPath = path.join(
+      __dirname,
+      "output/current-publications-refreshed.json"
+    );
     await fsp.mkdir(path.dirname(outputPath), { recursive: true });
     await fsp.writeFile(outputPath, JSON.stringify(metadata, null, 2));
     console.log(`\nSaved to: ${outputPath}`);
 
-    const yamlPath = path.join(__dirname, "output/current-publications-refreshed.yaml");
+    const yamlPath = path.join(
+      __dirname,
+      "output/current-publications-refreshed.yaml"
+    );
     await fsp.writeFile(yamlPath, toYamlFormat(metadata));
     console.log(`Saved YAML format to: ${yamlPath}`);
   } else {
@@ -332,15 +435,18 @@ Usage:
     Refresh metadata for all DOIs currently in publications.mdx
     Useful for updating existing entries.
 
+  node scripts/fetch-citations.mjs --build-publications [limit]
+    Build publications.json for the portal /publications entity list.
+    Fetches citing papers, enriches with Crossref metadata and citation counts.
+    Output: files/publications/publications.json
+
 Output:
-  - JSON files are saved to scripts/output/
+  - JSON files are saved to scripts/output/ (or files/publications/ for --build-publications)
   - YAML format is also generated for easy copy-paste into publications.mdx
 
 APIs Used:
-  - Semantic Scholar: Finding citing papers
+  - Semantic Scholar: Finding citing papers, citation counts
   - Crossref: Full publication metadata
-
-Note: Please update the User-Agent email in this script before heavy usage.
 `);
   }
 }

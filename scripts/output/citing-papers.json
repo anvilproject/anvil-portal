@@ -407,10 +407,7 @@
   },
   {
     "title": "CNPI: Rapid Analyses of Human Copy Number Data.",
-    "authors": [
-      "Jack Ustanik",
-      "Tychele N. Turner"
-    ],
+    "authors": ["Jack Ustanik", "Tychele N. Turner"],
     "year": 2025,
     "doi": "10.1016/j.jmb.2025.169313",
     "pmid": "40588120",
@@ -419,10 +416,7 @@
   },
   {
     "title": "Exploring Image Dataset Structure through Deep Feature Extraction and Dimensionality Reduction",
-    "authors": [
-      "Ana Vasilevschi",
-      "Daniela Faur"
-    ],
+    "authors": ["Ana Vasilevschi", "Daniela Faur"],
     "year": 2025,
     "doi": "10.1109/CSCS66924.2025.00057",
     "pmid": null,
@@ -712,9 +706,7 @@
   },
   {
     "title": "Science and Society: Pathways to Equitable Access and Delivery of Genomics Medicine in Africa",
-    "authors": [
-      "N. S. Munung"
-    ],
+    "authors": ["N. S. Munung"],
     "year": 2025,
     "doi": "10.1007/s40142-024-00211-0",
     "pmid": "40012965",
@@ -723,11 +715,7 @@
   },
   {
     "title": "Data stewardship and curation practices in AI-based genomics and automated microscopy image analysis for high-throughput screening studies: promoting robust and ethical AI applications",
-    "authors": [
-      "A. Taddese",
-      "Assefa Chekole Addis",
-      "Bjorn T Tam"
-    ],
+    "authors": ["A. Taddese", "Assefa Chekole Addis", "Bjorn T Tam"],
     "year": 2025,
     "doi": "10.1186/s40246-025-00716-x",
     "pmid": "39988670",
@@ -736,9 +724,7 @@
   },
   {
     "title": "Overcoming Barriers to Genomic Medicine Implementation.",
-    "authors": [
-      "Heidi L. Rehm"
-    ],
+    "authors": ["Heidi L. Rehm"],
     "year": 2025,
     "doi": "10.1093/clinchem/hvae147",
     "pmid": "39749513",
@@ -747,11 +733,7 @@
   },
   {
     "title": "Pharmacogenetics: Opportunities for the All of Us Research Program and Other Large Data Sets to Advance the Field.",
-    "authors": [
-      "P. Empey",
-      "Jason H. Karnes",
-      "Julie A Johnson"
-    ],
+    "authors": ["P. Empey", "Jason H. Karnes", "Julie A Johnson"],
     "year": 2025,
     "doi": "10.1146/annurev-pharmtox-061724-080718",
     "pmid": "39847465",
@@ -1637,9 +1619,7 @@
   },
   {
     "title": "Promoting equity in polygenic risk assessment through global collaboration",
-    "authors": [
-      "I. Kullo"
-    ],
+    "authors": ["I. Kullo"],
     "year": 2024,
     "doi": "10.1038/s41588-024-01843-2",
     "pmid": "39103647",
@@ -1849,9 +1829,7 @@
   },
   {
     "title": "Optimization Strategy of University Library Knowledge Service Based on Data Management",
-    "authors": [
-      "Yanjun Zhou"
-    ],
+    "authors": ["Yanjun Zhou"],
     "year": 2024,
     "doi": "10.1109/JCICE61382.2024.00057",
     "pmid": null,
@@ -1860,10 +1838,7 @@
   },
   {
     "title": "Substitution Attacks: A Catalyst to Reframe the DNA Manufacturing Cyberbiosecurity Landscape in the Age of Benchtop Synthesizers",
-    "authors": [
-      "Laura Adam",
-      "George H. McArthur"
-    ],
+    "authors": ["Laura Adam", "George H. McArthur"],
     "year": 2024,
     "doi": "10.1089/apb.2023.0035",
     "pmid": "39372512",
@@ -1909,10 +1884,7 @@
   },
   {
     "title": "An Analysis of Ethics-Based Foundation and Regulatory Issues for Genomic Data Privacy",
-    "authors": [
-      "Yesodhai Balagurunathan",
-      "Raja Rajeswari Sethuraman"
-    ],
+    "authors": ["Yesodhai Balagurunathan", "Raja Rajeswari Sethuraman"],
     "year": 2024,
     "doi": "10.1007/s40031-024-01058-3",
     "pmid": null,
@@ -2002,10 +1974,7 @@
   },
   {
     "title": "Enhancing Data Use Ontology (DUO) for health-data sharing by extending it with ODRL and DPV",
-    "authors": [
-      "H. Pandit",
-      "Beatriz Esteves"
-    ],
+    "authors": ["H. Pandit", "Beatriz Esteves"],
     "year": 2024,
     "doi": "10.3233/sw-243583",
     "pmid": null,
@@ -2081,11 +2050,7 @@
   },
   {
     "title": "Mapping a New Course to Understand Lung Biology Mechanisms: LungMAP.net",
-    "authors": [
-      "Sheng Yang",
-      "K. Gaietto",
-      "Wei Chen"
-    ],
+    "authors": ["Sheng Yang", "K. Gaietto", "Wei Chen"],
     "year": 2023,
     "doi": "10.1165/rcmb.2023-0439ED",
     "pmid": "38109690",
@@ -2094,9 +2059,7 @@
   },
   {
     "title": "Proyecto genoma veinte años después: el primer 'pangenoma humano'",
-    "authors": [
-      "Gilberto A. Gamboa-Bernal"
-    ],
+    "authors": ["Gilberto A. Gamboa-Bernal"],
     "year": 2023,
     "doi": "10.5294/pebi.2023.27.2.1",
     "pmid": null,
@@ -2120,11 +2083,7 @@
   },
   {
     "title": "Coding-complete genome of human alphaherpesvirus 1 isolated from a case of fulminant hepatitis",
-    "authors": [
-      "N. Viljoen",
-      "Felicity J. Burt",
-      "J. Weyer"
-    ],
+    "authors": ["N. Viljoen", "Felicity J. Burt", "J. Weyer"],
     "year": 2023,
     "doi": "10.1128/MRA.00355-23",
     "pmid": "37747240",
@@ -2473,11 +2432,7 @@
   },
   {
     "title": "pfb_fhir: A utility to extract clinical data systems into a portable format",
-    "authors": [
-      "B. Walsh",
-      "J. Lee",
-      "K. Ellrott"
-    ],
+    "authors": ["B. Walsh", "J. Lee", "K. Ellrott"],
     "year": 2023,
     "doi": "10.1101/2023.06.26.23291922",
     "pmid": null,
@@ -2486,11 +2441,7 @@
   },
   {
     "title": "Investigating the Roles and Responsibilities of Institutional Signing Officials After Data Sharing Policy Reform for Federally Funded Research in the United States: National Survey",
-    "authors": [
-      "Jinyoung Baek",
-      "Jonathan Lawson",
-      "V. Rahimzadeh"
-    ],
+    "authors": ["Jinyoung Baek", "Jonathan Lawson", "V. Rahimzadeh"],
     "year": 2023,
     "doi": "10.2196/49822",
     "pmid": "38506894",
@@ -2739,11 +2690,7 @@
   },
   {
     "title": "Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms",
-    "authors": [
-      "Jacklyn M. Dahlquist",
-      "S. Nelson",
-      "Stephanie M. Fullerton"
-    ],
+    "authors": ["Jacklyn M. Dahlquist", "S. Nelson", "Stephanie M. Fullerton"],
     "year": 2023,
     "doi": "10.1016/j.xhgg.2023.100196",
     "pmid": "37181330",
@@ -2752,11 +2699,7 @@
   },
   {
     "title": "Maximizing the utility of public data",
-    "authors": [
-      "Mahmoud Ahmed",
-      "Hyun Joon Kim",
-      "D. Kim"
-    ],
+    "authors": ["Mahmoud Ahmed", "Hyun Joon Kim", "D. Kim"],
     "year": 2023,
     "doi": "10.3389/fgene.2023.1106631",
     "pmid": "37065493",
@@ -3151,10 +3094,7 @@
   },
   {
     "title": "Navigating bottlenecks and trade-offs in genomic data analysis",
-    "authors": [
-      "Bonnie Berger",
-      "Y. Yu"
-    ],
+    "authors": ["Bonnie Berger", "Y. Yu"],
     "year": 2022,
     "doi": "10.1038/s41576-022-00551-z",
     "pmid": "36476810",
@@ -3210,11 +3150,7 @@
   },
   {
     "title": "A mixed-methods protocol to develop and validate a stewardship maturity matrix for human genomic data in the cloud",
-    "authors": [
-      "V. Rahimzadeh",
-      "G. Peng",
-      "Mildred K. Cho"
-    ],
+    "authors": ["V. Rahimzadeh", "G. Peng", "Mildred K. Cho"],
     "year": 2022,
     "doi": "10.3389/fgene.2022.876869",
     "pmid": "36313457",
@@ -3275,9 +3211,7 @@
   },
   {
     "title": "Ten lessons for data sharing with a data commons",
-    "authors": [
-      "R. Grossman"
-    ],
+    "authors": ["R. Grossman"],
     "year": 2022,
     "doi": "10.1038/s41597-023-02029-x",
     "pmid": "36878917",
@@ -3438,12 +3372,7 @@
   },
   {
     "title": "Seven years since the launch of the Matchmaker Exchange: The evolution of genomic matchmaking",
-    "authors": [
-      "K. Boycott",
-      "Danielle R Azzariti",
-      "A. Hamosh",
-      "H. Rehm"
-    ],
+    "authors": ["K. Boycott", "Danielle R Azzariti", "A. Hamosh", "H. Rehm"],
     "year": 2022,
     "doi": "10.1002/humu.24373",
     "pmid": "35537081",
