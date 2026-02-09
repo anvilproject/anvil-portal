@@ -47,7 +47,7 @@ export function buildJournal(publication: Publication): BasicCellProps {
  */
 export function buildYear(publication: Publication): BasicCellProps {
   return {
-    value: String(publication.year),
+    value: publication.year === 0 ? "" : String(publication.year),
   };
 }
 
