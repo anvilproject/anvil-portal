@@ -23,10 +23,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ANVIL_MAIN_DOI = "10.1016/j.xgen.2021.100085";
 
 // Key AnVIL component papers (ABOUT_ANVIL category)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Reserved for future use to fetch ABOUT_ANVIL category papers
 const ANVIL_COMPONENT_DOIS = {
-  "Galaxy 2020": "10.1093/nar/gkaa434",
-  Dockstore: "10.1093/nar/gkab346",
   Bioconductor: "10.1038/s41592-019-0654-x",
+  Dockstore: "10.1093/nar/gkab346",
+  "Galaxy 2020": "10.1093/nar/gkaa434",
   "Terra/FireCloud": "10.1038/s41588-019-0372-4", // Original Terra paper
   seqr: "10.1002/humu.24366",
 };
@@ -64,6 +65,7 @@ const PREPRINT_DOI_PREFIXES = [
 function isPreprint(doi) {
   const cleanDoi = doi
     .replace("https://doi.org/", "")
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
     .replace("http://doi.org/", "");
   return PREPRINT_DOI_PREFIXES.some((prefix) => cleanDoi.startsWith(prefix));
 }
@@ -76,6 +78,7 @@ function isPreprint(doi) {
 async function getPublishedDoi(preprintDoi) {
   const cleanDoi = preprintDoi
     .replace("https://doi.org/", "")
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
     .replace("http://doi.org/", "");
   try {
     const data = await fetchWithRetry(
@@ -85,8 +88,8 @@ async function getPublishedDoi(preprintDoi) {
     if (relation && relation.length > 0 && relation[0]["id-type"] === "doi") {
       return relation[0].id;
     }
-  } catch (error) {
-    // Ignore - relation lookup is best-effort
+  } catch {
+    // eslint-disable-next-line sonarjs/no-ignored-exceptions -- Relation lookup is best-effort; errors are expected for preprints without published versions
   }
   return null;
 }
@@ -154,13 +157,13 @@ async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
       .map((item) => {
         const paper = item.citingPaper;
         return {
-          title: paper.title,
           authors: paper.authors?.map((a) => a.name) || [],
-          year: paper.year,
           doi: paper.externalIds?.DOI || null,
           pmid: paper.externalIds?.PubMed || null,
-          venue: paper.venue,
           publicationDate: paper.publicationDate,
+          title: paper.title,
+          venue: paper.venue,
+          year: paper.year,
         };
       })
       .filter((p) => p.doi); // Only keep papers with DOIs
@@ -181,6 +184,7 @@ async function fetchCrossrefMetadata(doi) {
   // Clean DOI - remove URL prefix if present
   const cleanDoi = doi
     .replace("https://doi.org/", "")
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
     .replace("http://doi.org/", "");
 
   console.log(`Fetching Crossref metadata for: ${cleanDoi}`);
@@ -208,7 +212,14 @@ async function fetchCrossrefMetadata(doi) {
     const journal = work["container-title"]?.[0] || work.publisher || "";
 
     return {
-      title: work.title?.[0] || "",
+      // Additional metadata for reference
+      _metadata: {
+        citedByCount: work["is-referenced-by-count"],
+        issn: work.ISSN,
+        referencesCount: work["references-count"],
+        subject: work.subject,
+        type: work.type,
+      },
       cardLink: work.URL || `https://doi.org/${cleanDoi}`,
       category: "ON_ANVIL", // Default - can be changed manually
       citation: {
@@ -218,14 +229,7 @@ async function fetchCrossrefMetadata(doi) {
         publisher: work.publisher || "",
         year: year ? String(year) : "",
       },
-      // Additional metadata for reference
-      _metadata: {
-        type: work.type,
-        issn: work.ISSN,
-        subject: work.subject,
-        referencesCount: work["references-count"],
-        citedByCount: work["is-referenced-by-count"],
-      },
+      title: work.title?.[0] || "",
     };
   } catch (error) {
     console.error(`Error fetching ${cleanDoi}: ${error.message}`);
@@ -267,6 +271,7 @@ async function fetchMultipleDois(dois) {
 async function fetchCitationCount(doi) {
   const cleanDoi = doi
     .replace("https://doi.org/", "")
+    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
     .replace("http://doi.org/", "");
   try {
     const data = await fetchWithRetry(
@@ -286,6 +291,7 @@ async function fetchCitationCount(doi) {
  * @param {number} limit - Maximum number of citing papers to process.
  * @returns {Promise<void>}
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity -- Multi-step build process with necessary sequential logic
 async function buildPublications(limit = 1000) {
   // Step 1: Find citing papers via Semantic Scholar
   const citingPapers = await findCitingPapers(ANVIL_MAIN_DOI, limit);
@@ -306,6 +312,7 @@ async function buildPublications(limit = 1000) {
 
     const cleanDoi = paper.doi
       .replace("https://doi.org/", "")
+      // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
       .replace("http://doi.org/", "");
 
     allEntries.push({
