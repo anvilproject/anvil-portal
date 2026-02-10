@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.27.0](https://github.com/anvilproject/anvil-portal/compare/v2.26.1...v2.27.0) (2026-02-10)
+
+
+### Features
+
+* add citations entity page ([#3879](https://github.com/anvilproject/anvil-portal/issues/3879)) ([#3880](https://github.com/anvilproject/anvil-portal/issues/3880)) ([d526422](https://github.com/anvilproject/anvil-portal/commit/d52642279b2626d85e84caeda4c63e2d342e88ff))
+
 ## [2.26.1](https://github.com/anvilproject/anvil-portal/compare/v2.26.0...v2.26.1) (2026-02-06)
 
 
