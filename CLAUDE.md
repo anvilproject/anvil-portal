@@ -98,4 +98,4 @@ Uses conventional commits (enforced by commitlint):
 
 ## Node Version
 
-Node.js 20.10.0 is required (specified in `package.json` engines).
+Node.js 22.12.0 is required (specified in `package.json` engines).
