@@ -19,6 +19,7 @@ import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/provide
 import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/common/utils";
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 import { getNavigation } from "../components/Consortia/featureFlag/utils";
+import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 
 export type NextPageWithComponent = NextPage & {
   Footer?: typeof DXFooter;
@@ -62,29 +63,31 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
         <ConfigProvider config={appConfig} entityListType={entityListType}>
           <Head appTitle={appTitle} pageTitle={pageTitle} />
           <CssBaseline />
-          <LayoutDimensionsProvider>
-            <AppLayout>
-              <ThemeProvider
-                theme={(theme: Theme): Theme => {
-                  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                  const { vars, ...themeWithoutVars } = theme;
-                  return createTheme(
-                    deepmerge(themeWithoutVars, {
-                      breakpoints: createBreakpoints(BREAKPOINTS),
-                    })
-                  );
-                }}
-              >
-                <DXHeader {...layout.header} navigation={navigation} />
-              </ThemeProvider>
-              <ExploreStateProvider entityListType={entityListType}>
-                <Main>
-                  <Component {...pageProps} />
-                </Main>
-              </ExploreStateProvider>
-              <Footer {...layout.footer} />
-            </AppLayout>
-          </LayoutDimensionsProvider>
+          <ServicesProvider>
+            <LayoutDimensionsProvider>
+              <AppLayout>
+                <ThemeProvider
+                  theme={(theme: Theme): Theme => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                    const { vars, ...themeWithoutVars } = theme;
+                    return createTheme(
+                      deepmerge(themeWithoutVars, {
+                        breakpoints: createBreakpoints(BREAKPOINTS),
+                      })
+                    );
+                  }}
+                >
+                  <DXHeader {...layout.header} navigation={navigation} />
+                </ThemeProvider>
+                <ExploreStateProvider entityListType={entityListType}>
+                  <Main>
+                    <Component {...pageProps} />
+                  </Main>
+                </ExploreStateProvider>
+                <Footer {...layout.footer} />
+              </AppLayout>
+            </LayoutDimensionsProvider>
+          </ServicesProvider>
         </ConfigProvider>
       </ThemeProvider>
     </EmotionThemeProvider>

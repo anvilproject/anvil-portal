@@ -1,6 +1,5 @@
 import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
-import { MainProps } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { EntityConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
@@ -11,7 +10,6 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { JSX, useEffect, useState } from "react";
 import { config } from "../../../config/config";
 import { readFile } from "../../../utils/readFile";
-import { NextPageWithComponent } from "../../_app";
 
 /**
  * Seeds the in-memory database with static JSON data.
@@ -88,17 +86,6 @@ export const getStaticProps: GetStaticProps<
   return { props };
 };
 
-/**
- * Main layout wrapper without header offset margin.
- * @param props - Main layout props.
- * @param props.children - Page content.
- * @param props.className - CSS class name.
- * @returns Main element.
- */
-const ExploreMain = ({ children, className }: MainProps): JSX.Element => (
-  <DXMain className={className}>{children}</DXMain>
-);
-
-(ExplorePage as NextPageWithComponent).Main = ExploreMain;
+ExplorePage.Main = DXMain;
 
 export default ExplorePage;
