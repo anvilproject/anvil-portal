@@ -5,11 +5,11 @@ import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode/types";
 import { database } from "@databiosphere/findable-ui/lib/utils/database";
-import { ExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { JSX, useEffect, useState } from "react";
+import { JSX } from "react";
 import { config } from "../../../config/config";
 import { readFile } from "../../../utils/readFile";
+import { ExploreView } from "../../../views/ExploreView/exploreView";
 
 /**
  * Seeds the in-memory database with static JSON data.
@@ -31,27 +31,11 @@ async function seedDatabase(
 }
 
 /**
- * Delays rendering until the explore state provider's initial reset effect has
- * fired, preventing a race condition where ResetExploreResponse wipes data set
- * by ProcessExploreResponse on full page refresh.
- * @returns Whether the explore state is ready for child consumers.
- */
-function useExploreReady(): boolean {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    setReady(true);
-  }, []);
-  return ready;
-}
-
-/**
  * Entity list page for explore views (citations, workflows, etc.).
  * @param props - Static props including entity data.
  * @returns ExploreView with entity data.
  */
 const ExplorePage = (props: AzulEntitiesStaticResponse): JSX.Element => {
-  const isReady = useExploreReady();
-  if (!isReady) return <></>;
   return <ExploreView {...props} />;
 };
 
