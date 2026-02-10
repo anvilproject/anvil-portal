@@ -2,7 +2,7 @@ import { Link as MLink } from "@mui/material";
 import Link from "next/link";
 import { JSX } from "react";
 import { Alert } from "../../../index";
-import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/alert/constants";
+import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/Alert/constants";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/FluidPaper/fluidPaper";
 
 /**
