@@ -15,9 +15,20 @@
 
 import { promises as fsp } from "fs";
 import path from "path";
+import { stripHtml } from "string-strip-html";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Common HTML entities found in academic titles
+const HTML_ENTITIES = {
+  "&amp;": "&",
+  "&apos;": "'",
+  "&gt;": ">",
+  "&lt;": "<",
+  "&nbsp;": " ",
+  "&quot;": '"',
+};
 
 // Main AnVIL paper DOI
 const ANVIL_MAIN_DOI = "10.1016/j.xgen.2021.100085";
@@ -40,12 +51,38 @@ const CROSSREF_API = "https://api.crossref.org/works";
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
- * Strip HTML tags and normalize whitespace in a string.
+ * Decode common HTML entities in a string.
+ * @param {string} text - The input text with HTML entities.
+ * @returns {string} The text with entities decoded.
+ */
+function decodeHtmlEntities(text) {
+  let result = text;
+  for (const [entity, char] of Object.entries(HTML_ENTITIES)) {
+    result = result.replace(new RegExp(entity, "gi"), char);
+  }
+  // Handle numeric entities (&#60; &#x3C; etc.)
+  result = result.replace(/&#(\d+);/g, (_, code) =>
+    String.fromCharCode(parseInt(code, 10))
+  );
+  result = result.replace(/&#x([0-9a-f]+);/gi, (_, code) =>
+    String.fromCharCode(parseInt(code, 16))
+  );
+  return result;
+}
+
+/**
+ * Strip HTML/XML tags, decode entities, and normalize whitespace in a string.
  * @param {string} text - The input text to sanitize.
- * @returns {string} The sanitized text with angle brackets removed and whitespace normalized.
+ * @returns {string} The sanitized text with HTML/XML removed and whitespace normalized.
  */
 function cleanTitle(text) {
-  return text.replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
+  // Decode HTML entities first (may be double-encoded from Crossref)
+  let result = decodeHtmlEntities(decodeHtmlEntities(text));
+  // Remove XML processing instructions (e.g., <?A3B2 pi6?>) and HTML comments (e.g., <!--...-->)
+  result = result.replace(/<\?[^?]*\?>/g, "").replace(/<!--[\s\S]*?-->/g, "");
+  // Strip any remaining HTML tags
+  result = stripHtml(result, { skipHtmlDecoding: true }).result;
+  return result.replace(/\s+/g, " ").trim();
 }
 
 // Preprint DOI prefixes
