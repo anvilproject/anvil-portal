@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+import pathTool from "path";
 
 /**
  * Reads a file from the project root directory.
@@ -6,5 +7,5 @@ import { readFileSync } from "fs";
  * @returns File contents as a string.
  */
 export function readFile(filePath: string): string {
-  return readFileSync(`${process.cwd()}/${filePath}`, "utf-8");
+  return readFileSync(pathTool.join(process.cwd(), filePath), "utf-8");
 }
