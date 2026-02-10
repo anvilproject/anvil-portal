@@ -78,8 +78,14 @@ function decodeHtmlEntities(text) {
 function cleanTitle(text) {
   // Decode HTML entities first (may be double-encoded from Crossref)
   let result = decodeHtmlEntities(decodeHtmlEntities(text));
-  // Remove XML processing instructions (e.g., <?A3B2 pi6?>) and HTML comments (e.g., <!--...-->)
-  result = result.replace(/<\?[^?]*\?>/g, "").replace(/<!--[\s\S]*?-->/g, "");
+  // Remove XML processing instructions (e.g., <?A3B2 pi6?>)
+  result = result.replace(/<\?[^?]*\?>/g, "");
+  // Remove HTML comments (e.g., <!--...-->) iteratively to avoid incomplete multi-character sanitization
+  let previous;
+  do {
+    previous = result;
+    result = result.replace(/<!--[\s\S]*?-->/g, "");
+  } while (result !== previous);
   // Strip any remaining HTML tags
   result = stripHtml(result, { skipHtmlDecoding: true }).result;
   return result.replace(/\s+/g, " ").trim();
