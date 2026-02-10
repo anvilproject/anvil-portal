@@ -148,7 +148,10 @@ export const publicationsEntityConfig: EntityConfig<
     tableOptions: {
       initialState: {
         sorting: [
-          { desc: SORT_DIRECTION.DESCENDING as boolean, id: "citationCount" },
+          {
+            desc: SORT_DIRECTION.DESCENDING,
+            id: PUBLICATION_CATEGORY_KEY.CITATION_COUNT,
+          },
         ],
       },
     },
