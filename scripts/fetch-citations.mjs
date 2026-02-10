@@ -424,6 +424,17 @@ async function extractCurrentDois() {
 }
 
 /**
+ * Escape a string for use in a double-quoted YAML scalar.
+ * @param {string} str - The string to escape.
+ * @returns {string} The escaped string safe for double-quoted YAML.
+ */
+function escapeYamlDoubleQuoted(str) {
+  const value = String(str);
+  // Escape backslashes first, then double quotes, for use in double-quoted YAML scalars.
+  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+/**
  * Convert publications to YAML format for publications.mdx.
  * @param {Array<object>} publications - Array of publication objects to convert.
  * @returns {string} YAML-formatted string of publications.
@@ -432,18 +443,20 @@ function toYamlFormat(publications) {
   const lines = ["publications:"];
 
   for (const pub of publications) {
-    lines.push(`  - title: "${pub.title.replace(/"/g, '\\"')}"`);
+    lines.push(`  - title: "${escapeYamlDoubleQuoted(pub.title)}"`);
     lines.push(`    cardLink: "${pub.cardLink}"`);
     lines.push(`    category: "${pub.category}"`);
     lines.push("    citation:");
     lines.push("      authors:");
     for (const author of pub.citation.authors) {
-      lines.push(`        - "${author.replace(/"/g, '\\"')}"`);
+      lines.push(`        - "${escapeYamlDoubleQuoted(author)}"`);
     }
     lines.push(`      doi: "${pub.citation.doi}"`);
-    lines.push(`      journal: "${pub.citation.journal.replace(/"/g, '\\"')}"`);
     lines.push(
-      `      publisher: "${pub.citation.publisher.replace(/"/g, '\\"')}"`
+      `      journal: "${escapeYamlDoubleQuoted(pub.citation.journal)}"`
+    );
+    lines.push(
+      `      publisher: "${escapeYamlDoubleQuoted(pub.citation.publisher)}"`
     );
     lines.push(`      year: "${pub.citation.year}"`);
   }
