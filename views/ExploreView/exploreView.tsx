@@ -8,6 +8,7 @@ export const ExploreView = (
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    // Temporary work-around for race-condition issue with ExploreState's ProcessExploreResponse and ResetExploreResponse.
     setIsReady(true);
   }, []);
 
