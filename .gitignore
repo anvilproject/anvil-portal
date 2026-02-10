@@ -41,6 +41,8 @@ next-env.d.ts
 # scripts data
 /scripts/workspace-files
 /scripts/new-cser-materials
+/scripts/output/
+/scripts/files/
 
 # python
 __pycache__/
@@ -48,4 +50,5 @@ __pycache__/
 
 # IDEs and editors
 .idea
+.vscode
 .claude/rules*

@@ -50,7 +50,7 @@ export const OVERVIEW: NavigationEntry = {
           url: `${ROUTES.OVERVIEW}/${PATH_SEGMENTS.PROJECT_SPONSOR}`,
         },
         {
-          label: "Publications",
+          label: "Selected Publications",
           url: `${ROUTES.OVERVIEW}/${PATH_SEGMENTS.PUBLICATIONS}`,
         },
         {

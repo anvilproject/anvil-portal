@@ -22,6 +22,8 @@ export { Main } from "@databiosphere/findable-ui/lib/components/Layout/component
 export { NavBarHero } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/components/NavBarHero/navBarHero";
 export { Nav } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+export { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
+export { NTagCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
 export { AlertTitle } from "@mui/material";
 export { Champions } from "./Champions/champions";
