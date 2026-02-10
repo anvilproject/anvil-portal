@@ -40,7 +40,8 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * Strip HTML tags and normalize whitespace in a string.
- * @param text
+ * @param {string} text - The input text to sanitize.
+ * @returns {string} The sanitized text with angle brackets removed and whitespace normalized.
  */
 function cleanTitle(text) {
   return text.replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
@@ -57,7 +58,8 @@ const PREPRINT_DOI_PREFIXES = [
 
 /**
  * Check if a DOI belongs to a preprint server.
- * @param doi
+ * @param {string} doi - The DOI to check (with or without URL prefix).
+ * @returns {boolean} True if the DOI belongs to a known preprint server.
  */
 function isPreprint(doi) {
   const cleanDoi = doi
@@ -68,7 +70,8 @@ function isPreprint(doi) {
 
 /**
  * Check Crossref for a published version of a preprint (via relation metadata).
- * @param preprintDoi
+ * @param {string} preprintDoi - The preprint DOI to look up.
+ * @returns {Promise<string|null>} The published version DOI if found, otherwise null.
  */
 async function getPublishedDoi(preprintDoi) {
   const cleanDoi = preprintDoi
@@ -89,11 +92,12 @@ async function getPublishedDoi(preprintDoi) {
 }
 
 /**
- * Fetch with retry and rate limiting
- * @param url
- * @param options
- * @param retries
- * @param delay
+ * Fetch with retry and rate limiting.
+ * @param {string} url - The URL to fetch.
+ * @param {object} options - Fetch options to pass to the request.
+ * @param {number} retries - Number of retry attempts on failure.
+ * @param {number} delay - Base delay in milliseconds between retries.
+ * @returns {Promise<object>} The parsed JSON response.
  */
 async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
   for (let i = 0; i < retries; i++) {
@@ -129,9 +133,10 @@ async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
 }
 
 /**
- * Find papers citing the main AnVIL paper using Semantic Scholar
- * @param doi
- * @param limit
+ * Find papers citing the main AnVIL paper using Semantic Scholar.
+ * @param {string} doi - The DOI of the paper to find citations for.
+ * @param {number} limit - Maximum number of citing papers to retrieve.
+ * @returns {Promise<Array<object>>} Array of citing paper objects with DOI, title, authors, etc.
  */
 async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
   console.log(`\nFinding papers that cite DOI: ${doi}`);
@@ -168,8 +173,9 @@ async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
 }
 
 /**
- * Fetch metadata for a single DOI from Crossref
- * @param doi
+ * Fetch metadata for a single DOI from Crossref.
+ * @param {string} doi - The DOI to fetch metadata for.
+ * @returns {Promise<object|null>} Publication metadata object or null on error.
  */
 async function fetchCrossrefMetadata(doi) {
   // Clean DOI - remove URL prefix if present
@@ -228,8 +234,9 @@ async function fetchCrossrefMetadata(doi) {
 }
 
 /**
- * Fetch metadata for multiple DOIs
- * @param dois
+ * Fetch metadata for multiple DOIs.
+ * @param {Array<string>} dois - Array of DOIs to fetch metadata for.
+ * @returns {Promise<Array<object>>} Array of publication metadata objects.
  */
 async function fetchMultipleDois(dois) {
   const results = [];
@@ -253,8 +260,9 @@ async function fetchMultipleDois(dois) {
 }
 
 /**
- * Fetch citation count for a DOI from Semantic Scholar
- * @param doi
+ * Fetch citation count for a DOI from Semantic Scholar.
+ * @param {string} doi - The DOI to fetch citation count for.
+ * @returns {Promise<number>} The citation count, or 0 on error.
  */
 async function fetchCitationCount(doi) {
   const cleanDoi = doi
@@ -274,8 +282,9 @@ async function fetchCitationCount(doi) {
 }
 
 /**
- * Build publications.json for the portal entity list
- * @param limit
+ * Build publications.json for the portal entity list.
+ * @param {number} limit - Maximum number of citing papers to process.
+ * @returns {Promise<void>}
  */
 async function buildPublications(limit = 1000) {
   // Step 1: Find citing papers via Semantic Scholar
@@ -384,7 +393,8 @@ async function buildPublications(limit = 1000) {
 }
 
 /**
- * Extract DOIs from current publications.mdx
+ * Extract DOIs from current publications.mdx.
+ * @returns {Promise<Array<string>>} Array of unique DOIs found in the file.
  */
 async function extractCurrentDois() {
   const pubPath = path.join(__dirname, "../docs/overview/publications.mdx");
@@ -407,8 +417,9 @@ async function extractCurrentDois() {
 }
 
 /**
- * Convert publications to YAML format for publications.mdx
- * @param publications
+ * Convert publications to YAML format for publications.mdx.
+ * @param {Array<object>} publications - Array of publication objects to convert.
+ * @returns {string} YAML-formatted string of publications.
  */
 function toYamlFormat(publications) {
   const lines = ["publications:"];
@@ -434,7 +445,8 @@ function toYamlFormat(publications) {
 }
 
 /**
- * Main CLI handler
+ * Main CLI handler.
+ * @returns {Promise<void>}
  */
 async function main() {
   const args = process.argv.slice(2);
