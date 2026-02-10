@@ -40,12 +40,10 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * Strip HTML tags and normalize whitespace in a string.
+ * @param text
  */
 function cleanTitle(text) {
-  return text
-    .replace(/<[^>]*>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  return text.replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
 }
 
 // Preprint DOI prefixes
@@ -59,6 +57,7 @@ const PREPRINT_DOI_PREFIXES = [
 
 /**
  * Check if a DOI belongs to a preprint server.
+ * @param doi
  */
 function isPreprint(doi) {
   const cleanDoi = doi
@@ -69,6 +68,7 @@ function isPreprint(doi) {
 
 /**
  * Check Crossref for a published version of a preprint (via relation metadata).
+ * @param preprintDoi
  */
 async function getPublishedDoi(preprintDoi) {
   const cleanDoi = preprintDoi
@@ -90,6 +90,10 @@ async function getPublishedDoi(preprintDoi) {
 
 /**
  * Fetch with retry and rate limiting
+ * @param url
+ * @param options
+ * @param retries
+ * @param delay
  */
 async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
   for (let i = 0; i < retries; i++) {
@@ -126,6 +130,8 @@ async function fetchWithRetry(url, options = {}, retries = 3, delay = 1000) {
 
 /**
  * Find papers citing the main AnVIL paper using Semantic Scholar
+ * @param doi
+ * @param limit
  */
 async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
   console.log(`\nFinding papers that cite DOI: ${doi}`);
@@ -163,6 +169,7 @@ async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
 
 /**
  * Fetch metadata for a single DOI from Crossref
+ * @param doi
  */
 async function fetchCrossrefMetadata(doi) {
   // Clean DOI - remove URL prefix if present
@@ -222,6 +229,7 @@ async function fetchCrossrefMetadata(doi) {
 
 /**
  * Fetch metadata for multiple DOIs
+ * @param dois
  */
 async function fetchMultipleDois(dois) {
   const results = [];
@@ -246,6 +254,7 @@ async function fetchMultipleDois(dois) {
 
 /**
  * Fetch citation count for a DOI from Semantic Scholar
+ * @param doi
  */
 async function fetchCitationCount(doi) {
   const cleanDoi = doi
@@ -266,6 +275,7 @@ async function fetchCitationCount(doi) {
 
 /**
  * Build publications.json for the portal entity list
+ * @param limit
  */
 async function buildPublications(limit = 1000) {
   // Step 1: Find citing papers via Semantic Scholar
@@ -398,6 +408,7 @@ async function extractCurrentDois() {
 
 /**
  * Convert publications to YAML format for publications.mdx
+ * @param publications
  */
 function toYamlFormat(publications) {
   const lines = ["publications:"];
