@@ -31,6 +31,7 @@ import {
   PUBLICATION_CATEGORY_KEY,
   PUBLICATION_CATEGORY_LABEL,
 } from "./category";
+import { CHART_SORT } from "@databiosphere/findable-ui/lib/common/chart/sort/types";
 
 /**
  * Publications entity category group config for faceted filtering.
@@ -40,7 +41,7 @@ const categoryGroupConfig: CategoryGroupConfig = {
     {
       categoryConfigs: [
         {
-          enableChartView: false,
+          chart: { enable: false },
           key: PUBLICATION_CATEGORY_KEY.TITLE,
           label: PUBLICATION_CATEGORY_LABEL.TITLE,
         },
@@ -49,7 +50,7 @@ const categoryGroupConfig: CategoryGroupConfig = {
           label: PUBLICATION_CATEGORY_LABEL.JOURNAL,
         },
         {
-          enableChartView: false,
+          chart: { enable: false },
           key: PUBLICATION_CATEGORY_KEY.PMID,
           label: PUBLICATION_CATEGORY_LABEL.PMID,
         },
@@ -58,6 +59,7 @@ const categoryGroupConfig: CategoryGroupConfig = {
           label: PUBLICATION_CATEGORY_LABEL.AUTHORS,
         },
         {
+          chart: { enable: true, sortBy: CHART_SORT.ALPHA },
           key: PUBLICATION_CATEGORY_KEY.YEAR,
           label: PUBLICATION_CATEGORY_LABEL.YEAR,
         },
