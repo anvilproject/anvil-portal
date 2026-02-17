@@ -7,7 +7,7 @@ import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common
  *
  * @param a - The first select category value view to compare.
  * @param b - The second select category value view to compare.
- * @returns A negative number if b should come before a, a positive number if a should come before b, or 0 if they are equal.
+ * @returns A comparison result that sorts years in descending order (most recent first).
  */
 export function sortByYearDescending(
   a: SelectCategoryValueView,
