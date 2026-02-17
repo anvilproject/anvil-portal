@@ -31,7 +31,7 @@ import {
   PUBLICATION_CATEGORY_KEY,
   PUBLICATION_CATEGORY_LABEL,
 } from "./category";
-import { CHART_SORT } from "@databiosphere/findable-ui/lib/common/chart/sort/types";
+import { sortByYearDescending } from "./utils";
 
 /**
  * Publications entity category group config for faceted filtering.
@@ -59,7 +59,10 @@ const categoryGroupConfig: CategoryGroupConfig = {
           label: PUBLICATION_CATEGORY_LABEL.AUTHORS,
         },
         {
-          chart: { enable: true, sortBy: CHART_SORT.ALPHA },
+          chart: {
+            enable: true,
+            sortBy: sortByYearDescending,
+          },
           key: PUBLICATION_CATEGORY_KEY.YEAR,
           label: PUBLICATION_CATEGORY_LABEL.YEAR,
         },
