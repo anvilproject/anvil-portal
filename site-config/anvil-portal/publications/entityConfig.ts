@@ -31,8 +31,6 @@ import {
   PUBLICATION_CATEGORY_KEY,
   PUBLICATION_CATEGORY_LABEL,
 } from "./category";
-import { SelectCategoryValueView } from "@databiosphere/findable-ui/lib/common/entities";
-import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
 import { sortByYearDescending } from "./utils";
 
 /**
