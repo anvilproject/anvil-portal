@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.28.0](https://github.com/anvilproject/anvil-portal/compare/v2.27.0...v2.28.0) (2026-02-17)
+
+
+### Features
+
+* sort citation by years chart in descending order ([#3885](https://github.com/anvilproject/anvil-portal/issues/3885)) ([#3886](https://github.com/anvilproject/anvil-portal/issues/3886)) ([16249fc](https://github.com/anvilproject/anvil-portal/commit/16249fcfc0080d212bfc066ebd6ff239be2dfcaf))
+
+
+### Chores
+
+* update findable-ui to latest ([#3882](https://github.com/anvilproject/anvil-portal/issues/3882)) ([#3883](https://github.com/anvilproject/anvil-portal/issues/3883)) ([0c8c067](https://github.com/anvilproject/anvil-portal/commit/0c8c0678ad260ed2783fb6929067bd98b9389b38))
+
 ## [2.27.0](https://github.com/anvilproject/anvil-portal/compare/v2.26.1...v2.27.0) (2026-02-10)
 
 
