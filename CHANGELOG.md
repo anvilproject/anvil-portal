@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.29.0](https://github.com/anvilproject/anvil-portal/compare/v2.28.0...v2.29.0) (2026-02-19)
+
+
+### Features
+
+* add ras banner ([#3887](https://github.com/anvilproject/anvil-portal/issues/3887)) ([#3888](https://github.com/anvilproject/anvil-portal/issues/3888)) ([f1969ad](https://github.com/anvilproject/anvil-portal/commit/f1969adb425b98e9eb08b268d7622d4b5bc393b3))
+
 ## [2.28.0](https://github.com/anvilproject/anvil-portal/compare/v2.27.0...v2.28.0) (2026-02-17)
 
 
