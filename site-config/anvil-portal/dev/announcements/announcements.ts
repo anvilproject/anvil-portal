@@ -15,11 +15,19 @@ export const DEVELOPMENT_MODE_BANNER: ComponentConfig<
   },
 };
 
+export const RAS_BANNER: ComponentConfig<typeof MDX.RasBanner> = {
+  component: MDX.RasBanner,
+  props: {
+    ...ALERT_PROPS,
+  },
+};
+
 export const REPOSITORY_REVIEW_BANNER: ComponentConfig<typeof Banner> = {
   component: Banner,
 };
 
 export const announcements: ComponentsConfig = [
+  RAS_BANNER,
   REPOSITORY_REVIEW_BANNER,
   DEVELOPMENT_MODE_BANNER,
 ];
