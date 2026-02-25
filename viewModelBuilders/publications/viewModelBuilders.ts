@@ -41,14 +41,18 @@ export function buildJournal(publication: Publication): BasicCellProps {
 }
 
 /**
- * Builds BasicCell props for the year column.
+ * Builds BasicCell props for the publication date column.
  * @param publication - Publication entity.
- * @returns BasicCell component props.
+ * @returns BasicCell component props with date formatted as yyyy-mm-dd. Returns an empty value if publicationYear is 0.
  */
-export function buildYear(publication: Publication): BasicCellProps {
-  return {
-    value: publication.year === 0 ? "" : String(publication.year),
-  };
+export function buildPublicationDate(publication: Publication): BasicCellProps {
+  if (publication.publicationYear === 0) {
+    return { value: "" };
+  }
+  const year = String(publication.publicationYear);
+  const month = String(publication.publicationMonth).padStart(2, "0");
+  const day = String(publication.publicationDay).padStart(2, "0");
+  return { value: `${year}-${month}-${day}` };
 }
 
 /**

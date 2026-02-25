@@ -244,12 +244,15 @@ async function fetchCrossrefMetadata(doi) {
       return `${a.given || ""} ${a.family || ""}`.trim();
     });
 
-    // Get publication year
-    const year =
-      work.published?.["date-parts"]?.[0]?.[0] ||
-      work["published-print"]?.["date-parts"]?.[0]?.[0] ||
-      work["published-online"]?.["date-parts"]?.[0]?.[0] ||
-      null;
+    // Get publication date parts [year, month, day]
+    const dateParts =
+      work.published?.["date-parts"]?.[0] ||
+      work["published-print"]?.["date-parts"]?.[0] ||
+      work["published-online"]?.["date-parts"]?.[0] ||
+      [];
+    const year = dateParts[0] ?? 0;
+    const month = dateParts[1] ?? 1;
+    const day = dateParts[2] ?? 1;
 
     // Get journal/container title
     const journal = work["container-title"]?.[0] || work.publisher || "";
@@ -267,10 +270,12 @@ async function fetchCrossrefMetadata(doi) {
       category: "ON_ANVIL", // Default - can be changed manually
       citation: {
         authors,
+        day,
         doi: `https://doi.org/${cleanDoi}`,
         journal,
+        month,
         publisher: work.publisher || "",
-        year: year ? String(year) : "",
+        year,
       },
       title: work.title?.[0] || "",
     };
@@ -358,15 +363,26 @@ async function buildPublications(limit = 1000) {
       // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
       .replace("http://doi.org/", "");
 
+    const publicationYear = crossref.citation.year;
+    const publicationMonth = crossref.citation.month;
+    const publicationDay = crossref.citation.day;
+    const publicationTimestamp =
+      publicationYear > 0
+        ? Date.UTC(publicationYear, publicationMonth - 1, publicationDay)
+        : 0;
+
     allEntries.push({
       authors: crossref.citation.authors,
       citationCount,
       doi: `https://doi.org/${cleanDoi}`,
       journal: crossref.citation.journal,
       pmid: paper.pmid || null,
+      publicationDay,
+      publicationMonth,
+      publicationTimestamp,
+      publicationYear,
       publisher: crossref.citation.publisher,
       title: cleanTitle(crossref.title),
-      year: crossref.citation.year ? Number(crossref.citation.year) : null,
     });
 
     if (i < citingPapers.length - 1) {
