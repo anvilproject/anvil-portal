@@ -1,0 +1,90 @@
+[
+  {
+    "dataLibraryUrl": null,
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v11.p2",
+    "description": "This release contains no new samples or donors compared to V10, but has been updated to use [GENCODE release 47](https://www.gencodegenes.org/human/release_47.html) annotation.",
+    "duls": ["GRU"],
+    "explorerUrl": null,
+    "phsId": "phs000424.v11.p2",
+    "studyName": "Common Fund (CF) Genotype-Tissue Expression Project (GTEx)",
+    "studyUrl": "https://www.gtexportal.org/home/aboutAdultGtex",
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/191",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003472.v1.p1",
+    "description": "This first GRU data release encompasses comprehensive single-cell multiome and whole genome sequencing (WGS) studies derived from 700 human donors. The release includes 151 single-cell multiome datasets with raw and uniformly processed quantifications, 150 datasets of raw multiome data, and 23 raw whole genome sequencing datasets. The NGS data encompass over 1,600 samples, including differentiated iPSC cells, B-cells, bone marrow from AML or ALL donors, and PMBCs.<br/><br/>This first GRU-PUB-NPU consortium data release focuses on transcriptional dynamics and gene regulation in cardiac muscles using scNT-seq2. The release comprises 56 datasets generated from 8 human donors, including a 16-day time course of iPSC-induced cardiac muscle cells and 40 complete datasets investigating RNA abundance and turnover kinetics.",
+    "duls": ["GRU", "GRU-PUB-NPU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D",
+    "phsId": "phs003472.v1.p1",
+    "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
+    "studyUrl": "https://igvf.org/",
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/203",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003821.v2.p1",
+    "description": "Release 2 of OurHealth adds an additional 391 participants with Blended Genome-Exome sequencing, imputed genotypes, and cardiometabolic phenotypes, for a total of 1012 participants.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003821%22%5D%7D%5D",
+    "phsId": "phs003821.v2.p1",
+    "studyName": "OurHealth - Cardiovascular Disease in South Asians",
+    "studyUrl": "https://ourhealthstudy.org/",
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/204",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004058.v1.p1",
+    "description": "This first data release contains data from 1620 IGNITE Pragmatic Trials Network ADOPT PGx Acute Pain study participants, split between GRU (1397) and HMB (223). Data include patient reported study outcomes captured at baseline, 10-days, 1-month, 3-months, and 6-months post index date, CLIA laboratory-generated CYP2D6 and CYP2C19 pharmacogenomic phenotypes, coordinator facilitated medication inventories, and data collected through coordinator facilitated focused chart reviews. Data were centrally captured in a REDCap database hosted by the IGNITE Data Coordinating Center.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004058%22%5D%7D%5D",
+    "phsId": "phs004058.v1.p1",
+    "studyName": "A Depression and Opioid Pragmatic Trial in Pharmacogenetics (ADOPT PGx): Acute Pain Trial",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/206",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002511.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU-IRB-PUB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002511%22%5D%7D%5D",
+    "phsId": "phs002511.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: SPARK Simons Foundation Powering Autism Research for Knowledge",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/207",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002512.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["DS-AUT-IRB-RD"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002512%22%5D%7D%5D",
+    "phsId": "phs002512.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: Simons Searchlight",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/205",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002509.v2.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002509%22%5D%7D%5D",
+    "phsId": "phs002509.v2.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Neuropsychiatric: Genomics of Autism Spectrum Disorder (GASD)",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/121",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003444.v3.p1",
+    "description": "This dataset contains whole genome sequencing and RNA-Seq data generated by the DepMap project for 126 additional cell lines available on DepMap.org. Please note, data is added to this project on a rolling basis and will create a new version.",
+    "duls": ["GRU", "HMB-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003444%22%5D%7D%5D",
+    "phsId": "phs003444.v3.p1",
+    "studyName": "The Cancer Dependency Map (DepMap)",
+    "studyUrl": null,
+    "submitterBlogPost": "https://anvilproject.org/news/2026/03/03/depmap-data-release"
+  }
+]
