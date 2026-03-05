@@ -1,6 +1,7 @@
 [
   {
     "dataLibraryUrl": null,
+    "dataWorkspaceUrl": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_v11_hg38",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v11.p2",
     "description": "This release contains no new samples or donors compared to V10, but has been updated to use [GENCODE release 47](https://www.gencodegenes.org/human/release_47.html) annotation.",
     "duls": ["GRU"],
