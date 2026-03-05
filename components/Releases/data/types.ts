@@ -9,6 +9,7 @@ export interface BaseReleaseData {
 
 export type DataAddition = BaseReleaseData & {
   dataLibraryUrl: string | null;
+  dataWorkspaceUrl?: string | null;
   dbGapUrl: string;
   explorerUrl: string | null;
   submitterBlogPost: string | null;
