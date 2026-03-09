@@ -51,4 +51,4 @@ __pycache__/
 # IDEs and editors
 .idea
 .vscode
-.claude/rules*
+.claude/
