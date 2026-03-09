@@ -7,9 +7,12 @@ export interface Publication {
   doi: string;
   journal: string;
   pmid: string | null;
+  publicationDay: number;
+  publicationMonth: number;
+  publicationTimestamp: number;
+  publicationYear: number;
   publisher: string;
   title: string;
-  year: number;
 }
 
 /**
@@ -21,7 +24,10 @@ export interface PublicationInput {
   doi: string;
   journal: string;
   pmid: string | null;
+  publicationDay: number;
+  publicationMonth: number;
+  publicationTimestamp: number;
+  publicationYear: number;
   publisher: string;
   title: string;
-  year: number | null;
 }

@@ -6,8 +6,9 @@ export const PUBLICATION_CATEGORY_KEY = {
   CITATION_COUNT: "citationCount",
   JOURNAL: "journal",
   PMID: "pmid",
+  PUBLICATION_TIMESTAMP: "publicationTimestamp",
+  PUBLICATION_YEAR: "publicationYear",
   TITLE: "title",
-  YEAR: "year",
 };
 
 /**
@@ -18,6 +19,7 @@ export const PUBLICATION_CATEGORY_LABEL = {
   CITATION_COUNT: "Citations",
   JOURNAL: "Journal",
   PMID: "PubMed ID",
+  PUBLICATION_DATE: "Publication Date",
+  PUBLICATION_YEAR: "Year",
   TITLE: "Title",
-  YEAR: "Year",
 };

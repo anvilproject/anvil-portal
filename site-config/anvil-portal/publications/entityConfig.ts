@@ -24,8 +24,8 @@ import {
   buildCitationCount,
   buildJournal,
   buildPmid,
+  buildPublicationDate,
   buildPublicationTitle,
-  buildYear,
 } from "../../../viewModelBuilders/publications/viewModelBuilders";
 import {
   PUBLICATION_CATEGORY_KEY,
@@ -63,8 +63,8 @@ const categoryGroupConfig: CategoryGroupConfig = {
             enable: true,
             sortBy: sortByYearDescending,
           },
-          key: PUBLICATION_CATEGORY_KEY.YEAR,
-          label: PUBLICATION_CATEGORY_LABEL.YEAR,
+          key: PUBLICATION_CATEGORY_KEY.PUBLICATION_YEAR,
+          label: PUBLICATION_CATEGORY_LABEL.PUBLICATION_YEAR,
         },
       ],
     },
@@ -123,12 +123,12 @@ export const publicationsEntityConfig: EntityConfig<
       {
         componentConfig: {
           component: C.BasicCell as React.FC<BasicCellProps>,
-          viewBuilder: buildYear,
+          viewBuilder: buildPublicationDate,
         },
         enableSorting: true,
-        header: PUBLICATION_CATEGORY_LABEL.YEAR,
-        id: PUBLICATION_CATEGORY_KEY.YEAR,
-        width: { max: "0.5fr", min: "80px" },
+        header: PUBLICATION_CATEGORY_LABEL.PUBLICATION_DATE,
+        id: PUBLICATION_CATEGORY_KEY.PUBLICATION_TIMESTAMP,
+        width: { max: "0.5fr", min: "120px" },
       },
       {
         componentConfig: {
@@ -149,13 +149,28 @@ export const publicationsEntityConfig: EntityConfig<
         id: PUBLICATION_CATEGORY_KEY.CITATION_COUNT,
         width: { max: "0.5fr", min: "100px" },
       },
+      /* Hidden Column in Table View - Publication Year */
+      {
+        componentConfig: {
+          component: C.BasicCell as React.FC<BasicCellProps>,
+          viewBuilder: (p) => ({ value: p.publicationYear }),
+        },
+        enableHiding: false,
+        enableSorting: false,
+        header: PUBLICATION_CATEGORY_LABEL.PUBLICATION_YEAR,
+        id: PUBLICATION_CATEGORY_KEY.PUBLICATION_YEAR,
+        width: { max: "0.5fr", min: "100px" },
+      },
     ] as ColumnConfig<Publication>[],
     tableOptions: {
       initialState: {
+        columnVisibility: {
+          [PUBLICATION_CATEGORY_KEY.PUBLICATION_YEAR]: false,
+        },
         sorting: [
           {
             desc: SORT_DIRECTION.DESCENDING,
-            id: PUBLICATION_CATEGORY_KEY.CITATION_COUNT,
+            id: PUBLICATION_CATEGORY_KEY.PUBLICATION_TIMESTAMP,
           },
         ],
       },
