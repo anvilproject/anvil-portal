@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.30.0](https://github.com/anvilproject/anvil-portal/compare/v2.29.1...v2.30.0) (2026-03-09)
+
+
+### Features
+
+* add new link type to data additions footer ([#3900](https://github.com/anvilproject/anvil-portal/issues/3900)) ([#3901](https://github.com/anvilproject/anvil-portal/issues/3901)) ([13370fb](https://github.com/anvilproject/anvil-portal/commit/13370fb23507aadd91da003f784c7afbe3bf7ab3))
+* sort citations by publication date ([#3890](https://github.com/anvilproject/anvil-portal/issues/3890)) ([#3891](https://github.com/anvilproject/anvil-portal/issues/3891)) ([e57e66a](https://github.com/anvilproject/anvil-portal/commit/e57e66a75e63157d651ff2d91de3eb9b8cd5805c))
+
+
+### Bug Fixes
+
+* make DepMap blog link relative in March release notes ([#3903](https://github.com/anvilproject/anvil-portal/issues/3903)) ([c6b3799](https://github.com/anvilproject/anvil-portal/commit/c6b3799654eede04de8031fd7358726e1378522e))
+* make DepMap blog link relative in March release notes [#3898](https://github.com/anvilproject/anvil-portal/issues/3898) ([c6b3799](https://github.com/anvilproject/anvil-portal/commit/c6b3799654eede04de8031fd7358726e1378522e))
+
+
+### Content
+
+* add DepMap data release news article ([#3896](https://github.com/anvilproject/anvil-portal/issues/3896)) ([28294b8](https://github.com/anvilproject/anvil-portal/commit/28294b8f0a10dcb099f962826d995ee66f554362))
+* add March 2026 data release [#3898](https://github.com/anvilproject/anvil-portal/issues/3898) ([#3899](https://github.com/anvilproject/anvil-portal/issues/3899)) ([90f2891](https://github.com/anvilproject/anvil-portal/commit/90f289133f453ec66e9ab0fb007d52a26ddb982a))
+
 ## [2.29.1](https://github.com/anvilproject/anvil-portal/compare/v2.29.0...v2.29.1) (2026-02-27)
 
 
