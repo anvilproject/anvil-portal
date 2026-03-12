@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.30.1](https://github.com/anvilproject/anvil-portal/compare/v2.30.0...v2.30.1) (2026-03-12)
+
+
+### Bug Fixes
+
+* typos in learn/data-submitters/submission-guide (multiple pages) ([#3866](https://github.com/anvilproject/anvil-portal/issues/3866)) ([#3904](https://github.com/anvilproject/anvil-portal/issues/3904)) ([7adcba1](https://github.com/anvilproject/anvil-portal/commit/7adcba1a422357379ee9d0f628dfddd44ca521af))
+
 ## [2.30.0](https://github.com/anvilproject/anvil-portal/compare/v2.29.1...v2.30.0) (2026-03-09)
 
 
