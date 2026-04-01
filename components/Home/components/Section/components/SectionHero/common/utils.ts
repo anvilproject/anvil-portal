@@ -17,11 +17,11 @@ export function buildCarouselCards(): SectionCard[] {
       links: [
         {
           label: ACTION_LABEL.LEARN_MORE,
-          url: "/releases/2025/11/release-notes",
+          url: "/releases/2026/03/release-notes",
         },
       ],
       text: "Explore newly released and updated studies on the AnVIL platform - find datasets in the Data Explorer and Data Library.",
-      title: "AnVIL November 2025 Release",
+      title: "AnVIL March 2026 Release",
     },
     {
       links: [
