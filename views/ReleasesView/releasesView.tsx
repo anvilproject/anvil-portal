@@ -43,9 +43,9 @@ export const ReleasesView = (props: PageProps): JSX.Element => {
                     <CardActionArea cardUrl={release.url}>
                       <Stack gap={0} useFlexGap>
                         <CardSecondaryText>
-                          {release.timeSinceRelease} ago
+                          {release.timeSinceRelease}
                         </CardSecondaryText>
-                        <CardTitle>{release.month} Release</CardTitle>
+                        <CardTitle>{release.title}</CardTitle>
                       </Stack>
                       <ForwardArrowIcon
                         color={SVG_ICON_PROPS.COLOR.PRIMARY}
