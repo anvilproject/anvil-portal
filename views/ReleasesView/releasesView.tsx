@@ -43,7 +43,7 @@ export const ReleasesView = (props: PageProps): JSX.Element => {
                     <CardActionArea cardUrl={release.url}>
                       <Stack gap={0} useFlexGap>
                         <CardSecondaryText>
-                          {release.timeSinceRelease}
+                          {release.dateLabel}
                         </CardSecondaryText>
                         <CardTitle>{release.title}</CardTitle>
                       </Stack>
