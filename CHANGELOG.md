@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.31.0](https://github.com/anvilproject/anvil-portal/compare/v2.30.1...v2.31.0) (2026-04-07)
+
+
+### Features
+
+* move pre-release notification to release page ([#3918](https://github.com/anvilproject/anvil-portal/issues/3918)) ([c56ab06](https://github.com/anvilproject/anvil-portal/commit/c56ab06da7bda752b1f9f25de2c3dc724f0940f0))
+
+
+### Content
+
+* add anvil open-access data aws registry news article ([#3919](https://github.com/anvilproject/anvil-portal/issues/3919)) ([#3920](https://github.com/anvilproject/anvil-portal/issues/3920)) ([571184f](https://github.com/anvilproject/anvil-portal/commit/571184f06bdb43cb1800802dcfda5f6dc75d83aa))
+* add March 2026 release to carousel ([#3912](https://github.com/anvilproject/anvil-portal/issues/3912)) ([4b041ea](https://github.com/anvilproject/anvil-portal/commit/4b041eaae799839657e6a86a4b9eb8944f94328f))
+* add March 2026 release to carousel [#3910](https://github.com/anvilproject/anvil-portal/issues/3910) ([4b041ea](https://github.com/anvilproject/anvil-portal/commit/4b041eaae799839657e6a86a4b9eb8944f94328f))
+* update homepage stats ([#3914](https://github.com/anvilproject/anvil-portal/issues/3914)) ([c081db9](https://github.com/anvilproject/anvil-portal/commit/c081db9e6f4984d1f88762117ca6c5050383f7d8))
+* update homepage stats [#3911](https://github.com/anvilproject/anvil-portal/issues/3911) ([c081db9](https://github.com/anvilproject/anvil-portal/commit/c081db9e6f4984d1f88762117ca6c5050383f7d8))
+* update RAS banner text ([#3916](https://github.com/anvilproject/anvil-portal/issues/3916)) ([31fb349](https://github.com/anvilproject/anvil-portal/commit/31fb349836ddff52f33fa36bc705fd4c8e3d6519))
+* update RAS banner text [#3915](https://github.com/anvilproject/anvil-portal/issues/3915) ([31fb349](https://github.com/anvilproject/anvil-portal/commit/31fb349836ddff52f33fa36bc705fd4c8e3d6519))
+
 ## [2.30.1](https://github.com/anvilproject/anvil-portal/compare/v2.30.0...v2.30.1) (2026-03-26)
 
 
