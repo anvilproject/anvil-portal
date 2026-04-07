@@ -1,0 +1,43 @@
+---
+date: "2026-04-07"
+description: "Open-access data hosted by NHGRI's AnVIL Project is now available through the Registry of Open Data on AWS and the AWS Marketplace."
+featured: true
+title: "NHGRI AnVIL Open-Access Data Available in AWS Open Data Registry"
+---
+
+<NewsHero {...frontmatter} />
+
+We are pleased to announce that open-access data hosted by **NHGRI's AnVIL Project** is now available through both the **Registry of Open Data on AWS** and the **AWS Marketplace** and is freely downloadable from the AnVIL Data Explorer.
+
+This integration provides researchers with flexible access to AnVIL datasets directly within the AWS compute environment, as well as egress-free downloads for use in other compute environments such as institutional HPC clusters. These datasets are also available in **Google Cloud Platform (us-central1)** as part of **AnVIL Terra**.
+
+## Available Datasets
+
+All open-access AnVIL datasets are currently available through this program:
+
+- [AnVIL 1000G PRIMED Data Model](https://explore.anvilproject.org/datasets/303b5a92-57c8-4df2-8331-8ff308f21293/export)
+- [AnVIL 1000G High Coverage 2019](https://explore.anvilproject.org/datasets/63d97e58-a825-4b93-a9a7-0d9d165dc826/export)
+- [AnVIL GTEx Public Data](https://explore.anvilproject.org/datasets/e5aee011-bdb3-4caa-954c-a46678656270/export)
+- [AnVIL HPRC](https://explore.anvilproject.org/datasets/74472c21-cafa-4879-9745-aa94ebd9f77c/export)
+- [AnVIL NIA CARD Coriell Cell Lines Open](https://explore.anvilproject.org/datasets/1bb475e9-2422-4be4-9d98-b964be39c11d/export)
+- [AnVIL T2T](https://explore.anvilproject.org/datasets/5c25d772-bdcb-4ea9-989c-f92258634ad9/export)
+- [AnVIL T2T ChrY](https://explore.anvilproject.org/datasets/1426a206-fcb1-4a07-9b47-32f06ef8cf8d/export)
+- [AnVIL ENCORE 293T](https://explore.anvilproject.org/datasets/15ac2bed-cd9a-4893-9a0e-be1d07577153/export)
+- [AnVIL ENCORE RS293](https://explore.anvilproject.org/datasets/b749d9b5-0561-4343-936b-47c6b476ece0/export)
+- [AnVIL IGVF Mouse R1](https://explore.anvilproject.org/datasets/2864e9de-7a1a-4d4a-9ed2-03bd23cf7f5c/export)
+- [AnVIL MAGE](https://explore.anvilproject.org/datasets/4af9fbfc-de22-4a6d-b481-5fe756a45b23/export)
+
+Additional datasets and updates to existing datasets will be made available as they are released by NHGRI's AnVIL Project.
+
+## How to Access the Data
+
+Data can be accessed through the **AnVIL Data Explorer** using any of the following methods:
+
+- **Full Dataset Download** — Download a complete dataset using the `curl` command.
+- **Cross-Dataset File Download** — Use the `curl` command to download files of selected types across multiple datasets simultaneously.
+- **File Manifest Download** — Export a manifest containing the location of each file. A new column, `files.azul_mirror_uri`, provides the S3 URI for each file in the S3 bucket. Note that the filename in this column is a hash; the human-readable filename can be found in the `files.file_name` column.
+- **Individual File Download** — In the Explorer's **Files** tab, use the download icon to select individual files. A dark blue icon indicates the file is available for direct download; a light blue or grayed-out icon indicates the file is managed-access and currently not available to download via the AWS Open Data Registery.
+
+## Managed Access Data
+
+Managed-access files remain available for download from Google Cloud Platform via Terra's requester-pays services.
