@@ -1,7 +1,7 @@
 export interface Release {
+  dateLabel: string;
   id: string;
-  month: string;
-  timeSinceRelease: string;
+  title: string;
   url: string;
   year: string;
 }
