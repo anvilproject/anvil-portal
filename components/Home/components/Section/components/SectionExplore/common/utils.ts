@@ -30,7 +30,7 @@ export function buildToolsAndWorkflowsCards(
         label: ACTION_LABEL.UNSPECIFIED,
         url: `${browserURL}/datasets`,
       },
-      text: "Access public and managed-access data hosted in the AnVIL Data Explorer",
+      text: "Export or download data hosted in the AnVIL Data Explorer",
       title: "Datasets",
     },
     {

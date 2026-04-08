@@ -101,7 +101,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         height: 40,
         src: "/consortia/portals/anvil-explorer.png",
       },
-      text: "Build cross study cohorts for analysis in Terra.",
+      text: "Build cross-study cohorts for download or analysis in supported cloud environments.",
       title: "AnVIL Data Explorer",
     },
     {
