@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.31.1](https://github.com/anvilproject/anvil-portal/compare/v2.31.0...v2.31.1) (2026-04-08)
+
+
+### Content
+
+* add anvil open-access data news to home page carousel ([#3922](https://github.com/anvilproject/anvil-portal/issues/3922)) ([d457a3b](https://github.com/anvilproject/anvil-portal/commit/d457a3b758234e42145d93d7a0d742a894fb521a))
+
 ## [2.31.0](https://github.com/anvilproject/anvil-portal/compare/v2.30.1...v2.31.0) (2026-04-07)
 
 
