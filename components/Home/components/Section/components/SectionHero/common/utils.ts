@@ -17,6 +17,17 @@ export function buildCarouselCards(): SectionCard[] {
       links: [
         {
           label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
+          url: "/news/2026/04/07/anvil-open-access-data-aws-registry",
+        },
+      ],
+      text: "Open-access data hosted by NHGRI's AnVIL Project is now available through the Registry of Open Data on AWS and the AWS Marketplace and is freely downloadable from the AnVIL Data Explorer.",
+      title: "NHGRI AnVIL Open-Access Data Available in AWS Open Data Registry",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.LEARN_MORE,
           url: "/releases/2026/03/release-notes",
         },
       ],
