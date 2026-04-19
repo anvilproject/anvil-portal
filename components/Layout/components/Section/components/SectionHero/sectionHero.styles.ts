@@ -2,16 +2,16 @@ import {
   Content,
   ContentLayout,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/contentLayout.styles";
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import {
+  bpDownSm,
   bpUp1366,
   bpUpMd,
-  bpDownSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
-import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 interface Props {
   headerHeight: number;

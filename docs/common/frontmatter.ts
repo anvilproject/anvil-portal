@@ -1,6 +1,6 @@
+import { DATE_FORMAT } from "../../content/constants";
 import { Frontmatter } from "../../content/entities";
 import { getMoment } from "../../content/utils";
-import { DATE_FORMAT } from "../../content/constants";
 
 /**
  * Returns the formatted date from the frontmatter.

@@ -1,6 +1,6 @@
-import { Components, Theme } from "@mui/material";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Components, Theme } from "@mui/material";
 
 /**
  * MuiBreadcrumbs Component

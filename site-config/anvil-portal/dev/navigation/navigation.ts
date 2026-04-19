@@ -1,7 +1,6 @@
 import { NavigationConfig } from "../../../../docs/common/entities";
 import { ANVIL_CHAMPIONS } from "./champions";
 import { CONSORTIA } from "./consortia";
-import { RELEASES } from "./releases";
 import { EVENTS } from "./events";
 import { FAQ } from "./faq";
 import { GUIDES } from "./guides";
@@ -10,6 +9,7 @@ import { LEARN } from "./learn";
 import { NEWS } from "./news";
 import { OVERVIEW } from "./overview";
 import { PRIVACY } from "./privacy";
+import { RELEASES } from "./releases";
 import { TEAM } from "./team";
 
 // Site map for the MDX pages used to generate the navigation.

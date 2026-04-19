@@ -1,3 +1,5 @@
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { Button } from "@mui/material";
 import Link from "next/link";
 import { JSX } from "react";
 import { Section, SectionLayout } from "../../section.styles";
@@ -8,8 +10,6 @@ import {
   SectionActions,
   SectionTitle,
 } from "./sectionDatasets.styles";
-import { Button } from "@mui/material";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
 
 const CONSORTIA_ROADMAP = "/consortia";
 const CONTRIBUTE_DATA = "/learn/submit-data";

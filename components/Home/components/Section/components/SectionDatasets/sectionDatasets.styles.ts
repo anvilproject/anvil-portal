@@ -1,11 +1,11 @@
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { bpUp1024 } from "../../../../../../styles/common/mixins/breakpoints";
 import {
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionTitle as DefaultTitle,
+  sectionGrid,
 } from "../../section.styles";
-import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const Headline = styled(DefaultHeadline)`
   gap: 24px;

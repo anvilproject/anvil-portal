@@ -1,12 +1,12 @@
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import {
-  Section as DefaultSection,
-  sectionGrid,
   SectionHeadline as DefaultHeadline,
   SectionLayout as DefaultLayout,
+  Section as DefaultSection,
+  sectionGrid,
 } from "../../section.styles";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 
 export const Section = styled(DefaultSection)`
   background-color: ${PALETTE.SMOKE_LIGHTEST};

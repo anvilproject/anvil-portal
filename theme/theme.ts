@@ -1,7 +1,7 @@
-import { createTheme, Theme, ThemeOptions } from "@mui/material";
-import * as C from "./common/components";
 import { createAppTheme } from "@databiosphere/findable-ui/lib/theme/theme";
+import { createTheme, Theme, ThemeOptions } from "@mui/material";
 import { deepmerge } from "@mui/utils";
+import * as C from "./common/components";
 
 /**
  * Returns AnVIL theme with customization.

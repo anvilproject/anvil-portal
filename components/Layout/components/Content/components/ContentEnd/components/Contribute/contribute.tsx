@@ -1,14 +1,14 @@
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button as MButton, Typography } from "@mui/material";
 import { JSX } from "react";
 import { CodePullRequestIcon } from "../../../../../../../common/CustomIcon/components/CodePullRequestIcon/codePullRequestIcon";
 import { StyledBox } from "./contribute.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
-import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 
 const GITHUB_URL =
   "https://github.com/anvilproject/anvil-portal/blob/main/docs";

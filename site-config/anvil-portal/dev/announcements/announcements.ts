@@ -3,8 +3,8 @@ import {
   ComponentConfig,
   ComponentsConfig,
 } from "@databiosphere/findable-ui/lib/config/entities";
-import * as MDX from "../../../../components/Layout/components/Header/content";
 import { Banner } from "../../../../components/Home/components/Banner/banner";
+import * as MDX from "../../../../components/Layout/components/Header/content";
 
 export const DEVELOPMENT_MODE_BANNER: ComponentConfig<
   typeof MDX.DevelopmentModeBanner

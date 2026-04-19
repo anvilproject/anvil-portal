@@ -1,7 +1,7 @@
 import { Banner as DXBanner } from "@databiosphere/findable-ui/lib/components/common/Banner/banner";
+import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/Banner/constants";
 import { useRouter } from "next/router";
 import { JSX } from "react";
-import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/Banner/constants";
 
 export const Banner = (): JSX.Element | null => {
   const { asPath } = useRouter();

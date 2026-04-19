@@ -2,9 +2,9 @@ import { buildStaticPaths } from "@databiosphere/findable-ui/lib/utils/mdx/stati
 import { buildStaticProps } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/staticProps";
 import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { JSX } from "react";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
+import { JSX } from "react";
 import { StyledMain } from "../../../../components/Layout/components/Main/main.styles";
 import { processFrontmatter } from "../../../../components/Releases/common/utils";
 import { getReleaseData } from "../../../../components/Releases/data/utils";

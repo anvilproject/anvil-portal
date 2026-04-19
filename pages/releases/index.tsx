@@ -1,11 +1,8 @@
-import { GetStaticProps } from "next";
-import { JSX } from "react";
-import { StaticProps } from "../../content/entities";
-import { StyledMain } from "../../components/Layout/components/Main/main.styles";
-import { ReleasesView } from "../../views/ReleasesView/releasesView";
-import { FRONTMATTER } from "../../views/ReleasesView/frontmatter";
-import { Release } from "../../views/ReleasesView/types";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { mapMDXSlugByFilePaths } from "@databiosphere/findable-ui/lib/utils/mdx/files/mapMDXSlugByFilePaths";
 import { resolveRelativeDirs } from "@databiosphere/findable-ui/lib/utils/mdx/files/resolveRelativeDirs";
+import { getMatter } from "@databiosphere/findable-ui/lib/utils/mdx/frontmatter/getMatter";
+import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
 import {
   compareDesc,
   format,
@@ -13,12 +10,15 @@ import {
   isPast,
   parseISO,
 } from "date-fns";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { GetStaticProps } from "next";
+import { JSX } from "react";
 import slugify from "slugify";
-import { buildMDXFilePath } from "@databiosphere/findable-ui/lib/utils/mdx/staticGeneration/utils";
-import { getMatter } from "@databiosphere/findable-ui/lib/utils/mdx/frontmatter/getMatter";
-import { mapMDXSlugByFilePaths } from "@databiosphere/findable-ui/lib/utils/mdx/files/mapMDXSlugByFilePaths";
+import { StyledMain } from "../../components/Layout/components/Main/main.styles";
+import { StaticProps } from "../../content/entities";
 import { ROUTES } from "../../routes/constants";
+import { FRONTMATTER } from "../../views/ReleasesView/frontmatter";
+import { ReleasesView } from "../../views/ReleasesView/releasesView";
+import { Release } from "../../views/ReleasesView/types";
 
 const DOCS_DIR = "docs";
 const RELEASES_DIR = "releases";

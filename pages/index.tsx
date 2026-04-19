@@ -5,9 +5,9 @@ import { Main } from "../components/Home/components/Layout/components/Main/main"
 import { buildAnalysisPortalCards } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/utils";
 import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/common/content";
 import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
+import { buildToolsAndWorkflowsCards } from "../components/Home/components/Section/components/SectionExplore/common/utils";
 import { buildCarouselCards } from "../components/Home/components/Section/components/SectionHero/common/utils";
 import { buildPublicationSectionCards } from "../components/Home/components/Section/components/SectionPublications/common/utils";
-import { buildToolsAndWorkflowsCards } from "../components/Home/components/Section/components/SectionExplore/common/utils";
 import { buildUpdateSectionCards } from "../components/Home/components/Section/components/SectionUpdates/common/utils";
 import { CARDS as WORKSPACE_CARDS } from "../components/Home/components/Section/components/SectionWorkspaces/common/content";
 import { config } from "../config/config";

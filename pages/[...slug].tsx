@@ -4,12 +4,15 @@ import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/compon
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
 import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
+import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { JSX } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { GetStaticPathsResult } from "next/types";
 import Error from "next/error";
+import { GetStaticPathsResult } from "next/types";
+import { JSX } from "react";
 import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { ContentEnd } from "../components/Layout/components/Content/components/ContentEnd/contentEnd";
@@ -24,9 +27,6 @@ import {
   getStaticPropLayoutStyle,
   parseFrontmatter,
 } from "../docs/common/utils";
-import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
-import { remarkHeadings } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/remarkHeadings";
-import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 
 const CONFLICTING_STATIC_PATHS = ["events", "learn", "news", "releases"];
 

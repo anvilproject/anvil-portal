@@ -12,13 +12,13 @@ import {
   Publication,
   PublicationInput,
 } from "../../../apis/publications/entities";
-import { CitationInfoBox } from "../../../components/Citations/components/CitationInfoBox/citationInfoBox";
 import {
   getPublicationId,
   getPublicationTitle,
   publicationInputMapper,
 } from "../../../apis/publications/utils";
 import * as C from "../../../components";
+import { CitationInfoBox } from "../../../components/Citations/components/CitationInfoBox/citationInfoBox";
 import {
   buildAuthors,
   buildCitationCount,

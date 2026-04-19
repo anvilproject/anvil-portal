@@ -1,10 +1,10 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
 import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 import styled from "@emotion/styled";
 import { bpUp1024 } from "../../../../../../../../styles/common/mixins/breakpoints";
 import { sectionGrid } from "../../../../section.styles";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
-import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mixins/typography";
 
 export const Metrics = styled.div`
   ${sectionGrid};

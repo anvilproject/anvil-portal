@@ -1,10 +1,11 @@
 import { SELECTED_MATCH } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/common/entities";
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { filterConsortiaNavigationEntry } from "components/Consortia/utils";
 import * as C from "../../../components";
 import { ROUTES } from "../../../routes/constants";
-import { publicationsEntityConfig } from "../publications/entityConfig";
 import { FLATTEN, VISIBLE } from "../../common/constants";
 import { SiteConfig } from "../../common/entities";
+import { publicationsEntityConfig } from "../publications/entityConfig";
 import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
 import {
@@ -15,7 +16,6 @@ import { FAQ } from "./navigation/faq";
 import { OVERVIEW } from "./navigation/overview";
 import { TEAM } from "./navigation/team";
 import { socialMedia, SOCIALS } from "./socialMedia";
-import { filterConsortiaNavigationEntry } from "components/Consortia/utils";
 
 const APP_TITLE = "AnVIL Portal";
 const EXPLORER_URL = "https://explore.anvilproject.dev.clevercanary.com";

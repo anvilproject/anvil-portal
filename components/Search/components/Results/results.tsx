@@ -7,12 +7,12 @@ import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common
 import { CardText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardText/cardText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedCard } from "@databiosphere/findable-ui/lib/components/common/Card/components/RoundedCard/roundedCard";
+import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { NoResults } from "@databiosphere/findable-ui/lib/components/NoResults/noResults";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Typography } from "@mui/material";
 import { JSX } from "react";
 import { ResultsView } from "./results.styles";
-import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 interface ResultsProps {
   results?: CardProps[];

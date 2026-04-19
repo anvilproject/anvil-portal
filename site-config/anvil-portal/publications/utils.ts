@@ -1,5 +1,5 @@
-import { SelectCategoryValueView } from "@databiosphere/findable-ui/lib/common/entities";
 import { COLLATOR_CASE_INSENSITIVE } from "@databiosphere/findable-ui/lib/common/constants";
+import { SelectCategoryValueView } from "@databiosphere/findable-ui/lib/common/entities";
 
 /**
  * Sorting function to sort publication years in descending order.

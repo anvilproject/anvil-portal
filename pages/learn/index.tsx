@@ -1,9 +1,9 @@
 import { GetStaticProps } from "next";
 import { JSX } from "react";
+import { StyledMain } from "../../components/Layout/components/Main/main.styles";
 import { StaticProps } from "../../content/entities";
 import { generateStaticProps } from "../../docs/common/generateStaticProps";
 import { LearnView } from "../../views/LearnView/learnView";
-import { StyledMain } from "../../components/Layout/components/Main/main.styles";
 
 const SLUG = ["learn"];
 
