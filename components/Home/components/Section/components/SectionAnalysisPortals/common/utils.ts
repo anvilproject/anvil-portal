@@ -1,4 +1,5 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { PATH_PARAMETERS } from "../../../../../../../common/constants";
 import { SectionCard } from "../../../../../common/entities";
 
 const ACTION_LABEL = {
@@ -142,10 +143,9 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
     },
     {
       links: [
-        { label: ACTION_LABEL.LEARN_MORE, url: "https://www.ncpi-acc.org" },
         {
           label: ACTION_LABEL.DATASETS,
-          url: "https://ncpi-data.org/platforms",
+          url: PATH_PARAMETERS.ncpiURL,
         },
       ],
       media: {
