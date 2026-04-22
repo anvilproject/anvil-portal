@@ -7,4 +7,5 @@ export const EMAIL_ADDRESSES: Parameter = {
 
 export const PATH_PARAMETERS: Parameter = {
   anvilHelpURL: "https://help.anvilproject.org",
+  ncpiURL: "https://ncpi-data.org",
 };
