@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.31.2](https://github.com/anvilproject/anvil-portal/compare/v2.31.1...v2.31.2) (2026-04-22)
+
+
+### Bug Fixes
+
+* update ncpi-acc.org references to ncpi-data.org ([#3929](https://github.com/anvilproject/anvil-portal/issues/3929)) ([#3933](https://github.com/anvilproject/anvil-portal/issues/3933)) ([61f79d9](https://github.com/anvilproject/anvil-portal/commit/61f79d999e75dfd9325199b0cfc59f1c0b45c75e))
+
+
+### Chores
+
+* enable `prettier-plugin-organize-imports` ([#3927](https://github.com/anvilproject/anvil-portal/issues/3927)) ([#3928](https://github.com/anvilproject/anvil-portal/issues/3928)) ([077d51e](https://github.com/anvilproject/anvil-portal/commit/077d51e8f4c889be0519418e1d578acb3086374e))
+* upgrade findable-ui to 50.7.0 and run npm audit fix ([#3924](https://github.com/anvilproject/anvil-portal/issues/3924)) ([9f8919b](https://github.com/anvilproject/anvil-portal/commit/9f8919bc91ba6504af43bbab41dc1222be26a51e))
+* upgrade findable-ui to 50.7.0 and run npm audit fix ([#3925](https://github.com/anvilproject/anvil-portal/issues/3925)) ([9f8919b](https://github.com/anvilproject/anvil-portal/commit/9f8919bc91ba6504af43bbab41dc1222be26a51e))
+* upgrade findable-ui to 51.0.1, remove next-auth, and run npm audit fix ([#3931](https://github.com/anvilproject/anvil-portal/issues/3931)) ([f86d650](https://github.com/anvilproject/anvil-portal/commit/f86d650a55469b5e4fd1544c93671ad4edd07d24))
+* upgrade findable-ui to 51.0.1, remove next-auth, and run npm audit fix ([#3932](https://github.com/anvilproject/anvil-portal/issues/3932)) ([f86d650](https://github.com/anvilproject/anvil-portal/commit/f86d650a55469b5e4fd1544c93671ad4edd07d24))
+
 ## [2.31.1](https://github.com/anvilproject/anvil-portal/compare/v2.31.0...v2.31.1) (2026-04-08)
 
 
