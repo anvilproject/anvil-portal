@@ -1,6 +1,6 @@
-import { JSX, useEffect, useState } from "react";
-import { ExploreView as DXExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
 import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
+import { ExploreView as DXExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
+import { JSX, useEffect, useState } from "react";
 
 export const ExploreView = (
   props: AzulEntitiesStaticResponse

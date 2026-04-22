@@ -1,6 +1,6 @@
+import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Headline } from "../../components/Layout/components/Section/components/SectionHero/sectionHero.styles";
-import { bpDownSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 
 export const StyledHeadline = styled(Headline)`
   display: grid;

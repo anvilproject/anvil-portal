@@ -1,9 +1,13 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
+import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
 import {
-  bpUpSm,
   bpDownSm,
+  bpUpSm,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
+import { CardMedia } from "../../../../../../../Card/components/CardMedia/cardMedia";
 import {
   MAX_CARD_HEIGHT,
   MAX_CARD_HEIGHT_SM,
@@ -15,10 +19,6 @@ import {
   getCardTransition,
   getCardZIndex,
 } from "../../common/utils";
-import { SHADOWS } from "@databiosphere/findable-ui/lib/styles/common/constants/shadows";
-import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
-import { CardMedia } from "../../../../../../../Card/components/CardMedia/cardMedia";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 interface Props {
   cardPosition: number;

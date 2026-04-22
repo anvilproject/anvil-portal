@@ -2,12 +2,12 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { JSX } from "react";
 import { StyledMain } from "../../components/Layout/components/Main/main.styles";
 import { processOverviewFrontmatter } from "../../components/Layout/components/Section/components/SectionContent/components/SectionOverview/utils";
+import { processFrontmatter } from "../../components/Learn/utils";
 import { StaticProps } from "../../content/entities";
 import { generateSectionPathWithFrontmatter } from "../../content/utils";
 import { generateStaticPaths } from "../../docs/common/generateStaticPaths";
 import { generateStaticProps } from "../../docs/common/generateStaticProps";
 import { ContentOverviewView } from "../../views/ContentOverviewView/contentOverviewView";
-import { processFrontmatter } from "../../components/Learn/utils";
 
 const SECTION = "learn";
 

@@ -1,3 +1,12 @@
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Button, Link as MLink, Typography } from "@mui/material";
+import Link from "next/link";
+import { JSX } from "react";
 import { Section } from "../../section.styles";
 import { Carousel } from "./components/Carousel/carousel";
 import {
@@ -7,15 +16,6 @@ import {
   SectionLayout,
   Subhead,
 } from "./sectionHero.styles";
-import { Button, Link as MLink, Typography } from "@mui/material";
-import { JSX } from "react";
-import Link from "next/link";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import {
-  ANCHOR_TARGET,
-  REL_ATTRIBUTE,
-} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 
 const LAUNCH_TERRA = "https://anvil.terra.bio/#workspaces";
 const LEARN_MORE = "/learn";

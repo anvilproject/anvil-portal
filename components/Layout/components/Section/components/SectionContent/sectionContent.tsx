@@ -3,8 +3,9 @@ import {
   ContentLayout,
   Outline,
 } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/contentLayout.styles";
-import { JSX } from "react";
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 import { ContentViewProps } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
+import { JSX } from "react";
 import { StaticProps } from "../../../../../../content/entities";
 import {
   StyledContent,
@@ -13,7 +14,6 @@ import {
   StyledPositioner,
   StyledSection,
 } from "./sectionContent.styles";
-import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 export const SectionContent = ({
   content,

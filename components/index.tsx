@@ -12,7 +12,6 @@ export { SlackIcon } from "@databiosphere/findable-ui/lib/components/common/Cust
 export { XIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/XIcon/xIcon";
 export { YouTubeIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/YouTubeIcon/youTubeIcon";
 export { Grid } from "@databiosphere/findable-ui/lib/components/common/Grid/grid";
-export { GridTable } from "@databiosphere/findable-ui/lib/components/Table/common/gridTable.styles";
 export { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
 export { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 export { Footer } from "@databiosphere/findable-ui/lib/components/Layout/components/Footer/footer";
@@ -22,6 +21,7 @@ export { Main } from "@databiosphere/findable-ui/lib/components/Layout/component
 export { NavBarHero } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/components/NavBarHero/navBarHero";
 export { Nav } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+export { GridTable } from "@databiosphere/findable-ui/lib/components/Table/common/gridTable.styles";
 export { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
 export { NTagCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/contentView";
@@ -49,9 +49,9 @@ export { ANVILBranding } from "./Layout/components/Footer/components/Branding/co
 export { Actions } from "./Layout/components/Header/components/Actions/actions";
 export { LabelIconMenuItem } from "./Layout/components/Header/components/Content/components/Navigation/components/NavigationMenuItems/components/LabelIconMenuItem/labelIconMenuItem";
 export { SectionOverview } from "./Layout/components/Section/components/SectionContent/components/SectionOverview/sectionOverview";
+export { Workspaces } from "./Learn/components/Workspaces/workspaces";
 export { NewsHero } from "./News/components/NewsHero/newsHero";
 export { News } from "./News/news";
 export { Grid as AnalysisPortals } from "./Overview/components/AnalysisPortals/analysisPortals.styles";
 export { Button as ButtonAddPublication } from "./Overview/components/Publications/components/Button/button";
 export { Publications as AnVILPublications } from "./Overview/components/Publications/publications";
-export { Workspaces } from "./Learn/components/Workspaces/workspaces";

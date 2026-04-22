@@ -3,14 +3,14 @@ import {
   isClientSideNavigation,
   isURLString,
 } from "@databiosphere/findable-ui/lib/components/Links/common/utils";
+import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
+import { LinkProps } from "../../../../../../../../common/types";
 import {
   Frontmatter,
   FrontmatterOverview,
 } from "../../../../../../../../content/entities";
 import { isFrontmatterOverview } from "../../../../../../../../content/typeGuards";
-import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
 import { OverviewLink } from "./types";
-import { LinkProps } from "../../../../../../../../common/types";
 
 const MAX_ROWS = 3;
 const OVERVIEW_OUTLINE_DEPTH = 2;

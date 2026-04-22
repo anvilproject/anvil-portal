@@ -1,13 +1,13 @@
-import { StaticProps } from "../../content/entities";
 import { Fragment, JSX } from "react";
-import { Grid, StyledHeadline } from "./learnView.styles";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import {
   SectionLayout,
   StyledSection,
 } from "../../components/Layout/components/Section/section.styles";
 import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard";
+import { StaticProps } from "../../content/entities";
 import { CARDS } from "./constants";
+import { Grid, StyledHeadline } from "./learnView.styles";
 
 export const LearnView = (props: StaticProps): JSX.Element => {
   return (

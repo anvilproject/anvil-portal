@@ -1,20 +1,20 @@
-import { Fragment, JSX } from "react";
-import { StyledCard } from "./releasesView.styles";
-import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
-import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
-import { PageProps } from "../../pages/releases/index";
-import { Stack, Typography } from "@mui/material";
 import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { ForwardArrowIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
-import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
-import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
-import { useScrollMarginTop } from "./hook";
-import { groupReleasesByYear } from "./utils";
+import { OutlineItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/types";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Stack, Typography } from "@mui/material";
+import { Fragment, JSX } from "react";
+import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
+import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
+import { PageProps } from "../../pages/releases/index";
+import { useScrollMarginTop } from "./hook";
+import { StyledCard } from "./releasesView.styles";
+import { groupReleasesByYear } from "./utils";
 
 export const ReleasesView = (props: PageProps): JSX.Element => {
   const scrollMarginTop = useScrollMarginTop();

@@ -1,7 +1,7 @@
+import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 import styled from "@emotion/styled";
 import { Card as MCard } from "@mui/material";
 import { sectionGrid } from "../Section/section.styles";
-import { FONT } from "@databiosphere/findable-ui/lib/styles/common/constants/font";
 
 export const Grid = styled.div`
   ${sectionGrid};

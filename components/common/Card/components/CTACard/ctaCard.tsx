@@ -1,14 +1,14 @@
-import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
-import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
-import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
 import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
+import { CardActionArea } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardActionArea/cardActionArea";
+import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { ForwardArrowIcon } from "@databiosphere/findable-ui/lib/components/common/CustomIcon/components/ForwardArrowIcon/forwardArrowIcon";
-import { CardContent, StyledCard } from "./ctaCard.styles";
+import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
 import { Typography } from "@mui/material";
 import { JSX } from "react";
-import { Props } from "./types";
 import { CARD_PROPS, SVG_ICON_PROPS, TYPOGRAPHY_PROPS } from "./constants";
-import { StaticImage } from "@databiosphere/findable-ui/lib/components/common/StaticImage/staticImage";
+import { CardContent, StyledCard } from "./ctaCard.styles";
+import { Props } from "./types";
 
 export const CTACard = ({
   cardUrl,

@@ -1,17 +1,17 @@
-import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard";
-import { UploadFileIcon } from "../../components/common/CustomIcon/components/UploadFileIcon/uploadFileIcon";
 import { ComponentProps } from "react";
-import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/RocketLaunchIcon/rocketLaunchIcon";
+import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard";
 import { AccountsTreeIcon } from "../../components/common/CustomIcon/components/AccountsTreeIcon/accountsTreeIcon";
-import { AnimatedImagesIcon } from "../../components/common/CustomIcon/components/AnimatedImagesIcon/animatedImagesIcon";
-import { FilterDramaIcon } from "../../components/common/CustomIcon/components/FilterDramaIcon/filterDramaIcon";
-import { DatabaseSearchIcon } from "../../components/common/CustomIcon/components/DatabaseSearchIcon/databaseSearchIcon";
 import { AdsClickIcon } from "../../components/common/CustomIcon/components/AdsClickIcon/adsClickIcon";
-import { ROUTES } from "../../routes/constants";
+import { AnimatedImagesIcon } from "../../components/common/CustomIcon/components/AnimatedImagesIcon/animatedImagesIcon";
+import { DatabaseSearchIcon } from "../../components/common/CustomIcon/components/DatabaseSearchIcon/databaseSearchIcon";
+import { FilterDramaIcon } from "../../components/common/CustomIcon/components/FilterDramaIcon/filterDramaIcon";
+import { LiveHelpIcon } from "../../components/common/CustomIcon/components/LiveHelpIcon/liveHelpIcon";
+import { RocketLaunchIcon } from "../../components/common/CustomIcon/components/RocketLaunchIcon/rocketLaunchIcon";
 import { SmbShareIcon } from "../../components/common/CustomIcon/components/SmbShareIcon/smbShareIcon";
 import { SupportIcon } from "../../components/common/CustomIcon/components/SupportIcon/supportIcon";
-import { LiveHelpIcon } from "../../components/common/CustomIcon/components/LiveHelpIcon/liveHelpIcon";
 import { TerminalIcon } from "../../components/common/CustomIcon/components/TerminalIcon/terminalIcon";
+import { UploadFileIcon } from "../../components/common/CustomIcon/components/UploadFileIcon/uploadFileIcon";
+import { ROUTES } from "../../routes/constants";
 
 export const CARDS: ComponentProps<typeof CTACard>[] = [
   {

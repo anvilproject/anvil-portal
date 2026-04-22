@@ -1,12 +1,12 @@
 import { Divider } from "@mui/material";
 import { JSX } from "react";
+import { METRICS } from "./constants";
 import {
   Count,
   Metrics as DatasetMetrics,
   Label,
   Metric,
 } from "./metrics.styles";
-import { METRICS } from "./constants";
 
 export const Metrics = (): JSX.Element => {
   return (

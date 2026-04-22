@@ -1,6 +1,6 @@
-import { TypographyProps, Typography } from "@mui/material";
-import { JSX } from "react";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { Typography, TypographyProps } from "@mui/material";
+import { JSX } from "react";
 
 export const TextBodyLarge4002Lines = ({
   component = "div",

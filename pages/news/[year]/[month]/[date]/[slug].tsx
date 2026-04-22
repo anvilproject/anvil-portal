@@ -1,11 +1,12 @@
 import { LAYOUT_STYLE_NO_CONTRAST_DEFAULT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
 import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
+import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { JSX } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPathsResult } from "next/types";
 import { ParsedUrlQuery } from "querystring";
+import { JSX } from "react";
 import remarkGfm from "remark-gfm";
 import { ContentView } from "../../../../../components";
 import { ContentEnd } from "../../../../../components/Layout/components/Content/components/ContentEnd/contentEnd";
@@ -17,7 +18,6 @@ import {
   generatePaths,
   parseFrontmatter,
 } from "../../../../../docs/common/utils";
-import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
 
 interface NewsArticlePageUrlParams extends ParsedUrlQuery {
   date: string;

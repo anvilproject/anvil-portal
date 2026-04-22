@@ -1,7 +1,11 @@
 import "@databiosphere/findable-ui";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
+import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/common/utils";
+import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
 import { ExploreStateProvider } from "@databiosphere/findable-ui/lib/providers/exploreState";
+import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
+import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { createBreakpoints } from "@mui/system";
@@ -12,14 +16,10 @@ import { JSX, useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
+import { getNavigation } from "../components/Consortia/featureFlag/utils";
 import { config } from "../config/config";
 import { BREAKPOINTS } from "../site-config/common/constants";
 import { mergeAppTheme } from "../theme/theme";
-import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
-import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/common/utils";
-import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
-import { getNavigation } from "../components/Consortia/featureFlag/utils";
-import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 
 export type NextPageWithComponent = NextPage & {
   Footer?: typeof DXFooter;

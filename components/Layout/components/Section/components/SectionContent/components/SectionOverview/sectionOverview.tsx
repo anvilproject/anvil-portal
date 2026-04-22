@@ -1,15 +1,15 @@
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Divider } from "@mui/material";
 import { Fragment, JSX } from "react";
 import { Heading } from "../../../../../../../common/Typography/components/Heading/heading";
 import {
-  GroupOverview,
   GroupLinks,
+  GroupOverview,
   UnorderedList,
 } from "./sectionOverview.styles";
 import { SectionOverviewProps } from "./types";
 import { splitLinks } from "./utils";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export const SectionOverview = ({
   overview,

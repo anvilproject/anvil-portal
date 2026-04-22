@@ -1,9 +1,9 @@
 import { SiteConfig } from "../../common/entities";
-import { GIT_HUB_REPO_URL, makeConfig } from "../dev/config";
 import {
   RAS_BANNER,
   REPOSITORY_REVIEW_BANNER,
 } from "../dev/announcements/announcements";
+import { GIT_HUB_REPO_URL, makeConfig } from "../dev/config";
 
 const EXPLORER_URL = "https://explore.anvilproject.org";
 const PORTAL_URL = "https://anvilproject.org";

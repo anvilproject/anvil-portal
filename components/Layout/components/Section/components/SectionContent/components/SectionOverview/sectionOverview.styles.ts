@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import { PALETTE } from "@databiosphere/findable-ui/lib/styles/common/constants/palette";
+import { bpUpSm } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
+import styled from "@emotion/styled";
 
 export const GroupOverview = styled.div`
   .MuiDivider-root,

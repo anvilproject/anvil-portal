@@ -1,5 +1,5 @@
-import { GridProps, TypographyProps } from "@mui/material";
 import { TYPOGRAPHY_PROPS as MUI_TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { GridProps, TypographyProps } from "@mui/material";
 
 export const GRID_PROPS: Partial<GridProps> = {
   container: true,

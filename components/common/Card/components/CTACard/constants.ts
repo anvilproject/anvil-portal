@@ -1,6 +1,6 @@
-import { CardProps, SvgIconProps } from "@mui/material";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
 import { TYPOGRAPHY_PROPS as MUI_TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { CardProps, SvgIconProps } from "@mui/material";
 
 export const CARD_PROPS: CardProps = {
   component: RoundedPaper,

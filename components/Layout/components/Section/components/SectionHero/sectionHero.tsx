@@ -1,5 +1,7 @@
 import { Breadcrumbs } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
 import { PANEL_BACKGROUND_COLOR } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
+import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 import { JSX } from "react";
 import { StaticProps } from "../../../../../../content/entities";
 import { SectionDivider } from "../../../../../Home/components/Section/section.styles";
@@ -10,9 +12,7 @@ import {
   SectionLayout,
   StyledSection,
 } from "./sectionHero.styles";
-import { BaseComponentProps } from "@databiosphere/findable-ui/lib/components/types";
 import { Props } from "./types";
-import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 export const SectionHero = ({
   className,

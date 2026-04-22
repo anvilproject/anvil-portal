@@ -5,23 +5,23 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { isClientSideNavigation } from "@databiosphere/findable-ui/lib/components/Links/common/utils";
+import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import {
   CardActionArea as MCardActionArea,
   Link as MLink,
   Typography as MTypography,
 } from "@mui/material";
+import Link from "next/link";
 import { JSX } from "react";
 import { SectionCardWithLink } from "../../../../../../../../common/entities";
 import {
+  GridCardContent as CardContent,
   CardCTA,
   GridCard,
-  GridCardContent as CardContent,
 } from "../../../../../../../Card/card.styles";
-import { isClientSideNavigation } from "@databiosphere/findable-ui/lib/components/Links/common/utils";
-import Link from "next/link";
 import { StyledCardSection } from "./card.styles";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
-import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 
 export interface CardProps {
   card: SectionCardWithLink;

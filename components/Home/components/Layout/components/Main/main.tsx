@@ -1,6 +1,6 @@
+import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 import { JSX, ReactNode } from "react";
 import { MainWithOffset } from "./main.styles";
-import { useLayoutDimensions } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/hook";
 
 export interface MainProps {
   children: ReactNode | ReactNode[];

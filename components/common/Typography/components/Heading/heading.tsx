@@ -1,8 +1,8 @@
 import { AnchorLink } from "@databiosphere/findable-ui/lib/components/common/AnchorLink/anchorLink";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
 import { Typography, TypographyProps } from "@mui/material";
 import { JSX } from "react";
-import { slugifyHeading } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/utils";
-import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 
 export interface HeadingProps {
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

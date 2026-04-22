@@ -1,9 +1,9 @@
 import { Accordion } from "@databiosphere/findable-ui/lib/components/common/Accordion/accordion";
 import { Card } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import { ConsortiumPublication } from "components/Consortia/types";
 import { JSX } from "react";
 import { Publications as PublicationsByYear } from "./publications.styles";
-import { ConsortiumPublication } from "components/Consortia/types";
 
 export interface PublicationsProps {
   publications: ConsortiumPublication[];
