@@ -13,7 +13,7 @@
     ],
     "citationCount": 0,
     "doi": "https://doi.org/10.1128/jmbe.00288-25",
-    "journal": "Journal of Microbiology &amp; Biology Education",
+    "journal": "Journal of Microbiology & Biology Education",
     "pmid": null,
     "publicationDay": 17,
     "publicationMonth": 4,
@@ -617,7 +617,7 @@
       "Jose D. Vargas",
       "Antonis A. Armoundas"
     ],
-    "citationCount": 13,
+    "citationCount": 15,
     "doi": "https://doi.org/10.1161/CIRCGEN.124.004624",
     "journal": "Circulation: Genomic and Precision Medicine",
     "pmid": "40340425",
@@ -1321,7 +1321,7 @@
       "Patricia Durao",
       "Bekim Sadikovic"
     ],
-    "citationCount": 13,
+    "citationCount": 14,
     "doi": "https://doi.org/10.1186/s13023-024-03361-0",
     "journal": "Orphanet Journal of Rare Diseases",
     "pmid": "39334316",
@@ -2240,7 +2240,7 @@
       "Paul Zierep",
       "Rand Zoabi"
     ],
-    "citationCount": 574,
+    "citationCount": 579,
     "doi": "https://doi.org/10.1093/nar/gkae410",
     "journal": "Nucleic Acids Research",
     "pmid": "38769056",
@@ -2266,7 +2266,7 @@
   },
   "43": {
     "authors": ["Laura Adam", "George H. McArthur"],
-    "citationCount": 2,
+    "citationCount": 3,
     "doi": "https://doi.org/10.1089/apb.2023.0035",
     "journal": "Applied Biosafety",
     "pmid": "39372512",
@@ -2288,7 +2288,7 @@
     ],
     "citationCount": 7,
     "doi": "https://doi.org/10.1242/dmm.050754",
-    "journal": "Disease Models &amp; Mechanisms",
+    "journal": "Disease Models & Mechanisms",
     "pmid": "38832520",
     "publicationDay": 1,
     "publicationMonth": 5,
@@ -2397,7 +2397,7 @@
       "Ali H. Bahkali",
       "Arttapon Walker"
     ],
-    "citationCount": 75,
+    "citationCount": 76,
     "doi": "https://doi.org/10.1007/s13225-023-00532-5",
     "journal": "Fungal Diversity",
     "pmid": null,
@@ -2724,7 +2724,7 @@
       "David Glazer",
       "Paul A. Harris"
     ],
-    "citationCount": 48,
+    "citationCount": 49,
     "doi": "https://doi.org/10.1146/annurev-biodatasci-122120-104825",
     "journal": "Annual Review of Biomedical Data Science",
     "pmid": "37561600",
@@ -3232,7 +3232,7 @@
       "Barbara Wold",
       "J. Michael Cherry"
     ],
-    "citationCount": 105,
+    "citationCount": 106,
     "doi": "https://doi.org/10.1101/2023.04.04.535623",
     "journal": "openRxiv",
     "pmid": "37503119",
@@ -3453,7 +3453,7 @@
     ],
     "citationCount": 8,
     "doi": "https://doi.org/10.1177/20539517231163174",
-    "journal": "Big Data &amp; Society",
+    "journal": "Big Data & Society",
     "pmid": null,
     "publicationDay": 1,
     "publicationMonth": 1,
@@ -4083,7 +4083,7 @@
       "Shamil R Sunyaev",
       "Xihong Lin"
     ],
-    "citationCount": 124,
+    "citationCount": 125,
     "doi": "https://doi.org/10.1093/nar/gkac966",
     "journal": "Nucleic Acids Research",
     "pmid": "36350676",
@@ -4229,7 +4229,7 @@
       "Heng Li",
       "Benedict Paten"
     ],
-    "citationCount": 797,
+    "citationCount": 798,
     "doi": "https://doi.org/10.1038/s41586-023-05896-x",
     "journal": "Nature",
     "pmid": "37165242",
@@ -4546,7 +4546,7 @@
       "David Haussler",
       "the Human Pangenome Reference Consortium"
     ],
-    "citationCount": 365,
+    "citationCount": 367,
     "doi": "https://doi.org/10.1038/s41586-022-04601-8",
     "journal": "Nature",
     "pmid": "35444317",
@@ -4655,7 +4655,7 @@
       "Sumir Panji",
       "Nicola Mulder"
     ],
-    "citationCount": 13,
+    "citationCount": 14,
     "doi": "https://doi.org/10.1016/j.jbi.2021.103900",
     "journal": "Journal of Biomedical Informatics",
     "pmid": "34506960",
@@ -4679,7 +4679,7 @@
       "Daniel G. MacArthur",
       "Anne O'Donnell‐Luria"
     ],
-    "citationCount": 486,
+    "citationCount": 490,
     "doi": "https://doi.org/10.1002/humu.24309",
     "journal": "Human Mutation",
     "pmid": "34859531",
