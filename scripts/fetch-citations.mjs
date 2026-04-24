@@ -255,7 +255,9 @@ async function fetchCrossrefMetadata(doi) {
     const day = dateParts[2] ?? 1;
 
     // Get journal/container title
-    const journal = work["container-title"]?.[0] || work.publisher || "";
+    const journal = decodeHtmlEntities(
+      work["container-title"]?.[0] || work.publisher || ""
+    );
 
     return {
       // Additional metadata for reference
@@ -274,7 +276,7 @@ async function fetchCrossrefMetadata(doi) {
         doi: `https://doi.org/${cleanDoi}`,
         journal,
         month,
-        publisher: work.publisher || "",
+        publisher: decodeHtmlEntities(work.publisher || ""),
         year,
       },
       title: work.title?.[0] || "",

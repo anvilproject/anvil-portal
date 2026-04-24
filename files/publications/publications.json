@@ -1,6 +1,47 @@
 {
   "0": {
     "authors": [
+      "Mentewab Ayalew",
+      "Ava M. Hoffman",
+      "Karla Fuller",
+      "Jennifer Kerr",
+      "Andrew Lee",
+      "Joslynn Lee",
+      "Edu Suarez Martinez",
+      "Katherine Ulbricht",
+      "Xianfa Xie"
+    ],
+    "citationCount": 0,
+    "doi": "https://doi.org/10.1128/jmbe.00288-25",
+    "journal": "Journal of Microbiology & Biology Education",
+    "pmid": null,
+    "publicationDay": 17,
+    "publicationMonth": 4,
+    "publicationTimestamp": 1776384000000,
+    "publicationYear": 2026,
+    "publisher": "American Society for Microbiology",
+    "title": "Microbiome education at under-resourced institutions: current status, barriers, and approaches to successful implementation"
+  },
+  "1": {
+    "authors": [
+      "Marco Antonio Tangaro",
+      "Matteo Chiara",
+      "Graziano Pesole",
+      "Federico Zambelli"
+    ],
+    "citationCount": 0,
+    "doi": "https://doi.org/10.3389/fgene.2026.1819270",
+    "journal": "Frontiers in Genetics",
+    "pmid": null,
+    "publicationDay": 1,
+    "publicationMonth": 4,
+    "publicationTimestamp": 1775001600000,
+    "publicationYear": 2026,
+    "publisher": "Frontiers Media SA",
+    "title": "Federated, governed, and interoperable? The emerging architecture of public human genomic data infrastructures: a European perspective"
+  },
+  "2": {
+    "authors": [
       "Deepak Kukkar",
       "Chahat Chopra",
       "Ki-Hyun Kim",
@@ -17,7 +58,7 @@
     "publisher": "Elsevier BV",
     "title": "Progress in bioinformatics tools for analysis of metagenomically isolated microbiome: Current status and future prospects"
   },
-  "1": {
+  "3": {
     "authors": [
       "Wendi Anne Bacon",
       "Bérénice Batut",
@@ -42,7 +83,7 @@
     "publisher": "Public Library of Science (PLoS)",
     "title": "Ten common misconceptions about Galaxy (and why they are wrong!)"
   },
-  "2": {
+  "4": {
     "authors": ["Ilya Kiselev", "Anna Ryabova", "Fedor Kolpakov"],
     "citationCount": 0,
     "doi": "https://doi.org/10.12688/f1000research.175540.1",
@@ -55,7 +96,7 @@
     "publisher": "F1000 Research Ltd",
     "title": "Workflow graphical editor and translator to Nextflow"
   },
-  "3": {
+  "5": {
     "authors": [
       "The BioDIGS Consortium",
       "Jefferson Da Silva",
@@ -219,7 +260,7 @@
       "Sayumi York",
       "Lindsay Zirkle"
     ],
-    "citationCount": 0,
+    "citationCount": 1,
     "doi": "https://doi.org/10.1038/s41588-025-02442-5",
     "journal": "Nature Genetics",
     "pmid": "41461908",
@@ -230,7 +271,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Unearthing soil biodiversity through collaborative genomic research and education"
   },
-  "4": {
+  "6": {
     "authors": [
       "Madeline L. Page",
       "Mark E. Wadsworth",
@@ -249,7 +290,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Genome annotations matter: characterizing Ensembl hg38 annotations from 2014 to 2023"
   },
-  "5": {
+  "7": {
     "authors": [
       "Madeline L. Page",
       "Bernardo Aguzzoli Heberle",
@@ -271,7 +312,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "A bioinformatic survey of RNA isoform diversity and expression across 9 GTEx tissues using long-read sequencing data"
   },
-  "6": {
+  "8": {
     "authors": [
       "Andre D. Luchessi",
       "Thomas Sierocinski",
@@ -289,7 +330,7 @@
     "publisher": "Elsevier BV",
     "title": "Bioinformatic applications in blood group molecular typing"
   },
-  "7": {
+  "9": {
     "authors": [
       "Kathryn J. Isaac",
       "Katherine E. L. Cox",
@@ -313,7 +354,7 @@
     "publisher": "openRxiv",
     "title": "Insights into the Datasets, Tools, and Training Needs of the AnVIL Community: 2024"
   },
-  "8": {
+  "10": {
     "authors": [
       "Kohei Hamanaka",
       "Atsushi Fujita",
@@ -394,7 +435,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Genome sequencing provides high diagnostic yield and new etiological insights for intellectual disability and developmental delay"
   },
-  "9": {
+  "11": {
     "authors": [
       "Hailong Liu",
       "Chengyu Ma",
@@ -414,7 +455,7 @@
     "publisher": "China Science Publishing & Media Ltd.",
     "title": "Establishing a High-quality Biomedical Resource for Rare Diseases：Insights from Pediatric Medulloblastoma"
   },
-  "10": {
+  "12": {
     "authors": [
       "Johanna L. Smith",
       "Quenna Wong",
@@ -455,7 +496,7 @@
       "Lisa Yanek",
       "Yuji Zhang"
     ],
-    "citationCount": 1,
+    "citationCount": 3,
     "doi": "https://doi.org/10.1016/j.ajhg.2025.06.004",
     "journal": "The American Journal of Human Genetics",
     "pmid": "40628271",
@@ -466,7 +507,7 @@
     "publisher": "Elsevier BV",
     "title": "Data sharing in the PRIMED Consortium: Design, implementation, and recommendations for future policymaking"
   },
-  "11": {
+  "13": {
     "authors": [
       "Alyna T. Khan",
       "Clement Adebamowo",
@@ -505,7 +546,7 @@
     "publisher": "Elsevier BV",
     "title": "A data model for population descriptors in genomic research"
   },
-  "12": {
+  "14": {
     "authors": ["Jack Ustanik", "Tychele N. Turner"],
     "citationCount": 1,
     "doi": "https://doi.org/10.1016/j.jmb.2025.169313",
@@ -518,7 +559,7 @@
     "publisher": "Elsevier BV",
     "title": "CNPI: Rapid Analyses of Human Copy Number Data"
   },
-  "13": {
+  "15": {
     "authors": ["Ana-Mihaela Vasilevschi", "Daniela Faur"],
     "citationCount": 0,
     "doi": "https://doi.org/10.1109/CSCS66924.2025.00057",
@@ -531,7 +572,7 @@
     "publisher": "IEEE",
     "title": "Exploring Image Dataset Structure through Deep Feature Extraction and Dimensionality Reduction"
   },
-  "14": {
+  "16": {
     "authors": [
       "Isaure Quétel",
       "Sourakhata Tirera",
@@ -560,7 +601,7 @@
     "publisher": "MDPI AG",
     "title": "A Tutorial Toolbox to Simplify Bioinformatics and Biostatistics Analyses of Microbial Omics Data in an Island Context"
   },
-  "15": {
+  "17": {
     "authors": [
       "C. Anwar A. Chahal",
       "Fares Alahdab",
@@ -576,7 +617,7 @@
       "Jose D. Vargas",
       "Antonis A. Armoundas"
     ],
-    "citationCount": 9,
+    "citationCount": 15,
     "doi": "https://doi.org/10.1161/CIRCGEN.124.004624",
     "journal": "Circulation: Genomic and Precision Medicine",
     "pmid": "40340425",
@@ -587,7 +628,7 @@
     "publisher": "Ovid Technologies (Wolters Kluwer Health)",
     "title": "Data Interoperability and Harmonization in Cardiovascular Genomic and Precision Medicine"
   },
-  "16": {
+  "18": {
     "authors": [
       "Noora Siddiqui",
       "Breanna Lee",
@@ -618,7 +659,7 @@
     "publisher": "openRxiv",
     "title": "Celeste : A cloud-based genomics infrastructure with variant-calling pipeline suited for population-scale sequencing projects"
   },
-  "17": {
+  "19": {
     "authors": [
       "Taowei David Wang",
       "Shawn N. Murphy",
@@ -636,7 +677,7 @@
     "publisher": "openRxiv",
     "title": "From Spreadsheets and Bespoke Models to Enterprise Data Warehouses: GPT-enabled Clinical Data Ingestion into i2b2"
   },
-  "18": {
+  "20": {
     "authors": [
       "Paska Marto Hasugian",
       "Herman Mawengkang",
@@ -654,7 +695,7 @@
     "publisher": "Institute of Advanced Engineering and Science",
     "title": "Development of distance formulation for high-dimensional data visualization in multidimensional scaling"
   },
-  "19": {
+  "21": {
     "authors": [
       "Anand Rohatgi",
       "Sonia S. Anand",
@@ -678,7 +719,7 @@
       "Martha Gulati",
       "Jaideep Patel"
     ],
-    "citationCount": 4,
+    "citationCount": 7,
     "doi": "https://doi.org/10.1016/j.ajpc.2025.101000",
     "journal": "American Journal of Preventive Cardiology",
     "pmid": "40475260",
@@ -689,7 +730,7 @@
     "publisher": "Elsevier BV",
     "title": "South Asians and cardiometabolic health: A framework for comprehensive care for the individual, community, and population - An American society for preventive cardiology clinical practice statement"
   },
-  "20": {
+  "22": {
     "authors": [
       "Lingzhao Fang",
       "Jinyan Teng",
@@ -828,7 +869,7 @@
       "The FarmGTEx Consortium",
       "Curtis P. Van Tassell"
     ],
-    "citationCount": 26,
+    "citationCount": 31,
     "doi": "https://doi.org/10.1038/s41588-025-02121-5",
     "journal": "Nature Genetics",
     "pmid": "40097783",
@@ -839,9 +880,9 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "The Farm Animal Genotype–Tissue Expression (FarmGTEx) Project"
   },
-  "21": {
+  "23": {
     "authors": ["Nchangwi Syntia Munung"],
-    "citationCount": 8,
+    "citationCount": 9,
     "doi": "https://doi.org/10.1007/s40142-024-00211-0",
     "journal": "Current Genetic Medicine Reports",
     "pmid": "40012965",
@@ -852,13 +893,13 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Science and Society: Pathways to Equitable Access and Delivery of Genomics Medicine in Africa"
   },
-  "22": {
+  "24": {
     "authors": [
       "Asefa Adimasu Taddese",
       "Assefa Chekole Addis",
       "Bjorn T. Tam"
     ],
-    "citationCount": 8,
+    "citationCount": 11,
     "doi": "https://doi.org/10.1186/s40246-025-00716-x",
     "journal": "Human Genomics",
     "pmid": "39988670",
@@ -869,7 +910,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Data stewardship and curation practices in AI-based genomics and automated microscopy image analysis for high-throughput screening studies: promoting robust and ethical AI applications"
   },
-  "23": {
+  "25": {
     "authors": ["Heidi L Rehm"],
     "citationCount": 5,
     "doi": "https://doi.org/10.1093/clinchem/hvae147",
@@ -882,9 +923,9 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Overcoming Barriers to Genomic Medicine Implementation"
   },
-  "24": {
+  "26": {
     "authors": ["Philip E. Empey", "Jason H. Karnes", "Julie A. Johnson"],
-    "citationCount": 2,
+    "citationCount": 4,
     "doi": "https://doi.org/10.1146/annurev-pharmtox-061724-080718",
     "journal": "Annual Review of Pharmacology and Toxicology",
     "pmid": "39847465",
@@ -895,7 +936,7 @@
     "publisher": "Annual Reviews",
     "title": "Pharmacogenetics: Opportunities for the All of Us Research Program and Other Large Data Sets to Advance the Field"
   },
-  "25": {
+  "27": {
     "authors": [
       "Kimberley J. Billingsley",
       "Melissa Meredith",
@@ -943,7 +984,7 @@
       "Benedict Paten",
       "Cornelis Blauwendraat"
     ],
-    "citationCount": 8,
+    "citationCount": 9,
     "doi": "https://doi.org/10.1101/2024.12.16.628723",
     "journal": "openRxiv",
     "pmid": "39764002",
@@ -954,7 +995,7 @@
     "publisher": "openRxiv",
     "title": "Long-read sequencing of hundreds of diverse brains provides insight into the impact of structural variation on gene expression and DNA methylation"
   },
-  "26": {
+  "28": {
     "authors": [
       "Benjamin Stubbs",
       "Polina Shpilker",
@@ -974,7 +1015,7 @@
     "publisher": "IEEE",
     "title": "AnVILMEDFORD: Documenting Cloud-Based Analysis Projects Using the MEDFORD Metadata Language"
   },
-  "27": {
+  "29": {
     "authors": [
       "Giulia Irene Maria Pasquesi",
       "Holly Allen",
@@ -994,7 +1035,7 @@
       "Sara L. Sawyer",
       "Edward B. Chuong"
     ],
-    "citationCount": 22,
+    "citationCount": 25,
     "doi": "https://doi.org/10.1016/j.cell.2024.11.016",
     "journal": "Cell",
     "pmid": "39672162",
@@ -1005,14 +1046,14 @@
     "publisher": "Elsevier BV",
     "title": "Regulation of human interferon signaling by transposon exonization"
   },
-  "28": {
+  "30": {
     "authors": [
       "Niken Siwi Pamungkas",
       "Zico Pratama Putra",
       "Hendra Adhi Pratama",
       "Muhammad Yusuf"
     ],
-    "citationCount": 14,
+    "citationCount": 15,
     "doi": "https://doi.org/10.1016/j.hazadv.2024.100523",
     "journal": "Journal of Hazardous Materials Advances",
     "pmid": null,
@@ -1023,7 +1064,7 @@
     "publisher": "Elsevier BV",
     "title": "Supervised machine learning-based categorization and prediction of uranium adsorption capacity on various process parameters"
   },
-  "29": {
+  "31": {
     "authors": [
       "Iftikhar J. Kullo",
       "Matthew P. Conomos",
@@ -1197,7 +1238,7 @@
       "Yuji Zhang",
       "Michael Zhong"
     ],
-    "citationCount": 20,
+    "citationCount": 25,
     "doi": "https://doi.org/10.1016/j.ajhg.2024.10.010",
     "journal": "The American Journal of Human Genetics",
     "pmid": "39561770",
@@ -1208,7 +1249,7 @@
     "publisher": "Elsevier BV",
     "title": "The PRIMED Consortium: Reducing disparities in polygenic risk assessment"
   },
-  "30": {
+  "32": {
     "authors": [
       "Sehyun Oh",
       "Kai Gravel-Pucillo",
@@ -1230,7 +1271,7 @@
     "publisher": "F1000 Research Ltd",
     "title": "AnVILWorkflow: A runnable workflow package for Cloud-implemented bioinformatics analysis pipelines"
   },
-  "31": {
+  "33": {
     "authors": [
       "Zornitza Stark",
       "David Glazer",
@@ -1250,7 +1291,7 @@
       "Kathryn N. North",
       "Richard H. Scott"
     ],
-    "citationCount": 27,
+    "citationCount": 31,
     "doi": "https://doi.org/10.1038/s41576-024-00776-0",
     "journal": "Nature Reviews Genetics",
     "pmid": "39375561",
@@ -1261,7 +1302,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "A call to action to scale up research and clinical genomic data sharing"
   },
-  "32": {
+  "34": {
     "authors": [
       "Clara D. M. van Karnebeek",
       "Anne O’Donnell-Luria",
@@ -1280,7 +1321,7 @@
       "Patricia Durao",
       "Bekim Sadikovic"
     ],
-    "citationCount": 12,
+    "citationCount": 14,
     "doi": "https://doi.org/10.1186/s13023-024-03361-0",
     "journal": "Orphanet Journal of Rare Diseases",
     "pmid": "39334316",
@@ -1291,7 +1332,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Leaving no patient behind! Expert recommendation in the use of innovative technologies for diagnosing rare diseases"
   },
-  "33": {
+  "35": {
     "authors": [
       "IGVF Consortium",
       "Writing group (ordered by contribution)",
@@ -1968,7 +2009,7 @@
       "Stephanie A. Morris",
       "Ella K. Samer"
     ],
-    "citationCount": 62,
+    "citationCount": 64,
     "doi": "https://doi.org/10.1038/s41586-024-07510-0",
     "journal": "Nature",
     "pmid": "39232149",
@@ -1979,7 +2020,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Deciphering the impact of genomic variation on function"
   },
-  "34": {
+  "36": {
     "authors": [
       "Giada Lalli",
       "James Collier",
@@ -1997,7 +2038,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "JINet: easy and secure private data analysis for everyone"
   },
-  "35": {
+  "37": {
     "authors": ["Iftikhar J. Kullo"],
     "citationCount": 10,
     "doi": "https://doi.org/10.1038/s41588-024-01843-2",
@@ -2010,7 +2051,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Promoting equity in polygenic risk assessment through global collaboration"
   },
-  "36": {
+  "38": {
     "authors": [
       "Nuwan Goonasekera",
       "Alexandru Mahmoud",
@@ -2028,7 +2069,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Galaxy Helm chart: a standardized method for deploying production Galaxy servers"
   },
-  "37": {
+  "39": {
     "authors": [
       "Seungwan Hong",
       "Yoolim A. Choi",
@@ -2046,7 +2087,7 @@
     "publisher": "Elsevier BV",
     "title": "Privacy-preserving model evaluation for logistic and linear regression using homomorphically encrypted genotype data"
   },
-  "38": {
+  "40": {
     "authors": [
       "Steven Allers",
       "Kyle A O’Connell",
@@ -2065,7 +2106,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Reusable tutorials for using cloud-based computing environments for the analysis of bacterial gene expression data from bulk RNA sequencing"
   },
-  "39": {
+  "41": {
     "authors": [
       "The Galaxy Community",
       "Linelle Ann L Abueg",
@@ -2199,7 +2240,7 @@
       "Paul Zierep",
       "Rand Zoabi"
     ],
-    "citationCount": 498,
+    "citationCount": 579,
     "doi": "https://doi.org/10.1093/nar/gkae410",
     "journal": "Nucleic Acids Research",
     "pmid": "38769056",
@@ -2210,7 +2251,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "The Galaxy platform for accessible, reproducible, and collaborative data analyses: 2024 update"
   },
-  "40": {
+  "42": {
     "authors": ["Yanjun Zhou"],
     "citationCount": 0,
     "doi": "https://doi.org/10.1109/JCICE61382.2024.00057",
@@ -2223,20 +2264,20 @@
     "publisher": "IEEE",
     "title": "Optimization Strategy of University Library Knowledge Service Based on Data Management"
   },
-  "41": {
+  "43": {
     "authors": ["Laura Adam", "George H. McArthur"],
-    "citationCount": 2,
+    "citationCount": 3,
     "doi": "https://doi.org/10.1089/apb.2023.0035",
     "journal": "Applied Biosafety",
     "pmid": "39372512",
-    "publicationDay": 1,
-    "publicationMonth": 9,
-    "publicationTimestamp": 1725148800000,
+    "publicationDay": 2,
+    "publicationMonth": 5,
+    "publicationTimestamp": 1714608000000,
     "publicationYear": 2024,
     "publisher": "SAGE Publications",
     "title": "Substitution Attacks: A Catalyst to Reframe the DNA Manufacturing Cyberbiosecurity Landscape in the Age of Benchtop Synthesizers"
   },
-  "42": {
+  "44": {
     "authors": [
       "Helen Rankin Willsey",
       "Eleanor G. Seaby",
@@ -2245,9 +2286,9 @@
       "Matthew Guille",
       "Robert M. Grainger"
     ],
-    "citationCount": 6,
+    "citationCount": 7,
     "doi": "https://doi.org/10.1242/dmm.050754",
-    "journal": "Disease Models &amp; Mechanisms",
+    "journal": "Disease Models & Mechanisms",
     "pmid": "38832520",
     "publicationDay": 1,
     "publicationMonth": 5,
@@ -2256,7 +2297,7 @@
     "publisher": "The Company of Biologists",
     "title": "Modelling human genetic disorders in Xenopus tropicalis"
   },
-  "43": {
+  "45": {
     "authors": [
       "Dylan J. Taylor",
       "Jordan M. Eizenga",
@@ -2270,7 +2311,7 @@
       "Benedict Paten",
       "Michael C. Schatz"
     ],
-    "citationCount": 28,
+    "citationCount": 35,
     "doi": "https://doi.org/10.1146/annurev-genom-021623-081639",
     "journal": "Annual Review of Genomics and Human Genetics",
     "pmid": "38663087",
@@ -2281,9 +2322,9 @@
     "publisher": "Annual Reviews",
     "title": "Beyond the Human Genome Project: The Age of Complete Human Genome Sequences and Pangenome References"
   },
-  "44": {
+  "46": {
     "authors": ["Yesodhai Balagurunathan", "Raja Rajeswari Sethuraman"],
-    "citationCount": 6,
+    "citationCount": 7,
     "doi": "https://doi.org/10.1007/s40031-024-01058-3",
     "journal": "Journal of The Institution of Engineers (India): Series B",
     "pmid": null,
@@ -2294,7 +2335,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "An Analysis of Ethics-Based Foundation and Regulatory Issues for Genomic Data Privacy"
   },
-  "45": {
+  "47": {
     "authors": [
       "Erika Kim",
       "Tanja Davidsen",
@@ -2312,7 +2353,7 @@
       "Jill S. Barnholtz-Sloan",
       "Anthony R. Kerlavage"
     ],
-    "citationCount": 7,
+    "citationCount": 8,
     "doi": "https://doi.org/10.1158/0008-5472.CAN-23-2730",
     "journal": "Cancer Research",
     "pmid": "38488510",
@@ -2323,7 +2364,7 @@
     "publisher": "American Association for Cancer Research (AACR)",
     "title": "NCI Cancer Research Data Commons: Lessons Learned and Future State"
   },
-  "46": {
+  "48": {
     "authors": [
       "Kevin D. Hyde",
       "Petr Baldrian",
@@ -2356,7 +2397,7 @@
       "Ali H. Bahkali",
       "Arttapon Walker"
     ],
-    "citationCount": 64,
+    "citationCount": 76,
     "doi": "https://doi.org/10.1007/s13225-023-00532-5",
     "journal": "Fungal Diversity",
     "pmid": null,
@@ -2367,7 +2408,7 @@
     "publisher": "BioAcademic Press",
     "title": "Current trends, limitations and future research in the fungi?"
   },
-  "47": {
+  "49": {
     "authors": [
       "Ling-Hong Hung",
       "Bryce Fukuda",
@@ -2387,7 +2428,7 @@
     "publisher": "openRxiv",
     "title": "Accessible, interactive and cloud-enabled genomic workflows integrated with the NCI Genomic Data Commons"
   },
-  "48": {
+  "50": {
     "authors": ["Harshvardhan J. Pandit", "Beatriz Esteves"],
     "citationCount": 12,
     "doi": "https://doi.org/10.3233/sw-243583",
@@ -2400,7 +2441,7 @@
     "publisher": "SAGE Publications",
     "title": "Enhancing Data Use Ontology (DUO) for health-data sharing by extending it with ODRL and DPV"
   },
-  "49": {
+  "51": {
     "authors": [
       "Jacques Serizay",
       "Cyril Matthey-Doret",
@@ -2408,7 +2449,7 @@
       "Lyam Baudry",
       "Romain Koszul"
     ],
-    "citationCount": 19,
+    "citationCount": 21,
     "doi": "https://doi.org/10.1038/s41467-024-44761-x",
     "journal": "Nature Communications",
     "pmid": "38316789",
@@ -2419,7 +2460,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Orchestrating chromosome conformation capture analysis with Bioconductor"
   },
-  "50": {
+  "52": {
     "authors": [
       "Michael H. Duyzend",
       "Pilar Cacheiro",
@@ -2431,7 +2472,7 @@
       "Peter N. Robinson",
       "Damian Smedley"
     ],
-    "citationCount": 5,
+    "citationCount": 7,
     "doi": "https://doi.org/10.1002/pd.6522",
     "journal": "Prenatal Diagnosis",
     "pmid": "38242839",
@@ -2442,7 +2483,7 @@
     "publisher": "Wiley",
     "title": "Improving prenatal diagnosis through standards and aggregation"
   },
-  "51": {
+  "53": {
     "authors": [
       "Qian Liu",
       "Qiang Hu",
@@ -2450,7 +2491,7 @@
       "Alan Hutson",
       "Martin Morgan"
     ],
-    "citationCount": 3,
+    "citationCount": 4,
     "doi": "https://doi.org/10.1186/s12859-023-05626-0",
     "journal": "BMC Bioinformatics",
     "pmid": "38172657",
@@ -2461,7 +2502,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "ReUseData: an R/Bioconductor tool for reusable and reproducible genomic data management"
   },
-  "52": {
+  "54": {
     "authors": [
       "Marcel Jentsch",
       "Valentin Schneider-Lunitz",
@@ -2483,7 +2524,7 @@
     "publisher": "F1000 Research Ltd",
     "title": "Creating cloud platforms for supporting FAIR data management in biomedical research projects."
   },
-  "53": {
+  "55": {
     "authors": ["Sheng Yang", "Kristina Gaietto", "Wei Chen"],
     "citationCount": 1,
     "doi": "https://doi.org/10.1165/rcmb.2023-0439ED",
@@ -2496,7 +2537,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Mapping a New Course to Understand Lung Biology Mechanisms: LungMAP.net"
   },
-  "54": {
+  "56": {
     "authors": ["Gilberto A. Gamboa-Bernal"],
     "citationCount": 0,
     "doi": "https://doi.org/10.5294/pebi.2023.27.2.1",
@@ -2509,7 +2550,7 @@
     "publisher": "Universidad de la Sabana",
     "title": "Proyecto genoma veinte años después: el primer 'pangenoma humano'"
   },
-  "55": {
+  "57": {
     "authors": [
       "Kristin Bornstein",
       "Gary Gryan",
@@ -2517,7 +2558,7 @@
       "Aron Marchler-Bauer",
       "Valerie A. Schneider"
     ],
-    "citationCount": 19,
+    "citationCount": 20,
     "doi": "https://doi.org/10.1186/s12864-023-09643-4",
     "journal": "BMC Genomics",
     "pmid": "37759191",
@@ -2528,9 +2569,9 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "The NIH Comparative Genomics Resource: addressing the promises and challenges of comparative genomics on human health"
   },
-  "56": {
+  "58": {
     "authors": ["Natalie Viljoen", "Felicity Burt", "Jacqueline Weyer"],
-    "citationCount": 0,
+    "citationCount": 1,
     "doi": "https://doi.org/10.1128/MRA.00355-23",
     "journal": "Microbiology Resource Announcements",
     "pmid": "37747240",
@@ -2541,7 +2582,7 @@
     "publisher": "American Society for Microbiology",
     "title": "Coding-complete genome of human alphaherpesvirus 1 isolated from a case of fulminant hepatitis"
   },
-  "57": {
+  "59": {
     "authors": [
       "Mikhail Kolmogorov",
       "Kimberley J. Billingsley",
@@ -2574,7 +2615,7 @@
       "Cornelis Blauwendraat",
       "Benedict Paten"
     ],
-    "citationCount": 116,
+    "citationCount": 127,
     "doi": "https://doi.org/10.1038/s41592-023-01993-x",
     "journal": "Nature Methods",
     "pmid": "37710018",
@@ -2585,7 +2626,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Scalable Nanopore sequencing of human genomes provides a comprehensive view of haplotype-resolved variation and methylation"
   },
-  "58": {
+  "60": {
     "authors": [
       "Nicole Deflaux",
       "Margaret Sunitha Selvaraj",
@@ -2616,7 +2657,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Demonstrating paths for unlocking the value of cloud genomics through cross cohort analysis"
   },
-  "59": {
+  "61": {
     "authors": [
       "Amokelani C. Mahungu",
       "Elizabeth Steyn",
@@ -2634,7 +2675,7 @@
       "Melissa Nel",
       "Jeannine M. Heckmann"
     ],
-    "citationCount": 10,
+    "citationCount": 11,
     "doi": "https://doi.org/10.3389/fneur.2023.1239725",
     "journal": "Frontiers in Neurology",
     "pmid": "37712079",
@@ -2645,7 +2686,7 @@
     "publisher": "Frontiers Media SA",
     "title": "The mutational profile in a South African cohort with inherited neuropathies and spastic paraplegia"
   },
-  "60": {
+  "62": {
     "authors": [
       "Kelsey R. Mayo",
       "Melissa A. Basford",
@@ -2683,7 +2724,7 @@
       "David Glazer",
       "Paul A. Harris"
     ],
-    "citationCount": 43,
+    "citationCount": 49,
     "doi": "https://doi.org/10.1146/annurev-biodatasci-122120-104825",
     "journal": "Annual Review of Biomedical Data Science",
     "pmid": "37561600",
@@ -2694,7 +2735,7 @@
     "publisher": "Annual Reviews",
     "title": "The All of Us Data and Research Center: Creating a Secure, Scalable, and Sustainable Ecosystem for Biomedical Research"
   },
-  "61": {
+  "63": {
     "authors": [
       "Rebecca Keener",
       "Surya Chhetri",
@@ -2807,7 +2848,7 @@
     "publisher": "openRxiv",
     "title": "Validation of human telomere length trans-ancestry meta-analysis association signals identifies POP5 and KBTBD6 as novel human telomere length regulation genes"
   },
-  "62": {
+  "64": {
     "authors": [
       "Arang Rhie",
       "Sergey Nurk",
@@ -2897,7 +2938,7 @@
       "Kateryna D. Makova",
       "Adam M. Phillippy"
     ],
-    "citationCount": 355,
+    "citationCount": 375,
     "doi": "https://doi.org/10.1038/s41586-023-06457-y",
     "journal": "Nature",
     "pmid": "37612512",
@@ -2908,7 +2949,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "The complete sequence of a human Y chromosome"
   },
-  "63": {
+  "65": {
     "authors": ["Brian Walsh", "Jordan A. Lee", "Kyle Ellrott"],
     "citationCount": 0,
     "doi": "https://doi.org/10.1101/2023.06.26.23291922",
@@ -2921,7 +2962,7 @@
     "publisher": "openRxiv",
     "title": "pfb_fhir: A utility to extract clinical data systems into a portable format"
   },
-  "64": {
+  "66": {
     "authors": ["Jinyoung Baek", "Jonathan Lawson", "Vasiliki Rahimzadeh"],
     "citationCount": 2,
     "doi": "https://doi.org/10.2196/49822",
@@ -2934,14 +2975,14 @@
     "publisher": "JMIR Publications Inc.",
     "title": "Investigating the Roles and Responsibilities of Institutional Signing Officials After Data Sharing Policy Reform for Federally Funded Research in the United States: National Survey"
   },
-  "65": {
+  "67": {
     "authors": [
       "James Casaletto",
       "Alexander Bernier",
       "Robyn McDougall",
       "Melissa S. Cline"
     ],
-    "citationCount": 30,
+    "citationCount": 39,
     "doi": "https://doi.org/10.1146/annurev-genom-110122-084756",
     "journal": "Annual Review of Genomics and Human Genetics",
     "pmid": "37253596",
@@ -2952,7 +2993,7 @@
     "publisher": "Annual Reviews",
     "title": "Federated Analysis for Privacy-Preserving Data Sharing: A Technical and Legal Primer"
   },
-  "66": {
+  "68": {
     "authors": [
       "Nathan C. Sheffield",
       "Nathan J. LeRoy",
@@ -2969,7 +3010,7 @@
     "publisher": "Frontiers Media SA",
     "title": "Challenges to sharing sample metadata in computational genomics"
   },
-  "67": {
+  "69": {
     "authors": [
       "Stan Ahalt",
       "Paul Avillach",
@@ -3030,7 +3071,7 @@
       "Stephanie Suber",
       "Joe Asare"
     ],
-    "citationCount": 10,
+    "citationCount": 12,
     "doi": "https://doi.org/10.1093/jamia/ocad048",
     "journal": "Journal of the American Medical Informatics Association",
     "pmid": "37192819",
@@ -3041,7 +3082,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Building a collaborative cloud platform to accelerate heart, lung, blood, and sleep research"
   },
-  "68": {
+  "70": {
     "authors": [
       "Luana Licata",
       "Allegra Via",
@@ -3066,7 +3107,7 @@
       "Lucrezia Valeriani",
       "Emidio Capriotti"
     ],
-    "citationCount": 12,
+    "citationCount": 13,
     "doi": "https://doi.org/10.3389/fmolb.2023.1169109",
     "journal": "Frontiers in Molecular Biosciences",
     "pmid": "37234922",
@@ -3077,7 +3118,7 @@
     "publisher": "Frontiers Media SA",
     "title": "Resources and tools for rare disease variant interpretation"
   },
-  "69": {
+  "71": {
     "authors": [
       "Nicole Deflaux",
       "Margaret Sunitha Selvaraj",
@@ -3108,7 +3149,7 @@
     "publisher": "openRxiv",
     "title": "Cloud gazing: demonstrating paths for unlocking the value of cloud genomics through cross-cohort analysis"
   },
-  "70": {
+  "72": {
     "authors": [
       "Luiza Petrosyan",
       "Rafael Aleixandre-Benavent",
@@ -3128,7 +3169,7 @@
     "publisher": "Elsevier BV",
     "title": "FAIR degree assessment in agriculture datasets using the F-UJI tool"
   },
-  "71": {
+  "73": {
     "authors": [
       "Benjamin C. Hitz",
       "Jin-Wook Lee",
@@ -3191,7 +3232,7 @@
       "Barbara Wold",
       "J. Michael Cherry"
     ],
-    "citationCount": 97,
+    "citationCount": 106,
     "doi": "https://doi.org/10.1101/2023.04.04.535623",
     "journal": "openRxiv",
     "pmid": "37503119",
@@ -3202,7 +3243,7 @@
     "publisher": "openRxiv",
     "title": "The ENCODE Uniform Analysis Pipelines"
   },
-  "72": {
+  "74": {
     "authors": [
       "Jacklyn M. Dahlquist",
       "Sarah C. Nelson",
@@ -3219,7 +3260,7 @@
     "publisher": "Elsevier BV",
     "title": "Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms"
   },
-  "73": {
+  "75": {
     "authors": ["Mahmoud Ahmed", "Hyun Joon Kim", "Deok Ryong Kim"],
     "citationCount": 2,
     "doi": "https://doi.org/10.3389/fgene.2023.1106631",
@@ -3232,7 +3273,7 @@
     "publisher": "Frontiers Media SA",
     "title": "Maximizing the utility of public data"
   },
-  "74": {
+  "76": {
     "authors": [
       "Christiam Camacho",
       "Grzegorz M. Boratyn",
@@ -3240,7 +3281,7 @@
       "Roberto Vera Alvarez",
       "Thomas L. Madden"
     ],
-    "citationCount": 90,
+    "citationCount": 94,
     "doi": "https://doi.org/10.1186/s12859-023-05245-9",
     "journal": "BMC Bioinformatics",
     "pmid": "36967390",
@@ -3251,7 +3292,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "ElasticBLAST: accelerating sequence search via cloud computing"
   },
-  "75": {
+  "77": {
     "authors": [
       "Chih Chuan Shih",
       "Jieqi Chen",
@@ -3292,7 +3333,7 @@
       "Patrick Tan",
       "Rajkumar Dorajoo"
     ],
-    "citationCount": 3,
+    "citationCount": 4,
     "doi": "https://doi.org/10.1016/j.isci.2023.106546",
     "journal": "iScience",
     "pmid": "37123247",
@@ -3303,7 +3344,7 @@
     "publisher": "Elsevier BV",
     "title": "A five-safes approach to a secure and scalable genomics data repository"
   },
-  "76": {
+  "78": {
     "authors": [
       "Brendan J. Pinto",
       "Brian O’Connor",
@@ -3311,7 +3352,7 @@
       "Samantha Zarate",
       "Melissa A. Wilson"
     ],
-    "citationCount": 7,
+    "citationCount": 9,
     "doi": "https://doi.org/10.1101/2023.02.22.529542",
     "journal": "openRxiv",
     "pmid": "36865318",
@@ -3322,7 +3363,7 @@
     "publisher": "openRxiv",
     "title": "Concerning the eXclusion in human genomics: The choice of sex chromosome representation in the human genome drastically affects number of identified variants"
   },
-  "77": {
+  "79": {
     "authors": [
       "M. Mahmoud",
       "Y. Huang",
@@ -3339,7 +3380,7 @@
       "S. E. Levy",
       "F. J. Sedlazeck"
     ],
-    "citationCount": 81,
+    "citationCount": 88,
     "doi": "https://doi.org/10.1101/2023.01.23.525236",
     "journal": "openRxiv",
     "pmid": "38281971",
@@ -3350,7 +3391,7 @@
     "publisher": "openRxiv",
     "title": "Utility of long-read sequencing for All of Us"
   },
-  "78": {
+  "80": {
     "authors": [
       "Melanie Kirsche",
       "Gautam Prabhu",
@@ -3360,7 +3401,7 @@
       "Sergey Aganezov",
       "Michael C. Schatz"
     ],
-    "citationCount": 76,
+    "citationCount": 87,
     "doi": "https://doi.org/10.1038/s41592-022-01753-3",
     "journal": "Nature Methods",
     "pmid": "36658279",
@@ -3371,7 +3412,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Jasmine and Iris: population-scale structural variant comparison and analysis"
   },
-  "79": {
+  "81": {
     "authors": [
       "Stephanie A Felker",
       "James MJ Lawlor",
@@ -3403,16 +3444,16 @@
     "publisher": "openRxiv",
     "title": "Poison exon annotations improve the yield of clinically relevant variants in genomic diagnostic testing"
   },
-  "80": {
+  "82": {
     "authors": [
       "Alexander Bernier",
       "Maili Raven-Adams",
       "Davide Zaccagnini",
       "Bartha M. Knoppers"
     ],
-    "citationCount": 7,
+    "citationCount": 8,
     "doi": "https://doi.org/10.1177/20539517231163174",
-    "journal": "Big Data &amp; Society",
+    "journal": "Big Data & Society",
     "pmid": null,
     "publicationDay": 1,
     "publicationMonth": 1,
@@ -3421,7 +3462,7 @@
     "publisher": "SAGE Publications",
     "title": "Recording the ethical provenance of data and automating data stewardship"
   },
-  "81": {
+  "83": {
     "authors": [
       "Jodell E. Linder",
       "Aimee Allworth",
@@ -3841,7 +3882,7 @@
       "Yufeng Shen",
       "Josh F. Peterson"
     ],
-    "citationCount": 79,
+    "citationCount": 87,
     "doi": "https://doi.org/10.1016/j.gim.2023.100006",
     "journal": "Genetics in Medicine",
     "pmid": "36621880",
@@ -3852,7 +3893,7 @@
     "publisher": "Elsevier BV",
     "title": "Returning integrated genomic risk and clinical recommendations: The eMERGE study"
   },
-  "82": {
+  "84": {
     "authors": [
       "Helena Rasche",
       "Cameron Hyde",
@@ -3880,7 +3921,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Training Infrastructure as a Service"
   },
-  "83": {
+  "85": {
     "authors": [
       "Robert H Dolin",
       "Bret S E Heale",
@@ -3914,9 +3955,9 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "Introducing HL7 FHIR Genomics Operations: a developer-friendly approach to genomics-EHR integration"
   },
-  "84": {
+  "86": {
     "authors": ["Bonnie Berger", "Yun William Yu"],
-    "citationCount": 39,
+    "citationCount": 41,
     "doi": "https://doi.org/10.1038/s41576-022-00551-z",
     "journal": "Nature Reviews Genetics",
     "pmid": "36476810",
@@ -3927,7 +3968,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Navigating bottlenecks and trade-offs in genomic data analysis"
   },
-  "85": {
+  "87": {
     "authors": [
       "Chih Chuan Shih",
       "Jieqi Chen",
@@ -3979,7 +4020,7 @@
     "publisher": "openRxiv",
     "title": "RAPTOR: A Five-Safes approach to a secure, cloud native and serverless genomics data repository"
   },
-  "86": {
+  "88": {
     "authors": ["Vasiliki Rahimzadeh", "Ge Peng", "Mildred Cho"],
     "citationCount": 0,
     "doi": "https://doi.org/10.3389/fgene.2022.876869",
@@ -3992,7 +4033,7 @@
     "publisher": "Frontiers Media SA",
     "title": "A mixed-methods protocol to develop and validate a stewardship maturity matrix for human genomic data in the cloud"
   },
-  "87": {
+  "89": {
     "authors": [
       "Nathan C. Sheffield",
       "Vivien R. Bonazzi",
@@ -4003,7 +4044,7 @@
       "Ola Spjuth",
       "Andrew D. Yates"
     ],
-    "citationCount": 21,
+    "citationCount": 22,
     "doi": "https://doi.org/10.1038/s41597-022-01619-5",
     "journal": "Scientific Data",
     "pmid": "36075919",
@@ -4014,7 +4055,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "From biomedical cloud platforms to microservices: next steps in FAIR data and analysis"
   },
-  "88": {
+  "90": {
     "authors": [
       "Hufeng Zhou",
       "Theodore Arapoglou",
@@ -4042,7 +4083,7 @@
       "Shamil R Sunyaev",
       "Xihong Lin"
     ],
-    "citationCount": 117,
+    "citationCount": 125,
     "doi": "https://doi.org/10.1093/nar/gkac966",
     "journal": "Nucleic Acids Research",
     "pmid": "36350676",
@@ -4053,7 +4094,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "FAVOR: functional annotation of variants online resource and annotator for variation across the human genome"
   },
-  "89": {
+  "91": {
     "authors": ["Robert L. Grossman"],
     "citationCount": 23,
     "doi": "https://doi.org/10.1038/s41597-023-02029-x",
@@ -4066,7 +4107,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Ten lessons for data sharing with a data commons"
   },
-  "90": {
+  "92": {
     "authors": [
       "Wen-Wei Liao",
       "Mobin Asri",
@@ -4188,7 +4229,7 @@
       "Heng Li",
       "Benedict Paten"
     ],
-    "citationCount": 756,
+    "citationCount": 798,
     "doi": "https://doi.org/10.1038/s41586-023-05896-x",
     "journal": "Nature",
     "pmid": "37165242",
@@ -4199,7 +4240,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "A draft human pangenome reference"
   },
-  "91": {
+  "93": {
     "authors": [
       "Vasiliki Rahimzadeh",
       "Jonathan Lawson",
@@ -4217,7 +4258,7 @@
     "publisher": "SAGE Publications",
     "title": "Leveraging Algorithms to Improve Decision-Making Workflows for Genomic Data Access and Management"
   },
-  "92": {
+  "94": {
     "authors": [
       "Chathura J. Gunasekara",
       "Harry MacKay",
@@ -4244,7 +4285,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Systemic interindividual epigenetic variation in humans is associated with transposable elements and under strong genetic control"
   },
-  "93": {
+  "95": {
     "authors": [
       "Kathleen D. Muenzen",
       "Laura M. Amendola",
@@ -4278,7 +4319,7 @@
     "publisher": "Elsevier BV",
     "title": "Lessons learned and recommendations for data coordination in collaborative research: The CSER consortium experience"
   },
-  "94": {
+  "96": {
     "authors": [
       "Genevieve L. Wojcik",
       "Jessica Murphy",
@@ -4301,14 +4342,14 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "Opportunities and challenges for the use of common controls in sequencing studies"
   },
-  "95": {
+  "97": {
     "authors": [
       "Kym M. Boycott",
       "Danielle R. Azzariti",
       "Ada Hamosh",
       "Heidi L. Rehm"
     ],
-    "citationCount": 41,
+    "citationCount": 42,
     "doi": "https://doi.org/10.1002/humu.24373",
     "journal": "Human Mutation",
     "pmid": "35537081",
@@ -4319,7 +4360,7 @@
     "publisher": "Wiley",
     "title": "Seven years since the launch of the Matchmaker Exchange: The evolution of genomic matchmaking"
   },
-  "96": {
+  "98": {
     "authors": [
       "Eleanor G. Seaby",
       "Damian Smedley",
@@ -4331,7 +4372,7 @@
       "Anne O’Donnell-Luria",
       "Sarah Ennis"
     ],
-    "citationCount": 20,
+    "citationCount": 21,
     "doi": "https://doi.org/10.1016/j.gim.2022.04.019",
     "journal": "Genetics in Medicine",
     "pmid": "35532742",
@@ -4342,7 +4383,7 @@
     "publisher": "Elsevier BV",
     "title": "A gene-to-patient approach uplifts novel disease gene discovery and identifies 18 putative novel disease genes"
   },
-  "97": {
+  "99": {
     "authors": [
       "The Galaxy Community",
       "Enis Afgan",
@@ -4452,7 +4493,7 @@
       "Wolfgang Maier",
       "Peter J Briggs"
     ],
-    "citationCount": 498,
+    "citationCount": 508,
     "doi": "https://doi.org/10.1093/nar/gkac247",
     "journal": "Nucleic Acids Research",
     "pmid": "35446428",
@@ -4463,7 +4504,7 @@
     "publisher": "Oxford University Press (OUP)",
     "title": "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2022 update"
   },
-  "98": {
+  "100": {
     "authors": [
       "Ting Wang",
       "Lucinda Antonacci-Fulton",
@@ -4505,7 +4546,7 @@
       "David Haussler",
       "the Human Pangenome Reference Consortium"
     ],
-    "citationCount": 359,
+    "citationCount": 367,
     "doi": "https://doi.org/10.1038/s41586-022-04601-8",
     "journal": "Nature",
     "pmid": "35444317",
@@ -4516,7 +4557,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "The Human Pangenome Project: a global resource to map genomic diversity"
   },
-  "99": {
+  "101": {
     "authors": [
       "Robert L. Grossman",
       "Rebecca R. Boyles",
@@ -4528,7 +4569,7 @@
       "Deanne M. Taylor",
       "Stan Ahalt"
     ],
-    "citationCount": 16,
+    "citationCount": 17,
     "doi": "https://doi.org/10.1038/s41597-024-03041-5",
     "journal": "Scientific Data",
     "pmid": "38409183",
@@ -4539,9 +4580,9 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "A Framework for the Interoperability of Cloud Platforms: Towards FAIR Data in SAFE Environments"
   },
-  "100": {
+  "102": {
     "authors": ["The Genomic Data Science Community Network"],
-    "citationCount": 9,
+    "citationCount": 10,
     "doi": "https://doi.org/10.1101/gr.276496.121",
     "journal": "Genome Research",
     "pmid": "35858750",
@@ -4552,7 +4593,7 @@
     "publisher": "Cold Spring Harbor Laboratory",
     "title": "Diversifying the genomic data science research community"
   },
-  "101": {
+  "103": {
     "authors": [
       "Amanda L Charbonneau",
       "Arthur Brady",
@@ -4592,7 +4633,7 @@
       "C. Titus Brown",
       "Owen White"
     ],
-    "citationCount": 20,
+    "citationCount": 21,
     "doi": "https://doi.org/10.1101/2021.11.05.467504",
     "journal": "openRxiv",
     "pmid": "36409836",
@@ -4603,7 +4644,7 @@
     "publisher": "openRxiv",
     "title": "Making Common Fund data more findable: Catalyzing a Data Ecosystem"
   },
-  "102": {
+  "104": {
     "authors": [
       "Faisal M. Fadlelmola",
       "Lyndon Zass",
@@ -4614,7 +4655,7 @@
       "Sumir Panji",
       "Nicola Mulder"
     ],
-    "citationCount": 13,
+    "citationCount": 14,
     "doi": "https://doi.org/10.1016/j.jbi.2021.103900",
     "journal": "Journal of Biomedical Informatics",
     "pmid": "34506960",
@@ -4625,7 +4666,7 @@
     "publisher": "Elsevier BV",
     "title": "Data Management Plans in the genomics research revolution of Africa: Challenges and recommendations"
   },
-  "103": {
+  "105": {
     "authors": [
       "Sanna Gudmundsson",
       "Moriel Singer‐Berk",
@@ -4638,7 +4679,7 @@
       "Daniel G. MacArthur",
       "Anne O'Donnell‐Luria"
     ],
-    "citationCount": 451,
+    "citationCount": 490,
     "doi": "https://doi.org/10.1002/humu.24309",
     "journal": "Human Mutation",
     "pmid": "34859531",
@@ -4649,7 +4690,7 @@
     "publisher": "Wiley",
     "title": "Variant interpretation using population databases: Lessons from gnomAD"
   },
-  "104": {
+  "106": {
     "authors": [
       "Sergey Aganezov",
       "Stephanie M. Yan",
@@ -4685,7 +4726,7 @@
       "Justin M. Zook",
       "Michael C. Schatz"
     ],
-    "citationCount": 278,
+    "citationCount": 290,
     "doi": "https://doi.org/10.1126/science.abl3533",
     "journal": "Science",
     "pmid": "35357935",
@@ -4696,7 +4737,7 @@
     "publisher": "American Association for the Advancement of Science (AAAS)",
     "title": "A complete reference genome improves analysis of human genetic variation"
   },
-  "105": {
+  "107": {
     "authors": [
       "Christopher Wilks",
       "Shijie C. Zheng",
@@ -4714,7 +4755,7 @@
       "Kasper D. Hansen",
       "Ben Langmead"
     ],
-    "citationCount": 198,
+    "citationCount": 204,
     "doi": "https://doi.org/10.1186/s13059-021-02533-6",
     "journal": "Genome Biology",
     "pmid": "34844637",
@@ -4725,7 +4766,7 @@
     "publisher": "Springer Science and Business Media LLC",
     "title": "recount3: summaries and queries for large-scale RNA-seq expression and splicing"
   },
-  "106": {
+  "108": {
     "authors": [
       "Chelsea Lowther",
       "Elise Valkanas",
