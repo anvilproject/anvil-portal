@@ -1,4 +1,6 @@
 import "@databiosphere/findable-ui";
+import { Error } from "@databiosphere/findable-ui/lib/components/Error/error";
+import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary/errorBoundary";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/common/utils";
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
@@ -79,11 +81,21 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
                 >
                   <DXHeader {...layout.header} navigation={navigation} />
                 </ThemeProvider>
-                <ExploreStateProvider entityListType={entityListType}>
-                  <Main>
-                    <Component {...pageProps} />
-                  </Main>
-                </ExploreStateProvider>
+                <Main>
+                  <ErrorBoundary
+                    fallbackRender={({ error, reset }): JSX.Element => (
+                      <Error
+                        errorMessage={error.message}
+                        onReset={reset}
+                        rootPath="/"
+                      />
+                    )}
+                  >
+                    <ExploreStateProvider entityListType={entityListType}>
+                      <Component {...pageProps} />
+                    </ExploreStateProvider>
+                  </ErrorBoundary>
+                </Main>
                 <Footer {...layout.footer} />
               </AppLayout>
             </LayoutDimensionsProvider>
