@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.31.3](https://github.com/anvilproject/anvil-portal/compare/v2.31.2...v2.31.3) (2026-04-28)
+
+
+### Bug Fixes
+
+* move explorestprovider inside errorboundary to prevent crash loop ([#3937](https://github.com/anvilproject/anvil-portal/issues/3937)) ([dbec1ae](https://github.com/anvilproject/anvil-portal/commit/dbec1aed59259660f42134c2dda1e4930f7e9ef7))
+* revert ExploreStateProvider outside ErrorBoundary and upgrade findable-ui to v51.1.0 ([#3939](https://github.com/anvilproject/anvil-portal/issues/3939)) ([31bb4d6](https://github.com/anvilproject/anvil-portal/commit/31bb4d6f3ce1301c04d316297b8938475d678f27))
+
+
+### Content
+
+* refresh anvil citations data ([#3930](https://github.com/anvilproject/anvil-portal/issues/3930)) ([#3934](https://github.com/anvilproject/anvil-portal/issues/3934)) ([7957ee9](https://github.com/anvilproject/anvil-portal/commit/7957ee942c8840df4025c57fa9cc2027e69842b0))
+
 ## [2.31.2](https://github.com/anvilproject/anvil-portal/compare/v2.31.1...v2.31.2) (2026-04-22)
 
 
