@@ -81,21 +81,21 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
                 >
                   <DXHeader {...layout.header} navigation={navigation} />
                 </ThemeProvider>
-                <Main>
-                  <ErrorBoundary
-                    fallbackRender={({ error, reset }): JSX.Element => (
-                      <Error
-                        errorMessage={error.message}
-                        onReset={reset}
-                        rootPath="/"
-                      />
-                    )}
-                  >
-                    <ExploreStateProvider entityListType={entityListType}>
+                <ExploreStateProvider entityListType={entityListType}>
+                  <Main>
+                    <ErrorBoundary
+                      fallbackRender={({ error, reset }): JSX.Element => (
+                        <Error
+                          errorMessage={error.message}
+                          onReset={reset}
+                          rootPath="/"
+                        />
+                      )}
+                    >
                       <Component {...pageProps} />
-                    </ExploreStateProvider>
-                  </ErrorBoundary>
-                </Main>
+                    </ErrorBoundary>
+                  </Main>
+                </ExploreStateProvider>
                 <Footer {...layout.footer} />
               </AppLayout>
             </LayoutDimensionsProvider>
