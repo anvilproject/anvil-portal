@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.32.0](https://github.com/anvilproject/anvil-portal/compare/v2.31.2...v2.32.0) (2026-05-01)
+
+
+### Features
+
+* add open graph and twitter meta tags for rich link sharing ([#3944](https://github.com/anvilproject/anvil-portal/issues/3944)) ([#3945](https://github.com/anvilproject/anvil-portal/issues/3945)) ([65c2813](https://github.com/anvilproject/anvil-portal/commit/65c2813c3782fbfed9de8e4bb7b81ee162f926ba))
+
+
+### Bug Fixes
+
+* move explorestprovider inside errorboundary to prevent crash loop ([#3937](https://github.com/anvilproject/anvil-portal/issues/3937)) ([dbec1ae](https://github.com/anvilproject/anvil-portal/commit/dbec1aed59259660f42134c2dda1e4930f7e9ef7))
+* revert ExploreStateProvider outside ErrorBoundary and upgrade findable-ui to v51.1.0 ([#3939](https://github.com/anvilproject/anvil-portal/issues/3939)) ([31bb4d6](https://github.com/anvilproject/anvil-portal/commit/31bb4d6f3ce1301c04d316297b8938475d678f27))
+
+
+### Content
+
+* add news page and carousel card for anvil free genomic datasets on aws ([#3940](https://github.com/anvilproject/anvil-portal/issues/3940)) ([#3941](https://github.com/anvilproject/anvil-portal/issues/3941)) ([0cc1814](https://github.com/anvilproject/anvil-portal/commit/0cc1814d7c48f31be543ac112eeaa433a4cb4346))
+* refresh anvil citations data ([#3930](https://github.com/anvilproject/anvil-portal/issues/3930)) ([#3934](https://github.com/anvilproject/anvil-portal/issues/3934)) ([7957ee9](https://github.com/anvilproject/anvil-portal/commit/7957ee942c8840df4025c57fa9cc2027e69842b0))
+* update free datasets news with dataset list, filter link, and highlight box ([#3942](https://github.com/anvilproject/anvil-portal/issues/3942)) ([#3943](https://github.com/anvilproject/anvil-portal/issues/3943)) ([93f0c9c](https://github.com/anvilproject/anvil-portal/commit/93f0c9c5822996a490524d6b97f11e5c582fed16))
+
 ## [2.31.2](https://github.com/anvilproject/anvil-portal/compare/v2.31.1...v2.31.2) (2026-04-22)
 
 
