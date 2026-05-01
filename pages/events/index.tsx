@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       mdxSource,
+      pageDescription: frontmatter.description ?? null,
       pageTitle: frontmatter.title ?? null,
     },
   };

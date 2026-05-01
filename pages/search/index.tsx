@@ -17,6 +17,8 @@ const SearchPage = (): JSX.Element => {
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
+      pageDescription:
+        "Search the AnVIL Portal for datasets, documentation, news, and events.",
       pageTitle: "Search",
     },
   };
