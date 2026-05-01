@@ -44,7 +44,7 @@ export const OgMeta = ({
 }: OgMetaProps): JSX.Element => {
   const { asPath } = useRouter();
   const description = pageDescription || defaultDescription;
-  const image = `${portalURL}/consortia/favicons/apple-touch-icon.png`;
+  const image = `${portalURL}/consortia/logos/og-image.png`;
   const path = buildPath(asPath);
   const title = buildTitle(appTitle, pageTitle);
   const url = `${portalURL}${path}`;
@@ -57,13 +57,17 @@ export const OgMeta = ({
         property="og:description"
       />
       <meta key="og:image" content={image} property="og:image" />
-      <meta key="og:image:height" content="180" property="og:image:height" />
-      <meta key="og:image:width" content="180" property="og:image:width" />
+      <meta key="og:image:height" content="630" property="og:image:height" />
+      <meta key="og:image:width" content="1200" property="og:image:width" />
       <meta key="og:site_name" content={appTitle} property="og:site_name" />
       <meta key="og:title" content={title} property="og:title" />
       <meta key="og:type" content="website" property="og:type" />
       <meta key="og:url" content={url} property="og:url" />
-      <meta key="twitter:card" content="summary" name="twitter:card" />
+      <meta
+        key="twitter:card"
+        content="summary_large_image"
+        name="twitter:card"
+      />
       <meta key="twitter:image" content={image} name="twitter:image" />
     </NextHead>
   );
