@@ -394,7 +394,7 @@
 
         async function loadData() {
             try {
-                const [configRes, trafficRes, pageviewsRes, outboundRes, filtersRes, downloadsRes, eventsRes, metaRes] = await Promise.all([
+                const [configRes, trafficRes, pageviewsRes, outboundRes, filtersRes, downloadsRes, eventsRes, metaRes, searchRes, fileDownloadEventsRes] = await Promise.all([
                     fetch('data/config.json'),
                     fetch('data/monthly_traffic.json'),
                     fetch('data/pageviews.json'),
@@ -402,13 +402,17 @@
                     fetch('data/filter_selected.json'),
                     fetch('data/file_downloads.json'),
                     fetch('data/custom_events.json'),
-                    fetch('data/meta.json')
+                    fetch('data/meta.json'),
+                    fetch('data/search_queries.json').catch(() => null),
+                    fetch('data/file_download_events.json').catch(() => null),
                 ]);
 
                 const [config, traffic, pageviews, outbound, filters, downloads, events, meta] = await Promise.all([
                     configRes.json(), trafficRes.json(), pageviewsRes.json(), outboundRes.json(),
                     filtersRes.json(), downloadsRes.json(), eventsRes.json(), metaRes.json(),
                 ]);
+                const searchQueries = searchRes ? await searchRes.json().catch(() => null) : null;
+                const fileDownloadEvents = fileDownloadEventsRes ? await fileDownloadEventsRes.json().catch(() => null) : null;
 
                 applyConfig(config);
                 renderMeta(meta);
@@ -421,8 +425,8 @@
                 renderFiltersTable(filters);
                 renderFileDownloadsTable(downloads);
                 renderAccessRequestsTable();
-                renderSearchQueries();
-                renderFileDownloadEvents();
+                renderSearchQueries(searchQueries);
+                renderFileDownloadEvents(fileDownloadEvents);
                 renderEventCounts(config, events);
                 await renderEventStats(events, config);
             } catch (error) {
@@ -532,7 +536,7 @@
                 statCard(
                     engagementDisplay, 'Engagement Rate',
                     engagementChange,
-                    `Percentage of sessions during ${monthName} where users actively engaged with your site (e.g., stayed longer, viewed multiple pages, or triggered events). Higher is better. <a href="https://support.google.com/analytics/answer/11109416" target="_blank">Learn more</a>.`
+                    `Percentage of sessions during ${monthName} where users actively engaged with your site (e.g., stayed longer, viewed multiple pages, or triggered events). Higher is better. <a href="https://support.google.com/analytics/answer/11109416" target="_blank" rel="noopener noreferrer">Learn more</a>.`
                 );
         }
 
@@ -614,7 +618,7 @@
                     const rows = detail.map(r => {
                         const label = r.dataset_title || r.entity_name || r.page_path || '-';
                         const link = r.page_path ? `${siteBase}${r.page_path.replace(/\/export.*/, '')}` : null;
-                        const cell = link ? `<a href="${encodeURI(link)}" target="_blank">${escapeHtml(label)}</a>` : escapeHtml(label);
+                        const cell = link ? `<a href="${encodeURI(link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>` : escapeHtml(label);
                         return `<tr><td>${cell}</td><td class="col-number">${formatNumber(r.count)}</td></tr>`;
                     }).join('');
                     tableContent = `<table class="detail-table collapsible-table"><thead><tr><th>${escapeHtml(entityLabel)}</th><th class="col-number">Count</th></tr></thead><tbody>${rows}</tbody></table>`;
@@ -775,48 +779,32 @@
             `).join('');
         }
 
-        async function renderFileDownloadEvents() {
-            try {
-                const res = await fetch('data/file_download_events.json');
-                const data = await res.json();
-                const section = document.getElementById('resources-section');
-                if (!data || !data.files || data.files.length === 0) {
-                    return;
-                }
-                section.style.display = '';
-                document.getElementById('file-downloads-total-label').textContent = `(${formatNumber(data.total)})`;
-                const tbody = document.querySelector('#file-download-events-table tbody');
-                tbody.innerHTML = data.files.map(row => `
-                    <tr>
-                        <td>${escapeHtml(row.file_name)}</td>
-                        <td class="col-number">${formatNumber(row.count)}</td>
-                    </tr>
-                `).join('');
-            } catch (e) {
-                // File download events not available
-            }
+        function renderFileDownloadEvents(data) {
+            if (!data || !data.files || data.files.length === 0) return;
+            const section = document.getElementById('resources-section');
+            section.style.display = '';
+            document.getElementById('file-downloads-total-label').textContent = `(${formatNumber(data.total)})`;
+            const tbody = document.querySelector('#file-download-events-table tbody');
+            tbody.innerHTML = data.files.map(row => `
+                <tr>
+                    <td>${escapeHtml(row.file_name)}</td>
+                    <td class="col-number">${formatNumber(row.count)}</td>
+                </tr>
+            `).join('');
         }
 
-        async function renderSearchQueries() {
-            try {
-                const res = await fetch('data/search_queries.json');
-                const data = await res.json();
-                const section = document.getElementById('search-section');
-                if (!data || !data.queries || data.queries.length === 0) {
-                    return;
-                }
-                section.style.display = '';
-                document.getElementById('search-total-label').textContent = `(${formatNumber(data.total)})`;
-                const tbody = document.querySelector('#search-table tbody');
-                tbody.innerHTML = data.queries.map(row => `
-                    <tr>
-                        <td>${escapeHtml(row.query)}</td>
-                        <td class="col-number">${formatNumber(row.count)}</td>
-                    </tr>
-                `).join('');
-            } catch (e) {
-                // Search queries not available
-            }
+        function renderSearchQueries(data) {
+            if (!data || !data.queries || data.queries.length === 0) return;
+            const section = document.getElementById('search-section');
+            section.style.display = '';
+            document.getElementById('search-total-label').textContent = `(${formatNumber(data.total)})`;
+            const tbody = document.querySelector('#search-table tbody');
+            tbody.innerHTML = data.queries.map(row => `
+                <tr>
+                    <td>${escapeHtml(row.query)}</td>
+                    <td class="col-number">${formatNumber(row.count)}</td>
+                </tr>
+            `).join('');
         }
 
         function renderFileDownloadsTable(downloads) {
@@ -837,7 +825,7 @@
                 const entityName = row.entity_name && row.entity_name !== '(not set)' ? row.entity_name : '-';
                 const datasetName = row.related_entity_name && row.related_entity_name !== '(not set)' ? row.related_entity_name : '-';
                 const datasetCell = row.dataset_id && datasetName !== '-'
-                    ? `<a href="${encodeURI(siteBase + entityPath + '/' + row.dataset_id)}" target="_blank">${escapeHtml(datasetName)}</a>`
+                    ? `<a href="${encodeURI(siteBase + entityPath + '/' + row.dataset_id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(datasetName)}</a>`
                     : escapeHtml(datasetName);
                 return `
                     <tr>
@@ -905,7 +893,7 @@
                 const label = row.dataset_title || row.page_path || '-';
                 const link = row.page_path ? `${siteBase}${row.page_path.replace(/\/export.*/, '')}` : null;
                 const datasetCell = link
-                    ? `<a href="${encodeURI(link)}" target="_blank">${escapeHtml(label)}</a>`
+                    ? `<a href="${encodeURI(link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
                     : escapeHtml(label);
                 const url = row.click_url || '';
                 let service = url;

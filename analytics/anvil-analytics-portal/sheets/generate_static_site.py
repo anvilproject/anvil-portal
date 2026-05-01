@@ -15,7 +15,9 @@ from constants import (
     SECRET_NAME,
 )
 
-os.environ.setdefault(SECRET_NAME, "../../../.credentials/anvil_ga4_credentials.json")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CREDENTIALS_PATH = os.path.join(SCRIPT_DIR, "..", "..", "..", ".credentials", "anvil_ga4_credentials.json")
+os.environ.setdefault(SECRET_NAME, CREDENTIALS_PATH)
 
 ga_authentication = ga.authenticate(
     SECRET_NAME,
