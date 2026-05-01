@@ -42,7 +42,7 @@ def main():
         current_month=CURRENT_MONTH,
         analytics_start=ANALYTICS_START,
         output_dir=os.path.join(SCRIPT_DIR, "site"),
-        historic_data_path=HISTORIC_UA_DATA_PATH,
+        historic_data_path=os.path.join(SCRIPT_DIR, "..", HISTORIC_UA_DATA_PATH),
         exclude_pages=[
             "/guides/content/creating-links",
             "/guides/content/editing-an-existing-page",
