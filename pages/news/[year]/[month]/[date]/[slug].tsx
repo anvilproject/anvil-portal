@@ -28,6 +28,7 @@ interface NewsArticlePageUrlParams extends ParsedUrlQuery {
 
 interface NewsArticlePageProps {
   mdxSource: MDXRemoteSerializeResult;
+  pageDescription: string | null;
   pageTitle: string | null;
   slug: string[];
 }
@@ -69,6 +70,7 @@ export const getStaticProps: GetStaticProps = async (
   return {
     props: {
       mdxSource,
+      pageDescription: frontmatter.description ?? null,
       pageTitle: frontmatter.title ?? null,
       slug,
     },

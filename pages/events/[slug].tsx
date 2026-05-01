@@ -26,6 +26,7 @@ interface EventArticlePageUrlParams extends ParsedUrlQuery {
 
 interface EventArticlePageProps {
   mdxSource: MDXRemoteSerializeResult;
+  pageDescription: string | null;
   pageTitle: string | null;
   slug: string[];
 }
@@ -68,6 +69,7 @@ export const getStaticProps: GetStaticProps = async (
   return {
     props: {
       mdxSource,
+      pageDescription: frontmatter.description ?? null,
       pageTitle: frontmatter.title ?? null,
       slug,
     },
