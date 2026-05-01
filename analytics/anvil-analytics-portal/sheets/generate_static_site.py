@@ -38,7 +38,7 @@ generate_site(
     property_id=ANVIL_PORTAL_ID,
     current_month=CURRENT_MONTH,
     analytics_start=ANALYTICS_START,
-    output_dir="./site",
+    output_dir=os.path.join(SCRIPT_DIR, "site"),
     historic_data_path=HISTORIC_UA_DATA_PATH,
     exclude_pages=[
         "/guides/content/creating-links",
