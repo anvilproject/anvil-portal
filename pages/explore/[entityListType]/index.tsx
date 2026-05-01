@@ -56,8 +56,15 @@ export const getStaticProps: GetStaticProps<
   const { exploreMode, label } = entityConfig;
   const { fetchAllEntities } = getEntityService(entityConfig, undefined);
 
-  const props: AzulEntitiesStaticResponse & { pageTitle?: string } = {
+  const props: AzulEntitiesStaticResponse & {
+    pageDescription?: string;
+    pageTitle?: string;
+  } = {
     entityListType,
+    pageDescription:
+      typeof label === "string"
+        ? `Browse ${label.toLowerCase()} on the AnVIL platform.`
+        : undefined,
     pageTitle: typeof label === "string" ? label : undefined,
   };
 

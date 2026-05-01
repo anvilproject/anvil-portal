@@ -49,7 +49,14 @@ export const getStaticProps: GetStaticProps = async (
   // If the static props are not found, return not found.
   if (!staticProps) return { notFound: true };
 
-  return staticProps;
+  const { props: staticPropsData } = staticProps as { props: StaticProps };
+  return {
+    ...staticProps,
+    props: {
+      ...staticPropsData,
+      pageDescription: staticPropsData.frontmatter?.description ?? null,
+    },
+  };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

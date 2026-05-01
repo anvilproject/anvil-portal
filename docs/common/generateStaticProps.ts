@@ -49,7 +49,8 @@ export async function generateStaticProps(
     layoutStyle = LAYOUT_STYLE_NO_CONTRAST_DEFAULT,
     navigation = null,
   } = getNavigationConfig(slug) || {};
-  const { title: pageTitle = null } = frontmatter;
+  const { description: pageDescription = null, title: pageTitle = null } =
+    frontmatter;
   return {
     props: {
       frontmatter,
@@ -58,6 +59,7 @@ export async function generateStaticProps(
       mdxSource,
       navigation: getStaticPropNavigation(navigation, frontmatter),
       outline: getStaticPropOutline(outline, frontmatter),
+      pageDescription,
       pageTitle,
       slug,
     },

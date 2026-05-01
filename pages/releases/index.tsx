@@ -43,6 +43,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
     props: {
       frontmatter: FRONTMATTER,
       outline,
+      pageDescription:
+        "Data releases and updates for datasets hosted on the AnVIL platform.",
       pageTitle: "Releases",
       releases,
       slug: [RELEASES_DIR],

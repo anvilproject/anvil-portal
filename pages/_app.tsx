@@ -18,6 +18,8 @@ import { JSX, useEffect } from "react";
 import TagManager from "react-gtm-module";
 import { AppLayout, Footer as DXFooter, Main as DXMain } from "../components";
 import { Head } from "../components/common/Head/head";
+import { DEFAULT_DESCRIPTION } from "../components/common/OgMeta/constants";
+import { OgMeta } from "../components/common/OgMeta/ogMeta";
 import { getNavigation } from "../components/Consortia/featureFlag/utils";
 import { config } from "../config/config";
 import { BREAKPOINTS } from "../site-config/common/constants";
@@ -40,9 +42,13 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const Footer = Component.Footer || DXFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
-  const { analytics, appTitle, layout, themeOptions } = appConfig;
+  const { analytics, appTitle, layout, portalURL, themeOptions } = appConfig;
   const { gtmAuth, gtmId, gtmPreview } = analytics || {};
-  const { entityListType = DEFAULT_ENTITY_LIST_TYPE, pageTitle } = pageProps;
+  const {
+    entityListType = DEFAULT_ENTITY_LIST_TYPE,
+    pageDescription,
+    pageTitle,
+  } = pageProps;
   const appTheme = mergeAppTheme(themeOptions);
   const isGREGoREnabled = useFeatureFlag("gregor");
   const isPRIMEDEnabled = useFeatureFlag("primed");
@@ -64,6 +70,13 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
       <ThemeProvider theme={appTheme}>
         <ConfigProvider config={appConfig} entityListType={entityListType}>
           <Head appTitle={appTitle} pageTitle={pageTitle} />
+          <OgMeta
+            appTitle={appTitle}
+            defaultDescription={DEFAULT_DESCRIPTION}
+            pageDescription={pageDescription}
+            pageTitle={pageTitle}
+            portalURL={portalURL}
+          />
           <CssBaseline />
           <ServicesProvider>
             <LayoutDimensionsProvider>

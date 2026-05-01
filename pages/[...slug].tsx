@@ -36,6 +36,7 @@ interface DocPageProps {
   mdxSource: MDXRemoteSerializeResult;
   navigation: NavItem[] | null;
   outline: OutlineItem[];
+  pageDescription: string | null;
   pageTitle: string | null;
   slug?: string[];
 }
@@ -114,6 +115,7 @@ export const getStaticProps: GetStaticProps = async (
       mdxSource,
       navigation,
       outline: frontmatter.enableOutline ? outline.filter(filterOutline) : [],
+      pageDescription: frontmatter.description ?? null,
       pageTitle: frontmatter.title ?? null,
       slug,
     },

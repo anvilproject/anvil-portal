@@ -71,6 +71,7 @@ export interface StaticProps {
   mdxSource: MDXRemoteSerializeResult;
   navigation?: NavItem[] | null;
   outline?: OutlineItem[] | null;
+  pageDescription?: string | null;
   pageTitle: string | null;
   slug: string[];
 }
