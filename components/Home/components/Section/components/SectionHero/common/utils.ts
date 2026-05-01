@@ -18,6 +18,18 @@ export function buildCarouselCards(): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
+          url: "/news/2026/05/01/anvil-free-genomic-datasets-aws",
+        },
+      ],
+      text: "AnVIL has partnered with AWS to make major genomic datasets freely available, eliminating data transfer fees that previously exceeded $15,000 for some datasets.",
+      title:
+        "AnVIL Makes Groundbreaking Genomic Datasets Available on AWS for Free",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
           url: "/news/2026/04/07/anvil-open-access-data-aws-registry",
         },
       ],
