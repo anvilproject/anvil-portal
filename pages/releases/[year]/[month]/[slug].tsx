@@ -51,6 +51,7 @@ export const getStaticProps: GetStaticProps = async (
 
   const { props: staticPropsData } = staticProps as { props: StaticProps };
   return {
+    ...staticProps,
     props: {
       ...staticPropsData,
       pageDescription: staticPropsData.frontmatter?.description ?? null,

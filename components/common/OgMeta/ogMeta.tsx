@@ -18,7 +18,7 @@ function buildPath(asPath: string): string {
  * @param pageTitle - The page-specific title.
  * @returns formatted title.
  */
-function buildTitle(appTitle: string, pageTitle?: string): string {
+function buildTitle(appTitle: string, pageTitle?: string | null): string {
   if (pageTitle && pageTitle !== appTitle) {
     return `${pageTitle} - ${appTitle}`;
   }
