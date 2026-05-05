@@ -48,6 +48,9 @@ next-env.d.ts
 __pycache__/
 /scripts/**/venv/
 
+# credentials
+.credentials/
+
 # IDEs and editors
 .idea
 .vscode
