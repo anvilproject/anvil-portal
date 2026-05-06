@@ -30,6 +30,17 @@ export function buildCarouselCards(): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
+          url: "/events/anvil2026-community-conference",
+        },
+      ],
+      text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
+      title: "AnVIL Community Conference 2026",
+    },
+    {
+      links: [
+        {
+          label: ACTION_LABEL.LEARN_MORE,
+          target: ANCHOR_TARGET.SELF,
           url: "/news/2026/04/07/anvil-open-access-data-aws-registry",
         },
       ],
@@ -60,17 +71,6 @@ export function buildCarouselCards(): SectionCard[] {
       },
       text: "The GREGoR Consortium's latest publication in Nature (Vol 647) presents a large-scale collaborative framework, datasets and discoveries from over 7,500 individuals from over 3,000 families, are rapidly made available to researchers worldwide through the Analysis, Visualization and Informatics Lab-space (AnVIL) to catalyse global efforts to develop approaches for genetic diagnoses in rare diseases",
       title: "GREGoR: accelerating genomics for rare diseases",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/events/ashg2025-american-society-of-human-genetics",
-        },
-      ],
-      text: "The ASHG 2025 Annual Meeting will be held in Boston from October 14-18. The meeting will feature a wide range of scientific sessions, including plenary lectures, symposia, workshops, and poster presentations.",
-      title: "American Society of Human Genetics Annual Meeting 2025",
     },
     {
       links: [
