@@ -1,52 +1,64 @@
 {
-  "total": 73,
+  "total": 86,
   "queries": [
     {
       "query": "AnVIL Champions",
-      "count": 14
-    },
-    {
-      "query": "Baylor-Hopkins Center for Mendelian Genomics",
-      "count": 14
-    },
-    {
-      "query": "human pangenome",
-      "count": 3
-    },
-    {
-      "query": "Champions",
-      "count": 2
+      "count": 22
     },
     {
       "query": "Communicate Feedback",
+      "count": 15
+    },
+    {
+      "query": "Champions",
+      "count": 5
+    },
+    {
+      "query": "WGBS",
+      "count": 4
+    },
+    {
+      "query": "AnVIL_HPRC",
+      "count": 3
+    },
+    {
+      "query": "gregor",
+      "count": 3
+    },
+    {
+      "query": "HG005",
       "count": 2
     },
     {
-      "query": "IGV",
+      "query": "phs001489",
       "count": 2
     },
     {
-      "query": "andzelm",
+      "query": "ADOPT PGx Acute Pain Trial",
       "count": 2
     },
     {
-      "query": "mccarroll",
+      "query": "DUOS",
       "count": 2
     },
     {
-      "query": "\u8fd1\u7aef\u7c92\u5230\u7aef\u7c92\u7ec4\u88c5\u6570\u636e\u96c6",
+      "query": "collaboration",
+      "count": 2
+    },
+    {
+      "query": "contact",
+      "count": 2
+    },
+    {
+      "query": "phs004058.v1.p1.",
+      "count": 2
+    },
+    {
+      "query": "\"AnVIL Data Explorer\"",
       "count": 1
     },
     {
-      "query": " 9data st. creator ",
-      "count": 1
-    },
-    {
-      "query": "4329000710",
-      "count": 1
-    },
-    {
-      "query": "ADOPT PGx",
+      "query": "ALS compute",
       "count": 1
     },
     {
@@ -54,23 +66,15 @@
       "count": 1
     },
     {
-      "query": "AnVIL_HPRC ",
+      "query": "AnVIL Data Explorer",
       "count": 1
     },
     {
-      "query": "Baylor College of Medicine GREGoR",
+      "query": "Anvil Champions",
       "count": 1
     },
     {
-      "query": "Baylor-Hopkins",
-      "count": 1
-    },
-    {
-      "query": "Champions Guide",
-      "count": 1
-    },
-    {
-      "query": "GTEX",
+      "query": "GREGoR",
       "count": 1
     },
     {
@@ -78,87 +82,55 @@
       "count": 1
     },
     {
-      "query": "KENNEDY 4\" OS&Y PACKING",
+      "query": "HPRC",
       "count": 1
     },
     {
-      "query": "May 2026",
+      "query": "Paternity ",
       "count": 1
     },
     {
-      "query": "als",
+      "query": "WGBS GTEX",
       "count": 1
     },
     {
-      "query": "aylor College of Medicine GREGoR",
+      "query": "allele specific expression",
       "count": 1
     },
     {
-      "query": "cancer",
+      "query": "allele specific expression GTEx",
       "count": 1
     },
     {
-      "query": "dbGAP",
+      "query": "allele specific expression humangtex",
       "count": 1
     },
     {
-      "query": "genetic information nondiscrimination act",
+      "query": "galaxy",
       "count": 1
     },
     {
-      "query": "gtex",
+      "query": "liver",
       "count": 1
     },
     {
-      "query": "hprc",
+      "query": "phs000424",
       "count": 1
     },
     {
-      "query": "interview",
+      "query": "phs001886",
       "count": 1
     },
     {
-      "query": "login",
+      "query": "phs001886.v4.p1",
       "count": 1
     },
     {
-      "query": "mailing list",
+      "query": "phs003047",
       "count": 1
     },
     {
-      "query": "mohd",
-      "count": 1
-    },
-    {
-      "query": "pangenomic reference graph",
-      "count": 1
-    },
-    {
-      "query": "phs003047,",
-      "count": 1
-    },
-    {
-      "query": "submission",
-      "count": 1
-    },
-    {
-      "query": "survey",
-      "count": 1
-    },
-    {
-      "query": "tcga",
-      "count": 1
-    },
-    {
-      "query": "telomere-to-telomere assembly dataset",
-      "count": 1
-    },
-    {
-      "query": "updates",
-      "count": 1
-    },
-    {
-      "query": "workspac",
+      "query": "seqr",
       "count": 1
     }
   ]
