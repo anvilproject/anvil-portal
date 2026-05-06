@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.33.0](https://github.com/anvilproject/anvil-portal/compare/v2.32.0...v2.33.0) (2026-05-06)
+
+
+### Features
+
+* add static analytics site generator for AnVIL Portal ([#3947](https://github.com/anvilproject/anvil-portal/issues/3947)) ([9e455b9](https://github.com/anvilproject/anvil-portal/commit/9e455b95cd9512d360c2ac1ee56420f1fb79b627))
+
+
+### Content
+
+* add hotel booking links to ACC 2026 event page ([#3949](https://github.com/anvilproject/anvil-portal/issues/3949)) ([#3951](https://github.com/anvilproject/anvil-portal/issues/3951)) ([b78a80d](https://github.com/anvilproject/anvil-portal/commit/b78a80dd866625a54785767d63281e15b9c594a7))
+* update acc 2026 event page and carousel ([#3949](https://github.com/anvilproject/anvil-portal/issues/3949)) ([#3950](https://github.com/anvilproject/anvil-portal/issues/3950)) ([5d91223](https://github.com/anvilproject/anvil-portal/commit/5d91223370fd278bfad1b3ef11d8e3d52ba3d76b))
+
 ## [2.32.0](https://github.com/anvilproject/anvil-portal/compare/v2.31.2...v2.32.0) (2026-05-01)
 
 
