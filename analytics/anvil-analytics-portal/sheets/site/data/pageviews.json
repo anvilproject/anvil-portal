@@ -1,1411 +1,1541 @@
 [
   {
     "page": "/",
-    "views": 1710,
-    "change": 0.23660218497378538
+    "views": 1654,
+    "change": -0.0005068226120856778
   },
   {
     "page": "/overview",
-    "views": 139,
-    "change": 0.07306313757926675
+    "views": 159,
+    "change": 0.18201438848920848
   },
   {
     "page": "/learn",
-    "views": 134,
-    "change": 0.17507046664578763
-  },
-  {
-    "page": "/news/2024/11/20/gtexv10",
-    "views": 107,
-    "change": -0.11334714412548097
+    "views": 144,
+    "change": 0.11044776119402977
   },
   {
     "page": "/learn/get-started",
-    "views": 104,
-    "change": 0.18905675786035125
+    "views": 131,
+    "change": 0.30160256410256414
   },
   {
-    "page": "/consortia/cser",
-    "views": 98,
-    "change": 0.24670604270786
+    "page": "/news/2024/11/20/gtexv10",
+    "views": 120,
+    "change": 0.1588785046728971
   },
   {
     "page": "/search",
-    "views": 73,
-    "change": 0.22102747909199527
+    "views": 86,
+    "change": 0.21735159817351613
   },
   {
-    "page": "/releases/2026/03/release-notes",
-    "views": 70,
-    "change": null
-  },
-  {
-    "page": "/anvil-champions",
-    "views": 57,
-    "change": 3.290322580645161
-  },
-  {
-    "page": "/learn/get-started/creating-a-google-cloud-billing-account",
-    "views": 54,
-    "change": 0.03774879890185323
-  },
-  {
-    "page": "/learn/get-started/obtaining-a-google-id",
-    "views": 46,
-    "change": 0.2590420332355816
-  },
-  {
-    "page": "/team",
-    "views": 44,
-    "change": 0.47192353643966545
-  },
-  {
-    "page": "/learn/find-data/requesting-data-access",
-    "views": 41,
-    "change": 0.7634408602150538
+    "page": "/consortia/cser",
+    "views": 72,
+    "change": -0.24081632653061225
   },
   {
     "page": "/news",
-    "views": 38,
-    "change": 0.009487666034155406
-  },
-  {
-    "page": "/releases",
-    "views": 35,
-    "change": 0.1708482676224612
-  },
-  {
-    "page": "/events",
-    "views": 30,
-    "change": -0.09677419354838712
+    "views": 47,
+    "change": 0.2780701754385966
   },
   {
     "page": "/events/ashg2025-american-society-of-human-genetics",
-    "views": 29,
-    "change": 0.6370967741935483
+    "views": 44,
+    "change": 0.5678160919540229
+  },
+  {
+    "page": "/anvil-champions",
+    "views": 44,
+    "change": -0.2023391812865497
   },
   {
     "page": "/explore/citations",
-    "views": 24,
-    "change": -0.5387783115991764
+    "views": 41,
+    "change": 0.7652777777777777
   },
   {
-    "page": "/events/cshl2026-biology-of-genomes",
+    "page": "/events",
+    "views": 38,
+    "change": 0.308888888888889
+  },
+  {
+    "page": "/learn/get-started/overview-of-account-setup",
+    "views": 38,
+    "change": 1.0666666666666669
+  },
+  {
+    "page": "/learn/find-data/requesting-data-access",
+    "views": 34,
+    "change": -0.14308943089430903
+  },
+  {
+    "page": "/news/2025/08/25/card-data-release-2",
+    "views": 34,
+    "change": 10.71111111111111
+  },
+  {
+    "page": "/learn/get-started/obtaining-a-google-id",
+    "views": 32,
+    "change": -0.2811594202898551
+  },
+  {
+    "page": "/overview/security",
+    "views": 32,
+    "change": 1.5435897435897439
+  },
+  {
+    "page": "/releases",
+    "views": 32,
+    "change": -0.0552380952380952
+  },
+  {
+    "page": "/faq",
+    "views": 31,
+    "change": 1.4641025641025642
+  },
+  {
+    "page": "/learn/get-started/creating-a-google-cloud-billing-account",
+    "views": 30,
+    "change": -0.42592592592592593
+  },
+  {
+    "page": "/consortia/cser/resources",
+    "views": 25,
+    "change": 24.833333333333332
+  },
+  {
+    "page": "/news/2026/04/07/anvil-open-access-data-aws-registry",
     "views": 22,
-    "change": 1.838709677419355
+    "change": null
+  },
+  {
+    "page": "/consortia",
+    "views": 21,
+    "change": 0.2055555555555557
+  },
+  {
+    "page": "/learn/find-data/importing-data-from-dbgap-and-sra",
+    "views": 20,
+    "change": 0.8787878787878789
+  },
+  {
+    "page": "/events/anvil2026-community-conference",
+    "views": 20,
+    "change": 1.952380952380952
+  },
+  {
+    "page": "/help",
+    "views": 19,
+    "change": 0.15490196078431362
+  },
+  {
+    "page": "/learn/data-submitters/resources/consortium-data-access-guidelines",
+    "views": 19,
+    "change": 0.09074074074074079
+  },
+  {
+    "page": "/team",
+    "views": 19,
+    "change": -0.5537878787878787
   },
   {
     "page": "/events/cshl2025-biology-of-genomes",
     "views": 19,
-    "change": -0.5709677419354839
+    "change": 0.03333333333333344
   },
   {
-    "page": "/overview/why-anvil",
+    "page": "/learn/get-started/billing-concepts",
     "views": 19,
-    "change": -0.04659498207885293
-  },
-  {
-    "page": "/learn/get-started/overview-of-account-setup",
-    "views": 19,
-    "change": -0.3643966547192353
-  },
-  {
-    "page": "/learn/data-submitters/resources/consortium-data-access-guidelines",
-    "views": 18,
-    "change": 0.250620347394541
-  },
-  {
-    "page": "/consortia",
-    "views": 18,
-    "change": -0.3746898263027295
-  },
-  {
-    "page": "/learn/control-cloud-costs/budget-templates",
-    "views": 18,
-    "change": -0.5354838709677419
-  },
-  {
-    "page": "/help",
-    "views": 17,
-    "change": 1.193548387096774
-  },
-  {
-    "page": "/learn/get-started/setting-up-lab-accounts",
-    "views": 17,
-    "change": 0.39589442815249254
+    "change": 0.6361111111111111
   },
   {
     "page": "/learn/run-analyses-workflows/intro-to-terra",
+    "views": 18,
+    "change": 0.16249999999999987
+  },
+  {
+    "page": "/events/anvil2025-community-conference",
+    "views": 18,
+    "change": 0.3285714285714285
+  },
+  {
+    "page": "/faq/data-security",
     "views": 16,
-    "change": -0.09677419354838712
+    "change": 0.18095238095238098
   },
   {
-    "page": "/news/2025/08/25/ga4k-version-5-data-release",
-    "views": 15,
-    "change": -0.5629552549427679
-  },
-  {
-    "page": "/learn/control-cloud-costs/understanding-cloud-costs",
-    "views": 15,
-    "change": 0.3548387096774195
+    "page": "/overview/why-anvil",
+    "views": 16,
+    "change": -0.12982456140350873
   },
   {
     "page": "/learn/run-interactive-analyses/getting-started-with-galaxy",
     "views": 15,
-    "change": -0.153225806451613
+    "change": 0.03333333333333344
   },
   {
-    "page": "/faq/data-security",
+    "page": "/news/2023/03/17/data-release-telomere-to-telomere",
     "views": 14,
-    "change": 0.8064516129032258
+    "change": 0.8083333333333333
   },
   {
-    "page": "/events/anvil2025-community-conference",
+    "page": "/overview/publications",
     "views": 14,
-    "change": -0.4252199413489737
+    "change": 3.822222222222222
   },
   {
-    "page": "/releases/2025/11/release-notes",
-    "views": 14,
-    "change": -0.578494623655914
-  },
-  {
-    "page": "/faq",
+    "page": "/overview/dms-requirements",
     "views": 13,
-    "change": -0.41290322580645156
+    "change": 0.9190476190476189
   },
   {
-    "page": "/news/2021/03/10/announcing-seqr-in-anvil",
+    "page": "/events/cshl2026-biology-of-genomes",
     "views": 13,
-    "change": -0.09677419354838701
+    "change": -0.3893939393939394
   },
   {
-    "page": "/overview/security",
+    "page": "/learn/run-interactive-analyses/running-a-workflow",
     "views": 13,
-    "change": -0.4894810659186536
+    "change": 0.6791666666666667
   },
   {
-    "page": "/learn/data-submitters/submission-guide/set-up-a-data-model",
+    "page": "/releases/2026/03/release-notes",
     "views": 12,
-    "change": -0.36242884250474383
+    "change": -0.8228571428571428
   },
   {
-    "page": "/learn/get-started/billing-concepts",
+    "page": "/events/pag2025",
     "views": 12,
-    "change": -0.22580645161290325
+    "change": 0.55
   },
   {
-    "page": "/news/2025/11/04/complex-chromosomal-changes-involving-chromosome-9-data-release",
+    "page": "/news/2025/08/25/ga4k-version-5-data-release",
     "views": 12,
-    "change": 0.20430107526881724
+    "change": -0.17333333333333334
   },
   {
-    "page": "/learn/find-data/importing-data-from-dbgap-and-sra",
-    "views": 11,
-    "change": -0.3790322580645161
-  },
-  {
-    "page": "/learn/run-interactive-analyses/getting-started-with-bioconductor",
-    "views": 11,
-    "change": -0.23573200992555832
-  },
-  {
-    "page": "/learn/run-interactive-analyses/getting-started-with-jupyter-notebooks",
-    "views": 11,
-    "change": 0.24193548387096775
-  },
-  {
-    "page": "/news/2025/11/04/our-health-study-release",
-    "views": 11,
-    "change": 0.4193548387096775
+    "page": "/faq/data-submission",
+    "views": 12,
+    "change": 1.0666666666666664
   },
   {
     "page": "/learn/data-submitters/submission-guide/data-submitters-overview",
     "views": 10,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/run-analyses-workflows/intro-to-dockstore",
+    "page": "/learn/get-started/creating-a-terra-account",
     "views": 10,
-    "change": -0.09677419354838712
+    "change": 0.7222222222222221
   },
   {
-    "page": "/learn/run-interactive-analyses/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor",
+    "page": "/learn/run-interactive-analyses/getting-started-with-bioconductor",
+    "views": 10,
+    "change": -0.06060606060606055
+  },
+  {
+    "page": "/overview/cite-anvil",
+    "views": 10,
+    "change": 1.583333333333333
+  },
+  {
+    "page": "/learn/control-cloud-costs/understanding-cloud-costs",
+    "views": 10,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/news/2021/03/10/announcing-seqr-in-anvil",
     "views": 9,
-    "change": -0.18709677419354842
+    "change": -0.2846153846153846
   },
   {
-    "page": "/learn/reference/gtex-v8-free-egress-instructions",
-    "views": 8,
-    "change": 6.225806451612903
+    "page": "/overview/project-sponsor",
+    "views": 9,
+    "change": 2.1
   },
   {
-    "page": "/learn/run-interactive-analyses/using-r-bioconductor-in-anvil",
-    "views": 8,
-    "change": 0.20430107526881724
+    "page": "/learn/control-cloud-costs/budget-templates",
+    "views": 9,
+    "change": -0.4833333333333333
   },
   {
-    "page": "/news/2023/03/17/data-release-telomere-to-telomere",
-    "views": 8,
-    "change": -0.6989247311827957
+    "page": "/learn/find-data",
+    "views": 9,
+    "change": 1.3249999999999997
   },
   {
-    "page": "/team/oversight-committee",
-    "views": 8,
-    "change": 0.4451612903225808
+    "page": "/learn/data-submitters/submission-guide/data-approval-process",
+    "views": 9,
+    "change": 2.1
   },
   {
-    "page": "/events/pag2025",
-    "views": 8,
-    "change": 0.4451612903225808
+    "page": "/faq/resources-for-anvil-users",
+    "views": 9,
+    "change": 0.8599999999999999
   },
   {
-    "page": "/learn/run-interactive-analyses/running-a-workflow",
-    "views": 8,
-    "change": 0.032258064516129004
+    "page": "/learn/submit-data",
+    "views": 9,
+    "change": 0.55
   },
   {
-    "page": "/news/2025/11/05/anvil-is-a-cadr",
+    "page": "/robots.txt",
     "views": 8,
-    "change": -0.4838709677419355
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/news/2023/09/05/data-release-als-compute-project",
+    "views": 8,
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data",
+    "views": 8,
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/faq/using-anvil",
+    "views": 8,
+    "change": 7.266666666666666
   },
   {
     "page": "/learn/watch-videos-and-tutorials",
     "views": 8,
-    "change": -0.3978494623655914
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/run-analyses-workflows/using-example-workspaces",
-    "views": 8,
-    "change": -0.19713261648745517
+    "page": "/learn/run-interactive-analyses/getting-started-with-jupyter-notebooks",
+    "views": 7,
+    "change": -0.3424242424242424
   },
   {
-    "page": "/news/2025/04/03/genomic-variant-analysis-vrs-annotator",
-    "views": 8,
-    "change": 0.4451612903225808
+    "page": "/news/2025/11/05/anvil-is-a-cadr",
+    "views": 7,
+    "change": -0.09583333333333333
+  },
+  {
+    "page": "/releases/2025/11/release-notes",
+    "views": 7,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/privacy",
+    "views": 7,
+    "change": 2.6166666666666667
+  },
+  {
+    "page": "/releases/2026/05/release-notes",
+    "views": 6,
+    "change": null
+  },
+  {
+    "page": "/learn/get-started/setting-up-lab-accounts",
+    "views": 6,
+    "change": -0.6352941176470588
   },
   {
     "page": "/learn/run-analyses-workflows",
-    "views": 8,
-    "change": 1.4086021505376345
-  },
-  {
-    "page": "/news/2025/08/25/epi25-version-4-data-release",
-    "views": 8,
-    "change": 1.4086021505376345
-  },
-  {
-    "page": "/events/anvil2026-community-conference",
-    "views": 7,
-    "change": -0.2974910394265232
-  },
-  {
-    "page": "/news/2024/02/02/downtime-for-anvil-data-storage",
-    "views": 7,
-    "change": null
-  },
-  {
-    "page": "/overview/dms-requirements",
-    "views": 7,
-    "change": -0.4252199413489737
-  },
-  {
-    "page": "/overview/securityhttps://terra.bio/terra-security/",
-    "views": 7,
-    "change": null
-  },
-  {
-    "page": "/consortia/cser/publications",
-    "views": 7,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/news/2025/08/25/all-of-us-anvil-imputation-service",
-    "views": 7,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/learn/run-interactive-analyses",
-    "views": 7,
-    "change": 0.5806451612903225
-  },
-  {
-    "page": "/learn/get-started/creating-a-terra-account",
     "views": 6,
-    "change": 0.08387096774193559
-  },
-  {
-    "page": "/news/2023/03/17/data-release-card-dementia-long-read-project",
-    "views": 6,
-    "change": 1.7096774193548385
-  },
-  {
-    "page": "/robots.txt",
-    "views": 6,
-    "change": -0.4580645161290322
-  },
-  {
-    "page": "/faq/data-submission",
-    "views": 6,
-    "change": -0.32258064516129037
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/anvil-videos",
-    "views": 6,
-    "change": -0.3978494623655914
-  },
-  {
-    "page": "/news/2020/11/20/nhgri-anvil-now-supports-free-export-of-gtex-data",
-    "views": 6,
-    "change": 1.7096774193548385
-  },
-  {
-    "page": "/news/2021/03/11/hprc-on-anvil",
-    "views": 6,
-    "change": null
-  },
-  {
-    "page": "/news/2025/10/28/acc-2025-conference-report",
-    "views": 6,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/news/2026/01/06/february-2026-pre-release-announcement",
-    "views": 6,
-    "change": -0.3978494623655914
-  },
-  {
-    "page": "/releases/2025/08/release-notes",
-    "views": 6,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/learn/submit-data",
-    "views": 6,
-    "change": -0.7741935483870968
-  },
-  {
-    "page": "/news/2023/09/05/data-release-als-compute-project",
-    "views": 6,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/news/2024/10/04/nih-genomic-data-sharing-policy",
-    "views": 6,
-    "change": -0.4580645161290322
+    "change": -0.22499999999999998
   },
   {
     "page": "/events/agbt2025-advances-in-genome-biology-and-technology",
     "views": 5,
-    "change": -0.435483870967742
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/ashg2022-american-society-of-human-genetics",
+    "page": "/guides/content/using-images",
     "views": 5,
-    "change": 3.516129032258064
+    "change": 0.7222222222222221
   },
   {
-    "page": "/events/bioconductor-popup-workshops-20210531",
+    "page": "/learn/billing-setup/billing-concepts",
     "views": 5,
-    "change": 0.12903225806451601
-  },
-  {
-    "page": "/events/terra-training-2022-10-machine-learning-for-health",
-    "views": 5,
-    "change": null
-  },
-  {
-    "page": "/guides/style/typography-examples",
-    "views": 5,
-    "change": 3.516129032258064
-  },
-  {
-    "page": "/learn/data-analysts/the-r-bioconductor-anvil-package",
-    "views": 5,
-    "change": null
-  },
-  {
-    "page": "/learn/data-submitters/submission-guide/ingesting-data",
-    "views": 5,
-    "change": 3.516129032258064
-  },
-  {
-    "page": "/faq/resources-for-anvil-users",
-    "views": 5,
-    "change": 0.12903225806451601
-  },
-  {
-    "page": "/news/2024/09/16/sunsetting-gen3-in-anvil",
-    "views": 5,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/events/gwas-analysis-with-galaxy/",
-    "views": 4,
-    "change": 2.6129032258064515
-  },
-  {
-    "page": "/learn/anvil-mooc/use-case-eqtl",
-    "views": 4,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/learn/videos/terra-videos",
-    "views": 4,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/overview/cite-anvil",
-    "views": 4,
-    "change": -0.7741935483870968
-  },
-  {
-    "page": "/team/working-groups",
-    "views": 4,
-    "change": -0.6715542521994136
-  },
-  {
-    "page": "/guides/content/events-guide",
-    "views": 4,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/find-data",
-    "views": 4,
-    "change": -0.6715542521994136
-  },
-  {
-    "page": "/champions/",
-    "views": 4,
-    "change": null
-  },
-  {
-    "page": "/events/anvil2024-community-conference",
-    "views": 4,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/news/2025/11/04/gregor-consortium-data-release",
-    "views": 4,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/consortia/cser/news",
-    "views": 3,
-    "change": -0.32258064516129037
-  },
-  {
-    "page": "/consortia/cser/research-materials",
-    "views": 3,
-    "change": -0.7536656891495601
-  },
-  {
-    "page": "/events/bioconductor-popup-workshops-20210614",
-    "views": 3,
-    "change": -0.32258064516129037
-  },
-  {
-    "page": "/events/biology-of-genomes-2021",
-    "views": 3,
-    "change": -0.32258064516129037
-  },
-  {
-    "page": "/learn/access-data-services",
-    "views": 3,
-    "change": -0.4580645161290322
-  },
-  {
-    "page": "/learn/account-setup/creating-a-terra-account/",
-    "views": 3,
-    "change": null
-  },
-  {
-    "page": "/learn/data-submitters/resources/anvil-data-withdrawal-procedures",
-    "views": 3,
-    "change": -0.6612903225806452
-  },
-  {
-    "page": "/learn/data-submitters/submission-guide/data-approval-process",
-    "views": 3,
-    "change": -0.6989247311827957
-  },
-  {
-    "page": "/learn/data-submitters/submission-guide/prepare-for-submission",
-    "views": 3,
-    "change": -0.32258064516129037
-  },
-  {
-    "page": "/learn/find-data/data-access-controls",
-    "views": 3,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/introduction/understanding-cloud-costs/",
-    "views": 3,
-    "change": 1.7096774193548385
-  },
-  {
-    "page": "/learn/run-interactive-analyses/the-r-bioconductor-anvil-package",
-    "views": 3,
-    "change": 1.7096774193548385
-  },
-  {
-    "page": "/learn/workshop-archive",
-    "views": 3,
-    "change": 0.35483870967741926
-  },
-  {
-    "page": "/news/2020/04/03/james-taylor",
-    "views": 3,
-    "change": null
-  },
-  {
-    "page": "/news/2024/02/02/downtime-for-anvil-data-storage/",
-    "views": 3,
     "change": null
   },
   {
     "page": "/news/2024/11/21/gregor-consortium",
-    "views": 3,
-    "change": 0.35483870967741926
+    "views": 5,
+    "change": 0.7222222222222221
   },
   {
-    "page": "/news/james-taylor",
-    "views": 3,
-    "change": 1.7096774193548385
+    "page": "/team/working-groups",
+    "views": 5,
+    "change": 0.2916666666666665
   },
   {
-    "page": "/overview/project-sponsor",
-    "views": 3,
-    "change": -0.32258064516129037
+    "page": "/news/2025/08/25/epi25-version-4-data-release",
+    "views": 5,
+    "change": -0.35416666666666674
   },
   {
-    "page": "/overview/publications",
-    "views": 3,
-    "change": -0.8406072106261859
+    "page": "/news/2024/09/16/sunsetting-gen3-in-anvil",
+    "views": 5,
+    "change": 0.033333333333333215
   },
   {
-    "page": "/guides/content/using-images",
-    "views": 3,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/cloud-computing",
-    "views": 3,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/cloud-costs",
-    "views": 3,
-    "change": 1.7096774193548385
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/galaxy-videos",
-    "views": 3,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/seqr-videos",
-    "views": 3,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/terra-videos",
-    "views": 3,
+    "page": "/events/cshl-biology-of-genomes-2023",
+    "views": 4,
     "change": null
   },
   {
-    "page": "/news/2025/08/25/card-data-release-2",
-    "views": 3,
-    "change": -0.8957816377171216
+    "page": "/guides/style/color-palette",
+    "views": 4,
+    "change": 1.0666666666666664
   },
   {
-    "page": "/news/2026/03/03/depmap-data-release",
-    "views": 3,
+    "page": "/guides/style/typography",
+    "views": 4,
     "change": null
   },
   {
-    "page": "/news/2026/03/25/may-2026-pre-release-announcement",
-    "views": 3,
+    "page": "/learn/access-data-services",
+    "views": 4,
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/learn/account-setup/obtaining-a-google-id",
+    "views": 4,
     "change": null
+  },
+  {
+    "page": "/learn/data-analysts/the-r-bioconductor-anvil-package",
+    "views": 4,
+    "change": -0.17333333333333334
+  },
+  {
+    "page": "/learn/data-analysts/using-r-bioconductor-in-anvil/",
+    "views": 4,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/learn/run-analyses-workflows/using-example-workspaces",
+    "views": 4,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/learn/run-interactive-analyses/single-cell-rnaseq-with-orchestrating-single-cell-analysis-in-r-bioconductor",
+    "views": 4,
+    "change": -0.5407407407407407
+  },
+  {
+    "page": "/news/2020/04/03/james-taylor",
+    "views": 4,
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/news/2024/10/04/nih-genomic-data-sharing-policy",
+    "views": 4,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/news/2025/11/04/our-health-study-release",
+    "views": 4,
+    "change": -0.6242424242424243
+  },
+  {
+    "page": "/learn/control-cloud-costs",
+    "views": 4,
+    "change": null
+  },
+  {
+    "page": "/learn/data-submitters/resources/anvil-data-withdrawal-procedures",
+    "views": 4,
+    "change": 0.37777777777777777
+  },
+  {
+    "page": "/learn/reference/gtex-v8-free-egress-instructions",
+    "views": 4,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/news/2021/03/11/hprc-on-anvil",
+    "views": 4,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/news/2021/04/12/announcing-anvil-cloud-cost-credits-program",
+    "views": 4,
+    "change": 3.133333333333333
+  },
+  {
+    "page": "/learn/find-data/cross-platform-data-access-with-drs-uris-in-terra",
+    "views": 4,
+    "change": 3.133333333333333
   },
   {
     "page": "/consortia/cser/projects/kidscanseq",
     "views": 3,
-    "change": 1.7096774193548385
+    "change": 0.033333333333333215
   },
   {
-    "page": "/champions",
-    "views": 2,
-    "change": null
-  },
-  {
-    "page": "/champions/communicate-feedback",
-    "views": 2,
-    "change": null
-  },
-  {
-    "page": "/events/bioconductor-popup-workshops-20210510",
-    "views": 2,
-    "change": 0.8064516129032258
+    "page": "/consortia/cser/publications",
+    "views": 3,
+    "change": -0.5571428571428572
   },
   {
     "page": "/events/bioconductor-popup-workshops-20210517",
-    "views": 2,
-    "change": 0.8064516129032258
+    "views": 3,
+    "change": 0.55
   },
   {
-    "page": "/events/bioconductor-popup-workshops-20210531/",
+    "page": "/guides/content/adding-publications",
+    "views": 3,
+    "change": 2.1
+  },
+  {
+    "page": "/learn/data-submitters/submission-guide/set-up-a-data-model",
+    "views": 3,
+    "change": -0.7416666666666667
+  },
+  {
+    "page": "/learn/introduction/guides-and-tutorials",
+    "views": 3,
+    "change": 0.55
+  },
+  {
+    "page": "/learn/introduction/intro-to-terra/",
+    "views": 3,
+    "change": null
+  },
+  {
+    "page": "/learn/videos/terra-videos",
+    "views": 3,
+    "change": -0.22499999999999998
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/seqr-videos",
+    "views": 3,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/news/2023/03/17/data-release-card-dementia-long-read-project",
+    "views": 3,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/news/2023/05/09/data-management-anvil-hprc",
+    "views": 3,
+    "change": null
+  },
+  {
+    "page": "/news/2024/02/02/downtime-for-anvil-data-storage",
+    "views": 3,
+    "change": -0.5571428571428572
+  },
+  {
+    "page": "/news/2025/07/25/gregor-consortium-data-release",
+    "views": 3,
+    "change": 2.1
+  },
+  {
+    "page": "/news/2025/11/04/gregor-consortium-data-release",
+    "views": 3,
+    "change": -0.22499999999999998
+  },
+  {
+    "page": "/news/james-taylor",
+    "views": 3,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/team/oversight-committee",
+    "views": 3,
+    "change": -0.6125
+  },
+  {
+    "page": "/consortia/cser/projects",
+    "views": 3,
+    "change": 0.55
+  },
+  {
+    "page": "/news/2025/10/28/acc-2025-conference-report",
+    "views": 3,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/news/2026/03/25/may-2026-pre-release-announcement",
+    "views": 3,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/learn/data-submission/prepare-data",
+    "views": 3,
+    "change": null
+  },
+  {
+    "page": "/)",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/](https://anvilproject.org/)",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/consortia/cser/news",
+    "views": 2,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/events/agbt2022-advances-in-genome-biology-and-technology",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2022-july-office-hours",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2022-october-office-hours",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/events/anvil2023-february-office-hours",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2023-october-demos",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/events/anvil2024-june-demos",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/ashg2021-workshop-analysis-of-human-pangenome-data-with-anvil",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/ashg2024-american-society-of-human-genetics",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/bcc2020-r-bioconductor-in-the-cloud",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210503",
     "views": 2,
     "change": null
   },
   {
     "page": "/events/bioconductor-popup-workshops-20210607",
     "views": 2,
-    "change": 0.8064516129032258
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/ncpi2022-spring-workshop-nih-cloud-platforms-interoperability",
+    "page": "/events/biology-of-genomes-2021",
     "views": 2,
-    "change": -0.09677419354838712
+    "change": -0.3111111111111111
   },
   {
-    "page": "/events/sacnas-genomic-data-science-with-galaxy-workbench",
+    "page": "/events/cshl2024-biology-of-genomes",
     "views": 2,
-    "change": 0.8064516129032258
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/events/gbcc2025-galaxy-and-bioconductor-community-conference",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/events/ncpi2022-spring-workshop-nih-cloud-platforms-interoperability/",
+    "views": 2,
+    "change": 1.0666666666666664
   },
   {
     "page": "/events/terra-training-2022-10-introduction-to-terra",
     "views": 2,
-    "change": -0.3978494623655914
+    "change": 0.033333333333333215
   },
   {
-    "page": "/guides/style/color-palette",
+    "page": "/events/terra-training-2022-10-machine-learning-for-health",
     "views": 2,
-    "change": -0.3978494623655914
+    "change": -0.5866666666666667
+  },
+  {
+    "page": "/events/terra-training-2022-10-wdl-101",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/events](https://anvilproject.org/events)!",
+    "views": 2,
+    "change": null
+  },
+  {
+    "page": "/guides",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/guides/content/adding-youtube-videos",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/guides/content/events-guide",
+    "views": 2,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/guides/style/typography-examples",
+    "views": 2,
+    "change": -0.5866666666666667
+  },
+  {
+    "page": "/help@lists.anvilproject.org",
+    "views": 2,
+    "change": null
   },
   {
     "page": "/learn/data-analysts/galaxy-gsg-video",
     "views": 2,
-    "change": -0.3978494623655914
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/data-analysts/rstudio-gsg-video",
+    "page": "/learn/data-analysts/reproducible-research-with-anvilpublish",
     "views": 2,
     "change": null
   },
   {
-    "page": "/learn/data-analysts/using-r-bioconductor-in-anvil/",
+    "page": "/learn/data-submitters/submission-guide/ingesting-data",
     "views": 2,
-    "change": -0.09677419354838712
+    "change": -0.5866666666666667
   },
   {
     "page": "/learn/data-submitters/submission-guide/qc-data",
     "views": 2,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/learn/find-data/data-access-controls",
+    "views": 2,
+    "change": -0.3111111111111111
   },
   {
     "page": "/learn/interactive-analysis/getting-started-with-galaxy",
     "views": 2,
-    "change": 0.8064516129032258
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/introduction/guides-and-tutorials",
+    "page": "/learn/run-analyses-workflows/intro-to-dockstore",
     "views": 2,
-    "change": null
+    "change": -0.7933333333333333
+  },
+  {
+    "page": "/learn/run-analyses-workflows/running-galaxy-workflows-from-dockstore",
+    "views": 2,
+    "change": 1.0666666666666664
   },
   {
     "page": "/learn/run-analyses-workflows/running-gatk",
     "views": 2,
-    "change": null
+    "change": 0.033333333333333215
   },
   {
-    "page": "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees",
+    "page": "/learn/watch-videos-and-tutorials/anvil-videos",
+    "views": 2,
+    "change": -0.6555555555555556
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/use-case-eqtl",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/what-is-anvil",
+    "views": 2,
+    "change": 1.0666666666666664
+  },
+  {
+    "page": "/news/2021/11/22/announcing-anvil-cloud-credits-continued-program",
     "views": 2,
     "change": null
   },
   {
-    "page": "/news/2024/02/08/downtime-for-anvil-data-storage-workspaces",
+    "page": "/news/2024/04/14/announcing-anvil-coming-to-microsoft-azure",
     "views": 2,
     "change": null
   },
   {
-    "page": "/news/2024/04/15/comparing-the-nhgri-anvil-platform",
-    "views": 2,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/privacy",
-    "views": 2,
-    "change": -0.6989247311827957
-  },
-  {
-    "page": "/team/",
-    "views": 2,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/consortia/cser/projects",
-    "views": 2,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/data-submitters/submission-guide/data-submitters-overview/",
-    "views": 2,
-    "change": 0.8064516129032258
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/dockstore-videos",
+    "page": "/news/2024/11/15/duos-announcement",
     "views": 2,
     "change": null
   },
   {
-    "page": "/security",
+    "page": "/news/2025/04/03/genomic-variant-analysis-vrs-annotator",
     "views": 2,
-    "change": null
+    "change": -0.7416666666666667
   },
   {
-    "page": "/),",
-    "views": 1,
-    "change": null
+    "page": "/news/2026/03/03/depmap-data-release",
+    "views": 2,
+    "change": -0.3111111111111111
+  },
+  {
+    "page": "/releases/2025/08/release-notes",
+    "views": 2,
+    "change": -0.6555555555555556
+  },
+  {
+    "page": "/consortia/cser/research-materials",
+    "views": 2,
+    "change": -0.3111111111111111
   },
   {
     "page": "/).",
     "views": 1,
-    "change": null
+    "change": 0.033333333333333215
   },
   {
     "page": "//checkout/",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": 0.033333333333333215
   },
   {
-    "page": "/champions/communicate-feedback/",
+    "page": "/champions/",
+    "views": 1,
+    "change": -0.7416666666666667
+  },
+  {
+    "page": "/consortia/cser/projects/cser1",
     "views": 1,
     "change": null
   },
   {
-    "page": "/champions/docs/",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/consortia/cser/projects/p3egs",
-    "views": 1,
-    "change": -0.8193548387096774
-  },
-  {
-    "page": "/consortia/cser/resources",
-    "views": 1,
-    "change": -0.935483870967742
-  },
-  {
-    "page": "/contact",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/content-guide",
-    "views": 1,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/docs-EN/",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/docs/",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/docs/champions/",
+    "page": "/events)",
     "views": 1,
     "change": null
   },
   {
     "page": "/events/amia-informatics-summit-2023",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/anvil2021-december-office-hours/",
-    "views": 1,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/events/anvil2021-november-office-hours",
+    "page": "/events/anvil2022-august-office-hours",
     "views": 1,
     "change": null
   },
   {
-    "page": "/events/anvil2022-october-office-hours",
+    "page": "/events/anvil2022-february-office-hours",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": null
+  },
+  {
+    "page": "/events/anvil2022-june-office-hours",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2022-may-office-hours",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2022-september-office-hours",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2023-august-demos",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2023-december-demos",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2023-january-office-hours",
+    "views": 1,
+    "change": null
   },
   {
     "page": "/events/anvil2023-july-demos",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/anvil2023-march-demos",
+    "page": "/events/anvil2023-may-demos",
     "views": 1,
     "change": null
   },
   {
     "page": "/events/anvil2023-november-demos",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/anvil2023-october-demos",
+    "page": "/events/anvil2023-september-demos",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": null
+  },
+  {
+    "page": "/events/anvil2024-april-demos",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/anvil2024-april-rtcd-workshop",
+    "views": 1,
+    "change": null
   },
   {
     "page": "/events/anvil2024-august-demos",
+    "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/events/anvil2024-february-demos",
     "views": 1,
     "change": null
   },
   {
     "page": "/events/anvil2024-introduction-fred-hutch-workshop",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/anvil2024-nhgri-intramural-workshop",
+    "page": "/events/anvil2024-may-demos",
     "views": 1,
     "change": null
   },
   {
-    "page": "/events/anvil2025-august-demos",
+    "page": "/events/anvil2024-october-demos",
     "views": 1,
     "change": null
   },
   {
     "page": "/events/anvil2025-november-demos",
     "views": 1,
-    "change": null
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/anvil2026-february-demos",
-    "views": 1,
-    "change": -0.7741935483870968
-  },
-  {
-    "page": "/events/anvil2026-july-demos",
+    "page": "/events/anvil2026-april-demos",
     "views": 1,
     "change": null
   },
   {
-    "page": "/events/anvil2026-march-demos",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/events/anvil2026-may-demos",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/events/anvil2026-september-demos",
+    "page": "/events/anvil2026-november-demos",
     "views": 1,
     "change": null
   },
   {
     "page": "/events/ashg2021-workshop-structural-variant-discovery-with-galaxy",
     "views": 1,
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/events/ashg2023-american-society-of-human-genetics",
+    "views": 1,
     "change": null
   },
   {
-    "page": "/events/bioconductor-popup-workshops-20210426",
+    "page": "/events/bcc2020-dockstore-fundamentals",
     "views": 1,
-    "change": -0.7741935483870968
+    "change": null
   },
   {
-    "page": "/events/cshl2024-biology-of-genomes",
+    "page": "/events/bcc2020-reproducible-analysis",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": null
   },
   {
-    "page": "/events/cshl2025-genome-informatics",
+    "page": "/events/bioconductor-popup-workshops-20210510",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210524",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210531/",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/events/bog2022-biology-of-genomes",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/events/cshl2023-biology-of-genomes",
+    "views": 1,
+    "change": null
   },
   {
     "page": "/events/fog23-festival-of-genomics-biodata",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/events/gbcc2025-galaxy-and-bioconductor-community-conference",
+    "page": "/events/gcc2022-galaxy-community-conference",
     "views": 1,
     "change": null
   },
   {
-    "page": "/events/gi2021-poster-session",
+    "page": "/events/gcc2023-galaxy-community-conference",
     "views": 1,
     "change": null
   },
   {
-    "page": "/events/ncpi2022-spring-workshop-nih-cloud-platforms-interoperability/",
-    "views": 1,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/events/terra-training-2022-10-wdl-101",
-    "views": 1,
-    "change": -0.6989247311827957
-  },
-  {
-    "page": "/events/terra2022-wdl",
+    "page": "/events/ismb2020-finding-and-analyzing-data-in-the-cloud",
     "views": 1,
     "change": null
   },
   {
-    "page": "/faq/using-anvil",
-    "views": 1,
-    "change": -0.8193548387096774
-  },
-  {
-    "page": "/guides",
-    "views": 1,
-    "change": -0.8193548387096774
-  },
-  {
-    "page": "/guides/content/adding-publications",
-    "views": 1,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/guides/content/adding-youtube-videos",
-    "views": 1,
-    "change": -0.7741935483870968
-  },
-  {
-    "page": "/images/twitter-anvil.png",
-    "views": 1,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/account-setup/overview-of-account-setup",
+    "page": "/events/ismb2022-biological-data-science",
     "views": 1,
     "change": null
   },
   {
-    "page": "/learn/data-submitters/submission-guide/c2V0LXVwLW",
-    "views": 1,
-    "change": -0.09677419354838712
-  },
-  {
-    "page": "/learn/find-data/Y3Jvc3MtcG",
+    "page": "/events/magic2020",
     "views": 1,
     "change": null
   },
   {
-    "page": "/learn/find-data/cross-platform-data-access-with-drs-uris-in-terra",
+    "page": "/events/ncpi2022-spring-workshop-nih-cloud-platforms-interoperability",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/events/sacnas-genomic-data-science-with-galaxy-workbench",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/events/vadsti2021",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/explorer",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/faq/resources-for-anvil-users/",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/favicon-32x32.png",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/feed",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/guides/content/creating-a-new-page",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/guides/content/news-item-guide",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/accessing-data",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/anvil-mooc/use-case-eqtl",
+    "views": 1,
+    "change": -0.7416666666666667
+  },
+  {
+    "page": "/learn/anvil-mooc/what-is-anvil",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/data-analysts",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/data-analysts/participant-stories",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/data-analysts/running-a-workflow",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/data-analysts/using-r-bioconductor-in-anvil",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/data-submission/set-up-data-model",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/find-data/bringing-your-own-data",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/learn/introduction/anvil-data-model",
+    "views": 1,
+    "change": null
   },
   {
     "page": "/learn/reference/gtex-v8-free-egress-instructions/",
     "views": 1,
-    "change": null
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/run-analyses-workflows/running-galaxy-workflows-from-dockstore",
+    "page": "/learn/run-interactive-analyses",
+    "views": 1,
+    "change": -0.8523809523809524
+  },
+  {
+    "page": "/learn/run-interactive-analyses/jupyter-gsg-video",
     "views": 1,
     "change": null
   },
   {
-    "page": "/learn/run-analyses-workflows/use-case-gatk",
+    "page": "/learn/run-interactive-analyses/participant-stories",
     "views": 1,
     "change": null
   },
   {
-    "page": "/learn/run-interactive-analyses/getting-started-with-galaxyYouTube",
+    "page": "/learn/run-interactive-analyses/rstudio-gsg-video",
     "views": 1,
     "change": null
   },
   {
-    "page": "/learn/run-interactive-analyses/reproducible-research-with-anvilpublish",
+    "page": "/learn/run-interactive-analyses/the-r-bioconductor-anvil-package",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": -0.6555555555555556
   },
   {
     "page": "/learn/run-interactive-analyses/using-anvil-for-teaching-r-bioconductor",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/learn/watch-videos-and-tutorials/use-case-eqtl",
+    "page": "/learn/watch-videos-and-tutorials/cloud-computing",
     "views": 1,
-    "change": -0.6989247311827957
+    "change": -0.6555555555555556
   },
   {
-    "page": "/learn/watch-videos-and-tutorials/use-case-gwas",
+    "page": "/learn/watch-videos-and-tutorials/galaxy-videos",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": -0.6555555555555556
   },
   {
-    "page": "/learn/watch-videos-and-tutorials/what-is-anvil",
+    "page": "/learn/watch-videos-and-tutorials/terra-videos",
     "views": 1,
-    "change": -0.7741935483870968
+    "change": -0.6555555555555556
   },
   {
-    "page": "/new/2024/11/20/gtexv10",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/news/",
+    "page": "/learning/guides/commons-guides/champions-guides/",
     "views": 1,
     "change": null
   },
   {
     "page": "/news/2019/12/05/dockstore-training",
     "views": 1,
-    "change": -0.09677419354838712
+    "change": 0.033333333333333215
   },
   {
-    "page": "/news/2020/06/19/announcing-gen3-availability-in-anvil/",
-    "views": 1,
-    "change": -0.5483870967741935
-  },
-  {
-    "page": "/news/2021/04/12/announcing-anvil-cloud-cost-credits-program",
-    "views": 1,
-    "change": -0.6989247311827957
-  },
-  {
-    "page": "/news/2023/05/08/data-management-1000-genomes",
+    "page": "/news/2020/05/21/discover-anvil-at-bcc-2020",
     "views": 1,
     "change": null
   },
   {
-    "page": "/news/2024/09/16/sunsetting-gen3-functionality",
+    "page": "/news/2021/04/12/announcing-anvil-cloud-cost-credits-program/",
     "views": 1,
     "change": null
+  },
+  {
+    "page": "/news/2021/06/03/announcing-anvil-cloud-cost-credits-awardees",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/news/2021/11/22/announcing-anvil-cloud-credits-continued-program/",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/news/2022/05/03/announcing-anvil-cloud-credits-continued-program-awardees",
+    "views": 1,
+    "change": -0.4833333333333334
+  },
+  {
+    "page": "/news/2022/08/10/scheduled-downtime-for-anvil-data-housing-workspaces",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/news/2024/02/15/anvil-community-poll",
+    "views": 1,
+    "change": null
+  },
+  {
+    "page": "/news/2024/04/15/comparing-the-nhgri-anvil-platform",
+    "views": 1,
+    "change": -0.4833333333333334
   },
   {
     "page": "/news/2024/10/04/new-nih-data-managment-and-sharing-policy",
     "views": 1,
-    "change": -0.5483870967741935
+    "change": 0.033333333333333215
   },
   {
-    "page": "/news/2025/01/21/acc-2024-conference-report",
+    "page": "/news/2025/09/30/november-2025-pre-release-announcement",
     "views": 1,
     "change": null
   },
   {
-    "page": "/news/2025/07/25/gregor-consortium-data-release",
+    "page": "/news/2025/11/04/complex-chromosomal-changes-involving-chromosome-9-data-release",
     "views": 1,
-    "change": -0.7741935483870968
+    "change": -0.9138888888888889
   },
   {
-    "page": "/news/2025/08/28/august-2025-data-release",
+    "page": "/news/2026/01/06/february-2026-pre-release-announcement",
     "views": 1,
-    "change": -0.7741935483870968
+    "change": -0.8277777777777777
   },
   {
     "page": "/overview/",
     "views": 1,
-    "change": null
+    "change": 0.033333333333333215
+  },
+  {
+    "page": "/overview/securityhttps://terra.bio/terra-security/",
+    "views": 1,
+    "change": -0.8523809523809524
+  },
+  {
+    "page": "/),",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/champions",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/champions/communicate-feedback",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/champions/communicate-feedback/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/champions/docs/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/consortia/cser/projects/p3egs",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/contact",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/content-guide",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/docs-EN/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/docs/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/docs/champions/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2021-december-office-hours/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2021-november-office-hours",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2023-march-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2024-community-conference",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2024-nhgri-intramural-workshop",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2025-august-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2026-february-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2026-july-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2026-march-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2026-may-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/anvil2026-september-demos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/ashg2022-american-society-of-human-genetics",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210426",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210531",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/bioconductor-popup-workshops-20210614",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/cshl2025-genome-informatics",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/gi2021-poster-session",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/gwas-analysis-with-galaxy/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/events/terra2022-wdl",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/images/twitter-anvil.png",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/account-setup/creating-a-terra-account/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/account-setup/overview-of-account-setup",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/data-analysts/rstudio-gsg-video",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/data-submitters/submission-guide/c2V0LXVwLW",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/data-submitters/submission-guide/data-submitters-overview/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/data-submitters/submission-guide/prepare-for-submission",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/find-data/Y3Jvc3MtcG",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/introduction/understanding-cloud-costs/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/run-analyses-workflows/use-case-gatk",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/run-interactive-analyses/getting-started-with-galaxyYouTube",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/run-interactive-analyses/reproducible-research-with-anvilpublish",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/run-interactive-analyses/using-r-bioconductor-in-anvil",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/cloud-costs",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/dockstore-videos",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/watch-videos-and-tutorials/use-case-gwas",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/learn/workshop-archive",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/new/2024/11/20/gtexv10",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2020/06/19/announcing-gen3-availability-in-anvil/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2023/05/08/data-management-1000-genomes",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2024/02/02/downtime-for-anvil-data-storage/",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2024/02/08/downtime-for-anvil-data-storage-workspaces",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2024/09/16/sunsetting-gen3-functionality",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2025/01/21/acc-2024-conference-report",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2025/08/25/all-of-us-anvil-imputation-service",
+    "views": 0,
+    "change": -1.0
+  },
+  {
+    "page": "/news/2025/08/28/august-2025-data-release",
+    "views": 0,
+    "change": -1.0
   },
   {
     "page": "/overview/cite-anvil/",
-    "views": 1,
-    "change": null
+    "views": 0,
+    "change": -1.0
   },
   {
     "page": "/register",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/about",
     "views": 0,
     "change": -1.0
   },
   {
-    "page": "/about/nih-odss",
+    "page": "/security",
     "views": 0,
     "change": -1.0
   },
   {
-    "page": "/atom",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/consortia/cser/news/2018/acmg2018",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/consortia/cser/news/2018/cser-marker-paper",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/agbt-2023/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/agbt2022-advances-in-genome-biology-and-technology",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/amia2023-informatics-summit",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/anvil2023-august-demos",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/anvil2024-april-demos",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/anvil2024-april-rtcd-workshop",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/anvil2024-june-demos",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/ashg2021-workshop-analysis-of-human-pangenome-data-with-anvil",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/ashg2023-american-society-of-human-genetics",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/ashg2023-satisfying-nih-dms-requirements-with-anvil",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/bcc2020-r-bioconductor-in-the-cloud",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/bcc2020-reproducible-analysis",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/bioconductor-popup-workshops-20210524",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/bog2022-biology-of-genomes",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/cshl-biology-of-genomes-2023",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/cshl2023-biology-of-genomes",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/gcc2022-galaxy-community-conference",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/gcc2023-galaxy-community-conference",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/ismb2022-biological-data-science",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/vadsti-2021",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/events/vadsti2021",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/faq/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/favicon-32x32.png",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/guidance/python/a-brief-history-of-python",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/guides/content/creating-a-new-page",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/guides/content/news-item-guide",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/anvil-mooc/cloud-costs",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/billing-setup/billing-concepts",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/control-cloud-costs",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/data-submitters/resources/Y29uc29ydG",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/data-submitters/resources/YW52aWwtZG",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/find-data/bringing-your-own-data",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/interactive-analysis/getting-started-with-bioconductor",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/introduction/intro-to-dockstore",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/introduction/intro-to-terra/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/investigators/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/investigators/budget-templates",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/investigators/setting-up-lab-accounts",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/run-interactive-analyses/participant-stories",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/run-interactive-analyses/rstudio-gsg-video",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/service-accounts/google-cloud-platform-setup",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/learn/watch-videos-and-tutorials/use-case-gatk",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2021/03/10/announcing-seqr-in-anvil/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2022/08/10/scheduled-downtime-for-anvil-data-housing-workspaces",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2023/05/09/data-management-anvil-hprc",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2024/02/15/anvil-community-poll",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2024/04/14/announcing-anvil-coming-to-microsoft-azure",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2024/10/04/nih-genomic-data-sharing-policy.",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/news/2024/10/04/nih-genomic-data-sharing-policy<https://urldefense.com/v3/__https://anvilproject.org/news/2024/10/04/nih-genomic-data-sharing-policy__;!!LLK065n_VXAQ!kQ3mYouH9nqSWliRUP-ON-qmRQVrMRFINl8Zorku28sO5UD099Z4JhRCIh9LON0KOWkSuzCBGAV0Yp3Y5nzRFsrF$>.",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/publications",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/releases/2025/11/release-notes.",
+    "page": "/team/",
     "views": 0,
     "change": -1.0
   }
