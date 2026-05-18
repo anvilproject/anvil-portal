@@ -38,6 +38,11 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
   formattedSessions?: string[];
   hashtag?: Hashtag;
   location?: string;
+  /**
+   * When true, keeps this event eligible for the home page carousel and
+   * featured section regardless of its date. Use for evergreen items like
+   * recurring conferences or ongoing programs.
+   */
   persistent?: boolean;
   sessions: EventSession[];
   timestamp?: number;
@@ -48,6 +53,11 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
 export interface FrontmatterNews extends DefaultFrontmatter {
   date: string;
   featured?: boolean;
+  /**
+   * When true, keeps this news item eligible for the home page carousel and
+   * featured section regardless of its date. Use for evergreen content like
+   * flagship announcements.
+   */
   persistent?: boolean;
   url: string | null;
 }
