@@ -1,4 +1,4 @@
-import { isAfter, subMonths } from "date-fns";
+import { isAfter, startOfDay, subMonths } from "date-fns";
 import fs from "fs";
 import matter from "gray-matter";
 import moment, { Moment, tz } from "moment-timezone";
@@ -236,6 +236,6 @@ export function isRecentOrPersistent(
 export function isWithinRecentWindow(date: Date | string): boolean {
   const target = date instanceof Date ? date : new Date(date);
   if (isNaN(target.getTime())) return false;
-  const cutoff = subMonths(new Date(), RECENT_CONTENT_MONTHS);
+  const cutoff = startOfDay(subMonths(new Date(), RECENT_CONTENT_MONTHS));
   return isAfter(target, cutoff);
 }
