@@ -5,6 +5,8 @@ import {
   getContentDirectory,
   getFrontmatterByPaths,
   isFeatured,
+  isPersistent,
+  isRecentOrPersistent,
 } from "../../../../../../../content/utils";
 import { mapSlugByFilePaths } from "../../../../../../../docs/common/utils";
 import { CardFrontmatter, UpdateCard } from "./entities";
@@ -21,14 +23,14 @@ export function buildUpdateSectionCards(dirName: string): UpdateCard[] {
 }
 
 /**
- * Returns true if the frontmatter is featured, not hidden, and the date is defined.
+ * Returns true if the frontmatter is featured, not hidden, has a date, and is
+ * either within the recent-content window or marked persistent.
  * @param frontmatter - Frontmatter.
- * @returns true if the frontmatter is featured, not hidden, and the date is defined.
+ * @returns true if the frontmatter should be shown in the featured section.
  */
 function filterFrontmatter(frontmatter: CardFrontmatter): boolean {
-  return Boolean(
-    frontmatter.date && frontmatter.featured && !frontmatter.hidden
-  );
+  if (!frontmatter.featured || frontmatter.hidden) return false;
+  return isRecentOrPersistent(frontmatter.date, frontmatter.persistent);
 }
 
 /**
@@ -44,6 +46,7 @@ function mapToCardFrontmatter(
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate();
   const featured = isFeatured(frontmatter);
+  const persistent = isPersistent(frontmatter);
   const secondaryText = moment?.format(DATE_FORMAT); // Formatted date field.
   return {
     date,
@@ -51,6 +54,7 @@ function mapToCardFrontmatter(
     featured,
     hidden,
     path,
+    persistent,
     secondaryText,
     title,
   };

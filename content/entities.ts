@@ -38,6 +38,7 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
   formattedSessions?: string[];
   hashtag?: Hashtag;
   location?: string;
+  persistent?: boolean;
   sessions: EventSession[];
   timestamp?: number;
   timezone: string;
@@ -47,6 +48,7 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
 export interface FrontmatterNews extends DefaultFrontmatter {
   date: string;
   featured?: boolean;
+  persistent?: boolean;
   url: string | null;
 }
 

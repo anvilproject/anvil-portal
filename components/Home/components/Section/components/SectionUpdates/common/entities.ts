@@ -6,6 +6,7 @@ export interface CardFrontmatter {
   featured?: boolean;
   hidden: boolean;
   path: string;
+  persistent?: boolean;
   secondaryText?: string;
   title: string;
 }

@@ -1,3 +1,4 @@
+import { isAfter, subMonths } from "date-fns";
 import fs from "fs";
 import matter from "gray-matter";
 import moment, { Moment, tz } from "moment-timezone";
@@ -6,6 +7,7 @@ import { default as path, default as pathTool } from "path";
 import { SlugByFilePaths } from "../docs/common/entities";
 import { resolveDocPath } from "../docs/common/generateStaticPaths";
 import { mapSlugByFilePaths } from "../docs/common/utils";
+import { RECENT_CONTENT_MONTHS } from "./constants";
 import {
   EventSession,
   Frontmatter,
@@ -196,4 +198,44 @@ export function isFrontmatterNews(
   frontmatter: Frontmatter
 ): frontmatter is FrontmatterNews {
   return "date" in frontmatter;
+}
+
+/**
+ * Returns true if the persistent field is defined, and true. Persistent items
+ * remain eligible for the carousel and featured section regardless of date.
+ * @param frontmatter - Frontmatter.
+ * @returns true if the persistent field is defined, and true.
+ */
+export function isPersistent(frontmatter: Frontmatter): boolean | undefined {
+  return "persistent" in frontmatter && frontmatter.persistent;
+}
+
+/**
+ * Returns true if an item should remain eligible for the carousel or featured
+ * section: persistent items always pass; otherwise the item must have a date
+ * within the recent-content window.
+ * @param date - Date to test.
+ * @param persistent - Persistent flag.
+ * @returns true if the item is recent or persistent.
+ */
+export function isRecentOrPersistent(
+  date: Date | string | undefined,
+  persistent: boolean | undefined
+): boolean {
+  if (persistent) return true;
+  if (!date) return false;
+  return isWithinRecentWindow(date);
+}
+
+/**
+ * Returns true if the given date is within the recent-content window
+ * (RECENT_CONTENT_MONTHS months before now).
+ * @param date - Date to test.
+ * @returns true if the date is within the recent-content window.
+ */
+export function isWithinRecentWindow(date: Date | string): boolean {
+  const target = date instanceof Date ? date : new Date(date);
+  if (isNaN(target.getTime())) return false;
+  const cutoff = subMonths(new Date(), RECENT_CONTENT_MONTHS);
+  return isAfter(target, cutoff);
 }
