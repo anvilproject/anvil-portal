@@ -1,4 +1,5 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { isRecentOrPersistent } from "../../../../../../../content/utils";
 import { SectionCard } from "../../../../../common/entities";
 
 const ACTION_LABEL = {
@@ -7,189 +8,208 @@ const ACTION_LABEL = {
   WORKSPACE: "Workspace",
 };
 
+const CAROUSEL_CARDS: SectionCard[] = [
+  {
+    date: "2026-05-01",
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/news/2026/05/01/anvil-free-genomic-datasets-aws",
+      },
+    ],
+    text: "AnVIL has partnered with AWS to make major genomic datasets freely available, eliminating data transfer fees that previously exceeded $15,000 for some datasets.",
+    title:
+      "AnVIL Makes Groundbreaking Genomic Datasets Available on AWS for Free",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/events/anvil2026-community-conference",
+      },
+    ],
+    persistent: true,
+    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
+    title: "AnVIL Community Conference 2026",
+  },
+  {
+    date: "2026-04-07",
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/news/2026/04/07/anvil-open-access-data-aws-registry",
+      },
+    ],
+    text: "Open-access data hosted by NHGRI's AnVIL Project is now available through the Registry of Open Data on AWS and the AWS Marketplace and is freely downloadable from the AnVIL Data Explorer.",
+    title: "NHGRI AnVIL Open-Access Data Available in AWS Open Data Registry",
+  },
+  {
+    date: "2026-03-01",
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        url: "/releases/2026/03/release-notes",
+      },
+    ],
+    text: "Explore newly released and updated studies on the AnVIL platform - find datasets in the Data Explorer and Data Library.",
+    title: "AnVIL March 2026 Release",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.nature.com/articles/s41586-025-09613-8",
+      },
+    ],
+    media: {
+      alt: "GREGoR Consortium",
+      height: 168,
+      src: "/consortia/carousel/gregor.webp",
+    },
+    persistent: true,
+    text: "The GREGoR Consortium's latest publication in Nature (Vol 647) presents a large-scale collaborative framework, datasets and discoveries from over 7,500 individuals from over 3,000 families, are rapidly made available to researchers worldwide through the Analysis, Visualization and Informatics Lab-space (AnVIL) to catalyse global efforts to develop approaches for genetic diagnoses in rare diseases",
+    title: "GREGoR: accelerating genomics for rare diseases",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/news/2025/08/25/all-of-us-anvil-imputation-service",
+      },
+    ],
+    persistent: true,
+    text: "The Broad Institute's Data Sciences Platform has launched the All of Us + AnVIL Imputation Service.",
+    title: "Introducing the All of Us + AnVIL Imputation Service",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
+      },
+    ],
+    persistent: true,
+    text: "Using the AnVIL, the PRIMED Consortium is developing methods to improve the performance of PRSs in global populations and individuals of diverse genetic ancestry.",
+    title:
+      "The PRIMED Consortium: Reducing disparities in polygenic risk assessment",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.science.org/doi/10.1126/science.abl3533",
+      },
+      {
+        label: ACTION_LABEL.WORKSPACE,
+        url: "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T",
+      },
+    ],
+    persistent: true,
+    text: "Using the AnVIL, researchers find the T2T-CHM13 reference genome universally improves the analysis of human genetic variation.",
+    title:
+      "A complete reference genome improves analysis of human genetic variation",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3",
+      },
+    ],
+    persistent: true,
+    text: "AnVIL inverts the traditional model of genomic analysis, eliminating data movement and providing scalable, shared computing resources.",
+    title:
+      "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/learn/watch-videos-and-tutorials/anvil-videos",
+      },
+    ],
+    persistent: true,
+    text: "Our short video series shows how AnVIL improves collaborative science for different researcher roles.",
+    title: "AnVIL Shorts: How can AnVIL help my research?",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.science.org/doi/10.1126/science.abe3261",
+      },
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        url: "https://support.terra.bio/hc/en-us/articles/360041068771--COVID-19-workspaces-data-and-tools-in-Terra",
+      },
+    ],
+    persistent: true,
+    text: "Using the AnVIL, researchers investigate the effect of superspreading events in the Boston area.",
+    title:
+      "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://academic.oup.com/nar/article/49/W1/W624/6274534",
+      },
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        url: "https://dockstore.org",
+      },
+    ],
+    persistent: true,
+    text: "Dockstore is an open source platform for publishing, sharing, and finding bioinformatics tools and workflows.",
+    title:
+      "The Dockstore: enhancing a community platform for sharing reproducible and accessible computational protocols",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://www.nature.com/articles/s41592-019-0654-x",
+      },
+      {
+        label: ACTION_LABEL.WORKSPACE,
+        url: "https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Book-OrchestratingSingleCellAnalysis",
+      },
+    ],
+    persistent: true,
+    text: "The AnVIL hosts a detailed book of single-cell methods and analysis techniques.",
+    title: "Orchestrating single-cell analysis with Bioconductor",
+  },
+  {
+    links: [
+      {
+        label: ACTION_LABEL.PAPER,
+        url: "https://academic.oup.com/nar/article/48/W1/W395/5849904",
+      },
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/learn/run-interactive-analyses/getting-started-with-galaxy",
+      },
+    ],
+    persistent: true,
+    text: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data.",
+    title:
+      "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2020 update",
+  },
+];
+
 /**
- * Returns the carousel cards for the hero section.
+ * Returns the carousel cards for the hero section, filtered to entries that
+ * are either within the recent-content window or marked persistent.
  * @returns carousel cards.
  */
 export function buildCarouselCards(): SectionCard[] {
-  return [
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/news/2026/05/01/anvil-free-genomic-datasets-aws",
-        },
-      ],
-      text: "AnVIL has partnered with AWS to make major genomic datasets freely available, eliminating data transfer fees that previously exceeded $15,000 for some datasets.",
-      title:
-        "AnVIL Makes Groundbreaking Genomic Datasets Available on AWS for Free",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/events/anvil2026-community-conference",
-        },
-      ],
-      text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
-      title: "AnVIL Community Conference 2026",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/news/2026/04/07/anvil-open-access-data-aws-registry",
-        },
-      ],
-      text: "Open-access data hosted by NHGRI's AnVIL Project is now available through the Registry of Open Data on AWS and the AWS Marketplace and is freely downloadable from the AnVIL Data Explorer.",
-      title: "NHGRI AnVIL Open-Access Data Available in AWS Open Data Registry",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          url: "/releases/2026/03/release-notes",
-        },
-      ],
-      text: "Explore newly released and updated studies on the AnVIL platform - find datasets in the Data Explorer and Data Library.",
-      title: "AnVIL March 2026 Release",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.nature.com/articles/s41586-025-09613-8",
-        },
-      ],
-      media: {
-        alt: "GREGoR Consortium",
-        height: 168,
-        src: "/consortia/carousel/gregor.webp",
-      },
-      text: "The GREGoR Consortium's latest publication in Nature (Vol 647) presents a large-scale collaborative framework, datasets and discoveries from over 7,500 individuals from over 3,000 families, are rapidly made available to researchers worldwide through the Analysis, Visualization and Informatics Lab-space (AnVIL) to catalyse global efforts to develop approaches for genetic diagnoses in rare diseases",
-      title: "GREGoR: accelerating genomics for rare diseases",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/news/2025/08/25/all-of-us-anvil-imputation-service",
-        },
-      ],
-      text: "The Broad Institute's Data Sciences Platform has launched the All of Us + AnVIL Imputation Service.",
-      title: "Introducing the All of Us + AnVIL Imputation Service",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.cell.com/ajhg/fulltext/S0002-9297(24)00379-3",
-        },
-      ],
-      text: "Using the AnVIL, the PRIMED Consortium is developing methods to improve the performance of PRSs in global populations and individuals of diverse genetic ancestry.",
-      title:
-        "The PRIMED Consortium: Reducing disparities in polygenic risk assessment",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.science.org/doi/10.1126/science.abl3533",
-        },
-        {
-          label: ACTION_LABEL.WORKSPACE,
-          url: "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T",
-        },
-      ],
-      text: "Using the AnVIL, researchers find the T2T-CHM13 reference genome universally improves the analysis of human genetic variation.",
-      title:
-        "A complete reference genome improves analysis of human genetic variation",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3",
-        },
-      ],
-      text: "AnVIL inverts the traditional model of genomic analysis, eliminating data movement and providing scalable, shared computing resources.",
-      title:
-        "Inverting the model of genomics data sharing with the NHGRI Genomic Data Science Analysis, Visualization, and Informatics Lab-space (AnVIL)",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/learn/watch-videos-and-tutorials/anvil-videos",
-        },
-      ],
-      text: "Our short video series shows how AnVIL improves collaborative science for different researcher roles.",
-      title: "AnVIL Shorts: How can AnVIL help my research?",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.science.org/doi/10.1126/science.abe3261",
-        },
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          url: "https://support.terra.bio/hc/en-us/articles/360041068771--COVID-19-workspaces-data-and-tools-in-Terra",
-        },
-      ],
-      text: "Using the AnVIL, researchers investigate the effect of superspreading events in the Boston area.",
-      title:
-        "Phylogenetic analysis of SARS-CoV-2 in Boston highlights the impact of superspreading events",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://academic.oup.com/nar/article/49/W1/W624/6274534",
-        },
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          url: "https://dockstore.org",
-        },
-      ],
-      text: "Dockstore is an open source platform for publishing, sharing, and finding bioinformatics tools and workflows.",
-      title:
-        "The Dockstore: enhancing a community platform for sharing reproducible and accessible computational protocols",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://www.nature.com/articles/s41592-019-0654-x",
-        },
-        {
-          label: ACTION_LABEL.WORKSPACE,
-          url: "https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Book-OrchestratingSingleCellAnalysis",
-        },
-      ],
-      text: "The AnVIL hosts a detailed book of single-cell methods and analysis techniques.",
-      title: "Orchestrating single-cell analysis with Bioconductor",
-    },
-    {
-      links: [
-        {
-          label: ACTION_LABEL.PAPER,
-          url: "https://academic.oup.com/nar/article/48/W1/W395/5849904",
-        },
-        {
-          label: ACTION_LABEL.LEARN_MORE,
-          target: ANCHOR_TARGET.SELF,
-          url: "/learn/run-interactive-analyses/getting-started-with-galaxy",
-        },
-      ],
-      text: "AnVIL has access to full Galaxy capabilities, a computational workbench used by thousands of scientists to analyze biomedical data.",
-      title:
-        "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2020 update",
-    },
-  ];
+  return CAROUSEL_CARDS.filter((card) =>
+    isRecentOrPersistent(card.date, card.persistent)
+  );
 }

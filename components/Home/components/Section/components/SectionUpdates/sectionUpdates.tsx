@@ -8,31 +8,19 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
-import { UpdateCard } from "./common/entities";
 import { Updates } from "./components/Updates/updates";
+import { UPDATE_VIEW } from "./constants";
 import {
   Headline,
   SectionActions,
   ToggleButtonGroup,
 } from "./sectionUpdates.styles";
-
-const MAX_UPDATE_CARDS = 3;
-
-export enum UPDATE_VIEW {
-  EVENTS = "EVENTS",
-  NEWS = "NEWS",
-}
+import { getDisplayCards } from "./utils";
 
 export const SectionUpdates = (): JSX.Element => {
   const { eventCards, newsCards } = useSectionsData();
   const [view, setView] = useState<UPDATE_VIEW>(UPDATE_VIEW.NEWS);
-  const cards =
-    view === UPDATE_VIEW.NEWS
-      ? newsCards.slice(0, MAX_UPDATE_CARDS)
-      : eventCards
-          .filter(filterUpcomingEvent)
-          .reverse()
-          .slice(0, MAX_UPDATE_CARDS);
+  const cards = getDisplayCards(view, newsCards, eventCards);
   const updateName = view.toLowerCase();
 
   // Callback fired when toggle button value changes.
@@ -82,14 +70,4 @@ function getToggleButtons(
       value: UPDATE_VIEW.EVENTS,
     },
   ];
-}
-
-/**
- * Returns true if the card has a future date.
- * @param card - Cards
- * @returns true if the card has a future date.
- */
-function filterUpcomingEvent(card: UpdateCard): boolean {
-  if (!card.date) return false;
-  return new Date(card.date) >= new Date();
 }

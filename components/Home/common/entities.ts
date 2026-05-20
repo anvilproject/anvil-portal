@@ -4,8 +4,10 @@ import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/compo
 type Link = Omit<LinkProps, "url"> & { url: string };
 
 export interface SectionCard {
+  date?: string;
   links: Link[];
   media?: StaticImageProps;
+  persistent?: boolean;
   secondaryText?: string;
   text: string;
   title: string;

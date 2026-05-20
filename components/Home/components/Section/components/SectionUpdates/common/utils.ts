@@ -5,27 +5,50 @@ import {
   getContentDirectory,
   getFrontmatterByPaths,
   isFeatured,
+  isPersistent,
+  isRecentOrPersistent,
 } from "../../../../../../../content/utils";
 import { mapSlugByFilePaths } from "../../../../../../../docs/common/utils";
 import { CardFrontmatter, UpdateCard } from "./entities";
 
 /**
- * Returns the update section cards for the given directory.
+ * Returns the update section cards for the given directory, applying the
+ * supplied frontmatter filter.
  * @param dirName - Directory name.
+ * @param filterFrontmatterFn - Frontmatter filter applied per item.
  * @returns update section cards.
  */
-export function buildUpdateSectionCards(dirName: string): UpdateCard[] {
+export function buildUpdateSectionCards(
+  dirName: string,
+  filterFrontmatterFn: (frontmatter: CardFrontmatter) => boolean
+): UpdateCard[] {
   const slugByFilePaths = mapSlugByFilePaths(getContentDirectory(dirName));
   const frontmatterByPaths = getFrontmatterByPaths(slugByFilePaths, dirName);
-  return processUpdateSectionCards([...frontmatterByPaths]);
+  return processUpdateSectionCards(
+    [...frontmatterByPaths],
+    filterFrontmatterFn
+  );
 }
 
 /**
- * Returns true if the frontmatter is featured, not hidden, and the date is defined.
+ * Returns true if the event frontmatter is featured, not hidden, has a date,
+ * and is either within the recent-content window or marked persistent.
  * @param frontmatter - Frontmatter.
- * @returns true if the frontmatter is featured, not hidden, and the date is defined.
+ * @returns true if the event should be shown in the featured section.
  */
-function filterFrontmatter(frontmatter: CardFrontmatter): boolean {
+export function filterEventFrontmatter(frontmatter: CardFrontmatter): boolean {
+  if (!frontmatter.featured || frontmatter.hidden) return false;
+  return isRecentOrPersistent(frontmatter.date, frontmatter.persistent);
+}
+
+/**
+ * Returns true if the news frontmatter is featured, not hidden, and has a
+ * date. News is not subject to the recent-content window — the featured
+ * section always renders the most recent items regardless of age.
+ * @param frontmatter - Frontmatter.
+ * @returns true if the news item should be shown in the featured section.
+ */
+export function filterNewsFrontmatter(frontmatter: CardFrontmatter): boolean {
   return Boolean(
     frontmatter.date && frontmatter.featured && !frontmatter.hidden
   );
@@ -44,6 +67,7 @@ function mapToCardFrontmatter(
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate();
   const featured = isFeatured(frontmatter);
+  const persistent = isPersistent(frontmatter);
   const secondaryText = moment?.format(DATE_FORMAT); // Formatted date field.
   return {
     date,
@@ -51,6 +75,7 @@ function mapToCardFrontmatter(
     featured,
     hidden,
     path,
+    persistent,
     secondaryText,
     title,
   };
@@ -79,7 +104,7 @@ function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
  */
 export function processUpdateSectionCards(
   frontmatterByPaths: [string, Frontmatter][],
-  filterFrontmatterFn = filterFrontmatter
+  filterFrontmatterFn: (frontmatter: CardFrontmatter) => boolean
 ): UpdateCard[] {
   return [...frontmatterByPaths]
     .map(mapToCardFrontmatter)
