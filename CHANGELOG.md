@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.34.0](https://github.com/anvilproject/anvil-portal/compare/v2.33.0...v2.34.0) (2026-05-20)
+
+
+### Features
+
+* add 3-month freshness window and persistent flag ([#3961](https://github.com/anvilproject/anvil-portal/issues/3961)) ([#3962](https://github.com/anvilproject/anvil-portal/issues/3962)) ([67881ca](https://github.com/anvilproject/anvil-portal/commit/67881ca4f776005d5ceabd410873d4958f367ca5))
+* replace landscape og image with brand icon ([#3959](https://github.com/anvilproject/anvil-portal/issues/3959)) ([#3960](https://github.com/anvilproject/anvil-portal/issues/3960)) ([e9fdbdd](https://github.com/anvilproject/anvil-portal/commit/e9fdbddc1e9ceeec180e6e0626de9757c904d58d))
+
+
+### Chores
+
+* update static analytics to April 2026 ([#3952](https://github.com/anvilproject/anvil-portal/issues/3952)) ([e1fede3](https://github.com/anvilproject/anvil-portal/commit/e1fede36bdad375555b919a888122752435529cd))
+* update static analytics to April 2026 ([#3953](https://github.com/anvilproject/anvil-portal/issues/3953)) ([e1fede3](https://github.com/anvilproject/anvil-portal/commit/e1fede36bdad375555b919a888122752435529cd))
+
+
+### Content
+
+* replace ACC 2026 image with higher resolution version ([#3954](https://github.com/anvilproject/anvil-portal/issues/3954)) ([#3955](https://github.com/anvilproject/anvil-portal/issues/3955)) ([767d6e5](https://github.com/anvilproject/anvil-portal/commit/767d6e5851b063171a1d894e6344e8b5d84ce8e1))
+* update consortium data access guidelines to v3 ([#3963](https://github.com/anvilproject/anvil-portal/issues/3963)) ([#3966](https://github.com/anvilproject/anvil-portal/issues/3966)) ([8956204](https://github.com/anvilproject/anvil-portal/commit/895620408e57fb09fce497a81349e772d7bb8129))
+
 ## [2.33.0](https://github.com/anvilproject/anvil-portal/compare/v2.32.0...v2.33.0) (2026-05-06)
 
 
