@@ -1,6 +1,7 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
 import { JSX } from "react";
+import { TWITTER_HANDLE } from "./constants";
 import type { OgMetaProps } from "./types";
 
 /**
@@ -64,7 +65,13 @@ export const OgMeta = ({
       <meta key="og:type" content="website" property="og:type" />
       <meta key="og:url" content={url} property="og:url" />
       <meta key="twitter:card" content="summary" name="twitter:card" />
+      <meta
+        key="twitter:creator"
+        content={TWITTER_HANDLE}
+        name="twitter:creator"
+      />
       <meta key="twitter:image" content={image} name="twitter:image" />
+      <meta key="twitter:site" content={TWITTER_HANDLE} name="twitter:site" />
     </NextHead>
   );
 };
