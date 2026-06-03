@@ -280,11 +280,6 @@
     "change": 0.55
   },
   {
-    "page": "/robots.txt",
-    "views": 8,
-    "change": 0.37777777777777777
-  },
-  {
     "page": "/news/2023/09/05/data-release-als-compute-project",
     "views": 8,
     "change": 0.37777777777777777
@@ -565,16 +560,6 @@
     "change": null
   },
   {
-    "page": "/)",
-    "views": 2,
-    "change": null
-  },
-  {
-    "page": "/](https://anvilproject.org/)",
-    "views": 2,
-    "change": null
-  },
-  {
     "page": "/consortia/cser/news",
     "views": 2,
     "change": -0.3111111111111111
@@ -670,11 +655,6 @@
     "change": 1.0666666666666664
   },
   {
-    "page": "/events](https://anvilproject.org/events)!",
-    "views": 2,
-    "change": null
-  },
-  {
     "page": "/guides",
     "views": 2,
     "change": 1.0666666666666664
@@ -693,11 +673,6 @@
     "page": "/guides/style/typography-examples",
     "views": 2,
     "change": -0.5866666666666667
-  },
-  {
-    "page": "/help@lists.anvilproject.org",
-    "views": 2,
-    "change": null
   },
   {
     "page": "/learn/data-analysts/galaxy-gsg-video",
@@ -795,27 +770,12 @@
     "change": -0.3111111111111111
   },
   {
-    "page": "/).",
-    "views": 1,
-    "change": 0.033333333333333215
-  },
-  {
-    "page": "//checkout/",
-    "views": 1,
-    "change": 0.033333333333333215
-  },
-  {
     "page": "/champions/",
     "views": 1,
     "change": -0.7416666666666667
   },
   {
     "page": "/consortia/cser/projects/cser1",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/events)",
     "views": 1,
     "change": null
   },
@@ -1035,16 +995,6 @@
     "change": null
   },
   {
-    "page": "/favicon-32x32.png",
-    "views": 1,
-    "change": null
-  },
-  {
-    "page": "/feed",
-    "views": 1,
-    "change": null
-  },
-  {
     "page": "/guides/content/creating-a-new-page",
     "views": 1,
     "change": null
@@ -1230,16 +1180,6 @@
     "change": 0.033333333333333215
   },
   {
-    "page": "/overview/securityhttps://terra.bio/terra-security/",
-    "views": 1,
-    "change": -0.8523809523809524
-  },
-  {
-    "page": "/),",
-    "views": 0,
-    "change": -1.0
-  },
-  {
     "page": "/champions",
     "views": 0,
     "change": -1.0
@@ -1271,21 +1211,6 @@
   },
   {
     "page": "/content-guide",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/docs-EN/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/docs/",
-    "views": 0,
-    "change": -1.0
-  },
-  {
-    "page": "/docs/champions/",
     "views": 0,
     "change": -1.0
   },
