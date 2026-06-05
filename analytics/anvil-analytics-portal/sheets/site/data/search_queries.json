@@ -1,136 +1,152 @@
 {
-  "total": 86,
+  "total": 250,
   "queries": [
     {
-      "query": "AnVIL Champions",
-      "count": 22
+      "query": "LIZTYsvl",
+      "count": 83
     },
     {
-      "query": "Communicate Feedback",
-      "count": 15
+      "query": "javascript:alert(5397)",
+      "count": 48
     },
     {
-      "query": "Champions",
-      "count": 5
+      "query": "<img src=\"random.gif\" onerror=alert(5397)>",
+      "count": 42
     },
     {
-      "query": "WGBS",
-      "count": 4
+      "query": "<script>alert(5397)</script>",
+      "count": 30
+    },
+    {
+      "query": "alcohol",
+      "count": 7
+    },
+    {
+      "query": "cser",
+      "count": 3
     },
     {
       "query": "AnVIL_HPRC",
       "count": 3
     },
     {
-      "query": "gregor",
-      "count": 3
-    },
-    {
-      "query": "HG005",
+      "query": "dgtex",
       "count": 2
     },
     {
-      "query": "phs001489",
+      "query": "import files RStudio",
       "count": 2
     },
     {
-      "query": "ADOPT PGx Acute Pain Trial",
+      "query": "poenarm",
       "count": 2
     },
     {
-      "query": "DUOS",
+      "query": "1-1/4x1 mech tee",
       "count": 2
     },
     {
-      "query": "collaboration",
-      "count": 2
-    },
-    {
-      "query": "contact",
-      "count": 2
-    },
-    {
-      "query": "phs004058.v1.p1.",
-      "count": 2
-    },
-    {
-      "query": "\"AnVIL Data Explorer\"",
+      "query": "ADOPT",
       "count": 1
     },
     {
-      "query": "ALS compute",
+      "query": "Communicate Feedback",
       "count": 1
     },
     {
-      "query": "AnVIL Champions Communicate Feedback",
+      "query": "GRU",
       "count": 1
     },
     {
-      "query": "AnVIL Data Explorer",
+      "query": "GUARDD",
       "count": 1
     },
     {
-      "query": "Anvil Champions",
+      "query": "Genomic correlates of response to immune checkpoint therapies in clear cell renal cell carcinoma",
       "count": 1
     },
     {
-      "query": "GREGoR",
+      "query": "acc",
       "count": 1
     },
     {
-      "query": "GTEx",
+      "query": "acc 2026",
       "count": 1
     },
     {
-      "query": "HPRC",
+      "query": "access",
       "count": 1
     },
     {
-      "query": "Paternity ",
+      "query": "adopt",
       "count": 1
     },
     {
-      "query": "WGBS GTEX",
+      "query": "alcoholism",
       "count": 1
     },
     {
-      "query": "allele specific expression",
+      "query": "all of us",
       "count": 1
     },
     {
-      "query": "allele specific expression GTEx",
+      "query": "annotation",
       "count": 1
     },
     {
-      "query": "allele specific expression humangtex",
+      "query": "brief",
       "count": 1
     },
     {
-      "query": "galaxy",
+      "query": "cost",
       "count": 1
     },
     {
-      "query": "liver",
+      "query": "depmap",
       "count": 1
     },
     {
-      "query": "phs000424",
+      "query": "gencode",
       "count": 1
     },
     {
-      "query": "phs001886",
+      "query": "hprc",
       "count": 1
     },
     {
-      "query": "phs001886.v4.p1",
+      "query": "import data",
       "count": 1
     },
     {
-      "query": "phs003047",
+      "query": "institutional",
       "count": 1
     },
     {
-      "query": "seqr",
+      "query": "kids first",
+      "count": 1
+    },
+    {
+      "query": "openarm",
+      "count": 1
+    },
+    {
+      "query": "pangenome",
+      "count": 1
+    },
+    {
+      "query": "phs001493",
+      "count": 1
+    },
+    {
+      "query": "phs003181",
+      "count": 1
+    },
+    {
+      "query": "spatial",
+      "count": 1
+    },
+    {
+      "query": "travel risk brief",
       "count": 1
     }
   ]
