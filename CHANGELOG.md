@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.35.0](https://github.com/anvilproject/anvil-portal/compare/v2.34.0...v2.35.0) (2026-06-09)
+
+
+### Features
+
+* add bot traffic filtering and engaged sessions metric ([#3974](https://github.com/anvilproject/anvil-portal/issues/3974)) ([cd9f9a2](https://github.com/anvilproject/anvil-portal/commit/cd9f9a2f54d2f88c0f1e7bf596bad71c1952eb37))
+
+
+### Bug Fixes
+
+* og image not rendering in slack unfurls — replace with transparent-canvas asset ([#3971](https://github.com/anvilproject/anvil-portal/issues/3971)) ([#3972](https://github.com/anvilproject/anvil-portal/issues/3972)) ([6a6ccb6](https://github.com/anvilproject/anvil-portal/commit/6a6ccb68aaa7cd1243bd2a2274aba6e310118e0d))
+* slack link unfurls on anvilproject.org missing og image ([#3968](https://github.com/anvilproject/anvil-portal/issues/3968)) ([#3969](https://github.com/anvilproject/anvil-portal/issues/3969)) ([2bcc8b5](https://github.com/anvilproject/anvil-portal/commit/2bcc8b5c1c33c29ea731e66cc25df186b3f0ed6b))
+
+
+### Chores
+
+* add robots.txt for bot crawl protection ([#3965](https://github.com/anvilproject/anvil-portal/issues/3965)) ([b33e4db](https://github.com/anvilproject/anvil-portal/commit/b33e4db14f2a3911fe8dae220a17381529a68a8e))
+* add robots.txt for bot crawl protection [#3964](https://github.com/anvilproject/anvil-portal/issues/3964) ([b33e4db](https://github.com/anvilproject/anvil-portal/commit/b33e4db14f2a3911fe8dae220a17381529a68a8e))
+* update analytics to May 2026 ([#3978](https://github.com/anvilproject/anvil-portal/issues/3978)) ([344c957](https://github.com/anvilproject/anvil-portal/commit/344c957194f70d71ef70d957dfbd6180a0135b05))
+* update analytics to May 2026 [#3975](https://github.com/anvilproject/anvil-portal/issues/3975) ([344c957](https://github.com/anvilproject/anvil-portal/commit/344c957194f70d71ef70d957dfbd6180a0135b05))
+
 ## [2.34.0](https://github.com/anvilproject/anvil-portal/compare/v2.33.0...v2.34.0) (2026-05-20)
 
 
