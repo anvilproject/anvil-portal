@@ -1,0 +1,29 @@
+---
+author: "Lynn Pais"
+description: "seqr is a one-of-a-kind platform designed to support the analysis and visualization of genomic and transcriptomic data on rare disease families, while enabling data sharing and collaboration among researchers, clinicians and clinical laboratories."
+title: "seqr: an open-source rare disease genomic analysis platform on the AnVIL"
+date: "2026-06-11"
+---
+# ***seqr***: an open-source rare disease genomic analysis platform on the AnVIL   
+![Community need](public/consortia/news/Community_need.png)
+
+*seqr is a one-of-a-kind platform designed to support the analysis and visualization of genomic and transcriptomic data on rare disease families, while enabling data sharing and collaboration among researchers, clinicians and clinical laboratories.*
+
+## Security and Functionality
+The *seqr* platform is Federal Information Security Management Act (FISMA)-compliant and is fully integrated into the cloud-based AnVIL on the Terra ecosystem since 2021\. Since then, seqr has been used in the analysis of \>70,000 samples (45% Broad Institute Center for Mendelian Genomics data and 55% from external data owners loading through AnVIL).   
+![Seqr features](public/consortia/news/seqr_features.png)
+
+*seqr*’s analysis functionality includes predefined searches and customizable search parameters resulting in the filtration and display of richly annotated variants (A); Project management tools facilitate tracking of case and project-level metadata, including data type(s), pedigree, structured phenotype information, and analysis status (B); Data sharing functionality includes the integration of Matchmaker Exchange and Variant- Level Matching to facilitate novel disease discovery and phenotype expansions (C).
+
+## Using *seqr* on AnVIL
+
+![AnVIL loading](public/consortia/news/AnVIL_loading.png)
+
+Any AnVIL-registered user can submit a request to import data directly from their AnVIL workspace into a private *seqr* project for analysis. The entire pipeline is fully automated, with quality checks and error messages surfaced directly to the user throughout the process.
+
+<img src="public/consortia/news/Resources_user_support.png" align="left" width="300" style="margin-right: 10px;">
+Support resources for *seqr* include tutorials and a comprehensive FAQ page, which provide a useful starting point for learning more about the platform. 
+
+Users can also reach out directly to the *seqr* team with additional questions or to collaborate on new features.
+<div style="clear: both;"></div>
+Visit https://seqr.broadinstitute.org/faq/ to learn more. 
