@@ -13,7 +13,7 @@ date: "2026-06-11"
 The *seqr* platform is Federal Information Security Management Act (FISMA)-compliant and is fully integrated into the cloud-based AnVIL on the Terra ecosystem since 2021\. Since then, seqr has been used in the analysis of \>70,000 samples (45% Broad Institute Center for Mendelian Genomics data and 55% from external data owners loading through AnVIL).   
 ![Seqr features](public/consortia/news/seqr_features.png)
 
-*seqr*’s analysis functionality includes predefined searches and customizable search parameters resulting in the filtration and display of richly annotated variants (A); Project management tools facilitate tracking of case and project-level metadata, including data type(s), pedigree, structured phenotype information, and analysis status (B); Data sharing functionality includes the integration of Matchmaker Exchange and Variant- Level Matching to facilitate novel disease discovery and phenotype expansions (C).
+*seqr*’s analysis functionality includes predefined searches and customizable search parameters resulting in the filtration and display of richly annotated variants (A); Project management tools facilitate tracking of case and project-level metadata, including data type(s), pedigree, structured phenotype information, and analysis status (B); Data sharing functionality includes the integration of Matchmaker Exchange and Variant-Level Matching to facilitate novel disease discovery and phenotype expansions (C).
 
 ## Using *seqr* on AnVIL
 
