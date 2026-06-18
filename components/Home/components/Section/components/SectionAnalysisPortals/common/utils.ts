@@ -130,7 +130,7 @@ export function buildAnalysisPortalCards(browserURL: string): SectionCard[] {
         {
           label: ACTION_LABEL.LEARN_MORE,
           target: ANCHOR_TARGET.SELF,
-          url: "/news/2021/03/10/announcing-seqr-in-anvil/",
+          url: "/news/2026/06/11/seqr-about-on-anvil/",
         },
       ],
       media: {
