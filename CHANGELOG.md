@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.35.1](https://github.com/anvilproject/anvil-portal/compare/v2.35.0...v2.35.1) (2026-06-19)
+
+
+### Content
+
+* update seqr homepage link to new news article ([#3986](https://github.com/anvilproject/anvil-portal/issues/3986)) ([8f5f1ce](https://github.com/anvilproject/anvil-portal/commit/8f5f1cea0051c9aeb56fd8d99e74682c480a3579))
+
 ## [2.35.0](https://github.com/anvilproject/anvil-portal/compare/v2.34.0...v2.35.0) (2026-06-16)
 
 
