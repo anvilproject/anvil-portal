@@ -20,6 +20,7 @@ const config = [
       "**/out/**",
       "**/.next/**",
       "**/build/**",
+      "**/analytics/**",
       "**/venv/**",
       "next-env.d.ts",
       "next.config.mjs",
