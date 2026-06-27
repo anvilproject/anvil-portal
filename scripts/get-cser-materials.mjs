@@ -6,8 +6,8 @@ const urlsJsonPath = "./files/cser-materials-urls.json";
 const cserDirPath = "../public/consortia/cser";
 
 const categoryDirNames = {
-  "research-material": "research-materials",
   attachments: "resources",
+  "research-material": "research-materials",
 };
 
 getMaterials();
@@ -18,14 +18,15 @@ async function getMaterials() {
     const dirPath = path.resolve(cserDirPath, dirName);
     try {
       await fsp.access(dirPath);
-    } catch (e) {
+    } catch {
+      // Directory doesn't exist yet — create it.
       await fsp.mkdir(dirPath);
     }
   }
   // Download files
   const materialsUrls = JSON.parse(await fsp.readFile(urlsJsonPath, "utf8"));
   for (const url of iterFlatObjectValues(materialsUrls)) {
-    const urlMatch = /\/(research-material|attachments)\/([^\/]+)$/.exec(url);
+    const urlMatch = /\/(research-material|attachments)\/([^/]+)$/.exec(url);
     if (!urlMatch) {
       console.log(`Unknown path format for ${JSON.stringify(url)}`);
       continue;

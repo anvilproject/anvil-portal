@@ -9,6 +9,7 @@ export const ExploreView = (
 
   useEffect(() => {
     // Temporary work-around for race-condition issue with ExploreState's ProcessExploreResponse and ResetExploreResponse.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional one-shot mount flag for the race-condition work-around noted above; refactor tracked in #3991
     setIsReady(true);
   }, []);
 

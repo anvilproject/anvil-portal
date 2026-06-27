@@ -12,12 +12,12 @@ const NODE_KEYS: Record<string, NavigationNode["key"]> = {
 };
 const PATH_SEGMENTS = {
   CITE_ANVIL: "cite-anvil",
-  WHY_ANVIL: "why-anvil",
   DMS_REQUIRMENTS: "dms-requirements",
   OVERVIEW: "overview",
   PROJECT_SPONSOR: "project-sponsor",
   PUBLICATIONS: "publications",
   SECURITY: "security",
+  WHY_ANVIL: "why-anvil",
 };
 
 export const OVERVIEW: NavigationEntry = {

@@ -16,7 +16,13 @@ import { Card } from "./dataIngestionChart.styles";
 
 const EXCLUDED_CONSORTIA = ["Unspecified"];
 
-const { monthDataByConsortium, startYear } = chartData;
+// Next 16's tsconfig (moduleResolution: bundler + resolveJsonModule) infers
+// JSON types directly, widening the [name, sizes] tuples to (string | number[])[].
+// Assert the shape the chart logic depends on.
+const { monthDataByConsortium, startYear } = chartData as unknown as {
+  monthDataByConsortium: [string, number[]][];
+  startYear: number;
+};
 
 echarts.use([
   GridComponent,
@@ -56,7 +62,6 @@ function fixDecimalPlaces(n: number, places: number): string {
   return str.concat("0".repeat(places - presentPlaces));
 }
 
-// eslint-disable-next-line sonarjs/cognitive-complexity -- TODO?
 function formatTooltip(
   hoverIndex: React.MutableRefObject<null | number>,
   seriesInfoObjects: Array<TooltipSeriesInfo>
@@ -255,6 +260,7 @@ const DataIngestionChart: FC = (): JSX.Element => {
         <ReactEChartsCore
           ref={chart}
           echarts={echarts}
+          // eslint-disable-next-line react-hooks/refs -- reads hoverIndex ref during render to build chart options; refactor tracked in #3991
           option={getChartOptions(hoverIndex)}
           style={{ height: "400px" }}
         />

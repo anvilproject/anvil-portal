@@ -45,7 +45,8 @@ async function addMaterials(): Promise<void> {
         path.resolve(newMaterialsPath, `${categoryName}.json`),
         "utf8"
       );
-    } catch (e) {
+    } catch {
+      // No additions file for this category — skip it.
       continue;
     }
     const newMaterialsInfo = JSON.parse(jsonText) as MaterialsAdditions;
