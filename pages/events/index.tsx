@@ -38,6 +38,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const frontmatter = parseFrontmatter(data);
   if (!frontmatter || frontmatter.hidden) return { notFound: true };
   const mdxSource = await serialize(content, {
+    // blockJS: false — v6 defaults to true and would strip {expression}
+    // interpolation from MDX content.
+    blockJS: false,
     mdxOptions: {
       development: process.env.NODE_ENV === "development",
     },

@@ -132,7 +132,7 @@ async function getPublishedDoi(preprintDoi) {
       return relation[0].id;
     }
   } catch {
-    // eslint-disable-next-line sonarjs/no-ignored-exceptions -- Relation lookup is best-effort; errors are expected for preprints without published versions
+    // Best-effort preprint lookup; ignore failures and fall through to null.
   }
   return null;
 }

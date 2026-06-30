@@ -33,7 +33,7 @@ async function generateChartData() {
 
   try {
     await fsPromises.access(workspaceFilesPath);
-  } catch (e) {
+  } catch {
     console.log(
       "Folder /scripts/" +
         workspaceFilesPath.replace(/^.\//, "") +

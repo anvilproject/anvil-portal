@@ -50,6 +50,7 @@ export const useSearch = (): UseSearch => {
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncs request URL with request params on change; refactor tracked in #3991
     onSearch({ searchParams: requestParams });
   }, [onSearch, requestParams]);
 

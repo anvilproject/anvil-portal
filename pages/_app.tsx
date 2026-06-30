@@ -10,6 +10,7 @@ import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/provide
 import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
+import { AppCacheProvider } from "@mui/material-nextjs/v16-pagesRouter";
 import { createBreakpoints } from "@mui/system";
 import { deepmerge } from "@mui/utils";
 import { NextPage } from "next";
@@ -38,7 +39,8 @@ setFeatureFlags(["gregor", "primed"]);
 
 const DEFAULT_ENTITY_LIST_TYPE = "citations";
 
-function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
+function MyApp(props: AppPropsWithComponent): JSX.Element {
+  const { Component, pageProps } = props;
   const Footer = Component.Footer || DXFooter;
   const Main = Component.Main || DXMain;
   const appConfig = config();
@@ -66,56 +68,58 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   }, [gtmAuth, gtmId, gtmPreview]);
 
   return (
-    <EmotionThemeProvider theme={appTheme}>
-      <ThemeProvider theme={appTheme}>
-        <ConfigProvider config={appConfig} entityListType={entityListType}>
-          <Head appTitle={appTitle} pageTitle={pageTitle} />
-          <OgMeta
-            appTitle={appTitle}
-            defaultDescription={DEFAULT_DESCRIPTION}
-            pageDescription={pageDescription}
-            pageTitle={pageTitle}
-            portalURL={portalURL}
-          />
-          <CssBaseline />
-          <ServicesProvider>
-            <LayoutDimensionsProvider>
-              <AppLayout>
-                <ThemeProvider
-                  theme={(theme: Theme): Theme => {
-                    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                    const { vars, ...themeWithoutVars } = theme;
-                    return createTheme(
-                      deepmerge(themeWithoutVars, {
-                        breakpoints: createBreakpoints(BREAKPOINTS),
-                      })
-                    );
-                  }}
-                >
-                  <DXHeader {...layout.header} navigation={navigation} />
-                </ThemeProvider>
-                <ExploreStateProvider entityListType={entityListType}>
-                  <Main>
-                    <ErrorBoundary
-                      fallbackRender={({ error, reset }): JSX.Element => (
-                        <Error
-                          errorMessage={error.message}
-                          onReset={reset}
-                          rootPath="/"
-                        />
-                      )}
-                    >
-                      <Component {...pageProps} />
-                    </ErrorBoundary>
-                  </Main>
-                </ExploreStateProvider>
-                <Footer {...layout.footer} />
-              </AppLayout>
-            </LayoutDimensionsProvider>
-          </ServicesProvider>
-        </ConfigProvider>
-      </ThemeProvider>
-    </EmotionThemeProvider>
+    <AppCacheProvider {...props}>
+      <EmotionThemeProvider theme={appTheme}>
+        <ThemeProvider theme={appTheme}>
+          <ConfigProvider config={appConfig} entityListType={entityListType}>
+            <Head appTitle={appTitle} pageTitle={pageTitle} />
+            <OgMeta
+              appTitle={appTitle}
+              defaultDescription={DEFAULT_DESCRIPTION}
+              pageDescription={pageDescription}
+              pageTitle={pageTitle}
+              portalURL={portalURL}
+            />
+            <CssBaseline />
+            <ServicesProvider>
+              <LayoutDimensionsProvider>
+                <AppLayout>
+                  <ThemeProvider
+                    theme={(theme: Theme): Theme => {
+                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                      const { vars, ...themeWithoutVars } = theme;
+                      return createTheme(
+                        deepmerge(themeWithoutVars, {
+                          breakpoints: createBreakpoints(BREAKPOINTS),
+                        })
+                      );
+                    }}
+                  >
+                    <DXHeader {...layout.header} navigation={navigation} />
+                  </ThemeProvider>
+                  <ExploreStateProvider entityListType={entityListType}>
+                    <Main>
+                      <ErrorBoundary
+                        fallbackRender={({ error, reset }): JSX.Element => (
+                          <Error
+                            errorMessage={error.message}
+                            onReset={reset}
+                            rootPath="/"
+                          />
+                        )}
+                      >
+                        <Component {...pageProps} />
+                      </ErrorBoundary>
+                    </Main>
+                  </ExploreStateProvider>
+                  <Footer {...layout.footer} />
+                </AppLayout>
+              </LayoutDimensionsProvider>
+            </ServicesProvider>
+          </ConfigProvider>
+        </ThemeProvider>
+      </EmotionThemeProvider>
+    </AppCacheProvider>
   );
 }
 

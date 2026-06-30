@@ -12,10 +12,7 @@ export interface EventSession {
 }
 
 export type Frontmatter =
-  | DefaultFrontmatter
-  | FrontmatterEvent
-  | FrontmatterOverview
-  | FrontmatterNews;
+  DefaultFrontmatter | FrontmatterEvent | FrontmatterOverview | FrontmatterNews;
 
 export interface DefaultFrontmatter {
   breadcrumbs?: Breadcrumb[];

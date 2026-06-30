@@ -27,6 +27,7 @@ export const Datasets = (): JSX.Element => {
 
   // Resets visibility mode on breakpoint change.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- resets visibility mode on breakpoint change; refactor tracked in #3991
     setMode(resetVisibilityMode(bpUpSm));
   }, [bpUpSm]);
 
