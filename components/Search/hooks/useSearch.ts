@@ -2,16 +2,15 @@ import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card
 import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
 import { SiteConfig } from "../../../site-config/common/entities";
 import {
-  OnSearchFn,
   SearchPagination,
   SearchResponse,
   SearchResponseError,
 } from "./common/entities";
 import {
   getRequestURL,
+  getSearchIndex,
   isRequestValid,
   mapSearchPagination,
   mapSearchResults,
@@ -24,41 +23,34 @@ export interface UseSearch {
   isLoading: boolean;
   isSuccess: boolean;
   isValid: boolean;
-  onSearch: OnSearchFn;
   pagination?: SearchPagination;
   results?: CardProps[];
 }
 
 /**
  * Hook facilitating search functionality and results.
+ * Both the search term and the pagination index are derived from the URL, so
+ * refresh, deep-link sharing, and browser back/forward all restore the exact
+ * results page without any local state.
  * @returns search results.
  */
 export const useSearch = (): UseSearch => {
   const { config } = useConfig();
   const { portalURL } = config as SiteConfig;
   const { asPath } = useRouter();
-  const [requestURL, setRequestURL] = useState<string>();
+  const searchParams = useSearchParams();
+  const requestURL = getRequestURL(
+    portalURL,
+    searchParams,
+    getSearchIndex(searchParams)
+  );
   const { isIdle, isLoading, isSuccess, response } =
     useFetchSearch<Response>(requestURL);
-  const requestParams = useSearchParams();
-
-  const onSearch = useCallback(
-    ({ searchIndex = 0, searchParams = requestParams }): void => {
-      setRequestURL(getRequestURL(portalURL, searchParams, searchIndex));
-    },
-    [portalURL, requestParams]
-  );
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncs request URL with request params on change; refactor tracked in #3991
-    onSearch({ searchParams: requestParams });
-  }, [onSearch, requestParams]);
 
   return {
     isLoading: isIdle || isLoading,
     isSuccess: isSuccess,
     isValid: isRequestValid(asPath),
-    onSearch,
     pagination: mapSearchPagination(response),
     results: mapSearchResults(response),
   };

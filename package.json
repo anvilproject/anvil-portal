@@ -19,7 +19,7 @@
     "fetch-citations": "node scripts/fetch-citations.mjs --build-publications"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "^54",
+    "@databiosphere/findable-ui": "^55.0.0",
     "@emotion/react": "^11",
     "@emotion/server": "^11",
     "@emotion/styled": "^11",
