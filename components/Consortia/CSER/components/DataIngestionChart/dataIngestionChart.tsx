@@ -260,7 +260,7 @@ const DataIngestionChart: FC = (): JSX.Element => {
         <ReactEChartsCore
           ref={chart}
           echarts={echarts}
-          // eslint-disable-next-line react-hooks/refs -- reads hoverIndex ref during render to build chart options; refactor tracked in #3991
+          // eslint-disable-next-line react-hooks/refs -- intentional: passes the hoverIndex ref into the option builder so the ECharts tooltip formatter reads the live hover index at call time; holding it in state would re-render the whole chart on every hover
           option={getChartOptions(hoverIndex)}
           style={{ height: "400px" }}
         />
