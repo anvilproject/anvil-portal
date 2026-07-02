@@ -112,7 +112,7 @@ export function useSwipeInteraction(
 
   useEffect(() => {
     if (swipeAction === SWIPE_ACTION.SWIPE_FORWARD) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- swipe state-machine reset effect; refactor tracked in #3991
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: this effect is the state machine that consumes the transient swipeAction signal (set by the event handlers and by external callers via onSetSwipeAction), applies the index change, and resets the signal to NONE; kept as an effect so the returned event handlers stay referentially stable
       onSwipeToIndex(1);
       setSwipeAction(SWIPE_ACTION.NONE);
     } else if (swipeAction === SWIPE_ACTION.SWIPE_BACKWARD) {

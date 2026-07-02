@@ -3,7 +3,7 @@ import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
 } from "@databiosphere/findable-ui/lib/hooks/useBreakpointHelper";
-import { JSX, useEffect, useState } from "react";
+import { JSX, useState } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../common/entities";
@@ -18,18 +18,20 @@ export const Datasets = (): JSX.Element => {
   const bpUpSm = useBreakpointHelper(BREAKPOINT_FN_NAME.UP, "sm");
   const { datasetCards: cards } = useSectionsData();
   const [mode, setMode] = useState<VISIBILITY_MODE>(VISIBILITY_MODE.COLLAPSED);
+  const [prevBpUpSm, setPrevBpUpSm] = useState<boolean>();
   const isExpanded = mode === VISIBILITY_MODE.EXPANDED;
+
+  // Reset visibility mode whenever the breakpoint changes, adjusting state
+  // during render (rather than in an effect) by tracking the previous value.
+  if (bpUpSm !== prevBpUpSm) {
+    setPrevBpUpSm(bpUpSm);
+    setMode(resetVisibilityMode(bpUpSm));
+  }
 
   // Toggles visibility mode.
   const onVisibilityMode = (): void => {
     setMode(updateVisibilityMode);
   };
-
-  // Resets visibility mode on breakpoint change.
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- resets visibility mode on breakpoint change; refactor tracked in #3991
-    setMode(resetVisibilityMode(bpUpSm));
-  }, [bpUpSm]);
 
   return (
     <Grid isExpanded={isExpanded}>
