@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.35.2](https://github.com/anvilproject/anvil-portal/compare/v2.35.1...v2.35.2) (2026-07-02)
+
+
+### Bug Fixes
+
+* remove dead galaxy chat link from help page [#3988](https://github.com/anvilproject/anvil-portal/issues/3988) ([#3989](https://github.com/anvilproject/anvil-portal/issues/3989)) ([84ce250](https://github.com/anvilproject/anvil-portal/commit/84ce2508e5d9e46d6de3b707ed66611a2662e88c))
+
+
+### Chores
+
+* upgrade to next.js 16 + new findable-ui major (phase 2 from findable-ui[#952](https://github.com/anvilproject/anvil-portal/issues/952)) ([#3980](https://github.com/anvilproject/anvil-portal/issues/3980)) ([#3992](https://github.com/anvilproject/anvil-portal/issues/3992)) ([44c2c5f](https://github.com/anvilproject/anvil-portal/commit/44c2c5fbdfe1c6984c12db5a54a3315dac476ea0))
+
+
+### Code Refactoring
+
+* remove react-hooks v7 eslint-disable suppressions ([#3991](https://github.com/anvilproject/anvil-portal/issues/3991)) ([#3993](https://github.com/anvilproject/anvil-portal/issues/3993)) ([61119b7](https://github.com/anvilproject/anvil-portal/commit/61119b7f8e5ef73bd8d17e531137155e98acff4a))
+
 ## [2.35.1](https://github.com/anvilproject/anvil-portal/compare/v2.35.0...v2.35.1) (2026-06-19)
 
 
