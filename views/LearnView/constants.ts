@@ -42,7 +42,7 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
   {
     StartIcon: DatabaseSearchIcon,
     cardUrl: "/learn/find-data",
-    secondaryText: "Discover and access AnVIL datasets",
+    secondaryText: "Discover datasets and configure access (e.g. dbGaP)",
     title: "Find Data",
   },
   {
@@ -55,7 +55,7 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     StartIcon: SmbShareIcon,
     cardUrl: "/learn/access-data-services",
     secondaryText: "Learn to access and analyze data with AnVIL services",
-    title: "Access Data Services",
+    title: "Use Data Services",
   },
   {
     StartIcon: AdsClickIcon,
