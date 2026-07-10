@@ -38,7 +38,7 @@
     "echarts": "^5.3.3",
     "echarts-for-react": "^3.0.2",
     "gray-matter": "^4",
-    "isomorphic-dompurify": "^2",
+    "isomorphic-dompurify": "^3",
     "ky": "^1",
     "moment-timezone": "^0.5.45",
     "next": "^16",
