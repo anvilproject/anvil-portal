@@ -18,17 +18,27 @@ updates:
         update-types:
           - "minor"
           - "patch"
-  # Enable version updates for the analytics Python scripts
+  # Enable version updates for the analytics Python scripts, grouping all
+  # bumps into a single PR per run
   - package-ecosystem: "pip"
     directory: "/analytics"
     schedule:
       interval: "monthly"
     assignees:
       - "noopdog"
-  # Enable version updates for the disease-codes Python scripts
+    groups:
+      all-updates:
+        patterns:
+          - "*"
+  # Enable version updates for the disease-codes Python scripts, grouping all
+  # bumps into a single PR per run
   - package-ecosystem: "pip"
     directory: "/scripts/disease-codes"
     schedule:
       interval: "monthly"
     assignees:
       - "noopdog"
+    groups:
+      all-updates:
+        patterns:
+          - "*"
