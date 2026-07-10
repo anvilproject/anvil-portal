@@ -9,7 +9,7 @@ updates:
     schedule:
       interval: "monthly"
     assignees:
-      - "noopdog"
+      - "NoopDog"
     open-pull-requests-limit: 5
     groups:
       minor-and-patch:
@@ -25,7 +25,7 @@ updates:
     schedule:
       interval: "monthly"
     assignees:
-      - "noopdog"
+      - "NoopDog"
     groups:
       all-updates:
         patterns:
@@ -37,7 +37,7 @@ updates:
     schedule:
       interval: "monthly"
     assignees:
-      - "noopdog"
+      - "NoopDog"
     groups:
       all-updates:
         patterns:
