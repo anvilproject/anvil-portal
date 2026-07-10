@@ -118,7 +118,7 @@ tqdm==4.66.5
 traitlets==5.14.3
 typing_extensions==4.12.2
 tzdata==2024.1
-uc-micro-py==1.0.3
+uc-micro-py==2.0.0
 uritemplate==4.1.1
 urllib3==1.26.20
 wcwidth==0.2.13
