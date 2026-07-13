@@ -6,81 +6,135 @@ description: "AnVIL is a repository for open and controlled access datasets. Dat
 title: "Requesting Data Access"
 ---
 
-<Alert icon={false} severity="info">
-  AnVIL is a repository for open and controlled access datasets. Dataset access
-  is controlled in adherence to NIH Policy and in line with the standards set
-  forth in the individual consents involved in each cohort.
-</Alert>
+## Accessing Data in AnVIL
 
-## Data Access Types
+AnVIL provides access to datasets through the AnVIL Data Explorer and Terra. Access requirements depend on the permitted uses of the dataset.
 
-AnVIL provides three types of data access:
+### Data access types
 
-1. **Open Access** - Open access datasets are accessible to all in the [AnVIL Data Explorer](https://explore.anvilproject.org/guides).
-1. **[Controlled Access](/learn/find-data/requesting-data-access#accessing-controlled-access-data)** - Controlled Access datasets matching the data's dbGaP consent codes are accessible to researchers  via the AnVIL Data Explorer. Access is granted via dbGaP or DUOS within the Data Explorer using the process outlined below.
-1. **[Consortium Access](/learn/find-data/requesting-data-access#accessing-consortium-access-data)** - Consortium Access datasets are accessible to consortia
-   members under the consortium data sharing agreement.
+#### Open access
+
+Open access datasets are available to all users in the AnVIL Data Explorer. While no data access approval is required, users will need to use an institutional email with their AnVIL account.
+
+#### [Controlled access](/learn/find-data/requesting-data-access#accessing-controlled-access-data)
+
+Controlled access datasets require authorization based on the dataset's consent codes. Access is granted through dbGaP or DUOS. Once approved, users must link the appropriate research identities to their AnVIL/Terra account before they can access the data.
+
+#### [Consortium access](/learn/find-data/requesting-data-access#accessing-consortium-access-data)
+
+Consortium access datasets are available to approved members of participating consortia under consortium data-sharing agreements.
 
 ## Accessing Controlled Access Data
 
-This document outlines the process by which external, non-consortium members can gain access to a given cohort housed within the AnVIL. To learn more about AnVIL data and best practices for working with AnVIL data, see [Finding and using data in AnVIL](https://support.terra.bio/hc/en-us/articles/34594440468635-Finding-and-using-AnVIL-data). 
+This section explains how external, non-consortium researchers can find controlled access datasets in AnVIL, request access, and leverage approved access in Terra.
 
+To access controlled AnVIL datasets, you will need:
 
-### Goals
-This article is to inform a novice user how to 
+- An AnVIL/Terra account
+- A billing project or billing account in Terra
+- Approval to access the dataset through dbGaP or DUOS
+- A linked NIH Researcher Authentication Service, or RAS, identity in Terra
 
-1. Set up a Terra account with Google billing and data access via a linked eRA Commons address.    
-2. Find data in the AnVIL Data Explorer.     
-3. Submit a Data Access Request (DAR) within the AnVIL Data Explorer using either dbGaP or DUOS.
-4. Gain access to the data (with a valid, approved DAR).     
+### Before you begin: Use your institutional email for Terra
 
-## 1. Set up billing and access in Terra
+As of March 25, 2026, accessing AnVIL's controlled datasets requires linking your AnVIL/Terra account to the NIH Researcher Authentication Service (RAS).
 
-AnVIL recommends storing and analyzing data within the AnVIL ecosystem on the Terra platform. The step-by-step instructions (linked below) include guidance about setting up an account and billing in Terra.
+Your AnVIL/Terra account should be created using your **institutional email address**. Do not use a personal webmail address such as: Gmail, Yahoo, Hotmail, outlook.com, etc.
 
-### Linking Your Terra Account And Your eRA Commons Address
+Using your institutional email helps ensure that your Terra identity can be correctly associated with your institutional research credentials and data access approvals.
 
-1. **You must have an eRA Commons or NIH account to access controlled AnVIL data**. Go [here](https://wiki.nci.nih.gov/display/TCGA/Application+Process) for
-   instructions to set up an eRA Commons or NIH account.
-1. **Establish a link in Terra to your eRA Commons/NIH Account**. To link an eRA Commons to your Terra account, go to
-   your [Profile page](https://anvil.terra.bio/#profile) in Terra and log in with your NIH credentials. _(Note: Once per
-   month, you will need to relink these accounts to ensure that you still have proper access)_.      
+If your institutional account is not a Google account, you will need to [set up a Google ID that is linked with your institutional account](https://support.terra.bio/hc/en-us/articles/360029186611-How-to-set-up-a-Terra-account-with-a-non-Google-email).
 
-### Instructions    
+### Step 1: Confirm that you have data access approval
 
-- For step-by-step instructions on how to set up an account in Terra including how to set up and link Google billing to cover the costs of cloud resources and how to link your dbGaP authorization for controlled data, see [Part 1: Set up billing and access in Terra](https://support.terra.bio/hc/en-us/articles/34595554957723-Part-1-Set-up-billing-and-data-access-in-Terra). 
+Before linking accounts in Terra, confirm that you have been granted access to the study through dbGaP or DUOS.
 
-## 2. Find data and request access in the AnVIL Data Explorer
+If you already have dbGaP approval but cannot access the dataset in Terra or the AnVIL Data Explorer, you may still need to [link your NIH RAS identity to your Terra account](/learn/find-data/requesting-data-access#step-4-link-your-nih-ras-identity-in-terra). You can also explore datasets in the AnVIL Data Explorer and [request access later](/learn/find-data/requesting-data-access#step-7-request-access-if-needed).
 
-The [AnVIL Data Explorer](https://explore.anvilproject.org/datasets) provides faceted search and selection of released AnVIL data, including by dataset, donor, biosample, and file formats. You can request access through [dbGaP](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH1JK575KK82W997MXZT2WH) or [DUOS](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH68WKCFZVYYAQPND1M38B3) right from the Data Explorer.    
+### Step 2: Set up Login.gov or ID.me
 
-### Instructions    
+To use NIH RAS, you need either a Login.gov or ID.me account.
 
-- For step-by-step instructions how to **search and filter data and explore studies** in the AnVIL Data Explorer, see [Part 2 in Terra Support](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH0C1NJWMVCH66ESM444RFN).      
-- For details on how to **check/request access to controlled data** in the AnVIL Data Explorer, click [here](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH1JK575KK82W997MXZT2WH).    
-- **Is the dataset not listed in the AnVIL Data Explorer?**      
-If a desired dataset is not in the AnVIL Data Explorer, note that recently released data may not yet be indexed in the AnVIL Data Explorer. For step-by-step instructions on how to use DUOS to find and access your data, see [How to access GTEx data in Terra](https://support.terra.bio/hc/en-us/articles/30873545719451). Note that this documentation uses GTEx data as an example; you will use the same steps to access any data stored in TDR via DUOS, including AnVIL data before it is available in the AnvIL Data Explorer.
+- **U.S.-based researchers** should use a Login.gov account.
+- **Non-U.S./international researchers** should use ID.me, as Login.gov identity verification requires a U.S. issued ID.
 
-### Next steps: Analyzing AnVIL data  
+### Step 3: Link your eRA Commons account to Login.gov or ID.me
 
-Once you have access to controlled data, you can analyze it in Terra to keep it within the AnVIL ecosystem.     
+After setting up Login.gov or ID.me, link that account to your eRA Commons identity. Follow [these instructions](https://www.era.nih.gov/register-accounts/create-and-edit-an-account.htm) to set up an eRA Commons or NIH account if you don’t have one.
 
-### Instructions    
+1. Go to the [NIH Linked Identities Settings page](https://auth.nih.gov/settings2/profile/loadIdentities).
+2. Sign in using Login.gov or ID.me.
+3. Connect your eRA Commons account.
+4. Confirm that your eRA Commons account appears as a linked identity.
 
-- For **step-by-step instructions**, see [Part 3: Export AnVIL data to Terra for analysis](https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis). 
+This step allows NIH RAS to recognize your eRA Commons identity and associated dbGaP authorizations.
+
+### Step 4: Link your NIH RAS identity in Terra
+
+Once your Login.gov or ID.me account is linked to eRA Commons, connect NIH RAS to Terra.
+
+1. Sign in to Terra via anvil.terra.bio.
+2. Go to [the External Identities tab of your profile](https://anvil.terra.bio/#profile?tab=externalIdentities).
+3. Select **Log In To RAS**.
+4. Sign in using the same Login.gov or ID.me account you linked to eRA Commons.
+5. Confirm that your NIH RAS identity appears in Terra.
+
+After this is complete, Terra will use your RAS passport to determine which controlled datasets you are authorized to access. _Note: Once per month, you will need to relink these accounts to ensure that you still have proper access_.
+
+For detailed instructions, see the [Terra support article on RAS Integration for AnVIL Data](https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data-Released-3-25-26).
+
+### Step 5: Set up billing and access in Terra
+
+AnVIL recommends storing and analyzing data within the AnVIL ecosystem on the Terra platform.
+
+You will need Terra billing for cloud costs such as:
+
+- Compute
+- Storage
+- Data egress
+- Requester Pays data access
+
+For step-by-step instructions on how to set up an account in Terra, see these instructions: [How to set up billing in Terra (GCP)](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-in-Terra-GCP).
+
+### Step 6: Find data in the AnVIL Data Explorer
+
+The [AnVIL Data Explorer]({browserURL}/datasets) provides faceted search and selection of released AnVIL data, including by dataset, donor, biosample, and file formats. You can request access through [dbGaP](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH1JK575KK82W997MXZT2WH) or [DUOS](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH68WKCFZVYYAQPND1M38B3) right from the Data Explorer, if you aren’t already approved.
+
+To find a study:
+
+1. Open the AnVIL Data Explorer.
+2. Search for the dataset or study.
+3. Review the access type.
+4. If the dataset is controlled access, check whether you already have access.
+5. If needed, [begin a data access request through dbGaP or DUOS](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer#h_01JNH1JK575KK82W997MXZT2WH).
+
+For step-by-step instructions how to search and filter data and explore studies in the AnVIL Data Explorer, see [Search and select data in AnVIL Data Explorer](https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Data-Explorer).
+
+<Alert icon={false} severity="info">
+  <div>
+    **If your dataset is not listed in the AnVIL Data Explorer**:
+
+    Recently released data may not yet be indexed in the AnVIL Data Explorer. If the dataset you need is not listed, you may still be able to request access. For step-by-step instructions on how to use DUOS to find and access your data, see [How to access GTEx data in Terra](https://support.terra.bio/hc/en-us/articles/30873545719451). Note that this documentation uses GTEx data as an example; you will use the same steps to access any data stored in TDR via DUOS, including AnVIL data before it is available in the AnVIL Data Explorer.
+  </div>
+</Alert>
+
+### Step 7: Request access, if needed
+
+Controlled access data may require a Data Access Request, or DAR. Once your DAR is approved, make sure your Terra account is linked to NIH RAS as described above. Approval alone is not enough; Terra must also be able to verify your authorization through your linked RAS identity.
+
+### Next steps: Analyzing AnVIL data
+
+Once you have access to controlled data, you can analyze it in Terra to keep it within the AnVIL ecosystem. For step-by-step instructions, see the support article: [Export AnVIL data to Terra for analysis](https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis).
 
 ## Accessing Consortium Access Data
 
-Many consortia have data-sharing agreements between members, granting each member access to every other member's data
-within the consortium.
+Many consortia have data-sharing agreements between members, granting each member access to every other member's data within the consortium.
 
-The AnVIL is offering a streamlined access process for consortium members in data-sharing consortia. **See [Consortia Access guidelines](https://anvilproject.org/learn/data-submitters/resources/consortium-data-access-guidelines) for more details and instructions**. 
+The AnVIL is offering a streamlined access process for consortium members in data-sharing consortia. See [Consortia Access guidelines](/learn/data-submitters/resources/consortium-data-access-guidelines) for more details and instructions.
 
-The consortium bringing the data in designates a contact person, and that person is added to an access list as an access
-control admin for the consortia's datasets.
+The consortium bringing the data in designates a contact person, and that person is added to an access list as an access control admin for the consortia's datasets.
 
-The admin can add or remove users as their needs demand, and any users added to that list will see all the workspaces
-for their group.
+The admin can add or remove users as their needs demand, and any users added to that list will see all the workspaces for their group.
 
 For example, someone added to the CCDG access list will be able to see all the CCDG workspaces.
 
@@ -97,19 +151,40 @@ The following consortia currently participate in AnVIL’s consortia data-sharin
 - CMG
 - GTEx
 - eMERGE
-- [GREGoR](https://https://gregorconsortium.org/)
+- [GREGoR](https://gregorconsortium.org/)
 
-If you are a member of a participating consortium and would like access to a consortium’s data, please reach out to your
-consortium leadership to request access.
+If you are a member of a participating consortium and would like access to a consortium’s data, please reach out to your consortium leadership to request access.
 
 ## Requester Pays
 
-- All AnVIL buckets have Requester Pays enabled, meaning that you will need to provide a billing account in order to
-  cover any costs associated with egress, storage, or compute.
-- If working in gsutil, using the -u argument will be critical to provide this billing account.
+All AnVIL buckets have Requester Pays enabled. This means that you must provide a billing account to cover costs associated with:
 
-## Troubleshooting
+- Egress (data transfer)
+- Storage
+- Compute
 
-If you are having trouble with your access to AnVIL data, please email our help desk
-at [help@lists.anvilproject.org]({anvilHelp}), and someone will reach out to you as soon as we are
-able.
+If you are using `gcloud` command line tools, include the `--billing-project` argument to specify the billing account.
+
+Example:
+
+```
+gcloud storage --billing-project=<PROJECT_TO_BILL> cp <gs://path-to-file-to-download> <gs://destination>
+```
+
+Replace `PROJECT_TO_BILL` with your Google Cloud billing project. For more information, see [this article on working with Requester Pays](https://support.terra.bio/hc/en-us/articles/360029801491-Using-Requester-Pays-workspaces-buckets).
+
+## Troubleshooting Data Access
+
+If you have been approved for access but cannot see or use a controlled dataset, check the following:
+
+1. Did you create your Terra account with your institutional email?
+2. Have you created a Login.gov or ID.me account?
+3. Have you linked your eRA Commons account to Login.gov or ID.me?
+4. Have you linked your NIH RAS identity in Terra under **Profile > External Identities**?
+5. Are you signed into Terra with the correct account?
+6. Do you have an active Terra billing project?
+7. If using command-line tools, are you specifying a billing project for Requester Pays?
+
+If you still need help, you might find the answer to your question or ask a new question on the Support Forum at [help.anvilproject.org](https://help.anvilproject.org/).
+
+If your inquiry is more sensitive, please email our help desk at [help@lists.anvilproject.org]({anvilHelp}), and someone will reach out to you as soon as we are able.
