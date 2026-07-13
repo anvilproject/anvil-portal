@@ -3,6 +3,7 @@
 - `disease_abbrev_mapping.tsv` is the output file
 
 ## Setup
+- Use Python 3.12.4
 - Run `python -m venv ./venv` to create a new environment under `./venv`
 - Run `source ./venv/bin/activate` to activate the environment
 - Run `pip install -r ./requirements.txt` to install requirements
