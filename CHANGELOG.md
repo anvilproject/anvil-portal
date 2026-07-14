@@ -1,5 +1,43 @@
 # Changelog
 
+## [2.35.2](https://github.com/anvilproject/anvil-portal/compare/v2.35.1...v2.35.2) (2026-07-14)
+
+
+### Bug Fixes
+
+* remove dead galaxy chat link from help page [#3988](https://github.com/anvilproject/anvil-portal/issues/3988) ([#3989](https://github.com/anvilproject/anvil-portal/issues/3989)) ([84ce250](https://github.com/anvilproject/anvil-portal/commit/84ce2508e5d9e46d6de3b707ed66611a2662e88c))
+
+
+### Chores
+
+* **deps:** bump the all-updates group across 1 directory with 26 updates ([#4020](https://github.com/anvilproject/anvil-portal/issues/4020)) ([38a63a0](https://github.com/anvilproject/anvil-portal/commit/38a63a059e2c62779d5d5a562fc65f91df988414))
+* upgrade to next.js 16 + new findable-ui major (phase 2 from findable-ui[#952](https://github.com/anvilproject/anvil-portal/issues/952)) ([#3980](https://github.com/anvilproject/anvil-portal/issues/3980)) ([#3992](https://github.com/anvilproject/anvil-portal/issues/3992)) ([44c2c5f](https://github.com/anvilproject/anvil-portal/commit/44c2c5fbdfe1c6984c12db5a54a3315dac476ea0))
+
+
+### Content
+
+* add/revise data security faq entries ([#3995](https://github.com/anvilproject/anvil-portal/issues/3995)) ([#4033](https://github.com/anvilproject/anvil-portal/issues/4033)) ([2bcc1fb](https://github.com/anvilproject/anvil-portal/commit/2bcc1fbcb4b13eef011be5c22d401af78a678c7e))
+* revise requesting data access page ([#3994](https://github.com/anvilproject/anvil-portal/issues/3994)) ([#4034](https://github.com/anvilproject/anvil-portal/issues/4034)) ([99a21c8](https://github.com/anvilproject/anvil-portal/commit/99a21c895c605f2bf7f98e5181b525f0d4e5bcea))
+
+
+### Documentation
+
+* Update Learn card title/subtext ([#3996](https://github.com/anvilproject/anvil-portal/issues/3996)) ([#3997](https://github.com/anvilproject/anvil-portal/issues/3997)) ([d26e6f0](https://github.com/anvilproject/anvil-portal/commit/d26e6f03379c6abe2fc576e73b558738de55d52e))
+
+
+### Code Refactoring
+
+* remove react-hooks v7 eslint-disable suppressions ([#3991](https://github.com/anvilproject/anvil-portal/issues/3991)) ([#3993](https://github.com/anvilproject/anvil-portal/issues/3993)) ([61119b7](https://github.com/anvilproject/anvil-portal/commit/61119b7f8e5ef73bd8d17e531137155e98acff4a))
+
+
+### Continuous Integration
+
+* fix dependabot assignee username casing [#3998](https://github.com/anvilproject/anvil-portal/issues/3998) ([#4026](https://github.com/anvilproject/anvil-portal/issues/4026)) ([8d6beff](https://github.com/anvilproject/anvil-portal/commit/8d6beff5cb8d68784e15cf0fbec1df42449265fd))
+* group dependabot minor/patch updates into monthly PRs [#3998](https://github.com/anvilproject/anvil-portal/issues/3998) ([#3999](https://github.com/anvilproject/anvil-portal/issues/3999)) ([153a667](https://github.com/anvilproject/anvil-portal/commit/153a66786ac2d2405d5873a33ded63924471d0cf))
+* group dependabot pip updates into a single PR per directory [#3998](https://github.com/anvilproject/anvil-portal/issues/3998) ([#4017](https://github.com/anvilproject/anvil-portal/issues/4017)) ([d0b4ccc](https://github.com/anvilproject/anvil-portal/commit/d0b4ccc9447d526384c85a73937a6cfd9a9d5bf3))
+* upgrade release-please-action from v4 to v5 ([#4035](https://github.com/anvilproject/anvil-portal/issues/4035)) ([02f7438](https://github.com/anvilproject/anvil-portal/commit/02f7438b6f312066d58eed3af71175d7118fba30))
+* upgrade release-please-action from v4 to v5 ([#4036](https://github.com/anvilproject/anvil-portal/issues/4036)) ([02f7438](https://github.com/anvilproject/anvil-portal/commit/02f7438b6f312066d58eed3af71175d7118fba30))
+
 ## [2.35.1](https://github.com/anvilproject/anvil-portal/compare/v2.35.0...v2.35.1) (2026-06-19)
 
 
