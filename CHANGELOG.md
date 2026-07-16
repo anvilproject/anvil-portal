@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.35.3](https://github.com/anvilproject/anvil-portal/compare/v2.35.2...v2.35.3) (2026-07-15)
+
+
+### Continuous Integration
+
+* pin github actions by commit sha at current versions ([#4038](https://github.com/anvilproject/anvil-portal/issues/4038)) ([c3ea70c](https://github.com/anvilproject/anvil-portal/commit/c3ea70ccd571819e33c03f127e0df5a54adb1b8b))
+* pin github actions by commit sha at current versions ([#4040](https://github.com/anvilproject/anvil-portal/issues/4040)) ([c3ea70c](https://github.com/anvilproject/anvil-portal/commit/c3ea70ccd571819e33c03f127e0df5a54adb1b8b))
+
 ## [2.35.2](https://github.com/anvilproject/anvil-portal/compare/v2.35.1...v2.35.2) (2026-07-14)
 
 
