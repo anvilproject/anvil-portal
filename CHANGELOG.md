@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.35.4](https://github.com/anvilproject/anvil-portal/compare/v2.35.3...v2.35.4) (2026-07-21)
+
+
+### Content
+
+* add anvil quarterly data pre-release (aug/sep) ([#4048](https://github.com/anvilproject/anvil-portal/issues/4048)) ([#4049](https://github.com/anvilproject/anvil-portal/issues/4049)) ([bdbc2cd](https://github.com/anvilproject/anvil-portal/commit/bdbc2cd2a19ebacec39e00aab02d5b8fba6c3425))
+* add anvil101 virtual workshop ([#4043](https://github.com/anvilproject/anvil-portal/issues/4043)) ([#4047](https://github.com/anvilproject/anvil-portal/issues/4047)) ([ba20a2a](https://github.com/anvilproject/anvil-portal/commit/ba20a2a3a84ddd80ccd109515e493a19d5ab427b))
+
+
+### Build System
+
+* read node version from .nvmrc in deploy scripts ([#4044](https://github.com/anvilproject/anvil-portal/issues/4044)) ([5cbbd8a](https://github.com/anvilproject/anvil-portal/commit/5cbbd8a84dbc812dd20ba074b330a04cfa12fd69))
+* read node version from .nvmrc in deploy scripts ([#4045](https://github.com/anvilproject/anvil-portal/issues/4045)) ([5cbbd8a](https://github.com/anvilproject/anvil-portal/commit/5cbbd8a84dbc812dd20ba074b330a04cfa12fd69))
+
 ## [2.35.3](https://github.com/anvilproject/anvil-portal/compare/v2.35.2...v2.35.3) (2026-07-15)
 
 
