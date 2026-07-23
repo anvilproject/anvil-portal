@@ -3,6 +3,7 @@ import { CTACard } from "../../components/common/Card/components/CTACard/ctaCard
 import { AccountsTreeIcon } from "../../components/common/CustomIcon/components/AccountsTreeIcon/accountsTreeIcon";
 import { AdsClickIcon } from "../../components/common/CustomIcon/components/AdsClickIcon/adsClickIcon";
 import { AnimatedImagesIcon } from "../../components/common/CustomIcon/components/AnimatedImagesIcon/animatedImagesIcon";
+import { ClinicalResourceIcon } from "../../components/common/CustomIcon/components/ClinicalResourceIcon/clinicalResourceIcon";
 import { DatabaseSearchIcon } from "../../components/common/CustomIcon/components/DatabaseSearchIcon/databaseSearchIcon";
 import { FilterDramaIcon } from "../../components/common/CustomIcon/components/FilterDramaIcon/filterDramaIcon";
 import { LiveHelpIcon } from "../../components/common/CustomIcon/components/LiveHelpIcon/liveHelpIcon";
@@ -50,6 +51,12 @@ export const CARDS: ComponentProps<typeof CTACard>[] = [
     cardUrl: "/learn/submit-data",
     secondaryText: "View data submission guides and resources",
     title: "Submit Data",
+  },
+  {
+    StartIcon: ClinicalResourceIcon,
+    cardUrl: "/learn/anvil-clinical-resource",
+    secondaryText: "Learn about AnVIL resources for clinical data",
+    title: "AnVIL Clinical Resource",
   },
   {
     StartIcon: SmbShareIcon,
