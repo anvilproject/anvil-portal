@@ -17,8 +17,9 @@ const OVERVIEW_OUTLINE_DEPTH = 2;
 
 /**
  * Maps an overview link to LinkProps.
- * A string link is converted to a LinkProps with the title taken from the frontmatter.
- * An undefined value is returned if the link is not found in the frontmatter, or if the title is not found.
+ * A link that configures its own label is returned directly, without a frontmatter lookup; this supports linking across sections.
+ * A label-less string link is converted to LinkProps with the label taken from the target page's frontmatter title.
+ * An undefined value is returned for a label-less link when its target frontmatter or title cannot be found.
  * @param section - Section.
  * @param link - Overview link.
  * @param frontmatters - Paths with frontmatter.
@@ -40,6 +41,9 @@ function getOverviewLink(
     return { label, url };
   }
   // Otherwise, handle internal links.
+  // A configured label removes the need to source the title from the target's frontmatter,
+  // which allows internal links to reference pages in other sections.
+  if (label) return { label, url };
   // Find the corresponding frontmatter for the link.
   const pathFrontmatter = getPathFrontmatter(section, url, frontmatters);
   if (!pathFrontmatter) return;
@@ -48,7 +52,7 @@ function getOverviewLink(
   if (!title) return;
   // Return the link props.
   return {
-    label: label || title,
+    label: title,
     url,
   };
 }
