@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.36.0](https://github.com/anvilproject/anvil-portal/compare/v2.35.4...v2.36.0) (2026-07-23)
+
+
+### Features
+
+* add "anvil clinical resource" card and page to the learn section ([#3983](https://github.com/anvilproject/anvil-portal/issues/3983)) ([#4057](https://github.com/anvilproject/anvil-portal/issues/4057)) ([54c9a97](https://github.com/anvilproject/anvil-portal/commit/54c9a97e8ed26c8a79ca6829ed61b6ae5a92ab19))
+
+
+### Content
+
+* add anvil101 virtual workshop - october 2026 ([#4054](https://github.com/anvilproject/anvil-portal/issues/4054)) ([#4056](https://github.com/anvilproject/anvil-portal/issues/4056)) ([b2c8599](https://github.com/anvilproject/anvil-portal/commit/b2c8599efdc03ab4e3efe64f70a4ec556f289c3d))
+
 ## [2.35.4](https://github.com/anvilproject/anvil-portal/compare/v2.35.3...v2.35.4) (2026-07-21)
 
 
