@@ -29,4 +29,7 @@ export interface ReleaseData {
   dataAdditions?: DataAddition[];
   dataModifications?: DataModification[];
   enhancements?: Enhancement[];
+  upcomingChanges?: UpcomingChange[];
 }
+
+export type UpcomingChange = BaseReleaseData;
