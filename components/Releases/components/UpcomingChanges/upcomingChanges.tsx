@@ -1,6 +1,7 @@
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/RoundedPaper/roundedPaper";
 import { MarkdownRenderer } from "@databiosphere/findable-ui/lib/components/MarkdownRenderer/markdownRenderer";
-import { CardContent, CardHeader, Stack } from "@mui/material";
+import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
+import { CardContent, CardHeader, Stack, Typography } from "@mui/material";
 import { JSX } from "react";
 import { ReleaseData } from "../../data/types";
 import { StyledCard } from "../Card/card.styles";
@@ -21,7 +22,16 @@ export const UpcomingChanges = ({
             title={<Title {...release} />}
           />
           <CardContent>
-            <MarkdownRenderer value={description} />
+            <Stack spacing={2} useFlexGap>
+              <Typography
+                color={TYPOGRAPHY_PROPS.COLOR.INK_LIGHT}
+                component="div"
+                variant={TYPOGRAPHY_PROPS.VARIANT.BODY_400}
+              >
+                Upcoming Changes
+              </Typography>
+              <MarkdownRenderer value={description} />
+            </Stack>
           </CardContent>
         </StyledCard>
       ))}
