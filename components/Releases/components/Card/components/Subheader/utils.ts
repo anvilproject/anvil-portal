@@ -20,14 +20,15 @@ export function getSubheaderParts(
 
 /**
  * Renders the study identifier for a release.
- * If there is a child PHS ID, it returns both parent and child IDs.
- * Otherwise, it returns just the PHS ID.
+ * If both parent and child PHS IDs are present, it returns both, labelled.
+ * Otherwise, it returns whichever ID is present, or null when neither is.
  * @param release - The release object containing PHS IDs.
  * @returns The formatted study identifier.
  */
 export function renderStudyIdentifier(
   release: Pick<BaseReleaseData, "childPhsId" | "phsId">
 ): ReactNode {
+  if (!release.phsId) return release.childPhsId ?? null;
   if (!release.childPhsId) return release.phsId;
 
   return `${release.phsId} (parent), ${release.childPhsId} (child)`;
