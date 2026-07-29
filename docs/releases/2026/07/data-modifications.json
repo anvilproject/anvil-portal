@@ -1,0 +1,18 @@
+[
+  {
+    "datasetsAffected": [],
+    "description": "Two files in the current dataset ([Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D)/[Data Library](https://duos.org/studies/191)) were found to have errors and were replaced in this data release.\n\nPlease reach out to [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org) if more information is needed.",
+    "duls": ["Unrestricted", "Mouse"],
+    "phsId": "phs003472.v1.p1",
+    "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
+    "studyUrl": "https://igvf.org/"
+  },
+  {
+    "datasetsAffected": [],
+    "description": "New data snapshots were generated to address data update requests. The impacted datasets are versions 1-4 under the General Research Use Data Use Limitation (GRU DUL) and versions 2-4 under the Health/Medical/Biomedical.",
+    "duls": ["GRU", "HMB"],
+    "phsId": "phs003047 versions 1-4",
+    "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
+    "studyUrl": "https://gregorconsortium.org/"
+  }
+]

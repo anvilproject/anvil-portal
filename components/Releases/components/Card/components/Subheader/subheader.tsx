@@ -1,18 +1,19 @@
-import { Dot } from "@databiosphere/findable-ui/lib/components/common/Dot/dot";
-import { JSX } from "react";
+import { Fragment, JSX } from "react";
 import { BaseReleaseData } from "../../../../data/types";
-import { STACK_PROPS } from "./constants";
-import { StyledStack } from "./subheader.styles";
-import { renderStudyIdentifier } from "./utils";
+import { StyledBox, StyledDot } from "./subheader.styles";
+import { getSubheaderParts } from "./utils";
 
 export const Subheader = (
   props: Pick<BaseReleaseData, "childPhsId" | "duls" | "phsId">
 ): JSX.Element | null => {
   return (
-    <StyledStack {...STACK_PROPS}>
-      <span>{renderStudyIdentifier(props)}</span>
-      <Dot />
-      <span>{props.duls.join(", ") || "No DULs"}</span>
-    </StyledStack>
+    <StyledBox>
+      {getSubheaderParts(props).map((part, i) => (
+        <Fragment key={i}>
+          {i > 0 && <StyledDot />}
+          <span>{part}</span>
+        </Fragment>
+      ))}
+    </StyledBox>
   );
 };

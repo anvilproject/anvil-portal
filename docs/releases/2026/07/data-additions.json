@@ -1,0 +1,201 @@
+[
+  {
+    "dataLibraryUrl": null,
+    "dataWorkspaceUrl": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_dGTEx_GRU_v1",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003838.v1.p1",
+    "description": "The first data release of the Developmental GTEx (dGTEx) contains 379 samples (342 RNA-seq and 37 WGS) from 40 subjects.",
+    "duls": ["GRU"],
+    "explorerUrl": null,
+    "phsId": "phs003838.v1.p1",
+    "studyName": "Developmental Genotype Tissue Expression (dGTEx) Project",
+    "studyUrl": "https://gtexportal.org/home/aboutDGtex",
+    "submitterBlogPost": "https://gtexportal.org/home/home/news?id=610"
+  },
+  {
+    "dataLibraryUrl": null,
+    "dataWorkspaceUrl": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_nhp_dGTEx_V1",
+    "dbGapUrl": null,
+    "description": "The first data release of the Non-Human Primate Developmental GTEx (dGTEx) Project contains 421 Macaque samples (372 RNA-seq and 49 WGS) from 50 subjects, and 333 Marmoset samples (314 RNA-seq and 19 WGS) from 20 subjects.",
+    "duls": [],
+    "explorerUrl": null,
+    "phsId": null,
+    "studyName": "Non-Human Primate Developmental GTEx (dGTEx) Project",
+    "studyUrl": "https://gtexportal.org/home/aboutNHPdGtex",
+    "submitterBlogPost": "https://gtexportal.org/home/home/news?id=610"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/94",
+    "dbGapUrl": null,
+    "description": "Release 2 contains the full release, including sequencing data, assemblies, and annotations from 232 individuals, directly within AnVIL, enabling streamlined analysis alongside other hosted datasets and tools. This addition complements existing access points, including HPRC's AWS S3 bucket, the HPRC Data Explorer, and INSDC, giving the community flexibility in how they work with the data.\n\nAs with all HPRC data, please refer to the consortium publication policy and best practices when using this pre-publication resource.",
+    "duls": [],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.title%22%2C%22value%22%3A%5B%22ANVIL_HPRC%22%2C%22AnVIL_HPRC_R2%22%5D%7D%5D",
+    "phsId": null,
+    "studyName": "Human Pangenome Reference Consortium",
+    "studyUrl": "https://humanpangenome.org/",
+    "submitterBlogPost": "https://humanpangenome.org/hprc-data-release-2/"
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/107",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v5.p4",
+    "description": "This fifth data release from the GREGoR Consortium expands the dataset to 12,292 participants from more than 5,000 families. The GREGoR dataset includes short-read whole exomes and genomes, long-read whole genomes, short-read ATAC-seq data, short and long-read RNA-seq, fiber-seq data, with linked phenotype and family structure. The dataset is well documented and structured in accordance with the GREGoR Data model. More information about the GREGoR Dataset is available via the Consortium's \"[GREGoR Data for the Scientific Community](https://gregorconsortium.org/data)\" page.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003047%22%5D%7D%5D",
+    "phsId": "phs003047.v5.p4",
+    "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
+    "studyUrl": "https://gregorconsortium.org/",
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3394",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001616.v2.p2",
+    "description": "Please refer to the dbGaP study page for more information.\n\nClinical data from this eMERGE dataset was harmonized to OMOP 5.3. Users may find information about the OMOP transformation in [these release notes](https://docs.google.com/document/d/1SMDxadoCNFcDw3_Fk-M42QJuUrblVIn4LdHkAzkgfkc/preview).",
+    "duls": [
+      "GRU",
+      "GRU-IRB",
+      "GRU-IRB-NPU",
+      "GRU-IRB-PUB-NPU",
+      "HMB",
+      "HMB-GSO",
+      "HMB-NPU",
+      "GRU-NPU",
+      "HMB-IRB-PUB"
+    ],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001616%22%5D%7D%5D",
+    "phsId": "phs001616.v2.p2",
+    "studyName": "eMERGE Network Phase III Clinical Sequencing: eMERGEseq Panel",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3759",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000906.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.\n\nClinical data from this eMERGE dataset was harmonized to OMOP 5.3. Users may find information about the OMOP transformation in [these release notes](https://docs.google.com/document/d/16NzBfbXS-SBEI9d1R-q3Oc6SJ7jrMnXauN0y13H2DyA/preview).",
+    "duls": ["HMB", "DS-DEM", "GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs000906%22%5D%7D%5D",
+    "phsId": "phs000906.v1.p1",
+    "studyName": "eMERGE Network's Multi-Center Pilot of Pharmacogenetic Sequencing in Clinical Practice",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3392",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001584.v2.p2",
+    "description": "Please refer to the dbGaP study page for more information.\n\nClinical data from this eMERGE dataset was harmonized to OMOP 5.3. Users may find specific information about the OMOP transformation in [these release notes](https://docs.google.com/document/d/1jnNQ_CfpVHQ5uypU8NCWaoaBaRy8Dt1TwOemkF-sTvM/preview).",
+    "duls": [
+      "GRU",
+      "GRU-IRB-PUB-GSO",
+      "GRU-IRB-NPU",
+      "HMB",
+      "HMB-MDS",
+      "DS-CHILDD",
+      "DS-DEM",
+      "HMB-PUB-GSO",
+      "GRU-IRB-PUB",
+      "HMB-GSO"
+    ],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001584%22%5D%7D%5D",
+    "phsId": "phs001584.v2.p2",
+    "studyName": "eMERGE Network Phase III: HRC SNV and 1000 Genomes SV Imputed Array Data of 105,000 Participants",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3918",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004069.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004069%22%5D%7D%5D",
+    "phsId": "phs004069.v1.p1",
+    "studyName": "A Depression and Opioid Pragmatic Trial in Pharmacogenetics (ADOPT PGx): Depression Trial",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3919",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004045.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004045%22%5D%7D%5D",
+    "phsId": "phs004045.v1.p1",
+    "studyName": "Genetic Testing to Understand and Address Renal Disease Disparities across the United States (GUARDD-US)",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/65",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001398.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001398%22%5D%7D%5D",
+    "phsId": "phs001398.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Cardiovascular: The Bangladesh Risk of Acute Vascular Events (BRAVE) Study",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3500",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002243.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["HMB-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002243%22%5D%7D%5D",
+    "phsId": "phs002243.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Cardiovascular: PEGASUS-TIMI 54",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3492",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002242.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["DS-DCCA-NPU-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002242%22%5D%7D%5D",
+    "phsId": "phs002242.v1.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Cardiovascular: SWISS-AF/SWISS-AF-PVI/BEAT-AF",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/201",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003499.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["HMB-PUB", "HMB-PUB-COL"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003499%22%5D%7D%5D",
+    "phsId": "phs003499.v1.p1",
+    "studyName": "Center for Common Disease Genomics (CCDG) - Cardiovascular: Multiethnic Cohort",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3886",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004430.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["DS-ASD-ID-IRB-PUB-COL-NPU-GSO"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004430%22%5D%7D%5D",
+    "phsId": "phs004430.v1.p1",
+    "studyName": "Center for Common Disease Genomics (CCDG) - Neuropsychiatric: Introduction of Exome/Genome Sequencing",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/67",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002502.v3.p1",
+    "description": "Additional data added under GRU and HMB-MDS. Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002502%22%5D%7D%5D",
+    "phsId": "phs002502.v3.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] Neuropsychiatric: Autism Spectrum Disorder (ASD) – Whole Exomes",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/62",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001642.v2.p1",
+    "description": "Additional data added under GRU. Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001642%22%5D%7D%5D",
+    "phsId": "phs001642.v2.p1",
+    "studyName": "Center for Common Disease Genomics [CCDG] - Autoimmune: Inflammatory Bowel Disease (IBD) Exomes and Genomes",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  }
+]
