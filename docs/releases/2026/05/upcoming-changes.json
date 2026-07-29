@@ -1,0 +1,9 @@
+[
+  {
+    "description": "Two files in the current dataset ([Explorer](https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003472%22%5D%7D%5D)/[Data Library](https://duos.org/studies/191)) were found to have errors and will be replaced in the next data release.\n\nPlease reach out to [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org) if more information is needed.",
+    "duls": ["Unrestricted", "Mouse"],
+    "phsId": "phs003472.v1.p1",
+    "studyName": "Impact of Genomic Variation on Function (IGVF) Consortium",
+    "studyUrl": "https://igvf.org/"
+  }
+]

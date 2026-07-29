@@ -1,0 +1,9 @@
+[
+  {
+    "description": "[**AnVIL_GTEx_public_data**](https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_public_data) will be taken offline the weeks of **August 3 through August 14** for data updates and re-organization. The release notes will be updated with these changes. We recommend users do not schedule running analyses on this dataset over this time frame.\n\nPlease reach out to [anvil-data@broadinstitute.org](mailto:anvil-data@broadinstitute.org) if more information is needed.",
+    "duls": ["Unrestricted"],
+    "phsId": "phs000424",
+    "studyName": "Common Fund (CF) Genotype-Tissue Expression Project (GTEx)",
+    "studyUrl": "https://www.gtexportal.org/home/aboutAdultGtex"
+  }
+]
