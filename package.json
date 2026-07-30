@@ -33,7 +33,7 @@
     "@tanstack/match-sorter-utils": "^8",
     "@tanstack/react-table": "^8",
     "@tanstack/react-virtual": "^3",
-    "copy-to-clipboard": "^3",
+    "copy-to-clipboard": "^4",
     "date-fns": "^3.6.0",
     "echarts": "^5.3.3",
     "echarts-for-react": "^3.0.2",
