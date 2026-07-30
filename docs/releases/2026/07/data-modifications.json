@@ -9,7 +9,7 @@
   },
   {
     "datasetsAffected": [],
-    "description": "New data snapshots were generated to address data update requests. The impacted datasets are versions 1-4 under the General Research Use Data Use Limitation (GRU DUL) and versions 2-4 under the Health/Medical/Biomedical.",
+    "description": "New data snapshots were generated to address data update requests. The impacted datasets are versions 1-4 under the General Research Use Data Use Limitation (GRU DUL) and versions 2-4 under the Health/Medical/Biomedical Data Use Limitation (HMB DUL).",
     "duls": ["GRU", "HMB"],
     "phsId": "phs003047 versions 1-4",
     "studyName": "NHGRI GREGoR Consortium: Genomics Research to Elucidate the Genetics of Rare Disease",
