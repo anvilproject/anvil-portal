@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.37.0](https://github.com/anvilproject/anvil-portal/compare/v2.36.0...v2.37.0) (2026-07-30)
+
+
+### Features
+
+* update pre-release notes to the card-based release-notes format ([#4062](https://github.com/anvilproject/anvil-portal/issues/4062)) ([#4063](https://github.com/anvilproject/anvil-portal/issues/4063)) ([3f9932c](https://github.com/anvilproject/anvil-portal/commit/3f9932c8536b917ddb0f5b6e3ae457187d8a3a3e))
+
+
+### Content
+
+* add anvil release notes for july 2026 ([#4061](https://github.com/anvilproject/anvil-portal/issues/4061)) ([#4065](https://github.com/anvilproject/anvil-portal/issues/4065)) ([f96f4a4](https://github.com/anvilproject/anvil-portal/commit/f96f4a4d7a0525cba33af30fbf576c83eaa8e820))
+* amend july 2026 release notes to complete gregor data use limitation text ([#4066](https://github.com/anvilproject/anvil-portal/issues/4066)) ([#4067](https://github.com/anvilproject/anvil-portal/issues/4067)) ([230dbd0](https://github.com/anvilproject/anvil-portal/commit/230dbd079bf734080afeb0fe575f9eacc4079b8a))
+
 ## [2.36.0](https://github.com/anvilproject/anvil-portal/compare/v2.35.4...v2.36.0) (2026-07-23)
 
 
