@@ -1,112 +1,84 @@
 {
-  "total": 250,
+  "total": 50,
   "queries": [
     {
-      "query": "LIZTYsvl",
-      "count": 83
+      "query": "Toyota ",
+      "count": 6
     },
     {
-      "query": "javascript:alert(5397)",
-      "count": 48
+      "query": "Manhattan beach Toyota ",
+      "count": 5
     },
     {
-      "query": "<img src=\"random.gif\" onerror=alert(5397)>",
-      "count": 42
-    },
-    {
-      "query": "<script>alert(5397)</script>",
-      "count": 30
-    },
-    {
-      "query": "alcohol",
-      "count": 7
-    },
-    {
-      "query": "cser",
+      "query": "phs003047",
       "count": 3
     },
     {
-      "query": "AnVIL_HPRC",
+      "query": "GTEx",
       "count": 3
     },
     {
-      "query": "dgtex",
+      "query": "ccdg",
       "count": 2
     },
     {
-      "query": "import files RStudio",
+      "query": "gregor",
       "count": 2
     },
     {
-      "query": "poenarm",
+      "query": "high school research",
       "count": 2
     },
     {
-      "query": "1-1/4x1 mech tee",
+      "query": "ANVIL phs002227",
       "count": 2
     },
     {
-      "query": "ADOPT",
+      "query": "epigenetic aging telomere",
+      "count": 2
+    },
+    {
+      "query": "gap billing",
+      "count": 2
+    },
+    {
+      "query": "gtex",
+      "count": 2
+    },
+    {
+      "query": "\"anvil clinical resource\"",
       "count": 1
     },
     {
-      "query": "Communicate Feedback",
+      "query": "BRCA1",
       "count": 1
     },
     {
-      "query": "GRU",
+      "query": "GTEx v11",
       "count": 1
     },
     {
-      "query": "GUARDD",
+      "query": "GTx",
       "count": 1
     },
     {
-      "query": "Genomic correlates of response to immune checkpoint therapies in clear cell renal cell carcinoma",
+      "query": "HPRC",
       "count": 1
     },
     {
-      "query": "acc",
+      "query": "Hi- C humans",
       "count": 1
     },
     {
-      "query": "acc 2026",
+      "query": "ID me",
       "count": 1
     },
     {
-      "query": "access",
+      "query": "cloud use statement ",
       "count": 1
     },
     {
-      "query": "adopt",
-      "count": 1
-    },
-    {
-      "query": "alcoholism",
-      "count": 1
-    },
-    {
-      "query": "all of us",
-      "count": 1
-    },
-    {
-      "query": "annotation",
-      "count": 1
-    },
-    {
-      "query": "brief",
-      "count": 1
-    },
-    {
-      "query": "cost",
-      "count": 1
-    },
-    {
-      "query": "depmap",
-      "count": 1
-    },
-    {
-      "query": "gencode",
+      "query": "hbcc",
       "count": 1
     },
     {
@@ -114,39 +86,39 @@
       "count": 1
     },
     {
-      "query": "import data",
+      "query": "long read",
       "count": 1
     },
     {
-      "query": "institutional",
+      "query": "nhgri",
       "count": 1
     },
     {
-      "query": "kids first",
+      "query": "niagads",
       "count": 1
     },
     {
-      "query": "openarm",
+      "query": "phs001300.v5.p1",
       "count": 1
     },
     {
-      "query": "pangenome",
+      "query": "phs001642",
       "count": 1
     },
     {
-      "query": "phs001493",
+      "query": "phs001642.v2.p1",
       "count": 1
     },
     {
-      "query": "phs003181",
+      "query": "phs003047.v5",
       "count": 1
     },
     {
-      "query": "spatial",
+      "query": "results download",
       "count": 1
     },
     {
-      "query": "travel risk brief",
+      "query": "ssp",
       "count": 1
     }
   ]

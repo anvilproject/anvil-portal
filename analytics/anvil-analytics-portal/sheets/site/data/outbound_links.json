@@ -1,173 +1,183 @@
 [
   {
     "link": "https://anvil.terra.bio/#workspaces",
-    "clicks": 104,
-    "change": -0.022862511744440983
-  },
-  {
-    "link": "https://jhudatascience.org/AnVIL_Book_Getting_Started/index.html",
-    "clicks": 39,
-    "change": 0.048387096774193505
+    "clicks": 70,
+    "change": -0.27159209157127984
   },
   {
     "link": "https://bit.ly/anvil2026-register",
-    "clicks": 18,
-    "change": null
+    "clicks": 41,
+    "change": 2.3064516129032255
   },
   {
-    "link": "https://gtexportal.org/home/home/news?id=520",
-    "clicks": 15,
-    "change": -0.032258064516129004
+    "link": "https://jhudatascience.org/AnVIL_Book_Getting_Started/index.html",
+    "clicks": 31,
+    "change": -0.31818181818181823
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account",
-    "clicks": 13,
-    "change": -0.032258064516129004
+    "link": "https://www.marriott.com/event-reservations/reservation-link.mi?id=1775748371872&key=GRP&app=resvlin",
+    "clicks": 26,
+    "change": 5.290322580645161
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
-    "clicks": 12,
-    "change": -0.032258064516129115
+    "link": "https://bit.ly/anvil2026-abstract",
+    "clicks": 20,
+    "change": 5.451612903225806
   },
   {
     "link": "https://www.marriott.com/event-reservations/reservation-link.mi?id=1775331883145&key=GRP&app=resvlin",
-    "clicks": 11,
-    "change": null
+    "clicks": 16,
+    "change": 6.741935483870967
   },
   {
-    "link": "https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp",
+    "link": "https://gtexportal.org/home/home/news?id=520",
+    "clicks": 14,
+    "change": 0.5053763440860215
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/4402431367949-Launching-seqr-through-Terra",
+    "clicks": 12,
+    "change": 0.9354838709677418
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account",
+    "clicks": 11,
+    "change": 1.129032258064516
+  },
+  {
+    "link": "https://console.cloud.google.com/billing",
+    "clicks": 10,
+    "change": 1.419354838709677
+  },
+  {
+    "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 9,
     "change": -0.032258064516129115
   },
   {
     "link": "https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account",
-    "clicks": 9,
-    "change": 0.4516129032258065
+    "clicks": 8,
+    "change": 0.5483870967741935
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra",
-    "clicks": 9,
-    "change": null
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers",
+    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=26",
     "clicks": 7,
     "change": -0.3841642228739003
   },
   {
-    "link": "https://dockstore.org/organizations/anvil",
-    "clicks": 7,
-    "change": 0.35483870967741926
-  },
-  {
-    "link": "https://login.gov/",
-    "clicks": 6,
-    "change": 0.9354838709677418
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/4402431367949-Launching-seqr-through-Terra",
-    "clicks": 6,
-    "change": 0.16129032258064502
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces",
-    "clicks": 6,
-    "change": 0.16129032258064502
-  },
-  {
-    "link": "https://terra.bio/introducing-the-all-of-us-anvil-imputation-service",
-    "clicks": 6,
-    "change": null
-  },
-  {
     "link": "https://cloud.google.com/compute/all-pricing#top_of_page",
+    "clicks": 7,
+    "change": 1.258064516129032
+  },
+  {
+    "link": "https://twitter.com/hashtag/AnVILCommunity2026",
     "clicks": 6,
-    "change": null
+    "change": 0.4516129032258063
+  },
+  {
+    "link": "https://dockstore.org/organizations/anvil",
+    "clicks": 6,
+    "change": 0.4516129032258063
   },
   {
     "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v10.p2",
-    "clicks": 6,
-    "change": -0.27419354838709686
-  },
-  {
-    "link": "https://www.marriott.com/event-reservations/reservation-link.mi?id=1775748371872&key=GRP&app=resvlin",
-    "clicks": 6,
-    "change": null
-  },
-  {
-    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME",
-    "clicks": 5,
-    "change": 0.20967741935483852
-  },
-  {
-    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=26",
-    "clicks": 5,
-    "change": 0.20967741935483852
-  },
-  {
-    "link": "https://console.cloud.google.com/billing",
     "clicks": 5,
     "change": 1.419354838709677
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Goog",
-    "clicks": 5,
-    "change": 0.6129032258064515
-  },
-  {
-    "link": "https://news.ucsc.edu/2026/04/anvil-makes-genomic-datasets-free/",
+    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
     "clicks": 5,
     "change": null
   },
   {
-    "link": "https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?usp=sharing&ouid=11212",
+    "link": "https://cloud.google.com/billing/docs/how-to-manage-billing-account#create_a_new_billing_account",
     "clicks": 5,
     "change": null
   },
   {
-    "link": "https://twitter.com/hashtag/AnVILCommunity2026",
+    "link": "https://login.gov/",
     "clicks": 4,
-    "change": 0.9354838709677418
+    "change": -0.22580645161290325
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Goog",
-    "clicks": 3,
-    "change": -0.4193548387096775
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000979.v4.p2",
+    "clicks": 4,
+    "change": null
   },
   {
-    "link": "https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1.full",
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003444.v3.p1",
+    "clicks": 4,
+    "change": null
+  },
+  {
+    "link": "https://ncpi-data.org/",
     "clicks": 3,
     "change": null
   },
   {
-    "link": "https://terra.bio/anvil-platform-helps-meet-the-new-nih-data-management-and-sharing-policy-requireme",
+    "link": "https://login.gov/",
     "clicks": 3,
     "change": 0.4516129032258063
   },
   {
-    "link": "https://card.nih.gov/research-programs/long-read-sequencing",
+    "link": "https://www.intlpag.org/2025/",
+    "clicks": 3,
+    "change": -0.6370967741935485
+  },
+  {
+    "link": "https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp",
+    "clicks": 3,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/sections/360006866192-New-users-overview",
+    "clicks": 3,
+    "change": 0.4516129032258063
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/360024898671-Interactive-analysis-with-Jupyter-notebooks",
+    "clicks": 3,
+    "change": 1.9032258064516125
+  },
+  {
+    "link": "https://terra.bio/introducing-the-all-of-us-anvil-imputation-service",
     "clicks": 3,
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra",
+    "link": "https://www.vumc.org/dbmi/person/robert-carroll-phd",
     "clicks": 3,
     "change": null
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/events/anvil2026-community-conference.md",
     "clicks": 3,
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
+    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME",
+    "clicks": 3,
+    "change": null
+  },
+  {
+    "link": "https://anvil.terra.bio/#profile",
+    "clicks": 3,
+    "change": 1.9032258064516125
+  },
+  {
+    "link": "https://anvil.terra.bio/#workspaces",
+    "clicks": 3,
+    "change": -0.4193548387096775
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Goog",
+    "clicks": 3,
+    "change": 0.4516129032258063
+  },
+  {
+    "link": "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3",
     "clicks": 2,
-    "change": -0.6129032258064516
-  },
-  {
-    "link": "https://jhudatascience.org/AnVIL_Book_Champions",
-    "clicks": 2,
-    "change": -0.9193548387096774
+    "change": null
   },
   {
     "link": "https://login.gov/",
@@ -175,44 +185,54 @@
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360029772212-Controlling-Cloud-costs-sample-use-cases",
+    "link": "https://discuss.dockstore.org/",
     "clicks": 2,
     "change": 0.9354838709677418
   },
   {
-    "link": "https://www.genome.gov/about-nhgri/Policies-Guidance/Genomic-Data-Sharing",
-    "clicks": 2,
-    "change": null
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360039330211",
+    "link": "https://allofus-anvil-imputation.terra.bio/",
     "clicks": 2,
     "change": -0.3548387096774194
   },
   {
-    "link": "https://cloud.google.com/billing/docs/how-to-manage-billing-account#create_a_new_billing_account",
-    "clicks": 2,
-    "change": 0.9354838709677418
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360024898671-Interactive-analysis-with-Jupyter-notebooks",
-    "clicks": 2,
-    "change": -0.6129032258064516
-  },
-  {
     "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 2,
+    "change": null
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/34596321862427-Part-2-Search-and-select-data-in-AnVIL-Da",
+    "clicks": 2,
+    "change": null
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers",
+    "clicks": 2,
     "change": 0.9354838709677418
   },
   {
-    "link": "https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Geno",
+    "link": "https://github.com/gks-anvil/vrs_anvil_toolkit/",
+    "clicks": 2,
+    "change": null
+  },
+  {
+    "link": "https://card.nih.gov/research-programs/long-read-sequencing",
+    "clicks": 2,
+    "change": 0.9354838709677418
+  },
+  {
+    "link": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-24-157.html",
     "clicks": 2,
     "change": null
   },
   {
     "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 2,
-    "change": null
+    "change": 0.9354838709677418
+  },
+  {
+    "link": "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3",
+    "clicks": 2,
+    "change": -0.3548387096774194
   },
   {
     "link": "https://github.com/anvilproject",
@@ -220,34 +240,39 @@
     "change": null
   },
   {
-    "link": "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-D",
+    "link": "https://nyckidseq.org/",
     "clicks": 2,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/events/anvil2026-community-conference.md",
-    "clicks": 2,
-    "change": 0.9354838709677418
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360042670651-Best-practices-for-sharing-and-protecting-d",
+    "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 2,
     "change": null
   },
   {
-    "link": "https://cloud.google.com/free/docs/gcp-free-tier",
-    "clicks": 2,
-    "change": 0.9354838709677418
-  },
-  {
-    "link": "https://github.com/Kayla-Morrell/AnVILBulkRNASeq/blob/master/inst/workflow/salmon.wdl",
+    "link": "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4",
     "clicks": 2,
     "change": null
   },
   {
-    "link": "https://www.heart.org/en/about-us/jennifer-hall",
+    "link": "http://bit.ly/acc24-slides",
     "clicks": 2,
     "change": null
+  },
+  {
+    "link": "https://duos.org/datalibrary/anvil",
+    "clicks": 2,
+    "change": null
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
+    "clicks": 2,
+    "change": null
+  },
+  {
+    "link": "https://anvil.terra.bio/#workspaces/help-gatk/Hail-Notebook-Tutorials",
+    "clicks": 1,
+    "change": -0.032258064516129115
   },
   {
     "link": "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4",
@@ -257,95 +282,65 @@
   {
     "link": "https://dockstore.org/",
     "clicks": 1,
-    "change": null
+    "change": -0.5161290322580645
   },
   {
-    "link": "https://github.com/anvilproject/anvil-portal/releases/tag/v2.33.0",
+    "link": "https://github.com/anvilproject/anvil-portal/releases/tag/v2.37.0",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://twitter.com/useAnVIL",
+    "link": "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.nature.com/articles/s41586-025-09613-8",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://gtexportal.org/home/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://humanpangenome.org/",
+    "link": "https://www.linkedin.com/company/anvilproject/",
     "clicks": 1,
     "change": -0.5161290322580645
   },
   {
-    "link": "https://www.internationalgenome.org/",
+    "link": "https://www.nature.com/articles/s41586-025-09613-8",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://www.science.org/doi/10.1126/science.abe3261",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.nia.nih.gov/",
+    "link": "https://www.science.org/doi/10.1126/science.abl3533",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://jhudatascience.org/AnVIL_Book_Champions",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://gregorconsortium.org/data",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
+    "link": "https://undiagnosed.hms.harvard.edu/",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.genome.gov/",
+    "link": "https://www.genome.gov/Funded-Programs-Projects/NHGRI-Genome-Sequencing-Program/Centers-for-Common-D",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://bit.ly/acc2025-hilton",
+    "link": "https://doi.org/10.1002/ajmg.a.63033",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://www.agbt.org/events/general-meeting/agenda/",
     "clicks": 1,
     "change": null
   },
@@ -355,54 +350,84 @@
     "change": null
   },
   {
-    "link": "https://www.ashg.org/meetings/2025meeting",
-    "clicks": 1,
-    "change": -0.6774193548387097
-  },
-  {
-    "link": "https://twitter.com/hashtag/biodata24",
+    "link": "https://bit.ly/anvil2026-virtual101",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.intlpag.org/2025/",
-    "clicks": 1,
-    "change": -0.8387096774193549
-  },
-  {
-    "link": "https://www.genome.gov/",
+    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/events/anvil2026-101-virtual-workshop.md",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "http://osp.od.nih.gov/wp-content/uploads/Model_DUC.pdf",
+    "link": "https://github.com/anvilproject",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://grants.nih.gov/grants/guide/notice-files/NOT-HG-19-024.html",
+    "link": "https://login.gov/",
     "clicks": 1,
     "change": -0.032258064516129115
+  },
+  {
+    "link": "https://zoom.us/meeting/register/3L90chLuQ0OkJSH07ZAKcA",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=23",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://meetings.cshl.edu/meetings.aspx?meet=DATA&year=24",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://doi.org/10.1016/j.genrep.2026.102437",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://doi.org/10.1128/jmbe.00288-25",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://doi.org/10.12688/f1000research.175540.1",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://osp.od.nih.gov/wp-content/uploads/Model_DUC.pdf",
+    "clicks": 1,
+    "change": null
   },
   {
     "link": "https://docs.google.com/forms/d/e/1FAIpQLSdK_r1DTb_bBUiG9IvY5hwJ4Y-LHoaXk-E4L98MRcLR2TTtcQ/viewform",
     "clicks": 1,
-    "change": -0.5161290322580645
+    "change": null
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://support.terra.bio/hc/en-us/articles/360046295092-Set-up-billing-with-300-Google-credits-to-e",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us",
+    "link": "http://bioconductor.org/help/",
     "clicks": 1,
     "change": -0.032258064516129115
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/community/topics",
+    "link": "https://help.galaxyproject.org/",
     "clicks": 1,
-    "change": null
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://support.bioconductor.org/",
+    "clicks": 1,
+    "change": -0.032258064516129115
   },
   {
     "link": "https://duos.org/datalibrary/AnVIL",
@@ -410,19 +435,9 @@
     "change": null
   },
   {
-    "link": "https://cloud.google.com/compute/all-pricing#n1_standard_machine_types",
+    "link": "https://www.broadinstitute.org/videos/seqr-loading-data-anvil",
     "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://cloud.google.com/storage/pricing#storage-pricing",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://docs.google.com/document/d/145JFLn2hviLmaYF-mO06gbCkG0i4HRaWvkUBKORo85Y",
-    "clicks": 1,
-    "change": null
+    "change": -0.7580645161290323
   },
   {
     "link": "https://docs.google.com/spreadsheets/d/1GUN93HDRqDbZ0uktaZjoP-y8Ril1T_VIJnQrjRD6tV4",
@@ -430,72 +445,27 @@
     "change": -0.5161290322580645
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://cloud.google.com/compute/all-pricing#localssdpricing",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://cloud.google.com/storage/pricing#network-egress",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://cloud.google.com/storage/pricing#storage-pricing",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360029748111-Understanding-and-controlling-Cloud-costs",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
     "link": "https://support.terra.bio/hc/en-us/articles/360037862771-How-much-did-a-workflow-cost",
     "clicks": 1,
     "change": -0.032258064516129115
   },
   {
-    "link": "https://github.com/anvilproject/anvil-portal/blob/c9096716852b57072d6645ccefb741eb43905482/content/l",
+    "link": "https://support.terra.bio/hc/en-us/sections/360006459511-Controlling-Cloud-costs",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
+    "link": "https://duos.org/datalibrary/AnVIL",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/learn/data-submitters/submission-guide/d",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.nih.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://docs.google.com/forms/d/e/1FAIpQLSdK_r1DTb_bBUiG9IvY5hwJ4Y-LHoaXk-E4L98MRcLR2TTtcQ/viewform",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://sharing.nih.gov/genomic-data-sharing-policy/institutional-certifications/completing-an-insti",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/25290333623835-Step-4-Stage-data-in-submission-workspace",
+    "link": "https://support.terra.bio/hc/en-us/articles/36671511533467-Step-5-Ingest-data-to-TDR",
     "clicks": 1,
     "change": null
   },
@@ -505,114 +475,44 @@
     "change": null
   },
   {
-    "link": "https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=323182902#gid=3231",
+    "link": "https://support.terra.bio/hc/en-us/articles/360025758392-Managing-data-with-tables",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://docs.google.com/spreadsheets/d/1D0L5wm5pnpLKYqakYm9tyy-VmP5oJmGR/edit?gid=672801364#gid=6728",
+    "link": "https://support.terra.bio/hc/en-us/articles/360025851892-Sharing-data-and-tools-with-workspace-acces",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://gregorconsortium.org/data-model",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://dockstore.org/workflows/github.com/UW-GAC/fetch-dbgap-files/fetch_dbgap_files_wdl:main?tab=m",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-14-124.html",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://anvil.terra.bio/#profile",
+    "link": "https://support.terra.bio/hc/en-us/articles/360039330211",
     "clicks": 1,
     "change": -0.5161290322580645
   },
   {
-    "link": "https://login.gov/",
+    "link": "https://auth.nih.gov/settings2/profile/loadIdentities",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/34594440468635-Finding-and-using-AnVIL-data",
     "clicks": 1,
     "change": -0.032258064516129115
   },
   {
-    "link": "https://github.com/anvilproject",
+    "link": "https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-ana",
     "clicks": 1,
     "change": null
   },
   {
     "link": "https://login.gov/",
     "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://twitter.com/useAnVIL",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/learn/get-started/creating-a-google-clou",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
+    "change": -0.032258064516129115
   },
   {
     "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/learn/get-started/obtaining-a-google-id.",
@@ -620,6 +520,36 @@
     "change": null
   },
   {
+    "link": "https://support.terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with-a-non-Goog",
+    "clicks": 1,
+    "change": -0.5161290322580645
+  },
+  {
+    "link": "https://dockstore.org/",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://docs.dockstore.org/en/develop/getting-started/dockstore-workflows.html",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://duos.org/datalibrary/AnVIL",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://duos.org/datalibrary/AnVIL",
+    "clicks": 1,
+    "change": null
+  },
+  {
     "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 1,
     "change": null
@@ -630,82 +560,27 @@
     "change": null
   },
   {
-    "link": "https://anvil.terra.bio/#billing",
+    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra#h_01JE9G",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360026521831-How-to-set-up-a-workflow-analysis-",
-    "clicks": 1,
-    "change": -0.5161290322580645
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/help-gatk/Somatic-CNVs-GATK4",
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424",
     "clicks": 1,
     "change": -0.032258064516129115
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://app.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://terra.bio/try-rstudio-in-terra/",
+    "link": "https://www.genomeweb.com/sequencing/nih-researchers-deploy-nanopore-sequencing-large-scale-alzheime",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://docs.google.com/presentation/d/1eypYLLqD11-NwHLs4adGpcuSB07dYEJfAaALSMvgzqw/edit#slide=id.p",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/bioconductor-rpci-anvil/Bioconductor-Workflow-DESeq2",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://docs.google.com/presentation/d/1DnNRX703nlwEi0VLNqwcBzvGC8vBI1yGR0x1qOCapdY",
+    "link": "https://terra.bio/terra-details/",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://doi.org/10.1101/2023.01.12.523790",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/36711673/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_T2T_CHRY",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra",
+    "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 1,
     "change": null
   },
@@ -715,147 +590,92 @@
     "change": -0.5161290322580645
   },
   {
-    "link": "https://duos.org/home",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://github.com/UW-GAC/gregor_data_models",
-    "clicks": 1,
-    "change": null
-  },
-  {
     "link": "https://gregorconsortium.org/data",
     "clicks": 1,
-    "change": -0.5161290322580645
+    "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
+    "link": "https://search.cancervariants.org/",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/UW-GAC/gregor_data_models",
+    "link": "https://gregorconsortium.org/",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v3.p2#attribution-sec",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000979.v4.p2",
+    "link": "https://dockstore.org/organizations/NIHCARD",
     "clicks": 1,
     "change": null
   },
   {
     "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001300.v5.p1",
     "clicks": 1,
-    "change": -0.6774193548387097
-  },
-  {
-    "link": "https://beacon-network.org/#/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.childrensmercy.org/",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://github.com/UW-GAC/gregor_data_models",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://variants.gregorconsortium.org/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003047.v3.p2#attribution-sec",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/accessing-data/requireme",
-    "clicks": 1,
-    "change": -0.032258064516129115
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://ncpi-data.org/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
-    "clicks": 1,
-    "change": -0.6774193548387097
-  },
-  {
-    "link": "https://www.cell.com/cell-genomics/fulltext/S2666-979X(21)00106-3",
-    "clicks": 1,
     "change": -0.032258064516129115
   },
   {
     "link": "https://duos.org/datalibrary/AnVIL",
     "clicks": 1,
     "change": null
+  },
+  {
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002206.v5.p1",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://link.springer.com/article/10.1186/s13073-025-01563-0",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://duos.org/datalibrary/AnVIL",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://ourhealthstudy.org/",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003821",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://fairsharing.org/",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://ncpi-data.org/",
+    "clicks": 1,
+    "change": -0.5161290322580645
+  },
+  {
+    "link": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html",
+    "clicks": 1,
+    "change": null
+  },
+  {
+    "link": "https://terra.bio/anvil-platform-helps-meet-the-new-nih-data-management-and-sharing-policy-requireme",
+    "clicks": 1,
+    "change": -0.5161290322580645
   },
   {
     "link": "https://genome.cshlp.org/content/32/7/1231",
     "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/accessing-data/requireme",
-    "clicks": 1,
-    "change": -0.6774193548387097
-  },
-  {
-    "link": "https://login.gov/",
-    "clicks": 1,
     "change": -0.032258064516129115
   },
   {
-    "link": "https://anvil.terra.bio/#privacy",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.nih.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://github.com/anvilproject",
-    "clicks": 1,
-    "change": null
-  },
-  {
-    "link": "https://www.genome.gov/",
+    "link": "https://www.sciencedirect.com/science/article/abs/pii/S1098360023008973",
     "clicks": 1,
     "change": null
   },
@@ -865,74 +685,39 @@
     "change": null
   },
   {
-    "link": "https://humanpangenome.org/",
+    "link": "https://gregorconsortium.org/",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://github.com/anvilproject",
+    "link": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_GTEx_v11_hg38",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
+    "link": "https://www.gtexportal.org/home/aboutAdultGtex",
+    "clicks": 1,
+    "change": -0.032258064516129115
+  },
+  {
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000424.v11.p2",
     "clicks": 1,
     "change": null
   },
   {
-    "link": "https://academic.oup.com/nar/article/48/W1/W395/5849904",
-    "clicks": 0,
-    "change": -1.0
+    "link": "https://duos.org/datalibrary/AnVIL",
+    "clicks": 1,
+    "change": null
   },
   {
-    "link": "https://anvil.terra.bio/#workspaces/featured-workspaces-hca/HCA_Optimus_Pipeline",
-    "clicks": 0,
-    "change": -1.0
+    "link": "https://genome.wustl.edu/people/ting-wang/",
+    "clicks": 1,
+    "change": -0.032258064516129115
   },
   {
-    "link": "https://anvil.terra.bio/#workspaces/help-gatk/Hail-Notebook-Tutorials",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/help-gatk/InferCNV_SCP_scRNA-seq",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://github.com/anvilproject/anvil-portal/releases/tag/v2.31.1",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://ncpi-data.org/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://ncpi-data.org/platforms",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.genome.gov/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.linkedin.com/company/anvilproject/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.ncpi-acc.org/",
-    "clicks": 0,
-    "change": -1.0
+    "link": "https://www.heart.org/en/about-us/jennifer-hall",
+    "clicks": 1,
+    "change": null
   },
   {
     "link": "https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646",
@@ -940,27 +725,37 @@
     "change": -1.0
   },
   {
-    "link": "https://card.nih.gov/",
+    "link": "https://www.youtube.com/channel/UCBbHCj7kUogAMFyBAzzzfUw",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://gregorconsortium.org/data",
+    "link": "https://doi.org/10.1016/j.gim.2022.07.025",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://www.agbt.org/contact",
+    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://www.agbt.org/events/general-meeting/",
+    "link": "https://www.youtube.com/playlist?list=PL6aYJ_0zJ4uC978C57P3TgAAfB38uy58E",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=GENOME&year=25",
+    "link": "https://meetings.cshl.edu/meetings.aspx?meet=GENOME&year=22",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://meetings.cshl.edu/meetingsregistration.aspx?meet=GENOME&year=22",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://meetings.cshl.edu/meetingsregistrationgeneral.aspx?meet=GENOME&year=26",
     "clicks": 0,
     "change": -1.0
   },
@@ -975,192 +770,12 @@
     "change": -1.0
   },
   {
-    "link": "https://doi.org/10.1002/humu.24309",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1016/j.genrep.2026.102437",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1016/j.jmb.2025.169313",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1016/j.transci.2025.104300",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1038/s41586-022-04601-8",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1038/s41586-023-05896-x",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1038/s41586-023-06457-y",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1038/s41588-025-02442-5",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1038/s41592-023-01993-x",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1093/nar/gkac247",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1093/nar/gkac966",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1093/nar/gkae410",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1101/2024.12.16.628723",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1101/2025.11.14.688517",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1126/science.abl3533",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1186/s12859-025-06244-8",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1186/s12864-025-11919-w",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.1186/s13059-021-02533-6",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://doi.org/10.3724/bnsfc-2025-0002",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/37165242",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/40340425",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/40513563",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/40588120",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/40628271",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/40858643",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41102625",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41332714",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41345545",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41345834",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41461908",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41475041",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/41701727",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/faq.mdx",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://osp.od.nih.gov/wp-content/uploads/NIH_Best_Practices_for_Controlled-Access_Data_Subject_to_t",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://osp.od.nih.gov/wp-content/uploads/NIH_GDS_Policy.pdf",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.genome.gov/staff/Jennifer-Strasburger-MS#:~:text=Biography,Data%20Access%20Committee%20(",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
     "link": "https://anvil.terra.bio/#library/datasets",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://docs.google.com/forms/d/e/1FAIpQLSc8HDE31CC2jCQceigfbE8NJpp0So8ValzBb6xots-IHvwmZw/viewform",
+    "link": "https://login.gov/",
     "clicks": 0,
     "change": -1.0
   },
@@ -1170,32 +785,37 @@
     "change": -1.0
   },
   {
-    "link": "https://docs.google.com/document/d/1qMZNvZig7vNXposBxA77AIASY0gDCwaYwGl2YwzHXuY",
+    "link": "https://support.terra.bio/hc/en-us",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/sections/360006459511-Controlling-Cloud-costs",
+    "link": "https://support.terra.bio/hc/en-us/community/topics",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://github.com/anvilproject",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360058268832-How-to-move-data-between-local-and-workspac",
+    "link": "https://cloud.google.com/storage/pricing#network-egress",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451",
+    "link": "https://support.terra.bio/hc/en-us/articles/32634034451099-RAS-Integration-for-AnVIL-Data",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/34594440468635-Finding-and-using-AnVIL-data",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSdK_r1DTb_bBUiG9IvY5hwJ4Y-LHoaXk-E4L98MRcLR2TTtcQ/viewform",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://https//gregorconsortium.org/",
     "clicks": 0,
     "change": -1.0
   },
@@ -1210,12 +830,12 @@
     "change": -1.0
   },
   {
-    "link": "https://duos.org/datalibrary/AnVIL",
+    "link": "https://github.com/anvilproject",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/360047235151-Best-practices-for-managing-shared-team-cos",
+    "link": "https://join.slack.com/t/anvil-community/shared_invite/zt-hsyfam1w-LXlCv~3vNLSfDj~qNd5uBg",
     "clicks": 0,
     "change": -1.0
   },
@@ -1225,12 +845,12 @@
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/",
+    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/sections/360006866192-New-users-overview",
+    "link": "https://support.terra.bio/hc/en-us/articles/360024743371-Working-with-workspaces",
     "clicks": 0,
     "change": -1.0
   },
@@ -1245,32 +865,7 @@
     "change": -1.0
   },
   {
-    "link": "https://bioconductor.org/packages/AnVIL",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/360058163311",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra#h_01JE9G",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_HPRC",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://humanpangenome.org/year-1-sequencing-data-release/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://anvil.terra.bio/#workspaces/anvil-datastorage/AnVIL_HPRC",
+    "link": "https://www.youtube.com/playlist?list=PLlMMtlgw6qNiY6mkBu111-lpmANKHdGKM",
     "clicks": 0,
     "change": -1.0
   },
@@ -1280,82 +875,32 @@
     "change": -1.0
   },
   {
-    "link": "https://dockstore.org/workflows/github.com/gks-anvil/vrs-annotator/VRSAnnotator:main?tab=info",
+    "link": "https://doi.org/10.1101/2023.01.12.523790",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://github.com/gks-anvil",
+    "link": "https://duos.org/home",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://github.com/gks-anvil/vrs_anvil_toolkit",
+    "link": "https://support.terra.bio/hc/en-us/articles/30873545719451-How-to-access-GTEx-data-in-Terra",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://duos.org/datalibrary/anvil",
+    "link": "https://www.biorxiv.org/content/10.1101/2024.12.16.628723v1.full",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002206.v5.p1",
+    "link": "https://epi25.broadinstitute.org/",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://pubmed.ncbi.nlm.nih.gov/31068700/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://fairsharing.org/",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://github.com/anvilproject/anvil-portal/blob/main/docs/overview.mdx",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://academic.oup.com/bioinformatics/article/36/1/1/5514039",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://academic.oup.com/gigascience/article/9/12/giaa145/6042728?login=true",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://academic.oup.com/nar/article/48/W1/W395/5849904",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.nature.com/articles/s41592-019-0654-x",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://duos.org/datalibrary/AnVIL",
-    "clicks": 0,
-    "change": -1.0
-  },
-  {
-    "link": "https://www.childrensmercy.org/childrens-mercy-research-institute/studies-and-trials/genomic-answers",
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001489.v4.p2",
     "clicks": 0,
     "change": -1.0
   },
@@ -1365,17 +910,62 @@
     "change": -1.0
   },
   {
-    "link": "https://duos.org/studies/191",
+    "link": "https://gregorconsortium.org/about/gregor-centers",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://support.terra.bio/hc/en-us/articles/34594440468635-Finding-and-using-AnVIL-data",
+    "link": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-159.html",
     "clicks": 0,
     "change": -1.0
   },
   {
-    "link": "https://duos.org/studies/191",
+    "link": "https://pubmed.ncbi.nlm.nih.gov/31068700/",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.ncbi.nlm.nih.gov/pubmed?cmd=DetailsSearch&term=28753430%5BPMID%5D",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://news.ucsc.edu/2026/04/anvil-makes-genomic-datasets-free/",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://fairsharing.org/4204",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Geno",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://login.gov/",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://card.nih.gov/research-programs/long-read-sequencing",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://support.terra.bio/hc/en-us/articles/31034718333851-How-to-access-and-export-controlled-data-",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004058.v1.p1",
     "clicks": 0,
     "change": -1.0
   },
@@ -1385,7 +975,47 @@
     "change": -1.0
   },
   {
-    "link": "https://www.broadinstitute.org/bios/clare-bernard",
+    "link": "https://bse.carnegiescience.edu/",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/staff/Chris-Wellington-BS",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/staff/Elena-Ghanaim-MA",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/staff/Shurjo-K-Sen-PhD",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/staff/Valentina-Di-Francesco-MS",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/staff/robb-rowley-md",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.goeckslab.org/",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.hopkinsmedicine.org/profiles/details/casey-taylor",
+    "clicks": 0,
+    "change": -1.0
+  },
+  {
+    "link": "https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Geno",
     "clicks": 0,
     "change": -1.0
   }
