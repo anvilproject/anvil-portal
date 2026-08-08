@@ -39,3 +39,4 @@ The script is configured with:
 - **Page exclusions**: `/guides/content/creating-links` and `/guides/content/editing-an-existing-page` are excluded from the pageviews detail table
 - **Search queries**: Extracted from `/search?q=` page paths
 - **File downloads**: GA4 enhanced measurement `file_download` events
+- **Date exclusions**: Days with known synthetic/bot traffic are excluded from all GA4 queries (`EXCLUDE_BOT_TRAFFIC_DATES` in `constants.py`); historic UA data is unaffected
