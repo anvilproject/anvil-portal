@@ -9,6 +9,7 @@ from constants import (
     ANVIL_PORTAL_ID,
     ANALYTICS_START,
     CURRENT_MONTH,
+    EXCLUDE_BOT_TRAFFIC_DATES,
     EXCLUDE_PAGES_FILTER,
     HISTORIC_UA_DATA_PATH,
     OAUTH_PORT,
@@ -49,6 +50,7 @@ def main():
         ],
         base_dimension_filter=EXCLUDE_PAGES_FILTER,
         search_path="/search",
+        exclude_dates=EXCLUDE_BOT_TRAFFIC_DATES,
     )
 
 

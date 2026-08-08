@@ -9,6 +9,10 @@ SHEET_NAME = "AnVIL Portal"
 
 ANVIL_PORTAL_ID = "368678391"
 
+# Dates of known synthetic/bot traffic (headless-browser burst, likely a load test)
+# to exclude from reports; see anvilproject/anvil-portal#4077.
+EXCLUDE_BOT_TRAFFIC_DATES = ["2025-02-10"]
+
 HISTORIC_UA_DATA_PATH = "../users_over_time_history.json"
 SECRET_NAME = 'ANVIL_ANALYTICS_REPORTING_CLIENT_SECRET_PATH'
 GA_PROPERTY_PORTAL = "368678391" # AnVIL Portal - GA4
