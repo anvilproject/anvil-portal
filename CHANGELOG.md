@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.37.1](https://github.com/anvilproject/anvil-portal/compare/v2.37.0...v2.37.1) (2026-08-08)
+
+
+### Chores
+
+* exclude 2025-02-10 bot traffic from portal analytics report ([#4077](https://github.com/anvilproject/anvil-portal/issues/4077)) ([#4080](https://github.com/anvilproject/anvil-portal/issues/4080)) ([5bfeeed](https://github.com/anvilproject/anvil-portal/commit/5bfeeed29f24ebcb7572e52ecf0d63510ff7f365))
+* exclude 2025-02-10 bot traffic from portal analytics report [#4077](https://github.com/anvilproject/anvil-portal/issues/4077) ([5bfeeed](https://github.com/anvilproject/anvil-portal/commit/5bfeeed29f24ebcb7572e52ecf0d63510ff7f365))
+* update analytics to July 2026 ([#4074](https://github.com/anvilproject/anvil-portal/issues/4074)) ([#4075](https://github.com/anvilproject/anvil-portal/issues/4075)) ([d6c77b6](https://github.com/anvilproject/anvil-portal/commit/d6c77b69c74f4f72072fae35d26aff867f4619ef))
+* update analytics to July 2026 [#4074](https://github.com/anvilproject/anvil-portal/issues/4074) ([d6c77b6](https://github.com/anvilproject/anvil-portal/commit/d6c77b69c74f4f72072fae35d26aff867f4619ef))
+
 ## [2.37.0](https://github.com/anvilproject/anvil-portal/compare/v2.36.0...v2.37.0) (2026-07-30)
 
 
