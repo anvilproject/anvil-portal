@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.0](https://github.com/anvilproject/anvil-portal/compare/v2.37.1...v2.38.0) (2026-08-11)
+
+
+### Features
+
+* add a flag to toggle homepage carousel auto-rotation, and pause it ([#4086](https://github.com/anvilproject/anvil-portal/issues/4086)) ([#4087](https://github.com/anvilproject/anvil-portal/issues/4087)) ([31b10c0](https://github.com/anvilproject/anvil-portal/commit/31b10c0e9d213b5b39a96eb343759cf9c56b2548))
+
 ## [2.37.1](https://github.com/anvilproject/anvil-portal/compare/v2.37.0...v2.37.1) (2026-08-11)
 
 
