@@ -19,6 +19,8 @@ export const Bullets = ({
       {bullets.map((bullet) => (
         <Bullet
           key={bullet}
+          aria-current={activeBullet === bullet || undefined}
+          aria-label={`Show slide ${bullet + 1}`}
           isActive={activeBullet === bullet}
           onClick={(): void => {
             onBullet(bullet);

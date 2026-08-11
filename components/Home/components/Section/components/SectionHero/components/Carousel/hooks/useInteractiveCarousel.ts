@@ -5,6 +5,7 @@ import {
   UseSwipeInteraction,
   useSwipeInteraction,
 } from "../../../../../../../hooks/useSwipeInteraction/useSwipeInteraction";
+import { AUTO_ROTATE, AUTO_ROTATE_DELAY } from "../common/constants";
 
 export interface UseInteractiveCarousel {
   activeIndex: UseSwipeInteraction["activeIndex"];
@@ -27,11 +28,11 @@ export function useInteractiveCarousel(): UseInteractiveCarousel {
     () => buildInteractiveIndexes(carouselCards),
     [carouselCards]
   );
-  // Get the active index and interactive actions.
+  // Get the active index and interactive actions; a swipe delay of 0 disables auto-rotation.
   const swipeInteraction = useSwipeInteraction(
     interactiveIndexes.length,
     true,
-    8000
+    AUTO_ROTATE ? AUTO_ROTATE_DELAY : 0
   );
   return {
     interactiveCards: carouselCards,

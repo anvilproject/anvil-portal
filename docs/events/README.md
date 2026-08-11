@@ -41,4 +41,6 @@ The home page Updates section (Events tab) shows only upcoming `featured` events
 
 The hero carousel uses a 3-month freshness window: dated entries within the last 3 months show by default. Set `persistent: true` to keep an event eligible regardless of date — useful for recurring conferences.
 
+Note: carousel auto-rotation is currently paused (`AUTO_ROTATE` in `components/Home/components/Section/components/SectionHero/components/Carousel/common/constants.ts`), so the carousel holds on its first card — items behind it are only reached via manual navigation (arrows, bullets, or swipe).
+
 Use `hidden: true` to suppress an event from all listings.
