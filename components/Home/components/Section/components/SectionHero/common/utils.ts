@@ -10,6 +10,18 @@ const ACTION_LABEL = {
 
 const CAROUSEL_CARDS: SectionCard[] = [
   {
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/events/anvil2026-community-conference",
+      },
+    ],
+    persistent: true,
+    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
+    title: "AnVIL Community Conference 2026",
+  },
+  {
     date: "2026-05-01",
     links: [
       {
@@ -21,18 +33,6 @@ const CAROUSEL_CARDS: SectionCard[] = [
     text: "AnVIL has partnered with AWS to make major genomic datasets freely available, eliminating data transfer fees that previously exceeded $15,000 for some datasets.",
     title:
       "AnVIL Makes Groundbreaking Genomic Datasets Available on AWS for Free",
-  },
-  {
-    links: [
-      {
-        label: ACTION_LABEL.LEARN_MORE,
-        target: ANCHOR_TARGET.SELF,
-        url: "/events/anvil2026-community-conference",
-      },
-    ],
-    persistent: true,
-    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
-    title: "AnVIL Community Conference 2026",
   },
   {
     date: "2026-04-07",
