@@ -1,3 +1,5 @@
+export const AUTO_ROTATE = false;
+export const AUTO_ROTATE_DELAY = 8000;
 export const CARD_OFFSET_Y = 8;
 export const CARD_SCALE_X = 48;
 export const MIN_CONTENT_CARD_HEIGHT = 160;
