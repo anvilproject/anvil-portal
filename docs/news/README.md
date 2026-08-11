@@ -26,6 +26,8 @@ url: "https://..." # optional — external link (omit or use null otherwise)
 
 By default, the home page Updates section (and the hero carousel) only show items with a `date` within the last 3 months — older items fall off automatically.
 
+Note: carousel auto-rotation is currently paused (`AUTO_ROTATE` in `components/Home/components/Section/components/SectionHero/components/Carousel/common/constants.ts`), so the carousel holds on its first card — items behind it are only reached via manual navigation (arrows, bullets, or swipe).
+
 To keep an item visible past that window — e.g. a flagship announcement, an ongoing program, an evergreen paper — set `persistent: true`.
 
 The full news archive at `/news` shows everything regardless of date or `persistent`. Use `hidden: true` to suppress an item from all listings.

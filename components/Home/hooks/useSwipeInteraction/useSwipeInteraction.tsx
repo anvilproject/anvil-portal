@@ -31,7 +31,7 @@ export interface UseSwipeInteraction {
  * Swipe actions over swipe-able "views" i.e. cards, carousel cards, etc.
  * @param indexCount - Number of swipe-able / interactive "views".
  * @param swipeEnabled - Swipe interaction is enabled.
- * @param swipeDelay - Timeout delay for auto-swipe.
+ * @param swipeDelay - Timeout delay for auto-swipe; a delay of 0 disables auto-swipe.
  * @returns swipe actions and active swipe index.
  */
 export function useSwipeInteraction(
