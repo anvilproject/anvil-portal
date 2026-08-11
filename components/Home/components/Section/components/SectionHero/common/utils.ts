@@ -18,7 +18,7 @@ const CAROUSEL_CARDS: SectionCard[] = [
       },
     ],
     persistent: true,
-    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and the latest in genomics analysis in the cloud.",
+    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and more. Register by August 17!",
     title: "AnVIL Community Conference 2026",
   },
   {
