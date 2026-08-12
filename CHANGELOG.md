@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.1](https://github.com/anvilproject/anvil-portal/compare/v2.38.0...v2.38.1) (2026-08-11)
+
+
+### Content
+
+* update anvil acc 2026 notice with updates from planning doc ([#4090](https://github.com/anvilproject/anvil-portal/issues/4090)) ([#4092](https://github.com/anvilproject/anvil-portal/issues/4092)) ([08085b6](https://github.com/anvilproject/anvil-portal/commit/08085b66cb1cbb0053f6108bfe355310b330d5d7))
+
 ## [2.38.0](https://github.com/anvilproject/anvil-portal/compare/v2.37.1...v2.38.0) (2026-08-11)
 
 
