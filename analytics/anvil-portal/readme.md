@@ -4,7 +4,7 @@ Generates a static HTML dashboard displaying GA4 analytics data for the AnVIL Po
 
 ### Prerequisites
 
-- Activate the analytics environment (see `../readme.md`)
+- Activate the analytics environment (see [analytics readme](../readme.md))
 - Place Google OAuth credentials at `.credentials/anvil_ga4_credentials.json` in the repo root
 
 ### Generating the site
