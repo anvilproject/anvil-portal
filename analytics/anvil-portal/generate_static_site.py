@@ -17,7 +17,7 @@ from constants import (
 )
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CREDENTIALS_PATH = os.path.join(SCRIPT_DIR, "..", "..", "..", ".credentials", "anvil_ga4_credentials.json")
+CREDENTIALS_PATH = os.path.join(SCRIPT_DIR, "..", "..", ".credentials", "anvil_ga4_credentials.json")
 
 
 def main():
