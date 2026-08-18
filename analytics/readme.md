@@ -38,7 +38,7 @@ Then open http://localhost:8080.
 
 ### Updating the report
 
-1. Update `CURRENT_MONTH` and `PARENT_FOLDER_NAME` in `constants.py`
+1. Update `CURRENT_MONTH` in `constants.py`
 2. Run `python generate_static_site.py`
 3. Commit the updated `site/` directory
 4. Push to `main` — GitHub Actions will deploy the site automatically
