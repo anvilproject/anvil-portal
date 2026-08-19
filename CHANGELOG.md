@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.38.2](https://github.com/anvilproject/anvil-portal/compare/v2.38.1...v2.38.2) (2026-08-19)
+
+
+### Chores
+
+* remove legacy analytics report generators ([#4079](https://github.com/anvilproject/anvil-portal/issues/4079)) ([#4096](https://github.com/anvilproject/anvil-portal/issues/4096)) ([8b3ec6e](https://github.com/anvilproject/anvil-portal/commit/8b3ec6e037d04c0d7034b6121c2a1d5801209c69))
+
+
+### Content
+
+* add biodata ascent event ([#4094](https://github.com/anvilproject/anvil-portal/issues/4094)) ([#4098](https://github.com/anvilproject/anvil-portal/issues/4098)) ([c0a89b0](https://github.com/anvilproject/anvil-portal/commit/c0a89b06e198eae5d2219419f5d410f55ee2288d))
+* update overview of account setup page from account setup planning doc ([#4095](https://github.com/anvilproject/anvil-portal/issues/4095)) ([#4097](https://github.com/anvilproject/anvil-portal/issues/4097)) ([6b5deea](https://github.com/anvilproject/anvil-portal/commit/6b5deea937fe34f2b304c8ff425a73e3d10d1bc7))
+
 ## [2.38.1](https://github.com/anvilproject/anvil-portal/compare/v2.38.0...v2.38.1) (2026-08-11)
 
 
