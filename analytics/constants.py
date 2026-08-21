@@ -1,6 +1,8 @@
-# CHANGE THESE VALUES TO GENERATE NEW REPORTS
+# CHANGE THIS VALUE TO GENERATE A NEW REPORT
 # The date of the current month to report on (yyyy-mm)
 CURRENT_MONTH = "2026-07"
+
+# FIXED CONFIGURATION — the values below do not change between monthly reports
 
 ANVIL_PORTAL_ID = "368678391"
 
