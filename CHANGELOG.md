@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.38.3](https://github.com/anvilproject/anvil-portal/compare/v2.38.2...v2.38.3) (2026-08-21)
+
+
+### Chores
+
+* don't use editable install for analytics package ([#4100](https://github.com/anvilproject/anvil-portal/issues/4100)) ([#4107](https://github.com/anvilproject/anvil-portal/issues/4107)) ([1ad5f0e](https://github.com/anvilproject/anvil-portal/commit/1ad5f0e909342c14ec9f0193365ce70d393f8c93))
+* remove jsdelivr dependency from analytics dashboard ([#4099](https://github.com/anvilproject/anvil-portal/issues/4099)) ([#4113](https://github.com/anvilproject/anvil-portal/issues/4113)) ([a70abb7](https://github.com/anvilproject/anvil-portal/commit/a70abb7a656a68a9294dd11aa4efc774318e69ca))
+* remove nih ras banner from anvilproject.org ([#4110](https://github.com/anvilproject/anvil-portal/issues/4110)) ([#4114](https://github.com/anvilproject/anvil-portal/issues/4114)) ([ab59eb7](https://github.com/anvilproject/anvil-portal/commit/ab59eb7a100ef304849b8e3194c1748a91a49ed7))
+* scope stale 'change these values' banner in analytics constants ([#4103](https://github.com/anvilproject/anvil-portal/issues/4103)) ([#4117](https://github.com/anvilproject/anvil-portal/issues/4117)) ([f379a29](https://github.com/anvilproject/anvil-portal/commit/f379a29304367e7548819b708656b67432316d9c))
+
 ## [2.38.2](https://github.com/anvilproject/anvil-portal/compare/v2.38.1...v2.38.2) (2026-08-19)
 
 
