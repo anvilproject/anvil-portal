@@ -192,11 +192,7 @@ Commits must follow the conventional commits format enforced by commitlint:
 
 Transpiled via `transpilePackages` (Next.js native):
 
-- axios
 - @databiosphere/findable-ui
-- @observablehq/plot
-- @tanstack/react-table (peer dependency from @databiosphere/findable-ui)
-- @tanstack/react-virtual
 
 ## When Making Changes
 
