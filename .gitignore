@@ -39,7 +39,6 @@ yarn-error.log*
 next-env.d.ts
 
 # scripts data
-/scripts/workspace-files
 /scripts/new-cser-materials
 /scripts/output/
 /scripts/files/
