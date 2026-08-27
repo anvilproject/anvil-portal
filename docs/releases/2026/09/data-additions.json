@@ -1,0 +1,114 @@
+[
+  {
+    "dataLibraryUrl": "https://duos.org/studies/204",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004058.v2.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004058%22%5D%7D%5D",
+    "phsId": "phs004058.v2.p1",
+    "studyName": "A Depression and Opioid Pragmatic Trial in Pharmacogenetics (ADOPT PGx): Acute Pain Trial",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3918",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004069.v2.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004069%22%5D%7D%5D",
+    "phsId": "phs004069.v2.p1",
+    "studyName": "A Depression and Opioid Pragmatic Trial in Pharmacogenetics (ADOPT PGx): Depression Trial",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3940",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004059.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004059%22%5D%7D%5D",
+    "phsId": "phs004059.v1.p1",
+    "studyName": "A Depression and Opioid Pragmatic Trial in Pharmacogenetics (ADOPT PGx): Chronic Pain Trial",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3919",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs004045.v2.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs004045%22%5D%7D%5D",
+    "phsId": "phs004045.v2.p1",
+    "studyName": "Genetic Testing to Understand and Address Renal Disease Disparities across the United States (GUARDD-US)",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/46",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001272.v3.p2",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": [
+      "GRU",
+      "GRU-IRB",
+      "HMB",
+      "HMB-MDS",
+      "HMB-NPU-MDS",
+      "DS-BFD-MDS",
+      "DS-CVD-NPU",
+      "DS-KRD-RD",
+      "DS-NEUROLOGY-MDS",
+      "DS-NEUROLOGY-NPU-MDS",
+      "DS-ED-MDS",
+      "DS-NEURO-CHILD-MDS"
+    ],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs001272%22%5D%7D%5D",
+    "phsId": "phs001272.v3.p2",
+    "studyName": "Broad Institute Center for Mendelian Genomics",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3937",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003264.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["HMB-IRB-NPU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003264%22%5D%7D%5D",
+    "phsId": "phs003264.v1.p1",
+    "studyName": "Center for Common Disease Genomics (CCDG) - Cardiovascular: Women's Health Initiative (WHI) Cohort",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3938",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003265.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["DS-HF-IRB-MDS"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003265%22%5D%7D%5D",
+    "phsId": "phs003265.v1.p1",
+    "studyName": "Center for Common Disease Genomics (CCDG) - Cardiovascular: Sao Paulo Brazil Cohort",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/3939",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003266.v1.p1",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["HMB-NPU"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003266%22%5D%7D%5D",
+    "phsId": "phs003266.v1.p1",
+    "studyName": "Center for Common Disease Genomics (CCDG) - Cardiovascular: Kanazawa University Cohort",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  },
+  {
+    "dataLibraryUrl": "https://duos.org/studies/2668",
+    "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003067.v3.p3",
+    "description": "Please refer to the dbGaP study page for more information.",
+    "duls": ["GRU", "HMB", "DS-NEURO-NEUROMSC-GSO"],
+    "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs003067%22%5D%7D%5D",
+    "phsId": "phs003067.v3.p3",
+    "studyName": "Using NGS to Sequence Whole Genomes to Identify Genes Underlying ALS",
+    "studyUrl": null,
+    "submitterBlogPost": null
+  }
+]
