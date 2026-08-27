@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.4](https://github.com/anvilproject/anvil-portal/compare/v2.38.3...v2.38.4) (2026-08-27)
+
+
+### Content
+
+* add anvil release notes for september 2026 ([#4120](https://github.com/anvilproject/anvil-portal/issues/4120)) ([#4128](https://github.com/anvilproject/anvil-portal/issues/4128)) ([a626bd4](https://github.com/anvilproject/anvil-portal/commit/a626bd46368f3d77751615aa881b6f035e210cd4))
+
 ## [2.38.3](https://github.com/anvilproject/anvil-portal/compare/v2.38.2...v2.38.3) (2026-08-26)
 
 
