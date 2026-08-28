@@ -3,7 +3,6 @@ import { Stack } from "@mui/material";
 import * as C from "../../components";
 import { Link } from "../../components/common/Link/link";
 import { Table } from "../../components/common/Table/table";
-import DataIngestionChart from "../../components/Consortia/CSER/components/DataIngestionChart/dataIngestionChart";
 import { PUBLICATION_CATEGORY } from "../../components/Home/components/Section/components/SectionPublications/common/entities";
 import { ROUTES } from "../../routes/constants";
 
@@ -24,7 +23,6 @@ export const MDX_COMPONENTS = {
   Card: C.Card,
   Champions: C.Champions,
   Consortia: C.Consortia,
-  DataIngestionChart,
   EventCard: C.EventCard,
   Events: C.Events,
   EventsHero: C.EventsHero,

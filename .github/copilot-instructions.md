@@ -71,7 +71,6 @@ Both build commands:
 
 - **Convert CSER publications**: `npm run convert-cser-publications`
 - **Convert GREGoR publications**: `npm run convert-gregor-publications`
-- **Update ingestion chart**: `npm run update-ingestion-chart`
 - **Add CSER materials**: `npm run add-cser-materials`
 
 ## Coding Standards
@@ -183,7 +182,6 @@ Commits must follow the conventional commits format enforced by commitlint:
 
 - `@databiosphere/findable-ui` - Core UI library
 - `@observablehq/plot` - Data visualization
-- `echarts` and `echarts-for-react` - Charting
 - `@tanstack/react-virtual` - Virtualization
 - `gray-matter` - Front matter parsing
 - `isomorphic-dompurify` - HTML sanitization (important for security)
@@ -192,20 +190,9 @@ Commits must follow the conventional commits format enforced by commitlint:
 
 ### Transpiled Packages
 
-The project uses two transpilation mechanisms:
+Transpiled via `transpilePackages` (Next.js native):
 
-**Via `transpilePackages` (Next.js native):**
-
-- axios
 - @databiosphere/findable-ui
-- @observablehq/plot
-- @tanstack/react-table (peer dependency from @databiosphere/findable-ui)
-- @tanstack/react-virtual
-
-**Via `next-transpile-modules` plugin:**
-
-- echarts
-- zrender
 
 ## When Making Changes
 

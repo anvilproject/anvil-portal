@@ -25,7 +25,6 @@ npm run check-format             # Check Prettier formatting
 # Content scripts
 npm run convert-cser-publications
 npm run convert-gregor-publications
-npm run update-ingestion-chart
 npm run add-cser-materials
 ```
 
@@ -62,7 +61,7 @@ Components in `components/` are organized by feature:
 ### Key Dependencies
 
 - **`@databiosphere/findable-ui`** - Core UI library providing layout components, providers, and hooks
-- **`@observablehq/plot`**, **`echarts`** - Data visualization
+- **`@observablehq/plot`** - Data visualization
 - **`isomorphic-dompurify`** - HTML sanitization (required for XSS prevention)
 
 ### Feature Flags
