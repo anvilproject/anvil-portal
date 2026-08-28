@@ -1,6 +1,6 @@
 export const METRICS: [string, string][] = [
-  ["Size", "4.7PB+"],
-  ["Participants", "293k"],
-  ["Studies", "67"],
-  ["Datasets", "382"],
+  ["Size", "5.9PB+"],
+  ["Participants", "490k"],
+  ["Studies", "80"],
+  ["Datasets", "464"],
 ];
