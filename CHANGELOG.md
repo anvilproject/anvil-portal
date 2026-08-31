@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.38.5](https://github.com/anvilproject/anvil-portal/compare/v2.38.4...v2.38.5) (2026-08-28)
+
+
+### Chores
+
+* remove obsolete data ingestion chart from data consortia page ([#4126](https://github.com/anvilproject/anvil-portal/issues/4126)) ([5de2004](https://github.com/anvilproject/anvil-portal/commit/5de2004bb01a43c5f48fe687451a7240813f716c))
+
+
+### Content
+
+* refresh AnVIL citations data on /explore/citations ([#4132](https://github.com/anvilproject/anvil-portal/issues/4132)) ([a37e385](https://github.com/anvilproject/anvil-portal/commit/a37e38548e5d5bb3b4e1974a6c77e23849519269))
+* refresh home page dataset metrics from signed-in AnVIL Explorer data ([#4133](https://github.com/anvilproject/anvil-portal/issues/4133)) ([fa25321](https://github.com/anvilproject/anvil-portal/commit/fa25321099b603a750b8f470ce89c7a1ea0bdecc)), closes [#4122](https://github.com/anvilproject/anvil-portal/issues/4122)
+
 ## [2.38.4](https://github.com/anvilproject/anvil-portal/compare/v2.38.3...v2.38.4) (2026-08-27)
 
 
