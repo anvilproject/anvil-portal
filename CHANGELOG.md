@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.6](https://github.com/anvilproject/anvil-portal/compare/v2.38.5...v2.38.6) (2026-09-01)
+
+
+### Bug Fixes
+
+* events use start date instead of end date to determine upcoming vs past ([#4135](https://github.com/anvilproject/anvil-portal/issues/4135)) ([#4136](https://github.com/anvilproject/anvil-portal/issues/4136)) ([1b488af](https://github.com/anvilproject/anvil-portal/commit/1b488afec154760c8a6b045167f3c137d612d82f))
+
 ## [2.38.5](https://github.com/anvilproject/anvil-portal/compare/v2.38.4...v2.38.5) (2026-08-28)
 
 
