@@ -1,6 +1,7 @@
 import { DATE_FORMAT } from "../../../../../../../content/constants";
 import { Frontmatter } from "../../../../../../../content/entities";
 import {
+  buildEndMomentField,
   buildMomentField,
   getContentDirectory,
   getFrontmatterByPaths,
@@ -33,12 +34,14 @@ export function buildUpdateSectionCards(
 /**
  * Returns true if the event frontmatter is featured, not hidden, has a date,
  * and is either within the recent-content window or marked persistent.
+ * The window is measured from the end of the event, so a long-running event is
+ * not dropped while it is still in progress.
  * @param frontmatter - Frontmatter.
  * @returns true if the event should be shown in the featured section.
  */
 export function filterEventFrontmatter(frontmatter: CardFrontmatter): boolean {
   if (!frontmatter.featured || frontmatter.hidden) return false;
-  return isRecentOrPersistent(frontmatter.date, frontmatter.persistent);
+  return isRecentOrPersistent(frontmatter.endDate, frontmatter.persistent);
 }
 
 /**
@@ -66,12 +69,14 @@ function mapToCardFrontmatter(
   const { description, hidden = false, title } = frontmatter;
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate();
+  const endDate = buildEndMomentField(frontmatter)?.toDate() || date;
   const featured = isFeatured(frontmatter);
   const persistent = isPersistent(frontmatter);
   const secondaryText = moment?.format(DATE_FORMAT); // Formatted date field.
   return {
     date,
     description,
+    endDate,
     featured,
     hidden,
     path,
@@ -88,7 +93,7 @@ function mapToCardFrontmatter(
  */
 function mapToSectionCard(frontmatter: CardFrontmatter): UpdateCard {
   return {
-    date: frontmatter.date?.toISOString(),
+    endDate: frontmatter.endDate?.toISOString(),
     link: { label: null, url: frontmatter.path.replace(/^(?!\/)/, "/") },
     secondaryText: frontmatter.secondaryText,
     text: frontmatter.description,

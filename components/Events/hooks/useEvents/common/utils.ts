@@ -3,7 +3,8 @@ import { EVENTS_VIEW } from "./entities";
 
 /**
  * Returns boolean indicating event filtered based on the events view "upcoming" or "past".
- * @param eventTimestamp - Event timestamp.
+ * An event is "upcoming" until its last session has finished.
+ * @param eventTimestamp - Event timestamp, marking the end of the event.
  * @param timestamp - Timestamp.
  * @param view - Events view.
  * @returns event should be filtered, based on the events view "upcoming" or "past".

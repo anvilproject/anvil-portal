@@ -7,7 +7,11 @@ import { default as path, default as pathTool } from "path";
 import { SlugByFilePaths } from "../docs/common/entities";
 import { resolveDocPath } from "../docs/common/generateStaticPaths";
 import { mapSlugByFilePaths } from "../docs/common/utils";
-import { RECENT_CONTENT_MONTHS } from "./constants";
+import {
+  FORMAT_SESSION_DATE,
+  FORMATS_SESSION_DATE,
+  RECENT_CONTENT_MONTHS,
+} from "./constants";
 import {
   EventSession,
   Frontmatter,
@@ -18,7 +22,28 @@ import {
 const DOC_FOLDER_NAME = "anvil-portal/docs";
 
 /**
+ * Returns the moment marking the end of the given frontmatter's content.
+ * For "event" related frontmatter this is the last session moment; for "news"
+ * related frontmatter it is the publication date.
+ * @param frontmatter - Frontmatter.
+ * @returns moment.
+ */
+export function buildEndMomentField(
+  frontmatter: Frontmatter
+): Moment | undefined {
+  if (isFrontmatterEvent(frontmatter)) {
+    return getSessionEndMoment(frontmatter);
+  }
+  if (isFrontmatterNews(frontmatter)) {
+    const { date } = frontmatter || {};
+    return moment.utc(date);
+  }
+}
+
+/**
  * Returns the moment, for the date field from the given frontmatter.
+ * For "event" related frontmatter this is the first session moment, and is the
+ * date displayed for the event.
  * @param frontmatter - Frontmatter.
  * @returns moment.
  */
@@ -45,7 +70,7 @@ export function convertDateToMoment(
   if (date instanceof Date) {
     return tz(date, timezone);
   }
-  return tz(date, ["D MMM YYYY h:mm A", "D MMM YYYY"], timezone);
+  return tz(date, FORMATS_SESSION_DATE, timezone);
 }
 
 /**
@@ -118,6 +143,20 @@ export function getFrontmatterByPaths(
 }
 
 /**
+ * Returns the latest moment object.
+ * @param setOfMoments - Set of moments.
+ * @returns last moment object.
+ */
+function getLastMoment(setOfMoments: Set<Moment>): Moment | undefined {
+  /* Sort the moments ASC. */
+  const sortedMoments = [...setOfMoments].sort((moment01, moment02) =>
+    moment01.diff(moment02)
+  );
+  /* Return the last moment. */
+  return sortedMoments.pop();
+}
+
+/**
  * Returns matter object (frontmatter and content) from the given MDX path.
  * @param filePath - File path of MD / MDX file.
  * @returns matter object.
@@ -137,6 +176,26 @@ export function getMoment(date: Date | string): Moment {
 }
 
 /**
+ * Returns the last session as a moment from the given "event" frontmatter.
+ * Marks the end of the event, and determines whether the event is "upcoming" or "past".
+ * @param frontmatter - Event frontmatter.
+ * @returns moment.
+ */
+function getSessionEndMoment(
+  frontmatter: FrontmatterEvent
+): Moment | undefined {
+  const { sessions, timezone } = frontmatter || {};
+  /* Grab a set of moments. */
+  const setOfMoments = getSetOfMoments(sessions, timezone);
+  /* Grab the last moment. */
+  const lastMoment = getLastMoment(setOfMoments);
+  if (!lastMoment) return;
+  /* A session authored without a time runs for the whole day. */
+  if (isDateOnly(lastMoment)) return lastMoment.clone().endOf("day");
+  return lastMoment;
+}
+
+/**
  * Returns the first session as a moment from the given "event" frontmatter.
  * @param frontmatter - Event frontmatter.
  * @returns moment.
@@ -150,7 +209,8 @@ function getSessionMoment(frontmatter: FrontmatterEvent): Moment | undefined {
 }
 
 /**
- * Returns a set of moments from the given sessions.
+ * Returns a set of moments from the given sessions, excluding any session date
+ * that cannot be parsed.
  * @param sessions - Sessions.
  * @param timezone - Timezone.
  * @returns set of moments.
@@ -163,10 +223,24 @@ function getSetOfMoments(
   sessions.forEach((session) => {
     Object.values(session).forEach((date) => {
       const moment = convertDateToMoment(date, timezone);
+      /* Ignore unparsable session dates; they sort unpredictably, and would
+       * otherwise yield an invalid date downstream. */
+      if (!moment.isValid()) return;
       setOfMoments.add(moment);
     });
   });
   return setOfMoments;
+}
+
+/**
+ * Returns true if the given moment was parsed from a session date authored as a
+ * day only e.g. "1 September 2026". Checking the matched format, rather than the
+ * resulting time, distinguishes a day-only date from an explicit midnight.
+ * @param moment - Moment.
+ * @returns true if the moment was parsed from a day only.
+ */
+export function isDateOnly(moment: Moment): boolean {
+  return moment.creationData().format === FORMAT_SESSION_DATE;
 }
 
 /**

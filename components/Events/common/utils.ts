@@ -1,8 +1,10 @@
 import { Frontmatter, FrontmatterEvent } from "../../../content/entities";
 import {
+  buildEndMomentField,
   buildMomentField,
   convertDateToMoment,
   getFrontmatterByPaths,
+  isDateOnly,
   isFrontmatterEvent,
 } from "../../../content/utils";
 import {
@@ -60,7 +62,7 @@ function formatSessions(
     const moment01 = convertDateToMoment(sessionStart, timezone);
     if (!sessionEnd) {
       // Start session has no time specified, returns e.g. "Friday, July 17, 2020".
-      if (/T00:00:00/.test(moment01.format())) {
+      if (isDateOnly(moment01)) {
         return moment01.format(FORMAT_SESSION_DATE);
       }
       // Start session with time, returns e.g. "Friday, July 17, 2020 09:00 AM EST".
@@ -76,7 +78,8 @@ function formatSessions(
 
 /**
  * Returns tuple path parsed frontmatter.
- * Frontmatter session (first session) value parsed as "Date" for "event" related frontmatter.
+ * Frontmatter session (first session) value parsed as "Date" for "event" related frontmatter,
+ * and the last session value parsed as the timestamp marking the end of the event.
  * @param pathFrontmatter - Tuple containing path and associated frontmatter.
  * @returns tuple containing path and parsed frontmatter.
  */
@@ -86,7 +89,9 @@ function parseFrontmatter(
   const [path, frontmatter] = pathFrontmatter;
   const moment = buildMomentField(frontmatter);
   const date = moment?.toDate() || new Date();
-  const timestamp = date.getTime();
+  /* Left undefined when no session date could be parsed, so that the event is
+   * listed under neither "upcoming" nor "past". */
+  const timestamp = buildEndMomentField(frontmatter)?.toDate().getTime();
   return [path, { ...frontmatter, date, timestamp }];
 }
 
