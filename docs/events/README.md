@@ -33,7 +33,7 @@ hidden: true # optional — hide from all listings
 
 ### Session dates
 
-Use the format `D MMMM YYYY h:mm A` (e.g. `1 September 2026 9:00 AM`) in `sessionStart` and `sessionEnd`.
+Use the format `D MMM YYYY h:mm A` in `sessionStart` and `sessionEnd`. The month may be written in full or abbreviated — both `1 September 2026 9:00 AM` and `1 Sep 2026 9:00 AM` parse. Omit the time to author a day only, e.g. `1 September 2026`.
 
 The earliest `sessionStart` is the date displayed on event cards, and determines listing order.
 
