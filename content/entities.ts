@@ -42,6 +42,10 @@ export interface FrontmatterEvent extends DefaultFrontmatter {
    */
   persistent?: boolean;
   sessions: EventSession[];
+  /**
+   * Epoch milliseconds of the last session, marking the end of the event.
+   * Determines whether the event is listed as "upcoming" or "past".
+   */
   timestamp?: number;
   timezone: string;
   url: string | null;

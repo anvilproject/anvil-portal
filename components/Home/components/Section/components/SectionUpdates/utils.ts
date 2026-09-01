@@ -39,11 +39,13 @@ export function getDisplayCards(
 }
 
 /**
- * Returns true if the card has a future date.
+ * Returns true if the card has not yet ended.
+ * An event runs until the end of its last session, so an in-progress multi-day
+ * event still counts as upcoming.
  * @param card - Card.
- * @returns true if the card has a future date.
+ * @returns true if the card has not yet ended.
  */
 function filterUpcomingEvent(card: UpdateCard): boolean {
-  if (!card.date) return false;
-  return new Date(card.date) >= new Date();
+  if (!card.endDate) return false;
+  return new Date(card.endDate) >= new Date();
 }
