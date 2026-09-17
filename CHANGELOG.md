@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.39.0](https://github.com/anvilproject/anvil-portal/compare/v2.38.6...v2.39.0) (2026-09-17)
+
+
+### Features
+
+* add imputation service reference panel preprint to the home page carousel ([#4153](https://github.com/anvilproject/anvil-portal/issues/4153)) ([#4154](https://github.com/anvilproject/anvil-portal/issues/4154)) ([7e1c58b](https://github.com/anvilproject/anvil-portal/commit/7e1c58b76172db8db719287243618a119a126174))
+
+
+### Bug Fixes
+
+* remove anvil community conference 2026 from the home page carousel and featured events ([#4144](https://github.com/anvilproject/anvil-portal/issues/4144)) ([#4155](https://github.com/anvilproject/anvil-portal/issues/4155)) ([a0fb1df](https://github.com/anvilproject/anvil-portal/commit/a0fb1dfa0002a0921ebcc3df75b8137d581ac750))
+
+
+### Content
+
+* add news item — anvil launches omop support ([#4150](https://github.com/anvilproject/anvil-portal/issues/4150)) ([#4151](https://github.com/anvilproject/anvil-portal/issues/4151)) ([82f65ed](https://github.com/anvilproject/anvil-portal/commit/82f65eda9f6ec165eab3237ffc91c8b00a84c3f5))
+
 ## [2.38.6](https://github.com/anvilproject/anvil-portal/compare/v2.38.5...v2.38.6) (2026-09-01)
 
 
