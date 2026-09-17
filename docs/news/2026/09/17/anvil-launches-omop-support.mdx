@@ -1,0 +1,82 @@
+---
+date: "2026-09-17"
+description: "AnVIL is enhancing support of clinical data to improve the FAIRness of data on AnVIL by launching its first-ever harmonized OMOP datasets, with electronic health records from three eMERGE datasets harmonized to OMOP v5.3."
+featured: true
+title: "AnVIL Launches OMOP Support"
+---
+
+<NewsHero {...frontmatter} />
+
+AnVIL is excited to announce that we are enhancing support of clinical data to improve the [FAIR](https://www.nature.com/articles/sdata201618)ness of data on AnVIL by launching its first-ever harmonized OMOP datasets.
+
+The OMOP Common Data Model (CDM) is a data standard for representing electronic health records and is designed to optimize interoperability of clinical data for research. OMOP is developed and maintained by the Observational Health Data Sciences and Informatics program. Learn more about the OMOP CDM [here](https://ohdsi.github.io/CommonDataModel/background.html).
+
+Submitters with longitudinal electronic health records are encouraged to consider OMOP CDM for their clinical data. Guidance for submitting your clinical dataset in OMOP to AnVIL can be found in the [AnVIL Data Submission Guide Section 2.2.2 - OMOP Common Data Model](/learn/data-submitters/submission-guide/set-up-a-data-model#222-omop-common-data-model).
+
+## Publicly available OMOP datasets currently in AnVIL
+
+The Electronic Medical Records and Genomics (eMERGE) Network is a National Institutes of Health (NIH)-organized and funded consortium of U.S. medical research institutions. The primary goal of the eMERGE Network is to develop, disseminate, and apply research approaches that combine biorepositories with electronic medical record (EMR) systems for genomic discovery and genomic medicine implementation research.
+
+Electronic health records from three eMERGE datasets were harmonized to OMOP v5.3 and mark the inaugural release of OMOP data on the AnVIL. AnVIL users may find more information about the released datasets here:
+
+- eMERGE Network Phase III Clinical Sequencing: eMERGEseq Panel ([dbGaP](https://dbgap.ncbi.nlm.nih.gov/beta/study/phs001616.v2.p2/#study) | [harmonization release notes](https://docs.google.com/document/d/1SMDxadoCNFcDw3_Fk-M42QJuUrblVIn4LdHkAzkgfkc/edit?tab=t.0))
+- eMERGE Network's Multi-Center Pilot of Pharmacogenetic Sequencing in Clinical Practice ([dbGaP](https://dbgap.ncbi.nlm.nih.gov/beta/study/phs000906.v1.p1/#publicly-available-data) | [harmonization release notes](https://docs.google.com/document/d/16NzBfbXS-SBEI9d1R-q3Oc6SJ7jrMnXauN0y13H2DyA/edit?tab=t.0))
+- eMERGE Network Phase III: HRC SNV and 1000 Genomes SV Imputed Array Data of 105,000 Participants ([dbGaP](https://dbgap.ncbi.nlm.nih.gov/beta/study/phs000888.v1.p1/#study) | [harmonization release notes](https://docs.google.com/document/d/1jnNQ_CfpVHQ5uypU8NCWaoaBaRy8Dt1TwOemkF-sTvM/edit?tab=t.0))
+
+## Impact for AnVIL users
+
+The launch of OMOP support for AnVIL will facilitate data exploration and co-analysis of longitudinal clinical data.
+
+As the number of OMOP datasets grows through submissions and AnVIL harmonization activities, AnVIL users can look forward to being able to:
+
+- Easily explore and identify conditions or diseases across multiple AnVIL OMOP datasets
+- Integrate multiple AnVIL OMOP datasets from different consortia for analysis following access provisioning
+- Readily co-analyze across multiple AnVIL OMOP datasets to conduct investigations
+- Utilize standardized validation and data quality tools for assessing their AnVIL OMOP datasets
+
+## What is OMOP?
+
+The OMOP CDM is a relational database that stores electronic health records in a standardized way. OMOP organizes clinical data into major domains, such as conditions, measurements, drugs, and observations. The diagram below outlines how the tables in OMOP relate to one another, and AnVIL users may find a detailed description of each domain [here](https://ohdsi.github.io/CommonDataModel/cdm53.html#person).
+
+<Figure alt="Tables in the OMOP CDM and how they link to each other" caption={<>Figure 1. Tables in the OMOP CDM and how they link to each other. Source: <a href="https://ohdsi.github.io/CommonDataModel/index.html">OMOP Common Data Model</a></>} src="/consortia/news/omop-cdm-tables.webp" />
+
+All data in OMOP is expressed as structured "concepts", which are codes from medical vocabularies, such as SNOMED, ICD-9, and LOINC. OMOP contains both the source and standard codes, and more information about which vocabularies OMOP uses can be found [here](https://ohdsi.github.io/TheBookOfOhdsi/StandardizedVocabularies.html#tab:vocabList).
+
+Knowing how to get more information about concepts and vocabularies is essential to using OMOP datasets. This is because users must find the concepts they need for their investigation. Users can find concepts in two ways:
+
+### 1) Athena
+
+[Athena](https://athena.ohdsi.org/search-terms/start) is a public webpage that allows users to search concepts in the OMOP Standardized Vocabulary.
+
+### 2) Vocabulary Tables
+
+Users can use OMOP vocabulary tables (in orange in Figure 1) to find information about concepts. Learn more about how to use the vocabulary tables [here](https://ohdsi.github.io/CommonDataModel/cdm53.html#concept).
+
+Please note that, due to licensing restrictions, the AnVIL is not permitted to distribute the OMOP vocabulary. Fear not! Users can download the OMOP vocabulary for their eMERGE OMOP datasets from the [OHDSI Athena website](https://athena.ohdsi.org/search-terms/start). To download and import from Athena, users need an OHDSI Athena account and the list of vocabularies for each OMOP dataset, which can be found in each dataset's [release notes](/releases/2026/07/release-notes). The default download options also cover common use cases. Once downloaded, users can import these vocabulary files into their workspace for use.
+
+The OMOP vocabulary has 2 major releases each year in February and August. Users are encouraged to periodically update their OMOP vocabulary to stay up-to-date with any vocabulary changes.
+
+## How to Find OMOP Datasets in the AnVIL
+
+An overview of the recommendations and general steps to finding AnVIL datasets can be found in this Terra [Finding and using AnVIL data](https://support.terra.bio/hc/en-us/articles/34594440468635-Finding-and-using-AnVIL-data) article.
+
+To find the eMERGE datasets in the AnVIL Data Explorer, users can search "eMERGE" and a dataset name using the "Dataset" filter. Users can select the datasets and follow these articles to bring the data into their workspace: [Part 2: Search and select data in AnVIL Data Explorer](https://support.terra.bio/hc/en-us/articles/34596321862427) and [Step 3: Export AnVIL data to Terra for analysis](https://support.terra.bio/hc/en-us/articles/34607573660827-Part-3-Export-AnVIL-data-to-Terra-for-analysis).
+
+Alternatively, if users already have access to a dataset, they may bring their eMERGE datasets into their Terra workspaces for analysis from the [Terra Data Repository](https://data.terra.bio/). Users can search eMERGE datasets in [DUOS](https://duos.org/) and find the TDR location within the dataset's page. After logging into DUOS, navigate to the "Researcher Console" tab and search for "eMERGE" in the search bar to see the different consent groups available as datasets.
+
+![DUOS dataset page for ANVIL_eMERGE_eMERGEseq_GRU_IRB_NPU showing the TDR Location link](/consortia/news/omop-duos-dataset.webp)
+
+From here, users have their OMOP datasets in their workspaces. In a future blog post, we will provide a how-to guide and tool for combining AnVIL's OMOP datasets to maximize your use of harmonized, standard datasets. Until then, a number of Terra resources are available for users to get started with the data:
+
+- [Intro to workspaces in Terra](https://support.terra.bio/hc/en-us/articles/360046095192)
+- [Data in the cloud](https://support.terra.bio/hc/en-us/articles/7181688209179)
+- [Pipelining with workflows](https://support.terra.bio/hc/en-us/articles/360034701991)
+- [Interactive analysis (Jupyter, Galaxy, or RStudio)](https://support.terra.bio/hc/en-us/articles/4412443169051)
+- [Terra on GCP Quickstart Guide](https://app.terra.bio/#workspaces/help-terra/Terra%20on%20GCP%20Quickstart)
+
+This blog is the first in a series of blog posts supporting the release of OMOP datasets. Stay tuned to learn more about:
+
+- Using and combining your OMOP eMERGE datasets
+- Navigating the OMOP vocabulary
+
+Users with general questions about their OMOP datasets are encouraged to post their questions in the [AnVIL Support Forum]({anvilHelpURL}) or to reach out to the AnVIL Team at [help@lists.anvilproject.org]({anvilHelp}).
