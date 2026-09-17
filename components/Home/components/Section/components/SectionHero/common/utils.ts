@@ -10,6 +10,18 @@ const ACTION_LABEL = {
 
 const CAROUSEL_CARDS: SectionCard[] = [
   {
+    date: "2026-09-17",
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/news/2026/09/17/anvil-launches-omop-support",
+      },
+    ],
+    text: "AnVIL is enhancing support of clinical data by launching its first-ever harmonized OMOP datasets, with electronic health records from three eMERGE datasets harmonized to OMOP v5.3.",
+    title: "AnVIL Launches OMOP Support",
+  },
+  {
     links: [
       {
         label: ACTION_LABEL.LEARN_MORE,
