@@ -34,6 +34,18 @@ const CAROUSEL_CARDS: SectionCard[] = [
     title: "AnVIL Community Conference 2026",
   },
   {
+    date: "2026-09-17",
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        url: "https://broadscientificservices.zendesk.com/hc/en-us/articles/55938856182683-New-preprint-available-A-515-579-genome-reference-panel-powers-the-All-of-Us-AnVIL-Imputation-Service",
+      },
+    ],
+    text: "A new medRxiv preprint describes the 515,579-genome reference panel behind the All of Us + AnVIL Imputation Service — the largest and most diverse imputation panel to date, improving rare-variant imputation across underrepresented populations.",
+    title:
+      "New preprint: A 515,579-genome reference panel powers the All of Us + AnVIL Imputation Service",
+  },
+  {
     date: "2026-05-01",
     links: [
       {
