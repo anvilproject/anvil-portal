@@ -22,18 +22,6 @@ const CAROUSEL_CARDS: SectionCard[] = [
     title: "AnVIL Launches OMOP Support",
   },
   {
-    links: [
-      {
-        label: ACTION_LABEL.LEARN_MORE,
-        target: ANCHOR_TARGET.SELF,
-        url: "/events/anvil2026-community-conference",
-      },
-    ],
-    persistent: true,
-    text: "Join us August 31 - September 1, 2026 in Cambridge, MA for the AnVIL Community Conference — featuring keynote speakers, workshops, poster sessions, and more. Register by August 17!",
-    title: "AnVIL Community Conference 2026",
-  },
-  {
     date: "2026-09-17",
     links: [
       {
