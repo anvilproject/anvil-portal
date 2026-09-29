@@ -18,6 +18,7 @@ const OVERVIEW_OUTLINE_DEPTH = 2;
 /**
  * Maps an overview link to LinkProps.
  * A link that configures its own label is returned directly, without a frontmatter lookup; this supports linking across sections.
+ * A configured target (e.g. "_blank" for a hosted PDF) is preserved.
  * A label-less string link is converted to LinkProps with the label taken from the target page's frontmatter title.
  * An undefined value is returned for a label-less link when its target frontmatter or title cannot be found.
  * @param section - Section.
@@ -35,15 +36,17 @@ function getOverviewLink(
   if (!url) return;
   // Grab the configured label from the link.
   const label = getOverviewLinkLabel(link);
+  // Grab the configured target, if any, from the link.
+  const targetProps = getOverviewLinkTarget(link);
   // Handle external links.
   if (!isClientSideNavigation(url)) {
     if (typeof link === "string") return;
-    return { label, url };
+    return { label, url, ...targetProps };
   }
   // Otherwise, handle internal links.
   // A configured label removes the need to source the title from the target's frontmatter,
   // which allows internal links to reference pages in other sections.
-  if (label) return { label, url };
+  if (label) return { label, url, ...targetProps };
   // Find the corresponding frontmatter for the link.
   const pathFrontmatter = getPathFrontmatter(section, url, frontmatters);
   if (!pathFrontmatter) return;
@@ -54,6 +57,7 @@ function getOverviewLink(
   return {
     label: title,
     url,
+    ...targetProps,
   };
 }
 
@@ -68,6 +72,18 @@ function getOverviewLinkLabel(
 ): LinkProps["label"] | undefined {
   if (typeof link === "string") return;
   return link.label;
+}
+
+/**
+ * Gets the target, if configured, from an overview link.
+ * OverviewLink can be a string or LinkProps.
+ * An empty object is returned when no target is configured; undefined values cannot be serialized as static props.
+ * @param link - Overview link.
+ * @returns overview link target, as a partial LinkProps object.
+ */
+function getOverviewLinkTarget(link: OverviewLink): Pick<LinkProps, "target"> {
+  if (typeof link === "string" || !link.target) return {};
+  return { target: link.target };
 }
 
 /**
