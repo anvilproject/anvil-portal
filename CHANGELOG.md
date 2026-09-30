@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.40.0](https://github.com/anvilproject/anvil-portal/compare/v2.39.0...v2.40.0) (2026-09-29)
+
+
+### Features
+
+* add "other tools" section to the anvil clinical resource page ([#4157](https://github.com/anvilproject/anvil-portal/issues/4157)) ([#4158](https://github.com/anvilproject/anvil-portal/issues/4158)) ([1c5c5ef](https://github.com/anvilproject/anvil-portal/commit/1c5c5ef446027bea8c3e63dfa84b7f259c83ee92))
+
 ## [2.39.0](https://github.com/anvilproject/anvil-portal/compare/v2.38.6...v2.39.0) (2026-09-17)
 
 
