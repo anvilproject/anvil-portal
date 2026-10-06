@@ -8,6 +8,7 @@ import {
   SORT_DIRECTION,
 } from "@databiosphere/findable-ui/lib/config/entities";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode/types";
+import { PUBLICATIONS_ENTITY_ROUTE } from "../../../apis/publications/constants";
 import {
   Publication,
   PublicationInput,
@@ -179,7 +180,7 @@ export const publicationsEntityConfig: EntityConfig<
   listView: {
     disablePagination: true,
   },
-  route: "citations",
+  route: PUBLICATIONS_ENTITY_ROUTE,
   staticLoadFile: "files/publications/publications.json",
   ui: {
     slots: {

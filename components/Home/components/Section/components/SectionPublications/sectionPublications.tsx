@@ -5,6 +5,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button } from "@mui/material";
 import { JSX } from "react";
+import { ROUTES } from "../../../../../../routes/constants";
 import { Section, SectionLayout, SectionTitle } from "../../section.styles";
 import { Publications } from "./components/Publications/publications";
 import { CTAs, Headline, SectionActions } from "./sectionPublications.styles";
@@ -12,7 +13,6 @@ import { CTAs, Headline, SectionActions } from "./sectionPublications.styles";
 const CITE_ANVIL = "/overview/cite-anvil";
 const ADD_PUBLICATION =
   "https://github.com/anvilproject/anvil-portal/issues/new/?template=add-a-publication.md";
-const SHOW_ALL_PUBLICATIONS = "/overview/publications";
 
 export const SectionPublications = (): JSX.Element => {
   return (
@@ -35,7 +35,7 @@ export const SectionPublications = (): JSX.Element => {
         </Headline>
         <Publications />
         <SectionActions>
-          <ButtonSecondary href={SHOW_ALL_PUBLICATIONS}>
+          <ButtonSecondary href={ROUTES.CITATIONS}>
             Show all publications
           </ButtonSecondary>
         </SectionActions>

@@ -21,7 +21,7 @@ import { SectionsData, SectionsDataProvider } from "../providers/sectionsData";
 import { HomeView } from "../views/HomeView/homeView";
 
 export const getStaticProps: GetStaticProps<SectionsData> = async () => {
-  const { browserURL } = config();
+  const { browserURL, entities } = config();
   const analysisPortalCards = buildAnalysisPortalCards(browserURL);
   const carouselCards = buildCarouselCards();
   const cloudCards = CLOUD_CARDS;
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<SectionsData> = async () => {
     NEWS_DIR_NAME,
     filterNewsFrontmatter
   );
-  const publicationCards = buildPublicationSectionCards();
+  const publicationCards = buildPublicationSectionCards(entities);
   const workspaceCards = WORKSPACE_CARDS;
   return {
     props: {
