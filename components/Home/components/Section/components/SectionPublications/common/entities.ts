@@ -6,9 +6,12 @@ export interface Citation {
   year: string;
 }
 
-export interface PublicationCard {
-  cardLink: string;
+export interface PublicationCard extends PublicationSectionCard {
   category: PUBLICATION_CATEGORY;
+}
+
+export interface PublicationSectionCard {
+  cardLink: string;
   citation: Citation;
   title: string;
 }

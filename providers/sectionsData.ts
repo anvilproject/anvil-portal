@@ -3,7 +3,7 @@ import {
   SectionCard,
   SectionCardWithLink,
 } from "../components/Home/common/entities";
-import { PublicationCard } from "../components/Home/components/Section/components/SectionPublications/common/entities";
+import type { PublicationSectionCard } from "../components/Home/components/Section/components/SectionPublications/common/entities";
 import { UpdateCard } from "../components/Home/components/Section/components/SectionUpdates/common/entities";
 
 const DEFAULT_SECTIONS_DATA: SectionsData = {
@@ -25,7 +25,7 @@ export interface SectionsData {
   datasetCards: Omit<SectionCard, "links">[];
   eventCards: UpdateCard[];
   newsCards: UpdateCard[];
-  publicationCards: PublicationCard[];
+  publicationCards: PublicationSectionCard[];
   toolsAndWorkflowsCards: SectionCardWithLink[];
   workspaceCards: SectionCardWithLink[];
 }

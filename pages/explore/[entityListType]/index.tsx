@@ -9,7 +9,7 @@ import { ExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/ex
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { JSX } from "react";
 import { config } from "../../../config/config";
-import { readFile } from "../../../utils/readFile";
+import { readStaticLoadFile } from "../../../utils/readFile";
 
 /**
  * Seeds the in-memory database with static JSON data.
@@ -20,14 +20,7 @@ async function seedDatabase(
   entityListType: string,
   entityConfig: EntityConfig
 ): Promise<void> {
-  const { label, staticLoadFile } = entityConfig;
-  if (!staticLoadFile) {
-    throw new Error(`staticLoadFile not found for entity ${label}`);
-  }
-  const rawData = readFile(staticLoadFile);
-  const object = JSON.parse(rawData);
-  const entities = Object.values(object);
-  database.get().seed(entityListType, entities);
+  database.get().seed(entityListType, readStaticLoadFile(entityConfig));
 }
 
 /**

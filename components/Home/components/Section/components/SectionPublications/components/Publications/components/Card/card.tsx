@@ -11,19 +11,17 @@ import { JSX, useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../../../common/entities";
 import { updateVisibilityMode } from "../../../../../../../../common/utils";
-import { PublicationCard } from "../../../../common/entities";
 import { CardContent, CardSection, Card as GridCard } from "./card.styles";
+import { MAX_AUTHORS } from "./constants";
+import type { CardProps } from "./types";
+import { getCitation } from "./utils";
 
-const MAX_AUTHORS = 5;
-
-export interface Card {
-  card: PublicationCard;
-}
-
-export const Card = ({ card }: Card): JSX.Element => {
+export const Card = ({ card }: CardProps): JSX.Element => {
   const [mode, setMode] = useState<VISIBILITY_MODE>(VISIBILITY_MODE.COLLAPSED);
   const isExpanded = mode === VISIBILITY_MODE.EXPANDED;
   const { cardLink, citation, title } = card;
+  const isTruncatable = citation.authors.length > MAX_AUTHORS;
+  const isTruncated = isTruncatable && !isExpanded;
 
   // Toggles visibility mode.
   const onVisibilityMode = (event: MouseEvent): void => {
@@ -42,42 +40,16 @@ export const Card = ({ card }: Card): JSX.Element => {
           <CardContent>
             <CardTitle>{title}</CardTitle>
             <CardSecondaryText>
-              {getCitation(citation, isExpanded)}
+              {getCitation(citation, isTruncated)}
             </CardSecondaryText>
           </CardContent>
-          <ButtonTextPrimary onClick={onVisibilityMode}>
-            {VISIBILITY_MODE_LABEL[mode]}
-          </ButtonTextPrimary>
+          {isTruncatable && (
+            <ButtonTextPrimary onClick={onVisibilityMode}>
+              {VISIBILITY_MODE_LABEL[mode]}
+            </ButtonTextPrimary>
+          )}
         </CardSection>
       </MCardActionArea>
     </GridCard>
   );
 };
-
-/**
- * Returns the citation as a string.
- * @param citation - Citation.
- * @param isExpanded - Visibility mode.
- * @returns citation as a string.
- */
-function getCitation(
-  citation: PublicationCard["citation"],
-  isExpanded: boolean
-): string {
-  const { doi, journal, year } = citation;
-  const authors = joinAuthors(citation.authors, isExpanded);
-  return `${authors}${isExpanded ? "." : ","}${
-    isExpanded ? "" : " et al."
-  } (${year}). ${journal}. ${doi}.`;
-}
-
-/**
- * Returns the authors as a string.
- * @param authors - Authors.
- * @param isExpanded - Visibility mode.
- * @returns authors as a string.
- */
-function joinAuthors(authors: string[], isExpanded: boolean): string {
-  const fewAuthors = authors.slice(0, MAX_AUTHORS);
-  return isExpanded ? authors.join(", ") : fewAuthors.join(", ");
-}
