@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.41.0](https://github.com/anvilproject/anvil-portal/compare/v2.40.0...v2.41.0) (2026-10-06)
+
+
+### Features
+
+* show recent publications from the citations list on the home page ([#4166](https://github.com/anvilproject/anvil-portal/issues/4166)) ([#4172](https://github.com/anvilproject/anvil-portal/issues/4172)) ([eecc59d](https://github.com/anvilproject/anvil-portal/commit/eecc59dd846b5bb4e8ba9ad01387f1a300b48d0f))
+
+
+### Content
+
+* refresh anvil citations data on /explore/citations ([#4167](https://github.com/anvilproject/anvil-portal/issues/4167)) ([#4170](https://github.com/anvilproject/anvil-portal/issues/4170)) ([0c66c82](https://github.com/anvilproject/anvil-portal/commit/0c66c82e4712d95e693792137bb25f44a470f283))
+
 ## [2.40.0](https://github.com/anvilproject/anvil-portal/compare/v2.39.0...v2.40.0) (2026-09-29)
 
 
