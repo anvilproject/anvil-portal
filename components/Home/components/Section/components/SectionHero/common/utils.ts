@@ -12,6 +12,7 @@ const ACTION_LABEL = {
 // Keep at least one persistent card with no endDate so the carousel is never empty; titles must be unique (used as keys).
 const CAROUSEL_CARDS: SectionCard[] = [
   {
+    endDate: "2027-02-01",
     links: [
       {
         label: ACTION_LABEL.LEARN_MORE,
