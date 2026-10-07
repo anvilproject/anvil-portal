@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.42.0](https://github.com/anvilproject/anvil-portal/compare/v2.41.1...v2.42.0) (2026-10-07)
+
+
+### Features
+
+* let home page carousel cards expire on an end date ([#4178](https://github.com/anvilproject/anvil-portal/issues/4178)) ([#4180](https://github.com/anvilproject/anvil-portal/issues/4180)) ([025458f](https://github.com/anvilproject/anvil-portal/commit/025458f26c61e54a18019fbf121a4352a72bf9f1))
+
 ## [2.41.1](https://github.com/anvilproject/anvil-portal/compare/v2.41.0...v2.41.1) (2026-10-07)
 
 
