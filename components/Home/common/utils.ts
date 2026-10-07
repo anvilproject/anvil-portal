@@ -26,12 +26,13 @@ export function hasEnded(endDate?: string): boolean {
 }
 
 /**
- * Parses an end date written as "YYYY-MM-DD".
+ * Parses an end date written as "YYYY-MM-DD". Years must be 1000-9999, since
+ * Date.UTC maps years 0-99 to 1900-1999.
  * @param endDate - End date.
  * @returns year, month (1-12), and day.
  */
 function parseEndDate(endDate: string): [number, number, number] {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(endDate);
+  const match = /^([1-9]\d{3})-(\d{2})-(\d{2})$/.exec(endDate);
   if (match) {
     const [year, month, day] = match.slice(1).map(Number);
     const date = new Date(Date.UTC(year, month - 1, day));
