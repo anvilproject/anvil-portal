@@ -62,7 +62,7 @@ Carousel cards (`CAROUSEL_CARDS` in `components/Home/components/Section/componen
 - The end date is inclusive and "anywhere on Earth" (UTC−12): the card shows until that day is over in every timezone, so it never disappears early for anyone. Visitors far east of UTC may see it for up to a day longer.
 - It only ever hides a card. The card must still pass the freshness window or be `persistent` to show before then.
 - It applies when the site is built, and again in the visitor's browser. A card that ends between deploys stays in the static HTML until the next build, and is hidden once the page has loaded.
-- An `endDate` that isn't `"YYYY-MM-DD"` (e.g. `"2027/02/01"` or `"Feb 1 2027"`) fails the build.
+- An `endDate` that isn't a real `"YYYY-MM-DD"` date (e.g. `"2027/02/01"`, `"Feb 1 2027"` or `"2027-02-31"`) fails the build.
 
 Always keep at least one `persistent` card with no `endDate`, so the carousel is never empty. Card titles are used as keys, so they must be unique.
 
