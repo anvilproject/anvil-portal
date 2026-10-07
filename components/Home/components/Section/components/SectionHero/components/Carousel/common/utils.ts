@@ -88,3 +88,27 @@ export function getCardTranslateY(cardPosition: number): string {
 export function getCardZIndex(cardPosition: number): number {
   return MAX_DECK_SIZE - cardPosition;
 }
+
+/**
+ * Returns the client snapshot for useSyncExternalStore: rendering in the browser.
+ * @returns true.
+ */
+export function getClientSnapshot(): boolean {
+  return true;
+}
+
+/**
+ * Returns the server snapshot for useSyncExternalStore (also used while hydrating).
+ * @returns false.
+ */
+export function getServerSnapshot(): boolean {
+  return false;
+}
+
+/**
+ * Subscribes to nothing; the client snapshot never changes once hydrated.
+ * @returns unsubscribe function (no-op).
+ */
+export function subscribeNoop(): () => void {
+  return () => undefined;
+}

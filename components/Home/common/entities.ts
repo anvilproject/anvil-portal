@@ -5,6 +5,12 @@ type Link = Omit<LinkProps, "url"> & { url: string };
 
 export interface SectionCard {
   date?: string;
+  /**
+   * Last day the card is shown, as "YYYY-MM-DD" (inclusive, anywhere on Earth).
+   * The card is hidden once that day is over everywhere, regardless of the
+   * persistent flag or the recent-content window.
+   */
+  endDate?: string;
   links: Link[];
   media?: StaticImageProps;
   persistent?: boolean;
