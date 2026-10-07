@@ -10,6 +10,23 @@ const ACTION_LABEL = {
 
 const CAROUSEL_CARDS: SectionCard[] = [
   {
+    links: [
+      {
+        label: ACTION_LABEL.LEARN_MORE,
+        target: ANCHOR_TARGET.SELF,
+        url: "/events/cm4ai-anvil2026-dream-challenge",
+      },
+    ],
+    media: {
+      alt: "CM4AI-AnVIL Cell Map Prediction DREAM Challenge",
+      height: 168,
+      src: "/consortia/carousel/cm4ai-anvil-dream-challenge.webp",
+    },
+    persistent: true,
+    text: "Develop generative AI models that predict where proteins localize in human cells. Runs October 19, 2026 to February 1, 2027, with cash prizes and cloud credits.",
+    title: "CM4AI-AnVIL Cell Map Prediction DREAM Challenge",
+  },
+  {
     date: "2026-09-17",
     links: [
       {
