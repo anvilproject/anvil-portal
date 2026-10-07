@@ -25,7 +25,7 @@ export const Cards = ({ activeIndex, cards }: CardsProps): JSX.Element => {
       {cards.map(({ links, media, text, title }, c) => {
         return (
           <CardPositioner
-            key={c}
+            key={title}
             cardPosition={getCardPosition(c, activeIndex, lastIndex)}
           >
             <Card component={RoundedPaper}>

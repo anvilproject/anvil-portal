@@ -1,6 +1,7 @@
 import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { isRecentOrPersistent } from "../../../../../../../content/utils";
 import { SectionCard } from "../../../../../common/entities";
+import { excludeEndedCards } from "../../../../../common/utils";
 
 const ACTION_LABEL = {
   LEARN_MORE: "Learn More",
@@ -8,6 +9,7 @@ const ACTION_LABEL = {
   WORKSPACE: "Workspace",
 };
 
+// Keep at least one persistent card with no endDate so the carousel is never empty; titles must be unique (used as keys).
 const CAROUSEL_CARDS: SectionCard[] = [
   {
     links: [
@@ -234,11 +236,12 @@ const CAROUSEL_CARDS: SectionCard[] = [
 
 /**
  * Returns the carousel cards for the hero section, filtered to entries that
- * are either within the recent-content window or marked persistent.
+ * are either within the recent-content window or marked persistent, and whose
+ * end date (if any) has not passed.
  * @returns carousel cards.
  */
 export function buildCarouselCards(): SectionCard[] {
-  return CAROUSEL_CARDS.filter((card) =>
+  return excludeEndedCards(CAROUSEL_CARDS).filter((card) =>
     isRecentOrPersistent(card.date, card.persistent)
   );
 }

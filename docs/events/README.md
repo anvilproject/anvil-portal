@@ -49,6 +49,23 @@ The home page Updates section (Events tab) shows only upcoming `featured` events
 
 The hero carousel uses a 3-month freshness window: dated entries within the last 3 months show by default. Set `persistent: true` to keep an event eligible regardless of date — useful for recurring conferences.
 
+Carousel cards (`CAROUSEL_CARDS` in `components/Home/components/Section/components/SectionHero/common/utils.ts`) can also set an optional `endDate` (`"YYYY-MM-DD"`) to stop showing once something time-bound is over:
+
+```ts
+{
+  endDate: "2027-02-01",
+  persistent: true,
+  // ...links, text, title
+}
+```
+
+- The end date is inclusive and "anywhere on Earth" (UTC−12): the card shows until that day is over in every timezone, so it never disappears early for anyone. Visitors far east of UTC may see it for up to a day longer.
+- It only ever hides a card. The card must still pass the freshness window or be `persistent` to show before then.
+- It applies when the site is built, and again in the visitor's browser. A card that ends between deploys stays in the static HTML until the next build, and is hidden once the page has loaded.
+- An `endDate` that isn't `"YYYY-MM-DD"` (e.g. `"2027/02/01"` or `"Feb 1 2027"`) fails the build.
+
+Always keep at least one `persistent` card with no `endDate`, so the carousel is never empty. Card titles are used as keys, so they must be unique.
+
 Note: carousel auto-rotation is currently paused (`AUTO_ROTATE` in `components/Home/components/Section/components/SectionHero/components/Carousel/common/constants.ts`), so the carousel holds on its first card — items behind it are only reached via manual navigation (arrows, bullets, or swipe).
 
 Use `hidden: true` to suppress an event from all listings.

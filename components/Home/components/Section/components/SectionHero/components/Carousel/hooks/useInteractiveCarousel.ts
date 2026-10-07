@@ -1,11 +1,17 @@
-import { useMemo } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 import { useSectionsData } from "../../../../../../../../../providers/sectionsData";
 import { SectionCard } from "../../../../../../../common/entities";
+import { excludeEndedCards } from "../../../../../../../common/utils";
 import {
   UseSwipeInteraction,
   useSwipeInteraction,
 } from "../../../../../../../hooks/useSwipeInteraction/useSwipeInteraction";
 import { AUTO_ROTATE, AUTO_ROTATE_DELAY } from "../common/constants";
+import {
+  getClientSnapshot,
+  getServerSnapshot,
+  subscribeNoop,
+} from "../common/utils";
 
 export interface UseInteractiveCarousel {
   activeIndex: UseSwipeInteraction["activeIndex"];
@@ -17,16 +23,28 @@ export interface UseInteractiveCarousel {
 }
 
 /**
- * Facilitates interaction capabilities for the carousel.
+ * Facilitates interaction capabilities for the carousel. Once hydrated, cards
+ * whose end date has passed are excluded.
  * @returns carousel cards, interactive indexes, and interactive actions.
  */
 export function useInteractiveCarousel(): UseInteractiveCarousel {
   // Raw carousel cards.
   const { carouselCards } = useSectionsData();
+  // Once hydrated, drop cards that ended after the site was built; waiting
+  // until then keeps the first render identical to the static HTML.
+  const isClient = useSyncExternalStore(
+    subscribeNoop,
+    getClientSnapshot,
+    getServerSnapshot
+  );
+  const cards = useMemo(
+    () => (isClient ? excludeEndedCards(carouselCards) : carouselCards),
+    [carouselCards, isClient]
+  );
   // Get the interactive indexes.
   const interactiveIndexes = useMemo(
-    () => buildInteractiveIndexes(carouselCards),
-    [carouselCards]
+    () => buildInteractiveIndexes(cards),
+    [cards]
   );
   // Get the active index and interactive actions; a swipe delay of 0 disables auto-rotation.
   const swipeInteraction = useSwipeInteraction(
@@ -35,7 +53,7 @@ export function useInteractiveCarousel(): UseInteractiveCarousel {
     AUTO_ROTATE ? AUTO_ROTATE_DELAY : 0
   );
   return {
-    interactiveCards: carouselCards,
+    interactiveCards: cards,
     interactiveIndexes,
     ...swipeInteraction,
   };
