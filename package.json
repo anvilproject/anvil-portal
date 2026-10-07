@@ -35,7 +35,7 @@
     "copy-to-clipboard": "^3",
     "date-fns": "^3.6.0",
     "gray-matter": "^4",
-    "isomorphic-dompurify": "^2",
+    "isomorphic-dompurify": "^3",
     "ky": "^1",
     "moment-timezone": "^0.5.45",
     "next": "^16",
