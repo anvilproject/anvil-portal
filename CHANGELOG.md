@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.41.1](https://github.com/anvilproject/anvil-portal/compare/v2.41.0...v2.41.1) (2026-10-07)
+
+
+### Content
+
+* add cm4ai-anvil dream challenge event ([#4173](https://github.com/anvilproject/anvil-portal/issues/4173)) ([#4179](https://github.com/anvilproject/anvil-portal/issues/4179)) ([f9d32ab](https://github.com/anvilproject/anvil-portal/commit/f9d32abaa442dc19f297f460408fea6705177895))
+
 ## [2.41.0](https://github.com/anvilproject/anvil-portal/compare/v2.40.0...v2.41.0) (2026-10-06)
 
 
