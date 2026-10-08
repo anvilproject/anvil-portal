@@ -1,0 +1,33 @@
+---
+title: 'A new Galaxy on AnVIL: lower costs, greater scale, and Galaxy 26.1'
+description: 'An updated Galaxy on AnVIL combines scalable computing through Google Cloud Batch with the new features of Galaxy 26.1.'
+date: 2026-10-08
+---
+
+<NewsHero {...frontmatter} />
+
+Galaxy on AnVIL is introducing a new computing architecture designed to help researchers run analyses more affordably and at greater scale. The update combines on-demand job execution through Google Cloud Batch with Galaxy 26.1, including improvements to workflows, tool access, and research organization.
+
+Galaxy is an open-source platform for accessible and reproducible biomedical data analysis. Through a web browser, researchers can run analysis tools and build reusable workflows without having to manage the underlying computing infrastructure. Galaxy on AnVIL connects these capabilities with data hosted in AnVIL, including controlled-access datasets where researchers have the appropriate permissions.
+
+## Scalable computing with Google Cloud Batch
+
+The new architecture enables Galaxy to send computationally demanding jobs to Google Cloud Batch instead of limiting all analyses to the capacity of a single Galaxy virtual machine. Smaller jobs can continue running on the VM, while larger jobs can access cloud computing resources as needed.
+
+Resources for batch jobs are provisioned when needed and released when those jobs finish. This reduces the need to maintain large computing instances continuously and allows Galaxy to accommodate many concurrent analyses. The underlying Galaxy VM and persistent storage may still incur charges outside of batch job execution.
+
+![Galaxy on AnVIL architecture showing Google Cloud Batch job execution](/consortia/news/galaxy-gcp-batch-architecture.png)
+
+## What's new in Galaxy 26.1
+
+The update also includes Galaxy 26.1, with clearer workflow monitoring, easier creation of reusable workflows, quicker access to favorite and recently used tools, and Galaxy Notebooks for keeping data, results, visualizations, and notes together.
+
+Researchers can [explore the Galaxy 26.1 release highlights](https://docs.galaxyproject.org/en/release_26.1/releases/26.1_announce_user.html) for more information.
+
+## Get started and see a live demo
+
+Researchers can launch Galaxy from an AnVIL workspace by configuring a Galaxy cloud environment and opening the interface once it is ready. See the [getting started with Galaxy on AnVIL guide](https://anvilproject.org/learn/run-interactive-analyses/getting-started-with-galaxy) for instructions.
+
+The upcoming **AnVIL Demos** session on **Wednesday, October 21, 2026, from 10:00 to 11:00 AM ET** will introduce the updated architecture, demonstrate how to launch Galaxy on AnVIL, and highlight features of Galaxy 26.1. The virtual session includes a 30-minute demonstration followed by 30 minutes of questions and answers.
+
+[Learn more and register for the October 21 AnVIL Demo](https://help.anvilproject.org/t/anvil-demos-a-new-galaxy-on-anvil-lower-costs-greater-scale-and-galaxy-26-1-on-october-21-2026/423).
