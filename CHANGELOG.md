@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.42.0](https://github.com/anvilproject/anvil-portal/compare/v2.41.1...v2.42.0) (2026-10-12)
+
+
+### Features
+
+* let home page carousel cards expire on an end date ([#4178](https://github.com/anvilproject/anvil-portal/issues/4178)) ([#4180](https://github.com/anvilproject/anvil-portal/issues/4180)) ([025458f](https://github.com/anvilproject/anvil-portal/commit/025458f26c61e54a18019fbf121a4352a72bf9f1))
+
+
+### Content
+
+* add news announcement for galaxy on anvil gcp batch and galaxy 26.1 ([#4183](https://github.com/anvilproject/anvil-portal/issues/4183)) ([#4184](https://github.com/anvilproject/anvil-portal/issues/4184)) ([951746d](https://github.com/anvilproject/anvil-portal/commit/951746dba0b60232dae6cd79bb56884786de953d))
+
 ## [2.41.1](https://github.com/anvilproject/anvil-portal/compare/v2.41.0...v2.41.1) (2026-10-07)
 
 
