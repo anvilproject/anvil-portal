@@ -6,11 +6,11 @@ This repository contains the front-facing AnVIL (Analysis, Visualization, and In
 
 ## Technology Stack
 
-- **Framework**: Next.js 14 with React 18
+- **Framework**: Next.js 16 with React 19
 - **Language**: TypeScript (strict mode enabled)
 - **Styling**: Emotion (CSS-in-JS) with Material-UI (MUI) v7
 - **Content**: MDX for documentation and content pages
-- **Build Tools**: Node.js 22.12.0, npm
+- **Build Tools**: Node.js 22.13.0, npm
 - **Code Quality**: ESLint, Prettier, Husky for pre-commit hooks
 
 ## Project Structure
@@ -58,7 +58,7 @@ Both build commands:
 
 1. Run the common build script to set up environment files
 2. Set the version using `./scripts/set-version.sh`
-3. Run `next build` to create the production bundle
+3. Run `next build --webpack` to create the production bundle
 4. Run `npm run postbuild` to generate sitemap
 
 ### Code Quality
@@ -211,7 +211,7 @@ For detailed information about creating and modifying site content, refer to the
 
 ## Important Notes
 
-- Node.js version 22.12.0 is required (specified in `engines` in package.json)
+- Node.js version 22.13.0 is required (specified in `engines` in package.json)
 - The project uses Next.js static export (generates static HTML)
 - MDX is used extensively for content pages
 - Material-UI v7 is a major dependency - follow MUI patterns

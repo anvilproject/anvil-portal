@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AnVIL Portal is a Next.js 14 static site (anvilproject.org) for the NHGRI's Analysis, Visualization, and Informatics Lab-space initiative. It uses TypeScript with strict mode, MDX for content pages, and Material-UI v7 with Emotion for styling.
+AnVIL Portal is a Next.js 16 static site (anvilproject.org) for the NHGRI's Analysis, Visualization, and Informatics Lab-space initiative. It uses TypeScript with strict mode, MDX for content pages, and Material-UI v7 with Emotion for styling.
 
 ## Common Commands
 
