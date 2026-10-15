@@ -1,27 +1,13 @@
 import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
-import { EntityConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode/types";
-import { database } from "@databiosphere/findable-ui/lib/utils/database";
+import { seedDatabase } from "@databiosphere/findable-ui/lib/utils/seedDatabase";
 import { ExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { JSX } from "react";
 import { config } from "../../../config/config";
-import { readStaticLoadFile } from "../../../utils/readFile";
-
-/**
- * Seeds the in-memory database with static JSON data.
- * @param entityListType - Entity list type.
- * @param entityConfig - Entity config.
- */
-async function seedDatabase(
-  entityListType: string,
-  entityConfig: EntityConfig
-): Promise<void> {
-  database.get().seed(entityListType, readStaticLoadFile(entityConfig));
-}
 
 /**
  * Entity list page for explore views (citations, workflows, etc.).
