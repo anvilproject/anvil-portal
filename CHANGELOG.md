@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.42.1](https://github.com/anvilproject/anvil-portal/compare/v2.42.0...v2.42.1) (2026-10-16)
+
+
+### Chores
+
+* update findable-ui and next.js to latest (16.4), and run npm audit fix ([#4187](https://github.com/anvilproject/anvil-portal/issues/4187)) ([#4189](https://github.com/anvilproject/anvil-portal/issues/4189)) ([3701d21](https://github.com/anvilproject/anvil-portal/commit/3701d216916807cf881259639e94d18a1e35237d))
+
 ## [2.42.0](https://github.com/anvilproject/anvil-portal/compare/v2.41.1...v2.42.0) (2026-10-12)
 
 
