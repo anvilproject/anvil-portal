@@ -1,4 +1,5 @@
-import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { Button } from "@mui/material";
 import { JSX } from "react";
 import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
 import { Workspaces } from "./components/Workspaces/workspaces";
@@ -19,9 +20,12 @@ export const SectionWorkspaces = (): JSX.Element => {
             Workspaces aggregate data and analysis methods. Start quickly from
             an existing workspace and customize it to your needs.
           </SectionSubtitle>
-          <ButtonSecondary href={EXPLORE_WORKSPACES}>
+          <Button
+            {...BUTTON_PROPS.SECONDARY_CONTAINED}
+            href={EXPLORE_WORKSPACES}
+          >
             Explore Workspaces
-          </ButtonSecondary>
+          </Button>
         </Headline>
         <Workspaces />
       </SectionLayout>

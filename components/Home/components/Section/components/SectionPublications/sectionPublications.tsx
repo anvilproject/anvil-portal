@@ -1,4 +1,4 @@
-import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
@@ -21,7 +21,9 @@ export const SectionPublications = (): JSX.Element => {
         <Headline>
           <SectionTitle>Recent Publications</SectionTitle>
           <CTAs>
-            <ButtonSecondary href={CITE_ANVIL}>Cite AnVIL</ButtonSecondary>
+            <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} href={CITE_ANVIL}>
+              Cite AnVIL
+            </Button>
             <Button
               color="primary"
               href={ADD_PUBLICATION}
@@ -35,9 +37,9 @@ export const SectionPublications = (): JSX.Element => {
         </Headline>
         <Publications />
         <SectionActions>
-          <ButtonSecondary href={ROUTES.CITATIONS}>
+          <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} href={ROUTES.CITATIONS}>
             Show all publications
-          </ButtonSecondary>
+          </Button>
         </SectionActions>
       </SectionLayout>
     </Section>

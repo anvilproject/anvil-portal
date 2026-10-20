@@ -1,5 +1,6 @@
-import { ButtonSecondary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonSecondary/buttonSecondary";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import { ToggleButton } from "@databiosphere/findable-ui/lib/components/common/ToggleButtonGroup/toggleButtonGroup";
+import { Button } from "@mui/material";
 import { JSX, useState } from "react";
 import { useSectionsData } from "../../../../../../providers/sectionsData";
 import {
@@ -41,9 +42,9 @@ export const SectionUpdates = (): JSX.Element => {
         </Headline>
         <Updates cards={cards} />
         <SectionActions>
-          <ButtonSecondary href={`/${updateName}`}>
+          <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} href={`/${updateName}`}>
             Show All {updateName}
-          </ButtonSecondary>
+          </Button>
         </SectionActions>
       </SectionLayout>
     </Section>
