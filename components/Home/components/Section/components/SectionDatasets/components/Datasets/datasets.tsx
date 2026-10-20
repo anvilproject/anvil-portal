@@ -1,8 +1,9 @@
-import { ButtonTextPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonTextPrimary/buttonTextPrimary";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
 } from "@databiosphere/findable-ui/lib/hooks/useBreakpointHelper";
+import { Button } from "@mui/material";
 import { JSX, useState } from "react";
 import { useSectionsData } from "../../../../../../../../providers/sectionsData";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../common/constants";
@@ -36,9 +37,9 @@ export const Datasets = (): JSX.Element => {
   return (
     <Grid isExpanded={isExpanded}>
       <Cards cards={cards} />
-      <ButtonTextPrimary onClick={onVisibilityMode}>
+      <Button {...BUTTON_PROPS.PRIMARY_TEXT} onClick={onVisibilityMode}>
         {VISIBILITY_MODE_LABEL[mode]}
-      </ButtonTextPrimary>
+      </Button>
     </Grid>
   );
 };

@@ -1,4 +1,4 @@
-import { ButtonTextPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonTextPrimary/buttonTextPrimary";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
@@ -6,8 +6,8 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { CardActionArea as MCardActionArea } from "@mui/material";
-import { JSX, useState } from "react";
+import { Button, CardActionArea as MCardActionArea } from "@mui/material";
+import { JSX, MouseEvent, useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
 import { VISIBILITY_MODE } from "../../../../../../../../common/entities";
 import { updateVisibilityMode } from "../../../../../../../../common/utils";
@@ -24,7 +24,7 @@ export const Card = ({ card }: CardProps): JSX.Element => {
   const isTruncated = isTruncatable && !isExpanded;
 
   // Toggles visibility mode.
-  const onVisibilityMode = (event: MouseEvent): void => {
+  const onVisibilityMode = (event: MouseEvent<HTMLButtonElement>): void => {
     setMode(updateVisibilityMode);
     event.preventDefault();
   };
@@ -44,9 +44,9 @@ export const Card = ({ card }: CardProps): JSX.Element => {
             </CardSecondaryText>
           </CardContent>
           {isTruncatable && (
-            <ButtonTextPrimary onClick={onVisibilityMode}>
+            <Button {...BUTTON_PROPS.PRIMARY_TEXT} onClick={onVisibilityMode}>
               {VISIBILITY_MODE_LABEL[mode]}
-            </ButtonTextPrimary>
+            </Button>
           )}
         </CardSection>
       </MCardActionArea>
