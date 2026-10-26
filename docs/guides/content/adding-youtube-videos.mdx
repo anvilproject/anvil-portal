@@ -8,6 +8,7 @@ title: "Adding a YouTube Video"
 To include a YouTube video in your page:
 
 1. Copy the YouTube url.
+1. Copy the video's title.
 1. Reference the video in the markdown.
 
 ## Referencing the Video in the Markdown
@@ -15,9 +16,11 @@ To include a YouTube video in your page:
 To reference the video we use markdown like:
 
 ```
-<Video src="https://www.youtube.com/embed/1JWOVGzzgMc" />
+<Video src="https://www.youtube.com/embed/1JWOVGzzgMc" title="Dockstore: An Introduction" />
 ```
+
+The `title` is required. Screen readers announce it as the name of the video, so it should describe the video, for example by using the video's YouTube title. A page with a video that has no title will fail to build.
 
 This renders like:
 
-<Video src="https://www.youtube.com/embed/1JWOVGzzgMc" />
+<Video src="https://www.youtube.com/embed/1JWOVGzzgMc" title="Dockstore: An Introduction" />
