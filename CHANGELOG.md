@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.42.2](https://github.com/anvilproject/anvil-portal/compare/v2.42.1...v2.42.2) (2026-10-27)
+
+
+### Bug Fixes
+
+* add descriptive titles to video embeds for accessibility ([#4200](https://github.com/anvilproject/anvil-portal/issues/4200)) ([#4205](https://github.com/anvilproject/anvil-portal/issues/4205)) ([0e7bebc](https://github.com/anvilproject/anvil-portal/commit/0e7bebc894c0b96ac7eeaa877a3e5d6c09a6a1dc))
+
+
+### Content
+
+* add ACC2026 conference report ([#4198](https://github.com/anvilproject/anvil-portal/issues/4198)) ([#4199](https://github.com/anvilproject/anvil-portal/issues/4199)) ([1c85a40](https://github.com/anvilproject/anvil-portal/commit/1c85a40a82e626f24381a6cd8f3f6656ac819104))
+* add ACC2026 conference report [#4198](https://github.com/anvilproject/anvil-portal/issues/4198) ([1c85a40](https://github.com/anvilproject/anvil-portal/commit/1c85a40a82e626f24381a6cd8f3f6656ac819104))
+
+
+### Code Refactoring
+
+* replace findable button wrappers with mui button ([#4193](https://github.com/anvilproject/anvil-portal/issues/4193)) ([#4196](https://github.com/anvilproject/anvil-portal/issues/4196)) ([3d8926b](https://github.com/anvilproject/anvil-portal/commit/3d8926b30a8cb379212e8cbb1d69f405458f7155))
+
 ## [2.42.1](https://github.com/anvilproject/anvil-portal/compare/v2.42.0...v2.42.1) (2026-10-16)
 
 
