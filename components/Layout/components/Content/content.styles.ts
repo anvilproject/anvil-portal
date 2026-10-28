@@ -4,10 +4,6 @@ import { ThemeProps } from "@databiosphere/findable-ui/lib/theme/types";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-interface Props {
-  headerHeight: number;
-}
-
 const footnotes = css`
   section[data-footnotes] {
     border-top: 1px solid ${PALETTE.SMOKE_MAIN};
@@ -91,7 +87,7 @@ const muiButtonContainedPrimary = css`
 // See https://github.com/emotion-js/emotion/releases/tag/%40emotion%2Fcache%4011.10.2.
 const ignoreSsrWarning =
   "/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */";
-export const Content = styled.div<Props>`
+export const Content = styled.div`
   h1,
   h2,
   h3,
@@ -105,21 +101,18 @@ export const Content = styled.div<Props>`
     }
   }
 
-  h1 {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 24}px;
+  h1,
+  h4 {
+    scroll-margin-top: 24px;
   }
 
   h2,
   h3 {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 32}px;
-  }
-
-  h4 {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 24}px;
+    scroll-margin-top: 32px;
   }
 
   sup a {
-    scroll-margin-top: ${({ headerHeight }) => headerHeight + 48}px;
+    scroll-margin-top: 48px;
   }
 
   h1 + ol,

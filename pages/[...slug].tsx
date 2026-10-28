@@ -1,5 +1,4 @@
 import { LayoutStyle } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/entities";
-import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { NavItem } from "@databiosphere/findable-ui/lib/components/Layout/components/Nav/nav";
 import { ContentsTab } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/components/ContentsTab/contentsTab";
 import { Outline } from "@databiosphere/findable-ui/lib/components/Layout/components/Outline/outline";
@@ -16,7 +15,7 @@ import { JSX } from "react";
 import remarkGfm from "remark-gfm";
 import { ContentView, Nav, NavBarHero } from "../components";
 import { ContentEnd } from "../components/Layout/components/Content/components/ContentEnd/contentEnd";
-import { Content } from "../components/Layout/components/Content/content";
+import { Content } from "../components/Layout/components/Content/content.styles";
 import { MDX_COMPONENTS, MDX_SCOPE } from "../docs/common/constants";
 import { NodeHero } from "../docs/common/entities";
 import {
@@ -134,8 +133,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default Page;
-
-Page.Main = Main;
 
 /**
  * Checks if the slug is for the consortium page(s).

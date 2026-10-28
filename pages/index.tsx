@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { JSX } from "react";
 import { DIR_NAME as EVENTS_DIR_NAME } from "../components/Events/common/constants";
 import { Footer } from "../components/Home/components/Layout/components/Footer/footer.styles";
-import { Main } from "../components/Home/components/Layout/components/Main/main";
+import { StyledMain } from "../components/Home/components/Layout/components/Main/main.styles";
 import { buildAnalysisPortalCards } from "../components/Home/components/Section/components/SectionAnalysisPortals/common/utils";
 import { CARDS as CLOUD_CARDS } from "../components/Home/components/Section/components/SectionCloudEnvironment/common/content";
 import { CARDS as DATASET_CARDS } from "../components/Home/components/Section/components/SectionDatasets/common/utils";
@@ -82,7 +82,7 @@ export const Home = ({
   );
 };
 
-Home.Main = Main;
+Home.Main = StyledMain;
 Home.Footer = Footer;
 
 export default Home;

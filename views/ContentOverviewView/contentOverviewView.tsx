@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { Fragment, JSX } from "react";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
 import { SupportForum } from "../../components/Layout/components/Content/components/SupportForum/supportForum";
-import { Content } from "../../components/Layout/components/Content/content";
+import { Content } from "../../components/Layout/components/Content/content.styles";
 import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import { MDX_COMPONENTS } from "../../docs/common/constants";

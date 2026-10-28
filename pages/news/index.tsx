@@ -1,11 +1,10 @@
 import { LAYOUT_STYLE_NO_CONTRAST_LIGHTEST } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
-import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { JSX } from "react";
 import { ContentView } from "../../components";
-import { Content } from "../../components/Layout/components/Content/content";
+import { Content } from "../../components/Layout/components/Content/content.styles";
 import { processNewsFrontmatter } from "../../components/News/common/utils";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
 import {
@@ -58,5 +57,3 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default NewsPage;
-
-NewsPage.Main = Main;
