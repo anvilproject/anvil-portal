@@ -13,15 +13,8 @@ import { typographyToCSS } from "@databiosphere/findable-ui/lib/styles/common/mi
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-interface Props {
-  headerHeight: number;
-}
-
-export const StyledSection = styled("section", {
-  shouldForwardProp: (props) => props !== "headerHeight",
-})<Props>`
+export const StyledSection = styled.section`
   background-color: ${PALETTE.SMOKE_LIGHTEST};
-  padding-top: ${({ headerHeight }) => headerHeight}px;
   width: 100%;
 `;
 

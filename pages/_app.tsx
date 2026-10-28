@@ -6,7 +6,6 @@ import { setFeatureFlags } from "@databiosphere/findable-ui/lib/hooks/useFeature
 import { useFeatureFlag } from "@databiosphere/findable-ui/lib/hooks/useFeatureFlag/useFeatureFlag";
 import { ConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
 import { ExploreStateProvider } from "@databiosphere/findable-ui/lib/providers/exploreState";
-import { LayoutDimensionsProvider } from "@databiosphere/findable-ui/lib/providers/layoutDimensions/provider";
 import { ServicesProvider } from "@databiosphere/findable-ui/lib/providers/services/provider";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
@@ -82,39 +81,37 @@ function MyApp(props: AppPropsWithComponent): JSX.Element {
             />
             <CssBaseline />
             <ServicesProvider>
-              <LayoutDimensionsProvider>
-                <AppLayout>
-                  <ThemeProvider
-                    theme={(theme: Theme): Theme => {
-                      // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
-                      const { vars, ...themeWithoutVars } = theme;
-                      return createTheme(
-                        deepmerge(themeWithoutVars, {
-                          breakpoints: createBreakpoints(BREAKPOINTS),
-                        })
-                      );
-                    }}
-                  >
-                    <DXHeader {...layout.header} navigation={navigation} />
-                  </ThemeProvider>
-                  <ExploreStateProvider entityListType={entityListType}>
-                    <Main>
-                      <ErrorBoundary
-                        fallbackRender={({ error, reset }): JSX.Element => (
-                          <Error
-                            errorMessage={error.message}
-                            onReset={reset}
-                            rootPath="/"
-                          />
-                        )}
-                      >
-                        <Component {...pageProps} />
-                      </ErrorBoundary>
-                    </Main>
-                  </ExploreStateProvider>
-                  <Footer {...layout.footer} />
-                </AppLayout>
-              </LayoutDimensionsProvider>
+              <AppLayout>
+                <ThemeProvider
+                  theme={(theme: Theme): Theme => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- MUI internal property 'vars' is automatically added when cssVariables is enabled.
+                    const { vars, ...themeWithoutVars } = theme;
+                    return createTheme(
+                      deepmerge(themeWithoutVars, {
+                        breakpoints: createBreakpoints(BREAKPOINTS),
+                      })
+                    );
+                  }}
+                >
+                  <DXHeader {...layout.header} navigation={navigation} />
+                </ThemeProvider>
+                <ExploreStateProvider entityListType={entityListType}>
+                  <Main>
+                    <ErrorBoundary
+                      fallbackRender={({ error, reset }): JSX.Element => (
+                        <Error
+                          errorMessage={error.message}
+                          onReset={reset}
+                          rootPath="/"
+                        />
+                      )}
+                    >
+                      <Component {...pageProps} />
+                    </ErrorBoundary>
+                  </Main>
+                </ExploreStateProvider>
+                <Footer {...layout.footer} />
+              </AppLayout>
             </ServicesProvider>
           </ConfigProvider>
         </ThemeProvider>

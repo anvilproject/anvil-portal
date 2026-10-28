@@ -12,12 +12,10 @@ import { Fragment, JSX } from "react";
 import { SectionContent } from "../../components/Layout/components/Section/components/SectionContent/sectionContent";
 import { SectionHero } from "../../components/Layout/components/Section/components/SectionHero/sectionHero";
 import { PageProps } from "../../pages/releases/index";
-import { useScrollMarginTop } from "./hook";
 import { StyledCard } from "./releasesView.styles";
 import { groupReleasesByYear } from "./utils";
 
 export const ReleasesView = (props: PageProps): JSX.Element => {
-  const scrollMarginTop = useScrollMarginTop();
   const releasesByYear = groupReleasesByYear(props.releases);
   return (
     <Fragment>
@@ -34,12 +32,7 @@ export const ReleasesView = (props: PageProps): JSX.Element => {
                   {year}
                 </Typography>
                 {releases.map((release) => (
-                  <StyledCard
-                    key={release.id}
-                    id={release.id}
-                    elevation={1}
-                    sx={{ scrollMarginTop }}
-                  >
+                  <StyledCard key={release.id} id={release.id} elevation={1}>
                     <CardActionArea cardUrl={release.url}>
                       <Stack gap={0} useFlexGap>
                         <CardSecondaryText>

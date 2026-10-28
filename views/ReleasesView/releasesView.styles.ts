@@ -6,6 +6,7 @@ export const StyledCard = styled(Card)`
   border: 1px solid ${PALETTE.SMOKE_MAIN};
   border-radius: 8px;
   overflow: hidden;
+  scroll-margin-top: 16px;
 
   .MuiCardActionArea-root {
     display: grid;

@@ -190,6 +190,8 @@ On the client, `ExploreView` receives the data through props. `useEntityList` re
 
 The explore page imports `Main` from `@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles` (the base styled component without `margin-top: headerHeight`) instead of the default `MainWithOffset`. This is because `StyledGridEntityView` already adds `padding-top: headerHeight`, so using `MainWithOffset` would create a double offset. This follows the brc-analytics pattern.
 
+> **Superseded (findable-ui 58, #4207):** the header is now in flow (`position: sticky`) and findable's default `Main` carries no header offset, so the explore page no longer overrides `Main`.
+
 ## Out of Scope (v1)
 
 - Institution/affiliation facet (data not reliably available from Crossref)

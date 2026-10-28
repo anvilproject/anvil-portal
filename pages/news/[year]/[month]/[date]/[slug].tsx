@@ -1,5 +1,4 @@
 import { LAYOUT_STYLE_NO_CONTRAST_DEFAULT } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/common/constants";
-import { Main } from "@databiosphere/findable-ui/lib/components/Layout/components/ContentLayout/components/Main/main";
 import { rehypeSlug } from "@databiosphere/findable-ui/lib/utils/mdx/plugins/rehypeSlug";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -10,7 +9,7 @@ import { JSX } from "react";
 import remarkGfm from "remark-gfm";
 import { ContentView } from "../../../../../components";
 import { ContentEnd } from "../../../../../components/Layout/components/Content/components/ContentEnd/contentEnd";
-import { Content } from "../../../../../components/Layout/components/Content/content";
+import { Content } from "../../../../../components/Layout/components/Content/content.styles";
 import { processFrontmatter } from "../../../../../components/News/common/utils";
 import { MDX_COMPONENTS } from "../../../../../docs/common/constants";
 import {
@@ -89,8 +88,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default NewsArticlePage;
-
-NewsArticlePage.Main = Main;
 
 /**
  * Reduces the paths to only include news articles.

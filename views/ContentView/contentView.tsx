@@ -6,7 +6,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { JSX } from "react";
 import { Nav, NavBarHero } from "../../components";
 import { ContentEnd } from "../../components/Layout/components/Content/components/ContentEnd/contentEnd";
-import { Content } from "../../components/Layout/components/Content/content";
+import { Content } from "../../components/Layout/components/Content/content.styles";
 import { StaticProps } from "../../content/entities";
 import { MDX_COMPONENTS } from "../../docs/common/constants";
 import { NodeHero } from "../../docs/common/entities";
