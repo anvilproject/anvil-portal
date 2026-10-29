@@ -1,5 +1,5 @@
 analytics @ git+https://github.com/DataBiosphere/data-browser.git@analytics-5.1.0#subdirectory=analytics/analytics_package
-certifi==2026.7.22
+certifi==2026.10.18
 cffi==2.1.1
 charset-normalizer==3.5.1
 cryptography==50.0.0
