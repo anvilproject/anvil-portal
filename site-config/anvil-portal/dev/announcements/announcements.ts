@@ -1,4 +1,3 @@
-import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/Banner/constants";
 import {
   ComponentConfig,
   ComponentsConfig,
@@ -10,9 +9,12 @@ export const DEVELOPMENT_MODE_BANNER: ComponentConfig<
   typeof MDX.DevelopmentModeBanner
 > = {
   component: MDX.DevelopmentModeBanner,
-  props: {
-    ...ALERT_PROPS,
-  },
+};
+
+export const RAS_RECERTIFICATION_BANNER: ComponentConfig<
+  typeof MDX.RasRecertificationBanner
+> = {
+  component: MDX.RasRecertificationBanner,
 };
 
 export const REPOSITORY_REVIEW_BANNER: ComponentConfig<typeof Banner> = {
@@ -20,6 +22,7 @@ export const REPOSITORY_REVIEW_BANNER: ComponentConfig<typeof Banner> = {
 };
 
 export const announcements: ComponentsConfig = [
+  RAS_RECERTIFICATION_BANNER,
   REPOSITORY_REVIEW_BANNER,
   DEVELOPMENT_MODE_BANNER,
 ];
