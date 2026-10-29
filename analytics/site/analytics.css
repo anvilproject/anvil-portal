@@ -22,7 +22,7 @@
  *     <header class="fui-header">
  *       <div class="fui-header-left">
  *         <a class="fui-header-logo" href="/">
- *           <img src="logo.svg" alt="Logo" />
+ *           <img src="logo.svg" alt="Logo" width="140" height="32" />
  *         </a>
  *       </div>
  *       <div class="fui-header-right">
@@ -75,6 +75,16 @@
  *     }
  *   </style>
  *
+ * Header logo:
+ *   Put the logo's src, width and height in the HTML, so the header keeps
+ *   its space while the image loads. The logo is 32px tall; to match an
+ *   app's header, set --fui-header-logo-height to the height in its site
+ *   config, per breakpoint if it changes:
+ *
+ *   <style>
+ *     :root { --fui-header-logo-height: 40px; }
+ *   </style>
+ *
  * Responsive grid:
  *   Grid items use fixed column spans. To make them responsive,
  *   add a <style> block with media queries:
@@ -84,6 +94,48 @@
  *       .fui-card[class*="fui-grid-item"] { grid-column: 1 / -1; }
  *     }
  *   </style>
+ *
+ * Tooltips:
+ *   A tooltip shows above its trigger on hover or keyboard focus. The trigger
+ *   must be focusable, and the tooltip may contain links:
+ *
+ *   <span class="fui-tooltip-wrapper">
+ *     <span tabindex="0" aria-describedby="users-tooltip">Users</span>
+ *     <span class="fui-tooltip" id="users-tooltip" role="tooltip">
+ *       Unique visitors this month.
+ *     </span>
+ *   </span>
+ *
+ *   Escape should close an open tooltip (WCAG 1.4.13), which CSS can't do.
+ *   Add this script once per page. It keeps the tooltip closed until the
+ *   pointer and focus have both left its trigger:
+ *
+ *   <script>
+ *     document.addEventListener("keydown", (event) => {
+ *       if (event.key !== "Escape") return;
+ *       document
+ *         .querySelectorAll(".fui-tooltip-wrapper:is(:hover, :focus-within)")
+ *         .forEach((el) => el.classList.add("fui-tooltip-dismissed"));
+ *     });
+ *     ["focusout", "mouseout"].forEach((type) => {
+ *       document.addEventListener(type, (event) => {
+ *         const el = event.target.closest?.(".fui-tooltip-dismissed");
+ *         if (!el || el.contains(event.relatedTarget)) return;
+ *         if (el.matches(type === "focusout" ? ":hover" : ":focus-within")) return;
+ *         el.classList.remove("fui-tooltip-dismissed");
+ *       });
+ *     });
+ *   </script>
+ *
+ *   Chart libraries draw their own tooltips (Chart.js draws on the canvas),
+ *   so CSS can't style them. To match .fui-tooltip in Chart.js:
+ *
+ *   Object.assign(Chart.defaults.plugins.tooltip, {
+ *     backgroundColor: "#212b36",
+ *     bodyFont: { size: 13 },
+ *     cornerRadius: 4,
+ *     padding: { x: 12, y: 8 },
+ *   });
  */
 
 /* ---------- Custom Properties ---------- */
@@ -116,6 +168,9 @@
   /* Common */
   --fui-background: #f6f6f7;
   --fui-white: #ffffff;
+
+  /* Header */
+  --fui-header-logo-height: 32px;
 
   /* Ink (text) */
   --fui-ink: #212b36;
@@ -372,6 +427,8 @@
   align-items: center;
   background: var(--fui-white);
   border-bottom: 1px solid var(--fui-smoke);
+  box-shadow: var(--fui-shadow-01);
+  box-sizing: content-box; /* 56px plus the border, as in the app */
   display: grid;
   gap: var(--fui-space-16);
   grid-template-areas: "left center right";
@@ -409,11 +466,12 @@
   display: flex;
   font: var(--fui-font-body-large-500);
   gap: var(--fui-space-8);
+  justify-self: start;
 }
 
 .fui-header-logo img {
   display: block;
-  height: 32px;
+  height: var(--fui-header-logo-height);
   width: auto;
 }
 
@@ -510,6 +568,8 @@
 .fui-code {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 24px;
 }
 
@@ -541,8 +601,19 @@
   margin: var(--fui-space-24) 0 var(--fui-space-16);
 }
 
+.fui-content h5 {
+  font: var(--fui-font-body-large-500);
+  margin: var(--fui-space-24) 0 var(--fui-space-16);
+}
+
+.fui-content h6 {
+  font: var(--fui-font-body-500);
+  margin: var(--fui-space-24) 0 var(--fui-space-16);
+}
+
 .fui-content img {
   display: block;
+  height: auto;
   margin: var(--fui-space-16) 0;
   max-width: 100%;
 }
@@ -646,9 +717,88 @@
   text-underline-position: from-font;
 }
 
+/* ---------- Tooltip ---------- */
+
+.fui-tooltip-wrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+.fui-tooltip {
+  background-color: var(--fui-ink);
+  border-radius: var(--fui-radius-sm);
+  bottom: 100%;
+  box-shadow: var(--fui-shadow-02);
+  color: var(--fui-white);
+  font: var(--fui-font-body-small-400);
+  left: 50%;
+  margin-bottom: 14px;
+  max-width: min(400px, 100vw - 2 * var(--fui-space-16));
+  opacity: 0;
+  padding: var(--fui-space-8) var(--fui-space-12);
+  position: absolute;
+  transform: translateX(-50%);
+  transition:
+    opacity 150ms,
+    visibility 150ms;
+  visibility: hidden;
+  width: max-content;
+  z-index: 1500;
+}
+
+/* Arrow */
+.fui-tooltip::before {
+  background-color: inherit;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: "";
+  height: 0.71em;
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 1em;
+}
+
+/* Bridges the gap to the trigger, so the pointer can move onto the tooltip */
+.fui-tooltip::after {
+  content: "";
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.fui-tooltip-wrapper:hover .fui-tooltip,
+.fui-tooltip-wrapper:focus-within .fui-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Set by the Escape script in the usage notes. No transition, so links in
+   the tooltip leave the tab order at once. */
+.fui-tooltip-wrapper.fui-tooltip-dismissed .fui-tooltip {
+  opacity: 0;
+  transition: none;
+  visibility: hidden;
+}
+
+.fui-body .fui-tooltip a {
+  color: inherit;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (min-width: 768px) {
+  /* The theme's desktop heading sizes, set on the custom properties so that
+     anything using them directly (not only the heading classes) gets them. */
+  :root {
+    --fui-font-heading: 500 24px/32px var(--fui-font-family);
+    --fui-font-heading-large: 500 30px/40px var(--fui-font-family);
+    --fui-font-heading-small: 500 20px/28px var(--fui-font-family);
+    --fui-font-heading-xlarge: 500 40px/56px var(--fui-font-family);
+  }
+
   .fui-card-content {
     padding: var(--fui-space-20);
   }
@@ -667,45 +817,31 @@
   }
 
   .fui-content h1 {
-    font-size: 30px;
     letter-spacing: -0.8px;
-    line-height: 40px;
   }
 
   .fui-content h2 {
-    font-size: 24px;
     letter-spacing: -0.4px;
-    line-height: 32px;
   }
 
   .fui-content h3 {
-    font-size: 20px;
     letter-spacing: -0.2px;
-    line-height: 28px;
   }
 
   .fui-heading {
-    font-size: 24px;
     letter-spacing: -0.4px;
-    line-height: 32px;
   }
 
   .fui-heading-large {
-    font-size: 30px;
     letter-spacing: -0.8px;
-    line-height: 40px;
   }
 
   .fui-heading-small {
-    font-size: 20px;
     letter-spacing: -0.2px;
-    line-height: 28px;
   }
 
   .fui-heading-xlarge {
-    font-size: 40px;
     letter-spacing: -1.4px;
-    line-height: 56px;
   }
 }
 

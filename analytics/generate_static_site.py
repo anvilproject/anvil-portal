@@ -34,6 +34,8 @@ def main():
         config={
             "site_title": "AnVIL Portal",
             "logo_url": "https://anvilproject.org/consortia/logos/logoAnvil.png",
+            "logo_width": 109.58,
+            "logo_height": 40,
             "favicon_url": "https://anvilproject.org/consortia/favicons/favicon.ico",
             "logo_link": "https://anvilproject.org",
             "primary_color": "#035C94",
