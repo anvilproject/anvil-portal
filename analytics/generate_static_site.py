@@ -10,10 +10,10 @@ from constants import (
     ANALYTICS_START,
     CURRENT_MONTH,
     EXCLUDE_BOT_TRAFFIC_DATES,
-    EXCLUDE_PAGES_FILTER,
     HISTORIC_UA_DATA_PATH,
     OAUTH_PORT,
     SECRET_NAME,
+    TUTORIAL_AUDIENCE_FILTER,
 )
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -50,7 +50,7 @@ def main():
             "/guides/content/creating-links",
             "/guides/content/editing-an-existing-page",
         ],
-        base_dimension_filter=EXCLUDE_PAGES_FILTER,
+        base_dimension_filter=TUTORIAL_AUDIENCE_FILTER,
         search_path="/search",
         exclude_dates=EXCLUDE_BOT_TRAFFIC_DATES,
     )
