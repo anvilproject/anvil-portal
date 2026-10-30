@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.43.0](https://github.com/anvilproject/anvil-portal/compare/v2.42.2...v2.43.0) (2026-10-30)
+
+
+### Features
+
+* add nih ras ial2 account linking recertification banner ([#4215](https://github.com/anvilproject/anvil-portal/issues/4215)) ([#4216](https://github.com/anvilproject/anvil-portal/issues/4216)) ([2e19887](https://github.com/anvilproject/anvil-portal/commit/2e198879c4e52b936cf55446eeed61433b5a0c90))
+
+
+### Bug Fixes
+
+* analytics page: update the stylesheet, match the logo size and render it in html ([#4201](https://github.com/anvilproject/anvil-portal/issues/4201)) ([#4213](https://github.com/anvilproject/anvil-portal/issues/4213)) ([3458d6c](https://github.com/anvilproject/anvil-portal/commit/3458d6ca855c2c02bf1402e7d477c65c3a6abb69))
+
+
+### Chores
+
+* update findable-ui to 58.0.0 and migrate to the in-flow header ([#4207](https://github.com/anvilproject/anvil-portal/issues/4207)) ([#4208](https://github.com/anvilproject/anvil-portal/issues/4208)) ([0706b19](https://github.com/anvilproject/anvil-portal/commit/0706b19b6ce0394359c658081f24baeef5fb0338))
+
+
+### Content
+
+* add a photo above the keynotes section of the acc 2026 conference report ([#4211](https://github.com/anvilproject/anvil-portal/issues/4211)) ([#4212](https://github.com/anvilproject/anvil-portal/issues/4212)) ([27b1e32](https://github.com/anvilproject/anvil-portal/commit/27b1e32f55c4d340fd84413e6ae8c1b7b2495c04))
+
 ## [2.42.2](https://github.com/anvilproject/anvil-portal/compare/v2.42.1...v2.42.2) (2026-10-27)
 
 
