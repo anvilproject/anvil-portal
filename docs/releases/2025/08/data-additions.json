@@ -36,7 +36,7 @@
   {
     "dataLibraryUrl": "https://duos.org/studies/106",
     "dbGapUrl": "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs002206.v5.p1",
-    "description": "The new data release includes over 2,000 long-read genome sequences and 12,000 short-read genome and exome analyses, nearly 400 snapshots of patient transcriptomes and epigenomes in individual cells using single-cell RNA (scRNA) and sc open chromatin (scATAC), over 3,000 bulk whole genome bisulphite genome sequences for methylome interpretation, and over 200 functional assessments in available patient tissues using full length cDNA sequences by IsoSeq (PacBio) methodology. This release also consolidates data from release 4 and 5 into a single dataset for exporting.",
+    "description": "The new data release includes over 2,000 long-read genome sequences and 12,000 short-read genome and exome analyses, nearly 400 snapshots of patient transcriptomes and epigenomes in individual cells using single-cell RNA (scRNA) and sc open chromatin (scATAC), over 2,000 whole-genome sequences for methylome interpretation, including bulk bisulfite and PacBio-methyl-tagged HiFi sequencing, and over 200 functional assessments in available patient tissues using full length cDNA sequences by IsoSeq (PacBio) methodology. This release also consolidates data from release 4 and 5 into a single dataset for exporting.",
     "duls": ["DS-PEDD-IRB"],
     "explorerUrl": "https://explore.anvilproject.org/datasets?filter=%5B%7B%22categoryKey%22%3A%22datasets.registered_identifier%22%2C%22value%22%3A%5B%22phs002206%22%5D%7D%5D",
     "phsId": "phs002206.v5.p1",
