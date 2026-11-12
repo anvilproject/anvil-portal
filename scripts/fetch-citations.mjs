@@ -250,9 +250,10 @@ async function fetchCrossrefMetadata(doi) {
       work["published-print"]?.["date-parts"]?.[0] ||
       work["published-online"]?.["date-parts"]?.[0] ||
       [];
+    // Month and day are null when Crossref gives only a year or a year and month
     const year = dateParts[0] ?? 0;
-    const month = dateParts[1] ?? 1;
-    const day = dateParts[2] ?? 1;
+    const month = dateParts[1] ?? null;
+    const day = dateParts[2] ?? null;
 
     // Get journal/container title
     const journal = decodeHtmlEntities(
@@ -368,9 +369,14 @@ async function buildPublications(limit = 1000) {
     const publicationYear = crossref.citation.year;
     const publicationMonth = crossref.citation.month;
     const publicationDay = crossref.citation.day;
+    // A partial date sorts as the first day of its month or year
     const publicationTimestamp =
       publicationYear > 0
-        ? Date.UTC(publicationYear, publicationMonth - 1, publicationDay)
+        ? Date.UTC(
+            publicationYear,
+            (publicationMonth ?? 1) - 1,
+            publicationDay ?? 1
+          )
         : 0;
 
     allEntries.push({
