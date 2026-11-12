@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.43.1](https://github.com/anvilproject/anvil-portal/compare/v2.43.0...v2.43.1) (2026-11-12)
+
+
+### Content
+
+* add the January 2027 AnVIL 101 virtual workshop ([#4225](https://github.com/anvilproject/anvil-portal/issues/4225)) ([#4231](https://github.com/anvilproject/anvil-portal/issues/4231)) ([9bb6e76](https://github.com/anvilproject/anvil-portal/commit/9bb6e76f7cf9227ba75c7286a7655c083bb837bf))
+
 ## [2.43.0](https://github.com/anvilproject/anvil-portal/compare/v2.42.2...v2.43.0) (2026-11-09)
 
 
