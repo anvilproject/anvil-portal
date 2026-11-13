@@ -1,0 +1,6 @@
+# Papers that use AnVIL data but do not cite the main AnVIL paper (10.1016/j.xgen.2021.100085).
+# `npm run fetch-citations` adds these to files/publications/publications.json.
+# One DOI per line, without the https://doi.org/ prefix. Lines starting with # are ignored.
+
+# A dependency map enhanced with next-generation 3D cancer models (Nature, 2026)
+10.1038/s41586-026-10843-7
