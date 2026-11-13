@@ -1,9 +1,9 @@
+import { Alert } from "@databiosphere/findable-ui/lib/components/common/Alert/alert";
 import { ALERT_PROPS } from "@databiosphere/findable-ui/lib/components/common/Alert/constants";
 import { FluidPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/components/FluidPaper/fluidPaper";
 import { Link as MLink } from "@mui/material";
 import Link from "next/link";
 import { JSX } from "react";
-import { Alert } from "../../../index";
 
 /**
  * Citation info box displayed above the citations entity list.
