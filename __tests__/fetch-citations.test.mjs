@@ -12,10 +12,12 @@ import {
 import { promises as fsp } from "fs";
 import os from "os";
 import path from "path";
+import { fileURLToPath } from "url";
 import {
   cleanTitle,
   fetchSemanticScholarPaper,
   getPublishedDoi,
+  isExecutedDirectly,
   isPreprint,
   mergeHandAddedPapers,
   readDoiList,
@@ -26,6 +28,36 @@ import {
 beforeEach(() => {
   jest.spyOn(console, "error").mockImplementation(() => undefined);
   jest.spyOn(console, "log").mockImplementation(() => undefined);
+});
+
+const SCRIPT_PATH = fileURLToPath(
+  new URL("../scripts/fetch-citations.mjs", import.meta.url)
+);
+
+describe("isExecutedDirectly", () => {
+  it("returns true for the script's path", () => {
+    expect(isExecutedDirectly(SCRIPT_PATH)).toBe(true);
+  });
+
+  it("returns true for a symlink to the script", async () => {
+    const dir = await fsp.mkdtemp(path.join(os.tmpdir(), "fetch-citations-"));
+    try {
+      const link = path.join(dir, "fetch-citations.mjs");
+      await fsp.symlink(SCRIPT_PATH, link);
+      expect(isExecutedDirectly(link)).toBe(true);
+    } finally {
+      await fsp.rm(dir, { force: true, recursive: true });
+    }
+  });
+
+  it("returns false for another file", () => {
+    expect(isExecutedDirectly(fileURLToPath(import.meta.url))).toBe(false);
+  });
+
+  it("returns false with no entry path or stdin", () => {
+    expect(isExecutedDirectly(undefined)).toBe(false);
+    expect(isExecutedDirectly("-")).toBe(false);
+  });
 });
 
 describe("isPreprint", () => {

@@ -693,6 +693,16 @@ function toYamlFormat(publications) {
 }
 
 /**
+ * Check whether the process was started by running this script.
+ * @param {string|undefined} entryPath - The process's entry path, `process.argv[1]`.
+ * @returns {boolean} True if the entry path is this script, following symlinks; false when there is no entry path or it is stdin ("-").
+ */
+function isExecutedDirectly(entryPath) {
+  if (!entryPath || entryPath === "-") return false;
+  return realpathSync(entryPath) === fileURLToPath(import.meta.url);
+}
+
+/**
  * Main CLI handler.
  * @returns {Promise<void>}
  */
@@ -820,6 +830,7 @@ export {
   cleanTitle,
   fetchSemanticScholarPaper,
   getPublishedDoi,
+  isExecutedDirectly,
   isPreprint,
   mergeHandAddedPapers,
   readDoiList,
@@ -827,11 +838,8 @@ export {
   validateExtraDois,
 };
 
-// Run only when executed directly, so tests can import the helpers. Real paths, so a symlinked
-// checkout still runs. A top-level await lets any error print its stack and exit with code 1.
-if (
-  process.argv[1] &&
-  realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)
-) {
+// Run only when executed directly, so tests can import the helpers.
+// A top-level await lets any error print its stack and exit the process with code 1.
+if (isExecutedDirectly(process.argv[1])) {
   await main();
 }
