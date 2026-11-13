@@ -237,6 +237,7 @@ async function fetchWithRetry(url, options = {}, retries = 5, delay = 2000) {
  * @param {string} doi - The DOI of the paper to find citations for.
  * @param {number} limit - Maximum number of citing papers to retrieve.
  * @returns {Promise<Array<object>>} Array of citing paper objects with DOI, title, authors, etc.
+ * @throws {Error} If the request fails or the response has no citation list.
  */
 async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
   console.log(`\nFinding papers that cite DOI: ${doi}`);
@@ -245,7 +246,10 @@ async function findCitingPapers(doi = ANVIL_MAIN_DOI, limit = 100) {
 
   const data = await fetchWithRetry(url);
 
-  const citations = data.data || [];
+  if (!Array.isArray(data.data)) {
+    throw new Error(`No citation list in response from ${url}`);
+  }
+  const citations = data.data;
   console.log(`Found ${citations.length} citing papers\n`);
 
   // Extract DOIs from citing papers
@@ -604,7 +608,9 @@ async function buildPublications(limit = 1000) {
   console.log(`Saved ${kept.length} publications to: ${outputPath}`);
 
   if (problems.length > 0) {
-    console.warn(`\n${problems.length} problems:`);
+    console.warn(
+      `\n${problems.length} ${problems.length === 1 ? "problem" : "problems"}:`
+    );
     for (const { doi, reason } of problems) {
       console.warn(`  ${doi}: ${reason}`);
     }
