@@ -447,10 +447,15 @@ async function buildPublications(limit = 1000) {
   console.log(
     `Adding ${newExtraDois.length} hand-added DOIs (${extraDois.length - newExtraDois.length} skipped, already citing)`
   );
-  // Hand-added papers go first, so a mistyped DOI fails before the long citing-paper loop
+  // Hand-added papers go first, so a mistyped DOI fails before the long citing-paper loop.
+  // A citing paper that is also on the hand-added list keeps the hand-added checks.
+  const extraDoiSet = new Set(extraDois.map((doi) => doi.toLowerCase()));
   const papers = [
     ...newExtraDois.map((doi) => ({ doi, handAdded: true, pmid: null })),
-    ...citingPapers,
+    ...citingPapers.map((p) => ({
+      ...p,
+      handAdded: extraDoiSet.has(p.doi.toLowerCase()),
+    })),
   ];
 
   // DOIs an API has no record of, reported after the output is written
