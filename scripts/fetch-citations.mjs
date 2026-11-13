@@ -11,6 +11,8 @@
  *   node scripts/fetch-citations.mjs --from-dois           # Fetch metadata for DOIs in input file
  *   node scripts/fetch-citations.mjs --from-current        # Refresh metadata for current publications
  *   node scripts/fetch-citations.mjs --build-publications  # Build publications.json for the portal
+ *
+ * --build-publications also includes the DOIs in scripts/files/extra-publication-dois.txt.
  */
 
 import { promises as fsp } from "fs";
@@ -32,6 +34,12 @@ const HTML_ENTITIES = {
 
 // Main AnVIL paper DOI
 const ANVIL_MAIN_DOI = "10.1016/j.xgen.2021.100085";
+
+// Hand-added papers that use AnVIL data but do not cite the main AnVIL paper
+const EXTRA_PUBLICATION_DOIS_PATH = path.join(
+  __dirname,
+  "files/extra-publication-dois.txt"
+);
 
 // Key AnVIL component papers (ABOUT_ANVIL category)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Reserved for future use to fetch ABOUT_ANVIL category papers
@@ -315,26 +323,66 @@ async function fetchMultipleDois(dois) {
 }
 
 /**
- * Fetch citation count for a DOI from Semantic Scholar.
- * @param {string} doi - The DOI to fetch citation count for.
- * @returns {Promise<number>} The citation count, or 0 on error.
+ * Fetch citation count and PubMed ID for a DOI from Semantic Scholar.
+ * @param {string} doi - The DOI to look up.
+ * @returns {Promise<{citationCount: number, pmid: string|null}>} The citation count and PubMed ID, or 0 and null on error.
  */
-async function fetchCitationCount(doi) {
+async function fetchSemanticScholarPaper(doi) {
   const cleanDoi = doi
     .replace("https://doi.org/", "")
     // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
     .replace("http://doi.org/", "");
   try {
     const data = await fetchWithRetry(
-      `${SEMANTIC_SCHOLAR_API}/paper/DOI:${cleanDoi}?fields=citationCount`
+      `${SEMANTIC_SCHOLAR_API}/paper/DOI:${cleanDoi}?fields=citationCount,externalIds`
     );
-    return data.citationCount ?? 0;
+    return {
+      citationCount: data.citationCount ?? 0,
+      pmid: data.externalIds?.PubMed || null,
+    };
   } catch (error) {
     console.error(
-      `Error fetching citation count for ${cleanDoi}: ${error.message}`
+      `Error fetching Semantic Scholar data for ${cleanDoi}: ${error.message}`
     );
-    return 0;
+    return { citationCount: 0, pmid: null };
   }
+}
+
+/**
+ * Read a list of DOIs from a text file with one DOI per line.
+ * @param {string} filePath - Path to the text file.
+ * @returns {Promise<Array<string>>} The DOIs, skipping blank lines and lines starting with "#".
+ */
+async function readDoiList(filePath) {
+  const content = await fsp.readFile(filePath, "utf8");
+  return content
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("#"));
+}
+
+/**
+ * Check that every hand-added DOI is a bare DOI and is listed once.
+ * @param {Array<string>} dois - DOIs read from the extra publications list.
+ * @returns {Array<string>} The same DOIs.
+ * @throws {Error} If a DOI does not start with "10." or repeats an earlier one, ignoring case.
+ */
+function validateExtraDois(dois) {
+  const seen = new Set();
+  for (const doi of dois) {
+    if (!doi.startsWith("10.")) {
+      throw new Error(
+        `${EXTRA_PUBLICATION_DOIS_PATH}: "${doi}" is not a bare DOI starting with "10."`
+      );
+    }
+    if (seen.has(doi.toLowerCase())) {
+      throw new Error(
+        `${EXTRA_PUBLICATION_DOIS_PATH}: "${doi}" is listed more than once`
+      );
+    }
+    seen.add(doi.toLowerCase());
+  }
+  return dois;
 }
 
 /**
@@ -344,22 +392,40 @@ async function fetchCitationCount(doi) {
  */
 // eslint-disable-next-line sonarjs/cognitive-complexity -- Multi-step build process with necessary sequential logic
 async function buildPublications(limit = 1000) {
+  // Read the hand-added DOIs first, so a bad list fails before any network calls
+  const extraDois = validateExtraDois(
+    await readDoiList(EXTRA_PUBLICATION_DOIS_PATH)
+  );
+
   // Step 1: Find citing papers via Semantic Scholar
   const citingPapers = await findCitingPapers(ANVIL_MAIN_DOI, limit);
   console.log(`\nFound ${citingPapers.length} citing papers with DOIs`);
 
+  // Step 1b: Add hand-added papers that the citing papers don't already include
+  const citingDois = new Set(citingPapers.map((p) => p.doi.toLowerCase()));
+  const newExtraDois = extraDois.filter(
+    (doi) => !citingDois.has(doi.toLowerCase())
+  );
+  console.log(
+    `Adding ${newExtraDois.length} hand-added DOIs (${extraDois.length - newExtraDois.length} skipped, already citing)`
+  );
+  const papers = [
+    ...citingPapers,
+    ...newExtraDois.map((doi) => ({ doi, pmid: null })),
+  ];
+
   // Step 2: Fetch metadata and citation counts for all papers
   const allEntries = [];
 
-  for (let i = 0; i < citingPapers.length; i++) {
-    const paper = citingPapers[i];
-    console.log(`\n[${i + 1}/${citingPapers.length}] Processing: ${paper.doi}`);
+  for (let i = 0; i < papers.length; i++) {
+    const paper = papers[i];
+    console.log(`\n[${i + 1}/${papers.length}] Processing: ${paper.doi}`);
 
     const crossref = await fetchCrossrefMetadata(paper.doi);
     if (!crossref) continue;
 
     await sleep(300); // Rate limit between S2 calls
-    const citationCount = await fetchCitationCount(paper.doi);
+    const semanticScholar = await fetchSemanticScholarPaper(paper.doi);
 
     const cleanDoi = paper.doi
       .replace("https://doi.org/", "")
@@ -381,10 +447,10 @@ async function buildPublications(limit = 1000) {
 
     allEntries.push({
       authors: crossref.citation.authors,
-      citationCount,
+      citationCount: semanticScholar.citationCount,
       doi: `https://doi.org/${cleanDoi}`,
       journal: crossref.citation.journal,
-      pmid: paper.pmid || null,
+      pmid: paper.pmid || semanticScholar.pmid,
       publicationDay,
       publicationMonth,
       publicationTimestamp,
@@ -393,7 +459,7 @@ async function buildPublications(limit = 1000) {
       title: cleanTitle(crossref.title),
     });
 
-    if (i < citingPapers.length - 1) {
+    if (i < papers.length - 1) {
       await sleep(500);
     }
   }
@@ -583,11 +649,7 @@ async function main() {
     const inputFile = args[1] || path.join(__dirname, "files/dois.txt");
 
     try {
-      const content = await fsp.readFile(inputFile, "utf8");
-      const dois = content
-        .split("\n")
-        .map((line) => line.trim())
-        .filter((line) => line && !line.startsWith("#"));
+      const dois = await readDoiList(inputFile);
 
       console.log(`\nProcessing ${dois.length} DOIs from ${inputFile}`);
 

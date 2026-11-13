@@ -41,7 +41,8 @@ next-env.d.ts
 # scripts data
 /scripts/new-cser-materials
 /scripts/output/
-/scripts/files/
+/scripts/files/*
+!/scripts/files/extra-publication-dois.txt
 
 # python
 __pycache__/
