@@ -15,7 +15,7 @@
  * --build-publications also includes the DOIs in scripts/files/extra-publication-dois.txt.
  */
 
-import { promises as fsp } from "fs";
+import { promises as fsp, realpathSync } from "fs";
 import path from "path";
 import { stripHtml } from "string-strip-html";
 import { fileURLToPath } from "url";
@@ -428,6 +428,29 @@ function validateExtraDois(dois) {
 }
 
 /**
+ * Combine the citing papers with the hand-added DOIs, comparing DOIs without regard to case.
+ * Hand-added papers go first, so a mistyped DOI fails before the long citing-paper loop.
+ * @param {Array<object>} citingPapers - Papers citing the main AnVIL paper, each with a `doi`.
+ * @param {Array<string>} extraDois - Hand-added DOIs.
+ * @returns {Array<object>} A paper for each hand-added DOI that is not a citing paper, then every citing paper.
+ * Each has `handAdded`, true when its DOI is on the hand-added list.
+ */
+function mergeHandAddedPapers(citingPapers, extraDois) {
+  const citingDois = new Set(citingPapers.map((p) => p.doi.toLowerCase()));
+  const newExtraDois = extraDois.filter(
+    (doi) => !citingDois.has(doi.toLowerCase())
+  );
+  const extraDoiSet = new Set(extraDois.map((doi) => doi.toLowerCase()));
+  return [
+    ...newExtraDois.map((doi) => ({ doi, handAdded: true, pmid: null })),
+    ...citingPapers.map((p) => ({
+      ...p,
+      handAdded: extraDoiSet.has(p.doi.toLowerCase()),
+    })),
+  ];
+}
+
+/**
  * Build publications.json for the portal entity list.
  * @param {number} limit - Maximum number of citing papers to process.
  * @returns {Promise<void>}
@@ -443,24 +466,11 @@ async function buildPublications(limit = 1000) {
   const citingPapers = await findCitingPapers(ANVIL_MAIN_DOI, limit);
   console.log(`\nFound ${citingPapers.length} citing papers with DOIs`);
 
-  // Step 1b: Add hand-added papers that the citing papers don't already include
-  const citingDois = new Set(citingPapers.map((p) => p.doi.toLowerCase()));
-  const newExtraDois = extraDois.filter(
-    (doi) => !citingDois.has(doi.toLowerCase())
-  );
+  const papers = mergeHandAddedPapers(citingPapers, extraDois);
+  const addedCount = papers.length - citingPapers.length;
   console.log(
-    `Adding ${newExtraDois.length} hand-added DOIs (${extraDois.length - newExtraDois.length} skipped, already citing)`
+    `Adding ${addedCount} hand-added DOIs (${extraDois.length - addedCount} skipped, already citing)`
   );
-  // Hand-added papers go first, so a mistyped DOI fails before the long citing-paper loop.
-  // A citing paper that is also on the hand-added list keeps the hand-added checks.
-  const extraDoiSet = new Set(extraDois.map((doi) => doi.toLowerCase()));
-  const papers = [
-    ...newExtraDois.map((doi) => ({ doi, handAdded: true, pmid: null })),
-    ...citingPapers.map((p) => ({
-      ...p,
-      handAdded: extraDoiSet.has(p.doi.toLowerCase()),
-    })),
-  ];
 
   // DOIs an API has no record of, reported after the output is written
   const problems = [];
@@ -806,5 +816,22 @@ APIs Used:
   }
 }
 
-// A top-level await lets any error print its stack and exit the process with code 1
-await main();
+export {
+  cleanTitle,
+  fetchSemanticScholarPaper,
+  getPublishedDoi,
+  isPreprint,
+  mergeHandAddedPapers,
+  readDoiList,
+  toYamlFormat,
+  validateExtraDois,
+};
+
+// Run only when executed directly, so tests can import the helpers. Real paths, so a symlinked
+// checkout still runs. A top-level await lets any error print its stack and exit with code 1.
+if (
+  process.argv[1] &&
+  realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)
+) {
+  await main();
+}

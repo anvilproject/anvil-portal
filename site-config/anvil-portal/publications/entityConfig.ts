@@ -1,6 +1,15 @@
-import { LinkProps } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
-import { BasicCellProps } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
-import { NTagCellProps } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
+import {
+  Link,
+  type LinkProps,
+} from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
+import {
+  BasicCell,
+  type BasicCellProps,
+} from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
+import {
+  NTagCell,
+  type NTagCellProps,
+} from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/NTagCell/nTagCell";
 import {
   CategoryGroupConfig,
   ColumnConfig,
@@ -18,7 +27,6 @@ import {
   getPublicationTitle,
   publicationInputMapper,
 } from "../../../apis/publications/utils";
-import * as C from "../../../components";
 import { CitationInfoBox } from "../../../components/Citations/components/CitationInfoBox/citationInfoBox";
 import {
   buildAuthors,
@@ -96,7 +104,7 @@ export const publicationsEntityConfig: EntityConfig<
     columns: [
       {
         componentConfig: {
-          component: C.Link as React.FC<LinkProps>,
+          component: Link as React.FC<LinkProps>,
           viewBuilder: buildPublicationTitle,
         },
         header: PUBLICATION_CATEGORY_LABEL.TITLE,
@@ -105,7 +113,7 @@ export const publicationsEntityConfig: EntityConfig<
       },
       {
         componentConfig: {
-          component: C.NTagCell as React.FC<NTagCellProps>,
+          component: NTagCell as React.FC<NTagCellProps>,
           viewBuilder: buildAuthors,
         },
         header: PUBLICATION_CATEGORY_LABEL.AUTHORS,
@@ -114,7 +122,7 @@ export const publicationsEntityConfig: EntityConfig<
       },
       {
         componentConfig: {
-          component: C.BasicCell as React.FC<BasicCellProps>,
+          component: BasicCell as React.FC<BasicCellProps>,
           viewBuilder: buildJournal,
         },
         header: PUBLICATION_CATEGORY_LABEL.JOURNAL,
@@ -123,7 +131,7 @@ export const publicationsEntityConfig: EntityConfig<
       },
       {
         componentConfig: {
-          component: C.BasicCell as React.FC<BasicCellProps>,
+          component: BasicCell as React.FC<BasicCellProps>,
           viewBuilder: buildPublicationDate,
         },
         enableSorting: true,
@@ -133,7 +141,7 @@ export const publicationsEntityConfig: EntityConfig<
       },
       {
         componentConfig: {
-          component: C.Link as React.FC<LinkProps>,
+          component: Link as React.FC<LinkProps>,
           viewBuilder: buildPmid,
         },
         header: PUBLICATION_CATEGORY_LABEL.PMID,
@@ -142,7 +150,7 @@ export const publicationsEntityConfig: EntityConfig<
       },
       {
         componentConfig: {
-          component: C.BasicCell as React.FC<BasicCellProps>,
+          component: BasicCell as React.FC<BasicCellProps>,
           viewBuilder: buildCitationCount,
         },
         enableSorting: true,
@@ -153,7 +161,7 @@ export const publicationsEntityConfig: EntityConfig<
       /* Hidden Column in Table View - Publication Year */
       {
         componentConfig: {
-          component: C.BasicCell as React.FC<BasicCellProps>,
+          component: BasicCell as React.FC<BasicCellProps>,
           viewBuilder: (p) => ({ value: p.publicationYear }),
         },
         enableHiding: false,
