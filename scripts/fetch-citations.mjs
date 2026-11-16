@@ -700,7 +700,9 @@ function toYamlFormat(publications) {
 function isExecutedDirectly(entryPath) {
   // With `node -e` or stdin input, argv[1] is the first extra argument, which may name no file
   if (!entryPath || entryPath === "-" || !existsSync(entryPath)) return false;
-  return realpathSync(entryPath) === fileURLToPath(import.meta.url);
+  return (
+    realpathSync(entryPath) === realpathSync(fileURLToPath(import.meta.url))
+  );
 }
 
 /**
@@ -830,6 +832,7 @@ APIs Used:
 export {
   cleanTitle,
   fetchSemanticScholarPaper,
+  findCitingPapers,
   getPublishedDoi,
   isExecutedDirectly,
   isPreprint,

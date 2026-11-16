@@ -17,6 +17,7 @@ import { fileURLToPath } from "url";
 import {
   cleanTitle,
   fetchSemanticScholarPaper,
+  findCitingPapers,
   getPublishedDoi,
   isExecutedDirectly,
   isPreprint,
@@ -295,5 +296,134 @@ describe("fetchSemanticScholarPaper", () => {
       "HTTP 400"
     );
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("fetchWithRetry, through fetchSemanticScholarPaper", () => {
+  const PAPER_URL =
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1/a?fields=citationCount,externalIds";
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  /**
+   * Make a fetch implementation that answers with the given status, JSON body and headers.
+   * @param {number} status - The HTTP status code.
+   * @param {object} body - The JSON response body.
+   * @param {object} headers - The response headers.
+   * @returns {Function} The fetch implementation.
+   */
+  function respond(status, body = {}, headers = {}) {
+    return async () => Response.json(body, { headers, status });
+  }
+
+  /**
+   * Stub fetch to answer each request with the next implementation in turn.
+   * @param {...Function} implementations - One fetch implementation per request.
+   * @returns {object} The fetch mock.
+   */
+  function stubFetchSequence(...implementations) {
+    const fetchMock = jest.spyOn(globalThis, "fetch");
+    for (const implementation of implementations) {
+      fetchMock.mockImplementationOnce(implementation);
+    }
+    return fetchMock;
+  }
+
+  it("retries a 5xx response after 2s, then 4s, and returns the result", async () => {
+    const fetchMock = stubFetchSequence(
+      respond(503),
+      respond(503),
+      respond(200, { citationCount: 7 })
+    );
+    const result = fetchSemanticScholarPaper("10.1/a");
+    await jest.advanceTimersByTimeAsync(1999);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    await jest.advanceTimersByTimeAsync(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    await jest.advanceTimersByTimeAsync(3999);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    await jest.advanceTimersByTimeAsync(1);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+    await expect(result).resolves.toEqual({ citationCount: 7, pmid: null });
+  });
+
+  it("rejects with the HTTP error after five 5xx responses", async () => {
+    const fetchMock = jest
+      .spyOn(globalThis, "fetch")
+      .mockImplementation(respond(503));
+    const assertion = expect(
+      fetchSemanticScholarPaper("10.1/a")
+    ).rejects.toThrow(`HTTP 503 from ${PAPER_URL}`);
+    await jest.runAllTimersAsync();
+    await assertion;
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+  });
+
+  it("rejects naming the URL, with the network error as its cause, after five network errors", async () => {
+    const networkError = new TypeError("fetch failed");
+    const fetchMock = jest
+      .spyOn(globalThis, "fetch")
+      .mockRejectedValue(networkError);
+    const caught = fetchSemanticScholarPaper("10.1/a").catch((error) => error);
+    await jest.runAllTimersAsync();
+    const error = await caught;
+    expect(error.message).toBe(`Request failed: ${PAPER_URL}`);
+    expect(error.cause).toBe(networkError);
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+  });
+
+  it("waits the seconds a 429 response's retry-after gives", async () => {
+    const fetchMock = stubFetchSequence(
+      respond(429, {}, { "retry-after": "3" }),
+      respond(200, { citationCount: 7 })
+    );
+    const result = fetchSemanticScholarPaper("10.1/a");
+    await jest.advanceTimersByTimeAsync(2999);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    await jest.advanceTimersByTimeAsync(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    await expect(result).resolves.toEqual({ citationCount: 7, pmid: null });
+  });
+
+  it("falls back to the backoff when a 429 response's retry-after is a date", async () => {
+    const fetchMock = stubFetchSequence(
+      respond(429, {}, { "retry-after": "Wed, 21 Oct 2026 07:28:00 GMT" }),
+      respond(200, { citationCount: 7 })
+    );
+    const result = fetchSemanticScholarPaper("10.1/a");
+    await jest.advanceTimersByTimeAsync(1999);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    await jest.advanceTimersByTimeAsync(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    await expect(result).resolves.toEqual({ citationCount: 7, pmid: null });
+  });
+
+  it("rejects with the HTTP error after five 429 responses", async () => {
+    const fetchMock = jest
+      .spyOn(globalThis, "fetch")
+      .mockImplementation(respond(429));
+    const assertion = expect(
+      fetchSemanticScholarPaper("10.1/a")
+    ).rejects.toThrow(`HTTP 429 from ${PAPER_URL}`);
+    await jest.runAllTimersAsync();
+    await assertion;
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+  });
+});
+
+describe("findCitingPapers", () => {
+  it("rejects when the response has no citation list", async () => {
+    jest
+      .spyOn(globalThis, "fetch")
+      .mockImplementation(async () => Response.json({ error: "Not found" }));
+    await expect(findCitingPapers("10.1/a", 10)).rejects.toThrow(
+      "No citation list in response from https://api.semanticscholar.org/graph/v1/paper/DOI:10.1/a/citations"
+    );
   });
 });
