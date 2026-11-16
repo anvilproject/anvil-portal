@@ -1,8 +1,10 @@
+import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import type { ColumnConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { render, type RenderResult, screen } from "@testing-library/react";
 import type { Publication } from "../apis/publications/entities";
 import { PUBLICATION_CATEGORY_KEY } from "../site-config/anvil-portal/publications/category";
 import { publicationsEntityConfig } from "../site-config/anvil-portal/publications/entityConfig";
+import { buildPublicationTitle } from "../viewModelBuilders/publications/viewModelBuilders";
 
 const PUBLICATION: Publication = {
   authors: ["Ann Author", "Ben Author"],
@@ -35,11 +37,12 @@ function renderColumn(id: string, publication: Publication): RenderResult {
 }
 
 describe("citations table columns", () => {
-  it("links the title to the DOI in a new tab", () => {
+  it("links the title to the DOI, with a new-tab target from the builder", () => {
     renderColumn(PUBLICATION_CATEGORY_KEY.TITLE, PUBLICATION);
     const link = screen.getByRole("link", { name: PUBLICATION.title });
     expect(link).toHaveAttribute("href", PUBLICATION.doi);
-    expect(link).toHaveAttribute("target", "_blank");
+    // findable-ui's Link opens an external URL in a new tab on its own, so check the builder's target
+    expect(buildPublicationTitle(PUBLICATION).target).toBe(ANCHOR_TARGET.BLANK);
   });
 
   it("shows the authors", () => {

@@ -9,6 +9,7 @@ import {
   it,
   jest,
 } from "@jest/globals";
+import { spawnSync } from "child_process";
 import { promises as fsp } from "fs";
 import os from "os";
 import path from "path";
@@ -54,9 +55,24 @@ describe("isExecutedDirectly", () => {
     expect(isExecutedDirectly(fileURLToPath(import.meta.url))).toBe(false);
   });
 
+  it("runs main when the script is executed directly", () => {
+    const { status, stdout } = spawnSync(process.execPath, [SCRIPT_PATH], {
+      encoding: "utf8",
+      timeout: 10000,
+    });
+    expect(status).toBe(0);
+    expect(stdout).toContain("Usage:");
+  });
+
   it("returns false with no entry path or stdin", () => {
     expect(isExecutedDirectly(undefined)).toBe(false);
     expect(isExecutedDirectly("-")).toBe(false);
+  });
+
+  it("returns false for a path where no file exists", () => {
+    expect(isExecutedDirectly(path.join(os.tmpdir(), "no-such-file"))).toBe(
+      false
+    );
   });
 });
 
@@ -95,6 +111,12 @@ describe("cleanTitle", () => {
     expect(
       cleanTitle("<?A3B2 pi6?>Genomic <i>analysis</i><!-- note --> at scale")
     ).toBe("Genomic analysis at scale");
+  });
+
+  it("removes a comment left behind by removing a nested one", () => {
+    expect(cleanTitle("Genomic <!<!-- x -->-- y -->analysis")).toBe(
+      "Genomic analysis"
+    );
   });
 
   it("removes a whole processing instruction that contains >", () => {
@@ -152,6 +174,15 @@ describe("getPublishedDoi", () => {
 
   it("returns null when Crossref records no published version", () => {
     expect(getPublishedDoi({})).toBeNull();
+  });
+
+  it("returns null when the published version is not a DOI", () => {
+    const work = {
+      relation: {
+        "is-preprint-of": [{ id: "2401.00001", "id-type": "arxiv" }],
+      },
+    };
+    expect(getPublishedDoi(work)).toBeNull();
   });
 });
 
@@ -255,6 +286,14 @@ describe("fetchSemanticScholarPaper", () => {
   it("returns null without retrying when Semantic Scholar has no record", async () => {
     const fetchMock = stubFetch({ error: "Paper not found" }, 404);
     await expect(fetchSemanticScholarPaper("10.1/a")).resolves.toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("rejects without retrying on a client error other than 404", async () => {
+    const fetchMock = stubFetch({ error: "Bad request" }, 400);
+    await expect(fetchSemanticScholarPaper("10.1/a")).rejects.toThrow(
+      "HTTP 400"
+    );
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 });

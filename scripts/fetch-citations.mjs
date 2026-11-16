@@ -15,7 +15,7 @@
  * --build-publications also includes the DOIs in scripts/files/extra-publication-dois.txt.
  */
 
-import { promises as fsp, realpathSync } from "fs";
+import { existsSync, promises as fsp, realpathSync } from "fs";
 import path from "path";
 import { stripHtml } from "string-strip-html";
 import { fileURLToPath } from "url";
@@ -695,10 +695,11 @@ function toYamlFormat(publications) {
 /**
  * Check whether the process was started by running this script.
  * @param {string|undefined} entryPath - The process's entry path, `process.argv[1]`.
- * @returns {boolean} True if the entry path is this script, following symlinks; false when there is no entry path or it is stdin ("-").
+ * @returns {boolean} True if the entry path is this script, following symlinks; false when there is no entry path, it is stdin ("-") or no file exists at it.
  */
 function isExecutedDirectly(entryPath) {
-  if (!entryPath || entryPath === "-") return false;
+  // With `node -e` or stdin input, argv[1] is the first extra argument, which may name no file
+  if (!entryPath || entryPath === "-" || !existsSync(entryPath)) return false;
   return realpathSync(entryPath) === fileURLToPath(import.meta.url);
 }
 
