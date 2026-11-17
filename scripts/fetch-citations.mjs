@@ -102,6 +102,7 @@ function cleanTitle(text) {
 // Preprint DOI prefixes
 const PREPRINT_DOI_PREFIXES = [
   "10.1101/", // bioRxiv, medRxiv
+  "10.64898/", // openRxiv (bioRxiv, medRxiv)
   "10.21203/", // Research Square
   "10.48550/", // arXiv
   "10.20944/", // Preprints.org

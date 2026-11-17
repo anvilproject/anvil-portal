@@ -42,6 +42,7 @@ Semantic Scholar sometimes returns both the preprint and published version of th
 **Detection:** A paper is flagged as a preprint if its DOI matches a known preprint prefix:
 
 - `10.1101/` (bioRxiv, medRxiv)
+- `10.64898/` (openRxiv: bioRxiv, medRxiv)
 - `10.21203/` (Research Square)
 - `10.48550/` (arXiv)
 - `10.20944/` (Preprints.org)

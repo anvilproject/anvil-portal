@@ -81,6 +81,7 @@ describe("isExecutedDirectly", () => {
 describe("isPreprint", () => {
   it.each([
     "10.1101/2024.01.01.123456",
+    "10.64898/2026.05.15.725546",
     "10.21203/rs.3.rs-123/v1",
     "10.48550/arXiv.2401.00001",
     "10.20944/preprints202401.0001.v1",
