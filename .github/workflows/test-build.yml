@@ -13,4 +13,5 @@ jobs:
       - run: |
           npm ci
           npx tsc --noEmit
+          npm test
           npm run build-dev:anvil-portal
