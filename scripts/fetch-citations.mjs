@@ -695,13 +695,13 @@ function toYamlFormat(publications) {
 /**
  * Check whether the process was started by running this script.
  * @param {string|undefined} entryPath - The process's entry path, `process.argv[1]`.
- * @returns {boolean} True if the entry path is this script, following symlinks; false when there is no entry path, it is stdin ("-") or no file exists at it.
+ * @returns {boolean} True if the entry path resolves, following symlinks, to this script; false when there is no entry path or no file exists at it.
  */
 function isExecutedDirectly(entryPath) {
-  // With `node -e` or stdin input, argv[1] is the first extra argument, which may name no file
-  if (!entryPath || entryPath === "-" || !existsSync(entryPath)) return false;
+  // With `node -e` or stdin input, argv[1] is undefined, "-" or the first extra argument, which may name no file
   return (
-    realpathSync(entryPath) === realpathSync(fileURLToPath(import.meta.url))
+    existsSync(entryPath) &&
+    realpathSync(entryPath) === fileURLToPath(import.meta.url)
   );
 }
 
@@ -830,6 +830,7 @@ APIs Used:
 }
 
 export {
+  buildPublications,
   cleanTitle,
   fetchSemanticScholarPaper,
   findCitingPapers,

@@ -15,6 +15,7 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import {
+  buildPublications,
   cleanTitle,
   fetchSemanticScholarPaper,
   findCitingPapers,
@@ -116,6 +117,13 @@ describe("cleanTitle", () => {
 
   it("removes a comment left behind by removing a nested one", () => {
     expect(cleanTitle("Genomic <!<!-- x -->-- y -->analysis")).toBe(
+      "Genomic analysis"
+    );
+  });
+
+  it("repeats comment removal until no comment is left", () => {
+    // With one pass, the tag strip turns what is left into "Genomic <! -- c -->analysis"
+    expect(cleanTitle("Genomic <!<!<!-- a -->-- b -->-- c -->analysis")).toBe(
       "Genomic analysis"
     );
   });
@@ -425,5 +433,58 @@ describe("findCitingPapers", () => {
     await expect(findCitingPapers("10.1/a", 10)).rejects.toThrow(
       "No citation list in response from https://api.semanticscholar.org/graph/v1/paper/DOI:10.1/a/citations"
     );
+  });
+});
+
+describe("buildPublications", () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  /**
+   * Answer a request with a minimal response from the API its URL names.
+   * @param {string} url - The requested URL.
+   * @returns {Promise<Response>} A citation list with one citing paper, a Crossref work or a Semantic Scholar paper.
+   */
+  async function respondByUrl(url) {
+    if (url.includes("/citations?")) {
+      return Response.json({
+        data: [{ citingPaper: { externalIds: { DOI: "10.1/citing" } } }],
+      });
+    }
+    const crossrefPrefix = "https://api.crossref.org/works/";
+    if (url.startsWith(crossrefPrefix)) {
+      const doi = decodeURIComponent(url.slice(crossrefPrefix.length));
+      return Response.json({
+        message: { published: { "date-parts": [[2024]] }, title: [doi] },
+      });
+    }
+    return Response.json({ citationCount: 3 });
+  }
+
+  it("writes the new hand-added papers before the citing papers", async () => {
+    jest.spyOn(fsp, "readFile").mockResolvedValue("10.1/hand\n10.1/CITING\n");
+    jest.spyOn(fsp, "mkdir").mockResolvedValue(undefined);
+    const writeFile = jest.spyOn(fsp, "writeFile").mockResolvedValue();
+    jest.spyOn(globalThis, "fetch").mockImplementation(respondByUrl);
+
+    const done = buildPublications(10);
+    await jest.runAllTimersAsync();
+    await done;
+
+    expect(console.log).toHaveBeenCalledWith(
+      "Adding 1 hand-added DOIs (1 skipped, already citing)"
+    );
+    expect(writeFile).toHaveBeenCalledTimes(1);
+    const [outputPath, json] = writeFile.mock.calls[0];
+    expect(outputPath).toMatch(/files\/publications\/publications\.json$/);
+    expect(Object.values(JSON.parse(json)).map((p) => p.doi)).toEqual([
+      "https://doi.org/10.1/hand",
+      "https://doi.org/10.1/citing",
+    ]);
   });
 });
