@@ -99,27 +99,13 @@ function cleanTitle(text) {
   return result.replace(/\s+/g, " ").trim();
 }
 
-// Preprint DOI prefixes
-const PREPRINT_DOI_PREFIXES = [
-  "10.1101/", // bioRxiv, medRxiv
-  "10.64898/", // openRxiv (bioRxiv, medRxiv)
-  "10.21203/", // Research Square
-  "10.48550/", // arXiv
-  "10.20944/", // Preprints.org
-  "10.2139/", // SSRN
-];
-
 /**
- * Check if a DOI belongs to a preprint server.
- * @param {string} doi - The DOI to check (with or without URL prefix).
- * @returns {boolean} True if the DOI belongs to a known preprint server.
+ * Check whether a Crossref work is a preprint.
+ * @param {object} work - The `message` of a Crossref works response.
+ * @returns {boolean} True if Crossref gives the work the subtype "preprint".
  */
-function isPreprint(doi) {
-  const cleanDoi = doi
-    .replace("https://doi.org/", "")
-    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- String pattern for DOI cleaning, not a network call
-    .replace("http://doi.org/", "");
-  return PREPRINT_DOI_PREFIXES.some((prefix) => cleanDoi.startsWith(prefix));
+function isPreprint(work) {
+  return work.subtype === "preprint";
 }
 
 /**
@@ -311,15 +297,19 @@ async function fetchCrossrefMetadata(doi) {
   const month = dateParts[1] ?? null;
   const day = dateParts[2] ?? null;
 
-  // Get journal/container title
+  // Get journal/container title, falling back to the institution (bioRxiv or medRxiv for their preprints), then the publisher
   const journal = decodeHtmlEntities(
-    work["container-title"]?.[0] || work.publisher || ""
+    work["container-title"]?.[0] ||
+      work.institution?.[0]?.name ||
+      work.publisher ||
+      ""
   );
 
   return {
     // Additional metadata for reference
     _metadata: {
       citedByCount: work["is-referenced-by-count"],
+      isPreprint: isPreprint(work),
       issn: work.ISSN,
       publishedDoi: getPublishedDoi(work),
       referencesCount: work["references-count"],
@@ -475,8 +465,8 @@ async function buildPublications(limit = 1000) {
 
   // DOIs an API has no record of, reported after the output is written
   const problems = [];
-  // Published version DOI of each entry, from its Crossref record
-  const publishedDois = new Map();
+  // Crossref `_metadata` of each entry, by DOI
+  const crossrefMetadata = new Map();
 
   // Step 2: Fetch metadata and citation counts for all papers
   const allEntries = [];
@@ -529,10 +519,7 @@ async function buildPublications(limit = 1000) {
           )
         : 0;
 
-    publishedDois.set(
-      `https://doi.org/${cleanDoi}`,
-      crossref._metadata.publishedDoi
-    );
+    crossrefMetadata.set(`https://doi.org/${cleanDoi}`, crossref._metadata);
     allEntries.push({
       authors: crossref.citation.authors,
       citationCount: semanticScholar.citationCount,
@@ -562,7 +549,7 @@ async function buildPublications(limit = 1000) {
   const nonPreprintTitles = new Set();
 
   for (const entry of allEntries) {
-    if (!isPreprint(entry.doi)) {
+    if (!crossrefMetadata.get(entry.doi).isPreprint) {
       nonPreprintDois.add(
         entry.doi.replace("https://doi.org/", "").toLowerCase()
       );
@@ -574,13 +561,13 @@ async function buildPublications(limit = 1000) {
   let dropped = 0;
 
   for (const entry of allEntries) {
-    if (!isPreprint(entry.doi)) {
+    if (!crossrefMetadata.get(entry.doi).isPreprint) {
       kept.push(entry);
       continue;
     }
 
     // Check 1: Crossref relation — does this preprint have a published version in the dataset?
-    const publishedDoi = publishedDois.get(entry.doi);
+    const { publishedDoi } = crossrefMetadata.get(entry.doi);
     if (publishedDoi && nonPreprintDois.has(publishedDoi.toLowerCase())) {
       console.log(
         `  Dropping preprint ${entry.doi} (published version ${publishedDoi} in dataset)`
