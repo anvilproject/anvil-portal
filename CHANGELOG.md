@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.44.0](https://github.com/anvilproject/anvil-portal/compare/v2.43.1...v2.44.0) (2026-11-20)
+
+
+### Features
+
+* let `fetch-citations` keep hand-added publications that don't cite the AnVIL paper ([#4237](https://github.com/anvilproject/anvil-portal/issues/4237)) ([#4239](https://github.com/anvilproject/anvil-portal/issues/4239)) ([a0ca3a8](https://github.com/anvilproject/anvil-portal/commit/a0ca3a85e40ee5928e8dbcf6894875ba6c4bd053))
+* let fetch-citations keep hand-added publications that don't cite the anvil paper ([#4237](https://github.com/anvilproject/anvil-portal/issues/4237)) ([a0ca3a8](https://github.com/anvilproject/anvil-portal/commit/a0ca3a85e40ee5928e8dbcf6894875ba6c4bd053))
+
+
+### Bug Fixes
+
+* make `fetch-citations` fail loudly when a Semantic Scholar or Crossref request fails ([#4234](https://github.com/anvilproject/anvil-portal/issues/4234)) ([#4240](https://github.com/anvilproject/anvil-portal/issues/4240)) ([041a7cf](https://github.com/anvilproject/anvil-portal/commit/041a7cfed64ca7f077a0f088eb96ab2f4c400e76))
+* spot preprints by Crossref `subtype` and label bioRxiv and medRxiv in `fetch-citations` ([#4235](https://github.com/anvilproject/anvil-portal/issues/4235)) ([#4246](https://github.com/anvilproject/anvil-portal/issues/4246)) ([476908b](https://github.com/anvilproject/anvil-portal/commit/476908b73c5249d5ff4257ceca4e77824b5e5d55))
+
+
+### Content
+
+* refresh AnVIL citations data on /explore/citations ([#4229](https://github.com/anvilproject/anvil-portal/issues/4229)) ([#4232](https://github.com/anvilproject/anvil-portal/issues/4232)) ([f31a103](https://github.com/anvilproject/anvil-portal/commit/f31a103a048632ed3837904014c0d5d0635381ff))
+
+
+### Performance Improvements
+
+* bump the analytics pin to `analytics-5.1.3` for non-blocking Chart.js and fonts ([#4228](https://github.com/anvilproject/anvil-portal/issues/4228)) ([#4242](https://github.com/anvilproject/anvil-portal/issues/4242)) ([168d68a](https://github.com/anvilproject/anvil-portal/commit/168d68ab5215899272fa898e205417f927e49fba))
+
+
+### Tests
+
+* add a test runner so scripts like `fetch-citations` can be unit-tested in CI ([#4241](https://github.com/anvilproject/anvil-portal/issues/4241)) ([#4243](https://github.com/anvilproject/anvil-portal/issues/4243)) ([161d1d4](https://github.com/anvilproject/anvil-portal/commit/161d1d45739bbc3234727b3332efac1188ba498b))
+
 ## [2.43.1](https://github.com/anvilproject/anvil-portal/compare/v2.43.0...v2.43.1) (2026-11-12)
 
 
