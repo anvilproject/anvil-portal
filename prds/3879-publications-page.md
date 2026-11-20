@@ -39,13 +39,7 @@ The script is run manually via `npm run fetch-citations` to refresh the citing p
 
 Semantic Scholar sometimes returns both the preprint and published version of the same study. The build script deduplicates these to avoid listing a paper twice.
 
-**Detection:** A paper is flagged as a preprint if its DOI matches a known preprint prefix:
-
-- `10.1101/` (bioRxiv, medRxiv)
-- `10.21203/` (Research Square)
-- `10.48550/` (arXiv)
-- `10.20944/` (Preprints.org)
-- `10.2139/` (SSRN)
+**Detection:** A paper is flagged as a preprint if its Crossref record has `subtype: "preprint"`. The DOI prefix doesn't decide it: Cold Spring Harbor Laboratory Press uses `10.1101/` for both bioRxiv and medRxiv preprints and for peer-reviewed journals such as Genome Research.
 
 **Dedup rules** (applied to each preprint in order):
 
@@ -62,7 +56,7 @@ interface Publication {
   authors: string[]; // List of author names
   citationCount: number; // Citation count from Semantic Scholar
   doi: string; // Full DOI URL (https://doi.org/...)
-  journal: string; // Journal / container title
+  journal: string; // Journal / container title, else institution (bioRxiv or medRxiv for their preprints), else publisher
   pmid: string | null; // PubMed ID from Semantic Scholar (null if unavailable)
   publisher: string; // Publisher name
   title: string; // Paper title (HTML stripped, whitespace normalized)

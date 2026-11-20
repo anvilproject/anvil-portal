@@ -79,24 +79,18 @@ describe("isExecutedDirectly", () => {
 });
 
 describe("isPreprint", () => {
-  it.each([
-    "10.1101/2024.01.01.123456",
-    "10.21203/rs.3.rs-123/v1",
-    "10.48550/arXiv.2401.00001",
-    "10.20944/preprints202401.0001.v1",
-    "10.2139/ssrn.1234567",
-  ])("returns true for the preprint DOI %s", (doi) => {
-    expect(isPreprint(doi)).toBe(true);
+  it("returns true for a work with the subtype preprint", () => {
+    expect(isPreprint({ subtype: "preprint", type: "posted-content" })).toBe(
+      true
+    );
   });
 
-  it("returns true for a preprint DOI with a doi.org URL prefix", () => {
-    expect(isPreprint("https://doi.org/10.1101/2024.01.01.123456")).toBe(true);
-    // eslint-disable-next-line sonarjs/no-clear-text-protocols -- DOI string under test, not a network call
-    expect(isPreprint("http://doi.org/10.1101/2024.01.01.123456")).toBe(true);
+  it("returns false for a journal article", () => {
+    expect(isPreprint({ type: "journal-article" })).toBe(false);
   });
 
-  it("returns false for a journal DOI", () => {
-    expect(isPreprint("https://doi.org/10.1038/s41586-026-10843-7")).toBe(
+  it("returns false for posted content with another subtype", () => {
+    expect(isPreprint({ subtype: "other", type: "posted-content" })).toBe(
       false
     );
   });
@@ -446,45 +440,126 @@ describe("buildPublications", () => {
   });
 
   /**
-   * Answer a request with a minimal response from the API its URL names.
-   * @param {string} url - The requested URL.
-   * @returns {Promise<Response>} A citation list with one citing paper, a Crossref work or a Semantic Scholar paper.
+   * Stub fetch to answer with the given citing papers and Crossref works, and a Semantic Scholar paper for any other request.
+   * @param {Array<string>} citingDois - DOIs of the papers citing the AnVIL paper.
+   * @param {object} works - Crossref work fields by DOI, added to a minimal work titled with its DOI.
    */
-  async function respondByUrl(url) {
-    if (url.includes("/citations?")) {
-      return Response.json({
-        data: [{ citingPaper: { externalIds: { DOI: "10.1/citing" } } }],
-      });
-    }
-    const crossrefPrefix = "https://api.crossref.org/works/";
-    if (url.startsWith(crossrefPrefix)) {
-      const doi = decodeURIComponent(url.slice(crossrefPrefix.length));
-      return Response.json({
-        message: { published: { "date-parts": [[2024]] }, title: [doi] },
-      });
-    }
-    return Response.json({ citationCount: 3 });
+  function stubApis(citingDois, works = {}) {
+    jest.spyOn(globalThis, "fetch").mockImplementation(async (url) => {
+      if (url.includes("/citations?")) {
+        return Response.json({
+          data: citingDois.map((DOI) => ({
+            citingPaper: { externalIds: { DOI } },
+          })),
+        });
+      }
+      const crossrefPrefix = "https://api.crossref.org/works/";
+      if (url.startsWith(crossrefPrefix)) {
+        const doi = decodeURIComponent(url.slice(crossrefPrefix.length));
+        return Response.json({
+          message: {
+            published: { "date-parts": [[2024]] },
+            title: [doi],
+            ...works[doi],
+          },
+        });
+      }
+      return Response.json({ citationCount: 3 });
+    });
   }
 
-  it("writes the new hand-added papers before the citing papers", async () => {
-    jest.spyOn(fsp, "readFile").mockResolvedValue("10.1/hand\n10.1/CITING\n");
+  /**
+   * Run buildPublications with the given hand-added DOI list and return the publications it writes.
+   * @param {string} extraDoisText - Contents of the hand-added DOI list.
+   * @returns {Promise<Array<object>>} The publications written to publications.json, in order.
+   */
+  async function runBuild(extraDoisText) {
+    jest.spyOn(fsp, "readFile").mockResolvedValue(extraDoisText);
     jest.spyOn(fsp, "mkdir").mockResolvedValue(undefined);
     const writeFile = jest.spyOn(fsp, "writeFile").mockResolvedValue();
-    jest.spyOn(globalThis, "fetch").mockImplementation(respondByUrl);
 
     const done = buildPublications(10);
     await jest.runAllTimersAsync();
     await done;
 
-    expect(console.log).toHaveBeenCalledWith(
-      "Adding 1 hand-added DOIs (1 skipped, already citing)"
-    );
     expect(writeFile).toHaveBeenCalledTimes(1);
     const [outputPath, json] = writeFile.mock.calls[0];
     expect(outputPath).toMatch(/files\/publications\/publications\.json$/);
-    expect(Object.values(JSON.parse(json)).map((p) => p.doi)).toEqual([
+    return Object.values(JSON.parse(json));
+  }
+
+  it("writes the new hand-added papers before the citing papers", async () => {
+    stubApis(["10.1/citing"]);
+    const publications = await runBuild("10.1/hand\n10.1/CITING\n");
+
+    expect(console.log).toHaveBeenCalledWith(
+      "Adding 1 hand-added DOIs (1 skipped, already citing)"
+    );
+    expect(publications.map((p) => p.doi)).toEqual([
       "https://doi.org/10.1/hand",
       "https://doi.org/10.1/citing",
     ]);
+  });
+
+  it("drops preprints whose published version is listed, keeps journal articles with preprint-server prefixes, and falls back to the preprint server for the journal", async () => {
+    stubApis(
+      [
+        "10.64898/2026.01.01.000001",
+        "10.1038/published",
+        "10.1101/gr.000001.121",
+        "10.1101/2026.01.01.000002",
+        "10.1101/2026.01.01.000003",
+        "10.1/no-journal",
+      ],
+      {
+        "10.1/no-journal": { publisher: "Publisher" },
+        "10.1038/published": {
+          "container-title": ["Nature"],
+          publisher: "Springer Nature",
+        },
+        "10.1101/2026.01.01.000002": {
+          institution: [{ name: "bioRxiv" }],
+          publisher: "openRxiv",
+          subtype: "preprint",
+          type: "posted-content",
+        },
+        "10.1101/2026.01.01.000003": {
+          institution: [{ name: "medRxiv" }],
+          publisher: "openRxiv",
+          subtype: "preprint",
+          // Same title as the journal article, so it is dropped on the title match
+          title: ["10.1101/gr.000001.121"],
+          type: "posted-content",
+        },
+        "10.1101/gr.000001.121": {
+          "container-title": ["Genome Research"],
+          publisher: "Cold Spring Harbor Laboratory",
+          type: "journal-article",
+        },
+        "10.64898/2026.01.01.000001": {
+          institution: [{ name: "bioRxiv" }],
+          publisher: "openRxiv",
+          relation: {
+            "is-preprint-of": [{ id: "10.1038/published", "id-type": "doi" }],
+          },
+          subtype: "preprint",
+          type: "posted-content",
+        },
+      }
+    );
+    const publications = await runBuild("");
+
+    expect(publications.map((p) => [p.doi, p.journal])).toEqual([
+      ["https://doi.org/10.1038/published", "Nature"],
+      ["https://doi.org/10.1101/gr.000001.121", "Genome Research"],
+      ["https://doi.org/10.1101/2026.01.01.000002", "bioRxiv"],
+      ["https://doi.org/10.1/no-journal", "Publisher"],
+    ]);
+    expect(console.log).toHaveBeenCalledWith(
+      "  Dropping preprint https://doi.org/10.64898/2026.01.01.000001 (published version 10.1038/published in dataset)"
+    );
+    expect(console.log).toHaveBeenCalledWith(
+      "  Dropping preprint https://doi.org/10.1101/2026.01.01.000003 (title match with non-preprint)"
+    );
   });
 });
