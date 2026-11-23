@@ -49,7 +49,7 @@ Then open http://localhost:8080.
 
 The script is configured with:
 
-- **Audience filter**: Excludes users who land on the markdown tutorial page (`EXCLUDE_PAGES_FILTER` in `constants.py`)
+- **Audience filter**: Excludes users who land on the markdown tutorial page (`/guides/content/creating-links`) from every GA4 metric, via a GA4 audience (`TUTORIAL_AUDIENCE_FILTER` in `constants.py`)
 - **Page exclusions**: `/guides/content/creating-links` and `/guides/content/editing-an-existing-page` are excluded from the pageviews detail table
 - **Search queries**: Extracted from `/search?q=` page paths
 - **File downloads**: GA4 enhanced measurement `file_download` events
