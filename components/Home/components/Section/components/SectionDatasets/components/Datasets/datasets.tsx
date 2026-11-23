@@ -1,4 +1,4 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import {
   BREAKPOINT_FN_NAME,
   useBreakpointHelper,
@@ -37,7 +37,7 @@ export const Datasets = (): JSX.Element => {
   return (
     <Grid isExpanded={isExpanded}>
       <Cards cards={cards} />
-      <Button {...BUTTON_PROPS.PRIMARY_TEXT} onClick={onVisibilityMode}>
+      <Button {...BUTTON_PRESETS.PRIMARY_TEXT} onClick={onVisibilityMode}>
         {VISIBILITY_MODE_LABEL[mode]}
       </Button>
     </Grid>

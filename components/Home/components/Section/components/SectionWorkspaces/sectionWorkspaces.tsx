@@ -1,4 +1,4 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { Button } from "@mui/material";
 import { JSX } from "react";
 import { Section, SectionSubtitle, SectionTitle } from "../../section.styles";
@@ -21,7 +21,7 @@ export const SectionWorkspaces = (): JSX.Element => {
             an existing workspace and customize it to your needs.
           </SectionSubtitle>
           <Button
-            {...BUTTON_PROPS.SECONDARY_CONTAINED}
+            {...BUTTON_PRESETS.SECONDARY_OUTLINED}
             href={EXPLORE_WORKSPACES}
           >
             Explore Workspaces

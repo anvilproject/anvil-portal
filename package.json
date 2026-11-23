@@ -19,7 +19,7 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
-    "@databiosphere/findable-ui": "^60.0.0",
+    "@databiosphere/findable-ui": "^63.0.0",
     "@emotion/react": "^11",
     "@emotion/server": "^11",
     "@emotion/styled": "^11",
@@ -38,7 +38,7 @@
     "date-fns": "^3.6.0",
     "gray-matter": "^4",
     "isomorphic-dompurify": "^2",
-    "ky": "^1",
+    "ky": "^1.10.0",
     "moment-timezone": "^0.5.45",
     "next": "^16.4.5",
     "next-mdx-remote": "^6",

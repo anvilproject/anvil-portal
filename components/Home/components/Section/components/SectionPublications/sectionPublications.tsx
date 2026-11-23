@@ -1,8 +1,8 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { Button } from "@mui/material";
 import { JSX } from "react";
 import { ROUTES } from "../../../../../../routes/constants";
@@ -21,7 +21,7 @@ export const SectionPublications = (): JSX.Element => {
         <Headline>
           <SectionTitle>Recent Publications</SectionTitle>
           <CTAs>
-            <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} href={CITE_ANVIL}>
+            <Button {...BUTTON_PRESETS.SECONDARY_OUTLINED} href={CITE_ANVIL}>
               Cite AnVIL
             </Button>
             <Button
@@ -37,7 +37,10 @@ export const SectionPublications = (): JSX.Element => {
         </Headline>
         <Publications />
         <SectionActions>
-          <Button {...BUTTON_PROPS.SECONDARY_CONTAINED} href={ROUTES.CITATIONS}>
+          <Button
+            {...BUTTON_PRESETS.SECONDARY_OUTLINED}
+            href={ROUTES.CITATIONS}
+          >
             Show all publications
           </Button>
         </SectionActions>

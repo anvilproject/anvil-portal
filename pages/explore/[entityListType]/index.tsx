@@ -1,19 +1,19 @@
-import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode/types";
 import { seedDatabase } from "@databiosphere/findable-ui/lib/utils/seedDatabase";
 import { ExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
+import type { ExploreViewProps } from "@databiosphere/findable-ui/lib/views/ExploreView/types";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { JSX } from "react";
 import { config } from "../../../config/config";
 
 /**
  * Entity list page for explore views (citations, workflows, etc.).
- * @param props - Static props including entity data.
+ * @param props - Static props: the entity list type and its statically loaded entities.
  * @returns ExploreView with entity data.
  */
-const ExplorePage = (props: AzulEntitiesStaticResponse): JSX.Element => {
+const ExplorePage = (props: ExploreViewProps): JSX.Element => {
   return <ExploreView {...props} />;
 };
 
@@ -25,16 +25,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { fallback: false, paths };
 };
 
-export const getStaticProps: GetStaticProps<
-  AzulEntitiesStaticResponse
-> = async ({ params }: GetStaticPropsContext) => {
+/**
+ * Builds the static props for an explore page: its entity list type, page metadata and statically loaded entities.
+ * @param context - Static props context.
+ * @param context.params - Route params, including the entity list type.
+ * @returns Static props for the explore page.
+ */
+export const getStaticProps: GetStaticProps<ExploreViewProps> = async ({
+  params,
+}: GetStaticPropsContext) => {
   const entityListType = params?.entityListType as string;
   const appConfig = config();
   const entityConfig = getEntityConfig(appConfig.entities, entityListType);
   const { exploreMode, label } = entityConfig;
   const { fetchAllEntities } = getEntityService(entityConfig, undefined);
 
-  const props: AzulEntitiesStaticResponse & {
+  const props: ExploreViewProps & {
     pageDescription?: string;
     pageTitle?: string;
   } = {
@@ -50,7 +56,7 @@ export const getStaticProps: GetStaticProps<
     await seedDatabase(entityListType, entityConfig);
   }
 
-  props.data = await fetchAllEntities(entityListType, undefined);
+  props.data = (await fetchAllEntities(entityListType, undefined)).hits;
 
   return { props };
 };

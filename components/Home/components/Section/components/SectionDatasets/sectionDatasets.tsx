@@ -1,4 +1,4 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/constants";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import { JSX } from "react";
@@ -30,7 +30,7 @@ export const SectionDatasets = (): JSX.Element => {
             color={BUTTON_PROPS.COLOR.SECONDARY}
             component={Link}
             href={CONSORTIA_ROADMAP}
-            variant={BUTTON_PROPS.VARIANT.CONTAINED}
+            variant={BUTTON_PROPS.VARIANT.OUTLINED}
           >
             Consortia Roadmap
           </Button>
@@ -38,7 +38,7 @@ export const SectionDatasets = (): JSX.Element => {
             color={BUTTON_PROPS.COLOR.SECONDARY}
             component={Link}
             href={CONTRIBUTE_DATA}
-            variant={BUTTON_PROPS.VARIANT.CONTAINED}
+            variant={BUTTON_PROPS.VARIANT.OUTLINED}
           >
             Contribute Data
           </Button>
