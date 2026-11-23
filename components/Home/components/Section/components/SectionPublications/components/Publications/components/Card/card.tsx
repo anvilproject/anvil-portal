@@ -1,4 +1,3 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import { CardSecondaryText } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardSecondaryText/cardSecondaryText";
 import { CardTitle } from "@databiosphere/findable-ui/lib/components/common/Card/components/CardTitle/cardTitle";
 import { RoundedPaper } from "@databiosphere/findable-ui/lib/components/common/Paper/paper.styles";
@@ -6,6 +5,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { Button, CardActionArea as MCardActionArea } from "@mui/material";
 import { JSX, MouseEvent, useState } from "react";
 import { VISIBILITY_MODE_LABEL } from "../../../../../../../../common/constants";
@@ -44,7 +44,7 @@ export const Card = ({ card }: CardProps): JSX.Element => {
             </CardSecondaryText>
           </CardContent>
           {isTruncatable && (
-            <Button {...BUTTON_PROPS.PRIMARY_TEXT} onClick={onVisibilityMode}>
+            <Button {...BUTTON_PRESETS.PRIMARY_TEXT} onClick={onVisibilityMode}>
               {VISIBILITY_MODE_LABEL[mode]}
             </Button>
           )}

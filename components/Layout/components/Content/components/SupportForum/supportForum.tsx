@@ -1,8 +1,8 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button, Typography } from "@mui/material";
 import { JSX } from "react";
@@ -26,7 +26,7 @@ export const SupportForum = (): JSX.Element => {
         from our users and much more.
       </Typography>
       <Button
-        {...BUTTON_PROPS.SECONDARY_CONTAINED}
+        {...BUTTON_PRESETS.SECONDARY_OUTLINED}
         href={PATH_PARAMETERS.anvilHelpURL}
         rel={REL_ATTRIBUTE.NO_OPENER_NO_REFERRER}
         target={ANCHOR_TARGET.BLANK}

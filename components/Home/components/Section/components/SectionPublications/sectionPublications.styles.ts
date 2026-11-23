@@ -15,12 +15,12 @@ export const CTAs = styled(DefaultActions)`
   flex-direction: row;
   gap: 8px;
 
-  .MuiButton-containedSecondary {
+  .MuiButton-colorSecondary {
     order: 1;
   }
 
   ${bpUpSm} {
-    .MuiButton-containedSecondary {
+    .MuiButton-colorSecondary {
       order: 0;
     }
   }

@@ -2,7 +2,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/button";
+import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/constants";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button, Link as MLink, Typography } from "@mui/material";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export const SectionHero = (): JSX.Element => {
               size={BUTTON_PROPS.SIZE.LARGE}
               sx={{ display: { sm: "flex", xs: "none" } }}
               target={ANCHOR_TARGET.BLANK}
-              variant={BUTTON_PROPS.VARIANT.CONTAINED}
+              variant={BUTTON_PROPS.VARIANT.OUTLINED}
             >
               Launch Terra
             </Button>

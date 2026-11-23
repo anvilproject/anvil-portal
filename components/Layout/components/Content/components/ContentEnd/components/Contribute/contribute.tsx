@@ -1,8 +1,8 @@
-import { BUTTON_PROPS } from "@databiosphere/findable-ui/lib/components/common/Button/constants";
 import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import { BUTTON_PRESETS } from "@databiosphere/findable-ui/lib/contracts/mui/Button/presets";
 import { SVG_ICON_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/svgIcon";
 import { TYPOGRAPHY_PROPS } from "@databiosphere/findable-ui/lib/styles/common/mui/typography";
 import { Button as MButton, Typography } from "@mui/material";
@@ -35,7 +35,7 @@ export const Contribute = ({ slug }: ContributeProps): JSX.Element => {
         Submit a pull request.
       </Typography>
       <MButton
-        {...BUTTON_PROPS.SECONDARY_CONTAINED}
+        {...BUTTON_PRESETS.SECONDARY_OUTLINED}
         disabled={slug?.length === 0}
         href={getGitHubUrl(slug)}
         startIcon={
