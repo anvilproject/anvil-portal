@@ -1,0 +1,45 @@
+---
+date: "2026-12-07"
+description: "Jill Moore, a co-investigator for the Multi-Omics for Health and Disease (MOHD) Consortium, discusses the MOHD v1 data release, including how its heterogeneity fills gaps in other datasets, what questions researchers could explore, and how the data is structured for ease of use."
+featured: false
+hidden: true
+title: "Q&A with Dr. Jill Moore of Multi-Omics for Health and Disease (MOHD)"
+---
+
+<NewsHero {...frontmatter} />
+
+Jill Moore recently spoke at the AnVIL Community Conference 2026 discussing “[From Cohort to Cloud: Building the Multi-Omics for Health and Disease Resource on AnVIL](https://www.youtube.com/watch?v=enlrFxqkGYg&t=1852s).” Dr. Moore is an Assistant Professor at UMass Chan Medical School and a co-investigator for the Multi-Omics for Health and Disease (MOHD) Consortium, a National Institutes of Health (NIH) initiative. In this Q&A, learn more about the [MOHD v1 data release](/news/2026/12/07/mohd-version-1-data-release), including how its heterogeneity fills gaps in other datasets, what questions researchers could explore, and how the data is structured for ease of use.
+
+## What makes the MOHD dataset so special?
+
+There’s been a lot of work over the last couple decades to figure out the genetic components of disease, and why one person with a certain lifestyle gets a disease and another with the same lifestyle doesn’t. Some consortia try to understand how the genome operates in different cell types across age. Others look at the trajectory of disease over time.
+
+But MOHD is unusual in having a study design from the outset where we can look at all these different dimensions of disease in a coordinated fashion across time, disease state, and different environmental contexts, trying to tease apart some of these components that are contributing to disease.
+
+For example, MOHD data is truly multi-omic. Many multi-omic studies focus on just a few data types such as ATAC-seq and RNA-seq. But MOHD profiles across many -omes: the genome, epigenome, transcriptome, proteome, metabolome, lipidome, chemical exposome, and metalome. And a lot of the assays we’re doing are untargeted approaches. Instead of a small panel looking at specific predefined proteins, we’re using mass-spectrometry technology to get a broad view of something like the proteome or the lipidome. That’s really important for disease, because there might be a lot going on that we don’t know to look for in advance. The dataset also includes matched multi-omic data from the same participants for researchers building models of gene regulation.
+
+Additionally, the MOHD dataset contains a really comprehensive picture of phenotypic and clinical data: not just things like blood pressure, height, and BMI, but also survey data about participant occupations, what their diets are, exercise, medical history, etc. It’s a very rich REDCap data set for researchers looking to do data mining about, say, sex-specific differences or how socioeconomic variables differ in various parts of the United States.
+
+What’s particularly unique is that MOHD is measuring these coordinated data modalities over time and over six different cohorts (so not just in one disease silo). We can learn what is different about individual diseases and common between diseases, and how that changes at specific temporal moments. For instance, for chronic diseases such as kidney disease and liver disease, MOHD data is collected on a yearly basis, looking for long-term changes in disease progression. For preeclampsia and hypertensive disorders in pregnancy, the data is collected during the first trimester, at delivery, and postpartum, providing a more rapid trajectory. For pediatric asthma, new data is collected during exacerbations, which will show how the molecular profile changes in that sort of state.
+
+Finally, there’s a huge amount of heterogeneity in the participant data. Participants span a range of ages and geographic locations, and represent genetic ancestries not common in a lot of large-scale genomic studies today.
+
+What’s really crucial is that MOHD data is standardized and harmonized across sites, so researchers can leverage it across all the different participants.
+
+## Can you expand on the heterogeneity in MOHD participant data, and why it matters?
+
+Many people at the AnVIL Community Conference 2026 were expressing excitement about getting access to whole-genome sequencing data from a more heterogeneous cohort. There is a lot of representation in the MOHD study from genetic ancestries that are not common in large-scale genomic datasets. There’s also substantial admixture among MOHD participants, which means we may detect new combinations of haplotypes, enabling researchers to study their genetic effects. Also, some of the diseases we’re studying disproportionately affect certain populations. So researchers can better investigate how genetic, social, and environmental factors may contribute to these differences in disease burden.
+
+There are also interesting questions you can ask when you have such heterogeneous data covering many different dimensions. The data is collected at six different study sites, and if you cross-compare them, you could find biological and environmental associations you didn’t expect. For example, one study site is in Brownsville, Texas, with participants largely from Mexican-American communities along the U.S.-Mexico border. Another is at Columbia University in New York City, with many participants from Caribbean communities. Interesting patterns could emerge in these comparisons that aren't necessarily your primary research question.
+
+This is a great moment to acknowledge and appreciate the participants in the MOHD study, which requires commitment and repeated visits. Without their participation, we wouldn’t have this incredibly rich dataset. So thank you to the participants!
+
+## How has MOHD structured the data to make it easier for researchers to use?
+
+One thing we learned from other consortia was the importance of a consistent approach to consent. All MOHD participants are consented for General Research Use (GRU), which makes it easier for researchers to combine and compare data across the different study sites.
+
+We generate all the data at one processing site, so that mitigates a lot of the technical artifacts.
+
+We prioritize both human and machine readability. Particularly in our current age of AI, it’s important to have that human brain plugged in to understand what’s going on. If a researcher accesses the data, the file names and the way the data relates internally will give some understanding of what the researcher is looking at. We don’t use completely random identifiers. At the same time, we standardize everything so researchers can do computational work and data mining. Without standardization, things kind of explode.
+
+Access requests for this controlled data are available through dbGaP under [phs003765.v1.p1](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003765.v1.p1) (for the v1 release). The data is available at https://explore.anvilproject.org/datasets or https://duos.org/datalibrary/anvil.
