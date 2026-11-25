@@ -9,6 +9,7 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
+import { MailingList } from "./components/MailingList/mailingList";
 import { Updates } from "./components/Updates/updates";
 import { UPDATE_VIEW } from "./constants";
 import {
@@ -49,6 +50,7 @@ export const SectionUpdates = (): JSX.Element => {
             Show All {updateName}
           </Button>
         </SectionActions>
+        <MailingList />
       </SectionLayout>
     </Section>
   );

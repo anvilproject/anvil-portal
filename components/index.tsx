@@ -28,6 +28,8 @@ export { ContentView } from "@databiosphere/findable-ui/lib/views/ContentView/co
 export { AlertTitle } from "@mui/material";
 export { Champions } from "./Champions/champions";
 export { Figure } from "./common/Figure/figure";
+export { MailingListButton } from "./common/MailingListButton/mailingListButton";
+export { PageActions } from "./common/PageActions/pageActions.styles";
 export { NonBreakingSpace as NBS } from "./common/Typography/components/NonBreakingSpace/nonBreakingSpace";
 export { Subheader } from "./common/Typography/components/Subheader/subheader";
 export { TextBodyLarge500 } from "./common/Typography/components/TextBodyLarge500/textBodyLarge500";
