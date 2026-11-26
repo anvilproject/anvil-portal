@@ -30,10 +30,12 @@ export const MDX_COMPONENTS = {
   Grid: C.Grid,
   Image: C.StaticImage,
   Link: C.Link,
+  MailingListButton: C.MailingListButton,
   NBS: C.NBS, // non-breaking space typography component
   News: C.News,
   NewsCSER: C.NewsCSER,
   NewsHero: C.NewsHero,
+  PageActions: C.PageActions,
   Projects: C.Projects,
   Publications: C.Publications,
   PublicationsGREGoR: C.PublicationsGREGoR,

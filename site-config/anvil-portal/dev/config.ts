@@ -8,6 +8,7 @@ import { SiteConfig } from "../../common/entities";
 import { publicationsEntityConfig } from "../publications/entityConfig";
 import { announcements } from "./announcements/announcements";
 import { buildMenuItems } from "./common/utils";
+import { NAV_LINKS } from "./footer";
 import {
   CONSORTIA,
   NODE_KEYS as CONSORTIA_NODE_KEYS,
@@ -45,16 +46,7 @@ export function makeConfig(
     layout: {
       footer: {
         Branding: C.ANVILBranding(),
-        navLinks: [
-          {
-            label: "Help",
-            url: ROUTES.HELP,
-          },
-          {
-            label: "Privacy",
-            url: ROUTES.PRIVACY,
-          },
-        ],
+        navLinks: NAV_LINKS,
         socials: socialMedia.socials,
         versionInfo: true,
       },
