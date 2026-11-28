@@ -1,7 +1,7 @@
 appnope==0.1.4
 asttokens==3.0.1
 comm==0.2.3
-debugpy==1.8.21
+debugpy==1.8.22
 decorator==5.3.1
 executing==2.2.1
 ipykernel==7.3.0
