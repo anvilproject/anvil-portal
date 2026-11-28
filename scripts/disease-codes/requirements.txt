@@ -20,7 +20,7 @@ platformdirs==4.10.0
 prompt_toolkit==3.0.52
 psutil==7.2.2
 ptyprocess==0.7.0
-pure_eval==0.2.3
+pure_eval==0.2.4
 Pygments==2.20.0
 python-dateutil==2.9.0.post0
 pytz==2026.2
