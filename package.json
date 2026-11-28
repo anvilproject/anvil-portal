@@ -39,7 +39,7 @@
     "gray-matter": "^4",
     "isomorphic-dompurify": "^2",
     "ky": "^1.10.0",
-    "moment-timezone": "^0.5.45",
+    "moment-timezone": "^0.6.6",
     "next": "^16.4.5",
     "next-mdx-remote": "^6",
     "react": "^19.2.3",
