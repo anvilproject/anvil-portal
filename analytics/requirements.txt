@@ -25,4 +25,4 @@ requests==2.34.2
 requests-oauthlib==2.0.0
 six==1.17.0
 uritemplate==4.2.0
-urllib3==2.7.0
+urllib3==2.8.0
