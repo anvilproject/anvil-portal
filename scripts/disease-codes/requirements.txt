@@ -30,4 +30,4 @@ stack-data==0.6.3
 tornado==6.5.7
 traitlets==5.15.1
 tzdata==2026.2
-wcwidth==0.8.2
+wcwidth==0.9.4
