@@ -18,7 +18,7 @@ proto-plus==1.28.3
 protobuf==7.35.1
 pyasn1==0.6.4
 pyasn1_modules==0.4.2
-pycparser==3.0
+pycparser==3.12
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
 requests==2.34.2
