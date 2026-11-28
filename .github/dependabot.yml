@@ -1,44 +1,42 @@
 version: 2
 updates:
-  # Enable version updates for npm
-  - package-ecosystem: "npm"
-    # Look for `package.json` and `lock` files in the `root` directory
+  # GitHub Actions used by the repo's workflows
+  - package-ecosystem: "github-actions"
     directory: "/"
-    # Check the npm registry for updates monthly, grouping minor and patch
-    # bumps into a single PR; major bumps still open individual PRs
     schedule:
       interval: "monthly"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 100
     assignees:
       - "NoopDog"
-    open-pull-requests-limit: 5
-    groups:
-      minor-and-patch:
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
-  # Enable version updates for the analytics Python scripts, grouping all
-  # bumps into a single PR per run
+  # npm dependencies in the root `package.json`
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 100
+    assignees:
+      - "NoopDog"
+  # Python dependencies of the analytics scripts
   - package-ecosystem: "pip"
     directory: "/analytics"
     schedule:
       interval: "monthly"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 100
     assignees:
       - "NoopDog"
-    groups:
-      all-updates:
-        patterns:
-          - "*"
-  # Enable version updates for the disease-codes Python scripts, grouping all
-  # bumps into a single PR per run
+  # Python dependencies of the disease-codes scripts
   - package-ecosystem: "pip"
     directory: "/scripts/disease-codes"
     schedule:
       interval: "monthly"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 100
     assignees:
       - "NoopDog"
-    groups:
-      all-updates:
-        patterns:
-          - "*"
