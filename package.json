@@ -35,7 +35,7 @@
     "@tanstack/react-table": "^8",
     "@tanstack/react-virtual": "^3",
     "copy-to-clipboard": "^3",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.4.0",
     "gray-matter": "^4",
     "isomorphic-dompurify": "^2",
     "ky": "^1.10.0",
