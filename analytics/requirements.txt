@@ -10,7 +10,7 @@ google-auth-httplib2==0.4.1
 google-auth-oauthlib==1.4.0
 googleapis-common-protos==1.75.1
 httplib2==0.32.0
-idna==3.18
+idna==3.20
 numpy==2.5.2
 oauthlib==3.3.1
 pandas==3.0.5
