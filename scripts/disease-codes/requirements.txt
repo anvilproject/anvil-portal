@@ -24,7 +24,7 @@ pure_eval==0.2.3
 Pygments==2.20.0
 python-dateutil==2.9.0.post0
 pytz==2026.2
-pyzmq==27.1.0
+pyzmq==27.3.0
 six==1.17.0
 stack-data==0.6.3
 tornado==6.5.7
