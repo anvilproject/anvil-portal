@@ -6,7 +6,7 @@ cryptography==50.0.0
 google-api-core==2.34.0
 google-api-python-client==2.198.0
 google-auth==2.56.3
-google-auth-httplib2==0.4.1
+google-auth-httplib2==0.4.4
 google-auth-oauthlib==1.4.0
 googleapis-common-protos==1.75.1
 httplib2==0.32.0
