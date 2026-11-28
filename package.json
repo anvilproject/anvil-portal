@@ -95,7 +95,7 @@
     "prettier": "^3.7.4",
     "prettier-plugin-organize-imports": "^4.3.0",
     "string-strip-html": "^13.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "engines": {
     "node": "22.13.0"
