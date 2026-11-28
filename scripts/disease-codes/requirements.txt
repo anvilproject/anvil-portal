@@ -4,7 +4,7 @@ comm==0.2.3
 debugpy==1.8.21
 decorator==5.3.1
 executing==2.2.1
-ipykernel==7.3.0
+ipykernel==7.4.0
 ipython==9.15.0
 jedi==0.20.0
 jupyter_client==8.9.1
