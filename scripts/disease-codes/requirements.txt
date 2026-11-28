@@ -1,4 +1,4 @@
-appnope==0.1.4
+appnope==1.0.0
 asttokens==3.0.1
 comm==0.2.3
 debugpy==1.8.21
