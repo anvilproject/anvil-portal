@@ -38,7 +38,7 @@
     "date-fns": "^3.6.0",
     "gray-matter": "^4",
     "isomorphic-dompurify": "^2",
-    "ky": "^1.10.0",
+    "ky": "^2.2.0",
     "moment-timezone": "^0.5.45",
     "next": "^16.4.5",
     "next-mdx-remote": "^6",
